@@ -160,9 +160,10 @@ comments: false
         var count = document.getElementById("count");
         var text = input.value;
         backupInput();
+        text=deleteBlankLine(text);
         text = text.replace(/([A-Z])\n(.+)/mg, "- $1 $2");
         text = text.replace(/(^正确答案)/mg, "\n$1");
-        input.value = "\n# 题目" + count.value + "\n" + text + "\n## 解析\n";
+        input.value = "\n# 题目" + count.value + "\n" + text + "\n\n## 解析\n";
         count.value = Number(count.value) + 1;
         copy();
     }
