@@ -1,0 +1,109 @@
+---
+title: UML类图
+categories: 
+  - 其他
+  - UML
+date: 2019-09-16 13:14:42
+updated: 2019-10-30 11:55:40
+abbrlink: 122fc4b2
+---
+- [UML类图](/blog/html/122fc4b2/#UML类图)
+    - [UML类图关系](/blog/html/122fc4b2/#UML类图关系)
+    - [关系的强弱](/blog/html/122fc4b2/#关系的强弱)
+    - [2.1.泛化](/blog/html/122fc4b2/#2-1-泛化)
+        - [符号](/blog/html/122fc4b2/#符号)
+        - [代码体现](/blog/html/122fc4b2/#代码体现)
+        - [实例](/blog/html/122fc4b2/#实例)
+    - [2.2.实现](/blog/html/122fc4b2/#2-2-实现)
+        - [符号](/blog/html/122fc4b2/#符号)
+        - [代码体现](/blog/html/122fc4b2/#代码体现)
+        - [实例](/blog/html/122fc4b2/#实例)
+    - [2.3.关联](/blog/html/122fc4b2/#2-3-关联)
+        - [符号](/blog/html/122fc4b2/#符号)
+        - [代码体现](/blog/html/122fc4b2/#代码体现)
+        - [实例](/blog/html/122fc4b2/#实例)
+    - [2.4. 聚合关系](/blog/html/122fc4b2/#2-4-聚合关系)
+        - [符号](/blog/html/122fc4b2/#符号)
+        - [代码体现](/blog/html/122fc4b2/#代码体现)
+        - [实例](/blog/html/122fc4b2/#实例)
+    - [2.5.组合关系](/blog/html/122fc4b2/#2-5-组合关系)
+        - [符号](/blog/html/122fc4b2/#符号)
+        - [代码体现](/blog/html/122fc4b2/#代码体现)
+        - [实例](/blog/html/122fc4b2/#实例)
+    - [2.6.依赖](/blog/html/122fc4b2/#2-6-依赖)
+    - [参考资料](/blog/html/122fc4b2/#参考资料)
+
+<!--more-->
+<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
+<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+
+<!--end-->
+# UML类图 #
+## UML类图关系 ##
+在`UML`类图中,常见的有以下几种关系: 泛化(`Generalization`), 实现(`Realization`),关联(`Association)`,聚合(`Aggregation`),组合(`Composition`),依赖(`Dependency`)。
+## 关系的强弱 ##
+各种关系的强弱顺序: 泛化 = 实现 > 组合 > 聚合 > 关联 > 依赖
+## 2.1.泛化 ##
+【泛化关系】:是一种`继承`关系,表示一般与特殊的关系,它指定了子类如何继承父类的所有特征和行为。
+### 符号 ###
+箭头:空心三角形
+箭身:实线
+### 代码体现 ###
+`java`中继承通过`extends`关键字来定义.
+### 实例 ###
+例如：老虎是动物的一种，即有老虎的特性也有动物的共性。
+![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/UML/1.png)
+## 2.2.实现 ##
+【实现关系】：是一种类与接口的关系，表示类是接口所有特征和行为的实现。
+### 符号 ###
+箭头:空心三角形
+箭身:虚线
+### 代码体现 ###
+`java`中`实现`通过`implement`关键字来定义。
+### 实例 ###
+![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/UML/2.png)
+## 2.3.关联 ##
+【关联关系】:是一种`拥有`的关系,它**使一个类知道另一个类的属性和方法**;如:老师可以知道它的学生,丈夫可以知道妻子。关联可以是双向的,也可以是单向的。
+### 符号 ###
+箭头:
+- 双向的关联可以有两个箭头或者没有箭头
+- 单向的关联有一个箭头。
+- 箭头指向被关联的类
+
+箭身:实线
+
+### 代码体现 ###
+使用关联类作为当前类的`成员变量`实现。
+### 实例 ###
+![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/UML/3.png)
+## 2.4. 聚合关系 ##
+**聚合关系:是`整体与部分`的关系,且`部分可以离开整体而单独存在`**。如车和轮胎是整体和部分的关系,轮胎离开车仍然可以存在。
+**聚合关系是关联关系的一种**,是强的关联关系;关联和聚合在语法上无法区分,必须考察具体的逻辑关系。
+### 符号 ###
+聚合关系的箭头有两个,一个是`空心的菱形`,一个是`普通箭头`。菱形的一端指向`整体`,普通箭头指向`部分`
+箭身:和关联关系一样是`实线`
+### 代码体现 ###
+通过定义`成员变量`实现。
+### 实例 ###
+![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/UML/4.png)
+## 2.5.组合关系 ##
+**组合关系:是`整体与部分`的关系,但`部分不能离开整体而单独存在`**。如公司和部门是整体和部分的关系,没有公司就不存在部门。
+**组合关系是关联关系的一种**，**是比聚合关系还要强的关系.**
+### 符号 ###
+- 箭头及指向
+    - 实心菱形指向整体
+    - 普通箭头指向部分
+- 箭身:实线
+
+### 代码体现 ###
+通过定义成员变量实现。
+### 实例 ###
+![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/UML/5.png)
+## 2.6.依赖 ##
+依赖关系是指一个类的元素使用了另一个类,依赖关系使用带箭头的虚线表示,其中箭头指向被依赖的类。
+![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/UML/1.png)
+
+## 参考资料 ##
+[https://zhuanlan.zhihu.com/p/44518805](https://zhuanlan.zhihu.com/p/44518805)
+
+>原文链接: [UML类图](https://lanlan2017.github.io/blog/122fc4b2/)

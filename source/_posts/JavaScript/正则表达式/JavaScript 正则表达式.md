@@ -1,0 +1,88 @@
+---
+title: JavaScript 正则表达式
+categories: 
+  - JavaScript
+  - 正则表达式
+date: 2019-02-13 00:17:45
+updated: 2019-10-30 11:55:40
+abbrlink: cd878b94
+---
+- [语法](/blog/html/cd878b94/#语法)
+- [String对象中的正则表达式](/blog/html/cd878b94/#String对象中的正则表达式)
+    - [实例](/blog/html/cd878b94/#实例)
+- [参考链接](/blog/html/cd878b94/#参考链接)
+
+<!--more-->
+<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
+<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+
+<!--end-->
+## 语法 ##
+```javascript
+var patt=new RegExp(pattern,modifiers);
+```
+或更简单的方法
+```javascript
+var patt=/pattern/modifiers; 
+```
+- pattern（模式） 描述了表达式的模式
+- modifiers(修饰符) 用于指定全局匹配、区分大小写的匹配和多行匹配
+
+## String对象中的正则表达式 ##
+在 JavaScript 中，正则表达式通常用于两个字符串方法 : `search()` 和 `replace()`。
+- search() 方法 用于检索字符串中指定的`子字符串`，或检索与正则表达式相匹配的`子字符串`.
+	- 如果找到就`返回子串的起始位置`。
+	- 如果没找到就返回`-1`。
+- replace() 方法 用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的`子串`。返回的是替换后的文本。
+
+### 实例 ###
+```html
+<p id="test">测试javascirpt String对象中的正则表达式 hello World</p>
+<input type="button" onclick="setID20181128010217()" value="helloworld起始位置:">
+<span id="20181128010217"></span>
+<input type="button" onclick="setID20181128012951()" value="替换helloWorld:">
+<span id="20181128012951"></span>
+<script>
+    // id="20181128010217" onclick="setID20181128010217()"
+    function setID20181128010217() {
+        var id = document.getElementById("20181128010217");
+        var test = document.getElementById("test");
+        var str = test.innerText;
+        var start = str.search(/hello world/i);
+        id.innerText = start;
+    }
+    // id="20181128012951" onclick="setID20181128012951()"
+    function setID20181128012951() {
+        var id = document.getElementById("20181128012951");
+        var test = document.getElementById("test");
+        test.innerText = test.innerText.replace(/hello world/i, "hello javascript");
+    }
+</script>
+```
+<hr><p id="test">测试javascirpt String对象中的正则表达式 hello World</p><input type="button" onclick="setID20181128010217()" value="helloworld起始位置:"><span id="20181128010217"></span><input type="button" onclick="setID20181128012951()" value="替换helloWorld:"><span id="20181128012951"></span>
+<script>
+    // id="20181128010217" onclick="setID20181128010217()"
+    function setID20181128010217() {
+        var id = document.getElementById("20181128010217");
+        var test = document.getElementById("test");
+        var str = test.innerText;
+        var start = str.search(/hello world/i);
+        id.innerText = start;
+    }
+    // id="20181128012951" onclick="setID20181128012951()"
+    function setID20181128012951() {
+        var id = document.getElementById("20181128012951");
+        var test = document.getElementById("test");
+        test.innerText=test.innerText.replace(/hello world/i,"hello javascript");
+    }
+</script>
+
+<hr>
+## 参考链接 ##
+[JavaScript RegExp 对象](http://www.runoob.com/jsref/jsref-obj-regexp.html)
+[http://www.runoob.com/js/js-obj-regexp.html](http://www.runoob.com/js/js-obj-regexp.html)
+[http://www.runoob.com/js/js-regexp.html](http://www.runoob.com/js/js-regexp.html)
+[http://www.runoob.com/jsref/jsref-obj-regexp.html](http://www.runoob.com/jsref/jsref-obj-regexp.html)
+[https://www.lansheng.net.cn/blog/f52e78d1/#search() 方法](https://www.lansheng.net.cn/blog/f52e78d1/#search-%E6%96%B9%E6%B3%95)
+[https://www.lansheng.net.cn/blog/f52e78d1/#replace() 方法](https://www.lansheng.net.cn/blog/f52e78d1/#replace-%E6%96%B9%E6%B3%95)
+>原文链接: [JavaScript 正则表达式](https://lanlan2017.github.io/blog/cd878b94/)

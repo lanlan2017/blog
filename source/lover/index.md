@@ -1,0 +1,70 @@
+---
+title: sweetheart
+date: 2019-10-16 10:49:05
+type: "lover"
+comments: false
+---
+## 纪念日 ##
+2017-3-1
+## 生日 ##
+农历6月20日
+## 备忘录 ##
+### 10月 ###
+- 10月26日 星期六 上午8点50学术交流中心第一会议室，佩戴党徽
+- 10月26日 星球六 下午河海大学代替参见论坛
+- 10月28日 星期日 图书馆续借
+- 10月27日 看易烊千玺的新电影《少年的你》
+- 10月31日 去西安党支部交流会.
+### 11月 ###
+- 11月1日 答辩,需要改一下标题.
+- 11月2日 没事.
+- 11月3日 后天要培训上党课
+- 11月4日 要开学校党代会，一整天
+- 11月5日 上午值班
+- 11月6日 上午值班，下午开党代会
+- 11月7日 周四整天值班
+- 11月8日 周五我可能就去山东了
+
+## 计算 ##
+<div id='show' style="text-align:center"></div>
+<script>function timeFn() {var dateBegin = Date.parse("2017-3-1");var dateEnd = new Date();var dateDiff = dateEnd.getTime() - dateBegin;var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));var leave1 = dateDiff % (24 * 3600 * 1000);var hours = Math.floor(leave1 / (3600 * 1000));var leave2 = leave1 % (3600 * 1000);var minutes = Math.floor(leave2 / (60 * 1000));var leave3 = leave2 % (60 * 1000);var seconds = Math.round(leave3 / 1000);var leave4 = leave3 % (60 * 1000);var timeFn = "酸臭味持续了:" + dayDiff + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒";document.getElementById('show').innerText = timeFn;}setInterval("timeFn();", 1000);</script>
+<div style="display: none;">
+## 源码 ##
+```html
+<div id='show' style="text-align:center"></div>
+<script>
+    // 计算两个时间差 dateBegin 开始时间
+    function timeFn() {
+        // 预制时间
+        var dateBegin = Date.parse("2017-3-1");
+        //获取当前时间
+        var dateEnd = new Date();
+        //时间差的毫秒数
+        var dateDiff = dateEnd.getTime() - dateBegin;
+        //计算出相差天数
+        var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));
+        //计算天数后剩余的毫秒数
+        var leave1 = dateDiff % (24 * 3600 * 1000)
+        //计算出小时数
+        var hours = Math.floor(leave1 / (3600 * 1000))
+        //计算小时数后剩余的毫秒数
+        var leave2 = leave1 % (3600 * 1000)
+        //计算相差分钟数
+        var minutes = Math.floor(leave2 / (60 * 1000))
+        //计算分钟数后剩余的毫秒数
+        var leave3 = leave2 % (60 * 1000)
+        //计算相差秒数
+        var seconds = Math.round(leave3 / 1000)
+        //计算分钟数后剩余的毫秒数
+        var leave4 = leave3 % (60 * 1000)
+        // 毫秒数
+        var minseconds = Math.round(leave4 / 1000)
+        // 拼接字符串.
+        var timeFn = "酸臭味持续了:" + dayDiff + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒" + minseconds + "毫秒";
+        // 更新dom
+        document.getElementById('show').innerText = timeFn;
+    }
+    setInterval("timeFn();", 1000);
+</script>
+```
+</div>

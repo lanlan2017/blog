@@ -1,0 +1,25 @@
+language: node_js
+
+node_js: stable  # 要安装的node版本为当前的稳定版
+
+cache:
+  directories:
+  - node_modules # 要缓存的文件夹
+
+install:                      # 在安装项目环境阶段需要运行的命令，一条一行，类似的还有 before_install
+  - npm install               # 安装 package.json 中的依赖
+
+script:                       # 在构建阶段需要运行的命令，一条一行，类似的还有 before_script、after_script
+  - hexo generate             # Hexo 常规命令，执行清理和生成
+ 
+# 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
+after_script:
+  - git config user.name "lanlan2017"
+  - git config user.email "18251956727@163.com"
+  # 替换同目录下的_config.yml文件中gh_token字符串为travis后台刚才配置的变量，注意此处sed命令用了双引号。单引号无效！
+  - sed -i "s/gh_token/${GH_TOKEN}/g" ./_config.yml
+  - hexo deploy
+  
+branches:
+only:
+  - master # 触发持续集成的分支

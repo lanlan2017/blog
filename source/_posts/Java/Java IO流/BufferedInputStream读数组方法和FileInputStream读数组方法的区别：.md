@@ -1,0 +1,21 @@
+---
+title: BufferedInputStream读数组方法和FileInputStream读数组方法的区别：
+categories: 
+  - Java
+  - Java IO流
+date: 2018-08-22 14:32:39
+updated: 2019-10-30 11:55:39
+abbrlink: d4b540e
+---
+- [区别](/blog/html/d4b540e/#区别)
+
+<!--more-->
+<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
+<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+
+<!--end-->
+## 区别 ##
+- `BufferedInputStream`读数组方法，尽量读满整个数组，然后再返回，所以可能会多次读取，才返回。
+- 而`FileInputStream`的读数组方法只会读取一次，读到多少就返回多少。读取一次，就返回一次。不管数组有没有读满。
+
+>原文链接: [BufferedInputStream读数组方法和FileInputStream读数组方法的区别：](https://lanlan2017.github.io/blog/d4b540e/)
