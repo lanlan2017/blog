@@ -5,7 +5,7 @@ categories:
   - IDE
   - Idea
 date: 2019-10-03 12:06:07
-updated: 2019-10-30 11:55:39
+updated: 2019-10-30 13:53:55
 abbrlink: cbf0ce22
 ---
 - [idea Shift+Alt+I快捷键是弹出TouchPad Driver Diagnostics的问题](/blog/html/cbf0ce22/#idea-Shift-Alt-I快捷键是弹出TouchPad-Driver-Diagnostics的问题)

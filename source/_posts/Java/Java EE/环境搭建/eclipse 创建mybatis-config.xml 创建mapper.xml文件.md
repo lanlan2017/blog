@@ -5,7 +5,7 @@ categories:
   - Java EE
   - 环境搭建
 date: 2019-06-07 15:34:05
-updated: 2019-10-30 11:55:39
+updated: 2019-10-30 13:53:55
 abbrlink: 44aa2f70
 ---
 - [eclipse 创建mybatis-config.xml 创建mapper.xml文件](/blog/html/44aa2f70/#eclipse-创建mybatis-config-xml-创建mapper-xml文件)

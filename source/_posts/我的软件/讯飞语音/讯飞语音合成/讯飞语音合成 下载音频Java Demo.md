@@ -5,7 +5,7 @@ categories:
   - 讯飞语音
   - 讯飞语音合成
 date: 2019-03-07 15:03:05
-updated: 2019-10-30 11:55:40
+updated: 2019-10-30 13:53:55
 abbrlink: e47ffad6
 ---
 - [注册讯飞账号](/blog/html/e47ffad6/#注册讯飞账号)

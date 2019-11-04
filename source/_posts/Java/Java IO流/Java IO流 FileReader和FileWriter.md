@@ -4,7 +4,7 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-10 14:57:46
-updated: 2019-10-30 11:55:40
+updated: 2019-10-30 13:53:55
 abbrlink: f1ceb471
 ---
 - [FileReader类](/blog/html/f1ceb471/#FileReader类)

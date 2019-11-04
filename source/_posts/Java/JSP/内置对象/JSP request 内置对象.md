@@ -5,7 +5,7 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-13 12:31:03
-updated: 2019-10-30 11:55:40
+updated: 2019-10-30 13:53:55
 abbrlink: d5e5b83f
 ---
 - [JSP request内置对象](/blog/html/d5e5b83f/#JSP-request内置对象)

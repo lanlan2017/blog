@@ -4,7 +4,7 @@ categories:
   - 批处理
   - 应用
 date: 2019-08-05 00:29:34
-updated: 2019-10-30 11:55:40
+updated: 2019-10-30 13:53:55
 abbrlink: 5c6bafc2
 ---
 - [使用VSCode快速打开一个给定的文件](/blog/html/5c6bafc2/#使用VSCode快速打开一个给定的文件)

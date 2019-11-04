@@ -4,7 +4,7 @@ categories:
   - JavaScript
   - DOM
 date: 2019-02-13 00:12:44
-updated: 2019-10-30 11:55:40
+updated: 2019-10-30 13:53:55
 abbrlink: 37c4f730
 ---
 - [JavaScript innerText与innerHtml与value的区别](/blog/html/37c4f730/#JavaScript-innerText与innerHtml与value的区别)

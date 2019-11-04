@@ -4,7 +4,7 @@ categories:
   - JavaScript
   - 正则表达式
 date: 2019-02-13 00:17:45
-updated: 2019-10-30 11:55:40
+updated: 2019-10-30 13:53:55
 abbrlink: cd878b94
 ---
 - [语法](/blog/html/cd878b94/#语法)

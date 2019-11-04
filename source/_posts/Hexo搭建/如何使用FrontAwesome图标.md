@@ -3,7 +3,7 @@ title: 如何使用FrontAwesome图标
 categories: 
   - Hexo搭建
 date: 2019-03-11 21:02:57
-updated: 2019-10-30 11:55:39
+updated: 2019-10-30 13:53:55
 abbrlink: 4181f9ed
 ---
 - [选择图标](/blog/html/4181f9ed/#选择图标)

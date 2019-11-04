@@ -4,7 +4,7 @@ categories:
   - HTML
   - 表格
 date: 2019-03-28 14:47:35
-updated: 2019-10-30 11:55:39
+updated: 2019-10-30 13:53:55
 abbrlink: aa51abd2
 ---
 - [HTML 表格对齐方式](/blog/html/aa51abd2/#HTML-表格对齐方式)

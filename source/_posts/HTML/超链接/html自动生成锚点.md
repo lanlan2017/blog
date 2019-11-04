@@ -4,7 +4,7 @@ categories:
   - HTML
   - 超链接
 date: 2019-02-13 00:22:04
-updated: 2019-10-30 11:55:39
+updated: 2019-10-30 13:53:55
 abbrlink: b4a0eaf6
 ---
 - [根据ID属性跳转的锚点](/blog/html/b4a0eaf6/#根据ID属性跳转的锚点)

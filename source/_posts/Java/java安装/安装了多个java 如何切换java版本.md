@@ -4,7 +4,7 @@ categories:
   - Java
   - java安装
 date: 2019-10-06 10:42:44
-updated: 2019-10-30 11:55:40
+updated: 2019-10-30 13:53:55
 abbrlink: 957ae50e
 ---
 - [安装了多个java 如何切换java版本](/blog/html/957ae50e/#安装了多个java-如何切换java版本)

@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - 遇到问题
 date: 2018-08-29 19:35:07
-updated: 2019-10-30 11:55:39
+updated: 2019-10-30 13:53:55
 abbrlink: 87aa90c2
 ---
 - [设置语言为简体中文](/blog/html/87aa90c2/#设置语言为简体中文)

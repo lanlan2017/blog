@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - 给博客添加功能
 date: 2018-10-25 19:13:51
-updated: 2019-10-30 11:55:39
+updated: 2019-10-30 13:53:55
 abbrlink: 82e4ee34
 ---
 - [安装插件](/blog/html/82e4ee34/#安装插件)

@@ -5,7 +5,7 @@ categories:
   - IDE
   - Idea
 date: 2019-08-08 14:41:36
-updated: 2019-10-30 11:55:39
+updated: 2019-10-30 13:53:55
 abbrlink: 385c30d
 ---
 - [idea快捷键](/blog/html/385c30d/#idea快捷键)

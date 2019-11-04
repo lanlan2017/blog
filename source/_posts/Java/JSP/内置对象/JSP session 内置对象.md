@@ -5,7 +5,7 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:39
-updated: 2019-10-30 11:55:40
+updated: 2019-10-30 13:53:55
 abbrlink: 240051d
 ---
 - [session内置对象简介](/blog/html/240051d/#session内置对象简介)

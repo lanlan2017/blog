@@ -4,7 +4,7 @@ categories:
   - Java
   - JDBC
 date: 2018-12-05 00:25:23
-updated: 2019-10-30 11:55:40
+updated: 2019-10-30 13:53:55
 abbrlink: aa45691f
 ---
 - [JDBC 简介](/blog/html/aa45691f/#JDBC-简介)

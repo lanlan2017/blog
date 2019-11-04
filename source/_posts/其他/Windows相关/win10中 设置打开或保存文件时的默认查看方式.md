@@ -4,7 +4,7 @@ categories:
   - 其他
   - Windows相关
 date: 2019-08-28 12:20:01
-updated: 2019-10-30 11:55:40
+updated: 2019-10-30 13:53:55
 abbrlink: fda3d857
 ---
 - [win10中设置打开或保存文件时的默认查看方式](/blog/html/fda3d857/#win10中设置打开或保存文件时的默认查看方式)

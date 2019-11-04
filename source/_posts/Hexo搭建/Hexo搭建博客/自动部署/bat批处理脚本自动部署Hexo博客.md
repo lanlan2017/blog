@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - 自动部署
 date: 2018-12-07 00:23:50
-updated: 2019-10-30 11:55:39
+updated: 2019-10-30 13:53:55
 abbrlink: 5d465f14
 ---
 - [使用bat批处理的好处：省时间](/blog/html/5d465f14/#使用bat批处理的好处：省时间)

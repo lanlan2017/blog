@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - 给博客添加功能
 date: 2018-11-11 14:27:40
-updated: 2019-10-30 11:55:39
+updated: 2019-10-30 13:53:55
 abbrlink: f1fdd2cf
 ---
 - [valine自带的邮件提醒设置](/blog/html/f1fdd2cf/#valine自带的邮件提醒设置)

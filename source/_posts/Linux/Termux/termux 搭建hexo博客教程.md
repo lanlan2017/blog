@@ -4,7 +4,7 @@ categories:
   - Linux
   - Termux
 date: 2019-10-31 15:08:27
-updated: 2019-11-01 17:29:07
+updated: 2019-11-03 22:59:40
 abbrlink: 4a95e633
 ---
 - [安装termux](/blog/html/4a95e633/#安装termux)

@@ -5,7 +5,7 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-01-31 18:48:22
-updated: 2019-10-30 11:55:40
+updated: 2019-10-30 13:53:55
 abbrlink: 47a3a21b
 ---
 - [cmd 创建目录命令](/blog/html/47a3a21b/#cmd-创建目录命令)

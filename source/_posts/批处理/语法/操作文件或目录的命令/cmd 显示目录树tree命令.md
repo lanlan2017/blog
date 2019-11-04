@@ -5,7 +5,7 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-04-26 21:18:26
-updated: 2019-10-30 11:55:40
+updated: 2019-10-30 13:53:55
 abbrlink: 979e79b0
 ---
 - [显示目录树命令 tree](/blog/html/979e79b0/#显示目录树命令-tree)

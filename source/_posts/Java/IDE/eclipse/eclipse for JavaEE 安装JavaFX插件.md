@@ -5,7 +5,7 @@ categories:
   - IDE
   - eclipse
 date: 2019-01-03 19:17:47
-updated: 2019-10-30 11:55:39
+updated: 2019-10-30 13:53:55
 abbrlink: '5285183'
 ---
 - [安装JavaFX插件e(fx)clipse](/blog/html/5285183/#安装JavaFX插件e-fx-clipse)

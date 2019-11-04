@@ -3,7 +3,7 @@ title: 代码压缩 使用逻辑与替代单个if语句
 categories: 
   - JavaScript
 date: 2018-11-22 22:32:15
-updated: 2019-10-30 11:55:40
+updated: 2019-10-30 13:53:55
 abbrlink: 4fd080c1
 ---
 - [发现过程](/blog/html/4fd080c1/#发现过程)
