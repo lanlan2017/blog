@@ -38,3 +38,10 @@ comments: false
 - [网易云课堂](https://study.163.com/)
 - [尚硅谷](http://www.atguigu.com/download.shtml)
 - [实验楼](https://www.shiyanlou.com)
+
+# 博客 #
+- [廖雪峰的官网网站](https://www.liaoxuefeng.com/)
+
+# 资讯 #
+- [微博热搜](https://s.weibo.com/top/summary)
+- [人民网](http://www.people.com.cn/)
