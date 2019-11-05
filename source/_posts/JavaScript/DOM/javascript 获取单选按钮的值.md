@@ -4,11 +4,11 @@ categories:
   - JavaScript
   - DOM
 date: 2019-03-18 16:14:30
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 4f225713
 ---
-- [测试代码](/blog/html/4f225713/#测试代码)
-- [运行效果](/blog/html/4f225713/#运行效果)
+- [测试代码](/blog/4f225713/#测试代码)
+- [运行效果](/blog/4f225713/#运行效果)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

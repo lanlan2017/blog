@@ -5,16 +5,16 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2018-08-03 14:03:56
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: 6aff1849
 ---
-- [一、建立空文件的几种方法](/blog/html/6aff1849/#一、建立空文件的几种方法)
-    - [使用cd命令](/blog/html/6aff1849/#使用cd命令)
-    - [使用copy命令](/blog/html/6aff1849/#使用copy命令)
-    - [使用type命令](/blog/html/6aff1849/#使用type命令)
-    - [使用echo命令](/blog/html/6aff1849/#使用echo命令)
-    - [使用fsutil命令](/blog/html/6aff1849/#使用fsutil命令)
-    - [关键点](/blog/html/6aff1849/#关键点)
+- [一、建立空文件的几种方法](/blog/6aff1849/#一、建立空文件的几种方法)
+    - [使用cd命令](/blog/6aff1849/#使用cd命令)
+    - [使用copy命令](/blog/6aff1849/#使用copy命令)
+    - [使用type命令](/blog/6aff1849/#使用type命令)
+    - [使用echo命令](/blog/6aff1849/#使用echo命令)
+    - [使用fsutil命令](/blog/6aff1849/#使用fsutil命令)
+    - [关键点](/blog/6aff1849/#关键点)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

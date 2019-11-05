@@ -4,22 +4,22 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-09 19:25:05
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: a5e554af
 ---
-- [前言](/blog/html/a5e554af/#前言)
-    - [InputSteamReader 的方法：](/blog/html/a5e554af/#InputSteamReader-的方法：)
-        - [构造方法](/blog/html/a5e554af/#构造方法)
-        - [其他方法](/blog/html/a5e554af/#其他方法)
-    - [实例](/blog/html/a5e554af/#实例)
-        - [使用read()方法读取文件](/blog/html/a5e554af/#使用read-方法读取文件)
-        - [读字符数组方法](/blog/html/a5e554af/#读字符数组方法)
-- [OutputStreamWriter 类](/blog/html/a5e554af/#OutputStreamWriter-类)
-    - [构造方法](/blog/html/a5e554af/#构造方法)
-    - [其他方法：](/blog/html/a5e554af/#其他方法：)
-    - [对比这两个类](/blog/html/a5e554af/#对比这两个类)
-    - [实例：使用上面三种方法写文件](/blog/html/a5e554af/#实例：使用上面三种方法写文件)
-- [应用：复制字符文件](/blog/html/a5e554af/#应用：复制字符文件)
+- [前言](/blog/a5e554af/#前言)
+    - [InputSteamReader 的方法：](/blog/a5e554af/#InputSteamReader-的方法：)
+        - [构造方法](/blog/a5e554af/#构造方法)
+        - [其他方法](/blog/a5e554af/#其他方法)
+    - [实例](/blog/a5e554af/#实例)
+        - [使用read()方法读取文件](/blog/a5e554af/#使用read-方法读取文件)
+        - [读字符数组方法](/blog/a5e554af/#读字符数组方法)
+- [OutputStreamWriter 类](/blog/a5e554af/#OutputStreamWriter-类)
+    - [构造方法](/blog/a5e554af/#构造方法)
+    - [其他方法：](/blog/a5e554af/#其他方法：)
+    - [对比这两个类](/blog/a5e554af/#对比这两个类)
+    - [实例：使用上面三种方法写文件](/blog/a5e554af/#实例：使用上面三种方法写文件)
+- [应用：复制字符文件](/blog/a5e554af/#应用：复制字符文件)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

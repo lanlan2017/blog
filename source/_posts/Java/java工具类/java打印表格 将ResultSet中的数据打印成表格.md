@@ -4,18 +4,18 @@ categories:
   - Java
   - java工具类
 date: 2019-10-23 22:19:13
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: d58ef648
 ---
-- [java打印表格 将ResultSet中的数据打印成表格](/blog/html/d58ef648/#java打印表格-将ResultSet中的数据打印成表格)
-    - [问题描述](/blog/html/d58ef648/#问题描述)
-    - [思路](/blog/html/d58ef648/#思路)
-    - [字符串格式化方式](/blog/html/d58ef648/#字符串格式化方式)
-        - [左对齐](/blog/html/d58ef648/#左对齐)
-        - [右对齐](/blog/html/d58ef648/#右对齐)
-    - [实现](/blog/html/d58ef648/#实现)
-    - [测试](/blog/html/d58ef648/#测试)
-    - [运行结果](/blog/html/d58ef648/#运行结果)
+- [java打印表格 将ResultSet中的数据打印成表格](/blog/d58ef648/#java打印表格-将ResultSet中的数据打印成表格)
+    - [问题描述](/blog/d58ef648/#问题描述)
+    - [思路](/blog/d58ef648/#思路)
+    - [字符串格式化方式](/blog/d58ef648/#字符串格式化方式)
+        - [左对齐](/blog/d58ef648/#左对齐)
+        - [右对齐](/blog/d58ef648/#右对齐)
+    - [实现](/blog/d58ef648/#实现)
+    - [测试](/blog/d58ef648/#测试)
+    - [运行结果](/blog/d58ef648/#运行结果)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

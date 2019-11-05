@@ -6,10 +6,10 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-29 16:12:41
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 503e570d
 ---
-- [eclipse HTML代码格式化](/blog/html/503e570d/#eclipse-HTML代码格式化)
+- [eclipse HTML代码格式化](/blog/503e570d/#eclipse-HTML代码格式化)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

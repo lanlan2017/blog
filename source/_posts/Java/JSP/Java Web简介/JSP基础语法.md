@@ -5,23 +5,23 @@ categories:
   - JSP
   - Java Web简介
 date: 2018-12-03 19:28:31
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: ceef3131
 ---
-- [JSP页面元素构成](/blog/html/ceef3131/#JSP页面元素构成)
-    - [JSP指令](/blog/html/ceef3131/#JSP指令)
-        - [page指令](/blog/html/ceef3131/#page指令)
-        - [contentType 和pageEncoding的区别](/blog/html/ceef3131/#contentType-和pageEncoding的区别)
-    - [JSP注释](/blog/html/ceef3131/#JSP注释)
-        - [实例](/blog/html/ceef3131/#实例)
-        - [英文](/blog/html/ceef3131/#英文)
-- [JSP页面生命周期](/blog/html/ceef3131/#JSP页面生命周期)
-    - [JSP编译](/blog/html/ceef3131/#JSP编译)
-    - [JSP初始化](/blog/html/ceef3131/#JSP初始化)
-    - [JSP执行](/blog/html/ceef3131/#JSP执行)
-    - [JSP清理](/blog/html/ceef3131/#JSP清理)
-    - [实例](/blog/html/ceef3131/#实例)
-    - [参考链接](/blog/html/ceef3131/#参考链接)
+- [JSP页面元素构成](/blog/ceef3131/#JSP页面元素构成)
+    - [JSP指令](/blog/ceef3131/#JSP指令)
+        - [page指令](/blog/ceef3131/#page指令)
+        - [contentType 和pageEncoding的区别](/blog/ceef3131/#contentType-和pageEncoding的区别)
+    - [JSP注释](/blog/ceef3131/#JSP注释)
+        - [实例](/blog/ceef3131/#实例)
+        - [英文](/blog/ceef3131/#英文)
+- [JSP页面生命周期](/blog/ceef3131/#JSP页面生命周期)
+    - [JSP编译](/blog/ceef3131/#JSP编译)
+    - [JSP初始化](/blog/ceef3131/#JSP初始化)
+    - [JSP执行](/blog/ceef3131/#JSP执行)
+    - [JSP清理](/blog/ceef3131/#JSP清理)
+    - [实例](/blog/ceef3131/#实例)
+    - [参考链接](/blog/ceef3131/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

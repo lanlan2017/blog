@@ -4,17 +4,17 @@ categories:
   - 正则表达式
   - 应用
 date: 2018-12-16 20:05:20
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: accb1b6
 ---
-- [处理文本](/blog/html/accb1b6/#处理文本)
-- [获取代码文本](/blog/html/accb1b6/#获取代码文本)
-    - [删除代码块行数](/blog/html/accb1b6/#删除代码块行数)
-    - [替换换行符](/blog/html/accb1b6/#替换换行符)
-    - [删除剩下的所有html标签](/blog/html/accb1b6/#删除剩下的所有html标签)
-    - [删除空行](/blog/html/accb1b6/#删除空行)
-    - [删除多余空白符](/blog/html/accb1b6/#删除多余空白符)
-    - [HTML逆转义](/blog/html/accb1b6/#HTML逆转义)
+- [处理文本](/blog/accb1b6/#处理文本)
+- [获取代码文本](/blog/accb1b6/#获取代码文本)
+    - [删除代码块行数](/blog/accb1b6/#删除代码块行数)
+    - [替换换行符](/blog/accb1b6/#替换换行符)
+    - [删除剩下的所有html标签](/blog/accb1b6/#删除剩下的所有html标签)
+    - [删除空行](/blog/accb1b6/#删除空行)
+    - [删除多余空白符](/blog/accb1b6/#删除多余空白符)
+    - [HTML逆转义](/blog/accb1b6/#HTML逆转义)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

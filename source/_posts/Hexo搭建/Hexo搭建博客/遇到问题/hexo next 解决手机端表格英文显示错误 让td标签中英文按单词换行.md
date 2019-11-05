@@ -5,17 +5,17 @@ categories:
   - Hexo搭建博客
   - 遇到问题
 date: 2018-11-06 11:24:16
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 200a993a
 ---
-- [问题描述](/blog/html/200a993a/#问题描述)
-- [修改next主题样式文件](/blog/html/200a993a/#修改next主题样式文件)
-- [写表格时用空格分隔每个单词](/blog/html/200a993a/#写表格时用空格分隔每个单词)
-    - [实例 错误写法](/blog/html/200a993a/#实例-错误写法)
-    - [实例 正确写法](/blog/html/200a993a/#实例-正确写法)
-- [css word-break属性](/blog/html/200a993a/#css-word-break属性)
-- [white-space、word-wrap、word-break的区别](/blog/html/200a993a/#white-space、word-wrap、word-break的区别)
-- [参考链接](/blog/html/200a993a/#参考链接)
+- [问题描述](/blog/200a993a/#问题描述)
+- [修改next主题样式文件](/blog/200a993a/#修改next主题样式文件)
+- [写表格时用空格分隔每个单词](/blog/200a993a/#写表格时用空格分隔每个单词)
+    - [实例 错误写法](/blog/200a993a/#实例-错误写法)
+    - [实例 正确写法](/blog/200a993a/#实例-正确写法)
+- [css word-break属性](/blog/200a993a/#css-word-break属性)
+- [white-space、word-wrap、word-break的区别](/blog/200a993a/#white-space、word-wrap、word-break的区别)
+- [参考链接](/blog/200a993a/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

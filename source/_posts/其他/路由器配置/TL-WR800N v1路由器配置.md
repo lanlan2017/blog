@@ -4,15 +4,15 @@ categories:
   - 其他
   - 路由器配置
 date: 2019-11-01 14:39:51
-updated: 2019-11-04 16:55:10
+updated: 2019-11-04 17:02:02
 abbrlink: f8d0ff32
 ---
-- [TL-WR800N v1路由器配置](/blog/html/f8d0ff32/#TL-WR800N-v1路由器配置)
-    - [固定电脑IP地址](/blog/html/f8d0ff32/#固定电脑IP地址)
-    - [连接路由器的WiFi](/blog/html/f8d0ff32/#连接路由器的WiFi)
-    - [进入路由器后台](/blog/html/f8d0ff32/#进入路由器后台)
-    - [取消固定电脑IP地址](/blog/html/f8d0ff32/#取消固定电脑IP地址)
-- [参考链接](/blog/html/f8d0ff32/#参考链接)
+- [TL-WR800N v1路由器配置](/blog/f8d0ff32/#TL-WR800N-v1路由器配置)
+    - [固定电脑IP地址](/blog/f8d0ff32/#固定电脑IP地址)
+    - [连接路由器的WiFi](/blog/f8d0ff32/#连接路由器的WiFi)
+    - [进入路由器后台](/blog/f8d0ff32/#进入路由器后台)
+    - [取消固定电脑IP地址](/blog/f8d0ff32/#取消固定电脑IP地址)
+- [参考链接](/blog/f8d0ff32/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

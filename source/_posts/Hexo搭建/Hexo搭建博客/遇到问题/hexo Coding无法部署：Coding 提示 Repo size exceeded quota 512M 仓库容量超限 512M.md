@@ -5,15 +5,15 @@ categories:
   - Hexo搭建博客
   - 遇到问题
 date: 2018-11-06 14:35:04
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 39481c48
 ---
-- [问题描述](/blog/html/39481c48/#问题描述)
-- [解决方案](/blog/html/39481c48/#解决方案)
-    - [登录coding 清空仓库](/blog/html/39481c48/#登录coding-清空仓库)
-    - [重新部署](/blog/html/39481c48/#重新部署)
-    - [重新开启pages服务](/blog/html/39481c48/#重新开启pages服务)
-    - [重新绑定域名](/blog/html/39481c48/#重新绑定域名)
+- [问题描述](/blog/39481c48/#问题描述)
+- [解决方案](/blog/39481c48/#解决方案)
+    - [登录coding 清空仓库](/blog/39481c48/#登录coding-清空仓库)
+    - [重新部署](/blog/39481c48/#重新部署)
+    - [重新开启pages服务](/blog/39481c48/#重新开启pages服务)
+    - [重新绑定域名](/blog/39481c48/#重新绑定域名)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -4,15 +4,15 @@ categories:
   - 我的软件
   - 百度文字识别
 date: 2018-09-11 19:39:14
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: 29121dfd
 ---
-- [优化](/blog/html/29121dfd/#优化)
-    - [加入GUI](/blog/html/29121dfd/#加入GUI)
-    - [加入全局热键](/blog/html/29121dfd/#加入全局热键)
-        - [ScreenShotOCR程序入口类](/blog/html/29121dfd/#ScreenShotOCR程序入口类)
-        - [菜单窗口](/blog/html/29121dfd/#菜单窗口)
-        - [ScreenShotWindow截图窗口](/blog/html/29121dfd/#ScreenShotWindow截图窗口)
+- [优化](/blog/29121dfd/#优化)
+    - [加入GUI](/blog/29121dfd/#加入GUI)
+    - [加入全局热键](/blog/29121dfd/#加入全局热键)
+        - [ScreenShotOCR程序入口类](/blog/29121dfd/#ScreenShotOCR程序入口类)
+        - [菜单窗口](/blog/29121dfd/#菜单窗口)
+        - [ScreenShotWindow截图窗口](/blog/29121dfd/#ScreenShotWindow截图窗口)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

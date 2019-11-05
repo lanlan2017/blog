@@ -5,22 +5,22 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2018-12-28 15:38:46
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: 8d229e40
 ---
-- [创建文件 copy con命令](/blog/html/8d229e40/#创建文件-copy-con命令)
-- [浏览文件 type命令](/blog/html/8d229e40/#浏览文件-type命令)
-- [echo命令](/blog/html/8d229e40/#echo命令)
-- [@命令](/blog/html/8d229e40/#-命令)
-    - [两个关闭回显命令的区别](/blog/html/8d229e40/#两个关闭回显命令的区别)
-- [流程控制转向命令 goto命令](/blog/html/8d229e40/#流程控制转向命令-goto命令)
-- [调用另一个批处理程序 call命令](/blog/html/8d229e40/#调用另一个批处理程序-call命令)
-    - [call 和goto的区别](/blog/html/8d229e40/#call-和goto的区别)
-- [重新启用一个单独的命令行窗口 start命令](/blog/html/8d229e40/#重新启用一个单独的命令行窗口-start命令)
-- [注释](/blog/html/8d229e40/#注释)
-- [set命令](/blog/html/8d229e40/#set命令)
-    - [批处理脚本中获取用户输入](/blog/html/8d229e40/#批处理脚本中获取用户输入)
-- [设置本地临时环境变量 setlocal](/blog/html/8d229e40/#设置本地临时环境变量-setlocal)
+- [创建文件 copy con命令](/blog/8d229e40/#创建文件-copy-con命令)
+- [浏览文件 type命令](/blog/8d229e40/#浏览文件-type命令)
+- [echo命令](/blog/8d229e40/#echo命令)
+- [@命令](/blog/8d229e40/#-命令)
+    - [两个关闭回显命令的区别](/blog/8d229e40/#两个关闭回显命令的区别)
+- [流程控制转向命令 goto命令](/blog/8d229e40/#流程控制转向命令-goto命令)
+- [调用另一个批处理程序 call命令](/blog/8d229e40/#调用另一个批处理程序-call命令)
+    - [call 和goto的区别](/blog/8d229e40/#call-和goto的区别)
+- [重新启用一个单独的命令行窗口 start命令](/blog/8d229e40/#重新启用一个单独的命令行窗口-start命令)
+- [注释](/blog/8d229e40/#注释)
+- [set命令](/blog/8d229e40/#set命令)
+    - [批处理脚本中获取用户输入](/blog/8d229e40/#批处理脚本中获取用户输入)
+- [设置本地临时环境变量 setlocal](/blog/8d229e40/#设置本地临时环境变量-setlocal)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

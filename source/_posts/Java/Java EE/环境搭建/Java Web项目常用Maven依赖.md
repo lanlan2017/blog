@@ -5,16 +5,16 @@ categories:
   - Java EE
   - 环境搭建
 date: 2019-04-29 20:25:38
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: c20afdb9
 ---
-- [Java Web项目常用Maven依赖](/blog/html/c20afdb9/#Java-Web项目常用Maven依赖)
-    - [Spring MVC Maven依赖](/blog/html/c20afdb9/#Spring-MVC-Maven依赖)
-    - [JSTL Maven依赖](/blog/html/c20afdb9/#JSTL-Maven依赖)
-    - [jackson Maven依赖](/blog/html/c20afdb9/#jackson-Maven依赖)
-    - [Fastjson Maven依赖](/blog/html/c20afdb9/#Fastjson-Maven依赖)
-    - [MyBatis Maven依赖](/blog/html/c20afdb9/#MyBatis-Maven依赖)
-    - [mysql驱动 Maven依赖](/blog/html/c20afdb9/#mysql驱动-Maven依赖)
+- [Java Web项目常用Maven依赖](/blog/c20afdb9/#Java-Web项目常用Maven依赖)
+    - [Spring MVC Maven依赖](/blog/c20afdb9/#Spring-MVC-Maven依赖)
+    - [JSTL Maven依赖](/blog/c20afdb9/#JSTL-Maven依赖)
+    - [jackson Maven依赖](/blog/c20afdb9/#jackson-Maven依赖)
+    - [Fastjson Maven依赖](/blog/c20afdb9/#Fastjson-Maven依赖)
+    - [MyBatis Maven依赖](/blog/c20afdb9/#MyBatis-Maven依赖)
+    - [mysql驱动 Maven依赖](/blog/c20afdb9/#mysql驱动-Maven依赖)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

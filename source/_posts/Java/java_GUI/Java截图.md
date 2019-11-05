@@ -4,12 +4,12 @@ categories:
   - Java
   - java_GUI
 date: 2018-09-13 10:31:53
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 14ec9002
 ---
-- [完整的代码](/blog/html/14ec9002/#完整的代码)
-    - [ScreenShotOCR类](/blog/html/14ec9002/#ScreenShotOCR类)
-    - [BaiduOCR类](/blog/html/14ec9002/#BaiduOCR类)
+- [完整的代码](/blog/14ec9002/#完整的代码)
+    - [ScreenShotOCR类](/blog/14ec9002/#ScreenShotOCR类)
+    - [BaiduOCR类](/blog/14ec9002/#BaiduOCR类)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

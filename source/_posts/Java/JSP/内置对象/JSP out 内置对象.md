@@ -5,16 +5,16 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:38
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 8c60ed62
 ---
-- [out内置对象](/blog/html/8c60ed62/#out内置对象)
-    - [向客户端输出数据](/blog/html/8c60ed62/#向客户端输出数据)
-    - [管理响应缓冲](/blog/html/8c60ed62/#管理响应缓冲)
-        - [实例](/blog/html/8c60ed62/#实例)
-        - [验证flush()方法](/blog/html/8c60ed62/#验证flush-方法)
-        - [验证clear()方法](/blog/html/8c60ed62/#验证clear-方法)
-        - [验证clearBuffer()方法](/blog/html/8c60ed62/#验证clearBuffer-方法)
+- [out内置对象](/blog/8c60ed62/#out内置对象)
+    - [向客户端输出数据](/blog/8c60ed62/#向客户端输出数据)
+    - [管理响应缓冲](/blog/8c60ed62/#管理响应缓冲)
+        - [实例](/blog/8c60ed62/#实例)
+        - [验证flush()方法](/blog/8c60ed62/#验证flush-方法)
+        - [验证clear()方法](/blog/8c60ed62/#验证clear-方法)
+        - [验证clearBuffer()方法](/blog/8c60ed62/#验证clearBuffer-方法)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -4,13 +4,13 @@ categories:
   - Linux
   - 通用
 date: 2018-08-22 11:31:37
-updated: 2019-11-03 23:00:14
+updated: 2019-11-04 17:02:02
 abbrlink: d10c0440
 ---
-- [问题描述](/blog/html/d10c0440/#问题描述)
-- [命令](/blog/html/d10c0440/#命令)
-- [参数说明](/blog/html/d10c0440/#参数说明)
-- [参考资料](/blog/html/d10c0440/#参考资料)
+- [问题描述](/blog/d10c0440/#问题描述)
+- [命令](/blog/d10c0440/#命令)
+- [参数说明](/blog/d10c0440/#参数说明)
+- [参考资料](/blog/d10c0440/#参考资料)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

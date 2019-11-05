@@ -5,11 +5,11 @@ categories:
   - markdown使用
   - markdown语法
 date: 2018-10-21 10:01:08
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: 8859faa9
 ---
-- [Markdown待办事项语法](/blog/html/8859faa9/#Markdown待办事项语法)
-- [MarkdownPad2 中支持待办事项](/blog/html/8859faa9/#MarkdownPad2-中支持待办事项)
+- [Markdown待办事项语法](/blog/8859faa9/#Markdown待办事项语法)
+- [MarkdownPad2 中支持待办事项](/blog/8859faa9/#MarkdownPad2-中支持待办事项)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

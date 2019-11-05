@@ -4,10 +4,10 @@ categories:
   - 批处理
   - 应用
 date: 2019-08-05 00:29:34
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: 5c6bafc2
 ---
-- [使用VSCode快速打开一个给定的文件](/blog/html/5c6bafc2/#使用VSCode快速打开一个给定的文件)
+- [使用VSCode快速打开一个给定的文件](/blog/5c6bafc2/#使用VSCode快速打开一个给定的文件)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

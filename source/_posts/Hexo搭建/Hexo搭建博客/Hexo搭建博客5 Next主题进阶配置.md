@@ -4,21 +4,21 @@ categories:
   - Hexo搭建
   - Hexo搭建博客
 date: 2018-08-29 19:35:07
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: f01200cd
 ---
-- [实现点击出现爱心效果](/blog/html/f01200cd/#实现点击出现爱心效果)
-- [网站底部字数统计](/blog/html/f01200cd/#网站底部字数统计)
-    - [安装插件](/blog/html/f01200cd/#安装插件)
-    - [修改文件](/blog/html/f01200cd/#修改文件)
-- [保留**README.md**文件](/blog/html/f01200cd/#保留README-md文件)
-- [设置网站的图标Favicon](/blog/html/f01200cd/#设置网站的图标Favicon)
-- [实现统计功能](/blog/html/f01200cd/#实现统计功能)
-    - [安装插件](/blog/html/f01200cd/#安装插件)
-- [Dependencies: https://github.com/theme-next/hexo-symbols-count-time](/blog/html/f01200cd/#Dependencies-https-github-com-theme-next-hexo-symbols-count-time)
-- [隐藏网页底部**powered By Hexo / 强力驱动**](/blog/html/f01200cd/#隐藏网页底部powered-By-Hexo-强力驱动)
-- [隐藏网页底部**主题 – NexT.Gemini v6.4.0**](/blog/html/f01200cd/#隐藏网页底部主题-–-NexT-Gemini-v6-4-0)
-- [修改字体大小](/blog/html/f01200cd/#修改字体大小)
+- [实现点击出现爱心效果](/blog/f01200cd/#实现点击出现爱心效果)
+- [网站底部字数统计](/blog/f01200cd/#网站底部字数统计)
+    - [安装插件](/blog/f01200cd/#安装插件)
+    - [修改文件](/blog/f01200cd/#修改文件)
+- [保留**README.md**文件](/blog/f01200cd/#保留README-md文件)
+- [设置网站的图标Favicon](/blog/f01200cd/#设置网站的图标Favicon)
+- [实现统计功能](/blog/f01200cd/#实现统计功能)
+    - [安装插件](/blog/f01200cd/#安装插件)
+- [Dependencies: https://github.com/theme-next/hexo-symbols-count-time](/blog/f01200cd/#Dependencies-https-github-com-theme-next-hexo-symbols-count-time)
+- [隐藏网页底部**powered By Hexo / 强力驱动**](/blog/f01200cd/#隐藏网页底部powered-By-Hexo-强力驱动)
+- [隐藏网页底部**主题 – NexT.Gemini v6.4.0**](/blog/f01200cd/#隐藏网页底部主题-–-NexT-Gemini-v6-4-0)
+- [修改字体大小](/blog/f01200cd/#修改字体大小)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

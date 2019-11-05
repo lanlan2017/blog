@@ -4,33 +4,33 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-13 20:36:12
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 492ea8e8
 ---
-- [继承关系](/blog/html/492ea8e8/#继承关系)
-- [构造函数](/blog/html/492ea8e8/#构造函数)
-- [成员方法](/blog/html/492ea8e8/#成员方法)
-    - [可以自动刷新的方法](/blog/html/492ea8e8/#可以自动刷新的方法)
-    - [追加方法](/blog/html/492ea8e8/#追加方法)
-    - [print(...)方法](/blog/html/492ea8e8/#print-方法)
-    - [write(...)方法](/blog/html/492ea8e8/#write-方法)
-    - [错误相关方法](/blog/html/492ea8e8/#错误相关方法)
-    - [刷新方法](/blog/html/492ea8e8/#刷新方法)
-- [实例](/blog/html/492ea8e8/#实例)
-    - [不自动刷新的例子](/blog/html/492ea8e8/#不自动刷新的例子)
-    - [PrintWriter自动刷新实例](/blog/html/492ea8e8/#PrintWriter自动刷新实例)
-    - [PrintWriter不会自动刷新的方法](/blog/html/492ea8e8/#PrintWriter不会自动刷新的方法)
-- [疑惑的地方**write()**方法和**print(...)**方法**append()**方法的区别？](/blog/html/492ea8e8/#疑惑的地方write-方法和print-方法append-方法的区别？)
-    - [**write()**方法和**print(...)**方法的区别](/blog/html/492ea8e8/#write-方法和print-方法的区别)
-- [看源码](/blog/html/492ea8e8/#看源码)
-    - [字段](/blog/html/492ea8e8/#字段)
-    - [构造方法](/blog/html/492ea8e8/#构造方法)
-    - [print(...)方法源码](/blog/html/492ea8e8/#print-方法源码)
-    - [write(...)方法源码](/blog/html/492ea8e8/#write-方法源码)
-    - [append(...)方法源码](/blog/html/492ea8e8/#append-方法源码)
-    - [println(...)方法源码](/blog/html/492ea8e8/#println-方法源码)
-    - [format()方法源码](/blog/html/492ea8e8/#format-方法源码)
-    - [printf()方法源码](/blog/html/492ea8e8/#printf-方法源码)
+- [继承关系](/blog/492ea8e8/#继承关系)
+- [构造函数](/blog/492ea8e8/#构造函数)
+- [成员方法](/blog/492ea8e8/#成员方法)
+    - [可以自动刷新的方法](/blog/492ea8e8/#可以自动刷新的方法)
+    - [追加方法](/blog/492ea8e8/#追加方法)
+    - [print(...)方法](/blog/492ea8e8/#print-方法)
+    - [write(...)方法](/blog/492ea8e8/#write-方法)
+    - [错误相关方法](/blog/492ea8e8/#错误相关方法)
+    - [刷新方法](/blog/492ea8e8/#刷新方法)
+- [实例](/blog/492ea8e8/#实例)
+    - [不自动刷新的例子](/blog/492ea8e8/#不自动刷新的例子)
+    - [PrintWriter自动刷新实例](/blog/492ea8e8/#PrintWriter自动刷新实例)
+    - [PrintWriter不会自动刷新的方法](/blog/492ea8e8/#PrintWriter不会自动刷新的方法)
+- [疑惑的地方**write()**方法和**print(...)**方法**append()**方法的区别？](/blog/492ea8e8/#疑惑的地方write-方法和print-方法append-方法的区别？)
+    - [**write()**方法和**print(...)**方法的区别](/blog/492ea8e8/#write-方法和print-方法的区别)
+- [看源码](/blog/492ea8e8/#看源码)
+    - [字段](/blog/492ea8e8/#字段)
+    - [构造方法](/blog/492ea8e8/#构造方法)
+    - [print(...)方法源码](/blog/492ea8e8/#print-方法源码)
+    - [write(...)方法源码](/blog/492ea8e8/#write-方法源码)
+    - [append(...)方法源码](/blog/492ea8e8/#append-方法源码)
+    - [println(...)方法源码](/blog/492ea8e8/#println-方法源码)
+    - [format()方法源码](/blog/492ea8e8/#format-方法源码)
+    - [printf()方法源码](/blog/492ea8e8/#printf-方法源码)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

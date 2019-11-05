@@ -4,15 +4,15 @@ categories:
   - Java
   - 代码优化
 date: 2019-10-03 21:19:47
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: e14f1dac
 ---
-- [解决 String concatenation as argument to 'StringBuffer.append()' call 警告](/blog/html/e14f1dac/#解决-String-concatenation-as-argument-to-'StringBuffer-append-'-call-警告)
-    - [问题描述](/blog/html/e14f1dac/#问题描述)
-    - [分析原因](/blog/html/e14f1dac/#分析原因)
-    - [解决方案](/blog/html/e14f1dac/#解决方案)
-        - [1. 全部使用append方法](/blog/html/e14f1dac/#1-全部使用append方法)
-        - [2. 忽略](/blog/html/e14f1dac/#2-忽略)
+- [解决 String concatenation as argument to 'StringBuffer.append()' call 警告](/blog/e14f1dac/#解决-String-concatenation-as-argument-to-'StringBuffer-append-'-call-警告)
+    - [问题描述](/blog/e14f1dac/#问题描述)
+    - [分析原因](/blog/e14f1dac/#分析原因)
+    - [解决方案](/blog/e14f1dac/#解决方案)
+        - [1. 全部使用append方法](/blog/e14f1dac/#1-全部使用append方法)
+        - [2. 忽略](/blog/e14f1dac/#2-忽略)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

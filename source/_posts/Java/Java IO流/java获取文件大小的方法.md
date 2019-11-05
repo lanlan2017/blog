@@ -4,16 +4,16 @@ categories:
   - Java
   - Java IO流
 date: 2018-07-30 20:05:28
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: aa316c45
 ---
-- [java获取文件大小的方法](/blog/html/aa316c45/#java获取文件大小的方法)
-    - [一、通过File类的length()方法获取文件的大小](/blog/html/aa316c45/#一、通过File类的length-方法获取文件的大小)
-    - [二、通过file.io.*中的流式方法获取](/blog/html/aa316c45/#二、通过file-io-*中的流式方法获取)
-    - [三、通过file.nio.*中的FileChannel工具来获取文件大小：](/blog/html/aa316c45/#三、通过file-nio-*中的FileChannel工具来获取文件大小：)
-    - [四、使用小文件测试以上三种方法：](/blog/html/aa316c45/#四、使用小文件测试以上三种方法：)
-    - [java获取文件大小总结](/blog/html/aa316c45/#java获取文件大小总结)
-    - [完整的代码](/blog/html/aa316c45/#完整的代码)
+- [java获取文件大小的方法](/blog/aa316c45/#java获取文件大小的方法)
+    - [一、通过File类的length()方法获取文件的大小](/blog/aa316c45/#一、通过File类的length-方法获取文件的大小)
+    - [二、通过file.io.*中的流式方法获取](/blog/aa316c45/#二、通过file-io-*中的流式方法获取)
+    - [三、通过file.nio.*中的FileChannel工具来获取文件大小：](/blog/aa316c45/#三、通过file-nio-*中的FileChannel工具来获取文件大小：)
+    - [四、使用小文件测试以上三种方法：](/blog/aa316c45/#四、使用小文件测试以上三种方法：)
+    - [java获取文件大小总结](/blog/aa316c45/#java获取文件大小总结)
+    - [完整的代码](/blog/aa316c45/#完整的代码)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -6,10 +6,10 @@ categories:
   - markdown语法
   - 使用html标签
 date: 2018-10-26 11:23:58
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: 6507a83c
 ---
-- [键盘键](/blog/html/6507a83c/#键盘键)
+- [键盘键](/blog/6507a83c/#键盘键)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

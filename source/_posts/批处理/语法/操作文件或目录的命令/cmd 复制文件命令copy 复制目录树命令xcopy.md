@@ -5,16 +5,16 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-01-31 16:44:38
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: 1752f9e6
 ---
-- [如何cmd命令帮助文档](/blog/html/1752f9e6/#如何cmd命令帮助文档)
-- [copy命令](/blog/html/1752f9e6/#copy命令)
-    - [实例](/blog/html/1752f9e6/#实例)
-- [xcopy命令](/blog/html/1752f9e6/#xcopy命令)
-    - [xcopy实例](/blog/html/1752f9e6/#xcopy实例)
-    - [从中断处继续复制](/blog/html/1752f9e6/#从中断处继续复制)
-- [参考资料](/blog/html/1752f9e6/#参考资料)
+- [如何cmd命令帮助文档](/blog/1752f9e6/#如何cmd命令帮助文档)
+- [copy命令](/blog/1752f9e6/#copy命令)
+    - [实例](/blog/1752f9e6/#实例)
+- [xcopy命令](/blog/1752f9e6/#xcopy命令)
+    - [xcopy实例](/blog/1752f9e6/#xcopy实例)
+    - [从中断处继续复制](/blog/1752f9e6/#从中断处继续复制)
+- [参考资料](/blog/1752f9e6/#参考资料)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -4,14 +4,14 @@ categories:
   - Java
   - API整理
 date: 2019-10-06 20:42:50
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 921dcf6b
 ---
-- [Java API "中文版"教程](/blog/html/921dcf6b/#Java-API-"中文版"教程)
-    - [为什么之前使用CHM格式的Java Doc](/blog/html/921dcf6b/#为什么之前使用CHM格式的Java-Doc)
-    - [为什么现在推荐使用在线的Java doc](/blog/html/921dcf6b/#为什么现在推荐使用在线的Java-doc)
-    - [java9之前版本的在线的java doc中如何快速查找类](/blog/html/921dcf6b/#java9之前版本的在线的java-doc中如何快速查找类)
-    - [总结](/blog/html/921dcf6b/#总结)
+- [Java API "中文版"教程](/blog/921dcf6b/#Java-API-"中文版"教程)
+    - [为什么之前使用CHM格式的Java Doc](/blog/921dcf6b/#为什么之前使用CHM格式的Java-Doc)
+    - [为什么现在推荐使用在线的Java doc](/blog/921dcf6b/#为什么现在推荐使用在线的Java-doc)
+    - [java9之前版本的在线的java doc中如何快速查找类](/blog/921dcf6b/#java9之前版本的在线的java-doc中如何快速查找类)
+    - [总结](/blog/921dcf6b/#总结)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

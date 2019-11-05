@@ -4,26 +4,26 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-10 14:57:46
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: f1ceb471
 ---
-- [FileReader类](/blog/html/f1ceb471/#FileReader类)
-    - [继承关系](/blog/html/f1ceb471/#继承关系)
-    - [构造方法：](/blog/html/f1ceb471/#构造方法：)
-    - [读操作方法](/blog/html/f1ceb471/#读操作方法)
-    - [FileReader和InputStreamReader的区别](/blog/html/f1ceb471/#FileReader和InputStreamReader的区别)
-    - [读文件实例](/blog/html/f1ceb471/#读文件实例)
-        - [逐个字符读取](/blog/html/f1ceb471/#逐个字符读取)
-        - [按数组读取](/blog/html/f1ceb471/#按数组读取)
-        - [main方法中调用](/blog/html/f1ceb471/#main方法中调用)
-- [FileWriter类](/blog/html/f1ceb471/#FileWriter类)
-    - [继承关系](/blog/html/f1ceb471/#继承关系)
-    - [构造方法：](/blog/html/f1ceb471/#构造方法：)
-    - [读操作方法](/blog/html/f1ceb471/#读操作方法)
-    - [FileWriter类和OutputStreamWriter类的区别](/blog/html/f1ceb471/#FileWriter类和OutputStreamWriter类的区别)
-- [读写实例:复制文件](/blog/html/f1ceb471/#读写实例-复制文件)
-    - [使用FileReader和FileWriter复制文件](/blog/html/f1ceb471/#使用FileReader和FileWriter复制文件)
-    - [编码问题](/blog/html/f1ceb471/#编码问题)
+- [FileReader类](/blog/f1ceb471/#FileReader类)
+    - [继承关系](/blog/f1ceb471/#继承关系)
+    - [构造方法：](/blog/f1ceb471/#构造方法：)
+    - [读操作方法](/blog/f1ceb471/#读操作方法)
+    - [FileReader和InputStreamReader的区别](/blog/f1ceb471/#FileReader和InputStreamReader的区别)
+    - [读文件实例](/blog/f1ceb471/#读文件实例)
+        - [逐个字符读取](/blog/f1ceb471/#逐个字符读取)
+        - [按数组读取](/blog/f1ceb471/#按数组读取)
+        - [main方法中调用](/blog/f1ceb471/#main方法中调用)
+- [FileWriter类](/blog/f1ceb471/#FileWriter类)
+    - [继承关系](/blog/f1ceb471/#继承关系)
+    - [构造方法：](/blog/f1ceb471/#构造方法：)
+    - [读操作方法](/blog/f1ceb471/#读操作方法)
+    - [FileWriter类和OutputStreamWriter类的区别](/blog/f1ceb471/#FileWriter类和OutputStreamWriter类的区别)
+- [读写实例:复制文件](/blog/f1ceb471/#读写实例-复制文件)
+    - [使用FileReader和FileWriter复制文件](/blog/f1ceb471/#使用FileReader和FileWriter复制文件)
+    - [编码问题](/blog/f1ceb471/#编码问题)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

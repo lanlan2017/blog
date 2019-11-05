@@ -5,15 +5,15 @@ categories:
   - markdown使用
   - 编辑器
 date: 2019-08-20 12:06:20
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: 11f888fa
 ---
-- [快捷键支持](/blog/html/11f888fa/#快捷键支持)
-    - [加粗](/blog/html/11f888fa/#加粗)
-    - [切换代办列表](/blog/html/11f888fa/#切换代办列表)
-    - [格式化表格](/blog/html/11f888fa/#格式化表格)
-- [快捷键表格](/blog/html/11f888fa/#快捷键表格)
-    - [小结](/blog/html/11f888fa/#小结)
+- [快捷键支持](/blog/11f888fa/#快捷键支持)
+    - [加粗](/blog/11f888fa/#加粗)
+    - [切换代办列表](/blog/11f888fa/#切换代办列表)
+    - [格式化表格](/blog/11f888fa/#格式化表格)
+- [快捷键表格](/blog/11f888fa/#快捷键表格)
+    - [小结](/blog/11f888fa/#小结)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

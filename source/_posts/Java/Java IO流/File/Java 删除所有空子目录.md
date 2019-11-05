@@ -5,13 +5,13 @@ categories:
   - Java IO流
   - File
 date: 2018-12-22 19:15:36
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: efd55c13
 ---
-- [向下递归 删除所有空子目录](/blog/html/efd55c13/#向下递归-删除所有空子目录)
-- [向上递归 删除所有空父目录](/blog/html/efd55c13/#向上递归-删除所有空父目录)
-- [删除空目录完整代码](/blog/html/efd55c13/#删除空目录完整代码)
-- [测试](/blog/html/efd55c13/#测试)
+- [向下递归 删除所有空子目录](/blog/efd55c13/#向下递归-删除所有空子目录)
+- [向上递归 删除所有空父目录](/blog/efd55c13/#向上递归-删除所有空父目录)
+- [删除空目录完整代码](/blog/efd55c13/#删除空目录完整代码)
+- [测试](/blog/efd55c13/#测试)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

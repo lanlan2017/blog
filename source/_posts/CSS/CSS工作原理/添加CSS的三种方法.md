@@ -4,11 +4,11 @@ categories:
   - CSS
   - CSS工作原理
 date: 2019-05-11 11:31:24
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:00
 abbrlink: 9d1ffcf6
 ---
-- [添加CSS的三种方法](/blog/html/9d1ffcf6/#添加CSS的三种方法)
-- [CSS规则](/blog/html/9d1ffcf6/#CSS规则)
+- [添加CSS的三种方法](/blog/9d1ffcf6/#添加CSS的三种方法)
+- [CSS规则](/blog/9d1ffcf6/#CSS规则)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -4,12 +4,12 @@ categories:
   - JavaScript
   - DOM
 date: 2019-02-13 00:12:44
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 37c4f730
 ---
-- [JavaScript innerText与innerHtml与value的区别](/blog/html/37c4f730/#JavaScript-innerText与innerHtml与value的区别)
-- [实例](/blog/html/37c4f730/#实例)
-- [参考链接](/blog/html/37c4f730/#参考链接)
+- [JavaScript innerText与innerHtml与value的区别](/blog/37c4f730/#JavaScript-innerText与innerHtml与value的区别)
+- [实例](/blog/37c4f730/#实例)
+- [参考链接](/blog/37c4f730/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -6,13 +6,13 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-14 01:06:56
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: bb6759de
 ---
-- [前言](/blog/html/bb6759de/#前言)
-- [创建XML模板步骤](/blog/html/bb6759de/#创建XML模板步骤)
-- [使用自己创建的XML模板](/blog/html/bb6759de/#使用自己创建的XML模板)
-- [参考资料](/blog/html/bb6759de/#参考资料)
+- [前言](/blog/bb6759de/#前言)
+- [创建XML模板步骤](/blog/bb6759de/#创建XML模板步骤)
+- [使用自己创建的XML模板](/blog/bb6759de/#使用自己创建的XML模板)
+- [参考资料](/blog/bb6759de/#参考资料)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

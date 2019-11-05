@@ -5,15 +5,15 @@ categories:
   - IDE
   - eclipse
 date: 2019-04-20 13:48:50
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: afd38322
 ---
-- [Java代码中设置tab键为4个空格](/blog/html/afd38322/#Java代码中设置tab键为4个空格)
-- [JavaScript代码中设置tab键为4个空格](/blog/html/afd38322/#JavaScript代码中设置tab键为4个空格)
-- [XML代码中设置tab键为4个空格](/blog/html/afd38322/#XML代码中设置tab键为4个空格)
-- [CSS代码中设置tab键为4个空格](/blog/html/afd38322/#CSS代码中设置tab键为4个空格)
-- [HTML JSP代码中设置tab键为4个空格](/blog/html/afd38322/#HTML-JSP代码中设置tab键为4个空格)
-- [参考资料](/blog/html/afd38322/#参考资料)
+- [Java代码中设置tab键为4个空格](/blog/afd38322/#Java代码中设置tab键为4个空格)
+- [JavaScript代码中设置tab键为4个空格](/blog/afd38322/#JavaScript代码中设置tab键为4个空格)
+- [XML代码中设置tab键为4个空格](/blog/afd38322/#XML代码中设置tab键为4个空格)
+- [CSS代码中设置tab键为4个空格](/blog/afd38322/#CSS代码中设置tab键为4个空格)
+- [HTML JSP代码中设置tab键为4个空格](/blog/afd38322/#HTML-JSP代码中设置tab键为4个空格)
+- [参考资料](/blog/afd38322/#参考资料)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

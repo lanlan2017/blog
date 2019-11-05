@@ -4,15 +4,15 @@ categories:
   - HTML
   - 音视频
 date: 2019-02-13 00:24:14
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 4f1b06ea
 ---
-- [前言](/blog/html/4f1b06ea/#前言)
-- [方式0 使用原生的audio播放音频](/blog/html/4f1b06ea/#方式0-使用原生的audio播放音频)
-- [方式1 使用javascript播放音频](/blog/html/4f1b06ea/#方式1-使用javascript播放音频)
-- [方式2 使用javascript播放音频 简写](/blog/html/4f1b06ea/#方式2-使用javascript播放音频-简写)
-- [方式2 使用jquery播放音频](/blog/html/4f1b06ea/#方式2-使用jquery播放音频)
-- [总结](/blog/html/4f1b06ea/#总结)
+- [前言](/blog/4f1b06ea/#前言)
+- [方式0 使用原生的audio播放音频](/blog/4f1b06ea/#方式0-使用原生的audio播放音频)
+- [方式1 使用javascript播放音频](/blog/4f1b06ea/#方式1-使用javascript播放音频)
+- [方式2 使用javascript播放音频 简写](/blog/4f1b06ea/#方式2-使用javascript播放音频-简写)
+- [方式2 使用jquery播放音频](/blog/4f1b06ea/#方式2-使用jquery播放音频)
+- [总结](/blog/4f1b06ea/#总结)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

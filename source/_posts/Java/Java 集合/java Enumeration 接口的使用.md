@@ -4,14 +4,14 @@ categories:
   - Java
   - Java 集合
 date: 2018-12-09 22:47:36
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 7b1e18da
 ---
-- [API中的介绍](/blog/html/7b1e18da/#API中的介绍)
-- [Enumeration接口方法](/blog/html/7b1e18da/#Enumeration接口方法)
-- [Enumeration接口遍历实例](/blog/html/7b1e18da/#Enumeration接口遍历实例)
-- [另一个遍历枚举的例子](/blog/html/7b1e18da/#另一个遍历枚举的例子)
-- [参考链接](/blog/html/7b1e18da/#参考链接)
+- [API中的介绍](/blog/7b1e18da/#API中的介绍)
+- [Enumeration接口方法](/blog/7b1e18da/#Enumeration接口方法)
+- [Enumeration接口遍历实例](/blog/7b1e18da/#Enumeration接口遍历实例)
+- [另一个遍历枚举的例子](/blog/7b1e18da/#另一个遍历枚举的例子)
+- [参考链接](/blog/7b1e18da/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

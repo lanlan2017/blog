@@ -4,22 +4,22 @@ categories:
   - 正则表达式
   - 工具
 date: 2018-11-29 21:11:17
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: 54be6c80
 ---
-- [regexper本地安装](/blog/html/54be6c80/#regexper本地安装)
-    - [安装yarn](/blog/html/54be6c80/#安装yarn)
-    - [clone到本地](/blog/html/54be6c80/#clone到本地)
-    - [cd进入项目](/blog/html/54be6c80/#cd进入项目)
-    - [安装依赖](/blog/html/54be6c80/#安装依赖)
-    - [启动本地服务器](/blog/html/54be6c80/#启动本地服务器)
-    - [浏览器打开](/blog/html/54be6c80/#浏览器打开)
-    - [bat脚本快速启动](/blog/html/54be6c80/#bat脚本快速启动)
-    - [8080端口被占用了](/blog/html/54be6c80/#8080端口被占用了)
-        - [问题描述](/blog/html/54be6c80/#问题描述)
-        - [原因](/blog/html/54be6c80/#原因)
-        - [解决方案](/blog/html/54be6c80/#解决方案)
-    - [单词读音](/blog/html/54be6c80/#单词读音)
+- [regexper本地安装](/blog/54be6c80/#regexper本地安装)
+    - [安装yarn](/blog/54be6c80/#安装yarn)
+    - [clone到本地](/blog/54be6c80/#clone到本地)
+    - [cd进入项目](/blog/54be6c80/#cd进入项目)
+    - [安装依赖](/blog/54be6c80/#安装依赖)
+    - [启动本地服务器](/blog/54be6c80/#启动本地服务器)
+    - [浏览器打开](/blog/54be6c80/#浏览器打开)
+    - [bat脚本快速启动](/blog/54be6c80/#bat脚本快速启动)
+    - [8080端口被占用了](/blog/54be6c80/#8080端口被占用了)
+        - [问题描述](/blog/54be6c80/#问题描述)
+        - [原因](/blog/54be6c80/#原因)
+        - [解决方案](/blog/54be6c80/#解决方案)
+    - [单词读音](/blog/54be6c80/#单词读音)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -5,15 +5,15 @@ categories:
   - Hexo搭建博客
   - 个性化
 date: 2019-02-15 21:49:16
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 7162b91b
 ---
-- [卸载hexo-generator-index插件](/blog/html/7162b91b/#卸载hexo-generator-index插件)
-- [安装hexo-generator-index-pin-top插件](/blog/html/7162b91b/#安装hexo-generator-index-pin-top插件)
-- [添加front-matter配置项](/blog/html/7162b91b/#添加front-matter配置项)
-- [重新部署](/blog/html/7162b91b/#重新部署)
-- [添加置顶标识](/blog/html/7162b91b/#添加置顶标识)
-- [参考资料](/blog/html/7162b91b/#参考资料)
+- [卸载hexo-generator-index插件](/blog/7162b91b/#卸载hexo-generator-index插件)
+- [安装hexo-generator-index-pin-top插件](/blog/7162b91b/#安装hexo-generator-index-pin-top插件)
+- [添加front-matter配置项](/blog/7162b91b/#添加front-matter配置项)
+- [重新部署](/blog/7162b91b/#重新部署)
+- [添加置顶标识](/blog/7162b91b/#添加置顶标识)
+- [参考资料](/blog/7162b91b/#参考资料)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

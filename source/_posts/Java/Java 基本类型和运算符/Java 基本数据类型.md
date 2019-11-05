@@ -4,16 +4,16 @@ categories:
   - Java
   - Java 基本类型和运算符
 date: 2019-01-14 20:49:01
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 mathjax: true
 abbrlink: 4badee62
 ---
-- [基本数据类型](/blog/html/4badee62/#基本数据类型)
-- [整型](/blog/html/4badee62/#整型)
-    - [整型的数值范围](/blog/html/4badee62/#整型的数值范围)
-    - [直接给出的整数值默认为int类型](/blog/html/4badee62/#直接给出的整数值默认为int类型)
-    - [数值的表示方式](/blog/html/4badee62/#数值的表示方式)
-- [自动类型转换](/blog/html/4badee62/#自动类型转换)
+- [基本数据类型](/blog/4badee62/#基本数据类型)
+- [整型](/blog/4badee62/#整型)
+    - [整型的数值范围](/blog/4badee62/#整型的数值范围)
+    - [直接给出的整数值默认为int类型](/blog/4badee62/#直接给出的整数值默认为int类型)
+    - [数值的表示方式](/blog/4badee62/#数值的表示方式)
+- [自动类型转换](/blog/4badee62/#自动类型转换)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

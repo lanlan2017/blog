@@ -5,16 +5,16 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-02-01 21:57:48
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: c4029a06
 ---
-- [命令格式](/blog/html/c4029a06/#命令格式)
-    - [无参数](/blog/html/c4029a06/#无参数)
-    - [参数 /d](/blog/html/c4029a06/#参数-d)
-    - [参数 /R](/blog/html/c4029a06/#参数-R)
-    - [参数 /L](/blog/html/c4029a06/#参数-L)
-    - [参数 /F](/blog/html/c4029a06/#参数-F)
-- [参考资料](/blog/html/c4029a06/#参考资料)
+- [命令格式](/blog/c4029a06/#命令格式)
+    - [无参数](/blog/c4029a06/#无参数)
+    - [参数 /d](/blog/c4029a06/#参数-d)
+    - [参数 /R](/blog/c4029a06/#参数-R)
+    - [参数 /L](/blog/c4029a06/#参数-L)
+    - [参数 /F](/blog/c4029a06/#参数-F)
+- [参考资料](/blog/c4029a06/#参考资料)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

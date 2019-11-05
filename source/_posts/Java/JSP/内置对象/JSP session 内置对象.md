@@ -5,23 +5,23 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:39
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 240051d
 ---
-- [session内置对象简介](/blog/html/240051d/#session内置对象简介)
-- [session对象](/blog/html/240051d/#session对象)
-- [session对象常用方法](/blog/html/240051d/#session对象常用方法)
-    - [属性方法](/blog/html/240051d/#属性方法)
-    - [session有效时间方法](/blog/html/240051d/#session有效时间方法)
-    - [实例](/blog/html/240051d/#实例)
-- [session生命周期](/blog/html/240051d/#session生命周期)
-    - [创建](/blog/html/240051d/#创建)
-    - [活动](/blog/html/240051d/#活动)
-    - [tomcat中查看一个项目的所有session](/blog/html/240051d/#tomcat中查看一个项目的所有session)
-- [销毁](/blog/html/240051d/#销毁)
-    - [使用invalidate方法直接销毁](/blog/html/240051d/#使用invalidate方法直接销毁)
-    - [超时销毁](/blog/html/240051d/#超时销毁)
-- [参考链接](/blog/html/240051d/#参考链接)
+- [session内置对象简介](/blog/240051d/#session内置对象简介)
+- [session对象](/blog/240051d/#session对象)
+- [session对象常用方法](/blog/240051d/#session对象常用方法)
+    - [属性方法](/blog/240051d/#属性方法)
+    - [session有效时间方法](/blog/240051d/#session有效时间方法)
+    - [实例](/blog/240051d/#实例)
+- [session生命周期](/blog/240051d/#session生命周期)
+    - [创建](/blog/240051d/#创建)
+    - [活动](/blog/240051d/#活动)
+    - [tomcat中查看一个项目的所有session](/blog/240051d/#tomcat中查看一个项目的所有session)
+- [销毁](/blog/240051d/#销毁)
+    - [使用invalidate方法直接销毁](/blog/240051d/#使用invalidate方法直接销毁)
+    - [超时销毁](/blog/240051d/#超时销毁)
+- [参考链接](/blog/240051d/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

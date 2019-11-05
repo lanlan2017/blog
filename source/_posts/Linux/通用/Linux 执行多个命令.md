@@ -4,11 +4,11 @@ categories:
   - Linux
   - 通用
 date: 2019-11-01 10:24:47
-updated: 2019-11-03 23:00:14
+updated: 2019-11-04 17:02:02
 abbrlink: 1598bd9
 ---
-- [Linux执行多个命令](/blog/html/1598bd9/#Linux执行多个命令)
-    - [全部执行](/blog/html/1598bd9/#全部执行)
+- [Linux执行多个命令](/blog/1598bd9/#Linux执行多个命令)
+    - [全部执行](/blog/1598bd9/#全部执行)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

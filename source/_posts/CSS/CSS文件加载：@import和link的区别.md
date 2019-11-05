@@ -3,21 +3,21 @@ title: CSS文件加载：@import和link的区别
 categories: 
   - CSS
 date: 2019-05-01 10:29:08
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:00
 abbrlink: 9b90d554
 ---
-- [css文件加载：@import和link的区别](/blog/html/9b90d554/#css文件加载：-import和link的区别)
-    - [使用CSS的三种方式](/blog/html/9b90d554/#使用CSS的三种方式)
-    - [@impot使用方法](/blog/html/9b90d554/#-impot使用方法)
-    - [link的使用方法](/blog/html/9b90d554/#link的使用方法)
-    - [区别](/blog/html/9b90d554/#区别)
-        - [功能上的区别](/blog/html/9b90d554/#功能上的区别)
-        - [加载顺序上的区别](/blog/html/9b90d554/#加载顺序上的区别)
-        - [兼容性上的区别](/blog/html/9b90d554/#兼容性上的区别)
-        - [dom支持上的区别](/blog/html/9b90d554/#dom支持上的区别)
-        - [嵌套支持上的区别](/blog/html/9b90d554/#嵌套支持上的区别)
-    - [总结](/blog/html/9b90d554/#总结)
-    - [参考资料](/blog/html/9b90d554/#参考资料)
+- [css文件加载：@import和link的区别](/blog/9b90d554/#css文件加载：-import和link的区别)
+    - [使用CSS的三种方式](/blog/9b90d554/#使用CSS的三种方式)
+    - [@impot使用方法](/blog/9b90d554/#-impot使用方法)
+    - [link的使用方法](/blog/9b90d554/#link的使用方法)
+    - [区别](/blog/9b90d554/#区别)
+        - [功能上的区别](/blog/9b90d554/#功能上的区别)
+        - [加载顺序上的区别](/blog/9b90d554/#加载顺序上的区别)
+        - [兼容性上的区别](/blog/9b90d554/#兼容性上的区别)
+        - [dom支持上的区别](/blog/9b90d554/#dom支持上的区别)
+        - [嵌套支持上的区别](/blog/9b90d554/#嵌套支持上的区别)
+    - [总结](/blog/9b90d554/#总结)
+    - [参考资料](/blog/9b90d554/#参考资料)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

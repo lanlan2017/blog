@@ -6,13 +6,13 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-14 10:07:26
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 7198198c
 ---
-- [eclipse暗色主题下SQL文件的配色](/blog/html/7198198c/#eclipse暗色主题下SQL文件的配色)
-    - [问题描述](/blog/html/7198198c/#问题描述)
-    - [修改eclipse sql文件代码配色](/blog/html/7198198c/#修改eclipse-sql文件代码配色)
-    - [eclipse其他代码配色](/blog/html/7198198c/#eclipse其他代码配色)
+- [eclipse暗色主题下SQL文件的配色](/blog/7198198c/#eclipse暗色主题下SQL文件的配色)
+    - [问题描述](/blog/7198198c/#问题描述)
+    - [修改eclipse sql文件代码配色](/blog/7198198c/#修改eclipse-sql文件代码配色)
+    - [eclipse其他代码配色](/blog/7198198c/#eclipse其他代码配色)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

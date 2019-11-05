@@ -4,23 +4,23 @@ categories:
   - Java
   - java_GUI
 date: 2018-09-13 14:26:54
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 795fc6f9
 ---
-- [AWT简介](/blog/html/795fc6f9/#AWT简介)
-    - [GUI设计工具组件](/blog/html/795fc6f9/#GUI设计工具组件)
-- [Swing简介](/blog/html/795fc6f9/#Swing简介)
-- [容器类](/blog/html/795fc6f9/#容器类)
-    - [JFrame类](/blog/html/795fc6f9/#JFrame类)
-- [JDialog类](/blog/html/795fc6f9/#JDialog类)
-    - [JDialog与Jframe的区别](/blog/html/795fc6f9/#JDialog与Jframe的区别)
-- [JPanel类](/blog/html/795fc6f9/#JPanel类)
-- [Swing常用基本组件](/blog/html/795fc6f9/#Swing常用基本组件)
-    - [常用组件的共性操作](/blog/html/795fc6f9/#常用组件的共性操作)
-    - [按钮( JButton)](/blog/html/795fc6f9/#按钮-JButton)
-    - [文本框( JTextField)与密码输入框( JPasswordField)](/blog/html/795fc6f9/#文本框-JTextField-与密码输入框-JPasswordField)
-    - [文本域( JTextArea)](/blog/html/795fc6f9/#文本域-JTextArea)
-    - [标签( JLabel)](/blog/html/795fc6f9/#标签-JLabel)
+- [AWT简介](/blog/795fc6f9/#AWT简介)
+    - [GUI设计工具组件](/blog/795fc6f9/#GUI设计工具组件)
+- [Swing简介](/blog/795fc6f9/#Swing简介)
+- [容器类](/blog/795fc6f9/#容器类)
+    - [JFrame类](/blog/795fc6f9/#JFrame类)
+- [JDialog类](/blog/795fc6f9/#JDialog类)
+    - [JDialog与Jframe的区别](/blog/795fc6f9/#JDialog与Jframe的区别)
+- [JPanel类](/blog/795fc6f9/#JPanel类)
+- [Swing常用基本组件](/blog/795fc6f9/#Swing常用基本组件)
+    - [常用组件的共性操作](/blog/795fc6f9/#常用组件的共性操作)
+    - [按钮( JButton)](/blog/795fc6f9/#按钮-JButton)
+    - [文本框( JTextField)与密码输入框( JPasswordField)](/blog/795fc6f9/#文本框-JTextField-与密码输入框-JPasswordField)
+    - [文本域( JTextArea)](/blog/795fc6f9/#文本域-JTextArea)
+    - [标签( JLabel)](/blog/795fc6f9/#标签-JLabel)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

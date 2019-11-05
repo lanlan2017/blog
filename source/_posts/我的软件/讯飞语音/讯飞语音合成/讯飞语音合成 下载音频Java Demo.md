@@ -5,21 +5,21 @@ categories:
   - 讯飞语音
   - 讯飞语音合成
 date: 2019-03-07 15:03:05
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: e47ffad6
 ---
-- [注册讯飞账号](/blog/html/e47ffad6/#注册讯飞账号)
-- [实名认证](/blog/html/e47ffad6/#实名认证)
-- [创建应用](/blog/html/e47ffad6/#创建应用)
-- [添加语音合成服务](/blog/html/e47ffad6/#添加语音合成服务)
-- [下载SDK](/blog/html/e47ffad6/#下载SDK)
-- [解压下载到的SDK压缩包](/blog/html/e47ffad6/#解压下载到的SDK压缩包)
-- [应用到Java项目](/blog/html/e47ffad6/#应用到Java项目)
-- [创建测试类](/blog/html/e47ffad6/#创建测试类)
-    - [1 设置合成监听器](/blog/html/e47ffad6/#1-设置合成监听器)
-    - [编写main方法](/blog/html/e47ffad6/#编写main方法)
-- [完整下载Java demo如下](/blog/html/e47ffad6/#完整下载Java-demo如下)
-- [用audition cs6 打开](/blog/html/e47ffad6/#用audition-cs6-打开)
+- [注册讯飞账号](/blog/e47ffad6/#注册讯飞账号)
+- [实名认证](/blog/e47ffad6/#实名认证)
+- [创建应用](/blog/e47ffad6/#创建应用)
+- [添加语音合成服务](/blog/e47ffad6/#添加语音合成服务)
+- [下载SDK](/blog/e47ffad6/#下载SDK)
+- [解压下载到的SDK压缩包](/blog/e47ffad6/#解压下载到的SDK压缩包)
+- [应用到Java项目](/blog/e47ffad6/#应用到Java项目)
+- [创建测试类](/blog/e47ffad6/#创建测试类)
+    - [1 设置合成监听器](/blog/e47ffad6/#1-设置合成监听器)
+    - [编写main方法](/blog/e47ffad6/#编写main方法)
+- [完整下载Java demo如下](/blog/e47ffad6/#完整下载Java-demo如下)
+- [用audition cs6 打开](/blog/e47ffad6/#用audition-cs6-打开)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

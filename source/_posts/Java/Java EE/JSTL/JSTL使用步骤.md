@@ -5,14 +5,14 @@ categories:
   - Java EE
   - JSTL
 date: 2019-04-22 12:32:02
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 80d567ab
 ---
-- [JSTL 库安装](/blog/html/80d567ab/#JSTL-库安装)
-    - [下载JSTL库](/blog/html/80d567ab/#下载JSTL库)
-    - [复制jar文件到项目中](/blog/html/80d567ab/#复制jar文件到项目中)
-    - [复制tld文件到项目中](/blog/html/80d567ab/#复制tld文件到项目中)
-    - [在JSP页面引入](/blog/html/80d567ab/#在JSP页面引入)
+- [JSTL 库安装](/blog/80d567ab/#JSTL-库安装)
+    - [下载JSTL库](/blog/80d567ab/#下载JSTL库)
+    - [复制jar文件到项目中](/blog/80d567ab/#复制jar文件到项目中)
+    - [复制tld文件到项目中](/blog/80d567ab/#复制tld文件到项目中)
+    - [在JSP页面引入](/blog/80d567ab/#在JSP页面引入)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

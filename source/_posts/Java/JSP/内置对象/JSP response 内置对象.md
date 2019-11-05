@@ -5,23 +5,23 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:39
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: ddf72c82
 ---
-- [response内置对象简介](/blog/html/ddf72c82/#response内置对象简介)
-- [常用方法](/blog/html/ddf72c82/#常用方法)
-- [请求重定向和请求转发的区别](/blog/html/ddf72c82/#请求重定向和请求转发的区别)
-    - [请求重定向](/blog/html/ddf72c82/#请求重定向)
-    - [请求转发](/blog/html/ddf72c82/#请求转发)
-    - [生活中的例子](/blog/html/ddf72c82/#生活中的例子)
-- [设置HTP响应报头](/blog/html/ddf72c82/#设置HTP响应报头)
-    - [禁用缓存](/blog/html/ddf72c82/#禁用缓存)
-    - [设置过期的时间期限](/blog/html/ddf72c82/#设置过期的时间期限)
-    - [定时刷新页面](/blog/html/ddf72c82/#定时刷新页面)
-    - [定时跳转页面](/blog/html/ddf72c82/#定时跳转页面)
-- [设置输出缓冲](/blog/html/ddf72c82/#设置输出缓冲)
-    - [缓冲相关方法](/blog/html/ddf72c82/#缓冲相关方法)
-- [参考链接](/blog/html/ddf72c82/#参考链接)
+- [response内置对象简介](/blog/ddf72c82/#response内置对象简介)
+- [常用方法](/blog/ddf72c82/#常用方法)
+- [请求重定向和请求转发的区别](/blog/ddf72c82/#请求重定向和请求转发的区别)
+    - [请求重定向](/blog/ddf72c82/#请求重定向)
+    - [请求转发](/blog/ddf72c82/#请求转发)
+    - [生活中的例子](/blog/ddf72c82/#生活中的例子)
+- [设置HTP响应报头](/blog/ddf72c82/#设置HTP响应报头)
+    - [禁用缓存](/blog/ddf72c82/#禁用缓存)
+    - [设置过期的时间期限](/blog/ddf72c82/#设置过期的时间期限)
+    - [定时刷新页面](/blog/ddf72c82/#定时刷新页面)
+    - [定时跳转页面](/blog/ddf72c82/#定时跳转页面)
+- [设置输出缓冲](/blog/ddf72c82/#设置输出缓冲)
+    - [缓冲相关方法](/blog/ddf72c82/#缓冲相关方法)
+- [参考链接](/blog/ddf72c82/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

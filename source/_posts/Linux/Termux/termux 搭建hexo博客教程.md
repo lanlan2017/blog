@@ -4,27 +4,27 @@ categories:
   - Linux
   - Termux
 date: 2019-10-31 15:08:27
-updated: 2019-11-03 22:59:40
+updated: 2019-11-04 17:02:02
 abbrlink: 4a95e633
 ---
-- [安装termux](/blog/html/4a95e633/#安装termux)
-- [安装git](/blog/html/4a95e633/#安装git)
-- [安装nodejs](/blog/html/4a95e633/#安装nodejs)
-- [使用淘宝镜像](/blog/html/4a95e633/#使用淘宝镜像)
-- [设置npm全局安装路径和全局缓存路径](/blog/html/4a95e633/#设置npm全局安装路径和全局缓存路径)
-- [安装hexo](/blog/html/4a95e633/#安装hexo)
-- [创建站点](/blog/html/4a95e633/#创建站点)
-- [进入站点](/blog/html/4a95e633/#进入站点)
-- [启动本地服务器](/blog/html/4a95e633/#启动本地服务器)
-- [手机浏览器上进入网站](/blog/html/4a95e633/#手机浏览器上进入网站)
-- [Termux优化](/blog/html/4a95e633/#Termux优化)
-    - [终端配色](/blog/html/4a95e633/#终端配色)
-    - [访问外置存储优化](/blog/html/4a95e633/#访问外置存储优化)
-        - [创建QQ文件夹软连接](/blog/html/4a95e633/#创建QQ文件夹软连接)
-- [清除缓存](/blog/html/4a95e633/#清除缓存)
-- [复制主题](/blog/html/4a95e633/#复制主题)
-- [克隆一个分支](/blog/html/4a95e633/#克隆一个分支)
-- [获取管理员权限](/blog/html/4a95e633/#获取管理员权限)
+- [安装termux](/blog/4a95e633/#安装termux)
+- [安装git](/blog/4a95e633/#安装git)
+- [安装nodejs](/blog/4a95e633/#安装nodejs)
+- [使用淘宝镜像](/blog/4a95e633/#使用淘宝镜像)
+- [设置npm全局安装路径和全局缓存路径](/blog/4a95e633/#设置npm全局安装路径和全局缓存路径)
+- [安装hexo](/blog/4a95e633/#安装hexo)
+- [创建站点](/blog/4a95e633/#创建站点)
+- [进入站点](/blog/4a95e633/#进入站点)
+- [启动本地服务器](/blog/4a95e633/#启动本地服务器)
+- [手机浏览器上进入网站](/blog/4a95e633/#手机浏览器上进入网站)
+- [Termux优化](/blog/4a95e633/#Termux优化)
+    - [终端配色](/blog/4a95e633/#终端配色)
+    - [访问外置存储优化](/blog/4a95e633/#访问外置存储优化)
+        - [创建QQ文件夹软连接](/blog/4a95e633/#创建QQ文件夹软连接)
+- [清除缓存](/blog/4a95e633/#清除缓存)
+- [复制主题](/blog/4a95e633/#复制主题)
+- [克隆一个分支](/blog/4a95e633/#克隆一个分支)
+- [获取管理员权限](/blog/4a95e633/#获取管理员权限)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

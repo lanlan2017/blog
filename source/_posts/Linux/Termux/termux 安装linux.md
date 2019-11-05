@@ -4,21 +4,21 @@ categories:
   - Linux
   - Termux
 date: 2019-10-31 15:08:27
-updated: 2019-11-03 22:59:40
+updated: 2019-11-04 17:02:02
 abbrlink: 45517ea0
 ---
-- [首先先下载Termux](/blog/html/45517ea0/#首先先下载Termux)
-- [安装proot](/blog/html/45517ea0/#安装proot)
-- [获取root权限](/blog/html/45517ea0/#获取root权限)
-- [安装git并获取atilo](/blog/html/45517ea0/#安装git并获取atilo)
-- [进去atilo下并获取权限](/blog/html/45517ea0/#进去atilo下并获取权限)
-- [查看支持的版本](/blog/html/45517ea0/#查看支持的版本)
-- [安装ubuntu](/blog/html/45517ea0/#安装ubuntu)
-- [启动ubuntu](/blog/html/45517ea0/#启动ubuntu)
-- [卸载ubuntu](/blog/html/45517ea0/#卸载ubuntu)
-- [安装centos](/blog/html/45517ea0/#安装centos)
-- [通过anLinux安装](/blog/html/45517ea0/#通过anLinux安装)
-    - [安装centos](/blog/html/45517ea0/#安装centos)
+- [首先先下载Termux](/blog/45517ea0/#首先先下载Termux)
+- [安装proot](/blog/45517ea0/#安装proot)
+- [获取root权限](/blog/45517ea0/#获取root权限)
+- [安装git并获取atilo](/blog/45517ea0/#安装git并获取atilo)
+- [进去atilo下并获取权限](/blog/45517ea0/#进去atilo下并获取权限)
+- [查看支持的版本](/blog/45517ea0/#查看支持的版本)
+- [安装ubuntu](/blog/45517ea0/#安装ubuntu)
+- [启动ubuntu](/blog/45517ea0/#启动ubuntu)
+- [卸载ubuntu](/blog/45517ea0/#卸载ubuntu)
+- [安装centos](/blog/45517ea0/#安装centos)
+- [通过anLinux安装](/blog/45517ea0/#通过anLinux安装)
+    - [安装centos](/blog/45517ea0/#安装centos)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

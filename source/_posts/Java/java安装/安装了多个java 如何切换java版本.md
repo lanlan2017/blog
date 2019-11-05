@@ -4,23 +4,23 @@ categories:
   - Java
   - java安装
 date: 2019-10-06 10:42:44
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 957ae50e
 ---
-- [安装了多个java 如何切换java版本](/blog/html/957ae50e/#安装了多个java-如何切换java版本)
-    - [问题描述](/blog/html/957ae50e/#问题描述)
-    - [如何切换](/blog/html/957ae50e/#如何切换)
-- [解决方案](/blog/html/957ae50e/#解决方案)
-    - [手动切换](/blog/html/957ae50e/#手动切换)
-    - [批处理实现](/blog/html/957ae50e/#批处理实现)
-        - [新增环境变量](/blog/html/957ae50e/#新增环境变量)
-        - [批处理脚本](/blog/html/957ae50e/#批处理脚本)
-        - [给**CJavaBat.bat**设置管理员权限](/blog/html/957ae50e/#给CJavaBat-bat设置管理员权限)
-        - [配置CJava到Path环境变量](/blog/html/957ae50e/#配置CJava到Path环境变量)
-        - [通过Win+R运行CJava](/blog/html/957ae50e/#通过Win-R运行CJava)
-        - [CJava程序说明](/blog/html/957ae50e/#CJava程序说明)
-        - [CJava运行效果](/blog/html/957ae50e/#CJava运行效果)
-        - [查看是否切换成功](/blog/html/957ae50e/#查看是否切换成功)
+- [安装了多个java 如何切换java版本](/blog/957ae50e/#安装了多个java-如何切换java版本)
+    - [问题描述](/blog/957ae50e/#问题描述)
+    - [如何切换](/blog/957ae50e/#如何切换)
+- [解决方案](/blog/957ae50e/#解决方案)
+    - [手动切换](/blog/957ae50e/#手动切换)
+    - [批处理实现](/blog/957ae50e/#批处理实现)
+        - [新增环境变量](/blog/957ae50e/#新增环境变量)
+        - [批处理脚本](/blog/957ae50e/#批处理脚本)
+        - [给**CJavaBat.bat**设置管理员权限](/blog/957ae50e/#给CJavaBat-bat设置管理员权限)
+        - [配置CJava到Path环境变量](/blog/957ae50e/#配置CJava到Path环境变量)
+        - [通过Win+R运行CJava](/blog/957ae50e/#通过Win-R运行CJava)
+        - [CJava程序说明](/blog/957ae50e/#CJava程序说明)
+        - [CJava运行效果](/blog/957ae50e/#CJava运行效果)
+        - [查看是否切换成功](/blog/957ae50e/#查看是否切换成功)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -4,11 +4,11 @@ categories:
   - Java
   - Linux系统上java使用
 date: 2018-08-11 14:25:09
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 73224a52
 ---
-- [永久修改，对单一用户有效](/blog/html/73224a52/#永久修改，对单一用户有效)
-- [只对当前bash /shell 生效](/blog/html/73224a52/#只对当前bash-shell-生效)
+- [永久修改，对单一用户有效](/blog/73224a52/#永久修改，对单一用户有效)
+- [只对当前bash /shell 生效](/blog/73224a52/#只对当前bash-shell-生效)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

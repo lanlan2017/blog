@@ -4,15 +4,15 @@ categories:
   - Java
   - Java 正则表达式
 date: 2018-08-07 15:56:18
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 51e02fda
 ---
-- [删除一个或多个空行](/blog/html/51e02fda/#删除一个或多个空行)
-    - [正则表达式](/blog/html/51e02fda/#正则表达式)
-    - [匹配空行正则2](/blog/html/51e02fda/#匹配空行正则2)
-    - [删除所有空行Java代码](/blog/html/51e02fda/#删除所有空行Java代码)
-- [移除多余的连续空格，只留下一个空格。](/blog/html/51e02fda/#移除多余的连续空格，只留下一个空格。)
-- [在线正则图形化工具](/blog/html/51e02fda/#在线正则图形化工具)
+- [删除一个或多个空行](/blog/51e02fda/#删除一个或多个空行)
+    - [正则表达式](/blog/51e02fda/#正则表达式)
+    - [匹配空行正则2](/blog/51e02fda/#匹配空行正则2)
+    - [删除所有空行Java代码](/blog/51e02fda/#删除所有空行Java代码)
+- [移除多余的连续空格，只留下一个空格。](/blog/51e02fda/#移除多余的连续空格，只留下一个空格。)
+- [在线正则图形化工具](/blog/51e02fda/#在线正则图形化工具)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

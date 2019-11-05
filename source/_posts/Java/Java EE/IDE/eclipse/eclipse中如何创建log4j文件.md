@@ -6,10 +6,10 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-12 22:26:13
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 2f2a13a0
 ---
-- [eclipse中如何创建log4j文件](/blog/html/2f2a13a0/#eclipse中如何创建log4j文件)
+- [eclipse中如何创建log4j文件](/blog/2f2a13a0/#eclipse中如何创建log4j文件)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

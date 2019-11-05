@@ -4,13 +4,13 @@ categories:
   - HTML
   - 超链接
 date: 2019-02-13 00:22:04
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: b4a0eaf6
 ---
-- [根据ID属性跳转的锚点](/blog/html/b4a0eaf6/#根据ID属性跳转的锚点)
-- [自动生成](/blog/html/b4a0eaf6/#自动生成)
-    - [Java实现](/blog/html/b4a0eaf6/#Java实现)
-    - [javascript实现](/blog/html/b4a0eaf6/#javascript实现)
+- [根据ID属性跳转的锚点](/blog/b4a0eaf6/#根据ID属性跳转的锚点)
+- [自动生成](/blog/b4a0eaf6/#自动生成)
+    - [Java实现](/blog/b4a0eaf6/#Java实现)
+    - [javascript实现](/blog/b4a0eaf6/#javascript实现)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

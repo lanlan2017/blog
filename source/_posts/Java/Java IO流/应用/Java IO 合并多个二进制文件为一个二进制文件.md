@@ -5,14 +5,14 @@ categories:
   - Java IO流
   - 应用
 date: 2019-06-27 17:54:33
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: e4a1ea9f
 ---
-- [Java IO 合并多个二进制文件为一个二进制文件](/blog/html/e4a1ea9f/#Java-IO-合并多个二进制文件为一个二进制文件)
-    - [背景](/blog/html/e4a1ea9f/#背景)
-    - [算法描述](/blog/html/e4a1ea9f/#算法描述)
-    - [关键代码](/blog/html/e4a1ea9f/#关键代码)
-    - [合并多个源文件到目标文件并删除源文件](/blog/html/e4a1ea9f/#合并多个源文件到目标文件并删除源文件)
+- [Java IO 合并多个二进制文件为一个二进制文件](/blog/e4a1ea9f/#Java-IO-合并多个二进制文件为一个二进制文件)
+    - [背景](/blog/e4a1ea9f/#背景)
+    - [算法描述](/blog/e4a1ea9f/#算法描述)
+    - [关键代码](/blog/e4a1ea9f/#关键代码)
+    - [合并多个源文件到目标文件并删除源文件](/blog/e4a1ea9f/#合并多个源文件到目标文件并删除源文件)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

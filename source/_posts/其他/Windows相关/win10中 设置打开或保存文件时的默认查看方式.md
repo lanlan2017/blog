@@ -4,12 +4,12 @@ categories:
   - 其他
   - Windows相关
 date: 2019-08-28 12:20:01
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: fda3d857
 ---
-- [win10中设置打开或保存文件时的默认查看方式](/blog/html/fda3d857/#win10中设置打开或保存文件时的默认查看方式)
-- [分析](/blog/html/fda3d857/#分析)
-- [Win10 设置资源管理器中的默认查看方式](/blog/html/fda3d857/#Win10-设置资源管理器中的默认查看方式)
+- [win10中设置打开或保存文件时的默认查看方式](/blog/fda3d857/#win10中设置打开或保存文件时的默认查看方式)
+- [分析](/blog/fda3d857/#分析)
+- [Win10 设置资源管理器中的默认查看方式](/blog/fda3d857/#Win10-设置资源管理器中的默认查看方式)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

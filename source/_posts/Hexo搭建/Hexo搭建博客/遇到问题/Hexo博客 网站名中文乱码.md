@@ -5,13 +5,13 @@ categories:
   - Hexo搭建博客
   - 遇到问题
 date: 2018-08-29 19:35:07
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 87aa90c2
 ---
-- [设置语言为简体中文](/blog/html/87aa90c2/#设置语言为简体中文)
-- [Site](/blog/html/87aa90c2/#Site)
-- [修改站点配置文件的编码为UTF-8](/blog/html/87aa90c2/#修改站点配置文件的编码为UTF-8)
-- [重新启动](/blog/html/87aa90c2/#重新启动)
+- [设置语言为简体中文](/blog/87aa90c2/#设置语言为简体中文)
+- [Site](/blog/87aa90c2/#Site)
+- [修改站点配置文件的编码为UTF-8](/blog/87aa90c2/#修改站点配置文件的编码为UTF-8)
+- [重新启动](/blog/87aa90c2/#重新启动)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

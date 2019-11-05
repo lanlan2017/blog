@@ -5,16 +5,16 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:38
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: bc7737a8
 ---
-- [application内置对象](/blog/html/bc7737a8/#application内置对象)
-    - [访问应用程序初始化参数](/blog/html/bc7737a8/#访问应用程序初始化参数)
-        - [设置应用程序初始化参数](/blog/html/bc7737a8/#设置应用程序初始化参数)
-        - [获取初始化参数](/blog/html/bc7737a8/#获取初始化参数)
-    - [管理应用程序环境属性](/blog/html/bc7737a8/#管理应用程序环境属性)
-    - [其他方法](/blog/html/bc7737a8/#其他方法)
-    - [实例](/blog/html/bc7737a8/#实例)
+- [application内置对象](/blog/bc7737a8/#application内置对象)
+    - [访问应用程序初始化参数](/blog/bc7737a8/#访问应用程序初始化参数)
+        - [设置应用程序初始化参数](/blog/bc7737a8/#设置应用程序初始化参数)
+        - [获取初始化参数](/blog/bc7737a8/#获取初始化参数)
+    - [管理应用程序环境属性](/blog/bc7737a8/#管理应用程序环境属性)
+    - [其他方法](/blog/bc7737a8/#其他方法)
+    - [实例](/blog/bc7737a8/#实例)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

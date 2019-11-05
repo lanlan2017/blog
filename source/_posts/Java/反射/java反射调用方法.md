@@ -4,20 +4,20 @@ categories:
   - Java
   - 反射
 date: 2019-06-16 13:53:20
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 40640d2
 ---
-- [反射调用方法步骤](/blog/html/40640d2/#反射调用方法步骤)
-- [实例](/blog/html/40640d2/#实例)
-    - [项目结构](/blog/html/40640d2/#项目结构)
-    - [Tool.java](/blog/html/40640d2/#Tool-java)
-    - [Test.java](/blog/html/40640d2/#Test-java)
-    - [调用静态方法](/blog/html/40640d2/#调用静态方法)
-        - [调用无参的静态方法](/blog/html/40640d2/#调用无参的静态方法)
-        - [调用带参的静态方法](/blog/html/40640d2/#调用带参的静态方法)
-    - [调用实例方法](/blog/html/40640d2/#调用实例方法)
-        - [调用无参实例方法](/blog/html/40640d2/#调用无参实例方法)
-        - [调用带参实例方法](/blog/html/40640d2/#调用带参实例方法)
+- [反射调用方法步骤](/blog/40640d2/#反射调用方法步骤)
+- [实例](/blog/40640d2/#实例)
+    - [项目结构](/blog/40640d2/#项目结构)
+    - [Tool.java](/blog/40640d2/#Tool-java)
+    - [Test.java](/blog/40640d2/#Test-java)
+    - [调用静态方法](/blog/40640d2/#调用静态方法)
+        - [调用无参的静态方法](/blog/40640d2/#调用无参的静态方法)
+        - [调用带参的静态方法](/blog/40640d2/#调用带参的静态方法)
+    - [调用实例方法](/blog/40640d2/#调用实例方法)
+        - [调用无参实例方法](/blog/40640d2/#调用无参实例方法)
+        - [调用带参实例方法](/blog/40640d2/#调用带参实例方法)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

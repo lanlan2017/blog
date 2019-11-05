@@ -5,14 +5,14 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-08-25 13:22:53
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: b4b274e0
 ---
-- [批处理 start命令](/blog/html/b4b274e0/#批处理-start命令)
-    - [帮助文档](/blog/html/b4b274e0/#帮助文档)
-    - [帮助文档解释](/blog/html/b4b274e0/#帮助文档解释)
-    - [应用](/blog/html/b4b274e0/#应用)
-        - [在特定目录下启动cmd](/blog/html/b4b274e0/#在特定目录下启动cmd)
+- [批处理 start命令](/blog/b4b274e0/#批处理-start命令)
+    - [帮助文档](/blog/b4b274e0/#帮助文档)
+    - [帮助文档解释](/blog/b4b274e0/#帮助文档解释)
+    - [应用](/blog/b4b274e0/#应用)
+        - [在特定目录下启动cmd](/blog/b4b274e0/#在特定目录下启动cmd)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

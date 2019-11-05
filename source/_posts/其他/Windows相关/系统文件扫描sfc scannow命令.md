@@ -4,11 +4,11 @@ categories:
   - 其他
   - Windows相关
 date: 2019-05-23 18:49:38
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: 9b2b8330
 ---
-- [sfc /scannow命令说明](/blog/html/9b2b8330/#sfc-scannow命令说明)
-- [参考资料](/blog/html/9b2b8330/#参考资料)
+- [sfc /scannow命令说明](/blog/9b2b8330/#sfc-scannow命令说明)
+- [参考资料](/blog/9b2b8330/#参考资料)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

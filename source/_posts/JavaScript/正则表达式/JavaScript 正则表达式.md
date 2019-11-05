@@ -4,13 +4,13 @@ categories:
   - JavaScript
   - 正则表达式
 date: 2019-02-13 00:17:45
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: cd878b94
 ---
-- [语法](/blog/html/cd878b94/#语法)
-- [String对象中的正则表达式](/blog/html/cd878b94/#String对象中的正则表达式)
-    - [实例](/blog/html/cd878b94/#实例)
-- [参考链接](/blog/html/cd878b94/#参考链接)
+- [语法](/blog/cd878b94/#语法)
+- [String对象中的正则表达式](/blog/cd878b94/#String对象中的正则表达式)
+    - [实例](/blog/cd878b94/#实例)
+- [参考链接](/blog/cd878b94/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

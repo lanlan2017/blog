@@ -4,11 +4,11 @@ categories:
   - Java
   - Java IO流
 date: 2018-10-29 23:41:16
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 487a7f53
 ---
-- [返回文本文件最后一行java代码](/blog/html/487a7f53/#返回文本文件最后一行java代码)
-- [读取本文文件最后一行，并记下最后一行的位置](/blog/html/487a7f53/#读取本文文件最后一行，并记下最后一行的位置)
+- [返回文本文件最后一行java代码](/blog/487a7f53/#返回文本文件最后一行java代码)
+- [读取本文文件最后一行，并记下最后一行的位置](/blog/487a7f53/#读取本文文件最后一行，并记下最后一行的位置)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

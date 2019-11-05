@@ -4,14 +4,14 @@ categories:
   - C语言
   - 文件
 date: 2018-11-15 00:44:39
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:00
 abbrlink: 65f494cf
 ---
-- [C语言创建文件](/blog/html/65f494cf/#C语言创建文件)
-- [C语言重命名文件](/blog/html/65f494cf/#C语言重命名文件)
-- [C语言删除文件](/blog/html/65f494cf/#C语言删除文件)
-    - [实例](/blog/html/65f494cf/#实例)
-- [参考链接](/blog/html/65f494cf/#参考链接)
+- [C语言创建文件](/blog/65f494cf/#C语言创建文件)
+- [C语言重命名文件](/blog/65f494cf/#C语言重命名文件)
+- [C语言删除文件](/blog/65f494cf/#C语言删除文件)
+    - [实例](/blog/65f494cf/#实例)
+- [参考链接](/blog/65f494cf/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -5,18 +5,18 @@ categories:
   - 语法
   - 系统相关命令
 date: 2019-09-25 00:35:36
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: b1b65659
 ---
-- [schtask命令文档](/blog/html/b1b65659/#schtask命令文档)
-    - [创建新任务计划](/blog/html/b1b65659/#创建新任务计划)
-        - [schtasks /create文档](/blog/html/b1b65659/#schtasks-create文档)
-    - [定时关机](/blog/html/b1b65659/#定时关机)
-        - [先用计算器测试](/blog/html/b1b65659/#先用计算器测试)
-    - [查询任务计划](/blog/html/b1b65659/#查询任务计划)
-        - [语法](/blog/html/b1b65659/#语法)
-    - [删除任务计划](/blog/html/b1b65659/#删除任务计划)
-        - [删除上面创建的任务](/blog/html/b1b65659/#删除上面创建的任务)
+- [schtask命令文档](/blog/b1b65659/#schtask命令文档)
+    - [创建新任务计划](/blog/b1b65659/#创建新任务计划)
+        - [schtasks /create文档](/blog/b1b65659/#schtasks-create文档)
+    - [定时关机](/blog/b1b65659/#定时关机)
+        - [先用计算器测试](/blog/b1b65659/#先用计算器测试)
+    - [查询任务计划](/blog/b1b65659/#查询任务计划)
+        - [语法](/blog/b1b65659/#语法)
+    - [删除任务计划](/blog/b1b65659/#删除任务计划)
+        - [删除上面创建的任务](/blog/b1b65659/#删除上面创建的任务)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

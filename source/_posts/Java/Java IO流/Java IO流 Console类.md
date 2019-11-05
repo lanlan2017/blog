@@ -4,17 +4,17 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-12 12:51:31
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: eaae884d
 ---
-- [Java中Console类的用法](/blog/html/eaae884d/#Java中Console类的用法)
-    - [读控制台方法](/blog/html/eaae884d/#读控制台方法)
-        - [实例：读密码不回显](/blog/html/eaae884d/#实例：读密码不回显)
-    - [获取控制台的输入输出流](/blog/html/eaae884d/#获取控制台的输入输出流)
-        - [获取来自控制台的输入流](/blog/html/eaae884d/#获取来自控制台的输入流)
-        - [获取对控制台的输出流](/blog/html/eaae884d/#获取对控制台的输出流)
-        - [使用Console类自己的控制台输入和输出方法](/blog/html/eaae884d/#使用Console类自己的控制台输入和输出方法)
-    - [控制台格式化输出方法](/blog/html/eaae884d/#控制台格式化输出方法)
+- [Java中Console类的用法](/blog/eaae884d/#Java中Console类的用法)
+    - [读控制台方法](/blog/eaae884d/#读控制台方法)
+        - [实例：读密码不回显](/blog/eaae884d/#实例：读密码不回显)
+    - [获取控制台的输入输出流](/blog/eaae884d/#获取控制台的输入输出流)
+        - [获取来自控制台的输入流](/blog/eaae884d/#获取来自控制台的输入流)
+        - [获取对控制台的输出流](/blog/eaae884d/#获取对控制台的输出流)
+        - [使用Console类自己的控制台输入和输出方法](/blog/eaae884d/#使用Console类自己的控制台输入和输出方法)
+    - [控制台格式化输出方法](/blog/eaae884d/#控制台格式化输出方法)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

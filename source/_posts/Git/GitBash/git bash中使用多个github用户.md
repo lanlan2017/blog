@@ -4,18 +4,18 @@ categories:
   - Git
   - GitBash
 date: 2018-11-20 20:19:24
-updated: 2019-10-31 20:21:37
+updated: 2019-11-04 17:02:00
 abbrlink: 4190ffbf
 ---
-- [问题描述](/blog/html/4190ffbf/#问题描述)
-    - [生成新ssh key](/blog/html/4190ffbf/#生成新ssh-key)
-    - [添加新ssh key](/blog/html/4190ffbf/#添加新ssh-key)
-    - [添加公钥到github上](/blog/html/4190ffbf/#添加公钥到github上)
-    - [配置config文件](/blog/html/4190ffbf/#配置config文件)
-    - [测试是否配置成功](/blog/html/4190ffbf/#测试是否配置成功)
-    - [使用新用户时修改远程仓库的地址](/blog/html/4190ffbf/#使用新用户时修改远程仓库的地址)
-    - [下面是个人的操作](/blog/html/4190ffbf/#下面是个人的操作)
-- [参考链接](/blog/html/4190ffbf/#参考链接)
+- [问题描述](/blog/4190ffbf/#问题描述)
+    - [生成新ssh key](/blog/4190ffbf/#生成新ssh-key)
+    - [添加新ssh key](/blog/4190ffbf/#添加新ssh-key)
+    - [添加公钥到github上](/blog/4190ffbf/#添加公钥到github上)
+    - [配置config文件](/blog/4190ffbf/#配置config文件)
+    - [测试是否配置成功](/blog/4190ffbf/#测试是否配置成功)
+    - [使用新用户时修改远程仓库的地址](/blog/4190ffbf/#使用新用户时修改远程仓库的地址)
+    - [下面是个人的操作](/blog/4190ffbf/#下面是个人的操作)
+- [参考链接](/blog/4190ffbf/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

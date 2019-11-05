@@ -6,13 +6,13 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-13 22:21:13
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 874828d8
 ---
-- [Spring MVC配置文件模版](/blog/html/874828d8/#Spring-MVC配置文件模版)
-- [安装插件](/blog/html/874828d8/#安装插件)
-- [使用Spring Tools3插件创建配置文件](/blog/html/874828d8/#使用Spring-Tools3插件创建配置文件)
-- [手动创建web.xml](/blog/html/874828d8/#手动创建web-xml)
+- [Spring MVC配置文件模版](/blog/874828d8/#Spring-MVC配置文件模版)
+- [安装插件](/blog/874828d8/#安装插件)
+- [使用Spring Tools3插件创建配置文件](/blog/874828d8/#使用Spring-Tools3插件创建配置文件)
+- [手动创建web.xml](/blog/874828d8/#手动创建web-xml)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

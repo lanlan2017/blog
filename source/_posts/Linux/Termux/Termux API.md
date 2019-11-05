@@ -4,25 +4,25 @@ categories:
   - Linux
   - Termux
 date: 2019-11-03 19:40:56
-updated: 2019-11-03 22:59:40
+updated: 2019-11-04 17:02:02
 abbrlink: b709eab2
 ---
-- [Termux API有什么用](/blog/html/b709eab2/#Termux-API有什么用)
-- [手机上安装Termux API APP](/blog/html/b709eab2/#手机上安装Termux-API-APP)
-- [Termux里面安装Termux-api软件包](/blog/html/b709eab2/#Termux里面安装Termux-api软件包)
-- [常用命令](/blog/html/b709eab2/#常用命令)
-    - [获取电池信息](/blog/html/b709eab2/#获取电池信息)
-    - [获取相机信息](/blog/html/b709eab2/#获取相机信息)
-    - [获取与设置剪贴板](/blog/html/b709eab2/#获取与设置剪贴板)
-        - [查看当前剪贴板内容](/blog/html/b709eab2/#查看当前剪贴板内容)
-        - [设置新的剪贴板内容](/blog/html/b709eab2/#设置新的剪贴板内容)
-    - [获取通讯录列表](/blog/html/b709eab2/#获取通讯录列表)
-    - [查看短信内容列表](/blog/html/b709eab2/#查看短信内容列表)
-    - [发送短信](/blog/html/b709eab2/#发送短信)
-    - [拨打电话](/blog/html/b709eab2/#拨打电话)
-    - [WiFi相关](/blog/html/b709eab2/#WiFi相关)
-    - [termux API小结](/blog/html/b709eab2/#termux-API小结)
-- [参考资料](/blog/html/b709eab2/#参考资料)
+- [Termux API有什么用](/blog/b709eab2/#Termux-API有什么用)
+- [手机上安装Termux API APP](/blog/b709eab2/#手机上安装Termux-API-APP)
+- [Termux里面安装Termux-api软件包](/blog/b709eab2/#Termux里面安装Termux-api软件包)
+- [常用命令](/blog/b709eab2/#常用命令)
+    - [获取电池信息](/blog/b709eab2/#获取电池信息)
+    - [获取相机信息](/blog/b709eab2/#获取相机信息)
+    - [获取与设置剪贴板](/blog/b709eab2/#获取与设置剪贴板)
+        - [查看当前剪贴板内容](/blog/b709eab2/#查看当前剪贴板内容)
+        - [设置新的剪贴板内容](/blog/b709eab2/#设置新的剪贴板内容)
+    - [获取通讯录列表](/blog/b709eab2/#获取通讯录列表)
+    - [查看短信内容列表](/blog/b709eab2/#查看短信内容列表)
+    - [发送短信](/blog/b709eab2/#发送短信)
+    - [拨打电话](/blog/b709eab2/#拨打电话)
+    - [WiFi相关](/blog/b709eab2/#WiFi相关)
+    - [termux API小结](/blog/b709eab2/#termux-API小结)
+- [参考资料](/blog/b709eab2/#参考资料)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

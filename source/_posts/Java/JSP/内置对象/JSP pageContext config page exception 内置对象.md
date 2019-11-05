@@ -5,21 +5,21 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:14:31
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: ee24a152
 ---
-- [pageContext内置对象](/blog/html/ee24a152/#pageContext内置对象)
-    - [获取其他对象的方法](/blog/html/ee24a152/#获取其他对象的方法)
-    - [设置属性方法](/blog/html/ee24a152/#设置属性方法)
-    - [实例](/blog/html/ee24a152/#实例)
-- [page内置对象](/blog/html/ee24a152/#page内置对象)
-    - [常用方法](/blog/html/ee24a152/#常用方法)
-    - [实例](/blog/html/ee24a152/#实例)
-- [Config内置对象](/blog/html/ee24a152/#Config内置对象)
-    - [常用方法](/blog/html/ee24a152/#常用方法)
-- [Exception内置对象](/blog/html/ee24a152/#Exception内置对象)
-    - [exception对象的常用方法](/blog/html/ee24a152/#exception对象的常用方法)
-        - [实例](/blog/html/ee24a152/#实例)
+- [pageContext内置对象](/blog/ee24a152/#pageContext内置对象)
+    - [获取其他对象的方法](/blog/ee24a152/#获取其他对象的方法)
+    - [设置属性方法](/blog/ee24a152/#设置属性方法)
+    - [实例](/blog/ee24a152/#实例)
+- [page内置对象](/blog/ee24a152/#page内置对象)
+    - [常用方法](/blog/ee24a152/#常用方法)
+    - [实例](/blog/ee24a152/#实例)
+- [Config内置对象](/blog/ee24a152/#Config内置对象)
+    - [常用方法](/blog/ee24a152/#常用方法)
+- [Exception内置对象](/blog/ee24a152/#Exception内置对象)
+    - [exception对象的常用方法](/blog/ee24a152/#exception对象的常用方法)
+        - [实例](/blog/ee24a152/#实例)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

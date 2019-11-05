@@ -4,10 +4,10 @@ categories:
   - MySQL
   - 图形工具
 date: 2019-10-25 16:28:41
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: e1bb0d5c
 ---
-- [Navicat premium 12 mysql-命令列界面 清屏功能](/blog/html/e1bb0d5c/#Navicat-premium-12-mysql-命令列界面-清屏功能)
+- [Navicat premium 12 mysql-命令列界面 清屏功能](/blog/e1bb0d5c/#Navicat-premium-12-mysql-命令列界面-清屏功能)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

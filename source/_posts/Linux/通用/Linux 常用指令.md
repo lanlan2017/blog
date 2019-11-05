@@ -4,19 +4,19 @@ categories:
   - Linux
   - 通用
 date: 2018-11-11 16:35:46
-updated: 2019-11-03 23:00:14
+updated: 2019-11-04 17:02:02
 abbrlink: e44da
 ---
-- [前言](/blog/html/e44da/#前言)
-- [文件目录相关命令](/blog/html/e44da/#文件目录相关命令)
-    - [创建一个空白文件命令touch](/blog/html/e44da/#创建一个空白文件命令touch)
-    - [文件复制命令cp](/blog/html/e44da/#文件复制命令cp)
-    - [文件移动命令mv](/blog/html/e44da/#文件移动命令mv)
-        - [实例 移动文件到其他目录](/blog/html/e44da/#实例-移动文件到其他目录)
-        - [使用移动命令重命名文件](/blog/html/e44da/#使用移动命令重命名文件)
-    - [文件删除命令rm](/blog/html/e44da/#文件删除命令rm)
-        - [无法删除的情况](/blog/html/e44da/#无法删除的情况)
-    - [参考链接](/blog/html/e44da/#参考链接)
+- [前言](/blog/e44da/#前言)
+- [文件目录相关命令](/blog/e44da/#文件目录相关命令)
+    - [创建一个空白文件命令touch](/blog/e44da/#创建一个空白文件命令touch)
+    - [文件复制命令cp](/blog/e44da/#文件复制命令cp)
+    - [文件移动命令mv](/blog/e44da/#文件移动命令mv)
+        - [实例 移动文件到其他目录](/blog/e44da/#实例-移动文件到其他目录)
+        - [使用移动命令重命名文件](/blog/e44da/#使用移动命令重命名文件)
+    - [文件删除命令rm](/blog/e44da/#文件删除命令rm)
+        - [无法删除的情况](/blog/e44da/#无法删除的情况)
+    - [参考链接](/blog/e44da/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

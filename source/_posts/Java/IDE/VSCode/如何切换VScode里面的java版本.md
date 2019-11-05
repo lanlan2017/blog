@@ -5,13 +5,13 @@ categories:
   - IDE
   - VSCode
 date: 2019-10-06 21:46:08
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 6221fd78
 ---
-- [如何切换VScode里面的java版本](/blog/html/6221fd78/#如何切换VScode里面的java版本)
-    - [1. 电脑使用新版本的java](/blog/html/6221fd78/#1-电脑使用新版本的java)
-    - [2. 重装VScode里面的java环境](/blog/html/6221fd78/#2-重装VScode里面的java环境)
-    - [总结](/blog/html/6221fd78/#总结)
+- [如何切换VScode里面的java版本](/blog/6221fd78/#如何切换VScode里面的java版本)
+    - [1. 电脑使用新版本的java](/blog/6221fd78/#1-电脑使用新版本的java)
+    - [2. 重装VScode里面的java环境](/blog/6221fd78/#2-重装VScode里面的java环境)
+    - [总结](/blog/6221fd78/#总结)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

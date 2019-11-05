@@ -4,10 +4,10 @@ categories:
   - 我的软件
   - 截图文字识别
 date: 2018-10-10 16:37:33
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: 217f0f86
 ---
-- [参考](/blog/html/217f0f86/#参考)
+- [参考](/blog/217f0f86/#参考)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -6,14 +6,14 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-02 21:03:06
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: c9f81303
 ---
-- [打开eclipse marketplace](/blog/html/c9f81303/#打开eclipse-marketplace)
-- [安装mybatis-generator](/blog/html/c9f81303/#安装mybatis-generator)
-    - [插件主页](/blog/html/c9f81303/#插件主页)
-    - [拖动安装插件](/blog/html/c9f81303/#拖动安装插件)
-    - [同意许可](/blog/html/c9f81303/#同意许可)
+- [打开eclipse marketplace](/blog/c9f81303/#打开eclipse-marketplace)
+- [安装mybatis-generator](/blog/c9f81303/#安装mybatis-generator)
+    - [插件主页](/blog/c9f81303/#插件主页)
+    - [拖动安装插件](/blog/c9f81303/#拖动安装插件)
+    - [同意许可](/blog/c9f81303/#同意许可)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

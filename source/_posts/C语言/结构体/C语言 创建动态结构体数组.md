@@ -4,13 +4,13 @@ categories:
   - C语言
   - 结构体
 date: 2019-02-13 00:31:18
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:00
 abbrlink: 80deef00
 ---
-- [前言](/blog/html/80deef00/#前言)
-- [基本类型数组动态分配大小](/blog/html/80deef00/#基本类型数组动态分配大小)
-- [结构体类型数组分配大小](/blog/html/80deef00/#结构体类型数组分配大小)
-- [参考链接](/blog/html/80deef00/#参考链接)
+- [前言](/blog/80deef00/#前言)
+- [基本类型数组动态分配大小](/blog/80deef00/#基本类型数组动态分配大小)
+- [结构体类型数组分配大小](/blog/80deef00/#结构体类型数组分配大小)
+- [参考链接](/blog/80deef00/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

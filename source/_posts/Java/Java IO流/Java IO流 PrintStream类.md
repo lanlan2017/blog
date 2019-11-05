@@ -4,18 +4,18 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-14 15:19:37
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: '82040860'
 ---
-- [继承关系](/blog/html/82040860/#继承关系)
-- [构造方法](/blog/html/82040860/#构造方法)
-- [成员方法](/blog/html/82040860/#成员方法)
-    - [write(...)方法](/blog/html/82040860/#write-方法)
-    - [print(...)方法](/blog/html/82040860/#print-方法)
-    - [println(...)方法](/blog/html/82040860/#println-方法)
-    - [format(...)方法](/blog/html/82040860/#format-方法)
-    - [append(...)方法](/blog/html/82040860/#append-方法)
-    - [错误相关方法](/blog/html/82040860/#错误相关方法)
+- [继承关系](/blog/82040860/#继承关系)
+- [构造方法](/blog/82040860/#构造方法)
+- [成员方法](/blog/82040860/#成员方法)
+    - [write(...)方法](/blog/82040860/#write-方法)
+    - [print(...)方法](/blog/82040860/#print-方法)
+    - [println(...)方法](/blog/82040860/#println-方法)
+    - [format(...)方法](/blog/82040860/#format-方法)
+    - [append(...)方法](/blog/82040860/#append-方法)
+    - [错误相关方法](/blog/82040860/#错误相关方法)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

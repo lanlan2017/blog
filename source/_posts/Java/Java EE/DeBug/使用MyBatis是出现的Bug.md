@@ -5,31 +5,31 @@ categories:
   - Java EE
   - DeBug
 date: 2019-06-09 17:26:12
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 5aecc643
 ---
-- [Type interface mapper.UserMapper is not known to the MapperRegistry.](/blog/html/5aecc643/#Type-interface-mapper-UserMapper-is-not-known-to-the-MapperRegistry)
-    - [分1:没有引入Mapper.xml](/blog/html/5aecc643/#分1-没有引入Mapper-xml)
-        - [解决](/blog/html/5aecc643/#解决)
-    - [分析2:没有引入Mapper接口路径](/blog/html/5aecc643/#分析2-没有引入Mapper接口路径)
-        - [解决](/blog/html/5aecc643/#解决)
-    - [总结](/blog/html/5aecc643/#总结)
-- [Table 'mybatis.tb_calzz' doesn't exist](/blog/html/5aecc643/#Table-'mybatis-tb-calzz'-doesn't-exist)
-    - [错误提示](/blog/html/5aecc643/#错误提示)
-        - [Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'mybatis.tb_calzz' doesn't exist](/blog/html/5aecc643/#Error-querying-database-Cause-com-mysql-jdbc-exceptions-jdbc4-MySQLSyntaxErrorException-Table-'mybatis-tb-calzz'-doesn't-exist)
-        - [The error may exist in mapper/ClazzMapper.java (best guess)](/blog/html/5aecc643/#The-error-may-exist-in-mapper-ClazzMapper-java-best-guess)
-        - [The error may involve mapper.ClazzMapper.selectClazzById-Inline](/blog/html/5aecc643/#The-error-may-involve-mapper-ClazzMapper-selectClazzById-Inline)
-        - [The error occurred while setting parameters](/blog/html/5aecc643/#The-error-occurred-while-setting-parameters)
-        - [SQL: select * from tb_calzz where id=?](/blog/html/5aecc643/#SQL-select-*-from-tb-calzz-where-id=?)
-    - [分析](/blog/html/5aecc643/#分析)
-- [Error querying database. ...Query was empty](/blog/html/5aecc643/#Error-querying-database-Query-was-empty)
-        - [Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Query was empty](/blog/html/5aecc643/#Error-querying-database-Cause-com-mysql-jdbc-exceptions-jdbc4-MySQLSyntaxErrorException-Query-was-empty)
-        - [The error may exist in mapper/UserMapper.xml](/blog/html/5aecc643/#The-error-may-exist-in-mapper-UserMapper-xml)
-        - [The error may involve mapper.UserMapper.selectUserById-Inline](/blog/html/5aecc643/#The-error-may-involve-mapper-UserMapper-selectUserById-Inline)
-        - [The error occurred while setting parameters](/blog/html/5aecc643/#The-error-occurred-while-setting-parameters)
-        - [SQL:](/blog/html/5aecc643/#SQL)
-    - [原因](/blog/html/5aecc643/#原因)
-    - [解决](/blog/html/5aecc643/#解决)
+- [Type interface mapper.UserMapper is not known to the MapperRegistry.](/blog/5aecc643/#Type-interface-mapper-UserMapper-is-not-known-to-the-MapperRegistry)
+    - [分1:没有引入Mapper.xml](/blog/5aecc643/#分1-没有引入Mapper-xml)
+        - [解决](/blog/5aecc643/#解决)
+    - [分析2:没有引入Mapper接口路径](/blog/5aecc643/#分析2-没有引入Mapper接口路径)
+        - [解决](/blog/5aecc643/#解决)
+    - [总结](/blog/5aecc643/#总结)
+- [Table 'mybatis.tb_calzz' doesn't exist](/blog/5aecc643/#Table-'mybatis-tb-calzz'-doesn't-exist)
+    - [错误提示](/blog/5aecc643/#错误提示)
+        - [Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'mybatis.tb_calzz' doesn't exist](/blog/5aecc643/#Error-querying-database-Cause-com-mysql-jdbc-exceptions-jdbc4-MySQLSyntaxErrorException-Table-'mybatis-tb-calzz'-doesn't-exist)
+        - [The error may exist in mapper/ClazzMapper.java (best guess)](/blog/5aecc643/#The-error-may-exist-in-mapper-ClazzMapper-java-best-guess)
+        - [The error may involve mapper.ClazzMapper.selectClazzById-Inline](/blog/5aecc643/#The-error-may-involve-mapper-ClazzMapper-selectClazzById-Inline)
+        - [The error occurred while setting parameters](/blog/5aecc643/#The-error-occurred-while-setting-parameters)
+        - [SQL: select * from tb_calzz where id=?](/blog/5aecc643/#SQL-select-*-from-tb-calzz-where-id=?)
+    - [分析](/blog/5aecc643/#分析)
+- [Error querying database. ...Query was empty](/blog/5aecc643/#Error-querying-database-Query-was-empty)
+        - [Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Query was empty](/blog/5aecc643/#Error-querying-database-Cause-com-mysql-jdbc-exceptions-jdbc4-MySQLSyntaxErrorException-Query-was-empty)
+        - [The error may exist in mapper/UserMapper.xml](/blog/5aecc643/#The-error-may-exist-in-mapper-UserMapper-xml)
+        - [The error may involve mapper.UserMapper.selectUserById-Inline](/blog/5aecc643/#The-error-may-involve-mapper-UserMapper-selectUserById-Inline)
+        - [The error occurred while setting parameters](/blog/5aecc643/#The-error-occurred-while-setting-parameters)
+        - [SQL:](/blog/5aecc643/#SQL)
+    - [原因](/blog/5aecc643/#原因)
+    - [解决](/blog/5aecc643/#解决)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

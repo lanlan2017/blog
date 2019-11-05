@@ -4,12 +4,12 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-21 22:26:21
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 2e0f7472
 ---
-- [常用处理流（关闭处理流使用关闭里面的节点流）](/blog/html/2e0f7472/#常用处理流（关闭处理流使用关闭里面的节点流）)
-- [流的关闭顺序](/blog/html/2e0f7472/#流的关闭顺序)
-    - [注意：](/blog/html/2e0f7472/#注意：)
+- [常用处理流（关闭处理流使用关闭里面的节点流）](/blog/2e0f7472/#常用处理流（关闭处理流使用关闭里面的节点流）)
+- [流的关闭顺序](/blog/2e0f7472/#流的关闭顺序)
+    - [注意：](/blog/2e0f7472/#注意：)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -5,15 +5,15 @@ categories:
   - Hexo搭建博客
   - 遇到问题
 date: 2018-08-29 19:35:07
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 2c22a8d1
 ---
-- [URL](/blog/html/2c22a8d1/#URL)
-    - [If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'](/blog/html/2c22a8d1/#If-your-site-is-put-in-a-subdirectory,-set-url-as-'http-yoursite-com-child'-and-root-as-'-child-')
-- [网站的地址](/blog/html/2c22a8d1/#网站的地址)
-- [URL](/blog/html/2c22a8d1/#URL)
-    - [If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'](/blog/html/2c22a8d1/#If-your-site-is-put-in-a-subdirectory,-set-url-as-'http-yoursite-com-child'-and-root-as-'-child-')
-- [网站的地址](/blog/html/2c22a8d1/#网站的地址)
+- [URL](/blog/2c22a8d1/#URL)
+    - [If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'](/blog/2c22a8d1/#If-your-site-is-put-in-a-subdirectory,-set-url-as-'http-yoursite-com-child'-and-root-as-'-child-')
+- [网站的地址](/blog/2c22a8d1/#网站的地址)
+- [URL](/blog/2c22a8d1/#URL)
+    - [If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'](/blog/2c22a8d1/#If-your-site-is-put-in-a-subdirectory,-set-url-as-'http-yoursite-com-child'-and-root-as-'-child-')
+- [网站的地址](/blog/2c22a8d1/#网站的地址)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

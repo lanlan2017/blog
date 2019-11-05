@@ -4,12 +4,12 @@ categories:
   - Java
   - Java IO流
 date: 2018-10-26 19:56:09
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 18ab79a8
 ---
-- [首先介绍怎么把资源文件打包到可执行jar包中](/blog/html/18ab79a8/#首先介绍怎么把资源文件打包到可执行jar包中)
-- [读取jar包中的文件](/blog/html/18ab79a8/#读取jar包中的文件)
-- [读取jar包中资源文件子目录中的文件](/blog/html/18ab79a8/#读取jar包中资源文件子目录中的文件)
+- [首先介绍怎么把资源文件打包到可执行jar包中](/blog/18ab79a8/#首先介绍怎么把资源文件打包到可执行jar包中)
+- [读取jar包中的文件](/blog/18ab79a8/#读取jar包中的文件)
+- [读取jar包中资源文件子目录中的文件](/blog/18ab79a8/#读取jar包中资源文件子目录中的文件)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

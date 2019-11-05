@@ -3,16 +3,16 @@ title: git clone速度太慢
 categories: 
   - Git
 date: 2019-08-12 12:55:50
-updated: 2019-11-04 16:52:05
+updated: 2019-11-04 17:02:00
 abbrlink: 1f883a6b
 ---
-- [问题描述](/blog/html/1f883a6b/#问题描述)
-- [分析原因](/blog/html/1f883a6b/#分析原因)
-- [解决方案](/blog/html/1f883a6b/#解决方案)
-    - [查找域名对应IP地址](/blog/html/1f883a6b/#查找域名对应IP地址)
-    - [添加IP和域名到hosts文件](/blog/html/1f883a6b/#添加IP和域名到hosts文件)
-    - [保存更新DNS](/blog/html/1f883a6b/#保存更新DNS)
-    - [测试git clone](/blog/html/1f883a6b/#测试git-clone)
+- [问题描述](/blog/1f883a6b/#问题描述)
+- [分析原因](/blog/1f883a6b/#分析原因)
+- [解决方案](/blog/1f883a6b/#解决方案)
+    - [查找域名对应IP地址](/blog/1f883a6b/#查找域名对应IP地址)
+    - [添加IP和域名到hosts文件](/blog/1f883a6b/#添加IP和域名到hosts文件)
+    - [保存更新DNS](/blog/1f883a6b/#保存更新DNS)
+    - [测试git clone](/blog/1f883a6b/#测试git-clone)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

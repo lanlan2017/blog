@@ -4,13 +4,13 @@ categories:
   - JavaScript
   - 播放音频
 date: 2019-04-27 11:27:54
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: ff5ef3ed
 ---
-- [实例代码](/blog/html/ff5ef3ed/#实例代码)
-- [压缩的代码](/blog/html/ff5ef3ed/#压缩的代码)
-- [运行效果](/blog/html/ff5ef3ed/#运行效果)
-- [参考资料](/blog/html/ff5ef3ed/#参考资料)
+- [实例代码](/blog/ff5ef3ed/#实例代码)
+- [压缩的代码](/blog/ff5ef3ed/#压缩的代码)
+- [运行效果](/blog/ff5ef3ed/#运行效果)
+- [参考资料](/blog/ff5ef3ed/#参考资料)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

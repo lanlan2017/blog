@@ -3,17 +3,17 @@ title: Git更换远程仓库地址
 categories: 
   - Git
 date: 2019-05-02 10:56:15
-updated: 2019-10-31 20:21:37
+updated: 2019-11-04 17:02:00
 abbrlink: 7469a3b7
 ---
-- [问题描述](/blog/html/7469a3b7/#问题描述)
-- [在github上创建项目](/blog/html/7469a3b7/#在github上创建项目)
-- [修改远程仓库的地址](/blog/html/7469a3b7/#修改远程仓库的地址)
-    - [查看当前远程仓库](/blog/html/7469a3b7/#查看当前远程仓库)
-    - [修改远程仓库的地址为github的](/blog/html/7469a3b7/#修改远程仓库的地址为github的)
-    - [查看修改效果](/blog/html/7469a3b7/#查看修改效果)
-    - [push到新的远程仓库地址](/blog/html/7469a3b7/#push到新的远程仓库地址)
-- [参考资料](/blog/html/7469a3b7/#参考资料)
+- [问题描述](/blog/7469a3b7/#问题描述)
+- [在github上创建项目](/blog/7469a3b7/#在github上创建项目)
+- [修改远程仓库的地址](/blog/7469a3b7/#修改远程仓库的地址)
+    - [查看当前远程仓库](/blog/7469a3b7/#查看当前远程仓库)
+    - [修改远程仓库的地址为github的](/blog/7469a3b7/#修改远程仓库的地址为github的)
+    - [查看修改效果](/blog/7469a3b7/#查看修改效果)
+    - [push到新的远程仓库地址](/blog/7469a3b7/#push到新的远程仓库地址)
+- [参考资料](/blog/7469a3b7/#参考资料)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

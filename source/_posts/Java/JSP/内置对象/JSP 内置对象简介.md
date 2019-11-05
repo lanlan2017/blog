@@ -5,18 +5,18 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-08 21:46:24
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 4cc31c44
 ---
-- [JSP内置对象概述](/blog/html/4cc31c44/#JSP内置对象概述)
-    - [JSP九大内置对象](/blog/html/4cc31c44/#JSP九大内置对象)
-- [Web程序的请求响应模式](/blog/html/4cc31c44/#Web程序的请求响应模式)
-- [表单的提交方式](/blog/html/4cc31c44/#表单的提交方式)
-    - [get](/blog/html/4cc31c44/#get)
-    - [post](/blog/html/4cc31c44/#post)
-    - [实例](/blog/html/4cc31c44/#实例)
-        - [测试get方法](/blog/html/4cc31c44/#测试get方法)
-        - [测试post方法](/blog/html/4cc31c44/#测试post方法)
+- [JSP内置对象概述](/blog/4cc31c44/#JSP内置对象概述)
+    - [JSP九大内置对象](/blog/4cc31c44/#JSP九大内置对象)
+- [Web程序的请求响应模式](/blog/4cc31c44/#Web程序的请求响应模式)
+- [表单的提交方式](/blog/4cc31c44/#表单的提交方式)
+    - [get](/blog/4cc31c44/#get)
+    - [post](/blog/4cc31c44/#post)
+    - [实例](/blog/4cc31c44/#实例)
+        - [测试get方法](/blog/4cc31c44/#测试get方法)
+        - [测试post方法](/blog/4cc31c44/#测试post方法)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

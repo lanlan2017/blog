@@ -3,14 +3,14 @@ title: CSS选择器
 categories: 
   - CSS
 date: 2018-12-12 23:44:41
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:00
 abbrlink: b6981f1b
 ---
-- [基础](/blog/html/b6981f1b/#基础)
-    - [CSS选择器分类](/blog/html/b6981f1b/#CSS选择器分类)
-    - [CSS 元素选择器](/blog/html/b6981f1b/#CSS-元素选择器)
-    - [类型选择器](/blog/html/b6981f1b/#类型选择器)
-    - [参考链接](/blog/html/b6981f1b/#参考链接)
+- [基础](/blog/b6981f1b/#基础)
+    - [CSS选择器分类](/blog/b6981f1b/#CSS选择器分类)
+    - [CSS 元素选择器](/blog/b6981f1b/#CSS-元素选择器)
+    - [类型选择器](/blog/b6981f1b/#类型选择器)
+    - [参考链接](/blog/b6981f1b/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

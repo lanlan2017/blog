@@ -5,13 +5,13 @@ categories:
   - latex
   - LaTex语法
 date: 2019-02-18 21:39:42
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 mathjax: true
 abbrlink: f88b012c
 ---
-- [mathjax公式添加删除线](/blog/html/f88b012c/#mathjax公式添加删除线)
-    - [例子](/blog/html/f88b012c/#例子)
-- [参考资料](/blog/html/f88b012c/#参考资料)
+- [mathjax公式添加删除线](/blog/f88b012c/#mathjax公式添加删除线)
+    - [例子](/blog/f88b012c/#例子)
+- [参考资料](/blog/f88b012c/#参考资料)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

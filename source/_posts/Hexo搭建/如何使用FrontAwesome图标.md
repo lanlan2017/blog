@@ -3,16 +3,16 @@ title: 如何使用FrontAwesome图标
 categories: 
   - Hexo搭建
 date: 2019-03-11 21:02:57
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 4181f9ed
 ---
-- [选择图标](/blog/html/4181f9ed/#选择图标)
-- [NexT主题中使用](/blog/html/4181f9ed/#NexT主题中使用)
-- [实例](/blog/html/4181f9ed/#实例)
-    - [向上箭头图标](/blog/html/4181f9ed/#向上箭头图标)
-    - [github图标](/blog/html/4181f9ed/#github图标)
-- [设置图标颜色](/blog/html/4181f9ed/#设置图标颜色)
-- [参考资料](/blog/html/4181f9ed/#参考资料)
+- [选择图标](/blog/4181f9ed/#选择图标)
+- [NexT主题中使用](/blog/4181f9ed/#NexT主题中使用)
+- [实例](/blog/4181f9ed/#实例)
+    - [向上箭头图标](/blog/4181f9ed/#向上箭头图标)
+    - [github图标](/blog/4181f9ed/#github图标)
+- [设置图标颜色](/blog/4181f9ed/#设置图标颜色)
+- [参考资料](/blog/4181f9ed/#参考资料)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

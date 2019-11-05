@@ -5,17 +5,17 @@ categories:
   - Java EE
   - 环境搭建
 date: 2019-06-07 15:34:05
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 44aa2f70
 ---
-- [eclipse 创建mybatis-config.xml 创建mapper.xml文件](/blog/html/44aa2f70/#eclipse-创建mybatis-config-xml-创建mapper-xml文件)
-    - [下载mybatis的jar包](/blog/html/44aa2f70/#下载mybatis的jar包)
-    - [从mybatis的jar包复制模板文件](/blog/html/44aa2f70/#从mybatis的jar包复制模板文件)
-    - [保存模板文件到本地](/blog/html/44aa2f70/#保存模板文件到本地)
-    - [引入模板文件到eclipse中](/blog/html/44aa2f70/#引入模板文件到eclipse中)
-        - [引入mybatis-3-config.dtd](/blog/html/44aa2f70/#引入mybatis-3-config-dtd)
-        - [引入mybatis-3-mapper.dtd](/blog/html/44aa2f70/#引入mybatis-3-mapper-dtd)
-    - [使用模板文件创建mybatis-config.xml文件](/blog/html/44aa2f70/#使用模板文件创建mybatis-config-xml文件)
+- [eclipse 创建mybatis-config.xml 创建mapper.xml文件](/blog/44aa2f70/#eclipse-创建mybatis-config-xml-创建mapper-xml文件)
+    - [下载mybatis的jar包](/blog/44aa2f70/#下载mybatis的jar包)
+    - [从mybatis的jar包复制模板文件](/blog/44aa2f70/#从mybatis的jar包复制模板文件)
+    - [保存模板文件到本地](/blog/44aa2f70/#保存模板文件到本地)
+    - [引入模板文件到eclipse中](/blog/44aa2f70/#引入模板文件到eclipse中)
+        - [引入mybatis-3-config.dtd](/blog/44aa2f70/#引入mybatis-3-config-dtd)
+        - [引入mybatis-3-mapper.dtd](/blog/44aa2f70/#引入mybatis-3-mapper-dtd)
+    - [使用模板文件创建mybatis-config.xml文件](/blog/44aa2f70/#使用模板文件创建mybatis-config-xml文件)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

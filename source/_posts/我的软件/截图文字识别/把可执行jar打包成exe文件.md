@@ -4,23 +4,23 @@ categories:
   - 我的软件
   - 截图文字识别
 date: 2018-10-10 19:39:02
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: d7d49994
 ---
-- [前言](/blog/html/d7d49994/#前言)
-- [使用eclipse把java项目打包为可执行jar包](/blog/html/d7d49994/#使用eclipse把java项目打包为可执行jar包)
-- [下载安装破解exe4j](/blog/html/d7d49994/#下载安装破解exe4j)
-    - [下载exe4j](/blog/html/d7d49994/#下载exe4j)
-    - [解压压缩包](/blog/html/d7d49994/#解压压缩包)
-    - [安装](/blog/html/d7d49994/#安装)
-    - [破解](/blog/html/d7d49994/#破解)
-- [打包jar为exe](/blog/html/d7d49994/#打包jar为exe)
-    - [Project type](/blog/html/d7d49994/#Project-type)
-    - [Application info](/blog/html/d7d49994/#Application-info)
-    - [Executable info](/blog/html/d7d49994/#Executable-info)
-    - [Java invocation](/blog/html/d7d49994/#Java-invocation)
-    - [JRE](/blog/html/d7d49994/#JRE)
-- [运行生成的exe](/blog/html/d7d49994/#运行生成的exe)
+- [前言](/blog/d7d49994/#前言)
+- [使用eclipse把java项目打包为可执行jar包](/blog/d7d49994/#使用eclipse把java项目打包为可执行jar包)
+- [下载安装破解exe4j](/blog/d7d49994/#下载安装破解exe4j)
+    - [下载exe4j](/blog/d7d49994/#下载exe4j)
+    - [解压压缩包](/blog/d7d49994/#解压压缩包)
+    - [安装](/blog/d7d49994/#安装)
+    - [破解](/blog/d7d49994/#破解)
+- [打包jar为exe](/blog/d7d49994/#打包jar为exe)
+    - [Project type](/blog/d7d49994/#Project-type)
+    - [Application info](/blog/d7d49994/#Application-info)
+    - [Executable info](/blog/d7d49994/#Executable-info)
+    - [Java invocation](/blog/d7d49994/#Java-invocation)
+    - [JRE](/blog/d7d49994/#JRE)
+- [运行生成的exe](/blog/d7d49994/#运行生成的exe)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -5,10 +5,10 @@ categories:
   - Hexo搭建博客
   - SEO
 date: 2018-10-30 11:11:24
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 5f9ceba2
 ---
-- [Hexo安装插件支持百度熊掌号自动推送](/blog/html/5f9ceba2/#Hexo安装插件支持百度熊掌号自动推送)
+- [Hexo安装插件支持百度熊掌号自动推送](/blog/5f9ceba2/#Hexo安装插件支持百度熊掌号自动推送)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

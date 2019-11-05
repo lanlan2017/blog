@@ -5,17 +5,17 @@ categories:
   - Hexo搭建博客
   - SEO
 date: 2018-10-31 11:18:30
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 7ac3f85
 ---
-- [百度主动推送的作用](/blog/html/7ac3f85/#百度主动推送的作用)
-- [在hexo中添加百度主动推送功能](/blog/html/7ac3f85/#在hexo中添加百度主动推送功能)
-- [安装hexo-baidu-url-submit插件](/blog/html/7ac3f85/#安装hexo-baidu-url-submit插件)
-    - [在站点配置文件中添加baidu-url-submit的配置项](/blog/html/7ac3f85/#在站点配置文件中添加baidu-url-submit的配置项)
-    - [在站点配置文件中加入新的deploy配置项](/blog/html/7ac3f85/#在站点配置文件中加入新的deploy配置项)
-- [验证配置是否成功](/blog/html/7ac3f85/#验证配置是否成功)
-- [卸载](/blog/html/7ac3f85/#卸载)
-- [参考链接](/blog/html/7ac3f85/#参考链接)
+- [百度主动推送的作用](/blog/7ac3f85/#百度主动推送的作用)
+- [在hexo中添加百度主动推送功能](/blog/7ac3f85/#在hexo中添加百度主动推送功能)
+- [安装hexo-baidu-url-submit插件](/blog/7ac3f85/#安装hexo-baidu-url-submit插件)
+    - [在站点配置文件中添加baidu-url-submit的配置项](/blog/7ac3f85/#在站点配置文件中添加baidu-url-submit的配置项)
+    - [在站点配置文件中加入新的deploy配置项](/blog/7ac3f85/#在站点配置文件中加入新的deploy配置项)
+- [验证配置是否成功](/blog/7ac3f85/#验证配置是否成功)
+- [卸载](/blog/7ac3f85/#卸载)
+- [参考链接](/blog/7ac3f85/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

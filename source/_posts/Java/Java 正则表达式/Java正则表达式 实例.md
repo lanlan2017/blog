@@ -4,14 +4,14 @@ categories:
   - Java
   - Java 正则表达式
 date: 2018-08-06 18:24:40
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: aa025735
 ---
-- [匹配Email](/blog/html/aa025735/#匹配Email)
-- [常用正则表达式](/blog/html/aa025735/#常用正则表达式)
-- [删除重复字符](/blog/html/aa025735/#删除重复字符)
-- [对IP地址进行排序](/blog/html/aa025735/#对IP地址进行排序)
-        - [小结](/blog/html/aa025735/#小结)
+- [匹配Email](/blog/aa025735/#匹配Email)
+- [常用正则表达式](/blog/aa025735/#常用正则表达式)
+- [删除重复字符](/blog/aa025735/#删除重复字符)
+- [对IP地址进行排序](/blog/aa025735/#对IP地址进行排序)
+        - [小结](/blog/aa025735/#小结)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -3,11 +3,11 @@ title: Git错误集合
 categories: 
   - Git
 date: 2019-04-30 23:53:43
-updated: 2019-10-31 20:21:37
+updated: 2019-11-04 17:02:00
 abbrlink: 7e675acc
 ---
-- [git error:bad signature](/blog/html/7e675acc/#git-error-bad-signature)
-- [ERROR: You must verify your email address.](/blog/html/7e675acc/#ERROR-You-must-verify-your-email-address)
+- [git error:bad signature](/blog/7e675acc/#git-error-bad-signature)
+- [ERROR: You must verify your email address.](/blog/7e675acc/#ERROR-You-must-verify-your-email-address)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

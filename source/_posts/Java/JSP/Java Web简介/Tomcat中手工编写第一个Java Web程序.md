@@ -5,21 +5,21 @@ categories:
   - JSP
   - Java Web简介
 date: 2018-12-01 11:52:15
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: ccc57c12
 ---
-- [步骤](/blog/html/ccc57c12/#步骤)
-- [创建项目目录结构](/blog/html/ccc57c12/#创建项目目录结构)
-    - [创建项目目录](/blog/html/ccc57c12/#创建项目目录)
-    - [创建index.jsp](/blog/html/ccc57c12/#创建index-jsp)
-    - [创建Web_INF文件夹](/blog/html/ccc57c12/#创建Web-INF文件夹)
-        - [创建web.xml文件](/blog/html/ccc57c12/#创建web-xml文件)
-        - [编写web.xml文件](/blog/html/ccc57c12/#编写web-xml文件)
-        - [创建classes目录](/blog/html/ccc57c12/#创建classes目录)
-        - [创建lib目录](/blog/html/ccc57c12/#创建lib目录)
-    - [启动tomcat服务器](/blog/html/ccc57c12/#启动tomcat服务器)
-    - [浏览器查看](/blog/html/ccc57c12/#浏览器查看)
-    - [参考链接](/blog/html/ccc57c12/#参考链接)
+- [步骤](/blog/ccc57c12/#步骤)
+- [创建项目目录结构](/blog/ccc57c12/#创建项目目录结构)
+    - [创建项目目录](/blog/ccc57c12/#创建项目目录)
+    - [创建index.jsp](/blog/ccc57c12/#创建index-jsp)
+    - [创建Web_INF文件夹](/blog/ccc57c12/#创建Web-INF文件夹)
+        - [创建web.xml文件](/blog/ccc57c12/#创建web-xml文件)
+        - [编写web.xml文件](/blog/ccc57c12/#编写web-xml文件)
+        - [创建classes目录](/blog/ccc57c12/#创建classes目录)
+        - [创建lib目录](/blog/ccc57c12/#创建lib目录)
+    - [启动tomcat服务器](/blog/ccc57c12/#启动tomcat服务器)
+    - [浏览器查看](/blog/ccc57c12/#浏览器查看)
+    - [参考链接](/blog/ccc57c12/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

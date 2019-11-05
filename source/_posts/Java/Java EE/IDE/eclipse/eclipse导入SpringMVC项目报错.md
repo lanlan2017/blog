@@ -6,13 +6,13 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-14 22:21:07
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: ced29b25
 ---
-- [问题描述](/blog/html/ced29b25/#问题描述)
-- [修改JRE版本](/blog/html/ced29b25/#修改JRE版本)
-- [修改Spring MVC配置文件的第一行](/blog/html/ced29b25/#修改Spring-MVC配置文件的第一行)
-    - [解决方案](/blog/html/ced29b25/#解决方案)
+- [问题描述](/blog/ced29b25/#问题描述)
+- [修改JRE版本](/blog/ced29b25/#修改JRE版本)
+- [修改Spring MVC配置文件的第一行](/blog/ced29b25/#修改Spring-MVC配置文件的第一行)
+    - [解决方案](/blog/ced29b25/#解决方案)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

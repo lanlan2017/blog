@@ -4,23 +4,23 @@ categories:
   - Java
   - Java 正则表达式
 date: 2018-08-06 23:46:40
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 12fb64fe
 ---
-- [String支持正则表达式是的方法](/blog/html/12fb64fe/#String支持正则表达式是的方法)
-- [matches()方法](/blog/html/12fb64fe/#matches-方法)
-    - [实例：](/blog/html/12fb64fe/#实例：)
-    - [拓展：点号**.**能匹配**\r\n**之外的任意字符](/blog/html/12fb64fe/#拓展：点号-能匹配-r-n之外的任意字符)
-- [**split()**方法](/blog/html/12fb64fe/#split-方法)
-    - [返回结果](/blog/html/12fb64fe/#返回结果)
-    - [limit参数：](/blog/html/12fb64fe/#limit参数：)
-    - [分割符不相邻的情况**：**](/blog/html/12fb64fe/#分割符不相邻的情况：)
-    - [实例1分隔符相邻的情况:**o**:](/blog/html/12fb64fe/#实例1分隔符相邻的情况-o)
-    - [小结：](/blog/html/12fb64fe/#小结：)
-- [replaceFirst()方法](/blog/html/12fb64fe/#replaceFirst-方法)
-    - [实例](/blog/html/12fb64fe/#实例)
-- [replaceAll()方法](/blog/html/12fb64fe/#replaceAll-方法)
-    - [实例](/blog/html/12fb64fe/#实例)
+- [String支持正则表达式是的方法](/blog/12fb64fe/#String支持正则表达式是的方法)
+- [matches()方法](/blog/12fb64fe/#matches-方法)
+    - [实例：](/blog/12fb64fe/#实例：)
+    - [拓展：点号**.**能匹配**\r\n**之外的任意字符](/blog/12fb64fe/#拓展：点号-能匹配-r-n之外的任意字符)
+- [**split()**方法](/blog/12fb64fe/#split-方法)
+    - [返回结果](/blog/12fb64fe/#返回结果)
+    - [limit参数：](/blog/12fb64fe/#limit参数：)
+    - [分割符不相邻的情况**：**](/blog/12fb64fe/#分割符不相邻的情况：)
+    - [实例1分隔符相邻的情况:**o**:](/blog/12fb64fe/#实例1分隔符相邻的情况-o)
+    - [小结：](/blog/12fb64fe/#小结：)
+- [replaceFirst()方法](/blog/12fb64fe/#replaceFirst-方法)
+    - [实例](/blog/12fb64fe/#实例)
+- [replaceAll()方法](/blog/12fb64fe/#replaceAll-方法)
+    - [实例](/blog/12fb64fe/#实例)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -5,19 +5,19 @@ categories:
   - JSP
   - 基础语法
 date: 2018-12-20 01:09:14
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 99c62cee
 ---
-- [脚本标识概述](/blog/html/99c62cee/#脚本标识概述)
-- [JSP声明](/blog/html/99c62cee/#JSP声明)
-    - [语法](/blog/html/99c62cee/#语法)
-    - [实例](/blog/html/99c62cee/#实例)
-- [JSP表达式](/blog/html/99c62cee/#JSP表达式)
-    - [实例](/blog/html/99c62cee/#实例)
-- [代码片段](/blog/html/99c62cee/#代码片段)
-    - [语法格式](/blog/html/99c62cee/#语法格式)
-    - [代码片段与声明的区别](/blog/html/99c62cee/#代码片段与声明的区别)
-    - [实例](/blog/html/99c62cee/#实例)
+- [脚本标识概述](/blog/99c62cee/#脚本标识概述)
+- [JSP声明](/blog/99c62cee/#JSP声明)
+    - [语法](/blog/99c62cee/#语法)
+    - [实例](/blog/99c62cee/#实例)
+- [JSP表达式](/blog/99c62cee/#JSP表达式)
+    - [实例](/blog/99c62cee/#实例)
+- [代码片段](/blog/99c62cee/#代码片段)
+    - [语法格式](/blog/99c62cee/#语法格式)
+    - [代码片段与声明的区别](/blog/99c62cee/#代码片段与声明的区别)
+    - [实例](/blog/99c62cee/#实例)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

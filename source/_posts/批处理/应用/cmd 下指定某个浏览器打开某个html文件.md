@@ -4,12 +4,12 @@ categories:
   - 批处理
   - 应用
 date: 2019-01-31 18:29:25
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: ce34466e
 ---
-- [使用Chrome浏览器打开指定html文件](/blog/html/ce34466e/#使用Chrome浏览器打开指定html文件)
-- [创建批处理脚本chrome.bat来打开html文件](/blog/html/ce34466e/#创建批处理脚本chrome-bat来打开html文件)
-- [chrome.bat配置到path环境变量中](/blog/html/ce34466e/#chrome-bat配置到path环境变量中)
+- [使用Chrome浏览器打开指定html文件](/blog/ce34466e/#使用Chrome浏览器打开指定html文件)
+- [创建批处理脚本chrome.bat来打开html文件](/blog/ce34466e/#创建批处理脚本chrome-bat来打开html文件)
+- [chrome.bat配置到path环境变量中](/blog/ce34466e/#chrome-bat配置到path环境变量中)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

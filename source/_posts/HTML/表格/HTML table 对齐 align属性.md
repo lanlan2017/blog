@@ -4,11 +4,11 @@ categories:
   - HTML
   - 表格
 date: 2019-03-28 14:47:35
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: aa51abd2
 ---
-- [HTML 表格对齐方式](/blog/html/aa51abd2/#HTML-表格对齐方式)
-- [参考链接](/blog/html/aa51abd2/#参考链接)
+- [HTML 表格对齐方式](/blog/aa51abd2/#HTML-表格对齐方式)
+- [参考链接](/blog/aa51abd2/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

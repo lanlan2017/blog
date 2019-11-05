@@ -5,13 +5,13 @@ categories:
   - Java 基础
   - 字符串处理
 date: 2019-04-03 22:05:32
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 9d84ecc2
 ---
-- [原理](/blog/html/9d84ecc2/#原理)
-    - [ASCII码运算](/blog/html/9d84ecc2/#ASCII码运算)
-    - [结论](/blog/html/9d84ecc2/#结论)
-- [代码](/blog/html/9d84ecc2/#代码)
+- [原理](/blog/9d84ecc2/#原理)
+    - [ASCII码运算](/blog/9d84ecc2/#ASCII码运算)
+    - [结论](/blog/9d84ecc2/#结论)
+- [代码](/blog/9d84ecc2/#代码)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

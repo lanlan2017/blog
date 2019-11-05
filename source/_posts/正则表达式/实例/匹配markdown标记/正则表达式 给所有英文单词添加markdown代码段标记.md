@@ -5,13 +5,13 @@ categories:
   - 实例
   - 匹配markdown标记
 date: 2019-03-16 15:47:44
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: b7a12cba
 ---
-- [问题描述](/blog/html/b7a12cba/#问题描述)
-- [实现](/blog/html/b7a12cba/#实现)
-    - [匹配正则](/blog/html/b7a12cba/#匹配正则)
-    - [替换正则](/blog/html/b7a12cba/#替换正则)
+- [问题描述](/blog/b7a12cba/#问题描述)
+- [实现](/blog/b7a12cba/#实现)
+    - [匹配正则](/blog/b7a12cba/#匹配正则)
+    - [替换正则](/blog/b7a12cba/#替换正则)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -5,16 +5,16 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-04-03 17:24:14
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: 318f3e6b
 ---
-- [问题描述](/blog/html/318f3e6b/#问题描述)
-- [判断当前是否可以联网的批处理](/blog/html/318f3e6b/#判断当前是否可以联网的批处理)
-- [应用到程序中](/blog/html/318f3e6b/#应用到程序中)
-    - [安装程序](/blog/html/318f3e6b/#安装程序)
-    - [执行程序](/blog/html/318f3e6b/#执行程序)
-    - [运行结果](/blog/html/318f3e6b/#运行结果)
-    - [ping命令发送一次请求](/blog/html/318f3e6b/#ping命令发送一次请求)
+- [问题描述](/blog/318f3e6b/#问题描述)
+- [判断当前是否可以联网的批处理](/blog/318f3e6b/#判断当前是否可以联网的批处理)
+- [应用到程序中](/blog/318f3e6b/#应用到程序中)
+    - [安装程序](/blog/318f3e6b/#安装程序)
+    - [执行程序](/blog/318f3e6b/#执行程序)
+    - [运行结果](/blog/318f3e6b/#运行结果)
+    - [ping命令发送一次请求](/blog/318f3e6b/#ping命令发送一次请求)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

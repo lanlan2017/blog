@@ -5,18 +5,18 @@ categories:
   - JSP
   - Java Web简介
 date: 2018-12-08 21:46:18
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 6d6d5543
 ---
-- [什么是Windows服务](/blog/html/6d6d5543/#什么是Windows服务)
-- [安装tomcat到Windows 服务](/blog/html/6d6d5543/#安装tomcat到Windows-服务)
-- [启动tomcat服务器](/blog/html/6d6d5543/#启动tomcat服务器)
-- [关闭tomcat服务器](/blog/html/6d6d5543/#关闭tomcat服务器)
-- [重启tomcat服务](/blog/html/6d6d5543/#重启tomcat服务)
-- [重启时删除日志文件](/blog/html/6d6d5543/#重启时删除日志文件)
-- [删除tomcat windows服务](/blog/html/6d6d5543/#删除tomcat-windows服务)
-- [比较tomcat windows服务方式和startup.bat方法](/blog/html/6d6d5543/#比较tomcat-windows服务方式和startup-bat方法)
-- [参考链接](/blog/html/6d6d5543/#参考链接)
+- [什么是Windows服务](/blog/6d6d5543/#什么是Windows服务)
+- [安装tomcat到Windows 服务](/blog/6d6d5543/#安装tomcat到Windows-服务)
+- [启动tomcat服务器](/blog/6d6d5543/#启动tomcat服务器)
+- [关闭tomcat服务器](/blog/6d6d5543/#关闭tomcat服务器)
+- [重启tomcat服务](/blog/6d6d5543/#重启tomcat服务)
+- [重启时删除日志文件](/blog/6d6d5543/#重启时删除日志文件)
+- [删除tomcat windows服务](/blog/6d6d5543/#删除tomcat-windows服务)
+- [比较tomcat windows服务方式和startup.bat方法](/blog/6d6d5543/#比较tomcat-windows服务方式和startup-bat方法)
+- [参考链接](/blog/6d6d5543/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

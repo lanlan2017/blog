@@ -4,13 +4,13 @@ categories:
   - Java
   - Java 集合
 date: 2018-12-17 20:48:33
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: b5d86588
 ---
-- [Stack对象简介](/blog/html/b5d86588/#Stack对象简介)
-- [Stack对象方法](/blog/html/b5d86588/#Stack对象方法)
-    - [构造方法](/blog/html/b5d86588/#构造方法)
-    - [常用方法](/blog/html/b5d86588/#常用方法)
+- [Stack对象简介](/blog/b5d86588/#Stack对象简介)
+- [Stack对象方法](/blog/b5d86588/#Stack对象方法)
+    - [构造方法](/blog/b5d86588/#构造方法)
+    - [常用方法](/blog/b5d86588/#常用方法)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

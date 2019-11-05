@@ -4,24 +4,24 @@ categories:
   - MySQL
   - 安装
 date: 2018-12-14 01:58:11
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: e124ac2c
 ---
-- [安装](/blog/html/e124ac2c/#安装)
-- [安装mysql服务](/blog/html/e124ac2c/#安装mysql服务)
-- [启动mysql服务](/blog/html/e124ac2c/#启动mysql服务)
-- [使用mysql](/blog/html/e124ac2c/#使用mysql)
-    - [验证](/blog/html/e124ac2c/#验证)
-- [mysql用户登录](/blog/html/e124ac2c/#mysql用户登录)
-- [修改root用户密码](/blog/html/e124ac2c/#修改root用户密码)
-    - [情况1 记得原来root用户的密码](/blog/html/e124ac2c/#情况1-记得原来root用户的密码)
-    - [情况2 记不得root用户密码](/blog/html/e124ac2c/#情况2-记不得root用户密码)
-- [其他知识](/blog/html/e124ac2c/#其他知识)
-    - [关闭mysql服务](/blog/html/e124ac2c/#关闭mysql服务)
-- [debug](/blog/html/e124ac2c/#debug)
-    - [The service already exists](/blog/html/e124ac2c/#The-service-already-exists)
-    - [解决方案](/blog/html/e124ac2c/#解决方案)
-- [参考链接](/blog/html/e124ac2c/#参考链接)
+- [安装](/blog/e124ac2c/#安装)
+- [安装mysql服务](/blog/e124ac2c/#安装mysql服务)
+- [启动mysql服务](/blog/e124ac2c/#启动mysql服务)
+- [使用mysql](/blog/e124ac2c/#使用mysql)
+    - [验证](/blog/e124ac2c/#验证)
+- [mysql用户登录](/blog/e124ac2c/#mysql用户登录)
+- [修改root用户密码](/blog/e124ac2c/#修改root用户密码)
+    - [情况1 记得原来root用户的密码](/blog/e124ac2c/#情况1-记得原来root用户的密码)
+    - [情况2 记不得root用户密码](/blog/e124ac2c/#情况2-记不得root用户密码)
+- [其他知识](/blog/e124ac2c/#其他知识)
+    - [关闭mysql服务](/blog/e124ac2c/#关闭mysql服务)
+- [debug](/blog/e124ac2c/#debug)
+    - [The service already exists](/blog/e124ac2c/#The-service-already-exists)
+    - [解决方案](/blog/e124ac2c/#解决方案)
+- [参考链接](/blog/e124ac2c/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

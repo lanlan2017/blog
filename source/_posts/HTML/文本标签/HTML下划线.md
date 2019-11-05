@@ -4,16 +4,16 @@ categories:
   - HTML
   - 文本标签
 date: 2019-02-13 00:23:30
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 9f0a034b
 ---
-- [CSS设置下划线与文字间距距离(CSS文字下划线距离设置)](/blog/html/9f0a034b/#CSS设置下划线与文字间距距离-CSS文字下划线距离设置)
-    - [使用CSS单词介绍](/blog/html/9f0a034b/#使用CSS单词介绍)
-    - [读音](/blog/html/9f0a034b/#读音)
-- [实现过程](/blog/html/9f0a034b/#实现过程)
-- [CSS底部边框实现下划线效果](/blog/html/9f0a034b/#CSS底部边框实现下划线效果)
-    - [完整代码](/blog/html/9f0a034b/#完整代码)
-- [参考链接](/blog/html/9f0a034b/#参考链接)
+- [CSS设置下划线与文字间距距离(CSS文字下划线距离设置)](/blog/9f0a034b/#CSS设置下划线与文字间距距离-CSS文字下划线距离设置)
+    - [使用CSS单词介绍](/blog/9f0a034b/#使用CSS单词介绍)
+    - [读音](/blog/9f0a034b/#读音)
+- [实现过程](/blog/9f0a034b/#实现过程)
+- [CSS底部边框实现下划线效果](/blog/9f0a034b/#CSS底部边框实现下划线效果)
+    - [完整代码](/blog/9f0a034b/#完整代码)
+- [参考链接](/blog/9f0a034b/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

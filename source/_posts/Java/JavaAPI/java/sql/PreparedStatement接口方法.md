@@ -6,26 +6,26 @@ categories:
   - java
   - sql
 date: 2019-05-21 23:50:19
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 87bdbf10
 ---
-- [PreparedStatement接口方法2](/blog/html/87bdbf10/#PreparedStatement接口方法2)
-    - [执行SQL语句的方法](/blog/html/87bdbf10/#执行SQL语句的方法)
-    - [其他方法](/blog/html/87bdbf10/#其他方法)
-    - [getXXX方法](/blog/html/87bdbf10/#getXXX方法)
-    - [setXXX方法](/blog/html/87bdbf10/#setXXX方法)
-        - [setObject方法](/blog/html/87bdbf10/#setObject方法)
-        - [设置数组的方法](/blog/html/87bdbf10/#设置数组的方法)
-        - [设置输入流的方法](/blog/html/87bdbf10/#设置输入流的方法)
-        - [设置大数字对象的方法](/blog/html/87bdbf10/#设置大数字对象的方法)
-        - [Set基本数据类型方法](/blog/html/87bdbf10/#Set基本数据类型方法)
-        - [设定为Reader对象的方法](/blog/html/87bdbf10/#设定为Reader对象的方法)
-        - [set时间方法](/blog/html/87bdbf10/#set时间方法)
-        - [setString方法](/blog/html/87bdbf10/#setString方法)
-        - [setNull方法](/blog/html/87bdbf10/#setNull方法)
-        - [其他set方法](/blog/html/87bdbf10/#其他set方法)
-    - [从接口 java.sql.Statement 继承的方法](/blog/html/87bdbf10/#从接口-java-sql-Statement-继承的方法)
-    - [从接口 java.sql.Wrapper 继承的方法](/blog/html/87bdbf10/#从接口-java-sql-Wrapper-继承的方法)
+- [PreparedStatement接口方法2](/blog/87bdbf10/#PreparedStatement接口方法2)
+    - [执行SQL语句的方法](/blog/87bdbf10/#执行SQL语句的方法)
+    - [其他方法](/blog/87bdbf10/#其他方法)
+    - [getXXX方法](/blog/87bdbf10/#getXXX方法)
+    - [setXXX方法](/blog/87bdbf10/#setXXX方法)
+        - [setObject方法](/blog/87bdbf10/#setObject方法)
+        - [设置数组的方法](/blog/87bdbf10/#设置数组的方法)
+        - [设置输入流的方法](/blog/87bdbf10/#设置输入流的方法)
+        - [设置大数字对象的方法](/blog/87bdbf10/#设置大数字对象的方法)
+        - [Set基本数据类型方法](/blog/87bdbf10/#Set基本数据类型方法)
+        - [设定为Reader对象的方法](/blog/87bdbf10/#设定为Reader对象的方法)
+        - [set时间方法](/blog/87bdbf10/#set时间方法)
+        - [setString方法](/blog/87bdbf10/#setString方法)
+        - [setNull方法](/blog/87bdbf10/#setNull方法)
+        - [其他set方法](/blog/87bdbf10/#其他set方法)
+    - [从接口 java.sql.Statement 继承的方法](/blog/87bdbf10/#从接口-java-sql-Statement-继承的方法)
+    - [从接口 java.sql.Wrapper 继承的方法](/blog/87bdbf10/#从接口-java-sql-Wrapper-继承的方法)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

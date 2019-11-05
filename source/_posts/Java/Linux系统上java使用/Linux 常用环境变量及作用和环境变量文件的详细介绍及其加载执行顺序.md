@@ -4,18 +4,18 @@ categories:
   - Java
   - Linux系统上java使用
 date: 2018-08-11 15:28:20
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 6249459e
 ---
-- [前言：](/blog/html/6249459e/#前言：)
-- [一、环境变量文件介绍](/blog/html/6249459e/#一、环境变量文件介绍)
-- [二、Linux的变量种类](/blog/html/6249459e/#二、Linux的变量种类)
-- [三、Linux 环境变量文件](/blog/html/6249459e/#三、Linux-环境变量文件)
-    - [系统级：](/blog/html/6249459e/#系统级：)
-    - [/etc/bashrc](/blog/html/6249459e/#-etc-bashrc)
-- [用户级：](/blog/html/6249459e/#用户级：)
-    - [**~/.profile**](/blog/html/6249459e/#~-profile)
-    - [~/.bashrc](/blog/html/6249459e/#~-bashrc)
+- [前言：](/blog/6249459e/#前言：)
+- [一、环境变量文件介绍](/blog/6249459e/#一、环境变量文件介绍)
+- [二、Linux的变量种类](/blog/6249459e/#二、Linux的变量种类)
+- [三、Linux 环境变量文件](/blog/6249459e/#三、Linux-环境变量文件)
+    - [系统级：](/blog/6249459e/#系统级：)
+    - [/etc/bashrc](/blog/6249459e/#-etc-bashrc)
+- [用户级：](/blog/6249459e/#用户级：)
+    - [**~/.profile**](/blog/6249459e/#~-profile)
+    - [~/.bashrc](/blog/6249459e/#~-bashrc)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

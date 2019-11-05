@@ -4,10 +4,10 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-22 14:32:39
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: d4b540e
 ---
-- [区别](/blog/html/d4b540e/#区别)
+- [区别](/blog/d4b540e/#区别)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

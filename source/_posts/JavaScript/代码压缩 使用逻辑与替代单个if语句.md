@@ -3,11 +3,11 @@ title: 代码压缩 使用逻辑与替代单个if语句
 categories: 
   - JavaScript
 date: 2018-11-22 22:32:15
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: 4fd080c1
 ---
-- [发现过程](/blog/html/4fd080c1/#发现过程)
-- [原理](/blog/html/4fd080c1/#原理)
+- [发现过程](/blog/4fd080c1/#发现过程)
+- [原理](/blog/4fd080c1/#原理)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

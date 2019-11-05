@@ -4,13 +4,13 @@ categories:
   - Java
   - 反射
 date: 2019-06-09 22:53:08
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 5bc9db15
 ---
-- [如何读取src目录下的文件](/blog/html/5bc9db15/#如何读取src目录下的文件)
-- [我的用法](/blog/html/5bc9db15/#我的用法)
-- [读取资源文件的工具类](/blog/html/5bc9db15/#读取资源文件的工具类)
-- [使用示例](/blog/html/5bc9db15/#使用示例)
+- [如何读取src目录下的文件](/blog/5bc9db15/#如何读取src目录下的文件)
+- [我的用法](/blog/5bc9db15/#我的用法)
+- [读取资源文件的工具类](/blog/5bc9db15/#读取资源文件的工具类)
+- [使用示例](/blog/5bc9db15/#使用示例)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -4,11 +4,11 @@ categories:
   - C语言
   - 文件
 date: 2018-11-16 23:11:18
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:00
 abbrlink: a579418
 ---
-- [代码](/blog/html/a579418/#代码)
-- [参考链接](/blog/html/a579418/#参考链接)
+- [代码](/blog/a579418/#代码)
+- [参考链接](/blog/a579418/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

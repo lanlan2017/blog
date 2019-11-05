@@ -6,11 +6,11 @@ categories:
   - markdown语法
   - 使用html标签
 date: 2018-10-29 18:26:12
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:02
 abbrlink: f0d2185d
 ---
-- [问题描述](/blog/html/f0d2185d/#问题描述)
-- [效果](/blog/html/f0d2185d/#效果)
+- [问题描述](/blog/f0d2185d/#问题描述)
+- [效果](/blog/f0d2185d/#效果)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

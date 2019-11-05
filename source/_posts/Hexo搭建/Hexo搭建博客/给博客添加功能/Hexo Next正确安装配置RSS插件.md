@@ -5,23 +5,23 @@ categories:
   - Hexo搭建博客
   - 给博客添加功能
 date: 2018-10-25 19:13:51
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 82e4ee34
 ---
-- [安装插件](/blog/html/82e4ee34/#安装插件)
-- [修改站点配置文件](/blog/html/82e4ee34/#修改站点配置文件)
-- [设置RSS插件](/blog/html/82e4ee34/#设置RSS插件)
-- [修改主题配置文件](/blog/html/82e4ee34/#修改主题配置文件)
-- [Set rss to false to disable feed link.](/blog/html/82e4ee34/#Set-rss-to-false-to-disable-feed-link)
-- [Leave rss as empty to use site's feed link, and install hexo-generator-feed: **npm install hexo-generator-feed --save**.](/blog/html/82e4ee34/#Leave-rss-as-empty-to-use-site's-feed-link,-and-install-hexo-generator-feed-npm-install-hexo-generator-feed-save)
-- [Set rss to specific value if you have burned your feed already.](/blog/html/82e4ee34/#Set-rss-to-specific-value-if-you-have-burned-your-feed-already)
-- [配置RSS](/blog/html/82e4ee34/#配置RSS)
-- [type: atom](/blog/html/82e4ee34/#type-atom)
-- [rss localhost:4000](/blog/html/82e4ee34/#rss-localhost-4000)
-- [path: atom.xml](/blog/html/82e4ee34/#path-atom-xml)
-- [](/blog/html/82e4ee34/#)
-- [limit: 0](/blog/html/82e4ee34/#limit-0)
-- [部署看效果](/blog/html/82e4ee34/#部署看效果)
+- [安装插件](/blog/82e4ee34/#安装插件)
+- [修改站点配置文件](/blog/82e4ee34/#修改站点配置文件)
+- [设置RSS插件](/blog/82e4ee34/#设置RSS插件)
+- [修改主题配置文件](/blog/82e4ee34/#修改主题配置文件)
+- [Set rss to false to disable feed link.](/blog/82e4ee34/#Set-rss-to-false-to-disable-feed-link)
+- [Leave rss as empty to use site's feed link, and install hexo-generator-feed: **npm install hexo-generator-feed --save**.](/blog/82e4ee34/#Leave-rss-as-empty-to-use-site's-feed-link,-and-install-hexo-generator-feed-npm-install-hexo-generator-feed-save)
+- [Set rss to specific value if you have burned your feed already.](/blog/82e4ee34/#Set-rss-to-specific-value-if-you-have-burned-your-feed-already)
+- [配置RSS](/blog/82e4ee34/#配置RSS)
+- [type: atom](/blog/82e4ee34/#type-atom)
+- [rss localhost:4000](/blog/82e4ee34/#rss-localhost-4000)
+- [path: atom.xml](/blog/82e4ee34/#path-atom-xml)
+- [](/blog/82e4ee34/#)
+- [limit: 0](/blog/82e4ee34/#limit-0)
+- [部署看效果](/blog/82e4ee34/#部署看效果)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

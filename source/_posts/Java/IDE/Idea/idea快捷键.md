@@ -5,12 +5,12 @@ categories:
   - IDE
   - Idea
 date: 2019-08-08 14:41:36
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 385c30d
 ---
-- [idea快捷键](/blog/html/385c30d/#idea快捷键)
-    - [idea向上/向下插入空行](/blog/html/385c30d/#idea向上-向下插入空行)
-- [idea中使用eclipse快捷键](/blog/html/385c30d/#idea中使用eclipse快捷键)
+- [idea快捷键](/blog/385c30d/#idea快捷键)
+    - [idea向上/向下插入空行](/blog/385c30d/#idea向上-向下插入空行)
+- [idea中使用eclipse快捷键](/blog/385c30d/#idea中使用eclipse快捷键)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -4,24 +4,24 @@ categories:
   - Java
   - Java 集合
 date: 2018-11-26 18:53:21
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: fdae6905
 ---
-- [基本使用步骤](/blog/html/fdae6905/#基本使用步骤)
-    - [创建xxx.properties文件](/blog/html/fdae6905/#创建xxx-properties文件)
-- [部署网站的地址](/blog/html/fdae6905/#部署网站的地址)
-    - [实例化properties类](/blog/html/fdae6905/#实例化properties类)
-    - [加载配置文件](/blog/html/fdae6905/#加载配置文件)
-    - [读取键值对](/blog/html/fdae6905/#读取键值对)
-    - [设置键值对](/blog/html/fdae6905/#设置键值对)
-    - [获取所有键](/blog/html/fdae6905/#获取所有键)
-    - [写入输出流的方法](/blog/html/fdae6905/#写入输出流的方法)
-    - [写配置文件](/blog/html/fdae6905/#写配置文件)
-- [实例](/blog/html/fdae6905/#实例)
-    - [读取一个配置](/blog/html/fdae6905/#读取一个配置)
-- [部署网站的地址](/blog/html/fdae6905/#部署网站的地址)
-    - [遍历配置文件](/blog/html/fdae6905/#遍历配置文件)
-- [参考链接](/blog/html/fdae6905/#参考链接)
+- [基本使用步骤](/blog/fdae6905/#基本使用步骤)
+    - [创建xxx.properties文件](/blog/fdae6905/#创建xxx-properties文件)
+- [部署网站的地址](/blog/fdae6905/#部署网站的地址)
+    - [实例化properties类](/blog/fdae6905/#实例化properties类)
+    - [加载配置文件](/blog/fdae6905/#加载配置文件)
+    - [读取键值对](/blog/fdae6905/#读取键值对)
+    - [设置键值对](/blog/fdae6905/#设置键值对)
+    - [获取所有键](/blog/fdae6905/#获取所有键)
+    - [写入输出流的方法](/blog/fdae6905/#写入输出流的方法)
+    - [写配置文件](/blog/fdae6905/#写配置文件)
+- [实例](/blog/fdae6905/#实例)
+    - [读取一个配置](/blog/fdae6905/#读取一个配置)
+- [部署网站的地址](/blog/fdae6905/#部署网站的地址)
+    - [遍历配置文件](/blog/fdae6905/#遍历配置文件)
+- [参考链接](/blog/fdae6905/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

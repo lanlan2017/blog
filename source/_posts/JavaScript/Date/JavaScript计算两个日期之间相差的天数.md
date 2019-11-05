@@ -4,14 +4,14 @@ categories:
   - JavaScript
   - Date
 date: 2018-11-24 14:03:53
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: b57484e
 ---
-- [算法描述](/blog/html/b57484e/#算法描述)
-- [方法](/blog/html/b57484e/#方法)
-    - [js求两个日期之间相隔天数的方法 字符串参数](/blog/html/b57484e/#js求两个日期之间相隔天数的方法-字符串参数)
-    - [js获取当日的格式化时间](/blog/html/b57484e/#js获取当日的格式化时间)
-- [实例](/blog/html/b57484e/#实例)
+- [算法描述](/blog/b57484e/#算法描述)
+- [方法](/blog/b57484e/#方法)
+    - [js求两个日期之间相隔天数的方法 字符串参数](/blog/b57484e/#js求两个日期之间相隔天数的方法-字符串参数)
+    - [js获取当日的格式化时间](/blog/b57484e/#js获取当日的格式化时间)
+- [实例](/blog/b57484e/#实例)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -4,31 +4,31 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-10 15:00:32
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 3f2a064c
 ---
-- [BufferedReader](/blog/html/3f2a064c/#BufferedReader)
-    - [继承关系](/blog/html/3f2a064c/#继承关系)
-    - [构造方法](/blog/html/3f2a064c/#构造方法)
-    - [成员方法](/blog/html/3f2a064c/#成员方法)
-    - [读取文件实例](/blog/html/3f2a064c/#读取文件实例)
-        - [读取文件: 一个字符一个字符的读取](/blog/html/3f2a064c/#读取文件-一个字符一个字符的读取)
-        - [读取文件:一个数组一个数组的读取](/blog/html/3f2a064c/#读取文件-一个数组一个数组的读取)
-        - [读取文件:一行一行的读取](/blog/html/3f2a064c/#读取文件-一行一行的读取)
-    - [乱码问题](/blog/html/3f2a064c/#乱码问题)
-- [BufferedWriter](/blog/html/3f2a064c/#BufferedWriter)
-    - [继承关系](/blog/html/3f2a064c/#继承关系)
-    - [构造函数：](/blog/html/3f2a064c/#构造函数：)
-    - [成员方法](/blog/html/3f2a064c/#成员方法)
-    - [写文件实例](/blog/html/3f2a064c/#写文件实例)
-- [应用：复制文本文件](/blog/html/3f2a064c/#应用：复制文本文件)
-    - [逐个字符复制文件](/blog/html/3f2a064c/#逐个字符复制文件)
-    - [逐个字符数组复制文件](/blog/html/3f2a064c/#逐个字符数组复制文件)
-    - [按行复制文件](/blog/html/3f2a064c/#按行复制文件)
-    - [测试：](/blog/html/3f2a064c/#测试：)
-    - [bug:按行复制的时候多写换行符](/blog/html/3f2a064c/#bug-按行复制的时候多写换行符)
-    - [bug:乱码问题](/blog/html/3f2a064c/#bug-乱码问题)
-        - [实例：gbk编码的文件复制到utf8编码的文件中：](/blog/html/3f2a064c/#实例：gbk编码的文件复制到utf8编码的文件中：)
+- [BufferedReader](/blog/3f2a064c/#BufferedReader)
+    - [继承关系](/blog/3f2a064c/#继承关系)
+    - [构造方法](/blog/3f2a064c/#构造方法)
+    - [成员方法](/blog/3f2a064c/#成员方法)
+    - [读取文件实例](/blog/3f2a064c/#读取文件实例)
+        - [读取文件: 一个字符一个字符的读取](/blog/3f2a064c/#读取文件-一个字符一个字符的读取)
+        - [读取文件:一个数组一个数组的读取](/blog/3f2a064c/#读取文件-一个数组一个数组的读取)
+        - [读取文件:一行一行的读取](/blog/3f2a064c/#读取文件-一行一行的读取)
+    - [乱码问题](/blog/3f2a064c/#乱码问题)
+- [BufferedWriter](/blog/3f2a064c/#BufferedWriter)
+    - [继承关系](/blog/3f2a064c/#继承关系)
+    - [构造函数：](/blog/3f2a064c/#构造函数：)
+    - [成员方法](/blog/3f2a064c/#成员方法)
+    - [写文件实例](/blog/3f2a064c/#写文件实例)
+- [应用：复制文本文件](/blog/3f2a064c/#应用：复制文本文件)
+    - [逐个字符复制文件](/blog/3f2a064c/#逐个字符复制文件)
+    - [逐个字符数组复制文件](/blog/3f2a064c/#逐个字符数组复制文件)
+    - [按行复制文件](/blog/3f2a064c/#按行复制文件)
+    - [测试：](/blog/3f2a064c/#测试：)
+    - [bug:按行复制的时候多写换行符](/blog/3f2a064c/#bug-按行复制的时候多写换行符)
+    - [bug:乱码问题](/blog/3f2a064c/#bug-乱码问题)
+        - [实例：gbk编码的文件复制到utf8编码的文件中：](/blog/3f2a064c/#实例：gbk编码的文件复制到utf8编码的文件中：)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

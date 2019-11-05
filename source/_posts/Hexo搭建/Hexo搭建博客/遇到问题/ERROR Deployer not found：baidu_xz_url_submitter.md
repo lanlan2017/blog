@@ -5,17 +5,17 @@ categories:
   - Hexo搭建博客
   - 遇到问题
 date: 2018-10-30 23:47:02
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: 2740f49f
 ---
-- [解决方案](/blog/html/2740f49f/#解决方案)
-    - [修改package.json安装最新的hexo-baidu-url-submit插件](/blog/html/2740f49f/#修改package-json安装最新的hexo-baidu-url-submit插件)
-    - [配置站点配置文件](/blog/html/2740f49f/#配置站点配置文件)
-        - [baidu_url_submit 配置](/blog/html/2740f49f/#baidu-url-submit-配置)
-        - [deploy 配置](/blog/html/2740f49f/#deploy-配置)
-    - [部署](/blog/html/2740f49f/#部署)
-    - [登录熊掌号查看提交效果](/blog/html/2740f49f/#登录熊掌号查看提交效果)
-    - [参考链接](/blog/html/2740f49f/#参考链接)
+- [解决方案](/blog/2740f49f/#解决方案)
+    - [修改package.json安装最新的hexo-baidu-url-submit插件](/blog/2740f49f/#修改package-json安装最新的hexo-baidu-url-submit插件)
+    - [配置站点配置文件](/blog/2740f49f/#配置站点配置文件)
+        - [baidu_url_submit 配置](/blog/2740f49f/#baidu-url-submit-配置)
+        - [deploy 配置](/blog/2740f49f/#deploy-配置)
+    - [部署](/blog/2740f49f/#部署)
+    - [登录熊掌号查看提交效果](/blog/2740f49f/#登录熊掌号查看提交效果)
+    - [参考链接](/blog/2740f49f/#参考链接)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

@@ -4,12 +4,12 @@ categories:
   - Java
   - JDBC
 date: 2018-12-05 00:25:23
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: aa45691f
 ---
-- [JDBC 简介](/blog/html/aa45691f/#JDBC-简介)
-- [JDBC编程步骤](/blog/html/aa45691f/#JDBC编程步骤)
-    - [加载驱动程序](/blog/html/aa45691f/#加载驱动程序)
+- [JDBC 简介](/blog/aa45691f/#JDBC-简介)
+- [JDBC编程步骤](/blog/aa45691f/#JDBC编程步骤)
+    - [加载驱动程序](/blog/aa45691f/#加载驱动程序)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

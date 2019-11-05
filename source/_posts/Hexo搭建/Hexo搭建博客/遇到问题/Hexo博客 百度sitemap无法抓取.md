@@ -5,15 +5,15 @@ categories:
   - Hexo搭建博客
   - 遇到问题
 date: 2018-10-28 10:34:03
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: ebaabcd4
 ---
-- [安装插件](/blog/html/ebaabcd4/#安装插件)
-- [配置站点配置文件_config.yml](/blog/html/ebaabcd4/#配置站点配置文件-config-yml)
-- [部署](/blog/html/ebaabcd4/#部署)
-- [查看本地生成的baidusitemap.xml文件](/blog/html/ebaabcd4/#查看本地生成的baidusitemap-xml文件)
-- [确认浏览器中可以打开baidusitemap.xml文件](/blog/html/ebaabcd4/#确认浏览器中可以打开baidusitemap-xml文件)
-- [复制浏览器中的地址提价给百度](/blog/html/ebaabcd4/#复制浏览器中的地址提价给百度)
+- [安装插件](/blog/ebaabcd4/#安装插件)
+- [配置站点配置文件_config.yml](/blog/ebaabcd4/#配置站点配置文件-config-yml)
+- [部署](/blog/ebaabcd4/#部署)
+- [查看本地生成的baidusitemap.xml文件](/blog/ebaabcd4/#查看本地生成的baidusitemap-xml文件)
+- [确认浏览器中可以打开baidusitemap.xml文件](/blog/ebaabcd4/#确认浏览器中可以打开baidusitemap-xml文件)
+- [复制浏览器中的地址提价给百度](/blog/ebaabcd4/#复制浏览器中的地址提价给百度)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

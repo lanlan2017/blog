@@ -5,13 +5,13 @@ categories:
   - IDE
   - VSCode
 date: 2019-07-06 22:11:24
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: c8a8df16
 ---
-- [VSCode 运行Java](/blog/html/c8a8df16/#VSCode-运行Java)
-    - [安装插件](/blog/html/c8a8df16/#安装插件)
-    - [设置允许参数](/blog/html/c8a8df16/#设置允许参数)
-    - [开始调试](/blog/html/c8a8df16/#开始调试)
+- [VSCode 运行Java](/blog/c8a8df16/#VSCode-运行Java)
+    - [安装插件](/blog/c8a8df16/#安装插件)
+    - [设置允许参数](/blog/c8a8df16/#设置允许参数)
+    - [开始调试](/blog/c8a8df16/#开始调试)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

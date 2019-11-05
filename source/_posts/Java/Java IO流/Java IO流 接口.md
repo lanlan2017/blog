@@ -4,12 +4,12 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-13 15:04:36
-updated: 2019-10-30 13:53:55
+updated: 2019-11-04 17:02:01
 abbrlink: df6c2340
 ---
-- [Closeable接口](/blog/html/df6c2340/#Closeable接口)
-- [Flushable接口](/blog/html/df6c2340/#Flushable接口)
-- [Appendable接口](/blog/html/df6c2340/#Appendable接口)
+- [Closeable接口](/blog/df6c2340/#Closeable接口)
+- [Flushable接口](/blog/df6c2340/#Flushable接口)
+- [Appendable接口](/blog/df6c2340/#Appendable接口)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
