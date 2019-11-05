@@ -8,9 +8,9 @@ set blogRoot=%~dp0
 cd %blogRoot%
 REM 拉取远程分支
 git pull origin master
-REM 文件浏览器中打开当前目录
+REM 在文章根目录下打开文件资源管理器
 set postRoot=%~dp0source\_posts
 explorer %postRoot%
-REM 在当前目录下打开git-bash
-start git-bash --cd=%postRoot%
+REM 站点目录下打开git-bash
+start git-bash --cd=%blogRoot%
 REM pause
