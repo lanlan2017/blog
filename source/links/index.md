@@ -54,6 +54,9 @@ comments: false
 - [简书](https://www.jianshu.com/)
 - [C语言中文网](http://c.biancheng.net/)
 
+# 笔试
+- [牛客网](http://m.nowcoder.com/)
+
 # 资讯 #
 - [微博热搜](https://s.weibo.com/top/summary)
 - [人民网](http://www.people.com.cn/)
