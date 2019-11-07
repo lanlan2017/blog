@@ -61,3 +61,5 @@ comments: false
 - [微博热搜](https://s.weibo.com/top/summary)
 - [人民网](http://www.people.com.cn/)
 - [博客园新闻](https://www.cnblogs.com/news/)
+- [知乎-科技](https://www.zhihu.com/mweb-keji)
+- [开源中国资讯](https://www.oschina.net/news/industry)
