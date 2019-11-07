@@ -41,6 +41,16 @@ comments: false
 - [我的小书屋](mebook.cc)
 
 # 视屏网站 #
+## [中国大学MOOC](https://www.icourse163.org) ##
+- [计算机学科 中国大学MOOC](https://www.icourse163.org/channel/3002.htm)
+    - [数据库系统(上):模型与语言_哈工大](https://www.icourse163.org/course/HIT-1001516002)
+    - [数据库系统(中):建模与设计_哈工大](https://www.icourse163.org/learn/HIT-1001554030)
+    - [数据库系统(下):管理与技术](https://www.icourse163.org/course/HIT-1001578001)
+
+## [学堂在线](https://next.xuetangx.com/) ##
+- [学堂在线 计算机学科](https://next.xuetangx.com/search?query=&org=&classify=1&type=&status=&page=1)
+
+## 其他视频网站 ##
 - [慕课网](https://www.imooc.com/)
 - [哔哩哔哩](https://www.bilibili.com/)
 - [网易云课堂](https://study.163.com/)
