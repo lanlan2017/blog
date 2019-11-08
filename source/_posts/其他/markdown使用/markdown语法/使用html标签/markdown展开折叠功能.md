@@ -25,7 +25,7 @@ categories:
 
 ## 折叠的内容是可以Markdown
 ```
-    <details markdown='1'><summary>展开/收起</summary>
+<details markdown='1'><summary>展开/收起</summary>
     ```java
     private Formatter formatter;
     ......
@@ -35,8 +35,9 @@ categories:
         return this;
     }
     ```
-    </details>
+</details>
 ```
+
 显示效果如下
 <details markdown='1'><summary>展开/收起</summary>
 ```java
