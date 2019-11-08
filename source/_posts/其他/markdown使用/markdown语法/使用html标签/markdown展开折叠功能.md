@@ -1,10 +1,11 @@
 ---
 title: markdown展开折叠功能
-categories: 
+categories:
   - 其他
   - markdown使用
   - markdown语法
   - 使用html标签
+abbrlink: ce247608
 ---
 # HTML 5 `<details> `标签
 定义和用法
