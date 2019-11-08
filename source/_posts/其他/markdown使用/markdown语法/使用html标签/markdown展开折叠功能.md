@@ -24,7 +24,6 @@ categories:
 </details>
 
 ## 折叠的内容是可以Markdown
-注意为了让markdown可以正确的解析,请在markdown代码之前多写上一个**空行**
 ```
     <details markdown='1'><summary>展开/收起</summary>
     ```java
