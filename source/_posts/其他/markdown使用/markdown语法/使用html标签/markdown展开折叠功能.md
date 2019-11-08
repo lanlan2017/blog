@@ -24,20 +24,6 @@ categories:
 </details>
 
 ## 折叠的内容是可以Markdown
-```
-<details markdown='1'><summary>展开/收起</summary>
-    ```java
-    private Formatter formatter;
-    ......
-    public Console format(String fmt, Object ...args) 
-    {
-        formatter.format(fmt, args).flush();
-        return this;
-    }
-    ```
-</details>
-```
-
 显示效果如下
 <details markdown='1'><summary>展开/收起</summary>
 ```java
