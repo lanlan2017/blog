@@ -27,7 +27,6 @@ categories:
 注意为了让markdown可以正确的解析,请在markdown代码之前多写上一个**空行**
 ```
     <details markdown='1'><summary>展开/收起</summary>
-    
     ```java
     private Formatter formatter;
     ......
@@ -41,7 +40,6 @@ categories:
 ```
 显示效果如下
 <details markdown='1'><summary>展开/收起</summary>
-
 ```java
 private Formatter formatter;
 ......
