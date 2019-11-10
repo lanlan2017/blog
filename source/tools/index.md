@@ -34,6 +34,9 @@ comments: false
         if (timeOut != null) {
             window.clearTimeout(timeOut);
         }
+        input.select();
+        document.execCommand("Copy");
+        input.blur();
     }
     function clearInput() {
         input.value = "";
@@ -190,8 +193,9 @@ comments: false
         var text = input.value;
         text = deleteBlankLineArg(text);
         text = text.replace(/([A-Z])\n(.+)/mg, "- $1 $2");
-        text = text.replace(/(^正确答案)/mg, "\n$1");
-        text = "\n# 题目" + count.value + "\n" + text + "\n\n## 解析\n";
+        text = text.replace(/(^正确答案: [A-Za-z]$)/mg,
+            "\n## 解析\n<details><summary>显示答案/隐藏答案</summary>$1</details>\n");
+        text = "\n# 题目" + count.value + "\n" + text;
         result(text);
         count.value = Number(count.value) + 1;
     }
