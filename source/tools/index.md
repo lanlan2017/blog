@@ -203,9 +203,15 @@ comments: false
         var text = input.value;
         text = text.replace(/\n/mg, "");
         var title = text.replace(/^.+source\/_posts.+\/(.+?).md$/, "$1");
+        var dateStr = title.match(/(\d{4}年\d{1,2}月\d{1,2})日/)[1];
+        dateStr = dateStr.replace(/([年月])/g, "-");
+        var now = new Date();
+        dateStr += " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+        console.log(dateStr);
         var categories = text.replace(/^.+source\/_posts(.+)\/.+?.md$/, "$1");
         categories = categories.replace(/\//g, "\n  - ");
-        var fm = "---\n" + "title: " + title + "\n" + "categories: " + categories + "\n---\n";
+        var fm = "---\n" + "title: " + title + "\n" + "categories: " + categories + "\n" + "date: " + dateStr +
+            "\n---\n";
         result(fm);
     }
     function niuke() {
