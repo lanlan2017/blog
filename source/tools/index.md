@@ -234,6 +234,7 @@ comments: false
         text = formmatJavaArg(text);
         text = restoreSingleLineComment(text);
         text = deleteBlankLineArg(text);
+        text = restoreFor(text);
         console.log(text);
         result(text);
     }
@@ -269,6 +270,9 @@ comments: false
         tempText += text.substring(end);
         return tempText;
     }
+    function restoreFor(text) {
+        return text.replace(/for[ ]*\((.*?);\n?[ ]*(.*?);\n?[ ]*(.+)\)/mg, "for($1;$2;$3)");
+    }
     function formmatJavaArg(inputValue) {
         var lineTemp = '';
         var value = '';
@@ -279,15 +283,12 @@ comments: false
                 lineTemp += "{" + "\n" + depthTab(depth);
             } else if (value == "}") {
                 depth--;
-                lineTemp += "\n" + depthTab(depth) + "}";
+                lineTemp += "\n" + depthTab(depth) + "}" + "\n" + depthTab(depth);
                 if (depth == 0) {
                     lineTemp += "\n";
                 }
             } else if (value == ";") {
                 lineTemp += ";" + "\n" + depthTab(depth);
-            } else if (value == "/" && inputValue[i + 1] == "/") {
-                lineTemp += "//";
-                i++;
             } else {
                 lineTemp += value;
             }
