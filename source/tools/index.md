@@ -184,11 +184,12 @@ comments: false
     }
     function mdCodeInLines(text) {
         if (typeof (text) == "undefined") {
-            console.log("text=" + text)
-            var text = input.value;
+            result(mdCodeInLines(input.value));
+        } else {
+            text = text.replace(/`?((?:-(?! ))?[a-zA-Z<][a-zA-Z0-9 ():\_.\/\[\]<>,+="]*[a-zA-Z0-9)>/.\*])`?/mg,
+                "`$1`");
+            return text;
         }
-        text = text.replace(/`?((?:-(?! ))?[a-zA-Z<][a-zA-Z0-9 ():\_.\/\[\]<>,+="]*[a-zA-Z0-9)>/.\*])`?/mg, "`$1`");
-        result(text)
     }
     function mdB() {
         result("**" + input.value + "**");
@@ -235,9 +236,10 @@ comments: false
         var text = input.value;
         text = deleteBlankLine(text);
         text = toEnPunctuation(text);
+        text = mdCodeInLines(text);
         text = text.replace(/([A-Z])\n(.+)/mg, "- $1 $2");
         text = text.replace(/(^正确答案: [A-Za-z]+$)/mg,
-            "\n## 解析\n<details><summary>显示答案/隐藏答案</summary>$1</details>\n");
+            "\n## 解析\n<details><summary>显示答案/隐藏答案</summary>$1</details>\n\n");
         text = "\n# 题目" + count.value + "\n" + text;
         result(text);
         count.value = Number(count.value) + 1;
