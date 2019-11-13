@@ -257,7 +257,6 @@ comments: false
         var text = input.value;
         text = deleteBlankLine(text);
         text = toEnPunctuation(text);
-        text = mdCodeInLines(text);
         text = text.replace(/([A-Z])\n(.+)/mg, "- $1 $2");
         text = text.replace(/(^正确答案: `?[A-Za-z]+`?$)/mg,
             "\n## 解析\n<details><summary>显示答案/隐藏答案</summary>$1</details>\n\n");
