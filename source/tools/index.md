@@ -193,7 +193,7 @@ comments: false
         if (typeof (text) == "undefined") {
             result(mdCodeInLines(input.value));
         } else {
-            text = text.replace(/`?((?:-(?! ))?[a-zA-Z<][a-zA-Z0-9 ():\_.\/\[\]<>,+="]*[a-zA-Z0-9)>/.\*])`?/mg,
+            text = text.replace(/`?((?:-(?! ))?[a-zA-Z<][a-zA-Z0-9 ():\_.\/\[\]<>,+="-]*[a-zA-Z0-9)>/.\*])`?/mg,
                 "`$1`");
             return text;
         }
