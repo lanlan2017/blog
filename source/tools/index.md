@@ -253,14 +253,25 @@ comments: false
         result(fm);
     }
     function niuke() {
+        var problem = '';
+        var selects = '';
+        var answer = '';
+        var selectStart = 0;
+        var selectEnd = 0;
         var count = document.getElementById("count");
         var text = input.value;
-        text = deleteBlankLine(text);
         text = toEnPunctuation(text);
-        text = text.replace(/([A-Z])\n(.+)/mg, "- $1 $2");
-        text = text.replace(/(^正确答案: `?[A-Za-z]+`?$)/mg,
+        selects = text.match(/(?:[A-z]\n.+?\n)+/mg)[0];
+        selectStart = text.indexOf(selects);
+        selectEnd = selectStart + selects.length;
+        selects = mdCodeInLines(selects);
+        selects = selects.replace(/([A-Z])\n(.+)/mg, "- $1 $2");
+        problem += text.substring(0, selectStart);
+        answer = text.substring(selectEnd);
+        answer = deleteBlankLine(answer);
+        answer = answer.replace(/(^正确答案: `?[A-Za-z]+`?$)/mg,
             "\n## 解析\n<details><summary>显示答案/隐藏答案</summary>$1</details>\n\n");
-        text = "\n# 题目" + count.value + "\n" + text;
+        text = "\n# 题目" + count.value + "\n" + problem + selects + answer;
         result(text);
         count.value = Number(count.value) + 1;
     }
@@ -268,7 +279,7 @@ comments: false
         return text.replace(/(?:[ ]*)(\/\/.+)/mg, "$1__newLine__");
     }
     function restoreSingleLineComment(text) {
-        var tempText = '';
+        var textTemp = '';
         var regex = /([ ]*)(?:(\/\/.+?)__newLine__)+(.*)/mg;
         var flag;
         if ((flag = regex.test(text))) {
@@ -279,7 +290,7 @@ comments: false
             for (var i = 0; i < singleLineComments.length; i++) {
                 var recovery = '';
                 start = text.indexOf(singleLineComments[i]);
-                tempText += text.substring(end, start);
+                textTemp += text.substring(end, start);
                 end = start + singleLineComments[i].length;
                 var singleLineCommentArr = singleLineComments[i].split("__newLine__");
                 for (var j = 0; j < singleLineCommentArr.length; j++) {
@@ -290,11 +301,11 @@ comments: false
                         recovery += tabs + singleLineCommentArr[j] + "\n";
                     }
                 }
-                tempText += recovery;
+                textTemp += recovery;
             }
         }
-        tempText += text.substring(end);
-        return tempText;
+        textTemp += text.substring(end);
+        return textTemp;
     }
     function restoreFor(text) {
         return text.replace(/for[ ]*\((.*?);\n?[ ]*(.*?);\n?[ ]*(.+)\)/mg, "for($1;$2;$3)");
