@@ -2,16 +2,16 @@
 title: Hexo搭建
 categories: 
   - Hexo搭建
-date: 2018-08-26 23:59:13
-updated: 2019-11-04 17:02:01
+date: 2019-11-13 15:56:21
+updated: 2019-11-13 15:56:21
 comments: false
 abbrlink: 57ee7c1d
 ---
 - [安装和配置Node.js](/blog/57ee7c1d/#安装和配置Node-js)
     - [设置npm全局安装路径](/blog/57ee7c1d/#设置npm全局安装路径)
     - [查看设置效果](/blog/57ee7c1d/#查看设置效果)
-    - [配置全局安装路径到Path环境变量](/blog/57ee7c1d/#配置全局安装路径到Path环境变量)
     - [使用淘宝镜像](/blog/57ee7c1d/#使用淘宝镜像)
+    - [配置全局安装路径到Path环境变量](/blog/57ee7c1d/#配置全局安装路径到Path环境变量)
 - [安装hexo](/blog/57ee7c1d/#安装hexo)
 - [初始化站点目录](/blog/57ee7c1d/#初始化站点目录)
 - [站点配置](/blog/57ee7c1d/#站点配置)
@@ -115,7 +115,11 @@ npm config set prefix "E:\Program Files\nodejs\npm_global"
 npm config set cache "E:\Program Files\nodejs\node_cache"
 ```
 ## 查看设置效果 ##
-输入`npm config ls`这个命令可以看到蛇者效果.
+输入
+```
+npm config ls
+```
+这个命令可以看到蛇者效果.
 ```cmd
 $ npm config ls
 ; cli configs
@@ -136,16 +140,16 @@ prefix = "E:\\Program Files\\nodejs\\npm_global"
 ; "npm config ls -l" to show all defaults.
 
 ```
-## 配置全局安装路径到Path环境变量 ##
-将上面的全局安装路径(`E:\Program Files\nodejs\npm_global`)添加到Path环境变量中,这样可以在任意地方使用该路径下的程序.
 ## 使用淘宝镜像 ##
 npm的默认下载地址在国内访问比较慢,使用淘宝镜像安装会快一点。
 ```cmd
 npm config set registry https://registry.npm.taobao.org
 ```
+## 配置全局安装路径到Path环境变量 ##
+将上面的全局安装路径(`E:\Program Files\nodejs\npm_global`)添加到`Path`环境变量中,这样可以在任意地方使用`该路径`下的程序(如`hexo`命令).
 
 # 安装hexo #
-使用如下命令全局安装hexo
+配置好`path`环境变量后,使用如下命令全局安装`hexo`.
 ```cmd
 npm install hexo-cli -g
 ```
