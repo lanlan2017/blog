@@ -1,7 +1,8 @@
 ---
 title: Git SSH配置过程
-categories: 
+categories:
   - Git
+abbrlink: 8d23490d
 date: 2019-11-13 16:22:20
 updated: 2019-11-13 16:22:20
 ---
