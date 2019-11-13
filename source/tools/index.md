@@ -259,7 +259,7 @@ comments: false
         text = toEnPunctuation(text);
         text = mdCodeInLines(text);
         text = text.replace(/([A-Z])\n(.+)/mg, "- $1 $2");
-        text = text.replace(/(^正确答案: [A-Za-z]+$)/mg,
+        text = text.replace(/(^正确答案: `?[A-Za-z]+`?$)/mg,
             "\n## 解析\n<details><summary>显示答案/隐藏答案</summary>$1</details>\n\n");
         text = "\n# 题目" + count.value + "\n" + text;
         result(text);
