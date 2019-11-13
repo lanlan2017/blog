@@ -42,6 +42,15 @@ ssh-keygen -t rsa -C "18251956727@163.com"
 ```shell
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
+## 将公钥添加到Github上 ##
+## 添加密钥文件到 ##
+```shell
+ssh-add 文件名
+```
+## 测试链接是否成功 ##
+```shell
+ssh -T git@github.com
+```
 # 参考资料 #
 [https://www.cnblogs.com/yangshifu/p/9919817.html](https://www.cnblogs.com/yangshifu/p/9919817.html)
 [https://www.cnblogs.com/e-cat/p/10862208.html](https://www.cnblogs.com/e-cat/p/10862208.html)
