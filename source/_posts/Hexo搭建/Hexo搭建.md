@@ -3,7 +3,7 @@ title: Hexo搭建
 categories: 
   - Hexo搭建
 date: 2019-11-13 15:56:21
-updated: 2019-11-13 15:56:25
+updated: 2019-11-14 11:54:19
 comments: false
 abbrlink: 57ee7c1d
 ---
@@ -55,7 +55,6 @@ abbrlink: 57ee7c1d
     - [边栏设置](/blog/57ee7c1d/#边栏设置)
         - [设置边栏的位置](/blog/57ee7c1d/#设置边栏的位置)
         - [设置边栏的宽度](/blog/57ee7c1d/#设置边栏的宽度)
-- [Manual define the sidebar width. If commented, will be default for:](/blog/57ee7c1d/#Manual-define-the-sidebar-width-If-commented,-will-be-default-for)
         - [设置边栏弹出的机制](/blog/57ee7c1d/#设置边栏弹出的机制)
         - [点击空白处关闭边栏](/blog/57ee7c1d/#点击空白处关闭边栏)
     - [设置返回顶部箭头](/blog/57ee7c1d/#设置返回顶部箭头)
@@ -313,7 +312,7 @@ local_search:
 ### 设置边栏的宽度 ###
 这个可以设置也可以默认。默认的话用井号`#`,注释掉`width`配置项即可。
 ```
-# Manual define the sidebar width. If commented, will be default for:
+ # Manual define the sidebar width. If commented, will be default for:
   # Muse | Mist: 320
   # Pisces | Gemini: 240
   width: 300
