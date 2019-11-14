@@ -13,10 +13,18 @@ comments: false
 - [JetBrains Account](https://account.jetbrains.com/login)
 - [ffmpeg](https://ffmpeg.org)
 - [travis-ci](https://www.travis-ci.org)
+- [stackoverflow](https://stackoverflow.com/)
+
+# 在线工具
+- [regexper](https://regexper.com/)
+
 
 # 在线文档 #
 ## API
 - [Oracle java9 doc](https://docs.oracle.com/javase/9/docs/api/java/lang/System.html)
+
+## CSS
+- [buttons](https://www.bootcss.com/p/buttons/)
 
 ## 教程集合
 - [菜鸟教程](https://www.runoob.com/)
@@ -63,6 +71,7 @@ comments: false
 - [CSDN](https://www.csdn.net/)
 - [简书](https://www.jianshu.com/)
 - [C语言中文网](http://c.biancheng.net/)
+- [segmentfault](https://segmentfault.com/)
 
 # 笔试
 - [牛客网](http://m.nowcoder.com/)
