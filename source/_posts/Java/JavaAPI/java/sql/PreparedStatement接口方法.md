@@ -6,7 +6,7 @@ categories:
   - java
   - sql
 date: 2019-05-21 23:50:19
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:11
 abbrlink: 87bdbf10
 ---
 - [PreparedStatement接口方法2](/blog/87bdbf10/#PreparedStatement接口方法2)

@@ -5,7 +5,7 @@ categories:
   - JSP
   - Java Web简介
 date: 2018-12-03 19:28:31
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:11
 abbrlink: ceef3131
 ---
 - [JSP页面元素构成](/blog/ceef3131/#JSP页面元素构成)

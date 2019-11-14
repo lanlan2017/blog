@@ -5,15 +5,9 @@ categories:
   - java_GUI
   - 全局热键
 date: 2018-09-13 15:17:26
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:11
 abbrlink: 9d991fe9
 ---
-
-<!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
-
-<!--end-->
 参考:[https://blog.csdn.net/iteye_11213/article/details/81886200](https://blog.csdn.net/iteye_11213/article/details/81886200)
 
 JIntellitype提供了简单的调用方法去注册系统热键。操作简单，示例明确，下载后阅读一下readme.txt文档，就可以使用了。

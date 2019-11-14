@@ -4,7 +4,7 @@ categories:
   - Linux
   - Termux
 date: 2019-11-01 10:14:33
-updated: 2019-11-04 17:02:02
+updated: 2019-11-05 10:32:11
 abbrlink: d305bdc
 ---
 - [更新软件](/blog/d305bdc/#更新软件)

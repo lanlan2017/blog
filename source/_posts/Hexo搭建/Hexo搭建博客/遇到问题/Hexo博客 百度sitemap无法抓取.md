@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - 遇到问题
 date: 2018-10-28 10:34:03
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:10
 abbrlink: ebaabcd4
 ---
 - [安装插件](/blog/ebaabcd4/#安装插件)

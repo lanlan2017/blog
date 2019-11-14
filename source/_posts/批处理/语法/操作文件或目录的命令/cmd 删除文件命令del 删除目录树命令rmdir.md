@@ -5,7 +5,7 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-01-31 17:32:41
-updated: 2019-11-04 17:02:02
+updated: 2019-11-05 10:32:11
 abbrlink: 5d4c4249
 ---
 - [删除文件 del或erase命令](/blog/5d4c4249/#删除文件-del或erase命令)

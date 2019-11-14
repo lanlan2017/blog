@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - 个性化
 date: 2019-02-15 21:49:16
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:10
 abbrlink: 7162b91b
 ---
 - [卸载hexo-generator-index插件](/blog/7162b91b/#卸载hexo-generator-index插件)

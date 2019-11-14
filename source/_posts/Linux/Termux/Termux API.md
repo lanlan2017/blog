@@ -4,7 +4,7 @@ categories:
   - Linux
   - Termux
 date: 2019-11-03 19:40:56
-updated: 2019-11-04 17:02:02
+updated: 2019-11-05 10:32:11
 abbrlink: b709eab2
 ---
 - [Termux API有什么用](/blog/b709eab2/#Termux-API有什么用)

@@ -4,7 +4,7 @@ categories:
   - Linux
   - 通用
 date: 2019-11-01 10:24:47
-updated: 2019-11-04 17:02:02
+updated: 2019-11-05 10:32:11
 abbrlink: 1598bd9
 ---
 - [Linux执行多个命令](/blog/1598bd9/#Linux执行多个命令)

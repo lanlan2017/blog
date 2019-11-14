@@ -5,15 +5,9 @@ categories:
   - Hexo搭建博客
   - 给博客添加功能
 date: 2018-09-26 20:00:35
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:10
 abbrlink: 8eadc39
 ---
-
-<!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
-
-<!--end-->
 [头像设置](/2018/09/27/Hexo搭建博客/添加功能/Hexo Valine使用Gravatars头像/)参见
 
 评论系统的具体介绍如下图所示:

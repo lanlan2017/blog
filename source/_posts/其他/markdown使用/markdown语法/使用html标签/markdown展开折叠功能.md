@@ -1,12 +1,24 @@
 ---
 title: markdown展开折叠功能
-categories:
+categories: 
   - 其他
   - markdown使用
   - markdown语法
   - 使用html标签
+date: 2019-11-08 21:30:04
+updated: 2019-11-08 21:30:04
 abbrlink: ce247608
 ---
+- [HTML 5 **<details> **标签](/blog/ce247608/#HTML-5-<details>-标签)
+    - [**<summary> **子标签](/blog/ce247608/#<summary>-子标签)
+- [markdown中可以写HTML](/blog/ce247608/#markdown中可以写HTML)
+    - [折叠的内容是可以Markdown](/blog/ce247608/#折叠的内容是可以Markdown)
+
+<!--more-->
+<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
+<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+
+<!--end-->
 # HTML 5 `<details> `标签
 定义和用法
 `<details> `标签用于描述文档或文档某个部分的细节。

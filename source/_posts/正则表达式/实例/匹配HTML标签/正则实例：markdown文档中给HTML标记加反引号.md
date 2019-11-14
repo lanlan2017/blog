@@ -5,15 +5,9 @@ categories:
   - 实例
   - 匹配HTML标签
 date: 2018-09-27 22:00:53
-updated: 2019-11-04 17:02:02
+updated: 2019-11-05 10:32:11
 abbrlink: de8eb4f9
 ---
-
-<!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
-
-<!--end-->
 写到HTML这章的时候，在Markdown中添加了好多html标记，这样会引起文章渲染乱码。所以需要都让对一些HTML标记进行"转义"。我这里的做法是，使用反引号把HTML标记包裹起来。如下所示:
 ```
 `<h1>`

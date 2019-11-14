@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - 自动部署
 date: 2019-11-05 10:29:38
-updated: 2019-11-05 10:31:29
+updated: 2019-11-05 10:32:10
 abbrlink: 13f63c39
 ---
 - [获取Token](/blog/13f63c39/#获取Token)

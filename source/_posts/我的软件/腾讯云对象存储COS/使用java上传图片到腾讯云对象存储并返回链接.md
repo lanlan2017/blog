@@ -4,15 +4,9 @@ categories:
   - 我的软件
   - 腾讯云对象存储COS
 date: 2018-10-10 22:03:14
-updated: 2019-11-04 17:02:02
+updated: 2019-11-05 10:32:11
 abbrlink: 5a1e201b
 ---
-
-<!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
-
-<!--end-->
 不需要签名的公共链接：
 ```
 ![](http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDQikX6SPUAcqqcAxaT8ZmjPpyrUqwuKei%26q-sign-time%3D1540294349%3B1540294649%26q-key-time%3D1540294349%3B1540294649%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D1e368fb926c8858b9ed65b923a9030bb54234129)

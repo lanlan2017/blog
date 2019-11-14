@@ -5,15 +5,9 @@ categories:
   - IDE
   - eclipse
 date: 2018-10-25 16:45:17
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:10
 abbrlink: 956cc103
 ---
-
-<!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
-
-<!--end-->
 如果想要删除`Launch configuration`下拉列表的主类历史记录，只要进入到要打包的这个`工程所在的目录`，也就是`工作空间目录`找到这个：
 ```
 \.metadata\.plugins\org.eclipse.debug.core\.launches

@@ -4,7 +4,7 @@ categories:
   - HTML
   - 表单
 date: 2018-11-28 14:45:08
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:10
 abbrlink: b74fe8bf
 ---
 - [HTML表单是什么](/blog/b74fe8bf/#HTML表单是什么)

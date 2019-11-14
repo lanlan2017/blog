@@ -4,7 +4,7 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-12 12:51:31
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:10
 abbrlink: eaae884d
 ---
 - [Java中Console类的用法](/blog/eaae884d/#Java中Console类的用法)

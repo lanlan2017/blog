@@ -4,11 +4,12 @@ categories:
   - JavaScript
   - 正则表达式
 date: 2019-02-13 00:17:45
-updated: 2019-11-04 17:02:02
+updated: 2019-11-08 19:33:08
 abbrlink: cd878b94
 ---
 - [语法](/blog/cd878b94/#语法)
 - [String对象中的正则表达式](/blog/cd878b94/#String对象中的正则表达式)
+    - [match方法](/blog/cd878b94/#match方法)
     - [实例](/blog/cd878b94/#实例)
 - [参考链接](/blog/cd878b94/#参考链接)
 

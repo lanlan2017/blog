@@ -5,15 +5,9 @@ categories:
   - java_GUI
   - 全局热键
 date: 2018-09-13 23:42:32
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:11
 abbrlink: f91e74b
 ---
-
-<!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
-
-<!--end-->
 实例：
 ```java
 import java.awt.Insets;

@@ -5,7 +5,7 @@ categories:
   - 语法
   - 系统相关命令
 date: 2019-09-04 00:23:58
-updated: 2019-11-04 17:02:02
+updated: 2019-11-05 10:32:11
 abbrlink: 4508a6a3
 ---
 - [cmd shutdown命令](/blog/4508a6a3/#cmd-shutdown命令)

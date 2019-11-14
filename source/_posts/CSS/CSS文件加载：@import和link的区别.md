@@ -3,7 +3,7 @@ title: CSS文件加载：@import和link的区别
 categories: 
   - CSS
 date: 2019-05-01 10:29:08
-updated: 2019-11-04 17:02:00
+updated: 2019-11-05 10:32:09
 abbrlink: 9b90d554
 ---
 - [css文件加载：@import和link的区别](/blog/9b90d554/#css文件加载：-import和link的区别)

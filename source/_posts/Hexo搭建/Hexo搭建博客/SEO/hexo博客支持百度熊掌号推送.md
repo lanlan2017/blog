@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - SEO
 date: 2018-10-30 11:11:24
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:10
 abbrlink: 5f9ceba2
 ---
 - [Hexo安装插件支持百度熊掌号自动推送](/blog/5f9ceba2/#Hexo安装插件支持百度熊掌号自动推送)

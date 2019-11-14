@@ -4,7 +4,7 @@ categories:
   - JavaScript
   - 播放音频
 date: 2019-04-27 11:27:54
-updated: 2019-11-04 17:02:02
+updated: 2019-11-05 10:32:11
 abbrlink: ff5ef3ed
 ---
 - [实例代码](/blog/ff5ef3ed/#实例代码)

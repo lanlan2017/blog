@@ -4,7 +4,7 @@ categories:
   - C语言
   - 文件
 date: 2018-11-15 00:44:39
-updated: 2019-11-04 17:02:00
+updated: 2019-11-05 10:32:10
 abbrlink: 65f494cf
 ---
 - [C语言创建文件](/blog/65f494cf/#C语言创建文件)

@@ -5,7 +5,7 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-09-11 11:20:03
-updated: 2019-11-04 17:02:02
+updated: 2019-11-05 10:32:11
 abbrlink: 6a7ac4ce
 ---
 - [timeout命令](/blog/6a7ac4ce/#timeout命令)

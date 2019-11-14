@@ -5,15 +5,9 @@ categories:
   - 实例
   - 匹配HTML标签
 date: 2018-10-14 22:51:59
-updated: 2019-11-04 17:02:02
+updated: 2019-11-05 10:32:11
 abbrlink: 72162c39
 ---
-
-<!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
-
-<!--end-->
 有下面这样一段HTML代码：
 ```html
     <span style="cursor:auto">

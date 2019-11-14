@@ -5,7 +5,7 @@ categories:
   - Java EE
   - DeBug
 date: 2019-06-09 17:26:12
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:10
 abbrlink: 5aecc643
 ---
 - [Type interface mapper.UserMapper is not known to the MapperRegistry.](/blog/5aecc643/#Type-interface-mapper-UserMapper-is-not-known-to-the-MapperRegistry)

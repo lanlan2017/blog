@@ -4,7 +4,7 @@ categories:
   - Linux
   - Termux
 date: 2019-10-31 15:08:27
-updated: 2019-11-04 17:02:02
+updated: 2019-11-05 10:32:11
 abbrlink: 45517ea0
 ---
 - [首先先下载Termux](/blog/45517ea0/#首先先下载Termux)

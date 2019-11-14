@@ -5,7 +5,7 @@ categories:
   - IDE
   - VSCode
 date: 2019-10-06 21:46:08
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:10
 abbrlink: 6221fd78
 ---
 - [如何切换VScode里面的java版本](/blog/6221fd78/#如何切换VScode里面的java版本)

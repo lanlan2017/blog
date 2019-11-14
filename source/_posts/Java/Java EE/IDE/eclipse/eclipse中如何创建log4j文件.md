@@ -6,7 +6,7 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-12 22:26:13
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:10
 abbrlink: 2f2a13a0
 ---
 - [eclipse中如何创建log4j文件](/blog/2f2a13a0/#eclipse中如何创建log4j文件)

@@ -5,7 +5,7 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:38
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:11
 abbrlink: bc7737a8
 ---
 - [application内置对象](/blog/bc7737a8/#application内置对象)

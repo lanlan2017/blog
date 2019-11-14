@@ -4,15 +4,9 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-29 19:35:07
-updated: 2019-11-04 17:02:01
+updated: 2019-11-05 10:32:10
 abbrlink: 2fe8061d
 ---
-
-<!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
-
-<!--end-->
 例如test_utf8.py这个文件用的是utf-8+BOM编码的.
 ![](https://i.imgur.com/vtWvrjD.png)
 现在打开这个文件，然后以16进制的方式查看该文件。

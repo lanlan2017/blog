@@ -1,12 +1,23 @@
 ---
 title: Git SSH配置过程
-categories:
+categories: 
   - Git
-abbrlink: 8d23490d
 date: 2019-11-13 16:22:20
-updated: 2019-11-13 16:22:20
+updated: 2019-11-13 16:55:43
+abbrlink: 8d23490d
 ---
-- [Git SSH配置过程](/blog/null/#Git-SSH配置过程)
+- [Git SSH配置过程](/blog/8d23490d/#Git-SSH配置过程)
+    - [配置邮箱和用户名](/blog/8d23490d/#配置邮箱和用户名)
+        - [配置邮箱](/blog/8d23490d/#配置邮箱)
+        - [配置用户名](/blog/8d23490d/#配置用户名)
+        - [查看效果](/blog/8d23490d/#查看效果)
+    - [生成密钥对](/blog/8d23490d/#生成密钥对)
+        - [生成默认长度的密钥对](/blog/8d23490d/#生成默认长度的密钥对)
+        - [生成指定长度的密钥对](/blog/8d23490d/#生成指定长度的密钥对)
+    - [将公钥添加到Github上](/blog/8d23490d/#将公钥添加到Github上)
+    - [添加密钥文件到](/blog/8d23490d/#添加密钥文件到)
+    - [测试链接是否成功](/blog/8d23490d/#测试链接是否成功)
+- [参考资料](/blog/8d23490d/#参考资料)
 
 <!--more-->
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>

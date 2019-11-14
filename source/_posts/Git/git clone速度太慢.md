@@ -3,7 +3,7 @@ title: git clone速度太慢
 categories: 
   - Git
 date: 2019-08-12 12:55:50
-updated: 2019-11-04 17:02:00
+updated: 2019-11-05 10:32:10
 abbrlink: 1f883a6b
 ---
 - [问题描述](/blog/1f883a6b/#问题描述)
