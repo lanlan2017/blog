@@ -3,18 +3,53 @@ title: 在线工具
 date: 2019-10-17 12:08:16
 comments: false
 ---
-<div id="panel"><textarea rows="16" id="input" placeholder="请输入" contenteditable="true"></textarea><span class="button-group"><button class="button button-primary button-rounded button-raised button-small"onclick="clearInput()">clearInput</button><button class="button button-primary button-rounded button-raised button-small" onclick="copy()">copy</button><button class="button button-primary button-rounded button-raised button-small" onclick="undo()">undo</button><button class="button button-primary button-rounded button-raised button-small"onclick="unNiuke()">unNiuke</button></span><br><span>计数器:</span><input type="text" name="counter" id="counter" value="1" size="3" /><br><span class="button-group"><button class="button button-action button-rounded button-raised button-small"onclick="document.getElementById('counter').value='1'">reset</button><button class="button button-action button-rounded button-raised button-small" onclick="plus()">plus</button><button class="button button-action button-rounded button-raised button-small"onclick="minus()">minus</button></span><br><span>转成Markdown:</span><br><span class="button-group"><button class="button button-highlight button-square button-raised button-small" onclick="mdU()">u</button><button class="button button-highlight button-square button-raised button-small" onclick="mdO()">o</button><button class="button button-highlight button-square button-raised button-small" onclick="mdQ()">q</button><button class="button button-highlight button-square button-raised button-small"onclick="mdCodeInLine()">k</button><button class="button button-highlight button-square button-raised button-small"onclick="mdCodeInLines()">ks</button><button class="button button-highlight button-square button-raised button-small" onclick="mdB()">b</button><button class="button button-highlight button-rounded button-raised button-small"onclick="mdtableCopy()">table</button><button class="button button-highlight button-square button-raised button-small" onclick="mdU2T()">u2t</button><button class="button button-highlight button-square button-raised button-small"onclick="frontMatter()">FM</button><br></span><br><span>Markdown代码块:</span><select id="Option" name="Option"><option value=''>不设置语言</option><option value="java" selected>java</option><option value="javascript">javascript</option><option value="html">html</option><option value="sql">sql</option><option value="css">css</option></select><br><span class="button-group"><button class="button button-highlight button-square button-raised button-small"onclick="mdCbOption()">cb</button><button class="button button-highlight button-rounded button-raised button-small" onclick="mdCb('java')">cbjava</button><button class="button button-highlight button-rounded button-raised button-small"onclick="mdCb('javascript')">cb js</button><button class="button button-highlight button-rounded button-raised button-small" onclick="mdCb('html')">cbhtml</button><button class="button button-highlight button-rounded button-raised button-small" onclick="mdCb('css')">cbcss</button><button class="button button-highlight button-rounded button-raised button-small" onclick="mdCb('sql')">cbsql</button></span><br><span>格式化:</span><br><span class="button-group"><button class="button button-caution button-rounded button-raised button-small"onclick="niuke()">niuke</button><button class="button button-caution button-rounded button-raised button-small"onclick="formatJava()">formatJava</button><button class="button button-caution button-rounded button-raised button-small"onclick="cHeader()">cHeader</button></span><br><span>字符串转换:</span><br><span class="button-group"><button class="button button-royal button-square button-raised button-small"onclick="upperCase()">大写</button><button class="button button-royal button-square button-raised button-small"onclick="lowerCase()">小写</button></span><span class="button-group"><button class="button button-royal button-rounded button-raised button-small" onclick="tab()">tab</button><button class="button button-royal button-rounded button-raised button-small"onclick="unTab()">unTab</button></span><span class="button-group"><button class="button button-royal button-rounded button-raised button-small"onclick="deleteSingleLineComment()">删除单行注释</button><button class="button button-royal button-rounded button-raised button-small"onclick="deleteBlankLine()">删除空行</button><button class="button button-royal button-rounded button-raised button-small"onclick="deleteSpaceStart()">删除行头空白</button><button class="button button-royal button-rounded button-raised button-small"onclick="toOneLine()">toOneLine</button></span><span class="button-group"><button class="button button-royal button-rounded button-raised button-small"onclick="toEnPunctuation()">使用英文标点符号</button><button class="button button-royal button-rounded button-raised button-small"onclick="toTools()">toTools</button></span><br><span>其他工具</span><br><a href='/blog/html/6a91baf/'>Git 推送流程</a></div>    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<link href="https://cdn.bootcss.com/Buttons/2.0.0/css/buttons.min.css" rel="stylesheet">
-<script src="https://cdn.bootcss.com/Buttons/2.0.0/js/buttons.min.js"></script>
-
+<div id="panel"><textarea rows="16" id="input" placeholder="请输入" contenteditable="true"></textarea><br><span class="btn-group"><button class="btn" onclick="clearInput()">清空输入</button><button class="btn" onclick="copy()">copy</button><button class="btn" onclick="undo()">undo</button><button class="btn" onclick="unNiuke()">unNiuke</button><button class="btn" onclick="tags()">tags</button></span><br><span>计数器:</span><input type="text" name="counter" id="counter" value="1" size="3" /><br><span class="btn-group"><button class="btn btn-color-red" onclick="document.getElementById('counter').value='1'">reset</button><button class="btn btn-color-red" onclick="plus()">plus</button><button class="btn btn-color-red" onclick="minus()">minus</button></span><br><span>转成Markdown:</span><br><span class="btn-group"><button class="btn btn-color-green" onclick="mdU()">u</button><button class="btn btn-color-green" onclick="mdO()">o</button><button class="btn btn-color-green" onclick="mdQ()">q</button><button class="btn btn-color-green" onclick="mdK()">k</button><button class="btn btn-color-green" onclick="mdKs()">ks</button><button class="btn btn-color-green" onclick="mdB()">b</button><button class="btn btn-color-green" onclick="mdtableCopy()">table</button><button class="btn btn-color-green" onclick="mdU2T()">u2t</button><button class="btn btn-color-green" onclick="frontMatter()">FM</button></span><br><span>Markdown代码块:</span><select id="Option" name="Option"><option value=''>不设置语言</option><option value="java" selected>java</option><option value="javascript">javascript</option><option value="html">html</option><option value="sql">sql</option><option value="css">css</option></select><br><span class="btn-group"><button class="btn btn-color-green" onclick="mdCbOption()">cb</button><button class="btn btn-color-green" onclick="mdCb('java')">cb&nbsp;java</button><button class="btn btn-color-green" onclick="mdCb('javascript')">cb&nbsp;js</button><button class="btn btn-color-green" onclick="mdCb('html')">cb&nbsp;html</button><button class="btn btn-color-green" onclick="mdCb('css')">cb&nbsp;css</button><button class="btn btn-color-green" onclick="mdCb('sql')">cb&nbsp;sql</button></span><br><span>格式化:</span><br><span class="btn-group"><button class="btn btn-color-blueviolet" onclick="niuke()">niuke</button><button class="btn btn-color-blueviolet" onclick="formatJava()">formatJava</button><button class="btn btn-color-blueviolet" onclick="cHeader()">cHeader</button></span><br><span>字符串转换:</span><br><span class="btn-group"><button class="btn btn-color-brown" onclick="upperCase()">大写</button><button class="btn btn-color-brown" onclick="lowerCase()">小写</button></span><span class="btn-group"><button class="btn btn-color-brown">tab</button><button class="btn btn-color-brown" onclick="unTab()">unTab</button></span><span class="btn-group"><button class="btn btn-color-brown" onclick="deleteSingleLineComment()">删除单行注释</button><button class="btn btn-color-brown" onclick="deleteBlankLine()">删除空行</button><button class="btn btn-color-brown" onclick="deleteSpaceStart()">删除行头空白</button><button class="btn btn-color-brown" onclick="toOneLine()">toOneLine</button></span><span class="btn-group"><button class="btn btn-color-brown" onclick="toEnPunctuation()">使用英文标点符号</button><button class="btn btn-color-brown" onclick="toTools()">toTools</button></span><br><span>其他工具</span><br><a href='/blog/html/6a91baf/'>Git 推送流程</a></div>
 <style type="text/css">
-    /* input[type="button"] {
-        margin: 0.25em;
-    } */
+    .btn {
+        background-color: #008CBA;
+        border: none;
+        color: white;
+        padding: 0.2em 0.1em 0.2em 0.1em;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0.2em 0.1em 0.2em 0.1em;
+        cursor: pointer;
+        min-width: 2em;
+    }
+    .btn-color-red {
+        background-color: #f44336;
+    }
+    .btn-color-green {
+        background-color: #4CAF50;
+    }
+    .btn-color-pink {
+        background-color: #FF00FF;
+    }
+    .btn-color-blue {
+        background-color: #008CBA;
+    }
+    .btn-color-blueviolet {
+        background-color: BlueViolet;
+    }
+    .btn-color-brown {
+        background-color: brown;
+    }
+    .btn-color-crimson {
+        background-color: crimson;
+    }
+    .btn-color-black {
+        background-color: black;
+    }
+    .btn-color-gray {
+        background-color: #555555;
+    }
+    /* 文本框样式 */
     textarea {
         width: 100%;
         margin-right: auto;
     }
+    /* 覆盖样式 */
     header.post-header div.post-meta {
         margin-bottom: 0.875em;
     }
@@ -41,6 +76,10 @@ comments: false
         input.select();
         document.execCommand("Copy");
         input.blur();
+    }
+    function tags() {
+        input.value = "\ntags: 有空了解一下";
+        copy();
     }
     function clearInput() {
         input.value = "";
@@ -198,12 +237,12 @@ comments: false
         text = text + "\n";
         result(text);
     }
-    function mdCodeInLine() {
+    function mdK() {
         result("`" + input.value + "`");
     }
-    function mdCodeInLines(text) {
+    function mdKs(text) {
         if (typeof (text) == "undefined") {
-            result(mdCodeInLines(input.value));
+            result(mdKs(input.value));
         } else {
             text = text.replace(/`?((?:-(?! ))?[a-zA-Z<][a-zA-Z0-9 ():\_.\/\[\]<>,+="-]*[a-zA-Z0-9)>/.\*])`?/mg,
                 "`$1`");
@@ -225,7 +264,7 @@ comments: false
         text = deleteSpaceStart(text);
         text = deleteBlankLine(text);
         text = toEnPunctuation(text);
-        text = mdCodeInLines(text);
+        text = mdKs(text);
         text = text.replace(/^[-*] /mg, "");
         text = text.replace(/^(`.+?`):/mg, "$1|");
         text = text.replace(/^/mg, "|");
@@ -280,7 +319,7 @@ comments: false
         selects = text.match(/(?:[A-z]\n.+?\n)+/mg)[0];
         selectStart = text.indexOf(selects);
         selectEnd = selectStart + selects.length;
-        selects = mdCodeInLines(selects);
+        selects = mdKs(selects);
         selects = selects.replace(/([A-Z])\n(.+)/mg, "- $1 $2");
         problem += text.substring(0, selectStart);
         answer = text.substring(selectEnd);
