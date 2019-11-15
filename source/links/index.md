@@ -65,6 +65,7 @@ comments: false
 - [网易云课堂](https://study.163.com/)
 - [尚硅谷](http://www.atguigu.com/download.shtml)
 - [实验楼](https://www.shiyanlou.com)
+- [劲爆综艺动漫网](https://kan.jinbaozy.com/)
 
 # 博客 #
 - [廖雪峰的官网网站](https://www.liaoxuefeng.com/)
