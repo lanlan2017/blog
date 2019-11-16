@@ -3,7 +3,7 @@ title: Git SSH配置过程
 categories: 
   - Git
 date: 2019-11-13 16:22:20
-updated: 2019-11-13 16:55:43
+updated: 2019-11-17 01:38:41
 abbrlink: 8d23490d
 ---
 - [Git SSH配置过程](/blog/8d23490d/#Git-SSH配置过程)
@@ -15,7 +15,7 @@ abbrlink: 8d23490d
         - [生成默认长度的密钥对](/blog/8d23490d/#生成默认长度的密钥对)
         - [生成指定长度的密钥对](/blog/8d23490d/#生成指定长度的密钥对)
     - [将公钥添加到Github上](/blog/8d23490d/#将公钥添加到Github上)
-    - [添加密钥文件到](/blog/8d23490d/#添加密钥文件到)
+    - [添加密钥文件到本地SSH客户端](/blog/8d23490d/#添加密钥文件到本地SSH客户端)
     - [测试链接是否成功](/blog/8d23490d/#测试链接是否成功)
 - [参考资料](/blog/8d23490d/#参考资料)
 
@@ -30,9 +30,15 @@ abbrlink: 8d23490d
 ```shell
 git config --global user.email "your_email@example.com"
 ```
+```shell
+git config --global user.email "18251956727@163.com"
+```
 ### 配置用户名 ###
 ```shell
 git config --global user.name "your_name"
+```
+```shell
+git config --global user.name "lanlan2017"
 ```
 ### 查看效果 ###
 ```shell
@@ -55,7 +61,7 @@ ssh-keygen -t rsa -C "18251956727@163.com"
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 ## 将公钥添加到Github上 ##
-## 添加密钥文件到 ##
+## 添加密钥文件到本地SSH客户端 ##
 ```shell
 ssh-add 文件名
 ```
