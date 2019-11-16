@@ -19,6 +19,7 @@ comments: false
     - [ ] 配置mybatis
     - [ ] 设计server
 - [ ] 有空了解一下
+- [ ] 增加个性短语
 
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
