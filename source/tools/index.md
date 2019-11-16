@@ -3,7 +3,7 @@ title: 在线工具
 date: 2019-10-17 12:08:16
 comments: false
 ---
-<div id="panel"><textarea rows="16" id="input" placeholder="请输入" contenteditable="true"></textarea><br><span class="tools"><span><button class="btn" onclick="clearInput()">清空输入</button><button class="btn" onclick="copy()">copy</button><button class="btn" onclick="undo()">undo</button><button class="btn" onclick="unNiuke()">unNiuke</button><button class="btn" onclick="tags()">tags</button></span><br><span>计数器:</span><input type="text" name="counter" id="counter" value="1" size="3" /><span><button class="btn btn-color-red" onclick="document.getElementById('counter').value='1'">reset</button><button class="btn btn-color-red" onclick="plus()">plus</button><button class="btn btn-color-red" onclick="minus()">minus</button></span><br><span>转成Markdown:</span><br><span><button class="btn btn-color-green" onclick="mdU()">u</button><button class="btn btn-color-green" onclick="mdO()">o</button><button class="btn btn-color-green" onclick="mdQ()">q</button><button class="btn btn-color-green" onclick="mdK()">k</button><button class="btn btn-color-green" onclick="mdKs()">ks</button><button class="btn btn-color-green" onclick="mdB()">b</button><button class="btn btn-color-green" onclick="mdtableCopy()">table</button><button class="btn btn-color-green" onclick="mdU2T()">u2t</button><button class="btn btn-color-green" onclick="frontMatter()">FM</button></span><br><span>Markdown代码块:</span><select id="Option" name="Option"><option value=''>不设置语言</option><option value="java" selected>java</option><option value="javascript">javascript</option><option value="html">html</option><option value="sql">sql</option><option value="css">css</option></select><br><span><button class="btn btn-color-green" onclick="mdCbOption()">cb</button><button class="btn btn-color-green" onclick="mdCb('java')">cb&nbsp;java</button><button class="btn btn-color-green" onclick="mdCb('javascript')">cb&nbsp;js</button><button class="btn btn-color-green" onclick="mdCb('html')">cb&nbsp;html</button><button class="btn btn-color-green" onclick="mdCb('css')">cb&nbsp;css</button><button class="btn btn-color-green" onclick="mdCb('sql')">cb&nbsp;sql</button></span><br><span>格式化:</span><br><span><button class="btn btn-color-blueviolet" onclick="niuke()">niuke</button><button class="btn btn-color-blueviolet" onclick="formatJava()">formatJava</button><button class="btn btn-color-blueviolet" onclick="cHeader()">cHeader</button></span><br><span>字符串转换:</span><br><span><button class="btn btn-color-brown" onclick="upperCase()">大写</button><button class="btn btn-color-brown" onclick="lowerCase()">小写</button></span><span><button class="btn btn-color-brown" onclick="tab()">tab</button><button class="btn btn-color-brown" onclick="unTab()">unTab</button><button class="btn btn-color-brown" onclick="tabTo4Spaces()">tabTo4Spaces</button></span><span><button class="btn btn-color-brown" onclick="deleteSingleLineComment()">删除单行注释</button><button class="btn btn-color-brown" onclick="deleteBlankLine()">删除空行</button><button class="btn btn-color-brown" onclick="deleteSpaceStart()">删除行头空白</button><button class="btn btn-color-brown" onclick="toOneLine()">toOneLine</button></span><span><button class="btn btn-color-brown" onclick="toEnPunctuation()">使用英文标点符号</button><button class="btn btn-color-brown" onclick="toTools()">toTools</button></span><br><span>其他工具</span><br><a href='/blog/html/6a91baf/'>Git 推送流程</a></span></div>
+<div id="panel"><textarea rows="16" id="input" placeholder="请输入" contenteditable="true"></textarea><br><span class="tools"><span><button class="btn" onclick="clearInput()">清空输入</button><button class="btn" onclick="copy()">copy</button><button class="btn" onclick="undo()">undo</button><button class="btn" onclick="unNiuke()">unNiuke</button><button class="btn" onclick="tags()">tags</button></span><br><span>计数器:</span><input type="text" name="counter" id="counter" value="1" size="3" /><span><button class="btn btn-color-red" onclick="document.getElementById('counter').value='1'">reset</button><button class="btn btn-color-red" onclick="plus()">plus</button><button class="btn btn-color-red" onclick="minus()">minus</button></span><br><span>转成Markdown:</span><br><span><button class="btn btn-color-green" onclick="mdU()">u</button><button class="btn btn-color-green" onclick="mdO()">o</button><button class="btn btn-color-green" onclick="mdQ()">q</button><button class="btn btn-color-green" onclick="mdK()">k</button><button class="btn btn-color-green" onclick="mdKs()">ks</button><button class="btn btn-color-green" onclick="mdB()">b</button><button class="btn btn-color-green" onclick="mdtableCopy()">table</button><button class="btn btn-color-green" onclick="mdU2T()">u2t</button><button class="btn btn-color-green" onclick="frontMatter()">FM</button></span><br><span>Markdown代码块:</span><select id="Option" name="Option"><option value=''>不设置语言</option><option value="java" selected>java</option><option value="javascript">javascript</option><option value="html">html</option><option value="sql">sql</option><option value="css">css</option></select><br><span><button class="btn btn-color-green" onclick="mdCbOption()">cb</button><button class="btn btn-color-green" onclick="mdCb('java')">cb&nbsp;java</button><button class="btn btn-color-green" onclick="mdCb('javascript')">cb&nbsp;js</button><button class="btn btn-color-green" onclick="mdCb('html')">cb&nbsp;html</button><button class="btn btn-color-green" onclick="mdCb('css')">cb&nbsp;css</button><button class="btn btn-color-green" onclick="mdCb('sql')">cb&nbsp;sql</button></span><br><span>格式化:</span><br><span><button class="btn btn-color-blueviolet" onclick="niuke()">niuke</button><button class="btn btn-color-blueviolet" onclick="formatJava()">formatJava</button><button class="btn btn-color-blueviolet" onclick="cHeader()">cHeader</button></span><br><span>字符串转换:</span><br><span><button class="btn btn-color-brown" onclick="upperCase()">大写</button><button class="btn btn-color-brown" onclick="lowerCase()">小写</button></span><span><button class="btn btn-color-brown" onclick="tab()">tab</button><button class="btn btn-color-brown" onclick="unTab()">unTab</button><button class="btn btn-color-brown" onclick="tabTo4Spaces()">tabTo4Spaces</button></span><span><button class="btn btn-color-brown" onclick="deleteSingleLineComment()">删除单行注释</button><button class="btn btn-color-brown" onclick="deleteMultilineComments()">删除多行注释</button><button class="btn btn-color-brown" onclick="deleteBlankLine()">删除空行</button><button class="btn btn-color-brown" onclick="deleteSpaceStart()">删除行头空白</button><button class="btn btn-color-brown" onclick="toOneLine()">toOneLine</button></span><span><button class="btn btn-color-brown" onclick="toEnPunctuation()">使用英文标点符号</button><button class="btn btn-color-brown" onclick="toTools()">toTools</button><button class="btn btn-color-brown" onclick="miniJava()">miniJava</button></span><br><span>其他工具</span><br><a href='/blog/html/6a91baf/'>Git 推送流程</a></span></div>
 <style type="text/css">
     .btn {
         background-color: #008CBA;
@@ -136,7 +136,8 @@ comments: false
         }
         else {
             text = text.replace(/^[ ]*<!--.+-->/mg, "");
-            return text.replace(/^[ ]*\/\/.*\n/mg, "");
+            text = text.replace(/^[ ]*\/\/.*\n/mg, "");
+            return text;
         }
     }
     function deleteBlankLine(text) {
@@ -166,6 +167,13 @@ comments: false
             result(tabTo4Spaces(input.value));
         } else {
             return text.replace(/\t/mg, "    ");
+        }
+    }
+    function deleteMultilineComments(text) {
+        if (typeof (text) == "undefined") {
+            result(deleteMultilineComments(input.value));
+        } else {
+            return text.replace(/\/\*{1,2}\n(?:[ ]*\*.*?\n)+/mg, "");
         }
     }
     function deleteSpaceStart(text) {
@@ -381,24 +389,14 @@ comments: false
     function restoreFor(text) {
         return text.replace(/for[ ]*\((.*?);\n?[ ]*(.*?);\n?[ ]*(.+)\)/mg, "for($1;$2;$3)");
     }
-    function formatJava(inputValue) {
-        if (typeof (inputValue) == "undefined") {
-            var text = input.value;
-            text = toEnPunctuation(text);
-            text = convertSingleLineComments(text);
-            text = toOneLine(text);
-            text = formatJava(text);
-            text = restoreSingleLineComment(text);
-            text = deleteBlankLine(text);
-            text = restoreFor(text);
-            console.log(text);
-            result(text);
-        }
-        else {
+    function formatJavaCode(text) {
+        if (typeof (text) == "undefined") {
+            console.log("请输入参数");
+        } else {
             var lineTemp = '';
             var value = '';
-            for (var i = 0; i < inputValue.length; i++) {
-                value = inputValue[i];
+            for (var i = 0; i < text.length; i++) {
+                value = text[i];
                 if (value == "{") {
                     depth++;
                     lineTemp
@@ -420,6 +418,21 @@ comments: false
             return lineTemp;
         }
     }
+    function formatJava(text) {
+        if (typeof (text) == "undefined") {
+            result(formatJava(input.value));
+        }
+        else {
+            text = toEnPunctuation(text);
+            text = convertSingleLineComments(text);
+            text = toOneLine(text);
+            text = formatJavaCode(text);
+            text = restoreSingleLineComment(text);
+            text = deleteBlankLine(text);
+            text = restoreFor(text);
+            return text;
+        }
+    }
     function depthTab(depth) {
         var tab = "    ";
         var depthTabs = '';
@@ -427,6 +440,15 @@ comments: false
             depthTabs += tab;
         }
         return depthTabs;
+    }
+    function miniJava() {
+        var text = input.value;
+        text = deleteMultilineComments(text);
+        text = deleteSingleLineComment(text);
+        text = formatJava(text);
+        text = deleteSingleLineComment(text);
+        text = deleteBlankLine(text);
+        result(text);
     }
     function cHeader() {
         if (checkInput()) {

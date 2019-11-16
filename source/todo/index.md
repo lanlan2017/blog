@@ -19,6 +19,8 @@ comments: false
     - [ ] 配置mybatis
     - [ ] 设计server
 - [ ] 有空了解一下
+- [x] 修改tools页面:
+	- [ ] 添加删除多行注释的功能.
 
 
 # 已完成
