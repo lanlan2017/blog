@@ -11,7 +11,7 @@ comments: false
     - [ ] 多线程
 - [ ] 注意毕设进度，要求12月中旬答辩
     - [ ] 看开题报告，
-    - [ ] 登网站，
+    - [ ] 登网站,回学校再登陆吧
     - [ ] 理解需求
     - [ ] 设计ER
     - [ ] 设计数据库
@@ -19,8 +19,7 @@ comments: false
     - [ ] 配置mybatis
     - [ ] 设计server
 - [ ] 有空了解一下
-- [ ] 增加个性短语
-- [ ] 
+
 
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
@@ -40,5 +39,6 @@ comments: false
     - [x] 给耳机
     - [x] 更新mdKs中的正则表达式到电脑上到idea上
     - [x] 修改mdks正则:
+- [x] 增加个性短语
 
 </details>
