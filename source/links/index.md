@@ -5,7 +5,14 @@ comments: false
 ---
 # 我的站点 #
 - [读书笔记](https://lanlan2017.github.io/ReadingNotes/)
+- [Java 相关读书笔记](https://lanlan2017.github.io/JavaReadingNotes/)
 - [笔试答案](https://lanlan2017.github.io/exam/)
+
+# 本地站点 #
+- [博客本地](http://127.0.0.1:4007/)
+- [本地工具](http://127.0.0.1:4007/blog/tools/)
+- [笔试题本地](http://localhost:4008/exam/)
+    - [Java读书笔记](http://localhost:4010/JavaReadingNotes/)
 
 # 官网 #
 - [junit5](https://junit.org/junit5/)
