@@ -108,11 +108,19 @@ git add .
 git commit -m '测试SSH推送'
 git push origin master
 ```
-这个时候就可以直接推送到远程仓库了.不在需要密码.
-如果这个时候没有成功,这表示上面的步骤有问题.你可以需要输入
+这个时候就可以直接推送到远程仓库了.不再需要输入用户名和密码.
+
+如果这个时候还需要输入密码,这表示上面的步骤有问题.
+### 你可能没有开启ssh-agent
+你可以先需要输入如下命令
 ```shell
 ssh-agent bash
 ```
+再试着推送
+```java
+git push origin master
+```
+试试，如果还不许,则按上面的步骤重新操作一遍。
 
 # 参考资料 #
 [https://blog.csdn.net/hx1298234467/article/details/53576826](https://blog.csdn.net/hx1298234467/article/details/53576826)
