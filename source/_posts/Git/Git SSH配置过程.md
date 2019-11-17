@@ -30,6 +30,7 @@ abbrlink: 8d23490d
 ```shell
 git config --global user.email "your_email@example.com"
 ```
+例如我的邮箱:
 ```shell
 git config --global user.email "18251956727@163.com"
 ```
@@ -120,7 +121,42 @@ ssh-agent bash
 ```java
 git push origin master
 ```
-试试，如果还不许,则按上面的步骤重新操作一遍。
+### 你可能的远程仓库地址时HTTPS的不是SSH地址
+如果`ssh-agent`也开启了,密钥设置的也没有问题,`push`的时候还是要求登录密码，那你可能用的时`HTTPS`的仓库地址
+#### 查看远程仓库地址 ####
+```shell
+git remote -v
+```
+```shell
+lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/blog10 (master)
+$ git remote -v
+origin  https://github.com/lanlan2017/JavaReadingNotes.git (fetch)
+origin  https://github.com/lanlan2017/JavaReadingNotes.git (push)
+```
+#### 删除远程仓库地址 ####
+```shell
+git remote rm origin
+```
+#### 重新添加SSH地址 ####
+```shell
+git remote add origin git@github.com:lanlan2017/JavaReadingNotes.git
+```
+这样就可以直接push了:
+```shell
+lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/blog10 (master)
+$ git push origin master
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (11/11), 6.94 KiB | 3.47 MiB/s, done.
+Total 11 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
+To github.com:lanlan2017/JavaReadingNotes.git
+   58370ef..1f87f16  master -> master
+
+```
+如果还不行,则按上面的步骤重新操作一遍。
 
 # 参考资料 #
 [https://blog.csdn.net/hx1298234467/article/details/53576826](https://blog.csdn.net/hx1298234467/article/details/53576826)
