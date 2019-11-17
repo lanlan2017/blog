@@ -30,6 +30,7 @@ abbrlink: 8d23490d
 ```shell
 git config --global user.email "your_email@example.com"
 ```
+
 ```shell
 git config --global user.email "18251956727@163.com"
 ```
@@ -60,13 +61,12 @@ ssh-keygen -t rsa -C "18251956727@163.com"
 ```shell
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
-## 将公钥添加到Github上 ##
 ## 添加key到SSH  ##
 ```shell
 ssh-add 私钥文件名
 ```
 ```shell
-ssh-add ~/.ssh/id_rsa
+ssh-add id_rsa
 ```
 ### 解决 Could not open a connection to your authentication agent ###
 如果出现如下错误:
@@ -81,18 +81,40 @@ ssh-agent bash
 ```
 然后再次执行:
 ```shell
-ssh-add ~/.ssh/id_rsa
+ssh-add id_rsa
 ```
 即可
-添加成功效果:
+### 添加成功效果 ###
 ```shell
 $ ssh-add id_rsa
 Identity added: id_rsa (xxxxxxx@xxxx.com)
 ```
+## 将公钥添加到Github上 ##
+```shell
+cat id_rsa.pub
+```
+然后复制,设置到GitHub上.省略。
 ## 测试链接是否成功 ##
 ```shell
 ssh -T git@github.com
 ```
+```shell
+lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/blog9 (master)
+$ ssh -T git@github.com
+Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.
+```
+## 使用SSH推送远程仓库 ##
+```shell
+git add .
+git commit -m '测试SSH推送'
+git push origin master
+```
+这个时候就可以直接推送到远程仓库了.不在需要密码.
+如果这个时候没有成功,这表示上面的步骤有问题.你可以需要输入
+```shell
+ssh-agent bash
+```
+
 # 参考资料 #
 [https://blog.csdn.net/hx1298234467/article/details/53576826](https://blog.csdn.net/hx1298234467/article/details/53576826)
 [https://www.cnblogs.com/yangshifu/p/9919817.html](https://www.cnblogs.com/yangshifu/p/9919817.html)
