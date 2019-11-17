@@ -61,14 +61,39 @@ ssh-keygen -t rsa -C "18251956727@163.com"
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 ## 将公钥添加到Github上 ##
-## 添加密钥文件到本地SSH客户端 ##
+## 添加key到SSH  ##
 ```shell
-ssh-add 文件名
+ssh-add 私钥文件名
+```
+```shell
+ssh-add ~/.ssh/id_rsa
+```
+### 解决 Could not open a connection to your authentication agent ###
+如果出现如下错误:
+```shell
+lan@DESKTOP-8ISAT6B MINGW64 ~/.ssh
+$ ssh-add id_rsa
+Could not open a connection to your authentication agent.
+```
+则先执行如下命令
+```shell
+ssh-agent bash
+```
+然后再次执行:
+```shell
+ssh-add ~/.ssh/id_rsa
+```
+即可
+添加成功效果:
+```shell
+$ ssh-add id_rsa
+Identity added: id_rsa (xxxxxxx@xxxx.com)
 ```
 ## 测试链接是否成功 ##
 ```shell
 ssh -T git@github.com
 ```
 # 参考资料 #
+[https://blog.csdn.net/hx1298234467/article/details/53576826](https://blog.csdn.net/hx1298234467/article/details/53576826)
 [https://www.cnblogs.com/yangshifu/p/9919817.html](https://www.cnblogs.com/yangshifu/p/9919817.html)
 [https://www.cnblogs.com/e-cat/p/10862208.html](https://www.cnblogs.com/e-cat/p/10862208.html)
