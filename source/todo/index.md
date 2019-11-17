@@ -24,10 +24,6 @@ comments: false
     - [ ] 设计server
 - [ ] 有空了解一下
 - [x] 修改tools页面:
-- [ ] 更新博客
-    - [x] `创建子站点`专门存放Java相关的读书笔记.免得站点内容太多,部署缓慢,搜索缓慢.
-
-
 
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>

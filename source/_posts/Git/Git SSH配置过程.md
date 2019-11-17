@@ -30,7 +30,6 @@ abbrlink: 8d23490d
 ```shell
 git config --global user.email "your_email@example.com"
 ```
-
 ```shell
 git config --global user.email "18251956727@163.com"
 ```
