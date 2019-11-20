@@ -23,7 +23,11 @@ comments: false
     - [ ] 配置mybatis
     - [ ] 设计server
 - [ ] 有空了解一下
-- [x] 修改tools页面:
+- [ ] 洗衣服
+- [ ] 取快递
+- [ ] 休息
+- [ ] 看数据库设计
+- [ ] eclipse画er图
 
 
 
