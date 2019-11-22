@@ -14,6 +14,9 @@ comments: false
 - [笔试题本地](http://localhost:4008/exam/)
     - [Java读书笔记](http://localhost:4010/JavaReadingNotes/)
 
+# 学校
+- [校园网登陆](http://p.njupt.edu.cn/)
+
 # 官网 #
 - [junit5](https://junit.org/junit5/)
 - [mysql](https://www.mysql.com/cn/)
