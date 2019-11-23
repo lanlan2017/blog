@@ -94,10 +94,12 @@ comments: false
 - [微博热搜](https://s.weibo.com/top/summary)
 - [知乎-科技](https://www.zhihu.com/mweb-keji)
 - [网易 科技频道](https://3g.163.com/touch/tech/)
+    - [网易科技频道 电脑版](https://tech.163.com/)
 - [科技新闻 央视网](http://news.cctv.com/tech/mobile/)
 - [DoNews-互联网新闻门户网站-IT资讯科技媒体](http://3g.donews.com/)
 - [懒人科技网](http://www.lazykeji.com/m/list.php?tid=76)
 - [科技日报](http://digitalpaper.stdaily.com/)
-- [搜狐科技频道](https://m.sohu.com/ch/30/)
+- [搜狐科技频道 手机版](https://m.sohu.com/ch/30/)
+    - [搜狐科技频道 电脑版](http://it.sohu.com/)
 - [虎嗅网](https://m.huxiu.com/)
 
