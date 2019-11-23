@@ -4,7 +4,7 @@ categories:
   - MySQL
   - 图形工具
 date: 2019-10-18 17:01:51
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: 4f42ffba
 ---
 - [旧版本的navicat无法连接mysql8.0](/blog/4f42ffba/#旧版本的navicat无法连接mysql8-0)
