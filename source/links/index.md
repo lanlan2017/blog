@@ -3,6 +3,28 @@ title: links
 date: 2019-11-04 20:24:42
 comments: false
 ---
+<div id='toc'>
+
+- [我的站点](/blog/links/#我的站点)
+- [本地站点](/blog/links/#本地站点)
+- [学校](/blog/links/#学校)
+- [官网](/blog/links/#官网)
+- [在线工具](/blog/links/#在线工具)
+- [在线文档](/blog/links/#在线文档)
+- [资源下载](/blog/links/#资源下载)
+- [视屏网站](/blog/links/#视屏网站)
+- [博客](/blog/links/#博客)
+- [笔试](/blog/links/#笔试)
+- [资讯](/blog/links/#资讯)
+
+</div>
+<script>
+if (navigator.platform.toLowerCase() == 'win32')
+{
+    document.getElementById('toc').style.display = 'none';
+}
+</script>
+
 # 我的站点 #
 - [读书笔记](https://lanlan2017.github.io/ReadingNotes/)
 - [Java 相关读书笔记](https://lanlan2017.github.io/JavaReadingNotes/)
@@ -105,4 +127,3 @@ comments: false
 - [搜狐科技频道 手机版](https://m.sohu.com/ch/30/)
     - [搜狐科技频道 电脑版](http://it.sohu.com/)
 - [虎嗅网](https://m.huxiu.com/)
-
