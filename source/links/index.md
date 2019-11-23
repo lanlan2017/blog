@@ -33,6 +33,8 @@ comments: false
 # 在线文档 #
 ## API
 - [Oracle java9 doc](https://docs.oracle.com/javase/9/docs/api/java/lang/System.html)
+- [IntelliJ IDEA官方文档_w3cschool](https://www.w3cschool.cn/intellij_idea_doc/)
+    - [IntelliJ IDEA官方文档_手机](https://m.w3cschool.cn/intellij_idea_doc/)
 
 ## CSS
 - [buttons](https://www.bootcss.com/p/buttons/)
