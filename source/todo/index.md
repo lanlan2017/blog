@@ -34,10 +34,12 @@ comments: false
 - [ ] 还钱
     - [ ] 已经还了,等审核.明天看看审核通过了没
 - [ ] 约会
-- [ ] 完善tools，linksTOC,id加长点.
+- [x] 完善tools，linksTOC,id加长点.
+- [ ] 修改FM程序,在more后面执行脚本.关闭程序.
 - [ ] 安装virtualbox，
     - [ ] 安装ubuntu
     - [ ] 安装centos
+- [ ] 启动博客时,删除_post目录下的所有.html文件.
 
 
 # 已完成

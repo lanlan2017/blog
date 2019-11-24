@@ -93,6 +93,10 @@ comments: false
         if (text == null) {
             result(linksTOC(input.value));
         } else {
+            var head = "<div id='my_toc'>\n\n";
+            var tail =
+                "\n</div>\n<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}" +
+                "<__script>\n".replace("__", "/");
             var regex = /^# (.+?)(?: #)?$/mg;
             var matchs = text.match(regex);
             var resultStr = "";
@@ -100,7 +104,7 @@ comments: false
                 matchs[i] = matchs[i].replace(regex, "$1");
                 resultStr += "- [" + matchs[i] + "](/blog/links/#" + matchs[i] + ")" + "\n";
             }
-            return resultStr;
+            return head + resultStr + tail;
         }
     }
     function clearInput() {

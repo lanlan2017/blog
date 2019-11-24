@@ -3,7 +3,7 @@ title: links
 date: 2019-11-04 20:24:42
 comments: false
 ---
-<div id='toc'>
+<div id='my_toc'>
 
 - [我的站点](/blog/links/#我的站点)
 - [本地站点](/blog/links/#本地站点)
@@ -18,12 +18,7 @@ comments: false
 - [资讯](/blog/links/#资讯)
 
 </div>
-<script>
-if (navigator.platform.toLowerCase() == 'win32')
-{
-    document.getElementById('toc').style.display = 'none';
-}
-</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 # 我的站点 #
 - [读书笔记](https://lanlan2017.github.io/ReadingNotes/)
