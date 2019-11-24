@@ -23,6 +23,11 @@ abbrlink: 88ff8084
 # 解决方案
 在VirtualBox的安装路径(E:\Program Files\Oracle\VirtualBox)下启动cmd,然后执行如下命令:
 ```cmd
-E:\Program Files\Oracle\VirtualBox>VBoxManage setextradata global GUI/MaxGuestResolution any
+VBoxManage setextradata global GUI/MaxGuestResolution any
+```
+```cmd
+E:
+cd E:\Program Files\Oracle\VirtualBox
+VBoxManage setextradata global GUI/MaxGuestResolution any
 ```
 这样调整虚拟的分辨率后,就可以一致有效了.
