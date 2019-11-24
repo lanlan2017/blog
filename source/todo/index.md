@@ -32,13 +32,12 @@ comments: false
     - [x] 根据数据库导出E-R图
     - [ ] 根据E-R图生成表
 - [ ] 还钱
-    - [x] 奇怪,老是说我订单有错误.截至时期为12月20日,上班时间打电话问问怎么回事.
-        - [x] 我是昨天晚上八点钟换的,估计是下班时间不能还吧。
     - [ ] 已经还了,等审核.明天看看审核通过了没
 - [ ] 约会
-- [x] 安装vscode，markdown插件，
-- [x] 安装vscode SQL格式化插件
 - [ ] 完善tools，linksTOC,id加长点.
+- [ ] 安装virtualbox，
+    - [ ] 安装ubuntu
+    - [ ] 安装centos
 
 
 # 已完成
@@ -52,4 +51,9 @@ comments: false
     - [x] 安装mysql
 - [ ] Navicat 画ER图,
     - [x] 激活Navicat
+- [x] 安装vscode，markdown插件，
+- [x] 安装vscode SQL格式化插件
+- [x] 还钱
+    - [x] 奇怪,老是说我订单有错误.截至时期为12月20日,上班时间打电话问问怎么回事.
+        - [x] 我是昨天晚上八点钟换的,估计是下班时间不能还吧。
 </details>
