@@ -33,19 +33,24 @@ comments: false
     - [ ] 根据E-R图生成表
 - [ ] 还钱
     - [ ] 已经还了,等审核.明天看看审核通过了没
-- [ ] 约会
-- [x] 完善tools，linksTOC,id加长点.
+- [x] 完善tools，linksTOC,id加长点.生成脚本.
 - [ ] 修改FM程序,在more后面执行脚本.关闭程序.
 - [ ] 安装virtualbox，
-    - [ ] 安装ubuntu
-    - [ ] 安装centos
-- [ ] 启动博客时,删除_post目录下的所有.html文件.
-
+    - [ ] 安装增强工具,全屏,修复屏幕分辨率.
+    - [x] 安装ubuntu
+    - [x] 安装centos,
+        - [ ] 安装git,node.js,hexo,搭建博客.
+        - [ ] 安装中文输入法,
+        - [ ] 安装Java
+        - [ ] 安装idea
+        - [ ] 安装Mysql
+        - [ ] 安装Navicat.
+- [ ] 洗衣服
 
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
 
-- [x] 洗衣服
+- [x] 启动博客时,删除_post目录下的所有.html文件.
 - [x] 约会
     - [x] 衣服，白帽子，水杯。
     - [x] 安装去广告插件,创建账号
@@ -58,4 +63,5 @@ comments: false
 - [x] 还钱
     - [x] 奇怪,老是说我订单有错误.截至时期为12月20日,上班时间打电话问问怎么回事.
         - [x] 我是昨天晚上八点钟换的,估计是下班时间不能还吧。
+
 </details>
