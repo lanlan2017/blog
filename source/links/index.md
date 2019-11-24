@@ -7,6 +7,7 @@ comments: false
 
 - [我的站点](/blog/links/#我的站点)
 - [本地站点](/blog/links/#本地站点)
+- [笔试](/blog/links/#笔试)
 - [学校](/blog/links/#学校)
 - [官网](/blog/links/#官网)
 - [在线工具](/blog/links/#在线工具)
@@ -14,7 +15,6 @@ comments: false
 - [资源下载](/blog/links/#资源下载)
 - [视屏网站](/blog/links/#视屏网站)
 - [博客](/blog/links/#博客)
-- [笔试](/blog/links/#笔试)
 - [资讯](/blog/links/#资讯)
 
 </div>
@@ -25,11 +25,23 @@ comments: false
 - [Java 相关读书笔记](https://lanlan2017.github.io/JavaReadingNotes/)
 - [笔试答案](https://lanlan2017.github.io/exam/)
 
+<div id="localhost">
+
 # 本地站点 #
 - [博客本地](http://127.0.0.1:4007/)
 - [本地工具](http://127.0.0.1:4007/blog/tools/)
 - [笔试题本地](http://localhost:4008/exam/)
     - [Java读书笔记](http://localhost:4010/JavaReadingNotes/)
+
+</div>
+<script>if (navigator.platform.toLowerCase() == 'android'){document.getElementById('localhost').style.display = 'none';}</script>
+
+# 笔试
+- [牛客网](http://m.nowcoder.com/)
+- [W3CSchool 编程题库](https://www.w3cschool.cn/exam)
+- [51CTO前端开发题](https://edu.51cto.com/t/exam/list/id-103.html)
+- [51CTO后端开发java题](https://edu.51cto.com/t/exam/list/id-14.html)
+- [我要模考网 Java认证](http://www.51mokao.com/testlist2.html?id=7386&tc=507386&keyid=&q=&listtype=&testdate=&testtype=&area=)
 
 # 学校
 - [校园网登陆](http://p.njupt.edu.cn/)
@@ -45,6 +57,7 @@ comments: false
 
 # 在线工具
 - [regexper](https://regexper.com/)
+- [W3CSchool在线工具库](https://123.w3cschool.cn/webtools)
 
 
 # 在线文档 #
@@ -60,6 +73,10 @@ comments: false
 ## 教程集合
 - [菜鸟教程](https://www.runoob.com/)
 - [w3school 在线教程](https://www.w3school.com.cn/)
+- [w3cschool](https://www.w3cschool.cn/)
+    - [编程入门教程](https://www.w3cschool.cn/tutorial)
+    - [编程课程](https://www.w3cschool.cn/courses/)
+    - [编程实在](https://www.w3cschool.cn/codecamp/list)
 - [易百教程](https://www.yiibai.com/index.html)
 - [微学苑](http://www.weixueyuan.net/)
 
@@ -104,9 +121,6 @@ comments: false
 - [简书](https://www.jianshu.com/)
 - [C语言中文网](http://c.biancheng.net/)
 - [segmentfault](https://segmentfault.com/)
-
-# 笔试
-- [牛客网](http://m.nowcoder.com/)
 
 # 资讯 #
 - [博客园新闻](https://www.cnblogs.com/news/)
