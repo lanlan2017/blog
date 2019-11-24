@@ -4,14 +4,16 @@ categories:
   - 其他
   - Windows相关
 date: 2019-09-13 13:43:58
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: d39974fc
 ---
+<div id='my_toc'>
+
 - [Win10 PowerShell的光标出现在已经输入的字符的前面](/blog/d39974fc/#Win10-PowerShell的光标出现在已经输入的字符的前面)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Win10 PowerShell的光标出现在已经输入的字符的前面 #

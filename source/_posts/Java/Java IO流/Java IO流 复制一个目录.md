@@ -4,17 +4,19 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-10 23:32:16
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: bda55058
 ---
+<div id='my_toc'>
+
 - [实现文件复制](/blog/bda55058/#实现文件复制)
 - [复制目录的算法](/blog/bda55058/#复制目录的算法)
     - [复制目录的实现代码](/blog/bda55058/#复制目录的实现代码)
 - [完整代码如下：](/blog/bda55058/#完整代码如下：)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 实现把一个目录中的所有内容复制到一个目录中去

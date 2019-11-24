@@ -4,15 +4,17 @@ categories:
   - HTML
   - 表格
 date: 2019-03-28 14:47:35
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: aa51abd2
 ---
+<div id='my_toc'>
+
 - [HTML 表格对齐方式](/blog/aa51abd2/#HTML-表格对齐方式)
 - [参考链接](/blog/aa51abd2/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## HTML 表格对齐方式 ##

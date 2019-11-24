@@ -4,15 +4,17 @@ categories:
   - CSS
   - CSS工作原理
 date: 2019-05-11 11:31:24
-updated: 2019-11-05 10:32:09
+updated: 2019-11-14 11:39:25
 abbrlink: 9d1ffcf6
 ---
+<div id='my_toc'>
+
 - [添加CSS的三种方法](/blog/9d1ffcf6/#添加CSS的三种方法)
 - [CSS规则](/blog/9d1ffcf6/#CSS规则)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 添加CSS的三种方法 #

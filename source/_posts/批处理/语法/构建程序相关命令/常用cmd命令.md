@@ -5,9 +5,11 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2018-12-28 15:38:46
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: 8d229e40
 ---
+<div id='my_toc'>
+
 - [创建文件 copy con命令](/blog/8d229e40/#创建文件-copy-con命令)
 - [浏览文件 type命令](/blog/8d229e40/#浏览文件-type命令)
 - [echo命令](/blog/8d229e40/#echo命令)
@@ -22,9 +24,9 @@ abbrlink: 8d229e40
     - [批处理脚本中获取用户输入](/blog/8d229e40/#批处理脚本中获取用户输入)
 - [设置本地临时环境变量 setlocal](/blog/8d229e40/#设置本地临时环境变量-setlocal)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 创建文件 copy con命令 ##

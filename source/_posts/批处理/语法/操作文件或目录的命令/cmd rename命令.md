@@ -5,15 +5,17 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-11-22 11:07:10
-updated: 2019-11-22 11:17:34
+updated: 2019-11-22 11:22:40
 abbrlink: a63f263d
 ---
+<div id='my_toc'>
+
 - [帮助文档](/blog/a63f263d/#帮助文档)
 - [实例](/blog/a63f263d/#实例)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 帮助文档 #

@@ -4,9 +4,11 @@ categories:
   - Java
   - java工具类
 date: 2019-10-23 22:19:13
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: d58ef648
 ---
+<div id='my_toc'>
+
 - [java打印表格 将ResultSet中的数据打印成表格](/blog/d58ef648/#java打印表格-将ResultSet中的数据打印成表格)
     - [问题描述](/blog/d58ef648/#问题描述)
     - [思路](/blog/d58ef648/#思路)
@@ -17,9 +19,9 @@ abbrlink: d58ef648
     - [测试](/blog/d58ef648/#测试)
     - [运行结果](/blog/d58ef648/#运行结果)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # java打印表格 将ResultSet中的数据打印成表格 #

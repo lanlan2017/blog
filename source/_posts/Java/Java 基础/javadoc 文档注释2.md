@@ -4,9 +4,11 @@ categories:
   - Java
   - Java 基础
 date: 2019-02-10 18:15:08
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: a9f85f8d
 ---
+<div id='my_toc'>
+
 - [文档注释的格式化](/blog/a9f85f8d/#文档注释的格式化)
 - [文档注释的三部分](/blog/a9f85f8d/#文档注释的三部分)
     - [第一部分 简述](/blog/a9f85f8d/#第一部分-简述)
@@ -24,9 +26,9 @@ abbrlink: a9f85f8d
     - [-splitindex](/blog/a9f85f8d/#-splitindex)
     - [-windowtitle](/blog/a9f85f8d/#-windowtitle)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 文档注释可以用于对`类`、 `属性`、`方法`等进行说明。 写文档注释时除了需要使用 `/** .... */ ` 限定之外，还需要注意注释内部的一些细节问题。

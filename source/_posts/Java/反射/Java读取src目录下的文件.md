@@ -4,17 +4,19 @@ categories:
   - Java
   - 反射
 date: 2019-06-09 22:53:08
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:30
 abbrlink: 5bc9db15
 ---
+<div id='my_toc'>
+
 - [如何读取src目录下的文件](/blog/5bc9db15/#如何读取src目录下的文件)
 - [我的用法](/blog/5bc9db15/#我的用法)
 - [读取资源文件的工具类](/blog/5bc9db15/#读取资源文件的工具类)
 - [使用示例](/blog/5bc9db15/#使用示例)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 如何读取src目录下的文件 #

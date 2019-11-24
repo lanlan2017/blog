@@ -5,9 +5,11 @@ categories:
   - Java EE
   - 环境搭建
 date: 2019-04-26 17:42:04
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: 9b044702
 ---
+<div id='my_toc'>
+
 - [使用的软件版本](/blog/9b044702/#使用的软件版本)
 - [Maven安装](/blog/9b044702/#Maven安装)
     - [下载](/blog/9b044702/#下载)
@@ -33,9 +35,9 @@ abbrlink: 9b044702
     - [Tomcat之中部署的效果](/blog/9b044702/#Tomcat之中部署的效果)
 - [参考资料](/blog/9b044702/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 使用的软件版本 #

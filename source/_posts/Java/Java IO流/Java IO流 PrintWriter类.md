@@ -4,9 +4,11 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-13 20:36:12
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: 492ea8e8
 ---
+<div id='my_toc'>
+
 - [继承关系](/blog/492ea8e8/#继承关系)
 - [构造函数](/blog/492ea8e8/#构造函数)
 - [成员方法](/blog/492ea8e8/#成员方法)
@@ -32,9 +34,9 @@ abbrlink: 492ea8e8
     - [format()方法源码](/blog/492ea8e8/#format-方法源码)
     - [printf()方法源码](/blog/492ea8e8/#printf-方法源码)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 继承关系 ##

@@ -4,9 +4,11 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-10 14:57:46
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: f1ceb471
 ---
+<div id='my_toc'>
+
 - [FileReader类](/blog/f1ceb471/#FileReader类)
     - [继承关系](/blog/f1ceb471/#继承关系)
     - [构造方法：](/blog/f1ceb471/#构造方法：)
@@ -25,9 +27,9 @@ abbrlink: f1ceb471
     - [使用FileReader和FileWriter复制文件](/blog/f1ceb471/#使用FileReader和FileWriter复制文件)
     - [编码问题](/blog/f1ceb471/#编码问题)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # FileReader类 #

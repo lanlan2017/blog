@@ -4,9 +4,11 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-10 15:00:32
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: 3f2a064c
 ---
+<div id='my_toc'>
+
 - [BufferedReader](/blog/3f2a064c/#BufferedReader)
     - [继承关系](/blog/3f2a064c/#继承关系)
     - [构造方法](/blog/3f2a064c/#构造方法)
@@ -30,9 +32,9 @@ abbrlink: 3f2a064c
     - [bug:乱码问题](/blog/3f2a064c/#bug-乱码问题)
         - [实例：gbk编码的文件复制到utf8编码的文件中：](/blog/3f2a064c/#实例：gbk编码的文件复制到utf8编码的文件中：)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 为了提高字符流读写的效率，引入了缓冲机制，进行字符批量的读写，提高了单个字符读写的效率。`BufferedReader`用于加快读取字符的速度，`BufferedWriter`用于加快写入的速度

@@ -5,17 +5,19 @@ categories:
   - 实例
   - 匹配markdown标记
 date: 2019-03-16 15:47:44
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:33
 abbrlink: b7a12cba
 ---
+<div id='my_toc'>
+
 - [问题描述](/blog/b7a12cba/#问题描述)
 - [实现](/blog/b7a12cba/#实现)
     - [匹配正则](/blog/b7a12cba/#匹配正则)
     - [替换正则](/blog/b7a12cba/#替换正则)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 问题描述 ##

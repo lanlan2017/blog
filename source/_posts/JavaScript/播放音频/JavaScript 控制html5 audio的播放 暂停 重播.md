@@ -4,17 +4,19 @@ categories:
   - JavaScript
   - 播放音频
 date: 2019-04-27 11:27:54
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: ff5ef3ed
 ---
+<div id='my_toc'>
+
 - [实例代码](/blog/ff5ef3ed/#实例代码)
 - [压缩的代码](/blog/ff5ef3ed/#压缩的代码)
 - [运行效果](/blog/ff5ef3ed/#运行效果)
 - [参考资料](/blog/ff5ef3ed/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 实例代码 ##

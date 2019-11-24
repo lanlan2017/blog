@@ -4,17 +4,19 @@ categories:
   - MySQL
   - 图形工具
 date: 2019-11-23 23:05:36
-updated: 2019-11-23 23:55:08
+updated: 2019-11-24 00:13:47
 abbrlink: 50cd694e
 ---
+<div id='my_toc'>
+
 - [大学数据库模式](/blog/50cd694e/#大学数据库模式)
 - [逆向数据库到模型](/blog/50cd694e/#逆向数据库到模型)
 - [切换E-R图 表示方式](/blog/50cd694e/#切换E-R图-表示方式)
     - [UML格式的E-R图如下所示](/blog/50cd694e/#UML格式的E-R图如下所示)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 大学数据库模式 #

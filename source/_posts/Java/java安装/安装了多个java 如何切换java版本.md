@@ -4,9 +4,11 @@ categories:
   - Java
   - java安装
 date: 2019-10-06 10:42:44
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: 957ae50e
 ---
+<div id='my_toc'>
+
 - [安装了多个java 如何切换java版本](/blog/957ae50e/#安装了多个java-如何切换java版本)
     - [问题描述](/blog/957ae50e/#问题描述)
     - [如何切换](/blog/957ae50e/#如何切换)
@@ -22,9 +24,9 @@ abbrlink: 957ae50e
         - [CJava运行效果](/blog/957ae50e/#CJava运行效果)
         - [查看是否切换成功](/blog/957ae50e/#查看是否切换成功)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 安装了多个java 如何切换java版本 #

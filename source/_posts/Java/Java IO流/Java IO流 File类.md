@@ -4,9 +4,11 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-11 16:19:23
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: 833486b4
 ---
+<div id='my_toc'>
+
 - [File类简介](/blog/833486b4/#File类简介)
 - [File类方法](/blog/833486b4/#File类方法)
     - [继承关系](/blog/833486b4/#继承关系)
@@ -22,9 +24,9 @@ abbrlink: 833486b4
     - [路径相关方法](/blog/833486b4/#路径相关方法)
         - [返回目录列表](/blog/833486b4/#返回目录列表)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 Java IO流 File类

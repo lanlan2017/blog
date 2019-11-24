@@ -6,14 +6,16 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-12 22:26:13
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: 2f2a13a0
 ---
+<div id='my_toc'>
+
 - [eclipse中如何创建log4j文件](/blog/2f2a13a0/#eclipse中如何创建log4j文件)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # eclipse中如何创建log4j文件 #

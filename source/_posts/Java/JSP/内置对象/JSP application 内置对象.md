@@ -5,9 +5,11 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:38
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: bc7737a8
 ---
+<div id='my_toc'>
+
 - [application内置对象](/blog/bc7737a8/#application内置对象)
     - [访问应用程序初始化参数](/blog/bc7737a8/#访问应用程序初始化参数)
         - [设置应用程序初始化参数](/blog/bc7737a8/#设置应用程序初始化参数)
@@ -16,9 +18,9 @@ abbrlink: bc7737a8
     - [其他方法](/blog/bc7737a8/#其他方法)
     - [实例](/blog/bc7737a8/#实例)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # application内置对象 #

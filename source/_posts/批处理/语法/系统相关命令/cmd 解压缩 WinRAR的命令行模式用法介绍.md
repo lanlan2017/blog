@@ -5,17 +5,19 @@ categories:
   - 语法
   - 系统相关命令
 date: 2019-11-22 11:16:59
-updated: 2019-11-22 11:17:34
+updated: 2019-11-22 11:22:34
 abbrlink: a51d0e
 ---
+<div id='my_toc'>
+
 - [cmd 解压缩WinRAR的命令行模式用法介绍](/blog/a51d0e/#cmd-解压缩WinRAR的命令行模式用法介绍)
     - [下载安装WinRAR](/blog/a51d0e/#下载安装WinRAR)
     - [unrar.exe帮助文档](/blog/a51d0e/#unrar-exe帮助文档)
 - [参考资料](/blog/a51d0e/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # cmd 解压缩WinRAR的命令行模式用法介绍 #

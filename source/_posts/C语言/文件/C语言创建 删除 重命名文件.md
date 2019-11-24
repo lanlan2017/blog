@@ -4,18 +4,20 @@ categories:
   - C语言
   - 文件
 date: 2018-11-15 00:44:39
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 65f494cf
 ---
+<div id='my_toc'>
+
 - [C语言创建文件](/blog/65f494cf/#C语言创建文件)
 - [C语言重命名文件](/blog/65f494cf/#C语言重命名文件)
 - [C语言删除文件](/blog/65f494cf/#C语言删除文件)
     - [实例](/blog/65f494cf/#实例)
 - [参考链接](/blog/65f494cf/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## C语言创建文件 ##

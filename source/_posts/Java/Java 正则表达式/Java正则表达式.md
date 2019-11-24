@@ -4,9 +4,11 @@ categories:
   - Java
   - Java 正则表达式
 date: 2019-01-11 22:02:27
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:29
 abbrlink: 4ea1809c
 ---
+<div id='my_toc'>
+
 - [java 使用正则表达式步骤](/blog/4ea1809c/#java-使用正则表达式步骤)
     - [java的regex库常用类](/blog/4ea1809c/#java的regex库常用类)
         - [常用类：Pattern和Matcher](/blog/4ea1809c/#常用类：Pattern和Matcher)
@@ -35,9 +37,9 @@ abbrlink: 4ea1809c
                 - [实例2：替换第一次](/blog/4ea1809c/#实例2：替换第一次)
         - [小结：](/blog/4ea1809c/#小结：)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # java 使用正则表达式步骤 #

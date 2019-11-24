@@ -4,16 +4,18 @@ categories:
   - C语言
   - Debug
 date: 2018-11-14 19:25:05
-updated: 2019-11-05 10:32:09
+updated: 2019-11-14 11:39:26
 abbrlink: 38f33943
 ---
+<div id='my_toc'>
+
 - [分析原因](/blog/38f33943/#分析原因)
 - [解决方案](/blog/38f33943/#解决方案)
 - [总结](/blog/38f33943/#总结)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 分析原因 ##

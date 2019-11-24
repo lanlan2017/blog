@@ -4,18 +4,20 @@ categories:
   - 其他
   - 工具使用技巧
 date: 2019-09-28 10:27:21
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: 7ab55f4
 ---
+<div id='my_toc'>
+
 - [问题描述](/blog/7ab55f4/#问题描述)
 - [解决方案](/blog/7ab55f4/#解决方案)
     - [可能是编码的问题](/blog/7ab55f4/#可能是编码的问题)
 - [可能是VScode中的java环境版本太老](/blog/7ab55f4/#可能是VScode中的java环境版本太老)
 - [可能是PowerShell版本太老](/blog/7ab55f4/#可能是PowerShell版本太老)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 问题描述 ##

@@ -4,9 +4,11 @@ categories:
   - Java
   - java_GUI
 date: 2018-09-13 14:26:54
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: 795fc6f9
 ---
+<div id='my_toc'>
+
 - [AWT简介](/blog/795fc6f9/#AWT简介)
     - [GUI设计工具组件](/blog/795fc6f9/#GUI设计工具组件)
 - [Swing简介](/blog/795fc6f9/#Swing简介)
@@ -22,9 +24,9 @@ abbrlink: 795fc6f9
     - [文本域( JTextArea)](/blog/795fc6f9/#文本域-JTextArea)
     - [标签( JLabel)](/blog/795fc6f9/#标签-JLabel)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## AWT简介 ##

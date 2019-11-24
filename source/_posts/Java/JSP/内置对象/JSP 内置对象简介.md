@@ -5,9 +5,11 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-08 21:46:24
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:30
 abbrlink: 4cc31c44
 ---
+<div id='my_toc'>
+
 - [JSP内置对象概述](/blog/4cc31c44/#JSP内置对象概述)
     - [JSP九大内置对象](/blog/4cc31c44/#JSP九大内置对象)
 - [Web程序的请求响应模式](/blog/4cc31c44/#Web程序的请求响应模式)
@@ -18,9 +20,9 @@ abbrlink: 4cc31c44
         - [测试get方法](/blog/4cc31c44/#测试get方法)
         - [测试post方法](/blog/4cc31c44/#测试post方法)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # JSP内置对象概述 #

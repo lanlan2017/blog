@@ -5,18 +5,20 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-02-01 16:31:16
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: 7c811d1c
 ---
+<div id='my_toc'>
+
 - [set命令](/blog/7c811d1c/#set命令)
     - [批处理输入信息 set /p](/blog/7c811d1c/#批处理输入信息-set-p)
 - [setx命令](/blog/7c811d1c/#setx命令)
     - [setx设置永久用户环境变量](/blog/7c811d1c/#setx设置永久用户环境变量)
     - [setx设置永久系统环境变量](/blog/7c811d1c/#setx设置永久系统环境变量)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## set命令 ##

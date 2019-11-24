@@ -4,9 +4,11 @@ categories:
   - HTML
   - 文本标签
 date: 2019-02-13 00:23:30
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 9f0a034b
 ---
+<div id='my_toc'>
+
 - [CSS设置下划线与文字间距距离(CSS文字下划线距离设置)](/blog/9f0a034b/#CSS设置下划线与文字间距距离-CSS文字下划线距离设置)
     - [使用CSS单词介绍](/blog/9f0a034b/#使用CSS单词介绍)
     - [读音](/blog/9f0a034b/#读音)
@@ -15,9 +17,9 @@ abbrlink: 9f0a034b
     - [完整代码](/blog/9f0a034b/#完整代码)
 - [参考链接](/blog/9f0a034b/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## CSS设置下划线与文字间距距离(CSS文字下划线距离设置) ##

@@ -4,16 +4,18 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-21 22:26:21
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: 2e0f7472
 ---
+<div id='my_toc'>
+
 - [常用处理流（关闭处理流使用关闭里面的节点流）](/blog/2e0f7472/#常用处理流（关闭处理流使用关闭里面的节点流）)
 - [流的关闭顺序](/blog/2e0f7472/#流的关闭顺序)
     - [注意：](/blog/2e0f7472/#注意：)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 常用处理流（关闭处理流使用关闭里面的节点流） ##

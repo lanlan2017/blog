@@ -4,15 +4,17 @@ categories:
   - Linux
   - Termux
 date: 2019-11-01 10:14:33
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: d305bdc
 ---
+<div id='my_toc'>
+
 - [更新软件](/blog/d305bdc/#更新软件)
 - [查看已安装软件](/blog/d305bdc/#查看已安装软件)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 更新软件

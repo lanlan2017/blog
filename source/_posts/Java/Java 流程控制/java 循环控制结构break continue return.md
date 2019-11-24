@@ -4,9 +4,11 @@ categories:
   - Java
   - Java 流程控制
 date: 2019-01-16 20:13:29
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: 3ac4e85f
 ---
+<div id='my_toc'>
+
 - [前言](/blog/3ac4e85f/#前言)
 - [使用 break结束循环](/blog/3ac4e85f/#使用-break结束循环)
     - [结束本层循环](/blog/3ac4e85f/#结束本层循环)
@@ -16,9 +18,9 @@ abbrlink: 3ac4e85f
     - [continue标签 结束本次外层循环](/blog/3ac4e85f/#continue标签-结束本次外层循环)
 - [使用 return结束方法](/blog/3ac4e85f/#使用-return结束方法)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 前言 ##

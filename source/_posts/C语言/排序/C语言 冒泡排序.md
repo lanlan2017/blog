@@ -4,15 +4,17 @@ categories:
   - C语言
   - 排序
 date: 2018-11-18 14:11:07
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: ae21e76c
 ---
+<div id='my_toc'>
+
 - [实例 数组冒泡排序](/blog/ae21e76c/#实例-数组冒泡排序)
 - [include <stdio.h>](/blog/ae21e76c/#include-<stdio-h>)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 实例 数组冒泡排序 ##

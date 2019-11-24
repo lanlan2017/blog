@@ -5,18 +5,20 @@ categories:
   - Hexo搭建博客
   - 自动部署
 date: 2018-12-07 00:23:50
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 5d465f14
 ---
+<div id='my_toc'>
+
 - [使用bat批处理的好处：省时间](/blog/5d465f14/#使用bat批处理的好处：省时间)
 - [bat脚本启动hexo本地服务器](/blog/5d465f14/#bat脚本启动hexo本地服务器)
     - [指令说明](/blog/5d465f14/#指令说明)
     - [如何使用](/blog/5d465f14/#如何使用)
 - [bat脚本部署hexo博客](/blog/5d465f14/#bat脚本部署hexo博客)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 使用bat批处理的好处：省时间 ##

@@ -4,9 +4,11 @@ categories:
   - Java
   - Java IO流
 date: 2018-10-30 18:36:12
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: 4cd2c62c
 ---
+<div id='my_toc'>
+
 - [返回文本文件中最后一行的起始位置](/blog/4cd2c62c/#返回文本文件中最后一行的起始位置)
     - [重载方法1 使用File参数表示的文件](/blog/4cd2c62c/#重载方法1-使用File参数表示的文件)
     - [重载方法2 使用RandomAccessFile参数表示的文件](/blog/4cd2c62c/#重载方法2-使用RandomAccessFile参数表示的文件)
@@ -21,9 +23,9 @@ abbrlink: 4cd2c62c
 - [更新文本文件最后一行](/blog/4cd2c62c/#更新文本文件最后一行)
 - [整个类的代码](/blog/4cd2c62c/#整个类的代码)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 返回文本文件中最后一行的起始位置 ##

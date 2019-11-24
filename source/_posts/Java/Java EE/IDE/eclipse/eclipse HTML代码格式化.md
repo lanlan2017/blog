@@ -6,14 +6,16 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-29 16:12:41
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: 503e570d
 ---
+<div id='my_toc'>
+
 - [eclipse HTML代码格式化](/blog/503e570d/#eclipse-HTML代码格式化)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # eclipse HTML代码格式化 #

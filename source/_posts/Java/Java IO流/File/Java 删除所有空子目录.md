@@ -5,17 +5,19 @@ categories:
   - Java IO流
   - File
 date: 2018-12-22 19:15:36
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: efd55c13
 ---
+<div id='my_toc'>
+
 - [向下递归 删除所有空子目录](/blog/efd55c13/#向下递归-删除所有空子目录)
 - [向上递归 删除所有空父目录](/blog/efd55c13/#向上递归-删除所有空父目录)
 - [删除空目录完整代码](/blog/efd55c13/#删除空目录完整代码)
 - [测试](/blog/efd55c13/#测试)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 向下递归 删除所有空子目录 ##

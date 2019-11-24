@@ -3,10 +3,12 @@ title: Hexo搭建
 categories: 
   - Hexo搭建
 date: 2019-11-13 15:56:21
-updated: 2019-11-14 11:54:19
+updated: 2019-11-25 00:22:18
 comments: false
 abbrlink: 57ee7c1d
 ---
+<div id='my_toc'>
+
 - [安装和配置Node.js](/blog/57ee7c1d/#安装和配置Node-js)
     - [设置npm全局安装路径](/blog/57ee7c1d/#设置npm全局安装路径)
     - [查看设置效果](/blog/57ee7c1d/#查看设置效果)
@@ -35,7 +37,6 @@ abbrlink: 57ee7c1d
     - [字体定制](/blog/57ee7c1d/#字体定制)
 - [快速开始](/blog/57ee7c1d/#快速开始)
     - [选择主题模板](/blog/57ee7c1d/#选择主题模板)
-- [Schemes](/blog/57ee7c1d/#Schemes)
     - [配置菜单项](/blog/57ee7c1d/#配置菜单项)
     - [设置网站图标](/blog/57ee7c1d/#设置网站图标)
     - [配置头像](/blog/57ee7c1d/#配置头像)
@@ -65,7 +66,6 @@ abbrlink: 57ee7c1d
         - [修改菜单](/blog/57ee7c1d/#修改菜单)
     - [添加标签页面](/blog/57ee7c1d/#添加标签页面)
         - [创建页面](/blog/57ee7c1d/#创建页面)
-        - [基本设置](/blog/57ee7c1d/#基本设置)
         - [打开菜单](/blog/57ee7c1d/#打开菜单)
     - [设置代码高亮主题](/blog/57ee7c1d/#设置代码高亮主题)
     - [设置头像](/blog/57ee7c1d/#设置头像)
@@ -100,9 +100,9 @@ abbrlink: 57ee7c1d
     - [修改代码段样式](/blog/57ee7c1d/#修改代码段样式)
 - [参考资料](/blog/57ee7c1d/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 安装和配置Node.js #
@@ -255,11 +255,11 @@ github_banner:
 ## 选择主题模板 ##
 打开**主题配置文件**，查找`scheme:`,选一个自己喜欢的主题.
 ```
-# Schemes
-#scheme: Muse
-scheme: Mist
-#scheme: Pisces
-#scheme: Gemini
+ # Schemes
+ #scheme: Muse
+ scheme: Mist
+ #scheme: Pisces
+ #scheme: Gemini
 ```
 个人比较喜欢`Mist`这个主题,因为它在手机端也带有目录功能.在阅读文章时候比较使用目录快速跳转。
 ## 配置菜单项 ##
@@ -431,15 +431,6 @@ menu:
 ### 创建页面 ###
 ```cmd
 hexo new page tags
-```
-### 基本设置 ###
-```yml
----
-title: tags
-date: 2018-08-26 23:59:13
-type: "tags"
-comments: false
----
 ```
 ### 打开菜单 ###
 ```yml

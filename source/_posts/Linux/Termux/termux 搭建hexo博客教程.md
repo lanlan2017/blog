@@ -4,9 +4,11 @@ categories:
   - Linux
   - Termux
 date: 2019-10-31 15:08:27
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: 4a95e633
 ---
+<div id='my_toc'>
+
 - [安装termux](/blog/4a95e633/#安装termux)
 - [安装git](/blog/4a95e633/#安装git)
 - [安装nodejs](/blog/4a95e633/#安装nodejs)
@@ -26,9 +28,9 @@ abbrlink: 4a95e633
 - [克隆一个分支](/blog/4a95e633/#克隆一个分支)
 - [获取管理员权限](/blog/4a95e633/#获取管理员权限)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 安装termux

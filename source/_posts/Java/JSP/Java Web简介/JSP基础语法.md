@@ -5,9 +5,11 @@ categories:
   - JSP
   - Java Web简介
 date: 2018-12-03 19:28:31
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: ceef3131
 ---
+<div id='my_toc'>
+
 - [JSP页面元素构成](/blog/ceef3131/#JSP页面元素构成)
     - [JSP指令](/blog/ceef3131/#JSP指令)
         - [page指令](/blog/ceef3131/#page指令)
@@ -23,9 +25,9 @@ abbrlink: ceef3131
     - [实例](/blog/ceef3131/#实例)
     - [参考链接](/blog/ceef3131/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

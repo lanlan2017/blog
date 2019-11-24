@@ -5,9 +5,11 @@ categories:
   - Java EE
   - Servlet
 date: 2019-04-19 14:31:25
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: 4a8ee7ac
 ---
+<div id='my_toc'>
+
 - [手动部署Servlet](/blog/4a8ee7ac/#手动部署Servlet)
     - [创建项目结构](/blog/4a8ee7ac/#创建项目结构)
         - [java web应用部署路径](/blog/4a8ee7ac/#java-web应用部署路径)
@@ -22,9 +24,9 @@ abbrlink: 4a8ee7ac
         - [粘贴字节码文件到包目录中](/blog/4a8ee7ac/#粘贴字节码文件到包目录中)
     - [访问Servlet](/blog/4a8ee7ac/#访问Servlet)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 手动部署Servlet #

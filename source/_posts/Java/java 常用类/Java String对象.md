@@ -4,9 +4,11 @@ categories:
   - Java
   - java 常用类
 date: 2019-01-12 20:49:25
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:29
 abbrlink: 14ce793e
 ---
+<div id='my_toc'>
+
 - [父类](/blog/14ce793e/#父类)
 - [实现的接口](/blog/14ce793e/#实现的接口)
 - [字段:使用该字段可以对String进行排序](/blog/14ce793e/#字段-使用该字段可以对String进行排序)
@@ -16,9 +18,9 @@ abbrlink: 14ce793e
     - [正则匹配](/blog/14ce793e/#正则匹配)
     - [正则表达式分割](/blog/14ce793e/#正则表达式分割)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 我们经常使用 String 类来定义一个字符串。字符串是`常量`，它们的值在创建之后不能更改。字符串缓冲区支持可变的字符串。

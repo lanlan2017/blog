@@ -4,18 +4,20 @@ categories:
   - MySQL
   - debug
 date: 2019-10-23 15:59:21
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: 17349c5f
 ---
+<div id='my_toc'>
+
 - [最新版MySQL数据库驱动的问题](/blog/17349c5f/#最新版MySQL数据库驱动的问题)
     - [问题1 驱动名称不对](/blog/17349c5f/#问题1-驱动名称不对)
         - [解决方案](/blog/17349c5f/#解决方案)
     - [问题2 没有指定时区](/blog/17349c5f/#问题2-没有指定时区)
         - [解决方案](/blog/17349c5f/#解决方案)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 最新版MySQL数据库驱动的问题 #

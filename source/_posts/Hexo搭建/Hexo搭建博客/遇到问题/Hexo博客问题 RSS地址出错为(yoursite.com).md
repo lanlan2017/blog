@@ -5,9 +5,11 @@ categories:
   - Hexo搭建博客
   - 遇到问题
 date: 2018-08-29 19:35:07
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 2c22a8d1
 ---
+<div id='my_toc'>
+
 - [URL](/blog/2c22a8d1/#URL)
     - [If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'](/blog/2c22a8d1/#If-your-site-is-put-in-a-subdirectory,-set-url-as-'http-yoursite-com-child'-and-root-as-'-child-')
 - [网站的地址](/blog/2c22a8d1/#网站的地址)
@@ -15,9 +17,9 @@ abbrlink: 2c22a8d1
     - [If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'](/blog/2c22a8d1/#If-your-site-is-put-in-a-subdirectory,-set-url-as-'http-yoursite-com-child'-and-root-as-'-child-')
 - [网站的地址](/blog/2c22a8d1/#网站的地址)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 打开**站点配置文件**，定位到url配置项，如下所示，可以看到我的网站地址错误的设置为`https://yoursite.com`

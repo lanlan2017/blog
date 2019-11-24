@@ -4,9 +4,11 @@ categories:
   - 其他
   - 流程图
 date: 2018-12-08 00:07:22
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: 358dbd0e
 ---
+<div id='my_toc'>
+
 - [前言](/blog/358dbd0e/#前言)
 - [工具软件](/blog/358dbd0e/#工具软件)
 - [安装步骤](/blog/358dbd0e/#安装步骤)
@@ -15,9 +17,9 @@ abbrlink: 358dbd0e
     - [使用demo版本生成流程图](/blog/358dbd0e/#使用demo版本生成流程图)
 - [参考链接](/blog/358dbd0e/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 前言 ##

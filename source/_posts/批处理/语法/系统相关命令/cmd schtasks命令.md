@@ -5,9 +5,11 @@ categories:
   - 语法
   - 系统相关命令
 date: 2019-09-25 00:35:36
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:33
 abbrlink: b1b65659
 ---
+<div id='my_toc'>
+
 - [schtask命令文档](/blog/b1b65659/#schtask命令文档)
     - [创建新任务计划](/blog/b1b65659/#创建新任务计划)
         - [schtasks /create文档](/blog/b1b65659/#schtasks-create文档)
@@ -18,9 +20,9 @@ abbrlink: b1b65659
     - [删除任务计划](/blog/b1b65659/#删除任务计划)
         - [删除上面创建的任务](/blog/b1b65659/#删除上面创建的任务)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # schtask命令文档 #

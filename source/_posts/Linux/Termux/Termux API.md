@@ -4,9 +4,11 @@ categories:
   - Linux
   - Termux
 date: 2019-11-03 19:40:56
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: b709eab2
 ---
+<div id='my_toc'>
+
 - [Termux API有什么用](/blog/b709eab2/#Termux-API有什么用)
 - [手机上安装Termux API APP](/blog/b709eab2/#手机上安装Termux-API-APP)
 - [Termux里面安装Termux-api软件包](/blog/b709eab2/#Termux里面安装Termux-api软件包)
@@ -24,9 +26,9 @@ abbrlink: b709eab2
     - [termux API小结](/blog/b709eab2/#termux-API小结)
 - [参考资料](/blog/b709eab2/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Termux API有什么用 #

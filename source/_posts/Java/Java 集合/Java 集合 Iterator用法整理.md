@@ -4,17 +4,19 @@ categories:
   - Java
   - Java 集合
 date: 2018-12-14 23:10:23
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: c26fdf44
 ---
+<div id='my_toc'>
+
 - [迭代器](/blog/c26fdf44/#迭代器)
 - [Iterator的接口](/blog/c26fdf44/#Iterator的接口)
 - [迭代方法](/blog/c26fdf44/#迭代方法)
 - [参考链接](/blog/c26fdf44/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 迭代器 ##

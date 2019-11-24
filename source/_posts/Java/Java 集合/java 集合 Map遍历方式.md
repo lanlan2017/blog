@@ -4,18 +4,20 @@ categories:
   - Java
   - Java 集合
 date: 2018-12-14 21:43:36
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: ef2dac38
 ---
+<div id='my_toc'>
+
 - [方式1 通过keysSet遍历Map](/blog/ef2dac38/#方式1-通过keysSet遍历Map)
     - [实例](/blog/ef2dac38/#实例)
 - [方式2 通过Map.Entry对象遍历Map](/blog/ef2dac38/#方式2-通过Map-Entry对象遍历Map)
     - [实例](/blog/ef2dac38/#实例)
 - [直接遍历所有的值](/blog/ef2dac38/#直接遍历所有的值)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 方式1 通过keysSet遍历Map ##

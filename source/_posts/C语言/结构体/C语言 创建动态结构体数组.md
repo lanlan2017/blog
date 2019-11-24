@@ -4,17 +4,19 @@ categories:
   - C语言
   - 结构体
 date: 2019-02-13 00:31:18
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 80deef00
 ---
+<div id='my_toc'>
+
 - [前言](/blog/80deef00/#前言)
 - [基本类型数组动态分配大小](/blog/80deef00/#基本类型数组动态分配大小)
 - [结构体类型数组分配大小](/blog/80deef00/#结构体类型数组分配大小)
 - [参考链接](/blog/80deef00/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 前言 ##

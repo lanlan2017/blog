@@ -4,9 +4,11 @@ categories:
   - Java
   - Java 基础
 date: 2019-08-23 13:18:52
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: 569c8e52
 ---
+<div id='my_toc'>
+
 - [前言](/blog/569c8e52/#前言)
 - [原因](/blog/569c8e52/#原因)
 - [数字0到9转为'0'到'9'字符的正确做法](/blog/569c8e52/#数字0到9转为'0'到'9'字符的正确做法)
@@ -15,9 +17,9 @@ abbrlink: 569c8e52
         - [直接计算](/blog/569c8e52/#直接计算)
     - [Character.forDigit(数字,进制)方法进行转换](/blog/569c8e52/#Character-forDigit-数字,进制-方法进行转换)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 前言 #

@@ -3,9 +3,11 @@ title: 如何使用FrontAwesome图标
 categories: 
   - Hexo搭建
 date: 2019-03-11 21:02:57
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 4181f9ed
 ---
+<div id='my_toc'>
+
 - [选择图标](/blog/4181f9ed/#选择图标)
 - [NexT主题中使用](/blog/4181f9ed/#NexT主题中使用)
 - [实例](/blog/4181f9ed/#实例)
@@ -14,9 +16,9 @@ abbrlink: 4181f9ed
 - [设置图标颜色](/blog/4181f9ed/#设置图标颜色)
 - [参考资料](/blog/4181f9ed/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 选择图标 ##

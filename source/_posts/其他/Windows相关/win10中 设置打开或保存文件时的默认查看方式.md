@@ -4,16 +4,18 @@ categories:
   - 其他
   - Windows相关
 date: 2019-08-28 12:20:01
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: fda3d857
 ---
+<div id='my_toc'>
+
 - [win10中设置打开或保存文件时的默认查看方式](/blog/fda3d857/#win10中设置打开或保存文件时的默认查看方式)
 - [分析](/blog/fda3d857/#分析)
 - [Win10 设置资源管理器中的默认查看方式](/blog/fda3d857/#Win10-设置资源管理器中的默认查看方式)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # win10中设置打开或保存文件时的默认查看方式 #

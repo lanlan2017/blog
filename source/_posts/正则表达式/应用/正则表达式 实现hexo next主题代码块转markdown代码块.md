@@ -4,9 +4,11 @@ categories:
   - 正则表达式
   - 应用
 date: 2018-12-16 20:05:20
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:33
 abbrlink: accb1b6
 ---
+<div id='my_toc'>
+
 - [处理文本](/blog/accb1b6/#处理文本)
 - [获取代码文本](/blog/accb1b6/#获取代码文本)
     - [删除代码块行数](/blog/accb1b6/#删除代码块行数)
@@ -16,9 +18,9 @@ abbrlink: accb1b6
     - [删除多余空白符](/blog/accb1b6/#删除多余空白符)
     - [HTML逆转义](/blog/accb1b6/#HTML逆转义)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 处理文本 ##

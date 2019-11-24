@@ -4,9 +4,11 @@ categories:
   - JavaScript
   - 剪贴板
 date: 2019-02-13 00:16:32
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:30
 abbrlink: c78d87f4
 ---
+<div id='my_toc'>
+
 - [使用步骤](/blog/c78d87f4/#使用步骤)
 - [属性说明](/blog/c78d87f4/#属性说明)
 - [使用实例](/blog/c78d87f4/#使用实例)
@@ -20,9 +22,9 @@ abbrlink: c78d87f4
 - [剪切方式](/blog/c78d87f4/#剪切方式)
 - [参考链接](/blog/c78d87f4/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 使用步骤 ##

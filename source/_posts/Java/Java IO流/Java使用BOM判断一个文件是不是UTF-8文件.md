@@ -4,7 +4,7 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-29 19:35:07
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: 2fe8061d
 ---
 例如test_utf8.py这个文件用的是utf-8+BOM编码的.

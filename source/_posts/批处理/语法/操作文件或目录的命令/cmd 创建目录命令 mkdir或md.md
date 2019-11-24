@@ -5,14 +5,16 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-01-31 18:48:22
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: 47a3a21b
 ---
+<div id='my_toc'>
+
 - [cmd 创建目录命令](/blog/47a3a21b/#cmd-创建目录命令)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## cmd 创建目录命令 ##

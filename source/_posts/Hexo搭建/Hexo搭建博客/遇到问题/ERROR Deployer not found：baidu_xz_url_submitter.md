@@ -5,9 +5,11 @@ categories:
   - Hexo搭建博客
   - 遇到问题
 date: 2018-10-30 23:47:02
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 2740f49f
 ---
+<div id='my_toc'>
+
 - [解决方案](/blog/2740f49f/#解决方案)
     - [修改package.json安装最新的hexo-baidu-url-submit插件](/blog/2740f49f/#修改package-json安装最新的hexo-baidu-url-submit插件)
     - [配置站点配置文件](/blog/2740f49f/#配置站点配置文件)
@@ -17,9 +19,9 @@ abbrlink: 2740f49f
     - [登录熊掌号查看提交效果](/blog/2740f49f/#登录熊掌号查看提交效果)
     - [参考链接](/blog/2740f49f/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 解决方案 #

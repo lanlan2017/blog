@@ -3,9 +3,11 @@ title: Git更换远程仓库地址
 categories: 
   - Git
 date: 2019-05-02 10:56:15
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 7469a3b7
 ---
+<div id='my_toc'>
+
 - [问题描述](/blog/7469a3b7/#问题描述)
 - [在github上创建项目](/blog/7469a3b7/#在github上创建项目)
 - [修改远程仓库的地址](/blog/7469a3b7/#修改远程仓库的地址)
@@ -15,9 +17,9 @@ abbrlink: 7469a3b7
     - [push到新的远程仓库地址](/blog/7469a3b7/#push到新的远程仓库地址)
 - [参考资料](/blog/7469a3b7/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 问题描述 #

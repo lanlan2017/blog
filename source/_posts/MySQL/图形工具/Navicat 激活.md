@@ -4,9 +4,11 @@ categories:
   - MySQL
   - 图形工具
 date: 2019-11-23 15:47:40
-updated: 2019-11-24 00:13:36
+updated: 2019-11-24 00:13:47
 abbrlink: 30dba46d
 ---
+<div id='my_toc'>
+
 - [Navicat激活](/blog/30dba46d/#Navicat激活)
     - [复制navicat安装路径](/blog/30dba46d/#复制navicat安装路径)
     - [执行命令](/blog/30dba46d/#执行命令)
@@ -15,9 +17,9 @@ abbrlink: 30dba46d
         - [然后选择程序和版本](/blog/30dba46d/#然后选择程序和版本)
 - [参考资料](/blog/30dba46d/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Navicat激活 #

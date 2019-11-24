@@ -4,18 +4,20 @@ categories:
   - Java
   - Java 正则表达式
 date: 2018-08-06 18:24:40
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:29
 abbrlink: aa025735
 ---
+<div id='my_toc'>
+
 - [匹配Email](/blog/aa025735/#匹配Email)
 - [常用正则表达式](/blog/aa025735/#常用正则表达式)
 - [删除重复字符](/blog/aa025735/#删除重复字符)
 - [对IP地址进行排序](/blog/aa025735/#对IP地址进行排序)
         - [小结](/blog/aa025735/#小结)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 参考：[https://www.cnblogs.com/lzq198754/p/5780340.html](https://www.cnblogs.com/lzq198754/p/5780340.html)

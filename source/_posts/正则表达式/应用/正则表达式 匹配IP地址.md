@@ -4,9 +4,11 @@ categories:
   - 正则表达式
   - 应用
 date: 2018-08-19 19:39:36
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:33
 abbrlink: 9e1b6b70
 ---
+<div id='my_toc'>
+
 - [匹配一个合法的数字](/blog/9e1b6b70/#匹配一个合法的数字)
     - [三位数的情况：](/blog/9e1b6b70/#三位数的情况：)
     - [两位数的情况](/blog/9e1b6b70/#两位数的情况)
@@ -19,9 +21,9 @@ abbrlink: 9e1b6b70
 - [总结](/blog/9e1b6b70/#总结)
     - [匹配IP地址中的一个数](/blog/9e1b6b70/#匹配IP地址中的一个数)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 正则表达式匹配IP地址

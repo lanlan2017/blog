@@ -5,9 +5,11 @@ categories:
   - JSP
   - Java Web简介
 date: 2018-12-08 21:46:18
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: ec8e0fb7
 ---
+<div id='my_toc'>
+
 - [Java Web简介](/blog/ec8e0fb7/#Java-Web简介)
     - [什么是Web应用程序](/blog/ec8e0fb7/#什么是Web应用程序)
         - [常见web应用程序](/blog/ec8e0fb7/#常见web应用程序)
@@ -35,9 +37,9 @@ abbrlink: ec8e0fb7
         - [eclipse中修改Web项目虚拟路径](/blog/ec8e0fb7/#eclipse中修改Web项目虚拟路径)
     - [参考链接](/blog/ec8e0fb7/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

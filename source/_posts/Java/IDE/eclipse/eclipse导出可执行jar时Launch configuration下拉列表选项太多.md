@@ -5,7 +5,7 @@ categories:
   - IDE
   - eclipse
 date: 2018-10-25 16:45:17
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: 956cc103
 ---
 如果想要删除`Launch configuration`下拉列表的主类历史记录，只要进入到要打包的这个`工程所在的目录`，也就是`工作空间目录`找到这个：

@@ -5,17 +5,19 @@ categories:
   - Java IO流
   - 应用
 date: 2019-08-15 03:00:03
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: 16108e1f
 ---
+<div id='my_toc'>
+
 - [问题描述](/blog/16108e1f/#问题描述)
 - [需求分析](/blog/16108e1f/#需求分析)
 - [实现思路](/blog/16108e1f/#实现思路)
 - [编码实现](/blog/16108e1f/#编码实现)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 问题描述 #

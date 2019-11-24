@@ -5,9 +5,11 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-02-03 18:14:35
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: e6156b85
 ---
+<div id='my_toc'>
+
 - [问题描述](/blog/e6156b85/#问题描述)
 - [遇到的问题](/blog/e6156b85/#遇到的问题)
 - [实现1 使用find命令](/blog/e6156b85/#实现1-使用find命令)
@@ -23,9 +25,9 @@ abbrlink: e6156b85
     - [批处理 for命令 删除 一个系统path环境变量](/blog/e6156b85/#批处理-for命令-删除-一个系统path环境变量)
 - [参考资料](/blog/e6156b85/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 问题描述 ##

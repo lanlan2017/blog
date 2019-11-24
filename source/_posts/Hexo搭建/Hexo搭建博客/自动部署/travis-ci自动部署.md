@@ -5,9 +5,11 @@ categories:
   - Hexo搭建博客
   - 自动部署
 date: 2019-11-05 10:29:38
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 13f63c39
 ---
+<div id='my_toc'>
+
 - [获取Token](/blog/13f63c39/#获取Token)
 - [配置Token](/blog/13f63c39/#配置Token)
     - [一般的地址格式](/blog/13f63c39/#一般的地址格式)
@@ -16,9 +18,9 @@ abbrlink: 13f63c39
 - [书写正确的.travis.yml](/blog/13f63c39/#书写正确的-travis-yml)
 - [推送后自动部署](/blog/13f63c39/#推送后自动部署)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 获取Token

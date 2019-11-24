@@ -4,9 +4,11 @@ categories:
   - 正则表达式
   - 应用
 date: 2018-12-17 01:40:26
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:33
 abbrlink: f279d8a6
 ---
+<div id='my_toc'>
+
 - [html超链接 a 转markdown](/blog/f279d8a6/#html超链接-a-转markdown)
 - [html图片 img 转markdown](/blog/f279d8a6/#html图片-img-转markdown)
 - [代码段 code 转markdown](/blog/f279d8a6/#代码段-code-转markdown)
@@ -14,9 +16,9 @@ abbrlink: f279d8a6
 - [html加粗 转 markdown](/blog/f279d8a6/#html加粗-转-markdown)
 - [html 标题转markdown](/blog/f279d8a6/#html-标题转markdown)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## html超链接 a 转markdown ##

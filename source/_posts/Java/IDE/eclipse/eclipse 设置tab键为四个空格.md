@@ -5,9 +5,11 @@ categories:
   - IDE
   - eclipse
 date: 2019-04-20 13:48:50
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: afd38322
 ---
+<div id='my_toc'>
+
 - [Java代码中设置tab键为4个空格](/blog/afd38322/#Java代码中设置tab键为4个空格)
 - [JavaScript代码中设置tab键为4个空格](/blog/afd38322/#JavaScript代码中设置tab键为4个空格)
 - [XML代码中设置tab键为4个空格](/blog/afd38322/#XML代码中设置tab键为4个空格)
@@ -15,9 +17,9 @@ abbrlink: afd38322
 - [HTML JSP代码中设置tab键为4个空格](/blog/afd38322/#HTML-JSP代码中设置tab键为4个空格)
 - [参考资料](/blog/afd38322/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## Java代码中设置tab键为4个空格 ##

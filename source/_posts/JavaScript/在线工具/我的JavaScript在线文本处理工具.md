@@ -4,15 +4,17 @@ categories:
   - JavaScript
   - 在线工具
 date: 2018-12-14 20:51:47
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: 86af8ea
 ---
+<div id='my_toc'>
+
 - [源码](/blog/86af8ea/#源码)
 - [参考链接](/blog/86af8ea/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 源码 ##

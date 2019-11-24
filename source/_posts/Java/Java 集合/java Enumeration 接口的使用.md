@@ -4,18 +4,20 @@ categories:
   - Java
   - Java 集合
 date: 2018-12-09 22:47:36
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: 7b1e18da
 ---
+<div id='my_toc'>
+
 - [API中的介绍](/blog/7b1e18da/#API中的介绍)
 - [Enumeration接口方法](/blog/7b1e18da/#Enumeration接口方法)
 - [Enumeration接口遍历实例](/blog/7b1e18da/#Enumeration接口遍历实例)
 - [另一个遍历枚举的例子](/blog/7b1e18da/#另一个遍历枚举的例子)
 - [参考链接](/blog/7b1e18da/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

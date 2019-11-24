@@ -3,16 +3,18 @@ title: CSS介绍
 categories: 
   - CSS
 date: 2018-12-13 01:54:37
-updated: 2019-11-05 10:32:09
+updated: 2019-11-14 11:39:25
 abbrlink: 208d3303
 ---
+<div id='my_toc'>
+
 - [什么是 CSS](/blog/208d3303/#什么是-CSS)
 - [CSS如何影响HTML](/blog/208d3303/#CSS如何影响HTML)
 - [参考链接](/blog/208d3303/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 什么是 CSS ##

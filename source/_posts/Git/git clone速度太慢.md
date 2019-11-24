@@ -3,9 +3,11 @@ title: git clone速度太慢
 categories: 
   - Git
 date: 2019-08-12 12:55:50
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 1f883a6b
 ---
+<div id='my_toc'>
+
 - [问题描述](/blog/1f883a6b/#问题描述)
 - [分析原因](/blog/1f883a6b/#分析原因)
 - [解决方案](/blog/1f883a6b/#解决方案)
@@ -14,9 +16,9 @@ abbrlink: 1f883a6b
     - [保存更新DNS](/blog/1f883a6b/#保存更新DNS)
     - [测试git clone](/blog/1f883a6b/#测试git-clone)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 **`本文转自`**:[https://blog.csdn.net/shahuhu000/article/details/83965642#commentBox](https://blog.csdn.net/shahuhu000/article/details/83965642#commentBox)

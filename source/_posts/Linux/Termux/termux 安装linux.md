@@ -4,9 +4,11 @@ categories:
   - Linux
   - Termux
 date: 2019-10-31 15:08:27
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: 45517ea0
 ---
+<div id='my_toc'>
+
 - [首先先下载Termux](/blog/45517ea0/#首先先下载Termux)
 - [安装proot](/blog/45517ea0/#安装proot)
 - [获取root权限](/blog/45517ea0/#获取root权限)
@@ -20,9 +22,9 @@ abbrlink: 45517ea0
 - [通过anLinux安装](/blog/45517ea0/#通过anLinux安装)
     - [安装centos](/blog/45517ea0/#安装centos)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 首先先下载Termux

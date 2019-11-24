@@ -5,16 +5,18 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-13 14:57:10
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: 4499badc
 ---
+<div id='my_toc'>
+
 - [错误信息](/blog/4499badc/#错误信息)
 - [解决方案](/blog/4499badc/#解决方案)
 - [参考资料](/blog/4499badc/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 错误信息 #

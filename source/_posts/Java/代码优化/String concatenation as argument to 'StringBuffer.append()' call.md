@@ -4,9 +4,11 @@ categories:
   - Java
   - 代码优化
 date: 2019-10-03 21:19:47
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:30
 abbrlink: e14f1dac
 ---
+<div id='my_toc'>
+
 - [解决 String concatenation as argument to 'StringBuffer.append()' call 警告](/blog/e14f1dac/#解决-String-concatenation-as-argument-to-'StringBuffer-append-'-call-警告)
     - [问题描述](/blog/e14f1dac/#问题描述)
     - [分析原因](/blog/e14f1dac/#分析原因)
@@ -14,9 +16,9 @@ abbrlink: e14f1dac
         - [1. 全部使用append方法](/blog/e14f1dac/#1-全部使用append方法)
         - [2. 忽略](/blog/e14f1dac/#2-忽略)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 解决 String concatenation as argument to 'StringBuffer.append()' call 警告#

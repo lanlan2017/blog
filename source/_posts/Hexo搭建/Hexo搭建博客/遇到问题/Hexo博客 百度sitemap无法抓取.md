@@ -5,9 +5,11 @@ categories:
   - Hexo搭建博客
   - 遇到问题
 date: 2018-10-28 10:34:03
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: ebaabcd4
 ---
+<div id='my_toc'>
+
 - [安装插件](/blog/ebaabcd4/#安装插件)
 - [配置站点配置文件_config.yml](/blog/ebaabcd4/#配置站点配置文件-config-yml)
 - [部署](/blog/ebaabcd4/#部署)
@@ -15,9 +17,9 @@ abbrlink: ebaabcd4
 - [确认浏览器中可以打开baidusitemap.xml文件](/blog/ebaabcd4/#确认浏览器中可以打开baidusitemap-xml文件)
 - [复制浏览器中的地址提价给百度](/blog/ebaabcd4/#复制浏览器中的地址提价给百度)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 安装插件 ##

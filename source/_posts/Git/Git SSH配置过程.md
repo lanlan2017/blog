@@ -3,9 +3,11 @@ title: Git SSH配置过程
 categories: 
   - Git
 date: 2019-11-13 16:22:20
-updated: 2019-11-17 01:38:41
+updated: 2019-11-17 12:14:56
 abbrlink: 8d23490d
 ---
+<div id='my_toc'>
+
 - [Git SSH配置过程](/blog/8d23490d/#Git-SSH配置过程)
     - [配置邮箱和用户名](/blog/8d23490d/#配置邮箱和用户名)
         - [配置邮箱](/blog/8d23490d/#配置邮箱)
@@ -14,14 +16,19 @@ abbrlink: 8d23490d
     - [生成密钥对](/blog/8d23490d/#生成密钥对)
         - [生成默认长度的密钥对](/blog/8d23490d/#生成默认长度的密钥对)
         - [生成指定长度的密钥对](/blog/8d23490d/#生成指定长度的密钥对)
+    - [添加key到SSH](/blog/8d23490d/#添加key到SSH)
+        - [解决 Could not open a connection to your authentication agent](/blog/8d23490d/#解决-Could-not-open-a-connection-to-your-authentication-agent)
+        - [添加成功效果](/blog/8d23490d/#添加成功效果)
     - [将公钥添加到Github上](/blog/8d23490d/#将公钥添加到Github上)
-    - [添加密钥文件到本地SSH客户端](/blog/8d23490d/#添加密钥文件到本地SSH客户端)
     - [测试链接是否成功](/blog/8d23490d/#测试链接是否成功)
+    - [使用SSH推送远程仓库](/blog/8d23490d/#使用SSH推送远程仓库)
+        - [你可能没有开启ssh-agent](/blog/8d23490d/#你可能没有开启ssh-agent)
+        - [你可能的远程仓库地址时HTTPS的不是SSH地址](/blog/8d23490d/#你可能的远程仓库地址时HTTPS的不是SSH地址)
 - [参考资料](/blog/8d23490d/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Git SSH配置过程 #

@@ -4,9 +4,11 @@ categories:
   - Git
   - GitBash
 date: 2018-11-20 20:19:24
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 4190ffbf
 ---
+<div id='my_toc'>
+
 - [问题描述](/blog/4190ffbf/#问题描述)
     - [生成新ssh key](/blog/4190ffbf/#生成新ssh-key)
     - [添加新ssh key](/blog/4190ffbf/#添加新ssh-key)
@@ -17,9 +19,9 @@ abbrlink: 4190ffbf
     - [下面是个人的操作](/blog/4190ffbf/#下面是个人的操作)
 - [参考链接](/blog/4190ffbf/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 问题描述 ##

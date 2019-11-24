@@ -4,9 +4,11 @@ categories:
   - CSS
   - 按钮
 date: 2019-11-13 20:57:05
-updated: 2019-11-14 10:32:40
+updated: 2019-11-14 11:39:25
 abbrlink: a0156a29
 ---
+<div id='my_toc'>
+
 - [首先引入样式和js](/blog/a0156a29/#首先引入样式和js)
 - [使用样式](/blog/a0156a29/#使用样式)
     - [形状](/blog/a0156a29/#形状)
@@ -31,9 +33,9 @@ abbrlink: a0156a29
         - [效果](/blog/a0156a29/#效果)
 - [参考资料](/blog/a0156a29/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 首先引入样式和js #

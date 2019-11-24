@@ -4,9 +4,11 @@ categories:
   - Java
   - java_util
 date: 2018-08-13 14:50:18
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: 7906d867
 ---
+<div id='my_toc'>
+
 - [格式化规则](/blog/7906d867/#格式化规则)
     - [用来表示**日期和时间类型**的格式说明符语法](/blog/7906d867/#用来表示日期和时间类型的格式说明符语法)
     - [与参数不对应的格式说明符语法](/blog/7906d867/#与参数不对应的格式说明符语法)
@@ -29,9 +31,9 @@ abbrlink: 7906d867
         - [加进制标志加小数点](/blog/7906d867/#加进制标志加小数点)
         - [组分隔符](/blog/7906d867/#组分隔符)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 |方法|描述|

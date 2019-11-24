@@ -5,9 +5,11 @@ categories:
   - JSP
   - 基础语法
 date: 2018-12-20 01:09:14
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:30
 abbrlink: 99c62cee
 ---
+<div id='my_toc'>
+
 - [脚本标识概述](/blog/99c62cee/#脚本标识概述)
 - [JSP声明](/blog/99c62cee/#JSP声明)
     - [语法](/blog/99c62cee/#语法)
@@ -19,9 +21,9 @@ abbrlink: 99c62cee
     - [代码片段与声明的区别](/blog/99c62cee/#代码片段与声明的区别)
     - [实例](/blog/99c62cee/#实例)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 脚本标识概述 ##

@@ -4,9 +4,11 @@ categories:
   - 我的软件
   - 百度文字识别
 date: 2018-09-11 19:39:14
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: 29121dfd
 ---
+<div id='my_toc'>
+
 - [优化](/blog/29121dfd/#优化)
     - [加入GUI](/blog/29121dfd/#加入GUI)
     - [加入全局热键](/blog/29121dfd/#加入全局热键)
@@ -14,9 +16,9 @@ abbrlink: 29121dfd
         - [菜单窗口](/blog/29121dfd/#菜单窗口)
         - [ScreenShotWindow截图窗口](/blog/29121dfd/#ScreenShotWindow截图窗口)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 优化 #

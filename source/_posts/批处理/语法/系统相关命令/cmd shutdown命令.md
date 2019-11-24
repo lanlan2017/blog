@@ -5,18 +5,20 @@ categories:
   - 语法
   - 系统相关命令
 date: 2019-09-04 00:23:58
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:33
 abbrlink: 4508a6a3
 ---
+<div id='my_toc'>
+
 - [cmd shutdown命令](/blog/4508a6a3/#cmd-shutdown命令)
     - [帮助文档](/blog/4508a6a3/#帮助文档)
     - [应用](/blog/4508a6a3/#应用)
         - [定时关机](/blog/4508a6a3/#定时关机)
         - [在执行其他命令后休眠](/blog/4508a6a3/#在执行其他命令后休眠)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # cmd shutdown命令 #

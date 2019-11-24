@@ -5,9 +5,11 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-02-01 21:57:48
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: c4029a06
 ---
+<div id='my_toc'>
+
 - [命令格式](/blog/c4029a06/#命令格式)
     - [无参数](/blog/c4029a06/#无参数)
     - [参数 /d](/blog/c4029a06/#参数-d)
@@ -16,9 +18,9 @@ abbrlink: c4029a06
     - [参数 /F](/blog/c4029a06/#参数-F)
 - [参考资料](/blog/c4029a06/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 命令格式 ##

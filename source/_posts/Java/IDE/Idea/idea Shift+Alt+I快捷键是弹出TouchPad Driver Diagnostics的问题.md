@@ -5,17 +5,19 @@ categories:
   - IDE
   - Idea
 date: 2019-10-03 12:06:07
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: cbf0ce22
 ---
+<div id='my_toc'>
+
 - [idea Shift+Alt+I快捷键是弹出TouchPad Driver Diagnostics的问题](/blog/cbf0ce22/#idea-Shift-Alt-I快捷键是弹出TouchPad-Driver-Diagnostics的问题)
     - [原因](/blog/cbf0ce22/#原因)
     - [解决方案:禁用触控板](/blog/cbf0ce22/#解决方案-禁用触控板)
     - [重启电脑后生效](/blog/cbf0ce22/#重启电脑后生效)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # idea Shift+Alt+I快捷键是弹出TouchPad Driver Diagnostics的问题 #

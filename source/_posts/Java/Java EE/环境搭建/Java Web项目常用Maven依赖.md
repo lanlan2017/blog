@@ -5,9 +5,11 @@ categories:
   - Java EE
   - 环境搭建
 date: 2019-04-29 20:25:38
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: c20afdb9
 ---
+<div id='my_toc'>
+
 - [Java Web项目常用Maven依赖](/blog/c20afdb9/#Java-Web项目常用Maven依赖)
     - [Spring MVC Maven依赖](/blog/c20afdb9/#Spring-MVC-Maven依赖)
     - [JSTL Maven依赖](/blog/c20afdb9/#JSTL-Maven依赖)
@@ -16,9 +18,9 @@ abbrlink: c20afdb9
     - [MyBatis Maven依赖](/blog/c20afdb9/#MyBatis-Maven依赖)
     - [mysql驱动 Maven依赖](/blog/c20afdb9/#mysql驱动-Maven依赖)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Java Web项目常用Maven依赖 #

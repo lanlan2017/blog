@@ -5,18 +5,20 @@ categories:
   - Java EE
   - JSTL
 date: 2019-04-22 12:32:02
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: 80d567ab
 ---
+<div id='my_toc'>
+
 - [JSTL 库安装](/blog/80d567ab/#JSTL-库安装)
     - [下载JSTL库](/blog/80d567ab/#下载JSTL库)
     - [复制jar文件到项目中](/blog/80d567ab/#复制jar文件到项目中)
     - [复制tld文件到项目中](/blog/80d567ab/#复制tld文件到项目中)
     - [在JSP页面引入](/blog/80d567ab/#在JSP页面引入)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## JSTL 库安装 ##

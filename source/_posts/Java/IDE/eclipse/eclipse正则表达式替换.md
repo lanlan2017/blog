@@ -5,16 +5,18 @@ categories:
   - IDE
   - eclipse
 date: 2018-12-11 20:43:57
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: eee91bf3
 ---
+<div id='my_toc'>
+
 - [查找替换框设置](/blog/eee91bf3/#查找替换框设置)
 - [英文意思](/blog/eee91bf3/#英文意思)
 - [参考链接](/blog/eee91bf3/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

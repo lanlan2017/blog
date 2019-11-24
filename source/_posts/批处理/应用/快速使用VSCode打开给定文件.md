@@ -4,14 +4,16 @@ categories:
   - 批处理
   - 应用
 date: 2019-08-05 00:29:34
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: 5c6bafc2
 ---
+<div id='my_toc'>
+
 - [使用VSCode快速打开一个给定的文件](/blog/5c6bafc2/#使用VSCode快速打开一个给定的文件)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 使用VSCode快速打开一个给定的文件 #

@@ -4,9 +4,11 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-09 19:25:05
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: a5e554af
 ---
+<div id='my_toc'>
+
 - [前言](/blog/a5e554af/#前言)
     - [InputSteamReader 的方法：](/blog/a5e554af/#InputSteamReader-的方法：)
         - [构造方法](/blog/a5e554af/#构造方法)
@@ -21,9 +23,9 @@ abbrlink: a5e554af
     - [实例：使用上面三种方法写文件](/blog/a5e554af/#实例：使用上面三种方法写文件)
 - [应用：复制字符文件](/blog/a5e554af/#应用：复制字符文件)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 前言 #

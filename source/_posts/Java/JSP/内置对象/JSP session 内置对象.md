@@ -5,9 +5,11 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:39
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:30
 abbrlink: 240051d
 ---
+<div id='my_toc'>
+
 - [session内置对象简介](/blog/240051d/#session内置对象简介)
 - [session对象](/blog/240051d/#session对象)
 - [session对象常用方法](/blog/240051d/#session对象常用方法)
@@ -23,9 +25,9 @@ abbrlink: 240051d
     - [超时销毁](/blog/240051d/#超时销毁)
 - [参考链接](/blog/240051d/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## session内置对象简介 ##

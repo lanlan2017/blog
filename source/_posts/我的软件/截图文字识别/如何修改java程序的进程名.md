@@ -4,14 +4,16 @@ categories:
   - 我的软件
   - 截图文字识别
 date: 2018-10-10 16:37:33
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: 217f0f86
 ---
+<div id='my_toc'>
+
 - [参考](/blog/217f0f86/#参考)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 我的实现过程：[把可执行jar打包成exe文件](/2018/10/10/MyApplications/截图文字识别/把可执行jar打包成exe文件/)

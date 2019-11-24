@@ -4,9 +4,11 @@ categories:
   - Java
   - API整理
 date: 2019-09-30 22:59:36
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: e5bb3a41
 ---
+<div id='my_toc'>
+
 - [ProcessBuilder API整理](/blog/e5bb3a41/#ProcessBuilder-API整理)
     - [内部类](/blog/e5bb3a41/#内部类)
     - [构造器](/blog/e5bb3a41/#构造器)
@@ -25,9 +27,9 @@ abbrlink: e5bb3a41
     - [等待子进程](/blog/e5bb3a41/#等待子进程)
 - [实例](/blog/e5bb3a41/#实例)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # ProcessBuilder API整理 #

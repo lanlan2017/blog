@@ -4,15 +4,17 @@ categories:
   - Java
   - java_GUI
 date: 2018-09-16 13:07:25
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: 77feedee
 ---
+<div id='my_toc'>
+
 - [需求](/blog/77feedee/#需求)
 - [升级2](/blog/77feedee/#升级2)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 之前已经完成了程序的开发，也加入了热键，不过每次截图(ctrl+alt+w)都要手动的去点击文字识别按钮，显然有点浪费时间。

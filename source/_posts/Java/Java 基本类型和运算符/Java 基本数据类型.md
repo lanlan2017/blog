@@ -4,10 +4,12 @@ categories:
   - Java
   - Java 基本类型和运算符
 date: 2019-01-14 20:49:01
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 mathjax: true
 abbrlink: 4badee62
 ---
+<div id='my_toc'>
+
 - [基本数据类型](/blog/4badee62/#基本数据类型)
 - [整型](/blog/4badee62/#整型)
     - [整型的数值范围](/blog/4badee62/#整型的数值范围)
@@ -15,9 +17,9 @@ abbrlink: 4badee62
     - [数值的表示方式](/blog/4badee62/#数值的表示方式)
 - [自动类型转换](/blog/4badee62/#自动类型转换)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 基本数据类型  ##

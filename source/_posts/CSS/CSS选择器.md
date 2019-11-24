@@ -3,18 +3,20 @@ title: CSS选择器
 categories: 
   - CSS
 date: 2018-12-12 23:44:41
-updated: 2019-11-05 10:32:09
+updated: 2019-11-14 11:39:25
 abbrlink: b6981f1b
 ---
+<div id='my_toc'>
+
 - [基础](/blog/b6981f1b/#基础)
     - [CSS选择器分类](/blog/b6981f1b/#CSS选择器分类)
     - [CSS 元素选择器](/blog/b6981f1b/#CSS-元素选择器)
     - [类型选择器](/blog/b6981f1b/#类型选择器)
     - [参考链接](/blog/b6981f1b/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 基础 #

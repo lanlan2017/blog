@@ -4,9 +4,11 @@ categories:
   - Java
   - Java 正则表达式
 date: 2018-08-07 15:56:18
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:29
 abbrlink: 51e02fda
 ---
+<div id='my_toc'>
+
 - [删除一个或多个空行](/blog/51e02fda/#删除一个或多个空行)
     - [正则表达式](/blog/51e02fda/#正则表达式)
     - [匹配空行正则2](/blog/51e02fda/#匹配空行正则2)
@@ -14,9 +16,9 @@ abbrlink: 51e02fda
 - [移除多余的连续空格，只留下一个空格。](/blog/51e02fda/#移除多余的连续空格，只留下一个空格。)
 - [在线正则图形化工具](/blog/51e02fda/#在线正则图形化工具)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 删除一个或多个空行 #

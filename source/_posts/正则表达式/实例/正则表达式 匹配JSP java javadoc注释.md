@@ -4,9 +4,11 @@ categories:
   - 正则表达式
   - 实例
 date: 2018-12-15 02:33:36
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:33
 abbrlink: a2a97f71
 ---
+<div id='my_toc'>
+
 - [匹配注释](/blog/a2a97f71/#匹配注释)
     - [匹配JSP注释](/blog/a2a97f71/#匹配JSP注释)
         - [问题描述](/blog/a2a97f71/#问题描述)
@@ -16,9 +18,9 @@ abbrlink: a2a97f71
         - [需求](/blog/a2a97f71/#需求)
         - [匹配正则](/blog/a2a97f71/#匹配正则)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 匹配注释 #

@@ -4,18 +4,20 @@ categories:
   - MySQL
   - 图形工具
 date: 2019-10-18 17:01:51
-updated: 2019-11-23 23:02:29
+updated: 2019-11-24 00:13:47
 abbrlink: 4f42ffba
 ---
+<div id='my_toc'>
+
 - [旧版本的navicat无法连接mysql8.0](/blog/4f42ffba/#旧版本的navicat无法连接mysql8-0)
     - [问题描述](/blog/4f42ffba/#问题描述)
     - [原因](/blog/4f42ffba/#原因)
     - [解决方案](/blog/4f42ffba/#解决方案)
 - [参考链接](/blog/4f42ffba/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 旧版本的navicat无法连接mysql8.0 #

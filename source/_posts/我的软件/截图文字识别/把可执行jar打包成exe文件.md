@@ -4,9 +4,11 @@ categories:
   - 我的软件
   - 截图文字识别
 date: 2018-10-10 19:39:02
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: d7d49994
 ---
+<div id='my_toc'>
+
 - [前言](/blog/d7d49994/#前言)
 - [使用eclipse把java项目打包为可执行jar包](/blog/d7d49994/#使用eclipse把java项目打包为可执行jar包)
 - [下载安装破解exe4j](/blog/d7d49994/#下载安装破解exe4j)
@@ -22,9 +24,9 @@ abbrlink: d7d49994
     - [JRE](/blog/d7d49994/#JRE)
 - [运行生成的exe](/blog/d7d49994/#运行生成的exe)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 前言 ##

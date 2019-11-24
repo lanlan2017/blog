@@ -4,15 +4,17 @@ categories:
   - 其他
   - Windows相关
 date: 2019-11-24 11:33:50
-updated: 2019-11-24 11:53:50
+updated: 2019-11-24 11:53:58
 abbrlink: 6f73218
 ---
+<div id='my_toc'>
+
 - [问题描述](/blog/6f73218/#问题描述)
 - [设置Windows资源管理器 启动时显示此电脑](/blog/6f73218/#设置Windows资源管理器-启动时显示此电脑)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 问题描述 #

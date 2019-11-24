@@ -4,9 +4,11 @@ categories:
   - HTML
   - 音视频
 date: 2019-02-13 00:24:14
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: 4f1b06ea
 ---
+<div id='my_toc'>
+
 - [前言](/blog/4f1b06ea/#前言)
 - [方式0 使用原生的audio播放音频](/blog/4f1b06ea/#方式0-使用原生的audio播放音频)
 - [方式1 使用javascript播放音频](/blog/4f1b06ea/#方式1-使用javascript播放音频)
@@ -14,9 +16,9 @@ abbrlink: 4f1b06ea
 - [方式2 使用jquery播放音频](/blog/4f1b06ea/#方式2-使用jquery播放音频)
 - [总结](/blog/4f1b06ea/#总结)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 前言 ##

@@ -4,16 +4,18 @@ categories:
   - JavaScript
   - DOM
 date: 2019-02-13 00:12:44
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:30
 abbrlink: 37c4f730
 ---
+<div id='my_toc'>
+
 - [JavaScript innerText与innerHtml与value的区别](/blog/37c4f730/#JavaScript-innerText与innerHtml与value的区别)
 - [实例](/blog/37c4f730/#实例)
 - [参考链接](/blog/37c4f730/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## JavaScript innerText与innerHtml与value的区别 ##

@@ -4,16 +4,18 @@ categories:
   - 其他
   - Windows相关
 date: 2019-07-15 14:30:04
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: d4d344ff
 ---
+<div id='my_toc'>
+
 - [删除弹窗广告ff新鲜事(FlashHelperService.exe)](/blog/d4d344ff/#删除弹窗广告ff新鲜事-FlashHelperService-exe)
 - [删除掉之后有些网站打不开](/blog/d4d344ff/#删除掉之后有些网站打不开)
 - [参考资料](/blog/d4d344ff/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 删除弹窗广告ff新鲜事(FlashHelperService.exe) #

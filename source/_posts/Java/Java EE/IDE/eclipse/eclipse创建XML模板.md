@@ -6,17 +6,19 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-14 01:06:56
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: bb6759de
 ---
+<div id='my_toc'>
+
 - [前言](/blog/bb6759de/#前言)
 - [创建XML模板步骤](/blog/bb6759de/#创建XML模板步骤)
 - [使用自己创建的XML模板](/blog/bb6759de/#使用自己创建的XML模板)
 - [参考资料](/blog/bb6759de/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 前言 #

@@ -5,15 +5,17 @@ categories:
   - IDE
   - eclipse
 date: 2019-07-11 11:03:16
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: f3de5d3b
 ---
+<div id='my_toc'>
+
 - [eclipse提取本地变量快捷键](/blog/f3de5d3b/#eclipse提取本地变量快捷键)
 - [eclipse提取本地方法快捷键](/blog/f3de5d3b/#eclipse提取本地方法快捷键)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## eclipse提取本地变量快捷键 ##

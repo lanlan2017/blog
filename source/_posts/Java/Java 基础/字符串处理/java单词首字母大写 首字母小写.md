@@ -5,17 +5,19 @@ categories:
   - Java 基础
   - 字符串处理
 date: 2019-04-03 22:05:32
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: 9d84ecc2
 ---
+<div id='my_toc'>
+
 - [原理](/blog/9d84ecc2/#原理)
     - [ASCII码运算](/blog/9d84ecc2/#ASCII码运算)
     - [结论](/blog/9d84ecc2/#结论)
 - [代码](/blog/9d84ecc2/#代码)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 原理 ##

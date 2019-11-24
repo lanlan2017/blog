@@ -5,9 +5,11 @@ categories:
   - 讯飞语音
   - 讯飞语音合成
 date: 2019-03-07 15:03:05
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: e47ffad6
 ---
+<div id='my_toc'>
+
 - [注册讯飞账号](/blog/e47ffad6/#注册讯飞账号)
 - [实名认证](/blog/e47ffad6/#实名认证)
 - [创建应用](/blog/e47ffad6/#创建应用)
@@ -21,9 +23,9 @@ abbrlink: e47ffad6
 - [完整下载Java demo如下](/blog/e47ffad6/#完整下载Java-demo如下)
 - [用audition cs6 打开](/blog/e47ffad6/#用audition-cs6-打开)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 注册讯飞账号 ##

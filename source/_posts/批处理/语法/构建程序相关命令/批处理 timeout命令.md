@@ -5,18 +5,20 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-09-11 11:20:03
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: 6a7ac4ce
 ---
+<div id='my_toc'>
+
 - [timeout命令](/blog/6a7ac4ce/#timeout命令)
     - [帮助文档](/blog/6a7ac4ce/#帮助文档)
     - [应用](/blog/6a7ac4ce/#应用)
         - [30秒后休眠电脑](/blog/6a7ac4ce/#30秒后休眠电脑)
         - [定时休眠批处理程序](/blog/6a7ac4ce/#定时休眠批处理程序)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # timeout命令 #

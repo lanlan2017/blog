@@ -5,9 +5,11 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:38
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: 8c60ed62
 ---
+<div id='my_toc'>
+
 - [out内置对象](/blog/8c60ed62/#out内置对象)
     - [向客户端输出数据](/blog/8c60ed62/#向客户端输出数据)
     - [管理响应缓冲](/blog/8c60ed62/#管理响应缓冲)
@@ -16,9 +18,9 @@ abbrlink: 8c60ed62
         - [验证clear()方法](/blog/8c60ed62/#验证clear-方法)
         - [验证clearBuffer()方法](/blog/8c60ed62/#验证clearBuffer-方法)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # out内置对象 #

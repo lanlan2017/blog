@@ -5,9 +5,11 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:39
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:30
 abbrlink: ddf72c82
 ---
+<div id='my_toc'>
+
 - [response内置对象简介](/blog/ddf72c82/#response内置对象简介)
 - [常用方法](/blog/ddf72c82/#常用方法)
 - [请求重定向和请求转发的区别](/blog/ddf72c82/#请求重定向和请求转发的区别)
@@ -23,9 +25,9 @@ abbrlink: ddf72c82
     - [缓冲相关方法](/blog/ddf72c82/#缓冲相关方法)
 - [参考链接](/blog/ddf72c82/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## response内置对象简介 ##

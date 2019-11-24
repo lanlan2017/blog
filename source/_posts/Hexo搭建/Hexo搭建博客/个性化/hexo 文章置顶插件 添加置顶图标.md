@@ -5,9 +5,11 @@ categories:
   - Hexo搭建博客
   - 个性化
 date: 2019-02-15 21:49:16
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 7162b91b
 ---
+<div id='my_toc'>
+
 - [卸载hexo-generator-index插件](/blog/7162b91b/#卸载hexo-generator-index插件)
 - [安装hexo-generator-index-pin-top插件](/blog/7162b91b/#安装hexo-generator-index-pin-top插件)
 - [添加front-matter配置项](/blog/7162b91b/#添加front-matter配置项)
@@ -15,9 +17,9 @@ abbrlink: 7162b91b
 - [添加置顶标识](/blog/7162b91b/#添加置顶标识)
 - [参考资料](/blog/7162b91b/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 已经有了有大佬开发了置顶插件了，安装插件，然后在front-matter中配置一下就好了

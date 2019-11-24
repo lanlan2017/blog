@@ -3,9 +3,11 @@ title: Git更新推送流程
 categories: 
   - Git
 date: 2019-10-31 20:20:41
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 6a91baf
 ---
+<div id='my_toc'>
+
 - [进入项目地址](/blog/6a91baf/#进入项目地址)
 - [拉取远程分支](/blog/6a91baf/#拉取远程分支)
 - [查看更新](/blog/6a91baf/#查看更新)
@@ -20,9 +22,9 @@ abbrlink: 6a91baf
 - [输入GitHub用户名](/blog/6a91baf/#输入GitHub用户名)
 - [输入密码](/blog/6a91baf/#输入密码)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 进入项目地址

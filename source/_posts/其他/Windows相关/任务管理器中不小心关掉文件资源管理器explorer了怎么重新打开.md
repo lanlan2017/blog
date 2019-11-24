@@ -4,15 +4,17 @@ categories:
   - 其他
   - Windows相关
 date: 2018-11-13 15:03:20
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: d400453f
 ---
+<div id='my_toc'>
+
 - [我的问题](/blog/d400453f/#我的问题)
 - [解决方案](/blog/d400453f/#解决方案)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 我的问题 ##

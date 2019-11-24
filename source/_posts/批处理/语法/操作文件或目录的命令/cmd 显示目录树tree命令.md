@@ -5,9 +5,11 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-04-26 21:18:26
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: 979e79b0
 ---
+<div id='my_toc'>
+
 - [显示目录树命令 tree](/blog/979e79b0/#显示目录树命令-tree)
     - [帮助文档](/blog/979e79b0/#帮助文档)
     - [只显示目录不显示文件 不带参数](/blog/979e79b0/#只显示目录不显示文件-不带参数)
@@ -16,9 +18,9 @@ abbrlink: 979e79b0
     - [不要使用/a参数好](/blog/979e79b0/#不要使用-a参数好)
     - [把目录树写入剪贴板](/blog/979e79b0/#把目录树写入剪贴板)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 显示目录树命令 tree #

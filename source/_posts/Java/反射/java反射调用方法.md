@@ -4,9 +4,11 @@ categories:
   - Java
   - 反射
 date: 2019-06-16 13:53:20
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:30
 abbrlink: 40640d2
 ---
+<div id='my_toc'>
+
 - [反射调用方法步骤](/blog/40640d2/#反射调用方法步骤)
 - [实例](/blog/40640d2/#实例)
     - [项目结构](/blog/40640d2/#项目结构)
@@ -19,9 +21,9 @@ abbrlink: 40640d2
         - [调用无参实例方法](/blog/40640d2/#调用无参实例方法)
         - [调用带参实例方法](/blog/40640d2/#调用带参实例方法)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 反射调用方法步骤 #

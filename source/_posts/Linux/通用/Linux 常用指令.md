@@ -4,9 +4,11 @@ categories:
   - Linux
   - 通用
 date: 2018-11-11 16:35:46
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: e44da
 ---
+<div id='my_toc'>
+
 - [前言](/blog/e44da/#前言)
 - [文件目录相关命令](/blog/e44da/#文件目录相关命令)
     - [创建一个空白文件命令touch](/blog/e44da/#创建一个空白文件命令touch)
@@ -18,9 +20,9 @@ abbrlink: e44da
         - [无法删除的情况](/blog/e44da/#无法删除的情况)
     - [参考链接](/blog/e44da/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 前言 #

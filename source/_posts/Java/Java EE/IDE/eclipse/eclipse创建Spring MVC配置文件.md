@@ -6,17 +6,19 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-13 22:21:13
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: 874828d8
 ---
+<div id='my_toc'>
+
 - [Spring MVC配置文件模版](/blog/874828d8/#Spring-MVC配置文件模版)
 - [安装插件](/blog/874828d8/#安装插件)
 - [使用Spring Tools3插件创建配置文件](/blog/874828d8/#使用Spring-Tools3插件创建配置文件)
 - [手动创建web.xml](/blog/874828d8/#手动创建web-xml)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Spring MVC配置文件模版 #

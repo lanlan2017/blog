@@ -3,9 +3,11 @@ title: Git命令集合
 categories: 
   - Git
 date: 2018-10-29 20:55:48
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 504e809a
 ---
+<div id='my_toc'>
+
 - [分支相关](/blog/504e809a/#分支相关)
     - [查询分支](/blog/504e809a/#查询分支)
     - [创建分支](/blog/504e809a/#创建分支)
@@ -43,9 +45,9 @@ abbrlink: 504e809a
 - [查看分支时间](/blog/504e809a/#查看分支时间)
 - [参考链接](/blog/504e809a/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 分支相关 ##

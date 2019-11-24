@@ -5,9 +5,11 @@ categories:
   - Hexo搭建博客
   - 给博客添加功能
 date: 2018-10-25 19:13:51
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 82e4ee34
 ---
+<div id='my_toc'>
+
 - [安装插件](/blog/82e4ee34/#安装插件)
 - [修改站点配置文件](/blog/82e4ee34/#修改站点配置文件)
 - [设置RSS插件](/blog/82e4ee34/#设置RSS插件)
@@ -23,9 +25,9 @@ abbrlink: 82e4ee34
 - [limit: 0](/blog/82e4ee34/#limit-0)
 - [部署看效果](/blog/82e4ee34/#部署看效果)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 安装插件 ##

@@ -5,9 +5,11 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-04-03 17:24:14
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: 318f3e6b
 ---
+<div id='my_toc'>
+
 - [问题描述](/blog/318f3e6b/#问题描述)
 - [判断当前是否可以联网的批处理](/blog/318f3e6b/#判断当前是否可以联网的批处理)
 - [应用到程序中](/blog/318f3e6b/#应用到程序中)
@@ -16,9 +18,9 @@ abbrlink: 318f3e6b
     - [运行结果](/blog/318f3e6b/#运行结果)
     - [ping命令发送一次请求](/blog/318f3e6b/#ping命令发送一次请求)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 问题描述 ##

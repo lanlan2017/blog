@@ -4,9 +4,11 @@ categories:
   - HTML
   - 表单
 date: 2018-11-28 14:45:08
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: b74fe8bf
 ---
+<div id='my_toc'>
+
 - [HTML表单是什么](/blog/b74fe8bf/#HTML表单是什么)
 - [form元素](/blog/b74fe8bf/#form元素)
 - [文本输入域](/blog/b74fe8bf/#文本输入域)
@@ -49,9 +51,9 @@ abbrlink: b74fe8bf
         - [仪表](/blog/b74fe8bf/#仪表)
 - [参考链接](/blog/b74fe8bf/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # HTML表单是什么 #

@@ -6,9 +6,11 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-19 15:51:37
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: af6b423c
 ---
+<div id='my_toc'>
+
 - [eclipse自身设置的原因](/blog/af6b423c/#eclipse自身设置的原因)
     - [指定JRE路径](/blog/af6b423c/#指定JRE路径)
     - [关闭用不到的插件](/blog/af6b423c/#关闭用不到的插件)
@@ -17,9 +19,9 @@ abbrlink: af6b423c
         - [解决方案](/blog/af6b423c/#解决方案)
         - [参考资料](/blog/af6b423c/#参考资料)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # eclipse自身设置的原因 #

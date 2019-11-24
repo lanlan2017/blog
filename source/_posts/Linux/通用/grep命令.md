@@ -4,14 +4,16 @@ categories:
   - Linux
   - 通用
 date: 2019-11-03 15:40:40
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: 471198f0
 ---
+<div id='my_toc'>
+
 - [grep命令](/blog/471198f0/#grep命令)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # grep命令 #

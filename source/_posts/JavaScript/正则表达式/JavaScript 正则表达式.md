@@ -4,18 +4,20 @@ categories:
   - JavaScript
   - 正则表达式
 date: 2019-02-13 00:17:45
-updated: 2019-11-08 19:33:08
+updated: 2019-11-14 11:39:31
 abbrlink: cd878b94
 ---
+<div id='my_toc'>
+
 - [语法](/blog/cd878b94/#语法)
 - [String对象中的正则表达式](/blog/cd878b94/#String对象中的正则表达式)
     - [match方法](/blog/cd878b94/#match方法)
     - [实例](/blog/cd878b94/#实例)
 - [参考链接](/blog/cd878b94/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 语法 ##

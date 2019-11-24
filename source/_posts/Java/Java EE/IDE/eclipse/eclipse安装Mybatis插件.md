@@ -6,18 +6,20 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-02 21:03:06
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: c9f81303
 ---
+<div id='my_toc'>
+
 - [打开eclipse marketplace](/blog/c9f81303/#打开eclipse-marketplace)
 - [安装mybatis-generator](/blog/c9f81303/#安装mybatis-generator)
     - [插件主页](/blog/c9f81303/#插件主页)
     - [拖动安装插件](/blog/c9f81303/#拖动安装插件)
     - [同意许可](/blog/c9f81303/#同意许可)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 打开eclipse marketplace #

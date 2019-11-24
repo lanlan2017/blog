@@ -4,16 +4,18 @@ categories:
   - 其他
   - Windows相关
 date: 2019-10-07 00:20:19
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: e1bf4c3f
 ---
+<div id='my_toc'>
+
 - [cmd切换到 新版控制台 后没有显示文字怎么办](/blog/e1bf4c3f/#cmd切换到-新版控制台-后没有显示文字怎么办)
     - [问题描述](/blog/e1bf4c3f/#问题描述)
     - [解决方案](/blog/e1bf4c3f/#解决方案)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # cmd切换到 新版控制台 后没有显示文字怎么办 #

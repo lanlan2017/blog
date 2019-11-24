@@ -5,9 +5,11 @@ categories:
   - Hexo搭建博客
   - 给博客添加功能
 date: 2018-11-11 14:27:40
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: f1fdd2cf
 ---
+<div id='my_toc'>
+
 - [valine自带的邮件提醒设置](/blog/f1fdd2cf/#valine自带的邮件提醒设置)
 - [使用第三方邮件提醒](/blog/f1fdd2cf/#使用第三方邮件提醒)
     - [关闭valine自带的邮件提醒](/blog/f1fdd2cf/#关闭valine自带的邮件提醒)
@@ -15,9 +17,9 @@ abbrlink: f1fdd2cf
     - [重新部署使环境变量生效](/blog/f1fdd2cf/#重新部署使环境变量生效)
     - [提示邮件中文章链接错误加载不到评论](/blog/f1fdd2cf/#提示邮件中文章链接错误加载不到评论)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

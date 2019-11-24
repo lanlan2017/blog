@@ -4,9 +4,11 @@ categories:
   - Hexo搭建
   - Hexo搭建博客
 date: 2018-08-29 19:35:07
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: f01200cd
 ---
+<div id='my_toc'>
+
 - [实现点击出现爱心效果](/blog/f01200cd/#实现点击出现爱心效果)
 - [网站底部字数统计](/blog/f01200cd/#网站底部字数统计)
     - [安装插件](/blog/f01200cd/#安装插件)
@@ -20,9 +22,9 @@ abbrlink: f01200cd
 - [隐藏网页底部**主题 – NexT.Gemini v6.4.0**](/blog/f01200cd/#隐藏网页底部主题-–-NexT-Gemini-v6-4-0)
 - [修改字体大小](/blog/f01200cd/#修改字体大小)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 实现点击出现爱心效果 ##

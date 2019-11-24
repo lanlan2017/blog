@@ -5,9 +5,11 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-13 12:31:03
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:30
 abbrlink: d5e5b83f
 ---
+<div id='my_toc'>
+
 - [JSP request内置对象](/blog/d5e5b83f/#JSP-request内置对象)
     - [request对象常用方法](/blog/d5e5b83f/#request对象常用方法)
         - [获取请求体信息](/blog/d5e5b83f/#获取请求体信息)
@@ -34,9 +36,9 @@ abbrlink: d5e5b83f
         - [post提交方式](/blog/d5e5b83f/#post提交方式)
     - [参考链接](/blog/d5e5b83f/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # JSP request内置对象 #

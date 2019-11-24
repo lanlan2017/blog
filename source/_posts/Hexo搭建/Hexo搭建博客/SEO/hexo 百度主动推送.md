@@ -5,9 +5,11 @@ categories:
   - Hexo搭建博客
   - SEO
 date: 2018-10-31 11:18:30
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 7ac3f85
 ---
+<div id='my_toc'>
+
 - [百度主动推送的作用](/blog/7ac3f85/#百度主动推送的作用)
 - [在hexo中添加百度主动推送功能](/blog/7ac3f85/#在hexo中添加百度主动推送功能)
 - [安装hexo-baidu-url-submit插件](/blog/7ac3f85/#安装hexo-baidu-url-submit插件)
@@ -17,9 +19,9 @@ abbrlink: 7ac3f85
 - [卸载](/blog/7ac3f85/#卸载)
 - [参考链接](/blog/7ac3f85/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 百度主动推送的作用 ##

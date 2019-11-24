@@ -6,17 +6,19 @@ categories:
   - markdown语法
   - 使用html标签
 date: 2019-11-08 21:30:04
-updated: 2019-11-08 21:30:04
+updated: 2019-11-14 11:39:31
 abbrlink: ce247608
 ---
+<div id='my_toc'>
+
 - [HTML 5 **<details> **标签](/blog/ce247608/#HTML-5-<details>-标签)
     - [**<summary> **子标签](/blog/ce247608/#<summary>-子标签)
 - [markdown中可以写HTML](/blog/ce247608/#markdown中可以写HTML)
     - [折叠的内容是可以Markdown](/blog/ce247608/#折叠的内容是可以Markdown)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # HTML 5 `<details> `标签

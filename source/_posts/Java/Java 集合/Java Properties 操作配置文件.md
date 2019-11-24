@@ -4,9 +4,11 @@ categories:
   - Java
   - Java 集合
 date: 2018-11-26 18:53:21
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: fdae6905
 ---
+<div id='my_toc'>
+
 - [基本使用步骤](/blog/fdae6905/#基本使用步骤)
     - [创建xxx.properties文件](/blog/fdae6905/#创建xxx-properties文件)
 - [部署网站的地址](/blog/fdae6905/#部署网站的地址)
@@ -23,9 +25,9 @@ abbrlink: fdae6905
     - [遍历配置文件](/blog/fdae6905/#遍历配置文件)
 - [参考链接](/blog/fdae6905/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

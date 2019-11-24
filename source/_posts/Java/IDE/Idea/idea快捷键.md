@@ -5,16 +5,18 @@ categories:
   - IDE
   - Idea
 date: 2019-08-08 14:41:36
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: 385c30d
 ---
+<div id='my_toc'>
+
 - [idea快捷键](/blog/385c30d/#idea快捷键)
     - [idea向上/向下插入空行](/blog/385c30d/#idea向上-向下插入空行)
 - [idea中使用eclipse快捷键](/blog/385c30d/#idea中使用eclipse快捷键)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # idea快捷键 #

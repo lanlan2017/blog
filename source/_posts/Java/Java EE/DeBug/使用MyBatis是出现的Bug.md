@@ -5,9 +5,11 @@ categories:
   - Java EE
   - DeBug
 date: 2019-06-09 17:26:12
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: 5aecc643
 ---
+<div id='my_toc'>
+
 - [Type interface mapper.UserMapper is not known to the MapperRegistry.](/blog/5aecc643/#Type-interface-mapper-UserMapper-is-not-known-to-the-MapperRegistry)
     - [分1:没有引入Mapper.xml](/blog/5aecc643/#分1-没有引入Mapper-xml)
         - [解决](/blog/5aecc643/#解决)
@@ -31,9 +33,9 @@ abbrlink: 5aecc643
     - [原因](/blog/5aecc643/#原因)
     - [解决](/blog/5aecc643/#解决)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Type interface mapper.UserMapper is not known to the MapperRegistry. #

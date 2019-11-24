@@ -5,9 +5,11 @@ categories:
   - Java EE
   - 环境搭建
 date: 2019-06-07 15:34:05
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: 44aa2f70
 ---
+<div id='my_toc'>
+
 - [eclipse 创建mybatis-config.xml 创建mapper.xml文件](/blog/44aa2f70/#eclipse-创建mybatis-config-xml-创建mapper-xml文件)
     - [下载mybatis的jar包](/blog/44aa2f70/#下载mybatis的jar包)
     - [从mybatis的jar包复制模板文件](/blog/44aa2f70/#从mybatis的jar包复制模板文件)
@@ -17,9 +19,9 @@ abbrlink: 44aa2f70
         - [引入mybatis-3-mapper.dtd](/blog/44aa2f70/#引入mybatis-3-mapper-dtd)
     - [使用模板文件创建mybatis-config.xml文件](/blog/44aa2f70/#使用模板文件创建mybatis-config-xml文件)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # eclipse 创建mybatis-config.xml 创建mapper.xml文件 #

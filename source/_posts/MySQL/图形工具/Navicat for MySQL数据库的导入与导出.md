@@ -4,9 +4,11 @@ categories:
   - MySQL
   - 图形工具
 date: 2018-12-08 00:19:02
-updated: 2019-11-24 00:13:36
+updated: 2019-11-24 00:13:47
 abbrlink: 885d02c0
 ---
+<div id='my_toc'>
+
 - [导出数据库中的所有表](/blog/885d02c0/#导出数据库中的所有表)
     - [记下原来数据库的属性](/blog/885d02c0/#记下原来数据库的属性)
     - [导出原数据库中的全部](/blog/885d02c0/#导出原数据库中的全部)
@@ -16,9 +18,9 @@ abbrlink: 885d02c0
     - [导入](/blog/885d02c0/#导入)
 - [Java程序说明](/blog/885d02c0/#Java程序说明)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 导出数据库中的所有表 ##

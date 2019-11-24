@@ -4,17 +4,19 @@ categories:
   - HTML
   - 超链接
 date: 2019-02-13 00:22:04
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: b4a0eaf6
 ---
+<div id='my_toc'>
+
 - [根据ID属性跳转的锚点](/blog/b4a0eaf6/#根据ID属性跳转的锚点)
 - [自动生成](/blog/b4a0eaf6/#自动生成)
     - [Java实现](/blog/b4a0eaf6/#Java实现)
     - [javascript实现](/blog/b4a0eaf6/#javascript实现)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 这里介绍使用id属性来设置锚点，并通过代码自动生成ID唯一的锚点。

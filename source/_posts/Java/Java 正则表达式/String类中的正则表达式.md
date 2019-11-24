@@ -4,9 +4,11 @@ categories:
   - Java
   - Java 正则表达式
 date: 2018-08-06 23:46:40
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: 12fb64fe
 ---
+<div id='my_toc'>
+
 - [String支持正则表达式是的方法](/blog/12fb64fe/#String支持正则表达式是的方法)
 - [matches()方法](/blog/12fb64fe/#matches-方法)
     - [实例：](/blog/12fb64fe/#实例：)
@@ -22,9 +24,9 @@ abbrlink: 12fb64fe
 - [replaceAll()方法](/blog/12fb64fe/#replaceAll-方法)
     - [实例](/blog/12fb64fe/#实例)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## String支持正则表达式是的方法 ##

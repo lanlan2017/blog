@@ -4,18 +4,20 @@ categories:
   - C语言
   - 代码规范
 date: 2018-11-20 18:52:35
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 96819592
 ---
+<div id='my_toc'>
+
 - [一般写法](/blog/96819592/#一般写法)
 - [自动生成](/blog/96819592/#自动生成)
     - [源码](/blog/96819592/#源码)
     - [C语言头文件生成工具](/blog/96819592/#C语言头文件生成工具)
 - [参考链接](/blog/96819592/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 一般写法 ##

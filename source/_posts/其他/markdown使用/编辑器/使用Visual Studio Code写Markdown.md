@@ -5,9 +5,11 @@ categories:
   - markdown使用
   - 编辑器
 date: 2019-08-20 12:06:20
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: 11f888fa
 ---
+<div id='my_toc'>
+
 - [快捷键支持](/blog/11f888fa/#快捷键支持)
     - [加粗](/blog/11f888fa/#加粗)
     - [切换代办列表](/blog/11f888fa/#切换代办列表)
@@ -15,9 +17,9 @@ abbrlink: 11f888fa
 - [快捷键表格](/blog/11f888fa/#快捷键表格)
     - [小结](/blog/11f888fa/#小结)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 快捷键支持 #

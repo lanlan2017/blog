@@ -5,16 +5,18 @@ categories:
   - IDE
   - eclipse
 date: 2019-04-23 21:49:49
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: 3c99547f
 ---
+<div id='my_toc'>
+
 - [问题描述](/blog/3c99547f/#问题描述)
 - [原因](/blog/3c99547f/#原因)
 - [步骤](/blog/3c99547f/#步骤)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 问题描述 ##

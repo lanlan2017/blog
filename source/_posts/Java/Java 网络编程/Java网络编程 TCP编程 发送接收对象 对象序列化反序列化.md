@@ -4,9 +4,11 @@ categories:
   - Java
   - Java 网络编程
 date: 2019-05-30 18:31:18
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: e303557d
 ---
+<div id='my_toc'>
+
 - [Java网络编程 TCP编程 发送接收对象 对象序列化反序列化](/blog/e303557d/#Java网络编程-TCP编程-发送接收对象-对象序列化反序列化)
     - [对象序列化](/blog/e303557d/#对象序列化)
     - [对象反序列化](/blog/e303557d/#对象反序列化)
@@ -17,9 +19,9 @@ abbrlink: e303557d
         - [客户端线程](/blog/e303557d/#客户端线程)
         - [运行效果](/blog/e303557d/#运行效果)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Java网络编程 TCP编程 发送接收对象 对象序列化反序列化 #

@@ -5,18 +5,20 @@ categories:
   - Java IO流
   - 应用
 date: 2019-06-27 17:54:33
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: e4a1ea9f
 ---
+<div id='my_toc'>
+
 - [Java IO 合并多个二进制文件为一个二进制文件](/blog/e4a1ea9f/#Java-IO-合并多个二进制文件为一个二进制文件)
     - [背景](/blog/e4a1ea9f/#背景)
     - [算法描述](/blog/e4a1ea9f/#算法描述)
     - [关键代码](/blog/e4a1ea9f/#关键代码)
     - [合并多个源文件到目标文件并删除源文件](/blog/e4a1ea9f/#合并多个源文件到目标文件并删除源文件)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=193870569&type=red" frameborder=0 allowfullscreen></iframe>

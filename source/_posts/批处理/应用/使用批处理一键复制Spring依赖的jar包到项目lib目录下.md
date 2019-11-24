@@ -4,17 +4,19 @@ categories:
   - 批处理
   - 应用
 date: 2019-05-08 14:41:53
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: cbe4b14b
 ---
+<div id='my_toc'>
+
 - [前言](/blog/cbe4b14b/#前言)
 - [目录结构](/blog/cbe4b14b/#目录结构)
     - [一键复制Spring依赖到项目lib目录下.bat](/blog/cbe4b14b/#一键复制Spring依赖到项目lib目录下-bat)
         - [命令解释](/blog/cbe4b14b/#命令解释)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 前言 #

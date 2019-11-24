@@ -5,9 +5,11 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-01-31 17:32:41
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: 5d4c4249
 ---
+<div id='my_toc'>
+
 - [删除文件 del或erase命令](/blog/5d4c4249/#删除文件-del或erase命令)
     - [删除 当前目录 下某个文件](/blog/5d4c4249/#删除-当前目录-下某个文件)
     - [删除 当前目录 下某个后缀的所有文件](/blog/5d4c4249/#删除-当前目录-下某个后缀的所有文件)
@@ -17,9 +19,9 @@ abbrlink: 5d4c4249
     - [删除非空目录](/blog/5d4c4249/#删除非空目录)
     - [直接删除非空目录](/blog/5d4c4249/#直接删除非空目录)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 删除文件 del或erase命令 ##

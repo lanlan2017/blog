@@ -3,9 +3,11 @@ title: PigGo GitHub图床
 categories: 
   - Hexo搭建
 date: 2019-11-22 12:59:46
-updated: 2019-11-22 13:00:04
+updated: 2019-11-22 13:00:19
 abbrlink: b19c6a80
 ---
+<div id='my_toc'>
+
 - [生成token](/blog/b19c6a80/#生成token)
 - [下载安装PigGo](/blog/b19c6a80/#下载安装PigGo)
 - [配置PigGo](/blog/b19c6a80/#配置PigGo)
@@ -17,9 +19,9 @@ abbrlink: b19c6a80
         - [上传快捷方式](/blog/b19c6a80/#上传快捷方式)
 - [参考连接](/blog/b19c6a80/#参考连接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 生成token #

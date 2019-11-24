@@ -4,9 +4,11 @@ categories:
   - MySQL
   - 安装
 date: 2018-12-14 01:58:11
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: e124ac2c
 ---
+<div id='my_toc'>
+
 - [安装](/blog/e124ac2c/#安装)
 - [安装mysql服务](/blog/e124ac2c/#安装mysql服务)
 - [启动mysql服务](/blog/e124ac2c/#启动mysql服务)
@@ -23,9 +25,9 @@ abbrlink: e124ac2c
     - [解决方案](/blog/e124ac2c/#解决方案)
 - [参考链接](/blog/e124ac2c/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 安装 ##

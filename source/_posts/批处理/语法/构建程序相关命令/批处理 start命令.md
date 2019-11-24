@@ -5,18 +5,20 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-08-25 13:22:53
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: b4b274e0
 ---
+<div id='my_toc'>
+
 - [批处理 start命令](/blog/b4b274e0/#批处理-start命令)
     - [帮助文档](/blog/b4b274e0/#帮助文档)
     - [帮助文档解释](/blog/b4b274e0/#帮助文档解释)
     - [应用](/blog/b4b274e0/#应用)
         - [在特定目录下启动cmd](/blog/b4b274e0/#在特定目录下启动cmd)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 批处理 start命令 #

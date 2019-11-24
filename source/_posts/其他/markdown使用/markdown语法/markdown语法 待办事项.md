@@ -5,15 +5,17 @@ categories:
   - markdown使用
   - markdown语法
 date: 2018-10-21 10:01:08
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: 8859faa9
 ---
+<div id='my_toc'>
+
 - [Markdown待办事项语法](/blog/8859faa9/#Markdown待办事项语法)
 - [MarkdownPad2 中支持待办事项](/blog/8859faa9/#MarkdownPad2-中支持待办事项)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## Markdown待办事项语法 ##

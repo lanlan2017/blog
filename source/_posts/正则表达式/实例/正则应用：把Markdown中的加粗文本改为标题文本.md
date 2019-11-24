@@ -4,14 +4,16 @@ categories:
   - 正则表达式
   - 实例
 date: 2018-10-11 09:12:13
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:33
 abbrlink: 1d153e30
 ---
+<div id='my_toc'>
+
 - [实现](/blog/1d153e30/#实现)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 实现 ##

@@ -4,16 +4,18 @@ categories:
   - 批处理
   - 应用
 date: 2019-01-31 18:29:25
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: ce34466e
 ---
+<div id='my_toc'>
+
 - [使用Chrome浏览器打开指定html文件](/blog/ce34466e/#使用Chrome浏览器打开指定html文件)
 - [创建批处理脚本chrome.bat来打开html文件](/blog/ce34466e/#创建批处理脚本chrome-bat来打开html文件)
 - [chrome.bat配置到path环境变量中](/blog/ce34466e/#chrome-bat配置到path环境变量中)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 使用Chrome浏览器打开指定html文件 ##

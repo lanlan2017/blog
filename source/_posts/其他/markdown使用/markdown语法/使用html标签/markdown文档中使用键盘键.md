@@ -6,14 +6,16 @@ categories:
   - markdown语法
   - 使用html标签
 date: 2018-10-26 11:23:58
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 abbrlink: 6507a83c
 ---
+<div id='my_toc'>
+
 - [键盘键](/blog/6507a83c/#键盘键)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 键盘键 ##

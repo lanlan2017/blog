@@ -4,9 +4,11 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-14 15:19:37
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: '82040860'
 ---
+<div id='my_toc'>
+
 - [继承关系](/blog/82040860/#继承关系)
 - [构造方法](/blog/82040860/#构造方法)
 - [成员方法](/blog/82040860/#成员方法)
@@ -17,9 +19,9 @@ abbrlink: '82040860'
     - [append(...)方法](/blog/82040860/#append-方法)
     - [错误相关方法](/blog/82040860/#错误相关方法)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 继承关系 ##

@@ -5,9 +5,11 @@ categories:
   - JSP
   - Java Web简介
 date: 2018-12-01 11:52:15
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: ccc57c12
 ---
+<div id='my_toc'>
+
 - [步骤](/blog/ccc57c12/#步骤)
 - [创建项目目录结构](/blog/ccc57c12/#创建项目目录结构)
     - [创建项目目录](/blog/ccc57c12/#创建项目目录)
@@ -21,9 +23,9 @@ abbrlink: ccc57c12
     - [浏览器查看](/blog/ccc57c12/#浏览器查看)
     - [参考链接](/blog/ccc57c12/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

@@ -4,14 +4,16 @@ categories:
   - MySQL
   - 图形工具
 date: 2019-10-25 16:28:41
-updated: 2019-11-23 23:02:29
+updated: 2019-11-24 00:13:47
 abbrlink: e1bb0d5c
 ---
+<div id='my_toc'>
+
 - [Navicat premium 12 mysql-命令列界面 清屏功能](/blog/e1bb0d5c/#Navicat-premium-12-mysql-命令列界面-清屏功能)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Navicat premium 12 mysql-命令列界面 清屏功能 #

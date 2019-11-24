@@ -4,9 +4,11 @@ categories:
   - Java
   - Linux系统上java使用
 date: 2018-08-11 15:28:20
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:30
 abbrlink: 6249459e
 ---
+<div id='my_toc'>
+
 - [前言：](/blog/6249459e/#前言：)
 - [一、环境变量文件介绍](/blog/6249459e/#一、环境变量文件介绍)
 - [二、Linux的变量种类](/blog/6249459e/#二、Linux的变量种类)
@@ -17,9 +19,9 @@ abbrlink: 6249459e
     - [**~/.profile**](/blog/6249459e/#~-profile)
     - [~/.bashrc](/blog/6249459e/#~-bashrc)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 Linux 常用环境变量及作用和环境变量文件的详细介绍及其加载执行顺序

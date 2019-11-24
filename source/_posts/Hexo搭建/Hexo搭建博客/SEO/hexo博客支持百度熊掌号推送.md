@@ -5,14 +5,16 @@ categories:
   - Hexo搭建博客
   - SEO
 date: 2018-10-30 11:11:24
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 5f9ceba2
 ---
+<div id='my_toc'>
+
 - [Hexo安装插件支持百度熊掌号自动推送](/blog/5f9ceba2/#Hexo安装插件支持百度熊掌号自动推送)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 先写到这里，后续审核通过了我在再增加,注册这个只是为了，让我的博客站点在百度搜索中的排名靠前点。SEO还真心不容易啊。

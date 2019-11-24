@@ -5,9 +5,11 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2018-08-03 14:03:56
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:32
 abbrlink: 6aff1849
 ---
+<div id='my_toc'>
+
 - [一、建立空文件的几种方法](/blog/6aff1849/#一、建立空文件的几种方法)
     - [使用cd命令](/blog/6aff1849/#使用cd命令)
     - [使用copy命令](/blog/6aff1849/#使用copy命令)
@@ -16,9 +18,9 @@ abbrlink: 6aff1849
     - [使用fsutil命令](/blog/6aff1849/#使用fsutil命令)
     - [关键点](/blog/6aff1849/#关键点)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 一、建立空文件的几种方法 ##

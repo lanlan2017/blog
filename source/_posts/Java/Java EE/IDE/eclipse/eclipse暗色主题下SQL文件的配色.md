@@ -6,17 +6,19 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-14 10:07:26
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: 7198198c
 ---
+<div id='my_toc'>
+
 - [eclipse暗色主题下SQL文件的配色](/blog/7198198c/#eclipse暗色主题下SQL文件的配色)
     - [问题描述](/blog/7198198c/#问题描述)
     - [修改eclipse sql文件代码配色](/blog/7198198c/#修改eclipse-sql文件代码配色)
     - [eclipse其他代码配色](/blog/7198198c/#eclipse其他代码配色)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # eclipse暗色主题下SQL文件的配色 #

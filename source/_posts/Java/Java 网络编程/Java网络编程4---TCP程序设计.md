@@ -4,9 +4,11 @@ categories:
   - Java
   - Java 网络编程
 date: 2019-05-30 17:00:03
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: 691d97e3
 ---
+<div id='my_toc'>
+
 - [Java TCP程序设计](/blog/691d97e3/#Java-TCP程序设计)
     - [SeverSocket类与Socket类](/blog/691d97e3/#SeverSocket类与Socket类)
     - [第一个TCP程序](/blog/691d97e3/#第一个TCP程序)
@@ -34,9 +36,9 @@ abbrlink: 691d97e3
         - [EchoClient](/blog/691d97e3/#EchoClient)
         - [运行效果](/blog/691d97e3/#运行效果)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Java TCP程序设计 #

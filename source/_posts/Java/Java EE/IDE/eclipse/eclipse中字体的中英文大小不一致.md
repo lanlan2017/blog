@@ -6,17 +6,19 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-19 01:19:37
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:27
 abbrlink: 511c4c42
 ---
+<div id='my_toc'>
+
 - [eclipse中字体的中英文大小不一致](/blog/511c4c42/#eclipse中字体的中英文大小不一致)
     - [分析原因](/blog/511c4c42/#分析原因)
     - [解决方案](/blog/511c4c42/#解决方案)
     - [eclipse中使用](/blog/511c4c42/#eclipse中使用)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # eclipse中字体的中英文大小不一致 #

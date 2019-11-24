@@ -5,10 +5,12 @@ categories:
   - latex
   - LaTex语法
 date: 2018-08-30 18:46:38
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:31
 mathjax: true
 abbrlink: 83c2e83a
 ---
+<div id='my_toc'>
+
 - [公式显示位置](/blog/83c2e83a/#公式显示位置)
     - [行内公式](/blog/83c2e83a/#行内公式)
     - [行间公式](/blog/83c2e83a/#行间公式)
@@ -61,9 +63,9 @@ abbrlink: 83c2e83a
     - [公式中的间距](/blog/83c2e83a/#公式中的间距)
 - [参考链接](/blog/83c2e83a/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 公式显示位置 #

@@ -4,17 +4,19 @@ categories:
   - Java
   - Java 集合
 date: 2018-12-17 20:48:33
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: b5d86588
 ---
+<div id='my_toc'>
+
 - [Stack对象简介](/blog/b5d86588/#Stack对象简介)
 - [Stack对象方法](/blog/b5d86588/#Stack对象方法)
     - [构造方法](/blog/b5d86588/#构造方法)
     - [常用方法](/blog/b5d86588/#常用方法)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## Stack对象简介 ##

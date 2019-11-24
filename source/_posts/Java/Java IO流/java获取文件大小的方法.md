@@ -4,9 +4,11 @@ categories:
   - Java
   - Java IO流
 date: 2018-07-30 20:05:28
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:28
 abbrlink: aa316c45
 ---
+<div id='my_toc'>
+
 - [java获取文件大小的方法](/blog/aa316c45/#java获取文件大小的方法)
     - [一、通过File类的length()方法获取文件的大小](/blog/aa316c45/#一、通过File类的length-方法获取文件的大小)
     - [二、通过file.io.*中的流式方法获取](/blog/aa316c45/#二、通过file-io-*中的流式方法获取)
@@ -15,9 +17,9 @@ abbrlink: aa316c45
     - [java获取文件大小总结](/blog/aa316c45/#java获取文件大小总结)
     - [完整的代码](/blog/aa316c45/#完整的代码)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 本文转自：[https://www.cnblogs.com/hellowhy/p/7238570.html](https://www.cnblogs.com/hellowhy/p/7238570.html)

@@ -6,9 +6,11 @@ categories:
   - java
   - sql
 date: 2019-05-21 23:50:19
-updated: 2019-11-05 10:32:11
+updated: 2019-11-14 11:39:29
 abbrlink: 87bdbf10
 ---
+<div id='my_toc'>
+
 - [PreparedStatement接口方法2](/blog/87bdbf10/#PreparedStatement接口方法2)
     - [执行SQL语句的方法](/blog/87bdbf10/#执行SQL语句的方法)
     - [其他方法](/blog/87bdbf10/#其他方法)
@@ -27,9 +29,9 @@ abbrlink: 87bdbf10
     - [从接口 java.sql.Statement 继承的方法](/blog/87bdbf10/#从接口-java-sql-Statement-继承的方法)
     - [从接口 java.sql.Wrapper 继承的方法](/blog/87bdbf10/#从接口-java-sql-Wrapper-继承的方法)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # PreparedStatement接口方法2 #

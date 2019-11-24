@@ -5,9 +5,11 @@ categories:
   - Hexo搭建博客
   - 遇到问题
 date: 2018-11-06 11:24:16
-updated: 2019-11-05 10:32:10
+updated: 2019-11-14 11:39:26
 abbrlink: 200a993a
 ---
+<div id='my_toc'>
+
 - [问题描述](/blog/200a993a/#问题描述)
 - [修改next主题样式文件](/blog/200a993a/#修改next主题样式文件)
 - [写表格时用空格分隔每个单词](/blog/200a993a/#写表格时用空格分隔每个单词)
@@ -17,9 +19,9 @@ abbrlink: 200a993a
 - [white-space、word-wrap、word-break的区别](/blog/200a993a/#white-space、word-wrap、word-break的区别)
 - [参考链接](/blog/200a993a/#参考链接)
 
+</div>
 <!--more-->
-<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.slim.min.js"></script>
-<script>$(document).ready(function () {$(".post-body > ul:nth-child(1)").hide();});</script>
+<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 问题描述 ##
