@@ -24,10 +24,10 @@ springmvc配置文件报错如下:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/SpringMVCError/1.png)
 ```
 Multiple annotations found at this line:
-	- Referenced file contains errors (http://www.springframework.org/schema/context/spring-context.xsd). For more information, right click on the 
-	 message in the Problems View and select "Show Details..."
-	- Referenced file contains errors (http://www.springframework.org/schema/mvc/spring-mvc.xsd). For more information, right click on the message 
-	 in the Problems View and select "Show Details..."
+    - Referenced file contains errors (http://www.springframework.org/schema/context/spring-context.xsd). For more information, right click on the 
+     message in the Problems View and select "Show Details..."
+    - Referenced file contains errors (http://www.springframework.org/schema/mvc/spring-mvc.xsd). For more information, right click on the message 
+     in the Problems View and select "Show Details..."
 ```
 # 解决方案 #
 依次打开:`Window>Preferences>XML>XML Files >Validation`

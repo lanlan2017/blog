@@ -56,10 +56,10 @@ abbrlink: 12fb64fe
 ```java
 public static void main(String[] args)
 {
-	String text="I keep saying no\n"+
-				"This can't be the way we're supposed to be";
-	System.out.println(text.matches(".*saying.*"));
-	System.out.println(text.matches(".*saying.*\n.*"));
+    String text="I keep saying no\n"+
+                "This can't be the way we're supposed to be";
+    System.out.println(text.matches(".*saying.*"));
+    System.out.println(text.matches(".*saying.*\n.*"));
 }
 ```
 运行结果：
@@ -74,31 +74,31 @@ true
 public static void testMatchersSpecialCharacter()
 {
 //字符串中的转义字符有：\b  \t  \n  \f  \r  \"  \'  \\
-	String text;
-	//回车符
-	text="I keep saying no\r";
-	System.out.println(text.matches(".*saying.*"));
-	//换行符
-	text="I keep saying no\n";
-	System.out.println(text.matches(".*saying.*"));
-	//\b退格符
-	text="I keep saying no\b";
-	System.out.println(text.matches(".*saying.*"));
-	//\t水平制表符
-	text="I keep saying no\t";
-	System.out.println(text.matches(".*saying.*"));
-	//\f走页符
-	text="I keep saying no\f";
-	System.out.println(text.matches(".*saying.*"));
-	//\"双引号
-	text="I keep saying no\"";
-	System.out.println(text.matches(".*saying.*"));
-	//\'单引号
-	text="I keep saying no\'";
-	System.out.println(text.matches(".*saying.*"));
-	//\\反斜线
-	text="I keep saying no\\";
-	System.out.println(text.matches(".*saying.*"));
+    String text;
+    //回车符
+    text="I keep saying no\r";
+    System.out.println(text.matches(".*saying.*"));
+    //换行符
+    text="I keep saying no\n";
+    System.out.println(text.matches(".*saying.*"));
+    //\b退格符
+    text="I keep saying no\b";
+    System.out.println(text.matches(".*saying.*"));
+    //\t水平制表符
+    text="I keep saying no\t";
+    System.out.println(text.matches(".*saying.*"));
+    //\f走页符
+    text="I keep saying no\f";
+    System.out.println(text.matches(".*saying.*"));
+    //\"双引号
+    text="I keep saying no\"";
+    System.out.println(text.matches(".*saying.*"));
+    //\'单引号
+    text="I keep saying no\'";
+    System.out.println(text.matches(".*saying.*"));
+    //\\反斜线
+    text="I keep saying no\\";
+    System.out.println(text.matches(".*saying.*"));
 }
 ```
 运行结果：
@@ -182,36 +182,36 @@ Pattern.compile(regex).split(str, n)
 ```
 public static void testSplitLimitGreaterThan0()
 {
-	String text="boo:and:foo";
-	//n=2,最多分割n-1=1次
-	String[] arr=text.split(":",2); 
-	for (String string : arr)
-	{
-		System.out.println(string);
-	}
-	System.out.println("-------------------");
+    String text="boo:and:foo";
+    //n=2,最多分割n-1=1次
+    String[] arr=text.split(":",2); 
+    for (String string : arr)
+    {
+        System.out.println(string);
+    }
+    System.out.println("-------------------");
 }
 public static void testSplitLimitLessThan0()
 {
-	String text="boo:and:foo";
-	//n=2,分割尽可能多次
-	String[] arr=text.split(":",-2); 
-	for (String string : arr)
-	{
-		System.out.println(string);
-	}
-	System.out.println("------------------------------");
+    String text="boo:and:foo";
+    //n=2,分割尽可能多次
+    String[] arr=text.split(":",-2); 
+    for (String string : arr)
+    {
+        System.out.println(string);
+    }
+    System.out.println("------------------------------");
 }
 public static void testSplitLimitEqualTo0()
 {
-	String text="boo:and:foo";
-	//n=2,分割尽可能多次
-	String[] arr=text.split(":",0); 
-	for (String string : arr)
-	{
-		System.out.println(string);
-	}
-	System.out.println("------------------------------");
+    String text="boo:and:foo";
+    //n=2,分割尽可能多次
+    String[] arr=text.split(":",0); 
+    for (String string : arr)
+    {
+        System.out.println(string);
+    }
+    System.out.println("------------------------------");
 }
 ```
 运行结果：
@@ -233,37 +233,37 @@ foo
 ```
 public static void testSplitLimitGreaterThan0Adjacent()
 {
-	String text="boo:and:foo";
-	//n=2,最多分割n-1=1次
-	String[] arr=text.split("o",2); 
-	for (int i=0;i<arr.length;i++)
-	{
-		System.out.println(i+"-->"+arr[i]);
-	}
-	System.out.println("-------------------");
+    String text="boo:and:foo";
+    //n=2,最多分割n-1=1次
+    String[] arr=text.split("o",2); 
+    for (int i=0;i<arr.length;i++)
+    {
+        System.out.println(i+"-->"+arr[i]);
+    }
+    System.out.println("-------------------");
 }
 
 public static void testSplitLimitLessThan0Adjacent()
 {
-	String text="boo:and:foo";
-	//n=2,分割尽可能多次
-	String[] arr=text.split("o",-2); 
-	for (int i=0;i<arr.length;i++)
-	{
-		System.out.println(i+"-->"+arr[i]);
-	}
-	System.out.println("------------------------------");
+    String text="boo:and:foo";
+    //n=2,分割尽可能多次
+    String[] arr=text.split("o",-2); 
+    for (int i=0;i<arr.length;i++)
+    {
+        System.out.println(i+"-->"+arr[i]);
+    }
+    System.out.println("------------------------------");
 }
 public static void testSplitLimitEqualTo0Adjacent()
 {
-	String text="boo:and:foo";
-	//n=2,分割尽可能多次
-	String[] arr=text.split("o",0); 
-	for (int i=0;i<arr.length;i++)
-	{
-		System.out.println(i+"-->"+arr[i]);
-	}
-	System.out.println("------------------------------");
+    String text="boo:and:foo";
+    //n=2,分割尽可能多次
+    String[] arr=text.split("o",0); 
+    for (int i=0;i<arr.length;i++)
+    {
+        System.out.println(i+"-->"+arr[i]);
+    }
+    System.out.println("------------------------------");
 }
 ```
 运行结果：
@@ -363,9 +363,9 @@ public String replaceAll(String regex, String replacement)
 ### 实例 ###
 
 ```java
-	String text="A:你好\nGtoot:_\nA:额，听不懂\nGroot:_\nA:。。。";
-	text=text.replaceAll("A", "Tony Stark");
-	System.out.println(text.replaceAll("_", "I am groot"));
+    String text="A:你好\nGtoot:_\nA:额，听不懂\nGroot:_\nA:。。。";
+    text=text.replaceAll("A", "Tony Stark");
+    System.out.println(text.replaceAll("_", "I am groot"));
 ```
 运行结果：
 ```

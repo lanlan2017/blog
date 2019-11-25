@@ -83,30 +83,30 @@ login.jsp:
 </body>
 <!-- <form action="request.jsp" name="loginForm" method="get"> -->
 <form action="response.jsp" name="loginForm" method="post">
-	<table>
-		<tr>
-			<td align="right">用户名:</td>
-			<td><input type="text" name="userName"></td>
-		</tr>
-		<tr>
-			<td align="right">爱好:</td>
-			<td>
-			<input type="checkbox" name="hobbys" value="book">读书
-			<input type="checkbox" name="hobbys" value="music">音乐
-			<input type="checkbox" name="hobbys" value="sports">运动
-			<input type="checkbox" name="hobbys" value="movie">电影
-			</td>
-		</tr>
-		<tr>
-			<td align="right">密码:</td>
-			<td><input type="password" name="password"></td>
-		</tr>
-		<tr>
-			<td><input type="reset" value="重置"></td>
-			<td><input type="submit" value="登录"></td>
-		</tr>
-	</table>
-	<a href="http://localhost:8080/HelloWorld/request.jsp?userName=%E5%B0%8F%E6%98%8E&hobbys=book&password=123">直接提交</a>
+    <table>
+        <tr>
+            <td align="right">用户名:</td>
+            <td><input type="text" name="userName"></td>
+        </tr>
+        <tr>
+            <td align="right">爱好:</td>
+            <td>
+            <input type="checkbox" name="hobbys" value="book">读书
+            <input type="checkbox" name="hobbys" value="music">音乐
+            <input type="checkbox" name="hobbys" value="sports">运动
+            <input type="checkbox" name="hobbys" value="movie">电影
+            </td>
+        </tr>
+        <tr>
+            <td align="right">密码:</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td><input type="reset" value="重置"></td>
+            <td><input type="submit" value="登录"></td>
+        </tr>
+    </table>
+    <a href="http://localhost:8080/HelloWorld/request.jsp?userName=%E5%B0%8F%E6%98%8E&hobbys=book&password=123">直接提交</a>
 </form>
 </html>
 ```
@@ -114,12 +114,12 @@ response.jsp:
 ```jsp
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%
-	// 	//暂停五秒，以查看跳转的效果
-	Thread.sleep(5 * 1000);
-	//请求重定向到requset.jsp
-	response.sendRedirect("request.jsp");
-	//请求转发
-	// request.getRequestDispatcher("requset.jsp").forward(request,response);
+    //     //暂停五秒，以查看跳转的效果
+    Thread.sleep(5 * 1000);
+    //请求重定向到requset.jsp
+    response.sendRedirect("request.jsp");
+    //请求转发
+    // request.getRequestDispatcher("requset.jsp").forward(request,response);
 %>
 ```
 request.jsp:
@@ -132,29 +132,29 @@ request.jsp:
 <title>request内置对象测试</title>
 </head>
 <body>
-	<h2>request内置对象</h2>
-	<%
-		//解决post提交的数据中的。中文乱码问题.无法解决URL传参方式的中文乱码问题
-		request.setCharacterEncoding("utf-8");
-	%>
-	获取到用户名:<%=request.getParameter("userName")%><br> 爱好:<%
-		String[] hobbys = request.getParameterValues("hobbys");
-		if (hobbys != null)
-		{
-			for (int i = 0; i < hobbys.length; i++)
-			{
-				out.println(hobbys[i] + ",");
-			}
-		}
-	%><br> 密码:<%=request.getParameter("password")%><br> 
-	请求体的MME类型:<%=request.getContentType()%><br> 
-	请求体的长度:<%=request.getContentLength()%>字节<br>
-	请求用的协议类型及版本号:<%=request.getProtocol()%><br>
-	请求的服务器主机名:<%=request.getServerName()%><br> 
-	服务器接受此请求所用的端口号:<%=request.getServerPort()%><br>
-	请求的客户端IP地址:<%=request.getRemoteAddr()%><br>
-	请求的物理路径:<%=request.getRealPath("request.jsp") %><br>
-	请求的上下文路径:<%=request.getContextPath() %><br>
+    <h2>request内置对象</h2>
+    <%
+        //解决post提交的数据中的。中文乱码问题.无法解决URL传参方式的中文乱码问题
+        request.setCharacterEncoding("utf-8");
+    %>
+    获取到用户名:<%=request.getParameter("userName")%><br> 爱好:<%
+        String[] hobbys = request.getParameterValues("hobbys");
+        if (hobbys != null)
+        {
+            for (int i = 0; i < hobbys.length; i++)
+            {
+                out.println(hobbys[i] + ",");
+            }
+        }
+    %><br> 密码:<%=request.getParameter("password")%><br> 
+    请求体的MME类型:<%=request.getContentType()%><br> 
+    请求体的长度:<%=request.getContentLength()%>字节<br>
+    请求用的协议类型及版本号:<%=request.getProtocol()%><br>
+    请求的服务器主机名:<%=request.getServerName()%><br> 
+    服务器接受此请求所用的端口号:<%=request.getServerPort()%><br>
+    请求的客户端IP地址:<%=request.getRemoteAddr()%><br>
+    请求的物理路径:<%=request.getRealPath("request.jsp") %><br>
+    请求的上下文路径:<%=request.getContextPath() %><br>
 </body>
 </html>
 ```
@@ -171,12 +171,12 @@ request.jsp:
 ```jsp
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%
-	// 	//暂停五秒，以查看跳转的效果
-	Thread.sleep(5 * 1000);
-	//请求重定向到requset.jsp
-// 	response.sendRedirect("request.jsp");
-	//请求转发
-	request.getRequestDispatcher("requset.jsp").forward(request,response);
+    //     //暂停五秒，以查看跳转的效果
+    Thread.sleep(5 * 1000);
+    //请求重定向到requset.jsp
+//     response.sendRedirect("request.jsp");
+    //请求转发
+    request.getRequestDispatcher("requset.jsp").forward(request,response);
 %>
 ```
 重复上面的步骤：
@@ -234,13 +234,13 @@ response.setBufferSize(32);//设置缓冲区的大小为32KB
 <%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%
-	//设置响应的MIME类型
-	response.setContentType("text/html; charset=utf-8");
-	out.println("<h2> 测试response内置对象 </h2><br>");
-// 	out.flush();//强制清空缓冲区,先写内置的out输出流对象
-	//在打印的时候,会提前于内置的out对象
-	PrintWriter writer=response.getWriter();
-	writer.println("response.getWriter()输出");
+    //设置响应的MIME类型
+    response.setContentType("text/html; charset=utf-8");
+    out.println("<h2> 测试response内置对象 </h2><br>");
+//     out.flush();//强制清空缓冲区,先写内置的out输出流对象
+    //在打印的时候,会提前于内置的out对象
+    PrintWriter writer=response.getWriter();
+    writer.println("response.getWriter()输出");
 %>
 
 ```

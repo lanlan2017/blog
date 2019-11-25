@@ -185,15 +185,15 @@ import java.nio.channels.FileChannel;
 
 public class GetFileLength
 {
-	public static void getFileSize1(File file) 
-	{
-	    if (file.exists() && file.isFile()) 
-	    {
-	      
-	        System.out.println("文件"+file.getName()+"的大小是："+file.length()+"(Byte)="+file.length()/1024+"(KB)");
-	    }
-	}
-	/**
+    public static void getFileSize1(File file) 
+    {
+        if (file.exists() && file.isFile()) 
+        {
+          
+            System.out.println("文件"+file.getName()+"的大小是："+file.length()+"(Byte)="+file.length()/1024+"(KB)");
+        }
+    }
+    /**
      * 根据java.io.*的流获取文件大小
      * @param file
      */
@@ -242,15 +242,15 @@ public class GetFileLength
             }
         }
     }
-	public static void main(String[] args)
-	{
-		File bigFile=new File("F:\\软件\\安装包_office2016\\Office2016.iso");
-//		File smallFile=new File("D:\\dev\\java\\my\\tools\\CodeFormat.jar");
-		getFileSize1(bigFile);
-		getFileSize2(bigFile);
-		System.out.println("最大的int值="+Integer.MAX_VALUE);
-		getFileSize3(bigFile);
-	}
+    public static void main(String[] args)
+    {
+        File bigFile=new File("F:\\软件\\安装包_office2016\\Office2016.iso");
+//        File smallFile=new File("D:\\dev\\java\\my\\tools\\CodeFormat.jar");
+        getFileSize1(bigFile);
+        getFileSize2(bigFile);
+        System.out.println("最大的int值="+Integer.MAX_VALUE);
+        getFileSize3(bigFile);
+    }
 }
 
 ```

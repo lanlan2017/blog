@@ -42,15 +42,15 @@ abbrlink: e23c09a2
         copy();
     }
     //复制方法
-	function copy() {
-		var output = document.getElementById("output20181126110146");
-		output.select(); // 选择对象
-		document.execCommand("Copy"); // 执行浏览器复制命令
-		if(confirm("代码已经复制到剪贴板粘贴即可"))
-		{
-			output.value="";
-		}
-	}
+    function copy() {
+        var output = document.getElementById("output20181126110146");
+        output.select(); // 选择对象
+        document.execCommand("Copy"); // 执行浏览器复制命令
+        if(confirm("代码已经复制到剪贴板粘贴即可"))
+        {
+            output.value="";
+        }
+    }
     function uniqueIdByFormatDate() {
         var date1=new Date();
         var str = "";
@@ -76,7 +76,7 @@ abbrlink: e23c09a2
         if (second < 10)
             str += "0";
         str += second;
-        //	console.log(str);
+        //    console.log(str);
         return str;
     }
 </script>
@@ -103,15 +103,15 @@ abbrlink: e23c09a2
         copy();
     }
     //复制方法
-	function copy() {
-		var output = document.getElementById("output20181126110146");
-		output.select(); // 选择对象
-		document.execCommand("Copy"); // 执行浏览器复制命令
-		if(confirm("代码已经复制到剪贴板粘贴即可"))
-		{
-			output.value="";
-		}
-	}
+    function copy() {
+        var output = document.getElementById("output20181126110146");
+        output.select(); // 选择对象
+        document.execCommand("Copy"); // 执行浏览器复制命令
+        if(confirm("代码已经复制到剪贴板粘贴即可"))
+        {
+            output.value="";
+        }
+    }
     function uniqueIdByFormatDate() {
         var date1=new Date();
         var str = "";
@@ -137,7 +137,7 @@ abbrlink: e23c09a2
         if (second < 10)
             str += "0";
         str += second;
-        //	console.log(str);
+        //    console.log(str);
         return str;
     }
 </script>

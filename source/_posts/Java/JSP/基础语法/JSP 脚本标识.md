@@ -44,13 +44,13 @@ JSP声明标识用于在JSP页面中**定义`全局`的变量或方法**。通�
 ### 实例 ###
 ```jsp
 <%!
-	//声明一个字符串变量
-	String str="Hello World";
-	//声明一个方法
-	int add(int a,int b)
-	{
-		return a+b;
-	}
+    //声明一个字符串变量
+    String str="Hello World";
+    //声明一个方法
+    int add(int a,int b)
+    {
+        return a+b;
+    }
 %>
 ```
 ## JSP表达式 ##
@@ -66,7 +66,7 @@ JSP表达式不仅可以插入到网页的文本中,用于输出文本内容,也
 使用表达式，可以输出上面声明的变量和方法的返回结果：
 ```jsp
 <%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=utf-8"%>
+    contentType="text/html; charset=utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -74,18 +74,18 @@ JSP表达式不仅可以插入到网页的文本中,用于输出文本内容,也
 <title>HelloWorld</title>
 </head>
 <body>
-	<h2>Hello 这是我的第一个JavaWeb项目</h2>
-	<%
-		out.println("JSP脚本out对象输出");
-	%>
-	<%!//声明一个字符串变量
-	String str = "Hello World";
-	//声明一个方法
-	int add(int a, int b)
-	{
-		return a + b;
-	}%>
-	<br> str=<%=str%><br> 1+2=<%=add(1, 2)%>
+    <h2>Hello 这是我的第一个JavaWeb项目</h2>
+    <%
+        out.println("JSP脚本out对象输出");
+    %>
+    <%!//声明一个字符串变量
+    String str = "Hello World";
+    //声明一个方法
+    int add(int a, int b)
+    {
+        return a + b;
+    }%>
+    <br> str=<%=str%><br> 1+2=<%=add(1, 2)%>
 </body>
 </html>
 ```
@@ -117,10 +117,10 @@ JSP脚本就是JSP页面中的一段可执行的java代码
 <title>HelloWorld</title>
 </head>
 <body>
-	<h2>Hello 这是我的第一个JavaWeb项目</h2>
-	<%
-		out.println("JSP脚本out对象输出");
-	%>
+    <h2>Hello 这是我的第一个JavaWeb项目</h2>
+    <%
+        out.println("JSP脚本out对象输出");
+    %>
 </body>
 </html>
 ```
@@ -129,7 +129,7 @@ JSP脚本就是JSP页面中的一段可执行的java代码
 这里的：
 ```jsp
 <%
-	out.println("JSP脚本out对象输出");
+    out.println("JSP脚本out对象输出");
 %>
 ```
 就叫做JSP脚本。

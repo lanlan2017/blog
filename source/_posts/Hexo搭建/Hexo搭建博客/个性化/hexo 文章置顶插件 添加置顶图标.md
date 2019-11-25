@@ -44,14 +44,14 @@ hexo clean &&hexo s
 打开：`/blog/themes/next/layout/_macro` 目录下的`post.swig`文件，定位到`<div class="post-meta">`标签，在该标签下面，插入如下代码：
 ```html
         <div class="post-meta">
-	  <!-- 置顶插件添加 开始 -->
-	  {% if post.top %}
-	       <font color="#1fa67a"><i class="fa fa-arrow-up"></i>
-	       <strong>Top</strong></font>
-	       <span class="post-meta-divider">|</span>
+      <!-- 置顶插件添加 开始 -->
+      {% if post.top %}
+           <font color="#1fa67a"><i class="fa fa-arrow-up"></i>
+           <strong>Top</strong></font>
+           <span class="post-meta-divider">|</span>
           {% endif %}
-	  <!-- 置顶插件添加 结束 -->
-	   .........
+      <!-- 置顶插件添加 结束 -->
+       .........
 ```
 如果显示出现了中文乱码,则把`post.swig`转为`utf-8`格式即可,转换步骤：全选`post.swing`中的内容,然后修改`post.swing`的编码为utf-8,然后粘贴到`post.swing`中,这样就修改了post.swing的编码格式了。
 显示效果：

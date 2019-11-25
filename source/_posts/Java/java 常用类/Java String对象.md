@@ -40,11 +40,11 @@ static Comparator<String> CASE_INSENSITIVE_ORDER一个对 String 对象进行排
 ```java
 public static void main(String[] args)
 {
-	String[] rawStrings ={"B", "com.lan", "b", "A", "a", "c", "C"};
-	System.out.println(Arrays.toString(rawStrings));
-	// 使用String.CASE_INSENSITIVE_ORDER进行排序
-	Arrays.sort(rawStrings, String.CASE_INSENSITIVE_ORDER);
-	System.out.println(Arrays.toString(rawStrings));
+    String[] rawStrings ={"B", "com.lan", "b", "A", "a", "c", "C"};
+    System.out.println(Arrays.toString(rawStrings));
+    // 使用String.CASE_INSENSITIVE_ORDER进行排序
+    Arrays.sort(rawStrings, String.CASE_INSENSITIVE_ORDER);
+    System.out.println(Arrays.toString(rawStrings));
 }
 ```
 运行结果：

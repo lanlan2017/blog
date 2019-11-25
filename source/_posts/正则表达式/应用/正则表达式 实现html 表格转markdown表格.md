@@ -116,19 +116,19 @@ Pattern alignPattern = Pattern.compile("(\\|(?:.+?\\|)+\\n)");
 Matcher alignMatcher = alignPattern.matcher(htmlTable);
 while (alignMatcher.find())
 {
-	count++;
-	if (count == 2)
-	{
-		// 获取匹配的文本
-		String align = alignMatcher.group();
-		// 生成替换的文本
-		align = align.replaceAll("[^|]+\\|", ":--|");;
-		// 使用新的替换旧的 然后处理过的文本放到缓存中
-		alignMatcher.appendReplacement(sb, align);
-		// 没有扫描过的文本放到缓存中
-		alignMatcher.appendTail(sb);
-		break;
-	}
+    count++;
+    if (count == 2)
+    {
+        // 获取匹配的文本
+        String align = alignMatcher.group();
+        // 生成替换的文本
+        align = align.replaceAll("[^|]+\\|", ":--|");;
+        // 使用新的替换旧的 然后处理过的文本放到缓存中
+        alignMatcher.appendReplacement(sb, align);
+        // 没有扫描过的文本放到缓存中
+        alignMatcher.appendTail(sb);
+        break;
+    }
 }
 
 ```
@@ -152,38 +152,38 @@ while (alignMatcher.find())
 ```java
 public static String table2Markdown(String htmlTable)
 {
-	StringBuilder temp = new StringBuilder(htmlTable);
-	htmlTable = htmlTable
-			.replaceAll("(<t(?:h|d)) style=\"text\\-align:.*?(>)", "$1$2");
-	htmlTable = htmlTable.replaceAll(
-			"(?:<\\/?t(?:h|d)>\\n\\s+<\\/?t(?:h|d)>|<\\/?t(?:h|d)>)", "|");
-	htmlTable = htmlTable.replaceAll("<\\/?t(?:able|body|r)>", "");
-	htmlTable = htmlTable.replaceAll("^\\s*<\\/?t(?:able|body|r)>$", "");
-	htmlTable = htmlTable.replaceAll("(?m)^\\s*$(?:\\n|\\r\\n)+", "");
-	htmlTable = htmlTable.replaceAll("(?m)^\\s{2,}", "");
-	htmlTable = htmlTable
-			.replaceAll("<thead>\\n?((?:\\|.*)|)\\n?<\\/thead>", "$1\n$1");
-	StringBuffer sb = new StringBuffer();
-	int count = 0;
-	Pattern alignPattern = Pattern.compile("(\\|(?:.+?\\|)+\\n)");
-	Matcher alignMatcher = alignPattern.matcher(htmlTable);
-	while (alignMatcher.find())
-	{
-		count++;
-		if (count == 2)
-		{
-			// 获取匹配的文本
-			String align = alignMatcher.group();
-			// 生成替换的文本
-			align = align.replaceAll("[^|]+\\|", ":--|");;
-			// 使用新的替换旧的 然后处理过的文本放到缓存中
-			alignMatcher.appendReplacement(sb, align);
-			// 没有扫描过的文本放到缓存中
-			alignMatcher.appendTail(sb);
-			break;
-		}
-	}
-	return sb.toString();
+    StringBuilder temp = new StringBuilder(htmlTable);
+    htmlTable = htmlTable
+            .replaceAll("(<t(?:h|d)) style=\"text\\-align:.*?(>)", "$1$2");
+    htmlTable = htmlTable.replaceAll(
+            "(?:<\\/?t(?:h|d)>\\n\\s+<\\/?t(?:h|d)>|<\\/?t(?:h|d)>)", "|");
+    htmlTable = htmlTable.replaceAll("<\\/?t(?:able|body|r)>", "");
+    htmlTable = htmlTable.replaceAll("^\\s*<\\/?t(?:able|body|r)>$", "");
+    htmlTable = htmlTable.replaceAll("(?m)^\\s*$(?:\\n|\\r\\n)+", "");
+    htmlTable = htmlTable.replaceAll("(?m)^\\s{2,}", "");
+    htmlTable = htmlTable
+            .replaceAll("<thead>\\n?((?:\\|.*)|)\\n?<\\/thead>", "$1\n$1");
+    StringBuffer sb = new StringBuffer();
+    int count = 0;
+    Pattern alignPattern = Pattern.compile("(\\|(?:.+?\\|)+\\n)");
+    Matcher alignMatcher = alignPattern.matcher(htmlTable);
+    while (alignMatcher.find())
+    {
+        count++;
+        if (count == 2)
+        {
+            // 获取匹配的文本
+            String align = alignMatcher.group();
+            // 生成替换的文本
+            align = align.replaceAll("[^|]+\\|", ":--|");;
+            // 使用新的替换旧的 然后处理过的文本放到缓存中
+            alignMatcher.appendReplacement(sb, align);
+            // 没有扫描过的文本放到缓存中
+            alignMatcher.appendTail(sb);
+            break;
+        }
+    }
+    return sb.toString();
 }
 ```
 

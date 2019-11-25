@@ -41,34 +41,34 @@ import java.io.InputStreamReader;
 
 public class JSTest
 {
-	public static void main(String[] args)
-	{
-		InputStream inputStream = JSTest.class.getResourceAsStream("/JSTest.html");
+    public static void main(String[] args)
+    {
+        InputStream inputStream = JSTest.class.getResourceAsStream("/JSTest.html");
 
-		try
-		{
-			BufferedReader reader = new BufferedReader(
-					new InputStreamReader(inputStream, "UTF-8"));
-			StringBuilder builder = new StringBuilder();
-			char[] charArray = new char[200];
-			int number = -1;
-			while ((number = reader.read(charArray)) != -1)
-			{
-				builder.append(charArray,0,number);
-			}
-			System.out.println(builder.toString());
+        try
+        {
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(inputStream, "UTF-8"));
+            StringBuilder builder = new StringBuilder();
+            char[] charArray = new char[200];
+            int number = -1;
+            while ((number = reader.read(charArray)) != -1)
+            {
+                builder.append(charArray,0,number);
+            }
+            System.out.println(builder.toString());
 
-		} catch (FileNotFoundException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        } catch (FileNotFoundException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
-	}
+    }
 
 }
 ```

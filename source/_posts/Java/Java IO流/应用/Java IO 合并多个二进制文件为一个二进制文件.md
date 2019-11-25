@@ -52,9 +52,9 @@ int inSize = -1;
 // 这里的in为输入流对象
 while ((inSize = in.read(buffer)) != -1)
 {
-	// 把buffer缓存中的字节写入输出流(也就是目标文件)
+    // 把buffer缓存中的字节写入输出流(也就是目标文件)
       // 这里的out为输出流对象  
-	out.write(buffer, 0, inSize);
+    out.write(buffer, 0, inSize);
 }
 ```
 ## 合并多个源文件到目标文件并删除源文件 ##
@@ -68,47 +68,47 @@ while ((inSize = in.read(buffer)) != -1)
  *            存放源文件的路径名称字符串的ArrayList集合.
  */
 public static void merge2TargetFileDeleteSourceFile(String targetFilePath,
-		ArrayList<String> sourceFilePathList)
+        ArrayList<String> sourceFilePathList)
 {
-	// 如果ArrayList中有东西
-	if (sourceFilePathList.size() > 0)
-	{
-		BufferedInputStream in;
-		try (BufferedOutputStream out = new BufferedOutputStream(
-				new FileOutputStream(new File(targetFilePath)));)
-		{
-			System.out.println("源文件列表:");
-			for (Iterator<String> iterator = sourceFilePathList
-					.iterator(); iterator.hasNext();)
-			{
-				String sourceFilePath = iterator.next();
-				System.out.println("    " + sourceFilePath);
-				File sourceFile = new File(sourceFilePath);
-				in = new BufferedInputStream(
-						new FileInputStream(sourceFile));
-				// 缓存数组
-				byte[] buffer = new byte[2048];
-				// 每次读入的字节数量
-				int inSize = -1;
-				// 批量读入字节到buffer缓存中,并返回读入的自己数量给inSize
-				while ((inSize = in.read(buffer)) != -1)
-				{
-					// 把buffer缓存中的字节写入输出流(也就是目标文件)
-					out.write(buffer, 0, inSize);
-				}
-				// 关闭源文件
-				in.close();
-				// 删除这个源文件
-				sourceFile.delete();
-			}
-		} catch (FileNotFoundException e)
-		{
-			e.printStackTrace();
-		} catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-	}
+    // 如果ArrayList中有东西
+    if (sourceFilePathList.size() > 0)
+    {
+        BufferedInputStream in;
+        try (BufferedOutputStream out = new BufferedOutputStream(
+                new FileOutputStream(new File(targetFilePath)));)
+        {
+            System.out.println("源文件列表:");
+            for (Iterator<String> iterator = sourceFilePathList
+                    .iterator(); iterator.hasNext();)
+            {
+                String sourceFilePath = iterator.next();
+                System.out.println("    " + sourceFilePath);
+                File sourceFile = new File(sourceFilePath);
+                in = new BufferedInputStream(
+                        new FileInputStream(sourceFile));
+                // 缓存数组
+                byte[] buffer = new byte[2048];
+                // 每次读入的字节数量
+                int inSize = -1;
+                // 批量读入字节到buffer缓存中,并返回读入的自己数量给inSize
+                while ((inSize = in.read(buffer)) != -1)
+                {
+                    // 把buffer缓存中的字节写入输出流(也就是目标文件)
+                    out.write(buffer, 0, inSize);
+                }
+                // 关闭源文件
+                in.close();
+                // 删除这个源文件
+                sourceFile.delete();
+            }
+        } catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
 }
 ```
 >原文链接: [Java IO 合并多个二进制文件为一个二进制文件](https://lanlan2017.github.io/blog/e4a1ea9f/)

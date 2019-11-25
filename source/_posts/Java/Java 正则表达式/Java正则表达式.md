@@ -156,12 +156,12 @@ public static void testFindGroup()
 #### 查看正则表达式中有多到个捕获组 ####
 `int groupCount()`方法：返回此匹配器模式中的捕获组数.不包括0捕获组
 ```java
-	public static void testGroupCount()
-	{
-		Pattern pattern = Pattern.compile("(\\w+)(\\s+)([0-9]+)");
+    public static void testGroupCount()
+    {
+        Pattern pattern = Pattern.compile("(\\w+)(\\s+)([0-9]+)");
         Matcher matcher = pattern.matcher("aaa 111 bbbb 222 333 ccc");
         System.out.println(pattern.toString()+"这个正则表达式捕获组数目:"+matcher.groupCount());
-	}
+    }
 ```
 运行结果：
 ```
@@ -180,28 +180,28 @@ import java.util.regex.Pattern;
 
 public class RegexMatches
 {
-	public static void main(String args[])
-	{
-		// 按指定模式在字符串查找
-		String line = "I hope that 2018 is also a year full of hope.";
-		String pattern = "(\\D*)(\\d+)(.*)";
-		// 创建 Pattern 对象
-		Pattern r = Pattern.compile(pattern);
-		// 现在创建 matcher 对象
-		Matcher m = r.matcher(line);
-		if (m.find())
-		{
-			//默认匹配捕获整个表达式-调用m.group(0);
-			System.out.println(m.group());
-			System.out.println("第0个分组: " + m.group(0));
-			System.out.println("第1个分组: " + m.group(1));
-			System.out.println("第2个分组: " + m.group(2));
-			System.out.println("第3个分组: " + m.group(3));
-		} else
-		{
-			System.out.println("NO MATCH");
-		}
-	}
+    public static void main(String args[])
+    {
+        // 按指定模式在字符串查找
+        String line = "I hope that 2018 is also a year full of hope.";
+        String pattern = "(\\D*)(\\d+)(.*)";
+        // 创建 Pattern 对象
+        Pattern r = Pattern.compile(pattern);
+        // 现在创建 matcher 对象
+        Matcher m = r.matcher(line);
+        if (m.find())
+        {
+            //默认匹配捕获整个表达式-调用m.group(0);
+            System.out.println(m.group());
+            System.out.println("第0个分组: " + m.group(0));
+            System.out.println("第1个分组: " + m.group(1));
+            System.out.println("第2个分组: " + m.group(2));
+            System.out.println("第3个分组: " + m.group(3));
+        } else
+        {
+            System.out.println("NO MATCH");
+        }
+    }
 }
 ```
 以上实例编译运行结果如下：

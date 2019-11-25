@@ -23,91 +23,91 @@ abbrlink: 9d21d6ad
 MarkDown语法并不支持表格单元格合并，不过可以插入html表格标签来实现。
 ```
 <table>
-	<tr>
-		<th>序号
-		</td>
-		<th>OSI的体系结构
-		</td>
-		<th>TCP/IP的体系结构
-		</td>
-	</tr>
-	<tr>
-		<td>7</td>
-		<td>应用层</td>
-		<td rowspan="3">应用层 (各种应用层协议如 TELNET, FTP, SMTP 等)</td>
-	</tr>
-	<tr>
-		<td>6</td>
-		<td>表示层</td>
-	</tr>
-	<tr>
-		<td>5</td>
-		<td>会话层</td>
-	</tr>
-	<tr>
-		<td>4</td>
-		<td>传输层</td>
-		<td>传输层</td>
-	</tr>
-	<tr>
-		<td>3</td>
-		<td>网络层</td>
-		<td>互连网络层</td>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td>数据链路层</td>
-		<td rowspan="2">网络接入层</td>
-	</tr>
-	<tr>
-		<td>1</td>
-		<td>物理层</td>
-	</tr>
+    <tr>
+        <th>序号
+        </td>
+        <th>OSI的体系结构
+        </td>
+        <th>TCP/IP的体系结构
+        </td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>应用层</td>
+        <td rowspan="3">应用层 (各种应用层协议如 TELNET, FTP, SMTP 等)</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>表示层</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>会话层</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>传输层</td>
+        <td>传输层</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>网络层</td>
+        <td>互连网络层</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>数据链路层</td>
+        <td rowspan="2">网络接入层</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>物理层</td>
+    </tr>
 </table>
 
 ```
 ## 效果 ##
 <table>
-	<tr>
-		<th>序号
-		</th>
-		<th>OSI的体系结构
-		</th>
-		<th>TCP/IP的体系结构
-		</th>
-	</tr>
-	<tr>
-		<td>7</td>
-		<td>应用层</td>
-		<td rowspan="3">应用层 (各种应用层协议如 TELNET, FTP, SMTP 等)</td>
-	</tr>
-	<tr>
-		<td>6</td>
-		<td>表示层</td>
-	</tr>
-	<tr>
-		<td>5</td>
-		<td>会话层</td>
-	</tr>
-	<tr>
-		<td>4</td>
-		<td>传输层</td>
-		<td>传输层</td>
-	</tr>
-	<tr>
-		<td>3</td>
-		<td>网络层</td>
-		<td>互连网络层</td>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td>数据链路层</td>
-		<td rowspan="2">网络接入层</td>
-	</tr>
-	<tr>
-		<td>1</td>
-		<td>物理层</td>
-	</tr>
+    <tr>
+        <th>序号
+        </th>
+        <th>OSI的体系结构
+        </th>
+        <th>TCP/IP的体系结构
+        </th>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>应用层</td>
+        <td rowspan="3">应用层 (各种应用层协议如 TELNET, FTP, SMTP 等)</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>表示层</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>会话层</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>传输层</td>
+        <td>传输层</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>网络层</td>
+        <td>互连网络层</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>数据链路层</td>
+        <td rowspan="2">网络接入层</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>物理层</td>
+    </tr>
 </table>
 是不是看起很奇怪，表格跟上面的文字隔了这么多行这是`<table></table>`标签之间有回车符造成的,删除这些回车符，这样就显示正常了，不过这样的坏处就是看起来很凌乱不好修改。
 当然要是自己一行一行的删的话那得删到什么时候，最好使用正则表达式进行删除。我这里用的editplus这个编辑器。

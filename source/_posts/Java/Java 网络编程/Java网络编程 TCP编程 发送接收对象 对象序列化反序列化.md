@@ -59,56 +59,56 @@ import java.net.ServerSocket;
 import java.net.Socket;
 public class EchoThreadServerByArgs
 {
-	// 静态变量,可以更改该标记以便停止服务端
-	private static boolean isServerAlive = true;
-	private static int clientNum = 0;
-	public static void main(String args[]) throws Exception
-	{
-		// 1.定义服务器的引用
-		ServerSocket server = null;
-		// 2.客户端的引用
-		Socket client = null;
-		// 3.建立服务器，监听本地6666端口
-		server = new ServerSocket(6666);
-		while (isServerAlive)
-		{
-			System.out.println("等待客户端连接...");
-			// 4.取得连接，客户端没连接之前先等待连接。
-			client = server.accept();
-			System.out.println("    客户端连接成功,当前客户端数量:" + clientNum);
-			if (isServerAlive)
-			{
-				// 一个客户端连接之后，为该客户端启动一个服务线程进行服务
-				new Thread(new EchoThreadByArgs(client)).start();
-			}
-		}
-		server.close();
-		client.close();
-		System.out.println("服务端已经停止...");
-	}
-	public static void addClientNum()
-	{
-		clientNum = clientNum + 1;
-		// 注意了,下面的赋值方法错误
-		// 后++:先取值,再增加,这将达不到增加的效果
-		// clientNum = clientNum ++;
-	}
-	public static void minusClientNum()
-	{
-		clientNum = clientNum - 1;
-	}
-	public static int getClientNum()
-	{
-		return clientNum;
-	}
-	public static void shutdownServer()
-	{
-		isServerAlive = false;
-	}
-	public static boolean isServerAlive()
-	{
-		return isServerAlive;
-	}
+    // 静态变量,可以更改该标记以便停止服务端
+    private static boolean isServerAlive = true;
+    private static int clientNum = 0;
+    public static void main(String args[]) throws Exception
+    {
+        // 1.定义服务器的引用
+        ServerSocket server = null;
+        // 2.客户端的引用
+        Socket client = null;
+        // 3.建立服务器，监听本地6666端口
+        server = new ServerSocket(6666);
+        while (isServerAlive)
+        {
+            System.out.println("等待客户端连接...");
+            // 4.取得连接，客户端没连接之前先等待连接。
+            client = server.accept();
+            System.out.println("    客户端连接成功,当前客户端数量:" + clientNum);
+            if (isServerAlive)
+            {
+                // 一个客户端连接之后，为该客户端启动一个服务线程进行服务
+                new Thread(new EchoThreadByArgs(client)).start();
+            }
+        }
+        server.close();
+        client.close();
+        System.out.println("服务端已经停止...");
+    }
+    public static void addClientNum()
+    {
+        clientNum = clientNum + 1;
+        // 注意了,下面的赋值方法错误
+        // 后++:先取值,再增加,这将达不到增加的效果
+        // clientNum = clientNum ++;
+    }
+    public static void minusClientNum()
+    {
+        clientNum = clientNum - 1;
+    }
+    public static int getClientNum()
+    {
+        return clientNum;
+    }
+    public static void shutdownServer()
+    {
+        isServerAlive = false;
+    }
+    public static boolean isServerAlive()
+    {
+        return isServerAlive;
+    }
 }
 ```
 ### 服务端响应线程 ###
@@ -121,63 +121,63 @@ import java.net.Socket;
 import tcp.EchoThreadServer;
 public class EchoThreadByArgs implements Runnable
 {
-	// 客户端引用
-	private Socket client = null;
-	int clienId;
-	// 构造函数
-	public EchoThreadByArgs(Socket client)
-	{
-		this.client = client;
-		// 设置服务线程编号
-		this.clienId = EchoThreadServer.getClientNum();
-		// 服务线程数量加1
-		EchoThreadServer.addClientNum();
-	}
-	// 线程执行体
-	public void run()
-	{
-		// 接收客户端的输入
-		ObjectInputStream inoutFromClient = null;
-		ObjectOutputStream outputToClient = null;
-		try
-		{
-			// 接收客户端的输入
-			inoutFromClient = new ObjectInputStream(client.getInputStream());
-			String[] inputArg = (String[]) inoutFromClient.readObject();
-			for (String string : inputArg)
-			{
-				System.out.println(string);
-			}
-			// 输出对象到客户端
-			outputToClient = new ObjectOutputStream(client.getOutputStream());
-			outputToClient.writeObject(inputArg);
-			// 一定要刷新,不然客户端接收不到
-			outputToClient.flush();
-		} catch (Exception e)
-		{
-			e.printStackTrace();
-		} finally
-		{
-			if (inoutFromClient != null)
-			{
-				try
-				{
-					inoutFromClient.close();
-				} catch (IOException e)
-				{
-				}
-			}
-			if (outputToClient != null)
-			{
-				try
-				{
-					outputToClient.close();
-				} catch (IOException e)
-				{
-				}
-			}
-		}
-	}
+    // 客户端引用
+    private Socket client = null;
+    int clienId;
+    // 构造函数
+    public EchoThreadByArgs(Socket client)
+    {
+        this.client = client;
+        // 设置服务线程编号
+        this.clienId = EchoThreadServer.getClientNum();
+        // 服务线程数量加1
+        EchoThreadServer.addClientNum();
+    }
+    // 线程执行体
+    public void run()
+    {
+        // 接收客户端的输入
+        ObjectInputStream inoutFromClient = null;
+        ObjectOutputStream outputToClient = null;
+        try
+        {
+            // 接收客户端的输入
+            inoutFromClient = new ObjectInputStream(client.getInputStream());
+            String[] inputArg = (String[]) inoutFromClient.readObject();
+            for (String string : inputArg)
+            {
+                System.out.println(string);
+            }
+            // 输出对象到客户端
+            outputToClient = new ObjectOutputStream(client.getOutputStream());
+            outputToClient.writeObject(inputArg);
+            // 一定要刷新,不然客户端接收不到
+            outputToClient.flush();
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        } finally
+        {
+            if (inoutFromClient != null)
+            {
+                try
+                {
+                    inoutFromClient.close();
+                } catch (IOException e)
+                {
+                }
+            }
+            if (outputToClient != null)
+            {
+                try
+                {
+                    outputToClient.close();
+                } catch (IOException e)
+                {
+                }
+            }
+        }
+    }
 }
 ```
 ### 客户端线程 ###
@@ -190,66 +190,66 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 public class EchoClientByArgs
 {
-	public static void main(String[] args)
-	{
-		// 定义客户端引用
-		Socket client = null;
-		try
-		{
-			// 创建客户端监听本机的6666端口
-			client = new Socket("localhost", 6666);
-		} catch (UnknownHostException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		ObjectOutputStream outputToServer = null;
-		ObjectInputStream inputByServer = null;
-		try
-		{
-			outputToServer = new ObjectOutputStream(client.getOutputStream());
-			// 把命令行参数序列化到服务器
-			outputToServer.writeObject(args);
-			outputToServer.flush();
-			// 注意先后顺序,一定要写在发送之前
-			// 接收服务端的序列化信息
-			inputByServer = new ObjectInputStream(client.getInputStream());
-			// 反序列化成对象(字符串数组)
-			String[] inputArg = (String[]) inputByServer.readObject();
-			// 遍历数组
-			for (String string : inputArg)
-			{
-				System.out.println(string);
-			}
-		} catch (IOException | ClassNotFoundException e)
-		{
-			e.printStackTrace();
-		} finally
-		{
-			if (outputToServer != null)
-			{
-				try
-				{
-					outputToServer.close();
-				} catch (IOException e)
-				{
-				}
-			}
-			if (inputByServer != null)
-			{
-				try
-				{
-					inputByServer.close();
-				} catch (IOException e)
-				{
-				}
-			}
-		}
-	}
+    public static void main(String[] args)
+    {
+        // 定义客户端引用
+        Socket client = null;
+        try
+        {
+            // 创建客户端监听本机的6666端口
+            client = new Socket("localhost", 6666);
+        } catch (UnknownHostException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        ObjectOutputStream outputToServer = null;
+        ObjectInputStream inputByServer = null;
+        try
+        {
+            outputToServer = new ObjectOutputStream(client.getOutputStream());
+            // 把命令行参数序列化到服务器
+            outputToServer.writeObject(args);
+            outputToServer.flush();
+            // 注意先后顺序,一定要写在发送之前
+            // 接收服务端的序列化信息
+            inputByServer = new ObjectInputStream(client.getInputStream());
+            // 反序列化成对象(字符串数组)
+            String[] inputArg = (String[]) inputByServer.readObject();
+            // 遍历数组
+            for (String string : inputArg)
+            {
+                System.out.println(string);
+            }
+        } catch (IOException | ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        } finally
+        {
+            if (outputToServer != null)
+            {
+                try
+                {
+                    outputToServer.close();
+                } catch (IOException e)
+                {
+                }
+            }
+            if (inputByServer != null)
+            {
+                try
+                {
+                    inputByServer.close();
+                } catch (IOException e)
+                {
+                }
+            }
+        }
+    }
 }
 ```
 ### 运行效果 ###

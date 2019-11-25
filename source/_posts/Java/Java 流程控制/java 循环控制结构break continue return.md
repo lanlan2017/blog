@@ -32,12 +32,12 @@ Java语言没有提供goto语句来控制程序的跳转,这种做法提高了�
 // 一个简单的for循环
 for (int i = 0; i < 10 ; i++ )
 {
-	System.out.println("i的值是" + i);
-	if (i == 2)
-	{
-		// 执行该语句时将结束循环
-		break;
-	}
+    System.out.println("i的值是" + i);
+    if (i == 2)
+    {
+        // 执行该语句时将结束循环
+        break;
+    }
 }
 ```
 运行结果：
@@ -55,16 +55,16 @@ break语句不仅可以结束其所在的循环,还可以**直接结束其外层
 outer:
 for (int i = 0 ; i < 5 ; i++ )
 {
-	// 内层循环
-	for (int j = 0; j < 3 ; j++ )
-	{
-		System.out.println("i的值为:" + i + "  j的值为:" + j);
-		if (j == 1)
-		{
-			// 跳出outer标签所标识的循环。
-			break outer;
-		}
-	}
+    // 内层循环
+    for (int j = 0; j < 3 ; j++ )
+    {
+        System.out.println("i的值为:" + i + "  j的值为:" + j);
+        if (j == 1)
+        {
+            // 跳出outer标签所标识的循环。
+            break outer;
+        }
+    }
 }
 ```
 运行结果：
@@ -81,13 +81,13 @@ continue的功能和 break有点类似,区别是 continue只是忽略本次循�
 // 一个简单的for循环
 for (int i = 0; i < 3 ; i++ )
 {
-	System.out.println("i的值是" + i);
-	if (i == 1)
-	{
-		// 忽略本次循环的剩下语句
-		continue;
-	}
-	System.out.println("continue后的输出语句");
+    System.out.println("i的值是" + i);
+    if (i == 1)
+    {
+        // 忽略本次循环的剩下语句
+        continue;
+    }
+    System.out.println("continue后的输出语句");
 }
 ```
 运行结果：
@@ -108,16 +108,16 @@ continue后的输出语句
 outer:
 for (int i = 0 ; i < 5 ; i++ )
 {
-	// 内层循环
-	for (int j = 0; j < 5 ; j++ )
-	{
-		System.out.println("i的值为:" + i + "  j的值为:" + j);
-		if (j == 1)
-		{
-			// 忽略outer标签所指定的循环中本次循环所剩下语句。
-			continue outer;
-		}
-	}
+    // 内层循环
+    for (int j = 0; j < 5 ; j++ )
+    {
+        System.out.println("i的值为:" + i + "  j的值为:" + j);
+        if (j == 1)
+        {
+            // 忽略outer标签所指定的循环中本次循环所剩下语句。
+            continue outer;
+        }
+    }
 }
 ```
 运行结果：
@@ -141,12 +141,12 @@ Java程序中大部分循环都被放在方法中执行,例如前面介绍的所
 // 一个简单的for循环
 for (int i = 0; i < 3 ; i++ )
 {
-	System.out.println("i的值是" + i);
-	if (i == 1)
-	{
-		return;
-	}
-	System.out.println("return后的输出语句");
+    System.out.println("i的值是" + i);
+    if (i == 1)
+    {
+        return;
+    }
+    System.out.println("return后的输出语句");
 }
 ```
 运行结果：

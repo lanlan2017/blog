@@ -45,33 +45,33 @@ java代码：
 // 事件监听
 public void actionPerformed(ActionEvent e)
 {
-	// 如果按下的录入按钮
-	if (e.getSource() == insert)
-	{
-		Student student = Student.getInstance();
-		// 获取文本框中的文本
-		getAllInputs(student);
-		// 检查是否全都输入了
-		if (!isInputAll(student))
-		{
-			JOptionPane.showMessageDialog(this, "请全部填写所有输入项");
-		} else
-		{
-			// 判断
-			if (canBeInsert())
-			{
-				insetIntoStudent(student);
-				JOptionPane.showMessageDialog(this, "录入成功!", "信息管理系统",
-						JOptionPane.INFORMATION_MESSAGE);
-			}
-		}
-	}
-	// 如果按下了重置按钮
-	else if (e.getSource() == reset)
-	{
-		// 清空所有的输入框
-		cleanInput();
-	}
+    // 如果按下的录入按钮
+    if (e.getSource() == insert)
+    {
+        Student student = Student.getInstance();
+        // 获取文本框中的文本
+        getAllInputs(student);
+        // 检查是否全都输入了
+        if (!isInputAll(student))
+        {
+            JOptionPane.showMessageDialog(this, "请全部填写所有输入项");
+        } else
+        {
+            // 判断
+            if (canBeInsert())
+            {
+                insetIntoStudent(student);
+                JOptionPane.showMessageDialog(this, "录入成功!", "信息管理系统",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+    }
+    // 如果按下了重置按钮
+    else if (e.getSource() == reset)
+    {
+        // 清空所有的输入框
+        cleanInput();
+    }
 }
 ```
 打开软件，选择开发语言为:Java:

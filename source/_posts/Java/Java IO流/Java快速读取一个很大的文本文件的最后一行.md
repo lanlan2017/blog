@@ -20,69 +20,69 @@ abbrlink: 487a7f53
 ## 返回文本文件最后一行java代码 ##
 ```java
 public static String readLastLine(File file, String charset)
-		throws IOException
+        throws IOException
 {
-	if (!file.exists() || file.isDirectory() || !file.canRead())
-	{
-		return null;
-	}
-	RandomAccessFile raf = null;
-	try
-	{
-		raf = new RandomAccessFile(file, "r");
-		//获取文件占用字节数
-		long len = raf.length();
-		if (len == 0L)
-		{
-			return "";
-		} else
-		{
-			//向前走一个字节
-			long pos = len - 1;
-			while (pos > 0)
-			{
-				pos--;
-				//移动指针
-				raf.seek(pos);
-				//判断这个字节是不是回车符
-				if (raf.readByte() == '\n')
-				{
-					break;//前移到会第一个回车符后结束
-				}
-			}
-			if (pos == 0)
-			{
-				raf.seek(0);
-			}
-			
-			//记录下当前位置
-			
-			byte[] bytes = new byte[(int) (len - pos)];
-			//读取从回车符位置到文件结尾的所有字节
-			raf.read(bytes);
-			if (charset == null)
-			{
-				return new String(bytes);
-			} else
-			{
-				return new String(bytes, charset);
-			}
-		}
-	} catch (FileNotFoundException e)
-	{
-	} finally
-	{
-		if (raf != null)
-		{
-			try
-			{
-				raf.close();
-			} catch (Exception e2)
-			{
-			}
-		}
-	}
-	return null;
+    if (!file.exists() || file.isDirectory() || !file.canRead())
+    {
+        return null;
+    }
+    RandomAccessFile raf = null;
+    try
+    {
+        raf = new RandomAccessFile(file, "r");
+        //获取文件占用字节数
+        long len = raf.length();
+        if (len == 0L)
+        {
+            return "";
+        } else
+        {
+            //向前走一个字节
+            long pos = len - 1;
+            while (pos > 0)
+            {
+                pos--;
+                //移动指针
+                raf.seek(pos);
+                //判断这个字节是不是回车符
+                if (raf.readByte() == '\n')
+                {
+                    break;//前移到会第一个回车符后结束
+                }
+            }
+            if (pos == 0)
+            {
+                raf.seek(0);
+            }
+            
+            //记录下当前位置
+            
+            byte[] bytes = new byte[(int) (len - pos)];
+            //读取从回车符位置到文件结尾的所有字节
+            raf.read(bytes);
+            if (charset == null)
+            {
+                return new String(bytes);
+            } else
+            {
+                return new String(bytes, charset);
+            }
+        }
+    } catch (FileNotFoundException e)
+    {
+    } finally
+    {
+        if (raf != null)
+        {
+            try
+            {
+                raf.close();
+            } catch (Exception e2)
+            {
+            }
+        }
+    }
+    return null;
 }
 ```
 参考：[https://blog.csdn.net/q_linchao/article/details/79630906](https://blog.csdn.net/q_linchao/article/details/79630906)
@@ -96,89 +96,89 @@ import java.io.RandomAccessFile;
 
 public class LastLineInFile
 {
-	private long lastlinestart;
-	private String lastLine;
-	public LastLineInFile()
-	{
-		this.lastlinestart=0;
-		this.lastLine=null;
-	}
-	public long getLastlinestart()
-	{
-		return lastlinestart;
-	}
-	public String getLastLine()
-	{
-		return lastLine;
-	}
-	private void setLastlinestart(long pos)
-	{
-		this.lastlinestart = pos;
-	}
-	private void setLastLine(String lastLine)
-	{
-		this.lastLine = lastLine;
-	}
-	public void readLastLine(File file, String charset)
-			throws IOException
-	{
-		RandomAccessFile raf = null;
-		try
-		{
-			raf = new RandomAccessFile(file, "r");
-			//获取文件占用字节数
-			long len = raf.length();
-			if (len == 0L)
-			{
-				setLastLine("");
-			} else
-			{
-				//向前走一个字节
-				long pos = len - 1;
-				while (pos > 0)
-				{
-					pos--;
-					//移动指针
-					raf.seek(pos);
-					//判断这个字节是不是回车符
-					if (raf.readByte() == '\n')
-					{
-						break;//前移到会第一个回车符后结束
-					}
-				}
-				if (pos == 0)
-				{
-					raf.seek(0);
-				}
-				
-				//记录下当前位置
-				setLastlinestart(pos);
-				byte[] bytes = new byte[(int) (len - pos)];
-				//读取从回车符位置到文件结尾的所有字节
-				raf.read(bytes);
-				if (charset == null)
-				{
-					setLastLine(new String(bytes));
-				} else
-				{
-					setLastLine(new String(bytes,charset));
-				}
-			}
-		} catch (FileNotFoundException e)
-		{
-		} finally
-		{
-			if (raf != null)
-			{
-				try
-				{
-					raf.close();
-				} catch (Exception e2)
-				{
-				}
-			}
-		}
-	}
+    private long lastlinestart;
+    private String lastLine;
+    public LastLineInFile()
+    {
+        this.lastlinestart=0;
+        this.lastLine=null;
+    }
+    public long getLastlinestart()
+    {
+        return lastlinestart;
+    }
+    public String getLastLine()
+    {
+        return lastLine;
+    }
+    private void setLastlinestart(long pos)
+    {
+        this.lastlinestart = pos;
+    }
+    private void setLastLine(String lastLine)
+    {
+        this.lastLine = lastLine;
+    }
+    public void readLastLine(File file, String charset)
+            throws IOException
+    {
+        RandomAccessFile raf = null;
+        try
+        {
+            raf = new RandomAccessFile(file, "r");
+            //获取文件占用字节数
+            long len = raf.length();
+            if (len == 0L)
+            {
+                setLastLine("");
+            } else
+            {
+                //向前走一个字节
+                long pos = len - 1;
+                while (pos > 0)
+                {
+                    pos--;
+                    //移动指针
+                    raf.seek(pos);
+                    //判断这个字节是不是回车符
+                    if (raf.readByte() == '\n')
+                    {
+                        break;//前移到会第一个回车符后结束
+                    }
+                }
+                if (pos == 0)
+                {
+                    raf.seek(0);
+                }
+                
+                //记录下当前位置
+                setLastlinestart(pos);
+                byte[] bytes = new byte[(int) (len - pos)];
+                //读取从回车符位置到文件结尾的所有字节
+                raf.read(bytes);
+                if (charset == null)
+                {
+                    setLastLine(new String(bytes));
+                } else
+                {
+                    setLastLine(new String(bytes,charset));
+                }
+            }
+        } catch (FileNotFoundException e)
+        {
+        } finally
+        {
+            if (raf != null)
+            {
+                try
+                {
+                    raf.close();
+                } catch (Exception e2)
+                {
+                }
+            }
+        }
+    }
 }
 
 ```

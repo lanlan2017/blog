@@ -31,14 +31,14 @@ fclose(trainFILETemp);
 ## C语言重命名文件 ##
 
 ```c
-	int result;
-	char oldname[] ="trainTemp.txt";
-	char newname[] ="trainRename.txt";
-	result= rename( oldname , newname );
-	if ( result == 0 )
-		printf( "File successfully renamed" );
-	else
-		perror( "Error renaming file" );
+    int result;
+    char oldname[] ="trainTemp.txt";
+    char newname[] ="trainRename.txt";
+    result= rename( oldname , newname );
+    if ( result == 0 )
+        printf( "File successfully renamed" );
+    else
+        perror( "Error renaming file" );
 ```
 ## C语言删除文件 ##
 > 在C语言中，有专门的删除文件函数remove。
@@ -48,13 +48,13 @@ fclose(trainFILETemp);
 > 4、返回值：`删除成功，返回0`.`否则返回-1`.
 ### 实例 ###
 ```c
-	int ret;
-	char deleteFile[]="trainRename.txt";
-	ret = remove(deleteFile);//删除文件
-	if(ret==0)
-	    printf("删除文件成功\n");
-	else
-	    printf("删除文件失败\n");
+    int ret;
+    char deleteFile[]="trainRename.txt";
+    ret = remove(deleteFile);//删除文件
+    if(ret==0)
+        printf("删除文件成功\n");
+    else
+        printf("删除文件失败\n");
 ```
 ## 参考链接 ##
 [详解C语言中的rename()函数和remove()函数的使用方法](https://www.jb51.net/article/71801.htm)

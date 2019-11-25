@@ -55,16 +55,16 @@ package study.news;
 import java.io.Console;
 public class TestConsole
 {
-	public static void main(String[] args)
-	{
-		Console console = System.console();
-		//读入用户名
-		String username = console.readLine("User name:");
-		//读入密码
-		char[] passwd = console.readPassword("Password:");
-		console.printf("user:" + username + "\n");
-		console.printf(String.valueOf(passwd));
-	}
+    public static void main(String[] args)
+    {
+        Console console = System.console();
+        //读入用户名
+        String username = console.readLine("User name:");
+        //读入密码
+        char[] passwd = console.readPassword("Password:");
+        console.printf("user:" + username + "\n");
+        console.printf(String.valueOf(passwd));
+    }
 }
 ```
 **因为`Java.io.Console` 只能用在标准输入、输出流未被重定向的原始控制台中使用，在 `Eclipse` 或者其他 `IDE` 的控制台是用不了的。**
@@ -108,34 +108,34 @@ password:qunide
 
 public static void testConsoleReader()
 {
-	Console console = System.console();
-	if (console != null)
-	{
-		System.out.print("输入以#结束");
-		Pattern endRegex = Pattern.compile("([^#]*)#");
-		Matcher isEnd;
-		// 获取控制台的字符输入流,这样可以读取到我们在控制台上打的字
-		Scanner scan = new Scanner(console.reader());
-		String str;
-		StringBuilder builder = new StringBuilder();
-		while (scan.hasNext())
-		{
-			str = scan.next();
-			isEnd = endRegex.matcher(str);
-			// matches()会匹配整个字符串匹配后匹配的下表
-			if (isEnd.matches())
-			{
-				// 使用group()进行捕获的前提一定要是在匹配的情况下
-				// 可以在matches(),find(),lonkingAt()返回true的时候调用
-				builder.append(isEnd.group(1));
-				break;
-			}
-			builder.append(str);
-			// System.out.println(str);
-		}
-		System.out.println("接收到控制台输入：");
-		System.out.println(builder.toString());
-	}
+    Console console = System.console();
+    if (console != null)
+    {
+        System.out.print("输入以#结束");
+        Pattern endRegex = Pattern.compile("([^#]*)#");
+        Matcher isEnd;
+        // 获取控制台的字符输入流,这样可以读取到我们在控制台上打的字
+        Scanner scan = new Scanner(console.reader());
+        String str;
+        StringBuilder builder = new StringBuilder();
+        while (scan.hasNext())
+        {
+            str = scan.next();
+            isEnd = endRegex.matcher(str);
+            // matches()会匹配整个字符串匹配后匹配的下表
+            if (isEnd.matches())
+            {
+                // 使用group()进行捕获的前提一定要是在匹配的情况下
+                // 可以在matches(),find(),lonkingAt()返回true的时候调用
+                builder.append(isEnd.group(1));
+                break;
+            }
+            builder.append(str);
+            // System.out.println(str);
+        }
+        System.out.println("接收到控制台输入：");
+        System.out.println(builder.toString());
+    }
 }
 ```
 运行结果：
@@ -145,36 +145,36 @@ public static void testConsoleReader()
 ```java
 public static void testConsoleReader2() throws IOException
 {
-	Console console = System.console();
-	if (console != null)
-	{
-		System.out.print("输入以#结束");
-		Pattern endRegex = Pattern.compile("([^#]*)#");
-		Matcher isEnd;
-		// 获取控制台的字符输入流,这样可以读取到我们在控制台上打的字
-//			Scanner scan = new Scanner(console.reader());
-		
-		BufferedReader reader=new BufferedReader(console.reader());
-		String line;
-		//设置默认大小为100,面输入字符过多使得StringBuilder频繁扩容,每次扩容的长度是当前长度(length*2+2)
-		StringBuilder builder = new StringBuilder(100);
-		while ((line=reader.readLine())!=null)
-		{
-			isEnd = endRegex.matcher(line);
-			// matches()会匹配整个字符串匹配后匹配的下表
-			if (isEnd.matches())
-			{
-				// 使用group()进行捕获的前提一定要是在匹配的情况下
-				// 可以在matches(),find(),lonkingAt()返回true的时候调用
-				builder.append(isEnd.group(1));
-				break;
-			}
-			builder.append(line);
-		}
-		System.out.println("接收到控制台输入：");
-		System.out.println(builder.toString());
-		reader.close();
-	}
+    Console console = System.console();
+    if (console != null)
+    {
+        System.out.print("输入以#结束");
+        Pattern endRegex = Pattern.compile("([^#]*)#");
+        Matcher isEnd;
+        // 获取控制台的字符输入流,这样可以读取到我们在控制台上打的字
+//            Scanner scan = new Scanner(console.reader());
+        
+        BufferedReader reader=new BufferedReader(console.reader());
+        String line;
+        //设置默认大小为100,面输入字符过多使得StringBuilder频繁扩容,每次扩容的长度是当前长度(length*2+2)
+        StringBuilder builder = new StringBuilder(100);
+        while ((line=reader.readLine())!=null)
+        {
+            isEnd = endRegex.matcher(line);
+            // matches()会匹配整个字符串匹配后匹配的下表
+            if (isEnd.matches())
+            {
+                // 使用group()进行捕获的前提一定要是在匹配的情况下
+                // 可以在matches(),find(),lonkingAt()返回true的时候调用
+                builder.append(isEnd.group(1));
+                break;
+            }
+            builder.append(line);
+        }
+        System.out.println("接收到控制台输入：");
+        System.out.println(builder.toString());
+        reader.close();
+    }
 }
 ```
 ### 获取对控制台的输出流 ###
@@ -182,21 +182,21 @@ console.writer()可以获取对控制台的输出流(PrintWriter)
 ```java
 public static void testConsoleWriter()
 {
-	Console console = null;
-	PrintWriter out = null;
-	try
-	{
-		console = System.console();
-		if (console != null)
-		{
-			// 获取控制台的PrintWriter实例，也就是对控制台的输出
-			out = console.writer();
-			out.println("这句话将输出到控制台中");
-		}
-	} catch (Exception ex)
-	{
-		ex.printStackTrace();
-	}
+    Console console = null;
+    PrintWriter out = null;
+    try
+    {
+        console = System.console();
+        if (console != null)
+        {
+            // 获取控制台的PrintWriter实例，也就是对控制台的输出
+            out = console.writer();
+            out.println("这句话将输出到控制台中");
+        }
+    } catch (Exception ex)
+    {
+        ex.printStackTrace();
+    }
 }
 ```
 运行结果：
@@ -207,27 +207,27 @@ public static void testConsoleWriter()
 ```java
 public static void testReaderWriter()
 {
-	Console console =null;
-	console=System.console();
-	if(console!=null)
-	{
-		PrintWriter consoleOut=console.writer();
-		BufferedReader consoleIn=new BufferedReader(console.reader());
-		String line=null;
-		try
-		{
-			while((line=consoleIn.readLine())!=null)
-			{
-				if(line.equals("exit"))
-					break;
-				consoleOut.println("你输入了："+line);
-			}
-		} catch (IOException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+    Console console =null;
+    console=System.console();
+    if(console!=null)
+    {
+        PrintWriter consoleOut=console.writer();
+        BufferedReader consoleIn=new BufferedReader(console.reader());
+        String line=null;
+        try
+        {
+            while((line=consoleIn.readLine())!=null)
+            {
+                if(line.equals("exit"))
+                    break;
+                consoleOut.println("你输入了："+line);
+            }
+        } catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
 }
 ```
 ## 控制台格式化输出方法 ##

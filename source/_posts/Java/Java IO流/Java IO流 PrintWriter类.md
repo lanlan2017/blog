@@ -140,8 +140,8 @@ java.lang.Object
 ```
 public static void main(String[] args) throws IOException
 {
-	BufferedWriter writer=new BufferedWriter(new FileWriter("xiaoming.txt"));
-	writer.write("小明");
+    BufferedWriter writer=new BufferedWriter(new FileWriter("xiaoming.txt"));
+    writer.write("小明");
 }
 ```
 这样会不会在`xiaoming.txt`文件中写入“小明”这个字符串呢？答案是不会，因为，现在写的这个`小明`保存在`BufferedWriter`的内部字符数组中，并没有写到本地，想写到本地的话需要调用`flush()`方法刷新内部字符数组，把放在内部字符数组中的“小明”这个字符串写到本地中去。BufferedWriter内部缓存放满了，或者放不下了，会自动把内部缓存刷到本地中去。或者调用`close()`方法的时候也会刷新一下内部缓存。
@@ -152,11 +152,11 @@ public static void main(String[] args) throws IOException
 public static void main(String[] args) throws IOException
 {
        //自动刷新到文件xiaoming.txt中
-	PrintWriter writer=new PrintWriter(new FileWriter("xiaoming.txt"),true);
+    PrintWriter writer=new PrintWriter(new FileWriter("xiaoming.txt"),true);
        //使用下面三个方法会自动刷新
-	writer.println("小明");
-	writer.printf("%-10s#\n","小明");
-	writer.format("%-10d#", 12345);
+    writer.println("小明");
+    writer.printf("%-10s#\n","小明");
+    writer.format("%-10d#", 12345);
 }
 ```
 运行结果，`xiaoming.txt`文件中的内容：
@@ -174,13 +174,13 @@ public static void main(String[] args) throws IOException
 ```java
 public static void main(String[] args) throws IOException
 {
-	PrintWriter writer=new PrintWriter(new FileWriter("xiaoming.txt"),true);
-	writer.println("小明");
-	writer.printf("%-10s#\n","小明");
-	writer.format("%-10d#\n", 12345);
-	writer.write("我是不会写到文件中去的");
-	writer.print("我也不会自动写到文件中去的");
-	writer.append("我也一样不会写到文件中去的");
+    PrintWriter writer=new PrintWriter(new FileWriter("xiaoming.txt"),true);
+    writer.println("小明");
+    writer.printf("%-10s#\n","小明");
+    writer.format("%-10d#\n", 12345);
+    writer.write("我是不会写到文件中去的");
+    writer.print("我也不会自动写到文件中去的");
+    writer.append("我也一样不会写到文件中去的");
 }
 ```
 运行后，`xiaoming.txt`中的内容如下：
@@ -193,14 +193,14 @@ public static void main(String[] args) throws IOException
 ```java
 public static void main(String[] args) throws IOException
 {
-	PrintWriter writer=new PrintWriter(new FileWriter("xiaoming.txt"),true);
-	writer.println("小明");
-	writer.printf("%-10s#\n","小明");
-	writer.format("%-10d#\n", 12345);
-	writer.write("我是不会写到文件中去的\n");
-	writer.print("我也不会自动写到文件中去的\n");
-	writer.append("我也一样不会写到文件中去的\n");
-	writer.close();
+    PrintWriter writer=new PrintWriter(new FileWriter("xiaoming.txt"),true);
+    writer.println("小明");
+    writer.printf("%-10s#\n","小明");
+    writer.format("%-10d#\n", 12345);
+    writer.write("我是不会写到文件中去的\n");
+    writer.print("我也不会自动写到文件中去的\n");
+    writer.append("我也一样不会写到文件中去的\n");
+    writer.close();
 }
 ```
 运行上面代码后，`xiaoming.txt`文件中的内容如下

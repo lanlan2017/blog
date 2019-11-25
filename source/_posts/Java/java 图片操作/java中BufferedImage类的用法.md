@@ -17,7 +17,7 @@ java.lang.Object
 
 BufferedImage是Image的一个子类，Image和BufferedImage的主要作用就是将一副图片加载到内存中。BufferedImage生成的图片在内存里有一个图像缓冲区，利用这个缓冲区我们可以很方便的操作这个图片，通常用来做图片修改操作如大小变换、图片变灰、设置图片透明或不透明等。Java将一副图片加载到内存中的方法是：
 1
-	
+    
 BufferedImage bufferedImage = ImageIO.read(new FileInputStream(filePath));  
 
 >原文链接: [java中BufferedImage类的用法](https://lanlan2017.github.io/blog/d819de9c/)

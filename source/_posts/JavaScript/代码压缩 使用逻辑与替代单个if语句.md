@@ -39,8 +39,8 @@ abbrlink: 4fd080c1
 <script>
 function paly_audio0()
 { 
-	var a = document.getElementById("audio0");
-	null != a && a.play();
+    var a = document.getElementById("audio0");
+    null != a && a.play();
 }
 </script>
 ```

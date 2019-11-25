@@ -31,21 +31,21 @@ abbrlink: c78d87f4
 使用`clipboard.js`来可分为以下三个步骤：
 - 定义相关的html标签
 - 引入clisboard.js库，引入方式：
-	- 可以使用CDN:
-		- 到这里选择一个CDN:[https://github.com/zenorocha/clipboard.js/wiki/CDN-Providers](https://github.com/zenorocha/clipboard.js/wiki/CDN-Providers)
-	- 也可以先下载到本地，然后引入本地。
-	- 下载可以：
-		- 直接下载压缩包[download a ZIP ](https://github.com/zenorocha/clipboard.js/archive/master.zip)，
-		- 或者使用npm方式安装：`npm install clipboard --save`
+    - 可以使用CDN:
+        - 到这里选择一个CDN:[https://github.com/zenorocha/clipboard.js/wiki/CDN-Providers](https://github.com/zenorocha/clipboard.js/wiki/CDN-Providers)
+    - 也可以先下载到本地，然后引入本地。
+    - 下载可以：
+        - 直接下载压缩包[download a ZIP ](https://github.com/zenorocha/clipboard.js/archive/master.zip)，
+        - 或者使用npm方式安装：`npm install clipboard --save`
 - 实例化ClipboardJS对象
-	- 实例化之后可以加上监听复制成功或失败。以便给用户一些提示信息。
+    - 实例化之后可以加上监听复制成功或失败。以便给用户一些提示信息。
 
 ## 属性说明 ##
 - data-clipboard-text：复制的静态内容
 - data-clipboard-target：设置为其他元素的选择器，将复制该选择器中元素的内容
 - data-clipboard-action: 复制的方式，
-	- data-clipboard-action="copy" ：复制方式。默认
-	- data-clipboard-action="cut": 剪切方式。
+    - data-clipboard-action="copy" ：复制方式。默认
+    - data-clipboard-action="cut": 剪切方式。
 
 ## 使用实例 ##
 使用的区别主要在引入方式和ClipboardJS对象的实例化上。

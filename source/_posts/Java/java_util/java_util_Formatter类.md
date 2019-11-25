@@ -124,45 +124,45 @@ world,hello
 ```java
 public static void test_conversion_s()
 {
-	Formatter formatter=new Formatter();
-	String name = "World";
-	formatter.format("Hello %s !", name);
-	System.out.println(formatter.toString());
+    Formatter formatter=new Formatter();
+    String name = "World";
+    formatter.format("Hello %s !", name);
+    System.out.println(formatter.toString());
 }
 public static void test_conversion_S()
 {
-	Formatter formatter=new Formatter();
-	String name = "World";
-	formatter.format("Hello %S !", name);
-	System.out.println(formatter.toString());
+    Formatter formatter=new Formatter();
+    String name = "World";
+    formatter.format("Hello %S !", name);
+    System.out.println(formatter.toString());
 }
 public static void test_conversion_b()
 {
-	Formatter formatter=new Formatter();
-	String name = "World";
-	formatter.format("Hello %b !", name);
-	System.out.println(formatter.toString());
+    Formatter formatter=new Formatter();
+    String name = "World";
+    formatter.format("Hello %b !", name);
+    System.out.println(formatter.toString());
 }
 public static void test_conversion_B()
 {
-	Formatter formatter=new Formatter();
-	String name = "World";
-	formatter.format("Hello %B !", name);
-	System.out.println(formatter.toString());
+    Formatter formatter=new Formatter();
+    String name = "World";
+    formatter.format("Hello %B !", name);
+    System.out.println(formatter.toString());
 }
 public static void test_conversion_h()
 {
-	Formatter formatter=new Formatter();
-	String name = "World";
-	formatter.format("Hello %h !", name);
-	System.out.println(formatter.toString());
+    Formatter formatter=new Formatter();
+    String name = "World";
+    formatter.format("Hello %h !", name);
+    System.out.println(formatter.toString());
 }
 public static void test_conversion_H()
 {
-	Formatter formatter=new Formatter();
-	String name = "World";
-	formatter.format("Hello %H !", name);
-	System.out.println(formatter.toString());
+    Formatter formatter=new Formatter();
+    String name = "World";
+    formatter.format("Hello %H !", name);
+    System.out.println(formatter.toString());
 }
 ```
 
@@ -187,12 +187,12 @@ Hello 4FE2B72 !
 ```java
 public static void test_conversion_c(Formatter formatter)
 {
-	char[] chs={'\u4E2D','\u6587'};
-	for (char c : chs)
-	{
-		formatter.format("%c", c);
-	}
-	System.out.println(formatter);
+    char[] chs={'\u4E2D','\u6587'};
+    for (char c : chs)
+    {
+        formatter.format("%c", c);
+    }
+    System.out.println(formatter);
 }
 ```
 运行结果为：
@@ -204,13 +204,13 @@ public static void test_conversion_c(Formatter formatter)
 String str = "中文";
 try
 {
-	String encodeStr = URLEncoder.encode(str, "utf-16be");
-	encodeStr = encodeStr.replaceAll("%(.{2})%(.{2})", "\\\\u$1$2");
-	System.out.println(encodeStr);
+    String encodeStr = URLEncoder.encode(str, "utf-16be");
+    encodeStr = encodeStr.replaceAll("%(.{2})%(.{2})", "\\\\u$1$2");
+    System.out.println(encodeStr);
 } catch (UnsupportedEncodingException e)
 {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
+    // TODO Auto-generated catch block
+    e.printStackTrace();
 }
 ```
 运行结果:
@@ -382,10 +382,10 @@ System.out.println(formatter);
 ```
 public static void testFormatPercent()
 {
-	Formatter formatter = new Formatter();
-	String string="Hello World!";
-	formatter.format("%% %s %%", string);
-	System.out.println(formatter);
+    Formatter formatter = new Formatter();
+    String string="Hello World!";
+    formatter.format("%% %s %%", string);
+    System.out.println(formatter);
 }
 ```
 运行结果：
@@ -419,11 +419,11 @@ World!
 ```
 public static void testWidth()
 {
-	int value = 123;
-	Formatter formatter = new Formatter();
-	formatter.format("%4d%6d%10d\n", value,value,value);
-	formatter.format("%1$4d%1$6d%1$10d", value);
-	System.out.println(formatter);
+    int value = 123;
+    Formatter formatter = new Formatter();
+    formatter.format("%4d%6d%10d\n", value,value,value);
+    formatter.format("%1$4d%1$6d%1$10d", value);
+    System.out.println(formatter);
 }
 ```
 运行结果：
@@ -489,12 +489,12 @@ System.out.println(formatter);
 ```
 public static void testAlign()
 {
-	double value=321.123456789;
-	Formatter formatter=new Formatter();
-	formatter.format("总共占10位,只精确到小数点后三位:%10.3f##\n", value);
-	formatter.format("左对齐,总共占10位,不足0填充,只精确到小数点后三位:%010.3f##\n", value);
-	formatter.format("左对齐,总共占10位,只精确到小数点后三位:%-10.3f##\n", value);
-	System.out.println(formatter);
+    double value=321.123456789;
+    Formatter formatter=new Formatter();
+    formatter.format("总共占10位,只精确到小数点后三位:%10.3f##\n", value);
+    formatter.format("左对齐,总共占10位,不足0填充,只精确到小数点后三位:%010.3f##\n", value);
+    formatter.format("左对齐,总共占10位,只精确到小数点后三位:%-10.3f##\n", value);
+    System.out.println(formatter);
 }
 ```
 运行结果：

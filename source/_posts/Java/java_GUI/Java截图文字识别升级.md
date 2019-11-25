@@ -27,19 +27,19 @@ abbrlink: 77feedee
 在构造函数中传入工具栏窗口的引用tools，然后嗲用tools.setLocation(0,0)。即可，本来我想着放在右边的，但是放右边的话不好计算坐标，索性就放右上角。
 添加构造函数:
 ```java
-	public BaiduOCR(String path, ScreenShotWindow screenShotWindow,
-			JButton baiduOCRButton, ToolsWindow tools)
-	{
-		this.path = path;
-		this.screenShotWindow = screenShotWindow;
-		this.baiduOCRButton = baiduOCRButton;
-		this.tools = tools;
-	}
+    public BaiduOCR(String path, ScreenShotWindow screenShotWindow,
+            JButton baiduOCRButton, ToolsWindow tools)
+    {
+        this.path = path;
+        this.screenShotWindow = screenShotWindow;
+        this.baiduOCRButton = baiduOCRButton;
+        this.tools = tools;
+    }
 ```
 run()方法中加入：
 ```java
 if (tools != null)
-	tools.setLocation(0, 0);
+    tools.setLocation(0, 0);
 ```
 ## 升级2 ##
 有时候误操作的时候，我必须得截图一下才能进行其他操作。

@@ -104,21 +104,21 @@ public static void printByFileReader(String filePath) throws IOException
 ```
 public static void printByFileReaderChars(String filePath) throws IOException
 {
-	BufferedReader reader=new BufferedReader(
-			new FileReader(filePath)
-			);
-	if(!reader.ready())
-	{
-		System.out.println("文件流暂时无法读取");
-		return;
-	}
-	int size=0;
-	char[] cbuf=new char[20];
-	while((size=reader.read(cbuf, 0, cbuf.length))!=-1)
-	{
-		System.out.print(new String(cbuf,0,size));
-	}
-	reader.close();
+    BufferedReader reader=new BufferedReader(
+            new FileReader(filePath)
+            );
+    if(!reader.ready())
+    {
+        System.out.println("文件流暂时无法读取");
+        return;
+    }
+    int size=0;
+    char[] cbuf=new char[20];
+    while((size=reader.read(cbuf, 0, cbuf.length))!=-1)
+    {
+        System.out.print(new String(cbuf,0,size));
+    }
+    reader.close();
 }
 
 ```
@@ -127,21 +127,21 @@ public static void printByFileReaderChars(String filePath) throws IOException
 ```
 public static void printByFileReaderLine(String filePath) throws IOException
 {
-	BufferedReader reader=new BufferedReader(
-			new FileReader(filePath)
-			);
-	if(!reader.ready())
-	{
-		System.out.println("文件流暂时无法读取");
-		return;
-	}
-	int size=0;
-	String line;
-	while((line=reader.readLine())!=null)
-	{
-		System.out.print(line+"\n");
-	}
-	reader.close();
+    BufferedReader reader=new BufferedReader(
+            new FileReader(filePath)
+            );
+    if(!reader.ready())
+    {
+        System.out.println("文件流暂时无法读取");
+        return;
+    }
+    int size=0;
+    String line;
+    while((line=reader.readLine())!=null)
+    {
+        System.out.print(line+"\n");
+    }
+    reader.close();
 }
 ```
 需要注意的是：`reader.readLine()`方法返回的一行字符中`不包含换行符`,所以输出的时候要自己加上换行符。
@@ -207,12 +207,12 @@ utf-8 file
 ```
 String file = "utf8.txt";
 BufferedReader reader = new BufferedReader(
-		new InputStreamReader(new FileInputStream(file), "utf-8"));
+        new InputStreamReader(new FileInputStream(file), "utf-8"));
 char[] cbuf=new char[20];
 int size;
 while((size=reader.read(cbuf, 0, cbuf.length))!=-1)
 {
-	System.out.println(new String(cbuf,0,size));
+    System.out.println(new String(cbuf,0,size));
 }
 ```
 运行结果：
@@ -254,21 +254,21 @@ java.lang.Object
 ```java
 public static void main(String[] args) throws IOException
 {
-	BufferedWriter writer=new BufferedWriter(new FileWriter("静夜思.txt"));
-	char ch='床';
-	//写入一个字符
-	writer.write(ch);
-	String next="前明月光,";
-	char[] nexts=next.toCharArray();
-	//写入一个字符数组
-	writer.write(nexts,0,nexts.length);
-	//写入换行符
-	writer.newLine();//写入换行符
-	String nextLine="疑是地上霜。";
-	//写入一个字符串。
-	writer.write(nextLine);
-	//关闭流
-	writer.close();
+    BufferedWriter writer=new BufferedWriter(new FileWriter("静夜思.txt"));
+    char ch='床';
+    //写入一个字符
+    writer.write(ch);
+    String next="前明月光,";
+    char[] nexts=next.toCharArray();
+    //写入一个字符数组
+    writer.write(nexts,0,nexts.length);
+    //写入换行符
+    writer.newLine();//写入换行符
+    String nextLine="疑是地上霜。";
+    //写入一个字符串。
+    writer.write(nextLine);
+    //关闭流
+    writer.close();
 }
 ```
 运行结果,静夜思.txt：
@@ -283,17 +283,17 @@ public static void main(String[] args) throws IOException
 ```java
 static void copyByChar(String srcFile, String destFile) throws IOException
 {
-	BufferedReader reader = new BufferedReader(new FileReader(srcFile));
-	BufferedWriter writer = new BufferedWriter(new FileWriter(destFile));
-	int ch=0;
-	//读取一个字符
-	while ((ch = reader.read()) != -1)
-	{
-		//写入一个字符
-		writer.write(ch);
-	}
-	reader.close();
-	writer.close();
+    BufferedReader reader = new BufferedReader(new FileReader(srcFile));
+    BufferedWriter writer = new BufferedWriter(new FileWriter(destFile));
+    int ch=0;
+    //读取一个字符
+    while ((ch = reader.read()) != -1)
+    {
+        //写入一个字符
+        writer.write(ch);
+    }
+    reader.close();
+    writer.close();
 }
 ```
 
@@ -302,18 +302,18 @@ static void copyByChar(String srcFile, String destFile) throws IOException
 ```java
 static void copyByCharArray(String srcFile, String destFile) throws IOException
 {
-	BufferedReader reader = new BufferedReader(new FileReader(srcFile));
-	BufferedWriter writer = new BufferedWriter(new FileWriter(destFile));
-	int size=0;
-	char[] cbuf=new char[20];
-	//读取一个字符数组
-	while ((size = reader.read(cbuf)) != -1)
-	{
-		//读入多少写入多少
-		writer.write(cbuf,0,size);
-	}
-	reader.close();
-	writer.close();
+    BufferedReader reader = new BufferedReader(new FileReader(srcFile));
+    BufferedWriter writer = new BufferedWriter(new FileWriter(destFile));
+    int size=0;
+    char[] cbuf=new char[20];
+    //读取一个字符数组
+    while ((size = reader.read(cbuf)) != -1)
+    {
+        //读入多少写入多少
+        writer.write(cbuf,0,size);
+    }
+    reader.close();
+    writer.close();
 }
 ```
 ## 按行复制文件 ##
@@ -340,13 +340,13 @@ static void copyByLine(String srcFile,String destFile) throws IOException
 ```
 public static void main(String[] args) throws IOException
 {
-	String from = "gbk.txt";
-	String to = "gbk_copy.txt";
-	String to1 = "gbk_copy1.txt";
-	String to2 = "gbk_copy2.txt";
-	copyByChar(from, to);
-	copyByCharArray(from, to1);
-	copyByLine(from, to2);
+    String from = "gbk.txt";
+    String to = "gbk_copy.txt";
+    String to1 = "gbk_copy1.txt";
+    String to2 = "gbk_copy2.txt";
+    copyByChar(from, to);
+    copyByCharArray(from, to1);
+    copyByLine(from, to2);
 }
 ```
 源文件gbk.txt:
@@ -383,13 +383,13 @@ static void copyByLine(String srcFile,String destFile) throws IOException
     {
         if(!flag)
         {
-        	flag=true;
-        	writer.write(line);
+            flag=true;
+            writer.write(line);
         }
         else
         {
-        	writer.newLine();//写换行符
-        	writer.write(line);
+            writer.newLine();//写换行符
+            writer.write(line);
         }
         
     }
@@ -405,61 +405,61 @@ static void copyByLine(String srcFile,String destFile) throws IOException
 ### 实例：gbk编码的文件复制到utf8编码的文件中： ###
 ```java
 static void copyByLineEncoding(String srcFile, String srcEncoding, String destFile,
-		String destEncoding)
+        String destEncoding)
 {
-	BufferedReader reader = null;
-	BufferedWriter writer = null;
-	try
-	{
-		reader = new BufferedReader(new InputStreamReader(
-				new FileInputStream(srcFile), srcEncoding));
-		writer = new BufferedWriter(new OutputStreamWriter(
-				new FileOutputStream(destFile), destEncoding));
-		char[] charArray = new char[512];
-		int size;
-		while ((size = reader.read(charArray, 0, charArray.length)) != -1)
-		{
-			writer.write(charArray, 0, size);
-		}
+    BufferedReader reader = null;
+    BufferedWriter writer = null;
+    try
+    {
+        reader = new BufferedReader(new InputStreamReader(
+                new FileInputStream(srcFile), srcEncoding));
+        writer = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(destFile), destEncoding));
+        char[] charArray = new char[512];
+        int size;
+        while ((size = reader.read(charArray, 0, charArray.length)) != -1)
+        {
+            writer.write(charArray, 0, size);
+        }
 
-	} catch (UnsupportedEncodingException | FileNotFoundException e)
-	{
-		e.printStackTrace();
-	} catch (IOException e)
-	{
-		e.printStackTrace();
-	} finally
-	{
-		if (writer != null)
-		{
-			try
-			{
-				writer.close();
-			} catch (IOException e)
-			{
-				e.printStackTrace();
-			}
-		}
-		if (reader != null)
-		{
-			try
-			{
-				reader.close();
-			} catch (IOException e)
-			{
-				e.printStackTrace();
-			}
-		}
-	}
+    } catch (UnsupportedEncodingException | FileNotFoundException e)
+    {
+        e.printStackTrace();
+    } catch (IOException e)
+    {
+        e.printStackTrace();
+    } finally
+    {
+        if (writer != null)
+        {
+            try
+            {
+                writer.close();
+            } catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        if (reader != null)
+        {
+            try
+            {
+                reader.close();
+            } catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+    }
 }
 ```
 main方法：
 ```java
 public static void main(String[] args) throws IOException
 {
-	String from = "gbk.txt";
-	String to = "copyto_utf8.txt";
-	copyByLineEncoding(from,"gbk",to,"utf-8");
+    String from = "gbk.txt";
+    String to = "copyto_utf8.txt";
+    copyByLineEncoding(from,"gbk",to,"utf-8");
 }
 ```
 源文件gbk.txt(gbk编码)：

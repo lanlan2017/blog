@@ -26,13 +26,13 @@ abbrlink: 96819592
 //file.h
 //条件编译
 #ifndef _FILE_H_ //如果没有引入头文件file.h
-	#define _FILE_H_ //那就引入头文件file.h
-	//结构体和函数声明....
-	
-	//1 根据跟文件路径和模式获取文件指针
-	FILE* getFILE(char* filePath,char* mode);
-	//2 使用临时文件替换原文件
-	void updateOldFileByNew(char*oldFileName,char*newFileName);
+    #define _FILE_H_ //那就引入头文件file.h
+    //结构体和函数声明....
+    
+    //1 根据跟文件路径和模式获取文件指针
+    FILE* getFILE(char* filePath,char* mode);
+    //2 使用临时文件替换原文件
+    void updateOldFileByNew(char*oldFileName,char*newFileName);
 #endif
 ```
 ## 自动生成 ##
@@ -41,58 +41,58 @@ abbrlink: 96819592
 ```html
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>变成大写</title>
+    <meta charset="utf-8">
+    <title>变成大写</title>
 <script>
-	function daxie() {
-		var input = document.getElementById("output");
-		if (input.value == null || input.value == "") {
-			alert("请先输入");
-			return;
-		}
-		input.value = input.value.toUpperCase();//变成大写
-	}
-	function clean()
-	{	
-		document.getElementById("output").value="";
-	}
-	//复制方法
-	function copy() {
-		var in_output = document.getElementById("output");
-		in_output.select(); // 选择对象
-		document.execCommand("Copy"); // 执行浏览器复制命令
-		if(confirm("代码已经复制到剪贴板粘贴即可"))
-		{
-			in_output.value="";
-		}
-	}
-	function cyuyantouwenjianshengming() {
-		var input = document.getElementById("output");
-		var oldValue = input.value;
-		if (oldValue == null || oldValue == "") {
-			alert("请先输入头文件名(一个单词)");
-			return;
-		}
-		var isOneWord = /^\w+$/;
-		if (isOneWord.test(oldValue)) {
-			var daxie = input.value.toUpperCase();//变成大写
-			input.value = "//" + oldValue + ".h\n" +
-				"#ifndef _" + daxie + "_H_ //如果没有引入头文件" + oldValue + ".h\n" +
-				"    #define _" + daxie + "_H_ //那就引入头文件" + oldValue + ".h\n" +
-				"#endif";
-			copy();
-		}
-		else if (confirm("输入格式错误,是否清空输入框"))
-			document.getElementById("output").value = "";
-	}
+    function daxie() {
+        var input = document.getElementById("output");
+        if (input.value == null || input.value == "") {
+            alert("请先输入");
+            return;
+        }
+        input.value = input.value.toUpperCase();//变成大写
+    }
+    function clean()
+    {    
+        document.getElementById("output").value="";
+    }
+    //复制方法
+    function copy() {
+        var in_output = document.getElementById("output");
+        in_output.select(); // 选择对象
+        document.execCommand("Copy"); // 执行浏览器复制命令
+        if(confirm("代码已经复制到剪贴板粘贴即可"))
+        {
+            in_output.value="";
+        }
+    }
+    function cyuyantouwenjianshengming() {
+        var input = document.getElementById("output");
+        var oldValue = input.value;
+        if (oldValue == null || oldValue == "") {
+            alert("请先输入头文件名(一个单词)");
+            return;
+        }
+        var isOneWord = /^\w+$/;
+        if (isOneWord.test(oldValue)) {
+            var daxie = input.value.toUpperCase();//变成大写
+            input.value = "//" + oldValue + ".h\n" +
+                "#ifndef _" + daxie + "_H_ //如果没有引入头文件" + oldValue + ".h\n" +
+                "    #define _" + daxie + "_H_ //那就引入头文件" + oldValue + ".h\n" +
+                "#endif";
+            copy();
+        }
+        else if (confirm("输入格式错误,是否清空输入框"))
+            document.getElementById("output").value = "";
+    }
 </script>
 </head>
 <body>
-	<textarea rows="5" id="output" style="width:99%;margin-right:auto"></textarea>
-	<br>
-	<input type="button" name="button1" id="button1" value="变成大写" onclick="daxie()" />
-	<input type="button" name="butto2" id="button2" value="生成c语言头文件声明" onclick="cyuyantouwenjianshengming()" />
-	<input type="button" name="butto2" id="button2" value="清空输入框" onclick="clean()" />
+    <textarea rows="5" id="output" style="width:99%;margin-right:auto"></textarea>
+    <br>
+    <input type="button" name="button1" id="button1" value="变成大写" onclick="daxie()" />
+    <input type="button" name="butto2" id="button2" value="生成c语言头文件声明" onclick="cyuyantouwenjianshengming()" />
+    <input type="button" name="butto2" id="button2" value="清空输入框" onclick="clean()" />
 </body>
 </html>
 ```
@@ -102,54 +102,54 @@ abbrlink: 96819592
 <textarea rows="5" id="output" style="width:99%;margin-right:auto"></textarea><br><input type="button" name="button1" id="button1" value="变成大写" onclick="daxie()" /><input type="button" name="button1" id="button1" value="变成小写" onclick="xiaoxie()" /><input type="button" name="butto2" id="button2" value="生成c语言头文件声明" onclick="cyuyantouwenjianshengming()" /><input type="button" name="butto2" id="button2" value="清空输入框" onclick="clean()" />
 
 <script>
-	function daxie() {
-		var input = document.getElementById("output");
-		if (input.value == null || input.value == "") {
-			alert("请先输入");
-			return;
-		}
-		input.value = input.value.toUpperCase();//变成大写
-	}
-	function xiaoxie() {
-		var input = document.getElementById("output");
-		if (input.value == null || input.value == "") {
-			alert("请先输入");
-			return;
-		}
-		input.value = input.value.toLowerCase();//变成小写
-	}
+    function daxie() {
+        var input = document.getElementById("output");
+        if (input.value == null || input.value == "") {
+            alert("请先输入");
+            return;
+        }
+        input.value = input.value.toUpperCase();//变成大写
+    }
+    function xiaoxie() {
+        var input = document.getElementById("output");
+        if (input.value == null || input.value == "") {
+            alert("请先输入");
+            return;
+        }
+        input.value = input.value.toLowerCase();//变成小写
+    }
 
-	function clean() {
-		document.getElementById("output").value = "";
-	}
-	//复制方法
-	function copy() {
-		var in_output = document.getElementById("output");
-		in_output.select(); // 选择对象
-		document.execCommand("Copy"); // 执行浏览器复制命令
-		if (confirm("代码已经复制到剪贴板粘贴即可")) {
-			in_output.value = "";
-		}
-	}
-	function cyuyantouwenjianshengming() {
-		var input = document.getElementById("output");
-		var oldValue = input.value;
-		if (oldValue == null || oldValue == "") {
-			alert("请先输入头文件名(一个单词)");
-			return;
-		}
-		var isOneWord = /^\w+$/;
-		if (isOneWord.test(oldValue)) {
-			var daxie = input.value.toUpperCase();//变成大写
-			input.value = "//" + oldValue + ".h\n" +
-				"#ifndef _" + daxie + "_H_ //如果没有引入头文件" + oldValue + ".h\n" +
-				"    #define _" + daxie + "_H_ //那就引入头文件" + oldValue + ".h\n" +
-				"#endif";
-			copy();
-		}
-		else if (confirm("输入格式错误,是否清空输入框"))
-			document.getElementById("output").value = "";
-	}
+    function clean() {
+        document.getElementById("output").value = "";
+    }
+    //复制方法
+    function copy() {
+        var in_output = document.getElementById("output");
+        in_output.select(); // 选择对象
+        document.execCommand("Copy"); // 执行浏览器复制命令
+        if (confirm("代码已经复制到剪贴板粘贴即可")) {
+            in_output.value = "";
+        }
+    }
+    function cyuyantouwenjianshengming() {
+        var input = document.getElementById("output");
+        var oldValue = input.value;
+        if (oldValue == null || oldValue == "") {
+            alert("请先输入头文件名(一个单词)");
+            return;
+        }
+        var isOneWord = /^\w+$/;
+        if (isOneWord.test(oldValue)) {
+            var daxie = input.value.toUpperCase();//变成大写
+            input.value = "//" + oldValue + ".h\n" +
+                "#ifndef _" + daxie + "_H_ //如果没有引入头文件" + oldValue + ".h\n" +
+                "    #define _" + daxie + "_H_ //那就引入头文件" + oldValue + ".h\n" +
+                "#endif";
+            copy();
+        }
+        else if (confirm("输入格式错误,是否清空输入框"))
+            document.getElementById("output").value = "";
+    }
 </script>
 
 ## 参考链接 ##

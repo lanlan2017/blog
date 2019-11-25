@@ -86,35 +86,35 @@ Object--->Reader--->InputSteamReader--->FileReader
  */  
 public static void readByChar(String fileName)
 {
-	FileReader reader=null;
-	try
-	{
-		reader = new FileReader(fileName);
-		int ch;
-		while((ch=reader.read())!=-1)
-		{
-			System.out.print((char)ch);
-		}
-	} catch (FileNotFoundException e)
-	{
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (IOException e)
-	{
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	finally {
-		if(reader!=null)
-			try
-			{
-				reader.close();
-			} catch (IOException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	}
+    FileReader reader=null;
+    try
+    {
+        reader = new FileReader(fileName);
+        int ch;
+        while((ch=reader.read())!=-1)
+        {
+            System.out.print((char)ch);
+        }
+    } catch (FileNotFoundException e)
+    {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IOException e)
+    {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+    finally {
+        if(reader!=null)
+            try
+            {
+                reader.close();
+            } catch (IOException e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+    }
 }
 ```
 ### 按数组读取 ###
@@ -124,45 +124,45 @@ public static void readByChar(String fileName)
  */  
 public static void readByCharArray(String fileName)
 {
-	FileReader reader=null;
-	try
-	{
-		reader=new FileReader(fileName);
-		int size;
-		char[] cbuf=new char[128];
-		while((size=reader.read(cbuf, 0, cbuf.length))!=-1)
-		{
-			System.out.print(new String(cbuf,0,size));
-		}
-	} catch (FileNotFoundException e)
-	{
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (IOException e)
-	{
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}finally {
-		if(reader!=null)
-			try
-			{
-				reader.close();
-			} catch (IOException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	}
+    FileReader reader=null;
+    try
+    {
+        reader=new FileReader(fileName);
+        int size;
+        char[] cbuf=new char[128];
+        while((size=reader.read(cbuf, 0, cbuf.length))!=-1)
+        {
+            System.out.print(new String(cbuf,0,size));
+        }
+    } catch (FileNotFoundException e)
+    {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IOException e)
+    {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }finally {
+        if(reader!=null)
+            try
+            {
+                reader.close();
+            } catch (IOException e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+    }
 }
 ```
 ### main方法中调用 ###
 ```java
 public static void main(String[] args)
 {
-	String fileName="gbk.txt";
-	readByChar(fileName);
-	System.out.println("\n------------------------------");
-	readByCharArray(fileName);
+    String fileName="gbk.txt";
+    readByChar(fileName);
+    System.out.println("\n------------------------------");
+    readByCharArray(fileName);
 }
 ```
 测试文件：
@@ -239,56 +239,56 @@ OutputStream类的构造方法：
  */  
 public static void copyByFileReader_Writer(String from, String to)
 {
-	FileReader reader = null;
-	FileWriter writer = null;
-	try
-	{
-		reader = new FileReader(from);
-		writer = new FileWriter(to);
-		char[] cbuf = new char[128];
-		int size = 0;
-		while ((size = reader.read(cbuf, 0, cbuf.length)) != -1)
-		{
-			writer.write(cbuf, 0, size);
-		}
-	} catch (FileNotFoundException e)
-	{
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (IOException e)
-	{
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} finally
-	{
-		if (reader != null)
-			try
-			{
-				reader.close();
-			} catch (IOException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		if (writer != null)
-			try
-			{
-				writer.close();
-			} catch (IOException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	}
+    FileReader reader = null;
+    FileWriter writer = null;
+    try
+    {
+        reader = new FileReader(from);
+        writer = new FileWriter(to);
+        char[] cbuf = new char[128];
+        int size = 0;
+        while ((size = reader.read(cbuf, 0, cbuf.length)) != -1)
+        {
+            writer.write(cbuf, 0, size);
+        }
+    } catch (FileNotFoundException e)
+    {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IOException e)
+    {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } finally
+    {
+        if (reader != null)
+            try
+            {
+                reader.close();
+            } catch (IOException e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        if (writer != null)
+            try
+            {
+                writer.close();
+            } catch (IOException e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+    }
 }
 ```
 main方法中调用：
 ```java
 public static void main(String[] args)
 {
-	String from = "gbk.txt";
-	String to = "gbk_copy.txt";
-	copyByFileReader_Writer(from, to);
+    String from = "gbk.txt";
+    String to = "gbk_copy.txt";
+    copyByFileReader_Writer(from, to);
 }
 ```
 源文件`gbk.txt`:
@@ -312,9 +312,9 @@ main方法：
 ```java
 public static void main(String[] args)
 {
-	String from = "utf8.txt";
-	String to = "utf8_copy.txt";
-	copyByFileReader_Writer(from, to);
+    String from = "utf8.txt";
+    String to = "utf8_copy.txt";
+    copyByFileReader_Writer(from, to);
 }
 ```
 运行结果，复制好的`utf8_copy.txt`中的内容:

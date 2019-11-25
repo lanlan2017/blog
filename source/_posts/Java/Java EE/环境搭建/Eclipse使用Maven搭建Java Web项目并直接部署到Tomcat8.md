@@ -166,9 +166,9 @@ public class HelloWorldServlet extends HttpServlet
 `<servers></servers>`标签中添加如下代码:
 ```xml
 <server> 
-	<id>tomcat8</id>
-	<username>admin</username>
-	<password>admin</password>
+    <id>tomcat8</id>
+    <username>admin</username>
+    <password>admin</password>
 </server>
 ```
 ## 安装Tomcat Maven部署插件 ##

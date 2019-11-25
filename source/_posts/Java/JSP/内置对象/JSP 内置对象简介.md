@@ -68,20 +68,20 @@ post:将用户提交的信息封装在 HTML HEADER内。适合提交数据量大
 <body>
 </body>
 <form action="dologin.jsp" name="loginForm" method="get">
-	<table>
-		<tr>
-			<td align="right">用户名:</td>
-			<td><input type="text" name="userName"></td>
-		</tr>
-		<tr>
-			<td align="right">密码:</td>
-			<td><input type="password" name="password"></td>
-		</tr>
-		<tr>
-			<td><input type="reset" value="重置"> </td>
-			<td><input type="submit" value="登录"> </td>
-		</tr>
-	</table>
+    <table>
+        <tr>
+            <td align="right">用户名:</td>
+            <td><input type="text" name="userName"></td>
+        </tr>
+        <tr>
+            <td align="right">密码:</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td><input type="reset" value="重置"> </td>
+            <td><input type="submit" value="登录"> </td>
+        </tr>
+    </table>
 </form>
 </html>
 ```
@@ -95,7 +95,7 @@ post:将用户提交的信息封装在 HTML HEADER内。适合提交数据量大
 <title>登录处理</title>
 </head>
 <body>
-	<h2>登录成功</h2>
+    <h2>登录成功</h2>
 </body>
 </html>
 ```

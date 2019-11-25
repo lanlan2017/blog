@@ -352,25 +352,25 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ### 修改冲突的文件 ###
 首先不要慌张.`git`已经合并了没有冲突的地方,我们只需要修改上面两个文件中发生冲突的地方即可.现在打开冲突的文件`src/delete/Delete.java`然后修改`git`提示的有冲突的地方,如下所示:
 ```java
-	public static String deleteSpacesBetweenChinese(String text)
-	{
-		// 删除英文空格
-		text = text.replaceAll("([\\u4e00-\\u9fa5])\\s+([\\u4e00-\\u9fa5])",
-				"$1$2");
-		// 删除中文空格
-		text = text.replaceAll("[ ]+", "");
+    public static String deleteSpacesBetweenChinese(String text)
+    {
+        // 删除英文空格
+        text = text.replaceAll("([\\u4e00-\\u9fa5])\\s+([\\u4e00-\\u9fa5])",
+                "$1$2");
+        // 删除中文空格
+        text = text.replaceAll("[ ]+", "");
 <<<<<<< HEAD
 =======
-		text = text.replaceAll("　", "");
+        text = text.replaceAll("　", "");
 >>>>>>> dev
-		return text;
-	}
+        return text;
+    }
 ```
 Git用`<<<<<<<`，`=======`，`>>>>>>>`标记出不同分支的中有冲突的地方如下所示:
 ```java
 <<<<<<< HEAD
 =======
-		text = text.replaceAll("　", "");
+        text = text.replaceAll("　", "");
 >>>>>>> dev
 ```
 等号分割了两个分支,上面的是HEAD分支的新内容,这里为空,等号下面的是dev分支上的新内容。修改这部分内容,然后删掉`<<<<<<< HEAD`这些提示符就行了。这步叫做`手动解决冲突`。

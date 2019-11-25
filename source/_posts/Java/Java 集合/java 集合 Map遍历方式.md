@@ -76,8 +76,8 @@ Collection<Integer> values = map2.values();
 Iterator<Integer> it = values.iterator();
 while (it.hasNext())
 {
-	int value = it.next();
-	System.out.println("value=" + value);
+    int value = it.next();
+    System.out.println("value=" + value);
 }
 ```
 

@@ -197,22 +197,22 @@ javadoc  标记有如下一些:
  * @see Object#toString() 
  */
 public class TestJavaDoc {
-	/**
-	 * 字符串成员变量.
-	 */
-	public String str;
-	/**
-	*一个方法.
-	*/
-	public void str()
-	{
-	}
-	/**
-	*排序方法.
-	*/
-	public static void sort(String[] args)
-	{
-	}
+    /**
+     * 字符串成员变量.
+     */
+    public String str;
+    /**
+    *一个方法.
+    */
+    public void str()
+    {
+    }
+    /**
+    *排序方法.
+    */
+    public static void sort(String[] args)
+    {
+    }
 } 
 ```
 生成的文档的相关部分如下图：

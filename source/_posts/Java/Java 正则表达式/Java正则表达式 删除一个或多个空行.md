@@ -44,9 +44,9 @@ abbrlink: 51e02fda
 ```java
 public static String deleteEmptyLine(String input)
 {
-	input=input.replaceAll("(?m)(?:\\n|\\r\\n)(?:^\\s*$)", "");
-	input=input.replaceAll("(?m)(?:^\\s*$(?:\\n|\\r\\n))", "");
-	return input;
+    input=input.replaceAll("(?m)(?:\\n|\\r\\n)(?:^\\s*$)", "");
+    input=input.replaceAll("(?m)(?:^\\s*$(?:\\n|\\r\\n))", "");
+    return input;
 }
 ```
 

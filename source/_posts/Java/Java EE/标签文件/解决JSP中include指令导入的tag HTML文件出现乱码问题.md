@@ -41,13 +41,13 @@ abbrlink: ae393936
 ```jsp
 <html>
 <body>
-	<h2>下面是标签文件includeDemoTag.tag中的内容</h2>
-	<hr color="green">
-	<!-- 引入自定义标签目录,取个别名为前缀`easy` -->
-	<%@ taglib prefix="easy" tagdir="/WEB-INF/tags"%>
-	<!-- 引入前缀`easy`所表示的标签目录中的`includeDemoTag.tag`文件 -->
-	<easy:includeDemoTag />
-	<hr color="green">
+    <h2>下面是标签文件includeDemoTag.tag中的内容</h2>
+    <hr color="green">
+    <!-- 引入自定义标签目录,取个别名为前缀`easy` -->
+    <%@ taglib prefix="easy" tagdir="/WEB-INF/tags"%>
+    <!-- 引入前缀`easy`所表示的标签目录中的`includeDemoTag.tag`文件 -->
+    <easy:includeDemoTag />
+    <hr color="green">
 </body>
 </html>
 ```
@@ -72,22 +72,22 @@ abbrlink: ae393936
 `/app07a/WebContent/WEB-INF/tags/included.html`:
 ```html
 <table>
-	<tr>
-		<th>水果</th>
-		<th>单价(斤)</th>
-	</tr>
-	<tr>
-		<td>苹果</td>
-		<td>4.8</td>
-	</tr>
-	<tr>
-		<td>香蕉</td>
-		<td>3.6</td>
-	</tr>
-	<tr>
-		<td>草莓</td>
-		<td>12.5</td>
-	</tr>
+    <tr>
+        <th>水果</th>
+        <th>单价(斤)</th>
+    </tr>
+    <tr>
+        <td>苹果</td>
+        <td>4.8</td>
+    </tr>
+    <tr>
+        <td>香蕉</td>
+        <td>3.6</td>
+    </tr>
+    <tr>
+        <td>草莓</td>
+        <td>12.5</td>
+    </tr>
 </table>
 ```
 ## 浏览器显示效果 ##
@@ -99,7 +99,7 @@ abbrlink: ae393936
 在JSP文件第一行加入如下page指令:
 ```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 ```
 可以解决JSP文件中的乱码.现在浏览器显示效果如下:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/tag%20file/encoding/2.png)
@@ -120,16 +120,16 @@ abbrlink: ae393936
 ### includeDemoTagTest.jsp ###
 ```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <html>
 <body>
-	<h2>下面是标签文件includeDemoTag.tag中的内容</h2>
-	<hr color="green">
-	<!-- 引入自定义标签目录,取个别名为前缀`easy` -->
-	<%@ taglib prefix="easy" tagdir="/WEB-INF/tags"%>
-	<!-- 引入前缀`easy`所表示的标签目录中的`includeDemoTag.tag`文件 -->
-	<easy:includeDemoTag />
-	<hr color="green">
+    <h2>下面是标签文件includeDemoTag.tag中的内容</h2>
+    <hr color="green">
+    <!-- 引入自定义标签目录,取个别名为前缀`easy` -->
+    <%@ taglib prefix="easy" tagdir="/WEB-INF/tags"%>
+    <!-- 引入前缀`easy`所表示的标签目录中的`includeDemoTag.tag`文件 -->
+    <easy:includeDemoTag />
+    <hr color="green">
 </body>
 </html>
 ```

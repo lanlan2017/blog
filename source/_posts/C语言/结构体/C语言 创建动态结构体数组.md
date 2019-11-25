@@ -29,9 +29,9 @@ int* a = (int*)malloc(sizeof(int)*10) ; //动态分配10个大小的int类型的
 ```c
 struct DIYDEFINE
 {
-	int a;
-	char ch;
-	long lnum;
+    int a;
+    char ch;
+    long lnum;
 };
 //动态分配10个大小的结构体类型DIYDEFINE的内存空间。 
 DIYDEFINE* pDiy = (DIYDEFINE*)malloc(sizeof(DIYDEFINE)*10); 

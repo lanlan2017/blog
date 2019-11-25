@@ -345,28 +345,28 @@ lastModified(),length()，getName(),getParent(),getPath(),getAbsolutePath():
 
     public class FileAPIDemo1
     {
-    	public static void main(String[] args)
-    	{
-    		File file=new File("D:\\a\\file.txt");
-    		System.out.println("file.txt最后一次修改的时间："+timeStampToDate(file.lastModified()));
-    		System.out.println("file.txt长度(字节)："+file.length()+"B");
-    		System.out.println("file的文件名："+file.getName());
-    		System.out.println("file.txt的父路径字符串："+file.getParent());
-    		File fileParent=file.getParentFile();//获取父路径的File对象。
-    		System.out.println("父路径File对象fileParent的目录名："+fileParent.getName());
-    		System.out.println("file对象的抽象路径字符串："+file.getPath());
-    		System.out.println("file对象的绝对路径字符串："+file.getAbsolutePath());
-    		File AbsolutePathFile=file.getAbsoluteFile();//获取绝对路径的File对象
-    		System.out.println("AbsolutePathFile的名字："+file.getName());
-    		System.out.println("file和AbsolutePathFile引用的是相同的文件？："+file.equals(AbsolutePathFile));
-    	}
-    	//把时间戳转换成格式化时间字符串
-    	static String timeStampToDate(long timeStamp)
-    	{
-    		Date date =new Date(timeStamp);
-    		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    		return format.format(date);
-    	}
+        public static void main(String[] args)
+        {
+            File file=new File("D:\\a\\file.txt");
+            System.out.println("file.txt最后一次修改的时间："+timeStampToDate(file.lastModified()));
+            System.out.println("file.txt长度(字节)："+file.length()+"B");
+            System.out.println("file的文件名："+file.getName());
+            System.out.println("file.txt的父路径字符串："+file.getParent());
+            File fileParent=file.getParentFile();//获取父路径的File对象。
+            System.out.println("父路径File对象fileParent的目录名："+fileParent.getName());
+            System.out.println("file对象的抽象路径字符串："+file.getPath());
+            System.out.println("file对象的绝对路径字符串："+file.getAbsolutePath());
+            File AbsolutePathFile=file.getAbsoluteFile();//获取绝对路径的File对象
+            System.out.println("AbsolutePathFile的名字："+file.getName());
+            System.out.println("file和AbsolutePathFile引用的是相同的文件？："+file.equals(AbsolutePathFile));
+        }
+        //把时间戳转换成格式化时间字符串
+        static String timeStampToDate(long timeStamp)
+        {
+            Date date =new Date(timeStamp);
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            return format.format(date);
+        }
     }
 
 运行结果：
@@ -397,27 +397,27 @@ lastModified(),length()，getName(),getParent(),getPath(),getAbsolutePath():
 
     public class FileDemo3
     {
-    	public static void main(String[] args) throws IOException
-    	{
-    		// 打印当前工程的父路径
-    		// System.out.println(System.getProperty("user.dir"));
-    		File file = new File("D:\\a\\file.txt");
-    		System.out.println("相对路径	:" + file.getPath());
-    		System.out.println("绝对路径	:" + file.getAbsolutePath());
-    		System.out.println("规范化路径	:" + file.getCanonicalPath());
-    		System.out.println("-----------------------------");
-    		File file2 = new File(".\\file.txt");
-    		System.out.println("user.dir:" + System.getProperty("user.dir"));
-    		System.out.println("相对路径	:" + file2.getPath());
-    		System.out.println("绝对路径	:" + file2.getAbsolutePath());
-    		System.out.println("规范化路径	:" + file2.getCanonicalPath());
+        public static void main(String[] args) throws IOException
+        {
+            // 打印当前工程的父路径
+            // System.out.println(System.getProperty("user.dir"));
+            File file = new File("D:\\a\\file.txt");
+            System.out.println("相对路径    :" + file.getPath());
+            System.out.println("绝对路径    :" + file.getAbsolutePath());
+            System.out.println("规范化路径    :" + file.getCanonicalPath());
+            System.out.println("-----------------------------");
+            File file2 = new File(".\\file.txt");
+            System.out.println("user.dir:" + System.getProperty("user.dir"));
+            System.out.println("相对路径    :" + file2.getPath());
+            System.out.println("绝对路径    :" + file2.getAbsolutePath());
+            System.out.println("规范化路径    :" + file2.getCanonicalPath());
      
-    		// 当输入为绝对路径时，3个方法返回的都是绝对路径。
-    		// 当输入为相对路径时：
-    		// getPath()返回的是File构造方法里的路径
-    		// getAbsolutePath()返回的其实是user.dir+getPath()的内容
-    		// getCanonicalPath()返回的就是标准的将符号完全解析的路径
-    	}
+            // 当输入为绝对路径时，3个方法返回的都是绝对路径。
+            // 当输入为相对路径时：
+            // getPath()返回的是File构造方法里的路径
+            // getAbsolutePath()返回的其实是user.dir+getPath()的内容
+            // getCanonicalPath()返回的就是标准的将符号完全解析的路径
+        }
     }
 
 (3) list()和listFile()的区别
@@ -473,39 +473,39 @@ lastModified(),length()，getName(),getParent(),getPath(),getAbsolutePath():
 
     public class FileAPIDemo4
     {
-    	// 递归遍历所有的子目录和文件
-    	static void forEachAllDir(File dir)
-    	{
-    		if (dir == null)
-    		{
-    			System.out.println(dir + " 不是File对象");
-    			return;
-    		}
-    		if (!dir.isDirectory())
-    		{
-    			System.out.println(dir + " 不是目录");
-    		}
+        // 递归遍历所有的子目录和文件
+        static void forEachAllDir(File dir)
+        {
+            if (dir == null)
+            {
+                System.out.println(dir + " 不是File对象");
+                return;
+            }
+            if (!dir.isDirectory())
+            {
+                System.out.println(dir + " 不是目录");
+            }
      
-    		File[] lists = dir.listFiles();// 获取当前目录下子文件和子目录的File对象
-    		for (File file : lists)
-    		{
-    			if (file.isDirectory())// 如果是目录的话
-    			{
-    				System.out.println(file);//输出目录的绝对路径
-    				// 递归调用
-    				forEachAllDir(file);//继续显示子目录
-    			} 
+            File[] lists = dir.listFiles();// 获取当前目录下子文件和子目录的File对象
+            for (File file : lists)
+            {
+                if (file.isDirectory())// 如果是目录的话
+                {
+                    System.out.println(file);//输出目录的绝对路径
+                    // 递归调用
+                    forEachAllDir(file);//继续显示子目录
+                } 
                             else//如果是文件的话，就直接输出文件的绝对路径
-    			{
-    				System.out.println(file);
-    			}
-    		}
-    	}
-    	public static void main(String[] args)
-    	{
-    		File dir = new File(System.getProperty("user.dir"));
-    		forEachAllDir(dir);
-    	}
+                {
+                    System.out.println(file);
+                }
+            }
+        }
+        public static void main(String[] args)
+        {
+            File dir = new File(System.getProperty("user.dir"));
+            forEachAllDir(dir);
+        }
     }
 
 运行结果：
@@ -578,20 +578,20 @@ boolean accept(File dir,String name); //dir表示文件的当前目录，name表
 
     public static void printAllFile(File dir,final String ends)
     {
-    	String[] listStr=dir.list(new FilenameFilter()
-    	{
-    		@Override
-    		// dir表示文件的当前目录，name表示当前文件的文件名；
-    		public boolean accept(File dir, String name)
-    		{
-    			//该目录是文件，而且文件以.java结尾
-    			return new File(dir, name).isFile() && name.endsWith(ends);
-    		}
-    	});
-    	for (String string : listStr)
-    	{
-    		System.out.println(string);
-    	}
+        String[] listStr=dir.list(new FilenameFilter()
+        {
+            @Override
+            // dir表示文件的当前目录，name表示当前文件的文件名；
+            public boolean accept(File dir, String name)
+            {
+                //该目录是文件，而且文件以.java结尾
+                return new File(dir, name).isFile() && name.endsWith(ends);
+            }
+        });
+        for (String string : listStr)
+        {
+            System.out.println(string);
+        }
     }
 
 (2)实现FilenameFilter方式实现文件过滤：
@@ -600,25 +600,25 @@ boolean accept(File dir,String name); //dir表示文件的当前目录，name表
     //实现FilenameFilter
     static class MyFilenameFilter implements FilenameFilter
     {
-    	String ends;
-    	public MyFilenameFilter(){}
-    	public MyFilenameFilter(String ends)
-    	{
-    		this.ends=ends;
-    	}
-    	@Override
-    	public boolean accept(File dir, String name)
-    	{
-    		return new File(dir, name).isFile() && name.endsWith(ends);
-    	}
+        String ends;
+        public MyFilenameFilter(){}
+        public MyFilenameFilter(String ends)
+        {
+            this.ends=ends;
+        }
+        @Override
+        public boolean accept(File dir, String name)
+        {
+            return new File(dir, name).isFile() && name.endsWith(ends);
+        }
     }
     public static void printAllFile2(File dir, String ends)
     {
-    	String[] listStr=dir.list(new MyFilenameFilter(ends));
-    	for (String string : listStr)
-    	{
-    		System.out.println(string);
-    	}
+        String[] listStr=dir.list(new MyFilenameFilter(ends));
+        for (String string : listStr)
+        {
+            System.out.println(string);
+        }
     }
 
 完整代码：
@@ -630,65 +630,65 @@ boolean accept(File dir,String name); //dir表示文件的当前目录，name表
      
     public class FilenameFilterTest
     {
-    	public static void printAllFile(File dir, final String ends)
-    	{
-    		String[] listStr = dir.list(new FilenameFilter()
-    		{
-    			@Override
-    			// dir表示文件的当前目录，name表示当前文件的文件名；
-    			public boolean accept(File dir, String name)
-    			{
-    				// 该目录是文件，而且文件以.java结尾
-    				return new File(dir, name).isFile() && name.endsWith(ends);
-    			}
-    		});
-    		for (String string : listStr)
-    		{
-    			System.out.println(string);
-    		}
-    	}
-    	// 静态内部类可以直接new不用加上外部类的类名
-    	// 实现FilenameFilter
-    	static class MyFilenameFilter implements FilenameFilter
-    	{
-    		String ends;
-    		public MyFilenameFilter()
-    		{
-    		}
-    		public MyFilenameFilter(String ends)
-    		{
-    			this.ends = ends;
-    		}
-    		@Override
-    		public boolean accept(File dir, String name)
-    		{
-    			return new File(dir, name).isFile() && name.endsWith(ends);
-    		}
-    	}
-    	public static void printAllFile2(File dir, String ends)
-    	{
-    		String[] listStr = dir.list(new MyFilenameFilter(ends));
-    		for (String string : listStr)
-    		{
-    			System.out.println(string);
-    		}
-    	}
+        public static void printAllFile(File dir, final String ends)
+        {
+            String[] listStr = dir.list(new FilenameFilter()
+            {
+                @Override
+                // dir表示文件的当前目录，name表示当前文件的文件名；
+                public boolean accept(File dir, String name)
+                {
+                    // 该目录是文件，而且文件以.java结尾
+                    return new File(dir, name).isFile() && name.endsWith(ends);
+                }
+            });
+            for (String string : listStr)
+            {
+                System.out.println(string);
+            }
+        }
+        // 静态内部类可以直接new不用加上外部类的类名
+        // 实现FilenameFilter
+        static class MyFilenameFilter implements FilenameFilter
+        {
+            String ends;
+            public MyFilenameFilter()
+            {
+            }
+            public MyFilenameFilter(String ends)
+            {
+                this.ends = ends;
+            }
+            @Override
+            public boolean accept(File dir, String name)
+            {
+                return new File(dir, name).isFile() && name.endsWith(ends);
+            }
+        }
+        public static void printAllFile2(File dir, String ends)
+        {
+            String[] listStr = dir.list(new MyFilenameFilter(ends));
+            for (String string : listStr)
+            {
+                System.out.println(string);
+            }
+        }
      
-    	public static void main(String[] args) throws IOException
-    	{
-    		// 获得当前的包路径
-    		String packagePath = FilePath
-    				.getSrcPackagePath(FilenameFilterTest.class);
-    		File dir = new File(packagePath);
-    		System.out.println("当前目录下的所有java文件：");
-    		printAllFile(dir, ".java");
-    		System.out.println("-----------------------------------------------");
-    		System.out.println("当前目录下的所有txt文件：");
-    		printAllFile(dir, ".txt");
-    		System.out.println("-----------------------------------------------");
-    		System.out.println("当前目录下的所有txt文件：");
-    		printAllFile2(dir, ".txt");
-    	}
+        public static void main(String[] args) throws IOException
+        {
+            // 获得当前的包路径
+            String packagePath = FilePath
+                    .getSrcPackagePath(FilenameFilterTest.class);
+            File dir = new File(packagePath);
+            System.out.println("当前目录下的所有java文件：");
+            printAllFile(dir, ".java");
+            System.out.println("-----------------------------------------------");
+            System.out.println("当前目录下的所有txt文件：");
+            printAllFile(dir, ".txt");
+            System.out.println("-----------------------------------------------");
+            System.out.println("当前目录下的所有txt文件：");
+            printAllFile2(dir, ".txt");
+        }
     }
 
 运行结果：

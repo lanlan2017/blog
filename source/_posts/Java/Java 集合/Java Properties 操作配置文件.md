@@ -76,15 +76,15 @@ load()方法可以从`.properties`文件对应的文件输入流中，加载到P
 |`String getProperty(String key)`|用指定的键在此属性列表中搜索属性。 |
 |`String getProperty(String key, String defaultValue)`|用指定的键在属性列表中搜索属性。 |
 - `String getProperty(String key)`用指定的键在此属性列表中搜索属性。
-	- 如果在此属性列表中未找到该键，则接着递归检查默认属性列表及其默认值。
-	- 如果未找到属性，则此方法返回 null。 
-	- 参数：key - 属性键。 
-	- 返回：属性列表中具有指定键值的值。
+    - 如果在此属性列表中未找到该键，则接着递归检查默认属性列表及其默认值。
+    - 如果未找到属性，则此方法返回 null。 
+    - 参数：key - 属性键。 
+    - 返回：属性列表中具有指定键值的值。
 - `String getProperty(String key, String defaultValue)`用指定的键在属性列表中搜索属性。
-	- 如果在属性列表中未找到该键，则接着递归检查默认属性列表及其默认值。
-	-  如果未找到属性，则此方法返回默认值变量`defaultValue`。
-	-  参数：key - 哈希表键。defaultValue - 默认值。 
-	-  返回：属性列表中具有指定键值的值。 
+    - 如果在属性列表中未找到该键，则接着递归检查默认属性列表及其默认值。
+    -  如果未找到属性，则此方法返回默认值变量`defaultValue`。
+    -  参数：key - 哈希表键。defaultValue - 默认值。 
+    -  返回：属性列表中具有指定键值的值。 
 
 
 ### 设置键值对 ###
@@ -95,8 +95,8 @@ load()方法可以从`.properties`文件对应的文件输入流中，加载到P
 
 调用 Hashtable 的方法 put。使用 getProperty 方法提供并行性。强制要求为属性的`键和值使用字符串`。返回值是 Hashtable 调用 put 的结果。 
 - 参数：
-	- key - 要置于属性列表中的键。
-	- value - 对应于 key 的值。 
+    - key - 要置于属性列表中的键。
+    - value - 对应于 key 的值。 
 - 返回：属性列表中指定键的`旧值`，如果没有值，则为 null。
 ### 获取所有键 ###
 
@@ -142,27 +142,27 @@ import java.io.InputStream;
 import java.util.Properties;
 public class SiteProperties
 {
-	/**
-	 * @param filePath xxx.properties配置文件的路径
-	 * @return 配置文件中的site配置项，也就是网站的地址信息
-	 */
-	public static String getSite(String filePath)
-	{
-		//1 实例化
-		Properties properties = new Properties();
-		String site = null;
-		try (InputStream inputStream = new FileInputStream(filePath);)
-		{
-			// 2加载配置文件到Properties对象中
-			properties.load(inputStream);
-			// 3读取配置文件中的站点信息
-			site = properties.getProperty("site");
-		} catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-		return site;
-	}
+    /**
+     * @param filePath xxx.properties配置文件的路径
+     * @return 配置文件中的site配置项，也就是网站的地址信息
+     */
+    public static String getSite(String filePath)
+    {
+        //1 实例化
+        Properties properties = new Properties();
+        String site = null;
+        try (InputStream inputStream = new FileInputStream(filePath);)
+        {
+            // 2加载配置文件到Properties对象中
+            properties.load(inputStream);
+            // 3读取配置文件中的站点信息
+            site = properties.getProperty("site");
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        return site;
+    }
 }
 
 ```
@@ -170,8 +170,8 @@ public class SiteProperties
 ```java
 public static void main(String[] args)
 {
-	String filePath = "E:\\Blog\\blog5Copy\\FM.properties";
-	System.out.print("网站地址:"+SiteProperties.getSite(filePath));
+    String filePath = "E:\\Blog\\blog5Copy\\FM.properties";
+    System.out.print("网站地址:"+SiteProperties.getSite(filePath));
 }
 ```
 运行结果:
@@ -203,39 +203,39 @@ import java.util.Set;
 import res.reader.ResourceFileReader;
 public class PropertyTools
 {
-	public static void main(String[] args)
-	{
-		// 1 实例化
-		Properties properties = new Properties();
-		// 获取当前包下的配置文件路径
-		// 注意这个路径的根目录是以src目录为根目录.
-		// /Tools/src/property/reader/SpecialWords.properties对应的路径为:
-		// /property/reader/SpecialWords.properties,/Tools/src不需要写出来
-		// 2.获取配置文件的输入流
+    public static void main(String[] args)
+    {
+        // 1 实例化
+        Properties properties = new Properties();
+        // 获取当前包下的配置文件路径
+        // 注意这个路径的根目录是以src目录为根目录.
+        // /Tools/src/property/reader/SpecialWords.properties对应的路径为:
+        // /property/reader/SpecialWords.properties,/Tools/src不需要写出来
+        // 2.获取配置文件的输入流
             InputStream in = ResourceFileReader.class.getResourceAsStream(
-				"/property/reader/SpecialWords.properties");
-		try
-		{
-			// 3.加载配置文件
-			properties.load(in);
-		} catch (IOException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		// 4.获取所有key的Set集合
-		Set<String> keys = properties.stringPropertyNames();
-		String key;
-		String value;
-		// 5.遍历所有的key
-		for (Iterator<String> iterator = keys.iterator(); iterator.hasNext();)
-		{
-			key = (String) iterator.next();
-			// 取出对应key的value值
-			value = properties.getProperty(key);
-			System.out.println("key=" + key + ",value=" + value);
-		}
-	}
+                "/property/reader/SpecialWords.properties");
+        try
+        {
+            // 3.加载配置文件
+            properties.load(in);
+        } catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        // 4.获取所有key的Set集合
+        Set<String> keys = properties.stringPropertyNames();
+        String key;
+        String value;
+        // 5.遍历所有的key
+        for (Iterator<String> iterator = keys.iterator(); iterator.hasNext();)
+        {
+            key = (String) iterator.next();
+            // 取出对应key的value值
+            value = properties.getProperty(key);
+            System.out.println("key=" + key + ",value=" + value);
+        }
+    }
 }
 ```
 运行结果:

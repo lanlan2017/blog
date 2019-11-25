@@ -34,17 +34,17 @@ abbrlink: eee91bf3
 - Find ： 要搜索的内容
 - Replace With ： 要地换的内容
 - Direction ：方向（向前向后）
-	- Forward : 向前搜索
-	- Backward :向后搜索
+    - Forward : 向前搜索
+    - Backward :向后搜索
 - Scope：范围
-	- All ： 文件中所有代码中进行搜索
-	- Selected lines ：从选中行中进行搜索
+    - All ： 文件中所有代码中进行搜索
+    - Selected lines ：从选中行中进行搜索
 - Options：选项
-	- Case Sensitive : 区分大小写
-	- Wrap search ： 搜索/替换 `到文件最底部可回到文件开头进行匹配`
-	- whole word :  全词 （完全匹配 - 默认）
-	- Incremental：增量匹配（输入实时匹配），在Find输入框里`增加输入时`会实时匹配（需要修改搜索/替换时选用）
-	- Regular  expressions ：正则表达式 （没有使用过）
+    - Case Sensitive : 区分大小写
+    - Wrap search ： 搜索/替换 `到文件最底部可回到文件开头进行匹配`
+    - whole word :  全词 （完全匹配 - 默认）
+    - Incremental：增量匹配（输入实时匹配），在Find输入框里`增加输入时`会实时匹配（需要修改搜索/替换时选用）
+    - Regular  expressions ：正则表达式 （没有使用过）
 
 
 ## 参考链接 ##

@@ -33,7 +33,7 @@ abbrlink: 4b9baef8
 @return        返回值  
 @throws        异常类及抛出条件  
 @deprecated    引起不推荐使用的警告  
-@see           交叉参考 	
+@see           交叉参考     
 
 
 ## api文档生成 ##
@@ -96,16 +96,16 @@ package my.test;
  */
 public class Test
 {
-	/**
-	 * 简单测试成员变量
-	 */
-	public int age;
-	/**
-	 * Test类的测试构造器
-	 */
-	public Test()
-	{
-	}
+    /**
+     * 简单测试成员变量
+     */
+    public int age;
+    /**
+     * Test类的测试构造器
+     */
+    public Test()
+    {
+    }
 }
 
 

@@ -28,17 +28,17 @@ windows>preferences>XML>XML Files>Editors>templates,然后点击右边的new按�
 ```xml
 <!--设置文件编码过滤器-->
 <filter>
-	<filter-name>characterEncodingFilter</filter-name>
-	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-	<init-param>
-		<param-name>encoding</param-name>
-		<param-value>UTF-8</param-value>
-	</init-param>
+    <filter-name>characterEncodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+        <param-name>encoding</param-name>
+        <param-value>UTF-8</param-value>
+    </init-param>
 </filter>
 <!--匹配文件编码过滤器的URL-->
 <filter-mapping>
-	<filter-name>characterEncodingFilter</filter-name>
-	<url-pattern>/*</url-pattern>
+    <filter-name>characterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
 </filter-mapping>
 ```
 如下图所示:

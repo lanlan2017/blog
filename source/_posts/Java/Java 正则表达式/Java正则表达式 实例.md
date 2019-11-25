@@ -28,7 +28,7 @@ public static void testEmail()
     // 要验证的字符串
     String str = "service@xsoftlab.net";
     // 邮箱验证规则
-//	    String regEx = "[a-zA-Z_]{1,}[0-9]{0,}@(([a-zA-z0-9]-*){1,}\\.){1,3}[a-zA-z\\-]{1,}";
+//        String regEx = "[a-zA-Z_]{1,}[0-9]{0,}@(([a-zA-z0-9]-*){1,}\\.){1,3}[a-zA-z\\-]{1,}";
     String regEx = "[a-zA-Z_]+[0-9]*@(\\w*\\.){1,3}[a-zA-z\\-]{1,}";
     // 编译正则表达式
     Pattern pattern = Pattern.compile(regEx);
@@ -63,14 +63,14 @@ true
 ```java
 public static void testRaplaceDuplicateWord()
 {
-	String temp = "我我我、、、我我、、我要、要要、、、要要要、、要要、、学学学、、、、学学编、、、编编编、、编编编程、、程程";
-	//删除无意义的字符
-	temp = temp.replaceAll("(、+)", "");
-	System.out.println(temp);
-	System.out.println("-------------------------------------------------------------");
-	//删除连在一起的重复字符
-	temp = temp.replaceAll("(.)\\1+", "$1");
-	System.out.print(temp);
+    String temp = "我我我、、、我我、、我要、要要、、、要要要、、要要、、学学学、、、、学学编、、、编编编、、编编编程、、程程";
+    //删除无意义的字符
+    temp = temp.replaceAll("(、+)", "");
+    System.out.println(temp);
+    System.out.println("-------------------------------------------------------------");
+    //删除连在一起的重复字符
+    temp = temp.replaceAll("(.)\\1+", "$1");
+    System.out.print(temp);
 }
 
 ```
@@ -92,30 +92,30 @@ public static void testRaplaceDuplicateWord()
 # 对IP地址进行排序 #
 原文：[https://blog.csdn.net/sinat_36713319/article/details/53463120](https://blog.csdn.net/sinat_36713319/article/details/53463120)
 ```java
-	public static void sortIPAddress()
-	{
-		String temp = "192.168.1.200 10.10.10.10 10.10.10.11 11.10.10.10 3.3.50.3 127.0.0.1";
-		// 对所有的数字全部都在前面补上两个0
-		temp = temp.replaceAll("(\\d+)", "00$1");
-		System.out.println("ip地址:-->"+temp);
-		// 因为ip地址占3位(\d{3})捕获后三位,
-		// 把多余的0删除掉
-		temp = temp.replaceAll("0+(\\d{3})", "$1");// 将ip地址补成同样位数
-		System.out.println("ip地址:-->"+temp);
-		// 用空格割
-		String[] str = temp.split(" +");
-		// 排序从大到小排序
-		Arrays.sort(str);
-		System.out.println("从小到大排序:");
-		for (String string : str)
-		{
-			System.out.println(string);
-		}
-		System.out.println("去掉加上的辅助0");
-		for (String ips : str)
-			//删除多余的0
-			System.out.println(ips.replaceAll("0+(\\d+)", "$1"));
-	}
+    public static void sortIPAddress()
+    {
+        String temp = "192.168.1.200 10.10.10.10 10.10.10.11 11.10.10.10 3.3.50.3 127.0.0.1";
+        // 对所有的数字全部都在前面补上两个0
+        temp = temp.replaceAll("(\\d+)", "00$1");
+        System.out.println("ip地址:-->"+temp);
+        // 因为ip地址占3位(\d{3})捕获后三位,
+        // 把多余的0删除掉
+        temp = temp.replaceAll("0+(\\d{3})", "$1");// 将ip地址补成同样位数
+        System.out.println("ip地址:-->"+temp);
+        // 用空格割
+        String[] str = temp.split(" +");
+        // 排序从大到小排序
+        Arrays.sort(str);
+        System.out.println("从小到大排序:");
+        for (String string : str)
+        {
+            System.out.println(string);
+        }
+        System.out.println("去掉加上的辅助0");
+        for (String ips : str)
+            //删除多余的0
+            System.out.println(ips.replaceAll("0+(\\d+)", "$1"));
+    }
 ```
 运行结果：
 ```

@@ -49,11 +49,11 @@ String attr = null;
 //判断是否有属性
 while (enu.hasMoreElements())
 {
-	//获取一个属性
-	attr = enu.nextElement();
-	//打印一个属性到控制台
-	out.println("&nbsp;&nbsp;&nbsp;&nbsp;" + attr + "="
-			+ session.getAttribute(attr) + "<br>");
+    //获取一个属性
+    attr = enu.nextElement();
+    //打印一个属性到控制台
+    out.println("&nbsp;&nbsp;&nbsp;&nbsp;" + attr + "="
+            + session.getAttribute(attr) + "<br>");
 }
 %>
 ```
@@ -61,16 +61,16 @@ while (enu.hasMoreElements())
 ```java
 public static void main(String[] args)
 {
-	Vector v = new Vector();
-	v.addElement("Lisa");
-	v.addElement("Billy");
-	v.addElement("Mr Brown");
-	Enumeration e = v.elements();//返回Enumeration对象
-	while(e.hasMoreElements())
-	{
-		String value = (String)e.nextElement();//调用nextElement方法获得元素
-		System.out.print(value);
-	}
+    Vector v = new Vector();
+    v.addElement("Lisa");
+    v.addElement("Billy");
+    v.addElement("Mr Brown");
+    Enumeration e = v.elements();//返回Enumeration对象
+    while(e.hasMoreElements())
+    {
+        String value = (String)e.nextElement();//调用nextElement方法获得元素
+        System.out.print(value);
+    }
 }
 ```
 ## 参考链接 ##

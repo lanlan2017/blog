@@ -135,13 +135,13 @@ WEB-INF是Java WEB应用的`安全目录`。**所谓安全就是客户端无法�
 可以在WEB-INF目录中创建一个test.html文件:
 ```html
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>WEB-INF安全目录(客户端无法访问)</title>
-	</head>
-	<body>
-		<h1>这是WEB-INF目录中test.html文件</h1>
-	</body>
+    <head>
+        <meta charset="utf-8">
+        <title>WEB-INF安全目录(客户端无法访问)</title>
+    </head>
+    <body>
+        <h1>这是WEB-INF目录中test.html文件</h1>
+    </body>
 </html>
 ```
 然后启动tomcat服务器器，看看浏览器能否打开这个html文件([http://localhost:8080/HelloWorld/WEB-INF/test.html](http://localhost:8080/HelloWorld/WEB-INF/test.html)):
@@ -160,8 +160,8 @@ WEB-INF是Java WEB应用的`安全目录`。**所谓安全就是客户端无法�
 打开web.xml文件，然后添加如下的标签:
 ```xml
 <welcome-file-list>
-	<welcome-file>/index.jsp<welcome-file>
-	<welcome-file>/hhh.jsp<welcome-file>
+    <welcome-file>/index.jsp<welcome-file>
+    <welcome-file>/hhh.jsp<welcome-file>
 </welcome-file-list>
 ```
 `</welcome-file-list>`顾名思义，就是欢迎界面列表，这里面可以放多个欢迎界面，服务器会按顺序列表中的欢迎界面是否存在，如果第一个存在就以第一个作为欢迎界面，如果不存在则显示后面的。  
@@ -175,10 +175,10 @@ WEB-INF是Java WEB应用的`安全目录`。**所谓安全就是客户端无法�
   version="3.1"
   metadata-complete="true">
 
-	<welcome-file-list>
-		<welcome-file>/index.jsp</welcome-file>
-		<welcome-file>/hhh.jsp</welcome-file>
-	</welcome-file-list>
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+        <welcome-file>/hhh.jsp</welcome-file>
+    </welcome-file-list>
 
 </web-app>
 

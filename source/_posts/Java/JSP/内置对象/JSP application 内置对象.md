@@ -30,7 +30,7 @@ application对象用于保存所有应用程序中的公有数据。**它在服�
 - application对象是 ServletContext类的实例。
 - application开始于服务器的启动,终止于服务器的关闭。在此期间，application对象一直存在。
 - 在用户的前后连接或不同用户之间的连接中,可以对 application对象的同一属性进行操作。
-	- 类似于java中的静态成员属于整个类而不属于对象一样，applicatioan对象属于整个服务器，而不是属于某一个项目。
+    - 类似于java中的静态成员属于整个类而不属于对象一样，applicatioan对象属于整个服务器，而不是属于某一个项目。
 - 在任何地方对 application对象属性的操作,都将影响到其他用户对此的访问。
 - 服务器的启动和关闭决定了 application对象的生命。
 
@@ -40,10 +40,10 @@ application对象用于保存所有应用程序中的公有数据。**它在服�
 application对象提供了对应用程序初始化参数进行访问的方法。应用程序初始化参数在 web.xml文件中进行设置, web.xm文件位于Web应用所在目录下的 WEB-INF子目录中。在 web.xm文件中通过`<context-param>`标记配置应用程序初始化参数,如下所示：
 ```xml
 ......
-	<context-param>
-		<param-name>url</param-name>
-		<param-value>jdbc:mysql://127.0.0.1:3306/databaseName</param-value>
-	</context-param>
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:mysql://127.0.0.1:3306/databaseName</param-value>
+    </context-param>
 </web-app>
 ```
 ### 获取初始化参数 ###
@@ -59,14 +59,14 @@ getlnitParameter()
 **实例：或是上述web.xml中设置的所有初始化参数**
 ```jsp
 <%
-	Enumeration<String> initParameterNames = application
-			.getInitParameterNames();
-	String name = null;
-	while (initParameterNames.hasMoreElements())
-	{
-		name = initParameterNames.nextElement();
-		out.print(name + "=" + application.getInitParameter(name));
-	}
+    Enumeration<String> initParameterNames = application
+            .getInitParameterNames();
+    String name = null;
+    while (initParameterNames.hasMoreElements())
+    {
+        name = initParameterNames.nextElement();
+        out.print(name + "=" + application.getInitParameter(name));
+    }
 %>
 ```
 显示效果：
@@ -98,25 +98,25 @@ url=jdbc:mysql://127.0.0.1:3306/databaseName
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>application内置对象</h2>
-	<%
-		//设置属性
-		application.setAttribute("name", "小明");
-	    application.setAttribute("sex", "男");
-	    application.setAttribute("age", "18");
-	    //获取属性名称的枚举
-		Enumeration<String> names= application.getAttributeNames();	    
-		String name=null;
-		out.println("JSP(servlet)引擎名及版本号:"+application.getServerInfo());
-		//遍历所有的属性
-		out.println("<hr>");
-	    while(names.hasMoreElements())
-		{
-	    	name=names.nextElement();
-			out.println("&nbsp;&nbsp;&nbsp;&nbsp;"+name+"="+application.getAttribute(name)+"<br>");
-		}
-		out.println("<hr>");
-	%>
+    <h2>application内置对象</h2>
+    <%
+        //设置属性
+        application.setAttribute("name", "小明");
+        application.setAttribute("sex", "男");
+        application.setAttribute("age", "18");
+        //获取属性名称的枚举
+        Enumeration<String> names= application.getAttributeNames();        
+        String name=null;
+        out.println("JSP(servlet)引擎名及版本号:"+application.getServerInfo());
+        //遍历所有的属性
+        out.println("<hr>");
+        while(names.hasMoreElements())
+        {
+            name=names.nextElement();
+            out.println("&nbsp;&nbsp;&nbsp;&nbsp;"+name+"="+application.getAttribute(name)+"<br>");
+        }
+        out.println("<hr>");
+    %>
 </body>
 </html>
 ```

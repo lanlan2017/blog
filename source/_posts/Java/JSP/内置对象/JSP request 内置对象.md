@@ -67,20 +67,20 @@ login.jsp:
 </head>
 <body>
 <form action="request.jsp" name="loginForm" method="post">
-	<table>
-		<tr>
-			<td align="right">用户名:</td>
-			<td><input type="text" name="userName"></td>
-		</tr>
-		<tr>
-			<td align="right">密码:</td>
-			<td><input type="password" name="password"></td>
-		</tr>
-		<tr>
-			<td><input type="reset" value="重置"></td>
-			<td><input type="submit" value="登录"></td>
-		</tr>
-	</table>
+    <table>
+        <tr>
+            <td align="right">用户名:</td>
+            <td><input type="text" name="userName"></td>
+        </tr>
+        <tr>
+            <td align="right">密码:</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td><input type="reset" value="重置"></td>
+            <td><input type="submit" value="登录"></td>
+        </tr>
+    </table>
 </form>
 </body>
 </html>
@@ -95,14 +95,14 @@ login.jsp:
 <title>request内置对象测试</title>
 </head>
 <body>
-	<%
-		out.println("<table border=\"1\">");
-		out.println("<tr><td align=\"right\">请求体的MIME类型：</td><td>"
-				+ request.getContentType() + "</td>");
-		out.println("<tr><td align=\"right\">请求体的长度：</td><td>"
-				+ request.getContentLength() + " 字节</td>");
-		out.println("</table>");
-	%>
+    <%
+        out.println("<table border=\"1\">");
+        out.println("<tr><td align=\"right\">请求体的MIME类型：</td><td>"
+                + request.getContentType() + "</td>");
+        out.println("<tr><td align=\"right\">请求体的长度：</td><td>"
+                + request.getContentLength() + " 字节</td>");
+        out.println("</table>");
+    %>
 </body>
 </html>
 ```
@@ -136,34 +136,34 @@ login.jsp:
 <body>
 </body>
 <form action="request.jsp" name="loginForm" method="post">
-	<table>
-		<tr>
-			<td align="right">用户名:</td>
-			<td><input type="text" name="userName"></td>
-		</tr>
-		<tr>
-			<td align="right">密码:</td>
-			<td><input type="password" name="password"></td>
-		</tr>
-		<tr>
-			<td align="right">爱好:</td>
-			<td>读书<input type="checkbox" name="hobby" value="book">游戏<input
-				type="checkbox" name="hobby" value="game">音乐<input
-				type="checkbox" name="hobby" value="music"></td>
-		</tr>
-		<tr>
-			<td><input type="reset" value="重置"></td>
-			<td><input type="submit" value="登录"></td>
-		</tr>
-	</table>
+    <table>
+        <tr>
+            <td align="right">用户名:</td>
+            <td><input type="text" name="userName"></td>
+        </tr>
+        <tr>
+            <td align="right">密码:</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td align="right">爱好:</td>
+            <td>读书<input type="checkbox" name="hobby" value="book">游戏<input
+                type="checkbox" name="hobby" value="game">音乐<input
+                type="checkbox" name="hobby" value="music"></td>
+        </tr>
+        <tr>
+            <td><input type="reset" value="重置"></td>
+            <td><input type="submit" value="登录"></td>
+        </tr>
+    </table>
 </form>
 </html>
 ```
 ##### 枚举方式 遍历表单提交的数据 #####
 - 使用request.getParameterNames();方法获取所有name属性的名称的枚举
 - 有了属性名称之后，我们就可以根据属性名称来获取对应的值了，这里有两种方式
-	- 如果该属性名称只有一个值,则使用request.getParameter(name)方法获取对应的属性值
-	- 如果该属性名称有多个值(如 复选框),则可以使用request.getParameterValues(name);方法获取属性值数组，然后我们在遍历数组即可。
+    - 如果该属性名称只有一个值,则使用request.getParameter(name)方法获取对应的属性值
+    - 如果该属性名称有多个值(如 复选框),则可以使用request.getParameterValues(name);方法获取属性值数组，然后我们在遍历数组即可。
 
 ```jsp
 out.println("<table border=\"1\">");
@@ -171,25 +171,25 @@ Enumeration<String> names = request.getParameterNames();
 String name;
 while (names.hasMoreElements())
 {
-	name = names.nextElement();
-	out.println("<tr><td align=\"right\">" + name + "</td><td>");
-	//如果是name属性为hobby的情况
-	if ("hobby".equals(name))
-	{
-		//获取hobby多选框中的内容
-		String[] hobbys = request.getParameterValues(name);
-		for (int i = 0; i < hobbys.length; i++)
-		{
-			//输出分隔符
-			if (i > 0)
-				out.print(",");
-			out.print(hobbys[i]);
-		}
-		out.println("</td></tr>");
-	} else
-	{
-		out.println(request.getParameter(name) + "</td></tr>");
-	}
+    name = names.nextElement();
+    out.println("<tr><td align=\"right\">" + name + "</td><td>");
+    //如果是name属性为hobby的情况
+    if ("hobby".equals(name))
+    {
+        //获取hobby多选框中的内容
+        String[] hobbys = request.getParameterValues(name);
+        for (int i = 0; i < hobbys.length; i++)
+        {
+            //输出分隔符
+            if (i > 0)
+                out.print(",");
+            out.print(hobbys[i]);
+        }
+        out.println("</td></tr>");
+    } else
+    {
+        out.println(request.getParameter(name) + "</td></tr>");
+    }
 }
 out.println("</table>");
 ```
@@ -207,19 +207,19 @@ String[] values;
 out.println("<table border=\"1\">");
 while (parmIt.hasNext())
 {
-	//取得一个键值对
-	Entry<String, String[]> entry = parmIt.next();
-	//取出键和值
-	key = entry.getKey();
-	out.print("<tr><td align=\"right\">" + key + "</td><td>");
-	values = entry.getValue();
-	for (int i = 0; i < values.length; i++)
-	{
-		if (i > 0)
-			out.print(",");
-		out.print(values[i]);
-	}
-	out.print("</td><tr>");
+    //取得一个键值对
+    Entry<String, String[]> entry = parmIt.next();
+    //取出键和值
+    key = entry.getKey();
+    out.print("<tr><td align=\"right\">" + key + "</td><td>");
+    values = entry.getValue();
+    for (int i = 0; i < values.length; i++)
+    {
+        if (i > 0)
+            out.print(",");
+        out.print(values[i]);
+    }
+    out.print("</td><tr>");
 }
 out.print("</table>");
 ```
@@ -237,62 +237,62 @@ out.print("</table>");
 <title>request内置对象测试</title>
 </head>
 <body>
-	<%
-		out.println("<table border=\"1\">");
-		Enumeration<String> names = request.getParameterNames();
-		String name;
-		while (names.hasMoreElements())
-		{
-			name = names.nextElement();
-			out.println("<tr><td align=\"right\">" + name + "</td><td>");
-			//如果是name属性为hobby的情况
-			if ("hobby".equals(name))
-			{
-				//获取hobby多选框中的内容
-				String[] hobbys = request.getParameterValues(name);
-				for (int i = 0; i < hobbys.length; i++)
-				{
-					//输出分隔符
-					if (i > 0)
-						out.print(",");
-					out.print(hobbys[i]);
-				}
-				out.println("</td></tr>");
-			} else
-			{
-				out.println(request.getParameter(name) + "</td></tr>");
-			}
-		}
-		out.println("</table>");
-		out.println("<hr>");
-		//获取参数的Map集合
-		Map<String, String[]> parmMap = request.getParameterMap();
-		//获取键值对Set集合
-		Set<Entry<String, String[]>> parmEntrySet = parmMap.entrySet();
-		//键值对Set集合的迭代器
-		Iterator<Entry<String, String[]>> parmIt = parmEntrySet.iterator();
-		String key;
-		String[] values;
-		out.println("<table border=\"1\">");
-		while (parmIt.hasNext())
-		{
-			//取得一个键值对
-			Entry<String, String[]> entry = parmIt.next();
-			//取出键和值
-			key = entry.getKey();
-			out.print("<tr><td align=\"right\">" + key + "</td><td>");
-			values = entry.getValue();
-			for (int i = 0; i < values.length; i++)
-			{
-				if (i > 0)
-					out.print(",");
-				out.print(values[i]);
-			}
-			out.print("</td><tr>");
-		}
-		out.print("</table>");
-		// 		request.getParameterNames();
-	%>
+    <%
+        out.println("<table border=\"1\">");
+        Enumeration<String> names = request.getParameterNames();
+        String name;
+        while (names.hasMoreElements())
+        {
+            name = names.nextElement();
+            out.println("<tr><td align=\"right\">" + name + "</td><td>");
+            //如果是name属性为hobby的情况
+            if ("hobby".equals(name))
+            {
+                //获取hobby多选框中的内容
+                String[] hobbys = request.getParameterValues(name);
+                for (int i = 0; i < hobbys.length; i++)
+                {
+                    //输出分隔符
+                    if (i > 0)
+                        out.print(",");
+                    out.print(hobbys[i]);
+                }
+                out.println("</td></tr>");
+            } else
+            {
+                out.println(request.getParameter(name) + "</td></tr>");
+            }
+        }
+        out.println("</table>");
+        out.println("<hr>");
+        //获取参数的Map集合
+        Map<String, String[]> parmMap = request.getParameterMap();
+        //获取键值对Set集合
+        Set<Entry<String, String[]>> parmEntrySet = parmMap.entrySet();
+        //键值对Set集合的迭代器
+        Iterator<Entry<String, String[]>> parmIt = parmEntrySet.iterator();
+        String key;
+        String[] values;
+        out.println("<table border=\"1\">");
+        while (parmIt.hasNext())
+        {
+            //取得一个键值对
+            Entry<String, String[]> entry = parmIt.next();
+            //取出键和值
+            key = entry.getKey();
+            out.print("<tr><td align=\"right\">" + key + "</td><td>");
+            values = entry.getValue();
+            for (int i = 0; i < values.length; i++)
+            {
+                if (i > 0)
+                    out.print(",");
+                out.print(values[i]);
+            }
+            out.print("</td><tr>");
+        }
+        out.print("</table>");
+        //         request.getParameterNames();
+    %>
 </body>
 </html>
 ```
@@ -349,7 +349,7 @@ out.print("</table>");
 #### 遍历所有HTTP头部信息 ####
 ```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ page import="java.util.Enumeration"%>
 <!DOCTYPE html>
 <html>
@@ -358,34 +358,34 @@ out.print("</table>");
 <title>requestSever相关</title>
 </head>
 <body>
-	<%
-		out.println("<table border=\"1\">");
-		Enumeration<String> headernames = request.getHeaderNames();
-		String name;
-		while (headernames.hasMoreElements())
-		{
-			//获取头部名称
-			name = headernames.nextElement();
-			//获取名称对应的值
-			out.println("<tr><td align=\"right\">" + name + ":</td><td>"
-					+ request.getHeader(name) + "</td></tr>");
-		}
-		out.println("</table>");
-	%>
-	<%
-		out.println("<table border=\"1\">");
-		Enumeration<String> accept = request.getHeaders("user-agent");
-		String acceptName;
-		while (accept.hasMoreElements())
-		{
-			//获取头部名称
-			acceptName = (String) accept.nextElement();
-			//获取名称对应的值
-			out.println("<tr><td align=\"right\">" + acceptName
-					+ ":</td></tr>");
-		}
-		out.println("</table>");
-	%>
+    <%
+        out.println("<table border=\"1\">");
+        Enumeration<String> headernames = request.getHeaderNames();
+        String name;
+        while (headernames.hasMoreElements())
+        {
+            //获取头部名称
+            name = headernames.nextElement();
+            //获取名称对应的值
+            out.println("<tr><td align=\"right\">" + name + ":</td><td>"
+                    + request.getHeader(name) + "</td></tr>");
+        }
+        out.println("</table>");
+    %>
+    <%
+        out.println("<table border=\"1\">");
+        Enumeration<String> accept = request.getHeaders("user-agent");
+        String acceptName;
+        while (accept.hasMoreElements())
+        {
+            //获取头部名称
+            acceptName = (String) accept.nextElement();
+            //获取名称对应的值
+            out.println("<tr><td align=\"right\">" + acceptName
+                    + ":</td></tr>");
+        }
+        out.println("</table>");
+    %>
 </body>
 </html>
 ```
@@ -399,14 +399,14 @@ out.print("</table>");
 |String getRealPath(String)|返回当前请求文件的绝对路径,这个方法不推荐使用|
 ```jsp
 <table border="1">
-	<tr>
-		<td align="right">返回请求文件的项目路径：</td>
-		<td><%=request.getContextPath()%></td>
-	</tr>
-	<tr>
-		<td align="right">返回当前请求文件的绝对路径：</td>
-		<td><%=request.getRealPath("requestPath.jsp")%></td>
-	</tr>
+    <tr>
+        <td align="right">返回请求文件的项目路径：</td>
+        <td><%=request.getContextPath()%></td>
+    </tr>
+    <tr>
+        <td align="right">返回当前请求文件的绝对路径：</td>
+        <td><%=request.getRealPath("requestPath.jsp")%></td>
+    </tr>
 </table>
 ```
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/request/path/path.png)
@@ -436,26 +436,26 @@ out.print("</table>");
 <title>request内置对象测试</title>
 </head>
 <body>
-<%-- 	
-	<%
-		//解决post提交的数据中的。中文乱码问题.无法解决URL传参方式的中文乱码问题
-		request.setCharacterEncoding("utf-8");
-		//解决get提交的数据乱码,可以通过tomcat的config目录下的server.xml配置文件来设置。
-	%>
+<%--     
+    <%
+        //解决post提交的数据中的。中文乱码问题.无法解决URL传参方式的中文乱码问题
+        request.setCharacterEncoding("utf-8");
+        //解决get提交的数据乱码,可以通过tomcat的config目录下的server.xml配置文件来设置。
+    %>
  --%>
-	<h2>request内置对象</h2>
-	获取到用户名:<%=request.getParameter("userName")%>
-	爱好:<%
-		String[] hobbys = request.getParameterValues("hobbys");
-		if (hobbys != null)
-		{
-			for (int i = 0; i < hobbys.length; i++)
-			{
-				out.println(hobbys[i] + ",");
-			}
-		}
-	%>
-	密码:<%=request.getParameter("password")%>
+    <h2>request内置对象</h2>
+    获取到用户名:<%=request.getParameter("userName")%>
+    爱好:<%
+        String[] hobbys = request.getParameterValues("hobbys");
+        if (hobbys != null)
+        {
+            for (int i = 0; i < hobbys.length; i++)
+            {
+                out.println(hobbys[i] + ",");
+            }
+        }
+    %>
+    密码:<%=request.getParameter("password")%>
 </body>
 </html>
 ```
@@ -471,29 +471,29 @@ out.print("</table>");
 <body>
 </body>
 <form action="request.jsp" name="loginForm" method="post">
-	<table>
-		<tr>
-			<td align="right">用户名:</td>
-			<td><input type="text" name="userName"></td>
-		</tr>
-		<tr>
-			<td align="right">爱好:</td>
-			<td>
-			<input type="checkbox" name="hobbys" value="book">读书
-			<input type="checkbox" name="hobbys" value="music">音乐
-			<input type="checkbox" name="hobbys" value="sports">运动
-			<input type="checkbox" name="hobbys" value="movie">电影
-			</td>
-		</tr>
-		<tr>
-			<td align="right">密码:</td>
-			<td><input type="password" name="password"></td>
-		</tr>
-		<tr>
-			<td><input type="reset" value="重置"></td>
-			<td><input type="submit" value="登录"></td>
-		</tr>
-	</table>
+    <table>
+        <tr>
+            <td align="right">用户名:</td>
+            <td><input type="text" name="userName"></td>
+        </tr>
+        <tr>
+            <td align="right">爱好:</td>
+            <td>
+            <input type="checkbox" name="hobbys" value="book">读书
+            <input type="checkbox" name="hobbys" value="music">音乐
+            <input type="checkbox" name="hobbys" value="sports">运动
+            <input type="checkbox" name="hobbys" value="movie">电影
+            </td>
+        </tr>
+        <tr>
+            <td align="right">密码:</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td><input type="reset" value="重置"></td>
+            <td><input type="submit" value="登录"></td>
+        </tr>
+    </table>
 </form>
 </html>
 ```
@@ -512,26 +512,26 @@ request.jsp页面会显示乱码：
 对应post方法提交出现的中文乱码，可以通过，`request.setCharacterEncoding("请求页面编码");`来设置，这里login.jsp页面用的是utf-8编码，所以在`request.jsp`页面中，在输出文本框的数据之前，设置编码即可：
 ```jsp
 <body>
-	<h2>request内置对象</h2>
-	<%
-		//解决post提交的数据中的。中文乱码问题.无法解决URL传参方式的中文乱码问题
-// 		request.setCharacterEncoding("ISO-8859-1");
-		request.setCharacterEncoding("utf-8");
-		//解决get提交的数据乱码,可以通过tomcat的config目录下的server.xml配置文件来设置。
-	%>
-	获取到用户名:<%=request.getParameter("userName")%><br>
-	爱好:<%
-		String[] hobbys = request.getParameterValues("hobbys");
-		if (hobbys != null)
-		{
+    <h2>request内置对象</h2>
+    <%
+        //解决post提交的数据中的。中文乱码问题.无法解决URL传参方式的中文乱码问题
+//         request.setCharacterEncoding("ISO-8859-1");
+        request.setCharacterEncoding("utf-8");
+        //解决get提交的数据乱码,可以通过tomcat的config目录下的server.xml配置文件来设置。
+    %>
+    获取到用户名:<%=request.getParameter("userName")%><br>
+    爱好:<%
+        String[] hobbys = request.getParameterValues("hobbys");
+        if (hobbys != null)
+        {
 
-			for (int i = 0; i < hobbys.length; i++)
-			{
-				out.println(hobbys[i] + ",");
-			}
-		}
-	%>
-	密码:<%=request.getParameter("password")%>
+            for (int i = 0; i < hobbys.length; i++)
+            {
+                out.println(hobbys[i] + ",");
+            }
+        }
+    %>
+    密码:<%=request.getParameter("password")%>
 </body>
 ```
 然后重新输入中文用户名，进行登录就可以看到不会有乱码了：
@@ -578,34 +578,34 @@ userName=%E5%B0%8F%E6%98%8E
 修改requset.jsp如下：
 ```jsp
 <body>
-	<h2>request内置对象</h2>
-	<%
-		//解决post提交的数据中的。中文乱码问题.无法解决URL传参方式的中文乱码问题
-		// 		request.setCharacterEncoding("ISO-8859-1");
-		request.setCharacterEncoding("utf-8");
-		//解决get提交的数据乱码,可以通过tomcat的config目录下的server.xml配置文件来设置。
-		request.setAttribute("something", "属性值");
-	%>
-	获取到用户名:<%=request.getParameter("userName")%><br> 爱好:<%
-		String[] hobbys = request.getParameterValues("hobbys");
-		if (hobbys != null)
-		{
+    <h2>request内置对象</h2>
+    <%
+        //解决post提交的数据中的。中文乱码问题.无法解决URL传参方式的中文乱码问题
+        //         request.setCharacterEncoding("ISO-8859-1");
+        request.setCharacterEncoding("utf-8");
+        //解决get提交的数据乱码,可以通过tomcat的config目录下的server.xml配置文件来设置。
+        request.setAttribute("something", "属性值");
+    %>
+    获取到用户名:<%=request.getParameter("userName")%><br> 爱好:<%
+        String[] hobbys = request.getParameterValues("hobbys");
+        if (hobbys != null)
+        {
 
-			for (int i = 0; i < hobbys.length; i++)
-			{
-				out.println(hobbys[i] + ",");
-			}
-		}
-	%><br> 密码:<%=request.getParameter("password")%><br> 
-	属性值:<%=request.getAttribute("something")%><br>
-	请求体的MME类型:<%=request.getContentType()%><br> 
-	请求体的长度:<%=request.getContentLength()%>字节<br>
-	请求用的协议类型及版本号:<%=request.getProtocol()%><br>
-	请求的服务器主机名:<%=request.getServerName()%><br> 
-	服务器接受此请求所用的端口号:<%=request.getServerPort()%><br>
-	请求的客户端IP地址:<%=request.getRemoteAddr()%><br>
-	请求的物理路径:<%=request.getRealPath("request.jsp") %><br>
-	请求的上下文路径:<%=request.getContextPath() %><br>
+            for (int i = 0; i < hobbys.length; i++)
+            {
+                out.println(hobbys[i] + ",");
+            }
+        }
+    %><br> 密码:<%=request.getParameter("password")%><br> 
+    属性值:<%=request.getAttribute("something")%><br>
+    请求体的MME类型:<%=request.getContentType()%><br> 
+    请求体的长度:<%=request.getContentLength()%>字节<br>
+    请求用的协议类型及版本号:<%=request.getProtocol()%><br>
+    请求的服务器主机名:<%=request.getServerName()%><br> 
+    服务器接受此请求所用的端口号:<%=request.getServerPort()%><br>
+    请求的客户端IP地址:<%=request.getRemoteAddr()%><br>
+    请求的物理路径:<%=request.getRealPath("request.jsp") %><br>
+    请求的上下文路径:<%=request.getContextPath() %><br>
 </body>
 ```
 ### post提交方式 ###

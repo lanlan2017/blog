@@ -23,18 +23,18 @@ FILE* movieFile=fopen("movie.txt","r");
 //如果文件打开失败
 if(movieFile==0)
 {
-	printf("文件打开失败！\n");
-	system("pause");
-	exit(0);
+    printf("文件打开失败！\n");
+    system("pause");
+    exit(0);
 }
 //判断是否是空文件
 if(fgetc(movieFile)==EOF)
 {
-	printf("   文件 movie.txt 为空 请先录入\n");	
+    printf("   文件 movie.txt 为空 请先录入\n");    
 }
 else
 {
-	rewind(movieFile);//文件指针移动会首部
+    rewind(movieFile);//文件指针移动会首部
 }
 //其他操作...
 

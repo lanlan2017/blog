@@ -25,28 +25,28 @@ abbrlink: efd55c13
 ```java
 public static void deleteEmptyDIR(String dir)
 {
-	// 转成File对象
-	File dirFile = new File(dir);
-	// 获取列表
-	File[] fileList = dirFile.listFiles();
-	for (int i = 0; i < fileList.length; i++)
-	{
-		// 如果是目录的话
-		if (fileList[i].isDirectory())
-		{
-			if (fileList[i].listFiles().length == 0)
-			{
-				if (fileList[i].delete())
-				{
-					System.out.println("成功删除空目录:" + fileList[i].getAbsolutePath());
-				}
-			} else
-			{
-				// 递归下一个目录
-				deleteEmptyDIR(fileList[i].getAbsolutePath());
-			}
-		}
-	}
+    // 转成File对象
+    File dirFile = new File(dir);
+    // 获取列表
+    File[] fileList = dirFile.listFiles();
+    for (int i = 0; i < fileList.length; i++)
+    {
+        // 如果是目录的话
+        if (fileList[i].isDirectory())
+        {
+            if (fileList[i].listFiles().length == 0)
+            {
+                if (fileList[i].delete())
+                {
+                    System.out.println("成功删除空目录:" + fileList[i].getAbsolutePath());
+                }
+            } else
+            {
+                // 递归下一个目录
+                deleteEmptyDIR(fileList[i].getAbsolutePath());
+            }
+        }
+    }
 }
 ```
 上述代码只能删除目录树中最末尾的空目录,有可能删除之后，又出现了空目录。但是此时递归已经结束了,新出现的空目录将无法删除。
@@ -60,17 +60,17 @@ public static void deleteEmptyDIR(String dir)
  */
 public static void deleteEmptyParentDIR(File dir)
 {
-	File parentFile = dir.getParentFile();
-	// 如果dir目录的父目录为空的话
-	if (parentFile.isDirectory() && parentFile.listFiles().length == 0)
-	{
-		if (parentFile.delete())
-		{
-			System.out.println("成功删除 父 目录>" + parentFile.getAbsolutePath());
-			// 递归删除父目录
-			deleteEmptyParentDIR(parentFile);
-		}
-	}
+    File parentFile = dir.getParentFile();
+    // 如果dir目录的父目录为空的话
+    if (parentFile.isDirectory() && parentFile.listFiles().length == 0)
+    {
+        if (parentFile.delete())
+        {
+            System.out.println("成功删除 父 目录>" + parentFile.getAbsolutePath());
+            // 递归删除父目录
+            deleteEmptyParentDIR(parentFile);
+        }
+    }
 }
 ```
 ## 删除空目录完整代码 ##
@@ -79,64 +79,64 @@ public static void deleteEmptyParentDIR(File dir)
 import java.io.File;
 public class DeleteEmptyDir
 {
-	public static void main(String[] args)
-	{
-		// 获取目录
-		String dirPath = "test";
-		deleteEmptyDIR(dirPath);
-	}
-	/**
-	 * 向下递归,删除目录树中最后的空子目录.
-	 * @param dir
-	 */
-	public static void deleteEmptyDIR(String dir)
-	{
-		// 转成File对象
-		File dirFile = new File(dir);
-		// 获取列表
-		File[] fileList = dirFile.listFiles();
-		for (int i = 0; i < fileList.length; i++)
-		{
-			// 如果是目录的话
-			if (fileList[i].isDirectory())
-			{
-				// 如果当前是空目录
-				if (fileList[i].listFiles().length == 0)
-				{
-					// 删除当前的空目录
-					if (fileList[i].delete())
-					{
-						System.out.println("成功删除 空 目录>" + fileList[i].getAbsolutePath());
-						// 往回删除父目录
-						deleteEmptyParentDIR(fileList[i]);
-					}
-				} else
-				{
-					// 递归下一个目录
-					deleteEmptyDIR(fileList[i].getAbsolutePath());
-				}
-			}
-		}
-	}
-	/**
-	 * 向上递归删除空目录
-	 * @param dir
-	 */
-	public static void deleteEmptyParentDIR(File dir)
-	{
-		File parentFile = dir.getParentFile();
-		// 如果dir目录的父目录为空的话
-		if (parentFile.isDirectory() && parentFile.listFiles().length == 0)
-		{
-			//如果父目录删除成功
-			if (parentFile.delete())
-			{
-				System.out.println("成功删除 空 父 目录>" + parentFile.getAbsolutePath());
-				// 再递归删除父目录的父目录
-				deleteEmptyParentDIR(parentFile);
-			}
-		}
-	}
+    public static void main(String[] args)
+    {
+        // 获取目录
+        String dirPath = "test";
+        deleteEmptyDIR(dirPath);
+    }
+    /**
+     * 向下递归,删除目录树中最后的空子目录.
+     * @param dir
+     */
+    public static void deleteEmptyDIR(String dir)
+    {
+        // 转成File对象
+        File dirFile = new File(dir);
+        // 获取列表
+        File[] fileList = dirFile.listFiles();
+        for (int i = 0; i < fileList.length; i++)
+        {
+            // 如果是目录的话
+            if (fileList[i].isDirectory())
+            {
+                // 如果当前是空目录
+                if (fileList[i].listFiles().length == 0)
+                {
+                    // 删除当前的空目录
+                    if (fileList[i].delete())
+                    {
+                        System.out.println("成功删除 空 目录>" + fileList[i].getAbsolutePath());
+                        // 往回删除父目录
+                        deleteEmptyParentDIR(fileList[i]);
+                    }
+                } else
+                {
+                    // 递归下一个目录
+                    deleteEmptyDIR(fileList[i].getAbsolutePath());
+                }
+            }
+        }
+    }
+    /**
+     * 向上递归删除空目录
+     * @param dir
+     */
+    public static void deleteEmptyParentDIR(File dir)
+    {
+        File parentFile = dir.getParentFile();
+        // 如果dir目录的父目录为空的话
+        if (parentFile.isDirectory() && parentFile.listFiles().length == 0)
+        {
+            //如果父目录删除成功
+            if (parentFile.delete())
+            {
+                System.out.println("成功删除 空 父 目录>" + parentFile.getAbsolutePath());
+                // 再递归删除父目录的父目录
+                deleteEmptyParentDIR(parentFile);
+            }
+        }
+    }
 }
 ```
 ## 测试 ##

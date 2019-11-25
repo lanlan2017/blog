@@ -32,21 +32,21 @@ abbrlink: bda55058
  * @throws IOException
  */
 public static void copyFile(String srcFile, String destFile)
-		throws IOException
+        throws IOException
 {
-	FileInputStream in = new FileInputStream(srcFile);
-	FileOutputStream out = new FileOutputStream(destFile);
-	// 2097152(Byte)=2048(KB)=2M
-	byte[] buffer = new byte[2097152];
-	int size = 0;
-	//每次读取一个字节数组
-	while ((size = in.read(buffer)) != -1)
-	{
-		//读到多少写入多少
-		out.write(buffer, 0, size);
-	}
-	in.close();
-	out.close();
+    FileInputStream in = new FileInputStream(srcFile);
+    FileOutputStream out = new FileOutputStream(destFile);
+    // 2097152(Byte)=2048(KB)=2M
+    byte[] buffer = new byte[2097152];
+    int size = 0;
+    //每次读取一个字节数组
+    while ((size = in.read(buffer)) != -1)
+    {
+        //读到多少写入多少
+        out.write(buffer, 0, size);
+    }
+    in.close();
+    out.close();
 }
 ```
 
@@ -67,51 +67,51 @@ public static void copyFile(String srcFile, String destFile)
  */
 public static void copyDir(String FromDir, String ToDir) throws IOException
 {
-	// 创建目录的File对象
-	File srcDir = new File(FromDir);
-	// 判断源目录是不是一个目录
-	if (!srcDir.isDirectory())
-	{
-		//如果不是目录那就不复制
-		return;
-	}
-	//创建目的目录的File对象
-	File destDir = new File(ToDir);
-	// 如果目的目录不存在
-	if (!destDir.exists())
-	{
-		// 创建目的目录
-		destDir.mkdir();
-	}
-	
-	// 获取源目录下的File对象列表,每一个对象代表一个目录或者文件
-	File[] srcDirList = srcDir.listFiles();
-	// 遍历源目录File对象列表
-	for (int i = 0; i < srcDirList.length; i++)
-	{
-		// 如果是目录的话
-		if (srcDirList[i].isDirectory())
-		{
-			// 递归调用复制该目录
-			copyDir(FromDir + File.separator + srcDirList[i].getName(),
-					ToDir + File.separator + srcDirList[i].getName());
-		}
-		// 如果是文件的话
-		if (srcDirList[i].isFile())
-		{
-			// 调用复制文件的方法
-			copyFile(FromDir + File.separator + srcDirList[i].getName(),
-					ToDir + File.separator + srcDirList[i].getName());
-		}
+    // 创建目录的File对象
+    File srcDir = new File(FromDir);
+    // 判断源目录是不是一个目录
+    if (!srcDir.isDirectory())
+    {
+        //如果不是目录那就不复制
+        return;
+    }
+    //创建目的目录的File对象
+    File destDir = new File(ToDir);
+    // 如果目的目录不存在
+    if (!destDir.exists())
+    {
+        // 创建目的目录
+        destDir.mkdir();
+    }
+    
+    // 获取源目录下的File对象列表,每一个对象代表一个目录或者文件
+    File[] srcDirList = srcDir.listFiles();
+    // 遍历源目录File对象列表
+    for (int i = 0; i < srcDirList.length; i++)
+    {
+        // 如果是目录的话
+        if (srcDirList[i].isDirectory())
+        {
+            // 递归调用复制该目录
+            copyDir(FromDir + File.separator + srcDirList[i].getName(),
+                    ToDir + File.separator + srcDirList[i].getName());
+        }
+        // 如果是文件的话
+        if (srcDirList[i].isFile())
+        {
+            // 调用复制文件的方法
+            copyFile(FromDir + File.separator + srcDirList[i].getName(),
+                    ToDir + File.separator + srcDirList[i].getName());
+        }
 
-	}
+    }
 }
 ```
 main方法中调用：
 ```
 public static void main(String[] args) throws IOException
 {
-	copyDir("FromDir", "ToDir");//复制当前工程下的FromDir目录中的内容到ToDir目录中。
+    copyDir("FromDir", "ToDir");//复制当前工程下的FromDir目录中的内容到ToDir目录中。
 }
 ```
 
@@ -136,86 +136,86 @@ import java.io.IOException;
 
 public class CopyDir
 {
-	public static void main(String[] args) throws IOException
-	{
-		copyDir("FromDir", "ToDir");
-	}
-	/**
-	 * 使用递归复制目录,
-	 * 
-	 * @param FromDir
-	 *            源目录的路径名称
-	 * @param ToDir
-	 *            目的目录的路径名称
-	 * @throws IOException
-	 */
-	public static void copyDir(String FromDir, String ToDir) throws IOException
-	{
-		// 创建目录的File对象
-		File srcDir = new File(FromDir);
-		// 判断源目录是不是一个目录
-		if (!srcDir.isDirectory())
-		{
-			// 如果不是目录那就不复制
-			return;
-		}
-		// 创建目的目录的File对象
-		File destDir = new File(ToDir);
-		// 如果目的目录不存在
-		if (!destDir.exists())
-		{
-			// 创建目的目录
-			destDir.mkdir();
-		}
+    public static void main(String[] args) throws IOException
+    {
+        copyDir("FromDir", "ToDir");
+    }
+    /**
+     * 使用递归复制目录,
+     * 
+     * @param FromDir
+     *            源目录的路径名称
+     * @param ToDir
+     *            目的目录的路径名称
+     * @throws IOException
+     */
+    public static void copyDir(String FromDir, String ToDir) throws IOException
+    {
+        // 创建目录的File对象
+        File srcDir = new File(FromDir);
+        // 判断源目录是不是一个目录
+        if (!srcDir.isDirectory())
+        {
+            // 如果不是目录那就不复制
+            return;
+        }
+        // 创建目的目录的File对象
+        File destDir = new File(ToDir);
+        // 如果目的目录不存在
+        if (!destDir.exists())
+        {
+            // 创建目的目录
+            destDir.mkdir();
+        }
 
-		// 获取源目录下的File对象列表,每一个对象代表一个目录或者文件
-		File[] srcDirList = srcDir.listFiles();
-		// 遍历源目录File对象列表
-		for (int i = 0; i < srcDirList.length; i++)
-		{
-			// 如果是目录的话
-			if (srcDirList[i].isDirectory())
-			{
-				// 递归调用复制该目录
-				copyDir(FromDir + File.separator + srcDirList[i].getName(),
-						ToDir + File.separator + srcDirList[i].getName());
-			}
-			// 如果是文件的话
-			if (srcDirList[i].isFile())
-			{
-				// 调用复制文件的方法
-				copyFile(FromDir + File.separator + srcDirList[i].getName(),
-						ToDir + File.separator + srcDirList[i].getName());
-			}
+        // 获取源目录下的File对象列表,每一个对象代表一个目录或者文件
+        File[] srcDirList = srcDir.listFiles();
+        // 遍历源目录File对象列表
+        for (int i = 0; i < srcDirList.length; i++)
+        {
+            // 如果是目录的话
+            if (srcDirList[i].isDirectory())
+            {
+                // 递归调用复制该目录
+                copyDir(FromDir + File.separator + srcDirList[i].getName(),
+                        ToDir + File.separator + srcDirList[i].getName());
+            }
+            // 如果是文件的话
+            if (srcDirList[i].isFile())
+            {
+                // 调用复制文件的方法
+                copyFile(FromDir + File.separator + srcDirList[i].getName(),
+                        ToDir + File.separator + srcDirList[i].getName());
+            }
 
-		}
-	}
-	/**
-	 * 复制一个文件
-	 * 
-	 * @param srcFile
-	 *            源文件
-	 * @param destFile
-	 *            目的文件
-	 * @throws IOException
-	 */
-	public static void copyFile(String srcFile, String destFile)
-			throws IOException
-	{
-		FileInputStream in = new FileInputStream(srcFile);
-		FileOutputStream out = new FileOutputStream(destFile);
-		// 2097152(Byte)=2048(KB)=2M
-		byte[] buffer = new byte[2097152];
-		int size = 0;
-		// 每次读取一个字节数组
-		while ((size = in.read(buffer)) != -1)
-		{
-			// 读到多少写入多少
-			out.write(buffer, 0, size);
-		}
-		in.close();
-		out.close();
-	}
+        }
+    }
+    /**
+     * 复制一个文件
+     * 
+     * @param srcFile
+     *            源文件
+     * @param destFile
+     *            目的文件
+     * @throws IOException
+     */
+    public static void copyFile(String srcFile, String destFile)
+            throws IOException
+    {
+        FileInputStream in = new FileInputStream(srcFile);
+        FileOutputStream out = new FileOutputStream(destFile);
+        // 2097152(Byte)=2048(KB)=2M
+        byte[] buffer = new byte[2097152];
+        int size = 0;
+        // 每次读取一个字节数组
+        while ((size = in.read(buffer)) != -1)
+        {
+            // 读到多少写入多少
+            out.write(buffer, 0, size);
+        }
+        in.close();
+        out.close();
+    }
 
 }
 

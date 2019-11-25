@@ -41,10 +41,10 @@ abbrlink: 5aecc643
 # Type interface mapper.UserMapper is not known to the MapperRegistry. #
 ```cmd
 org.apache.ibatis.binding.BindingException: Type interface mapper.UserMapper is not known to the MapperRegistry.
-	at org.apache.ibatis.binding.MapperRegistry.getMapper(MapperRegistry.java:47)
-	at org.apache.ibatis.session.Configuration.getMapper(Configuration.java:745)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.getMapper(DefaultSqlSession.java:292)
-	at test.ManyToManyTest.main(ManyToManyTest.java:18)
+    at org.apache.ibatis.binding.MapperRegistry.getMapper(MapperRegistry.java:47)
+    at org.apache.ibatis.session.Configuration.getMapper(Configuration.java:745)
+    at org.apache.ibatis.session.defaults.DefaultSqlSession.getMapper(DefaultSqlSession.java:292)
+    at test.ManyToManyTest.main(ManyToManyTest.java:18)
 ```
 ## 分1:没有引入Mapper.xml ##
 这是因为没有在`mybatis-config.xml`中引入`UserMapper.xml.`

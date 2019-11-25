@@ -58,7 +58,7 @@ pageContext对象在实际JSP开发过程中很少使用,因为 request和 respo
 ## 实例 ##
 ```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,23 +66,23 @@ pageContext对象在实际JSP开发过程中很少使用,因为 request和 respo
 <title>pageContext内置对象</title>
 </head>
 <body>
-	<%
-		out.println("<hr>");
-		out.println("取出的是 out 内置对象："+(out==pageContext.getOut())+"<br>");
-		out.println("取出的是 request 内置对象："+(request==pageContext.getRequest())+"<br>");
-		out.println("取出的是 response 内置对象："+(response==pageContext.getResponse())+"<br>");
-		out.println("取出的是 session 内置对象："+(session==pageContext.getSession())+"<br>");
-		out.println("取出的是 page 内置对象："+(page==pageContext.getPage())+"<br>");
-		out.println("<hr>");
-		HttpSession session2 = pageContext.getSession();
-		out.println("session 中的user="+session2.getAttribute("user")+"<br>");
-		Object page2=pageContext.getPage();
-		out.println("page toString():"+page2.toString()+"<br>");
-		//跳转到session.jsp页面
-// 		pageContext.forward("session.jsp");
-		//包含login.jsp页面中的内容
-// 		pageContext.include("login.jsp");
-	%>
+    <%
+        out.println("<hr>");
+        out.println("取出的是 out 内置对象："+(out==pageContext.getOut())+"<br>");
+        out.println("取出的是 request 内置对象："+(request==pageContext.getRequest())+"<br>");
+        out.println("取出的是 response 内置对象："+(response==pageContext.getResponse())+"<br>");
+        out.println("取出的是 session 内置对象："+(session==pageContext.getSession())+"<br>");
+        out.println("取出的是 page 内置对象："+(page==pageContext.getPage())+"<br>");
+        out.println("<hr>");
+        HttpSession session2 = pageContext.getSession();
+        out.println("session 中的user="+session2.getAttribute("user")+"<br>");
+        Object page2=pageContext.getPage();
+        out.println("page toString():"+page2.toString()+"<br>");
+        //跳转到session.jsp页面
+//         pageContext.forward("session.jsp");
+        //包含login.jsp页面中的内容
+//         pageContext.include("login.jsp");
+    %>
 </body>
 </html>
 ```
@@ -114,7 +114,7 @@ page对象代表JSP本身,只有在JSP页面内才是合法的。page对象本�
 ## 实例 ##
 ```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -122,9 +122,9 @@ page对象代表JSP本身,只有在JSP页面内才是合法的。page对象本�
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		out.println("当前page页面的字符串描述：" + page.toString());
-	%>
+    <%
+        out.println("当前page页面的字符串描述：" + page.toString());
+    %>
 </body>
 </html>
 ```
@@ -169,8 +169,8 @@ exception内置对象是java.lang.Throwable接口的一个实例，用来处理J
 创建生成异常的页面：`exception_test.jsp`，指定异常处理页面为`exception.jsp`，如下所示：
 ```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!-- 	指定异常处理页面为exception.jsp -->
+    pageEncoding="UTF-8"%>
+<!--     指定异常处理页面为exception.jsp -->
 <%@ page errorPage="exception.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -179,16 +179,16 @@ exception内置对象是java.lang.Throwable接口的一个实例，用来处理J
 <title>生成异常</title>
 </head>
 <body>
-	<%
-		int x = 100 / 0;//抛出算术异常，除数不能为零
-	%>
+    <%
+        int x = 100 / 0;//抛出算术异常，除数不能为零
+    %>
 </body>
 </html>
 ```
 创建异常处理页面`exception.jsp`，并设置该页面为异常处理页面：
 ```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!-- 定义当前页面为异常处理页面 -->
 <%@ page isErrorPage="true"%>
 <!DOCTYPE html>
@@ -198,8 +198,8 @@ exception内置对象是java.lang.Throwable接口的一个实例，用来处理J
 <title>Insert title here</title>
 </head>
 <body>
-	异常信息为:<%=exception.getMessage()%><br> 
-	异常字符串描述为:<%=exception.toString()%><br>
+    异常信息为:<%=exception.getMessage()%><br> 
+    异常字符串描述为:<%=exception.toString()%><br>
 </body>
 </html>
 ```

@@ -72,7 +72,7 @@ session会话对象，一般用来保存帐户信息，一般购物车的实现�
 ```jsp
 <%@page import="java.util.Enumeration"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,19 +80,19 @@ session会话对象，一般用来保存帐户信息，一般购物车的实现�
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		session.setAttribute("user", "小明");
-		session.setAttribute("password", "123456");
-		session.setAttribute("sex", "男");
-		session.removeAttribute("sex");
-		Enumeration<String> attrNames = session.getAttributeNames();
-		String name;
-		while (attrNames.hasMoreElements())
-		{
-			name = attrNames.nextElement();
-			out.print(name+"="+session.getAttribute(name)+"<br>");
-		}
-	%>
+    <%
+        session.setAttribute("user", "小明");
+        session.setAttribute("password", "123456");
+        session.setAttribute("sex", "男");
+        session.removeAttribute("sex");
+        Enumeration<String> attrNames = session.getAttributeNames();
+        String name;
+        while (attrNames.hasMoreElements())
+        {
+            name = attrNames.nextElement();
+            out.print(name+"="+session.getAttribute(name)+"<br>");
+        }
+    %>
 </body>
 </html>
 ```
@@ -119,21 +119,21 @@ session会话对象，一般用来保存帐户信息，一般购物车的实现�
 <title>session</title>
 </head>
 <body>
-	<h2>session内置对象</h2>
-	<%
-		//获取session的创建时间
-		Date date = new Date(session.getCreationTime());
-		SimpleDateFormat format = new SimpleDateFormat(
-				"yyyy年MM月dd日 HH:mm:ss");
-		//设置session属性
-		session.setAttribute("user", "admin");
-		session.setAttribute("password", "123456");
-		//设置session生存周期为2秒
-		session.setMaxInactiveInterval(2);
-	%>
-	session对象的创建时间:
-	<%=format.format(date)%><br> session对象的ID:<%=session.getId()%><br>
-	<a href="http://localhost:8080/HelloWorld/session2.jsp" target="_blank">跳转到session2</a>
+    <h2>session内置对象</h2>
+    <%
+        //获取session的创建时间
+        Date date = new Date(session.getCreationTime());
+        SimpleDateFormat format = new SimpleDateFormat(
+                "yyyy年MM月dd日 HH:mm:ss");
+        //设置session属性
+        session.setAttribute("user", "admin");
+        session.setAttribute("password", "123456");
+        //设置session生存周期为2秒
+        session.setMaxInactiveInterval(2);
+    %>
+    session对象的创建时间:
+    <%=format.format(date)%><br> session对象的ID:<%=session.getId()%><br>
+    <a href="http://localhost:8080/HelloWorld/session2.jsp" target="_blank">跳转到session2</a>
 </body>
 </html>
 ```
@@ -149,16 +149,16 @@ session会话对象，一般用来保存帐户信息，一般购物车的实现�
 <title>session2</title>
 </head>
 <body>
-	<h2>session内置对象</h2>
-	<%
-		//获取session的创建时间
-		Date date = new Date(session.getCreationTime());
-		SimpleDateFormat format = new SimpleDateFormat(
-				"yyyy年MM月dd日 HH:mm:ss");
-	%>
-	session对象的创建时间:
-	<%=format.format(date)%><br>
-	session对象的ID:<%=session.getId()%><br>
+    <h2>session内置对象</h2>
+    <%
+        //获取session的创建时间
+        Date date = new Date(session.getCreationTime());
+        SimpleDateFormat format = new SimpleDateFormat(
+                "yyyy年MM月dd日 HH:mm:ss");
+    %>
+    session对象的创建时间:
+    <%=format.format(date)%><br>
+    session对象的ID:<%=session.getId()%><br>
 </body>
 </html>
 ```
@@ -182,37 +182,37 @@ session会话对象，一般用来保存帐户信息，一般购物车的实现�
 <title>session2</title>
 </head>
 <body>
-	<h2>session内置对象</h2>
-	<%
-		//获取session的创建时间
-		Date date = new Date(session.getCreationTime());
-		SimpleDateFormat format = new SimpleDateFormat(
-				"yyyy年MM月dd日 HH:mm:ss");
-		//设置session属性
-		session.setAttribute("user", "admin");
-		session.setAttribute("password", "123456");
-	%>
-	session对象的创建时间:
-	<%=format.format(date)%><br>
-	session对象的ID:<%=session.getId()%><br>
-	<hr>
-	遍历session中的属性/属性值对:
-	<br>
-	<%
-		//获取session中的所有属性
-		Enumeration<String> enu = session.getAttributeNames();
-		String attr = null;
-		//判断是否有内容
-		while (enu.hasMoreElements())
-		{
-			//获取一个内容
-			attr = enu.nextElement();
-			out.println("&nbsp;&nbsp;&nbsp;&nbsp;" + attr + "="
-					+ session.getAttribute(attr) + "<br>");
-		}
-	%>
-	<hr>
-	session最大存活时间:<%=session.getMaxInactiveInterval() %>秒=<%=session.getMaxInactiveInterval()/60 %>分钟<br>
+    <h2>session内置对象</h2>
+    <%
+        //获取session的创建时间
+        Date date = new Date(session.getCreationTime());
+        SimpleDateFormat format = new SimpleDateFormat(
+                "yyyy年MM月dd日 HH:mm:ss");
+        //设置session属性
+        session.setAttribute("user", "admin");
+        session.setAttribute("password", "123456");
+    %>
+    session对象的创建时间:
+    <%=format.format(date)%><br>
+    session对象的ID:<%=session.getId()%><br>
+    <hr>
+    遍历session中的属性/属性值对:
+    <br>
+    <%
+        //获取session中的所有属性
+        Enumeration<String> enu = session.getAttributeNames();
+        String attr = null;
+        //判断是否有内容
+        while (enu.hasMoreElements())
+        {
+            //获取一个内容
+            attr = enu.nextElement();
+            out.println("&nbsp;&nbsp;&nbsp;&nbsp;" + attr + "="
+                    + session.getAttribute(attr) + "<br>");
+        }
+    %>
+    <hr>
+    session最大存活时间:<%=session.getMaxInactiveInterval() %>秒=<%=session.getMaxInactiveInterval()/60 %>分钟<br>
 </body>
 </html>
 ```
@@ -229,34 +229,34 @@ session2.jsp:
 <title>session2</title>
 </head>
 <body>
-	<h2>session内置对象</h2>
-	<%
-		//获取session的创建时间
-		Date date = new Date(session.getCreationTime());
-		SimpleDateFormat format = new SimpleDateFormat(
-				"yyyy年MM月dd日 HH:mm:ss");
-	%>
-	session对象的创建时间:
-	<%=format.format(date)%><br>
-	session对象的ID:<%=session.getId()%><br>
-	<hr>
-	遍历session中的属性/属性值对:
-	<br>
-	<%
-		//获取session中的所有属性
-		Enumeration<String> enu = session.getAttributeNames();
-		String attr = null;
-		//判断是否有内容
-		while (enu.hasMoreElements())
-		{
-			//获取一个内容
-			attr = enu.nextElement();
-			out.println("&nbsp;&nbsp;&nbsp;&nbsp;" + attr + "="
-					+ session.getAttribute(attr) + "<br>");
-		}
-	%>
-	<hr>
-	session最大存活时间:<%=session.getMaxInactiveInterval() %>秒=<%=session.getMaxInactiveInterval()/60 %>分钟<br>
+    <h2>session内置对象</h2>
+    <%
+        //获取session的创建时间
+        Date date = new Date(session.getCreationTime());
+        SimpleDateFormat format = new SimpleDateFormat(
+                "yyyy年MM月dd日 HH:mm:ss");
+    %>
+    session对象的创建时间:
+    <%=format.format(date)%><br>
+    session对象的ID:<%=session.getId()%><br>
+    <hr>
+    遍历session中的属性/属性值对:
+    <br>
+    <%
+        //获取session中的所有属性
+        Enumeration<String> enu = session.getAttributeNames();
+        String attr = null;
+        //判断是否有内容
+        while (enu.hasMoreElements())
+        {
+            //获取一个内容
+            attr = enu.nextElement();
+            out.println("&nbsp;&nbsp;&nbsp;&nbsp;" + attr + "="
+                    + session.getAttribute(attr) + "<br>");
+        }
+    %>
+    <hr>
+    session最大存活时间:<%=session.getMaxInactiveInterval() %>秒=<%=session.getMaxInactiveInterval()/60 %>分钟<br>
 </body>
 </html>
 ```
@@ -274,7 +274,7 @@ session2.jsp访问效果：
 - 1 某次会话中通过超链接打开的新页面属于同一次会话。
 - 2 只要当前会话页面没有全部关闭,重新打开新的浏览器窗口访问同一项目资源时属于同一次会话。
 - 3 除非本次会话的所有页面都关闭(关闭所有相关浏览器窗口)后再重新访问某个JSP或者servlet将会创建新的会话。
-	- 注意: `原有会话还存在`,只是这个旧的 Session仍然存在于服务端,`只不过再也没有客户端会携带它然后交予服务端校验`,除非旧的会话超时了，旧的会话才结束。
+    - 注意: `原有会话还存在`,只是这个旧的 Session仍然存在于服务端,`只不过再也没有客户端会携带它然后交予服务端校验`,除非旧的会话超时了，旧的会话才结束。
 
 #### 验证说法1 ####
 修改session.jsp,session2.jsp如下：
@@ -293,36 +293,36 @@ session.jsp：
 <title>session</title>
 </head>
 <body>
-	<h2>session内置对象</h2>
-	<%
-		//获取session的创建时间
-		Date date = new Date(session.getCreationTime());
-		SimpleDateFormat format = new SimpleDateFormat(
-				"yyyy年MM月dd日 HH:mm:ss");
-		//设置session属性
-		session.setAttribute("user", "admin");
-		session.setAttribute("password", "123456");
-	%>
-	session对象的创建时间:
-	<%=format.format(date)%><br> session对象的ID:<%=session.getId()%><br>
-	<hr>
-	遍历session中的属性/属性值对:
-	<br>
-	<%
-		//获取session中的所有属性
-		Enumeration<String> enu = session.getAttributeNames();
-		String attr = null;
-		//判断是否有内容
-		while (enu.hasMoreElements())
-		{
-			//获取一个内容
-			attr = enu.nextElement();
-			out.println("&nbsp;&nbsp;&nbsp;&nbsp;" + attr + "="
-					+ session.getAttribute(attr) + "<br>");
-		}
-	%>
-	<hr>
-	<a href="http://localhost:8080/HelloWorld/session2.jsp" target="_blank">跳转到session2</a>
+    <h2>session内置对象</h2>
+    <%
+        //获取session的创建时间
+        Date date = new Date(session.getCreationTime());
+        SimpleDateFormat format = new SimpleDateFormat(
+                "yyyy年MM月dd日 HH:mm:ss");
+        //设置session属性
+        session.setAttribute("user", "admin");
+        session.setAttribute("password", "123456");
+    %>
+    session对象的创建时间:
+    <%=format.format(date)%><br> session对象的ID:<%=session.getId()%><br>
+    <hr>
+    遍历session中的属性/属性值对:
+    <br>
+    <%
+        //获取session中的所有属性
+        Enumeration<String> enu = session.getAttributeNames();
+        String attr = null;
+        //判断是否有内容
+        while (enu.hasMoreElements())
+        {
+            //获取一个内容
+            attr = enu.nextElement();
+            out.println("&nbsp;&nbsp;&nbsp;&nbsp;" + attr + "="
+                    + session.getAttribute(attr) + "<br>");
+        }
+    %>
+    <hr>
+    <a href="http://localhost:8080/HelloWorld/session2.jsp" target="_blank">跳转到session2</a>
 </body>
 </html>
 ```
@@ -339,33 +339,33 @@ session2.jsp:
 <title>session2</title>
 </head>
 <body>
-	<h2>session内置对象</h2>
-	<%
-		//获取session的创建时间
-		Date date = new Date(session.getCreationTime());
-		SimpleDateFormat format = new SimpleDateFormat(
-				"yyyy年MM月dd日 HH:mm:ss");
-	%>
-	session对象的创建时间:
-	<%=format.format(date)%><br>
-	session对象的ID:<%=session.getId()%><br>
-	<hr>
-	遍历session中的属性/属性值对:
-	<br>
-	<%
-		//获取session中的所有属性
-		Enumeration<String> enu = session.getAttributeNames();
-		String attr = null;
-		//判断是否有内容
-		while (enu.hasMoreElements())
-		{
-			//获取一个内容
-			attr = enu.nextElement();
-			out.println("&nbsp;&nbsp;&nbsp;&nbsp;" + attr + "="
-					+ session.getAttribute(attr) + "<br>");
-		}
-	%>
-	<hr>
+    <h2>session内置对象</h2>
+    <%
+        //获取session的创建时间
+        Date date = new Date(session.getCreationTime());
+        SimpleDateFormat format = new SimpleDateFormat(
+                "yyyy年MM月dd日 HH:mm:ss");
+    %>
+    session对象的创建时间:
+    <%=format.format(date)%><br>
+    session对象的ID:<%=session.getId()%><br>
+    <hr>
+    遍历session中的属性/属性值对:
+    <br>
+    <%
+        //获取session中的所有属性
+        Enumeration<String> enu = session.getAttributeNames();
+        String attr = null;
+        //判断是否有内容
+        while (enu.hasMoreElements())
+        {
+            //获取一个内容
+            attr = enu.nextElement();
+            out.println("&nbsp;&nbsp;&nbsp;&nbsp;" + attr + "="
+                    + session.getAttribute(attr) + "<br>");
+        }
+    %>
+    <hr>
 </body>
 </html>
 ```
@@ -447,38 +447,38 @@ session.invalidate();
 <title>session</title>
 </head>
 <body>
-	<h2>session内置对象</h2>
-	<%
-		//获取session的创建时间
-		Date date = new Date(session.getCreationTime());
-		SimpleDateFormat format = new SimpleDateFormat(
-				"yyyy年MM月dd日 HH:mm:ss");
-		//设置session属性
-		session.setAttribute("user", "admin");
-		session.setAttribute("password", "123456");
-	%>
-	session对象的创建时间:
-	<%=format.format(date)%><br> session对象的ID:<%=session.getId()%><br>
-	<hr>
-	遍历session中的属性/属性值对:
-	<br>
-	<%
-		//获取session中的所有属性
-		Enumeration<String> enu = session.getAttributeNames();
-		String attr = null;
-		//判断是否有内容
-		while (enu.hasMoreElements())
-		{
-			//获取一个内容
-			attr = enu.nextElement();
-			out.println("&nbsp;&nbsp;&nbsp;&nbsp;" + attr + "="
-					+ session.getAttribute(attr) + "<br>");
-		}
-		//销毁当前session
-		session.invalidate();
-	%>
-	<hr>
-	<a href="http://localhost:8080/HelloWorld/session2.jsp" target="_blank">跳转到session2</a>
+    <h2>session内置对象</h2>
+    <%
+        //获取session的创建时间
+        Date date = new Date(session.getCreationTime());
+        SimpleDateFormat format = new SimpleDateFormat(
+                "yyyy年MM月dd日 HH:mm:ss");
+        //设置session属性
+        session.setAttribute("user", "admin");
+        session.setAttribute("password", "123456");
+    %>
+    session对象的创建时间:
+    <%=format.format(date)%><br> session对象的ID:<%=session.getId()%><br>
+    <hr>
+    遍历session中的属性/属性值对:
+    <br>
+    <%
+        //获取session中的所有属性
+        Enumeration<String> enu = session.getAttributeNames();
+        String attr = null;
+        //判断是否有内容
+        while (enu.hasMoreElements())
+        {
+            //获取一个内容
+            attr = enu.nextElement();
+            out.println("&nbsp;&nbsp;&nbsp;&nbsp;" + attr + "="
+                    + session.getAttribute(attr) + "<br>");
+        }
+        //销毁当前session
+        session.invalidate();
+    %>
+    <hr>
+    <a href="http://localhost:8080/HelloWorld/session2.jsp" target="_blank">跳转到session2</a>
 </body>
 </html>
 ```
@@ -497,7 +497,7 @@ session.invalidate();
 ```xml
 <!-- 设置会话60分钟后过期 -->
 <session-config>
-	<session-timeout>60</session-timeout>
+    <session-timeout>60</session-timeout>
 </session-config>
 ```
 可以进入tomcat后天管理查看当前会话的活动时间已经被设置为60分钟了，而不是默认的30分钟：

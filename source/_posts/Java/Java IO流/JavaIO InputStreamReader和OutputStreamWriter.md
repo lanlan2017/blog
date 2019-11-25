@@ -69,7 +69,7 @@ abbrlink: a5e554af
 public static void main(String[] args) throws IOException
 {
     InputStreamReader inReader = new InputStreamReader(
-    	new FileInputStream("utf8.txt"), "utf-8");
+        new FileInputStream("utf8.txt"), "utf-8");
     //先判断能不能读取
     if (!inReader.ready())
     {
@@ -100,22 +100,22 @@ utf-8 file
 #### 实例：按字符数组读取文件 ####
 ```java
 InputStreamReader inReader = new InputStreamReader(
-		new FileInputStream("utf8.txt"), "utf-8");
+        new FileInputStream("utf8.txt"), "utf-8");
 //先判断能不能读取
 if (!inReader.ready())
 {
-	System.out.println("无法读取此文件！");
-	return;
+    System.out.println("无法读取此文件！");
+    return;
 }
 int size = 0;
 char[] cbuf = new char[10];
 // 每次读取一个数组
 while ((size = inReader.read(cbuf, 0, cbuf.length)) != -1)
 {
-	// 错误的写法
-	System.out.print(new String(cbuf));
-	// 注意读到多少个字符就转换多少个字符,不要转换整个字符
-	// System.out.print(new String(cbuf, 0, size));
+    // 错误的写法
+    System.out.print(new String(cbuf));
+    // 注意读到多少个字符就转换多少个字符,不要转换整个字符
+    // System.out.print(new String(cbuf, 0, size));
 }
 ```
 这里要注意写法，因为有的时候并不能读慢整个字符数组cbuf，所以我们输出的时候，读取到多少个字符就输出多少个，`System.out.print(new String(cbuf, 0, size));`，而不是输出整个数组 `System.out.print(new String(cbuf));`
@@ -192,68 +192,68 @@ OutputStreamWriter的API：
 
 ```
 public static void writeByOutputStreamWriter(String fileName)
-		throws FileNotFoundException, IOException
+        throws FileNotFoundException, IOException
 {
-	OutputStreamWriter out = new OutputStreamWriter(
-			new FileOutputStream(fileName));
-	char c = 'I';
-	// 写入单个字符
-	out.write(c);
-	String str = "am groot\n";
-	// 字符串转换为字符数组
-	char[] cbuf = str.toCharArray();
-	// 写入字符数组
-	out.write(cbuf, 0, cbuf.length);
-	String str2 = "I am groot!";
-	// 写入整个字符串
-	out.write(str2, 0, str2.length());// 写入字符串
-	out.close();
+    OutputStreamWriter out = new OutputStreamWriter(
+            new FileOutputStream(fileName));
+    char c = 'I';
+    // 写入单个字符
+    out.write(c);
+    String str = "am groot\n";
+    // 字符串转换为字符数组
+    char[] cbuf = str.toCharArray();
+    // 写入字符数组
+    out.write(cbuf, 0, cbuf.length);
+    String str2 = "I am groot!";
+    // 写入整个字符串
+    out.write(str2, 0, str2.length());// 写入字符串
+    out.close();
 }
 ```
 运用上面的InputStreamReader的知识,写两个方法来读取写入的内容
 按字符读取：
 ```
 public static void readByInputStreamReader(String fileName)
-		throws FileNotFoundException, IOException
+        throws FileNotFoundException, IOException
 {
-	InputStreamReader in = new InputStreamReader(
-			new FileInputStream(fileName));
-	int ch;
-	while ((ch = in.read()) != -1)
-	{
-		System.out.print((char) ch);
-	}
-	in.close();
+    InputStreamReader in = new InputStreamReader(
+            new FileInputStream(fileName));
+    int ch;
+    while ((ch = in.read()) != -1)
+    {
+        System.out.print((char) ch);
+    }
+    in.close();
 }
 ```
 按字符数组读取：
 ```
 public static void readByInputStreamReaderCharArr(String fileName)
-			throws FileNotFoundException, IOException
-	{
-		InputStreamReader in = new InputStreamReader(
-				new FileInputStream(fileName));
-		int size;
-		char[] array = new char[10];
-		while ((size = in.read(array, 0, array.length)) != -1)
-		{
-			System.out.print(new String(array, 0, size));
-		}
-		in.close();
-	}
+            throws FileNotFoundException, IOException
+    {
+        InputStreamReader in = new InputStreamReader(
+                new FileInputStream(fileName));
+        int size;
+        char[] array = new char[10];
+        while ((size = in.read(array, 0, array.length)) != -1)
+        {
+            System.out.print(new String(array, 0, size));
+        }
+        in.close();
+    }
 ```
 main方法：
 ```
 public static void main(String[] args) throws IOException
 {
-	String fileName = "test.txt";
-	System.out.println("写文件结束...");
-	writeByOutputStreamWriter(fileName);
-	System.out.println("写文件结束...");
-	// System.out.println(c+new String(cbuf)+str2);
-	System.out.println("--------------读字符：-------------------");
-	// readByInputStreamReader(fileName);
-	readByInputStreamReaderCharArr(fileName);
+    String fileName = "test.txt";
+    System.out.println("写文件结束...");
+    writeByOutputStreamWriter(fileName);
+    System.out.println("写文件结束...");
+    // System.out.println(c+new String(cbuf)+str2);
+    System.out.println("--------------读字符：-------------------");
+    // readByInputStreamReader(fileName);
+    readByInputStreamReaderCharArr(fileName);
 }
 ```
 运行结果：
@@ -293,57 +293,57 @@ Exception in thread "main" java.io.FileNotFoundException: \new1\test222.txt (系
 ```
 while((size=in.read(cbuf, 0, cbuf.length))!=-1)
 {
-	//然后把数字中读取到的字符写入到输出流中，注意读多少写多好，不要整个数组都写进去
-	out.write(cbuf, 0, size);
+    //然后把数字中读取到的字符写入到输出流中，注意读多少写多好，不要整个数组都写进去
+    out.write(cbuf, 0, size);
 }
 ```
 完整的代码：
 ```
 public static void copy(String from, String to)
 {
-	InputStreamReader in=null;
-	OutputStreamWriter out=null;
-	try
-	{
-		in = new InputStreamReader(new FileInputStream(from),"gbk");
-		//如果可以读了
-		if(in.ready())
-		{
-			out=new OutputStreamWriter(new FileOutputStream(to), "gbk");
-			//缓存字符数组
-			char[] cbuf=new char[20];
-			int size;
-			//从输入流中读取一个数组的字符到数组中
-			while((size=in.read(cbuf, 0, cbuf.length))!=-1)
-			{
-				//然后把数字中读取到的字符写入到输出流中，注意读多少写多好，不要整个数组都写进去
-				out.write(cbuf, 0, size);
-			}
-		}
-	} catch (UnsupportedEncodingException | FileNotFoundException e)
-	{
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (IOException e)
-	{
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	finally 
-	{
-		if(in!=null)
-		{
-			try{in.close();} 
-			catch (IOException e)
-			{e.printStackTrace();}
-		}
-		if(out!=null)
-		{
-			try{out.close();} 
-			catch (IOException e)
-			{e.printStackTrace();}
-		}
-	}
+    InputStreamReader in=null;
+    OutputStreamWriter out=null;
+    try
+    {
+        in = new InputStreamReader(new FileInputStream(from),"gbk");
+        //如果可以读了
+        if(in.ready())
+        {
+            out=new OutputStreamWriter(new FileOutputStream(to), "gbk");
+            //缓存字符数组
+            char[] cbuf=new char[20];
+            int size;
+            //从输入流中读取一个数组的字符到数组中
+            while((size=in.read(cbuf, 0, cbuf.length))!=-1)
+            {
+                //然后把数字中读取到的字符写入到输出流中，注意读多少写多好，不要整个数组都写进去
+                out.write(cbuf, 0, size);
+            }
+        }
+    } catch (UnsupportedEncodingException | FileNotFoundException e)
+    {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IOException e)
+    {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+    finally 
+    {
+        if(in!=null)
+        {
+            try{in.close();} 
+            catch (IOException e)
+            {e.printStackTrace();}
+        }
+        if(out!=null)
+        {
+            try{out.close();} 
+            catch (IOException e)
+            {e.printStackTrace();}
+        }
+    }
 }
 ```
 源文件：

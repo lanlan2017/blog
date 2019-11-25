@@ -58,21 +58,21 @@ abbrlink: e47ffad6
 // 1 设置合成监听器
 static SynthesizeToUriListener synthesizeToUriListener = new SynthesizeToUriListener()
 {
-	// progress为合成进度0~100
-	public void onBufferProgress(int progress)
-	{
-	}
-	// 会话合成完成回调接口
-	// uri为合成保存地址，error为错误信息，为null时表示合成会话成功
-	public void onSynthesizeCompleted(String uri, SpeechError error)
-	{
-	}
-	@Override
-	public void onEvent(int arg0, int arg1, int arg2, int arg3, Object arg4,
-			Object arg5)
-	{
-		// TODO Auto-generated method stub
-	}
+    // progress为合成进度0~100
+    public void onBufferProgress(int progress)
+    {
+    }
+    // 会话合成完成回调接口
+    // uri为合成保存地址，error为错误信息，为null时表示合成会话成功
+    public void onSynthesizeCompleted(String uri, SpeechError error)
+    {
+    }
+    @Override
+    public void onEvent(int arg0, int arg1, int arg2, int arg3, Object arg4,
+            Object arg5)
+    {
+        // TODO Auto-generated method stub
+    }
 };
 ```
 设置好监听器之后，下面就可来合成并下载音频了。
@@ -80,24 +80,24 @@ static SynthesizeToUriListener synthesizeToUriListener = new SynthesizeToUriList
 ```java
 public static void main(String[] args)
 {
-	// 2 将“XXXXXXXX”替换成您申请的APPID
-	SpeechUtility.createUtility(SpeechConstant.APPID + "=XXXXXXXX");
-	// 3.创建SpeechSynthesizer对象
-	SpeechSynthesizer mTts = SpeechSynthesizer.createSynthesizer();
-	// 4.合成参数设置，详见《MSC Reference Manual》SpeechSynthesizer 类
-	// 设置发音人
-	mTts.setParameter(SpeechConstant.VOICE_NAME, "xiaoyu");
-	// 设置语速，范围0~100
-	mTts.setParameter(SpeechConstant.SPEED, "50");
-	// 设置语调，范围0~100
-	mTts.setParameter(SpeechConstant.PITCH, "50");
-	// 设置音量，范围0~100
-	mTts.setParameter(SpeechConstant.VOLUME, "50");
-	// 5设置要合成的文本
-	String text="测试语音合成";
-	// 6.开始合成 //设置合成音频保存位置（可自定义保存位置），默认保存在“./tts_test.pcm”
-	mTts.synthesizeToUri(text, "./tts_test.pcm",
-			synthesizeToUriListener);
+    // 2 将“XXXXXXXX”替换成您申请的APPID
+    SpeechUtility.createUtility(SpeechConstant.APPID + "=XXXXXXXX");
+    // 3.创建SpeechSynthesizer对象
+    SpeechSynthesizer mTts = SpeechSynthesizer.createSynthesizer();
+    // 4.合成参数设置，详见《MSC Reference Manual》SpeechSynthesizer 类
+    // 设置发音人
+    mTts.setParameter(SpeechConstant.VOICE_NAME, "xiaoyu");
+    // 设置语速，范围0~100
+    mTts.setParameter(SpeechConstant.SPEED, "50");
+    // 设置语调，范围0~100
+    mTts.setParameter(SpeechConstant.PITCH, "50");
+    // 设置音量，范围0~100
+    mTts.setParameter(SpeechConstant.VOLUME, "50");
+    // 5设置要合成的文本
+    String text="测试语音合成";
+    // 6.开始合成 //设置合成音频保存位置（可自定义保存位置），默认保存在“./tts_test.pcm”
+    mTts.synthesizeToUri(text, "./tts_test.pcm",
+            synthesizeToUriListener);
 }
 ```
 ## 完整下载Java demo如下 ##
@@ -110,45 +110,45 @@ import com.iflytek.cloud.speech.SpeechUtility;
 import com.iflytek.cloud.speech.SynthesizeToUriListener;
 public class DownloadDemo
 {
-	public static void main(String[] args)
-	{
-		// 2 将“XXXXXXXX”替换成您申请的APPID
-		SpeechUtility.createUtility(SpeechConstant.APPID + "=5c80ae6b");
-		// 3.创建SpeechSynthesizer对象
-		SpeechSynthesizer mTts = SpeechSynthesizer.createSynthesizer();
-		// 4.合成参数设置，详见《MSC Reference Manual》SpeechSynthesizer 类
-		// 设置发音人
-		mTts.setParameter(SpeechConstant.VOICE_NAME, "xiaoyu");
-		// 设置语速，范围0~100
-		mTts.setParameter(SpeechConstant.SPEED, "50");
-		// 设置语调，范围0~100
-		mTts.setParameter(SpeechConstant.PITCH, "50");
-		// 设置音量，范围0~100
-		mTts.setParameter(SpeechConstant.VOLUME, "50");
-		// 5设置要合成的文本
-		String text = "测试语音合成";
-		// 6.开始合成 //设置合成音频保存位置（可自定义保存位置），默认保存在“./tts_test.pcm”
-		mTts.synthesizeToUri(text, "./tts_test.pcm", synthesizeToUriListener);
-	}
-	// 1 设置合成监听器
-	static SynthesizeToUriListener synthesizeToUriListener = new SynthesizeToUriListener()
-	{
-		// progress为合成进度0~100
-		public void onBufferProgress(int progress)
-		{
-		}
-		// 会话合成完成回调接口
-		// uri为合成保存地址，error为错误信息，为null时表示合成会话成功
-		public void onSynthesizeCompleted(String uri, SpeechError error)
-		{
-		}
-		@Override
-		public void onEvent(int arg0, int arg1, int arg2, int arg3, Object arg4,
-				Object arg5)
-		{
-			// TODO Auto-generated method stub
-		}
-	};
+    public static void main(String[] args)
+    {
+        // 2 将“XXXXXXXX”替换成您申请的APPID
+        SpeechUtility.createUtility(SpeechConstant.APPID + "=5c80ae6b");
+        // 3.创建SpeechSynthesizer对象
+        SpeechSynthesizer mTts = SpeechSynthesizer.createSynthesizer();
+        // 4.合成参数设置，详见《MSC Reference Manual》SpeechSynthesizer 类
+        // 设置发音人
+        mTts.setParameter(SpeechConstant.VOICE_NAME, "xiaoyu");
+        // 设置语速，范围0~100
+        mTts.setParameter(SpeechConstant.SPEED, "50");
+        // 设置语调，范围0~100
+        mTts.setParameter(SpeechConstant.PITCH, "50");
+        // 设置音量，范围0~100
+        mTts.setParameter(SpeechConstant.VOLUME, "50");
+        // 5设置要合成的文本
+        String text = "测试语音合成";
+        // 6.开始合成 //设置合成音频保存位置（可自定义保存位置），默认保存在“./tts_test.pcm”
+        mTts.synthesizeToUri(text, "./tts_test.pcm", synthesizeToUriListener);
+    }
+    // 1 设置合成监听器
+    static SynthesizeToUriListener synthesizeToUriListener = new SynthesizeToUriListener()
+    {
+        // progress为合成进度0~100
+        public void onBufferProgress(int progress)
+        {
+        }
+        // 会话合成完成回调接口
+        // uri为合成保存地址，error为错误信息，为null时表示合成会话成功
+        public void onSynthesizeCompleted(String uri, SpeechError error)
+        {
+        }
+        @Override
+        public void onEvent(int arg0, int arg1, int arg2, int arg3, Object arg4,
+                Object arg5)
+        {
+            // TODO Auto-generated method stub
+        }
+    };
 }
 
 ```

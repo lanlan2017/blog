@@ -28,39 +28,39 @@ abbrlink: c20afdb9
 ```xml
 <!-- Spring MVC依赖 -->
 <dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-aop</artifactId>
-	<version>5.1.7.RELEASE</version>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aop</artifactId>
+    <version>5.1.7.RELEASE</version>
 </dependency>
 <dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-beans</artifactId>
-	<version>5.1.7.RELEASE</version>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-beans</artifactId>
+    <version>5.1.7.RELEASE</version>
 </dependency>
 <dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-context</artifactId>
-	<version>5.1.7.RELEASE</version>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>5.1.7.RELEASE</version>
 </dependency>
 <dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-expression</artifactId>
-	<version>5.1.7.RELEASE</version>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-expression</artifactId>
+    <version>5.1.7.RELEASE</version>
 </dependency>
 <dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-web</artifactId>
-	<version>5.1.7.RELEASE</version>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-web</artifactId>
+    <version>5.1.7.RELEASE</version>
 </dependency>
 <dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-webmvc</artifactId>
-	<version>5.1.7.RELEASE</version>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>5.1.7.RELEASE</version>
 </dependency>
 <dependency>
-	<groupId>commons-logging</groupId>
-	<artifactId>commons-logging</artifactId>
-	<version>1.2</version>
+    <groupId>commons-logging</groupId>
+    <artifactId>commons-logging</artifactId>
+    <version>1.2</version>
 </dependency>
 <!-- Spring MVC依赖结束 -->
 ```

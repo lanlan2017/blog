@@ -36,13 +36,13 @@ abbrlink: ccc57c12
 # 步骤 #
 手工创建java web程序步骤如下:
 - 创建项目目录结构
-	- 在 WebApps创建项目目录，我这里是`D:\dev\apache-tomcat-8.0.33\webapps`
-	- 编写 `index. jsp`
-	- 创建WEB-INF目录
-		- 创建web.xml文件
-			- 编写web.xml文件
-		- 创建classes目录
-		- 创建lib目录
+    - 在 WebApps创建项目目录，我这里是`D:\dev\apache-tomcat-8.0.33\webapps`
+    - 编写 `index. jsp`
+    - 创建WEB-INF目录
+        - 创建web.xml文件
+            - 编写web.xml文件
+        - 创建classes目录
+        - 创建lib目录
 - 测试运行
 
 # 创建项目目录结构 #
@@ -55,13 +55,13 @@ abbrlink: ccc57c12
 然后打开`index.jsp`文件，在里面写上基本html代码，如下所示:
 ```html
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>HelloWorld</title>
-	</head>
-	<body>
-		<h1>欢迎来到HelloWorld</h1>
-	</body>
+    <head>
+        <meta charset="utf-8">
+        <title>HelloWorld</title>
+    </head>
+    <body>
+        <h1>欢迎来到HelloWorld</h1>
+    </body>
 </html>
 ```
 ## 创建Web_INF文件夹 ##

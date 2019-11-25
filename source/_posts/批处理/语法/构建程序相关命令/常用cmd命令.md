@@ -295,7 +295,7 @@ set /p 变量名=提示信息
 ```bat
 set /p isCommit=是否提交?(y/n):
 if %isCommit%==y (
-	一些命令...
+    一些命令...
 )
 ```
 具体如下：
@@ -311,15 +311,15 @@ echo.
 ::让用户来判断是否提交
 set /p isCommit=是否提交?(y/n):
 if %isCommit%==y (
-	set /p message=提交说明:
-	git add .
-	git commit -m "message"
+    set /p message=提交说明:
+    git add .
+    git commit -m "message"
 )
 echo.
 ::让用户来判断是否推送到Github
 set /p isPush=是否push到Github?(y/n):
 if %isPush%==y (
-	git push origin master
+    git push origin master
 )
 ```
 之前项目管理我一直手动来输入git命令，刚开始是为了熟悉命令，后面久了难免繁琐浪费时间，于是写了以上的bat脚本来完成。

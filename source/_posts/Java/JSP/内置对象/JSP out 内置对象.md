@@ -39,12 +39,12 @@ out对象一个最基本的应用就是向客户端浏览器输出信息。out�
 在使用 print0方法和 println()方法在页面中输出信息时,并不能很好地区分出两者的区别,因为在使用 printIn()方法向页面中输出的换行符显示在页面中时,并不能看到其后面的文字真的换行了,如果想让其显示,需要将要输出的文本使用HIML的`<pre>`标记括起来。修改后的代码如下:
 ```jsp
 <%
-	out.println("第一句脚本JSP脚本的输出,");
-	out.println("第二句是脚本JSP脚本的输出.");
+    out.println("第一句脚本JSP脚本的输出,");
+    out.println("第二句是脚本JSP脚本的输出.");
 %>
 <pre><%
-		out.println("第一句脚本JSP脚本的输出,");
-		out.println("第二句是脚本JSP脚本的输出.");
+        out.println("第一句脚本JSP脚本的输出,");
+        out.println("第二句是脚本JSP脚本的输出.");
 %></pre>
 ```
 显示效果：
@@ -77,15 +77,15 @@ out对象的类一个比较重要的功能就是对缓冲区进行管理。通�
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	out.println("<h2>测试out内置对象</h2>");
-	out.println("第一句脚本JSP脚本的输出,哈哈哈哈<br>");
-//	out.flush();//清空缓冲区，就是先把上面的第一句先写到浏览器
-// 	out.clear();//清除缓冲区的内容,在flush之后调用会抛出异常,程序终止
-//	out.clearBuffer();//清空缓冲区的内容,在flush之后调用不会抛出异常。
-	out.println("第二句是脚本JSP脚本的输出,哈哈哈哈<br>");
-	%>
-	<table>
+    <%
+    out.println("<h2>测试out内置对象</h2>");
+    out.println("第一句脚本JSP脚本的输出,哈哈哈哈<br>");
+//    out.flush();//清空缓冲区，就是先把上面的第一句先写到浏览器
+//     out.clear();//清除缓冲区的内容,在flush之后调用会抛出异常,程序终止
+//    out.clearBuffer();//清空缓冲区的内容,在flush之后调用不会抛出异常。
+    out.println("第二句是脚本JSP脚本的输出,哈哈哈哈<br>");
+    %>
+    <table>
     <tr>
         <td align="right">缓冲区大小:</td>
         <td><%=out.getBufferSize() %></td>
@@ -116,10 +116,10 @@ out对象的类一个比较重要的功能就是对缓冲区进行管理。通�
 ```
 严重: Servlet.service() for servlet [jsp] in context with path [/HelloWorld] threw exception
 java.io.IOException: An exception occurred processing JSP page [/out.jsp] at line [14]
-11: 	out.println("<h2>娴嬭瘯out鍐呯疆瀵硅薄</h2>");
-12: 	out.println("绗竴鍙ヨ剼鏈琂SP鑴氭湰鐨勮緭鍑?,鍝堝搱鍝堝搱<br>");
-13: 	out.flush();//娓呯┖缂撳啿鍖猴紝灏辨槸鍏堟妸涓婇潰鐨勭涓?鍙ュ厛鍐欏埌娴忚鍣?
-14: 	out.clear();//娓呴櫎缂撳啿鍖虹殑鍐呭,鍦╢lush涔嬪悗璋冪敤浼氭姏鍑哄紓甯?,绋嬪簭缁堟
+11:     out.println("<h2>娴嬭瘯out鍐呯疆瀵硅薄</h2>");
+12:     out.println("绗竴鍙ヨ剼鏈琂SP鑴氭湰鐨勮緭鍑?,鍝堝搱鍝堝搱<br>");
+13:     out.flush();//娓呯┖缂撳啿鍖猴紝灏辨槸鍏堟妸涓婇潰鐨勭涓?鍙ュ厛鍐欏埌娴忚鍣?
+14:     out.clear();//娓呴櫎缂撳啿鍖虹殑鍐呭,鍦╢lush涔嬪悗璋冪敤浼氭姏鍑哄紓甯?,绋嬪簭缁堟
 ```
 所以，调用了flush之后不要再接着调用clear()会报出异常的。
 ### 验证clearBuffer()方法 ###

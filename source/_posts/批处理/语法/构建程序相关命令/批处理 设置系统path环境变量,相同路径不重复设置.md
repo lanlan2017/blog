@@ -59,14 +59,14 @@ find "%thispath%" temp.txt
 批处理命令都有程序返回码`errorlevel`，对于find命令，如果在文件中查找到则返回`0`，如果没有找到则返回`1`，返回的结果就保存在程序返回码`errorlevel`中。所以我们可以根据程序返回码来做响应的条件处理:
 ```bat
 if %errorlevel% == 0 (
-	echo path环境变量中 已经包含了 当前路径%thispath%
-	echo 程序返回码:%errorlevel%
+    echo path环境变量中 已经包含了 当前路径%thispath%
+    echo 程序返回码:%errorlevel%
 ) else (
-	echo path环境变量中 没有包含   当前路径%thispath%
-	echo 程序返回码:%errorlevel%
-	::追加当前文件所在目录的路径到path环境变量中
-	setx /m "path" "%thispath%;%path%"
-)	
+    echo path环境变量中 没有包含   当前路径%thispath%
+    echo 程序返回码:%errorlevel%
+    ::追加当前文件所在目录的路径到path环境变量中
+    setx /m "path" "%thispath%;%path%"
+)    
 ```
 设置好环境变量后，删除临时文件即可,完整的代码如下:
 ### 添加当前目录路径到path系统环境变量中 不重复添加 ###
@@ -86,14 +86,14 @@ echo %mypath% > temp.txt
 find "%thispath%" temp.txt
 ::如果查找到则fin命令返回0,如果没有找到find命令返回1
 if %errorlevel% == 0 (
-	echo path环境变量中 已经包含了 当前路径%thispath%
-	echo 程序返回码:%errorlevel%
+    echo path环境变量中 已经包含了 当前路径%thispath%
+    echo 程序返回码:%errorlevel%
 ) else (
-	echo path环境变量中 没有包含   当前路径%thispath%
-	echo 程序返回码:%errorlevel%
-	::追加当前文件所在目录的路径到path环境变量中
-	setx /m "path" "%thispath%;%path%"
-)	
+    echo path环境变量中 没有包含   当前路径%thispath%
+    echo 程序返回码:%errorlevel%
+    ::追加当前文件所在目录的路径到path环境变量中
+    setx /m "path" "%thispath%;%path%"
+)    
 ::删除临时文件
 del temp.txt
 pause
@@ -111,24 +111,24 @@ set toAdd=D:\dev\workspace\MarkdownTools
 set finded=false
 :loop
 for /f "tokens=1* delims=;" %%a in ("%remain%") do (
-	::如果找到相同的了
-	if "%toAdd%"=="%%a" (
-		::直接退出
-		goto :isFinded
-		::该表标记,true表示有重复的了
-		set finded=true
-	)
-	rem 将截取剩下的部分赋给变量remain，其实这里可以使用延迟变量开关
-	set remain=%%b
+    ::如果找到相同的了
+    if "%toAdd%"=="%%a" (
+        ::直接退出
+        goto :isFinded
+        ::该表标记,true表示有重复的了
+        set finded=true
+    )
+    rem 将截取剩下的部分赋给变量remain，其实这里可以使用延迟变量开关
+    set remain=%%b
 )
 ::如果还有剩余,则继续分割
 if defined remain goto :loop
 ::如果没有重复:
 if "%finded%"=="false" (
-	echo 正在修改系统path环境变量...
-	setx /m "path" "%toAdd%;%path%"
-	::结束程序
-	goto :end
+    echo 正在修改系统path环境变量...
+    setx /m "path" "%toAdd%;%path%"
+    ::结束程序
+    goto :end
 )
 :isFinded
 echo path环境变量中已经有了该环境变量,无须重复添加.
@@ -143,9 +143,9 @@ setlocal enabledelayedexpansion
 set remain=%path%
 :loop
 for /f "tokens=1* delims=;" %%a in ("%remain%") do (
-	echo %%a
-	::剩下的赋值给原来的副本,以备下次分段
-	set remain=%%b
+    echo %%a
+    ::剩下的赋值给原来的副本,以备下次分段
+    set remain=%%b
 )
 ::如果还有剩余,则继续分割
 if defined remain goto :loop
@@ -187,9 +187,9 @@ echo.
 set toFind=D:\dev\workspace\MarkdownTools
 :loop
 for /f "tokens=1* delims=;" %%a in ("%remain%") do (
-	if "%toFind%"=="%%a" (echo 找到:%%a)
-	rem 将截取剩下的部分赋给变量remain，其实这里可以使用延迟变量开关
-	set remain=%%b
+    if "%toFind%"=="%%a" (echo 找到:%%a)
+    rem 将截取剩下的部分赋给变量remain，其实这里可以使用延迟变量开关
+    set remain=%%b
 )
 ::如果还有剩余,则继续分割
 if defined remain goto :loop
@@ -216,12 +216,12 @@ set remain=%path%
 set toDel=D:\dev\workspace\MarkdownTools
 :loop
 for /f "tokens=1* delims=;" %%a in ("%remain%") do (
-	if not "%toDel%"=="%%a" (
-		::如果mypath没有定义的话就直接赋值,赋值之后就只需要追加
-		if not defined mypath ( set mypath=%%a) else (set mypath=%mypath%;%%a)
-	)
-	rem 将截取剩下的部分赋给变量remain，其实这里可以使用延迟变量开关
-	set remain=%%b
+    if not "%toDel%"=="%%a" (
+        ::如果mypath没有定义的话就直接赋值,赋值之后就只需要追加
+        if not defined mypath ( set mypath=%%a) else (set mypath=%mypath%;%%a)
+    )
+    rem 将截取剩下的部分赋给变量remain，其实这里可以使用延迟变量开关
+    set remain=%%b
 )
 ::如果还有剩余,则继续分割
 if defined remain goto :loop

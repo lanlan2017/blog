@@ -46,53 +46,53 @@ a减去A=32
 package first.letter;
 public class LowerUpperCaseFirstLetter
 {
-	public static void main(String[] args)
-	{
-		// 首字母小写
-		System.out.println("首字母变小写:" + lowerCaseFirstLetter("Java"));
-		// 首字母大写
-		System.out.println("首字母变大写:" + upperCaseFirstLetter("java"));
-//		System.out.println("a-z:"+(int)'a'+"-"+(int)'z');
-//		System.out.println("A-Z:"+(int)'A'+"-"+(int)'Z');
-//		System.out.println("0-9:"+(int)'0'+"-"+(int)'9');
-//		System.out.println("a减去A="+(int)('a'-'A'));
-	}
-	/**
-	 * 首字母变大写.
-	 * 
-	 * @param str
-	 *            英文单词.
-	 * @return 首字母大写的英文单词.
-	 */
-	public static String upperCaseFirstLetter(String str)
-	{
-		char[] chars = str.toCharArray();
-		// 如果是小写字母
-		if ('a' <= chars[0] && chars[0] <= 'z')
-		{
-			System.out.println(chars[0] + ":" + (int) (chars[0]));
-			// 小写-32变大写
-			chars[0] = (char) (chars[0] - 32);
-		}
-		return String.valueOf(chars);
-	}
-	/**
-	 * 首字母变小写.
-	 * @param str 英文单词.
-	 * @return 首字母变小写的英文单词.
-	 */
-	public static String lowerCaseFirstLetter(String str)
-	{
-		char[] chars = str.toCharArray();
-		// 如果是大写字母
-		if ('A' <= chars[0] && chars[0] <= 'Z')
-		{
-			System.out.println(chars[0] + ":" + (int) (chars[0]));
-			// 大写+32是变小写
-			chars[0] += 32;
-		}
-		return String.valueOf(chars);
-	}
+    public static void main(String[] args)
+    {
+        // 首字母小写
+        System.out.println("首字母变小写:" + lowerCaseFirstLetter("Java"));
+        // 首字母大写
+        System.out.println("首字母变大写:" + upperCaseFirstLetter("java"));
+//        System.out.println("a-z:"+(int)'a'+"-"+(int)'z');
+//        System.out.println("A-Z:"+(int)'A'+"-"+(int)'Z');
+//        System.out.println("0-9:"+(int)'0'+"-"+(int)'9');
+//        System.out.println("a减去A="+(int)('a'-'A'));
+    }
+    /**
+     * 首字母变大写.
+     * 
+     * @param str
+     *            英文单词.
+     * @return 首字母大写的英文单词.
+     */
+    public static String upperCaseFirstLetter(String str)
+    {
+        char[] chars = str.toCharArray();
+        // 如果是小写字母
+        if ('a' <= chars[0] && chars[0] <= 'z')
+        {
+            System.out.println(chars[0] + ":" + (int) (chars[0]));
+            // 小写-32变大写
+            chars[0] = (char) (chars[0] - 32);
+        }
+        return String.valueOf(chars);
+    }
+    /**
+     * 首字母变小写.
+     * @param str 英文单词.
+     * @return 首字母变小写的英文单词.
+     */
+    public static String lowerCaseFirstLetter(String str)
+    {
+        char[] chars = str.toCharArray();
+        // 如果是大写字母
+        if ('A' <= chars[0] && chars[0] <= 'Z')
+        {
+            System.out.println(chars[0] + ":" + (int) (chars[0]));
+            // 大写+32是变小写
+            chars[0] += 32;
+        }
+        return String.valueOf(chars);
+    }
 }
 ```
 运行结果:

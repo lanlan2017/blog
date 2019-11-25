@@ -75,23 +75,23 @@ import java.net.*;
 import java.io.*;
 public class HelloServer
 {
-	public static void main(String args[]) throws Exception
-	{ 
+    public static void main(String args[]) throws Exception
+    { 
 
-		ServerSocket server = null; // 定义ServerSocket类
-		Socket client = null; // 表示客 户端
-		PrintStream out = null; // 打印流输出最方便
-		server = new ServerSocket(8888); // 服务器在8888端口上监听
-		System.out.println("服务器运行，等待客户端连接。");
-		client = server.accept(); // 得到连接，程序进入到阻塞状态
-		String str = "hello world"; // 表示要输出的信息
-		//在服务端可以通过Socket类的getOutputStream()得到对客户端的输出流
-		out = new PrintStream(client.getOutputStream());
-		//向客户端输出信息
-		out.println(str); 
-		client.close();
-		server.close();
-	}
+        ServerSocket server = null; // 定义ServerSocket类
+        Socket client = null; // 表示客 户端
+        PrintStream out = null; // 打印流输出最方便
+        server = new ServerSocket(8888); // 服务器在8888端口上监听
+        System.out.println("服务器运行，等待客户端连接。");
+        client = server.accept(); // 得到连接，程序进入到阻塞状态
+        String str = "hello world"; // 表示要输出的信息
+        //在服务端可以通过Socket类的getOutputStream()得到对客户端的输出流
+        out = new PrintStream(client.getOutputStream());
+        //向客户端输出信息
+        out.println(str); 
+        client.close();
+        server.close();
+    }
 }
 
 ```
@@ -104,20 +104,20 @@ import java.net.*;
 import java.io.*;
 public class HelloClient
 {
-	public static void main(String args[]) throws Exception
-	{
-		//表示客 户端
-		Socket client = null; 
-		client = new Socket("localhost", 8888);
-		BufferedReader buf = null; 
-		//客户端 可以通过getInputStream()方法获取服务器的输出
-		buf = new BufferedReader(
-				new InputStreamReader(client.getInputStream()));
-		String str = buf.readLine();
-		System.out.println("接收到服务器端输出内容：" + str);
-		buf.close();
-		client.close();
-	}
+    public static void main(String args[]) throws Exception
+    {
+        //表示客 户端
+        Socket client = null; 
+        client = new Socket("localhost", 8888);
+        BufferedReader buf = null; 
+        //客户端 可以通过getInputStream()方法获取服务器的输出
+        buf = new BufferedReader(
+                new InputStreamReader(client.getInputStream()));
+        String str = buf.readLine();
+        System.out.println("接收到服务器端输出内容：" + str);
+        buf.close();
+        client.close();
+    }
 }
 
 ```
@@ -207,55 +207,55 @@ import java.net.*;
 import java.io.*;
 public class EchoServer
 {
-	public static void main(String args[]) throws Exception
-	{
-		//定义服务器引用
-		ServerSocket server = null; 
-		//定义客户端引用
-		Socket client = null;
-		BufferedReader buf = null;
-		PrintStream out = null; 
-		//创建服务器，监听6666端口
-		server = new ServerSocket(6666);
-		//
-		boolean f = true; // 定义个标记位
-		while (f)
-		{
-			System.out.println("服务器运行，等待客户端连接。");
-			//等待客户端连接
-			client = server.accept();
-			//连接成功之后
-			//生成对客户端的输出流
-			out = new PrintStream(client.getOutputStream());
-			//获取客户端对本服务器的输入流
-			buf = new BufferedReader(
-					new InputStreamReader(client.getInputStream()));
-			boolean flag = true; // 标志位，表示可以一直接收并回应信息
-			while (flag)
-			{
-				//从客户端读入一条消息
-				String str = buf.readLine();
-				//如果有读到消息，或者没有读到
-				if (str == null || "".equals(str))
-				{ // 表示没有内容
-					flag = false; // 退出循环
-				} else
-				{
-					if ("exit".equals(str))
-					{ // 如果输入的内容为exit表示结束
-						flag = false;
-					} else
-					{
-						out.println("ECHO : " + str); // 回应信息
-					}
-				}
-			}
-			//关闭客户端
-			client.close();
-		}
-		//关闭服务端
-		server.close();
-	}
+    public static void main(String args[]) throws Exception
+    {
+        //定义服务器引用
+        ServerSocket server = null; 
+        //定义客户端引用
+        Socket client = null;
+        BufferedReader buf = null;
+        PrintStream out = null; 
+        //创建服务器，监听6666端口
+        server = new ServerSocket(6666);
+        //
+        boolean f = true; // 定义个标记位
+        while (f)
+        {
+            System.out.println("服务器运行，等待客户端连接。");
+            //等待客户端连接
+            client = server.accept();
+            //连接成功之后
+            //生成对客户端的输出流
+            out = new PrintStream(client.getOutputStream());
+            //获取客户端对本服务器的输入流
+            buf = new BufferedReader(
+                    new InputStreamReader(client.getInputStream()));
+            boolean flag = true; // 标志位，表示可以一直接收并回应信息
+            while (flag)
+            {
+                //从客户端读入一条消息
+                String str = buf.readLine();
+                //如果有读到消息，或者没有读到
+                if (str == null || "".equals(str))
+                { // 表示没有内容
+                    flag = false; // 退出循环
+                } else
+                {
+                    if ("exit".equals(str))
+                    { // 如果输入的内容为exit表示结束
+                        flag = false;
+                    } else
+                    {
+                        out.println("ECHO : " + str); // 回应信息
+                    }
+                }
+            }
+            //关闭客户端
+            client.close();
+        }
+        //关闭服务端
+        server.close();
+    }
 }
 ```
 **程序运行结果：**
@@ -269,48 +269,48 @@ import java.net.*;
 import java.io.*;
 public class EchoClient
 {
-	public static void main(String args[]) throws Exception
-	{
-		//定义客户端引用
-		Socket client = null;
-		//创建客户端监听本机的6666端口
-		client = new Socket("localhost", 6666);
-		
-		BufferedReader buf = null;
-		
-		PrintStream out = null;
-		BufferedReader input = null;
-		//获取键盘输入流
-		input = new BufferedReader(new InputStreamReader(System.in));
-		//获取服务器对本客户端的输入流
-		buf = new BufferedReader(
-				new InputStreamReader(client.getInputStream()));
-		//获取对服务器的输出流
-		out = new PrintStream(client.getOutputStream());
-		
-		boolean flag = true; // 定义标志位
-		while (flag)
-		{
-			System.out.print("输入信息：");
-			//接收键盘输入
-			String str = input.readLine();
-			//把键盘输入的字符串，打印到输出流，也就是打印到服务器端
-			out.println(str);
-			if ("exit".equals(str))
-			{
-				flag = false;
-			} else
-			{
-				//接收服务端的输入流
-				String echo = buf.readLine(); // 接收返回结果
-				System.out.println(echo); // 输出回应信息
-			}
-		}
-		//关闭服务器对本客户端的输入流
-		buf.close();
-		//关闭客户端
-		client.close();
-	}
+    public static void main(String args[]) throws Exception
+    {
+        //定义客户端引用
+        Socket client = null;
+        //创建客户端监听本机的6666端口
+        client = new Socket("localhost", 6666);
+        
+        BufferedReader buf = null;
+        
+        PrintStream out = null;
+        BufferedReader input = null;
+        //获取键盘输入流
+        input = new BufferedReader(new InputStreamReader(System.in));
+        //获取服务器对本客户端的输入流
+        buf = new BufferedReader(
+                new InputStreamReader(client.getInputStream()));
+        //获取对服务器的输出流
+        out = new PrintStream(client.getOutputStream());
+        
+        boolean flag = true; // 定义标志位
+        while (flag)
+        {
+            System.out.print("输入信息：");
+            //接收键盘输入
+            String str = input.readLine();
+            //把键盘输入的字符串，打印到输出流，也就是打印到服务器端
+            out.println(str);
+            if ("exit".equals(str))
+            {
+                flag = false;
+            } else
+            {
+                //接收服务端的输入流
+                String echo = buf.readLine(); // 接收返回结果
+                System.out.println(echo); // 输出回应信息
+            }
+        }
+        //关闭服务器对本客户端的输入流
+        buf.close();
+        //关闭客户端
+        client.close();
+    }
 ```
 在客户端EchoClient.java目录下，重新打开一个cmd窗口，然后编译运行客户端。
 **运行结果：**
@@ -335,53 +335,53 @@ import java.net.*;
 import java.io.*;
 public class EchoThread implements Runnable
 {
-	//客户端引用
-	private Socket client = null;
-	//构造函数
-	public EchoThread(Socket client)
-	{
-		this.client = client;
-	}
-	//线程执行体
-	public void run()
-	{
-		//表示来着客户端的输入
-		BufferedReader clientIn = null;
-		//对客户端的输出
-		PrintStream outToClient = null;
-		try
-		{
-			//获取对客户端的输出流
-			outToClient = new PrintStream(client.getOutputStream());
-			//获取来自客户端的输入流
-			clientIn = new BufferedReader(
-					new InputStreamReader(client.getInputStream()));
-			boolean flag = true; // 标志位，表示可以一直接收并回应信息
-			while (flag)
-			{
-				//读取来自客户端的输入
-				String str = clientIn.readLine(); 
-				if (str == null || "".equals(str))
-				{ // 表示没有内容
-					flag = false; // 退出循环
-				} else
-				{
-					if ("exit".equals(str))
-					{ // 如果输入的内容为bye表示结束
-						flag = false;
-					} else
-					{
-						//输出到客户端
-						outToClient.println("ECHO : " + str); // 回应信息
-					}
-				}
-			}
-			client.close();
-		} catch (Exception e)
-		{
-		}
+    //客户端引用
+    private Socket client = null;
+    //构造函数
+    public EchoThread(Socket client)
+    {
+        this.client = client;
+    }
+    //线程执行体
+    public void run()
+    {
+        //表示来着客户端的输入
+        BufferedReader clientIn = null;
+        //对客户端的输出
+        PrintStream outToClient = null;
+        try
+        {
+            //获取对客户端的输出流
+            outToClient = new PrintStream(client.getOutputStream());
+            //获取来自客户端的输入流
+            clientIn = new BufferedReader(
+                    new InputStreamReader(client.getInputStream()));
+            boolean flag = true; // 标志位，表示可以一直接收并回应信息
+            while (flag)
+            {
+                //读取来自客户端的输入
+                String str = clientIn.readLine(); 
+                if (str == null || "".equals(str))
+                { // 表示没有内容
+                    flag = false; // 退出循环
+                } else
+                {
+                    if ("exit".equals(str))
+                    { // 如果输入的内容为bye表示结束
+                        flag = false;
+                    } else
+                    {
+                        //输出到客户端
+                        outToClient.println("ECHO : " + str); // 回应信息
+                    }
+                }
+            }
+            client.close();
+        } catch (Exception e)
+        {
+        }
 
-	}
+    }
 }
 
 ```
@@ -395,25 +395,25 @@ package my.net.tcp;
 import java.net.*;
 public class EchoThreadServer
 {
-	public static void main(String args[]) throws Exception
-	{
-		//定义服务器的引用
-		ServerSocket server = null;
-		//客户端的引用
-		Socket client = null;
-		//建立服务器，监听本地6666端口
-		server = new ServerSocket(6666);
-		boolean f = true;
-		while (f)
-		{
-			System.out.println("服务器运行，等待客户端连接。");
-			//取得连接，客户端没连接之前先等待连接。
-			client = server.accept(); 
-			//一个客户端连接之后，为该客户端启动一个服务线程进行服务
-			new Thread(new EchoThread(client)).start();
-		}
-		server.close();
-	}
+    public static void main(String args[]) throws Exception
+    {
+        //定义服务器的引用
+        ServerSocket server = null;
+        //客户端的引用
+        Socket client = null;
+        //建立服务器，监听本地6666端口
+        server = new ServerSocket(6666);
+        boolean f = true;
+        while (f)
+        {
+            System.out.println("服务器运行，等待客户端连接。");
+            //取得连接，客户端没连接之前先等待连接。
+            client = server.accept(); 
+            //一个客户端连接之后，为该客户端启动一个服务线程进行服务
+            new Thread(new EchoThread(client)).start();
+        }
+        server.close();
+    }
 }
 ```
 还是对比上面的EchoServer.java，我们发现把EchoServer.java的**接受连接的部分**和**提供服务功能部分**分割出来成两个类，即可得到接受连接部分EchoThreadServer.java，和提供服务功能部分：EchoThread.java
@@ -437,56 +437,56 @@ package tcp;
 import java.net.*;
 public class EchoThreadServer
 {
-	// 静态变量,可以更改该标记以便停止服务端
-	private static boolean isServerAlive = true;
-	private static int clientNum = 0;
-	public static void main(String args[]) throws Exception
-	{
-		// 定义服务器的引用
-		ServerSocket server = null;
-		// 客户端的引用
-		Socket client = null;
-		// 建立服务器，监听本地6666端口
-		server = new ServerSocket(6666);
-		while (isServerAlive)
-		{
-			System.out.println("等待客户端连接...");
-			// 取得连接，客户端没连接之前先等待连接。
-			client = server.accept();
-			System.out.println("    客户端连接成功,当前客户端数量:" + clientNum);
-			if (isServerAlive)
-			{
-				// 一个客户端连接之后，为该客户端启动一个服务线程进行服务
-				new Thread(new EchoThread(client)).start();
-			}
-		}
-		server.close();
-		client.close();
-		System.out.println("服务端已经停止...");
-	}
-	public static void addClientNum()
-	{
-		clientNum = clientNum + 1;
-		// 注意了,下面的赋值方法错误
-		// 后++:先取值,再增加,这将达不到增加的效果
-		// clientNum = clientNum ++;
-	}
-	public static void minusClientNum()
-	{
-		clientNum = clientNum - 1;
-	}
-	public static int getClientNum()
-	{
-		return clientNum;
-	}
-	public static void shutdownServer()
-	{
-		isServerAlive = false;
-	}
-	public static boolean isServerAlive()
-	{
-		return isServerAlive;
-	}
+    // 静态变量,可以更改该标记以便停止服务端
+    private static boolean isServerAlive = true;
+    private static int clientNum = 0;
+    public static void main(String args[]) throws Exception
+    {
+        // 定义服务器的引用
+        ServerSocket server = null;
+        // 客户端的引用
+        Socket client = null;
+        // 建立服务器，监听本地6666端口
+        server = new ServerSocket(6666);
+        while (isServerAlive)
+        {
+            System.out.println("等待客户端连接...");
+            // 取得连接，客户端没连接之前先等待连接。
+            client = server.accept();
+            System.out.println("    客户端连接成功,当前客户端数量:" + clientNum);
+            if (isServerAlive)
+            {
+                // 一个客户端连接之后，为该客户端启动一个服务线程进行服务
+                new Thread(new EchoThread(client)).start();
+            }
+        }
+        server.close();
+        client.close();
+        System.out.println("服务端已经停止...");
+    }
+    public static void addClientNum()
+    {
+        clientNum = clientNum + 1;
+        // 注意了,下面的赋值方法错误
+        // 后++:先取值,再增加,这将达不到增加的效果
+        // clientNum = clientNum ++;
+    }
+    public static void minusClientNum()
+    {
+        clientNum = clientNum - 1;
+    }
+    public static int getClientNum()
+    {
+        return clientNum;
+    }
+    public static void shutdownServer()
+    {
+        isServerAlive = false;
+    }
+    public static boolean isServerAlive()
+    {
+        return isServerAlive;
+    }
 }
 ```
 `EchoThreadServer`这个类中的,`minusClientNum`,`getClientNum`,`shutdownServer`这三个方法都是给子线程调用的方法,也就是所谓的回调方法.
@@ -497,62 +497,62 @@ import java.net.*;
 import java.io.*;
 public class EchoThread implements Runnable
 {
-	// 客户端引用
-	private Socket client = null;
-	int clienId;
-	// 构造函数
-	public EchoThread(Socket client)
-	{
-		this.client = client;
-		// 设置服务线程编号
-		this.clienId = EchoThreadServer.getClientNum();
-		// 服务线程数量加1
-		EchoThreadServer.addClientNum();
-	}
-	// 线程执行体
-	public void run()
-	{
-		// 表示来着客户端的输入
-		BufferedReader inByclient = null;
-		// 对客户端的输出
-		PrintStream outToClient = null;
-		try
-		{
-			// 获取对客户端的输出流
-			outToClient = new PrintStream(client.getOutputStream());
-			// 获取来自客户端的输入流
-			inByclient = new BufferedReader(
-					new InputStreamReader(client.getInputStream()));
-			boolean isClientAlive = true; // 标志位，表示可以一直接收并回应信息
-			while (isClientAlive)
-			{
-				// 读取来自客户端的输入
-				String str = inByclient.readLine();
-				// 表示客户端要退出
-				if ("exit".equals(str))
-				{
-					// 结束循环不再接收客户端的输入.
-					isClientAlive = false;
-					// 服务线程数目减1
-					EchoThreadServer.minusClientNum();
-				}
-				// 关闭服务端
-				else if ("shutdownServer".equals(str))
-				{
-					EchoThreadServer.shutdownServer();
-					System.out.println("关闭服务器");
-					break;
-				} else
-				{
-					// 输出到客户端
-					outToClient.println(
-							"服务线程 " + this.clienId + " ECHO to client: " + str); // 回应信息
-				}
-			}
-		} catch (Exception e)
-		{
-		}
-	}
+    // 客户端引用
+    private Socket client = null;
+    int clienId;
+    // 构造函数
+    public EchoThread(Socket client)
+    {
+        this.client = client;
+        // 设置服务线程编号
+        this.clienId = EchoThreadServer.getClientNum();
+        // 服务线程数量加1
+        EchoThreadServer.addClientNum();
+    }
+    // 线程执行体
+    public void run()
+    {
+        // 表示来着客户端的输入
+        BufferedReader inByclient = null;
+        // 对客户端的输出
+        PrintStream outToClient = null;
+        try
+        {
+            // 获取对客户端的输出流
+            outToClient = new PrintStream(client.getOutputStream());
+            // 获取来自客户端的输入流
+            inByclient = new BufferedReader(
+                    new InputStreamReader(client.getInputStream()));
+            boolean isClientAlive = true; // 标志位，表示可以一直接收并回应信息
+            while (isClientAlive)
+            {
+                // 读取来自客户端的输入
+                String str = inByclient.readLine();
+                // 表示客户端要退出
+                if ("exit".equals(str))
+                {
+                    // 结束循环不再接收客户端的输入.
+                    isClientAlive = false;
+                    // 服务线程数目减1
+                    EchoThreadServer.minusClientNum();
+                }
+                // 关闭服务端
+                else if ("shutdownServer".equals(str))
+                {
+                    EchoThreadServer.shutdownServer();
+                    System.out.println("关闭服务器");
+                    break;
+                } else
+                {
+                    // 输出到客户端
+                    outToClient.println(
+                            "服务线程 " + this.clienId + " ECHO to client: " + str); // 回应信息
+                }
+            }
+        } catch (Exception e)
+        {
+        }
+    }
 }
 ```
 当`EchoThread`的一个线程启动时,将会调用主线程的`addClientNum`方法对主线程中的计数器`加1`,该线程结束时调用`minusClientNum`方法对主线程中的计数器`减1`.
@@ -564,53 +564,53 @@ import java.net.*;
 import java.io.*;
 public class EchoClient
 {
-	public static void main(String args[]) throws Exception
-	{
-		// 定义客户端引用
-		Socket client = null;
-		// 创建客户端监听本机的6666端口
-		client = new Socket("localhost", 6666);
-		BufferedReader inputByServer = null;
-		PrintStream outToServer = null;
-		BufferedReader input = null;
-		// 获取键盘输入流
-		input = new BufferedReader(new InputStreamReader(System.in));
-		// 获取服务器对本客户端的输入流
-		inputByServer = new BufferedReader(
-				new InputStreamReader(client.getInputStream()));
-		// 获取对服务器的输出流
-		outToServer = new PrintStream(client.getOutputStream());
-		boolean flag = true; // 定义标志位
-		// 如果服务器没死
-		while (flag && EchoThreadServer.isServerAlive())
-		{
-			System.out.print("输入信息：");
-			// 接收键盘输入
-			String str = input.readLine();
-			// 把键盘输入的字符串，打印到输出流，也就是打印到服务器端
-			outToServer.println(str);
-			// 客户端退出或者关闭服务器
-			if ("exit".equals(str))
-			{
-				flag = false;
-			} else if ("shutdownServer".equals(str))
-			{
-				flag = false;
-				// 无效连接,用来抵消服务端的监听连接请求,
-				// 不然服务端会一直阻塞造成无法关闭
-				new Socket("localhost", 6666);
-			} else
-			{
-				// 接收服务端的输入流
-				String echo = inputByServer.readLine(); // 接收返回结果
-				System.out.println(echo); // 输出回应信息
-			}
-		}
-		// 关闭服务器对本客户端的输入流
-		inputByServer.close();
-		// 关闭客户端
-		client.close();
-	}
+    public static void main(String args[]) throws Exception
+    {
+        // 定义客户端引用
+        Socket client = null;
+        // 创建客户端监听本机的6666端口
+        client = new Socket("localhost", 6666);
+        BufferedReader inputByServer = null;
+        PrintStream outToServer = null;
+        BufferedReader input = null;
+        // 获取键盘输入流
+        input = new BufferedReader(new InputStreamReader(System.in));
+        // 获取服务器对本客户端的输入流
+        inputByServer = new BufferedReader(
+                new InputStreamReader(client.getInputStream()));
+        // 获取对服务器的输出流
+        outToServer = new PrintStream(client.getOutputStream());
+        boolean flag = true; // 定义标志位
+        // 如果服务器没死
+        while (flag && EchoThreadServer.isServerAlive())
+        {
+            System.out.print("输入信息：");
+            // 接收键盘输入
+            String str = input.readLine();
+            // 把键盘输入的字符串，打印到输出流，也就是打印到服务器端
+            outToServer.println(str);
+            // 客户端退出或者关闭服务器
+            if ("exit".equals(str))
+            {
+                flag = false;
+            } else if ("shutdownServer".equals(str))
+            {
+                flag = false;
+                // 无效连接,用来抵消服务端的监听连接请求,
+                // 不然服务端会一直阻塞造成无法关闭
+                new Socket("localhost", 6666);
+            } else
+            {
+                // 接收服务端的输入流
+                String echo = inputByServer.readLine(); // 接收返回结果
+                System.out.println(echo); // 输出回应信息
+            }
+        }
+        // 关闭服务器对本客户端的输入流
+        inputByServer.close();
+        // 关闭客户端
+        client.close();
+    }
 }
 ```
 ### 运行效果 ###
