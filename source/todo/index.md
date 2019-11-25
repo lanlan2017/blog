@@ -38,14 +38,15 @@ comments: false
     - [ ] 安装idea
     - [ ] 安装Mysql
     - [ ] 安装Navicat.
-- [ ] 洗衣服
 - [ ] 2019 年发布中国互联网企业 100 强榜
-- [ ] 完善java遍历目录抽象
+
 
 
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
 
+- [x] 洗衣服
+- [x] 完善java遍历目录抽象
 - [x] 安装ubuntu
     - [x] linux(ubuntu)如何安装软件
     - [x] 安装VSCode

@@ -5,15 +5,16 @@ categories:
   - VirtualBox
   - Ubuntu
 date: 2019-11-26 00:48:27
-updated: 2019-11-26 00:48:27
+updated: 2019-11-26 00:55:28
+abbrlink: cc785ddc
 ---
 <div id='my_toc'>
 
-- [Ubuntu 为shell脚本创建.destop快捷方式](/blog/null/#Ubuntu-为shell脚本创建-destop快捷方式)
-    - [HexoS.sh](/blog/null/#HexoS-sh)
-- [杀死占用端口的所有进程](/blog/null/#杀死占用端口的所有进程)
-    - [启动博客.desktop](/blog/null/#启动博客-desktop)
-    - [.desktop 配置详解](/blog/null/#-desktop-配置详解)
+- [Ubuntu 为shell脚本创建.destop快捷方式](/blog/cc785ddc/#Ubuntu-为shell脚本创建-destop快捷方式)
+    - [HexoS.sh](/blog/cc785ddc/#HexoS-sh)
+- [杀死占用端口的所有进程](/blog/cc785ddc/#杀死占用端口的所有进程)
+    - [启动博客.desktop](/blog/cc785ddc/#启动博客-desktop)
+    - [.desktop 配置详解](/blog/cc785ddc/#-desktop-配置详解)
 
 </div>
 <!--more-->
