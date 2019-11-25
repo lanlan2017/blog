@@ -39,7 +39,8 @@ comments: false
     - [ ] 安装Mysql
     - [ ] 安装Navicat.
 - [ ] 2019 年发布中国互联网企业 100 强榜
-- [ ] 修改tools样式，按钮顶部内边距改小点
+- [x] 修改tools样式，按钮顶部内边距改小点
+- [ ] 应用到vscode上
 
 
 
