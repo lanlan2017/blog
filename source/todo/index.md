@@ -33,6 +33,7 @@ comments: false
     - [ ] 根据E-R图生成表
 - [ ] 还钱
     - [ ] 已经还了,等审核.明天看看审核通过了没
+- [ ] 安装Deepin
 - [x] 安装ubuntu
     - [ ] linux如何安装软件
         - [ ] 安装git,
@@ -45,6 +46,7 @@ comments: false
     - [ ] 安装Mysql
     - [ ] 安装Navicat.
 - [ ] 洗衣服
+- [ ] 2019 年发布中国互联网企业 100 强榜
 
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
