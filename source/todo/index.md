@@ -35,13 +35,6 @@ comments: false
     - [ ] 已经还了,等审核.明天看看审核通过了没
 - [ ] 安装Deepin
 - [x] 安装ubuntu
-    - [ ] linux如何安装软件
-        - [ ] 安装git,
-        - [ ] node.js,
-        - [ ] hexo,
-        - [ ] 搭建博客.
-    - [x] 安装中文输入法,
-    - [ ] 安装Java
     - [ ] 安装idea
     - [ ] 安装Mysql
     - [ ] 安装Navicat.
@@ -51,6 +44,20 @@ comments: false
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
 
+- [x] 安装ubuntu
+    - [x] linux(ubuntu)如何安装软件
+    - [x] 安装VSCode
+        - [x] 安装VScode中文语言包.
+        - [x] 在桌面创建VScode快捷方式。
+    - [x] 安装中文输入法,
+    - [x] 安装Java
+    - [x] 使用阿里云源
+        - [x] 更新程序.
+    - [x] 安装git,
+    - [x] node.js,
+        - [x] npm使用淘宝源
+    - [x] hexo,
+        - [x] 搭建博客.
 - [x] 安装virtualbox，
     - [x] 安装增强工具,
     - [x] 全屏,修复屏幕分辨率.
