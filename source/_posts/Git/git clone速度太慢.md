@@ -21,7 +21,8 @@ abbrlink: 1f883a6b
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
-**`本文转自`**:[https://blog.csdn.net/shahuhu000/article/details/83965642#commentBox](https://blog.csdn.net/shahuhu000/article/details/83965642#commentBox)
+# 原文链接
+[https://blog.csdn.net/shahuhu000/article/details/83965642#commentBox](https://blog.csdn.net/shahuhu000/article/details/83965642#commentBox)
 # 问题描述 #
 最近发现使用git clone的速度比较慢，于是找到了办法分享给大家：
 # 分析原因 #
@@ -59,5 +60,3 @@ github.com
 
 ## 测试git clone ##
 `github.com`有两个IP地址:`192.30.253.112`和`192.30.253.113`,哪个快就用哪个,我这里测试得到`192.30.253.112`稍微快点.
-
->原文链接: [git clone速度太慢](https://lanlan2017.github.io/blog/1f883a6b/)
