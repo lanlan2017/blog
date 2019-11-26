@@ -36,7 +36,7 @@ comments: false
     - [ ] 已经还了,等审核.明天看看审核通过了没
 - [ ] 安装Deepin
 - [x] 安装ubuntu
-    - [ ] 安装idea
+    - [x] 安装intellij IDEA Ultimate
     - [ ] 安装Mysql
     - [ ] 安装Navicat.
 - [ ] 2019 年发布中国互联网企业 100 强榜
@@ -46,6 +46,8 @@ comments: false
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
 
+- [x] 安装ubuntu
+    - [x] 安装intellij IDEA Ultimate
 - [x] 创建git命令简写Shell脚本
 - [x] 安装Linux子系统
 - [x] 解除Win10网速限制
