@@ -31,7 +31,7 @@ comments: false
 
 </div>
 <script>
-if (!navigator.platform.search('arm')!=-1){document.getElementById('my_toc').style.display = 'none';}
+if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
 document.getElementById('my_show').innerText="navigator.platform:"+navigator.platform+";"+"is arm: "+navigator.platform.search('arm');
 </script>
 
