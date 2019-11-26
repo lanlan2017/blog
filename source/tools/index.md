@@ -95,7 +95,7 @@ comments: false
         } else {
             var head = "<div id='my_toc'>\n\n";
             var tail =
-                "\n</div>\n<script>if (navigator.platform.toLowerCase() != 'android'){document.getElementById('my_toc').style.display = 'none';}" +
+                "\n</div>\n<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}" +
                 "<__script>\n".replace("__", "/");
             var regex = /^(#+) (.+?)(?: #*)?$/mg;
             var matchs = text.match(regex);
