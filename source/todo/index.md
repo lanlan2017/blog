@@ -45,9 +45,12 @@ comments: false
 
 
 
+
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
 
+- [x] 安装Linux子系统
+- [x] 解除Win10网速限制
 - [x] 办理宽带,
 - [x] 修改FM,只在安卓上显示摘要目录
 - [x] 修改tools样式，按钮顶部内边距改小点
