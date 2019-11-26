@@ -45,6 +45,8 @@ comments: false
 FM程序:
 正确:https://lanlan2017.github.io/blog/categories/Java/java-util/
 错误:#https://lanlan2017.github.io/blog/categories/Java/java_util/
+谷歌收录https://jactor-sue.github.io/zh-CN/how-blog-on-githubpages-can-be-searched-by-google/
+评论系统 Gitalk https://theme-next.org/docs/third-party-services/comments
 
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
