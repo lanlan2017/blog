@@ -5,7 +5,8 @@ comments: false
 ---
 # 未完成
 - [ ] 下个月关闭,移动网盘,6个月视频会员自动取消.
-- [ ] 读完疯狂java
+- [ ] 有空了解一下
+- [ ] 读疯狂java
     - [ ] 集合
         - [ ] 之前读完了,还没有第二次读和使用.
     - [ ] 泛型
@@ -23,41 +24,46 @@ comments: false
     - [ ] 设计po类
     - [ ] 配置mybatis
     - [ ] 设计server
-- [ ] 有空了解一下
 - [ ] 看数据库设计
     - [ ] 中国大学mooc
 - [ ] eclipse画er图
     - [ ] 下载插件
 - [ ] idea画er图
 - [ ] Navicat画ER图.
-    - [x] 根据数据库导出E-R图
     - [ ] 根据E-R图生成表
 - [ ] 还钱
     - [ ] 已经还了,等审核.明天看看审核通过了没
-- [ ] 安装Deepin
-- [x] 安装ubuntu
-    - [x] 安装intellij IDEA Ultimate
+- [x] ubuntu中安装软件
     - [ ] 安装Mysql
     - [ ] 安装Navicat.
-- [ ] 2019 年发布中国互联网企业 100 强榜
-- [ ] 手机上下载的劳动合同注意点.
+- [ ] 2019 年发布**中国互联网企业100 强榜**
+- [ ] 手机上下载的劳动合同注意点.微博收藏中的
 
+FM程序:
+正确:https://lanlan2017.github.io/blog/categories/Java/java-util/
+错误:#https://lanlan2017.github.io/blog/categories/Java/java_util/
 
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
 
+
+## 2019年11月27日
+
 - [x] 安装ubuntu
     - [x] 安装intellij IDEA Ultimate
+        - [x] 运行Java
+    - [x] 安装剪贴板工具xsel
 - [x] 创建git命令简写Shell脚本
 - [x] 安装Linux子系统
 - [x] 解除Win10网速限制
 - [x] 办理宽带,
 - [x] 修改FM,只在安卓上显示摘要目录
 - [x] 修改tools样式，按钮顶部内边距改小点
-- [x] 应用到vscode上
+
+## 2019年11月26日
 - [x] 洗衣服
 - [x] 完善java遍历目录抽象
-- [x] 安装ubuntu
+- [x] ubuntu上安装软件
     - [x] linux(ubuntu)如何安装软件
     - [x] 安装VSCode
         - [x] 安装VScode中文语言包.
@@ -71,10 +77,14 @@ comments: false
         - [x] npm使用淘宝源
     - [x] hexo,
         - [x] 搭建博客.
+
+## 2019年11月25日
 - [x] 修改文章
     - [x] 7.4.3 Java8新增的日期 时间包文章混乱
     - [x] 7.5 正则表达式
     - [x] 7.5.1 创建正则表达式
+
+## 2019年11月24日
 - [x] 安装virtualbox，
     - [x] 安装增强工具,
     - [x] 全屏,修复屏幕分辨率.
@@ -83,6 +93,8 @@ comments: false
 - [x] 完善tools，linksTOC,id加长点.生成脚本.
 - [x] 修改FM程序,在more后面执行脚本.关闭程序.
 - [x] 启动博客时,删除_post目录下的所有.html文件.
+
+## 2019年11月23日
 - [x] 约会
     - [x] 衣服，白帽子，水杯。
     - [x] 安装去广告插件,创建账号
@@ -90,6 +102,8 @@ comments: false
     - [x] 安装mysql
 - [ ] Navicat 画ER图,
     - [x] 激活Navicat
+
+## 2019年11月22日
 - [x] 安装vscode，markdown插件，
 - [x] 安装vscode SQL格式化插件
 - [x] 还钱
