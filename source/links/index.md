@@ -12,13 +12,24 @@ comments: false
 - [官网](/blog/links/#官网)
 - [在线工具](/blog/links/#在线工具)
 - [在线文档](/blog/links/#在线文档)
+    - [API](/blog/links/#API)
+    - [IDE使用教程](/blog/links/#IDE使用教程)
+    - [CSS](/blog/links/#CSS)
+    - [教程集合](/blog/links/#教程集合)
+    - [在线书籍](/blog/links/#在线书籍)
 - [资源下载](/blog/links/#资源下载)
+    - [IDE](/blog/links/#IDE)
+    - [依赖包](/blog/links/#依赖包)
+    - [电子书下载](/blog/links/#电子书下载)
 - [视屏网站](/blog/links/#视屏网站)
+    - [中国大学MOOC](/blog/links/#中国大学MOOC)
+    - [学堂在线](/blog/links/#学堂在线)
+    - [其他视频网站](/blog/links/#其他视频网站)
 - [博客](/blog/links/#博客)
 - [资讯](/blog/links/#资讯)
 
 </div>
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.toLowerCase() != 'android'){document.getElementById('my_toc').style.display = 'none';}</script>
 
 # 我的站点 #
 - [读书笔记](https://lanlan2017.github.io/ReadingNotes/)
@@ -58,7 +69,7 @@ comments: false
 # 在线工具
 - [regexper](https://regexper.com/)
 - [W3CSchool在线工具库](https://123.w3cschool.cn/webtools)
-
+- [在线正则表达式测试_C在线工具](https://tool.oschina.net/regex/)
 
 # 在线文档 #
 ## API

@@ -9,11 +9,11 @@ comments: false
         background-color: #008CBA;
         border: none;
         color: white;
-        padding: 0.1em 0.2em 0.1em 0.2em;
+        padding: 0em 0.2em 0em 0.2em;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        margin: 0.2em 0.1em 0.2em 0.1em;
+        margin: 0.1em 0.1em 0.1em 0.1em;
         cursor: pointer;
         min-width: 2em;
     }
@@ -95,17 +95,34 @@ comments: false
         } else {
             var head = "<div id='my_toc'>\n\n";
             var tail =
-                "\n</div>\n<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}" +
+                "\n</div>\n<script>if (navigator.platform.toLowerCase() != 'android'){document.getElementById('my_toc').style.display = 'none';}" +
                 "<__script>\n".replace("__", "/");
-            var regex = /^# (.+?)(?: #)?$/mg;
+            var regex = /^(#+) (.+?)(?: #*)?$/mg;
             var matchs = text.match(regex);
             var resultStr = "";
+            var item = '';
+            var tabs = '';
+            var title = '';
+            var MdLinkRegex = /\[(.+?)\]\(.+?\)/;
             for (var i = 0; i < matchs.length; i++) {
-                matchs[i] = matchs[i].replace(regex, "$1");
-                resultStr += "- [" + matchs[i] + "](/blog/links/#" + matchs[i] + ")" + "\n";
+                tabs = generateIndentation(matchs[i].replace(regex, "$1").length - 1);
+                title = matchs[i].replace(regex, "$2");
+                if (title.match(MdLinkRegex)) {
+                    title = title.replace(MdLinkRegex, '$1');
+                }
+                item = tabs + "- [" + title + "](/blog/links/#" + title + ")" + "\n"
+                console.log(item);
+                resultStr += item;
             }
             return head + resultStr + tail;
         }
+    }
+    function generateIndentation(count) {
+        var indentation = '';
+        for (var i = 0; i < count; i++) {
+            indentation += "    ";
+        }
+        return indentation;
     }
     function clearInput() {
         input.value = "";
