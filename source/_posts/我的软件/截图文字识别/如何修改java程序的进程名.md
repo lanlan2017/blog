@@ -4,7 +4,7 @@ categories:
   - 我的软件
   - 截图文字识别
 date: 2018-10-10 16:37:33
-updated: 2019-11-14 11:39:32
+updated: 2019-11-25 00:23:45
 abbrlink: 217f0f86
 ---
 <div id='my_toc'>
@@ -13,7 +13,7 @@ abbrlink: 217f0f86
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 我的实现过程：[把可执行jar打包成exe文件](/2018/10/10/MyApplications/截图文字识别/把可执行jar打包成exe文件/)

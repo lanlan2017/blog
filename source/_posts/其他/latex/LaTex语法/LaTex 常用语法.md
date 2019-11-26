@@ -5,7 +5,7 @@ categories:
   - latex
   - LaTex语法
 date: 2018-08-30 18:46:38
-updated: 2019-11-14 11:39:31
+updated: 2019-11-25 00:23:45
 mathjax: true
 abbrlink: 83c2e83a
 ---
@@ -65,7 +65,7 @@ abbrlink: 83c2e83a
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 公式显示位置 #

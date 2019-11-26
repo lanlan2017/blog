@@ -5,7 +5,7 @@ categories:
   - IDE
   - Idea
 date: 2019-08-08 14:41:36
-updated: 2019-11-14 11:39:27
+updated: 2019-11-25 00:23:43
 abbrlink: 385c30d
 ---
 <div id='my_toc'>
@@ -16,7 +16,7 @@ abbrlink: 385c30d
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # idea快捷键 #

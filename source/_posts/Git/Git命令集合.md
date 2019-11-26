@@ -3,7 +3,7 @@ title: Git命令集合
 categories: 
   - Git
 date: 2018-10-29 20:55:48
-updated: 2019-11-14 11:39:26
+updated: 2019-11-25 13:24:47
 abbrlink: 504e809a
 ---
 <div id='my_toc'>
@@ -47,7 +47,7 @@ abbrlink: 504e809a
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 分支相关 ##

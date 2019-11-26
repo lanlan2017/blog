@@ -4,7 +4,7 @@ categories:
   - MySQL
   - 图形工具
 date: 2019-10-18 17:01:51
-updated: 2019-11-24 00:13:47
+updated: 2019-11-25 00:23:45
 abbrlink: 4f42ffba
 ---
 <div id='my_toc'>
@@ -17,7 +17,7 @@ abbrlink: 4f42ffba
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 旧版本的navicat无法连接mysql8.0 #

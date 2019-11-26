@@ -3,7 +3,7 @@ title: CSS选择器
 categories: 
   - CSS
 date: 2018-12-12 23:44:41
-updated: 2019-11-14 11:39:25
+updated: 2019-11-25 00:23:43
 abbrlink: b6981f1b
 ---
 <div id='my_toc'>
@@ -16,7 +16,7 @@ abbrlink: b6981f1b
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 基础 #

@@ -5,7 +5,7 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-02-01 16:31:16
-updated: 2019-11-14 11:39:32
+updated: 2019-11-25 00:23:45
 abbrlink: 7c811d1c
 ---
 <div id='my_toc'>
@@ -18,7 +18,7 @@ abbrlink: 7c811d1c
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## set命令 ##

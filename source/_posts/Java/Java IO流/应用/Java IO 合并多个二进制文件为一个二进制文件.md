@@ -5,7 +5,7 @@ categories:
   - Java IO流
   - 应用
 date: 2019-06-27 17:54:33
-updated: 2019-11-14 11:39:28
+updated: 2019-11-25 13:24:47
 abbrlink: e4a1ea9f
 ---
 <div id='my_toc'>
@@ -18,7 +18,7 @@ abbrlink: e4a1ea9f
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=193870569&type=red" frameborder=0 allowfullscreen></iframe>

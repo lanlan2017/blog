@@ -4,7 +4,7 @@ categories:
   - MySQL
   - 安装
 date: 2018-12-14 01:58:11
-updated: 2019-11-14 11:39:31
+updated: 2019-11-25 00:23:45
 abbrlink: e124ac2c
 ---
 <div id='my_toc'>
@@ -27,7 +27,7 @@ abbrlink: e124ac2c
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 安装 ##

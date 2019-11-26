@@ -5,7 +5,7 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-01-31 17:32:41
-updated: 2019-11-14 11:39:32
+updated: 2019-11-25 13:24:47
 abbrlink: 5d4c4249
 ---
 <div id='my_toc'>
@@ -21,7 +21,7 @@ abbrlink: 5d4c4249
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 删除文件 del或erase命令 ##

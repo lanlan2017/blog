@@ -6,7 +6,7 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-19 01:19:37
-updated: 2019-11-14 11:39:27
+updated: 2019-11-25 00:23:43
 abbrlink: 511c4c42
 ---
 <div id='my_toc'>
@@ -18,7 +18,7 @@ abbrlink: 511c4c42
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # eclipse中字体的中英文大小不一致 #

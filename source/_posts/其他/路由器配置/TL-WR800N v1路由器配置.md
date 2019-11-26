@@ -4,7 +4,7 @@ categories:
   - 其他
   - 路由器配置
 date: 2019-11-01 14:39:51
-updated: 2019-11-14 11:39:32
+updated: 2019-11-25 00:23:45
 abbrlink: f8d0ff32
 ---
 <div id='my_toc'>
@@ -18,7 +18,7 @@ abbrlink: f8d0ff32
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # TL-WR800N v1路由器配置 #

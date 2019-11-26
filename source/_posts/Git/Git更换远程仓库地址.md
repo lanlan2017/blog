@@ -3,7 +3,7 @@ title: Git更换远程仓库地址
 categories: 
   - Git
 date: 2019-05-02 10:56:15
-updated: 2019-11-14 11:39:26
+updated: 2019-11-25 00:23:43
 abbrlink: 7469a3b7
 ---
 <div id='my_toc'>
@@ -19,7 +19,7 @@ abbrlink: 7469a3b7
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 问题描述 #

@@ -4,7 +4,7 @@ categories:
   - C语言
   - 文件
 date: 2018-11-15 00:44:39
-updated: 2019-11-14 11:39:26
+updated: 2019-11-25 13:24:47
 abbrlink: 65f494cf
 ---
 <div id='my_toc'>
@@ -17,7 +17,7 @@ abbrlink: 65f494cf
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## C语言创建文件 ##

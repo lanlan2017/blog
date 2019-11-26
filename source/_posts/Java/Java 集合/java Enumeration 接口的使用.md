@@ -4,7 +4,7 @@ categories:
   - Java
   - Java 集合
 date: 2018-12-09 22:47:36
-updated: 2019-11-14 11:39:29
+updated: 2019-11-25 13:24:47
 abbrlink: 7b1e18da
 ---
 <div id='my_toc'>
@@ -17,7 +17,7 @@ abbrlink: 7b1e18da
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

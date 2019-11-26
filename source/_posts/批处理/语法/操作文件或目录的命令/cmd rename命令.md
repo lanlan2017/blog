@@ -5,7 +5,7 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-11-22 11:07:10
-updated: 2019-11-22 11:22:40
+updated: 2019-11-25 00:23:45
 abbrlink: a63f263d
 ---
 <div id='my_toc'>
@@ -15,7 +15,7 @@ abbrlink: a63f263d
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 帮助文档 #

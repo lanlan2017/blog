@@ -5,7 +5,7 @@ categories:
   - 语法
   - 系统相关命令
 date: 2019-09-04 00:23:58
-updated: 2019-11-14 11:39:33
+updated: 2019-11-25 13:24:47
 abbrlink: 4508a6a3
 ---
 <div id='my_toc'>
@@ -18,7 +18,7 @@ abbrlink: 4508a6a3
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # cmd shutdown命令 #

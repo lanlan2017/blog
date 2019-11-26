@@ -4,7 +4,7 @@ categories:
   - Java
   - java_GUI
 date: 2018-09-16 13:07:25
-updated: 2019-11-14 11:39:29
+updated: 2019-11-25 13:24:47
 abbrlink: 77feedee
 ---
 <div id='my_toc'>
@@ -14,7 +14,7 @@ abbrlink: 77feedee
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 之前已经完成了程序的开发，也加入了热键，不过每次截图(ctrl+alt+w)都要手动的去点击文字识别按钮，显然有点浪费时间。

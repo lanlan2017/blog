@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - 个性化
 date: 2019-02-15 21:49:16
-updated: 2019-11-14 11:39:26
+updated: 2019-11-25 13:24:47
 abbrlink: 7162b91b
 ---
 <div id='my_toc'>
@@ -19,7 +19,7 @@ abbrlink: 7162b91b
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 已经有了有大佬开发了置顶插件了，安装插件，然后在front-matter中配置一下就好了

@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - 自动部署
 date: 2019-11-05 10:29:38
-updated: 2019-11-14 11:39:26
+updated: 2019-11-25 00:23:43
 abbrlink: 13f63c39
 ---
 <div id='my_toc'>
@@ -20,7 +20,7 @@ abbrlink: 13f63c39
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 获取Token

@@ -5,7 +5,7 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2018-12-28 15:38:46
-updated: 2019-11-14 11:39:32
+updated: 2019-11-25 13:24:47
 abbrlink: 8d229e40
 ---
 <div id='my_toc'>
@@ -26,7 +26,7 @@ abbrlink: 8d229e40
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 创建文件 copy con命令 ##

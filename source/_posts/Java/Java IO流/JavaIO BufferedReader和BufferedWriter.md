@@ -4,7 +4,7 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-10 15:00:32
-updated: 2019-11-14 11:39:28
+updated: 2019-11-25 13:24:47
 abbrlink: 3f2a064c
 ---
 <div id='my_toc'>
@@ -34,7 +34,7 @@ abbrlink: 3f2a064c
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 为了提高字符流读写的效率，引入了缓冲机制，进行字符批量的读写，提高了单个字符读写的效率。`BufferedReader`用于加快读取字符的速度，`BufferedWriter`用于加快写入的速度

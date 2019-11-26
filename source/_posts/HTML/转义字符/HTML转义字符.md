@@ -4,7 +4,7 @@ categories:
   - HTML
   - 转义字符
 date: 2019-03-28 12:54:08
-updated: 2019-11-14 11:39:27
+updated: 2019-11-25 00:23:43
 abbrlink: c14b29da
 ---
 <div id='my_toc'>
@@ -14,7 +14,7 @@ abbrlink: c14b29da
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 下面列举了让我出现问题的HTML转义符 ##

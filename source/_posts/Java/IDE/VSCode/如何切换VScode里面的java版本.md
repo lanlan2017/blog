@@ -5,7 +5,7 @@ categories:
   - IDE
   - VSCode
 date: 2019-10-06 21:46:08
-updated: 2019-11-14 11:39:27
+updated: 2019-11-25 00:23:43
 abbrlink: 6221fd78
 ---
 <div id='my_toc'>
@@ -17,7 +17,7 @@ abbrlink: 6221fd78
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 如何切换VScode里面的java版本 #

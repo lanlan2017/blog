@@ -5,7 +5,7 @@ categories:
   - VirtualBox
   - Ubuntu
 date: 2019-11-26 00:48:27
-updated: 2019-11-26 00:55:28
+updated: 2019-11-26 10:32:43
 abbrlink: cc785ddc
 ---
 <div id='my_toc'>
@@ -15,10 +15,15 @@ abbrlink: cc785ddc
 - [杀死占用端口的所有进程](/blog/cc785ddc/#杀死占用端口的所有进程)
     - [启动博客.desktop](/blog/cc785ddc/#启动博客-desktop)
     - [.desktop 配置详解](/blog/cc785ddc/#-desktop-配置详解)
+    - [Desktop Entry 文件结构](/blog/cc785ddc/#Desktop-Entry-文件结构)
+    - [关键字详解](/blog/cc785ddc/#关键字详解)
+        - [必选关键字](/blog/cc785ddc/#必选关键字)
+        - [可选关键字](/blog/cc785ddc/#可选关键字)
+- [参考资料](/blog/cc785ddc/#参考资料)
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Ubuntu 为shell脚本创建.destop快捷方式 #

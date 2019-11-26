@@ -5,7 +5,7 @@ categories:
   - Java EE
   - 环境搭建
 date: 2019-04-29 20:25:38
-updated: 2019-11-14 11:39:28
+updated: 2019-11-25 13:24:47
 abbrlink: c20afdb9
 ---
 <div id='my_toc'>
@@ -20,7 +20,7 @@ abbrlink: c20afdb9
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Java Web项目常用Maven依赖 #

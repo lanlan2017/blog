@@ -4,7 +4,7 @@ categories:
   - 正则表达式
   - 应用
 date: 2018-08-19 19:39:36
-updated: 2019-11-14 11:39:33
+updated: 2019-11-25 00:23:47
 abbrlink: 9e1b6b70
 ---
 <div id='my_toc'>
@@ -23,7 +23,7 @@ abbrlink: 9e1b6b70
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 正则表达式匹配IP地址

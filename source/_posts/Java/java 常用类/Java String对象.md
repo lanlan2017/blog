@@ -4,7 +4,7 @@ categories:
   - Java
   - java 常用类
 date: 2019-01-12 20:49:25
-updated: 2019-11-14 11:39:29
+updated: 2019-11-25 13:24:47
 abbrlink: 14ce793e
 ---
 <div id='my_toc'>
@@ -20,7 +20,7 @@ abbrlink: 14ce793e
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 我们经常使用 String 类来定义一个字符串。字符串是`常量`，它们的值在创建之后不能更改。字符串缓冲区支持可变的字符串。

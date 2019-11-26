@@ -5,7 +5,7 @@ categories:
   - IDE
   - eclipse
 date: 2019-08-29 22:34:38
-updated: 2019-11-14 11:39:27
+updated: 2019-11-25 00:23:43
 abbrlink: ced73660
 ---
 <div id='my_toc'>
@@ -18,7 +18,7 @@ abbrlink: ced73660
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 在eclipse项目路径下启动cmd并解决乱码 #

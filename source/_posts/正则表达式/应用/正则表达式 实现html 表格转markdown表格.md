@@ -4,7 +4,7 @@ categories:
   - 正则表达式
   - 应用
 date: 2018-12-17 01:40:14
-updated: 2019-11-14 11:39:33
+updated: 2019-11-25 13:24:47
 abbrlink: 211bb72a
 ---
 <div id='my_toc'>
@@ -21,7 +21,7 @@ abbrlink: 211bb72a
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 抓取文章信息 ##

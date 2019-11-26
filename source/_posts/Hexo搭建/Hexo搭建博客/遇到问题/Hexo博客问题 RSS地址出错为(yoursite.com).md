@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - 遇到问题
 date: 2018-08-29 19:35:07
-updated: 2019-11-14 11:39:26
+updated: 2019-11-25 00:23:43
 abbrlink: 2c22a8d1
 ---
 <div id='my_toc'>
@@ -19,7 +19,7 @@ abbrlink: 2c22a8d1
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 打开**站点配置文件**，定位到url配置项，如下所示，可以看到我的网站地址错误的设置为`https://yoursite.com`

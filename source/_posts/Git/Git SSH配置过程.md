@@ -3,7 +3,7 @@ title: Git SSH配置过程
 categories: 
   - Git
 date: 2019-11-13 16:22:20
-updated: 2019-11-17 12:14:56
+updated: 2019-11-25 00:23:43
 abbrlink: 8d23490d
 ---
 <div id='my_toc'>
@@ -28,7 +28,7 @@ abbrlink: 8d23490d
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Git SSH配置过程 #

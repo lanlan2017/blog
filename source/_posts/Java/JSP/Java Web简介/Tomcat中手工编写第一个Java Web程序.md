@@ -5,7 +5,7 @@ categories:
   - JSP
   - Java Web简介
 date: 2018-12-01 11:52:15
-updated: 2019-11-14 11:39:29
+updated: 2019-11-25 13:24:47
 abbrlink: ccc57c12
 ---
 <div id='my_toc'>
@@ -25,7 +25,7 @@ abbrlink: ccc57c12
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

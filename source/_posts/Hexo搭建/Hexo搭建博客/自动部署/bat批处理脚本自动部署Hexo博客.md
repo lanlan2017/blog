@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - 自动部署
 date: 2018-12-07 00:23:50
-updated: 2019-11-14 11:39:26
+updated: 2019-11-25 00:23:43
 abbrlink: 5d465f14
 ---
 <div id='my_toc'>
@@ -18,7 +18,7 @@ abbrlink: 5d465f14
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 使用bat批处理的好处：省时间 ##

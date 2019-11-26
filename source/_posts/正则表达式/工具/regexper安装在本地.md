@@ -4,7 +4,7 @@ categories:
   - 正则表达式
   - 工具
 date: 2018-11-29 21:11:17
-updated: 2019-11-14 11:39:33
+updated: 2019-11-25 00:23:47
 abbrlink: 54be6c80
 ---
 <div id='my_toc'>
@@ -25,7 +25,7 @@ abbrlink: 54be6c80
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # regexper本地安装 #

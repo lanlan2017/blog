@@ -4,7 +4,7 @@ categories:
   - 其他
   - Windows相关
 date: 2019-10-07 00:20:19
-updated: 2019-11-14 11:39:31
+updated: 2019-11-25 00:23:45
 abbrlink: e1bf4c3f
 ---
 <div id='my_toc'>
@@ -15,7 +15,7 @@ abbrlink: e1bf4c3f
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # cmd切换到 新版控制台 后没有显示文字怎么办 #

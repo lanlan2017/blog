@@ -5,7 +5,7 @@ categories:
   - Java EE
   - DeBug
 date: 2019-06-09 17:26:12
-updated: 2019-11-14 11:39:27
+updated: 2019-11-25 13:24:47
 abbrlink: 5aecc643
 ---
 <div id='my_toc'>
@@ -35,7 +35,7 @@ abbrlink: 5aecc643
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Type interface mapper.UserMapper is not known to the MapperRegistry. #

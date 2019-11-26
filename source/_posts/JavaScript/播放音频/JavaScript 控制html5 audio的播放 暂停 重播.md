@@ -4,7 +4,7 @@ categories:
   - JavaScript
   - 播放音频
 date: 2019-04-27 11:27:54
-updated: 2019-11-14 11:39:31
+updated: 2019-11-25 13:24:47
 abbrlink: ff5ef3ed
 ---
 <div id='my_toc'>
@@ -16,7 +16,7 @@ abbrlink: ff5ef3ed
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 实例代码 ##

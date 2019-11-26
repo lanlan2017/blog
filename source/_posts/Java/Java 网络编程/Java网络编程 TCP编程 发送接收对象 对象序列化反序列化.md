@@ -4,7 +4,7 @@ categories:
   - Java
   - Java 网络编程
 date: 2019-05-30 18:31:18
-updated: 2019-11-14 11:39:29
+updated: 2019-11-25 13:24:47
 abbrlink: e303557d
 ---
 <div id='my_toc'>
@@ -21,7 +21,7 @@ abbrlink: e303557d
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Java网络编程 TCP编程 发送接收对象 对象序列化反序列化 #

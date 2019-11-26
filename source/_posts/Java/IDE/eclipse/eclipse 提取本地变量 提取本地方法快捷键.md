@@ -5,7 +5,7 @@ categories:
   - IDE
   - eclipse
 date: 2019-07-11 11:03:16
-updated: 2019-11-14 11:39:27
+updated: 2019-11-25 00:23:43
 abbrlink: f3de5d3b
 ---
 <div id='my_toc'>
@@ -15,7 +15,7 @@ abbrlink: f3de5d3b
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## eclipse提取本地变量快捷键 ##

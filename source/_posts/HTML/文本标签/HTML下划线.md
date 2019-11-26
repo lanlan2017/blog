@@ -4,7 +4,7 @@ categories:
   - HTML
   - 文本标签
 date: 2019-02-13 00:23:30
-updated: 2019-11-14 11:39:26
+updated: 2019-11-25 00:23:43
 abbrlink: 9f0a034b
 ---
 <div id='my_toc'>
@@ -19,7 +19,7 @@ abbrlink: 9f0a034b
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## CSS设置下划线与文字间距距离(CSS文字下划线距离设置) ##

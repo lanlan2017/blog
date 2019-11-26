@@ -5,7 +5,7 @@ categories:
   - VirtualBox
   - Ubuntu
 date: 2019-11-25 19:55:24
-updated: 2019-11-25 20:56:00
+updated: 2019-11-25 20:58:16
 abbrlink: 92f73acb
 ---
 <div id='my_toc'>
@@ -21,7 +21,7 @@ abbrlink: 92f73acb
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Ubuntu 安装 git #

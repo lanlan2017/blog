@@ -4,7 +4,7 @@ categories:
   - Java
   - 代码优化
 date: 2019-10-03 21:19:47
-updated: 2019-11-14 11:39:30
+updated: 2019-11-25 00:23:45
 abbrlink: e14f1dac
 ---
 <div id='my_toc'>
@@ -18,7 +18,7 @@ abbrlink: e14f1dac
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 解决 String concatenation as argument to 'StringBuffer.append()' call 警告#

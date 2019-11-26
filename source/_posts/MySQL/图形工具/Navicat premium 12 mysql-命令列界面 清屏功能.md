@@ -4,7 +4,7 @@ categories:
   - MySQL
   - 图形工具
 date: 2019-10-25 16:28:41
-updated: 2019-11-24 00:13:47
+updated: 2019-11-25 00:23:45
 abbrlink: e1bb0d5c
 ---
 <div id='my_toc'>
@@ -13,7 +13,7 @@ abbrlink: e1bb0d5c
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Navicat premium 12 mysql-命令列界面 清屏功能 #

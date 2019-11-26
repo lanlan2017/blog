@@ -5,7 +5,7 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:39
-updated: 2019-11-14 11:39:30
+updated: 2019-11-25 13:24:47
 abbrlink: 240051d
 ---
 <div id='my_toc'>
@@ -27,7 +27,7 @@ abbrlink: 240051d
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## session内置对象简介 ##

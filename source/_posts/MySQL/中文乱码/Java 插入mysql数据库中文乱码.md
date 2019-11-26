@@ -4,7 +4,7 @@ categories:
   - MySQL
   - 中文乱码
 date: 2018-12-03 20:49:58
-updated: 2019-11-14 11:39:31
+updated: 2019-11-25 00:23:45
 abbrlink: 84e4b0d4
 ---
 <div id='my_toc'>
@@ -14,7 +14,7 @@ abbrlink: 84e4b0d4
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

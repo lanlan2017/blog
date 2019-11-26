@@ -6,7 +6,7 @@ categories:
   - markdown语法
   - 使用html标签
 date: 2018-10-26 11:23:58
-updated: 2019-11-14 11:39:31
+updated: 2019-11-25 00:23:45
 abbrlink: 6507a83c
 ---
 <div id='my_toc'>
@@ -15,7 +15,7 @@ abbrlink: 6507a83c
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 键盘键 ##

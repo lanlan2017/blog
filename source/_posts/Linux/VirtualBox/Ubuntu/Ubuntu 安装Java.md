@@ -5,7 +5,7 @@ categories:
   - VirtualBox
   - Ubuntu
 date: 2019-11-25 18:07:50
-updated: 2019-11-25 19:59:54
+updated: 2019-11-25 20:00:29
 abbrlink: 6266bb6b
 ---
 <div id='my_toc'>
@@ -27,7 +27,7 @@ abbrlink: 6266bb6b
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Ubuntu 安装Java #

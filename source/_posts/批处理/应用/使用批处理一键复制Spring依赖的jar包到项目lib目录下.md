@@ -4,7 +4,7 @@ categories:
   - 批处理
   - 应用
 date: 2019-05-08 14:41:53
-updated: 2019-11-14 11:39:32
+updated: 2019-11-25 00:23:45
 abbrlink: cbe4b14b
 ---
 <div id='my_toc'>
@@ -16,7 +16,7 @@ abbrlink: cbe4b14b
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 前言 #

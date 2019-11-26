@@ -4,7 +4,7 @@ categories:
   - CSS
   - 按钮
 date: 2019-11-13 20:57:05
-updated: 2019-11-14 11:39:25
+updated: 2019-11-25 00:23:43
 abbrlink: a0156a29
 ---
 <div id='my_toc'>
@@ -35,7 +35,7 @@ abbrlink: a0156a29
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 首先引入样式和js #

@@ -5,7 +5,7 @@ categories:
   - latex
   - LaTex语法
 date: 2019-02-18 21:39:42
-updated: 2019-11-14 11:39:31
+updated: 2019-11-25 00:23:45
 mathjax: true
 abbrlink: f88b012c
 ---
@@ -17,7 +17,7 @@ abbrlink: f88b012c
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## mathjax公式添加删除线 ##

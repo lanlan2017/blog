@@ -5,7 +5,7 @@ categories:
   - VirtualBox
   - Ubuntu
 date: 2019-11-25 15:38:46
-updated: 2019-11-25 19:59:54
+updated: 2019-11-25 20:00:29
 abbrlink: '65863024'
 ---
 <div id='my_toc'>
@@ -21,7 +21,7 @@ abbrlink: '65863024'
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Ubuntu 安装Vscode #

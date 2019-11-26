@@ -4,7 +4,7 @@ categories:
   - JavaScript
   - DOM
 date: 2019-02-13 00:12:44
-updated: 2019-11-14 11:39:30
+updated: 2019-11-25 00:23:45
 abbrlink: 37c4f730
 ---
 <div id='my_toc'>
@@ -15,7 +15,7 @@ abbrlink: 37c4f730
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## JavaScript innerText与innerHtml与value的区别 ##

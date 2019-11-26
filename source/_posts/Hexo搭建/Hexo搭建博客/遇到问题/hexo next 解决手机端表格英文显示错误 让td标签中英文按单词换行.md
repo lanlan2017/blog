@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - 遇到问题
 date: 2018-11-06 11:24:16
-updated: 2019-11-14 11:39:26
+updated: 2019-11-25 00:23:43
 abbrlink: 200a993a
 ---
 <div id='my_toc'>
@@ -21,7 +21,7 @@ abbrlink: 200a993a
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 问题描述 ##

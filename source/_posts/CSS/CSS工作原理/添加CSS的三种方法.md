@@ -4,7 +4,7 @@ categories:
   - CSS
   - CSS工作原理
 date: 2019-05-11 11:31:24
-updated: 2019-11-14 11:39:25
+updated: 2019-11-25 00:23:43
 abbrlink: 9d1ffcf6
 ---
 <div id='my_toc'>
@@ -14,7 +14,7 @@ abbrlink: 9d1ffcf6
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 添加CSS的三种方法 #

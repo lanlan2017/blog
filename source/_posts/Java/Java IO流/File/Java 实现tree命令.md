@@ -5,7 +5,7 @@ categories:
   - Java IO流
   - File
 date: 2019-04-30 20:00:58
-updated: 2019-11-14 11:39:28
+updated: 2019-11-25 13:24:47
 abbrlink: bf650217
 ---
 <div id='my_toc'>
@@ -25,7 +25,7 @@ abbrlink: bf650217
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 问题描述 ##

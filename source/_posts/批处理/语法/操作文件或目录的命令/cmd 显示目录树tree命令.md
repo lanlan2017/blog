@@ -5,7 +5,7 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-04-26 21:18:26
-updated: 2019-11-14 11:39:32
+updated: 2019-11-25 00:23:45
 abbrlink: 979e79b0
 ---
 <div id='my_toc'>
@@ -20,7 +20,7 @@ abbrlink: 979e79b0
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 显示目录树命令 tree #

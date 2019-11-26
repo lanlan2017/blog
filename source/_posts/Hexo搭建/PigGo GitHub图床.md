@@ -3,7 +3,7 @@ title: PigGo GitHub图床
 categories: 
   - Hexo搭建
 date: 2019-11-22 12:59:46
-updated: 2019-11-22 13:00:19
+updated: 2019-11-25 00:23:43
 abbrlink: b19c6a80
 ---
 <div id='my_toc'>
@@ -21,7 +21,7 @@ abbrlink: b19c6a80
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 生成token #

@@ -4,7 +4,7 @@ categories:
   - 批处理
   - 应用
 date: 2019-08-05 00:29:34
-updated: 2019-11-14 11:39:32
+updated: 2019-11-25 00:23:45
 abbrlink: 5c6bafc2
 ---
 <div id='my_toc'>
@@ -13,7 +13,7 @@ abbrlink: 5c6bafc2
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 使用VSCode快速打开一个给定的文件 #

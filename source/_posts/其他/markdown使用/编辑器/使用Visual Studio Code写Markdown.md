@@ -5,7 +5,7 @@ categories:
   - markdown使用
   - 编辑器
 date: 2019-08-20 12:06:20
-updated: 2019-11-14 11:39:31
+updated: 2019-11-25 00:23:45
 abbrlink: 11f888fa
 ---
 <div id='my_toc'>
@@ -19,7 +19,7 @@ abbrlink: 11f888fa
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 快捷键支持 #

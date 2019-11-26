@@ -4,7 +4,7 @@ categories:
   - Java
   - API整理
 date: 2019-09-30 22:59:36
-updated: 2019-11-14 11:39:27
+updated: 2019-11-25 00:23:43
 abbrlink: e5bb3a41
 ---
 <div id='my_toc'>
@@ -29,7 +29,7 @@ abbrlink: e5bb3a41
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # ProcessBuilder API整理 #

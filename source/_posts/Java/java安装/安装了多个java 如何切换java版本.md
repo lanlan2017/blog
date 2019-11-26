@@ -4,7 +4,7 @@ categories:
   - Java
   - java安装
 date: 2019-10-06 10:42:44
-updated: 2019-11-14 11:39:29
+updated: 2019-11-25 00:23:45
 abbrlink: 957ae50e
 ---
 <div id='my_toc'>
@@ -26,7 +26,7 @@ abbrlink: 957ae50e
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 安装了多个java 如何切换java版本 #

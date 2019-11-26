@@ -5,7 +5,7 @@ categories:
   - 语法
   - 系统相关命令
 date: 2019-09-25 00:35:36
-updated: 2019-11-14 11:39:33
+updated: 2019-11-25 00:23:46
 abbrlink: b1b65659
 ---
 <div id='my_toc'>
@@ -22,7 +22,7 @@ abbrlink: b1b65659
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # schtask命令文档 #

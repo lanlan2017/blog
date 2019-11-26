@@ -1,10 +1,10 @@
 ---
-title: linux下删除目录及其子目录下某种类型文件
+title: Linux下删除目录及其子目录下某种类型文件
 categories: 
   - Linux
   - 通用
 date: 2018-08-22 11:31:37
-updated: 2019-11-14 11:39:31
+updated: 2019-11-26 13:21:33
 abbrlink: d10c0440
 ---
 <div id='my_toc'>
@@ -16,7 +16,7 @@ abbrlink: d10c0440
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 问题描述 ##

@@ -4,7 +4,7 @@ categories:
   - Java
   - Java IO流
 date: 2018-10-26 19:56:09
-updated: 2019-11-14 11:39:28
+updated: 2019-11-25 13:24:47
 abbrlink: 18ab79a8
 ---
 <div id='my_toc'>
@@ -15,7 +15,7 @@ abbrlink: 18ab79a8
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 首先介绍怎么把资源文件打包到可执行jar包中 ##

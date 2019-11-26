@@ -4,7 +4,7 @@ categories:
   - Java
   - Java 基础
 date: 2019-02-10 18:15:08
-updated: 2019-11-14 11:39:28
+updated: 2019-11-25 13:24:47
 abbrlink: a9f85f8d
 ---
 <div id='my_toc'>
@@ -28,7 +28,7 @@ abbrlink: a9f85f8d
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 文档注释可以用于对`类`、 `属性`、`方法`等进行说明。 写文档注释时除了需要使用 `/** .... */ ` 限定之外，还需要注意注释内部的一些细节问题。

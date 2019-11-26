@@ -4,7 +4,7 @@ categories:
   - 其他
   - Windows相关
 date: 2019-09-13 13:43:58
-updated: 2019-11-14 11:39:31
+updated: 2019-11-25 00:23:45
 abbrlink: d39974fc
 ---
 <div id='my_toc'>
@@ -13,7 +13,7 @@ abbrlink: d39974fc
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Win10 PowerShell的光标出现在已经输入的字符的前面 #

@@ -5,7 +5,7 @@ categories:
   - 语法
   - 系统相关命令
 date: 2019-11-22 11:16:59
-updated: 2019-11-22 11:22:34
+updated: 2019-11-25 00:23:46
 abbrlink: a51d0e
 ---
 <div id='my_toc'>
@@ -17,7 +17,7 @@ abbrlink: a51d0e
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # cmd 解压缩WinRAR的命令行模式用法介绍 #

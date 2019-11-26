@@ -4,7 +4,7 @@ categories:
   - 其他
   - 流程图
 date: 2018-12-08 00:07:22
-updated: 2019-11-14 11:39:32
+updated: 2019-11-25 13:24:47
 abbrlink: 358dbd0e
 ---
 <div id='my_toc'>
@@ -19,7 +19,7 @@ abbrlink: 358dbd0e
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 前言 ##

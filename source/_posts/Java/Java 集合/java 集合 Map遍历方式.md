@@ -4,7 +4,7 @@ categories:
   - Java
   - Java 集合
 date: 2018-12-14 21:43:36
-updated: 2019-11-14 11:39:29
+updated: 2019-11-25 13:24:47
 abbrlink: ef2dac38
 ---
 <div id='my_toc'>
@@ -17,7 +17,7 @@ abbrlink: ef2dac38
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 方式1 通过keysSet遍历Map ##

@@ -4,7 +4,7 @@ categories:
   - 我的软件
   - 百度文字识别
 date: 2018-09-11 19:39:14
-updated: 2019-11-14 11:39:32
+updated: 2019-11-25 13:24:47
 abbrlink: 29121dfd
 ---
 <div id='my_toc'>
@@ -18,7 +18,7 @@ abbrlink: 29121dfd
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 优化 #

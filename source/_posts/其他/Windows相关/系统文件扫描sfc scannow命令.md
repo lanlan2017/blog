@@ -4,7 +4,7 @@ categories:
   - 其他
   - Windows相关
 date: 2019-05-23 18:49:38
-updated: 2019-11-14 11:39:32
+updated: 2019-11-25 00:23:45
 abbrlink: 9b2b8330
 ---
 <div id='my_toc'>
@@ -14,7 +14,7 @@ abbrlink: 9b2b8330
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # sfc /scannow命令说明 #

@@ -5,7 +5,7 @@ categories:
   - IDE
   - eclipse
 date: 2018-12-11 20:43:57
-updated: 2019-11-14 11:39:27
+updated: 2019-11-25 00:23:43
 abbrlink: 37dcd881
 ---
 <div id='my_toc'>
@@ -18,7 +18,7 @@ abbrlink: 37dcd881
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

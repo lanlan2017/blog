@@ -4,7 +4,7 @@ categories:
   - Java
   - Java 正则表达式
 date: 2018-08-07 15:56:18
-updated: 2019-11-14 11:39:29
+updated: 2019-11-25 13:24:47
 abbrlink: 51e02fda
 ---
 <div id='my_toc'>
@@ -18,7 +18,7 @@ abbrlink: 51e02fda
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 删除一个或多个空行 #

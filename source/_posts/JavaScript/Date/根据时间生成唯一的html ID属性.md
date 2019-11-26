@@ -4,7 +4,7 @@ categories:
   - JavaScript
   - Date
 date: 2018-12-08 00:16:53
-updated: 2019-11-14 11:39:30
+updated: 2019-11-25 13:24:47
 abbrlink: e23c09a2
 ---
 <div id='my_toc'>
@@ -14,7 +14,7 @@ abbrlink: e23c09a2
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

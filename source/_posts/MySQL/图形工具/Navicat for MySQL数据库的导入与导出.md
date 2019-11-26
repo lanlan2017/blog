@@ -4,7 +4,7 @@ categories:
   - MySQL
   - 图形工具
 date: 2018-12-08 00:19:02
-updated: 2019-11-24 00:13:47
+updated: 2019-11-25 00:23:45
 abbrlink: 885d02c0
 ---
 <div id='my_toc'>
@@ -20,7 +20,7 @@ abbrlink: 885d02c0
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 导出数据库中的所有表 ##

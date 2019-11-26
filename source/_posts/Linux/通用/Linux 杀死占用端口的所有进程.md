@@ -4,7 +4,7 @@ categories:
   - Linux
   - 通用
 date: 2019-11-25 23:26:06
-updated: 2019-11-26 00:14:28
+updated: 2019-11-26 13:21:33
 abbrlink: e2b78dd9
 ---
 <div id='my_toc'>
@@ -19,7 +19,7 @@ abbrlink: e2b78dd9
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 查找占用端口的程序 #

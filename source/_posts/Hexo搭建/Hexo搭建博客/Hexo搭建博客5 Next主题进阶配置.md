@@ -4,7 +4,7 @@ categories:
   - Hexo搭建
   - Hexo搭建博客
 date: 2018-08-29 19:35:07
-updated: 2019-11-14 11:39:26
+updated: 2019-11-25 00:23:43
 abbrlink: f01200cd
 ---
 <div id='my_toc'>
@@ -24,7 +24,7 @@ abbrlink: f01200cd
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 实现点击出现爱心效果 ##

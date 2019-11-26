@@ -4,7 +4,7 @@ categories:
   - Java
   - IDE
 date: 2019-07-11 11:03:16
-updated: 2019-11-14 11:39:27
+updated: 2019-11-25 00:23:43
 abbrlink: 126e3b07
 ---
 <div id='my_toc'>
@@ -14,7 +14,7 @@ abbrlink: 126e3b07
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## eclipse提取本地变量快捷键 ##

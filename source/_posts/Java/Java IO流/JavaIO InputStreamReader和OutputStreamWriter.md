@@ -4,7 +4,7 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-09 19:25:05
-updated: 2019-11-14 11:39:28
+updated: 2019-11-25 13:24:47
 abbrlink: a5e554af
 ---
 <div id='my_toc'>
@@ -25,7 +25,7 @@ abbrlink: a5e554af
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 前言 #

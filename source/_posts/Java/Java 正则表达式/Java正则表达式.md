@@ -4,7 +4,7 @@ categories:
   - Java
   - Java 正则表达式
 date: 2019-01-11 22:02:27
-updated: 2019-11-14 11:39:29
+updated: 2019-11-25 13:24:47
 abbrlink: 4ea1809c
 ---
 <div id='my_toc'>
@@ -39,7 +39,7 @@ abbrlink: 4ea1809c
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # java 使用正则表达式步骤 #

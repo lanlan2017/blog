@@ -6,7 +6,7 @@ categories:
   - java
   - sql
 date: 2019-05-21 23:50:19
-updated: 2019-11-14 11:39:29
+updated: 2019-11-25 00:23:44
 abbrlink: 87bdbf10
 ---
 <div id='my_toc'>
@@ -31,7 +31,7 @@ abbrlink: 87bdbf10
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # PreparedStatement接口方法2 #

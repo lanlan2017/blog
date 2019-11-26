@@ -5,7 +5,7 @@ categories:
   - VirtualBox
   - Ubuntu
 date: 2019-11-25 17:44:39
-updated: 2019-11-25 19:59:54
+updated: 2019-11-25 20:00:29
 abbrlink: 4fc37c0d
 ---
 <div id='my_toc'>
@@ -18,7 +18,7 @@ abbrlink: 4fc37c0d
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Ubuntu 18.04修改默认源为国内源 #

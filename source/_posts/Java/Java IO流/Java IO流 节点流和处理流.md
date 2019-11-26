@@ -4,7 +4,7 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-21 22:26:21
-updated: 2019-11-14 11:39:28
+updated: 2019-11-25 00:23:44
 abbrlink: 2e0f7472
 ---
 <div id='my_toc'>
@@ -15,7 +15,7 @@ abbrlink: 2e0f7472
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 常用处理流（关闭处理流使用关闭里面的节点流） ##

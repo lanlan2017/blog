@@ -5,7 +5,7 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-02-03 18:14:35
-updated: 2019-11-14 11:39:32
+updated: 2019-11-25 13:24:47
 abbrlink: e6156b85
 ---
 <div id='my_toc'>
@@ -27,7 +27,7 @@ abbrlink: e6156b85
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 问题描述 ##

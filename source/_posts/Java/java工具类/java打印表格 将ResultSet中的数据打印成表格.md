@@ -4,7 +4,7 @@ categories:
   - Java
   - java工具类
 date: 2019-10-23 22:19:13
-updated: 2019-11-14 11:39:29
+updated: 2019-11-25 00:23:45
 abbrlink: d58ef648
 ---
 <div id='my_toc'>
@@ -21,7 +21,7 @@ abbrlink: d58ef648
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # java打印表格 将ResultSet中的数据打印成表格 #

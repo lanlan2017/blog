@@ -5,7 +5,7 @@ categories:
   - IDE
   - VSCode
 date: 2019-07-06 22:11:24
-updated: 2019-11-14 11:39:27
+updated: 2019-11-25 00:23:43
 abbrlink: c8a8df16
 ---
 <div id='my_toc'>
@@ -17,7 +17,7 @@ abbrlink: c8a8df16
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # VSCode 运行Java #

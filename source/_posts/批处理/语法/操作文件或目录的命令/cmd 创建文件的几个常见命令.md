@@ -5,7 +5,7 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2018-08-03 14:03:56
-updated: 2019-11-14 11:39:32
+updated: 2019-11-25 00:23:45
 abbrlink: 6aff1849
 ---
 <div id='my_toc'>
@@ -20,7 +20,7 @@ abbrlink: 6aff1849
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 一、建立空文件的几种方法 ##

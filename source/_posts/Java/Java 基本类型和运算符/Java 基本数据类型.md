@@ -4,7 +4,7 @@ categories:
   - Java
   - Java 基本类型和运算符
 date: 2019-01-14 20:49:01
-updated: 2019-11-14 11:39:28
+updated: 2019-11-25 00:23:44
 mathjax: true
 abbrlink: 4badee62
 ---
@@ -19,7 +19,7 @@ abbrlink: 4badee62
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 基本数据类型  ##

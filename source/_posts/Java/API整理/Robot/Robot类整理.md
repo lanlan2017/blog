@@ -5,7 +5,7 @@ categories:
   - API整理
   - Robot
 date: 2019-10-19 20:23:38
-updated: 2019-11-14 11:39:27
+updated: 2019-11-25 00:23:43
 abbrlink: 321f0e4e
 ---
 <div id='my_toc'>
@@ -15,7 +15,7 @@ abbrlink: 321f0e4e
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## API ##

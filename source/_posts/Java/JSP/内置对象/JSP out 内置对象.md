@@ -5,7 +5,7 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:38
-updated: 2019-11-14 11:39:29
+updated: 2019-11-25 13:24:47
 abbrlink: 8c60ed62
 ---
 <div id='my_toc'>
@@ -20,7 +20,7 @@ abbrlink: 8c60ed62
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # out内置对象 #

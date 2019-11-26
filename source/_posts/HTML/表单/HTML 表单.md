@@ -4,7 +4,7 @@ categories:
   - HTML
   - 表单
 date: 2018-11-28 14:45:08
-updated: 2019-11-14 11:39:26
+updated: 2019-11-25 13:24:47
 abbrlink: b74fe8bf
 ---
 <div id='my_toc'>
@@ -53,7 +53,7 @@ abbrlink: b74fe8bf
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # HTML表单是什么 #

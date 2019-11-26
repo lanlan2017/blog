@@ -4,7 +4,7 @@ categories:
   - Linux
   - Termux
 date: 2019-11-03 19:40:56
-updated: 2019-11-14 11:39:31
+updated: 2019-11-25 00:23:45
 abbrlink: b709eab2
 ---
 <div id='my_toc'>
@@ -28,7 +28,7 @@ abbrlink: b709eab2
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # Termux API有什么用 #

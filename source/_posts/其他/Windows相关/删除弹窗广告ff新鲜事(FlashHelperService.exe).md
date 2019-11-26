@@ -4,7 +4,7 @@ categories:
   - 其他
   - Windows相关
 date: 2019-07-15 14:30:04
-updated: 2019-11-14 11:39:32
+updated: 2019-11-25 00:23:45
 abbrlink: d4d344ff
 ---
 <div id='my_toc'>
@@ -15,7 +15,7 @@ abbrlink: d4d344ff
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 删除弹窗广告ff新鲜事(FlashHelperService.exe) #

@@ -4,7 +4,7 @@ categories:
   - 正则表达式
   - 实例
 date: 2018-10-11 09:12:13
-updated: 2019-11-14 11:39:33
+updated: 2019-11-25 00:23:47
 abbrlink: 1d153e30
 ---
 <div id='my_toc'>
@@ -13,7 +13,7 @@ abbrlink: 1d153e30
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 实现 ##

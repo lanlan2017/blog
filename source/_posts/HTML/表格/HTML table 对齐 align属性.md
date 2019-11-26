@@ -4,7 +4,7 @@ categories:
   - HTML
   - 表格
 date: 2019-03-28 14:47:35
-updated: 2019-11-14 11:39:26
+updated: 2019-11-25 00:23:43
 abbrlink: aa51abd2
 ---
 <div id='my_toc'>
@@ -14,7 +14,7 @@ abbrlink: aa51abd2
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## HTML 表格对齐方式 ##

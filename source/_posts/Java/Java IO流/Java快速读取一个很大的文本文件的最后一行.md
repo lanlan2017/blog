@@ -4,7 +4,7 @@ categories:
   - Java
   - Java IO流
 date: 2018-10-29 23:41:16
-updated: 2019-11-14 11:39:28
+updated: 2019-11-25 13:24:47
 abbrlink: 487a7f53
 ---
 <div id='my_toc'>
@@ -14,7 +14,7 @@ abbrlink: 487a7f53
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 返回文本文件最后一行java代码 ##

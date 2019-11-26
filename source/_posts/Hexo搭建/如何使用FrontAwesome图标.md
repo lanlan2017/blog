@@ -3,7 +3,7 @@ title: 如何使用FrontAwesome图标
 categories: 
   - Hexo搭建
 date: 2019-03-11 21:02:57
-updated: 2019-11-14 11:39:26
+updated: 2019-11-25 00:23:43
 abbrlink: 4181f9ed
 ---
 <div id='my_toc'>
@@ -18,7 +18,7 @@ abbrlink: 4181f9ed
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## 选择图标 ##

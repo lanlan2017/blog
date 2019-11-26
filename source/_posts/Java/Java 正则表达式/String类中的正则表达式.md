@@ -4,7 +4,7 @@ categories:
   - Java
   - Java 正则表达式
 date: 2018-08-06 23:46:40
-updated: 2019-11-14 11:39:29
+updated: 2019-11-25 13:24:47
 abbrlink: 12fb64fe
 ---
 <div id='my_toc'>
@@ -26,7 +26,7 @@ abbrlink: 12fb64fe
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## String支持正则表达式是的方法 ##

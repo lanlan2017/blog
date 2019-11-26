@@ -5,7 +5,7 @@ categories:
   - markdown使用
   - markdown语法
 date: 2018-10-21 10:01:08
-updated: 2019-11-14 11:39:31
+updated: 2019-11-25 00:23:45
 abbrlink: 8859faa9
 ---
 <div id='my_toc'>
@@ -15,7 +15,7 @@ abbrlink: 8859faa9
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 ## Markdown待办事项语法 ##

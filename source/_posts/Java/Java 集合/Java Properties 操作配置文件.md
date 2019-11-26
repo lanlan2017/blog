@@ -4,7 +4,7 @@ categories:
   - Java
   - Java 集合
 date: 2018-11-26 18:53:21
-updated: 2019-11-14 11:39:29
+updated: 2019-11-25 13:24:47
 abbrlink: fdae6905
 ---
 <div id='my_toc'>
@@ -27,7 +27,7 @@ abbrlink: fdae6905
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

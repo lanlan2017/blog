@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - SEO
 date: 2018-10-30 11:11:24
-updated: 2019-11-14 11:39:26
+updated: 2019-11-25 00:23:43
 abbrlink: 5f9ceba2
 ---
 <div id='my_toc'>
@@ -14,7 +14,7 @@ abbrlink: 5f9ceba2
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 先写到这里，后续审核通过了我在再增加,注册这个只是为了，让我的博客站点在百度搜索中的排名靠前点。SEO还真心不容易啊。

@@ -3,7 +3,7 @@ title: Hexo搭建
 categories: 
   - Hexo搭建
 date: 2019-11-13 15:56:21
-updated: 2019-11-25 00:22:18
+updated: 2019-11-25 00:23:43
 comments: false
 abbrlink: 57ee7c1d
 ---
@@ -102,7 +102,7 @@ abbrlink: 57ee7c1d
 
 </div>
 <!--more-->
-<script>if (navigator.platform.toLowerCase() == 'win32'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
 # 安装和配置Node.js #
