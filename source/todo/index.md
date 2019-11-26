@@ -43,12 +43,10 @@ comments: false
 - [ ] 手机上下载的劳动合同注意点.
 
 
-
-
-
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
 
+- [x] 创建git命令简写Shell脚本
 - [x] 安装Linux子系统
 - [x] 解除Win10网速限制
 - [x] 办理宽带,
