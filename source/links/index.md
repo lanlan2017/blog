@@ -31,8 +31,8 @@ comments: false
 
 </div>
 <script>
-if (navigator.platform.toLowerCase() != 'android'){document.getElementById('my_toc').style.display = 'none';}
-document.getElementById('my_show').innerText="navigator.userAgent: "+navigator.userAgent+"\n"+"navigator.platform: "+navigator.platform;
+if (!navigator.platform.search(/^linux arm.*$/i)){document.getElementById('my_toc').style.display = 'none';}
+document.getElementById('my_show').innerText="navigator.platform: "+navigator.platform;
 </script>
 
 # 我的站点 #
