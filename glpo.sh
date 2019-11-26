@@ -1,4 +1,4 @@
-echo ----------------------
+echo ----------------------------
 echo git log -10 --pretty=oneline
-echo ----------------------
+echo ----------------------------
 git log -10 --pretty=oneline

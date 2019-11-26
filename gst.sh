@@ -1,4 +1,4 @@
 echo ----------------------------
-echo git add .
+echo git status
 echo ----------------------------
-git add .
+git status
