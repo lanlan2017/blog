@@ -39,14 +39,14 @@ comments: false
     - [ ] 安装Mysql
     - [ ] 安装Navicat.
 - [ ] 2019 年发布中国互联网企业 100 强榜
-- [x] 修改tools样式，按钮顶部内边距改小点
-- [ ] 应用到vscode上
-
+- [ ] 手机上下载的劳动合同注意点.
 
 
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
 
+- [x] 修改tools样式，按钮顶部内边距改小点
+- [x] 应用到vscode上
 - [x] 洗衣服
 - [x] 完善java遍历目录抽象
 - [x] 安装ubuntu
