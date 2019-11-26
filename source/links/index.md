@@ -3,6 +3,7 @@ title: links
 date: 2019-11-04 20:24:42
 comments: false
 ---
+<p id='my_show'></p>
 <div id='my_toc'>
 
 - [我的站点](/blog/links/#我的站点)
@@ -29,7 +30,10 @@ comments: false
 - [资讯](/blog/links/#资讯)
 
 </div>
-<script>if (navigator.platform.toLowerCase() != 'android'){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>
+if (navigator.platform.toLowerCase() != 'android'){document.getElementById('my_toc').style.display = 'none';}
+document.getElementById('my_show').innerText="navigator.userAgent: "+navigator.userAgent+"\n"+"navigator.platform: "+navigator.platform;
+</script>
 
 # 我的站点 #
 - [读书笔记](https://lanlan2017.github.io/ReadingNotes/)
