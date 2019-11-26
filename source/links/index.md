@@ -30,10 +30,7 @@ comments: false
 - [资讯](/blog/links/#资讯)
 
 </div>
-<script>
-if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-document.getElementById('my_show').innerText="navigator.platform:"+navigator.platform+";"+"is arm: "+navigator.platform.search('arm');
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 # 我的站点 #
 - [读书笔记](https://lanlan2017.github.io/ReadingNotes/)
