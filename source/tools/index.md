@@ -93,6 +93,14 @@ comments: false
         input.value = "git status\ngit add .\ngit status\ngit commit -m '";
         copy();
     }
+    function gacTools() {
+        input.value = "git status\ngit add .\ngit status\ngit commit -m '更新tools页面'\ngit push origin master\n";
+        copy();
+    }
+    function gacLinks() {
+        input.value = "git status\ngit add .\ngit status\ngit commit -m '更新links页面'\ngit push origin master\n";
+        copy();
+    }
     function gpom() {
         input.value = "git push origin master\n";
         copy();
