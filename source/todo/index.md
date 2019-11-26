@@ -40,6 +40,7 @@ comments: false
 - [ ] 手机上下载的劳动合同注意点.微博收藏中的
 - [ ] 删除tools页面的Git命令
 - [ ] 安装讯飞输入法，使用同步个性短语
+- [ ] 测试
 
 FM程序:
 正确:https://lanlan2017.github.io/blog/categories/Java/java-util/
