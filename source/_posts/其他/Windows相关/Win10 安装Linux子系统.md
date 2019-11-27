@@ -83,15 +83,7 @@ sudo dpkg-reconfigure locales
 ```shell
 sudo apt-get install ubuntu-desktop unity compizconfig-settings-manager
 ```
-```shell
-sudo apt-get install ubuntu-desktop
-```
-```shell
-sudo apt-get install unity
-```
-```shell
-sudo apt-get install compizconfig-settings-manager
-```
+
 ```shell
 export  DISPLAY=localhost:0
 ```
@@ -119,8 +111,4 @@ sudo compiz
 ```
 Win10/SubSystem/Linux/Ubuntu/
 # 参考资料 #
-[https://www.jianshu.com/p/002edb60a0ac](https://www.jianshu.com/p/002edb60a0ac)
-[https://www.cnblogs.com/lonelyxmas/p/9914493.html](https://www.cnblogs.com/lonelyxmas/p/9914493.html)
-[https://www.cnblogs.com/oboth-zl/p/10315500.html](https://www.cnblogs.com/oboth-zl/p/10315500.html)
-[https://blog.csdn.net/qq_20464153/article/details/79682274](https://blog.csdn.net/qq_20464153/article/details/79682274)
-[https://blog.csdn.net/daybreak222/article/details/87968078](https://blog.csdn.net/daybreak222/article/details/87968078)
+[https://www.bilibili.com/video/av51515689/](https://www.bilibili.com/video/av51515689/)
