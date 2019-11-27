@@ -56,6 +56,9 @@ abbrlink: 942c9c89
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
+# 总结 #
+经过我一天的瞎忙活,我发现安装后的window子系统只有一个简单的文件管理器可以用,其他的图形化工具太少了,还是算了,**老老实实用虚拟机来的实在**
+也可能是我不会安装相应软件的原因吧。
 # 打开开发者选项 #
 按下**`win+I`**快捷键,打开**设置**,然后进入**更新和安全**
 ![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/1.png)
@@ -217,6 +220,29 @@ sudo apt-get install tasksel -y
 sudo tasksel
 ```
 待续.....
+```shell
+sudo apt-get install --no-install-recommends ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
+```
+```shell
+sudo vim .vnc/xstartup
+```
+```shell
+XAUTHORITY=$HOME/.Xauthority
+export XAUTHORITY
+LANG=zh_CN.UTF-8
+# unset SESSION_MANAGER
+# exec /etc/X11/xinit/xinitrc
+[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+xsetroot -solid grey
+vncconfig -iconic &
+x-terminal-emulator -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &
+x-window-manager &
+gnome-panel &
+gnome-settings-daemon &
+metacity &
+nautilus &
+```
 # 安装桌面方式2 #
 ```shell
 sudo apt-get install xubuntu-desktop
