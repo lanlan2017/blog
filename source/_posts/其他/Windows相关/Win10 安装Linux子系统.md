@@ -202,6 +202,140 @@ sudo apt-get install xubuntu-desktop
 之后会自动安装桌面。（gnome桌面、xfce4桌面、Unity桌面、kde桌面等可自行选择，只需命令sudo install xxx就可安装了）
 
 如果界面管理器出错就安装（没有就不用管这句）：sudo apt install lightdm 安装完成后重启系统就好了
+sudo apt-get install xubuntu-desktop
+
+## 解决错误1 ##
+```shell
+在处理时有错误发生：
+ blueman
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+```
+创建需要的文件目录然后再安装:
+```shell
+sudo mv /var/lib/dpkg/info /var/lib/dpkg/info.bak
+sudo mkdir /var/lib/dpkg/info
+sudo apt-get update
+sudo apt-get install xubuntu-desktop
+```
+### 合并目录 ###
+```shell
+sudo mv /var/lib/dpkg/info/* /var/lib/dpkg/info.bak
+sudo rm -rf /var/lib/dpkg/info
+sudo mv /var/lib/dpkg/info.bak /var/lib/dpkg/info
+```
+## 解决错误2 ##
+```shell
+W: APT had planned for dpkg to do more than it reported back (0 vs 4).
+   Affected packages: blueman:amd64
+```
+输入如下命令解决:
+```shell
+sudo dpkg -C
+```
+## 重启子系统 ##
+以管理员身份启动windows的cmd,输入如下命令:
+```cmd
+net stop LxssManager
+net start LxssManager
+```
+# 安装中文输入法 #
+```shell
+sudo apt install -y fcitx fcitx-googlepinyin*
+```
+## 配置变量 ##
+```shell
+sudo vim .profile
+```
+在文件末尾添加:
+```shell
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+```
+# 连接桌面 #
+## 安装VNC ##
+```shell
+sudo apt-get install vnc4server
+```
+## 启动VNX ##
+```shell
+sudo vncserver -geometry 1366x768 :0
+```
+`1366x768`是表示屏幕分辨率,` :0`是表示**桌面**的端口号为零,分辨率和端口号都可以随意自行更改,只要不出错就行
+然后会提示设置**连接密码**,会提示输入**两次**,然后就能看见为0的端口号在运行。
+```shell
+blue@DESKTOP-8ISAT6B:~$ sudo vncserver -geometry 1366x768 :0
+
+You will require a password to access your desktops.
+
+Password:Verify:xauth:  file /home/blue/.Xauthority does not exist
+
+New 'DESKTOP-8ISAT6B:0 (root)' desktop is DESKTOP-8ISAT6B:0
+
+Creating default startup script /home/blue/.vnc/xstartup
+Starting applications specified in /home/blue/.vnc/xstartup
+Log file is /home/blue/.vnc/DESKTOP-8ISAT6B:0.log
+
+blue@DESKTOP-8ISAT6B:~$
+```
+之后输入VNC结束命令：
+```shell
+sudo vncserver -kill :0
+```
+先输入命令：
+```shell
+sudo vim .vnc/xstartup
+```
+然后复制以下内容粘贴到`xstartup`文本里:(桌面空白也用此方法解决)
+```shell
+#!/bin/sh
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+xsetroot -solid grey
+startxfce4 &
+```
+## 再次启动VNC ##
+```shell
+sudo vncserver -geometry 1366x768 :0
+```
+输出如下:
+```
+blue@DESKTOP-8ISAT6B:~$ sudo vncserver -geometry 1366x768 :0
+
+New 'DESKTOP-8ISAT6B:0 (root)' desktop is DESKTOP-8ISAT6B:0
+
+Starting applications specified in /home/blue/.vnc/xstartup
+Log file is /home/blue/.vnc/DESKTOP-8ISAT6B:0.log
+```
+可以看大这里的煮面端口是`0`(DESKTOP-8ISAT6B`:0`)
+如果**显示端口是4**那么在客户端连接的就是127.0.0.1:4 (每个人的不一样，可自行修改，一般默认是0)
+使用vnc客户端连接即可查看桌面，
+# 安装VNC客户端 #
+到vnc-viewer官网:[https://vnc-viewer.en.softonic.com/download](https://vnc-viewer.en.softonic.com/download)下载VNC客户端
+然后安装,
+## 如何退出VNC全屏的方法 ##
+如果你不小心在VNC客户段上点击全屏后,是无法在VNC客户端结束全屏的.
+不过幸好的是现在还连着Linux,所以可以杀死Linux上的VNC进程,这样Windows客户段连接不上Linux,就会自动退出.
+结束vnc进程命令为.
+```shell
+sudo vncserver -kill :0
+```
+0表示为桌面端口号。
+
+# 如何查看ubuntu版本 #
+## 安装程序 ##
+```shell
+sudo apt-get install neofetch
+```
+## 查看版本 ##
+```shell
+neofetch
+```
+
+
+
 
 Win10/SubSystem/Linux/Ubuntu/
 # 参考资料 #
