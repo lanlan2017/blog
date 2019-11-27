@@ -209,9 +209,15 @@ LxssManager 服务已经启动成功。
 
 C:\WINDOWS\system32>
 ```
-
-
-# 安装桌面 #
+# 安装桌面方式1 #
+```shell
+sudo apt-get install tasksel -y
+```
+```shell
+sudo tasksel
+```
+待续.....
+# 安装桌面方式2 #
 ```shell
 sudo apt-get install xubuntu-desktop
 ```
