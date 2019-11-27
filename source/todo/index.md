@@ -38,13 +38,8 @@ comments: false
     - [ ] 安装Navicat.
 - [ ] 2019 年发布**中国互联网企业100 强榜**
 - [ ] 手机上下载的劳动合同注意点.微博收藏中的
-- [ ] 删除tools页面的Git命令
-- [ ] 安装讯飞输入法，使用同步个性短语
 
 
-FM程序:
-正确:https://lanlan2017.github.io/blog/categories/Java/java-util/
-错误:#https://lanlan2017.github.io/blog/categories/Java/java_util/
 谷歌收录https://jactor-sue.github.io/zh-CN/how-blog-on-githubpages-can-be-searched-by-google/
 评论系统 Gitalk https://theme-next.org/docs/third-party-services/comments
 
@@ -52,6 +47,9 @@ FM程序:
 <details><summary>展开已完成/折叠已完成</summary>
 
 ## 2019年11月27日
+- [x] FM程序:错误
+- [x] 删除tools页面的Git命令
+- [x] 微软拼音使用,同步个性短语
 - [x] 安装Linux子系统Ubuntu
 - [x] Ubuntu子系统的图形化
     - [x] 图形化操作失败,有些需要的软件我没有安装完整,还是完整的虚拟机用起来方便
