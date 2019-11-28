@@ -38,13 +38,23 @@ comments: false
     - [ ] 安装Navicat.
 - [ ] 2019 年发布**中国互联网企业100 强榜**
 - [ ] 手机上下载的劳动合同注意点.微博收藏中的
-
-
-谷歌收录https://jactor-sue.github.io/zh-CN/how-blog-on-githubpages-can-be-searched-by-google/
-评论系统 Gitalk https://theme-next.org/docs/third-party-services/comments
+- [ ] 谷歌收录https://jactor-sue.github.io/zh-CN/how-blog-on-githubpages-can-be-searched-by-google/
+- [ ] 写使用Gitalk评论系统的文档.
+- [ ] 约会,给安装模拟器,给安装翻墙软件.
+- 
 
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
+## 2019年11月28日
+- [x] 电脑上使用安卓模拟器翻墙
+    - [x] 安装雷电模拟器
+        - [x] 安装谷歌框架
+        - [x] 安装翻墙软件
+        - [x] 登陆谷歌,
+        - [x] 下载其他翻墙软件
+        - [x] 导出模拟器中的软件
+        - [x] 体验雷电模拟器
+        - 
 
 ## 2019年11月27日
 - [x] FM程序:错误
@@ -53,6 +63,8 @@ comments: false
 - [x] 安装Linux子系统Ubuntu
 - [x] Ubuntu子系统的图形化
     - [x] 图形化操作失败,有些需要的软件我没有安装完整,还是完整的虚拟机用起来方便
+- [x] 使用Gitalk评论系统
+
 ## 2019年11月26日
 
 - [x] 安装ubuntu
