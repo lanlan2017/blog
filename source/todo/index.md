@@ -39,8 +39,9 @@ comments: false
     - [ ] 安装Navicat.
 - [ ] 2019 年发布**中国互联网企业100 强榜**
 - [ ] 手机上下载的劳动合同注意点.微博收藏中的
-- [ ] 谷歌收录https://jactor-sue.github.io/zh-CN/how-blog-on-githubpages-can-be-searched-by-google/
+- [ ] 谷歌收录 https://jactor-sue.github.io/zh-CN/how-blog-on-githubpages-can-be-searched-by-google/
 - [ ] 写使用Gitalk评论系统的文档.
+- [ ] 百度收录 https://theme-next.org/docs/theme-settings/seo
 
 
 # 已完成
