@@ -1,5 +1,5 @@
 ---
-title: JS 添加DOM元素 删除DOM元素
+title: JS 添加DOM元素 删除DOM元素 复制文本到剪贴板
 categories: 
   - JavaScript
   - DOM
