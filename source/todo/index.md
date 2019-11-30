@@ -51,6 +51,7 @@ comments: false
     - [ ] 安装Mysql
     - [ ] 安装Navicat.
 - [ ] 有空了解一下
+- [ ] Linux和Window下打开一个文件的不同.
 
 </details>
 
