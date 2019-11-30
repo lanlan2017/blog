@@ -28,7 +28,7 @@ abbrlink: '5285183'
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/JavaFX/2.png)
 然后等待安装完毕，安装完毕后重启eclipse,打开首选项，如果看到JavaFX则说明安装成功:
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/JavaFX/3.png)
-## 下载 scene builder##
+## 下载 scene builder ##
 [https://www.oracle.com/technetwork/java/javase/downloads/javafxscenebuilder-1x-archive-2199384.html](https://www.oracle.com/technetwork/java/javase/downloads/javafxscenebuilder-1x-archive-2199384.html)
 ## 安装 ##
 点击安装即可

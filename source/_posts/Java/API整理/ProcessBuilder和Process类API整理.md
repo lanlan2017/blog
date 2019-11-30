@@ -37,6 +37,7 @@ abbrlink: e5bb3a41
 |方法|描述|
 |:---|:---|
 |`static class ProcessBuilder.Redirect`|表示子进程的输入源或者输出的目的|
+
 ## 构造器 ##
 |方法|描述|
 |:---|:---|
@@ -97,6 +98,7 @@ abbrlink: e5bb3a41
 |:---|:---|
 |`abstract void destroy()`|杀死子流程|
 |`Process destroyForcibly()`|杀死子流程|
+
 ## 获取子进程的IO ##
 |方法|描述|
 |:---|:---|
