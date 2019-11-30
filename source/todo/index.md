@@ -5,7 +5,6 @@ comments: false
 ---
 # 未完成
 - [ ] 下个月关闭,移动网盘,6个月视频会员自动取消.
-- [ ] 有空了解一下
 - [ ] 读疯狂java
     - [ ] 集合
         - [ ] 之前读完了,还没有第二次读和使用.
@@ -34,19 +33,26 @@ comments: false
     - [ ] 根据E-R图生成表
 - [ ] 还钱
     - [ ] 已经还了,等审核.明天看看审核通过了没
-- [x] ubuntu中安装软件
-    - [ ] 安装Mysql
-    - [ ] 安装Navicat.
+
 - [ ] 2019 年发布**中国互联网企业100 强榜**
 - [ ] 手机上下载的劳动合同注意点.微博收藏中的
+
+
+# 搁置
+<details><summary>展开搁置/折叠搁置</summary>
+
 - [ ] 谷歌收录 https://jactor-sue.github.io/zh-CN/how-blog-on-githubpages-can-be-searched-by-google/
 - [ ] 写使用Gitalk评论系统的文档.
 - [ ] [NexT SEO设置](https://theme-next.org/docs/theme-settings/seo)
     - [ ] 必应收录
     - [ ] 谷歌收录
     - [ ] 百度收录
+- [x] ubuntu中安装软件
+    - [ ] 安装Mysql
+    - [ ] 安装Navicat.
+- [ ] 有空了解一下
 
-
+</details>
 
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
