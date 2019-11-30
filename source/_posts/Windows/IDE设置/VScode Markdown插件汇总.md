@@ -1,3 +1,9 @@
+---
+categories:
+  - Windows
+  - IDE设置
+abbrlink: '0'
+---
 # VScode Markdown插件汇总
 
 ## Markdown Shortcuts
