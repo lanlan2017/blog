@@ -52,20 +52,6 @@ sudo vim /etc/apt/sources.list
 ****
 `注释`掉其他`apt`源,然后在`/etc/apt/sources.list`文件**前面**添加如下条目:
 ```shell
-    # 中科大源 开始
-    deb https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
-    deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
-    deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-    deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
-    deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
-    deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
-    deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
-    deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
-    deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
-    deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
-    # 中科大源 开始
-```
-```shell
     # 阿里云源 开始
     deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
     deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
@@ -81,6 +67,22 @@ sudo vim /etc/apt/sources.list
 ```
 ![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Linux/Ubuntu/ChangeSource/1.png)
 其他Ubuntu版本的apt源,只需要替换上面的系统代号即可.
+
+```shell
+    # 中科大源 开始
+    deb https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
+    deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
+    deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+    deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+    deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+    deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+    deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+    deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+    deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+    deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+    # 中科大源 开始
+```
+
 ## 更新程序 ##
 ### 更新软件列表 ###
 ```shell
