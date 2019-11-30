@@ -4,29 +4,47 @@ categories:
   - Linux
   - Termux
 date: 2019-10-31 15:08:27
-updated: 2019-11-25 00:23:45
+updated: 2019-11-30 20:22:30
 abbrlink: 4a95e633
 ---
 <div id='my_toc'>
 
 - [安装termux](/blog/4a95e633/#安装termux)
-- [安装git](/blog/4a95e633/#安装git)
-- [安装nodejs](/blog/4a95e633/#安装nodejs)
-- [使用淘宝镜像](/blog/4a95e633/#使用淘宝镜像)
-- [设置npm全局安装路径和全局缓存路径](/blog/4a95e633/#设置npm全局安装路径和全局缓存路径)
-- [安装hexo](/blog/4a95e633/#安装hexo)
-- [创建站点](/blog/4a95e633/#创建站点)
-- [进入站点](/blog/4a95e633/#进入站点)
-- [启动本地服务器](/blog/4a95e633/#启动本地服务器)
-- [手机浏览器上进入网站](/blog/4a95e633/#手机浏览器上进入网站)
+    - [下载termux](/blog/4a95e633/#下载termux)
+- [更换国内源](/blog/4a95e633/#更换国内源)
+    - [官方方法](/blog/4a95e633/#官方方法)
+    - [直接编辑源文件](/blog/4a95e633/#直接编辑源文件)
+    - [修改效果](/blog/4a95e633/#修改效果)
+- [The main termux repository:](/blog/4a95e633/#The-main-termux-repository)
+- [deb https://termux.org/packages/ stable main](/blog/4a95e633/#deb-https-termux-org-packages-stable-main)
+- [The termux repository mirror from TUNA:](/blog/4a95e633/#The-termux-repository-mirror-from-TUNA)
+- [Termux获取管理员权限](/blog/4a95e633/#Termux获取管理员权限)
 - [Termux优化](/blog/4a95e633/#Termux优化)
     - [终端配色](/blog/4a95e633/#终端配色)
     - [访问外置存储优化](/blog/4a95e633/#访问外置存储优化)
         - [创建QQ文件夹软连接](/blog/4a95e633/#创建QQ文件夹软连接)
-- [清除缓存](/blog/4a95e633/#清除缓存)
-- [复制主题](/blog/4a95e633/#复制主题)
-- [克隆一个分支](/blog/4a95e633/#克隆一个分支)
-- [获取管理员权限](/blog/4a95e633/#获取管理员权限)
+- [安装git](/blog/4a95e633/#安装git)
+- [Termux 上搭建Hexo博客](/blog/4a95e633/#Termux-上搭建Hexo博客)
+    - [安装nodejs长期支持版本](/blog/4a95e633/#安装nodejs长期支持版本)
+    - [使用淘宝镜像](/blog/4a95e633/#使用淘宝镜像)
+    - [安装hexo](/blog/4a95e633/#安装hexo)
+    - [创建站点](/blog/4a95e633/#创建站点)
+    - [进入站点](/blog/4a95e633/#进入站点)
+    - [启动本地服务器](/blog/4a95e633/#启动本地服务器)
+    - [手机浏览器上进入网站](/blog/4a95e633/#手机浏览器上进入网站)
+- [在非Termux目录下写博客](/blog/4a95e633/#在非Termux目录下写博客)
+    - [克隆博客源码](/blog/4a95e633/#克隆博客源码)
+- [题外话](/blog/4a95e633/#题外话)
+    - [设置npm全局安装路径和全局缓存路径](/blog/4a95e633/#设置npm全局安装路径和全局缓存路径)
+    - [设置Linux环境变量](/blog/4a95e633/#设置Linux环境变量)
+    - [安装指定版本的nodejs](/blog/4a95e633/#安装指定版本的nodejs)
+        - [安装n模块](/blog/4a95e633/#安装n模块)
+        - [升级node.js到最新稳定版](/blog/4a95e633/#升级node-js到最新稳定版)
+        - [查看Nodejs历史版本](/blog/4a95e633/#查看Nodejs历史版本)
+        - [安装指定版本的nodejs](/blog/4a95e633/#安装指定版本的nodejs)
+        - [切换到指定版本的nodejs](/blog/4a95e633/#切换到指定版本的nodejs)
+- [清除npm缓存](/blog/4a95e633/#清除npm缓存)
+- [参考资料](/blog/4a95e633/#参考资料)
 
 </div>
 <!--more-->
@@ -34,65 +52,52 @@ abbrlink: 4a95e633
 
 <!--end-->
 # 安装termux
-下载,安装termux
-# 安装git
-```shell
-pkg install git
-```
-# 安装nodejs
-注意安装长期支持版的
-```shell
-pkg install nodejs-lts
-```
-卸载nodejs长期支持版本:
-```shell
-pkg unstall nodejs-lts
-```
-## 安装指定版本的nodejs ##
-node有一个模块n，是专门用来管理node.js的版本的。
-### 安装n模块 ###
-```shell
-npm install -g n
-```
-### 升级node.js到最新稳定版 ###
-```shell
-n stable
-```
-### 查看Nodejs历史版本 ###
-[https://nodejs.org/en/about/releases/](https://nodejs.org/en/about/releases/)
-点击上面的**版本号**即可看到安装的版本,例如点击[v10](https://nodejs.org/download/release/latest-v10.x/),然后拉到最后,可以看到当前最新的nodejs 10的版本为:`v10.17.0`
-```shell
-node-v10.17.0.tar.xz                               22-Oct-2019 16:41            21514260
-```
-### 安装指定版本的nodejs ###
-```shell
-n v10.17.0
-```
+官网:
+[https://termux.com/](https://termux.com/)
+github仓库:
+[https://github.com/termux/termux-app](https://github.com/termux/termux-app)
+## 下载termux ##
+[f-droid 下载](https://f-droid.org/packages/com.termux/)
+[Google Play 下载](https://play.google.com/store/apps/details?id=com.termux)
 
-# 使用淘宝镜像
+
+# 更换国内源 #
+更换`Termux`清华大学源,加快软件包下载速度. 
+## 官方方法 ##
+设置默认编辑器
 ```shell
-npm config set registry http://registry.npm.taobao.org
+export EDITOR=vi
 ```
-# 设置npm全局安装路径和全局缓存路径
-可以不设置
-# 安装hexo
+编辑源文件
 ```shell
-npm install hexo-cli -g
+apt edit-sources
 ```
-# 创建站点
+将原来的`https://termux.net`官方源替换为`http://mirrors.tuna.tsinghua.edu.cn/termux`
+## 直接编辑源文件 ##
+上面是官方推荐的方法,其实还有更简单的方法,类似于Linux下直接去编辑源文件:
 ```shell
-hexo init blog
+vi  $PREFIX/etc/apt/sources.list
 ```
-# 进入站点
+## 修改效果 ##
 ```shell
-cd blog
+u0_a391@localhost~ cat $PREFIX/etc/apt/sources.list
+# The main termux repository:
+# deb https://termux.org/packages/ stable main
+# The termux repository mirror from TUNA:
+deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main
+
 ```
-# 启动本地服务器
+# Termux获取管理员权限
+没有 `root` 的手机是没有 `root` 权限的。不过 `termux` 给我们提供了一个解决办法可以模拟 `root` 权限。
+我们下载安装 proot
 ```shell
-hexo s
+pkg install proot
 ```
-# 手机浏览器上进入网站
-[http://localhost:4000](http://localhost:4000)
+然后执行下面的命令即可获得 root 权限
+```shell
+termux-chroot
+```
+root 时输入exit可以退回普通用户
 
 # Termux优化
 要翻墙，不翻墙无法访问
@@ -122,34 +127,140 @@ Enter a number, leave blank to not to change: 14 Enter a number, leave blank to 
 ```shell
 ln -s /data/data/com.termux/files/home/storage/shared/tencent/QQfile_recv qq
 ```
+
+# 安装git
+```shell
+pkg install git
+```
+# Termux 上搭建Hexo博客 #
+## 安装nodejs长期支持版本
+注意安装长期支持版的
+```shell
+pkg install nodejs-lts
+```
+卸载nodejs长期支持版本:
+```shell
+pkg unstall nodejs-lts
+```
+## 使用淘宝镜像
+```shell
+npm config set registry http://registry.npm.taobao.org
+```
+## 安装hexo
+```shell
+npm install hexo-cli -g
+```
+## 创建站点
+在**用户主目录**下,输入如下命令创建一个Hexo站点:
+```shell
+hexo init blogTest
+```
+注意**必须在Termux自己的目录**下才可以**创建站点**
+如果在非Termux的目录下执行上面的命令,则会报错如下:
+```shell
+npm WARN tar EPERM: operation not permitted, futime
+npm WARN tar EPERM: operation not permitted, futime
+npm WARN tar EPERM: operation not permitted, futime
+npm WARN tar EPERM: operation not permitted, futime
+npm WARN tar EPERM: operation not permitted, futime
+npm WARN tar EPERM: operation not permitted, futime
+npm WARN tar EPERM: operation not permitted, futime
+npm WARN tar EPERM: operation not permitted, futime
+npm ERR! cb() never called!
+
+npm ERR! This is an error with npm itself. Please report this error at:
+npm ERR!     <https://npm.community>
+WARN  Failed to install dependencies. Please run 'npm install' manually!
+
+```
+## 进入站点
+```shell
+cd blogTest
+```
+## 启动本地服务器
+```shell
+hexo s
+```
+## 手机浏览器上进入网站
+[http://localhost:4000](http://localhost:4000)
+
+# 在非Termux目录下写博客 #
+虽然在Termux下面可以搭建好Hexo,但是不好的是:手机中无法通过其他markdown软件编辑Termux中的文件。虽然使用进入Termux中使用vim编辑也是可以的,但是很麻烦.
+
+现在我只用git管理博客源码就行了,然后通过markdown编辑软件
 ```shell
 ln -s /data/data/com.termux/files/home/storage/shared/blog blog
 ```
-# 清除缓存
 ```shell
-npm cache clean --force
+cd ~blog
 ```
-# 复制主题
-```shell
-git clone https://github.com/theme-next/hexo-theme-next themes/next
-```
-# 克隆一个分支
-```shell
-git clone -b master https://github.com/lanlan2017/ReadingNotes.git
-```
+## 克隆博客源码
 ```shell
 git clone -b master https://github.com/lanlan2017/blog.git
 ```
-# Termux获取管理员权限
-没有 `root` 的手机是没有 `root` 权限的。不过 `termux` 给我们提供了一个解决办法可以模拟 `root` 权限。
-我们下载安装 proot
 ```shell
-pkg install proot
+git clone -b master https://github.com/lanlan2017/ReadingNotes.git
 ```
-然后执行下面的命令即可获得 root 权限
+
+# 题外话 #
+## 设置npm全局安装路径和全局缓存路径
+可以不设置
+cd ~
+mkdir nodejs_data
+cd ~/nodejs_data
+mkdir npm_global
+mkdir node_cache
+```shell
+npm config set cache "~/nodejs_data/node_cache"
+```
+```shell
+npm config set prefix "~/nodejs_data/npm_global"
+```
+## 设置Linux环境变量
+```shell
+cp /etc/profile /etc/profile.bak
+```
+```shell
+vim /etc/profile
+```
+在最后添加:
+```shell
+source /etc/profile
+```
+## 安装指定版本的nodejs ##
+node有一个模块n，是专门用来管理node.js的版本的。
+### 安装n模块 ###
+```shell
+npm install -g n
+```
+### 升级node.js到最新稳定版 ###
+先获取root权限
 ```shell
 termux-chroot
 ```
-root 时输入exit可以退回普通用户
+```shell
+n stable
+```
+### 查看Nodejs历史版本 ###
+[https://nodejs.org/en/about/releases/](https://nodejs.org/en/about/releases/)
+点击上面的**版本号**即可看到安装的版本,例如点击[v10](https://nodejs.org/download/release/latest-v10.x/),然后拉到最后,可以看到当前最新的nodejs 10的版本为:`v10.17.0`
+```shell
+node-v10.17.0.tar.xz                               22-Oct-2019 16:41            21514260
+```
+### 安装指定版本的nodejs ###
+```shell
+n v10.17.0
+```
+### 切换到指定版本的nodejs ###
+输入
+```shell
+n
+```
+# 清除npm缓存
+```shell
+npm cache clean --force
+```
 # 参考资料 #
+[https://www.sqlsec.com/2018/05/termux.html](https://www.sqlsec.com/2018/05/termux.html)
 [https://www.cnblogs.com/anyun/p/8328397.html](https://www.cnblogs.com/anyun/p/8328397.html)
+[https://blog.csdn.net/flw8840488/article/details/90513873](https://blog.csdn.net/flw8840488/article/details/90513873)
