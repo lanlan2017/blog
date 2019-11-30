@@ -4,7 +4,7 @@ categories:
   - Linux
   - Termux
 date: 2019-10-31 15:08:27
-updated: 2019-11-30 20:22:30
+updated: 2019-11-30 20:45:58
 abbrlink: 4a95e633
 ---
 <div id='my_toc'>
@@ -36,6 +36,7 @@ abbrlink: 4a95e633
     - [克隆博客源码](/blog/4a95e633/#克隆博客源码)
 - [题外话](/blog/4a95e633/#题外话)
     - [设置npm全局安装路径和全局缓存路径](/blog/4a95e633/#设置npm全局安装路径和全局缓存路径)
+    - [取消自定义个npm全局安装路径](/blog/4a95e633/#取消自定义个npm全局安装路径)
     - [设置Linux环境变量](/blog/4a95e633/#设置Linux环境变量)
     - [安装指定版本的nodejs](/blog/4a95e633/#安装指定版本的nodejs)
         - [安装n模块](/blog/4a95e633/#安装n模块)
@@ -216,6 +217,20 @@ npm config set cache "~/nodejs_data/node_cache"
 ```shell
 npm config set prefix "~/nodejs_data/npm_global"
 ```
+上面配置好的全局安装目录的信息会下载用户home目录下的`.npmrc`文件中
+```shell
+cat .npmrc
+```
+```shell
+ u0_a391@localhost  ~  cat .npmrc 
+registry=http://registry.npm.taobao.org
+prefix=/data/data/com.termux/files/home/nodejs_data/npm_global
+cache=/data/data/com.termux/files/home/nodejs_data/node_cache
+
+```
+## 取消自定义个npm全局安装路径
+删除用户home目录下的配置文件`.npmrc `中的`prefix`和`cache`即可:
+
 ## 设置Linux环境变量
 ```shell
 cp /etc/profile /etc/profile.bak
