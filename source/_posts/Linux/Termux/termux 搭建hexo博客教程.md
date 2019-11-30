@@ -34,6 +34,7 @@ abbrlink: 4a95e633
 
 <!--end-->
 # 安装termux
+下载,安装termux
 # 安装git
 ```shell
 pkg install git
@@ -48,6 +49,7 @@ pkg install nodejs-lts
 npm config set registry http://registry.npm.taobao.org
 ```
 # 设置npm全局安装路径和全局缓存路径
+可以不设置
 # 安装hexo
 ```shell
 npm install hexo-cli -g
@@ -113,15 +115,16 @@ git clone -b master https://github.com/lanlan2017/ReadingNotes.git
 ```shell
 git clone -b master https://github.com/lanlan2017/blog.git
 ```
-# 获取管理员权限
-没有 root 的手机是没有 root 权限的。不过 termux 给我们提供了一个解决办法可以模拟 root 权限。
-
+# Termux获取管理员权限
+没有 `root` 的手机是没有 `root` 权限的。不过 `termux` 给我们提供了一个解决办法可以模拟 `root` 权限。
 我们下载安装 proot
-
+```shell
 pkg install proot
+```
 然后执行下面的命令即可获得 root 权限
-
+```shell
 termux-chroot
+```
 root 时输入exit可以退回普通用户
 
 >原文链接: [termux 搭建hexo博客教程](https://lanlan2017.github.io/blog/4a95e633/)
