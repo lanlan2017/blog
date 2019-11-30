@@ -36,16 +36,11 @@ comments: false
 - [Java 相关读书笔记](https://lanlan2017.github.io/JavaReadingNotes/)
 - [笔试答案](https://lanlan2017.github.io/exam/)
 
-<div id="localhost">
-
 # 本地站点 #
 - [博客本地](http://127.0.0.1:4007/)
 - [本地工具](http://127.0.0.1:4007/blog/tools/)
 - [笔试题本地](http://localhost:4008/exam/)
     - [Java读书笔记](http://localhost:4010/JavaReadingNotes/)
-
-</div>
-<script>if (navigator.platform.toLowerCase() == 'android'){document.getElementById('localhost').style.display = 'none';}</script>
 
 # 笔试
 - [牛客网](http://m.nowcoder.com/)
