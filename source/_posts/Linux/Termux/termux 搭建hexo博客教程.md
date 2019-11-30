@@ -44,6 +44,31 @@ pkg install git
 ```shell
 pkg install nodejs-lts
 ```
+卸载nodejs长期支持版本:
+```shell
+pkg unstall nodejs-lts
+```
+## 安装指定版本的nodejs ##
+node有一个模块n，是专门用来管理node.js的版本的。
+### 安装n模块 ###
+```shell
+npm install -g n
+```
+### 升级node.js到最新稳定版 ###
+```shell
+n stable
+```
+### 查看Nodejs历史版本 ###
+[https://nodejs.org/en/about/releases/](https://nodejs.org/en/about/releases/)
+点击上面的**版本号**即可看到安装的版本,例如点击[v10](https://nodejs.org/download/release/latest-v10.x/),然后拉到最后,可以看到当前最新的nodejs 10的版本为:`v10.17.0`
+```shell
+node-v10.17.0.tar.xz                               22-Oct-2019 16:41            21514260
+```
+### 安装指定版本的nodejs ###
+```shell
+n v10.17.0
+```
+
 # 使用淘宝镜像
 ```shell
 npm config set registry http://registry.npm.taobao.org
@@ -126,5 +151,5 @@ pkg install proot
 termux-chroot
 ```
 root 时输入exit可以退回普通用户
-
->原文链接: [termux 搭建hexo博客教程](https://lanlan2017.github.io/blog/4a95e633/)
+# 参考资料 #
+[https://www.cnblogs.com/anyun/p/8328397.html](https://www.cnblogs.com/anyun/p/8328397.html)

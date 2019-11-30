@@ -48,8 +48,9 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 ## 添加国内apt源 ##
 ```shell
 sudo vim /etc/apt/sources.list
-```****
-在`/etc/apt/sources.list`文件**前面**添加如下条目:
+```
+****
+`注释`掉其他`apt`源,然后在`/etc/apt/sources.list`文件**前面**添加如下条目:
 ```shell
     # 中科大源 开始
     deb https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
