@@ -41,7 +41,12 @@ comments: false
 - [ ] 手机上下载的劳动合同注意点.微博收藏中的
 - [ ] 谷歌收录 https://jactor-sue.github.io/zh-CN/how-blog-on-githubpages-can-be-searched-by-google/
 - [ ] 写使用Gitalk评论系统的文档.
-- [ ] 百度收录 https://theme-next.org/docs/theme-settings/seo
+- [ ] [NexT SEO设置](https://theme-next.org/docs/theme-settings/seo)
+    - [ ] 必应收录
+    - [ ] 谷歌收录
+    - [ ] 百度收录
+ - [ ] 添加ml命令，添加mimg命令
+ - [ ] 批量给markdown添加图片提示文本
 
 
 # 已完成
@@ -49,7 +54,9 @@ comments: false
 
 ## 2019年11月29日
 - [x] 修改毕设系统密码
-- [x] 约会
+- [x] 约会，送回学校
+- [x] 设置必应站长工具
+- [x] 安装站点目录插件
 
 
 
@@ -62,7 +69,6 @@ comments: false
         - [x] 下载其他翻墙软件
         - [x] 导出模拟器中的软件
         - [x] 体验雷电模拟器
-        - 
 
 ## 2019年11月27日
 - [x] FM程序:错误
