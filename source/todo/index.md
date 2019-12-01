@@ -71,6 +71,9 @@ comments: false
   - [x] 重装谷歌服务
   - [x] 重装VPN软件
 - [x] 谷歌收录
+  - [x] `<meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc" />`
+  - [x] [站长工具控制台](https://search.google.com/search-console?resource_id=https%3A%2F%2Flanlan2017.github.io%2F)
+
 
 ## 2019年11月30
 - [x] Termux上搭建Hexo博客
