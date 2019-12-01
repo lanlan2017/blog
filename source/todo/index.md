@@ -48,7 +48,7 @@ comments: false
 - [ ] 谷歌收录 https://jactor-sue.github.io/zh-CN/how-blog-on-githubpages-can-be-searched-by-google/
 - [ ] 写使用Gitalk评论系统的文档.
 - [ ] [NexT SEO设置](https://theme-next.org/docs/theme-settings/seo)
-    - [ ] 必应收录
+    - [ ] [必应收录](https://www.bing.com/webmaster/home/dashboard/?url=https://lanlan2017.github.io/)
     - [ ] 谷歌收录
     - [ ] 百度收录
 - [x] ubuntu中安装软件
@@ -67,6 +67,10 @@ comments: false
 
 ## 2019年12月01日
 - [x] 已经关闭那个移动云盘
+- [x] 重装雷电模拟器
+  - [x] 重装谷歌服务
+  - [x] 重装VPN软件
+- [x] 谷歌收录
 
 ## 2019年11月30
 - [x] Termux上搭建Hexo博客
