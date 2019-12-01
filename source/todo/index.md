@@ -47,10 +47,6 @@ comments: false
     - [ ] 已经还了,等审核.明天看看审核通过了没
 - [ ] 谷歌收录 https://jactor-sue.github.io/zh-CN/how-blog-on-githubpages-can-be-searched-by-google/
 - [ ] 写使用Gitalk评论系统的文档.
-- [ ] [NexT SEO设置](https://theme-next.org/docs/theme-settings/seo)
-    - [ ] [必应收录](https://www.bing.com/webmaster/home/dashboard/?url=https://lanlan2017.github.io/)
-    - [ ] 谷歌收录
-    - [ ] 百度收录
 - [x] ubuntu中安装软件
     - [ ] 安装Mysql
     - [ ] 安装Navicat.
@@ -71,8 +67,8 @@ comments: false
   - [x] 重装谷歌服务
   - [x] 重装VPN软件
 - [x] 谷歌收录
-  - [x] `<meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc" />`
-  - [x] [站长工具控制台](https://search.google.com/search-console?resource_id=https%3A%2F%2Flanlan2017.github.io%2F)
+- [x] 必应收录
+- [x] 百度收录
 
 
 ## 2019年11月30

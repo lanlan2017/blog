@@ -133,9 +133,10 @@ comments: false
 - [segmentfault](https://segmentfault.com/)
 
 # 资讯 #
+- [微博热搜](https://s.weibo.com/top/summary)
 - [博客园新闻](https://www.cnblogs.com/news/)
 - [开源中国资讯](https://www.oschina.net/news/industry)
-- [微博热搜](https://s.weibo.com/top/summary)
+- [脚本之家咨询](https://www.jb51.net/news/)
 - [知乎-科技](https://www.zhihu.com/mweb-keji)
 - [网易 科技频道](https://3g.163.com/touch/tech/)
     - [网易科技频道 电脑版](https://tech.163.com/)
