@@ -1,3 +1,38 @@
+---
+title: Hexo NexT 7谷歌收录 必应收录 百度收录
+categories: 
+  - Hexo
+  - Hexo搭建博客
+  - SEO
+date: 2019-12-01 12:12:27
+updated: 2019-12-01 12:30:47
+abbrlink: 242f5d55
+---
+<div id='my_toc'>
+
+- [前言](/blog/242f5d55/#前言)
+- [安装生成站点地图的插件](/blog/242f5d55/#安装生成站点地图的插件)
+- [谷歌收录](/blog/242f5d55/#谷歌收录)
+    - [验证网站所有权](/blog/242f5d55/#验证网站所有权)
+    - [配置主题配置文件](/blog/242f5d55/#配置主题配置文件)
+    - [重新部署](/blog/242f5d55/#重新部署)
+    - [提交站点地图](/blog/242f5d55/#提交站点地图)
+- [必应收录](/blog/242f5d55/#必应收录)
+- [百度收录](/blog/242f5d55/#百度收录)
+    - [安装插件](/blog/242f5d55/#安装插件)
+    - [获取content](/blog/242f5d55/#获取content)
+    - [配置主题配置文件](/blog/242f5d55/#配置主题配置文件)
+    - [重新部署](/blog/242f5d55/#重新部署)
+    - [提交sitemap](/blog/242f5d55/#提交sitemap)
+- [参考资料](/blog/242f5d55/#参考资料)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
+# 前言
+本文基于Hexo+NexT7.
 # 安装生成站点地图的插件
 ```shell
 npm install hexo-generator-sitemap --save
@@ -5,7 +40,7 @@ npm install hexo-generator-sitemap --save
 # 谷歌收录
 ## 验证网站所有权
 先[翻墙](https://lanlan2017.github.io/blog/a1ad1d5d/),然后打开`Google Webmaster Tools`:[https://www.google.com/webmasters/tools](https://www.google.com/webmasters/tools),
-登陆,然后选择获取`content`,
+登陆,然后选择获取`content`:
 ## 配置主题配置文件
 打开主题配置文件
 搜素:
@@ -38,13 +73,29 @@ https://lanlan2017.github.io/sitemap.xml
 npm install hexo-generator-baidu-sitemap --save
 ```
 ## 获取content
-
+打开百度站长工具:[https://ziyuan.baidu.com/site/](https://ziyuan.baidu.com/site/)
+点击`站点管理`,`添加网站`:
+![这里有一张图片](https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Baidu/1.png)
+选择协议头,然后填入站点:
+![这里有一张图片](https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Baidu/2.png)
+`设置站点领域`:
+![这里有一张图片](https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Baidu/3.png)
+然后选择HTML验证,复制content的值:
+![这里有一张图片](https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Baidu/4.png)
 ## 配置主题配置文件
 打开主题配置文件,搜索:
 ```shell
 baidu_site_verification
 ```
-然后粘贴获取都的`content`即可
+然后粘贴获取都的`content`.
+然后搜素:
+```shell
+baidu_push
+```
+设置为true即可:
+```shell
+baidu_push: true
+```
 ## 重新部署
 ```shell
 hexo clean&&hexo g&&hexo d
