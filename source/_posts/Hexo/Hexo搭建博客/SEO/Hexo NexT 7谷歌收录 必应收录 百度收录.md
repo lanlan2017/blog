@@ -5,7 +5,7 @@ categories:
   - Hexo搭建博客
   - SEO
 date: 2019-12-01 12:12:27
-updated: 2019-12-01 12:30:47
+updated: 2019-12-01 12:42:35
 abbrlink: 242f5d55
 ---
 <div id='my_toc'>
@@ -24,6 +24,7 @@ abbrlink: 242f5d55
     - [配置主题配置文件](/blog/242f5d55/#配置主题配置文件)
     - [重新部署](/blog/242f5d55/#重新部署)
     - [提交sitemap](/blog/242f5d55/#提交sitemap)
+- [查看被收录的文章](/blog/242f5d55/#查看被收录的文章)
 - [参考资料](/blog/242f5d55/#参考资料)
 
 </div>
@@ -104,6 +105,7 @@ hexo clean&&hexo g&&hexo d
 ```shell
 https://lanlan2017.github.io/baidusitemap.xml
 ```
+等待部署完毕,然后点击`完成验证`。
 ## 提交sitemap
 在百度站长工具中,点击左侧的`数据引入`,`链接提交`,
 ![这里有一张图片](https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Google/8.png)
@@ -113,5 +115,16 @@ https://lanlan2017.github.io/baidusitemap.xml
 <!--
 Hexo/seo/Google/
 -->
+# 查看被收录的文章
+在搜素框中输入:
+```shell
+site:网站地址
+```
+即可查看搜素引擎收录的效果:
+```shell
+site:https://lanlan2017.github.io
+```
+例如谷歌收录的效果如下:
+![这里有一张图片](https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Goolge/10.png)
 # 参考资料
 [https://theme-next.org/docs/theme-settings/seo](https://theme-next.org/docs/theme-settings/seo)
