@@ -2,10 +2,9 @@
 title: Hexo NexT 7谷歌收录 必应收录 百度收录
 categories: 
   - Hexo
-  - Hexo搭建博客
   - SEO
 date: 2019-12-01 12:12:27
-updated: 2019-12-01 12:42:35
+updated: 2019-12-01 12:42:42
 abbrlink: 242f5d55
 ---
 <div id='my_toc'>

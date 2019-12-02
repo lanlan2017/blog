@@ -2,10 +2,9 @@
 title: hexo next 解决手机端表格英文显示错误 让td标签中英文按单词换行
 categories: 
   - Hexo
-  - Hexo搭建博客
-  - 遇到问题
+  - Debug
 date: 2018-11-06 11:24:16
-updated: 2019-11-26 13:21:56
+updated: 2019-12-02 10:52:23
 abbrlink: 200a993a
 ---
 <div id='my_toc'>

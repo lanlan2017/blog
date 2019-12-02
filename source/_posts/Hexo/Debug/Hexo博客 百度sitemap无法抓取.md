@@ -2,10 +2,9 @@
 title: Hexo博客 百度sitemap无法抓取
 categories: 
   - Hexo
-  - Hexo搭建博客
-  - 遇到问题
+  - Debug
 date: 2018-10-28 10:34:03
-updated: 2019-11-26 13:21:56
+updated: 2019-12-02 10:52:23
 abbrlink: ebaabcd4
 ---
 <div id='my_toc'>

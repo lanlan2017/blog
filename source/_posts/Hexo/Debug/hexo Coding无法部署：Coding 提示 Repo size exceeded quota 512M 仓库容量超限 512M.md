@@ -2,10 +2,9 @@
 title: hexo Coding无法部署：Coding 提示 Repo size exceeded quota 512M 仓库容量超限 512M
 categories: 
   - Hexo
-  - Hexo搭建博客
-  - 遇到问题
+  - Debug
 date: 2018-11-06 14:35:04
-updated: 2019-11-26 13:21:56
+updated: 2019-12-02 10:52:23
 abbrlink: 39481c48
 ---
 <div id='my_toc'>

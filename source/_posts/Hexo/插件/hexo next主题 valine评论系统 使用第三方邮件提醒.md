@@ -2,10 +2,9 @@
 title: hexo next主题 valine评论系统 使用第三方邮件提醒
 categories: 
   - Hexo
-  - Hexo搭建博客
-  - 给博客添加功能
+  - 插件
 date: 2018-11-11 14:27:40
-updated: 2019-11-26 13:21:56
+updated: 2019-12-02 10:52:23
 abbrlink: f1fdd2cf
 ---
 <div id='my_toc'>

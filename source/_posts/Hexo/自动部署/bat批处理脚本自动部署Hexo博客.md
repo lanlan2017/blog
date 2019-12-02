@@ -2,10 +2,9 @@
 title: bat批处理脚本自动部署Hexo博客
 categories: 
   - Hexo
-  - Hexo搭建博客
   - 自动部署
 date: 2018-12-07 00:23:50
-updated: 2019-11-26 13:21:56
+updated: 2019-11-29 21:20:17
 abbrlink: 5d465f14
 ---
 <div id='my_toc'>

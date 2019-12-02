@@ -2,9 +2,8 @@
 title: Hexo搭建博客5 Next主题进阶配置
 categories: 
   - Hexo
-  - Hexo搭建博客
 date: 2018-08-29 19:35:07
-updated: 2019-11-26 13:21:56
+updated: 2019-11-29 21:20:17
 abbrlink: f01200cd
 ---
 <div id='my_toc'>

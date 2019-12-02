@@ -2,10 +2,9 @@
 title: hexo 百度主动推送
 categories: 
   - Hexo
-  - Hexo搭建博客
   - SEO
 date: 2018-10-31 11:18:30
-updated: 2019-11-26 13:21:56
+updated: 2019-11-29 21:20:17
 abbrlink: 7ac3f85
 ---
 <div id='my_toc'>

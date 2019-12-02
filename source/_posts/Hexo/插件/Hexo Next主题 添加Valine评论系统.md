@@ -2,10 +2,9 @@
 title: Hexo Next主题 添加Valine评论系统
 categories: 
   - Hexo
-  - Hexo搭建博客
-  - 给博客添加功能
+  - 插件
 date: 2018-09-26 20:00:35
-updated: 2019-11-26 13:21:56
+updated: 2019-12-02 10:52:23
 abbrlink: 8eadc39
 ---
 [头像设置](/2018/09/27/Hexo搭建博客/添加功能/Hexo Valine使用Gravatars头像/)参见

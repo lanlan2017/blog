@@ -2,10 +2,9 @@
 title: Hexo博客 网站名中文乱码
 categories: 
   - Hexo
-  - Hexo搭建博客
-  - 遇到问题
+  - Debug
 date: 2018-08-29 19:35:07
-updated: 2019-11-26 13:21:56
+updated: 2019-12-02 10:52:23
 abbrlink: 87aa90c2
 ---
 <div id='my_toc'>

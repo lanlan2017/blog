@@ -2,10 +2,9 @@
 title: Hexo博客问题 RSS地址出错为(yoursite.com)
 categories: 
   - Hexo
-  - Hexo搭建博客
-  - 遇到问题
+  - Debug
 date: 2018-08-29 19:35:07
-updated: 2019-11-26 13:21:56
+updated: 2019-12-02 10:52:23
 abbrlink: 2c22a8d1
 ---
 <div id='my_toc'>

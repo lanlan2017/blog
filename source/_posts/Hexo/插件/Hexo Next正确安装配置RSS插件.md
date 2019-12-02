@@ -2,10 +2,9 @@
 title: Hexo Next正确安装配置RSS插件
 categories: 
   - Hexo
-  - Hexo搭建博客
-  - 给博客添加功能
+  - 插件
 date: 2018-10-25 19:13:51
-updated: 2019-11-26 13:21:56
+updated: 2019-12-02 10:52:23
 abbrlink: 82e4ee34
 ---
 <div id='my_toc'>

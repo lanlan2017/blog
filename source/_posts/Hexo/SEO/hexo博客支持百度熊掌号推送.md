@@ -2,10 +2,9 @@
 title: hexo博客支持百度熊掌号推送
 categories: 
   - Hexo
-  - Hexo搭建博客
   - SEO
 date: 2018-10-30 11:11:24
-updated: 2019-11-26 13:21:56
+updated: 2019-11-29 21:20:17
 abbrlink: 5f9ceba2
 ---
 <div id='my_toc'>

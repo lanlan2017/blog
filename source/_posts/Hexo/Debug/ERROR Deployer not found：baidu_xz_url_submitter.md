@@ -2,10 +2,9 @@
 title: ERROR Deployer not found：baidu_xz_url_submitter
 categories: 
   - Hexo
-  - Hexo搭建博客
-  - 遇到问题
+  - Debug
 date: 2018-10-30 23:47:02
-updated: 2019-11-26 13:21:56
+updated: 2019-12-02 10:52:23
 abbrlink: 2740f49f
 ---
 <div id='my_toc'>

@@ -2,10 +2,9 @@
 title: hexo 文章置顶插件 添加置顶图标
 categories: 
   - Hexo
-  - Hexo搭建博客
-  - 个性化
+  - 插件
 date: 2019-02-15 21:49:16
-updated: 2019-11-26 13:21:56
+updated: 2019-12-02 10:52:23
 abbrlink: 7162b91b
 ---
 <div id='my_toc'>
