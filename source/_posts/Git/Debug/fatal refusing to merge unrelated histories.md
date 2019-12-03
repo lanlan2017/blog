@@ -1,3 +1,9 @@
+---
+categories:
+  - Git
+  - Debug
+abbrlink: '0'
+---
 
 
 # fatal: refusing to merge unrelated histories

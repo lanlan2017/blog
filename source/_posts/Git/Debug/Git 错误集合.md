@@ -1,10 +1,11 @@
 ---
 title: Git错误集合
-categories: 
+categories:
   - Git
+  - Debug
+abbrlink: 7e675acc
 date: 2019-04-30 23:53:43
 updated: 2019-11-25 00:23:43
-abbrlink: 7e675acc
 ---
 <div id='my_toc'>
 
