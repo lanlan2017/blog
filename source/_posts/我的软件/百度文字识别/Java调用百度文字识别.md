@@ -1,11 +1,11 @@
----
 title: Java调用百度文字识别
-categories: 
+categories:
   - 我的软件
   - 百度文字识别
-date: 2018-09-11 19:39:14
-updated: 2019-11-25 13:24:47
 abbrlink: 29121dfd
+tags: []
+date: 2018-09-11 19:39:00
+updated: 2019-11-25 13:24:47
 ---
 <div id='my_toc'>
 
@@ -416,5 +416,3 @@ public class ScreenShotWindow extends JWindow
 
 
 新的问题，程序不能很好的退出，而且让截图窗口显示的方式并不会重新截图，这样我已经阅读到一页文章了，但是窗口中保存的还是前页的截图，所以，应该重新初始化话截图才对。也就是说是使用线程来做才对。
-
->原文链接: [Java调用百度文字识别](https://lanlan2017.github.io/blog/29121dfd/)

@@ -4,7 +4,7 @@ categories:
   - Hexo
   - 插件
 date: 2019-12-05 12:13:26
-updated: 2019-12-05 13:56:34
+updated: 2019-12-05 19:31:49
 abbrlink: fbe3df38
 ---
 <div id='my_toc'>
@@ -21,7 +21,23 @@ abbrlink: fbe3df38
     - [浏览器中编辑](/blog/fbe3df38/#浏览器中编辑)
     - [设置密码](/blog/fbe3df38/#设置密码)
     - [hexo-myadmin优缺点](/blog/fbe3df38/#hexo-myadmin优缺点)
+        - [优点](/blog/fbe3df38/#优点)
+        - [缺点](/blog/fbe3df38/#缺点)
+- [hexo-local-admin](/blog/fbe3df38/#hexo-local-admin)
+    - [安装](/blog/fbe3df38/#安装)
+    - [帮助文档](/blog/fbe3df38/#帮助文档)
+        - [设置站点路径](/blog/fbe3df38/#设置站点路径)
+        - [设置主题名称](/blog/fbe3df38/#设置主题名称)
+        - [hexo-local-admin配置文件路径](/blog/fbe3df38/#hexo-local-admin配置文件路径)
+        - [启动本地服务器](/blog/fbe3df38/#启动本地服务器)
+        - [优点](/blog/fbe3df38/#优点)
+- [hexo-hey插件](/blog/fbe3df38/#hexo-hey插件)
+    - [安装](/blog/fbe3df38/#安装)
+    - [设置密码](/blog/fbe3df38/#设置密码)
+    - [缺点](/blog/fbe3df38/#缺点)
+    - [卸载](/blog/fbe3df38/#卸载)
 - [手机端的浏览器中编辑](/blog/fbe3df38/#手机端的浏览器中编辑)
+- [总结](/blog/fbe3df38/#总结)
 - [参考资料](/blog/fbe3df38/#参考资料)
 
 </div>
@@ -46,11 +62,12 @@ hexo s
 然后重启本地服务器即可.
 ## hexo-admin优缺点
 ### 缺点
-载入缓慢
-编辑器功能不强
+- 载入缓慢
+- 编辑器原始,功能不强.
 
 ### 优点
-支持粘贴图片
+- 支持粘贴图片
+- 子站点中可以使用
 
 # hexo-myadmin插件
 插件仓库:[https://github.com/thesadabc/hexo-myadmin](https://github.com/thesadabc/hexo-myadmin)
@@ -92,14 +109,94 @@ $2a$10$......
 也可以到[https://www.javainuse.com/onlineBcrypt](https://www.javainuse.com/onlineBcrypt)这个网站去生成
 
 ## hexo-myadmin优缺点
-优点:
+### 优点
 - 载入速度快
 - 编辑器功能强大.
 
-缺点:不支持图片粘贴功能.
+### 缺点
+- 不支持图片粘贴功能.
+- **子站点中无法使用**
 
+```shell
+npm uninstall hexo-myadmin --save
+```
+# hexo-local-admin
+[https://github.com/geekwen/hexo-local-admin](https://github.com/geekwen/hexo-local-admin)
+## 安装
+```shell
+npm install -g hexo-local-admin
+```
+## 帮助文档
+```shell
+hexo-admin -h
+```
+```shell
+$ hexo-admin -h
+Usage: hexo-admin [options] [command]
+
+Options:
+  -V, --version                  output the version number
+  -r, --root-path [root_path]    view/set hexo root path
+  -t, --theme-name [theme_name]  view/set hexo theme name
+  -h, --help                     output usage information
+
+Commands:
+  start                          Start hexo local admin server
+
+```
+### 设置站点路径
+```shell
+hexo-admin -r /e/Blog/blog9
+```
+### 设置主题名称
+注意是主题名称,不要输入主题的路径,否则程序会出错
+```shell
+hexo-admin -t next
+```
+主题名称错误的设为路径怎么办?只能找到配置文件然直接在配置文件中修改即可.
+### hexo-local-admin配置文件路径
+文件路径:
+```shell
+C:\Users\用户名\Documents\.hexo-local-admin-config.json
+```
+如
+```shell
+C:\Users\lan\Documents\.hexo-local-admin-config.json
+```
+### 启动本地服务器
+```shell
+hexo-admin start
+```
+会在[http://localhost:4001/](http://localhost:4001/)中启动后台.
+### 优点
+可以创建文章,可以修改以前的文章.
+
+还是老老实实用hexo-admin吧.
+
+# hexo-hey插件
+## 安装
+```shell
+npm install hexo-hey --save
+```
+## 设置密码
+```shell
+admin:
+  name: 账号
+  password: 密码
+  secret: hey hexo
+  expire: 60*1
+  # cors: http://localhost:4007
+```
+## 缺点
+只能新建文章,不能编辑以前的文章,要你何用。
+## 卸载
+```shell
+npm uninstall hexo-hey --save
+```
 # 手机端的浏览器中编辑
 先安装Termux,然后安装好环境后,就可以使用Hexo-admin进行编辑了.hexo-admin这个插件好像并不支持相应式布局.用法和在电脑上用法差不多。
+# 总结
+经过我一番比较还是使用Hexo-admin比较实在,虽然它载入的比较慢.但是bug少.
 # 参考资料
 [https://www.v2ex.com/t/340678](https://www.v2ex.com/t/340678)
 参见:[https://blog.csdn.net/smileyan9/article/details/86666824](https://blog.csdn.net/smileyan9/article/details/86666824)
