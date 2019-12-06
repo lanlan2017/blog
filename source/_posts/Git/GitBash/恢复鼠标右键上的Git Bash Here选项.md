@@ -24,12 +24,14 @@ updated: 2019-12-06 15:28:58
 
 <!--end-->
 # 问题描述
-新安装的Git-bash会在鼠标右键上注册一个git-bash here的快捷选项.
-但是我的git-bash版本可能比较聊,我重装后也没有.现在来手动创建.
+新安装的Git-bash会在鼠标右键上注册一个git-bash here的选项.
+但是我的git-bash版本可能比较老，或者其他原因,我重装后也没有这个鼠标右键选项，不过没有关系，现在来手动创建就是了。
 # 打开注册表编辑器
-按Win+r打开运行,然后输入`regedit`,进入注册表编辑器:
+按Win+r打开运行,然后输入`regedit`,进入注册表编辑器。
 # 进入shell目录
-然后在顶部地址栏中粘贴如下路径,然后按回车进入shell目录,
+然后在
+注册表顶部的**地址栏**
+中粘贴如下路径,然后按**回车**进入shell目录,
 ```
 计算机\HKEY_CLASSES_ROOT\Directory\Background\shell
 ```
@@ -53,7 +55,7 @@ Icon
 ```
 Git安装目录\mingw64\share\git\git-for-windows.ico
 ```
-# 设置命令
+## 设置命令
 鼠标点击**Git Bash Here**目录,然后**右键**,**新建**,**项**,输入名字:
 ```
 command
@@ -66,7 +68,7 @@ command
 因为地址中有空格,为了防止系统无法识别,所以程序地址要用**双引号**包裹起来
 也可以Git按住目录下的git-bash.exe上面**按住shift键**,然后按下鼠标**右键**,然后选择**复制为路径(A)**即可得到双引号包裹的路径.
 # 使用
-在一个目录下按下,鼠标右键选择Git Bash Here选项,即可在当前目录下打开git-bash了:
+在Windows资源管理器中的任意目录下按下,**鼠标右键**然后 选择Git Bash Here选项,即可在当前目录下打开git-bash了。
 
 # 参考资料
 [https://blog.csdn.net/weixin_42357048/article/details/80533571](https://blog.csdn.net/weixin_42357048/article/details/80533571)
