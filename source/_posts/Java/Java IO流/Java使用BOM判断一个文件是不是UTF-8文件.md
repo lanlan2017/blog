@@ -1,11 +1,11 @@
----
 title: Java使用BOM判断一个文件是不是UTF-8文件
-categories: 
+categories:
   - Java
   - Java IO流
-date: 2018-08-29 19:35:07
-updated: 2019-11-25 00:23:44
 abbrlink: 2fe8061d
+tags: []
+date: 2018-08-29 19:35:00
+updated: 2019-11-25 00:23:44
 ---
 例如test_utf8.py这个文件用的是utf-8+BOM编码的.
 ![](https://i.imgur.com/vtWvrjD.png)

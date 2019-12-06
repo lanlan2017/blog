@@ -1,11 +1,10 @@
----
 title: Java正则表达式
-categories: 
+categories:
   - Java
   - Java 正则表达式
+abbrlink: 4ea1809c
 date: 2019-01-11 22:02:27
 updated: 2019-11-25 13:24:47
-abbrlink: 4ea1809c
 ---
 <div id='my_toc'>
 
@@ -50,9 +49,9 @@ abbrlink: 4ea1809c
 `java`里提供了一个`java.util.regex`库，方便于我们在`java`里操作正则表达式，或者用它来匹配字符串。
 ### 常用类：Pattern和Matcher ###
 其中比较常用的类有 `Pattern` 和 `Matcher` ,`Pattern`是一个编译好的正则表达式，而`Mather`是一个正则表达式适配器，`Mather`的功能很强大，所以我们一般用`pattern` 来获取一个`Matcher`对象，然后用`Matcher`来操作正则表达式。
-### `Pattern` 类和`Matcher` 类的关系 ###
+### `Pattern` 类和`Matcher`类的关系 ###
 首先一个`Pattern`实例订制了一个所用语法与`PERL`的类似的正则表达式经编译后的模式，然后一个`Matcher`实例在这个给定的`Pattern`实例的模式控制下进行字符串的匹配工作。
-### `PatternSyntaxException` 类###
+### `PatternSyntaxException`类 ###
 `PatternSyntaxException` 是一个非强制异常类，它表示一个正则表达式模式中的语法错误。
 
 ## 通常使用步骤 ##
@@ -151,6 +150,7 @@ public static void testFindGroup()
 |1|`public int groupCount()`|返回此匹配器模式中的捕获组数。根据惯例，零组表示整个模式。它不包括在此计数中。|
 |2|`String group()`|返回0号捕获组，也就是整个表达式匹配的字符串|
 |3|`String group(int group)`|返回指定捕获组捕获到的子串|
+
 ### 捕获组实例 ###
 
 #### 查看正则表达式中有多到个捕获组 ####
@@ -384,11 +384,11 @@ matcher.lookingAt()返回:true
 
 ## 替换方法 ##
 api看的我有点晕头转向，个人总结如下。 
+
 |序号|方法|描述|
 |-|-|-|
 |1|`public String replaceAll(String replacement)`|用`replacement`替换正则表达式匹配到的所有子串|
 |2|`public String replaceFirst(String replacement)`|用`replacement`替换正则表达式匹配到的第一个子串|
-
 |5|`public static String quoteReplacement(String s)`|返回指定字符串的字面替换字符串。这个方法返回一个字符串，就像传递给Matcher类的appendReplacement 方法一个字面字符串一样工作。|
 
 ### replaceFirst 和 replaceAll 方法 ###
@@ -550,10 +550,3 @@ public static void testAppendReplace_TailFrist()
 - `appendReplacement(sb`,`replacement)`方法先获取所有`从上次匹配的结束位置，到本次匹配结束位置的所有字符串`，然后`替换其中匹配的部分`，最后追加到`sb`中。
 - `appendReplacement(sb)`方法把结束位置到文本结尾的所有字符追加到`sb`中。
 - 使用appendReplace()和appendTail()方法可以更加灵活的进行替换操作，注意要结合find()方法使用。
-
-
-
-
-
-
->原文链接: [Java正则表达式](https://lanlan2017.github.io/blog/4ea1809c/)
