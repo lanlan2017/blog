@@ -1,11 +1,10 @@
----
 title: 恢复鼠标右键上的Git Bash Here选项
-categories: 
+categories:
   - Git
   - GitBash
+abbrlink: 6aa7c987
 date: 2019-12-06 15:02:25
 updated: 2019-12-06 15:28:58
-abbrlink: 6aa7c987
 ---
 <div id='my_toc'>
 
@@ -25,7 +24,7 @@ abbrlink: 6aa7c987
 
 <!--end-->
 # 问题描述
-新安卓的Git-bash会在鼠标右键上注册一个git-bash here的快捷选项.
+新安装的Git-bash会在鼠标右键上注册一个git-bash here的快捷选项.
 但是我的git-bash版本可能比较聊,我重装后也没有.现在来手动创建.
 # 打开注册表编辑器
 按Win+r打开运行,然后输入`regedit`,进入注册表编辑器:
