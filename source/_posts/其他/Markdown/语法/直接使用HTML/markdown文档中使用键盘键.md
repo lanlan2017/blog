@@ -2,11 +2,11 @@
 title: markdown文档中使用键盘键
 categories: 
   - 其他
-  - markdown使用
-  - markdown语法
-  - 使用html标签
+  - Markdown
+  - 语法
+  - 直接使用HTML
 date: 2018-10-26 11:23:58
-updated: 2019-11-25 00:23:45
+updated: 2019-12-06 10:33:32
 abbrlink: 6507a83c
 ---
 <div id='my_toc'>

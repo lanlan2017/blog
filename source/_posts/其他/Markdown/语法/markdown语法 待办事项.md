@@ -2,10 +2,10 @@
 title: markdown语法 待办事项
 categories: 
   - 其他
-  - markdown使用
-  - markdown语法
+  - Markdown
+  - 语法
 date: 2018-10-21 10:01:08
-updated: 2019-11-25 00:23:45
+updated: 2019-12-06 10:33:32
 abbrlink: 8859faa9
 ---
 <div id='my_toc'>

@@ -2,11 +2,11 @@
 title: markdown展开折叠功能
 categories: 
   - 其他
-  - markdown使用
-  - markdown语法
-  - 使用html标签
+  - Markdown
+  - 语法
+  - 直接使用HTML
 date: 2019-11-08 21:30:04
-updated: 2019-11-25 00:23:45
+updated: 2019-12-06 10:33:32
 abbrlink: ce247608
 ---
 <div id='my_toc'>

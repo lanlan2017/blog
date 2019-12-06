@@ -2,11 +2,11 @@
 title: markdown表格支持单元格合并
 categories: 
   - 其他
-  - markdown使用
-  - markdown语法
-  - 使用html标签
+  - Markdown
+  - 语法
+  - 直接使用HTML
 date: 2018-08-15 23:11:20
-updated: 2019-11-25 13:24:47
+updated: 2019-12-06 10:33:32
 abbrlink: 9d21d6ad
 ---
 <div id='my_toc'>

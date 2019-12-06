@@ -2,10 +2,10 @@
 title: 使用Visual Studio Code写Markdown
 categories: 
   - 其他
-  - markdown使用
+  - Markdown
   - 编辑器
 date: 2019-08-20 12:06:20
-updated: 2019-11-25 00:23:45
+updated: 2019-12-06 10:33:32
 abbrlink: 11f888fa
 ---
 <div id='my_toc'>

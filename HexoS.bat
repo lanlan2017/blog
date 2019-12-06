@@ -3,6 +3,9 @@ echo 切换盘符 %~d0
 %~d0
 echo 进入文章目录: %~dp0source\_posts\
 cd %~dp0source\_posts\
+echo ##### 删除备份文件
+del %~dp0source\_posts\备份.md
+echo ##### 删除备份文件
 echo.
 echo ############################################################### 删除所有的html文件 开始
 echo.
