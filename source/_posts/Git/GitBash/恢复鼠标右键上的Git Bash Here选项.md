@@ -70,3 +70,4 @@ command
 在一个目录下按下,鼠标右键选择Git Bash Here选项,即可在当前目录下打开git-bash了:
 
 # 参考资料
+[https://blog.csdn.net/weixin_42357048/article/details/80533571](https://blog.csdn.net/weixin_42357048/article/details/80533571)
