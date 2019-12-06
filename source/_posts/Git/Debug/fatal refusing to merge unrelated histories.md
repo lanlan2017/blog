@@ -1,5 +1,5 @@
 ---
-title: fatal: refusing to merge unrelated histories
+title: fatal refusing to merge unrelated histories
 categories:
   - Git
   - Debug
