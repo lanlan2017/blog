@@ -36,6 +36,9 @@ abbrlink: 7906d867
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 <!--end-->
+
+# formatter方法
+
 |方法|描述|
 |:-|:-|
 |`void close()`|关闭此 formatter。 |
@@ -58,7 +61,7 @@ abbrlink: 7906d867
 # 格式化规则 #
 要想按照自己的想法格式化必须事先编写一个规则。这个规则的语法如下。
 
-##` 常规类型`、`字符类型`和`数值类型`的`格式说明符语法` ##
+## ` 常规类型`、`字符类型`和`数值类型`的`格式说明符语法` ##
 ```
 %[argument_index$][flags][width][.precision]conversion
 ```
@@ -244,6 +247,7 @@ System.out.println(formatter);
 
 ```
 
+### 浮点数格式符号
 
 |浮点数格式符|描述|
 |:-|:-|

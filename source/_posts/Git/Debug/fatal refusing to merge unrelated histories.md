@@ -5,8 +5,6 @@ categories:
   - Debug
 abbrlink: '0'
 ---
-
-
 # fatal: refusing to merge unrelated histories
 今天拉取远程分支时报错如下:
 ````shell
