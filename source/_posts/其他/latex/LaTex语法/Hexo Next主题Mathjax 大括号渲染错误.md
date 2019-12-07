@@ -37,7 +37,7 @@ $U=\{ A_1,A_2,\cdots,A_n \} $
 ```
 \lbrace \rbrace
 ```
-来写大括号.
+这两个**Latex定界符**来写**大括号**.
 # 示例
 ```
 $U=\lbrace A_1,A_2,\cdots,A_n \rbrace $
