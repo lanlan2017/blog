@@ -2,9 +2,9 @@
 title: VSCode 自动换行
 categories: 
   - Windows
-  - IDE设置
+  - 软件设置
 date: 2019-12-05 21:23:34
-updated: 2019-12-05 21:25:41
+updated: 2019-12-05 21:25:55
 abbrlink: 5fce2b9c
 ---
 <div id='my_toc'>

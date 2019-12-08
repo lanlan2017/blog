@@ -2,9 +2,9 @@
 title: VScode 运行java是输出乱码解决
 categories: 
   - Windows
-  - IDE设置
+  - 软件设置
 date: 2019-09-28 10:27:21
-updated: 2019-11-30 16:38:27
+updated: 2019-12-01 00:45:11
 abbrlink: 7ab55f4
 ---
 <div id='my_toc'>

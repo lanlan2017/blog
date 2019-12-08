@@ -2,9 +2,9 @@
 title: editplus快捷键
 categories: 
   - Windows
-  - IDE设置
+  - 软件设置
 date: 2019-02-07 21:47:54
-updated: 2019-11-30 16:38:27
+updated: 2019-12-01 00:45:11
 abbrlink: d0992fb0
 ---
 <div id='my_toc'>

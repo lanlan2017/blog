@@ -2,9 +2,9 @@
 title: VScode Markdown插件汇总
 categories: 
   - Windows
-  - IDE设置
+  - 软件设置
 date: 2019-12-01 00:35:59
-updated: 2019-12-01 00:45:11
+updated: 2019-12-01 00:45:27
 abbrlink: 913bbb38
 ---
 <div id='my_toc'>
