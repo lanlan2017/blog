@@ -27,12 +27,13 @@ abbrlink: edcdf022
 
 <!--end-->
 # git rebase的作用
-当你完成比较负载的一个任务的时候,你可能提交了多次commit,经过一系列的commit后,你最终完成了任务,然后你想推送到远程仓库中.
-但是如果你此时直接push到远程仓库中,这样远程仓库中就有了好多冗余的commit,所以在push到远程仓库之前,应该讲这些中间的commit合并成一个commit,然后再推送到远程仓库上,这样的commit记录就会比较简洁美观.
+当你完成比较复杂的一个任务的时候,你可能提交了多次commit,经过一系列的commit后,你最终完成了任务,然后你想推送到远程仓库中.
+但是如果你此时直接push到远程仓库中,这样远程仓库中就有了好多冗余的commit,所以在push到远程仓库之前,应该将这些中间的commit合并成一个commit,然后再推送到远程仓库上,这样你的的commit记录就比较简洁清爽.
 # 注意
 不要通过rebase对任何已经提交到公共仓库中的commit进行修改(除非是你)
+还有就是使用rebase的过程中不要在更改本地仓库中的任何内容,以免需要再次合并,或者再次提交.
 # 压缩多个commit为一个新的commit
-要合并commit的话,前提是要有多个commit,如果只相差一个commit的话直接push就行了,不需要合并
+要合并commit的话,前提是要有多个commit,如果只是超前一个commit的话,直接push就行了,不需要合并
 ## 先查看commit历史
 ```shell
 git log -10 --pretty=oneline
@@ -51,11 +52,18 @@ b82a12ccc05de8d2e9ff162bf206b525e386d7fd 更新文章
 bf682016607be6eabf1952ee9a2ca70c804442aa 添加新的Git相关的文章
 9e845cfda2fa63dd4bb7f143a33a53c3308bccf7 删除文章中的无效图片
 ```
+可以看到现在超前了3个commit,这3个commit其实做的是同一件事情,应该压缩成一个分支.
 ## 合并当前到远程之间的commit
+先获取远程commit记录上的commit_id:
+```shell
+92bf7d32990a43ca242e3b0a40b2e0f199ad1dd2
+```
+然后输入如下命令,进行压缩:
 ```shell
 git rebase -i 92bf7d32990a43ca242e3b0a40b2e0f199ad1dd2
 ```
 ## 保留第一个pick 后面的pick改为squash
+记下来,会在vim中弹出如下内容:
 ```shell
     pick b82a12c 更新文章
     pick 1fcec38 更新文章
@@ -83,6 +91,7 @@ git rebase -i 92bf7d32990a43ca242e3b0a40b2e0f199ad1dd2
     "E:/Blog/blog/.git/rebase-merge/git-rebase-todo" [unix] 29L, 1214C
 
 ```
+我们要修改其中的内容:按下`i`,进入**vim**的**插入模式**,将第一个pick保留,后面的pick全部改成s:
 ```shell
     pick b82a12c 更新文章
     s 1fcec38 更新文章
@@ -108,8 +117,9 @@ git rebase -i 92bf7d32990a43ca242e3b0a40b2e0f199ad1dd2
     #
 
 ```
-这样会将上面的三个commit压缩到一个新的分支上.
+修改好了之后,按下**ESC**,然后输入`:wq`进行保存,这样会将上面的三个commit压缩到一个新的分支上.
 ## 写上新的commit的描述
+然后还会在vim中弹出如下内容,让你写上**压缩得到的新的分支的描述信息**.
 ```shell
     # This is a combination of 3 commits.
     # This is the 1st commit message:
@@ -135,6 +145,7 @@ git rebase -i 92bf7d32990a43ca242e3b0a40b2e0f199ad1dd2
     #    squash dce93fd 更新文章
 
 ```
+这个地方按你的实际情况书写即可,为了演示方便,我改成如下内容:
 ```shell
     # This is a combination of 3 commits.
     # This is the 1st commit message:
@@ -160,7 +171,9 @@ git rebase -i 92bf7d32990a43ca242e3b0a40b2e0f199ad1dd2
     #    squash dce93fd 更新文章
 
 ```
+然后再次**保存退出即可**.
 ## 压缩效果
+这样就压缩好了,压缩得到的分支如下:
 ```shell
 lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/blog (master)
 $ git log -10 --pretty=oneline
@@ -174,7 +187,6 @@ bf682016607be6eabf1952ee9a2ca70c804442aa 添加新的Git相关的文章
 9e845cfda2fa63dd4bb7f143a33a53c3308bccf7 删除文章中的无效图片
 b9ab7facc769e575b28fefd74e2154fd16087e52 添加新的Git相关的文章
 29a6e2b0240c71240146f9a19029d8736055eb5b 添加JS相关文章,更新Git相关文章
-
 ```
 可以看到:
 ```shell
@@ -182,7 +194,7 @@ dce93fd66d8c01b3bb7e944ae43fe0165e5ae802 (HEAD -> master) 更新文章
 1fcec380bdfe807de6ef6a36495683a5488b9f56 更新文章
 b82a12ccc05de8d2e9ff162bf206b525e386d7fd 更新文章
 ```
-这三条commit都**压缩成一个新的commit**了:
+这三条commit都**压缩成一个新的commit**:
 ```shell
 226d81dfa724d963ca387f40505df4cf11fd42c7 (HEAD -> master) 更新文章_压缩得到的新的commit的描述信息
 ```
