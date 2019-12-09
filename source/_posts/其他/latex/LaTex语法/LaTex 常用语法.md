@@ -9,65 +9,6 @@ updated: 2019-11-25 00:23:45
 mathjax: true
 abbrlink: 83c2e83a
 ---
-<div id='my_toc'>
-
-- [公式显示位置](/blog/83c2e83a/#公式显示位置)
-    - [行内公式](/blog/83c2e83a/#行内公式)
-    - [行间公式](/blog/83c2e83a/#行间公式)
-- [数学符号](/blog/83c2e83a/#数学符号)
-    - [上下标](/blog/83c2e83a/#上下标)
-    - [导数符号](/blog/83c2e83a/#导数符号)
-        - [偏导 条件偏导](/blog/83c2e83a/#偏导-条件偏导)
-    - [分式](/blog/83c2e83a/#分式)
-    - [根式](/blog/83c2e83a/#根式)
-    - [无穷大符号](/blog/83c2e83a/#无穷大符号)
-    - [省略号](/blog/83c2e83a/#省略号)
-    - [关系符](/blog/83c2e83a/#关系符)
-    - [巨算子](/blog/83c2e83a/#巨算子)
-    - [极限符号](/blog/83c2e83a/#极限符号)
-        - [行间公式极限](/blog/83c2e83a/#行间公式极限)
-        - [行间极限](/blog/83c2e83a/#行间极限)
-- [集合相关符号](/blog/83c2e83a/#集合相关符号)
-    - [元素与集合的关系](/blog/83c2e83a/#元素与集合的关系)
-        - [属于](/blog/83c2e83a/#属于)
-        - [不属于](/blog/83c2e83a/#不属于)
-    - [集合与集合相关的关系](/blog/83c2e83a/#集合与集合相关的关系)
-        - [空集](/blog/83c2e83a/#空集)
-        - [子集](/blog/83c2e83a/#子集)
-        - [真子集](/blog/83c2e83a/#真子集)
-        - [交集](/blog/83c2e83a/#交集)
-        - [并集](/blog/83c2e83a/#并集)
-- [数学重音和上下括号](/blog/83c2e83a/#数学重音和上下括号)
-- [箭头](/blog/83c2e83a/#箭头)
-- [括号和定界符](/blog/83c2e83a/#括号和定界符)
-- [多行公式](/blog/83c2e83a/#多行公式)
-    - [长公式折行](/blog/83c2e83a/#长公式折行)
-    - [多行公式](/blog/83c2e83a/#多行公式)
-        - [公用编号的多行公式](/blog/83c2e83a/#公用编号的多行公式)
-    - [公式中的间距](/blog/83c2e83a/#公式中的间距)
-- [数组和矩阵](/blog/83c2e83a/#数组和矩阵)
-- [分段函数](/blog/83c2e83a/#分段函数)
-- [数学符号的字体控制](/blog/83c2e83a/#数学符号的字体控制)
-    - [数学字母字体](/blog/83c2e83a/#数学字母字体)
-    - [数学符号的尺寸](/blog/83c2e83a/#数学符号的尺寸)
-- [符号表](/blog/83c2e83a/#符号表)
-    - [文本/数学模式通用符号](/blog/83c2e83a/#文本-数学模式通用符号)
-    - [二元关系符](/blog/83c2e83a/#二元关系符)
-    - [二元运算符](/blog/83c2e83a/#二元运算符)
-    - [希腊字母](/blog/83c2e83a/#希腊字母)
-        - [希腊字母顺序表](/blog/83c2e83a/#希腊字母顺序表)
-    - [巨算符](/blog/83c2e83a/#巨算符)
-    - [箭头](/blog/83c2e83a/#箭头)
-    - [作为重音的箭头符号](/blog/83c2e83a/#作为重音的箭头符号)
-    - [定界符](/blog/83c2e83a/#定界符)
-    - [公式中的间距](/blog/83c2e83a/#公式中的间距)
-- [参考链接](/blog/83c2e83a/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
-
-<!--end-->
 # 公式显示位置 #
 ## 行内公式 ##
 在公式两边各自加上一个美元符号即使行内公式
@@ -209,14 +150,17 @@ $$\sum_{i=1}^n \quad
 
 巨算符的上下标用作其上下限。行间公式中，积分号默认将上下限放在右上角和右下角，求和号默认在上下方；行内公式一律默认在右上角和右下角。**可以在巨算符后使用\limits手动令上下限显示在上下方**，\nolimits则相反,即不显示在上下方，也就是显示在右上角，右下角。
 ```
-In text:
-$\sum\limits_{i=1}^n \quad
+In text:$\sum\limits_{i=1}^n \quad
 \int\limits_0^{\frac{\pi}{2}} \quad
 \prod\limits_\epsilon $ 
+
 In display:
-$$\sum\nolimits_{i=1}^n \quad
+$$
+\sum\nolimits_{i=1}^n \quad
 \int\limits_0^{\frac{\pi}{2}} \quad
-\prod\nolimits_\epsilon $$
+\prod\nolimits_\epsilon 
+$$
+
 ```
 In text:
 $\sum\limits_{i=1}^n \quad
@@ -357,10 +301,12 @@ ${a,b,c} \neq \{a,b,c\}$
 \left.\frac{\partial f}{\partial t}
 \right|_{t=0}\]
 ```
-$$1 + \left(\frac{1}{1-x^{2}}
+$$
+1 + \left(\frac{1}{1-x^{2}}
 \right)^3 \qquad
 \left.\frac{\partial f}{\partial t}
-\right|_{t=0}$$
+\right|_{t=0}
+$$
 
 # 多行公式 #
 ## 长公式折行 ##
@@ -368,16 +314,18 @@ $$1 + \left(\frac{1}{1-x^{2}}
 amsmath宏包的multline环境提供了书写折行长公式的方便环境。它允许用`\\\\`(markdown中显示:\\\\)折行，**将公式编号放在最后一行**。多行公式的**首行左对齐**，**末行右对齐**，**其余行居中**。
 因为markdown中`\`是转义符，所以`\\`才表示一个\\,所以这里要写四个`\`(`\\\\`)
 ```
-$\begin{multline}
-a + b + c + d + e + f+ g + h + i \\
+$$
+\begin{multline}a + b + c + d + e + f+ g + h + i \\
 = j + k + l + m + n\\
-= o + p + q + r + s\\
-= t + u + v + x + z
-\end{multline}$
+= o + p + q + r + s\\= t + u + v + x + z\end{multline}
+$$
 ```
-$\begin{multline}a + b + c + d + e + f+ g + h + i \\
+
+$$
+\begin{multline}a + b + c + d + e + f+ g + h + i \\
 = j + k + l + m + n\\
-= o + p + q + r + s\\= t + u + v + x + z\end{multline}$
+= o + p + q + r + s\\= t + u + v + x + z\end{multline}
+$$
 
 与表格不同的是，公式的最后一行不写`\\`，如果写了，反倒会产生一个多余的空行。类似equation\*，multline\*环境排版不带编号的折行长公式。
 
@@ -386,83 +334,102 @@ $\begin{multline}a + b + c + d + e + f+ g + h + i \\
 
 **目前最常用的是align环境，它将公式用&隔为两部分并对齐。分隔符通常放在等号左边：**
 ```
+$$
 \begin{align}
 a & = b + c \\
 & = d + e
 \end{align}
+$$
 ```
-$\begin{align}
+$$
+\begin{align}
 a & = b + c \\
 & = d + e
-\end{align}$
+\end{align}
+$$
 
 `align`环境会给每行公式都编号。我们仍然可以用`\notag`去掉某行的编号。在以下的例子，为了对齐加号，我们将分隔符放在等号右边，这时需要给等号后添加一对括号{}以产生正常的间距：
 ```
-$\begin{align}
-a ={} & b + c \\
-={} & d + e + f + g + h + i
-+ j + k + l \notag \\
-& + m + n + o \\
-={} & p + q + r + s
-\end{align}$
-```
-$\begin{align}
+$$
+\begin{align}
 a ={} & b + c \\
 ={} & d + e + f + g + h + i+ j + k + l \notag \\
 & + m + n + o \\
 ={} & p + q + r + s
-\end{align}$
+\end{align}
+$$
+```
+$$
+\begin{align}
+a ={} & b + c \\
+={} & d + e + f + g + h + i+ j + k + l \notag \\
+& + m + n + o \\
+={} & p + q + r + s
+\end{align}
+$$
 
 align还能够对齐多组公式，除等号前的&之外，公式之间也用&分隔：
 ```
-$\begin{align}
+$$
+\begin{align}
 a &=1  &  b &=2   & c &=3   \\
 d &=-1 &  e &=-2  & f &=-5
-\end{align}$
+\end{align}
+$$
 ```
-$\begin{align}
+$$
+\begin{align}
 a &=1  &  b &=2   & c &=3   \\
 d &=-1 &  e &=-2  & f &=-5
-\end{align}$
+\end{align}
+$$
 
 如果我们不需要按等号对齐，只需罗列数个公式，gather将是一个很好用的环境：
 ```
-$\begin{gather}
+$$
+\begin{gather}
 a = b + c \\
 d = e + f + g \\
 h + i = j + k \notag \\
 l + m = n
-\end{gather}$
+\end{gather}
+$$
 ```
-$\begin{gather}
+$$
+\begin{gather}
 a = b + c \\
 d = e + f + g \\
 h + i = j + k \notag \\
 l + m = n
-\end{gather}$
+\end{gather}
+$$
 
 align和gather有对应的不带编号的版本align\*和gather\*。
 
 ### 公用编号的多行公式 ###
 另一个常见的需求是将多个公式组在一起公用一个编号，编号位于公式的居中位置。为此，amsmath宏包提供了诸如aligned、gathered等环境，与equation环境套用。以-ed结尾的环境用法与前一节不以-ed结尾的环境用法一一对应。我们仅以aligned举例：
 ```
-$\begin{equation}
+$$
+\begin{equation}
 \begin{aligned}
 a &= b + c \\
 d &= e + f + g \\
 h + i &= j + k \\
 l + m &= n
 \end{aligned}
-\end{equation}$
+\end{equation}
+$$
 ```
-$\begin{equation}
+$$
+\begin{equation}
 \begin{aligned}
 a &= b + c \\
 d &= e + f + g \\
 h + i &= j + k \\
 l + m &= n
 \end{aligned}
-\end{equation}$
+\end{equation}
+$$
 
 split环境和aligned环境用法类似，也用于和equation环境套用，区别是split只能将每行的一个公式分两栏，aligned允许每行多个公式多栏。
 ## 公式中的间距 ##
@@ -485,71 +452,52 @@ $$
 $$
 
 另一个用途是生成多重积分号。如果我们直接连写两个\int，之间的间距将会过宽，此时可以使用负间距\\!修正之。不过amsmath提供了更方便的多重积分号，如**二重积分`\iint`**、**三重积分`\iiint`**等。
-```
-$$\newcommand\diff{\,\mathrm{d}}
-\begin{gather\*}
-\int\int f(x)g(y)
-\diff x \diff y \\
-\int\\!\\!\\!\int
-f(x)g(y) \diff x \diff y \\
-\iint f(x)g(y) \diff x \diff y \\
-\iint\quad \iiint\quad \idotsint
-\end{gather\*}$$
-```
-这上面还是有问题的，我在hexo mathjax的marked.js（在./node_modules/marked/lib/中）修改了：
-```
-//escape: /^\\([\\`*{}\[\]()#$+\-.!_>])/, 
-//它取消了该渲染引擎对\,{,}的转义
-  escape: /^\\([`*\[\]()#$+\-.!_>])/,
-```
-取消了`\\`的转义，但是这了`\i`还是现实错误，我不知道该怎么弄，所以，上面的代码中使用`\\i`代替`\i`。修改源码需谨慎。
-$$\newcommand\diff{\,\mathrm{d}}
-\begin{gather\*}
-\int\int f(x)g(y)
-\diff x \diff y \\
-\int\\!\\!\\!\int
-f(x)g(y) \diff x \diff y \\
-\iint f(x)g(y) \diff x \diff y \\
-\iint\quad \iiint\quad \idotsint
-\end{gather\*}$$
 
 # 数组和矩阵 #
 为了排版二维数组，LATEX提供了array环境，用法与tabular环境极为类似，也需要定义列格式，并用\\换行。数组可作为一个公式块，在外套用\left、\right等定界符:
 ```
-$$ \mathbf{X} = \left(
+$$
+\mathbf{X} = \left(
 \begin{array}{cccc}
 x_{11} & x_{12} & \ldots & x_{1n}\\
 x_{21} & x_{22} & \ldots & x_{2n}\\
 \vdots & \vdots & \ddots & \vdots\\
 x_{n1} & x_{n2} & \ldots & x_{nn}\\
 \end{array}
-\right) $$
+\right) 
+$$
 ```
 还是因为是在markdown文档中`\`需要转义，所以两个斜杠:`\\`,在markdown文档中需要使用四个斜杠:`\\\\`来表示
-$$ \mathbf{X} = \left(
+$$
+\mathbf{X} = \left(
 \begin{array}{cccc}
 x_{11} & x_{12} & \ldots & x_{1n}\\
 x_{21} & x_{22} & \ldots & x_{2n}\\
 \vdots & \vdots & \ddots & \vdots\\
 x_{n1} & x_{n2} & \ldots & x_{nn}\\
 \end{array}
-\right) $$
+\right)
+$$
 
 值得注意的是，上一节末尾介绍的aligned等环境也可以用定界符包裹。我们还可以利用空的定界符排版出这样的效果：
 ```
-\[ |x| = \left\{
+$$
+|x| = \left\{
 \begin{array}{rl}
 -x & \text{if } x < 0,\\
 0 & \text{if } x = 0,\\
 x & \text{if } x > 0.
-\end{array} \right. \]
+\end{array} \right. 
+$$
 ```
-\[ |x| = \left\{
+$$
+|x| = \left\{
 \begin{array}{rl}
 -x & \text{if } x < 0,\\
 0 & \text{if } x = 0,\\
 x & \text{if } x > 0.
-\end{array} \right. \]
+\end{array} \right. 
+$$
 
 我不知道这里为什么显示不正常，可以能不支持把，下面的例子同样也可额完成，衣柜对于分段函数可以写下面的这种形式。
 # 分段函数 #
@@ -572,9 +520,9 @@ x & \text{if } x > 0.
 我们当然也可以用array环境排版各种矩阵。amsmath宏包还直接提供了多种排版矩阵的环境，包括不带定界符的matrix，以及带各种定界符的矩阵pmatrix（(）、bmatrix（[）、Bmatrix（{）、vmatrix（）、Vmatrix（）。使用这些环境时，无需给定列格式5：
 
 ```
-\[
+$$
 \begin{matrix}
-1 & 2 \\ 3 & 4
+1 & 2 \\\\ 3 & 4
 \end{matrix} \qquad
 \begin{bmatrix}
 x_{11} & x_{12} & \ldots & x_{1n}\\
@@ -582,7 +530,7 @@ x_{21} & x_{22} & \ldots & x_{2n}\\
 \vdots & \vdots & \ddots & \vdots\\
 x_{n1} & x_{n2} & \ldots & x_{nn}\\
 \end{bmatrix}
-\]
+$$
 ```
 $$
 \begin{matrix}
@@ -603,7 +551,7 @@ $$
 \begin{bmatrix}
 \dfrac{\partial^2 f}{\partial x^2} &
 \dfrac{\partial^2 f}
-{\partial x \partial y} \\[8pt]
+{\partial x \partial y} \\
 \dfrac{\partial^2 f}
 {\partial x \partial y} &
 \dfrac{\partial^2 f}{\partial y^2}
@@ -615,7 +563,7 @@ $$
 \begin{bmatrix}
 \dfrac{\partial^2 f}{\partial x^2} &
 \dfrac{\partial^2 f}
-{\partial x \partial y} \\  \[8pt]
+{\partial x \partial y} \\
 \dfrac{\partial^2 f}
 {\partial x \partial y} &
 \dfrac{\partial^2 f}{\partial y^2}

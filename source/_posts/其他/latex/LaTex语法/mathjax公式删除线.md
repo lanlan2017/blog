@@ -48,12 +48,12 @@ $$
 $$
 \require{cancel}
 \begin{array}{rl}
-\verb|y+\cancel{x}| & y+\cancel{x}\\
-\verb|\cancel{y+x}| & \cancel{y+x}\\
-\verb|y+\bcancel{x}| & y+\bcancel{x}\\
-\verb|y+\xcancel{x}| & y+\xcancel{x}\\
-\verb|y+\cancelto{0}{x}| & y+\cancelto{0}{x}\\
-\verb+\frac{1\cancel9}{\cancel95} = \frac15+& \frac{1\cancel9}{\cancel95} = \frac15 \\
+\verb|y+\cancel{x}| & y+\cancel{x}\\\\
+\verb|\cancel{y+x}| & \cancel{y+x}\\\\
+\verb|y+\bcancel{x}| & y+\bcancel{x}\\\\
+\verb|y+\xcancel{x}| & y+\xcancel{x}\\\\
+\verb|y+\cancelto{0}{x}| & y+\cancelto{0}{x}\\\\
+\verb+\frac{1\cancel9}{\cancel95} = \frac15+& \frac{1\cancel9}{\cancel95} = \frac15 \\\\
 \end{array}
 $$
 ## 参考资料 ##
