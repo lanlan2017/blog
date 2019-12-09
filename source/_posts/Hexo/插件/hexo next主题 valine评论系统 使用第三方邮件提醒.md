@@ -4,21 +4,13 @@ categories:
   - Hexo
   - 插件
 date: 2018-11-11 14:27:40
-updated: 2019-12-02 10:52:23
+updated: 2019-12-09 19:55:22
 abbrlink: f1fdd2cf
 ---
-<div id='my_toc'>
-
-- [valine自带的邮件提醒设置](/blog/f1fdd2cf/#valine自带的邮件提醒设置)
-- [使用第三方邮件提醒](/blog/f1fdd2cf/#使用第三方邮件提醒)
-    - [关闭valine自带的邮件提醒](/blog/f1fdd2cf/#关闭valine自带的邮件提醒)
-    - [怎么获取SMTP授权码](/blog/f1fdd2cf/#怎么获取SMTP授权码)
-    - [重新部署使环境变量生效](/blog/f1fdd2cf/#重新部署使环境变量生效)
-    - [提示邮件中文章链接错误加载不到评论](/blog/f1fdd2cf/#提示邮件中文章链接错误加载不到评论)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f1fdd2cf/#valine自带的邮件提醒设置">valine自带的邮件提醒设置</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f1fdd2cf/#使用第三方邮件提醒">使用第三方邮件提醒</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f1fdd2cf/#关闭valine自带的邮件提醒">关闭valine自带的邮件提醒</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f1fdd2cf/#怎么获取SMTP授权码">怎么获取SMTP授权码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f1fdd2cf/#重新部署使环境变量生效">重新部署使环境变量生效</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f1fdd2cf/#提示邮件中文章链接错误加载不到评论">提示邮件中文章链接错误加载不到评论</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

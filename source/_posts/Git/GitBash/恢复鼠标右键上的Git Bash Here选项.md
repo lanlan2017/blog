@@ -1,26 +1,16 @@
+---
 title: 恢复鼠标右键上的Git Bash Here选项
-categories:
+categories: 
   - Git
   - GitBash
-abbrlink: 6aa7c987
 date: 2019-12-06 15:02:25
-updated: 2019-12-06 15:28:58
+updated: 2019-12-09 19:55:22
+abbrlink: 6aa7c987
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/6aa7c987/#问题描述)
-- [打开注册表编辑器](/blog/6aa7c987/#打开注册表编辑器)
-- [进入shell目录](/blog/6aa7c987/#进入shell目录)
-- [新建项Git Bash Here](/blog/6aa7c987/#新建项Git-Bash-Here)
-    - [设置图标](/blog/6aa7c987/#设置图标)
-- [设置命令](/blog/6aa7c987/#设置命令)
-- [地址中有空格要用引号包裹](/blog/6aa7c987/#地址中有空格要用引号包裹)
-- [使用](/blog/6aa7c987/#使用)
-- [参考资料](/blog/6aa7c987/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/6aa7c987/#问题描述">问题描述</a><br/><a href="/blog/6aa7c987/#打开注册表编辑器">打开注册表编辑器</a><br/><a href="/blog/6aa7c987/#进入shell目录">进入shell目录</a><br/><a href="/blog/6aa7c987/#新建项Git-Bash-Here">新建项Git Bash Here</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6aa7c987/#设置图标">设置图标</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6aa7c987/#设置命令">设置命令</a><br/><a href="/blog/6aa7c987/#地址中有空格要用引号包裹">地址中有空格要用引号包裹</a><br/><a href="/blog/6aa7c987/#使用">使用</a><br/><a href="/blog/6aa7c987/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 问题描述

@@ -4,17 +4,13 @@ categories:
   - Windows
   - 软件设置
 date: 2019-12-05 21:23:34
-updated: 2019-12-05 21:25:55
+updated: 2019-12-09 19:45:23
 abbrlink: 5fce2b9c
 ---
-<div id='my_toc'>
-
-- [VScode设置自动换行](/blog/5fce2b9c/#VScode设置自动换行)
-- [参考资料](/blog/5fce2b9c/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/5fce2b9c/#VScode设置自动换行">VScode设置自动换行</a><br/><a href="/blog/5fce2b9c/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # VScode设置自动换行

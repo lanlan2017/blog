@@ -4,21 +4,13 @@ categories:
   - JavaScript
   - DOM
 date: 2019-11-28 15:26:51
-updated: 2019-11-28 16:03:20
+updated: 2019-12-09 19:45:22
 abbrlink: aee7c65a
 ---
-<div id='my_toc'>
-
-- [JS 添加DOM元素 删除DOM元素](/blog/aee7c65a/#JS-添加DOM元素-删除DOM元素)
-    - [创建一个DOM对象](/blog/aee7c65a/#创建一个DOM对象)
-    - [DOM对象添加一个子DOM](/blog/aee7c65a/#DOM对象添加一个子DOM)
-    - [DOM删除一个子DOM](/blog/aee7c65a/#DOM删除一个子DOM)
-    - [JS 复制到系统剪贴板](/blog/aee7c65a/#JS-复制到系统剪贴板)
-    - [完整例子](/blog/aee7c65a/#完整例子)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/aee7c65a/#JS-添加DOM元素-删除DOM元素">JS 添加DOM元素 删除DOM元素</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aee7c65a/#创建一个DOM对象">创建一个DOM对象</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aee7c65a/#DOM对象添加一个子DOM">DOM对象添加一个子DOM</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aee7c65a/#DOM删除一个子DOM">DOM删除一个子DOM</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aee7c65a/#JS-复制到系统剪贴板">JS 复制到系统剪贴板</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aee7c65a/#完整例子">完整例子</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # JS 添加DOM元素 删除DOM元素 #

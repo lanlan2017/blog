@@ -4,23 +4,13 @@ categories:
   - Hexo
   - Debug
 date: 2018-11-06 11:24:16
-updated: 2019-12-02 10:52:23
+updated: 2019-12-09 19:55:22
 abbrlink: 200a993a
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/200a993a/#问题描述)
-- [修改next主题样式文件](/blog/200a993a/#修改next主题样式文件)
-- [写表格时用空格分隔每个单词](/blog/200a993a/#写表格时用空格分隔每个单词)
-    - [实例 错误写法](/blog/200a993a/#实例-错误写法)
-    - [实例 正确写法](/blog/200a993a/#实例-正确写法)
-- [css word-break属性](/blog/200a993a/#css-word-break属性)
-- [white-space、word-wrap、word-break的区别](/blog/200a993a/#white-space、word-wrap、word-break的区别)
-- [参考链接](/blog/200a993a/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/200a993a/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/200a993a/#修改next主题样式文件">修改next主题样式文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/200a993a/#写表格时用空格分隔每个单词">写表格时用空格分隔每个单词</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/200a993a/#实例-错误写法">实例 错误写法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/200a993a/#实例-正确写法">实例 正确写法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/200a993a/#css-word-break属性">css word-break属性</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/200a993a/#white-space、word-wrap、word-break的区别">white-space、word-wrap、word-break的区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/200a993a/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 问题描述 ##

@@ -4,21 +4,13 @@ categories:
   - 正则表达式
   - 应用
 date: 2018-12-17 01:40:26
-updated: 2019-11-25 00:23:47
+updated: 2019-12-09 19:45:24
 abbrlink: f279d8a6
 ---
-<div id='my_toc'>
-
-- [html超链接 a 转markdown](/blog/f279d8a6/#html超链接-a-转markdown)
-- [html图片 img 转markdown](/blog/f279d8a6/#html图片-img-转markdown)
-- [代码段 code 转markdown](/blog/f279d8a6/#代码段-code-转markdown)
-    - [逆转义](/blog/f279d8a6/#逆转义)
-- [html加粗 转 markdown](/blog/f279d8a6/#html加粗-转-markdown)
-- [html 标题转markdown](/blog/f279d8a6/#html-标题转markdown)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f279d8a6/#html超链接-a-转markdown">html超链接 a 转markdown</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f279d8a6/#html图片-img-转markdown">html图片 img 转markdown</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f279d8a6/#代码段-code-转markdown">代码段 code 转markdown</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f279d8a6/#逆转义">逆转义</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f279d8a6/#html加粗-转-markdown">html加粗 转 markdown</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f279d8a6/#html-标题转markdown">html 标题转markdown</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## html超链接 a 转markdown ##

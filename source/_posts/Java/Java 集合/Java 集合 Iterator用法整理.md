@@ -4,19 +4,13 @@ categories:
   - Java
   - Java 集合
 date: 2018-12-14 23:10:23
-updated: 2019-11-25 00:23:44
+updated: 2019-12-09 19:45:21
 abbrlink: c26fdf44
 ---
-<div id='my_toc'>
-
-- [迭代器](/blog/c26fdf44/#迭代器)
-- [Iterator的接口](/blog/c26fdf44/#Iterator的接口)
-- [迭代方法](/blog/c26fdf44/#迭代方法)
-- [参考链接](/blog/c26fdf44/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c26fdf44/#迭代器">迭代器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c26fdf44/#Iterator的接口">Iterator的接口</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c26fdf44/#迭代方法">迭代方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c26fdf44/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 迭代器 ##

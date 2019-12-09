@@ -4,21 +4,13 @@ categories:
   - Hexo
   - Debug
 date: 2018-10-28 10:34:03
-updated: 2019-12-02 10:52:23
+updated: 2019-12-09 19:55:22
 abbrlink: ebaabcd4
 ---
-<div id='my_toc'>
-
-- [安装插件](/blog/ebaabcd4/#安装插件)
-- [配置站点配置文件_config.yml](/blog/ebaabcd4/#配置站点配置文件-config-yml)
-- [部署](/blog/ebaabcd4/#部署)
-- [查看本地生成的baidusitemap.xml文件](/blog/ebaabcd4/#查看本地生成的baidusitemap-xml文件)
-- [确认浏览器中可以打开baidusitemap.xml文件](/blog/ebaabcd4/#确认浏览器中可以打开baidusitemap-xml文件)
-- [复制浏览器中的地址提价给百度](/blog/ebaabcd4/#复制浏览器中的地址提价给百度)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ebaabcd4/#安装插件">安装插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ebaabcd4/#配置站点配置文件-config-yml">配置站点配置文件_config.yml</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ebaabcd4/#部署">部署</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ebaabcd4/#查看本地生成的baidusitemap-xml文件">查看本地生成的baidusitemap.xml文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ebaabcd4/#确认浏览器中可以打开baidusitemap-xml文件">确认浏览器中可以打开baidusitemap.xml文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ebaabcd4/#复制浏览器中的地址提价给百度">复制浏览器中的地址提价给百度</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 安装插件 ##

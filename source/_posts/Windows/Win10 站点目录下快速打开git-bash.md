@@ -3,18 +3,13 @@ title: Win10 站点目录下快速打开git-bash
 categories: 
   - Windows
 date: 2018-12-08 00:28:36
-updated: 2019-11-29 21:08:10
+updated: 2019-12-09 19:45:23
 abbrlink: 15df3886
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/15df3886/#问题描述)
-- [站点目录下快速打开cmd](/blog/15df3886/#站点目录下快速打开cmd)
-- [站点目录下快速打开git-bash](/blog/15df3886/#站点目录下快速打开git-bash)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/15df3886/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/15df3886/#站点目录下快速打开cmd">站点目录下快速打开cmd</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/15df3886/#站点目录下快速打开git-bash">站点目录下快速打开git-bash</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 问题描述 ##

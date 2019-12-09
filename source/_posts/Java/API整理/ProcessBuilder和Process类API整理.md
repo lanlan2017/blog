@@ -4,32 +4,13 @@ categories:
   - Java
   - API整理
 date: 2019-09-30 22:59:36
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 20:34:55
 abbrlink: e5bb3a41
 ---
-<div id='my_toc'>
-
-- [ProcessBuilder API整理](/blog/e5bb3a41/#ProcessBuilder-API整理)
-    - [内部类](/blog/e5bb3a41/#内部类)
-    - [构造器](/blog/e5bb3a41/#构造器)
-    - [方法](/blog/e5bb3a41/#方法)
-        - [取出或设置程序和参数的方法](/blog/e5bb3a41/#取出或设置程序和参数的方法)
-        - [取出或设置工作目录的方法](/blog/e5bb3a41/#取出或设置工作目录的方法)
-        - [设置标准IO的方法](/blog/e5bb3a41/#设置标准IO的方法)
-        - [取出标准IO的方法](/blog/e5bb3a41/#取出标准IO的方法)
-        - [合并标准输出相关的方法](/blog/e5bb3a41/#合并标准输出相关的方法)
-        - [其他方法](/blog/e5bb3a41/#其他方法)
-        - [启动进程方法](/blog/e5bb3a41/#启动进程方法)
-- [Process类API整理](/blog/e5bb3a41/#Process类API整理)
-    - [杀死子进程](/blog/e5bb3a41/#杀死子进程)
-    - [获取子进程的IO](/blog/e5bb3a41/#获取子进程的IO)
-    - [其他方法](/blog/e5bb3a41/#其他方法)
-    - [等待子进程](/blog/e5bb3a41/#等待子进程)
-- [实例](/blog/e5bb3a41/#实例)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/e5bb3a41/#ProcessBuilder-API整理">ProcessBuilder API整理</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e5bb3a41/#内部类">内部类</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e5bb3a41/#构造器">构造器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e5bb3a41/#方法">方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e5bb3a41/#取出或设置程序和参数的方法">取出或设置程序和参数的方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e5bb3a41/#取出或设置工作目录的方法">取出或设置工作目录的方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e5bb3a41/#设置标准IO的方法">设置标准IO的方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e5bb3a41/#取出标准IO的方法">取出标准IO的方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e5bb3a41/#合并标准输出相关的方法">合并标准输出相关的方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e5bb3a41/#其他方法">其他方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e5bb3a41/#启动进程方法">启动进程方法</a><br/><a href="/blog/e5bb3a41/#Process类API整理">Process类API整理</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e5bb3a41/#杀死子进程">杀死子进程</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e5bb3a41/#获取子进程的IO">获取子进程的IO</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e5bb3a41/#其他方法">其他方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e5bb3a41/#等待子进程">等待子进程</a><br/><a href="/blog/e5bb3a41/#实例">实例</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # ProcessBuilder API整理 #

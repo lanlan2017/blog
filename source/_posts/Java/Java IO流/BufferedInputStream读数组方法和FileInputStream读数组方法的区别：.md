@@ -4,16 +4,13 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-22 14:32:39
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 20:34:56
 abbrlink: d4b540e
 ---
-<div id='my_toc'>
-
-- [区别](/blog/d4b540e/#区别)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d4b540e/#区别">区别</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 区别 ##

@@ -3,20 +3,13 @@ title: Git 强制拉去远程分支 删除本地分支
 categories: 
   - Git
 date: 2019-12-03 19:17:52
-updated: 2019-12-03 19:41:38
+updated: 2019-12-09 19:55:22
 abbrlink: ecbd02e2
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/ecbd02e2/#问题描述)
-- [解决方案](/blog/ecbd02e2/#解决方案)
-    - [方案1 删除本地仓库 重新克隆src分支](/blog/ecbd02e2/#方案1-删除本地仓库-重新克隆src分支)
-    - [方案2 下载src分支 然后删除本地master分支](/blog/ecbd02e2/#方案2-下载src分支-然后删除本地master分支)
-        - [删除远程master分支的记录](/blog/ecbd02e2/#删除远程master分支的记录)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/ecbd02e2/#问题描述">问题描述</a><br/><a href="/blog/ecbd02e2/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ecbd02e2/#方案1-删除本地仓库-重新克隆src分支">方案1 删除本地仓库 重新克隆src分支</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ecbd02e2/#方案2-下载src分支-然后删除本地master分支">方案2 下载src分支 然后删除本地master分支</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ecbd02e2/#删除远程master分支的记录">删除远程master分支的记录</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 问题描述

@@ -5,40 +5,13 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-13 12:31:03
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:22
 abbrlink: d5e5b83f
 ---
-<div id='my_toc'>
-
-- [JSP request内置对象](/blog/d5e5b83f/#JSP-request内置对象)
-    - [request对象常用方法](/blog/d5e5b83f/#request对象常用方法)
-        - [获取请求体信息](/blog/d5e5b83f/#获取请求体信息)
-        - [获取表单提交的参数](/blog/d5e5b83f/#获取表单提交的参数)
-            - [枚举方式 遍历表单提交的数据](/blog/d5e5b83f/#枚举方式-遍历表单提交的数据)
-                - [枚举方式 遍历表单提交的数据](/blog/d5e5b83f/#枚举方式-遍历表单提交的数据)
-            - [Map方式 遍历表单提交的数据](/blog/d5e5b83f/#Map方式-遍历表单提交的数据)
-                - [Map方式 遍历表单提交的数据](/blog/d5e5b83f/#Map方式-遍历表单提交的数据)
-        - [操作request对象属性](/blog/d5e5b83f/#操作request对象属性)
-        - [操作编码](/blog/d5e5b83f/#操作编码)
-        - [服务器信息](/blog/d5e5b83f/#服务器信息)
-        - [客户端信息](/blog/d5e5b83f/#客户端信息)
-        - [获取请求头信息](/blog/d5e5b83f/#获取请求头信息)
-        - [路径](/blog/d5e5b83f/#路径)
-        - [其他信息](/blog/d5e5b83f/#其他信息)
-    - [实例](/blog/d5e5b83f/#实例)
-    - [表单输入中文乱码问题](/blog/d5e5b83f/#表单输入中文乱码问题)
-        - [post方法乱码解决](/blog/d5e5b83f/#post方法乱码解决)
-    - [超链接请求传参](/blog/d5e5b83f/#超链接请求传参)
-        - [超链接传参语法](/blog/d5e5b83f/#超链接传参语法)
-        - [实例](/blog/d5e5b83f/#实例)
-    - [解决get方法提交(URL传参)中文乱码](/blog/d5e5b83f/#解决get方法提交-URL传参-中文乱码)
-    - [requset对象其他方法实例](/blog/d5e5b83f/#requset对象其他方法实例)
-        - [post提交方式](/blog/d5e5b83f/#post提交方式)
-    - [参考链接](/blog/d5e5b83f/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/d5e5b83f/#JSP-request内置对象">JSP request内置对象</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#request对象常用方法">request对象常用方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#获取请求体信息">获取请求体信息</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#获取表单提交的参数">获取表单提交的参数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#枚举方式-遍历表单提交的数据">枚举方式 遍历表单提交的数据</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#枚举方式-遍历表单提交的数据">枚举方式 遍历表单提交的数据</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#Map方式-遍历表单提交的数据">Map方式 遍历表单提交的数据</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#Map方式-遍历表单提交的数据">Map方式 遍历表单提交的数据</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#操作request对象属性">操作request对象属性</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#操作编码">操作编码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#服务器信息">服务器信息</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#客户端信息">客户端信息</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#获取请求头信息">获取请求头信息</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#路径">路径</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#其他信息">其他信息</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#表单输入中文乱码问题">表单输入中文乱码问题</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#post方法乱码解决">post方法乱码解决</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#超链接请求传参">超链接请求传参</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#超链接传参语法">超链接传参语法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#解决get方法提交-URL传参-中文乱码">解决get方法提交(URL传参)中文乱码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#requset对象其他方法实例">requset对象其他方法实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#post提交方式">post提交方式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d5e5b83f/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # JSP request内置对象 #

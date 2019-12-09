@@ -4,17 +4,13 @@ categories:
   - Java
   - Linux系统上java使用
 date: 2018-08-11 14:25:09
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:22
 abbrlink: 73224a52
 ---
-<div id='my_toc'>
-
-- [永久修改，对单一用户有效](/blog/73224a52/#永久修改，对单一用户有效)
-- [只对当前bash /shell 生效](/blog/73224a52/#只对当前bash-shell-生效)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/73224a52/#永久修改，对单一用户有效">永久修改，对单一用户有效</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/73224a52/#只对当前bash-shell-生效">只对当前bash /shell 生效</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 $vi /etc/profile

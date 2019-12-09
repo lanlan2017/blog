@@ -1,21 +1,16 @@
 ---
 title: JavaScript生成Txt文件并下载
-categories:
+categories: 
   - JavaScript
   - 下载文件
-abbrlink: 4c49ec32
 date: 2019-12-08 22:39:01
-updated: 2019-12-08 22:39:01
+updated: 2019-12-09 19:45:22
+abbrlink: 4c49ec32
 ---
-<div id='my_toc'>
-
-- [JS代码](/blog/null/#JS代码)
-- [示例](/blog/null/#示例)
-- [参考资料](/blog/null/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/4c49ec32/#JS代码">JS代码</a><br/><a href="/blog/4c49ec32/#示例">示例</a><br/><a href="/blog/4c49ec32/#效果">效果</a><br/><a href="/blog/4c49ec32/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # JS代码

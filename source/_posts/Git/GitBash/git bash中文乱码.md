@@ -4,19 +4,13 @@ categories:
   - Git
   - GitBash
 date: 2019-11-13 16:05:01
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 19:55:22
 abbrlink: ad35763b
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/ad35763b/#问题描述)
-- [解决方案](/blog/ad35763b/#解决方案)
-- [成功效果](/blog/ad35763b/#成功效果)
-- [参考资料](/blog/ad35763b/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/ad35763b/#问题描述">问题描述</a><br/><a href="/blog/ad35763b/#解决方案">解决方案</a><br/><a href="/blog/ad35763b/#成功效果">成功效果</a><br/><a href="/blog/ad35763b/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 问题描述 #

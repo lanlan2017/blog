@@ -4,52 +4,13 @@ categories:
   - Linux
   - Termux
 date: 2019-10-31 15:08:27
-updated: 2019-11-30 20:45:58
+updated: 2019-12-09 19:45:23
 abbrlink: 4a95e633
 ---
-<div id='my_toc'>
-
-- [安装termux](/blog/4a95e633/#安装termux)
-    - [下载termux](/blog/4a95e633/#下载termux)
-- [更换国内源](/blog/4a95e633/#更换国内源)
-    - [官方方法](/blog/4a95e633/#官方方法)
-    - [直接编辑源文件](/blog/4a95e633/#直接编辑源文件)
-    - [修改效果](/blog/4a95e633/#修改效果)
-- [The main termux repository:](/blog/4a95e633/#The-main-termux-repository)
-- [deb https://termux.org/packages/ stable main](/blog/4a95e633/#deb-https-termux-org-packages-stable-main)
-- [The termux repository mirror from TUNA:](/blog/4a95e633/#The-termux-repository-mirror-from-TUNA)
-- [Termux获取管理员权限](/blog/4a95e633/#Termux获取管理员权限)
-- [Termux优化](/blog/4a95e633/#Termux优化)
-    - [终端配色](/blog/4a95e633/#终端配色)
-    - [访问外置存储优化](/blog/4a95e633/#访问外置存储优化)
-        - [创建QQ文件夹软连接](/blog/4a95e633/#创建QQ文件夹软连接)
-- [安装git](/blog/4a95e633/#安装git)
-- [Termux 上搭建Hexo博客](/blog/4a95e633/#Termux-上搭建Hexo博客)
-    - [安装nodejs长期支持版本](/blog/4a95e633/#安装nodejs长期支持版本)
-    - [使用淘宝镜像](/blog/4a95e633/#使用淘宝镜像)
-    - [安装hexo](/blog/4a95e633/#安装hexo)
-    - [创建站点](/blog/4a95e633/#创建站点)
-    - [进入站点](/blog/4a95e633/#进入站点)
-    - [启动本地服务器](/blog/4a95e633/#启动本地服务器)
-    - [手机浏览器上进入网站](/blog/4a95e633/#手机浏览器上进入网站)
-- [在非Termux目录下写博客](/blog/4a95e633/#在非Termux目录下写博客)
-    - [克隆博客源码](/blog/4a95e633/#克隆博客源码)
-- [题外话](/blog/4a95e633/#题外话)
-    - [设置npm全局安装路径和全局缓存路径](/blog/4a95e633/#设置npm全局安装路径和全局缓存路径)
-    - [取消自定义个npm全局安装路径](/blog/4a95e633/#取消自定义个npm全局安装路径)
-    - [设置Linux环境变量](/blog/4a95e633/#设置Linux环境变量)
-    - [安装指定版本的nodejs](/blog/4a95e633/#安装指定版本的nodejs)
-        - [安装n模块](/blog/4a95e633/#安装n模块)
-        - [升级node.js到最新稳定版](/blog/4a95e633/#升级node-js到最新稳定版)
-        - [查看Nodejs历史版本](/blog/4a95e633/#查看Nodejs历史版本)
-        - [安装指定版本的nodejs](/blog/4a95e633/#安装指定版本的nodejs)
-        - [切换到指定版本的nodejs](/blog/4a95e633/#切换到指定版本的nodejs)
-- [清除npm缓存](/blog/4a95e633/#清除npm缓存)
-- [参考资料](/blog/4a95e633/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/4a95e633/#安装termux">安装termux</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#下载termux">下载termux</a><br/><a href="/blog/4a95e633/#更换国内源">更换国内源</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#官方方法">官方方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#直接编辑源文件">直接编辑源文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#修改效果">修改效果</a><br/><a href="/blog/4a95e633/#The-main-termux-repository">The main termux repository:</a><br/><a href="/blog/4a95e633/#deb-https-termux-org-packages-stable-main">deb https://termux.org/packages/ stable main</a><br/><a href="/blog/4a95e633/#The-termux-repository-mirror-from-TUNA">The termux repository mirror from TUNA:</a><br/><a href="/blog/4a95e633/#Termux获取管理员权限">Termux获取管理员权限</a><br/><a href="/blog/4a95e633/#Termux优化">Termux优化</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#终端配色">终端配色</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#访问外置存储优化">访问外置存储优化</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#创建QQ文件夹软连接">创建QQ文件夹软连接</a><br/><a href="/blog/4a95e633/#安装git">安装git</a><br/><a href="/blog/4a95e633/#Termux-上搭建Hexo博客">Termux 上搭建Hexo博客</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#安装nodejs长期支持版本">安装nodejs长期支持版本</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#使用淘宝镜像">使用淘宝镜像</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#安装hexo">安装hexo</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#创建站点">创建站点</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#进入站点">进入站点</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#启动本地服务器">启动本地服务器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#手机浏览器上进入网站">手机浏览器上进入网站</a><br/><a href="/blog/4a95e633/#在非Termux目录下写博客">在非Termux目录下写博客</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#克隆博客源码">克隆博客源码</a><br/><a href="/blog/4a95e633/#题外话">题外话</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#设置npm全局安装路径和全局缓存路径">设置npm全局安装路径和全局缓存路径</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#取消自定义个npm全局安装路径">取消自定义个npm全局安装路径</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#设置Linux环境变量">设置Linux环境变量</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#安装指定版本的nodejs">安装指定版本的nodejs</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#安装n模块">安装n模块</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#升级node-js到最新稳定版">升级node.js到最新稳定版</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#查看Nodejs历史版本">查看Nodejs历史版本</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#安装指定版本的nodejs">安装指定版本的nodejs</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4a95e633/#切换到指定版本的nodejs">切换到指定版本的nodejs</a><br/><a href="/blog/4a95e633/#清除npm缓存">清除npm缓存</a><br/><a href="/blog/4a95e633/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 安装termux

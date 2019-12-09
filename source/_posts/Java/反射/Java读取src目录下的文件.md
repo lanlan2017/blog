@@ -4,19 +4,13 @@ categories:
   - Java
   - 反射
 date: 2019-06-09 22:53:08
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:22
 abbrlink: 5bc9db15
 ---
-<div id='my_toc'>
-
-- [如何读取src目录下的文件](/blog/5bc9db15/#如何读取src目录下的文件)
-- [我的用法](/blog/5bc9db15/#我的用法)
-- [读取资源文件的工具类](/blog/5bc9db15/#读取资源文件的工具类)
-- [使用示例](/blog/5bc9db15/#使用示例)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/5bc9db15/#如何读取src目录下的文件">如何读取src目录下的文件</a><br/><a href="/blog/5bc9db15/#我的用法">我的用法</a><br/><a href="/blog/5bc9db15/#读取资源文件的工具类">读取资源文件的工具类</a><br/><a href="/blog/5bc9db15/#使用示例">使用示例</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 如何读取src目录下的文件 #

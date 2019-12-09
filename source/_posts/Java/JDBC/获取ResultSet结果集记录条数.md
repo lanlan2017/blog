@@ -4,17 +4,13 @@ categories:
   - Java
   - JDBC
 date: 2018-12-05 00:18:01
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:22
 abbrlink: 127223bf
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/127223bf/#问题描述)
-- [参考链接](/blog/127223bf/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/127223bf/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/127223bf/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ResultSet表示数据库结果集的数据表，通常通过执行查询数据库的语句生成。 

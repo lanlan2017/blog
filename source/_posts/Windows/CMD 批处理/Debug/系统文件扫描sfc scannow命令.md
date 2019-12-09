@@ -5,17 +5,13 @@ categories:
   - CMD 批处理
   - Debug
 date: 2019-05-23 18:49:38
-updated: 2019-11-29 21:19:57
+updated: 2019-12-09 19:45:23
 abbrlink: 9b2b8330
 ---
-<div id='my_toc'>
-
-- [sfc /scannow命令说明](/blog/9b2b8330/#sfc-scannow命令说明)
-- [参考资料](/blog/9b2b8330/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/9b2b8330/#sfc-scannow命令说明">sfc /scannow命令说明</a><br/><a href="/blog/9b2b8330/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # sfc /scannow命令说明 #

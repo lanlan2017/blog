@@ -6,19 +6,13 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-13 22:21:13
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 20:34:55
 abbrlink: 874828d8
 ---
-<div id='my_toc'>
-
-- [Spring MVC配置文件模版](/blog/874828d8/#Spring-MVC配置文件模版)
-- [安装插件](/blog/874828d8/#安装插件)
-- [使用Spring Tools3插件创建配置文件](/blog/874828d8/#使用Spring-Tools3插件创建配置文件)
-- [手动创建web.xml](/blog/874828d8/#手动创建web-xml)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/874828d8/#Spring-MVC配置文件模版">Spring MVC配置文件模版</a><br/><a href="/blog/874828d8/#安装插件">安装插件</a><br/><a href="/blog/874828d8/#使用Spring-Tools3插件创建配置文件">使用Spring Tools3插件创建配置文件</a><br/><a href="/blog/874828d8/#手动创建web-xml">手动创建web.xml</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # Spring MVC配置文件模版 #

@@ -4,20 +4,13 @@ categories:
   - JavaScript
   - Date
 date: 2018-11-24 14:03:53
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:22
 abbrlink: b57484e
 ---
-<div id='my_toc'>
-
-- [算法描述](/blog/b57484e/#算法描述)
-- [方法](/blog/b57484e/#方法)
-    - [js求两个日期之间相隔天数的方法 字符串参数](/blog/b57484e/#js求两个日期之间相隔天数的方法-字符串参数)
-    - [js获取当日的格式化时间](/blog/b57484e/#js获取当日的格式化时间)
-- [实例](/blog/b57484e/#实例)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b57484e/#算法描述">算法描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b57484e/#方法">方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b57484e/#js求两个日期之间相隔天数的方法-字符串参数">js求两个日期之间相隔天数的方法 字符串参数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b57484e/#js获取当日的格式化时间">js获取当日的格式化时间</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b57484e/#实例">实例</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

@@ -4,67 +4,16 @@ categories:
   - MySQL
   - 图形工具
 date: 2019-11-23 15:47:40
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:23
 abbrlink: 30dba46d
 ---
-<div id='my_toc'>
-
-- [Navicat激活](/blog/30dba46d/#Navicat激活)
-    - [复制navicat安装路径](/blog/30dba46d/#复制navicat安装路径)
-    - [执行命令](/blog/30dba46d/#执行命令)
-        - [运行效果](/blog/30dba46d/#运行效果)
-    - [再执行命令](/blog/30dba46d/#再执行命令)
-        - [然后选择程序和版本](/blog/30dba46d/#然后选择程序和版本)
-- [参考资料](/blog/30dba46d/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/30dba46d/#再执行命令">再执行命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/30dba46d/#然后选择程序和版本">然后选择程序和版本</a><br/><a href="/blog/30dba46d/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
-# Navicat激活 #
-
-## 复制navicat安装路径 ##
-## 执行命令 ##
-```cmd
-navicat-patcher.exe "安装路径"
-```
-我的是
-```cmd
-navicat-patcher.exe "F:\Program Files\PremiumSoft\Navicat Premium 12"
-```
-### 运行效果 ###
-```cmd
-G:\Desktop\破解>navicat-patcher.exe "E:\dev2\PremiumSoft\Navicat Premium 12"
-***************************************************
-*       Navicat Patcher by @DoubleLabyrinth       *
-*                  Version: 4.1                   *
-***************************************************
-
-Press Enter to continue or Ctrl + C to abort.
-
-[+] Try to open Navicat.exe ... Ok!
-[+] Try to open libcc.dll ... Ok!
-
-[+] PatchSolution0 ...... Ready to apply
-    [*] Patch offset = +0x029bd6d8
-[-] PatchSolution1 ...... Omitted
-[-] PatchSolution2 ...... Omitted
-[-] PatchSolution3 ...... Omitted
-[-] PatchSolution4 ...... Omitted
-
-
-[*] Generating new RSA private key, it may take a long time...
-[*] Your RSA public key:
------BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx9gWjlZE4Fmf6ucUenqk
-pMlcvkCKRTYvtWD24esJFbr/plC++nHbxsW62ZhWTvwW1Qd/HwrwcYfpmloSbAuM
-UQKqUDYH2Mln/6QefussY1y5wB/70k+gczjjKyx7F6VIzlOp5YjNVjhdyvAdodc6
-OekJcYJ8yrQk6B5+id+ZtR5zTvpi31r2wlU7VaUBFa1zgFYkBui6b8++n4LUOEjA
-ye3Qr4DG/XB5pSd2ov/Rr4AQwC3pKb3cIjFtuG4ydUAGlCmf85a4kbOPX1S6FqMV
-WRFYsSiRPx0e6JC8ADS8x5VdVQS+8HpIoPVfsM3lzKJkxTgWkQ0M18qANqNIhduA
-owIDAQAB
------END PUBLIC KEY-----
+--END PUBLIC KEY-----
 
 *******************************************************
 *                   PatchSolution0                    *

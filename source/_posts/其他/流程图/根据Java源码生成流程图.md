@@ -4,22 +4,13 @@ categories:
   - 其他
   - 流程图
 date: 2018-12-08 00:07:22
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:23
 abbrlink: 358dbd0e
 ---
-<div id='my_toc'>
-
-- [前言](/blog/358dbd0e/#前言)
-- [工具软件](/blog/358dbd0e/#工具软件)
-- [安装步骤](/blog/358dbd0e/#安装步骤)
-    - [下载demo版安装包](/blog/358dbd0e/#下载demo版安装包)
-    - [安装demo版本](/blog/358dbd0e/#安装demo版本)
-    - [使用demo版本生成流程图](/blog/358dbd0e/#使用demo版本生成流程图)
-- [参考链接](/blog/358dbd0e/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/358dbd0e/#前言">前言</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/358dbd0e/#工具软件">工具软件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/358dbd0e/#安装步骤">安装步骤</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/358dbd0e/#下载demo版安装包">下载demo版安装包</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/358dbd0e/#安装demo版本">安装demo版本</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/358dbd0e/#使用demo版本生成流程图">使用demo版本生成流程图</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/358dbd0e/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 前言 ##

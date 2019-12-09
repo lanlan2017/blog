@@ -4,56 +4,13 @@ categories:
   - HTML
   - 表单
 date: 2018-11-28 14:45:08
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:55:22
 abbrlink: b74fe8bf
 ---
-<div id='my_toc'>
-
-- [HTML表单是什么](/blog/b74fe8bf/#HTML表单是什么)
-- [form元素](/blog/b74fe8bf/#form元素)
-- [文本输入域](/blog/b74fe8bf/#文本输入域)
-    - [单行文本域](/blog/b74fe8bf/#单行文本域)
-        - [E-mail 地址域](/blog/b74fe8bf/#E-mail-地址域)
-        - [密码域](/blog/b74fe8bf/#密码域)
-        - [搜索域](/blog/b74fe8bf/#搜索域)
-        - [电话号码域](/blog/b74fe8bf/#电话号码域)
-        - [URL 域](/blog/b74fe8bf/#URL-域)
-    - [多行文本域](/blog/b74fe8bf/#多行文本域)
-- [下拉内容](/blog/b74fe8bf/#下拉内容)
-    - [选择框](/blog/b74fe8bf/#选择框)
-    - [多选选择框](/blog/b74fe8bf/#多选选择框)
-    - [自动补全输入框](/blog/b74fe8bf/#自动补全输入框)
-- [可选中项](/blog/b74fe8bf/#可选中项)
-    - [复选框](/blog/b74fe8bf/#复选框)
-    - [单选按钮](/blog/b74fe8bf/#单选按钮)
-- [按钮](/blog/b74fe8bf/#按钮)
-    - [submit](/blog/b74fe8bf/#submit)
-    - [reset](/blog/b74fe8bf/#reset)
-    - [button](/blog/b74fe8bf/#button)
-- [高级表单部件](/blog/b74fe8bf/#高级表单部件)
-    - [数字](/blog/b74fe8bf/#数字)
-        - [例子](/blog/b74fe8bf/#例子)
-    - [滑块](/blog/b74fe8bf/#滑块)
-        - [例子](/blog/b74fe8bf/#例子)
-    - [日期时间选择器](/blog/b74fe8bf/#日期时间选择器)
-        - [本地时间](/blog/b74fe8bf/#本地时间)
-        - [月](/blog/b74fe8bf/#月)
-        - [时间](/blog/b74fe8bf/#时间)
-        - [星期](/blog/b74fe8bf/#星期)
-    - [拾色器](/blog/b74fe8bf/#拾色器)
-- [其他小部件](/blog/b74fe8bf/#其他小部件)
-    - [文件选择器](/blog/b74fe8bf/#文件选择器)
-        - [例子](/blog/b74fe8bf/#例子)
-    - [隐藏内容](/blog/b74fe8bf/#隐藏内容)
-    - [图像按钮](/blog/b74fe8bf/#图像按钮)
-    - [仪表和进度条](/blog/b74fe8bf/#仪表和进度条)
-        - [进度条](/blog/b74fe8bf/#进度条)
-        - [仪表](/blog/b74fe8bf/#仪表)
-- [参考链接](/blog/b74fe8bf/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/b74fe8bf/#HTML表单是什么">HTML表单是什么</a><br/><a href="/blog/b74fe8bf/#form元素">form元素</a><br/><a href="/blog/b74fe8bf/#文本输入域">文本输入域</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#单行文本域">单行文本域</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#E-mail-地址域">E-mail 地址域</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#密码域">密码域</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#搜索域">搜索域</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#电话号码域">电话号码域</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#URL-域">URL 域</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#多行文本域">多行文本域</a><br/><a href="/blog/b74fe8bf/#下拉内容">下拉内容</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#选择框">选择框</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#多选选择框">多选选择框</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#自动补全输入框">自动补全输入框</a><br/><a href="/blog/b74fe8bf/#可选中项">可选中项</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#复选框">复选框</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#单选按钮">单选按钮</a><br/><a href="/blog/b74fe8bf/#按钮">按钮</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#submit">submit</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#reset">reset</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#button">button</a><br/><a href="/blog/b74fe8bf/#高级表单部件">高级表单部件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#数字">数字</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#例子">例子</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#滑块">滑块</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#例子">例子</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#日期时间选择器">日期时间选择器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#本地时间">本地时间</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#月">月</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#时间">时间</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#星期">星期</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#拾色器">拾色器</a><br/><a href="/blog/b74fe8bf/#其他小部件">其他小部件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#文件选择器">文件选择器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#例子">例子</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#隐藏内容">隐藏内容</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#图像按钮">图像按钮</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#仪表和进度条">仪表和进度条</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#进度条">进度条</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b74fe8bf/#仪表">仪表</a><br/><a href="/blog/b74fe8bf/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # HTML表单是什么 #

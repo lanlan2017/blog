@@ -4,27 +4,13 @@ categories:
   - JavaScript
   - 剪贴板
 date: 2019-02-13 00:16:32
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:23
 abbrlink: c78d87f4
 ---
-<div id='my_toc'>
-
-- [使用步骤](/blog/c78d87f4/#使用步骤)
-- [属性说明](/blog/c78d87f4/#属性说明)
-- [使用实例](/blog/c78d87f4/#使用实例)
-    - [使用HTML DOM选择器实例化](/blog/c78d87f4/#使用HTML-DOM选择器实例化)
-    - [使用HTML元素实例化](/blog/c78d87f4/#使用HTML元素实例化)
-    - [使用html元素列表实例化](/blog/c78d87f4/#使用html元素列表实例化)
-- [复制静态文本](/blog/c78d87f4/#复制静态文本)
-- [复制其他元素的内容](/blog/c78d87f4/#复制其他元素的内容)
-    - [复制一个内容](/blog/c78d87f4/#复制一个内容)
-    - [复制多个内容的情况](/blog/c78d87f4/#复制多个内容的情况)
-- [剪切方式](/blog/c78d87f4/#剪切方式)
-- [参考链接](/blog/c78d87f4/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c78d87f4/#使用步骤">使用步骤</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c78d87f4/#属性说明">属性说明</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c78d87f4/#使用实例">使用实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c78d87f4/#使用HTML-DOM选择器实例化">使用HTML DOM选择器实例化</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c78d87f4/#使用HTML元素实例化">使用HTML元素实例化</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c78d87f4/#使用html元素列表实例化">使用html元素列表实例化</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c78d87f4/#复制静态文本">复制静态文本</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c78d87f4/#复制其他元素的内容">复制其他元素的内容</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c78d87f4/#复制一个内容">复制一个内容</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c78d87f4/#复制多个内容的情况">复制多个内容的情况</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c78d87f4/#剪切方式">剪切方式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c78d87f4/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 使用步骤 ##

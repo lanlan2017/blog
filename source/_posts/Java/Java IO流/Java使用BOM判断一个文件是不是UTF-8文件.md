@@ -1,13 +1,18 @@
 ---
-ttitle: Java使用BOM判断一个文件是不是UTF-8文件
-categories:
+title: Java使用BOM判断一个文件是不是UTF-8文件
+categories: 
   - Java
   - Java IO流
-abbrlink: 2fe8061d
 date: 2018-08-29 19:35:00
-updated: 2019-11-25 00:23:44
+updated: 2019-12-09 20:34:57
+abbrlink: 2fe8061d
 ---
+<div id='my_toc'><a href="/blog/2fe8061d/#查看16进制的源文件">查看16进制的源文件</a><br/><a href="/blog/2fe8061d/#判断文件是不是udf-8加BOM">判断文件是不是udf-8加BOM</a><br/><a href="/blog/2fe8061d/#缺点">缺点</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
+<!--end-->
 # 查看16进制的源文件
 例如test_utf8.py这个文件用的是utf-8+BOM编码的.
 现在打开这个文件，然后**以16进制的方式**查看该文件。

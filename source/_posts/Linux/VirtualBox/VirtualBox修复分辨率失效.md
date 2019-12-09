@@ -4,17 +4,13 @@ categories:
   - Linux
   - VirtualBox
 date: 2019-11-24 23:19:58
-updated: 2019-11-25 19:59:54
+updated: 2019-12-09 19:45:23
 abbrlink: 88ff8084
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/88ff8084/#问题描述)
-- [解决方案](/blog/88ff8084/#解决方案)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/88ff8084/#问题描述">问题描述</a><br/><a href="/blog/88ff8084/#解决方案">解决方案</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 问题描述

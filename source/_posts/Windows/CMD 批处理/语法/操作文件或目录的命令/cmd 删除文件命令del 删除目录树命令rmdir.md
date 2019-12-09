@@ -6,23 +6,13 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-01-31 17:32:41
-updated: 2019-11-29 21:19:58
+updated: 2019-12-09 19:45:23
 abbrlink: 5d4c4249
 ---
-<div id='my_toc'>
-
-- [删除文件 del或erase命令](/blog/5d4c4249/#删除文件-del或erase命令)
-    - [删除 当前目录 下某个文件](/blog/5d4c4249/#删除-当前目录-下某个文件)
-    - [删除 当前目录 下某个后缀的所有文件](/blog/5d4c4249/#删除-当前目录-下某个后缀的所有文件)
-    - [删除 当前目录树 下某个后缀的所有文件](/blog/5d4c4249/#删除-当前目录树-下某个后缀的所有文件)
-- [删除目录 rmdir或rd命令](/blog/5d4c4249/#删除目录-rmdir或rd命令)
-    - [删除空目录](/blog/5d4c4249/#删除空目录)
-    - [删除非空目录](/blog/5d4c4249/#删除非空目录)
-    - [直接删除非空目录](/blog/5d4c4249/#直接删除非空目录)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5d4c4249/#删除文件-del或erase命令">删除文件 del或erase命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5d4c4249/#删除-当前目录-下某个文件">删除 当前目录 下某个文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5d4c4249/#删除-当前目录-下某个后缀的所有文件">删除 当前目录 下某个后缀的所有文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5d4c4249/#删除-当前目录树-下某个后缀的所有文件">删除 当前目录树 下某个后缀的所有文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5d4c4249/#删除目录-rmdir或rd命令">删除目录 rmdir或rd命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5d4c4249/#删除空目录">删除空目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5d4c4249/#删除非空目录">删除非空目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5d4c4249/#直接删除非空目录">直接删除非空目录</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 删除文件 del或erase命令 ##

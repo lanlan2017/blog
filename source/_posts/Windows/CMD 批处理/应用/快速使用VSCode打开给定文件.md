@@ -5,16 +5,13 @@ categories:
   - CMD 批处理
   - 应用
 date: 2019-08-05 00:29:34
-updated: 2019-11-29 21:19:58
+updated: 2019-12-09 19:45:23
 abbrlink: 5c6bafc2
 ---
-<div id='my_toc'>
-
-- [使用VSCode快速打开一个给定的文件](/blog/5c6bafc2/#使用VSCode快速打开一个给定的文件)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/5c6bafc2/#使用VSCode快速打开一个给定的文件">使用VSCode快速打开一个给定的文件</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 使用VSCode快速打开一个给定的文件 #

@@ -5,18 +5,13 @@ categories:
   - IDE
   - eclipse
 date: 2019-04-23 21:49:49
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 20:34:55
 abbrlink: 3c99547f
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/3c99547f/#问题描述)
-- [原因](/blog/3c99547f/#原因)
-- [步骤](/blog/3c99547f/#步骤)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/3c99547f/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/3c99547f/#原因">原因</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/3c99547f/#步骤">步骤</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 问题描述 ##

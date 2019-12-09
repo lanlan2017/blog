@@ -5,23 +5,13 @@ categories:
   - VirtualBox
   - Ubuntu
 date: 2019-11-25 19:55:24
-updated: 2019-11-25 20:58:16
+updated: 2019-12-09 19:45:23
 abbrlink: 92f73acb
 ---
-<div id='my_toc'>
-
-- [Ubuntu 安装 git](/blog/92f73acb/#Ubuntu-安装-git)
-- [Ubuntu 安装 nodejs](/blog/92f73acb/#Ubuntu-安装-nodejs)
-    - [安装指定的版本](/blog/92f73acb/#安装指定的版本)
-    - [配置Nodejs](/blog/92f73acb/#配置Nodejs)
-        - [使用淘宝镜像](/blog/92f73acb/#使用淘宝镜像)
-        - [产看配置是否成功](/blog/92f73acb/#产看配置是否成功)
-- [安装hexo](/blog/92f73acb/#安装hexo)
-- [参考资料](/blog/92f73acb/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/92f73acb/#Ubuntu-安装-git">Ubuntu 安装 git</a><br/><a href="/blog/92f73acb/#Ubuntu-安装-nodejs">Ubuntu 安装 nodejs</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/92f73acb/#安装指定的版本">安装指定的版本</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/92f73acb/#配置Nodejs">配置Nodejs</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/92f73acb/#使用淘宝镜像">使用淘宝镜像</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/92f73acb/#产看配置是否成功">产看配置是否成功</a><br/><a href="/blog/92f73acb/#安装hexo">安装hexo</a><br/><a href="/blog/92f73acb/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # Ubuntu 安装 git #

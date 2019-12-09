@@ -4,18 +4,13 @@ categories:
   - Java
   - Java IO流
 date: 2018-10-26 19:56:09
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:21
 abbrlink: 18ab79a8
 ---
-<div id='my_toc'>
-
-- [首先介绍怎么把资源文件打包到可执行jar包中](/blog/18ab79a8/#首先介绍怎么把资源文件打包到可执行jar包中)
-- [读取jar包中的文件](/blog/18ab79a8/#读取jar包中的文件)
-- [读取jar包中资源文件子目录中的文件](/blog/18ab79a8/#读取jar包中资源文件子目录中的文件)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/18ab79a8/#首先介绍怎么把资源文件打包到可执行jar包中">首先介绍怎么把资源文件打包到可执行jar包中</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/18ab79a8/#读取jar包中的文件">读取jar包中的文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/18ab79a8/#读取jar包中资源文件子目录中的文件">读取jar包中资源文件子目录中的文件</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 首先介绍怎么把资源文件打包到可执行jar包中 ##

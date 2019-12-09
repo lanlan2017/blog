@@ -5,20 +5,13 @@ categories:
   - IDE
   - eclipse
 date: 2019-08-29 22:34:38
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 20:34:55
 abbrlink: ced73660
 ---
-<div id='my_toc'>
-
-- [在eclipse项目路径下启动cmd并解决乱码](/blog/ced73660/#在eclipse项目路径下启动cmd并解决乱码)
-    - [在eclipse中启动cmd](/blog/ced73660/#在eclipse中启动cmd)
-    - [选择cmd的编码为GBK](/blog/ced73660/#选择cmd的编码为GBK)
-    - [启动cmd.exe](/blog/ced73660/#启动cmd-exe)
-    - [操作过程](/blog/ced73660/#操作过程)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/ced73660/#在eclipse项目路径下启动cmd并解决乱码">在eclipse项目路径下启动cmd并解决乱码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ced73660/#在eclipse中启动cmd">在eclipse中启动cmd</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ced73660/#选择cmd的编码为GBK">选择cmd的编码为GBK</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ced73660/#启动cmd-exe">启动cmd.exe</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ced73660/#操作过程">操作过程</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 在eclipse项目路径下启动cmd并解决乱码 #

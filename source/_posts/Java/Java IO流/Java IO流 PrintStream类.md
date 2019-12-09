@@ -4,24 +4,13 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-14 15:19:37
-updated: 2019-11-25 00:23:44
+updated: 2019-12-09 20:34:56
 abbrlink: '82040860'
 ---
-<div id='my_toc'>
-
-- [继承关系](/blog/82040860/#继承关系)
-- [构造方法](/blog/82040860/#构造方法)
-- [成员方法](/blog/82040860/#成员方法)
-    - [write(...)方法](/blog/82040860/#write-方法)
-    - [print(...)方法](/blog/82040860/#print-方法)
-    - [println(...)方法](/blog/82040860/#println-方法)
-    - [format(...)方法](/blog/82040860/#format-方法)
-    - [append(...)方法](/blog/82040860/#append-方法)
-    - [错误相关方法](/blog/82040860/#错误相关方法)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/82040860/#继承关系">继承关系</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/82040860/#构造方法">构造方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/82040860/#成员方法">成员方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/82040860/#write-方法">write(...)方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/82040860/#print-方法">print(...)方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/82040860/#println-方法">println(...)方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/82040860/#format-方法">format(...)方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/82040860/#append-方法">append(...)方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/82040860/#错误相关方法">错误相关方法</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 继承关系 ##

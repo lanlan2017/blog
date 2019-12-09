@@ -3,17 +3,13 @@ title: 代码压缩 使用逻辑与替代单个if语句
 categories: 
   - JavaScript
 date: 2018-11-22 22:32:15
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:22
 abbrlink: 4fd080c1
 ---
-<div id='my_toc'>
-
-- [发现过程](/blog/4fd080c1/#发现过程)
-- [原理](/blog/4fd080c1/#原理)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4fd080c1/#发现过程">发现过程</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4fd080c1/#原理">原理</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 发现过程 ##

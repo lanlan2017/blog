@@ -4,18 +4,13 @@ categories:
   - JavaScript
   - DOM
 date: 2019-02-13 00:12:44
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:22
 abbrlink: 37c4f730
 ---
-<div id='my_toc'>
-
-- [JavaScript innerText与innerHtml与value的区别](/blog/37c4f730/#JavaScript-innerText与innerHtml与value的区别)
-- [实例](/blog/37c4f730/#实例)
-- [参考链接](/blog/37c4f730/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/37c4f730/#JavaScript-innerText与innerHtml与value的区别">JavaScript innerText与innerHtml与value的区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/37c4f730/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/37c4f730/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## JavaScript innerText与innerHtml与value的区别 ##

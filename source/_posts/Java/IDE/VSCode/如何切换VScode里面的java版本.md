@@ -5,19 +5,13 @@ categories:
   - IDE
   - VSCode
 date: 2019-10-06 21:46:08
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 20:34:55
 abbrlink: 6221fd78
 ---
-<div id='my_toc'>
-
-- [如何切换VScode里面的java版本](/blog/6221fd78/#如何切换VScode里面的java版本)
-    - [1. 电脑使用新版本的java](/blog/6221fd78/#1-电脑使用新版本的java)
-    - [2. 重装VScode里面的java环境](/blog/6221fd78/#2-重装VScode里面的java环境)
-    - [总结](/blog/6221fd78/#总结)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/6221fd78/#如何切换VScode里面的java版本">如何切换VScode里面的java版本</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6221fd78/#1-电脑使用新版本的java">1. 电脑使用新版本的java</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6221fd78/#2-重装VScode里面的java环境">2. 重装VScode里面的java环境</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6221fd78/#总结">总结</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 如何切换VScode里面的java版本 #

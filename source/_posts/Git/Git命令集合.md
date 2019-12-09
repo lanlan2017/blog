@@ -3,51 +3,13 @@ title: Git命令集合
 categories: 
   - Git
 date: 2018-10-29 20:55:48
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:55:22
 abbrlink: 504e809a
 ---
-<div id='my_toc'>
-
-- [分支相关](/blog/504e809a/#分支相关)
-    - [查询分支](/blog/504e809a/#查询分支)
-    - [创建分支](/blog/504e809a/#创建分支)
-    - [查看当前分支](/blog/504e809a/#查看当前分支)
-    - [切换分支](/blog/504e809a/#切换分支)
-    - [合并分支](/blog/504e809a/#合并分支)
-    - [删除分支](/blog/504e809a/#删除分支)
-- [忽略文件](/blog/504e809a/#忽略文件)
-    - [忽略文件的便捷写法](/blog/504e809a/#忽略文件的便捷写法)
-    - [忽略已加入版本控制的文件](/blog/504e809a/#忽略已加入版本控制的文件)
-        - [1.清除该文件的缓存](/blog/504e809a/#1-清除该文件的缓存)
-            - [1.清除该文件的缓存](/blog/504e809a/#1-清除该文件的缓存)
-        - [2.重新添加提交](/blog/504e809a/#2-重新添加提交)
-            - [2.重新添加提交](/blog/504e809a/#2-重新添加提交)
-    - [克隆的仓库中 忽略已经加入文件的更新](/blog/504e809a/#克隆的仓库中-忽略已经加入文件的更新)
-- [远程仓库](/blog/504e809a/#远程仓库)
-    - [添加远程仓库](/blog/504e809a/#添加远程仓库)
-    - [查看远程仓库](/blog/504e809a/#查看远程仓库)
-    - [推送到远程仓库](/blog/504e809a/#推送到远程仓库)
-- [版本回退](/blog/504e809a/#版本回退)
-    - [查看版本日志](/blog/504e809a/#查看版本日志)
-    - [撤销添加](/blog/504e809a/#撤销添加)
-    - [回退到某次commit](/blog/504e809a/#回退到某次commit)
-    - [撤销修改](/blog/504e809a/#撤销修改)
-- [冲突](/blog/504e809a/#冲突)
-    - [产生冲突的情况](/blog/504e809a/#产生冲突的情况)
-    - [查找冲突的文件](/blog/504e809a/#查找冲突的文件)
-    - [修改冲突的文件](/blog/504e809a/#修改冲突的文件)
-    - [再次提交](/blog/504e809a/#再次提交)
-    - [切换分支合并修改](/blog/504e809a/#切换分支合并修改)
-    - [显示分支的合并情况](/blog/504e809a/#显示分支的合并情况)
-- [git rebase 进行 git 压缩](/blog/504e809a/#git-rebase-进行-git-压缩)
-    - [压缩最近的分支](/blog/504e809a/#压缩最近的分支)
-- [强制覆盖远程仓库](/blog/504e809a/#强制覆盖远程仓库)
-- [查看分支时间](/blog/504e809a/#查看分支时间)
-- [参考链接](/blog/504e809a/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#分支相关">分支相关</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#查询分支">查询分支</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#创建分支">创建分支</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#查看当前分支">查看当前分支</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#切换分支">切换分支</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#合并分支">合并分支</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#删除分支">删除分支</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#忽略文件">忽略文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#忽略文件的便捷写法">忽略文件的便捷写法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#忽略已加入版本控制的文件">忽略已加入版本控制的文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#1-清除该文件的缓存">1.清除该文件的缓存</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#1-清除该文件的缓存">1.清除该文件的缓存</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#2-重新添加提交">2.重新添加提交</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#2-重新添加提交">2.重新添加提交</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#克隆的仓库中-忽略已经加入文件的更新">克隆的仓库中 忽略已经加入文件的更新</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#远程仓库">远程仓库</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#添加远程仓库">添加远程仓库</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#查看远程仓库">查看远程仓库</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#推送到远程仓库">推送到远程仓库</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#版本回退">版本回退</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#查看版本日志">查看版本日志</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#撤销添加">撤销添加</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#回退到某次commit">回退到某次commit</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#撤销修改">撤销修改</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#冲突">冲突</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#产生冲突的情况">产生冲突的情况</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#查找冲突的文件">查找冲突的文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#修改冲突的文件">修改冲突的文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#再次提交">再次提交</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#切换分支合并修改">切换分支合并修改</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#显示分支的合并情况">显示分支的合并情况</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#git-rebase-进行-git-压缩">git rebase 进行 git 压缩</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#压缩最近的分支">压缩最近的分支</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#强制覆盖远程仓库">强制覆盖远程仓库</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#查看分支时间">查看分支时间</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/504e809a/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 分支相关 ##

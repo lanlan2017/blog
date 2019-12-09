@@ -4,22 +4,13 @@ categories:
   - HTML
   - 文本标签
 date: 2019-02-13 00:23:30
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 19:55:22
 abbrlink: 9f0a034b
 ---
-<div id='my_toc'>
-
-- [CSS设置下划线与文字间距距离(CSS文字下划线距离设置)](/blog/9f0a034b/#CSS设置下划线与文字间距距离-CSS文字下划线距离设置)
-    - [使用CSS单词介绍](/blog/9f0a034b/#使用CSS单词介绍)
-    - [读音](/blog/9f0a034b/#读音)
-- [实现过程](/blog/9f0a034b/#实现过程)
-- [CSS底部边框实现下划线效果](/blog/9f0a034b/#CSS底部边框实现下划线效果)
-    - [完整代码](/blog/9f0a034b/#完整代码)
-- [参考链接](/blog/9f0a034b/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9f0a034b/#CSS设置下划线与文字间距距离-CSS文字下划线距离设置">CSS设置下划线与文字间距距离(CSS文字下划线距离设置)</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9f0a034b/#使用CSS单词介绍">使用CSS单词介绍</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9f0a034b/#读音">读音</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9f0a034b/#实现过程">实现过程</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9f0a034b/#CSS底部边框实现下划线效果">CSS底部边框实现下划线效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9f0a034b/#完整代码">完整代码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9f0a034b/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## CSS设置下划线与文字间距距离(CSS文字下划线距离设置) ##

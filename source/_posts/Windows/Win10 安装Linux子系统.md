@@ -3,60 +3,13 @@ title: Win10 安装Linux子系统
 categories: 
   - Windows
 date: 2019-11-27 10:49:35
-updated: 2019-11-29 21:08:10
+updated: 2019-12-09 19:45:23
 abbrlink: 942c9c89
 ---
-<div id='my_toc'>
-
-- [总结](/blog/942c9c89/#总结)
-- [打开开发者选项](/blog/942c9c89/#打开开发者选项)
-- [勾选适用于Linux的Windows子系统](/blog/942c9c89/#勾选适用于Linux的Windows子系统)
-    - [小娜搜索 进入 启用或关闭 Windows功能的步骤](/blog/942c9c89/#小娜搜索-进入-启用或关闭-Windows功能的步骤)
-    - [通过控制面板进入 启用或关闭 Windows功能的步骤](/blog/942c9c89/#通过控制面板进入-启用或关闭-Windows功能的步骤)
-        - [快速打开控制面板](/blog/942c9c89/#快速打开控制面板)
-- [Microsoft store安装Linux](/blog/942c9c89/#Microsoft-store安装Linux)
-- [启动Linux](/blog/942c9c89/#启动Linux)
-    - [cmd中启动](/blog/942c9c89/#cmd中启动)
-    - [文件资源管理器中启动](/blog/942c9c89/#文件资源管理器中启动)
-- [配置Linux](/blog/942c9c89/#配置Linux)
-    - [设置root用户密码](/blog/942c9c89/#设置root用户密码)
-- [更换国内apt源 并更新软件](/blog/942c9c89/#更换国内apt源-并更新软件)
-    - [更新源列表](/blog/942c9c89/#更新源列表)
-    - [更新已安装使所有软件](/blog/942c9c89/#更新已安装使所有软件)
-- [安装中文字体及设置](/blog/942c9c89/#安装中文字体及设置)
-    - [安装中文字体](/blog/942c9c89/#安装中文字体)
-    - [查看中文字体](/blog/942c9c89/#查看中文字体)
-    - [配置环境变量](/blog/942c9c89/#配置环境变量)
-    - [查看中文字体](/blog/942c9c89/#查看中文字体)
-    - [切换中文](/blog/942c9c89/#切换中文)
-    - [查看系统语言](/blog/942c9c89/#查看系统语言)
-    - [重启子系统](/blog/942c9c89/#重启子系统)
-        - [关闭子系统](/blog/942c9c89/#关闭子系统)
-        - [开启子系统](/blog/942c9c89/#开启子系统)
-- [安装桌面方式1](/blog/942c9c89/#安装桌面方式1)
-- [unset SESSION_MANAGER](/blog/942c9c89/#unset-SESSION-MANAGER)
-- [exec /etc/X11/xinit/xinitrc](/blog/942c9c89/#exec-etc-X11-xinit-xinitrc)
-- [安装桌面方式2](/blog/942c9c89/#安装桌面方式2)
-    - [解决错误1](/blog/942c9c89/#解决错误1)
-        - [合并目录](/blog/942c9c89/#合并目录)
-    - [解决错误2](/blog/942c9c89/#解决错误2)
-    - [重启子系统](/blog/942c9c89/#重启子系统)
-- [安装中文输入法](/blog/942c9c89/#安装中文输入法)
-    - [配置变量](/blog/942c9c89/#配置变量)
-- [连接桌面](/blog/942c9c89/#连接桌面)
-    - [安装VNC](/blog/942c9c89/#安装VNC)
-    - [启动VNX](/blog/942c9c89/#启动VNX)
-    - [再次启动VNC](/blog/942c9c89/#再次启动VNC)
-- [安装VNC客户端](/blog/942c9c89/#安装VNC客户端)
-    - [如何退出VNC全屏的方法](/blog/942c9c89/#如何退出VNC全屏的方法)
-- [如何查看ubuntu版本](/blog/942c9c89/#如何查看ubuntu版本)
-    - [安装程序](/blog/942c9c89/#安装程序)
-    - [查看版本](/blog/942c9c89/#查看版本)
-- [参考资料](/blog/942c9c89/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/942c9c89/#总结">总结</a><br/><a href="/blog/942c9c89/#打开开发者选项">打开开发者选项</a><br/><a href="/blog/942c9c89/#勾选适用于Linux的Windows子系统">勾选适用于Linux的Windows子系统</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#小娜搜索-进入-启用或关闭-Windows功能的步骤">小娜搜索 进入 启用或关闭 Windows功能的步骤</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#通过控制面板进入-启用或关闭-Windows功能的步骤">通过控制面板进入 启用或关闭 Windows功能的步骤</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#快速打开控制面板">快速打开控制面板</a><br/><a href="/blog/942c9c89/#Microsoft-store安装Linux">Microsoft store安装Linux</a><br/><a href="/blog/942c9c89/#启动Linux">启动Linux</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#cmd中启动">cmd中启动</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#文件资源管理器中启动">文件资源管理器中启动</a><br/><a href="/blog/942c9c89/#配置Linux">配置Linux</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#设置root用户密码">设置root用户密码</a><br/><a href="/blog/942c9c89/#更换国内apt源-并更新软件">更换国内apt源 并更新软件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#更新源列表">更新源列表</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#更新已安装使所有软件">更新已安装使所有软件</a><br/><a href="/blog/942c9c89/#安装中文字体及设置">安装中文字体及设置</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#安装中文字体">安装中文字体</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#查看中文字体">查看中文字体</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#配置环境变量">配置环境变量</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#查看中文字体">查看中文字体</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#切换中文">切换中文</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#查看系统语言">查看系统语言</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#重启子系统">重启子系统</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#关闭子系统">关闭子系统</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#开启子系统">开启子系统</a><br/><a href="/blog/942c9c89/#安装桌面方式1">安装桌面方式1</a><br/><a href="/blog/942c9c89/#unset-SESSION-MANAGER">unset SESSION_MANAGER</a><br/><a href="/blog/942c9c89/#exec-etc-X11-xinit-xinitrc">exec /etc/X11/xinit/xinitrc</a><br/><a href="/blog/942c9c89/#安装桌面方式2">安装桌面方式2</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#解决错误1">解决错误1</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#合并目录">合并目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#解决错误2">解决错误2</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#重启子系统">重启子系统</a><br/><a href="/blog/942c9c89/#安装中文输入法">安装中文输入法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#配置变量">配置变量</a><br/><a href="/blog/942c9c89/#连接桌面">连接桌面</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#安装VNC">安装VNC</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#启动VNX">启动VNX</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#再次启动VNC">再次启动VNC</a><br/><a href="/blog/942c9c89/#安装VNC客户端">安装VNC客户端</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#如何退出VNC全屏的方法">如何退出VNC全屏的方法</a><br/><a href="/blog/942c9c89/#如何查看ubuntu版本">如何查看ubuntu版本</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#安装程序">安装程序</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/942c9c89/#查看版本">查看版本</a><br/><a href="/blog/942c9c89/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 总结 #

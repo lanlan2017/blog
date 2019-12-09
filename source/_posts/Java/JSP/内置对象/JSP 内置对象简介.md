@@ -5,24 +5,13 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-08 21:46:24
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:22
 abbrlink: 4cc31c44
 ---
-<div id='my_toc'>
-
-- [JSP内置对象概述](/blog/4cc31c44/#JSP内置对象概述)
-    - [JSP九大内置对象](/blog/4cc31c44/#JSP九大内置对象)
-- [Web程序的请求响应模式](/blog/4cc31c44/#Web程序的请求响应模式)
-- [表单的提交方式](/blog/4cc31c44/#表单的提交方式)
-    - [get](/blog/4cc31c44/#get)
-    - [post](/blog/4cc31c44/#post)
-    - [实例](/blog/4cc31c44/#实例)
-        - [测试get方法](/blog/4cc31c44/#测试get方法)
-        - [测试post方法](/blog/4cc31c44/#测试post方法)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/4cc31c44/#JSP内置对象概述">JSP内置对象概述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4cc31c44/#JSP九大内置对象">JSP九大内置对象</a><br/><a href="/blog/4cc31c44/#Web程序的请求响应模式">Web程序的请求响应模式</a><br/><a href="/blog/4cc31c44/#表单的提交方式">表单的提交方式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4cc31c44/#get">get</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4cc31c44/#post">post</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4cc31c44/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4cc31c44/#测试get方法">测试get方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4cc31c44/#测试post方法">测试post方法</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # JSP内置对象概述 #

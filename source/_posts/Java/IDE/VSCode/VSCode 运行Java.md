@@ -5,19 +5,13 @@ categories:
   - IDE
   - VSCode
 date: 2019-07-06 22:11:24
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 20:34:55
 abbrlink: c8a8df16
 ---
-<div id='my_toc'>
-
-- [VSCode 运行Java](/blog/c8a8df16/#VSCode-运行Java)
-    - [安装插件](/blog/c8a8df16/#安装插件)
-    - [设置允许参数](/blog/c8a8df16/#设置允许参数)
-    - [开始调试](/blog/c8a8df16/#开始调试)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/c8a8df16/#VSCode-运行Java">VSCode 运行Java</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c8a8df16/#安装插件">安装插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c8a8df16/#设置允许参数">设置允许参数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c8a8df16/#开始调试">开始调试</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # VSCode 运行Java #

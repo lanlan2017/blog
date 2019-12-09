@@ -5,28 +5,13 @@ categories:
   - Java EE
   - 标签文件
 date: 2019-04-12 15:16:17
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 20:34:56
 abbrlink: ae393936
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/ae393936/#问题描述)
-- [详细代码](/blog/ae393936/#详细代码)
-- [浏览器显示效果](/blog/ae393936/#浏览器显示效果)
-- [解决乱码](/blog/ae393936/#解决乱码)
-    - [解决jsp文件乱码](/blog/ae393936/#解决jsp文件乱码)
-    - [解决jsp中引入的tag文件出现的乱码](/blog/ae393936/#解决jsp中引入的tag文件出现的乱码)
-    - [解决tag文件中引入的tagf文件出现的乱码](/blog/ae393936/#解决tag文件中引入的tagf文件出现的乱码)
-    - [解决tag文件中引入的html文件中出现的乱码](/blog/ae393936/#解决tag文件中引入的html文件中出现的乱码)
-- [修改后的代码](/blog/ae393936/#修改后的代码)
-    - [includeDemoTagTest.jsp](/blog/ae393936/#includeDemoTagTest-jsp)
-    - [includeDemoTag.tag](/blog/ae393936/#includeDemoTag-tag)
-    - [included.tagf](/blog/ae393936/#included-tagf)
-    - [included2.tagf](/blog/ae393936/#included2-tagf)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ae393936/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ae393936/#详细代码">详细代码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ae393936/#浏览器显示效果">浏览器显示效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ae393936/#解决乱码">解决乱码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ae393936/#解决jsp文件乱码">解决jsp文件乱码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ae393936/#解决jsp中引入的tag文件出现的乱码">解决jsp中引入的tag文件出现的乱码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ae393936/#解决tag文件中引入的tagf文件出现的乱码">解决tag文件中引入的tagf文件出现的乱码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ae393936/#解决tag文件中引入的html文件中出现的乱码">解决tag文件中引入的html文件中出现的乱码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ae393936/#修改后的代码">修改后的代码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ae393936/#includeDemoTagTest-jsp">includeDemoTagTest.jsp</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ae393936/#includeDemoTag-tag">includeDemoTag.tag</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ae393936/#included-tagf">included.tagf</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ae393936/#included2-tagf">included2.tagf</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 问题描述 ##

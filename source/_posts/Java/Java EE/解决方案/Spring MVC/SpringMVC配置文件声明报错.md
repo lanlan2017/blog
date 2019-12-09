@@ -6,20 +6,13 @@ categories:
   - 解决方案
   - Spring MVC
 date: 2019-05-14 21:32:11
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 20:34:56
 abbrlink: fb0eb9bb
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/fb0eb9bb/#问题描述)
-- [解决方案](/blog/fb0eb9bb/#解决方案)
-    - [安装Spring Tools3插件](/blog/fb0eb9bb/#安装Spring-Tools3插件)
-    - [方案1](/blog/fb0eb9bb/#方案1)
-    - [方案2](/blog/fb0eb9bb/#方案2)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/fb0eb9bb/#问题描述">问题描述</a><br/><a href="/blog/fb0eb9bb/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fb0eb9bb/#安装Spring-Tools3插件">安装Spring Tools3插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fb0eb9bb/#方案1">方案1</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fb0eb9bb/#方案2">方案2</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 问题描述 #

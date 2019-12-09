@@ -4,23 +4,13 @@ categories:
   - Hexo
   - SEO
 date: 2018-10-31 11:18:30
-updated: 2019-11-29 21:20:17
+updated: 2019-12-09 19:55:22
 abbrlink: 7ac3f85
 ---
-<div id='my_toc'>
-
-- [百度主动推送的作用](/blog/7ac3f85/#百度主动推送的作用)
-- [在hexo中添加百度主动推送功能](/blog/7ac3f85/#在hexo中添加百度主动推送功能)
-- [安装hexo-baidu-url-submit插件](/blog/7ac3f85/#安装hexo-baidu-url-submit插件)
-    - [在站点配置文件中添加baidu-url-submit的配置项](/blog/7ac3f85/#在站点配置文件中添加baidu-url-submit的配置项)
-    - [在站点配置文件中加入新的deploy配置项](/blog/7ac3f85/#在站点配置文件中加入新的deploy配置项)
-- [验证配置是否成功](/blog/7ac3f85/#验证配置是否成功)
-- [卸载](/blog/7ac3f85/#卸载)
-- [参考链接](/blog/7ac3f85/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#百度主动推送的作用">百度主动推送的作用</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#在hexo中添加百度主动推送功能">在hexo中添加百度主动推送功能</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#安装hexo-baidu-url-submit插件">安装hexo-baidu-url-submit插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#在站点配置文件中添加baidu-url-submit的配置项">在站点配置文件中添加baidu-url-submit的配置项</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#在站点配置文件中加入新的deploy配置项">在站点配置文件中加入新的deploy配置项</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#验证配置是否成功">验证配置是否成功</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#卸载">卸载</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 百度主动推送的作用 ##

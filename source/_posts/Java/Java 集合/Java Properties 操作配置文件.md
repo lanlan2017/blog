@@ -4,30 +4,13 @@ categories:
   - Java
   - Java 集合
 date: 2018-11-26 18:53:21
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:21
 abbrlink: fdae6905
 ---
-<div id='my_toc'>
-
-- [基本使用步骤](/blog/fdae6905/#基本使用步骤)
-    - [创建xxx.properties文件](/blog/fdae6905/#创建xxx-properties文件)
-- [部署网站的地址](/blog/fdae6905/#部署网站的地址)
-    - [实例化properties类](/blog/fdae6905/#实例化properties类)
-    - [加载配置文件](/blog/fdae6905/#加载配置文件)
-    - [读取键值对](/blog/fdae6905/#读取键值对)
-    - [设置键值对](/blog/fdae6905/#设置键值对)
-    - [获取所有键](/blog/fdae6905/#获取所有键)
-    - [写入输出流的方法](/blog/fdae6905/#写入输出流的方法)
-    - [写配置文件](/blog/fdae6905/#写配置文件)
-- [实例](/blog/fdae6905/#实例)
-    - [读取一个配置](/blog/fdae6905/#读取一个配置)
-- [部署网站的地址](/blog/fdae6905/#部署网站的地址)
-    - [遍历配置文件](/blog/fdae6905/#遍历配置文件)
-- [参考链接](/blog/fdae6905/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fdae6905/#基本使用步骤">基本使用步骤</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fdae6905/#创建xxx-properties文件">创建xxx.properties文件</a><br/><a href="/blog/fdae6905/#部署网站的地址">部署网站的地址</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fdae6905/#实例化properties类">实例化properties类</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fdae6905/#加载配置文件">加载配置文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fdae6905/#读取键值对">读取键值对</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fdae6905/#设置键值对">设置键值对</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fdae6905/#获取所有键">获取所有键</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fdae6905/#写入输出流的方法">写入输出流的方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fdae6905/#写配置文件">写配置文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fdae6905/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fdae6905/#读取一个配置">读取一个配置</a><br/><a href="/blog/fdae6905/#部署网站的地址">部署网站的地址</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fdae6905/#遍历配置文件">遍历配置文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fdae6905/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

@@ -5,20 +5,13 @@ categories:
   - VirtualBox
   - Ubuntu
 date: 2019-11-25 17:44:39
-updated: 2019-11-25 20:00:29
+updated: 2019-12-09 19:45:23
 abbrlink: 4fc37c0d
 ---
-<div id='my_toc'>
-
-- [Ubuntu 18.04修改默认源为国内源](/blog/4fc37c0d/#Ubuntu-18-04修改默认源为国内源)
-    - [备份/etc/apt/sources.list](/blog/4fc37c0d/#备份-etc-apt-sources-list)
-    - [添加阿里云源](/blog/4fc37c0d/#添加阿里云源)
-    - [更新程序](/blog/4fc37c0d/#更新程序)
-- [参考资料](/blog/4fc37c0d/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/4fc37c0d/#Ubuntu-18-04修改默认源为国内源">Ubuntu 18.04修改默认源为国内源</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4fc37c0d/#获取当前Ubuntu版本系统代号">获取当前Ubuntu版本系统代号</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4fc37c0d/#其他Ubuntu版本系统代号">其他Ubuntu版本系统代号</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4fc37c0d/#备份-etc-apt-sources-list">备份/etc/apt/sources.list</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4fc37c0d/#添加国内apt源">添加国内apt源</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4fc37c0d/#更新程序">更新程序</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4fc37c0d/#更新软件列表">更新软件列表</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4fc37c0d/#更新软件">更新软件</a><br/><a href="/blog/4fc37c0d/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # Ubuntu 18.04修改默认源为国内源 #

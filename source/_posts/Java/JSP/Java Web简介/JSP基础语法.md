@@ -5,92 +5,16 @@ categories:
   - JSP
   - Java Web简介
 date: 2018-12-03 19:28:31
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:22
 abbrlink: ceef3131
 ---
-<div id='my_toc'>
-
-- [JSP页面元素构成](/blog/ceef3131/#JSP页面元素构成)
-    - [JSP指令](/blog/ceef3131/#JSP指令)
-        - [page指令](/blog/ceef3131/#page指令)
-        - [contentType 和pageEncoding的区别](/blog/ceef3131/#contentType-和pageEncoding的区别)
-    - [JSP注释](/blog/ceef3131/#JSP注释)
-        - [实例](/blog/ceef3131/#实例)
-        - [英文](/blog/ceef3131/#英文)
-- [JSP页面生命周期](/blog/ceef3131/#JSP页面生命周期)
-    - [JSP编译](/blog/ceef3131/#JSP编译)
-    - [JSP初始化](/blog/ceef3131/#JSP初始化)
-    - [JSP执行](/blog/ceef3131/#JSP执行)
-    - [JSP清理](/blog/ceef3131/#JSP清理)
-    - [实例](/blog/ceef3131/#实例)
-    - [参考链接](/blog/ceef3131/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
-
-<!--end-->
-<input type="button" onclick="open_closeTOC()" id="showcloseButton">
-<script>
-    function open_closeTOC() {var id = document.querySelector(".post-body > ul"); if (id.style.display == "block") {id.style.display = "none";document.getElementById("showcloseButton").value= "展开目录";}else if (id.style.display == "none") {id.style.display = "block";document.getElementById("showcloseButton").value="折叠目录";}}(function () {document.querySelector(".post-body > ul").style.display = "none";document.getElementById("showcloseButton").value="展开目录";})();
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ceef3131/#JSP注释">JSP注释</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ceef3131/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ceef3131/#英文">英文</a><br/><a href="/blog/ceef3131/#JSP页面生命周期">JSP页面生命周期</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ceef3131/#JSP编译">JSP编译</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ceef3131/#JSP初始化">JSP初始化</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ceef3131/#JSP执行">JSP执行</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ceef3131/#JSP清理">JSP清理</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ceef3131/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ceef3131/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
 </script>
 
-
-
-# JSP页面元素构成 #
-JSP页面组成部分
-- [指令](/blog/ceef3131/#JSP指令)
-- 注释
-- 脚本
-- 声明
-- 表达式
-- 静态内容
-
-## JSP指令 ##
-JSP指令元素一共有以下三种：
-- page指令--通常位于jsp页面的顶端,同一个页面可以有多个page指令
-- include指令--将一个外部文件嵌入到当前JSP文件中,同时解析这个页面中的JSP语句。
-- taglib指令--使用taglib指令可以用户自定义标签库,在JSP中使用自定义的标签库。
-
-### page指令 ###
-page指令语法
-```
-<%@ page 属性1="属性值" 属性2="属性值21,属性值22" 属性值n="属性值n1,属性值n2" %>
-```
-注意`@`和`page`之间有一个空格，属性和属性值之间是键值对的关系，属性值需要包含在双引号之中。page常用属性如下：
-
-|属性|描述|默认值|
-|:--|:--|:--|
-|language|指定JSP页面使用的脚本语言|java|
-|import|通过该属性来引用脚本语言中使用到的类文件|无|
-|contentType|用来指定JSP页面所采用的文件类型以及编码方式|text/html,ISO-8859-1|
-
-新建一个项目，可以看到默认的page指令如下：
-```jsp
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-```
-这里的` pageEncoding="lSO-8859-1"`的表示页面的字符编码为`ISO-8859-1`,这个编码不支持中文，使用中文会乱码。
-
-![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/pageCMD/charSet.png)
-这里推荐使用`contentType`属性，修改page指令如下：
-```
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"%>
-```
-现在就显示正常了:
-![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/pageCMD/utf-8.png)
-
-### contentType 和pageEncoding的区别 ###
- 在JSP标准的语法中，如果pageEncoding属性存在，那么`JSP页面`的字符编码方式就由pageEncoding决定，否则就由contentType属性中的charset决定，如果charset也不存在，JSP页面的字符编码方式就采用默认的ISO-8859-1。
-
-`pageEncoding是jsp文件本身的编码`,发生在由jsp文件编译成java文件的时候，使用pageEncoding指定的编码来读取jsp文件，编译成utf-8格式的java源码（即.java）
-contentType的charset设置的编码是指服务器发送给客户端时的内容编码，简单讲就是`ContentType的charset让浏览器知道用什么编码解析`服务器发过去的东西".
-
-----------
-客户端访问一个jsp文件要经过如下三个阶段
-- 第一次编码发生在web容器将jsp文件编译成java文件(Servlet类)的时候。web容器根据pageEncoding指定的编码来读取jsp文件，编译成utf-8格式的java文件(Servlet类)（.java)
-- 第二阶编码发生在由java文件编译成二进制文件(.class)的时候，javac命令使用utf-8编码读取java文件，然后编译成utf-8格式的二进制码（即.class）
-- 第三阶段是Tomcat（或其的application container）载入和执行阶段二的来的JAVA二进制码得到输出的结果,输出结果以contentType的charset进行编码。
-----------
+<!--end-->
+-------
 
 ## JSP注释 ##
 JSP页面中共有三种注释

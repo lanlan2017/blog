@@ -4,18 +4,13 @@ categories:
   - JavaScript
   - 正则表达式
 date: 2019-12-02 22:40:18
-updated: 2019-12-02 22:52:04
+updated: 2019-12-09 19:45:23
 abbrlink: 2b78c799
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/2b78c799/#问题描述)
-- [解决方案](/blog/2b78c799/#解决方案)
-- [更新](/blog/2b78c799/#更新)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/2b78c799/#问题描述">问题描述</a><br/><a href="/blog/2b78c799/#解决方案">解决方案</a><br/><a href="/blog/2b78c799/#更新">更新</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 问题描述

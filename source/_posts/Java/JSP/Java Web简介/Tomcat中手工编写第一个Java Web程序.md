@@ -5,27 +5,13 @@ categories:
   - JSP
   - Java Web简介
 date: 2018-12-01 11:52:15
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:22
 abbrlink: ccc57c12
 ---
-<div id='my_toc'>
-
-- [步骤](/blog/ccc57c12/#步骤)
-- [创建项目目录结构](/blog/ccc57c12/#创建项目目录结构)
-    - [创建项目目录](/blog/ccc57c12/#创建项目目录)
-    - [创建index.jsp](/blog/ccc57c12/#创建index-jsp)
-    - [创建Web_INF文件夹](/blog/ccc57c12/#创建Web-INF文件夹)
-        - [创建web.xml文件](/blog/ccc57c12/#创建web-xml文件)
-        - [编写web.xml文件](/blog/ccc57c12/#编写web-xml文件)
-        - [创建classes目录](/blog/ccc57c12/#创建classes目录)
-        - [创建lib目录](/blog/ccc57c12/#创建lib目录)
-    - [启动tomcat服务器](/blog/ccc57c12/#启动tomcat服务器)
-    - [浏览器查看](/blog/ccc57c12/#浏览器查看)
-    - [参考链接](/blog/ccc57c12/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/ccc57c12/#步骤">步骤</a><br/><a href="/blog/ccc57c12/#创建项目目录结构">创建项目目录结构</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#创建项目目录">创建项目目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#创建index-jsp">创建index.jsp</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#创建Web-INF文件夹">创建Web_INF文件夹</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#创建web-xml文件">创建web.xml文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#编写web-xml文件">编写web.xml文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#创建classes目录">创建classes目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#创建lib目录">创建lib目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#启动tomcat服务器">启动tomcat服务器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#浏览器查看">浏览器查看</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

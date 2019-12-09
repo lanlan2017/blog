@@ -3,17 +3,13 @@ title: 任务管理器中不小心关掉文件资源管理器explorer了怎么�
 categories: 
   - Windows
 date: 2018-11-13 15:03:20
-updated: 2019-11-29 21:08:10
+updated: 2019-12-09 19:45:23
 abbrlink: d400453f
 ---
-<div id='my_toc'>
-
-- [我的问题](/blog/d400453f/#我的问题)
-- [解决方案](/blog/d400453f/#解决方案)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d400453f/#我的问题">我的问题</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d400453f/#解决方案">解决方案</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 我的问题 ##

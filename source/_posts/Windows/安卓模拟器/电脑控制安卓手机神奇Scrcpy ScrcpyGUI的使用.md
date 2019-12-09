@@ -4,22 +4,13 @@ categories:
   - Windows
   - 安卓模拟器
 date: 2019-12-03 21:30:26
-updated: 2019-12-03 21:48:50
+updated: 2019-12-09 19:45:23
 abbrlink: c57ac4f
 ---
-<div id='my_toc'>
-
-- [简介](/blog/c57ac4f/#简介)
-    - [Scrcpy](/blog/c57ac4f/#Scrcpy)
-    - [Scrcpy GUI](/blog/c57ac4f/#Scrcpy-GUI)
-    - [使用](/blog/c57ac4f/#使用)
-        - [下载 解压](/blog/c57ac4f/#下载-解压)
-        - [配置到Path环境变量](/blog/c57ac4f/#配置到Path环境变量)
-- [参考资料](/blog/c57ac4f/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/c57ac4f/#简介">简介</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c57ac4f/#Scrcpy">Scrcpy</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c57ac4f/#Scrcpy-GUI">Scrcpy GUI</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c57ac4f/#Scrcpy-GUI">Scrcpy GUI</a><br/><a href="/blog/c57ac4f/#配置scrcpy">配置scrcpy</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c57ac4f/#下载-解压scrcpy">下载 解压scrcpy</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c57ac4f/#配置scrcpy到Path环境变量">配置scrcpy到Path环境变量</a><br/><a href="/blog/c57ac4f/#下载Scrcpy-GUI">下载Scrcpy GUI</a><br/><a href="/blog/c57ac4f/#使用">使用</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c57ac4f/#前提">前提</a><br/><a href="/blog/c57ac4f/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 简介

@@ -5,22 +5,13 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:38
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:22
 abbrlink: 8c60ed62
 ---
-<div id='my_toc'>
-
-- [out内置对象](/blog/8c60ed62/#out内置对象)
-    - [向客户端输出数据](/blog/8c60ed62/#向客户端输出数据)
-    - [管理响应缓冲](/blog/8c60ed62/#管理响应缓冲)
-        - [实例](/blog/8c60ed62/#实例)
-        - [验证flush()方法](/blog/8c60ed62/#验证flush-方法)
-        - [验证clear()方法](/blog/8c60ed62/#验证clear-方法)
-        - [验证clearBuffer()方法](/blog/8c60ed62/#验证clearBuffer-方法)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/8c60ed62/#out内置对象">out内置对象</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8c60ed62/#向客户端输出数据">向客户端输出数据</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8c60ed62/#管理响应缓冲">管理响应缓冲</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8c60ed62/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8c60ed62/#验证flush-方法">验证flush()方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8c60ed62/#验证clear-方法">验证clear()方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8c60ed62/#验证clearBuffer-方法">验证clearBuffer()方法</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # out内置对象 #

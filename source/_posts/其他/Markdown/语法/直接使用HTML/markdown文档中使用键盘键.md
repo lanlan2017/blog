@@ -6,16 +6,13 @@ categories:
   - 语法
   - 直接使用HTML
 date: 2018-10-26 11:23:58
-updated: 2019-12-06 10:33:32
+updated: 2019-12-09 19:45:23
 abbrlink: 6507a83c
 ---
-<div id='my_toc'>
-
-- [键盘键](/blog/6507a83c/#键盘键)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6507a83c/#键盘键">键盘键</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 键盘键 ##

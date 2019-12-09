@@ -4,31 +4,13 @@ categories:
   - Hexo
   - SEO
 date: 2019-12-01 12:12:27
-updated: 2019-12-01 12:42:42
+updated: 2019-12-09 19:55:22
 abbrlink: 242f5d55
 ---
-<div id='my_toc'>
-
-- [前言](/blog/242f5d55/#前言)
-- [安装生成站点地图的插件](/blog/242f5d55/#安装生成站点地图的插件)
-- [谷歌收录](/blog/242f5d55/#谷歌收录)
-    - [验证网站所有权](/blog/242f5d55/#验证网站所有权)
-    - [配置主题配置文件](/blog/242f5d55/#配置主题配置文件)
-    - [重新部署](/blog/242f5d55/#重新部署)
-    - [提交站点地图](/blog/242f5d55/#提交站点地图)
-- [必应收录](/blog/242f5d55/#必应收录)
-- [百度收录](/blog/242f5d55/#百度收录)
-    - [安装插件](/blog/242f5d55/#安装插件)
-    - [获取content](/blog/242f5d55/#获取content)
-    - [配置主题配置文件](/blog/242f5d55/#配置主题配置文件)
-    - [重新部署](/blog/242f5d55/#重新部署)
-    - [提交sitemap](/blog/242f5d55/#提交sitemap)
-- [查看被收录的文章](/blog/242f5d55/#查看被收录的文章)
-- [参考资料](/blog/242f5d55/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/242f5d55/#前言">前言</a><br/><a href="/blog/242f5d55/#安装生成站点地图的插件">安装生成站点地图的插件</a><br/><a href="/blog/242f5d55/#谷歌收录">谷歌收录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/242f5d55/#验证网站所有权">验证网站所有权</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/242f5d55/#配置主题配置文件">配置主题配置文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/242f5d55/#重新部署">重新部署</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/242f5d55/#提交站点地图">提交站点地图</a><br/><a href="/blog/242f5d55/#必应收录">必应收录</a><br/><a href="/blog/242f5d55/#百度收录">百度收录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/242f5d55/#安装插件">安装插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/242f5d55/#获取content">获取content</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/242f5d55/#配置主题配置文件">配置主题配置文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/242f5d55/#重新部署">重新部署</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/242f5d55/#提交sitemap">提交sitemap</a><br/><a href="/blog/242f5d55/#查看被收录的文章">查看被收录的文章</a><br/><a href="/blog/242f5d55/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 前言

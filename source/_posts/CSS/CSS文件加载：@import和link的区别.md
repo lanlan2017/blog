@@ -3,27 +3,13 @@ title: CSS文件加载：@import和link的区别
 categories: 
   - CSS
 date: 2019-05-01 10:29:08
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 19:55:22
 abbrlink: 9b90d554
 ---
-<div id='my_toc'>
-
-- [css文件加载：@import和link的区别](/blog/9b90d554/#css文件加载：-import和link的区别)
-    - [使用CSS的三种方式](/blog/9b90d554/#使用CSS的三种方式)
-    - [@impot使用方法](/blog/9b90d554/#-impot使用方法)
-    - [link的使用方法](/blog/9b90d554/#link的使用方法)
-    - [区别](/blog/9b90d554/#区别)
-        - [功能上的区别](/blog/9b90d554/#功能上的区别)
-        - [加载顺序上的区别](/blog/9b90d554/#加载顺序上的区别)
-        - [兼容性上的区别](/blog/9b90d554/#兼容性上的区别)
-        - [dom支持上的区别](/blog/9b90d554/#dom支持上的区别)
-        - [嵌套支持上的区别](/blog/9b90d554/#嵌套支持上的区别)
-    - [总结](/blog/9b90d554/#总结)
-    - [参考资料](/blog/9b90d554/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/9b90d554/#css文件加载：-import和link的区别">css文件加载：@import和link的区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b90d554/#使用CSS的三种方式">使用CSS的三种方式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b90d554/#-impot使用方法">@impot使用方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b90d554/#link的使用方法">link的使用方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b90d554/#区别">区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b90d554/#功能上的区别">功能上的区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b90d554/#加载顺序上的区别">加载顺序上的区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b90d554/#兼容性上的区别">兼容性上的区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b90d554/#dom支持上的区别">dom支持上的区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b90d554/#嵌套支持上的区别">嵌套支持上的区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b90d554/#总结">总结</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b90d554/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # css文件加载：@import和link的区别 #

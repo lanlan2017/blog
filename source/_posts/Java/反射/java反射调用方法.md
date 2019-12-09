@@ -4,26 +4,13 @@ categories:
   - Java
   - 反射
 date: 2019-06-16 13:53:20
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:22
 abbrlink: 40640d2
 ---
-<div id='my_toc'>
-
-- [反射调用方法步骤](/blog/40640d2/#反射调用方法步骤)
-- [实例](/blog/40640d2/#实例)
-    - [项目结构](/blog/40640d2/#项目结构)
-    - [Tool.java](/blog/40640d2/#Tool-java)
-    - [Test.java](/blog/40640d2/#Test-java)
-    - [调用静态方法](/blog/40640d2/#调用静态方法)
-        - [调用无参的静态方法](/blog/40640d2/#调用无参的静态方法)
-        - [调用带参的静态方法](/blog/40640d2/#调用带参的静态方法)
-    - [调用实例方法](/blog/40640d2/#调用实例方法)
-        - [调用无参实例方法](/blog/40640d2/#调用无参实例方法)
-        - [调用带参实例方法](/blog/40640d2/#调用带参实例方法)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/40640d2/#反射调用方法步骤">反射调用方法步骤</a><br/><a href="/blog/40640d2/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#项目结构">项目结构</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#Tool-java">Tool.java</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#Test-java">Test.java</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#调用静态方法">调用静态方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#调用无参的静态方法">调用无参的静态方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#调用带参的静态方法">调用带参的静态方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#调用实例方法">调用实例方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#调用无参实例方法">调用无参实例方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#调用带参实例方法">调用带参实例方法</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 反射调用方法步骤 #

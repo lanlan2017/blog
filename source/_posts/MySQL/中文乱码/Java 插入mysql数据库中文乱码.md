@@ -4,17 +4,13 @@ categories:
   - MySQL
   - 中文乱码
 date: 2018-12-03 20:49:58
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:23
 abbrlink: 84e4b0d4
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/84e4b0d4/#问题描述)
-- [解决方案](/blog/84e4b0d4/#解决方案)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/84e4b0d4/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/84e4b0d4/#解决方案">解决方案</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

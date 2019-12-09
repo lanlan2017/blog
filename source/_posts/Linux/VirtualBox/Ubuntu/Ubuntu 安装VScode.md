@@ -5,23 +5,13 @@ categories:
   - VirtualBox
   - Ubuntu
 date: 2019-11-25 15:38:46
-updated: 2019-11-25 20:00:29
+updated: 2019-12-09 19:45:23
 abbrlink: '65863024'
 ---
-<div id='my_toc'>
-
-- [Ubuntu 安装Vscode](/blog/65863024/#Ubuntu-安装Vscode)
-    - [下载.deb文件](/blog/65863024/#下载-deb文件)
-    - [点击.deb文件安装](/blog/65863024/#点击-deb文件安装)
-    - [命令安装](/blog/65863024/#命令安装)
-    - [安装成功效果](/blog/65863024/#安装成功效果)
-    - [vscode配置](/blog/65863024/#vscode配置)
-        - [安装中问语言包](/blog/65863024/#安装中问语言包)
-        - [在桌面创建VScode快捷方式](/blog/65863024/#在桌面创建VScode快捷方式)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/65863024/#Ubuntu-安装Vscode">Ubuntu 安装Vscode</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/65863024/#下载-deb文件">下载.deb文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/65863024/#点击-deb文件安装">点击.deb文件安装</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/65863024/#命令安装">命令安装</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/65863024/#安装成功效果">安装成功效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/65863024/#vscode配置">vscode配置</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/65863024/#安装中问语言包">安装中问语言包</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/65863024/#在桌面创建VScode快捷方式">在桌面创建VScode快捷方式</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # Ubuntu 安装Vscode #

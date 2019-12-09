@@ -4,80 +4,16 @@ categories:
   - Java
   - Java 正则表达式
 date: 2018-08-06 18:24:40
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:21
 abbrlink: aa025735
 ---
-<div id='my_toc'>
-
-- [匹配Email](/blog/aa025735/#匹配Email)
-- [常用正则表达式](/blog/aa025735/#常用正则表达式)
-- [删除重复字符](/blog/aa025735/#删除重复字符)
-- [对IP地址进行排序](/blog/aa025735/#对IP地址进行排序)
-        - [小结](/blog/aa025735/#小结)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/aa025735/#对IP地址进行排序">对IP地址进行排序</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aa025735/#小结">小结</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
-参考：[https://www.cnblogs.com/lzq198754/p/5780340.html](https://www.cnblogs.com/lzq198754/p/5780340.html)
-# 匹配Email #
-```java
-public static void testEmail() 
-{
-    // 要验证的字符串
-    String str = "service@xsoftlab.net";
-    // 邮箱验证规则
-//        String regEx = "[a-zA-Z_]{1,}[0-9]{0,}@(([a-zA-z0-9]-*){1,}\\.){1,3}[a-zA-z\\-]{1,}";
-    String regEx = "[a-zA-Z_]+[0-9]*@(\\w*\\.){1,3}[a-zA-z\\-]{1,}";
-    // 编译正则表达式
-    Pattern pattern = Pattern.compile(regEx);
-    // 忽略大小写的写法
-    // Pattern pat = Pattern.compile(regEx, Pattern.CASE_INSENSITIVE);
-    Matcher matcher = pattern.matcher(str);
-    // 字符串是否与正则表达式相匹配
-    boolean rs = matcher.matches();
-    System.out.println(rs);
-}
-```
-运行结果：
-```
-true
-```
-# 常用正则表达式 #
-
-|规则|正则表达式语法|
-|-|-|
-|一个或多个汉字|^[\u0391-\uFFE5]+$ |
-|邮政编码|^[1-9]\d{5}$|
-|QQ号码|^[1-9]\d{4,10}$ |
-|邮箱|^[a-zA-Z_]{1,}[0-9]{0,}@(([a-zA-z0-9]-*){1,}\.){1,3}[a-zA-z\-]{1,}$|
-|用户名（字母开头 + 数字/字母/下划线）|^[A-Za-z][A-Za-z1-9_-]+$|
-|手机号码|^1[3&#124;4&#124;5&#124;8][0-9]\d{8}$ |
-|URL|^((http&#124;https)://)?([\w-]+\.)+[\w-]+(/[\w-./?%&=]*)?$|
-|18位身份证号|^(\d{6})(18&#124;19&#124;20)?(\d{2})([01]\d)([0123]\d)(\d{3})(\d&#124;X&#124;x)?$|
-[表格中如何加入竖线](https://blog.csdn.net/u013553529/article/details/51024733)
-
-# 删除重复字符 #
-1、需求： 将“我我我、、、我我、、我要、我要要、、、要要要、、要要、、学学学、、、、学学编、、、学编编编、、编编编程、、程程”还原成：我要学编程
-```java
-public static void testRaplaceDuplicateWord()
-{
-    String temp = "我我我、、、我我、、我要、要要、、、要要要、、要要、、学学学、、、、学学编、、、编编编、、编编编程、、程程";
-    //删除无意义的字符
-    temp = temp.replaceAll("(、+)", "");
-    System.out.println(temp);
-    System.out.println("-------------------------------------------------------------");
-    //删除连在一起的重复字符
-    temp = temp.replaceAll("(.)\\1+", "$1");
-    System.out.print(temp);
-}
-
-```
-运行结果:
-```
-我我我我我我要要要要要要要要学学学学学编编编编编编编程程程
--------------------------------------------------------------
+----------------------------------------------------------
 我要学编程
 ```
 来解释一下这个`(.)\\1+`正则表达还是的意思，

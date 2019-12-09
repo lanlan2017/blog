@@ -5,23 +5,13 @@ categories:
   - Java EE
   - 环境搭建
 date: 2019-06-07 15:34:05
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 20:34:56
 abbrlink: 44aa2f70
 ---
-<div id='my_toc'>
-
-- [eclipse 创建mybatis-config.xml 创建mapper.xml文件](/blog/44aa2f70/#eclipse-创建mybatis-config-xml-创建mapper-xml文件)
-    - [下载mybatis的jar包](/blog/44aa2f70/#下载mybatis的jar包)
-    - [从mybatis的jar包复制模板文件](/blog/44aa2f70/#从mybatis的jar包复制模板文件)
-    - [保存模板文件到本地](/blog/44aa2f70/#保存模板文件到本地)
-    - [引入模板文件到eclipse中](/blog/44aa2f70/#引入模板文件到eclipse中)
-        - [引入mybatis-3-config.dtd](/blog/44aa2f70/#引入mybatis-3-config-dtd)
-        - [引入mybatis-3-mapper.dtd](/blog/44aa2f70/#引入mybatis-3-mapper-dtd)
-    - [使用模板文件创建mybatis-config.xml文件](/blog/44aa2f70/#使用模板文件创建mybatis-config-xml文件)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/44aa2f70/#eclipse-创建mybatis-config-xml-创建mapper-xml文件">eclipse 创建mybatis-config.xml 创建mapper.xml文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/44aa2f70/#下载mybatis的jar包">下载mybatis的jar包</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/44aa2f70/#从mybatis的jar包复制模板文件">从mybatis的jar包复制模板文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/44aa2f70/#保存模板文件到本地">保存模板文件到本地</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/44aa2f70/#引入模板文件到eclipse中">引入模板文件到eclipse中</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/44aa2f70/#引入mybatis-3-config-dtd">引入mybatis-3-config.dtd</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/44aa2f70/#引入mybatis-3-mapper-dtd">引入mybatis-3-mapper.dtd</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/44aa2f70/#使用模板文件创建mybatis-config-xml文件">使用模板文件创建mybatis-config.xml文件</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # eclipse 创建mybatis-config.xml 创建mapper.xml文件 #

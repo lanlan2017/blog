@@ -4,16 +4,13 @@ categories:
   - 正则表达式
   - 实例
 date: 2018-10-11 09:12:13
-updated: 2019-11-25 00:23:47
+updated: 2019-12-09 19:45:24
 abbrlink: 1d153e30
 ---
-<div id='my_toc'>
-
-- [实现](/blog/1d153e30/#实现)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/1d153e30/#实现">实现</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 实现 ##

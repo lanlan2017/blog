@@ -4,21 +4,13 @@ categories:
   - Hexo
   - 插件
 date: 2019-02-15 21:49:16
-updated: 2019-12-02 10:52:23
+updated: 2019-12-09 19:55:22
 abbrlink: 7162b91b
 ---
-<div id='my_toc'>
-
-- [卸载hexo-generator-index插件](/blog/7162b91b/#卸载hexo-generator-index插件)
-- [安装hexo-generator-index-pin-top插件](/blog/7162b91b/#安装hexo-generator-index-pin-top插件)
-- [添加front-matter配置项](/blog/7162b91b/#添加front-matter配置项)
-- [重新部署](/blog/7162b91b/#重新部署)
-- [添加置顶标识](/blog/7162b91b/#添加置顶标识)
-- [参考资料](/blog/7162b91b/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#卸载hexo-generator-index插件">卸载hexo-generator-index插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#安装hexo-generator-index-pin-top插件">安装hexo-generator-index-pin-top插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#添加front-matter配置项">添加front-matter配置项</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#重新部署">重新部署</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#添加置顶标识">添加置顶标识</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 已经有了有大佬开发了置顶插件了，安装插件，然后在front-matter中配置一下就好了

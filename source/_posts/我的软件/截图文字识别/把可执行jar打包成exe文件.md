@@ -4,31 +4,9 @@ categories:
   - 我的软件
   - 截图文字识别
 date: 2018-10-10 19:39:02
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 13:05:53
 abbrlink: d7d49994
 ---
-<div id='my_toc'>
-
-- [前言](/blog/d7d49994/#前言)
-- [使用eclipse把java项目打包为可执行jar包](/blog/d7d49994/#使用eclipse把java项目打包为可执行jar包)
-- [下载安装破解exe4j](/blog/d7d49994/#下载安装破解exe4j)
-    - [下载exe4j](/blog/d7d49994/#下载exe4j)
-    - [解压压缩包](/blog/d7d49994/#解压压缩包)
-    - [安装](/blog/d7d49994/#安装)
-    - [破解](/blog/d7d49994/#破解)
-- [打包jar为exe](/blog/d7d49994/#打包jar为exe)
-    - [Project type](/blog/d7d49994/#Project-type)
-    - [Application info](/blog/d7d49994/#Application-info)
-    - [Executable info](/blog/d7d49994/#Executable-info)
-    - [Java invocation](/blog/d7d49994/#Java-invocation)
-    - [JRE](/blog/d7d49994/#JRE)
-- [运行生成的exe](/blog/d7d49994/#运行生成的exe)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
-
-<!--end-->
 ## 前言 ##
 上次的程序我通过使用,我通过`javaw -jar xxx.jar`来启动一个程序，在任务管理器中显示如下：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/javaw_process.png)

@@ -5,19 +5,13 @@ categories:
   - IDE
   - Idea
 date: 2019-10-03 12:06:07
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 20:34:55
 abbrlink: cbf0ce22
 ---
-<div id='my_toc'>
-
-- [idea Shift+Alt+I快捷键是弹出TouchPad Driver Diagnostics的问题](/blog/cbf0ce22/#idea-Shift-Alt-I快捷键是弹出TouchPad-Driver-Diagnostics的问题)
-    - [原因](/blog/cbf0ce22/#原因)
-    - [解决方案:禁用触控板](/blog/cbf0ce22/#解决方案-禁用触控板)
-    - [重启电脑后生效](/blog/cbf0ce22/#重启电脑后生效)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/cbf0ce22/#idea-Shift-Alt-I快捷键是弹出TouchPad-Driver-Diagnostics的问题">idea Shift+Alt+I快捷键是弹出TouchPad Driver Diagnostics的问题</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cbf0ce22/#原因">原因</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cbf0ce22/#解决方案-禁用触控板">解决方案:禁用触控板</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cbf0ce22/#重启电脑后生效">重启电脑后生效</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # idea Shift+Alt+I快捷键是弹出TouchPad Driver Diagnostics的问题 #

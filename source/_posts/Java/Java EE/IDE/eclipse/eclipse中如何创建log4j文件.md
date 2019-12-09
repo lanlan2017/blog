@@ -6,16 +6,13 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-12 22:26:13
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 20:34:55
 abbrlink: 2f2a13a0
 ---
-<div id='my_toc'>
-
-- [eclipse中如何创建log4j文件](/blog/2f2a13a0/#eclipse中如何创建log4j文件)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/2f2a13a0/#eclipse中如何创建log4j文件">eclipse中如何创建log4j文件</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # eclipse中如何创建log4j文件 #

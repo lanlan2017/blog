@@ -5,19 +5,14 @@ categories:
   - latex
   - LaTex语法
 date: 2019-12-07 22:23:13
-updated: 2019-12-07 22:23:55
-abbrlink: 14ee6880
+updated: 2019-12-09 19:45:23
 mathjax: true
+abbrlink: 14ee6880
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/14ee6880/#问题描述)
-- [解决方案](/blog/14ee6880/#解决方案)
-- [示例](/blog/14ee6880/#示例)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/14ee6880/#问题描述">问题描述</a><br/><a href="/blog/14ee6880/#解决方案">解决方案</a><br/><a href="/blog/14ee6880/#示例">示例</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 问题描述

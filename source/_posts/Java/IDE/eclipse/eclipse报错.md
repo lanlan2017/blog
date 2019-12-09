@@ -5,18 +5,13 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-13 14:57:10
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 20:34:55
 abbrlink: 4499badc
 ---
-<div id='my_toc'>
-
-- [错误信息](/blog/4499badc/#错误信息)
-- [解决方案](/blog/4499badc/#解决方案)
-- [参考资料](/blog/4499badc/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/4499badc/#错误信息">错误信息</a><br/><a href="/blog/4499badc/#解决方案">解决方案</a><br/><a href="/blog/4499badc/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 错误信息 #

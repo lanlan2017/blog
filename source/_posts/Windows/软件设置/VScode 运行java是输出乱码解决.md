@@ -4,20 +4,13 @@ categories:
   - Windows
   - 软件设置
 date: 2019-09-28 10:27:21
-updated: 2019-12-01 00:45:11
+updated: 2019-12-09 19:45:23
 abbrlink: 7ab55f4
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/7ab55f4/#问题描述)
-- [解决方案](/blog/7ab55f4/#解决方案)
-    - [可能是编码的问题](/blog/7ab55f4/#可能是编码的问题)
-- [可能是VScode中的java环境版本太老](/blog/7ab55f4/#可能是VScode中的java环境版本太老)
-- [可能是PowerShell版本太老](/blog/7ab55f4/#可能是PowerShell版本太老)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ab55f4/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ab55f4/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ab55f4/#可能是编码的问题">可能是编码的问题</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ab55f4/#可能是VScode中的java环境版本太老">可能是VScode中的java环境版本太老</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ab55f4/#可能是PowerShell版本太老">可能是PowerShell版本太老</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 问题描述 ##

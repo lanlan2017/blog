@@ -4,18 +4,13 @@ categories:
   - C语言
   - Debug
 date: 2018-11-14 19:25:05
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 19:55:22
 abbrlink: 38f33943
 ---
-<div id='my_toc'>
-
-- [分析原因](/blog/38f33943/#分析原因)
-- [解决方案](/blog/38f33943/#解决方案)
-- [总结](/blog/38f33943/#总结)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/38f33943/#分析原因">分析原因</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/38f33943/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/38f33943/#总结">总结</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 分析原因 ##

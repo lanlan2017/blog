@@ -4,17 +4,13 @@ categories:
   - C语言
   - 排序
 date: 2018-11-18 14:11:07
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 19:55:22
 abbrlink: ae21e76c
 ---
-<div id='my_toc'>
-
-- [实例 数组冒泡排序](/blog/ae21e76c/#实例-数组冒泡排序)
-- [include <stdio.h>](/blog/ae21e76c/#include-<stdio-h>)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ae21e76c/#实例-数组冒泡排序">实例 数组冒泡排序</a><br/><a href="/blog/ae21e76c/#include-<stdio-h>">include <stdio.h></a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 实例 数组冒泡排序 ##

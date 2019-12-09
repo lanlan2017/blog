@@ -1,26 +1,13 @@
+---
 title: Java调用百度文字识别
-categories:
+categories: 
   - 我的软件
   - 百度文字识别
-abbrlink: 29121dfd
 tags: []
 date: 2018-09-11 19:39:00
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 13:05:53
+abbrlink: 29121dfd
 ---
-<div id='my_toc'>
-
-- [优化](/blog/29121dfd/#优化)
-    - [加入GUI](/blog/29121dfd/#加入GUI)
-    - [加入全局热键](/blog/29121dfd/#加入全局热键)
-        - [ScreenShotOCR程序入口类](/blog/29121dfd/#ScreenShotOCR程序入口类)
-        - [菜单窗口](/blog/29121dfd/#菜单窗口)
-        - [ScreenShotWindow截图窗口](/blog/29121dfd/#ScreenShotWindow截图窗口)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
-
-<!--end-->
 # 优化 #
 ## 加入GUI ##
 加入编写GUI,加入Java截图功能，截图后自动保存，然后调用百度识图API,并将从处理结果中的JSON字符串中，取出识别的数据。

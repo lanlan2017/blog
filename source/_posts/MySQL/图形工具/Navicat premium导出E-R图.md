@@ -4,19 +4,13 @@ categories:
   - MySQL
   - 图形工具
 date: 2019-11-23 23:05:36
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:23
 abbrlink: 50cd694e
 ---
-<div id='my_toc'>
-
-- [大学数据库模式](/blog/50cd694e/#大学数据库模式)
-- [逆向数据库到模型](/blog/50cd694e/#逆向数据库到模型)
-- [切换E-R图 表示方式](/blog/50cd694e/#切换E-R图-表示方式)
-    - [UML格式的E-R图如下所示](/blog/50cd694e/#UML格式的E-R图如下所示)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/50cd694e/#大学数据库模式">大学数据库模式</a><br/><a href="/blog/50cd694e/#逆向数据库到模型">逆向数据库到模型</a><br/><a href="/blog/50cd694e/#切换E-R图-表示方式">切换E-R图 表示方式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/50cd694e/#UML格式的E-R图如下所示">UML格式的E-R图如下所示</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 大学数据库模式 #

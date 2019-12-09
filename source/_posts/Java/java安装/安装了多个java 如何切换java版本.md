@@ -4,108 +4,16 @@ categories:
   - Java
   - java安装
 date: 2019-10-06 10:42:44
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:22
 abbrlink: 957ae50e
 ---
-<div id='my_toc'>
-
-- [安装了多个java 如何切换java版本](/blog/957ae50e/#安装了多个java-如何切换java版本)
-    - [问题描述](/blog/957ae50e/#问题描述)
-    - [如何切换](/blog/957ae50e/#如何切换)
-- [解决方案](/blog/957ae50e/#解决方案)
-    - [手动切换](/blog/957ae50e/#手动切换)
-    - [批处理实现](/blog/957ae50e/#批处理实现)
-        - [新增环境变量](/blog/957ae50e/#新增环境变量)
-        - [批处理脚本](/blog/957ae50e/#批处理脚本)
-        - [给**CJavaBat.bat**设置管理员权限](/blog/957ae50e/#给CJavaBat-bat设置管理员权限)
-        - [配置CJava到Path环境变量](/blog/957ae50e/#配置CJava到Path环境变量)
-        - [通过Win+R运行CJava](/blog/957ae50e/#通过Win-R运行CJava)
-        - [CJava程序说明](/blog/957ae50e/#CJava程序说明)
-        - [CJava运行效果](/blog/957ae50e/#CJava运行效果)
-        - [查看是否切换成功](/blog/957ae50e/#查看是否切换成功)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/957ae50e/#查看是否切换成功">查看是否切换成功</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
-# 安装了多个java 如何切换java版本 #
-## 问题描述 ##
-平常用的是`java8`,最近在学习`java`的新特性。这就需要从`java8`往更高的`java`版本切换。由于还在使用`java8`,测试完新特性后我需要再切换回`java8`.
-## 如何切换 ##
-安装`java`的时候我们会配置`JAVA_HOME`这个环境变量.所有要切换`java`版本,只需要修改`JAVA_HOME`即可,在`JAVA_HOME`里面写上`java8`的安装目录,那就使用的是`java8`,`JAVA_HOME`里面写上`java9`的安装目录,则使用的是`java9`。
-# 解决方案 #
-## 手动切换 ##
-手动修改,`JAVA_HOME`中的地址即可,这里不介绍。
-## 批处理实现 ##
-因为手动修改`JAVA_HOME`,太过繁琐,所以通过一个批处理程序来实现.
-### 新增环境变量 ###
-新增`JAVA_HOME_8`,`JAVA_HOME_9`,`JAVA_HOME_11`分别写入`java8`,`java9`,`java11`的安装目录,这和配置`JAVA_HOME`一样.
-### 批处理脚本 ###
-创建一个名为`快捷方式`的目录。
-#### TJava.bat ####
-在这个`快捷方式`目录下新建`TJava.bat`,写入如下命令:
-```bat
-@echo off
-java -version
-pause
-```
-运行这个批处理就可以看到当前用的是哪个`java`版本了.这里使用批处理是为了快速运行这个`java -version`命令,不用手动操作。
-#### CJavaBat.bat ####
-然后在`快捷方式`下,创建批处理脚本`CJavaBat.bat`,开头的`C`是`change`的意思.
-```bat
-@echo off
-@echo ------------------------------------------------
-@echo 当前Java版本为:
-call TJava.bat
-@echo ------------------------------------------------
-@echo 输入要使用的java版本对应的选项:
-@echo 选项   含义
-@echo 8      切换环境为JDK8
-@echo 9      切换环境为JDK9
-@echo 11     切换环境为JDK11
-@echo ------------------------------------------------
-set /P choose=请输入选择:
-IF "%choose%" EQU "8" (
-    REM 修改JAVA_HOME环境变量为%JAVA_HOME_8%,
-    setx "JAVA_HOME" "%%JAVA_HOME_8%%" /m
-    echo 已经修改 "JAVA_HOME" 为 %%JAVA_HOME_8%%
-) ELSE IF "%choose%" EQU "9" (
-    setx "JAVA_HOME" "%%JAVA_HOME_9%%" /m
-    echo 已经修改 "JAVA_HOME" 为 %%JAVA_HOME_9%%
-REM setx "Path" "%cd%;%path%" /m
-) ELSE IF "%choose%" EQU "11" (
-    setx "JAVA_HOME" "%%JAVA_HOME_11%%" /m
-    echo 已经修改 "JAVA_HOME" 为 %%JAVA_HOME_11%%
-)
-pause
-```
-上面程序中的`setx`命令就是用来修改环境变量的.语法格式为:`setx 环境变量名 环境变量值 /m`。`setx`设置环境变量需要管理员权限,以管理员身份,运行上面的`CJavaBat.bat`就可以修改`JAVA_HOME`环境变量的内容,从而切换`Java`版本。
-### 给`CJavaBat.bat`设置管理员权限 ###
-创建`CJavaBat.bat`的快捷方式,然后将这个`快捷方式`重命名为`CJava`,注意一定要修改名字。
-然后在`快捷方式`上面右键。选择`属性`,在`快捷方式`选项卡上,点击`高级`,然后勾选上`用管理员身份运行`。
-这样以后直接点击`CJava`这个快捷方式就可以以管理身份运行`CJavaBat.bat`这个批处理脚本了。
-### 配置CJava到Path环境变量 ###
-将这个`快捷方式`目录配置到`Path`环境变量中,这样系统会在这个目录下查找程序,
-### 通过Win+R运行CJava ###
-然后就可以按下`Win+R`来启动运行,结束输入`CJava`,即可启动程序。
-### CJava程序说明 ###
-在`CJava`中输入选项:8,则切换到`Java8`,输入9,则切换到`Java9`,输入11则切换到`java11`,依次类推,可以拓展上面的程序,以支持切换更多的`java`版本。
-### CJava运行效果 ###
-```
-------------------------------------------------
-当前Java版本为:
-java version "1.8.0_221"
-Java(TM) SE Runtime Environment (build 1.8.0_221-b11)
-Java HotSpot(TM) 64-Bit Server VM (build 25.221-b11, mixed mode)
-请按任意键继续. . .
-------------------------------------------------
-输入要使用的java版本对应的选项:
-选项   含义
-8      切换环境为JDK8
-9      切换环境为JDK9
-11     切换环境为JDK11
-------------------------------------------------
+---------------------------------------------
 请输入选择:11
 成功: 指定的值已得到保存。
 已经修改 "JAVA_HOME" 为 %JAVA_HOME_11%

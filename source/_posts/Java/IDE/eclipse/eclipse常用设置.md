@@ -5,34 +5,13 @@ categories:
   - IDE
   - eclipse
 date: 2018-12-11 20:43:57
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 20:34:55
 abbrlink: 2b8e86b
 ---
-<div id='my_toc'>
-
-- [eclipse for JavaEE下载](/blog/2b8e86b/#eclipse-for-JavaEE下载)
-    - [下载URL](/blog/2b8e86b/#下载URL)
-    - [选择镜像](/blog/2b8e86b/#选择镜像)
-    - [解压安装](/blog/2b8e86b/#解压安装)
-- [eclipse创建工作空间workspace](/blog/2b8e86b/#eclipse创建工作空间workspace)
-    - [新建文件夹](/blog/2b8e86b/#新建文件夹)
-    - [选择该文件夹作为workspace](/blog/2b8e86b/#选择该文件夹作为workspace)
-- [eclipse删除多余的工作区间](/blog/2b8e86b/#eclipse删除多余的工作区间)
-- [eclipse设置字体](/blog/2b8e86b/#eclipse设置字体)
-- [自动补全](/blog/2b8e86b/#自动补全)
-    - [Java自动补全](/blog/2b8e86b/#Java自动补全)
-    - [XML自动补全](/blog/2b8e86b/#XML自动补全)
-    - [HTML自动补全](/blog/2b8e86b/#HTML自动补全)
-    - [JavaScript自动补全](/blog/2b8e86b/#JavaScript自动补全)
-- [使用外部浏览器打开JavaWeb项目](/blog/2b8e86b/#使用外部浏览器打开JavaWeb项目)
-- [eclipse 使用自带暗色主题](/blog/2b8e86b/#eclipse-使用自带暗色主题)
-- [设置工作区间为UTF-8](/blog/2b8e86b/#设置工作区间为UTF-8)
-- [设置创建JSP文件使用的编码](/blog/2b8e86b/#设置创建JSP文件使用的编码)
-- [参考链接](/blog/2b8e86b/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#eclipse-for-JavaEE下载">eclipse for JavaEE下载</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#下载URL">下载URL</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#选择镜像">选择镜像</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#解压安装">解压安装</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#eclipse创建工作空间workspace">eclipse创建工作空间workspace</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#新建文件夹">新建文件夹</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#选择该文件夹作为workspace">选择该文件夹作为workspace</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#eclipse删除多余的工作区间">eclipse删除多余的工作区间</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#eclipse设置字体">eclipse设置字体</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#自动补全">自动补全</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#Java自动补全">Java自动补全</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#XML自动补全">XML自动补全</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#HTML自动补全">HTML自动补全</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#JavaScript自动补全">JavaScript自动补全</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#使用外部浏览器打开JavaWeb项目">使用外部浏览器打开JavaWeb项目</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#eclipse-使用自带暗色主题">eclipse 使用自带暗色主题</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#设置工作区间为UTF-8">设置工作区间为UTF-8</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#设置创建JSP文件使用的编码">设置创建JSP文件使用的编码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2b8e86b/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## eclipse for JavaEE下载 ##

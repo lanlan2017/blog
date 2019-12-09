@@ -5,29 +5,13 @@ categories:
   - JSP
   - 基础语法
 date: 2018-12-20 23:51:51
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:22
 abbrlink: 7b20b86
 ---
-<div id='my_toc'>
-
-- [page指令](/blog/7b20b86/#page指令)
-    - [language属性](/blog/7b20b86/#language属性)
-    - [extends属性](/blog/7b20b86/#extends属性)
-    - [import属性](/blog/7b20b86/#import属性)
-    - [pageEccoding属性](/blog/7b20b86/#pageEccoding属性)
-    - [contentType属性](/blog/7b20b86/#contentType属性)
-    - [session属性](/blog/7b20b86/#session属性)
-    - [buffer属性](/blog/7b20b86/#buffer属性)
-    - [autoFlush属性](/blog/7b20b86/#autoFlush属性)
-    - [isErrorPage属性](/blog/7b20b86/#isErrorPage属性)
-    - [errorPage属性](/blog/7b20b86/#errorPage属性)
-- [inc|ude指令](/blog/7b20b86/#inc|ude指令)
-    - [实例](/blog/7b20b86/#实例)
-- [taglib指令](/blog/7b20b86/#taglib指令)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/7b20b86/#page指令">page指令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b20b86/#language属性">language属性</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b20b86/#extends属性">extends属性</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b20b86/#import属性">import属性</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b20b86/#pageEccoding属性">pageEccoding属性</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b20b86/#contentType属性">contentType属性</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b20b86/#session属性">session属性</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b20b86/#buffer属性">buffer属性</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b20b86/#autoFlush属性">autoFlush属性</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b20b86/#isErrorPage属性">isErrorPage属性</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b20b86/#errorPage属性">errorPage属性</a><br/><a href="/blog/7b20b86/#inc|ude指令">inc|ude指令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b20b86/#实例">实例</a><br/><a href="/blog/7b20b86/#taglib指令">taglib指令</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # page指令 #

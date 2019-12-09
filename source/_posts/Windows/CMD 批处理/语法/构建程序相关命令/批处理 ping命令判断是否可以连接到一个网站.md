@@ -6,22 +6,13 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-04-03 17:24:14
-updated: 2019-11-29 21:19:58
+updated: 2019-12-09 19:45:23
 abbrlink: 318f3e6b
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/318f3e6b/#问题描述)
-- [判断当前是否可以联网的批处理](/blog/318f3e6b/#判断当前是否可以联网的批处理)
-- [应用到程序中](/blog/318f3e6b/#应用到程序中)
-    - [安装程序](/blog/318f3e6b/#安装程序)
-    - [执行程序](/blog/318f3e6b/#执行程序)
-    - [运行结果](/blog/318f3e6b/#运行结果)
-    - [ping命令发送一次请求](/blog/318f3e6b/#ping命令发送一次请求)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/318f3e6b/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/318f3e6b/#判断当前是否可以联网的批处理">判断当前是否可以联网的批处理</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/318f3e6b/#应用到程序中">应用到程序中</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/318f3e6b/#安装程序">安装程序</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/318f3e6b/#执行程序">执行程序</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/318f3e6b/#运行结果">运行结果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/318f3e6b/#ping命令发送一次请求">ping命令发送一次请求</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 问题描述 ##

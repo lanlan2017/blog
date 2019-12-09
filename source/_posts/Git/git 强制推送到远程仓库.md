@@ -3,20 +3,13 @@ title: git 强制推送到远程仓库
 categories: 
   - Git
 date: 2019-12-01 15:16:23
-updated: 2019-12-01 15:24:02
+updated: 2019-12-09 19:55:22
 abbrlink: 3f12657a
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/3f12657a/#问题描述)
-- [解决方案](/blog/3f12657a/#解决方案)
-- [格式1](/blog/3f12657a/#格式1)
-- [格式2](/blog/3f12657a/#格式2)
-- [参考资料](/blog/3f12657a/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/3f12657a/#问题描述">问题描述</a><br/><a href="/blog/3f12657a/#解决方案">解决方案</a><br/><a href="/blog/3f12657a/#格式1">格式1</a><br/><a href="/blog/3f12657a/#格式2">格式2</a><br/><a href="/blog/3f12657a/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 问题描述

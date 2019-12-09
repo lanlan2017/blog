@@ -3,32 +3,13 @@ title: Git SSH配置过程
 categories: 
   - Git
 date: 2019-11-13 16:22:20
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 19:55:22
 abbrlink: 8d23490d
 ---
-<div id='my_toc'>
-
-- [Git SSH配置过程](/blog/8d23490d/#Git-SSH配置过程)
-    - [配置邮箱和用户名](/blog/8d23490d/#配置邮箱和用户名)
-        - [配置邮箱](/blog/8d23490d/#配置邮箱)
-        - [配置用户名](/blog/8d23490d/#配置用户名)
-        - [查看效果](/blog/8d23490d/#查看效果)
-    - [生成密钥对](/blog/8d23490d/#生成密钥对)
-        - [生成默认长度的密钥对](/blog/8d23490d/#生成默认长度的密钥对)
-        - [生成指定长度的密钥对](/blog/8d23490d/#生成指定长度的密钥对)
-    - [添加key到SSH](/blog/8d23490d/#添加key到SSH)
-        - [解决 Could not open a connection to your authentication agent](/blog/8d23490d/#解决-Could-not-open-a-connection-to-your-authentication-agent)
-        - [添加成功效果](/blog/8d23490d/#添加成功效果)
-    - [将公钥添加到Github上](/blog/8d23490d/#将公钥添加到Github上)
-    - [测试链接是否成功](/blog/8d23490d/#测试链接是否成功)
-    - [使用SSH推送远程仓库](/blog/8d23490d/#使用SSH推送远程仓库)
-        - [你可能没有开启ssh-agent](/blog/8d23490d/#你可能没有开启ssh-agent)
-        - [你可能的远程仓库地址时HTTPS的不是SSH地址](/blog/8d23490d/#你可能的远程仓库地址时HTTPS的不是SSH地址)
-- [参考资料](/blog/8d23490d/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/8d23490d/#Git-SSH配置过程">Git SSH配置过程</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#配置邮箱和用户名">配置邮箱和用户名</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#配置邮箱">配置邮箱</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#配置用户名">配置用户名</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#查看效果">查看效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#生成密钥对">生成密钥对</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#生成默认长度的密钥对">生成默认长度的密钥对</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#生成指定长度的密钥对">生成指定长度的密钥对</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#添加key到SSH">添加key到SSH</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#解决-Could-not-open-a-connection-to-your-authentication-agent">解决 Could not open a connection to your authentication agent</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#添加成功效果">添加成功效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#将公钥添加到Github上">将公钥添加到Github上</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#测试链接是否成功">测试链接是否成功</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#使用SSH推送远程仓库">使用SSH推送远程仓库</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#你可能没有开启ssh-agent">你可能没有开启ssh-agent</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d23490d/#你可能的远程仓库地址时HTTPS的不是SSH地址">你可能的远程仓库地址时HTTPS的不是SSH地址</a><br/><a href="/blog/8d23490d/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # Git SSH配置过程 #

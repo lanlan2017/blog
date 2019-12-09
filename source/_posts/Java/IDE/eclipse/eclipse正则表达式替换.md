@@ -5,18 +5,13 @@ categories:
   - IDE
   - eclipse
 date: 2018-12-11 20:43:57
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 20:34:55
 abbrlink: eee91bf3
 ---
-<div id='my_toc'>
-
-- [查找替换框设置](/blog/eee91bf3/#查找替换框设置)
-- [英文意思](/blog/eee91bf3/#英文意思)
-- [参考链接](/blog/eee91bf3/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/eee91bf3/#查找替换框设置">查找替换框设置</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/eee91bf3/#英文意思">英文意思</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/eee91bf3/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

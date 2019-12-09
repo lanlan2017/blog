@@ -4,19 +4,13 @@ categories:
   - C语言
   - 结构体
 date: 2019-02-13 00:31:18
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:55:22
 abbrlink: 80deef00
 ---
-<div id='my_toc'>
-
-- [前言](/blog/80deef00/#前言)
-- [基本类型数组动态分配大小](/blog/80deef00/#基本类型数组动态分配大小)
-- [结构体类型数组分配大小](/blog/80deef00/#结构体类型数组分配大小)
-- [参考链接](/blog/80deef00/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/80deef00/#前言">前言</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/80deef00/#基本类型数组动态分配大小">基本类型数组动态分配大小</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/80deef00/#结构体类型数组分配大小">结构体类型数组分配大小</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/80deef00/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 前言 ##

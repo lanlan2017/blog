@@ -4,17 +4,13 @@ categories:
   - Git
   - Debug
 date: 2019-12-08 22:44:49
-updated: 2019-12-08 22:44:49
+updated: 2019-12-09 19:55:22
 abbrlink: 331932fd
 ---
-<div id='my_toc'>
-
-- [fatal: refusing to merge unrelated histories](/blog/331932fd/#fatal-refusing-to-merge-unrelated-histories)
-- [原因](/blog/331932fd/#原因)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/331932fd/#fatal-refusing-to-merge-unrelated-histories">fatal: refusing to merge unrelated histories</a><br/><a href="/blog/331932fd/#原因">原因</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # fatal: refusing to merge unrelated histories

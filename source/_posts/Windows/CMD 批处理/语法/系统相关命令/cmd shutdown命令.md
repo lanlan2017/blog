@@ -6,20 +6,13 @@ categories:
   - 语法
   - 系统相关命令
 date: 2019-09-04 00:23:58
-updated: 2019-11-29 21:19:58
+updated: 2019-12-09 19:45:23
 abbrlink: 4508a6a3
 ---
-<div id='my_toc'>
-
-- [cmd shutdown命令](/blog/4508a6a3/#cmd-shutdown命令)
-    - [帮助文档](/blog/4508a6a3/#帮助文档)
-    - [应用](/blog/4508a6a3/#应用)
-        - [定时关机](/blog/4508a6a3/#定时关机)
-        - [在执行其他命令后休眠](/blog/4508a6a3/#在执行其他命令后休眠)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/4508a6a3/#cmd-shutdown命令">cmd shutdown命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4508a6a3/#帮助文档">帮助文档</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4508a6a3/#应用">应用</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4508a6a3/#定时关机">定时关机</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4508a6a3/#在执行其他命令后休眠">在执行其他命令后休眠</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # cmd shutdown命令 #

@@ -6,22 +6,13 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-04-26 21:18:26
-updated: 2019-11-29 21:19:58
+updated: 2019-12-09 19:45:23
 abbrlink: 979e79b0
 ---
-<div id='my_toc'>
-
-- [显示目录树命令 tree](/blog/979e79b0/#显示目录树命令-tree)
-    - [帮助文档](/blog/979e79b0/#帮助文档)
-    - [只显示目录不显示文件 不带参数](/blog/979e79b0/#只显示目录不显示文件-不带参数)
-    - [显示文件 参数/f](/blog/979e79b0/#显示文件-参数-f)
-    - [参数/a](/blog/979e79b0/#参数-a)
-    - [不要使用/a参数好](/blog/979e79b0/#不要使用-a参数好)
-    - [把目录树写入剪贴板](/blog/979e79b0/#把目录树写入剪贴板)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/979e79b0/#显示目录树命令-tree">显示目录树命令 tree</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/979e79b0/#帮助文档">帮助文档</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/979e79b0/#只显示目录不显示文件-不带参数">只显示目录不显示文件 不带参数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/979e79b0/#显示文件-参数-f">显示文件 参数/f</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/979e79b0/#参数-a">参数/a</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/979e79b0/#不要使用-a参数好">不要使用/a参数好</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/979e79b0/#把目录树写入剪贴板">把目录树写入剪贴板</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 显示目录树命令 tree #

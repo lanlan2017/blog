@@ -4,20 +4,13 @@ categories:
   - Linux
   - 通用
 date: 2019-11-27 00:18:09
-updated: 2019-11-27 00:20:17
+updated: 2019-12-09 19:45:23
 abbrlink: 9ed0e635
 ---
-<div id='my_toc'>
-
-- [xsel](/blog/9ed0e635/#xsel)
-    - [安装xsel](/blog/9ed0e635/#安装xsel)
-    - [输出到剪贴板中](/blog/9ed0e635/#输出到剪贴板中)
-    - [读取剪贴板内容](/blog/9ed0e635/#读取剪贴板内容)
-- [参考资料](/blog/9ed0e635/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/9ed0e635/#xsel">xsel</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9ed0e635/#安装xsel">安装xsel</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9ed0e635/#输出到剪贴板中">输出到剪贴板中</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9ed0e635/#读取剪贴板内容">读取剪贴板内容</a><br/><a href="/blog/9ed0e635/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # xsel #

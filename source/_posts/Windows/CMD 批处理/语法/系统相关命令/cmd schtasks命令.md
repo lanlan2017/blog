@@ -6,24 +6,13 @@ categories:
   - 语法
   - 系统相关命令
 date: 2019-09-25 00:35:36
-updated: 2019-11-29 21:19:58
+updated: 2019-12-09 19:45:23
 abbrlink: b1b65659
 ---
-<div id='my_toc'>
-
-- [schtask命令文档](/blog/b1b65659/#schtask命令文档)
-    - [创建新任务计划](/blog/b1b65659/#创建新任务计划)
-        - [schtasks /create文档](/blog/b1b65659/#schtasks-create文档)
-    - [定时关机](/blog/b1b65659/#定时关机)
-        - [先用计算器测试](/blog/b1b65659/#先用计算器测试)
-    - [查询任务计划](/blog/b1b65659/#查询任务计划)
-        - [语法](/blog/b1b65659/#语法)
-    - [删除任务计划](/blog/b1b65659/#删除任务计划)
-        - [删除上面创建的任务](/blog/b1b65659/#删除上面创建的任务)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/b1b65659/#schtask命令文档">schtask命令文档</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b1b65659/#创建新任务计划">创建新任务计划</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b1b65659/#schtasks-create文档">schtasks /create文档</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b1b65659/#定时关机">定时关机</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b1b65659/#先用计算器测试">先用计算器测试</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b1b65659/#查询任务计划">查询任务计划</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b1b65659/#语法">语法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b1b65659/#删除任务计划">删除任务计划</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b1b65659/#删除上面创建的任务">删除上面创建的任务</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # schtask命令文档 #

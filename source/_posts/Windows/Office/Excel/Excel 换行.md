@@ -1,22 +1,17 @@
 ---
 title: Excel 换行
-categories:
+categories: 
   - Windows
   - Office
   - Excel
-abbrlink: 69c3dc40
 date: 2019-11-30 16:30:50
-updated: 2019-11-30 16:30:50
+updated: 2019-12-09 19:45:23
+abbrlink: 69c3dc40
 ---
-<div id='my_toc'>
-
-- [Excel 自动换行](/blog/null/#Excel-自动换行)
-- [Excel 强制换行](/blog/null/#Excel-强制换行)
-- [参考资料](/blog/null/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/69c3dc40/#Excel-自动换行">Excel 自动换行</a><br/><a href="/blog/69c3dc40/#Excel-强制换行">Excel 强制换行</a><br/><a href="/blog/69c3dc40/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # Excel 自动换行

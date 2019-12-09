@@ -5,42 +5,16 @@ categories:
   - 实例
   - 匹配markdown标记
 date: 2019-03-16 15:47:44
-updated: 2019-11-25 00:23:47
+updated: 2019-12-09 19:45:24
 abbrlink: b7a12cba
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/b7a12cba/#问题描述)
-- [实现](/blog/b7a12cba/#实现)
-    - [匹配正则](/blog/b7a12cba/#匹配正则)
-    - [替换正则](/blog/b7a12cba/#替换正则)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b7a12cba/#实现">实现</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b7a12cba/#匹配正则">匹配正则</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b7a12cba/#替换正则">替换正则</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
-## 问题描述 ##
-写博客难免有中英文混合的情况,我喜欢用代码段标记吧英文包裹起来，如下所示:
-```markdown
-注意，`URL`和`tokens`间用问号`?`分割，`token`间用与号`&`分割。
-`URL`重写适合于`tokens`无须在太多URL间传递的情 况下，然而它有如下限制：
-- `URL`在某些浏览器上最大长度为2000字符； 
-- 若要传递值到下一个资源，需要将值插入到链接 中，换句话说，静态页面很难传值；
-- `URL`重写需要在服务端上完成，所有的链接都必须 带值，因此当一个页面存在很多链接时，处理过程 会是一个不小的挑战； 
-- 某些字符，例如空格、与和问号等必须用base64编 码；
-- 所有的信息都是可见的，某些情况下不合适。
-```
-显示效果:
-<hr>
-注意，`URL`和`tokens`间用问号`?`分割，`token`间用与号`&`分割。
-`URL`重写适合于`tokens`无须在太多URL间传递的情 况下，然而它有如下限制：
-- `URL`在某些浏览器上最大长度为2000字符； 
-- 若要传递值到下一个资源，需要将值插入到链接 中，换句话说，静态页面很难传值；
-- `URL`重写需要在服务端上完成，所有的链接都必须 带值，因此当一个页面存在很多链接时，处理过程 会是一个不小的挑战； 
-- 某些字符，例如空格、与和问号等必须用base64编 码；
-- 所有的信息都是可见的，某些情况下不合适。
-------
+---
 手动加麻烦,下面写程序来实现:
 ## 实现 ##
 如果是单纯的匹配英文的话使用`(\w+)`来匹配即可,但是这样会匹配到数字,我不希望匹配到数字,所以使用`([a-zA-Z]\w+)`来匹配,然后使用

@@ -5,41 +5,13 @@ categories:
   - JSP
   - Java Web简介
 date: 2018-12-08 21:46:18
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:22
 abbrlink: ec8e0fb7
 ---
-<div id='my_toc'>
-
-- [Java Web简介](/blog/ec8e0fb7/#Java-Web简介)
-    - [什么是Web应用程序](/blog/ec8e0fb7/#什么是Web应用程序)
-        - [常见web应用程序](/blog/ec8e0fb7/#常见web应用程序)
-        - [目前软件开发领域的三大方向](/blog/ec8e0fb7/#目前软件开发领域的三大方向)
-    - [静态网页与动态网页](/blog/ec8e0fb7/#静态网页与动态网页)
-        - [静态网页](/blog/ec8e0fb7/#静态网页)
-        - [动态网页](/blog/ec8e0fb7/#动态网页)
-    - [搭建 Java Web开发环境](/blog/ec8e0fb7/#搭建-Java-Web开发环境)
-        - [Tomcat安装步骤](/blog/ec8e0fb7/#Tomcat安装步骤)
-        - [Tomcat版本和JDK版本之间的映射关系](/blog/ec8e0fb7/#Tomcat版本和JDK版本之间的映射关系)
-        - [下载Tomcat](/blog/ec8e0fb7/#下载Tomcat)
-        - [安装](/blog/ec8e0fb7/#安装)
-        - [如何启动](/blog/ec8e0fb7/#如何启动)
-        - [如何关闭](/blog/ec8e0fb7/#如何关闭)
-        - [配置Tomcat环境变量](/blog/ec8e0fb7/#配置Tomcat环境变量)
-        - [Tomcat服务器的目录结构](/blog/ec8e0fb7/#Tomcat服务器的目录结构)
-    - [Tomcat中手动创建第一个Java Web项目](/blog/ec8e0fb7/#Tomcat中手动创建第一个Java-Web项目)
-    - [WEB-INF目录详解](/blog/ec8e0fb7/#WEB-INF目录详解)
-        - [验证客户端是否真的无法访问WEB-INF目录](/blog/ec8e0fb7/#验证客户端是否真的无法访问WEB-INF目录)
-        - [web.xml配置文件](/blog/ec8e0fb7/#web-xml配置文件)
-        - [修改欢迎界面](/blog/ec8e0fb7/#修改欢迎界面)
-        - [classes文件夹](/blog/ec8e0fb7/#classes文件夹)
-        - [lib文件夹](/blog/ec8e0fb7/#lib文件夹)
-    - [Web项目的虚拟路径](/blog/ec8e0fb7/#Web项目的虚拟路径)
-        - [eclipse中修改Web项目虚拟路径](/blog/ec8e0fb7/#eclipse中修改Web项目虚拟路径)
-    - [参考链接](/blog/ec8e0fb7/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/ec8e0fb7/#Java-Web简介">Java Web简介</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#什么是Web应用程序">什么是Web应用程序</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#常见web应用程序">常见web应用程序</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#目前软件开发领域的三大方向">目前软件开发领域的三大方向</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#静态网页与动态网页">静态网页与动态网页</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#静态网页">静态网页</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#动态网页">动态网页</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#搭建-Java-Web开发环境">搭建 Java Web开发环境</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#Tomcat安装步骤">Tomcat安装步骤</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#Tomcat版本和JDK版本之间的映射关系">Tomcat版本和JDK版本之间的映射关系</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#下载Tomcat">下载Tomcat</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#安装">安装</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#如何启动">如何启动</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#如何关闭">如何关闭</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#配置Tomcat环境变量">配置Tomcat环境变量</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#Tomcat服务器的目录结构">Tomcat服务器的目录结构</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#Tomcat中手动创建第一个Java-Web项目">Tomcat中手动创建第一个Java Web项目</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#WEB-INF目录详解">WEB-INF目录详解</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#验证客户端是否真的无法访问WEB-INF目录">验证客户端是否真的无法访问WEB-INF目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#web-xml配置文件">web.xml配置文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#修改欢迎界面">修改欢迎界面</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#classes文件夹">classes文件夹</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#lib文件夹">lib文件夹</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#Web项目的虚拟路径">Web项目的虚拟路径</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#eclipse中修改Web项目虚拟路径">eclipse中修改Web项目虚拟路径</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ec8e0fb7/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

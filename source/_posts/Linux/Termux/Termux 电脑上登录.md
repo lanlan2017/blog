@@ -4,43 +4,13 @@ categories:
   - Linux
   - Termux
 date: 2019-11-01 11:37:04
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:23
 abbrlink: c3146b3e
 ---
-<div id='my_toc'>
-
-- [下载安装Xshell免费版](/blog/c3146b3e/#下载安装Xshell免费版)
-    - [进入中文官网](/blog/c3146b3e/#进入中文官网)
-    - [填写邮箱获取下载链接](/blog/c3146b3e/#填写邮箱获取下载链接)
-    - [接收邮件 并下载](/blog/c3146b3e/#接收邮件-并下载)
-- [使用Xshell创建秘钥](/blog/c3146b3e/#使用Xshell创建秘钥)
-    - [Xshell创建秘钥详细过程](/blog/c3146b3e/#Xshell创建秘钥详细过程)
-    - [保存公钥](/blog/c3146b3e/#保存公钥)
-    - [导出私钥并保存](/blog/c3146b3e/#导出私钥并保存)
-- [将Xshell创建的秘钥设置到Termux中](/blog/c3146b3e/#将Xshell创建的秘钥设置到Termux中)
-    - [Termux 获得存储权限](/blog/c3146b3e/#Termux-获得存储权限)
-    - [将公钥发送到手机上](/blog/c3146b3e/#将公钥发送到手机上)
-    - [复制公钥到.ssh目录下](/blog/c3146b3e/#复制公钥到-ssh目录下)
-    - [将公钥写入authorized_keys中](/blog/c3146b3e/#将公钥写入authorized-keys中)
-- [开启sshd](/blog/c3146b3e/#开启sshd)
-- [获取链接信息](/blog/c3146b3e/#获取链接信息)
-    - [查看当前Termux用户信息](/blog/c3146b3e/#查看当前Termux用户信息)
-    - [查看Termux的ip地址](/blog/c3146b3e/#查看Termux的ip地址)
-        - [使用正则取出正确的IP所在的行](/blog/c3146b3e/#使用正则取出正确的IP所在的行)
-- [确保手机和电脑在同一个网络下](/blog/c3146b3e/#确保手机和电脑在同一个网络下)
-- [使用Xshell链接Termux](/blog/c3146b3e/#使用Xshell链接Termux)
-    - [设置链接常规信息](/blog/c3146b3e/#设置链接常规信息)
-    - [设置用户身份验证信息](/blog/c3146b3e/#设置用户身份验证信息)
-    - [链接成功效果](/blog/c3146b3e/#链接成功效果)
-        - [链接成功但是无法操作的情况](/blog/c3146b3e/#链接成功但是无法操作的情况)
-        - [保证Termux显示在手机屏幕最上方](/blog/c3146b3e/#保证Termux显示在手机屏幕最上方)
-    - [如何重新链接](/blog/c3146b3e/#如何重新链接)
-    - [设置Termux常驻后台](/blog/c3146b3e/#设置Termux常驻后台)
-- [参考资料](/blog/c3146b3e/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/c3146b3e/#下载安装Xshell免费版">下载安装Xshell免费版</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#进入中文官网">进入中文官网</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#填写邮箱获取下载链接">填写邮箱获取下载链接</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#接收邮件-并下载">接收邮件 并下载</a><br/><a href="/blog/c3146b3e/#使用Xshell创建秘钥">使用Xshell创建秘钥</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#Xshell创建秘钥详细过程">Xshell创建秘钥详细过程</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#保存公钥">保存公钥</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#导出私钥并保存">导出私钥并保存</a><br/><a href="/blog/c3146b3e/#将Xshell创建的秘钥设置到Termux中">将Xshell创建的秘钥设置到Termux中</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#Termux-获得存储权限">Termux 获得存储权限</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#将公钥发送到手机上">将公钥发送到手机上</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#复制公钥到-ssh目录下">复制公钥到.ssh目录下</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#将公钥写入authorized-keys中">将公钥写入authorized_keys中</a><br/><a href="/blog/c3146b3e/#开启sshd">开启sshd</a><br/><a href="/blog/c3146b3e/#获取链接信息">获取链接信息</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#查看当前Termux用户信息">查看当前Termux用户信息</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#查看Termux的ip地址">查看Termux的ip地址</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#使用正则取出正确的IP所在的行">使用正则取出正确的IP所在的行</a><br/><a href="/blog/c3146b3e/#确保手机和电脑在同一个网络下">确保手机和电脑在同一个网络下</a><br/><a href="/blog/c3146b3e/#使用Xshell链接Termux">使用Xshell链接Termux</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#设置链接常规信息">设置链接常规信息</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#设置用户身份验证信息">设置用户身份验证信息</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#链接成功效果">链接成功效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#链接成功但是无法操作的情况">链接成功但是无法操作的情况</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#保证Termux显示在手机屏幕最上方">保证Termux显示在手机屏幕最上方</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#如何重新链接">如何重新链接</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c3146b3e/#设置Termux常驻后台">设置Termux常驻后台</a><br/><a href="/blog/c3146b3e/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 下载安装Xshell免费版 #

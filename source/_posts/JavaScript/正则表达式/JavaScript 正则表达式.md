@@ -4,20 +4,13 @@ categories:
   - JavaScript
   - 正则表达式
 date: 2019-02-13 00:17:45
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:23
 abbrlink: cd878b94
 ---
-<div id='my_toc'>
-
-- [语法](/blog/cd878b94/#语法)
-- [String对象中的正则表达式](/blog/cd878b94/#String对象中的正则表达式)
-    - [match方法](/blog/cd878b94/#match方法)
-    - [实例](/blog/cd878b94/#实例)
-- [参考链接](/blog/cd878b94/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cd878b94/#语法">语法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cd878b94/#String对象中的正则表达式">String对象中的正则表达式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cd878b94/#match方法">match方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cd878b94/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cd878b94/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 语法 ##

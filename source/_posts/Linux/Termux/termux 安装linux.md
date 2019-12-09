@@ -4,27 +4,13 @@ categories:
   - Linux
   - Termux
 date: 2019-10-31 15:08:27
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:23
 abbrlink: 45517ea0
 ---
-<div id='my_toc'>
-
-- [首先先下载Termux](/blog/45517ea0/#首先先下载Termux)
-- [安装proot](/blog/45517ea0/#安装proot)
-- [获取root权限](/blog/45517ea0/#获取root权限)
-- [安装git并获取atilo](/blog/45517ea0/#安装git并获取atilo)
-- [进去atilo下并获取权限](/blog/45517ea0/#进去atilo下并获取权限)
-- [查看支持的版本](/blog/45517ea0/#查看支持的版本)
-- [安装ubuntu](/blog/45517ea0/#安装ubuntu)
-- [启动ubuntu](/blog/45517ea0/#启动ubuntu)
-- [卸载ubuntu](/blog/45517ea0/#卸载ubuntu)
-- [安装centos](/blog/45517ea0/#安装centos)
-- [通过anLinux安装](/blog/45517ea0/#通过anLinux安装)
-    - [安装centos](/blog/45517ea0/#安装centos)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/45517ea0/#首先先下载Termux">首先先下载Termux</a><br/><a href="/blog/45517ea0/#安装proot">安装proot</a><br/><a href="/blog/45517ea0/#获取root权限">获取root权限</a><br/><a href="/blog/45517ea0/#安装git并获取atilo">安装git并获取atilo</a><br/><a href="/blog/45517ea0/#进去atilo下并获取权限">进去atilo下并获取权限</a><br/><a href="/blog/45517ea0/#查看支持的版本">查看支持的版本</a><br/><a href="/blog/45517ea0/#安装ubuntu">安装ubuntu</a><br/><a href="/blog/45517ea0/#启动ubuntu">启动ubuntu</a><br/><a href="/blog/45517ea0/#卸载ubuntu">卸载ubuntu</a><br/><a href="/blog/45517ea0/#安装centos">安装centos</a><br/><a href="/blog/45517ea0/#通过anLinux安装">通过anLinux安装</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/45517ea0/#安装centos">安装centos</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 首先先下载Termux

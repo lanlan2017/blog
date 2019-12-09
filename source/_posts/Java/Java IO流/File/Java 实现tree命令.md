@@ -5,27 +5,13 @@ categories:
   - Java IO流
   - File
 date: 2019-04-30 20:00:58
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 20:34:56
 abbrlink: bf650217
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/bf650217/#问题描述)
-- [文件名称过滤器](/blog/bf650217/#文件名称过滤器)
-    - [默认文件](/blog/bf650217/#默认文件)
-    - [Maven Java Web项目文件名称过滤器](/blog/bf650217/#Maven-Java-Web项目文件名称过滤器)
-- [打印目录树主类 MyTree.java](/blog/bf650217/#打印目录树主类-MyTree-java)
-- [MyTree程序参数说明](/blog/bf650217/#MyTree程序参数说明)
-    - [不带参数](/blog/bf650217/#不带参数)
-    - [带一个参数](/blog/bf650217/#带一个参数)
-- [运行结果](/blog/bf650217/#运行结果)
-    - [只打印目录](/blog/bf650217/#只打印目录)
-    - [打印目录和文件](/blog/bf650217/#打印目录和文件)
-    - [显示Maven Java Web项目结构](/blog/bf650217/#显示Maven-Java-Web项目结构)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bf650217/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bf650217/#文件名称过滤器">文件名称过滤器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bf650217/#默认文件">默认文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bf650217/#Maven-Java-Web项目文件名称过滤器">Maven Java Web项目文件名称过滤器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bf650217/#打印目录树主类-MyTree-java">打印目录树主类 MyTree.java</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bf650217/#MyTree程序参数说明">MyTree程序参数说明</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bf650217/#不带参数">不带参数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bf650217/#带一个参数">带一个参数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bf650217/#运行结果">运行结果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bf650217/#只打印目录">只打印目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bf650217/#打印目录和文件">打印目录和文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bf650217/#显示Maven-Java-Web项目结构">显示Maven Java Web项目结构</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 问题描述 ##

@@ -4,40 +4,13 @@ categories:
   - 其他
   - UML
 date: 2019-09-16 13:14:42
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:23
 abbrlink: 122fc4b2
 ---
-<div id='my_toc'>
-
-- [UML类图](/blog/122fc4b2/#UML类图)
-    - [UML类图关系](/blog/122fc4b2/#UML类图关系)
-    - [关系的强弱](/blog/122fc4b2/#关系的强弱)
-    - [2.1.泛化](/blog/122fc4b2/#2-1-泛化)
-        - [符号](/blog/122fc4b2/#符号)
-        - [代码体现](/blog/122fc4b2/#代码体现)
-        - [实例](/blog/122fc4b2/#实例)
-    - [2.2.实现](/blog/122fc4b2/#2-2-实现)
-        - [符号](/blog/122fc4b2/#符号)
-        - [代码体现](/blog/122fc4b2/#代码体现)
-        - [实例](/blog/122fc4b2/#实例)
-    - [2.3.关联](/blog/122fc4b2/#2-3-关联)
-        - [符号](/blog/122fc4b2/#符号)
-        - [代码体现](/blog/122fc4b2/#代码体现)
-        - [实例](/blog/122fc4b2/#实例)
-    - [2.4. 聚合关系](/blog/122fc4b2/#2-4-聚合关系)
-        - [符号](/blog/122fc4b2/#符号)
-        - [代码体现](/blog/122fc4b2/#代码体现)
-        - [实例](/blog/122fc4b2/#实例)
-    - [2.5.组合关系](/blog/122fc4b2/#2-5-组合关系)
-        - [符号](/blog/122fc4b2/#符号)
-        - [代码体现](/blog/122fc4b2/#代码体现)
-        - [实例](/blog/122fc4b2/#实例)
-    - [2.6.依赖](/blog/122fc4b2/#2-6-依赖)
-    - [参考资料](/blog/122fc4b2/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/122fc4b2/#UML类图">UML类图</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#UML类图关系">UML类图关系</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#关系的强弱">关系的强弱</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#2-1-泛化">2.1.泛化</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#符号">符号</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#代码体现">代码体现</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#2-2-实现">2.2.实现</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#符号">符号</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#代码体现">代码体现</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#2-3-关联">2.3.关联</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#符号">符号</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#代码体现">代码体现</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#2-4-聚合关系">2.4. 聚合关系</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#符号">符号</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#代码体现">代码体现</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#2-5-组合关系">2.5.组合关系</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#符号">符号</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#代码体现">代码体现</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#2-6-依赖">2.6.依赖</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/122fc4b2/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # UML类图 #

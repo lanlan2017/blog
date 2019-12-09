@@ -5,22 +5,13 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:38
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:22
 abbrlink: bc7737a8
 ---
-<div id='my_toc'>
-
-- [application内置对象](/blog/bc7737a8/#application内置对象)
-    - [访问应用程序初始化参数](/blog/bc7737a8/#访问应用程序初始化参数)
-        - [设置应用程序初始化参数](/blog/bc7737a8/#设置应用程序初始化参数)
-        - [获取初始化参数](/blog/bc7737a8/#获取初始化参数)
-    - [管理应用程序环境属性](/blog/bc7737a8/#管理应用程序环境属性)
-    - [其他方法](/blog/bc7737a8/#其他方法)
-    - [实例](/blog/bc7737a8/#实例)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/bc7737a8/#application内置对象">application内置对象</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bc7737a8/#访问应用程序初始化参数">访问应用程序初始化参数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bc7737a8/#设置应用程序初始化参数">设置应用程序初始化参数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bc7737a8/#获取初始化参数">获取初始化参数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bc7737a8/#管理应用程序环境属性">管理应用程序环境属性</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bc7737a8/#其他方法">其他方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bc7737a8/#实例">实例</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # application内置对象 #

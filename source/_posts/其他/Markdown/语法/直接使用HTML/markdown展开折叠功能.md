@@ -6,19 +6,13 @@ categories:
   - 语法
   - 直接使用HTML
 date: 2019-11-08 21:30:04
-updated: 2019-12-06 10:33:32
+updated: 2019-12-09 19:45:23
 abbrlink: ce247608
 ---
-<div id='my_toc'>
-
-- [HTML 5 **<details> **标签](/blog/ce247608/#HTML-5-<details>-标签)
-    - [**<summary> **子标签](/blog/ce247608/#<summary>-子标签)
-- [markdown中可以写HTML](/blog/ce247608/#markdown中可以写HTML)
-    - [折叠的内容是可以Markdown](/blog/ce247608/#折叠的内容是可以Markdown)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/ce247608/#HTML-5-<details>-标签">HTML 5 `<details> `标签</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ce247608/#<summary>-子标签">`<summary> `子标签</a><br/><a href="/blog/ce247608/#markdown中可以写HTML">markdown中可以写HTML</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ce247608/#折叠的内容是可以Markdown">折叠的内容是可以Markdown</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # HTML 5 `<details> `标签

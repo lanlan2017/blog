@@ -3,18 +3,13 @@ title: win10中 设置打开或保存文件时的默认查看方式
 categories: 
   - Windows
 date: 2019-08-28 12:20:01
-updated: 2019-11-29 21:08:10
+updated: 2019-12-09 19:45:23
 abbrlink: fda3d857
 ---
-<div id='my_toc'>
-
-- [win10中设置打开或保存文件时的默认查看方式](/blog/fda3d857/#win10中设置打开或保存文件时的默认查看方式)
-- [分析](/blog/fda3d857/#分析)
-- [Win10 设置资源管理器中的默认查看方式](/blog/fda3d857/#Win10-设置资源管理器中的默认查看方式)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/fda3d857/#win10中设置打开或保存文件时的默认查看方式">win10中设置打开或保存文件时的默认查看方式</a><br/><a href="/blog/fda3d857/#分析">分析</a><br/><a href="/blog/fda3d857/#Win10-设置资源管理器中的默认查看方式">Win10 设置资源管理器中的默认查看方式</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # win10中设置打开或保存文件时的默认查看方式 #

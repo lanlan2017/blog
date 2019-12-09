@@ -4,28 +4,13 @@ categories:
   - Windows
   - 设置
 date: 2019-12-06 11:57:15
-updated: 2019-12-06 12:06:49
+updated: 2019-12-09 19:45:23
 abbrlink: 8da2248a
 ---
-<div id='my_toc'>
-
-- [搜狗输入法个性短语格式](/blog/8da2248a/#搜狗输入法个性短语格式)
-    - [单行格式](/blog/8da2248a/#单行格式)
-    - [多行格式](/blog/8da2248a/#多行格式)
-- [讯飞输入法个性短语格式](/blog/8da2248a/#讯飞输入法个性短语格式)
-    - [单行格式](/blog/8da2248a/#单行格式)
-- [搜狗输入法Windows版本个性短语转讯飞输入法安卓版个性短语](/blog/8da2248a/#搜狗输入法Windows版本个性短语转讯飞输入法安卓版个性短语)
-    - [单行短语转换](/blog/8da2248a/#单行短语转换)
-        - [匹配正则](/blog/8da2248a/#匹配正则)
-        - [替换正则](/blog/8da2248a/#替换正则)
-- [讯飞输入法安卓版转搜狗输入法Windows版](/blog/8da2248a/#讯飞输入法安卓版转搜狗输入法Windows版)
-    - [单行短语转换](/blog/8da2248a/#单行短语转换)
-        - [匹配正则](/blog/8da2248a/#匹配正则)
-        - [替换正则](/blog/8da2248a/#替换正则)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/8da2248a/#搜狗输入法个性短语格式">搜狗输入法个性短语格式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8da2248a/#单行格式">单行格式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8da2248a/#多行格式">多行格式</a><br/><a href="/blog/8da2248a/#讯飞输入法个性短语格式">讯飞输入法个性短语格式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8da2248a/#单行格式">单行格式</a><br/><a href="/blog/8da2248a/#搜狗输入法Windows版本个性短语转讯飞输入法安卓版个性短语">搜狗输入法Windows版本个性短语转讯飞输入法安卓版个性短语</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8da2248a/#单行短语转换">单行短语转换</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8da2248a/#匹配正则">匹配正则</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8da2248a/#替换正则">替换正则</a><br/><a href="/blog/8da2248a/#讯飞输入法安卓版转搜狗输入法Windows版">讯飞输入法安卓版转搜狗输入法Windows版</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8da2248a/#单行短语转换">单行短语转换</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8da2248a/#匹配正则">匹配正则</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8da2248a/#替换正则">替换正则</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 搜狗输入法个性短语格式

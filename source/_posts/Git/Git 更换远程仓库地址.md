@@ -1,25 +1,15 @@
 ---
-title: Git更换远程仓库地址
+title: Git 更换远程仓库地址
 categories: 
   - Git
 date: 2019-05-02 10:56:15
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 19:55:22
 abbrlink: 7469a3b7
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/7469a3b7/#问题描述)
-- [在github上创建项目](/blog/7469a3b7/#在github上创建项目)
-- [修改远程仓库的地址](/blog/7469a3b7/#修改远程仓库的地址)
-    - [查看当前远程仓库](/blog/7469a3b7/#查看当前远程仓库)
-    - [修改远程仓库的地址为github的](/blog/7469a3b7/#修改远程仓库的地址为github的)
-    - [查看修改效果](/blog/7469a3b7/#查看修改效果)
-    - [push到新的远程仓库地址](/blog/7469a3b7/#push到新的远程仓库地址)
-- [参考资料](/blog/7469a3b7/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/7469a3b7/#问题描述">问题描述</a><br/><a href="/blog/7469a3b7/#在github上创建项目">在github上创建项目</a><br/><a href="/blog/7469a3b7/#修改远程仓库的地址">修改远程仓库的地址</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7469a3b7/#查看当前远程仓库">查看当前远程仓库</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7469a3b7/#修改远程仓库的地址为github的">修改远程仓库的地址为github的</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7469a3b7/#查看修改效果">查看修改效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7469a3b7/#push到新的远程仓库地址">push到新的远程仓库地址</a><br/><a href="/blog/7469a3b7/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 问题描述 #

@@ -5,19 +5,13 @@ categories:
   - CMD 批处理
   - 应用
 date: 2019-05-08 14:41:53
-updated: 2019-11-29 21:19:58
+updated: 2019-12-09 19:45:23
 abbrlink: cbe4b14b
 ---
-<div id='my_toc'>
-
-- [前言](/blog/cbe4b14b/#前言)
-- [目录结构](/blog/cbe4b14b/#目录结构)
-    - [一键复制Spring依赖到项目lib目录下.bat](/blog/cbe4b14b/#一键复制Spring依赖到项目lib目录下-bat)
-        - [命令解释](/blog/cbe4b14b/#命令解释)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/cbe4b14b/#前言">前言</a><br/><a href="/blog/cbe4b14b/#目录结构">目录结构</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cbe4b14b/#一键复制Spring依赖到项目lib目录下-bat">一键复制Spring依赖到项目lib目录下.bat</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cbe4b14b/#命令解释">命令解释</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 前言 #

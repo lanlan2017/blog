@@ -3,22 +3,13 @@ title: 如何使用FrontAwesome图标
 categories: 
   - Hexo
 date: 2019-03-11 21:02:57
-updated: 2019-11-29 21:20:18
+updated: 2019-12-09 19:55:22
 abbrlink: 4181f9ed
 ---
-<div id='my_toc'>
-
-- [选择图标](/blog/4181f9ed/#选择图标)
-- [NexT主题中使用](/blog/4181f9ed/#NexT主题中使用)
-- [实例](/blog/4181f9ed/#实例)
-    - [向上箭头图标](/blog/4181f9ed/#向上箭头图标)
-    - [github图标](/blog/4181f9ed/#github图标)
-- [设置图标颜色](/blog/4181f9ed/#设置图标颜色)
-- [参考资料](/blog/4181f9ed/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4181f9ed/#选择图标">选择图标</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4181f9ed/#NexT主题中使用">NexT主题中使用</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4181f9ed/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4181f9ed/#向上箭头图标">向上箭头图标</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4181f9ed/#github图标">github图标</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4181f9ed/#设置图标颜色">设置图标颜色</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4181f9ed/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 选择图标 ##

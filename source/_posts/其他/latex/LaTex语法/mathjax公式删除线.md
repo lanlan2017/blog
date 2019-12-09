@@ -5,19 +5,14 @@ categories:
   - latex
   - LaTex语法
 date: 2019-02-18 21:39:42
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:23
 mathjax: true
 abbrlink: f88b012c
 ---
-<div id='my_toc'>
-
-- [mathjax公式添加删除线](/blog/f88b012c/#mathjax公式添加删除线)
-    - [例子](/blog/f88b012c/#例子)
-- [参考资料](/blog/f88b012c/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f88b012c/#mathjax公式添加删除线">mathjax公式添加删除线</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f88b012c/#例子">例子</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f88b012c/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## mathjax公式添加删除线 ##

@@ -3,18 +3,13 @@ title: CSS介绍
 categories: 
   - CSS
 date: 2018-12-13 01:54:37
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 19:55:22
 abbrlink: 208d3303
 ---
-<div id='my_toc'>
-
-- [什么是 CSS](/blog/208d3303/#什么是-CSS)
-- [CSS如何影响HTML](/blog/208d3303/#CSS如何影响HTML)
-- [参考链接](/blog/208d3303/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/208d3303/#什么是-CSS">什么是 CSS</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/208d3303/#CSS如何影响HTML">CSS如何影响HTML</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/208d3303/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 什么是 CSS ##

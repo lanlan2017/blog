@@ -4,24 +4,13 @@ categories:
   - Java
   - Java 网络编程
 date: 2019-05-30 18:31:18
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:21
 abbrlink: e303557d
 ---
-<div id='my_toc'>
-
-- [Java网络编程 TCP编程 发送接收对象 对象序列化反序列化](/blog/e303557d/#Java网络编程-TCP编程-发送接收对象-对象序列化反序列化)
-    - [对象序列化](/blog/e303557d/#对象序列化)
-    - [对象反序列化](/blog/e303557d/#对象反序列化)
-    - [实例](/blog/e303557d/#实例)
-        - [通信流程](/blog/e303557d/#通信流程)
-        - [服务端主线程](/blog/e303557d/#服务端主线程)
-        - [服务端响应线程](/blog/e303557d/#服务端响应线程)
-        - [客户端线程](/blog/e303557d/#客户端线程)
-        - [运行效果](/blog/e303557d/#运行效果)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/e303557d/#Java网络编程-TCP编程-发送接收对象-对象序列化反序列化">Java网络编程 TCP编程 发送接收对象 对象序列化反序列化</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e303557d/#对象序列化">对象序列化</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e303557d/#对象反序列化">对象反序列化</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e303557d/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e303557d/#通信流程">通信流程</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e303557d/#服务端主线程">服务端主线程</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e303557d/#服务端响应线程">服务端响应线程</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e303557d/#客户端线程">客户端线程</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e303557d/#运行效果">运行效果</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # Java网络编程 TCP编程 发送接收对象 对象序列化反序列化 #

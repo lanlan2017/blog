@@ -5,29 +5,13 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:39
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:22
 abbrlink: 240051d
 ---
-<div id='my_toc'>
-
-- [session内置对象简介](/blog/240051d/#session内置对象简介)
-- [session对象](/blog/240051d/#session对象)
-- [session对象常用方法](/blog/240051d/#session对象常用方法)
-    - [属性方法](/blog/240051d/#属性方法)
-    - [session有效时间方法](/blog/240051d/#session有效时间方法)
-    - [实例](/blog/240051d/#实例)
-- [session生命周期](/blog/240051d/#session生命周期)
-    - [创建](/blog/240051d/#创建)
-    - [活动](/blog/240051d/#活动)
-    - [tomcat中查看一个项目的所有session](/blog/240051d/#tomcat中查看一个项目的所有session)
-- [销毁](/blog/240051d/#销毁)
-    - [使用invalidate方法直接销毁](/blog/240051d/#使用invalidate方法直接销毁)
-    - [超时销毁](/blog/240051d/#超时销毁)
-- [参考链接](/blog/240051d/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#session内置对象简介">session内置对象简介</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#session对象">session对象</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#session对象常用方法">session对象常用方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#属性方法">属性方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#session有效时间方法">session有效时间方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#session生命周期">session生命周期</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#创建">创建</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#活动">活动</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#tomcat中查看一个项目的所有session">tomcat中查看一个项目的所有session</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#销毁">销毁</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#使用invalidate方法直接销毁">使用invalidate方法直接销毁</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#超时销毁">超时销毁</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## session内置对象简介 ##

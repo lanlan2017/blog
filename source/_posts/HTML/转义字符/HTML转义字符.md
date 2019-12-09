@@ -4,17 +4,13 @@ categories:
   - HTML
   - 转义字符
 date: 2019-03-28 12:54:08
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 19:55:23
 abbrlink: c14b29da
 ---
-<div id='my_toc'>
-
-- [下面列举了让我出现问题的HTML转义符](/blog/c14b29da/#下面列举了让我出现问题的HTML转义符)
-- [参考链接](/blog/c14b29da/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c14b29da/#下面列举了让我出现问题的HTML转义符">下面列举了让我出现问题的HTML转义符</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c14b29da/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 下面列举了让我出现问题的HTML转义符 ##

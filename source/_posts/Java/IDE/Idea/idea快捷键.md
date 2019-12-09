@@ -5,18 +5,13 @@ categories:
   - IDE
   - Idea
 date: 2019-08-08 14:41:36
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 20:34:55
 abbrlink: 385c30d
 ---
-<div id='my_toc'>
-
-- [idea快捷键](/blog/385c30d/#idea快捷键)
-    - [idea向上/向下插入空行](/blog/385c30d/#idea向上-向下插入空行)
-- [idea中使用eclipse快捷键](/blog/385c30d/#idea中使用eclipse快捷键)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/385c30d/#idea快捷键">idea快捷键</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/385c30d/#idea向上-向下插入空行">idea向上/向下插入空行</a><br/><a href="/blog/385c30d/#idea中使用eclipse快捷键">idea中使用eclipse快捷键</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # idea快捷键 #

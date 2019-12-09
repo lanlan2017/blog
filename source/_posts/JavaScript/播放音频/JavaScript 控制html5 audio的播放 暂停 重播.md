@@ -4,19 +4,13 @@ categories:
   - JavaScript
   - 播放音频
 date: 2019-04-27 11:27:54
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:23
 abbrlink: ff5ef3ed
 ---
-<div id='my_toc'>
-
-- [实例代码](/blog/ff5ef3ed/#实例代码)
-- [压缩的代码](/blog/ff5ef3ed/#压缩的代码)
-- [运行效果](/blog/ff5ef3ed/#运行效果)
-- [参考资料](/blog/ff5ef3ed/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ff5ef3ed/#实例代码">实例代码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ff5ef3ed/#压缩的代码">压缩的代码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ff5ef3ed/#运行效果">运行效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ff5ef3ed/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 实例代码 ##

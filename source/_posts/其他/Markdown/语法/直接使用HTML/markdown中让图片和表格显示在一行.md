@@ -6,17 +6,13 @@ categories:
   - 语法
   - 直接使用HTML
 date: 2018-10-29 18:26:12
-updated: 2019-12-06 10:33:32
+updated: 2019-12-09 19:45:23
 abbrlink: f0d2185d
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/f0d2185d/#问题描述)
-- [效果](/blog/f0d2185d/#效果)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f0d2185d/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f0d2185d/#效果">效果</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 问题描述 ##

@@ -3,20 +3,13 @@ title: CSS选择器
 categories: 
   - CSS
 date: 2018-12-12 23:44:41
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 19:55:22
 abbrlink: b6981f1b
 ---
-<div id='my_toc'>
-
-- [基础](/blog/b6981f1b/#基础)
-    - [CSS选择器分类](/blog/b6981f1b/#CSS选择器分类)
-    - [CSS 元素选择器](/blog/b6981f1b/#CSS-元素选择器)
-    - [类型选择器](/blog/b6981f1b/#类型选择器)
-    - [参考链接](/blog/b6981f1b/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/b6981f1b/#基础">基础</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b6981f1b/#CSS选择器分类">CSS选择器分类</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b6981f1b/#CSS-元素选择器">CSS 元素选择器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b6981f1b/#类型选择器">类型选择器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b6981f1b/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 基础 #

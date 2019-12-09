@@ -4,28 +4,13 @@ categories:
   - 正则表达式
   - 工具
 date: 2018-11-29 21:11:17
-updated: 2019-11-25 00:23:47
+updated: 2019-12-09 19:45:24
 abbrlink: 54be6c80
 ---
-<div id='my_toc'>
-
-- [regexper本地安装](/blog/54be6c80/#regexper本地安装)
-    - [安装yarn](/blog/54be6c80/#安装yarn)
-    - [clone到本地](/blog/54be6c80/#clone到本地)
-    - [cd进入项目](/blog/54be6c80/#cd进入项目)
-    - [安装依赖](/blog/54be6c80/#安装依赖)
-    - [启动本地服务器](/blog/54be6c80/#启动本地服务器)
-    - [浏览器打开](/blog/54be6c80/#浏览器打开)
-    - [bat脚本快速启动](/blog/54be6c80/#bat脚本快速启动)
-    - [8080端口被占用了](/blog/54be6c80/#8080端口被占用了)
-        - [问题描述](/blog/54be6c80/#问题描述)
-        - [原因](/blog/54be6c80/#原因)
-        - [解决方案](/blog/54be6c80/#解决方案)
-    - [单词读音](/blog/54be6c80/#单词读音)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/54be6c80/#regexper本地安装">regexper本地安装</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/54be6c80/#安装yarn">安装yarn</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/54be6c80/#clone到本地">clone到本地</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/54be6c80/#cd进入项目">cd进入项目</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/54be6c80/#安装依赖">安装依赖</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/54be6c80/#启动本地服务器">启动本地服务器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/54be6c80/#浏览器打开">浏览器打开</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/54be6c80/#bat脚本快速启动">bat脚本快速启动</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/54be6c80/#8080端口被占用了">8080端口被占用了</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/54be6c80/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/54be6c80/#原因">原因</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/54be6c80/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/54be6c80/#单词读音">单词读音</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # regexper本地安装 #

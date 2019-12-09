@@ -5,21 +5,13 @@ categories:
   - Markdown
   - 编辑器
 date: 2019-08-20 12:06:20
-updated: 2019-12-06 10:33:32
+updated: 2019-12-09 19:45:23
 abbrlink: 11f888fa
 ---
-<div id='my_toc'>
-
-- [快捷键支持](/blog/11f888fa/#快捷键支持)
-    - [加粗](/blog/11f888fa/#加粗)
-    - [切换代办列表](/blog/11f888fa/#切换代办列表)
-    - [格式化表格](/blog/11f888fa/#格式化表格)
-- [快捷键表格](/blog/11f888fa/#快捷键表格)
-    - [小结](/blog/11f888fa/#小结)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/11f888fa/#快捷键支持">快捷键支持</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/11f888fa/#加粗">加粗</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/11f888fa/#切换代办列表">切换代办列表</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/11f888fa/#格式化表格">格式化表格</a><br/><a href="/blog/11f888fa/#快捷键表格">快捷键表格</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/11f888fa/#小结">小结</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 快捷键支持 #

@@ -4,45 +4,13 @@ categories:
   - Hexo
   - 插件
 date: 2019-12-05 12:13:26
-updated: 2019-12-05 19:31:49
+updated: 2019-12-09 19:55:22
 abbrlink: fbe3df38
 ---
-<div id='my_toc'>
-
-- [hexo-admin插件](/blog/fbe3df38/#hexo-admin插件)
-    - [安装插件](/blog/fbe3df38/#安装插件)
-    - [浏览器中编辑](/blog/fbe3df38/#浏览器中编辑)
-    - [设置密码](/blog/fbe3df38/#设置密码)
-    - [hexo-admin优缺点](/blog/fbe3df38/#hexo-admin优缺点)
-        - [缺点](/blog/fbe3df38/#缺点)
-        - [优点](/blog/fbe3df38/#优点)
-- [hexo-myadmin插件](/blog/fbe3df38/#hexo-myadmin插件)
-    - [安装插件](/blog/fbe3df38/#安装插件)
-    - [浏览器中编辑](/blog/fbe3df38/#浏览器中编辑)
-    - [设置密码](/blog/fbe3df38/#设置密码)
-    - [hexo-myadmin优缺点](/blog/fbe3df38/#hexo-myadmin优缺点)
-        - [优点](/blog/fbe3df38/#优点)
-        - [缺点](/blog/fbe3df38/#缺点)
-- [hexo-local-admin](/blog/fbe3df38/#hexo-local-admin)
-    - [安装](/blog/fbe3df38/#安装)
-    - [帮助文档](/blog/fbe3df38/#帮助文档)
-        - [设置站点路径](/blog/fbe3df38/#设置站点路径)
-        - [设置主题名称](/blog/fbe3df38/#设置主题名称)
-        - [hexo-local-admin配置文件路径](/blog/fbe3df38/#hexo-local-admin配置文件路径)
-        - [启动本地服务器](/blog/fbe3df38/#启动本地服务器)
-        - [优点](/blog/fbe3df38/#优点)
-- [hexo-hey插件](/blog/fbe3df38/#hexo-hey插件)
-    - [安装](/blog/fbe3df38/#安装)
-    - [设置密码](/blog/fbe3df38/#设置密码)
-    - [缺点](/blog/fbe3df38/#缺点)
-    - [卸载](/blog/fbe3df38/#卸载)
-- [手机端的浏览器中编辑](/blog/fbe3df38/#手机端的浏览器中编辑)
-- [总结](/blog/fbe3df38/#总结)
-- [参考资料](/blog/fbe3df38/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/fbe3df38/#hexo-admin插件">hexo-admin插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#安装插件">安装插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#浏览器中编辑">浏览器中编辑</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#设置密码">设置密码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#hexo-admin优缺点">hexo-admin优缺点</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#缺点">缺点</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#优点">优点</a><br/><a href="/blog/fbe3df38/#hexo-myadmin插件">hexo-myadmin插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#安装插件">安装插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#浏览器中编辑">浏览器中编辑</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#设置密码">设置密码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#hexo-myadmin优缺点">hexo-myadmin优缺点</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#优点">优点</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#缺点">缺点</a><br/><a href="/blog/fbe3df38/#hexo-local-admin">hexo-local-admin</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#安装">安装</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#帮助文档">帮助文档</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#设置站点路径">设置站点路径</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#设置主题名称">设置主题名称</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#hexo-local-admin配置文件路径">hexo-local-admin配置文件路径</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#启动本地服务器">启动本地服务器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#优点">优点</a><br/><a href="/blog/fbe3df38/#hexo-hey插件">hexo-hey插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#安装">安装</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#设置密码">设置密码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#缺点">缺点</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fbe3df38/#卸载">卸载</a><br/><a href="/blog/fbe3df38/#手机端的浏览器中编辑">手机端的浏览器中编辑</a><br/><a href="/blog/fbe3df38/#总结">总结</a><br/><a href="/blog/fbe3df38/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # hexo-admin插件

@@ -6,16 +6,13 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-01-31 18:48:22
-updated: 2019-11-29 21:19:58
+updated: 2019-12-09 19:45:23
 abbrlink: 47a3a21b
 ---
-<div id='my_toc'>
-
-- [cmd 创建目录命令](/blog/47a3a21b/#cmd-创建目录命令)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/47a3a21b/#cmd-创建目录命令">cmd 创建目录命令</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## cmd 创建目录命令 ##

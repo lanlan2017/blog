@@ -4,39 +4,15 @@ categories:
   - Java
   - java_util
 date: 2018-08-13 14:50:18
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:22
 abbrlink: 7906d867
 ---
-<div id='my_toc'>
-
-- [格式化规则](/blog/7906d867/#格式化规则)
-    - [用来表示**日期和时间类型**的格式说明符语法](/blog/7906d867/#用来表示日期和时间类型的格式说明符语法)
-    - [与参数不对应的格式说明符语法](/blog/7906d867/#与参数不对应的格式说明符语法)
-- [语法规则详细说明](/blog/7906d867/#语法规则详细说明)
-    - [可选项**[argument_index$]**](/blog/7906d867/#可选项[argument-index$])
-    - [必选项**conversion**](/blog/7906d867/#必选项conversion)
-        - [**conversion**分类：](/blog/7906d867/#conversion分类：)
-        - [常规格式符](/blog/7906d867/#常规格式符)
-        - [Unicode字符](/blog/7906d867/#Unicode字符)
-        - [整数格式符](/blog/7906d867/#整数格式符)
-        - [日期/时间转换前缀](/blog/7906d867/#日期-时间转换前缀)
-        - [日期/时间转换后缀](/blog/7906d867/#日期-时间转换后缀)
-        - [格式化百分号](/blog/7906d867/#格式化百分号)
-        - [格式化行分隔符](/blog/7906d867/#格式化行分隔符)
-        - [可选项**[width]**](/blog/7906d867/#可选项[width])
-        - [可选项**[.precision]**](/blog/7906d867/#可选项[-precision])
-    - [可选项**[flags]**](/blog/7906d867/#可选项[flags])
-        - [设置左右对齐,0补齐](/blog/7906d867/#设置左右对齐,0补齐)
-        - [正负数符号表示](/blog/7906d867/#正负数符号表示)
-        - [加进制标志加小数点](/blog/7906d867/#加进制标志加小数点)
-        - [组分隔符](/blog/7906d867/#组分隔符)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/7906d867/#formatter方法">formatter方法</a><br/><a href="/blog/7906d867/#格式化规则">格式化规则</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#-常规类型、字符类型和数值类型的格式说明符语法">` 常规类型`、`字符类型`和`数值类型`的`格式说明符语法`</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#用来表示日期和时间类型的格式说明符语法">用来表示`日期和时间类型`的格式说明符语法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#与参数不对应的格式说明符语法">与参数不对应的格式说明符语法</a><br/><a href="/blog/7906d867/#语法规则详细说明">语法规则详细说明</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#可选项[argument-index$]">可选项`[argument_index$]`</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#必选项conversion">必选项`conversion`</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#conversion分类：">`conversion`分类：</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#常规格式符">常规格式符</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#Unicode字符">Unicode字符</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#整数格式符">整数格式符</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#浮点数格式符号">浮点数格式符号</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#日期-时间转换前缀">日期/时间转换前缀</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#日期-时间转换后缀">日期/时间转换后缀</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#格式化百分号">格式化百分号</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#格式化行分隔符">格式化行分隔符</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#可选项[width]">可选项`[width]`</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#可选项[-precision]">可选项`[.precision]`</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#可选项[flags]">可选项`[flags]`</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#设置左右对齐,0补齐">设置左右对齐,0补齐</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#正负数符号表示">正负数符号表示</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#加进制标志加小数点">加进制标志加小数点</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7906d867/#组分隔符">组分隔符</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
-
 # formatter方法
 
 |方法|描述|

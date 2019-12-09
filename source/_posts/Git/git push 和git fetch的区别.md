@@ -3,19 +3,13 @@ title: git push 和git fetch的区别
 categories: 
   - Git
 date: 2019-12-03 19:40:41
-updated: 2019-12-03 19:41:38
+updated: 2019-12-09 19:55:22
 abbrlink: bd41df27
 ---
-<div id='my_toc'>
-
-- [git push和git fetch的区别](/blog/bd41df27/#git-push和git-fetch的区别)
-- [推荐使用git fetch](/blog/bd41df27/#推荐使用git-fetch)
-    - [git fetch更新流程](/blog/bd41df27/#git-fetch更新流程)
-- [参考资料](/blog/bd41df27/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/bd41df27/#git-push和git-fetch的区别">git push和git fetch的区别</a><br/><a href="/blog/bd41df27/#推荐使用git-fetch">推荐使用git fetch</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bd41df27/#git-fetch更新流程">git fetch更新流程</a><br/><a href="/blog/bd41df27/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # git push和git fetch的区别

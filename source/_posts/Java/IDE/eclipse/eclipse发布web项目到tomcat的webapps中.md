@@ -5,20 +5,13 @@ categories:
   - IDE
   - eclipse
 date: 2018-12-11 20:43:57
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 20:34:55
 abbrlink: 37dcd881
 ---
-<div id='my_toc'>
-
-- [问题描述](/blog/37dcd881/#问题描述)
-    - [缺点](/blog/37dcd881/#缺点)
-    - [解决方案](/blog/37dcd881/#解决方案)
-    - [eclipse中设置把Web项目发布到Tomcat webapps中](/blog/37dcd881/#eclipse中设置把Web项目发布到Tomcat-webapps中)
-- [参考链接](/blog/37dcd881/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/37dcd881/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/37dcd881/#缺点">缺点</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/37dcd881/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/37dcd881/#eclipse中设置把Web项目发布到Tomcat-webapps中">eclipse中设置把Web项目发布到Tomcat webapps中</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/37dcd881/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

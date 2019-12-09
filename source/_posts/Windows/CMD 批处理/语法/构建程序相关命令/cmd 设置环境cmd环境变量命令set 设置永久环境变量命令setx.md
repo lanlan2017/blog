@@ -6,20 +6,13 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-02-01 16:31:16
-updated: 2019-11-29 21:19:58
+updated: 2019-12-09 19:45:23
 abbrlink: 7c811d1c
 ---
-<div id='my_toc'>
-
-- [set命令](/blog/7c811d1c/#set命令)
-    - [批处理输入信息 set /p](/blog/7c811d1c/#批处理输入信息-set-p)
-- [setx命令](/blog/7c811d1c/#setx命令)
-    - [setx设置永久用户环境变量](/blog/7c811d1c/#setx设置永久用户环境变量)
-    - [setx设置永久系统环境变量](/blog/7c811d1c/#setx设置永久系统环境变量)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7c811d1c/#set命令">set命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7c811d1c/#批处理输入信息-set-p">批处理输入信息 set /p</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7c811d1c/#setx命令">setx命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7c811d1c/#setx设置永久用户环境变量">setx设置永久用户环境变量</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7c811d1c/#setx设置永久系统环境变量">setx设置永久系统环境变量</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## set命令 ##

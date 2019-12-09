@@ -4,19 +4,13 @@ categories:
   - Hexo
   - Debug
 date: 2018-08-29 19:35:07
-updated: 2019-12-02 10:52:23
+updated: 2019-12-09 19:55:22
 abbrlink: 87aa90c2
 ---
-<div id='my_toc'>
-
-- [设置语言为简体中文](/blog/87aa90c2/#设置语言为简体中文)
-- [Site](/blog/87aa90c2/#Site)
-- [修改站点配置文件的编码为UTF-8](/blog/87aa90c2/#修改站点配置文件的编码为UTF-8)
-- [重新启动](/blog/87aa90c2/#重新启动)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/87aa90c2/#设置语言为简体中文">设置语言为简体中文</a><br/><a href="/blog/87aa90c2/#Site">Site</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/87aa90c2/#修改站点配置文件的编码为UTF-8">修改站点配置文件的编码为UTF-8</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/87aa90c2/#重新启动">重新启动</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 设置语言为简体中文 ##

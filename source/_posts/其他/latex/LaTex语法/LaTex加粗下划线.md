@@ -5,19 +5,14 @@ categories:
   - latex
   - LaTex语法
 date: 2019-12-07 12:51:38
-updated: 2019-12-07 13:04:39
+updated: 2019-12-09 19:45:23
 mathjax: true
 abbrlink: 55e94bf9
 ---
-<div id='my_toc'>
-
-- [latex加粗](/blog/55e94bf9/#latex加粗)
-- [latex下划线](/blog/55e94bf9/#latex下划线)
-- [参考资料](/blog/55e94bf9/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/55e94bf9/#latex加粗">latex加粗</a><br/><a href="/blog/55e94bf9/#latex下划线">latex下划线</a><br/><a href="/blog/55e94bf9/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # latex加粗

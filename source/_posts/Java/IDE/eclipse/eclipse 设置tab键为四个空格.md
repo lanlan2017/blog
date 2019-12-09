@@ -5,21 +5,13 @@ categories:
   - IDE
   - eclipse
 date: 2019-04-20 13:48:50
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 20:34:55
 abbrlink: afd38322
 ---
-<div id='my_toc'>
-
-- [Java代码中设置tab键为4个空格](/blog/afd38322/#Java代码中设置tab键为4个空格)
-- [JavaScript代码中设置tab键为4个空格](/blog/afd38322/#JavaScript代码中设置tab键为4个空格)
-- [XML代码中设置tab键为4个空格](/blog/afd38322/#XML代码中设置tab键为4个空格)
-- [CSS代码中设置tab键为4个空格](/blog/afd38322/#CSS代码中设置tab键为4个空格)
-- [HTML JSP代码中设置tab键为4个空格](/blog/afd38322/#HTML-JSP代码中设置tab键为4个空格)
-- [参考资料](/blog/afd38322/#参考资料)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/afd38322/#Java代码中设置tab键为4个空格">Java代码中设置tab键为4个空格</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/afd38322/#JavaScript代码中设置tab键为4个空格">JavaScript代码中设置tab键为4个空格</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/afd38322/#XML代码中设置tab键为4个空格">XML代码中设置tab键为4个空格</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/afd38322/#CSS代码中设置tab键为4个空格">CSS代码中设置tab键为4个空格</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/afd38322/#HTML-JSP代码中设置tab键为4个空格">HTML JSP代码中设置tab键为4个空格</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/afd38322/#参考资料">参考资料</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## Java代码中设置tab键为4个空格 ##

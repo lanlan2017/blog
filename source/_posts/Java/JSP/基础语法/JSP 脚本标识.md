@@ -5,25 +5,13 @@ categories:
   - JSP
   - 基础语法
 date: 2018-12-20 01:09:14
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:45:22
 abbrlink: 99c62cee
 ---
-<div id='my_toc'>
-
-- [脚本标识概述](/blog/99c62cee/#脚本标识概述)
-- [JSP声明](/blog/99c62cee/#JSP声明)
-    - [语法](/blog/99c62cee/#语法)
-    - [实例](/blog/99c62cee/#实例)
-- [JSP表达式](/blog/99c62cee/#JSP表达式)
-    - [实例](/blog/99c62cee/#实例)
-- [代码片段](/blog/99c62cee/#代码片段)
-    - [语法格式](/blog/99c62cee/#语法格式)
-    - [代码片段与声明的区别](/blog/99c62cee/#代码片段与声明的区别)
-    - [实例](/blog/99c62cee/#实例)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#脚本标识概述">脚本标识概述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#JSP声明">JSP声明</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#语法">语法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#JSP表达式">JSP表达式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#代码片段">代码片段</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#语法格式">语法格式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#代码片段与声明的区别">代码片段与声明的区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#实例">实例</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 脚本标识概述 ##

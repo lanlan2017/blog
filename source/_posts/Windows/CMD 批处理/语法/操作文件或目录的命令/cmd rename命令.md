@@ -6,17 +6,13 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-11-22 11:07:10
-updated: 2019-11-29 21:19:58
+updated: 2019-12-09 19:45:23
 abbrlink: a63f263d
 ---
-<div id='my_toc'>
-
-- [帮助文档](/blog/a63f263d/#帮助文档)
-- [实例](/blog/a63f263d/#实例)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/a63f263d/#帮助文档">帮助文档</a><br/><a href="/blog/a63f263d/#实例">实例</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 帮助文档 #

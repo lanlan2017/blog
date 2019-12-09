@@ -1,20 +1,16 @@
 ---
-title: Git错误集合
-categories:
+title: Git 错误集合
+categories: 
   - Git
   - Debug
-abbrlink: 7e675acc
 date: 2019-04-30 23:53:43
-updated: 2019-11-25 00:23:43
+updated: 2019-12-09 19:55:22
+abbrlink: 7e675acc
 ---
-<div id='my_toc'>
-
-- [git error:bad signature](/blog/7e675acc/#git-error-bad-signature)
-- [ERROR: You must verify your email address.](/blog/7e675acc/#ERROR-You-must-verify-your-email-address)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7e675acc/#git-error-bad-signature">git error:bad signature</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7e675acc/#ERROR-You-must-verify-your-email-address">ERROR: You must verify your email address.</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## git error:bad signature ##

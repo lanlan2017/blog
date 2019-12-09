@@ -4,20 +4,13 @@ categories:
   - Hexo
   - 自动部署
 date: 2018-12-07 00:23:50
-updated: 2019-11-29 21:20:17
+updated: 2019-12-09 19:55:22
 abbrlink: 5d465f14
 ---
-<div id='my_toc'>
-
-- [使用bat批处理的好处：省时间](/blog/5d465f14/#使用bat批处理的好处：省时间)
-- [bat脚本启动hexo本地服务器](/blog/5d465f14/#bat脚本启动hexo本地服务器)
-    - [指令说明](/blog/5d465f14/#指令说明)
-    - [如何使用](/blog/5d465f14/#如何使用)
-- [bat脚本部署hexo博客](/blog/5d465f14/#bat脚本部署hexo博客)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5d465f14/#使用bat批处理的好处：省时间">使用bat批处理的好处：省时间</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5d465f14/#bat脚本启动hexo本地服务器">bat脚本启动hexo本地服务器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5d465f14/#指令说明">指令说明</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5d465f14/#如何使用">如何使用</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5d465f14/#bat脚本部署hexo博客">bat脚本部署hexo博客</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 使用bat批处理的好处：省时间 ##

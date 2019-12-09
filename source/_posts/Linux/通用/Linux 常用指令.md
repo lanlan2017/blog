@@ -4,25 +4,13 @@ categories:
   - Linux
   - 通用
 date: 2018-11-11 16:35:46
-updated: 2019-11-26 13:21:33
+updated: 2019-12-09 19:45:23
 abbrlink: e44da
 ---
-<div id='my_toc'>
-
-- [前言](/blog/e44da/#前言)
-- [文件目录相关命令](/blog/e44da/#文件目录相关命令)
-    - [创建一个空白文件命令touch](/blog/e44da/#创建一个空白文件命令touch)
-    - [文件复制命令cp](/blog/e44da/#文件复制命令cp)
-    - [文件移动命令mv](/blog/e44da/#文件移动命令mv)
-        - [实例 移动文件到其他目录](/blog/e44da/#实例-移动文件到其他目录)
-        - [使用移动命令重命名文件](/blog/e44da/#使用移动命令重命名文件)
-    - [文件删除命令rm](/blog/e44da/#文件删除命令rm)
-        - [无法删除的情况](/blog/e44da/#无法删除的情况)
-    - [参考链接](/blog/e44da/#参考链接)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'><a href="/blog/e44da/#前言">前言</a><br/><a href="/blog/e44da/#文件目录相关命令">文件目录相关命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e44da/#创建一个空白文件命令touch">创建一个空白文件命令touch</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e44da/#文件复制命令cp">文件复制命令cp</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e44da/#文件移动命令mv">文件移动命令mv</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e44da/#实例-移动文件到其他目录">实例 移动文件到其他目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e44da/#使用移动命令重命名文件">使用移动命令重命名文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e44da/#文件删除命令rm">文件删除命令rm</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e44da/#无法删除的情况">无法删除的情况</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e44da/#参考链接">参考链接</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 前言 #

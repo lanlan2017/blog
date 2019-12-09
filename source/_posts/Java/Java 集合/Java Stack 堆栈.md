@@ -4,19 +4,13 @@ categories:
   - Java
   - Java 集合
 date: 2018-12-17 20:48:33
-updated: 2019-11-25 00:23:44
+updated: 2019-12-09 19:45:21
 abbrlink: b5d86588
 ---
-<div id='my_toc'>
-
-- [Stack对象简介](/blog/b5d86588/#Stack对象简介)
-- [Stack对象方法](/blog/b5d86588/#Stack对象方法)
-    - [构造方法](/blog/b5d86588/#构造方法)
-    - [常用方法](/blog/b5d86588/#常用方法)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b5d86588/#Stack对象简介">Stack对象简介</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b5d86588/#Stack对象方法">Stack对象方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b5d86588/#构造方法">构造方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b5d86588/#常用方法">常用方法</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## Stack对象简介 ##

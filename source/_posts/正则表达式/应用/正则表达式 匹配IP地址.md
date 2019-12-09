@@ -4,26 +4,13 @@ categories:
   - 正则表达式
   - 应用
 date: 2018-08-19 19:39:36
-updated: 2019-11-25 00:23:47
+updated: 2019-12-09 19:45:24
 abbrlink: 9e1b6b70
 ---
-<div id='my_toc'>
-
-- [匹配一个合法的数字](/blog/9e1b6b70/#匹配一个合法的数字)
-    - [三位数的情况：](/blog/9e1b6b70/#三位数的情况：)
-    - [两位数的情况](/blog/9e1b6b70/#两位数的情况)
-    - [一位数的情况](/blog/9e1b6b70/#一位数的情况)
-    - [匹配一个合法的数字](/blog/9e1b6b70/#匹配一个合法的数字)
-    - [优化：](/blog/9e1b6b70/#优化：)
-- [匹配一个合法的数字和点号三次](/blog/9e1b6b70/#匹配一个合法的数字和点号三次)
-- [最终的表达式：](/blog/9e1b6b70/#最终的表达式：)
-    - [优化：](/blog/9e1b6b70/#优化：)
-- [总结](/blog/9e1b6b70/#总结)
-    - [匹配IP地址中的一个数](/blog/9e1b6b70/#匹配IP地址中的一个数)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9e1b6b70/#匹配一个合法的数字">匹配一个合法的数字</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9e1b6b70/#三位数的情况：">三位数的情况：</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9e1b6b70/#两位数的情况">两位数的情况</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9e1b6b70/#一位数的情况">一位数的情况</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9e1b6b70/#匹配一个合法的数字">匹配一个合法的数字</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9e1b6b70/#优化：">优化：</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9e1b6b70/#匹配一个合法的数字和点号三次">匹配一个合法的数字和点号三次</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9e1b6b70/#最终的表达式：">最终的表达式：</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9e1b6b70/#优化：">优化：</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9e1b6b70/#总结">总结</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9e1b6b70/#匹配IP地址中的一个数">匹配IP地址中的一个数</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 正则表达式匹配IP地址

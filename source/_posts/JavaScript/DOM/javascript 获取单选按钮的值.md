@@ -4,17 +4,13 @@ categories:
   - JavaScript
   - DOM
 date: 2019-03-18 16:14:30
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:22
 abbrlink: 4f225713
 ---
-<div id='my_toc'>
-
-- [测试代码](/blog/4f225713/#测试代码)
-- [运行效果](/blog/4f225713/#运行效果)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4f225713/#测试代码">测试代码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4f225713/#运行效果">运行效果</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 测试代码 ##

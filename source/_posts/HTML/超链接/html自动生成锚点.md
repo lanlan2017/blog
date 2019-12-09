@@ -4,19 +4,13 @@ categories:
   - HTML
   - 超链接
 date: 2019-02-13 00:22:04
-updated: 2019-11-25 13:24:47
+updated: 2019-12-09 19:55:23
 abbrlink: b4a0eaf6
 ---
-<div id='my_toc'>
-
-- [根据ID属性跳转的锚点](/blog/b4a0eaf6/#根据ID属性跳转的锚点)
-- [自动生成](/blog/b4a0eaf6/#自动生成)
-    - [Java实现](/blog/b4a0eaf6/#Java实现)
-    - [javascript实现](/blog/b4a0eaf6/#javascript实现)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b4a0eaf6/#根据ID属性跳转的锚点">根据ID属性跳转的锚点</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b4a0eaf6/#自动生成">自动生成</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b4a0eaf6/#Java实现">Java实现</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b4a0eaf6/#javascript实现">javascript实现</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 这里介绍使用id属性来设置锚点，并通过代码自动生成ID唯一的锚点。

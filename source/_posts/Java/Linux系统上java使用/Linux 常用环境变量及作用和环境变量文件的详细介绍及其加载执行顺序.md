@@ -4,24 +4,13 @@ categories:
   - Java
   - Linux系统上java使用
 date: 2018-08-11 15:28:20
-updated: 2019-11-25 00:23:45
+updated: 2019-12-09 19:45:22
 abbrlink: 6249459e
 ---
-<div id='my_toc'>
-
-- [前言：](/blog/6249459e/#前言：)
-- [一、环境变量文件介绍](/blog/6249459e/#一、环境变量文件介绍)
-- [二、Linux的变量种类](/blog/6249459e/#二、Linux的变量种类)
-- [三、Linux 环境变量文件](/blog/6249459e/#三、Linux-环境变量文件)
-    - [系统级：](/blog/6249459e/#系统级：)
-    - [/etc/bashrc](/blog/6249459e/#-etc-bashrc)
-- [用户级：](/blog/6249459e/#用户级：)
-    - [**~/.profile**](/blog/6249459e/#~-profile)
-    - [~/.bashrc](/blog/6249459e/#~-bashrc)
-
-</div>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6249459e/#前言：">前言：</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6249459e/#一、环境变量文件介绍">一、环境变量文件介绍</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6249459e/#二、Linux的变量种类">二、Linux的变量种类</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6249459e/#三、Linux-环境变量文件">三、Linux 环境变量文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6249459e/#系统级：">系统级：</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6249459e/#-etc-bashrc">/etc/bashrc</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6249459e/#用户级：">用户级：</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6249459e/#~-profile">`~/.profile`</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6249459e/#~-bashrc">~/.bashrc</a><br/></div><!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 Linux 常用环境变量及作用和环境变量文件的详细介绍及其加载执行顺序
