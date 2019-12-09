@@ -16,15 +16,19 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 
 <!--end-->
 ## mathjax公式添加删除线 ##
-使用删除线功能必须使用行间公式:`$$...$$`。
-在公式内使用 `\require{cancel}` 来允许 片段删除线 的显示,即写成如下形式:
+使用`\require{cancel}`声明,来允许片段删除线 的显示,即写成如下形式:
 ```latex
 $$
 \require{cancel}
 ......
 $$
 ```
-声明片段删除线后，使用 `\cancel{字符}`、`\bcancel{字符}`、`\xcancel{字符} `和 `\cancelto{字符} `来实现各种片段删除线效果。
+声明片段删除线后，使用如下代码:
+- `\cancel{字符}`斜线(`/`)、
+- `\bcancel{字符}`反斜线(`\`)、
+- `\xcancel{字符}`打叉(`x`)
+- `\cancelto{字符}`带箭头斜线
+
 ### 例子 ###
 ```mathjax
 $$
@@ -43,12 +47,12 @@ $$
 $$
 \require{cancel}
 \begin{array}{rl}
-\verb|y+\cancel{x}| & y+\cancel{x}\\\\
-\verb|\cancel{y+x}| & \cancel{y+x}\\\\
-\verb|y+\bcancel{x}| & y+\bcancel{x}\\\\
-\verb|y+\xcancel{x}| & y+\xcancel{x}\\\\
-\verb|y+\cancelto{0}{x}| & y+\cancelto{0}{x}\\\\
-\verb+\frac{1\cancel9}{\cancel95} = \frac15+& \frac{1\cancel9}{\cancel95} = \frac15 \\\\
+\verb|y+\cancel{x}| & y+\cancel{x}\\
+\verb|\cancel{y+x}| & \cancel{y+x}\\
+\verb|y+\bcancel{x}| & y+\bcancel{x}\\
+\verb|y+\xcancel{x}| & y+\xcancel{x}\\
+\verb|y+\cancelto{0}{x}| & y+\cancelto{0}{x}\\
+\verb+\frac{1\cancel9}{\cancel95} = \frac15+& \frac{1\cancel9}{\cancel95} = \frac15 \\
 \end{array}
 $$
 ## 参考资料 ##
