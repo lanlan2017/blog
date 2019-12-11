@@ -29,10 +29,11 @@ abbrlink: 83c2e83a
 ## 上下标 ##
 在LaTex中用`^`和`_`表明上下标。注意如果上下标只对其后面的一个字符起作用，如果上下标的内容超过一个字符，则需要用花括号`{}`包裹，否则上下标只对后面的一个符号起作用
 ```
-$p^3_{ij} \qquad \sum_{K=1}^3 k a^x+y \qquad  \neq a^{x+y}$
+$$p^3_{ij}\qquad\sum_{K=1}^3ka^x+y\qquad\neq a^{x+y}$$
 ```
-显示效果：
-$p^3_{ij} \qquad \sum_{K=1}^3 k a^x+y \qquad  \neq a^{x+y}$
+显示效果:
+$$p^3_{ij}\qquad\sum_{K=1}^3ka^x+y\qquad\neq a^{x+y}$$
+
 ## 导数符号 ##
 导数符号`'`是一个特殊的上标，可以适当连用表示多阶导数，也可以在其后连用上标：
 ```
@@ -85,19 +86,22 @@ $\infty$
 ```
 $\infty$
 
-这个是个缩写，原单词:<input type="button" onclick="paly_audioID20181123132026();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/infinity">\infinity</a>
+这个是个缩写，原单词:<input type="button" onclick="play('audioID20181123132026')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/infinity">\infinity</a>
+
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=infinity&spd=3&source=web" id="audioID20181123132026"></audio>
-<script>
-    function paly_audioID20181123132026() {
-        var audioID20181123132026 = document.getElementById("audioID20181123132026");
-        if (audioID20181123132026 != null) {
-            audioID20181123132026.play();
-        }
-    }
-</script>
+
+<script>function play(id){if(id!=null){var audio=document.getElementById(id);audio.play();}}</script>
 
 ## 省略号 ##
-省略号有$\dots$(\dots)和$cdots$(`\cdots`)两种形式。他们有各自合适的用途：
+
+|名称|符号|效果|
+|:---|:---|:---|
+|水平省略号|\dots|$\dots$|
+|水平省略号|\cdots|$\cdots$|
+|竖直省略号|\vdots|$\vdots$|
+|斜排省略号|\ddots|$\ddots$|
+
+
 ```
 $a_1,a_2,\dots,a_n$
 $a_1,a_2,\cdots,a_n$
@@ -106,7 +110,7 @@ $a_1,a_2,\cdots,a_n$
 $a_1,a_2,\dots,a_n$
 $a_1,a_2,\cdots,a_n$
 
-\ldost和\dots是完全等效的，它们既能用在公式中，也用在文本里作为省略号。
+\cdots和\dots是完全等效的，它们既能用在公式中，也用在文本里作为**省略号**。
 除此之外，在矩阵中可能会用到竖排的$\vdots$(\vdots)和斜排的$\ddots$(\ddots)
 
 ## 关系符 ##
@@ -124,116 +128,90 @@ $$
 
 ## 巨算子 ##
 
-积分号$\int$(\int),求和号$\sum$(\sum)等符号称为**[巨算子](http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf#54)**。巨算子在行内公式和行间公式的大小形状有区别
-```
-在行内显示:$\sum_{i=1}^n \quad
-\int_0^{\frac{\pi}{2}} \quad
-\oint_0^{\frac{\pi}{2}} \quad
-\prod_\epsilon $
-在行间显示：
-$$\sum_{i=1}^n \quad
-\int_0^{\frac{\pi}{2}} \quad
-\oint_0^{\frac{\pi}{2}} \quad
-\prod_\epsilon $$
-```
-在行内显示:$\sum_{i=1}^n \quad
-\int_0^{\frac{\pi}{2}} \quad
-\oint_0^{\frac{\pi}{2}} \quad
-\prod_\epsilon $
-在行间显示：
+积分号,求和号等符号称为**[巨算子](http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf#54)**。
 
-$$\sum_{i=1}^n \quad
+|名称|符号|效果|
+|:---|:---|:---|
+|积分号|\int|$\int$|
+|求和号|\sum|$\sum$|
+
+```
+$$
+\sum_{i=1}^n \quad
 \int_0^{\frac{\pi}{2}} \quad
 \oint_0^{\frac{\pi}{2}} \quad
-\prod_\epsilon $$
-
-巨算符的上下标用作其上下限。行间公式中，积分号默认将上下限放在右上角和右下角，求和号默认在上下方；行内公式一律默认在右上角和右下角。**可以在巨算符后使用\limits手动令上下限显示在上下方**，\nolimits则相反,即不显示在上下方，也就是显示在右上角，右下角。
+\prod_\epsilon 
+$$
 ```
-In text:$\sum\limits_{i=1}^n \quad
+$$
+\sum_{i=1}^n \quad
+\int_0^{\frac{\pi}{2}} \quad
+\oint_0^{\frac{\pi}{2}} \quad
+\prod_\epsilon 
+$$
+
+巨算符的上下标用作其**上下限**。行间公式中，积分号默认将上下限放在右上角和右下角，求和号默认在上下方；行内公式一律默认在右上角和右下角。**可以在巨算符后使用\limits手动令上下限显示在上下方**，\nolimits则相反,即不显示在上下方，也就是显示在右上角，右下角。
+```
+$$
+\sum\nolimits_{i=1}^n \quad
 \int\limits_0^{\frac{\pi}{2}} \quad
-\prod\limits_\epsilon $ 
-
-In display:
+\prod\nolimits_\epsilon 
+$$
+```
 $$
 \sum\nolimits_{i=1}^n \quad
 \int\limits_0^{\frac{\pi}{2}} \quad
 \prod\nolimits_\epsilon 
 $$
 
-```
-In text:
-$\sum\limits_{i=1}^n \quad
-\int\limits_0^{\frac{\pi}{2}} \quad
-\prod\limits_\epsilon $ 
-In display:
-$$\sum\nolimits_{i=1}^n \quad
-\int\limits_0^{\frac{\pi}{2}} \quad
-\prod\nolimits_\epsilon $$
-
 ## 极限符号 ##
 ### 行间公式极限 ###
 行间公式下标默认放在符号的下方，所以直接再极限符号`\lim`下方写上符号极限范围即可：
-```latex
+```
 $${\lim_{x \to +\infty}}$$
 ```
 $${\lim_{x \to +\infty}}$$
-```latex
+```
 $${\lim_{x \to -\infty}}$$
 ```
 $${\lim_{x \to -\infty}}$$
-```latex
+```
 $${\lim_{x \to 0}}$$
 ```
 $${\lim_{x \to 0}}$$
-```latex
+```
 $${\lim_{x \to 0^+}}$$
 ```
 $${\lim_{x \to 0^+}}$$
-```latex
+```
 $${ \lim_{x \to 0} \frac{3x^2 +7x^3}{x^2 +5x^4} = 3}$$
 ```
 $${ \lim_{x \to 0} \frac{3x^2 +7x^3}{x^2 +5x^4} = 3}$$
 ### 行间极限 ###
 行间的下标默认放在右下角，可以使用`\limits_{下标}`把下标放到符号下方即可。实例如下所示：
-```latex
+```
 ${\lim \limits_{x \to -\infty}}$
 ```
 行间极限符号:${\lim \limits_{x \to -\infty}}$
 # 集合相关符号 #
 ## 元素与集合的关系 ##
-### 属于 ###
-```latex
-\in
-```
-$\in$
-### 不属于 ###
-```latex
-\notin
-```
-$\notin$
+
+|名称|符号|效果|
+|:---|:---|:---|
+|属于|\in|$\in$|
+|不属于|\notin|$\notin$|
+
 ## 集合与集合相关的关系 ##
-### 空集 ###
-```
-\emptyset
-```
-$\emptyset$
-### 子集 ###
-```latex
-\subset
-```
-$\subset$
-### 真子集 ###
-```latex
-\subseteq
-```
-$\subseteq$
-### 交集 ###
-交集符号有大小之分，只要区别在两者的显示大小上面
-大交集符号`\bigcap`,显示效果:$\bigcap$
-小交集符号`\cap`,显示效果:$\cap$
-### 并集 ###
-这里有大并集符号`\bigcup`和通常并集`\cup`符号之分
-大并集符号:$\bigcup$。小并集符号:$\cup$
+
+|名称|符号|效果|
+|:---|:---|:---|
+|空集|\emptyset|$\emptyset$|
+|子集|\subset|$\subset$|
+|真子集|\subseteq|$\subseteq$|
+|交集|\bigcap和\cap|$\bigcap$和$\cap$|
+|并集|\bigcup和\cup|$\bigcup$和$\cup$|
+
+
 # 数学重音和上下括号 #
 数学符号可以像文字一样**加重音**，比如对时间求导的符号$\dot{r}$(\dot{r})、$ddot{r}$(ddot{r})、表示向量的箭头$vec{r}$(vec{r})、表示欧式空间单位向量的$\hat{\mathbf{e}}$(\hat{\mathbf{e}})等，详见表[4.9](http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf#e1)。使用时要注意重音符号的作用区域，**一般应当对某个符号而不是不符号加下表使用重音：**
 ```
@@ -278,12 +256,18 @@ _\text{meaning of life} = 42$
 除了作为上下标之外，箭头还用于表示过程。amsmath的`\xleftarrow`和`\xrightarrow`命令可以为箭头增加上下标：
 ```
 $$ a\xleftarrow{x+y+z} b $$
-$$c\xrightarrow[x<y]{a\*b\*c}d $$
+$$c\xrightarrow[x<y]{a*b*c}d $$
 ```
 $$ a\xleftarrow{x+y+z} b$$
-$$c\xrightarrow[x<y]{a\*b\*c}d $$
+$$c\xrightarrow[x<y]{a*b*c}d $$
 
-注意，这里`$$c\xrightarrow[x<y]{a\*b\*c}d $$`乘号前面加转义符是让Markdown引擎不解析这两个星号，因为两个连续的星号，markdown会解析成斜体字。
+注意，这里:
+```
+$$
+c\xrightarrow[x<y]{a*b*c}d 
+$$
+```
+乘号前面加转义符是让Markdown引擎不解析这两个星号，因为两个连续的星号，markdown会解析成斜体字。
 
 # 括号和定界符 #
 
@@ -663,14 +647,14 @@ latex希腊字母符号代码就是`斜杠+其英文名称`，如`$\alpha$`:$\al
 
 |效果|命令|效果|命令|效果|命令|效果|命令|
 |-:|:-|-:|:-|-:|:-|-:|:-|
-|$\alpha$|<input type="button" onclick="paly_audioID20181123121312();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/alpha">\alpha</a>|$\theta$|<input type="button" onclick="paly_audioID20181123122135();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/theta">\theta</a>|$o$|o|$\upsilon$|<input type="button" onclick="paly_audioID20181123122254();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/upsilon">\upsilon</a>|
-|$\beta$|<input type="button" onclick="paly_audioID20181123122456();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/beta">\beta</a>|$\vartheta$|<input type="button" onclick="paly_audioID20181123122555();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/vartheta">\vartheta</a>|$\pi$|<input type="button" onclick="paly_audioID20181123122823();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/pi">\pi</a>|$\phi$|<input type="button" onclick="paly_audioID20181123123338();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/phi">\phi</a>|
-|$\gamma$|<input type="button" onclick="paly_audioID20181123123438();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/gamma">\gamma</a>|$\iota$|<input type="button" onclick="paly_audioID20181123123517();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/iota">\iota</a>|$\varpi$|\varpi|$\varphi$|\varphi|
-|$\delta$|<input type="button" onclick="paly_audioID20181123124010();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/delta">\delta</a>|$\kappa$|<input type="button" onclick="paly_audioID20181123124102();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/kappa">\kappa</a>|$\rho$|<input type="button" onclick="paly_audioID20181123124140();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/rho">\rho</a>|$\chi$|<input type="button" onclick="paly_audioID20181123124313();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/chi">\chi</a>|
-|$\epsilon$|<input type="button" onclick="paly_audioID20181123124355();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/epsilon">epsilon</a>|$\lambda$|<input type="button" onclick="paly_audioID20181123124424();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/lambda">\lambda</a>|$\varrho$|\varrho|$\psi$|<input type="button" onclick="paly_audioID20181123124455();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/psi">\psi</a>|
-|$\varepsilon$|\varepsilon|$\mu$|<input type="button" onclick="paly_audioID20181123124600();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/mu">\mu</a>|$\sigma$|<input type="button" onclick="paly_audioID20181123124628();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/sigma">\sigma</a>|$\omega$|<input type="button" onclick="paly_audioID20181123124656();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/omega">\omega</a>第24位|
-|$\zeta$|<input type="button" onclick="paly_audioID20181123124728();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/zeta">\zeta</a>|$\nu$|<input type="button" onclick="paly_audioID20181123124755();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/nu">\nu</a>|$\varsigma$|\varsigma|||
-|$\eta$|<input type="button" onclick="paly_audioID20181123124856();" value="播放" /><a href="http://dict.youdao.com/search?q=eta&keyfrom=new-fanyi.smartResult">\eta</a>|$\xi$|<input type="button" onclick="paly_audioID20181123130726();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/xi">\xi</a>|$\tau$|<input type="button" onclick="paly_audioID20181123130836();" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/tau">\tau</a>||| 
+|$\alpha$|<input type="button" onclick="play('audioID20181123121312')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/alpha">\alpha</a>|$\theta$|<input type="button" onclick="play('audioID20181123122135')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/theta">\theta</a>|$o$|o|$\upsilon$|<input type="button" onclick="play('audioID20181123122254')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/upsilon">\upsilon</a>|
+|$\beta$|<input type="button" onclick="play('audioID20181123122456')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/beta">\beta</a>|$\vartheta$|<input type="button" onclick="play('audioID20181123122555')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/vartheta">\vartheta</a>|$\pi$|<input type="button" onclick="play('audioID20181123122823')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/pi">\pi</a>|$\phi$|<input type="button" onclick="play('audioID20181123123338')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/phi">\phi</a>|
+|$\gamma$|<input type="button" onclick="play('audioID20181123123438')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/gamma">\gamma</a>|$\iota$|<input type="button" onclick="play('audioID20181123123517')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/iota">\iota</a>|$\varpi$|\varpi|$\varphi$|\varphi|
+|$\delta$|<input type="button" onclick="play('audioID20181123124010')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/delta">\delta</a>|$\kappa$|<input type="button" onclick="play('audioID20181123124102')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/kappa">\kappa</a>|$\rho$|<input type="button" onclick="play('audioID20181123124140')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/rho">\rho</a>|$\chi$|<input type="button" onclick="play('audioID20181123124313')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/chi">\chi</a>|
+|$\epsilon$|<input type="button" onclick="play('audioID20181123124355')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/epsilon">epsilon</a>|$\lambda$|<input type="button" onclick="play('audioID20181123124424')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/lambda">\lambda</a>|$\varrho$|\varrho|$\psi$|<input type="button" onclick="play('audioID20181123124455')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/psi">\psi</a>|
+|$\varepsilon$|\varepsilon|$\mu$|<input type="button" onclick="play('audioID20181123124600')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/mu">\mu</a>|$\sigma$|<input type="button" onclick="play('audioID20181123124628')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/sigma">\sigma</a>|$\omega$|<input type="button" onclick="play('audioID20181123124656')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/omega">\omega</a>第24位|
+|$\zeta$|<input type="button" onclick="play('audioID20181123124728')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/zeta">\zeta</a>|$\nu$|<input type="button" onclick="play('audioID20181123124755')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/nu">\nu</a>|$\varsigma$|\varsigma|||
+|$\eta$|<input type="button" onclick="play('audioID20181123124856')" value="播放" /><a href="http://dict.youdao.com/search?q=eta&keyfrom=new-fanyi.smartResult">\eta</a>|$\xi$|<input type="button" onclick="play('audioID20181123130726')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/xi">\xi</a>|$\tau$|<input type="button" onclick="play('audioID20181123130836')" value="播放" /><a href="https://fanyi.baidu.com/?#en/zh/tau">\tau</a>||| 
 |$\Gamma$|\Gamma|$\Lambda$|\Lambda|$\Sigma$|\Sigma|$\Psi$|\Psi|
 |$\Delta$|\Delta|$\Xi$|\Xi|$\Upsilon$|\Upsilon|$\Omega$|\Omega|
 |$\Theta$|\Theta|$\Pi$|\Pi|$\Phi$|\Phi|||
@@ -679,348 +663,83 @@ latex希腊字母符号代码就是`斜杠+其英文名称`，如`$\alpha$`:$\al
 |$\varTheta$|\varTheta|$\varPi$|\varPi|$\varPhi$|\varPhi|
 
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=tau&spd=3&source=web" id="audioID20181123130836"></audio>
-<script>
-    function paly_audioID20181123130836() {
-        var audioID20181123130836 = document.getElementById("audioID20181123130836");
-        if (audioID20181123130836 != null) {
-            audioID20181123130836.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=xi&spd=3&source=web" id="audioID20181123130726"></audio>
-<script>
-    function paly_audioID20181123130726() {
-        var audioID20181123130726 = document.getElementById("audioID20181123130726");
-        if (audioID20181123130726 != null) {
-            audioID20181123130726.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=eta&spd=3&source=web" id="audioID20181123124856"></audio>
-<script>
-    function paly_audioID20181123124856() {
-        var audioID20181123124856 = document.getElementById("audioID20181123124856");
-        if (audioID20181123124856 != null) {
-            audioID20181123124856.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=nu&spd=3&source=web" id="audioID20181123124755"></audio>
-<script>
-    function paly_audioID20181123124755() {
-        var audioID20181123124755 = document.getElementById("audioID20181123124755");
-        if (audioID20181123124755 != null) {
-            audioID20181123124755.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=zeta&spd=3&source=web" id="audioID20181123124728"></audio>
-<script>
-    function paly_audioID20181123124728() {
-        var audioID20181123124728 = document.getElementById("audioID20181123124728");
-        if (audioID20181123124728 != null) {
-            audioID20181123124728.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=omega&spd=3&source=web" id="audioID20181123124656"></audio>
-<script>
-    function paly_audioID20181123124656() {
-        var audioID20181123124656 = document.getElementById("audioID20181123124656");
-        if (audioID20181123124656 != null) {
-            audioID20181123124656.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=sigma&spd=3&source=web" id="audioID20181123124628"></audio>
-<script>
-    function paly_audioID20181123124628() {
-        var audioID20181123124628 = document.getElementById("audioID20181123124628");
-        if (audioID20181123124628 != null) {
-            audioID20181123124628.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=mu&spd=3&source=web" id="audioID20181123124600"></audio>
-<script>
-    function paly_audioID20181123124600() {
-        var audioID20181123124600 = document.getElementById("audioID20181123124600");
-        if (audioID20181123124600 != null) {
-            audioID20181123124600.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=psi&spd=3&source=web" id="audioID20181123124455"></audio>
-<script>
-    function paly_audioID20181123124455() {
-        var audioID20181123124455 = document.getElementById("audioID20181123124455");
-        if (audioID20181123124455 != null) {
-            audioID20181123124455.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=lambda&spd=3&source=web" id="audioID20181123124424"></audio>
-<script>
-    function paly_audioID20181123124424() {
-        var audioID20181123124424 = document.getElementById("audioID20181123124424");
-        if (audioID20181123124424 != null) {
-            audioID20181123124424.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=epsilon&spd=3&source=web" id="audioID20181123124355"></audio>
-<script>
-    function paly_audioID20181123124355() {
-        var audioID20181123124355 = document.getElementById("audioID20181123124355");
-        if (audioID20181123124355 != null) {
-            audioID20181123124355.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=chi&spd=3&source=web" id="audioID20181123124313"></audio>
-<script>
-    function paly_audioID20181123124313() {
-        var audioID20181123124313 = document.getElementById("audioID20181123124313");
-        if (audioID20181123124313 != null) {
-            audioID20181123124313.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=rho&spd=3&source=web" id="audioID20181123124140"></audio>
-<script>
-    function paly_audioID20181123124140() {
-        var audioID20181123124140 = document.getElementById("audioID20181123124140");
-        if (audioID20181123124140 != null) {
-            audioID20181123124140.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=kappa&spd=3&source=web" id="audioID20181123124102"></audio>
-<script>
-    function paly_audioID20181123124102() {
-        var audioID20181123124102 = document.getElementById("audioID20181123124102");
-        if (audioID20181123124102 != null) {
-            audioID20181123124102.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=delta&spd=3&source=web" id="audioID20181123124010"></audio>
-<script>
-    function paly_audioID20181123124010() {
-        var audioID20181123124010 = document.getElementById("audioID20181123124010");
-        if (audioID20181123124010 != null) {
-            audioID20181123124010.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=iota&spd=3&source=web" id="audioID20181123123517"></audio>
-<script>
-    function paly_audioID20181123123517() {
-        var audioID20181123123517 = document.getElementById("audioID20181123123517");
-        if (audioID20181123123517 != null) {
-            audioID20181123123517.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=gamma&spd=3&source=web" id="audioID20181123123438"></audio>
-<script>
-    function paly_audioID20181123123438() {
-        var audioID20181123123438 = document.getElementById("audioID20181123123438");
-        if (audioID20181123123438 != null) {
-            audioID20181123123438.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=phi&spd=3&source=web" id="audioID20181123123338"></audio>
-<script>
-    function paly_audioID20181123123338() {
-        var audioID20181123123338 = document.getElementById("audioID20181123123338");
-        if (audioID20181123123338 != null) {
-            audioID20181123123338.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=pi&spd=3&source=web" id="audioID20181123122823"></audio>
-<script>
-    function paly_audioID20181123122823() {
-        var audioID20181123122823 = document.getElementById("audioID20181123122823");
-        if (audioID20181123122823 != null) {
-            audioID20181123122823.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=vartheta&spd=3&source=web" id="audioID20181123122555"></audio>
-<script>
-    function paly_audioID20181123122555() {
-        var audioID20181123122555 = document.getElementById("audioID20181123122555");
-        if (audioID20181123122555 != null) {
-            audioID20181123122555.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=beta&spd=3&source=web" id="audioID20181123122456"></audio>
-<script>
-    function paly_audioID20181123122456() {
-        var audioID20181123122456 = document.getElementById("audioID20181123122456");
-        if (audioID20181123122456 != null) {
-            audioID20181123122456.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=upsilon&spd=3&source=web" id="audioID20181123122254"></audio>
-<script>
-    function paly_audioID20181123122254() {
-        var audioID20181123122254 = document.getElementById("audioID20181123122254");
-        if (audioID20181123122254 != null) {
-            audioID20181123122254.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=theta&spd=3&source=web" id="audioID20181123122135"></audio>
-<script>
-    function paly_audioID20181123122135() {
-        var audioID20181123122135 = document.getElementById("audioID20181123122135");
-        if (audioID20181123122135 != null) {
-            audioID20181123122135.play();
-        }
-    }
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=alpha&spd=3&source=web" id="audioID20181123121312"></audio>
-<script>
-    function paly_audioID20181123121312() {
-        var audioID20181123121312 = document.getElementById("audioID20181123121312");
-        if (audioID20181123121312 != null) {
-            audioID20181123121312.play();
-        }
-    }
-</script>
 
 ### 希腊字母顺序表 ###
 |序号|大写|小写|英文|读音|
 |:--|:--|:--|:--|:--|
-|1|$A$|$\alpha$|<a href="https://fanyi.baidu.com/?#en/zh/alpha">alpha</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJVVW();"></i> |
-|2|$B$|$\beta$|<a href="https://fanyi.baidu.com/?#en/zh/beta">beta</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJW1a();"></i> |
-|3|$\Gamma$|$\gamma$|<a href="https://fanyi.baidu.com/?#en/zh/gamma">gamma</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJW2P();"></i> |
-|4|$\Delta$|$\delta$|<a href="https://fanyi.baidu.com/?#en/zh/delta">delta</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJW5S();"></i> |
-|5|$E$|$\epsilon$|<a href="https://fanyi.baidu.com/?#en/zh/epsilon">epsilon</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJW7B();"></i> |
-|6|$Z$|$\zeta$|<a href="https://fanyi.baidu.com/?#en/zh/zeta">zeta</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWbG();"></i> |
-|7|$H$|$\eta$|<a href="https://fanyi.baidu.com/?#en/zh/eta">eta</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWdm();"></i> |
-|8|$\Theta$|$\theta$|<a href="https://fanyi.baidu.com/?#en/zh/theta">theta</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWho();"></i> |
-|9|$I$|$\iota$|<a href="https://fanyi.baidu.com/?#en/zh/iota">iota</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWiz();"></i> |
-|10|$K$|$\kappa$|<a href="https://fanyi.baidu.com/?#en/zh/kappa">kappa</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWk9();"></i> |
-|11|$\Lambda$|$\lambda$|<a href="https://fanyi.baidu.com/?#en/zh/lambda">lambda</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWnJ();"></i> |
-|12|$M$|$\mu$|<a href="https://fanyi.baidu.com/?#en/zh/mu">mu</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWqk();"></i> |
-|13|$N$|$\nu$|<a href="https://fanyi.baidu.com/?#en/zh/nu">nu</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWtG();"></i> |
-|14|$\Xi$|$\xi$|<a href="https://fanyi.baidu.com/?#en/zh/xi">xi</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWvh();"></i> |
-|15|$O$|$\omicron$|<a href="https://fanyi.baidu.com/?#en/zh/omicron">omicron</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWx7();"></i> |
-|16|$\Pi$|$\pi$|<a href="https://fanyi.baidu.com/?#en/zh/pi">pi</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWyD();"></i> |
-|17|$P$|$\rho$|<a href="https://fanyi.baidu.com/?#en/zh/rho">rho</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWAc();"></i> |
-|18|$\Sigma$|$\sigma$|<a href="https://fanyi.baidu.com/?#en/zh/sigma">sigma</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWIq();"></i> |
-|19|$T$|$\tau$|<a href="https://fanyi.baidu.com/?#en/zh/tau">tau</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWL9();"></i> |
-|20|$\Upsilon$|$\upsilon$|<a href="https://fanyi.baidu.com/?#en/zh/upsilon">upsilon</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWMK();"></i> |
-|21|$\Phi$|$\phi$|<a href="https://fanyi.baidu.com/?#en/zh/phi">phi</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWNB();"></i> |
-|22|$X$|$\chi$|<a href="https://fanyi.baidu.com/?#en/zh/chi">chi</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWP5();"></i> |
-|23|$\Psi$|$\psi$|<a href="https://fanyi.baidu.com/?#en/zh/psi">psi</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWQE();"></i> |
-|24|$\Omega$|$\omega$|<a href="https://fanyi.baidu.com/?#en/zh/omega">omega</a>|<i class="fa fa-play" aria-hidden="true" onclick="paly_audioID5JswJWS3();"></i> |
-
+|1|$A$|$\alpha$|<a href="https://fanyi.baidu.com/?#en/zh/alpha">alpha</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJVVW')"></i> |
+|2|$B$|$\beta$|<a href="https://fanyi.baidu.com/?#en/zh/beta">beta</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJW1a')"></i> |
+|3|$\Gamma$|$\gamma$|<a href="https://fanyi.baidu.com/?#en/zh/gamma">gamma</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJW2P')"></i> |
+|4|$\Delta$|$\delta$|<a href="https://fanyi.baidu.com/?#en/zh/delta">delta</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJW5S')"></i> |
+|5|$E$|$\epsilon$|<a href="https://fanyi.baidu.com/?#en/zh/epsilon">epsilon</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJW7B')"></i> |
+|6|$Z$|$\zeta$|<a href="https://fanyi.baidu.com/?#en/zh/zeta">zeta</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWbG')"></i> |
+|7|$H$|$\eta$|<a href="https://fanyi.baidu.com/?#en/zh/eta">eta</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWdm')"></i> |
+|8|$\Theta$|$\theta$|<a href="https://fanyi.baidu.com/?#en/zh/theta">theta</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWho')"></i> |
+|9|$I$|$\iota$|<a href="https://fanyi.baidu.com/?#en/zh/iota">iota</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWiz')"></i> |
+|10|$K$|$\kappa$|<a href="https://fanyi.baidu.com/?#en/zh/kappa">kappa</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWk9')"></i> |
+|11|$\Lambda$|$\lambda$|<a href="https://fanyi.baidu.com/?#en/zh/lambda">lambda</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWnJ')"></i> |
+|12|$M$|$\mu$|<a href="https://fanyi.baidu.com/?#en/zh/mu">mu</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWqk')"></i> |
+|13|$N$|$\nu$|<a href="https://fanyi.baidu.com/?#en/zh/nu">nu</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWtG')"></i> |
+|14|$\Xi$|$\xi$|<a href="https://fanyi.baidu.com/?#en/zh/xi">xi</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWvh')"></i> |
+|15|$O$|$\omicron$|<a href="https://fanyi.baidu.com/?#en/zh/omicron">omicron</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWx7')"></i> |
+|16|$\Pi$|$\pi$|<a href="https://fanyi.baidu.com/?#en/zh/pi">pi</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWyD')"></i> |
+|17|$P$|$\rho$|<a href="https://fanyi.baidu.com/?#en/zh/rho">rho</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWAc')"></i> |
+|18|$\Sigma$|$\sigma$|<a href="https://fanyi.baidu.com/?#en/zh/sigma">sigma</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWIq')"></i> |
+|19|$T$|$\tau$|<a href="https://fanyi.baidu.com/?#en/zh/tau">tau</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWL9')"></i> |
+|20|$\Upsilon$|$\upsilon$|<a href="https://fanyi.baidu.com/?#en/zh/upsilon">upsilon</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWMK')"></i> |
+|21|$\Phi$|$\phi$|<a href="https://fanyi.baidu.com/?#en/zh/phi">phi</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWNB')"></i> |
+|22|$X$|$\chi$|<a href="https://fanyi.baidu.com/?#en/zh/chi">chi</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWP5')"></i> |
+|23|$\Psi$|$\psi$|<a href="https://fanyi.baidu.com/?#en/zh/psi">psi</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWQE')"></i> |
+|24|$\Omega$|$\omega$|<a href="https://fanyi.baidu.com/?#en/zh/omega">omega</a>|<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWS3')"></i> |
 
 
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=omega&spd=5&source=web" id="audioID5JswJWS3"></audio>
-<script>
-    function paly_audioID5JswJWS3() {var id = document.getElementById("audioID5JswJWS3");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=psi&spd=5&source=web" id="audioID5JswJWQE"></audio>
-<script>
-    function paly_audioID5JswJWQE() {var id = document.getElementById("audioID5JswJWQE");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=chi&spd=5&source=web" id="audioID5JswJWP5"></audio>
-<script>
-    function paly_audioID5JswJWP5() {var id = document.getElementById("audioID5JswJWP5");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=phi&spd=5&source=web" id="audioID5JswJWNB"></audio>
-<script>
-    function paly_audioID5JswJWNB() {var id = document.getElementById("audioID5JswJWNB");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=upsilon&spd=5&source=web" id="audioID5JswJWMK"></audio>
-<script>
-    function paly_audioID5JswJWMK() {var id = document.getElementById("audioID5JswJWMK");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=tau&spd=5&source=web" id="audioID5JswJWL9"></audio>
-<script>
-    function paly_audioID5JswJWL9() {var id = document.getElementById("audioID5JswJWL9");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=sigma&spd=5&source=web" id="audioID5JswJWIq"></audio>
-<script>
-    function paly_audioID5JswJWIq() {var id = document.getElementById("audioID5JswJWIq");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=rho&spd=5&source=web" id="audioID5JswJWAc"></audio>
-<script>
-    function paly_audioID5JswJWAc() {var id = document.getElementById("audioID5JswJWAc");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=pi&spd=5&source=web" id="audioID5JswJWyD"></audio>
-<script>
-    function paly_audioID5JswJWyD() {var id = document.getElementById("audioID5JswJWyD");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=omicron&spd=5&source=web" id="audioID5JswJWx7"></audio>
-<script>
-    function paly_audioID5JswJWx7() {var id = document.getElementById("audioID5JswJWx7");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=xi&spd=5&source=web" id="audioID5JswJWvh"></audio>
-<script>
-    function paly_audioID5JswJWvh() {var id = document.getElementById("audioID5JswJWvh");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=nu&spd=5&source=web" id="audioID5JswJWtG"></audio>
-<script>
-    function paly_audioID5JswJWtG() {var id = document.getElementById("audioID5JswJWtG");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=mu&spd=5&source=web" id="audioID5JswJWqk"></audio>
-<script>
-    function paly_audioID5JswJWqk() {var id = document.getElementById("audioID5JswJWqk");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=lambda&spd=5&source=web" id="audioID5JswJWnJ"></audio>
-<script>
-    function paly_audioID5JswJWnJ() {var id = document.getElementById("audioID5JswJWnJ");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=kappa&spd=5&source=web" id="audioID5JswJWk9"></audio>
-<script>
-    function paly_audioID5JswJWk9() {var id = document.getElementById("audioID5JswJWk9");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=iota&spd=5&source=web" id="audioID5JswJWiz"></audio>
-<script>
-    function paly_audioID5JswJWiz() {var id = document.getElementById("audioID5JswJWiz");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=theta&spd=5&source=web" id="audioID5JswJWho"></audio>
-<script>
-    function paly_audioID5JswJWho() {var id = document.getElementById("audioID5JswJWho");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=eta&spd=5&source=web" id="audioID5JswJWdm"></audio>
-<script>
-    function paly_audioID5JswJWdm() {var id = document.getElementById("audioID5JswJWdm");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=zeta&spd=5&source=web" id="audioID5JswJWbG"></audio>
-<script>
-    function paly_audioID5JswJWbG() {var id = document.getElementById("audioID5JswJWbG");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=epsilon&spd=5&source=web" id="audioID5JswJW7B"></audio>
-<script>
-    function paly_audioID5JswJW7B() {var id = document.getElementById("audioID5JswJW7B");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=delta&spd=5&source=web" id="audioID5JswJW5S"></audio>
-<script>
-    function paly_audioID5JswJW5S() {var id = document.getElementById("audioID5JswJW5S");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=gamma&spd=5&source=web" id="audioID5JswJW2P"></audio>
-<script>
-    function paly_audioID5JswJW2P() {var id = document.getElementById("audioID5JswJW2P");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=beta&spd=5&source=web" id="audioID5JswJW1a"></audio>
-<script>
-    function paly_audioID5JswJW1a() {var id = document.getElementById("audioID5JswJW1a");if (id != null) {id.play();}}
-</script>
 <audio src="http://fanyi.baidu.com/gettts?lan=en&text=alpha&spd=5&source=web" id="audioID5JswJVVW"></audio>
-<script>
-    function paly_audioID5JswJVVW() {var id = document.getElementById("audioID5JswJVVW");if (id != null) {id.play();}}
-</script>
 
 #### 参考资料 ####
 [https://baike.baidu.com/item/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/4428067?fr=aladdin#2_1](https://baike.baidu.com/item/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/4428067?fr=aladdin#2_1)
