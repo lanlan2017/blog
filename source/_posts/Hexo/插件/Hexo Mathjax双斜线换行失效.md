@@ -1,11 +1,10 @@
 ---
 title: Hexo Mathjax双斜线换行失效
 categories: 
-  - 其他
-  - latex
-  - LaTex语法
+  - Hexo
+  - 插件
 date: 2019-12-09 17:31:25
-updated: 2019-12-09 19:45:23
+updated: 2019-12-09 20:39:05
 mathjax: true
 abbrlink: eb86e892
 ---

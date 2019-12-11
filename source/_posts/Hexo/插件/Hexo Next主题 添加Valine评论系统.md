@@ -4,7 +4,7 @@ categories:
   - Hexo
   - 插件
 date: 2018-09-26 20:00:35
-updated: 2019-12-09 19:55:22
+updated: 2019-12-09 20:34:40
 abbrlink: 8eadc39
 ---
 [头像设置](/2018/09/27/Hexo搭建博客/添加功能/Hexo Valine使用Gravatars头像/)参见

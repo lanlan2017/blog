@@ -4,7 +4,7 @@ categories:
   - Hexo
   - 插件
 date: 2019-02-15 21:49:16
-updated: 2019-12-09 19:55:22
+updated: 2019-12-09 20:34:41
 abbrlink: 7162b91b
 ---
 <div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#卸载hexo-generator-index插件">卸载hexo-generator-index插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#安装hexo-generator-index-pin-top插件">安装hexo-generator-index-pin-top插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#添加front-matter配置项">添加front-matter配置项</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#重新部署">重新部署</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#添加置顶标识">添加置顶标识</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#参考资料">参考资料</a><br/></div><!--more-->

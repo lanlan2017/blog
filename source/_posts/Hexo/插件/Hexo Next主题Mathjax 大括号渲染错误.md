@@ -1,11 +1,10 @@
 ---
 title: Hexo Next主题Mathjax 大括号渲染错误
 categories: 
-  - 其他
-  - latex
-  - LaTex语法
+  - Hexo
+  - 插件
 date: 2019-12-07 22:23:13
-updated: 2019-12-09 19:45:23
+updated: 2019-12-09 20:39:05
 mathjax: true
 abbrlink: 14ee6880
 ---
