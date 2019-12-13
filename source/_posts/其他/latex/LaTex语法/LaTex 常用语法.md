@@ -259,47 +259,6 @@ $\underbrace{\overbrace{a+b+c}^6
 \cdot \overbrace{d+e+f}^7}
 _\text{meaning of life} = 42$
 
-
-# 箭头 #
-
-除了作为上下标之外，箭头还用于表示过程。amsmath的`\xleftarrow`和`\xrightarrow`命令可以为箭头增加上下标：
-```
-$$ a\xleftarrow{x+y+z} b $$
-$$c\xrightarrow[x<y]{a*b*c}d $$
-```
-$$ a\xleftarrow{x+y+z} b$$
-$$c\xrightarrow[x<y]{a*b*c}d $$
-
-注意，这里:
-```
-$$
-c\xrightarrow[x<y]{a*b*c}d 
-$$
-```
-乘号前面加转义符是让Markdown引擎不解析这两个星号，因为两个连续的星号，markdown会解析成斜体字。
-
-# 括号和定界符 #
-
-LATEX提供了多种括号和定界符表示公式块的边界。除小括号( )、中括号[ ]之外，其余都是LATEX命令，包括大括号\{ \}。表4.12和4.13给出了更多的括号/定界符命令。
-```
-${a,b,c} \neq \{a,b,c\}$
-```
-${a,b,c} \neq \{a,b,c\}$
-
-使用\left和\right命令可令括号（定界符）的大小可变，在行间公式中常用。LATEX会自动根据括号内的公式大小决定定界符大小。\left和\right必须成对使用。需要使用单个定界符时，另一个定界符写成\left.或\right.。
-```
-\[1 + \left(\frac{1}{1-x^{2}}
-\right)^3 \qquad
-\left.\frac{\partial f}{\partial t}
-\right|_{t=0}\]
-```
-$$
-1 + \left(\frac{1}{1-x^{2}}
-\right)^3 \qquad
-\left.\frac{\partial f}{\partial t}
-\right|_{t=0}
-$$
-
 # 多行公式 #
 ## 长公式折行 ##
 通常来讲应当避免写出超过一行而需要折行的长公式。如果一定要折行的话，优先在等号之前折行，其次在加号、减号之前，再次在乘号、除号之前。其它位置应当避免折行。
@@ -647,7 +606,47 @@ $$
 
 ## 二元运算符 ##
 LaTex中的算符大多数是二元算符，除了直接用键盘可以输入的+，-，*，/外，其他符号用命令输入，常用的符号有乘号：$\times$(\times),除号: $\div$ (\div),点乘: $\cdot$ (\cdot),加减号 $\pm$ (\pm) 或者 $\mp$ (\mp)等等。更多符号命令可参考表4.7以及表4.17 
+### 图片内容
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/eryuanyunsuan.png)
+
+### 渲染效果
+
+|latex符号|效果|描述|
+|:---|:---|:---|
+|+|$+$|加号|
+|-|$-$|减号|
+|\pm|$\pm$|正负号|
+|\mp|$\mp$|正负号|
+|\cdot|$\cdot$|点乘|
+|\times|$\times$|乘法|
+|\div|$\div$|除法|
+|\cup|$\cup$|并|
+|\cap|$\cap$|交集|
+|\sqcup|$\sqcup$|不懂叫啥|
+|\sqcap|$\sqcap$|不懂叫啥|
+|\vee,或者\lor|$\vee$,$\lor$|不懂叫啥|
+|\wedgw,或者\land|$\wedge$,$\land$|不懂叫啥|
+|\oplus|$\oplus$|异或运算|
+|\ominus|$\ominus$|不懂叫啥|
+|\odot|$\odot$|异或运算|
+|\oslash|$\oslash$|不懂叫啥|
+|\otimes|$\times$|不懂叫啥|
+|\bigtriangleup|$\bigtriangleup$|不懂叫啥|
+|\bigtriangledown|$\bigtriangledown$|不懂叫啥|
+|\triangleleft|$\triangleleft$|不懂叫啥|
+|\triangleright|$\triangleright$|不懂叫啥|
+|\star|$\star$|不懂叫啥|
+|\ast|$\ast$|不懂叫啥|
+|\circ|$\circ$|不懂叫啥|
+|\bigcirc|$\bigcirc$|不懂叫啥|
+|\bullet|$\bullet$|不懂叫啥|
+|\diamond|$\diamond$|不懂叫啥|
+|\uplus|$\uplus$|不懂叫啥|
+|\amalg|$\amalg$|不懂叫啥|
+|\dagger|$\dagger$|不懂叫啥|
+|\ddagger|$\ddagger$|不懂叫啥|
+|\wr|$\wr$|不懂叫啥|
+
 ## 希腊字母 ##
 latex希腊字母符号代码就是`斜杠+其英文名称`，如`$\alpha$`:$\alpha$,`$\beta$`:$\beta$...等。
 大写的latex希腊字母就是`斜杠+首字母大写的英文名称`，如`$\Gamma$`:$\Gamma$,`$\Delta$`:$\Delta$...。
@@ -687,7 +686,52 @@ latex希腊字母符号代码就是`斜杠+其英文名称`，如`$\alpha$`:$\al
 ## 巨算符 ##
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/jusuanfu.png)
 ## 箭头 ##
+除了作为上下标之外，箭头还用于表示过程。amsmath的`\xleftarrow`和`\xrightarrow`命令可以为箭头增加上下标：
+```
+$$ a\xleftarrow{x+y+z} b $$
+$$c\xrightarrow[x<y]{a*b*c}d $$
+```
+$$ a\xleftarrow{x+y+z} b$$
+$$c\xrightarrow[x<y]{a*b*c}d $$
+
+### 箭头详细表 图片
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/jiantou.png)
+
+### 箭头详细表 渲染
+
+|效果|源码|效果|源码|
+|:---|:---|:---|:---|
+|$\leftarrow$或者$\gets$|\leftarrow或者\gets|$\longleftarrow$|\longleftarrow|
+|$\rightarrow$或者$\to$|\rightarrow或者\to|$\longrightarrow$|\longrightarrow|
+|$\leftrightarrow$|\leftrightarrow|$\longleftrightarrow$|\longleftrightarrow|
+|$\Leftarrow$|\Leftarrow|$\Longleftarrow$|\Longleftarrow|
+|$\Rightarrow$|\Rightarrow|$\Longrightarrow$|\Longrightarrow|
+
+<!-- ||||| -->
+
+
+# 括号和定界符 #
+
+LATEX提供了多种括号和定界符表示公式块的边界。除小括号( )、中括号[ ]之外，其余都是LATEX命令，包括大括号\{ \}。表4.12和4.13给出了更多的括号/定界符命令。
+```
+${a,b,c} \neq \{a,b,c\}$
+```
+${a,b,c} \neq \{a,b,c\}$
+
+使用\left和\right命令可令括号（定界符）的大小可变，在行间公式中常用。LATEX会自动根据括号内的公式大小决定定界符大小。\left和\right必须成对使用。需要使用单个定界符时，另一个定界符写成\left.或\right.。
+```
+\[1 + \left(\frac{1}{1-x^{2}}
+\right)^3 \qquad
+\left.\frac{\partial f}{\partial t}
+\right|_{t=0}\]
+```
+$$
+1 + \left(\frac{1}{1-x^{2}}
+\right)^3 \qquad
+\left.\frac{\partial f}{\partial t}
+\right|_{t=0}
+$$
+
 ## 作为重音的箭头符号 ##
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/dingbujiantou.png)
 ## 定界符 ##
