@@ -64,6 +64,25 @@ Run npm install to install new versions.
 npm install
 ```
 更新软件版本即可
+# 更新其他
+```
+E:\Blog\exam>npm install
+npm WARN deprecated core-js@1.2.7: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.10 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.10: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules\hexo-fs\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules\hexo-deployer-git\node_modules\fsevents):        npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+added 62 packages from 77 contributors, removed 6 packages, updated 35 packages and moved 1 package in 13.828s
+```
+注意错误信息:
+```
+npm WARN deprecated core-js@1.2.7: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+```
+更新core-js@1.2.7到core-js@3:
+```
+npm install --save core-js@^3
+```
 # 参考资料
 [https://www.jianshu.com/p/f192d11b60a2](https://www.jianshu.com/p/f192d11b60a2)
 [https://www.jianshu.com/p/ce9a46ae3a03](https://www.jianshu.com/p/ce9a46ae3a03)
