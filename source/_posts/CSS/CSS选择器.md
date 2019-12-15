@@ -6,12 +6,6 @@ date: 2018-12-12 23:44:41
 updated: 2019-12-09 19:55:22
 abbrlink: b6981f1b
 ---
-<div id='my_toc'><a href="/blog/b6981f1b/#基础">基础</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b6981f1b/#CSS选择器分类">CSS选择器分类</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b6981f1b/#CSS-元素选择器">CSS 元素选择器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b6981f1b/#类型选择器">类型选择器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b6981f1b/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 基础 #
 > 简而言之，选择器是 CSS 规则的一部分且位于 CSS 声明块前。
 ## CSS选择器分类 ##

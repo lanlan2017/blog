@@ -7,12 +7,6 @@ date: 2018-09-13 10:31:53
 updated: 2019-12-09 19:45:21
 abbrlink: 14ec9002
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/14ec9002/#完整的代码">完整的代码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/14ec9002/#ScreenShotOCR类">ScreenShotOCR类</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/14ec9002/#BaiduOCR类">BaiduOCR类</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 源码：[https://www.cnblogs.com/feitianshaoxai/p/6560110.html](https://www.cnblogs.com/feitianshaoxai/p/6560110.html)
 
 上面代码实现了截图的操作，我要在上面的代码中加入自动保存然后调用百度识图的操作。具体可以模仿上面的保存函数

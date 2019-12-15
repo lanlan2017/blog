@@ -7,12 +7,6 @@ date: 2019-06-09 22:53:08
 updated: 2019-12-09 19:45:22
 abbrlink: 5bc9db15
 ---
-<div id='my_toc'><a href="/blog/5bc9db15/#如何读取src目录下的文件">如何读取src目录下的文件</a><br/><a href="/blog/5bc9db15/#我的用法">我的用法</a><br/><a href="/blog/5bc9db15/#读取资源文件的工具类">读取资源文件的工具类</a><br/><a href="/blog/5bc9db15/#使用示例">使用示例</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 如何读取src目录下的文件 #
 `src`目录下的文件都是**资源文件**,运行程序时,可以通过反射来获取这些资源文件的输入流,进而读取这些文件中的内容。
 **放到`src`目录下的文件会被打包到`jar`包中**。

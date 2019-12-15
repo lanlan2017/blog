@@ -7,12 +7,6 @@ date: 2019-10-23 15:59:21
 updated: 2019-12-09 19:45:23
 abbrlink: 17349c5f
 ---
-<div id='my_toc'><a href="/blog/17349c5f/#最新版MySQL数据库驱动的问题">最新版MySQL数据库驱动的问题</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/17349c5f/#问题1-驱动名称不对">问题1 驱动名称不对</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/17349c5f/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/17349c5f/#问题2-没有指定时区">问题2 没有指定时区</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/17349c5f/#解决方案">解决方案</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 最新版MySQL数据库驱动的问题 #
 ## 问题1 驱动名称不对 ##
 ```cmd

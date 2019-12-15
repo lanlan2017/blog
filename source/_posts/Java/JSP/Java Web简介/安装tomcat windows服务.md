@@ -8,12 +8,6 @@ date: 2018-12-08 21:46:18
 updated: 2019-12-09 19:45:22
 abbrlink: 6d6d5543
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6d6d5543/#什么是Windows服务">什么是Windows服务</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6d6d5543/#安装tomcat到Windows-服务">安装tomcat到Windows 服务</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6d6d5543/#启动tomcat服务器">启动tomcat服务器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6d6d5543/#关闭tomcat服务器">关闭tomcat服务器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6d6d5543/#重启tomcat服务">重启tomcat服务</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6d6d5543/#重启时删除日志文件">重启时删除日志文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6d6d5543/#删除tomcat-windows服务">删除tomcat windows服务</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6d6d5543/#比较tomcat-windows服务方式和startup-bat方法">比较tomcat windows服务方式和startup.bat方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6d6d5543/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">
 <script>
     function open_closeTOC() {var id = document.querySelector(".post-body > ul"); if (id.style.display == "block") {id.style.display = "none";document.getElementById("showcloseButton").value= "展开目录";}else if (id.style.display == "none") {id.style.display = "block";document.getElementById("showcloseButton").value="折叠目录";}}(function () {document.querySelector(".post-body > ul").style.display = "none";document.getElementById("showcloseButton").value="展开目录";})();

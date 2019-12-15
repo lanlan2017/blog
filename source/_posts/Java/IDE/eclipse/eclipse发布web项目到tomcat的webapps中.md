@@ -8,12 +8,6 @@ date: 2018-12-11 20:43:57
 updated: 2019-12-09 20:34:55
 abbrlink: 37dcd881
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/37dcd881/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/37dcd881/#缺点">缺点</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/37dcd881/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/37dcd881/#eclipse中设置把Web项目发布到Tomcat-webapps中">eclipse中设置把Web项目发布到Tomcat webapps中</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/37dcd881/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">
 <script>
     function open_closeTOC() {var id = document.querySelector(".post-body > ul"); if (id.style.display == "block") {id.style.display = "none";document.getElementById("showcloseButton").value= "展开目录";}else if (id.style.display == "none") {id.style.display = "block";document.getElementById("showcloseButton").value="折叠目录";}}(function () {document.querySelector(".post-body > ul").style.display = "none";document.getElementById("showcloseButton").value="展开目录";})();

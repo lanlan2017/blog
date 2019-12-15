@@ -7,12 +7,6 @@ date: 2018-08-09 19:25:05
 updated: 2019-12-09 20:34:57
 abbrlink: a5e554af
 ---
-<div id='my_toc'><a href="/blog/a5e554af/#应用：复制字符文件">应用：复制字符文件</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 -----------读字符：-------------------
 I am groot
 I am groot!

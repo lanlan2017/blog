@@ -7,12 +7,6 @@ date: 2019-11-13 20:57:05
 updated: 2019-12-09 19:55:22
 abbrlink: a0156a29
 ---
-<div id='my_toc'><a href="/blog/a0156a29/#首先引入样式和js">首先引入样式和js</a><br/><a href="/blog/a0156a29/#使用样式">使用样式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#形状">形状</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#颜色">颜色</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#大小">大小</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#透明按钮">透明按钮</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#3D按钮">3D按钮</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#突起按钮">突起按钮</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#长阴影">长阴影</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#光晕效果">光晕效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#带下拉菜单的按钮">带下拉菜单的按钮</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#效果">效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#按钮组">按钮组</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#效果">效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#堆叠按钮">堆叠按钮</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#效果">效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#额外的环绕效果">额外的环绕效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#效果">效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#表单按钮">表单按钮</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#效果">效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#各种文字样式">各种文字样式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a0156a29/#效果">效果</a><br/><a href="/blog/a0156a29/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 首先引入样式和js #
 使用下拉列表需要使用JS
 ```html

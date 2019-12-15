@@ -7,12 +7,6 @@ date: 2018-12-08 00:19:02
 updated: 2019-12-09 19:45:23
 abbrlink: 885d02c0
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/885d02c0/#导出数据库中的所有表">导出数据库中的所有表</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/885d02c0/#记下原来数据库的属性">记下原来数据库的属性</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/885d02c0/#导出原数据库中的全部">导出原数据库中的全部</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/885d02c0/#导入数据库">导入数据库</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/885d02c0/#参看文件中的信息">参看文件中的信息</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/885d02c0/#新建同名数据库">新建同名数据库</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/885d02c0/#导入">导入</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/885d02c0/#Java程序说明">Java程序说明</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 导出数据库中的所有表 ##
 ### 记下原来数据库的属性 ###
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/mysql/tools/NavicatForMysql/shuxing.png)

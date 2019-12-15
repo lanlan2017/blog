@@ -8,12 +8,6 @@ date: 2019-07-11 11:03:16
 updated: 2019-12-09 20:34:55
 abbrlink: f3de5d3b
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f3de5d3b/#eclipse提取本地变量快捷键">eclipse提取本地变量快捷键</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f3de5d3b/#eclipse提取本地方法快捷键">eclipse提取本地方法快捷键</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## eclipse提取本地变量快捷键 ##
 `alt+shit+l`快捷键可以快速把一个字符串提取成一个本地变量。具体步骤如下:
 选中要提取成变量的字符串,然后按下`alt+shift+L`快捷键.

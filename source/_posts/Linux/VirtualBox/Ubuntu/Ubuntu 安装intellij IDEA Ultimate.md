@@ -8,12 +8,6 @@ date: 2019-11-25 17:52:23
 updated: 2019-12-09 19:45:23
 abbrlink: fa17fccd
 ---
-<div id='my_toc'><a href="/blog/fa17fccd/#Ubuntu安装intellij-IDEA-Ultimate">Ubuntu安装intellij IDEA Ultimate</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fa17fccd/#下载压缩包-tar-gz">下载压缩包(.tar.gz)</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fa17fccd/#移动压缩包到要安装的路径">移动压缩包到要安装的路径</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fa17fccd/#进入复制后的路径">进入复制后的路径</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fa17fccd/#解压压缩包">解压压缩包</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fa17fccd/#进入bin目录">进入bin目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fa17fccd/#启动idea">启动idea</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fa17fccd/#创建桌面快捷方式">创建桌面快捷方式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/fa17fccd/#在桌面创建idea-desktop">在桌面创建idea.desktop</a><br/><a href="/blog/fa17fccd/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # Ubuntu安装intellij IDEA Ultimate #
 ## 下载压缩包(.tar.gz) ##
 进入[Linux下载路径](https://www.jetbrains.com/idea/download/download-thanks.html?platform=linux)

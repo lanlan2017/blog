@@ -8,12 +8,6 @@ date: 2019-08-20 12:06:20
 updated: 2019-12-09 19:45:23
 abbrlink: 11f888fa
 ---
-<div id='my_toc'><a href="/blog/11f888fa/#快捷键支持">快捷键支持</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/11f888fa/#加粗">加粗</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/11f888fa/#切换代办列表">切换代办列表</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/11f888fa/#格式化表格">格式化表格</a><br/><a href="/blog/11f888fa/#快捷键表格">快捷键表格</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/11f888fa/#小结">小结</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 快捷键支持 #
 安装`Markdown All in One`插件,该插件提供了快捷键支持.
 ## 加粗 ##

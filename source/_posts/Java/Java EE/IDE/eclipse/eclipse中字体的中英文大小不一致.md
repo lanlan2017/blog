@@ -9,12 +9,6 @@ date: 2019-06-19 01:19:37
 updated: 2019-12-09 20:34:55
 abbrlink: 511c4c42
 ---
-<div id='my_toc'><a href="/blog/511c4c42/#eclipse中字体的中英文大小不一致">eclipse中字体的中英文大小不一致</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/511c4c42/#分析原因">分析原因</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/511c4c42/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/511c4c42/#eclipse中使用">eclipse中使用</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # eclipse中字体的中英文大小不一致 #
 ## 分析原因 ##
 `eclipse`的默认字体好像是`Consolas`,但

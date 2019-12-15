@@ -9,12 +9,6 @@ updated: 2019-12-09 19:45:23
 mathjax: true
 abbrlink: f88b012c
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f88b012c/#mathjax公式添加删除线">mathjax公式添加删除线</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f88b012c/#例子">例子</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f88b012c/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## mathjax公式添加删除线 ##
 使用`\require{cancel}`声明,来允许片段删除线 的显示,即写成如下形式:
 ```latex

@@ -7,12 +7,6 @@ date: 2019-11-23 15:47:40
 updated: 2019-12-09 19:45:23
 abbrlink: 30dba46d
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/30dba46d/#再执行命令">再执行命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/30dba46d/#然后选择程序和版本">然后选择程序和版本</a><br/><a href="/blog/30dba46d/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 --END PUBLIC KEY-----
 
 *******************************************************

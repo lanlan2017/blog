@@ -8,12 +8,6 @@ date: 2019-05-08 14:41:53
 updated: 2019-12-09 19:45:23
 abbrlink: cbe4b14b
 ---
-<div id='my_toc'><a href="/blog/cbe4b14b/#前言">前言</a><br/><a href="/blog/cbe4b14b/#目录结构">目录结构</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cbe4b14b/#一键复制Spring依赖到项目lib目录下-bat">一键复制Spring依赖到项目lib目录下.bat</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cbe4b14b/#命令解释">命令解释</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 前言 #
 在Java Web项目中,我们想要使用Spring,需要把Spring的jar包复制粘贴到项目的WEB-INF/lib目录下,如果创建多个项目,每次这样复制其实很麻烦,下面介绍使用批处理来批量复制Spring依赖的jar包到Web项目的WEB-INF/lib目录下:
 # 目录结构 #

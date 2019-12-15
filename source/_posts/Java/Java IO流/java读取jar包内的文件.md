@@ -7,12 +7,6 @@ date: 2018-10-26 19:56:09
 updated: 2019-12-09 19:45:21
 abbrlink: 18ab79a8
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/18ab79a8/#首先介绍怎么把资源文件打包到可执行jar包中">首先介绍怎么把资源文件打包到可执行jar包中</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/18ab79a8/#读取jar包中的文件">读取jar包中的文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/18ab79a8/#读取jar包中资源文件子目录中的文件">读取jar包中资源文件子目录中的文件</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 首先介绍怎么把资源文件打包到可执行jar包中 ##
 打开eclipse，在你Java项目下建立一个资源文件夹res，然后在里面放入要打包到可执行jar包中的文件(我这里是JSTest.html)，如下图所示：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Java%20IO%E6%B5%81/java%E8%AF%BB%E5%8F%96jar%E5%8C%85%E5%86%85%E7%9A%84%E6%96%87%E4%BB%B6/new_res_folder.png)

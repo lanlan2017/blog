@@ -9,12 +9,6 @@ date: 2019-09-11 11:20:03
 updated: 2019-12-09 19:45:23
 abbrlink: 6a7ac4ce
 ---
-<div id='my_toc'><a href="/blog/6a7ac4ce/#timeout命令">timeout命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6a7ac4ce/#帮助文档">帮助文档</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6a7ac4ce/#应用">应用</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6a7ac4ce/#30秒后休眠电脑">30秒后休眠电脑</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6a7ac4ce/#定时休眠批处理程序">定时休眠批处理程序</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # timeout命令 #
 ## 帮助文档 ##
 ```cmd

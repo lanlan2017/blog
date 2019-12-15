@@ -7,12 +7,6 @@ date: 2018-11-15 00:44:39
 updated: 2019-12-09 19:55:22
 abbrlink: 65f494cf
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/65f494cf/#C语言创建文件">C语言创建文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/65f494cf/#C语言重命名文件">C语言重命名文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/65f494cf/#C语言删除文件">C语言删除文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/65f494cf/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/65f494cf/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## C语言创建文件 ##
 以`只写方式`打开文件，如果没有改文件的话则会创建该文件
 ```c

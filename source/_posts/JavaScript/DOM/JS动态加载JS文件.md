@@ -7,12 +7,6 @@ date: 2019-12-10 11:19:12
 updated: 2019-12-10 11:20:04
 abbrlink: 61c2129d
 ---
-<div id='my_toc'><a href="/blog/61c2129d/#直接document-write">直接document.write</a><br/><a href="/blog/61c2129d/#动态改变已有script的src属性">动态改变已有script的src属性</a><br/><a href="/blog/61c2129d/#动态创建script元素">动态创建script元素</a><br/><a href="/blog/61c2129d/#使用jQuery">使用jQuery</a><br/><a href="/blog/61c2129d/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 直接document.write
 ```html
 <script language="javascript">

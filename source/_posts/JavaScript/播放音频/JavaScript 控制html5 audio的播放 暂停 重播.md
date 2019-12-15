@@ -7,12 +7,6 @@ date: 2019-04-27 11:27:54
 updated: 2019-12-09 19:45:23
 abbrlink: ff5ef3ed
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ff5ef3ed/#实例代码">实例代码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ff5ef3ed/#压缩的代码">压缩的代码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ff5ef3ed/#运行效果">运行效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ff5ef3ed/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 实例代码 ##
 ```html
 <!DOCTYPE HTML>

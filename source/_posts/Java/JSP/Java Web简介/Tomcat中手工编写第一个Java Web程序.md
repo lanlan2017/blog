@@ -8,12 +8,6 @@ date: 2018-12-01 11:52:15
 updated: 2019-12-09 19:45:22
 abbrlink: ccc57c12
 ---
-<div id='my_toc'><a href="/blog/ccc57c12/#步骤">步骤</a><br/><a href="/blog/ccc57c12/#创建项目目录结构">创建项目目录结构</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#创建项目目录">创建项目目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#创建index-jsp">创建index.jsp</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#创建Web-INF文件夹">创建Web_INF文件夹</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#创建web-xml文件">创建web.xml文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#编写web-xml文件">编写web.xml文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#创建classes目录">创建classes目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#创建lib目录">创建lib目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#启动tomcat服务器">启动tomcat服务器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#浏览器查看">浏览器查看</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ccc57c12/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">
 <script>
     function open_closeTOC() {var id = document.querySelector(".post-body > ul"); if (id.style.display == "block") {id.style.display = "none";document.getElementById("showcloseButton").value= "展开目录";}else if (id.style.display == "none") {id.style.display = "block";document.getElementById("showcloseButton").value="折叠目录";}}(function () {document.querySelector(".post-body > ul").style.display = "none";document.getElementById("showcloseButton").value="展开目录";})();

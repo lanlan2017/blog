@@ -9,12 +9,6 @@ date: 2019-02-03 18:14:35
 updated: 2019-12-09 19:45:23
 abbrlink: e6156b85
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e6156b85/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e6156b85/#遇到的问题">遇到的问题</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e6156b85/#实现1-使用find命令">实现1 使用find命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e6156b85/#获取当前文件所在的目录">获取当前文件所在的目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e6156b85/#在path环境变量中查找当前目录路径">在path环境变量中查找当前目录路径</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e6156b85/#根据查找结果处理">根据查找结果处理</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e6156b85/#添加当前目录路径到path系统环境变量中-不重复添加">添加当前目录路径到path系统环境变量中 不重复添加</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e6156b85/#实现2-使用for命令">实现2 使用for命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e6156b85/#批处理-for命令-增加-一个系统path环境变量">批处理 for命令 增加 一个系统path环境变量</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e6156b85/#拓展">拓展</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e6156b85/#批处理-for命令-遍历-系统path环境变量">批处理 for命令 遍历 系统path环境变量</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e6156b85/#批处理-for命令-查找-一个系统path环境变量">批处理 for命令 查找 一个系统path环境变量</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e6156b85/#批处理-for命令-删除-一个系统path环境变量">批处理 for命令 删除 一个系统path环境变量</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e6156b85/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 问题描述 ##
 我想点击运行一个批处理文件(install.bat)，然后把该文件所在的目录配置到path系统环境变量中。
 这种功能我用在软件安装程序中,为自己的软件自动搭建好需要的环境。

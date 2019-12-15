@@ -7,12 +7,6 @@ date: 2018-10-30 23:47:02
 updated: 2019-12-09 19:55:22
 abbrlink: 2740f49f
 ---
-<div id='my_toc'><a href="/blog/2740f49f/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2740f49f/#修改package-json安装最新的hexo-baidu-url-submit插件">修改package.json安装最新的hexo-baidu-url-submit插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2740f49f/#配置站点配置文件">配置站点配置文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2740f49f/#baidu-url-submit-配置">baidu_url_submit 配置</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2740f49f/#deploy-配置">deploy 配置</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2740f49f/#部署">部署</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2740f49f/#登录熊掌号查看提交效果">登录熊掌号查看提交效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2740f49f/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 解决方案 #
 ## 修改package.json安装最新的hexo-baidu-url-submit插件 ##
 进入站点根目录，打开`package.json`,把hexo-baidu-url-submit配置项改为：

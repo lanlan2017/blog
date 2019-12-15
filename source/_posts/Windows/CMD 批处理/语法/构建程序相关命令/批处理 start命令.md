@@ -9,12 +9,6 @@ date: 2019-08-25 13:22:53
 updated: 2019-12-09 19:45:23
 abbrlink: b4b274e0
 ---
-<div id='my_toc'><a href="/blog/b4b274e0/#批处理-start命令">批处理 start命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b4b274e0/#帮助文档">帮助文档</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b4b274e0/#帮助文档解释">帮助文档解释</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b4b274e0/#应用">应用</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b4b274e0/#在特定目录下启动cmd">在特定目录下启动cmd</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 批处理 start命令 #
 ## 帮助文档 ##
 ```cmd

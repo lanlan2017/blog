@@ -9,12 +9,6 @@ date: 2019-12-06 10:33:33
 updated: 2019-12-09 19:45:23
 abbrlink: 695eb842
 ---
-<div id='my_toc'><a href="/blog/695eb842/#HTML下载链接格式">HTML下载链接格式</a><br/><a href="/blog/695eb842/#下载其他站点的资源">下载其他站点的资源</a><br/><a href="/blog/695eb842/#在当前站点中没有download属性的情况">在当前站点中没有download属性的情况</a><br/><a href="/blog/695eb842/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # HTML下载链接格式
 ```html
 <a href="资源路径" download="资源的名称">资源说明</a>

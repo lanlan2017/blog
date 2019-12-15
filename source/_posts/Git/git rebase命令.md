@@ -6,12 +6,6 @@ date: 2019-12-09 12:15:47
 updated: 2019-12-09 20:27:33
 abbrlink: edcdf022
 ---
-<div id='my_toc'><a href="/blog/edcdf022/#git-rebase的作用">git rebase的作用</a><br/><a href="/blog/edcdf022/#注意">注意</a><br/><a href="/blog/edcdf022/#压缩多个commit为一个新的commit">压缩多个commit为一个新的commit</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/edcdf022/#先查看commit历史">先查看commit历史</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/edcdf022/#合并当前到远程之间的commit">合并当前到远程之间的commit</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/edcdf022/#保留第一个pick-后面的pick改为squash">保留第一个pick 后面的pick改为squash</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/edcdf022/#写上新的commit的描述">写上新的commit的描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/edcdf022/#压缩效果">压缩效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/edcdf022/#再次修改commit描述">再次修改commit描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/edcdf022/#效果">效果</a><br/><a href="/blog/edcdf022/#测试">测试</a><br/><a href="/blog/edcdf022/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # git rebase的作用
 当你完成比较复杂的一个任务的时候,你可能提交了多次commit,经过一系列的commit后,你最终完成了任务,然后你想推送到远程仓库中.
 但是如果你此时直接push到远程仓库中,这样远程仓库中就有了好多冗余的commit,所以在push到远程仓库之前,应该将这些中间的commit合并成一个commit,然后再推送到远程仓库上,这样你的的commit记录就比较简洁清爽.

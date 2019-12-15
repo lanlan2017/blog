@@ -7,12 +7,6 @@ date: 2018-12-14 20:51:47
 updated: 2019-12-09 19:45:23
 abbrlink: 86af8ea
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/86af8ea/#源码">源码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/86af8ea/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 源码 ##
 ```html
 <textarea rows="5" id="output" style="width:99%;margin-right:auto"></textarea>

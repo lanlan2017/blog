@@ -7,12 +7,6 @@ date: 2019-06-16 13:53:20
 updated: 2019-12-09 19:45:22
 abbrlink: 40640d2
 ---
-<div id='my_toc'><a href="/blog/40640d2/#反射调用方法步骤">反射调用方法步骤</a><br/><a href="/blog/40640d2/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#项目结构">项目结构</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#Tool-java">Tool.java</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#Test-java">Test.java</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#调用静态方法">调用静态方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#调用无参的静态方法">调用无参的静态方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#调用带参的静态方法">调用带参的静态方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#调用实例方法">调用实例方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#调用无参实例方法">调用无参实例方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/40640d2/#调用带参实例方法">调用带参实例方法</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 反射调用方法步骤 #
 - 1.获取`Class`对象,使用`Class.forName("类的全限定名")`来加载类的实例,
 - 2.获取要调用的方法的`Method`对象,使用`Class对象.getMethod("方法名",形参列表)`获取要调用的方法.

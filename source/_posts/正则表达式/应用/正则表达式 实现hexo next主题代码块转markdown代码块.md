@@ -7,12 +7,6 @@ date: 2018-12-16 20:05:20
 updated: 2019-12-09 19:45:24
 abbrlink: accb1b6
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/accb1b6/#处理文本">处理文本</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/accb1b6/#获取代码文本">获取代码文本</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/accb1b6/#删除代码块行数">删除代码块行数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/accb1b6/#替换换行符">替换换行符</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/accb1b6/#删除剩下的所有html标签">删除剩下的所有html标签</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/accb1b6/#删除空行">删除空行</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/accb1b6/#删除多余空白符">删除多余空白符</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/accb1b6/#HTML逆转义">HTML逆转义</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 处理文本 ##
 hexo next主题 生成的代码块html代码，如下所示
 ```html

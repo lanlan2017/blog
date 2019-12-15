@@ -6,12 +6,6 @@ date: 2019-12-03 10:38:35
 updated: 2019-12-09 19:55:22
 abbrlink: 9f3d9944
 ---
-<div id='my_toc'><a href="/blog/9f3d9944/#问题描述">问题描述</a><br/><a href="/blog/9f3d9944/#实例">实例</a><br/><a href="/blog/9f3d9944/#SSH链接格式">SSH链接格式</a><br/><a href="/blog/9f3d9944/#Https格式">Https格式</a><br/><a href="/blog/9f3d9944/#转换规则">转换规则</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9f3d9944/#SSH转HTTPS">SSH转HTTPS</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9f3d9944/#HTTPS转SSH">HTTPS转SSH</a><br/><a href="/blog/9f3d9944/#源码">源码</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 问题描述
 我在手机上想通过SSH克隆我的仓库,但是需要登入到Github上才能获取到SSH链接,其他方式好像只能获取HTTPS链接.有时候登陆比较麻烦,所以我需要写点代码来实现HTTPS和SSH地址的相互转换。
 # 实例

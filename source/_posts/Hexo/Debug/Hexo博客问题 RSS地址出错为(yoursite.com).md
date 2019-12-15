@@ -7,12 +7,6 @@ date: 2018-08-29 19:35:07
 updated: 2019-12-09 19:55:22
 abbrlink: 2c22a8d1
 ---
-<div id='my_toc'><a href="/blog/2c22a8d1/#URL">URL</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2c22a8d1/#If-your-site-is-put-in-a-subdirectory,-set-url-as-'http-yoursite-com-child'-and-root-as-'-child-'">If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</a><br/><a href="/blog/2c22a8d1/#网站的地址">网站的地址</a><br/><a href="/blog/2c22a8d1/#URL">URL</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/2c22a8d1/#If-your-site-is-put-in-a-subdirectory,-set-url-as-'http-yoursite-com-child'-and-root-as-'-child-'">If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</a><br/><a href="/blog/2c22a8d1/#网站的地址">网站的地址</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 打开**站点配置文件**，定位到url配置项，如下所示，可以看到我的网站地址错误的设置为`https://yoursite.com`
 ```
 # URL

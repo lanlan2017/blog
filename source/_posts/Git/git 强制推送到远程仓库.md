@@ -6,12 +6,6 @@ date: 2019-12-01 15:16:23
 updated: 2019-12-09 19:55:22
 abbrlink: 3f12657a
 ---
-<div id='my_toc'><a href="/blog/3f12657a/#问题描述">问题描述</a><br/><a href="/blog/3f12657a/#解决方案">解决方案</a><br/><a href="/blog/3f12657a/#格式1">格式1</a><br/><a href="/blog/3f12657a/#格式2">格式2</a><br/><a href="/blog/3f12657a/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 问题描述
 今天我使用自动部署`Travis CI`自动部署的Hexo博客的时候,仓库名称不小心填错了,导致我的Github上的其他仓库被覆盖了.
 # 解决方案

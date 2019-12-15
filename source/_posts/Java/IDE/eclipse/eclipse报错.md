@@ -8,12 +8,6 @@ date: 2019-05-13 14:57:10
 updated: 2019-12-09 20:34:55
 abbrlink: 4499badc
 ---
-<div id='my_toc'><a href="/blog/4499badc/#错误信息">错误信息</a><br/><a href="/blog/4499badc/#解决方案">解决方案</a><br/><a href="/blog/4499badc/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 错误信息 #
 springmvc配置文件报错如下:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/SpringMVCError/1.png)

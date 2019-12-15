@@ -9,12 +9,6 @@ date: 2019-06-02 21:03:06
 updated: 2019-12-09 20:34:55
 abbrlink: c9f81303
 ---
-<div id='my_toc'><a href="/blog/c9f81303/#打开eclipse-marketplace">打开eclipse marketplace</a><br/><a href="/blog/c9f81303/#安装mybatis-generator">安装mybatis-generator</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c9f81303/#插件主页">插件主页</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c9f81303/#拖动安装插件">拖动安装插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c9f81303/#同意许可">同意许可</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 打开eclipse marketplace #
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Mybatis/3.png)
 # 安装mybatis-generator #

@@ -8,12 +8,6 @@ date: 2019-11-26 00:48:27
 updated: 2019-12-09 19:45:23
 abbrlink: cc785ddc
 ---
-<div id='my_toc'><a href="/blog/cc785ddc/#Ubuntu-为shell脚本创建-destop快捷方式">Ubuntu 为shell脚本创建.destop快捷方式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cc785ddc/#HexoS-sh">HexoS.sh</a><br/><a href="/blog/cc785ddc/#杀死占用端口的所有进程">杀死占用端口的所有进程</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cc785ddc/#启动博客-desktop">启动博客.desktop</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cc785ddc/#-desktop-配置详解">.desktop 配置详解</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cc785ddc/#Desktop-Entry-文件结构">Desktop Entry 文件结构</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cc785ddc/#关键字详解">关键字详解</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cc785ddc/#必选关键字">必选关键字</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/cc785ddc/#可选关键字">可选关键字</a><br/><a href="/blog/cc785ddc/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # Ubuntu 为shell脚本创建.destop快捷方式 #
 ## HexoS.sh ##
 ```shell

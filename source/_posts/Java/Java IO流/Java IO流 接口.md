@@ -7,12 +7,6 @@ date: 2018-08-13 15:04:36
 updated: 2019-12-09 20:34:56
 abbrlink: df6c2340
 ---
-<div id='my_toc'><a href="/blog/df6c2340/#Closeable接口">Closeable接口</a><br/><a href="/blog/df6c2340/#Flushable接口">Flushable接口</a><br/><a href="/blog/df6c2340/#Appendable接口">Appendable接口</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 Java IO流 接口
 
 # Closeable接口 #

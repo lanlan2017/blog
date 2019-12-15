@@ -7,12 +7,6 @@ date: 2018-08-10 14:57:46
 updated: 2019-12-09 20:34:56
 abbrlink: f1ceb471
 ---
-<div id='my_toc'><a href="/blog/f1ceb471/#FileWriter类">FileWriter类</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f1ceb471/#继承关系">继承关系</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f1ceb471/#构造方法：">构造方法：</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f1ceb471/#读操作方法">读操作方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f1ceb471/#FileWriter类和OutputStreamWriter类的区别">FileWriter类和OutputStreamWriter类的区别</a><br/><a href="/blog/f1ceb471/#读写实例-复制文件">读写实例:复制文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f1ceb471/#使用FileReader和FileWriter复制文件">使用FileReader和FileWriter复制文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f1ceb471/#编码问题">编码问题</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ---------------------------
 gbk file
 这里是一句中文

@@ -9,12 +9,6 @@ date: 2018-08-03 14:03:56
 updated: 2019-12-09 19:45:23
 abbrlink: 6aff1849
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6aff1849/#一、建立空文件的几种方法">一、建立空文件的几种方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6aff1849/#使用cd命令">使用cd命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6aff1849/#使用copy命令">使用copy命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6aff1849/#使用type命令">使用type命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6aff1849/#使用echo命令">使用echo命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6aff1849/#使用fsutil命令">使用fsutil命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/6aff1849/#关键点">关键点</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 一、建立空文件的几种方法 ##
 ### 使用cd命令 ###
 1、`cd.>a.txt`

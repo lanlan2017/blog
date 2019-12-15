@@ -7,12 +7,6 @@ date: 2019-10-23 22:19:13
 updated: 2019-12-09 19:45:22
 abbrlink: d58ef648
 ---
-<div id='my_toc'><a href="/blog/d58ef648/#java打印表格-将ResultSet中的数据打印成表格">java打印表格 将ResultSet中的数据打印成表格</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d58ef648/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d58ef648/#思路">思路</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d58ef648/#字符串格式化方式">字符串格式化方式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d58ef648/#左对齐">左对齐</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d58ef648/#右对齐">右对齐</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d58ef648/#实现">实现</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d58ef648/#测试">测试</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d58ef648/#运行结果">运行结果</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # java打印表格 将ResultSet中的数据打印成表格 #
 ## 问题描述 ##
 `MySQL`的查询语句输出如下:

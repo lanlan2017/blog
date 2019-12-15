@@ -8,12 +8,6 @@ date: 2018-12-20 01:09:14
 updated: 2019-12-09 19:45:22
 abbrlink: 99c62cee
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#脚本标识概述">脚本标识概述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#JSP声明">JSP声明</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#语法">语法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#JSP表达式">JSP表达式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#代码片段">代码片段</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#语法格式">语法格式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#代码片段与声明的区别">代码片段与声明的区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/99c62cee/#实例">实例</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 脚本标识概述 ##
 在JSP页面中,脚本标识使用得最为频繁。因为它们能够很方便、灵活地生成页面中的动态内容特别是 Scriptlet脚本程序。JSP中的脚本标识包括3部分,即：
 - JSP表达式( Expression)、

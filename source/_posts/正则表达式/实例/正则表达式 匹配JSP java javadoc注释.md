@@ -7,12 +7,6 @@ date: 2018-12-15 02:33:36
 updated: 2019-12-09 19:45:24
 abbrlink: a2a97f71
 ---
-<div id='my_toc'><a href="/blog/a2a97f71/#匹配注释">匹配注释</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a2a97f71/#匹配JSP注释">匹配JSP注释</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a2a97f71/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a2a97f71/#正则匹配JSP多行注释">正则匹配JSP多行注释</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a2a97f71/#匹配Java多行注释-文档注释">匹配Java多行注释 文档注释</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a2a97f71/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a2a97f71/#需求">需求</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a2a97f71/#匹配正则">匹配正则</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 匹配注释 #
 ## 匹配JSP注释 ##
 ### 问题描述 ###

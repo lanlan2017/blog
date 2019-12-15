@@ -7,12 +7,6 @@ date: 2018-07-30 20:05:28
 updated: 2019-12-09 20:35:54
 abbrlink: aa316c45
 ---
-<div id='my_toc'><a href="/blog/aa316c45/#java获取文件大小的方法">java获取文件大小的方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aa316c45/#一、通过File类的length-方法获取文件的大小">一、通过File类的length()方法获取文件的大小</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aa316c45/#二、通过file-io-*中的流式方法获取">二、通过file.io.*中的流式方法获取</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aa316c45/#三、通过file-nio-*中的FileChannel工具来获取文件大小：">三、通过file.nio.*中的FileChannel工具来获取文件大小：</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aa316c45/#四、使用小文件测试以上三种方法：">四、使用小文件测试以上三种方法：</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aa316c45/#java获取文件大小总结">java获取文件大小总结</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aa316c45/#完整的代码">完整的代码</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 本文转自：[https://www.cnblogs.com/hellowhy/p/7238570.html](https://www.cnblogs.com/hellowhy/p/7238570.html)
 # java获取文件大小的方法 #
 

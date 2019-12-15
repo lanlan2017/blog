@@ -8,12 +8,6 @@ date: 2018-12-19 15:11:39
 updated: 2019-12-09 19:45:22
 abbrlink: ddf72c82
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ddf72c82/#response内置对象简介">response内置对象简介</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ddf72c82/#常用方法">常用方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ddf72c82/#请求重定向和请求转发的区别">请求重定向和请求转发的区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ddf72c82/#请求重定向">请求重定向</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ddf72c82/#请求转发">请求转发</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ddf72c82/#生活中的例子">生活中的例子</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ddf72c82/#设置HTP响应报头">设置HTP响应报头</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ddf72c82/#禁用缓存">禁用缓存</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ddf72c82/#设置过期的时间期限">设置过期的时间期限</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ddf72c82/#定时刷新页面">定时刷新页面</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ddf72c82/#定时跳转页面">定时跳转页面</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ddf72c82/#设置输出缓冲">设置输出缓冲</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ddf72c82/#缓冲相关方法">缓冲相关方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ddf72c82/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## response内置对象简介 ##
 
 - 是HttpServletrResponse类的实例

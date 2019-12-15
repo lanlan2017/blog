@@ -7,12 +7,6 @@ date: 2018-12-08 00:07:22
 updated: 2019-12-09 19:45:23
 abbrlink: 358dbd0e
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/358dbd0e/#前言">前言</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/358dbd0e/#工具软件">工具软件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/358dbd0e/#安装步骤">安装步骤</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/358dbd0e/#下载demo版安装包">下载demo版安装包</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/358dbd0e/#安装demo版本">安装demo版本</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/358dbd0e/#使用demo版本生成流程图">使用demo版本生成流程图</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/358dbd0e/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 前言 ##
 最近我写了点操作数据库的代码，但是呢，要在报告里画上流程图。手动来画的话很繁琐，于是我就想着有没有工具可以根据java源代码直接生成流程图。网上找了一番找到一个可以免费`试用`的流程图生成工具(`visustin`)。
 ## 工具软件 ##

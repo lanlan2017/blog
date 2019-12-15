@@ -8,12 +8,6 @@ date: 2018-12-19 15:11:39
 updated: 2019-12-09 19:45:22
 abbrlink: 240051d
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#session内置对象简介">session内置对象简介</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#session对象">session对象</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#session对象常用方法">session对象常用方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#属性方法">属性方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#session有效时间方法">session有效时间方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#session生命周期">session生命周期</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#创建">创建</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#活动">活动</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#tomcat中查看一个项目的所有session">tomcat中查看一个项目的所有session</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#销毁">销毁</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#使用invalidate方法直接销毁">使用invalidate方法直接销毁</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#超时销毁">超时销毁</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/240051d/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## session内置对象简介 ##
 session是较常用的内置对象之一,与 request对象相比其作用范围更大。
 session在网络中被称为会话。由于HTTP协议是一种**无状态协议,也就是当一个客户向服务器发出请求,服务器接收请求,并返回响应后,该连接就结束了,而服务器并不保存相关的信息**。为了弥补这一缺点,HTTP协议提供了session。通过session可以在应用程序的Web页面间进行跳转时,保存用户的状态,使整个用户会话一直存在下去,**直到关闭浏览器**。但是,如果在一个会话中,客户端长时间不向服务器发出请求, session对象就会自动消失。这个时间取决于服务器,例如, Tomcat服务器默认为30分钟。不过这个时间可以通过编写程序进行修改。

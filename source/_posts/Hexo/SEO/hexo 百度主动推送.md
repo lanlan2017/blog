@@ -7,12 +7,6 @@ date: 2018-10-31 11:18:30
 updated: 2019-12-09 19:55:22
 abbrlink: 7ac3f85
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#百度主动推送的作用">百度主动推送的作用</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#在hexo中添加百度主动推送功能">在hexo中添加百度主动推送功能</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#安装hexo-baidu-url-submit插件">安装hexo-baidu-url-submit插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#在站点配置文件中添加baidu-url-submit的配置项">在站点配置文件中添加baidu-url-submit的配置项</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#在站点配置文件中加入新的deploy配置项">在站点配置文件中加入新的deploy配置项</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#验证配置是否成功">验证配置是否成功</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#卸载">卸载</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ac3f85/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 百度主动推送的作用 ##
 > 作用：某些主机，比如Github，禁止百度爬虫访问博客，导致博客无法被百度收录。多亏百度提供了主动提交的接口，这才有了个补救的方法。除此之外， 使用主动推送还会达到如下功效：
 - 及时发现：可以缩短百度爬虫发现您站点新链接的时间，使新发布的页面可以在第一时间被百度收录

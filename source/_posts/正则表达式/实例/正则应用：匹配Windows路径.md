@@ -7,12 +7,6 @@ date: 2018-10-23 16:02:37
 updated: 2019-12-09 19:45:24
 abbrlink: 93d942f1
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/93d942f1/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/93d942f1/#文件位置">文件位置</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/93d942f1/#文件位置">文件位置</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/93d942f1/#应用正则">应用正则</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 问题描述 ##
 下面的文本中有好多路径如:`D:\dev\workspace\HexoTools`，我想用markdown`代码段标记`出来。
 ```

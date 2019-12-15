@@ -8,12 +8,6 @@ date: 2019-08-08 14:41:36
 updated: 2019-12-09 20:34:55
 abbrlink: 385c30d
 ---
-<div id='my_toc'><a href="/blog/385c30d/#idea快捷键">idea快捷键</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/385c30d/#idea向上-向下插入空行">idea向上/向下插入空行</a><br/><a href="/blog/385c30d/#idea中使用eclipse快捷键">idea中使用eclipse快捷键</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # idea快捷键 #
 ## idea向上/向下插入空行 ##
 注意下面的快捷不是默认的快捷键,我已经修改过了,所以我给出了快捷键对应的功能的英文名称,可以根据功能名查找对应的快捷键,然后自己修改即可.

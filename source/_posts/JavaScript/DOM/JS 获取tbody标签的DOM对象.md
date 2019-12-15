@@ -7,12 +7,6 @@ date: 2019-12-12 14:24:44
 updated: 2019-12-12 14:29:30
 abbrlink: 70388ccf
 ---
-<div id='my_toc'><a href="/blog/70388ccf/#使用tBodies方法">使用tBodies方法</a><br/><a href="/blog/70388ccf/#通过tbody上的id属性">通过tbody上的id属性</a><br/><a href="/blog/70388ccf/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 使用tBodies方法
 ```html
 var table = document.getElementById('cal_panel');

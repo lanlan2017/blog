@@ -8,12 +8,6 @@ date: 2019-04-22 12:32:02
 updated: 2019-12-09 20:34:55
 abbrlink: 80d567ab
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/80d567ab/#JSTL-库安装">JSTL 库安装</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/80d567ab/#下载JSTL库">下载JSTL库</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/80d567ab/#复制jar文件到项目中">复制jar文件到项目中</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/80d567ab/#复制tld文件到项目中">复制tld文件到项目中</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/80d567ab/#在JSP页面引入">在JSP页面引入</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## JSTL 库安装 ##
 Apache Tomcat安装JSTL 库步骤如下：
 ### 下载JSTL库 ###

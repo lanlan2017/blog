@@ -8,12 +8,6 @@ date: 2018-12-19 15:14:31
 updated: 2019-12-09 19:45:22
 abbrlink: ee24a152
 ---
-<div id='my_toc'><a href="/blog/ee24a152/#pageContext内置对象">pageContext内置对象</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ee24a152/#获取其他对象的方法">获取其他对象的方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ee24a152/#设置属性方法">设置属性方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ee24a152/#实例">实例</a><br/><a href="/blog/ee24a152/#page内置对象">page内置对象</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ee24a152/#常用方法">常用方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ee24a152/#实例">实例</a><br/><a href="/blog/ee24a152/#Config内置对象">Config内置对象</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ee24a152/#常用方法">常用方法</a><br/><a href="/blog/ee24a152/#Exception内置对象">Exception内置对象</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ee24a152/#exception对象的常用方法">exception对象的常用方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ee24a152/#实例">实例</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # pageContext内置对象 #
 获取页面上下文的 pageContext对象是一个比较特殊的对象,通过它可以获取JSP页面的 request、response、 session、 application、 exception等对象。 pageContext对象的创建和初始化都是由容器来完成的,JP页面中可以直接使用 pageContext对象。 page Context对象的常用方法如下表所示。
 - pageContext对象提供了对JSP页面内所有的对象及名字空间的访问

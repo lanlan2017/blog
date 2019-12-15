@@ -9,12 +9,6 @@ date: 2019-05-01 17:11:48
 updated: 2019-12-09 20:34:56
 abbrlink: a61ce5bb
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a61ce5bb/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a61ce5bb/#解决方案">解决方案</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 问题描述 ##
 今天Eclipse中Spring MVC的配置文件报错如下:
 ```java

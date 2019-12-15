@@ -8,12 +8,6 @@ date: 2018-12-08 21:46:24
 updated: 2019-12-09 19:45:22
 abbrlink: 4cc31c44
 ---
-<div id='my_toc'><a href="/blog/4cc31c44/#JSP内置对象概述">JSP内置对象概述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4cc31c44/#JSP九大内置对象">JSP九大内置对象</a><br/><a href="/blog/4cc31c44/#Web程序的请求响应模式">Web程序的请求响应模式</a><br/><a href="/blog/4cc31c44/#表单的提交方式">表单的提交方式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4cc31c44/#get">get</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4cc31c44/#post">post</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4cc31c44/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4cc31c44/#测试get方法">测试get方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4cc31c44/#测试post方法">测试post方法</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # JSP内置对象概述 #
 由于JSP使用Java作为脚本语言,所以JSP将具有强大的对象处理能力,并且可以动态创建web页面内容。**但Java语法在使用一个对象前,需要先实例化这个对象**,这其实是一件比较繁琐的事情。JSP为了简化开发,提供了一些内置对象,用来实现很多JSP应用。在使用JSP内置对象时,不需要先定义这些对象,直接使用即可。
 ## JSP九大内置对象 ##

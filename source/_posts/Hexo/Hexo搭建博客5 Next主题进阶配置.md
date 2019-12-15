@@ -6,12 +6,6 @@ date: 2018-08-29 19:35:07
 updated: 2019-12-09 19:55:22
 abbrlink: f01200cd
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f01200cd/#实现点击出现爱心效果">实现点击出现爱心效果</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f01200cd/#网站底部字数统计">网站底部字数统计</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f01200cd/#安装插件">安装插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f01200cd/#修改文件">修改文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f01200cd/#保留README-md文件">保留`README.md`文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f01200cd/#设置网站的图标Favicon">设置网站的图标Favicon</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f01200cd/#实现统计功能">实现统计功能</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f01200cd/#安装插件">安装插件</a><br/><a href="/blog/f01200cd/#Dependencies-https-github-com-theme-next-hexo-symbols-count-time">Dependencies: https://github.com/theme-next/hexo-symbols-count-time</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f01200cd/#隐藏网页底部powered-By-Hexo-强力驱动">隐藏网页底部`powered By Hexo / 强力驱动`</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f01200cd/#隐藏网页底部主题-–-NexT-Gemini-v6-4-0">隐藏网页底部`主题 – NexT.Gemini v6.4.0`</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f01200cd/#修改字体大小">修改字体大小</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 实现点击出现爱心效果 ##
 原文：[https://blog.csdn.net/qq_33699981/article/details/72716951#t9](https://blog.csdn.net/qq_33699981/article/details/72716951#t9)
 

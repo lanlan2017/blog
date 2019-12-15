@@ -8,12 +8,6 @@ date: 2019-01-03 19:17:47
 updated: 2019-12-09 20:34:55
 abbrlink: '5285183'
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5285183/#安装JavaFX插件e-fx-clipse">安装JavaFX插件e(fx)clipse</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5285183/#下载-scene-builder">下载 scene builder</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5285183/#安装">安装</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5285183/#eclipse中指定scene-builder路径">eclipse中指定scene builder路径</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/5285183/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 安装JavaFX插件e(fx)clipse ##
 依次点击`Help`--`Eclipse Marketplace...`进入eclipse应用市场，
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/JavaFX/1.png)

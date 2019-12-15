@@ -7,12 +7,6 @@ date: 2019-02-13 00:24:14
 updated: 2019-12-09 19:55:23
 abbrlink: 4f1b06ea
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4f1b06ea/#前言">前言</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4f1b06ea/#方式0-使用原生的audio播放音频">方式0 使用原生的audio播放音频</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4f1b06ea/#方式1-使用javascript播放音频">方式1 使用javascript播放音频</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4f1b06ea/#方式2-使用javascript播放音频-简写">方式2 使用javascript播放音频 简写</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4f1b06ea/#方式2-使用jquery播放音频">方式2 使用jquery播放音频</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4f1b06ea/#总结">总结</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 前言 ##
 markdown中可以插入html标签，所以可以插入audio标签来播放音频。
 ## 方式0 使用原生的audio播放音频 ##

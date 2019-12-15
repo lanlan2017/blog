@@ -7,12 +7,6 @@ date: 2019-12-02 22:40:18
 updated: 2019-12-09 19:45:23
 abbrlink: 2b78c799
 ---
-<div id='my_toc'><a href="/blog/2b78c799/#问题描述">问题描述</a><br/><a href="/blog/2b78c799/#解决方案">解决方案</a><br/><a href="/blog/2b78c799/#更新">更新</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 问题描述
 JS中当在正则表达式中写HTML标签时,浏览器可能会错误的将正则表达式中的HTML标签当成HTML标签解析,而不是正则表达式,例如,对于如下JS代码:
 ```html

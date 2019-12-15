@@ -7,12 +7,6 @@ date: 2019-01-11 22:02:27
 updated: 2019-12-09 19:45:21
 abbrlink: 4ea1809c
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4ea1809c/#小结：">小结：</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ------------------------------------------
 #######################################
 上述替换完成后StringBuffer中的内容------>before_ONEA

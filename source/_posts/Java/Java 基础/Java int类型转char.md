@@ -7,12 +7,6 @@ date: 2019-08-23 13:18:52
 updated: 2019-12-09 19:45:21
 abbrlink: 569c8e52
 ---
-<div id='my_toc'><a href="/blog/569c8e52/#前言">前言</a><br/><a href="/blog/569c8e52/#原因">原因</a><br/><a href="/blog/569c8e52/#数字0到9转为'0'到'9'字符的正确做法">数字0到9转为'0'到'9'字符的正确做法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/569c8e52/#先计算出正确的ASCII码在转为字符">先计算出正确的ASCII码在转为字符</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/569c8e52/#使用自动类型转换进行计算">使用自动类型转换进行计算</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/569c8e52/#直接计算">直接计算</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/569c8e52/#Character-forDigit-数字,进制-方法进行转换">Character.forDigit(数字,进制)方法进行转换</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 前言 #
 最近想随机生成一串包含数字和字母的字符串.但是我发现把int类型的数字通过强制类型转换为char类型字符的时候出现了乱码.
 # 原因 #

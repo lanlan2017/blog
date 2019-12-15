@@ -7,12 +7,6 @@ abbrlink: f0b52541
 date: 2019-12-14 10:36:39
 updated: 2019-12-14 10:36:39
 ---
-<div id='my_toc'><a href="/blog/null/#安装npm-check-updates">安装npm-check-updates</a><br/><a href="/blog/null/#查询是否后最新版本">查询是否后最新版本</a><br/><a href="/blog/null/#更新依赖文件配置">更新依赖文件配置</a><br/><a href="/blog/null/#更新软件">更新软件</a><br/><a href="/blog/null/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 安装npm-check-updates
 ```
 npm install -g npm-check-updates

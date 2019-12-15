@@ -7,12 +7,6 @@ date: 2019-11-25 23:26:06
 updated: 2019-12-09 19:45:23
 abbrlink: e2b78dd9
 ---
-<div id='my_toc'><a href="/blog/e2b78dd9/#查找占用端口的程序">查找占用端口的程序</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e2b78dd9/#命令1">命令1</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e2b78dd9/#查找占用端口的程序的PID">查找占用端口的程序的PID</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e2b78dd9/#命令2">命令2</a><br/><a href="/blog/e2b78dd9/#根据PID杀死进程">根据PID杀死进程</a><br/><a href="/blog/e2b78dd9/#一条命令杀死占用端口的所有进程">一条命令杀死占用端口的所有进程</a><br/><a href="/blog/e2b78dd9/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 查找占用端口的程序 #
 ## 命令1 ##
 ```shell

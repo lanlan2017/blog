@@ -7,12 +7,6 @@ date: 2019-09-28 10:27:21
 updated: 2019-12-09 19:45:23
 abbrlink: 7ab55f4
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ab55f4/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ab55f4/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ab55f4/#可能是编码的问题">可能是编码的问题</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ab55f4/#可能是VScode中的java环境版本太老">可能是VScode中的java环境版本太老</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7ab55f4/#可能是PowerShell版本太老">可能是PowerShell版本太老</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 问题描述 ##
 最近我在`VSCode`中运行`Java`代码,但是奇怪的的是中文输出的是乱码.
 ## 解决方案 ##

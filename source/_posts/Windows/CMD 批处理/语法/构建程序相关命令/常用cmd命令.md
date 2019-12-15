@@ -9,12 +9,6 @@ date: 2018-12-28 15:38:46
 updated: 2019-12-09 19:45:23
 abbrlink: 8d229e40
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d229e40/#创建文件-copy-con命令">创建文件 copy con命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d229e40/#浏览文件-type命令">浏览文件 type命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d229e40/#echo命令">echo命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d229e40/#-命令">@命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d229e40/#两个关闭回显命令的区别">两个关闭回显命令的区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d229e40/#流程控制转向命令-goto命令">流程控制转向命令 goto命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d229e40/#调用另一个批处理程序-call命令">调用另一个批处理程序 call命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d229e40/#call-和goto的区别">call 和goto的区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d229e40/#重新启用一个单独的命令行窗口-start命令">重新启用一个单独的命令行窗口 start命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d229e40/#注释">注释</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d229e40/#set命令">set命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d229e40/#批处理脚本中获取用户输入">批处理脚本中获取用户输入</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8d229e40/#设置本地临时环境变量-setlocal">设置本地临时环境变量 setlocal</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 创建文件 copy con命令 ##
 `copy con`是一个功能简单、易于使用的创建文本文件命令,命令中`con`代表计算机屏幕。**`copy con`最初的意思就是`将计算机屏幕上输入的内容存放到指定的文本文件中`**
 

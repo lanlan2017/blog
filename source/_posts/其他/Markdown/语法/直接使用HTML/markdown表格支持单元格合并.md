@@ -9,12 +9,6 @@ date: 2018-08-15 23:11:20
 updated: 2019-12-09 19:45:23
 abbrlink: 9d21d6ad
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9d21d6ad/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9d21d6ad/#效果">效果</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 问题描述 ##
 MarkDown语法并不支持表格单元格合并，不过可以插入html表格标签来实现。
 ```

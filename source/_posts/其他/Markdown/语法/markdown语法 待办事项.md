@@ -8,12 +8,6 @@ date: 2018-10-21 10:01:08
 updated: 2019-12-09 19:45:23
 abbrlink: 8859faa9
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8859faa9/#Markdown待办事项语法">Markdown待办事项语法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/8859faa9/#MarkdownPad2-中支持待办事项">MarkdownPad2 中支持待办事项</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## Markdown待办事项语法 ##
 不是所有的markdown都支持待办事项的，语法：**横框+ 空格+方括号（方括号中必须有空格或者x） + 空格+ 文本**。例如：
 ```

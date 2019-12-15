@@ -7,12 +7,6 @@ date: 2019-12-01 00:35:59
 updated: 2019-12-09 19:45:23
 abbrlink: 913bbb38
 ---
-<div id='my_toc'><a href="/blog/913bbb38/#VScode-Markdown插件汇总">VScode Markdown插件汇总</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/913bbb38/#Markdown-Shortcuts">Markdown Shortcuts</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/913bbb38/#鼠标右键方式">鼠标右键方式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/913bbb38/#命令方式">命令方式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/913bbb38/#Markdown-All-in-One">Markdown All in One</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/913bbb38/#Markdown-Todo">Markdown Todo</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # VScode Markdown插件汇总
 
 ## Markdown Shortcuts

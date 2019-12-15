@@ -7,12 +7,6 @@ date: 2019-12-08 22:39:01
 updated: 2019-12-09 19:45:22
 abbrlink: 4c49ec32
 ---
-<div id='my_toc'><a href="/blog/4c49ec32/#JS代码">JS代码</a><br/><a href="/blog/4c49ec32/#示例">示例</a><br/><a href="/blog/4c49ec32/#效果">效果</a><br/><a href="/blog/4c49ec32/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # JS代码
 ```javascript
 // 启动浏览器下载,文件名为filename,文件内容text中的内容

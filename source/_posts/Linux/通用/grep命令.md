@@ -7,12 +7,6 @@ date: 2019-11-03 15:40:40
 updated: 2019-12-09 19:45:23
 abbrlink: 471198f0
 ---
-<div id='my_toc'><a href="/blog/471198f0/#grep命令">grep命令</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # grep命令 #
 ```shell
 grep --help                                                               

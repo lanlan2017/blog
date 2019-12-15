@@ -7,12 +7,6 @@ date: 2018-08-06 18:24:40
 updated: 2019-12-09 19:45:21
 abbrlink: aa025735
 ---
-<div id='my_toc'><a href="/blog/aa025735/#对IP地址进行排序">对IP地址进行排序</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aa025735/#小结">小结</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ----------------------------------------------------------
 我要学编程
 ```

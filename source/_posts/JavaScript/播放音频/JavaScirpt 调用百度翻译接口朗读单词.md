@@ -7,12 +7,6 @@ date: 2019-12-11 16:47:26
 updated: 2019-12-11 17:51:16
 abbrlink: 9c369915
 ---
-<div id='my_toc'><a href="/blog/9c369915/#百度翻译音频的下载链接格式">百度翻译音频的下载链接格式</a><br/><a href="/blog/9c369915/#示例">示例</a><br/><a href="/blog/9c369915/#升级">升级</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9c369915/#示例">示例</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 百度翻译音频的下载链接格式
 ```
 http://fanyi.baidu.com/gettts?lan=en&text=单词&spd=5&source=web

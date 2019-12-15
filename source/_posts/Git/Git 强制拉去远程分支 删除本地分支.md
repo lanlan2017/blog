@@ -6,12 +6,6 @@ date: 2019-12-03 19:17:52
 updated: 2019-12-09 19:55:22
 abbrlink: ecbd02e2
 ---
-<div id='my_toc'><a href="/blog/ecbd02e2/#问题描述">问题描述</a><br/><a href="/blog/ecbd02e2/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ecbd02e2/#方案1-删除本地仓库-重新克隆src分支">方案1 删除本地仓库 重新克隆src分支</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ecbd02e2/#方案2-下载src分支-然后删除本地master分支">方案2 下载src分支 然后删除本地master分支</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ecbd02e2/#删除远程master分支的记录">删除远程master分支的记录</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 问题描述
 我的博客源码放在src分支上,pages放在master分支上,但是今天我在另一个电脑上想写博客,但是我克隆博客源码的时候输错了命令,不小心克隆到了master分支上.master分支上的pages是自动部署的,不需要我操作,我不想再本地上看到任何master分支的内容.
 # 解决方案

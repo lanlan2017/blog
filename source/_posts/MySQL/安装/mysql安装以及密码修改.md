@@ -7,12 +7,6 @@ date: 2018-12-14 01:58:11
 updated: 2019-12-09 19:45:23
 abbrlink: e124ac2c
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#安装">安装</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#安装mysql服务">安装mysql服务</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#启动mysql服务">启动mysql服务</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#使用mysql">使用mysql</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#验证">验证</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#mysql用户登录">mysql用户登录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#修改root用户密码">修改root用户密码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#情况1-记得原来root用户的密码">情况1 记得原来root用户的密码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#情况2-记不得root用户密码">情况2 记不得root用户密码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#其他知识">其他知识</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#关闭mysql服务">关闭mysql服务</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#debug">debug</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#The-service-already-exists">The service already exists</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e124ac2c/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 安装 ##
 解压安装包即可安装
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/mysql/install/install.png)

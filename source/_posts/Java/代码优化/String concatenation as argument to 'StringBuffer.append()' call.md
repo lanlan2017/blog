@@ -7,12 +7,6 @@ date: 2019-10-03 21:19:47
 updated: 2019-12-09 19:45:22
 abbrlink: e14f1dac
 ---
-<div id='my_toc'><a href="/blog/e14f1dac/#解决-String-concatenation-as-argument-to-'StringBuffer-append-'-call-警告">解决 String concatenation as argument to 'StringBuffer.append()' call 警告</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e14f1dac/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e14f1dac/#分析原因">分析原因</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e14f1dac/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e14f1dac/#1-全部使用append方法">1. 全部使用append方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e14f1dac/#2-忽略">2. 忽略</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 解决 String concatenation as argument to 'StringBuffer.append()' call 警告#
 ## 问题描述 ##
 最近带idea中老是收到下面这个警告:

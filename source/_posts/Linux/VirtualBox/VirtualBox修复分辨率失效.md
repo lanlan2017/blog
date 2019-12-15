@@ -7,12 +7,6 @@ date: 2019-11-24 23:19:58
 updated: 2019-12-09 19:45:23
 abbrlink: 88ff8084
 ---
-<div id='my_toc'><a href="/blog/88ff8084/#问题描述">问题描述</a><br/><a href="/blog/88ff8084/#解决方案">解决方案</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 问题描述
 今天在VirtualBox上安装了Ubuntu,默认的分辨率比较小,所以我Ubuntu上调整好分辨率后,显示虚拟机显示区域变大了。
 但是我重启虚拟机后,**虚拟机的显示屏又变小了**。我总不可能每次都调整虚拟机的的分辨率.

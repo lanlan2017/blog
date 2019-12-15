@@ -8,12 +8,6 @@ date: 2019-03-16 15:47:44
 updated: 2019-12-09 19:45:24
 abbrlink: b7a12cba
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b7a12cba/#实现">实现</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b7a12cba/#匹配正则">匹配正则</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b7a12cba/#替换正则">替换正则</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ---
 手动加麻烦,下面写程序来实现:
 ## 实现 ##

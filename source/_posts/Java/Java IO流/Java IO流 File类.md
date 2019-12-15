@@ -7,12 +7,6 @@ date: 2018-08-11 16:19:23
 updated: 2019-12-09 20:34:56
 abbrlink: 833486b4
 ---
-<div id='my_toc'><a href="/blog/833486b4/#File类简介">File类简介</a><br/><a href="/blog/833486b4/#File类方法">File类方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/833486b4/#继承关系">继承关系</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/833486b4/#字段">字段</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/833486b4/#构造函数">构造函数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/833486b4/#判断方法">判断方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/833486b4/#详细说明：">详细说明：</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/833486b4/#创建文件或目录方法">创建文件或目录方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/833486b4/#当文件不存在时创建该文件">当文件不存在时创建该文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/833486b4/#当目录不存在时创建该目录">当目录不存在时创建该目录:</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/833486b4/#删除文件或目录">删除文件或目录</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/833486b4/#获取文件信息方法">获取文件信息方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/833486b4/#路径相关方法">路径相关方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/833486b4/#返回目录列表">返回目录列表</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 Java IO流 File类
 
 # File类简介 #

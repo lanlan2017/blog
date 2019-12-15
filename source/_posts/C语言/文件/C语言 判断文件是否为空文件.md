@@ -7,12 +7,6 @@ date: 2018-11-16 23:11:18
 updated: 2019-12-09 19:55:22
 abbrlink: a579418
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a579418/#代码">代码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/a579418/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 代码 ##
 ```c
 FILE* movieFile=fopen("movie.txt","r");

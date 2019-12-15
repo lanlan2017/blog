@@ -7,12 +7,6 @@ date: 2018-12-14 23:10:23
 updated: 2019-12-09 19:45:21
 abbrlink: c26fdf44
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c26fdf44/#迭代器">迭代器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c26fdf44/#Iterator的接口">Iterator的接口</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c26fdf44/#迭代方法">迭代方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c26fdf44/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 迭代器 ##
 迭代器是一种设计模式，Iterator是Java迭代器最简单的实现。它是一个对象，它可以遍历并选择序列中的对象，而开发人员不需要了解该序列的底层结构。
 使用集合对象的`.iterator()`返回一个Iterator。第一次调用Iterator的next()方法时，它返回序列的第一个元素。

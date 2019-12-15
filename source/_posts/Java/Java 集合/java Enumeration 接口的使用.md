@@ -7,12 +7,6 @@ date: 2018-12-09 22:47:36
 updated: 2019-12-09 19:45:21
 abbrlink: 7b1e18da
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b1e18da/#API中的介绍">API中的介绍</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b1e18da/#Enumeration接口方法">Enumeration接口方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b1e18da/#Enumeration接口遍历实例">Enumeration接口遍历实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b1e18da/#另一个遍历枚举的例子">另一个遍历枚举的例子</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7b1e18da/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">
 <script>
     function open_closeTOC() {var id = document.querySelector(".post-body > ul"); if (id.style.display == "block") {id.style.display = "none";document.getElementById("showcloseButton").value= "展开目录";}else if (id.style.display == "none") {id.style.display = "block";document.getElementById("showcloseButton").value="折叠目录";}}(function () {document.querySelector(".post-body > ul").style.display = "none";document.getElementById("showcloseButton").value="展开目录";})();

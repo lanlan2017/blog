@@ -7,12 +7,6 @@ date: 2019-02-13 00:31:18
 updated: 2019-12-09 19:55:22
 abbrlink: 80deef00
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/80deef00/#前言">前言</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/80deef00/#基本类型数组动态分配大小">基本类型数组动态分配大小</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/80deef00/#结构体类型数组分配大小">结构体类型数组分配大小</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/80deef00/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 前言 ##
 结构体类型数据组就和我们平常定义的基本类型的数组一样，只不过是类型变了。
 ## 基本类型数组动态分配大小 ##

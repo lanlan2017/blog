@@ -6,12 +6,6 @@ date: 2019-11-22 12:59:46
 updated: 2019-12-09 19:55:22
 abbrlink: b19c6a80
 ---
-<div id='my_toc'><a href="/blog/b19c6a80/#生成token">生成token</a><br/><a href="/blog/b19c6a80/#下载安装PigGo">下载安装PigGo</a><br/><a href="/blog/b19c6a80/#配置PigGo">配置PigGo</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b19c6a80/#Github图床配置">Github图床配置</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b19c6a80/#githubPlus插件配置">githubPlus插件配置</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b19c6a80/#同步更新删除Github">同步更新删除Github</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b19c6a80/#配置githubPlus">配置githubPlus</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b19c6a80/#PigGo其他配置">PigGo其他配置</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/b19c6a80/#上传快捷方式">上传快捷方式</a><br/><a href="/blog/b19c6a80/#参考连接">参考连接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 生成token #
 省略...
 # 下载安装PigGo #

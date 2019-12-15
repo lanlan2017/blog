@@ -7,12 +7,6 @@ date: 2019-11-01 14:39:51
 updated: 2019-12-09 19:45:23
 abbrlink: f8d0ff32
 ---
-<div id='my_toc'><a href="/blog/f8d0ff32/#TL-WR800N-v1路由器配置">TL-WR800N v1路由器配置</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f8d0ff32/#固定电脑IP地址">固定电脑IP地址</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f8d0ff32/#连接路由器的WiFi">连接路由器的WiFi</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f8d0ff32/#进入路由器后台">进入路由器后台</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/f8d0ff32/#取消固定电脑IP地址">取消固定电脑IP地址</a><br/><a href="/blog/f8d0ff32/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # TL-WR800N v1路由器配置 #
 ## 固定电脑IP地址 ##
 固定IP为192.168.1.200

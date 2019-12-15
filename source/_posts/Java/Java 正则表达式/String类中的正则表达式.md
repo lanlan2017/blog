@@ -7,12 +7,6 @@ date: 2018-08-06 23:46:40
 updated: 2019-12-09 19:45:21
 abbrlink: 12fb64fe
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/12fb64fe/#replaceFirst-方法">replaceFirst()方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/12fb64fe/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/12fb64fe/#replaceAll-方法">replaceAll()方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/12fb64fe/#实例">实例</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ---------------------------
 ```
 所以平常使用的时候为了不分割到空字符串，还是设置`limit=0`比较好，可以就是直接调用`String.split(regex)`就行了。

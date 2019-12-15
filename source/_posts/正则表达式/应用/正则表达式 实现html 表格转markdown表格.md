@@ -7,12 +7,6 @@ date: 2018-12-17 01:40:14
 updated: 2019-12-09 19:45:24
 abbrlink: 211bb72a
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/211bb72a/#抓取文章信息">抓取文章信息</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/211bb72a/#匹配正则">匹配正则</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/211bb72a/#精简表格正则">精简表格正则</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/211bb72a/#删除内嵌样式">删除内嵌样式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/211bb72a/#生成分割符">生成分割符</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/211bb72a/#按行分割">按行分割</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/211bb72a/#删除其他html多余标签行">删除其他html多余标签行</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/211bb72a/#生成对齐方式">生成对齐方式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/211bb72a/#html-table转Markdown-Java方法">html table转Markdown Java方法</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 抓取文章信息 ##
 ### 匹配正则 ###
 ```

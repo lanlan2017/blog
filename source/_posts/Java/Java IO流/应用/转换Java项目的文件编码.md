@@ -8,12 +8,6 @@ date: 2019-08-15 03:00:03
 updated: 2019-12-09 19:45:21
 abbrlink: 16108e1f
 ---
-<div id='my_toc'><a href="/blog/16108e1f/#问题描述">问题描述</a><br/><a href="/blog/16108e1f/#需求分析">需求分析</a><br/><a href="/blog/16108e1f/#实现思路">实现思路</a><br/><a href="/blog/16108e1f/#编码实现">编码实现</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 问题描述 #
 今天在`idea`中导入一个项目的时候出现了乱码,乱码的原因时因为这个项目的编码是`GBK`,但是我设置`idea`的编码为`UTF-8`。
 我知道怎么在`idea`把一个文件从`gbk`转为`utf-8`.但是我还不知道怎么快速把转换整个项目得我编码。

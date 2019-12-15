@@ -7,12 +7,6 @@ date: 2019-01-12 20:49:25
 updated: 2019-12-09 19:45:21
 abbrlink: 14ce793e
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/14ce793e/#父类">父类</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/14ce793e/#实现的接口">实现的接口</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/14ce793e/#字段-使用该字段可以对String进行排序">字段:使用该字段可以对String进行排序</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/14ce793e/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/14ce793e/#String字符串转为字节数组">String字符串转为字节数组</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/14ce793e/#大小写转换">大小写转换</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/14ce793e/#正则匹配">正则匹配</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/14ce793e/#正则表达式分割">正则表达式分割</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 我们经常使用 String 类来定义一个字符串。字符串是`常量`，它们的值在创建之后不能更改。字符串缓冲区支持可变的字符串。
 ## 父类 ##
 ```

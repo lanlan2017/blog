@@ -8,12 +8,6 @@ updated: 2019-12-09 19:45:21
 mathjax: true
 abbrlink: 4badee62
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4badee62/#基本数据类型">基本数据类型</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4badee62/#整型">整型</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4badee62/#整型的数值范围">整型的数值范围</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4badee62/#直接给出的整数值默认为int类型">直接给出的整数值默认为int类型</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4badee62/#数值的表示方式">数值的表示方式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4badee62/#自动类型转换">自动类型转换</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 基本数据类型  ##
 $$
 基本数据类型

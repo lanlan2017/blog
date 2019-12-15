@@ -7,12 +7,6 @@ date: 2018-11-20 18:52:35
 updated: 2019-12-09 19:55:22
 abbrlink: 96819592
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/96819592/#一般写法">一般写法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/96819592/#自动生成">自动生成</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/96819592/#源码">源码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/96819592/#C语言头文件生成工具">C语言头文件生成工具</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/96819592/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 一般写法 ##
 例如这样有一根file.h头文件，一般写法如下
 ```c

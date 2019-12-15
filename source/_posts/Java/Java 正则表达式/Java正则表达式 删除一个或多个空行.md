@@ -7,12 +7,6 @@ date: 2018-08-07 15:56:18
 updated: 2019-12-09 19:45:21
 abbrlink: 51e02fda
 ---
-<div id='my_toc'><a href="/blog/51e02fda/#删除一个或多个空行">删除一个或多个空行</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/51e02fda/#正则表达式">正则表达式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/51e02fda/#匹配空行正则2">匹配空行正则2</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/51e02fda/#删除所有空行Java代码">删除所有空行Java代码</a><br/><a href="/blog/51e02fda/#移除多余的连续空格，只留下一个空格。">移除多余的连续空格，只留下一个空格。</a><br/><a href="/blog/51e02fda/#在线正则图形化工具">在线正则图形化工具</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 删除一个或多个空行 #
 ## 正则表达式 ##
 ```

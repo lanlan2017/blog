@@ -7,12 +7,6 @@ date: 2019-11-29 21:21:31
 updated: 2019-12-09 19:45:23
 abbrlink: 3c180144
 ---
-<div id='my_toc'><a href="/blog/3c180144/#查看当前用户的home目录">查看当前用户的home目录</a><br/><a href="/blog/3c180144/#用户开机启动文件夹路径">用户开机启动文件夹路径</a><br/><a href="/blog/3c180144/#在用户的开机启动文件夹放置程序">在用户的开机启动文件夹放置程序</a><br/><a href="/blog/3c180144/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 查看当前用户的home目录 #
 在Linux中当打开终端的时候一般会进入用的home目录,windows中的cmd也是如此.
 windows中`%UserProfile%`这个变量保存了当前用户的主目录

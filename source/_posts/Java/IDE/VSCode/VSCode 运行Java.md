@@ -8,12 +8,6 @@ date: 2019-07-06 22:11:24
 updated: 2019-12-09 20:34:55
 abbrlink: c8a8df16
 ---
-<div id='my_toc'><a href="/blog/c8a8df16/#VSCode-运行Java">VSCode 运行Java</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c8a8df16/#安装插件">安装插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c8a8df16/#设置允许参数">设置允许参数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c8a8df16/#开始调试">开始调试</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # VSCode 运行Java #
 ## 安装插件 ##
 依次点击`查看`,`扩展`,然后在搜索框中输入`Java Extension Pack`,然后安装这个插件,安装完毕后重启VSCode.

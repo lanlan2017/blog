@@ -7,12 +7,6 @@ date: 2019-03-28 14:47:35
 updated: 2019-12-09 19:55:22
 abbrlink: aa51abd2
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aa51abd2/#HTML-表格对齐方式">HTML 表格对齐方式</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/aa51abd2/#参考链接">参考链接</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## HTML 表格对齐方式 ##
 `align `属性规定表格相对于周围元素的对齐方式。这个东西有时候会忘掉.还是记录一下,以便下次查找.
 ```html

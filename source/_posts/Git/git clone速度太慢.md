@@ -6,12 +6,6 @@ date: 2019-08-12 12:55:50
 updated: 2019-12-09 19:55:22
 abbrlink: 1f883a6b
 ---
-<div id='my_toc'><a href="/blog/1f883a6b/#原文链接">原文链接</a><br/><a href="/blog/1f883a6b/#问题描述">问题描述</a><br/><a href="/blog/1f883a6b/#分析原因">分析原因</a><br/><a href="/blog/1f883a6b/#解决方案">解决方案</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/1f883a6b/#查找域名对应IP地址">查找域名对应IP地址</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/1f883a6b/#添加IP和域名到hosts文件">添加IP和域名到hosts文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/1f883a6b/#保存更新DNS">保存更新DNS</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/1f883a6b/#测试git-clone">测试git clone</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 原文链接
 [https://blog.csdn.net/shahuhu000/article/details/83965642#commentBox](https://blog.csdn.net/shahuhu000/article/details/83965642#commentBox)
 # 问题描述 #

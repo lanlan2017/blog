@@ -9,12 +9,6 @@ date: 2019-05-14 22:21:07
 updated: 2019-12-09 20:34:55
 abbrlink: ced29b25
 ---
-<div id='my_toc'><a href="/blog/ced29b25/#问题描述">问题描述</a><br/><a href="/blog/ced29b25/#修改JRE版本">修改JRE版本</a><br/><a href="/blog/ced29b25/#修改Spring-MVC配置文件的第一行">修改Spring MVC配置文件的第一行</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/ced29b25/#解决方案">解决方案</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 问题描述 #
 最近在看《Spring MVC+Mybatis企业项目实战(第2版)》这本书,但是,随书源码导入eclipse的时候总是会报错.下面来介绍怎么解决eclipse导入Spring MVC项目报错的问题。
 # 修改JRE版本 #

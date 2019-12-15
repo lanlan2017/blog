@@ -6,12 +6,6 @@ date: 2019-03-11 21:02:57
 updated: 2019-12-09 19:55:22
 abbrlink: 4181f9ed
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4181f9ed/#选择图标">选择图标</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4181f9ed/#NexT主题中使用">NexT主题中使用</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4181f9ed/#实例">实例</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4181f9ed/#向上箭头图标">向上箭头图标</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4181f9ed/#github图标">github图标</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4181f9ed/#设置图标颜色">设置图标颜色</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/4181f9ed/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 选择图标 ##
 到[http://www.fontawesome.com.cn/faicons/](http://www.fontawesome.com.cn/faicons/)这个地方搜索一个你喜欢的图标.
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/hexoSettings/FrontAwesome/find.png)

@@ -8,12 +8,6 @@ date: 2018-12-19 15:11:38
 updated: 2019-12-09 19:45:22
 abbrlink: bc7737a8
 ---
-<div id='my_toc'><a href="/blog/bc7737a8/#application内置对象">application内置对象</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bc7737a8/#访问应用程序初始化参数">访问应用程序初始化参数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bc7737a8/#设置应用程序初始化参数">设置应用程序初始化参数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bc7737a8/#获取初始化参数">获取初始化参数</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bc7737a8/#管理应用程序环境属性">管理应用程序环境属性</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bc7737a8/#其他方法">其他方法</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/bc7737a8/#实例">实例</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # application内置对象 #
 application对象用于保存所有应用程序中的公有数据。**它在服务器启动时自动创建,在服务器停止时销毁**。所有用户都可以共享该 application对象。与 session对象相比, application对象的生命周期更长,类似于系统的“全局变量”。
 

@@ -9,12 +9,6 @@ date: 2019-05-14 01:06:56
 updated: 2019-12-09 20:34:55
 abbrlink: bb6759de
 ---
-<div id='my_toc'><a href="/blog/bb6759de/#前言">前言</a><br/><a href="/blog/bb6759de/#创建XML模板步骤">创建XML模板步骤</a><br/><a href="/blog/bb6759de/#使用自己创建的XML模板">使用自己创建的XML模板</a><br/><a href="/blog/bb6759de/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 前言 #
 web.xml之中好多xml标签都差不多,每次都要抄写一遍就很烦,把这些代码做成XML模板,这样eclipse就会自动提示.
 # 创建XML模板步骤 #

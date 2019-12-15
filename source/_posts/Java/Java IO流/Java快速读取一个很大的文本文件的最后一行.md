@@ -7,12 +7,6 @@ date: 2018-10-29 23:41:16
 updated: 2019-12-09 20:34:58
 abbrlink: 487a7f53
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/487a7f53/#返回文本文件最后一行java代码">返回文本文件最后一行java代码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/487a7f53/#读取本文文件最后一行，并记下最后一行的位置">读取本文文件最后一行，并记下最后一行的位置</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 返回文本文件最后一行java代码 ##
 ```java
 public static String readLastLine(File file, String charset)

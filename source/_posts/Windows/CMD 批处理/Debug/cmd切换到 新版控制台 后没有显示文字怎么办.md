@@ -8,12 +8,6 @@ date: 2019-10-07 00:20:19
 updated: 2019-12-09 19:45:23
 abbrlink: e1bf4c3f
 ---
-<div id='my_toc'><a href="/blog/e1bf4c3f/#cmd切换到-新版控制台-后没有显示文字怎么办">cmd切换到 新版控制台 后没有显示文字怎么办</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e1bf4c3f/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e1bf4c3f/#解决方案">解决方案</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # cmd切换到 新版控制台 后没有显示文字怎么办 #
 ## 问题描述 ##
 今天从旧版控制台切换到新版控制台后,弹出的cmd是个黑框框,上面没有文字,好奇怪.

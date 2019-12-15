@@ -8,12 +8,6 @@ date: 2019-04-26 17:42:04
 updated: 2019-12-09 20:34:56
 abbrlink: 9b044702
 ---
-<div id='my_toc'><a href="/blog/9b044702/#使用的软件版本">使用的软件版本</a><br/><a href="/blog/9b044702/#Maven安装">Maven安装</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#下载">下载</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#解压">解压</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#配置环境变量">配置环境变量</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#M2-HOME环境变量">M2_HOME环境变量</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#path环境变量">path环境变量</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#集成到Eclipse">集成到Eclipse</a><br/><a href="/blog/9b044702/#Eclipse之中创建Maven-Web项目">Eclipse之中创建Maven Web项目</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#创建Maven-Web项目">创建Maven Web项目</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#修改项目配置">修改项目配置</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#把Maven-Web项目改为Java-Web项目">把Maven Web项目改为Java Web项目</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#修改web-xml">修改web.xml</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#修改pom-xml">修改pom.xml</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#测试">测试</a><br/><a href="/blog/9b044702/#使用Maven一键部署到Tomcat中">使用Maven一键部署到Tomcat中</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#设置tomcat用户密码">设置tomcat用户密码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#修改Mawen的配置文件">修改Mawen的配置文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#安装Tomcat-Maven部署插件">安装Tomcat Maven部署插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#部署">部署</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#运行服务器">运行服务器</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#使用Maven部署项目">使用Maven部署项目</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/9b044702/#Tomcat之中部署的效果">Tomcat之中部署的效果</a><br/><a href="/blog/9b044702/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 # 使用的软件版本 #
 - `eclipse for Java EE 2019`
 - `jdk 1.8`

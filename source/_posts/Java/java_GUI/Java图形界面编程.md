@@ -7,12 +7,6 @@ date: 2018-09-13 14:26:54
 updated: 2019-12-09 19:45:21
 abbrlink: 795fc6f9
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/795fc6f9/#AWT简介">AWT简介</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/795fc6f9/#GUI设计工具组件">GUI设计工具组件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/795fc6f9/#Swing简介">Swing简介</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/795fc6f9/#容器类">容器类</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/795fc6f9/#JFrame类">JFrame类</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/795fc6f9/#JDialog类">JDialog类</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/795fc6f9/#JDialog与Jframe的区别">JDialog与Jframe的区别</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/795fc6f9/#JPanel类">JPanel类</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/795fc6f9/#Swing常用基本组件">Swing常用基本组件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/795fc6f9/#常用组件的共性操作">常用组件的共性操作</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/795fc6f9/#按钮-JButton">按钮( JButton)</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/795fc6f9/#文本框-JTextField-与密码输入框-JPasswordField">文本框( JTextField)与密码输入框( JPasswordField)</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/795fc6f9/#文本域-JTextArea">文本域( JTextArea)</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/795fc6f9/#标签-JLabel">标签( JLabel)</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## AWT简介 ##
 Java1.0的出现带来了`抽象窗口工具箱(AWT)`。设计目标是希望构建一个通用的GUI,使得利用它编写的程序能够运行在所有的平台上,以实现Sun公司提出的口号“一次编写,随处运行”。 Java AWT中包含了许多类来支持GUI设计。AWT由Java的 Java.awt包提供,该包中有许多用来设计GU的组件类,如按钮、菜单、列表、文本框等组件类;同时还包含窗口、面板等容器类。AWT的具体层次结构如图16.1所示。
 ![](http://pefsyzdwh.bkt.clouddn.com/18-9-12/77483434.jpg)

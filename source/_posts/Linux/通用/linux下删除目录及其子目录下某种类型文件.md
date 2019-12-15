@@ -7,12 +7,6 @@ date: 2018-08-22 11:31:37
 updated: 2019-12-09 19:45:23
 abbrlink: d10c0440
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d10c0440/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d10c0440/#命令">命令</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d10c0440/#参数说明">参数说明</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/d10c0440/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 问题描述 ##
 Linux下，如果想要删除目录及其子目录下某种类型文件，比如说所有的txt文件，则可以使用下面的命令：
 ## 命令 ##

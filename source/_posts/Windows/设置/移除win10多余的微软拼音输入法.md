@@ -7,12 +7,6 @@ date: 2018-10-21 22:23:49
 updated: 2019-12-09 19:45:23
 abbrlink: 3cc3e684
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/3cc3e684/#问题描述">问题描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/3cc3e684/#步骤">步骤</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/3cc3e684/#删除无效的情况">删除无效的情况</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/3cc3e684/#解决方案">解决方案</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 ## 问题描述 ##
 我不是很喜欢win10自带的微软拼音输入法，自己安装了搜狗拼音输入法，但是这样同时用两个输入法，经常需要按下shift+ctrl进行切换。我不喜欢来回切换输入法,现在来介绍移除多余的微软拼音输入法。
 ## 步骤 ##

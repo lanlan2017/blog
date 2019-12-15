@@ -7,12 +7,6 @@ date: 2019-02-15 21:49:16
 updated: 2019-12-09 20:34:41
 abbrlink: 7162b91b
 ---
-<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#卸载hexo-generator-index插件">卸载hexo-generator-index插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#安装hexo-generator-index-pin-top插件">安装hexo-generator-index-pin-top插件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#添加front-matter配置项">添加front-matter配置项</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#重新部署">重新部署</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#添加置顶标识">添加置顶标识</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/7162b91b/#参考资料">参考资料</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 已经有了有大佬开发了置顶插件了，安装插件，然后在front-matter中配置一下就好了
 ## 卸载hexo-generator-index插件 ##
 hexo站点目录下，输入下面命令卸载插件

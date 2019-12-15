@@ -8,12 +8,6 @@ date: 2019-06-27 17:54:33
 updated: 2019-12-09 19:45:21
 abbrlink: e4a1ea9f
 ---
-<div id='my_toc'><a href="/blog/e4a1ea9f/#Java-IO-合并多个二进制文件为一个二进制文件">Java IO 合并多个二进制文件为一个二进制文件</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e4a1ea9f/#背景">背景</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e4a1ea9f/#算法描述">算法描述</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e4a1ea9f/#关键代码">关键代码</a><br/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/e4a1ea9f/#合并多个源文件到目标文件并删除源文件">合并多个源文件到目标文件并删除源文件</a><br/></div><!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
-
-<!--end-->
 <iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=193870569&type=red" frameborder=0 allowfullscreen></iframe>
 # Java IO 合并多个二进制文件为一个二进制文件 #
 ## 背景 ##
