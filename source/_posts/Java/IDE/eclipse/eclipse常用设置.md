@@ -85,4 +85,3 @@ Window--preferences--General--Web Brower​，选择Use external web browser
 [Eclipse设置打开的默认浏览器](https://blog.csdn.net/qq193423571/article/details/76146046)
 [https://blog.csdn.net/erlian1992/article/details/53706736](https://blog.csdn.net/erlian1992/article/details/53706736)
 [Eclipse怎样删除多余workspace](https://jingyan.baidu.com/article/046a7b3ebb211df9c27fa926.html)
->原文链接: [eclipse常用设置](https://lanlan2017.github.io/blog/2b8e86b/)

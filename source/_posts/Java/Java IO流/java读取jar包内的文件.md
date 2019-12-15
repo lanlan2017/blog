@@ -93,5 +93,3 @@ InputStream inputStream = JSTest.class.getResourceAsStream("/son/inside.txt");
 运行可执行jar包：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Java%20IO%E6%B5%81/java%E8%AF%BB%E5%8F%96jar%E5%8C%85%E5%86%85%E7%9A%84%E6%96%87%E4%BB%B6/runjar_show_sonFolder.png)
 同样运行成功。
-
->原文链接: [java读取jar包内的文件](https://lanlan2017.github.io/blog/18ab79a8/)

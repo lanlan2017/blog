@@ -46,5 +46,3 @@ valine:
 
 解决方案：把错误的SITE_URL`https://www.lansheng.net.cn/`最后的斜杆删除掉，改成`https://www.lansheng.net.cn`,然后点击保存，然后点击`部署标签`，点击`部署按钮`，重新部署，让设置生效即可。
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/hexoSettings/NextSettings/Valine/chongxinbushuranghuangjiangbiangliangshengxiao.png)
-
->原文链接: [hexo next主题 valine评论系统 使用第三方邮件提醒](https://lanlan2017.github.io/blog/f1fdd2cf/)

@@ -43,4 +43,3 @@ Error: Coding 提示: Repo size exceeded quota: 512M (100.02%).
 开启服务后，就可以使用Coding默认的域名(`https://用户名.coding.me`)来访问了。如果使用coding的默认域名的话到这里就可以了。
 如果之前绑定了自己买的域名的话，清空仓库后，之前绑定的域名也失效了，需要重新绑定。但是奇怪的是，我在coding上一直绑定不上。也不知道为什么，我猜是域名解析的问题，所以我到万网上，先删除coding和github的解析，然后在重新添加Coding的解析。然后回到Coding.net上绑定域名，神奇的是，这样就可以绑定上了，最后在重新添加github的解析就行了。
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/wenti/codingcangkubuzu/bangdingyuming.png)
->原文链接: [hexo Coding无法部署：Coding 提示 Repo size exceeded quota 512M 仓库容量超限 512M](https://lanlan2017.github.io/blog/39481c48/)

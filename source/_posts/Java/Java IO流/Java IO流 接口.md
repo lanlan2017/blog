@@ -55,5 +55,3 @@ Closeable接口
 |`Appendable append(char c)`|向此 Appendable 添加指定字符。 |
 |`Appendable append(CharSequence csq)`|向此 Appendable 添加指定的字符序列。 |
 |`Appendable append(CharSequence csq, int start, int end)`|向此 Appendable 添加指定字符序列的子序列。 |
-
->原文链接: [Java IO流 接口](https://lanlan2017.github.io/blog/df6c2340/)

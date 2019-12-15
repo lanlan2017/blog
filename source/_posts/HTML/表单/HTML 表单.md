@@ -411,4 +411,3 @@ http://foo.com?pos.x=123&pos.y=456
 [MDN-HTML表单指南](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms)
 [MDN-原生表单部件](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms/The_native_form_widgets)
 [MDN-&lt;input&gt;：输入（表单输入）元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input)
->原文链接: [HTML 表单](https://lanlan2017.github.io/blog/b74fe8bf/)

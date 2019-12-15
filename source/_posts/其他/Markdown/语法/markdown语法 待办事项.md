@@ -32,5 +32,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/markdown/undo/markdownPad2_Undo_settings.png)
 再按下`ctrl+shift+1`导出为html，就可查看效果了：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/markdown/undo/markdownPad2_Undo_show.png)
-
->原文链接: [markdown语法 待办事项](https://lanlan2017.github.io/blog/8859faa9/)

@@ -199,5 +199,3 @@ Uploaded: http://127.0.0.1:8080/manager/text/deploy?path=%2FHelloWorld&update=tr
 # 参考资料 #
 [https://blog.csdn.net/ai_lian_shuo/article/details/77096071#t11](https://blog.csdn.net/ai_lian_shuo/article/details/77096071#t11)
 [https://www.linuxidc.com/Linux/2017-05/143308.htm](https://www.linuxidc.com/Linux/2017-05/143308.htm)
-
->原文链接: [Eclipse使用Maven搭建Java Web项目并直接部署到Tomcat8](https://lanlan2017.github.io/blog/9b044702/)

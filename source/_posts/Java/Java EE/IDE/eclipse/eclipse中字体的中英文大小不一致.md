@@ -24,5 +24,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 使用`Consolas+雅黑混合版`,下载路径[https://www.iplaysoft.com/consolas.html](https://www.iplaysoft.com/consolas.html)
 ## eclipse中使用 ##
 `Window-Preferences-General-Appearance-Colors and fonts-Text Font`,选择`YaHei Consolas Hybrid`,大小选择`小四`或者`五号`之类的带中文的字号.这两种字号比较清晰。
-
->原文链接: [eclipse中字体的中英文大小不一致](https://lanlan2017.github.io/blog/511c4c42/)

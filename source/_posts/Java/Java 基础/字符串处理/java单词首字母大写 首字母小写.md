@@ -96,4 +96,3 @@ J:74
 j:106
 首字母变大写:Java
 ```
->原文链接: [java单词首字母大写 首字母小写](https://lanlan2017.github.io/blog/9d84ecc2/)

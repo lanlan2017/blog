@@ -24,5 +24,3 @@ lan                      WDAGUtilityAccount
 ## 参考资料 ##
 [http://www.hechaku.com/arcitle/201810398.html](http://www.hechaku.com/arcitle/201810398.html)
 [http://www.hechaku.com/arcitle/201810344.html](http://www.hechaku.com/arcitle/201810344.html)
-
->原文链接: [批处理 for命令](https://lanlan2017.github.io/blog/c4029a06/)

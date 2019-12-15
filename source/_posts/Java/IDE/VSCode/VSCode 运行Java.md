@@ -86,5 +86,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ## 开始调试 ##
 `调试`各项功能,如下图所示:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/vscode/java/debug/1.png)
-
->原文链接: [VSCode 运行Java](https://lanlan2017.github.io/blog/c8a8df16/)

@@ -44,5 +44,3 @@ if (tools != null)
 
 
 修改好了，我现在该代码都没注意改
-
->原文链接: [Java截图文字识别升级](https://lanlan2017.github.io/blog/77feedee/)

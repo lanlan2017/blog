@@ -31,5 +31,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/C/debug/alredyHasABody/zhushidiao.png)
 ## 总结 ##
 以后不要在头文件中导入头文件，再主方法中导入即可。
-
->原文链接: [解决C语言：error C2084：function 'xxx xxx()' already has a body](https://lanlan2017.github.io/blog/38f33943/)

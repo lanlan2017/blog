@@ -46,5 +46,3 @@ h2 {color:silver;}
 ## 参考链接 ##
 [https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/Selectors](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/Selectors)
 [http://www.w3school.com.cn/css/css_selector_type.asp](http://www.w3school.com.cn/css/css_selector_type.asp)
-
->原文链接: [CSS选择器](https://lanlan2017.github.io/blog/b6981f1b/)

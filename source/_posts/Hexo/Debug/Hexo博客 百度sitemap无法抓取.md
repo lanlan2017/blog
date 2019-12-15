@@ -52,5 +52,3 @@ hexo clean&&hexo g&&hexo d
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E7%99%BE%E5%BA%A6%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81/sitemapnotrue/sitemapyes.png)
 其他配置可以点击的下面的参考链接查看：需要注意的是它这里的提交的百度链接不正确。
 参考：[https://www.jianshu.com/p/9c2d6db2f855](https://www.jianshu.com/p/9c2d6db2f855)
-
->原文链接: [Hexo博客 百度sitemap无法抓取](https://lanlan2017.github.io/blog/ebaabcd4/)

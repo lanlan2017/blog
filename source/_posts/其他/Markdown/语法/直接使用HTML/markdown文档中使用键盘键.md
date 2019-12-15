@@ -30,5 +30,3 @@ markdown中可以插入html标签来实现更加丰富的显示效果。例如`<
 显示效果：
 <kbd>Ctrl</kbd>+<kbd>H</kbd>
 参考：[http://www.w3school.com.cn/tags/tag_kbd.asp](http://www.w3school.com.cn/tags/tag_kbd.asp)
-
->原文链接: [markdown文档中使用键盘键](https://lanlan2017.github.io/blog/6507a83c/)

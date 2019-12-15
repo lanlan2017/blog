@@ -79,4 +79,3 @@ public void actionPerformed(ActionEvent e)
 使用demo版本可以实现基本功能。但是如果想到处到Word或者Visio中就要使用付费版的。如果你嫌弃画面太丑了，可以用其他工具照着着重新画一遍这里推荐[https://www.processon.com/](https://www.processon.com/)这个在线工具。不过差不多啦，能看就行了。
 ## 参考链接 ##
 [https://www.cnblogs.com/aademeng/articles/6905351.html](https://www.cnblogs.com/aademeng/articles/6905351.html)
->原文链接: [根据Java源码生成流程图](https://lanlan2017.github.io/blog/358dbd0e/)

@@ -80,5 +80,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 
 ## 参考资料 ##
 [https://zhuanlan.zhihu.com/p/44518805](https://zhuanlan.zhihu.com/p/44518805)
-
->原文链接: [UML类图](https://lanlan2017.github.io/blog/122fc4b2/)

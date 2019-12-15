@@ -116,5 +116,3 @@ E       5    20    网络连接丢失(计划外)
 |命令|描述|
 |:---|:---|
 |`hexo clean&&hexo g&&hexo d&&shutdown /h`|发布`Hexo`博客后休眠电脑|
-
->原文链接: [cmd shutdown命令](https://lanlan2017.github.io/blog/4508a6a3/)

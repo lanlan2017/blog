@@ -38,5 +38,3 @@ Alt+Shitf+F
 
 ## 小结 ##
 快捷键支持并不完全.还是算了.
-
->原文链接: [使用Visual Studio Code写Markdown](https://lanlan2017.github.io/blog/11f888fa/)

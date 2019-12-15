@@ -38,5 +38,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ```regex
 `$1`
 ```
-
->原文链接: [正则表达式 给所有英文单词添加markdown代码段标记](https://lanlan2017.github.io/blog/b7a12cba/)

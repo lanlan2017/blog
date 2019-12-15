@@ -38,4 +38,3 @@ fclose(movieFile);//关闭文件
 ```
 ## 参考链接 ##
 [C语言怎么判断文件是否为空](https://blog.csdn.net/lwpping/article/details/7441950)
->原文链接: [C语言 判断文件是否为空文件](https://lanlan2017.github.io/blog/a579418/)

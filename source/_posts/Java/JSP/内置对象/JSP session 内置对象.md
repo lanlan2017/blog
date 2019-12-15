@@ -493,4 +493,3 @@ session.invalidate();
 ## 参考链接 ##
 [JSP Session](http://www.runoob.com/jsp/jsp-session.html)
 [https://wenku.baidu.com/view/08dd8ef3f90f76c661371a0d.html?sxts=1544369585905](https://wenku.baidu.com/view/08dd8ef3f90f76c661371a0d.html?sxts=1544369585905)
->原文链接: [JSP session 内置对象](https://lanlan2017.github.io/blog/240051d/)

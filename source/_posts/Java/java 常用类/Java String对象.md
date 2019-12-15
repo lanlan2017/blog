@@ -222,5 +222,3 @@ static String format(String format, Object... args)
 boolean regionMatches(int toffset, String other, int ooffset, int len)
 测试两个字符串区域是否相等。 
 ```
-
->原文链接: [Java String对象](https://lanlan2017.github.io/blog/14ce793e/)

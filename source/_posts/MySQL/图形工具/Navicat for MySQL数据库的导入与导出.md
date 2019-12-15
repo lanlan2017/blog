@@ -108,4 +108,3 @@ File Encoding         : 65001
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/mysql/daixie/caozuo.png)
 还有就是，程序写入数据库的时候，Navicat中的数据不会更新，为了查看效果，请项关闭usersifo数据库，然后在打开，就可以看到Java程序更新的数据：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/mysql/daixie/guanbidakai.png)
->原文链接: [Navicat for MySQL数据库的导入与导出](https://lanlan2017.github.io/blog/885d02c0/)

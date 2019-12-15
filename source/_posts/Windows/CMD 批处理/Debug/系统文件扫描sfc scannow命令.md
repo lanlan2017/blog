@@ -29,4 +29,3 @@ C:\Windows\system32>
 ```
 # 参考资料 #
 [https://blog.csdn.net/zhangyihui2016/article/details/47376093](https://blog.csdn.net/zhangyihui2016/article/details/47376093)
->原文链接: [系统文件扫描sfc scannow命令](https://lanlan2017.github.io/blog/9b2b8330/)

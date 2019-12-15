@@ -102,5 +102,3 @@ post:将用户提交的信息封装在 HTML HEADER内。适合提交数据量大
 然再重复上面的操作，观察地址栏，可以发现在地址栏是看不到上有用户的信息的：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/get_post/dologin_post.png)
 虽然在地址栏看不见，不过表单数据,即用户名和密码还是提交给了服务器的。至于怎么得到这些表单数据往下看request内置对象。
-
->原文链接: [JSP 内置对象简介](https://lanlan2017.github.io/blog/4cc31c44/)

@@ -21,4 +21,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 然后输入`explorer`，按下回车即可启动文件资源管理器了，这样电脑就恢复正常了。
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/windows/explorer/startExplorer.png)
 启动其他程序也类似。
->原文链接: [任务管理器中不小心关掉文件资源管理器explorer了怎么重新打开](https://lanlan2017.github.io/blog/d400453f/)

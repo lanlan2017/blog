@@ -22,5 +22,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 保证现在电脑里用的是新版本的`java`,然后卸载`VScode`里面的`java`环境(`Java Extension Pack`),然后重启`VScode`,再重新安装`Java`插件(`Java Extension Pack`),这个使用插件就会使用电脑里的新版本的`java`.
 ## 总结 ##
 这样做就是`重装插件比较耗时`,不过还算能用,有人知道怎么切换`VScode`里面的`java`版本的话教教我.
-
->原文链接: [如何切换VScode里面的java版本](https://lanlan2017.github.io/blog/6221fd78/)

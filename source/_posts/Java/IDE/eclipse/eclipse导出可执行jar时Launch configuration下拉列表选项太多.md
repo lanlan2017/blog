@@ -14,5 +14,3 @@ abbrlink: 956cc103
 ```
 文件夹，清空里面的内容，然后重启eclipse即可：![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDE%E4%BD%BF%E7%94%A8/eclipse%E5%AF%BC%E5%87%BA%E5%8F%AF%E6%89%A7%E8%A1%8Cjar%E6%97%B6Launch%20configuration%E9%80%89%E9%A1%B9%E5%A4%AA%E5%A4%9A/qingli_launch.png)
 参考：[http://coderlxl201209164551.iteye.com/blog/2126652](http://coderlxl201209164551.iteye.com/blog/2126652)
-
->原文链接: [eclipse导出可执行jar时Launch configuration下拉列表选项太多](https://lanlan2017.github.io/blog/956cc103/)

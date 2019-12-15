@@ -21,5 +21,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ## 步骤 ##
 在`eclipse`中依次点击`Window->Preferences->Java->Editor->Content Assist->Advanced`,然后勾选上右边方框中的`Template Proposals`,最后点击`Apply and Close`即可,如下图所示:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/CanNotSYSO/1.png)
-
->原文链接: [eclipse 按下syso没有自动提示](https://lanlan2017.github.io/blog/3c99547f/)

@@ -58,5 +58,3 @@ public String StringConnectorToAppend(String stringBufferAppendCode) {
 ```
 ### 2. 忽略 ###
 这个不替换也能运行,而且替换后代码长度变长了,不好阅读,可以选择忽略.
-
->原文链接: [String concatenation as argument to 'StringBuffer.append()' call](https://lanlan2017.github.io/blog/e14f1dac/)

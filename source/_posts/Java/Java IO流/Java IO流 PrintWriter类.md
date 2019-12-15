@@ -547,5 +547,3 @@ public PrintWriter printf(Locale l, String format, Object ... args) {
 其他方法如write()方法，print()方法，append()方法没有上面这句话所以就没了自动刷新功能。
 
 就这样吧
-
->原文链接: [Java IO流 PrintWriter类](https://lanlan2017.github.io/blog/492ea8e8/)

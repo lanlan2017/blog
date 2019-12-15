@@ -1,8 +1,9 @@
 ---
 title: 更新package.json中安装好的程序
-categories: 
+categories:
   - JavaScript
   - NodeJS
+abbrlink: f0b52541
 date: 2019-12-14 10:36:39
 updated: 2019-12-14 10:36:39
 ---

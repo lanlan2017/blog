@@ -127,4 +127,3 @@ public void jspDestroy()
 ## 参考链接 ##
 [http://www.runoob.com/jsp/jsp-life-cycle.html](http://www.runoob.com/jsp/jsp-life-cycle.html)
 [https://www.cnblogs.com/x_wukong/p/3646848.html](https://www.cnblogs.com/x_wukong/p/3646848.html)
->原文链接: [JSP基础语法](https://lanlan2017.github.io/blog/ceef3131/)

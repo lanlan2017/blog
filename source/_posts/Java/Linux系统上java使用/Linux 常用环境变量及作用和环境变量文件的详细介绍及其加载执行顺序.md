@@ -83,5 +83,3 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 
 
 暂时整理到这里，我看作者写的有点乱。
-
->原文链接: [Linux 常用环境变量及作用和环境变量文件的详细介绍及其加载执行顺序](https://lanlan2017.github.io/blog/6249459e/)

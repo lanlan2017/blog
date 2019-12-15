@@ -52,5 +52,3 @@ rss: /atom.xml
 输入命令`hexo -d`部署到GithHub上，点击RSS按钮即可订阅整个站点的文章。
 
 参考：[https://blog.csdn.net/u011303443/article/details/52333695](https://blog.csdn.net/u011303443/article/details/52333695)
-
->原文链接: [Hexo Next正确安装配置RSS插件](https://lanlan2017.github.io/blog/82e4ee34/)

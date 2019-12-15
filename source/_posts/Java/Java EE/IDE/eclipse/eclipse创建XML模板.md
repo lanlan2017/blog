@@ -43,5 +43,3 @@ windows>preferences>XML>XML Files>Editors>templates,然后点击右边的new按�
 选择这个选项即可补全代码
 # 参考资料 #
 [https://blog.csdn.net/qq_38379632/article/details/81866784](https://blog.csdn.net/qq_38379632/article/details/81866784)
-
->原文链接: [eclipse创建XML模板](https://lanlan2017.github.io/blog/bb6759de/)

@@ -77,5 +77,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
     } 
 </script>
 
-
->原文链接: [javascript 获取单选按钮的值](https://lanlan2017.github.io/blog/4f225713/)

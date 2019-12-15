@@ -28,5 +28,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ## 同意许可 ##
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Mybatis/2.png)
 安装完毕后重启`eclipse`即可.
-
->原文链接: [eclipse安装Mybatis插件](https://lanlan2017.github.io/blog/c9f81303/)

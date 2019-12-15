@@ -34,4 +34,3 @@ The Apache Tomcat installation at this directory is version 8.5.35.  A Tomcat 8.
 [[下载eclipse for JavaEE](https://www.lansheng.net.cn/blog/f9c8fc17/)]([下载eclipse for JavaEE](https://www.lansheng.net.cn/blog/f9c8fc17/))
 ### 方案 2 修改Apache源代码中的配置文件 ###
 参见：[https://jingyan.baidu.com/article/48a42057f8dfafa92525044d.html](https://jingyan.baidu.com/article/48a42057f8dfafa92525044d.html)
->原文链接: [解决eclipse for JavaEE 配置Tomcat时 The Apache Tomcat installation at this directory is version 8.5.35.  A Tomcat 8.0 installation is expected.](https://lanlan2017.github.io/blog/b2fd10c5/)

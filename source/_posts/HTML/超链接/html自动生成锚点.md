@@ -226,5 +226,3 @@ function output() {
         // console.log(in_output.value);
     }
 </script>
-
->原文链接: [html自动生成锚点](https://lanlan2017.github.io/blog/b4a0eaf6/)

@@ -26,5 +26,3 @@ Apache Tomcat安装JSTL 库步骤如下：
 将`jakarta-taglibs-standard-1.1.2/tld/`目录下的需要引入的`tld`文件复制到`WEB-INF/tld/`目录下,
 ### 在JSP页面引入 ###
 接下来我们在 web.xml 文件中添加以下配置：
-
->原文链接: [JSTL使用步骤](https://lanlan2017.github.io/blog/80d567ab/)

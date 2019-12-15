@@ -115,5 +115,3 @@ copy(from, to);
 I am groot
 I am groot!
 ```
-
->原文链接: [JavaIO InputStreamReader和OutputStreamWriter](https://lanlan2017.github.io/blog/a5e554af/)

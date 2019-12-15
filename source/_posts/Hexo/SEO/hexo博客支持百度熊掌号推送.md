@@ -17,5 +17,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ## Hexo安装插件支持百度熊掌号自动推送 ##
 具体参照我的这篇文章：[ERROR Deployer not found：baidu_xz_url_submitter](https://www.lansheng.net.cn/blog/2740f49f/)
 我不想再重复写一次了。
-
->原文链接: [hexo博客支持百度熊掌号推送](https://lanlan2017.github.io/blog/5f9ceba2/)

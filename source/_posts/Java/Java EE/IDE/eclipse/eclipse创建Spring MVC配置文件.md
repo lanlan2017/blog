@@ -40,5 +40,3 @@ Spring MVC配置文件模板如下所示:
 有时候,刚开始创建项目时,并没有创建`web.xml`文件,等到需要用到时,总不能再创建一个一个项目,然后再把`web.xml`复制过来吧。下面来介绍怎么手动创建`web.xml`:
 在项目上右键,选择`Java EE tools`,然后选择`Generate Deployment Descriptor Stub`即可创建`web.xml`:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Spring/SpringMVC/NewFile/5.png)
-
->原文链接: [eclipse创建Spring MVC配置文件](https://lanlan2017.github.io/blog/874828d8/)

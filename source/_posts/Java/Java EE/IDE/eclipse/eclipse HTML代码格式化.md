@@ -23,5 +23,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 - `Align final bracket in multi-line element tags`:表示对齐多行元素的结束符
 - `Clear all blank lines`:删除空行
 - `Indent using spaces`:使用空格对齐,而不是`tab`键
-
->原文链接: [eclipse HTML代码格式化](https://lanlan2017.github.io/blog/503e570d/)

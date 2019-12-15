@@ -40,5 +40,3 @@ char c = (char)(48 + i);
 int i=2;
 char c = Character.forDigit(i,10);
 ```
-
->原文链接: [Java int类型转char](https://lanlan2017.github.io/blog/569c8e52/)

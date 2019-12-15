@@ -43,5 +43,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 `$1`
 ```
 这个匹配的不是很正确，使用的时候我还不敢点全部替换，我对正则表达式的掌握还不够,还得继续去学。
-
->原文链接: [正则应用：匹配Windows路径](https://lanlan2017.github.io/blog/93d942f1/)

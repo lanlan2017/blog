@@ -24,5 +24,3 @@ reg add HKEY_LoCAL_MACHINE\sYsTEM\CurrentControlset\services\synTP\Parameters\De
 ```
 ## 重启电脑后生效 ##
 运行后,不会立即生效,需要重启电脑才会生效.
-
->原文链接: [idea Shift+Alt+I快捷键是弹出TouchPad Driver Diagnostics的问题](https://lanlan2017.github.io/blog/cbf0ce22/)

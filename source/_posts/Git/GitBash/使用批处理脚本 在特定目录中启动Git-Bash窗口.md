@@ -33,4 +33,3 @@ start F:\Program" "Files\Git\git-bash.exe --cd=D:\dev\workspace\HexoTools
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/git/GitBash/KuaiSuDaKai/2.png)
 ## 参考资料 ##
 [如何使用脚本启动具有特定工作目录的Git Bash窗口？](https://code.i-harness.com/zh-CN/q/12fe77e)
->原文链接: [使用批处理脚本 在特定目录中启动Git-Bash窗口](https://lanlan2017.github.io/blog/e95301e8/)

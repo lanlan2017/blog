@@ -222,4 +222,3 @@ pause
 ```
 ## 参考资料 ##
 [Bat 处理字符串分割 （split功能）](http://blog.51cto.com/langlichong/1851961)
->原文链接: [批处理 设置系统path环境变量,相同路径不重复设置](https://lanlan2017.github.io/blog/e6156b85/)

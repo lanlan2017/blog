@@ -416,5 +416,3 @@ bfd69df (HEAD -> dev, origin/master, origin/HEAD, master) master@{2019-05-25 00:
 [添加远程库](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013752340242354807e192f02a44359908df8a5643103a000)
 [Git 合并多次 commit 、 删除某次 commit](https://blog.csdn.net/Al_assad/article/details/81145856#t0)
 [git如何移除某文件夹的版本控制](https://www.cnblogs.com/dhcn/p/7125099.html)
-
->原文链接: [Git命令集合](https://lanlan2017.github.io/blog/504e809a/)

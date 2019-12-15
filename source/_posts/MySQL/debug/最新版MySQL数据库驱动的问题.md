@@ -42,5 +42,3 @@ jdbcUrl=jdbc:mysql://localhost:3306/spring?serverTimezone=UTC&characterEncoding=
 ```
 jdbcUrl=jdbc:mysql://localhost:3306/spring?serverTimezone=UTC&amp;characterEncoding=utf-8
 ```
-
->原文链接: [最新版MySQL数据库驱动的问题](https://lanlan2017.github.io/blog/17349c5f/)

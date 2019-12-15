@@ -59,4 +59,3 @@ setx "Path" "D:\test;%path%" /m
 ```
 这样`D:\test`将会在path环境变量中出现两次.
 [https://blog.csdn.net/fm0517/article/details/52450940](https://blog.csdn.net/fm0517/article/details/52450940)
->原文链接: [cmd 设置环境cmd环境变量命令set 设置永久环境变量命令setx](https://lanlan2017.github.io/blog/7c811d1c/)

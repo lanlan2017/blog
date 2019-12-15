@@ -132,4 +132,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 </script>
 ```
 ## 参考链接 ##
->原文链接: [我的JavaScript在线文本处理工具](https://lanlan2017.github.io/blog/86af8ea/)

@@ -24,5 +24,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ```
 如图所示：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/java/my_regex_example/ctrl_b3ctrl_3.png)
-
->原文链接: [正则应用：把Markdown中的加粗文本改为标题文本](https://lanlan2017.github.io/blog/1d153e30/)

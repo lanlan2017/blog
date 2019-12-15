@@ -57,4 +57,3 @@ string.replaceAll("[ ]+", " ");
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/regex/Examples/BlankLine/picture1.png)
 [https://jex.im/regulex/](https://jex.im/regulex/)这个在线工具和第一个差不多，也可以绘图。`(?:(?:^\s*$(?:\n|\r\n))|(?:(?:\n|\r\n)^\s*$))`的图形如下:
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/regex/Examples/BlankLine/picture2.png)
->原文链接: [Java正则表达式 删除一个或多个空行](https://lanlan2017.github.io/blog/51e02fda/)

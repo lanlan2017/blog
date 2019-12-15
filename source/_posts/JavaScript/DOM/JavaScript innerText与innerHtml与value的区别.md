@@ -63,4 +63,3 @@ div中时没有value属性的，所以这里返回的是`undefined`
 [https://blog.csdn.net/qq_30567891/article/details/60466455](https://blog.csdn.net/qq_30567891/article/details/60466455)
 [http://www.cnblogs.com/zhang-jiao/p/9589967.html](http://www.cnblogs.com/zhang-jiao/p/9589967.html)
 [https://www.jianshu.com/p/2f7942af4acb?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq](https://www.jianshu.com/p/2f7942af4acb?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq)
->原文链接: [JavaScript innerText与innerHtml与value的区别](https://lanlan2017.github.io/blog/37c4f730/)

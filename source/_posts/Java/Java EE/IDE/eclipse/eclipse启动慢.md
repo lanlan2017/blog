@@ -40,4 +40,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/StartSlow/4.png)
 ### 参考资料 ###
 [如何让Windows Defender不扫描指定排除文件夹](https://jingyan.baidu.com/article/5553fa829ad79e65a2393433.html)]([如何让WindowsDefender不扫描指定排除文件夹](https://jingyan.baidu.com/article/5553fa829ad79e65a2393433.html))
->原文链接: [eclipse启动慢](https://lanlan2017.github.io/blog/af6b423c/)

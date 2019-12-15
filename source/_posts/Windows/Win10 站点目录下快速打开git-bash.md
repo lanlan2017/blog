@@ -26,5 +26,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ## 站点目录下快速打开git-bash ##
 同样的，站点目录下，在文件资源浏览器地址栏中，输入 `git-bash` 即可快速启动 `git-bash` ：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/windows/openSofewareInDir/git-bash.png)
-
->原文链接: [Win10 站点目录下快速打开git-bash](https://lanlan2017.github.io/blog/15df3886/)

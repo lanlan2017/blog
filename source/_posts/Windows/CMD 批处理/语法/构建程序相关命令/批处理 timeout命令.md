@@ -52,5 +52,3 @@ timeout /t %waitTime% /nobreak && shutdown -h
 REM timeout /t %waitTime% /nobreak && echo 休眠电脑啦!
 REM pause
 ```
-
->原文链接: [批处理 timeout命令](https://lanlan2017.github.io/blog/6a7ac4ce/)

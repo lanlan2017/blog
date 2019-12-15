@@ -24,4 +24,3 @@ System.out.println(rs.getRow());// 获得结果集长度
 ## 参考链接 ##
 [https://blog.csdn.net/DrifterJ/article/details/17720271](https://blog.csdn.net/DrifterJ/article/details/17720271)]([https://blog.csdn.net/DrifterJ/article/details/17720271](https://blog.csdn.net/DrifterJ/article/details/17720271)
 [https://blog.csdn.net/qq_21808961/column/info/24405/2](https://blog.csdn.net/qq_21808961/column/info/24405/2)
->原文链接: [获取ResultSet结果集记录条数](https://lanlan2017.github.io/blog/127223bf/)

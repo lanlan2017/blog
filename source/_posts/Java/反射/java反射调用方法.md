@@ -226,4 +226,3 @@ private static void callPublicInstanceMethod(String arg1, String arg2) throws Ex
 公有 带参 实例 方法 被调用...
     参数1:Hello,参数2:World
 ```
->原文链接: [java反射调用方法](https://lanlan2017.github.io/blog/40640d2/)

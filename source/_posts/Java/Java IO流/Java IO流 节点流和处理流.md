@@ -32,5 +32,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 - 如果关闭了处理流，在关闭与之相关的节点流，也可能出现IO异常。（hadoop编程文件流操作中遇到了。）
 
 **总结：通常在IO的继承树中，`继承自Filter开头的流`或者转换流(InputStreamReader,OutputStreamReader)都是处理流，其他的都是节点流。**
-
->原文链接: [Java IO流 节点流和处理流](https://lanlan2017.github.io/blog/2e0f7472/)

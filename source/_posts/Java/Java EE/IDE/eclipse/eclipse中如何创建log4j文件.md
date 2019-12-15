@@ -32,5 +32,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 <!DOCTYPE log4j:configuration PUBLIC "-//LOG4J//DTD LOG4J//EN" "https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd" >
 <log4j:configuration></log4j:configuration>
 ```
-
->原文链接: [eclipse中如何创建log4j文件](https://lanlan2017.github.io/blog/2f2a13a0/)

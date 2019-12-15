@@ -118,5 +118,3 @@ public class GlobleHotKeyDemo extends JFrame
 第二步：注册热键；
 第三步：添加热键监听器，实现接口的方法；
 参考：[https://www.cnblogs.com/jebysun/p/3969363.html](https://www.cnblogs.com/jebysun/p/3969363.html)
-
->原文链接: [Java设置全局热键——第三方包jintellitype实现](https://lanlan2017.github.io/blog/f91e74b/)

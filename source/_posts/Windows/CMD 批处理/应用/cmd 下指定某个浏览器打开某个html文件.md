@@ -36,5 +36,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 然后现在只需要输入`chrome.bat index.html`就可以完成上述功能了,甚至`.bat`也可以省略,只需要输入`chrome index.html`即可。
 ## chrome.bat配置到path环境变量中 ##
 为了在所有的目录下都可以使用chrome.bat来打来html文件,还需要把`chrome.bat`的绝对路径配置到path环境变量中。
-
->原文链接: [cmd 下指定某个浏览器打开某个html文件](https://lanlan2017.github.io/blog/ce34466e/)

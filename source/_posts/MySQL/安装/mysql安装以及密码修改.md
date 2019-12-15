@@ -114,5 +114,3 @@ sc delete mysql
 然后再安装`mysqld -install`就能成功了。
 ## 参考链接 ##
 [mysql以zip安装，解决the service already exists](https://www.cnblogs.com/dichters/p/5929209.html)
-
->原文链接: [mysql安装以及密码修改](https://lanlan2017.github.io/blog/e124ac2c/)

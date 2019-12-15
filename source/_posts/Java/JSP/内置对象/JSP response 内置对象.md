@@ -236,4 +236,3 @@ response.setBufferSize(32);//设置缓冲区的大小为32KB
 ## 参考链接 ##
 [response.setHeader各种用法详解](https://www.jb51.net/article/107218.htm)
 [response.setHeader参数、用法的介绍](https://www.jb51.net/article/16437.htm)
->原文链接: [JSP response 内置对象](https://lanlan2017.github.io/blog/ddf72c82/)

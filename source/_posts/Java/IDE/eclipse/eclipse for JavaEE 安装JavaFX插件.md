@@ -29,4 +29,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/JavaFX/4.png)
 ## 参考资料 ##
 [在Eclipse安装JavaFX Scene Builder ](https://www.yiibai.com/javafx/install-javafx-scene-builder-into-eclipse.html)
->原文链接: [eclipse for JavaEE 安装JavaFX插件](https://lanlan2017.github.io/blog/5285183/)

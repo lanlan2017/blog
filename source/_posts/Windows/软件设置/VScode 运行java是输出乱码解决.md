@@ -38,5 +38,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 我试到这一步乱码解决了,但是更新`java`环境后我没有测试乱码有没有解决,如果更新`java`环境后乱码解决了,也就不用更新`PowerShell`了(这是废话)。
 
 
-
->原文链接: [VScode 运行java是输出乱码解决](https://lanlan2017.github.io/blog/7ab55f4/)

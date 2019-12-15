@@ -26,4 +26,3 @@ Spring MVC的配置文件的第一行是一个<beans>标签,里面有各种声�
 然后删除原来的配置文件。
 然后把新的文件重命名为原来的文件.
 最后引入声明即可.
->原文链接: [eclipse导入SpringMVC项目报错](https://lanlan2017.github.io/blog/ced29b25/)

@@ -91,5 +91,3 @@ markdown中可以插入html标签，所以可以插入audio标签来播放音频
 
 ## 总结 ##
 还是直接使用javascript来播放音频的好，这样还少几行代码，也不用引入jqurey库。
-
->原文链接: [hexo博客中 使用javascirpt和jqurey播放audio](https://lanlan2017.github.io/blog/4f1b06ea/)

@@ -145,5 +145,3 @@ rmdir /q /s myjavadoc
 ```
 这样就直接删除掉非空目录`myjavadoc`了。
 当然如果`myjavadoc`目录时空目录的话加上参数也是能删掉的，但是空目录的话不加参数就可以删掉，加上参数反而画蛇添足。
-
->原文链接: [cmd 删除文件命令del 删除目录树命令rmdir](https://lanlan2017.github.io/blog/5d4c4249/)

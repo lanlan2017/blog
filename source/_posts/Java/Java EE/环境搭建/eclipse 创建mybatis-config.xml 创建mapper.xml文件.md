@@ -71,4 +71,3 @@ http://mybatis.org/dtd/mybatis-3-mapper.dtd
 <configuration></configuration>
 ```
 **创建`Mapper.xml`类似**
->原文链接: [eclipse 创建mybatis-config.xml 创建mapper.xml文件](https://lanlan2017.github.io/blog/44aa2f70/)

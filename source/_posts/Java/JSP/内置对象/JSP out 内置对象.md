@@ -117,5 +117,3 @@ java.io.IOException: An exception occurred processing JSP page [/out.jsp] at lin
 现在注释掉out.clear()，取消out.clearBuffer();的注释，再次访问out.jsp:
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/out/clearBuffer.png)
 同时再eclipse控制台中也看不到有异常的出现。
-
->原文链接: [JSP out 内置对象](https://lanlan2017.github.io/blog/8c60ed62/)

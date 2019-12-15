@@ -24,5 +24,3 @@ abbrlink: de8eb4f9
 具体设置如下图所示:
 [https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java%20Web%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/2/Notepad%2B%2B%E6%AD%A3%E5%88%99%E6%9B%BF%E6%8D%A2.png](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java%20Web%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/2/Notepad%2B%2B%E6%AD%A3%E5%88%99%E6%9B%BF%E6%8D%A2.png)
 最后，说一下，NotePad++打开替换的快捷键是:`ctrl+H`。当然，这个正则表达式并不严谨，但是对我来说已经够用了。
-
->原文链接: [正则实例：markdown文档中给HTML标记加反引号](https://lanlan2017.github.io/blog/de8eb4f9/)

@@ -126,5 +126,3 @@ rm: cannot remove 'latex/': Device or resource busy
 这是因为有程序在使用当前的目录，打开资源监视器，输入句柄(目录绝对路径)找到该程序，关闭该程序。然后就可以删除了。
 ## 参考链接 ##
 [https://www.cnblogs.com/liaojie970/p/6746230.html](https://www.cnblogs.com/liaojie970/p/6746230.html)
-
->原文链接: [Linux 常用指令](https://lanlan2017.github.io/blog/e44da/)

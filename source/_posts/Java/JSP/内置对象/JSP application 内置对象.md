@@ -114,5 +114,3 @@ url=jdbc:mysql://127.0.0.1:3306/databaseName
 运行结果：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/application/show.png)
 可以看到除了我们自己设置的几个属性之外，还有一些内置的属性。
-
->原文链接: [JSP application 内置对象](https://lanlan2017.github.io/blog/bc7737a8/)

@@ -54,4 +54,3 @@ Java中整数值有4种表示方式:十进制、二进制、八进制和十六�
 
 ## 自动类型转换 ##
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/ShuJuLeiXing/1.png)
->原文链接: [Java 基本数据类型](https://lanlan2017.github.io/blog/4badee62/)

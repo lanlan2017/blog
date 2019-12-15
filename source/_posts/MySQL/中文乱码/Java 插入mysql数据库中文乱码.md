@@ -25,4 +25,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ```
 jdbc:mysql:///usersinfo?characterEncoding=gbk
 ```
->原文链接: [Java 插入mysql数据库中文乱码](https://lanlan2017.github.io/blog/84e4b0d4/)

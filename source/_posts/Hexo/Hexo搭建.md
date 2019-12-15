@@ -243,5 +243,3 @@ code {
 这个样式是我从CSDN上的代码段样式中复制下来的,个人觉得比较好看.
 # 参考资料 #
 [hexo修改默认端口](https://www.leiyawu.com/2018/04/20/hexo%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3/)
-
->原文链接: [Hexo搭建](https://lanlan2017.github.io/blog/57ee7c1d/)

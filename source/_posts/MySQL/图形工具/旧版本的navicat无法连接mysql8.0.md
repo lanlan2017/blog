@@ -30,5 +30,3 @@ Client does not support authentication protocol requested by server; consider up
 修改上面的`you_password`为你数据库`root`用户的密码即可.
 # 参考链接 #
 [https://blog.csdn.net/m_amazing/article/details/84313789](https://blog.csdn.net/m_amazing/article/details/84313789)
-
->原文链接: [旧版本的navicat无法连接mysql8.0](https://lanlan2017.github.io/blog/4f42ffba/)

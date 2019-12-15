@@ -741,5 +741,4 @@ $$
 # 参考链接 #
 参考文献: [http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf](http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf)
 参考链接: [https://blog.csdn.net/thither_shore/article/details/52260742](https://blog.csdn.net/thither_shore/article/details/52260742)
-
->原文链接: [LaTex 常用语法](https://lanlan2017.github.io/blog/83c2e83a/)
+

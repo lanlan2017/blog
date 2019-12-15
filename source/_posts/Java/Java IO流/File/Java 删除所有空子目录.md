@@ -145,4 +145,3 @@ public class DeleteEmptyDir
 成功删除 空 父 目录>D:\dev\workspace\Test\test\test1\test2
 ```
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Java%20IO/File/delete/emptyDirs/delete.png)
->原文链接: [Java 删除所有空子目录](https://lanlan2017.github.io/blog/efd55c13/)

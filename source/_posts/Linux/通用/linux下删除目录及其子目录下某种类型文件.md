@@ -48,4 +48,3 @@ $ find . -name "*.txt" -type f -print -exec rm -rf {} \;
 `command`为其他命令，`-exec`后可再接其他的命令来处理查找到的结果，上式中，`{}`表示”由`find`命令查找到的结果“，如上所示，find所查找到的结果放置到{}位置，-exec一直到”\;“是关键字，表示`find`额外命令的**开始（`-exec`）**到**结束（`\;`）**，这中间的就是find命令的额外命令，上式中就是` rm -rf`
 ## 参考资料 ##
 原文：[https://www.cnblogs.com/wyb628/p/7374372.html](https://www.cnblogs.com/wyb628/p/7374372.html)
->原文链接: [linux下删除目录及其子目录下某种类型文件](https://lanlan2017.github.io/blog/d10c0440/)

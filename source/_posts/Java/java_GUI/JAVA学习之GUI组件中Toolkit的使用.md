@@ -17,5 +17,3 @@ int height = (int) (screenSize.height * 0.8);// 计算窗体新宽度
 setSize(width, height);// 设置窗体大小
 ```
 
-
->原文链接: [JAVA学习之GUI组件中Toolkit的使用](https://lanlan2017.github.io/blog/514963fc/)

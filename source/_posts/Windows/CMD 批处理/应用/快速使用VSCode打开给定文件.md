@@ -25,5 +25,3 @@ set /P input="输入要打开的文件的路径:"
 start F:\Program" "Files\Microsoft" "VS" "Code\Microsoft" "VS" "Code\Code.exe "%input%"
 ```
 最后一行代码是关键代码,注意路径之间如果有空格则要用双引号包裹起来.
-
->原文链接: [快速使用VSCode打开给定文件](https://lanlan2017.github.io/blog/5c6bafc2/)

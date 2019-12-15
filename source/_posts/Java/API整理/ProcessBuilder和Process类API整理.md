@@ -100,5 +100,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 |`boolean waitFor(long timeout, TimeUnit unit)`|使当前线程在必要时等待，直到此`Process`对象代表的子进程终止或经过指定的等待时间为止。|
 
 # 实例 #
-
->原文链接: [ProcessBuilder和Process类API整理](https://lanlan2017.github.io/blog/e5bb3a41/)

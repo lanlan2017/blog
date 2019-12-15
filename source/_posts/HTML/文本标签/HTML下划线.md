@@ -83,4 +83,3 @@ border-bottom: 2px solid #F00
 <u>下划线样式</u>
 ## 参考链接 ##
 [http://css5.com.cn/jiqiao/914.shtml](http://css5.com.cn/jiqiao/914.shtml)
->原文链接: [HTML下划线](https://lanlan2017.github.io/blog/9f0a034b/)

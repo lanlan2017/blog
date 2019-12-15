@@ -127,5 +127,3 @@ G:\Desktop\书籍\批处理\bat>ping www.xfyun.cn -n 1
     最短 = 57ms，最长 = 57ms，平均 = 57ms
 ```
 这样等待时间可以忽略,毕竟等待默认的ping命令执行完毕还是挺难熬的。
-
->原文链接: [批处理 ping命令判断是否可以连接到一个网站](https://lanlan2017.github.io/blog/318f3e6b/)

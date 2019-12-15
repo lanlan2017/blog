@@ -26,5 +26,3 @@ Referenced file contains errors (http://www.springframework.org/schema/mvc/sprin
 [http://www.springframework.org/schema/mvc/](http://www.springframework.org/schema/mvc/)
 你会看到一个多个版本链接列表,点击对应的版本的链接打开文件,我这里使用的是`4.3`版本的,所以我点击`4.3`版本的链接
 然后浏览器会打开这个文件,复制地址栏上的URL:`http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd`,替换上面报错的`http://www.springframework.org/schema/mvc/spring-mvc.xsd`即可。
-
->原文链接: [SpringMVC配置文件报错：](https://lanlan2017.github.io/blog/a61ce5bb/)

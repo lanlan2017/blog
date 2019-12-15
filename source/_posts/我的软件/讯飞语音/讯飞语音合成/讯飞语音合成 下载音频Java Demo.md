@@ -137,5 +137,3 @@ public class DownloadDemo
 采样率选择`16000`,其他默认,然后就可以播放了,如果播放的声音跟`猪叫`差不多的话，那应该是采样率错了，反正采样率多测试几次下就好了
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/myapp/TTS/XunFei/YuYinHeCheng/11.png)
 语音合成的地方肯定有些合成的不如意的地方,可以在audition中再次编辑,然后保存为mp3等等即可，这样以后就可直接播放了。
-
->原文链接: [讯飞语音合成 下载音频Java Demo](https://lanlan2017.github.io/blog/e47ffad6/)

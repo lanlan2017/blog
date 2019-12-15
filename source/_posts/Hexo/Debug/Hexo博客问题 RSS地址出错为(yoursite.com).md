@@ -34,5 +34,3 @@ permalink: :year/:month/:day/:title/
 permalink_defaults:
 ```
 然后后面就可以使用`hexo clean && hexo g -d`进行发布,然后就可正确使用RSS功能了。
-
->原文链接: [Hexo博客问题 RSS地址出错为(yoursite.com)](https://lanlan2017.github.io/blog/2c22a8d1/)

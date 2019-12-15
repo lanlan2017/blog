@@ -34,4 +34,3 @@ free(pDiy)；
 ```
 ## 参考链接 ##
 [C语言中结构体数组的大小如何动态分配](https://zhidao.baidu.com/question/1882917470304248548.html?qbl=relate_question_0&word=C%D3%EF%D1%D4%B6%AF%CC%AC%BD%E1%B9%B9%CC%E5%CA%FD%D7%E9)
->原文链接: [C语言 创建动态结构体数组](https://lanlan2017.github.io/blog/80deef00/)

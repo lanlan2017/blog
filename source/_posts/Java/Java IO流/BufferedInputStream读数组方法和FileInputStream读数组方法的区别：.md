@@ -16,5 +16,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ## 区别 ##
 - `BufferedInputStream`读数组方法，尽量读满整个数组，然后再返回，所以可能会多次读取，才返回。
 - 而`FileInputStream`的读数组方法只会读取一次，读到多少就返回多少。读取一次，就返回一次。不管数组有没有读满。
-
->原文链接: [BufferedInputStream读数组方法和FileInputStream读数组方法的区别：](https://lanlan2017.github.io/blog/d4b540e/)

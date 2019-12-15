@@ -82,5 +82,3 @@ D:\dev\apache-tomcat-8.5.35\bin>
 ## 参考链接 ##
 [https://blog.csdn.net/fengyao1995/article/details/52927202](https://blog.csdn.net/fengyao1995/article/details/52927202)
 [http://gaoxianwei.iteye.com/blog/1520064](http://gaoxianwei.iteye.com/blog/1520064)
-
->原文链接: [安装tomcat windows服务](https://lanlan2017.github.io/blog/6d6d5543/)

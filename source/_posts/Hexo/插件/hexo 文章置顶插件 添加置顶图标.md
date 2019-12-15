@@ -54,4 +54,3 @@ hexo clean &&hexo s
 添加置顶图标教程: [http://wangwlj.com/2018/01/09/blog_pin_post/](http://wangwlj.com/2018/01/09/blog_pin_post/)
 Hexo博客功能优化: [https://www.itfanr.cc/2017/12/06/hexo-blog-optimization/#文章置顶](https://www.itfanr.cc/2017/12/06/hexo-blog-optimization/#%E6%96%87%E7%AB%A0%E7%BD%AE%E9%A1%B6)
 [如何使用FrontAwesome图标](https://www.lansheng.net.cn/blog/4181f9ed/)
->原文链接: [hexo 文章置顶插件 添加置顶图标](https://lanlan2017.github.io/blog/7162b91b/)

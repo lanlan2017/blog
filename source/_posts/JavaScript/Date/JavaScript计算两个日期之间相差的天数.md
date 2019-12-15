@@ -147,5 +147,3 @@ function today()
             document.getElementById("in_output").innerText = "今天" + today() + "到2017-3-1共计:" + daysDistance("2017-3-1", today()) + "天";
         }
     </script>
-
->原文链接: [JavaScript计算两个日期之间相差的天数](https://lanlan2017.github.io/blog/b57484e/)

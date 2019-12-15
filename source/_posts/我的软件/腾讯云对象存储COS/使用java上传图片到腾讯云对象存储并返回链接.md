@@ -34,5 +34,3 @@ https的图片链接：
 
 软件上传效果：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E4%B8%8A%E4%BC%A0/%E6%88%91%E5%B0%86%E4%BC%9A%E4%B8%8A%E4%BC%A0%E5%88%B0%E8%85%BE%E8%AE%AF%E4%BA%91.png)
-
->原文链接: [使用java上传图片到腾讯云对象存储并返回链接](https://lanlan2017.github.io/blog/5a1e201b/)

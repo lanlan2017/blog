@@ -76,5 +76,3 @@ include指令的语法格式如下:
 - prefix:用于指定标签的前缀。该前缀不能命名为jsp、jspx、java、 Javax、sun、 servlet和sunw。
 - uri:用于指定标签库文件的存放位置
 
-
->原文链接: [JSP 指令](https://lanlan2017.github.io/blog/7b20b86/)

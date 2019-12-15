@@ -39,5 +39,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 注意: **正则表达式分支要特别注意分支的顺序**,`\*\/`要写在`\*`前面，如果写成`\s*(?:\/\*{1,2}|\*|\*\/)`d的话,匹配注释结束符号的时候会先匹配到单个星号`*`，正好与第二个分支合适，就不会再匹配`/`了，如下图所示：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/regex/example/annotation/shunxu.png)
 
-
->原文链接: [正则表达式 匹配JSP java javadoc注释](https://lanlan2017.github.io/blog/a2a97f71/)

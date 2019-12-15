@@ -123,5 +123,3 @@ MarkDown语法并不支持表格单元格合并，不过可以插入html表格�
 <td>传输层</td></tr><tr><td>3</td><td>网络层</td><td>互连网络层</td></tr><tr><td>2</td><td>数据链路层</td><td rowspan="2">网络接入层</td> </tr><tr><td>1</td> <td>物理层</td></tr></table> 
 
 
-
->原文链接: [markdown表格支持单元格合并](https://lanlan2017.github.io/blog/9d21d6ad/)

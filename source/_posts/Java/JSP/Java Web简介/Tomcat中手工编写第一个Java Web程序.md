@@ -93,4 +93,3 @@ lib目录用于存放项目中用到的`.jar`包。
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/newByHand/show.png)
 ## 参考链接 ##
 慕课视频: [https://www.imooc.com/video/2926](https://www.imooc.com/video/2926)
->原文链接: [Tomcat中手工编写第一个Java Web程序](https://lanlan2017.github.io/blog/ccc57c12/)

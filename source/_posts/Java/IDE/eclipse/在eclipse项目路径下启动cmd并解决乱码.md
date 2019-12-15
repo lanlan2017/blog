@@ -28,4 +28,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ## 操作过程 ##
 如下`gif`所示:
 ![这是一个gif文件](https://image-1257720033.cos.ap-shanghai.myqcloud.com/gif/IDE/eclipse/cmd/1.gif)
->原文链接: [在eclipse项目路径下启动cmd并解决乱码](https://lanlan2017.github.io/blog/ced73660/)

@@ -345,4 +345,3 @@ import  语句确定是写出类名还是类全名。
 -windowtitle  标题
 ```
 标题是一串没有包含空格的文本， 因为空格符是用于分隔各参数的， 所以不能包含空格。 同 -d  类似，如果指定了  -windowtitle  选项，则必须指定标题文本。
->原文链接: [javadoc 文档注释2](https://lanlan2017.github.io/blog/a9f85f8d/)

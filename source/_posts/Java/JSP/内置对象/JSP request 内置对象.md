@@ -591,4 +591,3 @@ userName=%E5%B0%8F%E6%98%8E
 ## 参考链接 ##
 [http://www.runoob.com/jsp/jsp-client-request.html](http://www.runoob.com/jsp/jsp-client-request.html)
 [GET和POST两种基本请求方法的区别](http://www.cnblogs.com/logsharing/p/8448446.html)
->原文链接: [JSP request 内置对象](https://lanlan2017.github.io/blog/d5e5b83f/)

@@ -37,5 +37,3 @@ md [drive:]path
 相同。如果扩展被停用，则需要键入 mkdir \a\b\c\d。
 ```
 可以看到使用mkdir,或者md命令都可以创建目录，唯一要注意的就是`目录的格式要写对`，可以是绝对路径(如`mkdir D:\Test`),也可是相对路径(如`mkdir .\myjavadoc\test`).
-
->原文链接: [cmd 创建目录命令 mkdir或md](https://lanlan2017.github.io/blog/47a3a21b/)

@@ -187,5 +187,3 @@ public class ConvertProjectEncode
 
 }
 ```
-
->原文链接: [转换Java项目的文件编码](https://lanlan2017.github.io/blog/16108e1f/)

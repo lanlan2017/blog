@@ -30,5 +30,3 @@ admin
 # 参考链接 #
 [https://www.192ly.com/router-settings/tp-link/tl-wr800n-v1-ap.html](https://www.192ly.com/router-settings/tp-link/tl-wr800n-v1-ap.html)
 [TL-WR800N v1 说明书](https://service.tp-link.com.cn/detail_download_621.html)
-
->原文链接: [TL-WR800N v1路由器配置](https://lanlan2017.github.io/blog/f8d0ff32/)

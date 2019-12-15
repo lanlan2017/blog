@@ -48,5 +48,3 @@ public class HotkeyTest
 JIntellitype下载地址：[http://melloware.com/download/](http://melloware.com/download/) （打开页面，找到JIntellitype）
 下载地址：[https://code.google.com/archive/p/jintellitype/downloads](https://code.google.com/archive/p/jintellitype/downloads),注意需要科学上网。
 附件中提供了一个jintellitype-1.3.4-dist版本备用
-
->原文链接: [通过JIntellitype给Java程序注册系统热键](https://lanlan2017.github.io/blog/9d991fe9/)

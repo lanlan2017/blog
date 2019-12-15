@@ -314,4 +314,3 @@ if %isPush%==y (
 ## 设置本地临时环境变量 setlocal ##
 
 `setlocal`命令可在批处理程序运行时设置自身的临时变量环境,且不会影响到系统变量环境设置。
->原文链接: [常用cmd命令](https://lanlan2017.github.io/blog/8d229e40/)

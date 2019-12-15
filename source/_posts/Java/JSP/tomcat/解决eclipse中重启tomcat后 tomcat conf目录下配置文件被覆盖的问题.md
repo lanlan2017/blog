@@ -34,4 +34,3 @@ Ecplise项目中有一个Server项目，有一个`Tomcat v8,5 Server at localhos
 在eclipse中的Server项目中修改对应的配置文件就行了。
 ## 参考链接 ##
 [http://www.cnblogs.com/zuosl/p/4342190.html](http://www.cnblogs.com/zuosl/p/4342190.html)
->原文链接: [解决eclipse中重启tomcat后 tomcat conf目录下配置文件被覆盖的问题](https://lanlan2017.github.io/blog/2f563857/)

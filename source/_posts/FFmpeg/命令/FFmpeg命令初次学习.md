@@ -16,5 +16,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ## 书籍下载 ##
 https://pan.baidu.com/wap/init?surl=7SxXM9_cqrhnoM4KV7SQVw
 提取码: gnn4
-
->原文链接: [FFmpeg命令初次学习](https://lanlan2017.github.io/blog/e6e67208/)

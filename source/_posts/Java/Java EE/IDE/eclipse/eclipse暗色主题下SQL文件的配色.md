@@ -26,4 +26,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/CodeColor/4.png)
 ## eclipse其他代码配色 ##
 同理:`windows->Preferences`,然后在搜索框中输入`Syntax Colorin`,然后选择对个的代码高亮设置即可.
->原文链接: [eclipse暗色主题下SQL文件的配色](https://lanlan2017.github.io/blog/7198198c/)

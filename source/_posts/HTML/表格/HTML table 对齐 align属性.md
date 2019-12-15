@@ -67,4 +67,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 
 ## 参考链接 ##
 [http://www.w3school.com.cn/tags/att_table_align.asp](http://www.w3school.com.cn/tags/att_table_align.asp)
->原文链接: [HTML table 对齐 align属性](https://lanlan2017.github.io/blog/aa51abd2/)

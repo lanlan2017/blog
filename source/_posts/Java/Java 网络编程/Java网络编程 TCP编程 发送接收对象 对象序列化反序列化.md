@@ -243,4 +243,3 @@ public class EchoClientByArgs
 ```
 ### 运行效果 ###
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/net/TCP/6.png)
->原文链接: [Java网络编程 TCP编程 发送接收对象 对象序列化反序列化](https://lanlan2017.github.io/blog/e303557d/)

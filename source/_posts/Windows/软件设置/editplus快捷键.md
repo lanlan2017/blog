@@ -19,5 +19,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 `ctrl+j`快捷键可以复制一行到到下一行
 ## 参考资料 ##
 [https://zhidao.baidu.com/question/189856473.html](https://zhidao.baidu.com/question/189856473.html)
-
->原文链接: [editplus快捷键](https://lanlan2017.github.io/blog/d0992fb0/)

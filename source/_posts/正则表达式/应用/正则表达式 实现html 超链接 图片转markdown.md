@@ -63,5 +63,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ## html 标题转markdown ##
 **匹配正则:**`<h2 id=.+?><a href=.+?></a>(.+?)</h2>`
 **替换正则:**`## $1 ##\n`
-
->原文链接: [正则表达式 实现html 超链接 图片转markdown](https://lanlan2017.github.io/blog/f279d8a6/)

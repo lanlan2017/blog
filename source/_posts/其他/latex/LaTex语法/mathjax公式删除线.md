@@ -57,5 +57,4 @@ $$
 $$
 ## 参考资料 ##
 [https://blog.csdn.net/qq_30717203/article/details/81139708#t29](https://blog.csdn.net/qq_30717203/article/details/81139708#t29)
-
->原文链接: [mathjax公式删除线](https://lanlan2017.github.io/blog/f88b012c/)
+

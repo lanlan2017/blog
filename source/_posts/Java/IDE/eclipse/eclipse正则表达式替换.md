@@ -45,5 +45,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ## 参考链接 ##
 [https://blog.csdn.net/superit401/article/details/80008281](https://blog.csdn.net/superit401/article/details/80008281)
 [https://blog.csdn.net/a249198337/article/details/46467253](https://blog.csdn.net/a249198337/article/details/46467253)
-
->原文链接: [eclipse正则表达式替换](https://lanlan2017.github.io/blog/eee91bf3/)

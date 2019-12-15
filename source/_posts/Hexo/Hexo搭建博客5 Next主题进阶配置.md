@@ -152,5 +152,3 @@ $font-size-base            =16px
 ```
 `16px`我看太大了手机上阅读不方便，留着这个方法，也许哪天我想把字体改小。
 
-
->原文链接: [Hexo搭建博客5 Next主题进阶配置](https://lanlan2017.github.io/blog/f01200cd/)

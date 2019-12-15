@@ -122,5 +122,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 `addBatch`, `cancel`, `clearBatch`, `clearWarnings`, `close`, `execute`, `execute`, `execute`, `execute`, `executeBatch`, `executeQuery`, `executeUpdate`, `executeUpdate`, `executeUpdate`, `executeUpdate`, `getConnection`, `getFetchDirection`, `getFetchSize`, `getGeneratedKeys`, `getMaxFieldSize`, `getMaxRows`, `getMoreResults`, `getMoreResults`, `getQueryTimeout`, `getResultSet`, `getResultSetConcurrency`, `getResultSetHoldability`, `getResultSetType`, `getUpdateCount`, `getWarnings`, `isClosed`, `isPoolable`, `setCursorName`, `setEscapeProcessing`, `setFetchDirection`, `setFetchSize`, `setMaxFieldSize`, `setMaxRows`, `setPoolable`, `setQueryTimeout `
 ## 从接口 java.sql.Wrapper 继承的方法  ##
 `isWrapperFor`, `unwrap `
-
->原文链接: [PreparedStatement接口方法](https://lanlan2017.github.io/blog/87bdbf10/)

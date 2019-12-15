@@ -115,4 +115,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 </dependency>
 <!-- mysql 依赖 结束 -->
 ```
->原文链接: [Java Web项目常用Maven依赖](https://lanlan2017.github.io/blog/c20afdb9/)

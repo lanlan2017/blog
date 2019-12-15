@@ -40,4 +40,3 @@ cd E:\Blog\blog5
 hexo clean&&hexo g&&hexo d
 ```
 还是在桌面创建一个名为`发布博客.bat`的文本文件，粘贴上述代码，然后点击运行，即可发布博客。发布完毕后cmd窗口会自动关闭。
->原文链接: [bat批处理脚本自动部署Hexo博客](https://lanlan2017.github.io/blog/5d465f14/)

@@ -85,5 +85,3 @@ abbrlink: d7d49994
 
 
 参考：[https://blog.csdn.net/qq_29232943/article/details/52861800](https://blog.csdn.net/qq_29232943/article/details/52861800)
-
->原文链接: [把可执行jar打包成exe文件](https://lanlan2017.github.io/blog/d7d49994/)

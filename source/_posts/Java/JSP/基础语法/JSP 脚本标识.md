@@ -121,4 +121,3 @@ JSP脚本就是JSP页面中的一段可执行的java代码
 %>
 ```
 就叫做JSP脚本。
->原文链接: [JSP 脚本标识](https://lanlan2017.github.io/blog/99c62cee/)

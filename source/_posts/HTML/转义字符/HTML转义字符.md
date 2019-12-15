@@ -26,4 +26,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 就这么多,后面遇到再更新.
 ## 参考链接 ##
 [http://www.cnblogs.com/xcsn/p/3559624.html](http://www.cnblogs.com/xcsn/p/3559624.html)
->原文链接: [HTML转义字符](https://lanlan2017.github.io/blog/c14b29da/)

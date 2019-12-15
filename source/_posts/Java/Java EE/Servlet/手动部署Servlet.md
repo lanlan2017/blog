@@ -133,4 +133,3 @@ E:\workspace_web\app01a\src\app01a>
 [http://localhost:8080/app01a/my](http://localhost:8080/app01a/my)
 浏览器显示效果如下图所示:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/Servlet/byHand/3.png)
->原文链接: [手动部署Servlet](https://lanlan2017.github.io/blog/4a8ee7ac/)

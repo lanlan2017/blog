@@ -77,5 +77,3 @@ word-break属性用来规定自动换行的处理方式，它不仅可以让浏�
 ## 参考链接 ##
 [td自动换行时不切断英文单词](https://blog.csdn.net/qq_26702601/article/details/78497609#commentBox)
 [CSS 单词换行 word-break属性](https://blog.csdn.net/ixygj197875/article/details/79326788)
-
->原文链接: [hexo next 解决手机端表格英文显示错误 让td标签中英文按单词换行](https://lanlan2017.github.io/blog/200a993a/)

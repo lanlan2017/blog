@@ -67,5 +67,3 @@ abbrlink: e23c09a2
 </script>
 ```
 
-
->原文链接: [根据时间生成唯一的html ID属性](https://lanlan2017.github.io/blog/e23c09a2/)

@@ -191,5 +191,3 @@ exception内置对象是java.lang.Throwable接口的一个实例，用来处理J
 ```
 浏览器访问exception_test.jsp,该页面出现了异常，会自动跳转到异常处理页面：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/exception/exception_test.png)
-
->原文链接: [JSP pageContext config page exception 内置对象](https://lanlan2017.github.io/blog/ee24a152/)

@@ -30,5 +30,3 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.4+10-LTS, mixed mode)
 请按任意键继续. . .
 ```
 可以看到现在已经成功切换为`Java11`了
-
->原文链接: [安装了多个java 如何切换java版本](https://lanlan2017.github.io/blog/957ae50e/)

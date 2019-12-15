@@ -73,5 +73,3 @@ while (it.hasNext())
     System.out.println("value=" + value);
 }
 ```
-
->原文链接: [java 集合 Map遍历方式](https://lanlan2017.github.io/blog/ef2dac38/)

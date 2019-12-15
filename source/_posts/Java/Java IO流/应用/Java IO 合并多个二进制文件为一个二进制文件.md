@@ -104,4 +104,3 @@ public static void merge2TargetFileDeleteSourceFile(String targetFilePath,
     }
 }
 ```
->原文链接: [Java IO 合并多个二进制文件为一个二进制文件](https://lanlan2017.github.io/blog/e4a1ea9f/)

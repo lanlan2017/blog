@@ -59,5 +59,3 @@ pause
 `%~d0`:`%0`这个是命令行参数,表示当前批处理文件本身,`%~d0`表示当前批处理文件所在的盘符.直接写上这个命令标识进入当前批处理文件所在的盘符。
 `cd %~dp0`:`%~dp0`标识当前批处理文件所在的目录,所以`cd %~dp0`表示进入当前批处理文件所在的目录.
 `xcopy *.RELEASE.jar %target% /d`,`xcopy`可以用来复制文件或者目录,`xcopy *.RELEASE.jar`表示复制`Spring`需要的所有`jar`文件,`xcopy`的`/d`参数表示不覆盖目标目录中已经存在的同名文件.
-
->原文链接: [使用批处理一键复制Spring依赖的jar包到项目lib目录下](https://lanlan2017.github.io/blog/cbe4b14b/)

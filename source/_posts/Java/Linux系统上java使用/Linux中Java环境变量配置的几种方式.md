@@ -52,5 +52,3 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 
 参考：[https://blog.csdn.net/jillliang/article/details/8216308](https://blog.csdn.net/jillliang/article/details/8216308)
-
->原文链接: [Linux中Java环境变量配置的几种方式](https://lanlan2017.github.io/blog/73224a52/)

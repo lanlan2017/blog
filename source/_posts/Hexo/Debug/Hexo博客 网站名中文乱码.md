@@ -34,5 +34,3 @@ timezone:
 ```
 hexo clean && hexo g && hexo s
 ```
-
->原文链接: [Hexo博客 网站名中文乱码](https://lanlan2017.github.io/blog/87aa90c2/)

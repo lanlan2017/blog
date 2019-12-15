@@ -243,4 +243,3 @@ public class Test {
 |98345|       Kim|Elec. Eng.| 80000.00|
 +-----+----------+----------+---------+
 ```
->原文链接: [java打印表格 将ResultSet中的数据打印成表格](https://lanlan2017.github.io/blog/d58ef648/)

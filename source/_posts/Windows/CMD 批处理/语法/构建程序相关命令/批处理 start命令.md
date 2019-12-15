@@ -127,5 +127,3 @@ Explorer。如果从命令行执行，则等同于对那个路径作 CD /D。
 ```bat
 start /d E:\workspace_QingLiangJiJavaEEQiYeYingYongShiZhang5\lazy-init cmd.exe
 ```
-
->原文链接: [批处理 start命令](https://lanlan2017.github.io/blog/b4b274e0/)

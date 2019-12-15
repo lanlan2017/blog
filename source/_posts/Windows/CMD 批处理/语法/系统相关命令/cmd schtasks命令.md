@@ -363,5 +363,3 @@ E:\dev2\idea_workspace\CodeGenerator>schtasks /delete /tn shutdown_test
 成功: 计划的任务 "shutdown_test" 被成功删除。
 
 ```
-
->原文链接: [cmd schtasks命令](https://lanlan2017.github.io/blog/b1b65659/)

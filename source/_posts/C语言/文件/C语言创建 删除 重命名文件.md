@@ -53,4 +53,3 @@ fclose(trainFILETemp);
 [详解C语言中的rename()函数和remove()函数的使用方法](https://www.jb51.net/article/71801.htm)
 [如何用C语言创建和删除文件](https://zhidao.baidu.com/question/267104376240933125.html)
 [c 重命名文件](https://blog.csdn.net/goodboy_wkx/article/details/45561327)
->原文链接: [C语言创建 删除 重命名文件](https://lanlan2017.github.io/blog/65f494cf/)

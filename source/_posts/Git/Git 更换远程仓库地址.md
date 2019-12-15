@@ -71,4 +71,3 @@ To github.com:lanlan2017/MyJavaTools.git
 ```
 # 参考资料 #
 [https://blog.csdn.net/chaiyu2002/article/details/80898474](https://blog.csdn.net/chaiyu2002/article/details/80898474)
->原文链接: [Git更换远程仓库地址](https://lanlan2017.github.io/blog/7469a3b7/)

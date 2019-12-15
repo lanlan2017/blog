@@ -80,4 +80,3 @@ INFO  Deploy done: baidu_xz_url_submitter
 ## 参考链接 ##
 参考文章：[https://alili.tech/archive/9d64fe09/](https://alili.tech/archive/9d64fe09/)
 **hexo-baidu-url-submit**插件官方位置：[https://github.com/huiwang/hexo-baidu-url-submit](https://github.com/huiwang/hexo-baidu-url-submit)
->原文链接: [ERROR Deployer not found：baidu_xz_url_submitter](https://lanlan2017.github.io/blog/2740f49f/)

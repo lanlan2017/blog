@@ -76,5 +76,3 @@ p {color:red;}
 ## 参考资料 ##
 [https://www.cnblogs.com/pp-cat/p/4001628.html](https://www.cnblogs.com/pp-cat/p/4001628.html)
 [https://blog.csdn.net/sinat_36414515/article/details/80392321](https://blog.csdn.net/sinat_36414515/article/details/80392321)
-
->原文链接: [CSS文件加载：@import和link的区别](https://lanlan2017.github.io/blog/9b90d554/)

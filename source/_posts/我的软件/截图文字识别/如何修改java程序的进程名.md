@@ -14,5 +14,3 @@ abbrlink: 217f0f86
 [https://bbs.csdn.net/topics/370063237](https://bbs.csdn.net/topics/370063237)
 [https://bbs.csdn.net/topics/90400835](https://bbs.csdn.net/topics/90400835)
 
-
->原文链接: [如何修改java程序的进程名](https://lanlan2017.github.io/blog/217f0f86/)

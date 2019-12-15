@@ -84,4 +84,3 @@ match方法返回的是保存所有匹配正则表达式的子串的一个**数�
 [http://www.runoob.com/jsref/jsref-obj-regexp.html](http://www.runoob.com/jsref/jsref-obj-regexp.html)
 [https://www.lansheng.net.cn/blog/f52e78d1/#search() 方法](https://www.lansheng.net.cn/blog/f52e78d1/#search-%E6%96%B9%E6%B3%95)
 [https://www.lansheng.net.cn/blog/f52e78d1/#replace() 方法](https://www.lansheng.net.cn/blog/f52e78d1/#replace-%E6%96%B9%E6%B3%95)
->原文链接: [JavaScript 正则表达式](https://lanlan2017.github.io/blog/cd878b94/)

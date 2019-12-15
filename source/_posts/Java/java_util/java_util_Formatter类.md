@@ -584,5 +584,3 @@ System.out.println(builder);
 ```
 123,456,789
 ```
-
->原文链接: [java_util_Formatter类](https://lanlan2017.github.io/blog/7906d867/)

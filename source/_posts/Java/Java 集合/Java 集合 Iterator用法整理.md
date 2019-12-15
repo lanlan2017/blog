@@ -35,5 +35,3 @@ for(Iterator it = c.iterator(); it.hasNext(); ){
 ## 参考链接 ##
 [https://www.cnblogs.com/hasse/p/5024193.html](https://www.cnblogs.com/hasse/p/5024193.html)
 [http://www.cnblogs.com/lxqiaoyixuan/p/7156944.html](http://www.cnblogs.com/lxqiaoyixuan/p/7156944.html)
-
->原文链接: [Java 集合 Iterator用法整理](https://lanlan2017.github.io/blog/c26fdf44/)

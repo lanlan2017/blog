@@ -89,4 +89,3 @@ org.apache.ibatis.exceptions.PersistenceException:
 映射文件`mapper/UserMapper.xml`中`id`为`selectUserById`的`select`标签中没有写`SQL`语句。
 ## 解决 ##
 写上`SQL`语句即可。
->原文链接: [使用MyBatis是出现的Bug](https://lanlan2017.github.io/blog/5aecc643/)

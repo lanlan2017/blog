@@ -501,5 +501,3 @@ public class BaiduOCR implements Runnable
 }
 
 ```
-
->原文链接: [Java截图](https://lanlan2017.github.io/blog/14ec9002/)

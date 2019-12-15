@@ -24,5 +24,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/KuaiJieJian/3.png)
 ## eclipse提取本地方法快捷键 ##
 `alt+shift+m`可以快速把几行代码提取成一个方法。步骤和上面类似,选中要提取的那几行代码,然后站下`alt+shift+m`快捷键,然后输入方法名即可。
-
->原文链接: [eclipse 提取本地变量 提取本地方法快捷键](https://lanlan2017.github.io/blog/f3de5d3b/)

@@ -31,5 +31,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 这样在软件中打开文件时的视图就都按照详细列表方式进行排序了:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/windows/explorer/MoRenChaKanFangShi/5.png)
 
-
->原文链接: [win10中 设置打开或保存文件时的默认查看方式](https://lanlan2017.github.io/blog/fda3d857/)

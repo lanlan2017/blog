@@ -299,5 +299,3 @@ utf-8 file
 ```
 所以使用包装`InputStreamReader`的`BufferedReader`,包装`OutputStreamWriter`的`BufferedWriter`来复制文件的好处就是可以指定复制文件的时候使用的字符编码，例如上面的复制操作，从gbk编码的文件中读取，然后写入到utf8编码的文件中去。
 
-
->原文链接: [JavaIO BufferedReader和BufferedWriter](https://lanlan2017.github.io/blog/3f2a064c/)

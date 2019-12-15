@@ -42,5 +42,3 @@ Error: Spawn failed
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/git/Error/Email/2.png)
 
 参考资料:[https://www.jianshu.com/p/d478f6fd381b](https://www.jianshu.com/p/d478f6fd381b)
-
->原文链接: [Git错误集合](https://lanlan2017.github.io/blog/7e675acc/)

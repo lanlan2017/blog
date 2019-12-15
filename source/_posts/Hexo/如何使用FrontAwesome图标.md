@@ -50,5 +50,3 @@ NexT(hexo)主题中,是可以直接使用这些图标的
 2使用案例:[http://www.fontawesome.com.cn/examples/](http://www.fontawesome.com.cn/examples/)
 3可访问性:[http://www.fontawesome.com.cn/accessibility/](http://www.fontawesome.com.cn/accessibility/)
 
-
->原文链接: [如何使用FrontAwesome图标](https://lanlan2017.github.io/blog/4181f9ed/)

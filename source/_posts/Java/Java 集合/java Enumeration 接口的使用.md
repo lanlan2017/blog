@@ -68,4 +68,3 @@ public static void main(String[] args)
 ```
 ## 参考链接 ##
 [https://blog.csdn.net/qq924862077/article/details/48022185](https://blog.csdn.net/qq924862077/article/details/48022185)
->原文链接: [java Enumeration 接口的使用](https://lanlan2017.github.io/blog/7b1e18da/)

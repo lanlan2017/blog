@@ -238,4 +238,3 @@ key=id,value=ID
 [https://blog.csdn.net/i745763006/article/details/72475623](https://blog.csdn.net/i745763006/article/details/72475623)
 [Java读取Properties文件的六种方法](https://blog.csdn.net/Senton/article/details/4083127)
 [Java Properties 类](http://www.runoob.com/java/java-properties-class.html)
->原文链接: [Java Properties 操作配置文件](https://lanlan2017.github.io/blog/fdae6905/)

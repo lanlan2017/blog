@@ -19,5 +19,3 @@ BufferedImage是Image的一个子类，Image和BufferedImage的主要作用就�
 1
     
 BufferedImage bufferedImage = ImageIO.read(new FileInputStream(filePath));  
-
->原文链接: [java中BufferedImage类的用法](https://lanlan2017.github.io/blog/d819de9c/)

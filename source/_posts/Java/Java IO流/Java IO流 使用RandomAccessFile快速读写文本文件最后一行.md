@@ -602,5 +602,3 @@ public class LastLineInFileTools
 
 ```
 
-
->原文链接: [Java IO流 使用RandomAccessFile快速读写文本文件最后一行](https://lanlan2017.github.io/blog/4cd2c62c/)

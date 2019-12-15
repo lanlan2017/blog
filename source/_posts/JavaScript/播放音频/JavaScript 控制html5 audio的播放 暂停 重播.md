@@ -75,5 +75,3 @@ function ps() {var a = document.getElementById('m');var p_s=document.getElementB
 
 ## 参考资料 ##
 [https://www.cnblogs.com/kingplus/p/5587441.html](https://www.cnblogs.com/kingplus/p/5587441.html)
-
->原文链接: [JavaScript 控制html5 audio的播放 暂停 重播](https://lanlan2017.github.io/blog/ff5ef3ed/)

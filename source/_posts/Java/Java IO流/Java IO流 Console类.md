@@ -245,5 +245,3 @@ public Console format(String fmt, Object ...args)
 }
 ```
 可以看到这里的`format`方法是使用`Formatter`类的`formatter`方法来实现的。
-
->原文链接: [Java IO流 Console类](https://lanlan2017.github.io/blog/eaae884d/)

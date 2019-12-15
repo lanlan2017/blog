@@ -76,5 +76,3 @@ found 2 vulnerabilities (1 low, 1 moderate)
 参考文章:[https://www.jianshu.com/p/f37452d4978e](https://www.jianshu.com/p/f37452d4978e)
 插件GitHub地址:[https://github.com/huiwang/hexo-baidu-url-submit](https://github.com/huiwang/hexo-baidu-url-submit)
 官方说明文档：[https://hui-wang.info/2016/10/23/Hexo%E6%8F%92%E4%BB%B6%E4%B9%8B%E7%99%BE%E5%BA%A6%E4%B8%BB%E5%8A%A8%E6%8F%90%E4%BA%A4%E9%93%BE%E6%8E%A5/](https://hui-wang.info/2016/10/23/Hexo%E6%8F%92%E4%BB%B6%E4%B9%8B%E7%99%BE%E5%BA%A6%E4%B8%BB%E5%8A%A8%E6%8F%90%E4%BA%A4%E9%93%BE%E6%8E%A5/)
-
->原文链接: [hexo 百度主动推送](https://lanlan2017.github.io/blog/7ac3f85/)

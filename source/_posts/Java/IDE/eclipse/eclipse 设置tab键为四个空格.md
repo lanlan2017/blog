@@ -37,5 +37,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 因为`JSP`代码使用的是`HTML`的模板来渲染的,所以设置好了`HTML`,也是设置好了`JSP`
 ## 参考资料 ##
 [https://blog.csdn.net/qq_37932863/article/details/73611785](https://blog.csdn.net/qq_37932863/article/details/73611785)
-
->原文链接: [eclipse 设置tab键为四个空格](https://lanlan2017.github.io/blog/afd38322/)

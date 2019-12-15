@@ -35,5 +35,3 @@ Multiple annotations found at this line:
 这样就不会报错了，如下图所示:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/SpringMVCError/5.png)
 # 参考资料 #
-
->原文链接: [eclipse报错](https://lanlan2017.github.io/blog/4499badc/)

@@ -31,5 +31,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 今天win10更新了,微软输入法又回来了,按上述的方法老是删不掉,每当我按下shift+ctrl后,微软输入法就跳出来了.
 ### 解决方案 ###
 安装`英语(美国)`语言包,然后按上述步骤就可以删除了.
-
->原文链接: [移除win10多余的微软拼音输入法](https://lanlan2017.github.io/blog/3cc3e684/)

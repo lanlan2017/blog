@@ -124,5 +124,3 @@ $1$2
     <span style="cursor:wait">wait</span><br />
     <span style="cursor:help">help</span>
 ```
-
->原文链接: [正则实例：多行html代码合并为一行](https://lanlan2017.github.io/blog/72162c39/)

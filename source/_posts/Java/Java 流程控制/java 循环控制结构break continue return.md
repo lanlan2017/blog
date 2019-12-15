@@ -146,4 +146,3 @@ return后的输出语句
 i的值是1
 ```
 运行上面程序,循环只能执行到i等于1时,当i等于1时程序将完全结束(当main方法结束时,也就是Java程序结束时)。从这个运行结果来看,虽然 return并不是专门用于循环结构控制的关键字,但通过 return语句确实可以结束一个循环。与 continue和 break不同的是, **return直接结束整个方法,不管这个 return处于多少层循环之内**。
->原文链接: [java 循环控制结构break continue return](https://lanlan2017.github.io/blog/3ac4e85f/)

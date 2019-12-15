@@ -272,4 +272,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 使用html元素列表实例化：[https://github.com/zenorocha/clipboard.js/blob/master/demo/constructor-nodelist.html#L18-L19](https://github.com/zenorocha/clipboard.js/blob/master/demo/constructor-nodelist.html#L18-L19)
 [https://www.jb51.net/article/125914.htm](https://www.jb51.net/article/125914.htm)
 [https://www.cnblogs.com/yunser/p/7628031.html](https://www.cnblogs.com/yunser/p/7628031.html)
->原文链接: [clipboard_js使用步骤](https://lanlan2017.github.io/blog/c78d87f4/)

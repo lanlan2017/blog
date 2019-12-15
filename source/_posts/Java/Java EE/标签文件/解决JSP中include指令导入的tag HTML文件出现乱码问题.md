@@ -145,4 +145,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
     out.print("<strong>included.tagf文件中的内容</strong>");
 %>
 ```
->原文链接: [解决JSP中include指令导入的tag HTML文件出现乱码问题](https://lanlan2017.github.io/blog/ae393936/)

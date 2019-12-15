@@ -46,5 +46,3 @@ echo a 3>a.txt。
 **只要没有输出，并重定向到文件就可以了**
 
 [百度知道-cmd 如何新建文件](https://zhidao.baidu.com/question/277563240.html)
-
->原文链接: [cmd 创建文件的几个常见命令](https://lanlan2017.github.io/blog/6aff1849/)

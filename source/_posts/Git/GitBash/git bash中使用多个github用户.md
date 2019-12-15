@@ -133,5 +133,3 @@ cp -r bolg5/ xuexi
 ## 参考链接 ##
 
 [多个git账号之间的切换](https://www.cnblogs.com/williamjie/p/9145570.html)
-
->原文链接: [git bash中使用多个github用户](https://lanlan2017.github.io/blog/4190ffbf/)

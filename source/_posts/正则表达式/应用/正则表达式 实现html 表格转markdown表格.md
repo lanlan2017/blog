@@ -175,5 +175,3 @@ public static String table2Markdown(String htmlTable)
     return sb.toString();
 }
 ```
-
->原文链接: [正则表达式 实现html 表格转markdown表格](https://lanlan2017.github.io/blog/211bb72a/)

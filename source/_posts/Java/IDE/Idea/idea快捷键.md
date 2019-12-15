@@ -36,5 +36,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 |功能|描述|快捷键|
 |:---|:---|:---|
 |`Delete Line`|删除一行|`ctrl+d`|
-
->原文链接: [idea快捷键](https://lanlan2017.github.io/blog/385c30d/)

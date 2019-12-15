@@ -57,5 +57,3 @@ lanlan2017
 ```
 # 输入密码
 省略...
-
->原文链接: [Git更新推送流程](https://lanlan2017.github.io/blog/6a91baf/)

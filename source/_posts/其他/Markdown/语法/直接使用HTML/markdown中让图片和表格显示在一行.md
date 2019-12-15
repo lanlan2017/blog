@@ -49,5 +49,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 还有就是markdown中html表格标签中不要有换行符，显示的时候回出现好多空白行。删除上面的表格标签中的空白符后显示自效果如下：
 ## 效果 ##
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/findjob/table_img_insameline.png)
-
->原文链接: [markdown中让图片和表格显示在一行](https://lanlan2017.github.io/blog/f0d2185d/)

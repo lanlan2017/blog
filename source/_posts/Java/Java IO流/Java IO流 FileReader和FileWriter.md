@@ -169,5 +169,3 @@ utf-8 file
 可以看到虽然已经以`utf-8`编码打开了，但是还是显示乱码。
 
 **所以遇到需要处理字符编码的时候要使用`InputStreamReader`和`OutputStreamWriter`来操作。**
-
->原文链接: [Java IO流 FileReader和FileWriter](https://lanlan2017.github.io/blog/f1ceb471/)

@@ -762,5 +762,3 @@ public PrintStream append(char c) {
 |`void close()`|关闭流。 |
 |`void flush()`|刷新该流的缓冲。 |
 |`protected  void setError()`|将该流的错误状态设置为 true。 |
-
->原文链接: [Java IO流 PrintStream类](https://lanlan2017.github.io/blog/82040860/)

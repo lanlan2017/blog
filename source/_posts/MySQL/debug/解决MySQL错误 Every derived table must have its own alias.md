@@ -64,5 +64,3 @@ where avg_salary>42000;
 +------------+--------------+
 6 rows in set
 ```
-
->原文链接: [解决MySQL错误 Every derived table must have its own alias](https://lanlan2017.github.io/blog/85e5e68e/)

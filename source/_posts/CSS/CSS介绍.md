@@ -26,4 +26,3 @@ Web浏览器通过CSS规则来设置HTML标签的显示方式。一个CSS规则�
 样式表中的一组CSS规则确定了网页如何显示，你将在下一篇文章中了解更多关于CSS语法的内容 — CSS 语法。
 ## 参考链接 ##
 [https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/How_CSS_works](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/How_CSS_works)
->原文链接: [CSS介绍](https://lanlan2017.github.io/blog/208d3303/)

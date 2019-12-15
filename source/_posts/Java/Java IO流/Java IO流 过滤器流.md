@@ -20,5 +20,3 @@ var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.pare
 - 过滤器流可以置于原始流或其他过滤器流之上；
 - 阅读器/书写器可置于原始流、过滤器流或其他阅读器/书写器之上；
 - 过滤器流不能放在阅读器/书写器之后。
-
->原文链接: [Java IO流 过滤器流](https://lanlan2017.github.io/blog/c52cb4ad/)

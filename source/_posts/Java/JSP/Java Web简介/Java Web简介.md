@@ -185,4 +185,3 @@ lib文件夹,用于存放需要项目中用到的jar包,如连接数据库驱动
 [tomact首页](http://tomcat.apache.org/)
 [tomcat8下载页](https://tomcat.apache.org/download-80.cgi)
 [慕课网 Tmcat目录结构](https://www.imooc.com/video/2925)
->原文链接: [Java Web简介](https://lanlan2017.github.io/blog/ec8e0fb7/)

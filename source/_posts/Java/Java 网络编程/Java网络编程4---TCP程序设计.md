@@ -596,5 +596,3 @@ public class EchoClient
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/net/TCP/4.png)
 当所有连接过的客户端都结束后,服务端没有任何线程在运行,此时服务器才真正的结束:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/net/TCP/5.png)
-
->原文链接: [Java网络编程4---TCP程序设计](https://lanlan2017.github.io/blog/691d97e3/)

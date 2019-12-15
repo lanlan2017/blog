@@ -28,5 +28,3 @@ Indent by one
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Format/1.png)
 格式化效果如下图所示:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Format/2.png)
-
->原文链接: [Eclipse代码格式化](https://lanlan2017.github.io/blog/4d0864a5/)
