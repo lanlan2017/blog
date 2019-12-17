@@ -6,34 +6,13 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-13 22:21:13
-updated: 2019-12-16 02:39:07
+updated: 2019-12-17 05:17:08
 abbrlink: 874828d8
 ---
 <div id='my_toc'><a href="/blog/874828d8/#Spring-MVC配置文件模版" class="header_1">Spring MVC配置文件模版</a><br><a href="/blog/874828d8/#安装插件" class="header_1">安装插件</a><br><a href="/blog/874828d8/#使用Spring-Tools3插件创建配置文件" class="header_1">使用Spring Tools3插件创建配置文件</a><br><a href="/blog/874828d8/#手动创建web.xml" class="header_1">手动创建web.xml</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 # Spring MVC配置文件模版 #

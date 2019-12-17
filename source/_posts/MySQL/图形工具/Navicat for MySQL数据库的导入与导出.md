@@ -4,34 +4,13 @@ categories:
   - MySQL
   - 图形工具
 date: 2018-12-08 00:19:02
-updated: 2019-12-15 10:01:44
+updated: 2019-12-17 05:17:09
 abbrlink: 885d02c0
 ---
 <div id='my_toc'><a href="/blog/885d02c0/#导出数据库中的所有表" class="header_2">导出数据库中的所有表</a><br><a href="/blog/885d02c0/#记下原来数据库的属性" class="header_3">记下原来数据库的属性</a><br><a href="/blog/885d02c0/#导出原数据库中的全部" class="header_3">导出原数据库中的全部</a><br><a href="/blog/885d02c0/#导入数据库" class="header_2">导入数据库</a><br><a href="/blog/885d02c0/#参看文件中的信息" class="header_3">参看文件中的信息</a><br><a href="/blog/885d02c0/#关键信息" class="header_4">关键信息</a><br><a href="/blog/885d02c0/#新建同名数据库" class="header_3">新建同名数据库</a><br><a href="/blog/885d02c0/#导入" class="header_3">导入</a><br><a href="/blog/885d02c0/#Java程序说明" class="header_2">Java程序说明</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## 导出数据库中的所有表 ##

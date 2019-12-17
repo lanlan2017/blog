@@ -4,34 +4,13 @@ categories:
   - Hexo
   - Debug
 date: 2018-11-06 11:24:16
-updated: 2019-12-15 10:01:43
+updated: 2019-12-17 05:17:08
 abbrlink: 200a993a
 ---
 <div id='my_toc'><a href="/blog/200a993a/#问题描述" class="header_2">问题描述</a><br><a href="/blog/200a993a/#修改next主题样式文件" class="header_2">修改next主题样式文件</a><br><a href="/blog/200a993a/#写表格时用空格分隔每个单词" class="header_2">写表格时用空格分隔每个单词</a><br><a href="/blog/200a993a/#实例-错误写法" class="header_3">实例 错误写法</a><br><a href="/blog/200a993a/#实例-正确写法" class="header_3">实例 正确写法</a><br><a href="/blog/200a993a/#css-word-break属性" class="header_2">css word-break属性</a><br><a href="/blog/200a993a/#white-space、word-wrap、word-break的区别" class="header_2">white-space、word-wrap、word-break的区别</a><br><a href="/blog/200a993a/#参考链接" class="header_2">参考链接</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## 问题描述 ##

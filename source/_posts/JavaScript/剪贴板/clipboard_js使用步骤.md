@@ -4,34 +4,13 @@ categories:
   - JavaScript
   - 剪贴板
 date: 2019-02-13 00:16:32
-updated: 2019-12-15 10:01:44
+updated: 2019-12-17 05:17:09
 abbrlink: c78d87f4
 ---
 <div id='my_toc'><a href="/blog/c78d87f4/#使用步骤" class="header_2">使用步骤</a><br><a href="/blog/c78d87f4/#属性说明" class="header_2">属性说明</a><br><a href="/blog/c78d87f4/#使用实例" class="header_2">使用实例</a><br><a href="/blog/c78d87f4/#使用HTML-DOM选择器实例化" class="header_3">使用HTML DOM选择器实例化</a><br><a href="/blog/c78d87f4/#使用HTML元素实例化" class="header_3">使用HTML元素实例化</a><br><a href="/blog/c78d87f4/#使用html元素列表实例化" class="header_3">使用html元素列表实例化</a><br><a href="/blog/c78d87f4/#复制静态文本" class="header_2">复制静态文本</a><br><a href="/blog/c78d87f4/#复制其他元素的内容" class="header_2">复制其他元素的内容</a><br><a href="/blog/c78d87f4/#复制一个内容" class="header_3">复制一个内容</a><br><a href="/blog/c78d87f4/#复制多个内容的情况" class="header_3">复制多个内容的情况</a><br><a href="/blog/c78d87f4/#剪切方式" class="header_2">剪切方式</a><br><a href="/blog/c78d87f4/#参考链接" class="header_2">参考链接</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## 使用步骤 ##

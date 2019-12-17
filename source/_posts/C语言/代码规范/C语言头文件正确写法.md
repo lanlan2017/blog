@@ -4,34 +4,13 @@ categories:
   - C语言
   - 代码规范
 date: 2018-11-20 18:52:35
-updated: 2019-12-15 10:01:43
+updated: 2019-12-17 05:17:08
 abbrlink: 96819592
 ---
 <div id='my_toc'><a href="/blog/96819592/#一般写法" class="header_2">一般写法</a><br><a href="/blog/96819592/#自动生成" class="header_2">自动生成</a><br><a href="/blog/96819592/#源码" class="header_3">源码</a><br><a href="/blog/96819592/#C语言头文件生成工具" class="header_3">C语言头文件生成工具</a><br><a href="/blog/96819592/#参考链接" class="header_2">参考链接</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## 一般写法 ##

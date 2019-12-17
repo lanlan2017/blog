@@ -6,34 +6,13 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2019-01-31 17:32:41
-updated: 2019-12-15 10:01:44
+updated: 2019-12-17 05:17:09
 abbrlink: 5d4c4249
 ---
 <div id='my_toc'><a href="/blog/5d4c4249/#删除文件-del或erase命令" class="header_2">删除文件 del或erase命令</a><br><a href="/blog/5d4c4249/#删除-当前目录-下某个文件" class="header_3">删除 当前目录 下某个文件</a><br><a href="/blog/5d4c4249/#删除-当前目录-下某个后缀的所有文件" class="header_3">删除 当前目录 下某个后缀的所有文件</a><br><a href="/blog/5d4c4249/#删除-当前目录树-下某个后缀的所有文件" class="header_3">删除 当前目录树 下某个后缀的所有文件</a><br><a href="/blog/5d4c4249/#测试" class="header_4">测试</a><br><a href="/blog/5d4c4249/#删除目录-rmdir或rd命令" class="header_2">删除目录 rmdir或rd命令</a><br><a href="/blog/5d4c4249/#删除空目录" class="header_3">删除空目录</a><br><a href="/blog/5d4c4249/#删除非空目录" class="header_3">删除非空目录</a><br><a href="/blog/5d4c4249/#直接删除非空目录" class="header_3">直接删除非空目录</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## 删除文件 del或erase命令 ##

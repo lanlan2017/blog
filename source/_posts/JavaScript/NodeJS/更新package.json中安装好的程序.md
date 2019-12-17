@@ -4,34 +4,13 @@ categories:
   - JavaScript
   - NodeJS
 date: 2019-12-14 10:36:39
-updated: 2019-12-15 10:01:44
+updated: 2019-12-17 05:17:09
 abbrlink: f0b52541
 ---
 <div id='my_toc'><a href="/blog/f0b52541/#安装npm-check-updates" class="header_1">安装npm-check-updates</a><br><a href="/blog/f0b52541/#查询是否后最新版本" class="header_1">查询是否后最新版本</a><br><a href="/blog/f0b52541/#更新依赖文件配置" class="header_1">更新依赖文件配置</a><br><a href="/blog/f0b52541/#更新软件" class="header_1">更新软件</a><br><a href="/blog/f0b52541/#更新其他" class="header_1">更新其他</a><br><a href="/blog/f0b52541/#参考资料" class="header_1">参考资料</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 # 安装npm-check-updates

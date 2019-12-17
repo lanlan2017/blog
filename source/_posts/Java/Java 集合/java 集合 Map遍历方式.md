@@ -4,34 +4,13 @@ categories:
   - Java
   - Java 集合
 date: 2018-12-14 21:43:36
-updated: 2019-12-16 02:40:59
+updated: 2019-12-17 05:17:09
 abbrlink: ef2dac38
 ---
 <div id='my_toc'><a href="/blog/ef2dac38/#方式1-通过keysSet遍历Map" class="header_2">方式1 通过keysSet遍历Map</a><br><a href="/blog/ef2dac38/#实例" class="header_3">实例</a><br><a href="/blog/ef2dac38/#方式2-通过Map.Entry对象遍历Map" class="header_2">方式2 通过Map.Entry对象遍历Map</a><br><a href="/blog/ef2dac38/#实例" class="header_3">实例</a><br><a href="/blog/ef2dac38/#直接遍历所有的值" class="header_2">直接遍历所有的值</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## 方式1 通过keysSet遍历Map ##

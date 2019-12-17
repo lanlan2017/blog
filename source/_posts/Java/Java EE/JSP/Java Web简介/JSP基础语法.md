@@ -6,34 +6,13 @@ categories:
   - JSP
   - Java Web简介
 date: 2018-12-03 19:28:31
-updated: 2019-12-16 02:39:10
+updated: 2019-12-17 05:17:08
 abbrlink: ceef3131
 ---
 <div id='my_toc'><a href="/blog/ceef3131/#JSP注释" class="header_2">JSP注释</a><br><a href="/blog/ceef3131/#实例" class="header_3">实例</a><br><a href="/blog/ceef3131/#英文" class="header_3">英文</a><br><a href="/blog/ceef3131/#JSP页面生命周期" class="header_1">JSP页面生命周期</a><br><a href="/blog/ceef3131/#JSP编译" class="header_2">JSP编译</a><br><a href="/blog/ceef3131/#JSP初始化" class="header_2">JSP初始化</a><br><a href="/blog/ceef3131/#JSP执行" class="header_2">JSP执行</a><br><a href="/blog/ceef3131/#JSP清理" class="header_2">JSP清理</a><br><a href="/blog/ceef3131/#实例" class="header_2">实例</a><br><a href="/blog/ceef3131/#参考链接" class="header_2">参考链接</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ----

@@ -5,34 +5,13 @@ categories:
   - Java EE
   - 环境搭建
 date: 2019-04-26 17:42:04
-updated: 2019-12-16 02:39:53
+updated: 2019-12-17 05:17:09
 abbrlink: 9b044702
 ---
 <div id='my_toc'><a href="/blog/9b044702/#使用的软件版本" class="header_1">使用的软件版本</a><br><a href="/blog/9b044702/#Maven安装" class="header_1">Maven安装</a><br><a href="/blog/9b044702/#下载" class="header_2">下载</a><br><a href="/blog/9b044702/#解压" class="header_2">解压</a><br><a href="/blog/9b044702/#配置环境变量" class="header_2">配置环境变量</a><br><a href="/blog/9b044702/#M2_HOME环境变量" class="header_3">M2_HOME环境变量</a><br><a href="/blog/9b044702/#path环境变量" class="header_3">path环境变量</a><br><a href="/blog/9b044702/#集成到Eclipse" class="header_2">集成到Eclipse</a><br><a href="/blog/9b044702/#Eclipse之中创建Maven-Web项目" class="header_1">Eclipse之中创建Maven Web项目</a><br><a href="/blog/9b044702/#创建Maven-Web项目" class="header_2">创建Maven Web项目</a><br><a href="/blog/9b044702/#修改项目配置" class="header_2">修改项目配置</a><br><a href="/blog/9b044702/#把Maven-Web项目改为Java-Web项目" class="header_3">把Maven Web项目改为Java Web项目</a><br><a href="/blog/9b044702/#选择JDK版本" class="header_4">选择JDK版本</a><br><a href="/blog/9b044702/#选择Dynamic-Web-Module版本" class="header_4">选择Dynamic Web Module版本</a><br><a href="/blog/9b044702/#选择Tomcat" class="header_4">选择Tomcat</a><br><a href="/blog/9b044702/#创建java目录" class="header_4">创建java目录</a><br><a href="/blog/9b044702/#效果" class="header_4">效果</a><br><a href="/blog/9b044702/#修改web.xml" class="header_3">修改web.xml</a><br><a href="/blog/9b044702/#修改pom.xml" class="header_3">修改pom.xml</a><br><a href="/blog/9b044702/#测试" class="header_3">测试</a><br><a href="/blog/9b044702/#编写HelloWorldServlet" class="header_4">编写HelloWorldServlet</a><br><a href="/blog/9b044702/#使用Maven一键部署到Tomcat中" class="header_1">使用Maven一键部署到Tomcat中</a><br><a href="/blog/9b044702/#设置tomcat用户密码" class="header_2">设置tomcat用户密码</a><br><a href="/blog/9b044702/#修改Mawen的配置文件" class="header_2">修改Mawen的配置文件</a><br><a href="/blog/9b044702/#安装Tomcat-Maven部署插件" class="header_2">安装Tomcat Maven部署插件</a><br><a href="/blog/9b044702/#部署" class="header_2">部署</a><br><a href="/blog/9b044702/#运行服务器" class="header_3">运行服务器</a><br><a href="/blog/9b044702/#使用Maven部署项目" class="header_3">使用Maven部署项目</a><br><a href="/blog/9b044702/#Tomcat之中部署的效果" class="header_2">Tomcat之中部署的效果</a><br><a href="/blog/9b044702/#参考资料" class="header_1">参考资料</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 # 使用的软件版本 #

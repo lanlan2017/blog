@@ -6,34 +6,13 @@ categories:
   - 语法
   - 操作文件或目录的命令
 date: 2018-08-03 14:03:56
-updated: 2019-12-15 10:01:44
+updated: 2019-12-17 05:17:09
 abbrlink: 6aff1849
 ---
 <div id='my_toc'><a href="/blog/6aff1849/#一、建立空文件的几种方法" class="header_2">一、建立空文件的几种方法</a><br><a href="/blog/6aff1849/#使用cd命令" class="header_3">使用cd命令</a><br><a href="/blog/6aff1849/#使用copy命令" class="header_3">使用copy命令</a><br><a href="/blog/6aff1849/#使用type命令" class="header_3">使用type命令</a><br><a href="/blog/6aff1849/#使用echo命令" class="header_3">使用echo命令</a><br><a href="/blog/6aff1849/#使用fsutil命令" class="header_3">使用fsutil命令</a><br><a href="/blog/6aff1849/#关键点" class="header_3">关键点</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## 一、建立空文件的几种方法 ##

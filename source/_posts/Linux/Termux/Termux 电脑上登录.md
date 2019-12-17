@@ -4,34 +4,13 @@ categories:
   - Linux
   - Termux
 date: 2019-11-01 11:37:04
-updated: 2019-12-15 10:01:44
+updated: 2019-12-17 05:17:09
 abbrlink: c3146b3e
 ---
 <div id='my_toc'><a href="/blog/c3146b3e/#下载安装Xshell免费版" class="header_1">下载安装Xshell免费版</a><br><a href="/blog/c3146b3e/#进入中文官网" class="header_2">进入中文官网</a><br><a href="/blog/c3146b3e/#填写邮箱获取下载链接" class="header_2">填写邮箱获取下载链接</a><br><a href="/blog/c3146b3e/#接收邮件-并下载" class="header_2">接收邮件 并下载</a><br><a href="/blog/c3146b3e/#使用Xshell创建秘钥" class="header_1">使用Xshell创建秘钥</a><br><a href="/blog/c3146b3e/#Xshell创建秘钥详细过程" class="header_2">Xshell创建秘钥详细过程</a><br><a href="/blog/c3146b3e/#保存公钥" class="header_2">保存公钥</a><br><a href="/blog/c3146b3e/#导出私钥并保存" class="header_2">导出私钥并保存</a><br><a href="/blog/c3146b3e/#将Xshell创建的秘钥设置到Termux中" class="header_1">将Xshell创建的秘钥设置到Termux中</a><br><a href="/blog/c3146b3e/#Termux-获得存储权限" class="header_2">Termux 获得存储权限</a><br><a href="/blog/c3146b3e/#将公钥发送到手机上" class="header_2">将公钥发送到手机上</a><br><a href="/blog/c3146b3e/#复制公钥到.ssh目录下" class="header_2">复制公钥到.ssh目录下</a><br><a href="/blog/c3146b3e/#将公钥写入authorized_keys中" class="header_2">将公钥写入authorized_keys中</a><br><a href="/blog/c3146b3e/#开启sshd" class="header_1">开启sshd</a><br><a href="/blog/c3146b3e/#获取链接信息" class="header_1">获取链接信息</a><br><a href="/blog/c3146b3e/#查看当前Termux用户信息" class="header_2">查看当前Termux用户信息</a><br><a href="/blog/c3146b3e/#查看Termux的ip地址" class="header_2">查看Termux的ip地址</a><br><a href="/blog/c3146b3e/#使用正则取出正确的IP所在的行" class="header_3">使用正则取出正确的IP所在的行</a><br><a href="/blog/c3146b3e/#确保手机和电脑在同一个网络下" class="header_1">确保手机和电脑在同一个网络下</a><br><a href="/blog/c3146b3e/#使用Xshell链接Termux" class="header_1">使用Xshell链接Termux</a><br><a href="/blog/c3146b3e/#设置链接常规信息" class="header_2">设置链接常规信息</a><br><a href="/blog/c3146b3e/#设置用户身份验证信息" class="header_2">设置用户身份验证信息</a><br><a href="/blog/c3146b3e/#链接成功效果" class="header_2">链接成功效果</a><br><a href="/blog/c3146b3e/#链接成功但是无法操作的情况" class="header_3">链接成功但是无法操作的情况</a><br><a href="/blog/c3146b3e/#保证Termux显示在手机屏幕最上方" class="header_3">保证Termux显示在手机屏幕最上方</a><br><a href="/blog/c3146b3e/#如何重新链接" class="header_2">如何重新链接</a><br><a href="/blog/c3146b3e/#设置Termux常驻后台" class="header_2">设置Termux常驻后台</a><br><a href="/blog/c3146b3e/#参考资料" class="header_1">参考资料</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 # 下载安装Xshell免费版 #

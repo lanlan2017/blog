@@ -6,34 +6,13 @@ categories:
   - IDE
   - VSCode
 date: 2019-10-06 21:46:08
-updated: 2019-12-16 02:40:42
+updated: 2019-12-17 05:17:09
 abbrlink: 6221fd78
 ---
 <div id='my_toc'><a href="/blog/6221fd78/#如何切换VScode里面的java版本" class="header_1">如何切换VScode里面的java版本</a><br><a href="/blog/6221fd78/#1.-电脑使用新版本的java" class="header_2">1. 电脑使用新版本的java</a><br><a href="/blog/6221fd78/#2.-重装VScode里面的java环境" class="header_2">2. 重装VScode里面的java环境</a><br><a href="/blog/6221fd78/#总结" class="header_2">总结</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 # 如何切换VScode里面的java版本 #

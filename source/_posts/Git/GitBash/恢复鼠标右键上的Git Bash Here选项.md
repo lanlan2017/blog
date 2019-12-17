@@ -4,34 +4,13 @@ categories:
   - Git
   - GitBash
 date: 2019-12-06 15:02:25
-updated: 2019-12-15 10:01:43
+updated: 2019-12-17 05:17:08
 abbrlink: 6aa7c987
 ---
 <div id='my_toc'><a href="/blog/6aa7c987/#问题描述" class="header_1">问题描述</a><br><a href="/blog/6aa7c987/#打开注册表编辑器" class="header_1">打开注册表编辑器</a><br><a href="/blog/6aa7c987/#进入shell目录" class="header_1">进入shell目录</a><br><a href="/blog/6aa7c987/#新建项Git-Bash-Here" class="header_1">新建项Git Bash Here</a><br><a href="/blog/6aa7c987/#设置图标" class="header_2">设置图标</a><br><a href="/blog/6aa7c987/#设置命令" class="header_2">设置命令</a><br><a href="/blog/6aa7c987/#地址中有空格要用引号包裹" class="header_1">地址中有空格要用引号包裹</a><br><a href="/blog/6aa7c987/#使用" class="header_1">使用</a><br><a href="/blog/6aa7c987/#参考资料" class="header_1">参考资料</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 # 问题描述

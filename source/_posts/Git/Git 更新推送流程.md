@@ -3,34 +3,13 @@ title: Git 更新推送流程
 categories: 
   - Git
 date: 2019-10-31 20:20:41
-updated: 2019-12-15 10:01:43
+updated: 2019-12-17 05:17:08
 abbrlink: 6a91baf
 ---
 <div id='my_toc'><a href="/blog/6a91baf/#进入项目地址" class="header_1">进入项目地址</a><br><a href="/blog/6a91baf/#拉取远程分支" class="header_1">拉取远程分支</a><br><a href="/blog/6a91baf/#查看更新" class="header_1">查看更新</a><br><a href="/blog/6a91baf/#一步到位" class="header_2">一步到位</a><br><a href="/blog/6a91baf/#处理冲突或者其他操作" class="header_1">处理冲突或者其他操作</a><br><a href="/blog/6a91baf/#添加所有文件" class="header_1">添加所有文件</a><br><a href="/blog/6a91baf/#提交" class="header_1">提交</a><br><a href="/blog/6a91baf/#提交语句开始" class="header_2">提交语句开始</a><br><a href="/blog/6a91baf/#写入提交描述" class="header_2">写入提交描述</a><br><a href="/blog/6a91baf/#描述结束符" class="header_2">描述结束符</a><br><a href="/blog/6a91baf/#推送到指定分支" class="header_1">推送到指定分支</a><br><a href="/blog/6a91baf/#输入GitHub用户名" class="header_1">输入GitHub用户名</a><br><a href="/blog/6a91baf/#输入密码" class="header_1">输入密码</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 # 进入项目地址

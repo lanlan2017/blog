@@ -4,34 +4,13 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-11 16:19:23
-updated: 2019-12-16 02:40:10
+updated: 2019-12-17 05:17:09
 abbrlink: 833486b4
 ---
-<div id='my_toc'><a href="/blog/833486b4/#File类简介" class="header_1">File类简介</a><br><a href="/blog/833486b4/#File类方法" class="header_1">File类方法</a><br><a href="/blog/833486b4/#继承关系" class="header_2">继承关系</a><br><a href="/blog/833486b4/#字段" class="header_2">字段</a><br><a href="/blog/833486b4/#构造函数" class="header_2">构造函数</a><br><a href="/blog/833486b4/#判断方法" class="header_2">判断方法</a><br><a href="/blog/833486b4/#详细说明：" class="header_3">详细说明：</a><br><a href="/blog/833486b4/#创建文件或目录方法" class="header_2">创建文件或目录方法</a><br><a href="/blog/833486b4/#当文件不存在时创建该文件" class="header_3">当文件不存在时创建该文件</a><br><a href="/blog/833486b4/#当目录不存在时创建该目录-" class="header_3">当目录不存在时创建该目录:</a><br><a href="/blog/833486b4/#删除文件或目录" class="header_2">删除文件或目录</a><br><a href="/blog/833486b4/#获取文件信息方法" class="header_2">获取文件信息方法</a><br><a href="/blog/833486b4/#路径相关方法" class="header_2">路径相关方法</a><br><a href="/blog/833486b4/#返回目录列表" class="header_3">返回目录列表</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<div id='my_toc'><a href="/blog/833486b4/#File类简介" class="header_1">File类简介</a><br><a href="/blog/833486b4/#File类方法" class="header_1">File类方法</a><br><a href="/blog/833486b4/#继承关系" class="header_2">继承关系</a><br><a href="/blog/833486b4/#字段" class="header_2">字段</a><br><a href="/blog/833486b4/#构造函数" class="header_2">构造函数</a><br><a href="/blog/833486b4/#判断方法" class="header_2">判断方法</a><br><a href="/blog/833486b4/#详细说明：" class="header_3">详细说明：</a><br><a href="/blog/833486b4/#创建文件或目录方法" class="header_2">创建文件或目录方法</a><br><a href="/blog/833486b4/#当文件不存在时创建该文件" class="header_3">当文件不存在时创建该文件</a><br><a href="/blog/833486b4/#当目录不存在时创建该目录" class="header_3">当目录不存在时创建该目录:</a><br><a href="/blog/833486b4/#删除文件或目录" class="header_2">删除文件或目录</a><br><a href="/blog/833486b4/#获取文件信息方法" class="header_2">获取文件信息方法</a><br><a href="/blog/833486b4/#路径相关方法" class="header_2">路径相关方法</a><br><a href="/blog/833486b4/#返回目录列表" class="header_3">返回目录列表</a><br></div>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 Java IO流 File类

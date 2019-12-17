@@ -4,34 +4,13 @@ categories:
   - Java
   - Java IO流
 date: 2018-10-29 23:41:16
-updated: 2019-12-16 02:40:32
+updated: 2019-12-17 05:17:09
 abbrlink: 487a7f53
 ---
 <div id='my_toc'><a href="/blog/487a7f53/#返回文本文件最后一行java代码" class="header_2">返回文本文件最后一行java代码</a><br><a href="/blog/487a7f53/#读取本文文件最后一行，并记下最后一行的位置" class="header_2">读取本文文件最后一行，并记下最后一行的位置</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## 返回文本文件最后一行java代码 ##

@@ -5,34 +5,13 @@ categories:
   - Java 基础
   - Java 正则表达式
 date: 2018-08-07 15:56:18
-updated: 2019-12-16 02:40:42
+updated: 2019-12-17 05:17:09
 abbrlink: 51e02fda
 ---
 <div id='my_toc'><a href="/blog/51e02fda/#删除一个或多个空行" class="header_1">删除一个或多个空行</a><br><a href="/blog/51e02fda/#正则表达式" class="header_2">正则表达式</a><br><a href="/blog/51e02fda/#匹配空行正则2" class="header_2">匹配空行正则2</a><br><a href="/blog/51e02fda/#删除所有空行Java代码" class="header_2">删除所有空行Java代码</a><br><a href="/blog/51e02fda/#移除多余的连续空格，只留下一个空格。" class="header_1">移除多余的连续空格，只留下一个空格。</a><br><a href="/blog/51e02fda/#在线正则图形化工具" class="header_1">在线正则图形化工具</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 # 删除一个或多个空行 #

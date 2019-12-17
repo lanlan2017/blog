@@ -3,34 +3,13 @@ title: Hexo搭建博客5 Next主题进阶配置
 categories: 
   - Hexo
 date: 2018-08-29 19:35:07
-updated: 2019-12-15 10:01:43
+updated: 2019-12-17 05:17:08
 abbrlink: f01200cd
 ---
-<div id='my_toc'><a href="/blog/f01200cd/#实现点击出现爱心效果" class="header_2">实现点击出现爱心效果</a><br><a href="/blog/f01200cd/#网站底部字数统计" class="header_2">网站底部字数统计</a><br><a href="/blog/f01200cd/#安装插件" class="header_3">安装插件</a><br><a href="/blog/f01200cd/#修改文件" class="header_3">修改文件</a><br><a href="/blog/f01200cd/#保留-README.md-文件" class="header_2">保留`README.md`文件</a><br><a href="/blog/f01200cd/#设置网站的图标Favicon" class="header_2">设置网站的图标Favicon</a><br><a href="/blog/f01200cd/#实现统计功能" class="header_2">实现统计功能</a><br><a href="/blog/f01200cd/#安装插件" class="header_3">安装插件</a><br><a href="/blog/f01200cd/#隐藏网页底部-powered-By-Hexo-/-强力驱动-" class="header_2">隐藏网页底部`powered By Hexo / 强力驱动`</a><br><a href="/blog/f01200cd/#隐藏网页底部-主题-–-NexT.Gemini-v6.4.0-" class="header_2">隐藏网页底部`主题 – NexT.Gemini v6.4.0`</a><br><a href="/blog/f01200cd/#修改字体大小" class="header_2">修改字体大小</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<div id='my_toc'><a href="/blog/f01200cd/#实现点击出现爱心效果" class="header_2">实现点击出现爱心效果</a><br><a href="/blog/f01200cd/#网站底部字数统计" class="header_2">网站底部字数统计</a><br><a href="/blog/f01200cd/#安装插件" class="header_3">安装插件</a><br><a href="/blog/f01200cd/#修改文件" class="header_3">修改文件</a><br><a href="/blog/f01200cd/#保留-README.md-文件" class="header_2">保留`README.md`文件</a><br><a href="/blog/f01200cd/#设置网站的图标Favicon" class="header_2">设置网站的图标Favicon</a><br><a href="/blog/f01200cd/#实现统计功能" class="header_2">实现统计功能</a><br><a href="/blog/f01200cd/#安装插件" class="header_3">安装插件</a><br><a href="/blog/f01200cd/#隐藏网页底部-powered-By-Hexo-/-强力驱动" class="header_2">隐藏网页底部`powered By Hexo / 强力驱动`</a><br><a href="/blog/f01200cd/#隐藏网页底部-主题-–-NexT.Gemini-v6.4.0" class="header_2">隐藏网页底部`主题 – NexT.Gemini v6.4.0`</a><br><a href="/blog/f01200cd/#修改字体大小" class="header_2">修改字体大小</a><br></div>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## 实现点击出现爱心效果 ##

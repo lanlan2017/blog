@@ -4,34 +4,13 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-13 20:36:12
-updated: 2019-12-16 02:40:25
+updated: 2019-12-17 05:17:09
 abbrlink: 492ea8e8
 ---
-<div id='my_toc'><a href="/blog/492ea8e8/#继承关系" class="header_2">继承关系</a><br><a href="/blog/492ea8e8/#构造函数" class="header_2">构造函数</a><br><a href="/blog/492ea8e8/#成员方法" class="header_2">成员方法</a><br><a href="/blog/492ea8e8/#可以自动刷新的方法" class="header_3">可以自动刷新的方法</a><br><a href="/blog/492ea8e8/#追加方法" class="header_3">追加方法</a><br><a href="/blog/492ea8e8/#print(...)方法" class="header_3">print(...)方法</a><br><a href="/blog/492ea8e8/#write(...)方法" class="header_3">write(...)方法</a><br><a href="/blog/492ea8e8/#错误相关方法" class="header_3">错误相关方法</a><br><a href="/blog/492ea8e8/#刷新方法" class="header_3">刷新方法</a><br><a href="/blog/492ea8e8/#实例" class="header_2">实例</a><br><a href="/blog/492ea8e8/#不自动刷新的例子" class="header_3">不自动刷新的例子</a><br><a href="/blog/492ea8e8/#PrintWriter自动刷新实例" class="header_3">PrintWriter自动刷新实例</a><br><a href="/blog/492ea8e8/#PrintWriter不会自动刷新的方法" class="header_3">PrintWriter不会自动刷新的方法</a><br><a href="/blog/492ea8e8/#疑惑的地方-write()-方法和-print(...)-方法-append()-方法的区别？" class="header_2">疑惑的地方`write()`方法和`print(...)`方法`append()`方法的区别？</a><br><a href="/blog/492ea8e8/#-write()-方法和-print(...)-方法的区别" class="header_3">`write()`方法和`print(...)`方法的区别</a><br><a href="/blog/492ea8e8/#看源码" class="header_2">看源码</a><br><a href="/blog/492ea8e8/#字段" class="header_3">字段</a><br><a href="/blog/492ea8e8/#构造方法" class="header_3">构造方法</a><br><a href="/blog/492ea8e8/#print(...)方法源码" class="header_3">print(...)方法源码</a><br><a href="/blog/492ea8e8/#write(...)方法源码" class="header_3">write(...)方法源码</a><br><a href="/blog/492ea8e8/#append(...)方法源码" class="header_3">append(...)方法源码</a><br><a href="/blog/492ea8e8/#println(...)方法源码" class="header_3">println(...)方法源码</a><br><a href="/blog/492ea8e8/#format()方法源码" class="header_3">format()方法源码</a><br><a href="/blog/492ea8e8/#printf()方法源码" class="header_3">printf()方法源码</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<div id='my_toc'><a href="/blog/492ea8e8/#继承关系" class="header_2">继承关系</a><br><a href="/blog/492ea8e8/#构造函数" class="header_2">构造函数</a><br><a href="/blog/492ea8e8/#成员方法" class="header_2">成员方法</a><br><a href="/blog/492ea8e8/#可以自动刷新的方法" class="header_3">可以自动刷新的方法</a><br><a href="/blog/492ea8e8/#追加方法" class="header_3">追加方法</a><br><a href="/blog/492ea8e8/#print-...-方法" class="header_3">print(...)方法</a><br><a href="/blog/492ea8e8/#write-...-方法" class="header_3">write(...)方法</a><br><a href="/blog/492ea8e8/#错误相关方法" class="header_3">错误相关方法</a><br><a href="/blog/492ea8e8/#刷新方法" class="header_3">刷新方法</a><br><a href="/blog/492ea8e8/#实例" class="header_2">实例</a><br><a href="/blog/492ea8e8/#不自动刷新的例子" class="header_3">不自动刷新的例子</a><br><a href="/blog/492ea8e8/#PrintWriter自动刷新实例" class="header_3">PrintWriter自动刷新实例</a><br><a href="/blog/492ea8e8/#PrintWriter不会自动刷新的方法" class="header_3">PrintWriter不会自动刷新的方法</a><br><a href="/blog/492ea8e8/#疑惑的地方-write-方法和-print-...-方法-append-方法的区别？" class="header_2">疑惑的地方`write()`方法和`print(...)`方法`append()`方法的区别？</a><br><a href="/blog/492ea8e8/#-write-方法和-print-...-方法的区别" class="header_3">`write()`方法和`print(...)`方法的区别</a><br><a href="/blog/492ea8e8/#看源码" class="header_2">看源码</a><br><a href="/blog/492ea8e8/#字段" class="header_3">字段</a><br><a href="/blog/492ea8e8/#构造方法" class="header_3">构造方法</a><br><a href="/blog/492ea8e8/#print-...-方法源码" class="header_3">print(...)方法源码</a><br><a href="/blog/492ea8e8/#write-...-方法源码" class="header_3">write(...)方法源码</a><br><a href="/blog/492ea8e8/#append-...-方法源码" class="header_3">append(...)方法源码</a><br><a href="/blog/492ea8e8/#println-...-方法源码" class="header_3">println(...)方法源码</a><br><a href="/blog/492ea8e8/#format-方法源码" class="header_3">format()方法源码</a><br><a href="/blog/492ea8e8/#printf-方法源码" class="header_3">printf()方法源码</a><br></div>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## 继承关系 ##

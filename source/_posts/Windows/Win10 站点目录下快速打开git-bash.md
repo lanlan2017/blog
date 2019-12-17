@@ -3,34 +3,13 @@ title: Win10 站点目录下快速打开git-bash
 categories: 
   - Windows
 date: 2018-12-08 00:28:36
-updated: 2019-12-15 10:01:44
+updated: 2019-12-17 05:17:09
 abbrlink: 15df3886
 ---
 <div id='my_toc'><a href="/blog/15df3886/#问题描述" class="header_2">问题描述</a><br><a href="/blog/15df3886/#站点目录下快速打开cmd" class="header_2">站点目录下快速打开cmd</a><br><a href="/blog/15df3886/#站点目录下快速打开git-bash" class="header_2">站点目录下快速打开git-bash</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## 问题描述 ##

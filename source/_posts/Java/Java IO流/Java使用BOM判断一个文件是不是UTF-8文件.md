@@ -4,34 +4,13 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-29 19:35:00
-updated: 2019-12-16 02:40:31
+updated: 2019-12-17 05:17:09
 abbrlink: 2fe8061d
 ---
 <div id='my_toc'><a href="/blog/2fe8061d/#查看16进制的源文件" class="header_1">查看16进制的源文件</a><br><a href="/blog/2fe8061d/#判断文件是不是udf-8加BOM" class="header_1">判断文件是不是udf-8加BOM</a><br><a href="/blog/2fe8061d/#缺点" class="header_1">缺点</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 # 查看16进制的源文件

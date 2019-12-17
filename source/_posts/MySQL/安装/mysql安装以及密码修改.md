@@ -4,34 +4,13 @@ categories:
   - MySQL
   - 安装
 date: 2018-12-14 01:58:11
-updated: 2019-12-15 10:01:44
+updated: 2019-12-17 05:17:09
 abbrlink: e124ac2c
 ---
 <div id='my_toc'><a href="/blog/e124ac2c/#安装" class="header_2">安装</a><br><a href="/blog/e124ac2c/#安装mysql服务" class="header_2">安装mysql服务</a><br><a href="/blog/e124ac2c/#启动mysql服务" class="header_2">启动mysql服务</a><br><a href="/blog/e124ac2c/#使用mysql" class="header_2">使用mysql</a><br><a href="/blog/e124ac2c/#验证" class="header_3">验证</a><br><a href="/blog/e124ac2c/#mysql用户登录" class="header_2">mysql用户登录</a><br><a href="/blog/e124ac2c/#修改root用户密码" class="header_2">修改root用户密码</a><br><a href="/blog/e124ac2c/#情况1-记得原来root用户的密码" class="header_3">情况1 记得原来root用户的密码</a><br><a href="/blog/e124ac2c/#登录root用户" class="header_4">登录root用户</a><br><a href="/blog/e124ac2c/#修改密码" class="header_4">修改密码</a><br><a href="/blog/e124ac2c/#重启服务使新密码生效" class="header_4">重启服务使新密码生效</a><br><a href="/blog/e124ac2c/#情况2-记不得root用户密码" class="header_3">情况2 记不得root用户密码</a><br><a href="/blog/e124ac2c/#修改my.in登录时跳过密码检查" class="header_4">修改my.in登录时跳过密码检查</a><br><a href="/blog/e124ac2c/#重启mysql服务" class="header_4">重启mysql服务</a><br><a href="/blog/e124ac2c/#直接登录mysql修改密码" class="header_4">直接登录mysql修改密码</a><br><a href="/blog/e124ac2c/#其他知识" class="header_2">其他知识</a><br><a href="/blog/e124ac2c/#关闭mysql服务" class="header_3">关闭mysql服务</a><br><a href="/blog/e124ac2c/#debug" class="header_2">debug</a><br><a href="/blog/e124ac2c/#The-service-already-exists" class="header_3">The service already exists</a><br><a href="/blog/e124ac2c/#解决方案-###​" class="header_3">解决方案 ###​</a><br><a href="/blog/e124ac2c/#参考链接" class="header_2">参考链接</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## 安装 ##

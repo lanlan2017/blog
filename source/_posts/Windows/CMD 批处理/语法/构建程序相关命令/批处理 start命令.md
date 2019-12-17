@@ -6,34 +6,13 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-08-25 13:22:53
-updated: 2019-12-15 10:01:44
+updated: 2019-12-17 05:17:09
 abbrlink: b4b274e0
 ---
 <div id='my_toc'><a href="/blog/b4b274e0/#批处理-start命令" class="header_1">批处理 start命令</a><br><a href="/blog/b4b274e0/#帮助文档" class="header_2">帮助文档</a><br><a href="/blog/b4b274e0/#帮助文档解释" class="header_2">帮助文档解释</a><br><a href="/blog/b4b274e0/#应用" class="header_2">应用</a><br><a href="/blog/b4b274e0/#在特定目录下启动cmd" class="header_3">在特定目录下启动cmd</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 # 批处理 start命令 #

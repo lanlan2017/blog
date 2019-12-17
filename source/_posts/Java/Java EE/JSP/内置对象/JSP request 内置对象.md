@@ -6,34 +6,13 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-13 12:31:03
-updated: 2019-12-16 02:39:19
+updated: 2019-12-17 05:17:08
 abbrlink: d5e5b83f
 ---
-<div id='my_toc'><a href="/blog/d5e5b83f/#JSP-request内置对象" class="header_1">JSP request内置对象</a><br><a href="/blog/d5e5b83f/#request对象常用方法" class="header_2">request对象常用方法</a><br><a href="/blog/d5e5b83f/#获取请求体信息" class="header_3">获取请求体信息</a><br><a href="/blog/d5e5b83f/#实例" class="header_4">实例</a><br><a href="/blog/d5e5b83f/#获取表单提交的参数" class="header_3">获取表单提交的参数</a><br><a href="/blog/d5e5b83f/#实例" class="header_4">实例</a><br><a href="/blog/d5e5b83f/#枚举方式-遍历表单提交的数据" class="header_5">枚举方式 遍历表单提交的数据</a><br><a href="/blog/d5e5b83f/#Map方式-遍历表单提交的数据" class="header_5">Map方式 遍历表单提交的数据</a><br><a href="/blog/d5e5b83f/#操作request对象属性" class="header_3">操作request对象属性</a><br><a href="/blog/d5e5b83f/#操作编码" class="header_3">操作编码</a><br><a href="/blog/d5e5b83f/#服务器信息" class="header_3">服务器信息</a><br><a href="/blog/d5e5b83f/#客户端信息" class="header_3">客户端信息</a><br><a href="/blog/d5e5b83f/#获取请求头信息" class="header_3">获取请求头信息</a><br><a href="/blog/d5e5b83f/#遍历所有HTTP头部信息" class="header_4">遍历所有HTTP头部信息</a><br><a href="/blog/d5e5b83f/#路径" class="header_3">路径</a><br><a href="/blog/d5e5b83f/#其他信息" class="header_3">其他信息</a><br><a href="/blog/d5e5b83f/#实例" class="header_2">实例</a><br><a href="/blog/d5e5b83f/#表单输入中文乱码问题" class="header_2">表单输入中文乱码问题</a><br><a href="/blog/d5e5b83f/#post方法乱码解决" class="header_3">post方法乱码解决</a><br><a href="/blog/d5e5b83f/#超链接请求传参" class="header_2">超链接请求传参</a><br><a href="/blog/d5e5b83f/#超链接传参语法" class="header_3">超链接传参语法</a><br><a href="/blog/d5e5b83f/#实例" class="header_3">实例</a><br><a href="/blog/d5e5b83f/#解决get方法提交(URL传参)中文乱码" class="header_2">解决get方法提交(URL传参)中文乱码</a><br><a href="/blog/d5e5b83f/#requset对象其他方法实例" class="header_2">requset对象其他方法实例</a><br><a href="/blog/d5e5b83f/#post提交方式" class="header_3">post提交方式</a><br><a href="/blog/d5e5b83f/#get方式提交的" class="header_4">get方式提交的</a><br><a href="/blog/d5e5b83f/#参考链接" class="header_2">参考链接</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<div id='my_toc'><a href="/blog/d5e5b83f/#JSP-request内置对象" class="header_1">JSP request内置对象</a><br><a href="/blog/d5e5b83f/#request对象常用方法" class="header_2">request对象常用方法</a><br><a href="/blog/d5e5b83f/#获取请求体信息" class="header_3">获取请求体信息</a><br><a href="/blog/d5e5b83f/#实例" class="header_4">实例</a><br><a href="/blog/d5e5b83f/#获取表单提交的参数" class="header_3">获取表单提交的参数</a><br><a href="/blog/d5e5b83f/#实例" class="header_4">实例</a><br><a href="/blog/d5e5b83f/#枚举方式-遍历表单提交的数据" class="header_5">枚举方式 遍历表单提交的数据</a><br><a href="/blog/d5e5b83f/#Map方式-遍历表单提交的数据" class="header_5">Map方式 遍历表单提交的数据</a><br><a href="/blog/d5e5b83f/#操作request对象属性" class="header_3">操作request对象属性</a><br><a href="/blog/d5e5b83f/#操作编码" class="header_3">操作编码</a><br><a href="/blog/d5e5b83f/#服务器信息" class="header_3">服务器信息</a><br><a href="/blog/d5e5b83f/#客户端信息" class="header_3">客户端信息</a><br><a href="/blog/d5e5b83f/#获取请求头信息" class="header_3">获取请求头信息</a><br><a href="/blog/d5e5b83f/#遍历所有HTTP头部信息" class="header_4">遍历所有HTTP头部信息</a><br><a href="/blog/d5e5b83f/#路径" class="header_3">路径</a><br><a href="/blog/d5e5b83f/#其他信息" class="header_3">其他信息</a><br><a href="/blog/d5e5b83f/#实例" class="header_2">实例</a><br><a href="/blog/d5e5b83f/#表单输入中文乱码问题" class="header_2">表单输入中文乱码问题</a><br><a href="/blog/d5e5b83f/#post方法乱码解决" class="header_3">post方法乱码解决</a><br><a href="/blog/d5e5b83f/#超链接请求传参" class="header_2">超链接请求传参</a><br><a href="/blog/d5e5b83f/#超链接传参语法" class="header_3">超链接传参语法</a><br><a href="/blog/d5e5b83f/#实例" class="header_3">实例</a><br><a href="/blog/d5e5b83f/#解决get方法提交-URL传参-中文乱码" class="header_2">解决get方法提交(URL传参)中文乱码</a><br><a href="/blog/d5e5b83f/#requset对象其他方法实例" class="header_2">requset对象其他方法实例</a><br><a href="/blog/d5e5b83f/#post提交方式" class="header_3">post提交方式</a><br><a href="/blog/d5e5b83f/#get方式提交的" class="header_4">get方式提交的</a><br><a href="/blog/d5e5b83f/#参考链接" class="header_2">参考链接</a><br></div>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 # JSP request内置对象 #

@@ -4,34 +4,13 @@ categories:
   - JavaScript
   - DOM
 date: 2019-02-13 00:12:44
-updated: 2019-12-15 10:01:44
+updated: 2019-12-17 05:17:09
 abbrlink: 37c4f730
 ---
 <div id='my_toc'><a href="/blog/37c4f730/#JavaScript-innerText与innerHtml与value的区别" class="header_2">JavaScript innerText与innerHtml与value的区别</a><br><a href="/blog/37c4f730/#实例" class="header_2">实例</a><br><a href="/blog/37c4f730/#参考链接" class="header_2">参考链接</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## JavaScript innerText与innerHtml与value的区别 ##

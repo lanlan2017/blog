@@ -4,34 +4,13 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-12 12:51:31
-updated: 2019-12-16 02:40:01
+updated: 2019-12-17 05:17:09
 abbrlink: eaae884d
 ---
 <div id='my_toc'><a href="/blog/eaae884d/#Java中Console类的用法" class="header_1">Java中Console类的用法</a><br><a href="/blog/eaae884d/#读控制台方法" class="header_2">读控制台方法</a><br><a href="/blog/eaae884d/#实例：读密码不回显" class="header_3">实例：读密码不回显</a><br><a href="/blog/eaae884d/#获取控制台的输入输出流" class="header_2">获取控制台的输入输出流</a><br><a href="/blog/eaae884d/#获取来自控制台的输入流" class="header_3">获取来自控制台的输入流</a><br><a href="/blog/eaae884d/#获取对控制台的输出流" class="header_3">获取对控制台的输出流</a><br><a href="/blog/eaae884d/#使用Console类自己的控制台输入和输出方法" class="header_3">使用Console类自己的控制台输入和输出方法</a><br><a href="/blog/eaae884d/#控制台格式化输出方法" class="header_2">控制台格式化输出方法</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 Console类

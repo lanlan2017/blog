@@ -4,34 +4,13 @@ categories:
   - C语言
   - 文件
 date: 2018-11-15 00:44:39
-updated: 2019-12-15 10:01:43
+updated: 2019-12-17 05:17:08
 abbrlink: 65f494cf
 ---
 <div id='my_toc'><a href="/blog/65f494cf/#C语言创建文件" class="header_2">C语言创建文件</a><br><a href="/blog/65f494cf/#C语言重命名文件" class="header_2">C语言重命名文件</a><br><a href="/blog/65f494cf/#C语言删除文件" class="header_2">C语言删除文件</a><br><a href="/blog/65f494cf/#实例" class="header_3">实例</a><br><a href="/blog/65f494cf/#参考链接" class="header_2">参考链接</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## C语言创建文件 ##

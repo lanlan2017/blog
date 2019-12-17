@@ -6,34 +6,13 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-14 22:21:07
-updated: 2019-12-16 02:39:07
+updated: 2019-12-17 05:17:08
 abbrlink: ced29b25
 ---
 <div id='my_toc'><a href="/blog/ced29b25/#问题描述" class="header_1">问题描述</a><br><a href="/blog/ced29b25/#修改JRE版本" class="header_1">修改JRE版本</a><br><a href="/blog/ced29b25/#修改Spring-MVC配置文件的第一行" class="header_1">修改Spring MVC配置文件的第一行</a><br><a href="/blog/ced29b25/#解决方案" class="header_2">解决方案</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 # 问题描述 #

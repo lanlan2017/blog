@@ -4,34 +4,13 @@ categories:
   - Git
   - GitBash
 date: 2019-01-07 20:35:05
-updated: 2019-12-15 10:01:43
+updated: 2019-12-17 05:17:08
 abbrlink: e95301e8
 ---
 <div id='my_toc'><a href="/blog/e95301e8/#问题描述" class="header_2">问题描述</a><br><a href="/blog/e95301e8/#实现" class="header_2">实现</a><br><a href="/blog/e95301e8/#命令解释" class="header_2">命令解释</a><br><a href="/blog/e95301e8/#点击批处理在项目目录下打开git-bash" class="header_2">点击批处理在项目目录下打开git-bash</a><br><a href="/blog/e95301e8/#参考资料" class="header_2">参考资料</a><br></div>
-<style>
-    .header_1{
-        margin-left: 1em;
-    }
-    .header_2{
-        margin-left: 2em;
-    }
-    .header_3{
-        margin-left: 3em;
-    }
-    .header_4{
-        margin-left: 4em;
-    }
-    .header_5{
-        margin-left: 5em;
-    }
-    .header_6{
-        margin-left: 6em;
-    }
-</style>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## 问题描述 ##
