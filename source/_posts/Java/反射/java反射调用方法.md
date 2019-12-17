@@ -4,9 +4,28 @@ categories:
   - Java
   - 反射
 date: 2019-06-16 13:53:20
-updated: 2019-12-09 19:45:22
+updated: 2019-12-15 22:01:44
 abbrlink: 40640d2
 ---
+<div id='my_toc'>
+
+- [反射调用方法步骤](/blog/40640d2/#反射调用方法步骤)
+- [实例](/blog/40640d2/#实例)
+    - [项目结构](/blog/40640d2/#项目结构)
+    - [Tool.java](/blog/40640d2/#Tool-java)
+    - [Test.java](/blog/40640d2/#Test-java)
+    - [调用静态方法](/blog/40640d2/#调用静态方法)
+        - [调用无参的静态方法](/blog/40640d2/#调用无参的静态方法)
+        - [调用带参的静态方法](/blog/40640d2/#调用带参的静态方法)
+    - [调用实例方法](/blog/40640d2/#调用实例方法)
+        - [调用无参实例方法](/blog/40640d2/#调用无参实例方法)
+        - [调用带参实例方法](/blog/40640d2/#调用带参实例方法)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 # 反射调用方法步骤 #
 - 1.获取`Class`对象,使用`Class.forName("类的全限定名")`来加载类的实例,
 - 2.获取要调用的方法的`Method`对象,使用`Class对象.getMethod("方法名",形参列表)`获取要调用的方法.

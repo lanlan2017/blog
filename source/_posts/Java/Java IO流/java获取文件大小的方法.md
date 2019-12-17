@@ -4,9 +4,24 @@ categories:
   - Java
   - Java IO流
 date: 2018-07-30 20:05:28
-updated: 2019-12-09 20:35:54
+updated: 2019-12-15 22:01:44
 abbrlink: aa316c45
 ---
+<div id='my_toc'>
+
+- [java获取文件大小的方法](/blog/aa316c45/#java获取文件大小的方法)
+    - [一、通过File类的length()方法获取文件的大小](/blog/aa316c45/#一、通过File类的length-方法获取文件的大小)
+    - [二、通过file.io.*中的流式方法获取](/blog/aa316c45/#二、通过file-io-*中的流式方法获取)
+    - [三、通过file.nio.*中的FileChannel工具来获取文件大小：](/blog/aa316c45/#三、通过file-nio-*中的FileChannel工具来获取文件大小：)
+    - [四、使用小文件测试以上三种方法：](/blog/aa316c45/#四、使用小文件测试以上三种方法：)
+    - [java获取文件大小总结](/blog/aa316c45/#java获取文件大小总结)
+    - [完整的代码](/blog/aa316c45/#完整的代码)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 本文转自：[https://www.cnblogs.com/hellowhy/p/7238570.html](https://www.cnblogs.com/hellowhy/p/7238570.html)
 # java获取文件大小的方法 #
 

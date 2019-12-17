@@ -6,9 +6,24 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-19 15:51:37
-updated: 2019-12-09 20:34:55
+updated: 2019-12-15 22:01:44
 abbrlink: af6b423c
 ---
+<div id='my_toc'>
+
+- [eclipse自身设置的原因](/blog/af6b423c/#eclipse自身设置的原因)
+    - [指定JRE路径](/blog/af6b423c/#指定JRE路径)
+    - [关闭用不到的插件](/blog/af6b423c/#关闭用不到的插件)
+- [被Windows Defender拦截](/blog/af6b423c/#被Windows-Defender拦截)
+    - [Windows Defender不扫描eclipse的安装目录](/blog/af6b423c/#Windows-Defender不扫描eclipse的安装目录)
+        - [解决方案](/blog/af6b423c/#解决方案)
+        - [参考资料](/blog/af6b423c/#参考资料)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 # eclipse自身设置的原因 #
 ## 指定JRE路径 ##
 在`eclipse`启动的时候，它总是会搜索让其运行的`jre`,往往就是这个搜索过程让`eclipse`启动变慢了,解决方案是,在`eclipse`的配置文件`eclipse.ini`(该文件位于eclipse安装目录下)中加入-`vm`配置,直接指定`jre`的位置,减少这个搜索过程.

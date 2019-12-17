@@ -6,9 +6,21 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-14 01:06:56
-updated: 2019-12-09 20:34:55
+updated: 2019-12-15 22:01:44
 abbrlink: bb6759de
 ---
+<div id='my_toc'>
+
+- [前言](/blog/bb6759de/#前言)
+- [创建XML模板步骤](/blog/bb6759de/#创建XML模板步骤)
+- [使用自己创建的XML模板](/blog/bb6759de/#使用自己创建的XML模板)
+- [参考资料](/blog/bb6759de/#参考资料)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 # 前言 #
 web.xml之中好多xml标签都差不多,每次都要抄写一遍就很烦,把这些代码做成XML模板,这样eclipse就会自动提示.
 # 创建XML模板步骤 #

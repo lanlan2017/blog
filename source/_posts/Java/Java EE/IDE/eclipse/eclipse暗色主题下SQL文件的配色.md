@@ -6,9 +6,21 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-14 10:07:26
-updated: 2019-12-09 20:34:55
+updated: 2019-12-15 22:01:44
 abbrlink: 7198198c
 ---
+<div id='my_toc'>
+
+- [eclipse暗色主题下SQL文件的配色](/blog/7198198c/#eclipse暗色主题下SQL文件的配色)
+    - [问题描述](/blog/7198198c/#问题描述)
+    - [修改eclipse sql文件代码配色](/blog/7198198c/#修改eclipse-sql文件代码配色)
+    - [eclipse其他代码配色](/blog/7198198c/#eclipse其他代码配色)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 # eclipse暗色主题下SQL文件的配色 #
 ## 问题描述 ##
 `eclipse`的暗色主题下的`SQL`配色有问题,**代码颜色和背景色对比不明显**,看起来费神.如下图所示:

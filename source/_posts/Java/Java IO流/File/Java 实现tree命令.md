@@ -5,9 +5,29 @@ categories:
   - Java IO流
   - File
 date: 2019-04-30 20:00:58
-updated: 2019-12-09 20:34:56
+updated: 2019-12-15 22:01:44
 abbrlink: bf650217
 ---
+<div id='my_toc'>
+
+- [问题描述](/blog/bf650217/#问题描述)
+- [文件名称过滤器](/blog/bf650217/#文件名称过滤器)
+    - [默认文件](/blog/bf650217/#默认文件)
+    - [Maven Java Web项目文件名称过滤器](/blog/bf650217/#Maven-Java-Web项目文件名称过滤器)
+- [打印目录树主类 MyTree.java](/blog/bf650217/#打印目录树主类-MyTree-java)
+- [MyTree程序参数说明](/blog/bf650217/#MyTree程序参数说明)
+    - [不带参数](/blog/bf650217/#不带参数)
+    - [带一个参数](/blog/bf650217/#带一个参数)
+- [运行结果](/blog/bf650217/#运行结果)
+    - [只打印目录](/blog/bf650217/#只打印目录)
+    - [打印目录和文件](/blog/bf650217/#打印目录和文件)
+    - [显示Maven Java Web项目结构](/blog/bf650217/#显示Maven-Java-Web项目结构)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 ## 问题描述 ##
 最近先现实项目的目录结构,查了一下`cmd`之后由`tree`命令,但是项目中有些目录和文件(如`.class`文件)是项目自动生成的,并不全部显示出来,我这想显示该项目必须要有的目录和文件即可,对于`IDE`等工具生成的目录忽略掉。这样使用`cmd`提供的`tree`命令无法满足我的要求,我有必要自己实现一个`tree`命令。下来是我用`java`实现的一个满足我特定要求的`tree`命令。
 ## 文件名称过滤器 ##

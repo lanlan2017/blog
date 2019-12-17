@@ -5,9 +5,30 @@ categories:
   - Java EE
   - Servlet
 date: 2019-04-19 14:31:25
-updated: 2019-12-09 20:34:55
+updated: 2019-12-15 22:01:44
 abbrlink: 4a8ee7ac
 ---
+<div id='my_toc'>
+
+- [手动部署Servlet](/blog/4a8ee7ac/#手动部署Servlet)
+    - [创建项目结构](/blog/4a8ee7ac/#创建项目结构)
+        - [java web应用部署路径](/blog/4a8ee7ac/#java-web应用部署路径)
+        - [创建项目目录](/blog/4a8ee7ac/#创建项目目录)
+        - [项目目录下创建WEB-INF目录](/blog/4a8ee7ac/#项目目录下创建WEB-INF目录)
+    - [编写Servlet](/blog/4a8ee7ac/#编写Servlet)
+    - [编译Servlet](/blog/4a8ee7ac/#编译Servlet)
+        - [配置编译环境](/blog/4a8ee7ac/#配置编译环境)
+        - [使用javac命令编译](/blog/4a8ee7ac/#使用javac命令编译)
+    - [部署Servlet](/blog/4a8ee7ac/#部署Servlet)
+        - [创建包目录](/blog/4a8ee7ac/#创建包目录)
+        - [粘贴字节码文件到包目录中](/blog/4a8ee7ac/#粘贴字节码文件到包目录中)
+    - [访问Servlet](/blog/4a8ee7ac/#访问Servlet)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 # 手动部署Servlet #
 ## 创建项目结构 ##
 ### java web应用部署路径 ###

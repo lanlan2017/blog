@@ -5,9 +5,18 @@ categories:
   - Java EE
   - 环境搭建
 date: 2019-04-27 22:28:28
-updated: 2019-12-09 20:34:56
+updated: 2019-12-15 22:01:44
 abbrlink: 4d0864a5
 ---
+<div id='my_toc'>
+
+- [注解格式化](/blog/4d0864a5/#注解格式化)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 ## 注解格式化 ##
 第一个按钮选择最后一个,
 ```

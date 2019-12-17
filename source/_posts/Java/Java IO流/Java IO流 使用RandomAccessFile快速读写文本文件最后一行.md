@@ -4,9 +4,30 @@ categories:
   - Java
   - Java IO流
 date: 2018-10-30 18:36:12
-updated: 2019-12-09 20:34:56
+updated: 2019-12-15 22:01:44
 abbrlink: 4cd2c62c
 ---
+<div id='my_toc'>
+
+- [返回文本文件中最后一行的起始位置](/blog/4cd2c62c/#返回文本文件中最后一行的起始位置)
+    - [重载方法1 使用File参数表示的文件](/blog/4cd2c62c/#重载方法1-使用File参数表示的文件)
+    - [重载方法2 使用RandomAccessFile参数表示的文件](/blog/4cd2c62c/#重载方法2-使用RandomAccessFile参数表示的文件)
+- [获取文本文件中最后一行文本](/blog/4cd2c62c/#获取文本文件中最后一行文本)
+- [在文本文件最后一行追加文本](/blog/4cd2c62c/#在文本文件最后一行追加文本)
+    - [重载方法1 使用File参数表示的文件](/blog/4cd2c62c/#重载方法1-使用File参数表示的文件)
+    - [重载方法2 使用RandomAccessFile参数表示的文件](/blog/4cd2c62c/#重载方法2-使用RandomAccessFile参数表示的文件)
+- [在文本文件最后一行后插入另一行文本](/blog/4cd2c62c/#在文本文件最后一行后插入另一行文本)
+- [删除文本文件最后一行](/blog/4cd2c62c/#删除文本文件最后一行)
+    - [重载方法1 使用File参数表示的文件](/blog/4cd2c62c/#重载方法1-使用File参数表示的文件)
+    - [重载方法2 使用RandomAccessFile参数表示的文件](/blog/4cd2c62c/#重载方法2-使用RandomAccessFile参数表示的文件)
+- [更新文本文件最后一行](/blog/4cd2c62c/#更新文本文件最后一行)
+- [整个类的代码](/blog/4cd2c62c/#整个类的代码)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 ## 返回文本文件中最后一行的起始位置 ##
 ### 重载方法1 使用File参数表示的文件 ###
 ```java

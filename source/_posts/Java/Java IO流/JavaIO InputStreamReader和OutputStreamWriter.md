@@ -4,10 +4,19 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-09 19:25:05
-updated: 2019-12-09 20:34:57
+updated: 2019-12-15 22:01:44
 abbrlink: a5e554af
 ---
------------读字符：-------------------
+<div id='my_toc'>
+
+- [应用：复制字符文件](/blog/a5e554af/#应用：复制字符文件)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
+--------读字符：-------------------
 I am groot
 I am groot!
 ```

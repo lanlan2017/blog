@@ -4,9 +4,25 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-12 12:51:31
-updated: 2019-12-09 20:34:56
+updated: 2019-12-15 22:01:44
 abbrlink: eaae884d
 ---
+<div id='my_toc'>
+
+- [Java中Console类的用法](/blog/eaae884d/#Java中Console类的用法)
+    - [读控制台方法](/blog/eaae884d/#读控制台方法)
+        - [实例：读密码不回显](/blog/eaae884d/#实例：读密码不回显)
+    - [获取控制台的输入输出流](/blog/eaae884d/#获取控制台的输入输出流)
+        - [获取来自控制台的输入流](/blog/eaae884d/#获取来自控制台的输入流)
+        - [获取对控制台的输出流](/blog/eaae884d/#获取对控制台的输出流)
+        - [使用Console类自己的控制台输入和输出方法](/blog/eaae884d/#使用Console类自己的控制台输入和输出方法)
+    - [控制台格式化输出方法](/blog/eaae884d/#控制台格式化输出方法)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 Console类
 # Java中Console类的用法 #
 参考1:[https://blog.csdn.net/ChengXuYuanXingCheng/article/details/71430068、](https://blog.csdn.net/ChengXuYuanXingCheng/article/details/71430068、)

@@ -5,9 +5,21 @@ categories:
   - Java IO流
   - File
 date: 2018-12-22 19:15:36
-updated: 2019-12-09 20:34:56
+updated: 2019-12-15 22:01:44
 abbrlink: efd55c13
 ---
+<div id='my_toc'>
+
+- [向下递归 删除所有空子目录](/blog/efd55c13/#向下递归-删除所有空子目录)
+- [向上递归 删除所有空父目录](/blog/efd55c13/#向上递归-删除所有空父目录)
+- [删除空目录完整代码](/blog/efd55c13/#删除空目录完整代码)
+- [测试](/blog/efd55c13/#测试)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 ## 向下递归 删除所有空子目录 ##
 删除方法如下所示：
 ```java

@@ -6,9 +6,22 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-02 21:03:06
-updated: 2019-12-09 20:34:55
+updated: 2019-12-15 22:01:44
 abbrlink: c9f81303
 ---
+<div id='my_toc'>
+
+- [打开eclipse marketplace](/blog/c9f81303/#打开eclipse-marketplace)
+- [安装mybatis-generator](/blog/c9f81303/#安装mybatis-generator)
+    - [插件主页](/blog/c9f81303/#插件主页)
+    - [拖动安装插件](/blog/c9f81303/#拖动安装插件)
+    - [同意许可](/blog/c9f81303/#同意许可)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 # 打开eclipse marketplace #
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Mybatis/3.png)
 # 安装mybatis-generator #

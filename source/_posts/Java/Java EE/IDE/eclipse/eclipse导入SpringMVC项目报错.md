@@ -6,9 +6,21 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-14 22:21:07
-updated: 2019-12-09 20:34:55
+updated: 2019-12-15 22:01:44
 abbrlink: ced29b25
 ---
+<div id='my_toc'>
+
+- [问题描述](/blog/ced29b25/#问题描述)
+- [修改JRE版本](/blog/ced29b25/#修改JRE版本)
+- [修改Spring MVC配置文件的第一行](/blog/ced29b25/#修改Spring-MVC配置文件的第一行)
+    - [解决方案](/blog/ced29b25/#解决方案)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 # 问题描述 #
 最近在看《Spring MVC+Mybatis企业项目实战(第2版)》这本书,但是,随书源码导入eclipse的时候总是会报错.下面来介绍怎么解决eclipse导入Spring MVC项目报错的问题。
 # 修改JRE版本 #

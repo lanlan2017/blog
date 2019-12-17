@@ -5,9 +5,41 @@ categories:
   - Java EE
   - 环境搭建
 date: 2019-04-26 17:42:04
-updated: 2019-12-09 20:34:56
+updated: 2019-12-15 22:01:44
 abbrlink: 9b044702
 ---
+<div id='my_toc'>
+
+- [使用的软件版本](/blog/9b044702/#使用的软件版本)
+- [Maven安装](/blog/9b044702/#Maven安装)
+    - [下载](/blog/9b044702/#下载)
+    - [解压](/blog/9b044702/#解压)
+    - [配置环境变量](/blog/9b044702/#配置环境变量)
+        - [M2_HOME环境变量](/blog/9b044702/#M2-HOME环境变量)
+        - [path环境变量](/blog/9b044702/#path环境变量)
+    - [集成到Eclipse](/blog/9b044702/#集成到Eclipse)
+- [Eclipse之中创建Maven Web项目](/blog/9b044702/#Eclipse之中创建Maven-Web项目)
+    - [创建Maven Web项目](/blog/9b044702/#创建Maven-Web项目)
+    - [修改项目配置](/blog/9b044702/#修改项目配置)
+        - [把Maven Web项目改为Java Web项目](/blog/9b044702/#把Maven-Web项目改为Java-Web项目)
+        - [修改web.xml](/blog/9b044702/#修改web-xml)
+        - [修改pom.xml](/blog/9b044702/#修改pom-xml)
+        - [测试](/blog/9b044702/#测试)
+- [使用Maven一键部署到Tomcat中](/blog/9b044702/#使用Maven一键部署到Tomcat中)
+    - [设置tomcat用户密码](/blog/9b044702/#设置tomcat用户密码)
+    - [修改Mawen的配置文件](/blog/9b044702/#修改Mawen的配置文件)
+    - [安装Tomcat Maven部署插件](/blog/9b044702/#安装Tomcat-Maven部署插件)
+    - [部署](/blog/9b044702/#部署)
+        - [运行服务器](/blog/9b044702/#运行服务器)
+        - [使用Maven部署项目](/blog/9b044702/#使用Maven部署项目)
+    - [Tomcat之中部署的效果](/blog/9b044702/#Tomcat之中部署的效果)
+- [参考资料](/blog/9b044702/#参考资料)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 # 使用的软件版本 #
 - `eclipse for Java EE 2019`
 - `jdk 1.8`

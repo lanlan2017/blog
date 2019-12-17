@@ -6,9 +6,19 @@ categories:
   - 解决方案
   - Spring MVC
 date: 2019-05-01 17:11:48
-updated: 2019-12-09 20:34:56
+updated: 2019-12-15 22:01:44
 abbrlink: a61ce5bb
 ---
+<div id='my_toc'>
+
+- [问题描述](/blog/a61ce5bb/#问题描述)
+- [解决方案](/blog/a61ce5bb/#解决方案)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 ## 问题描述 ##
 今天Eclipse中Spring MVC的配置文件报错如下:
 ```java

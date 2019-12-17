@@ -4,9 +4,24 @@ categories:
   - Java
   - Java 基础
 date: 2019-08-23 13:18:52
-updated: 2019-12-09 19:45:21
+updated: 2019-12-15 22:01:44
 abbrlink: 569c8e52
 ---
+<div id='my_toc'>
+
+- [前言](/blog/569c8e52/#前言)
+- [原因](/blog/569c8e52/#原因)
+- [数字0到9转为'0'到'9'字符的正确做法](/blog/569c8e52/#数字0到9转为'0'到'9'字符的正确做法)
+    - [先计算出正确的ASCII码在转为字符](/blog/569c8e52/#先计算出正确的ASCII码在转为字符)
+        - [使用自动类型转换进行计算](/blog/569c8e52/#使用自动类型转换进行计算)
+        - [直接计算](/blog/569c8e52/#直接计算)
+    - [Character.forDigit(数字,进制)方法进行转换](/blog/569c8e52/#Character-forDigit-数字,进制-方法进行转换)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 # 前言 #
 最近想随机生成一串包含数字和字母的字符串.但是我发现把int类型的数字通过强制类型转换为char类型字符的时候出现了乱码.
 # 原因 #

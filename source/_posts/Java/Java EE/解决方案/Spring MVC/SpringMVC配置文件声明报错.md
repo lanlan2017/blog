@@ -6,9 +6,22 @@ categories:
   - 解决方案
   - Spring MVC
 date: 2019-05-14 21:32:11
-updated: 2019-12-09 20:34:56
+updated: 2019-12-15 22:01:44
 abbrlink: fb0eb9bb
 ---
+<div id='my_toc'>
+
+- [问题描述](/blog/fb0eb9bb/#问题描述)
+- [解决方案](/blog/fb0eb9bb/#解决方案)
+    - [安装Spring Tools3插件](/blog/fb0eb9bb/#安装Spring-Tools3插件)
+    - [方案1](/blog/fb0eb9bb/#方案1)
+    - [方案2](/blog/fb0eb9bb/#方案2)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 # 问题描述 #
 在导入项目的时候,`springmvc`的配置文件声明,也就是第一行的`beans`标签,经常报错.
 # 解决方案 #

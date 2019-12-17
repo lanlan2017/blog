@@ -4,9 +4,32 @@ categories:
   - Java
   - Java 集合
 date: 2018-11-26 18:53:21
-updated: 2019-12-09 19:45:21
+updated: 2019-12-15 22:01:44
 abbrlink: fdae6905
 ---
+<div id='my_toc'>
+
+- [基本使用步骤](/blog/fdae6905/#基本使用步骤)
+    - [创建xxx.properties文件](/blog/fdae6905/#创建xxx-properties文件)
+- [部署网站的地址](/blog/fdae6905/#部署网站的地址)
+    - [实例化properties类](/blog/fdae6905/#实例化properties类)
+    - [加载配置文件](/blog/fdae6905/#加载配置文件)
+    - [读取键值对](/blog/fdae6905/#读取键值对)
+    - [设置键值对](/blog/fdae6905/#设置键值对)
+    - [获取所有键](/blog/fdae6905/#获取所有键)
+    - [写入输出流的方法](/blog/fdae6905/#写入输出流的方法)
+    - [写配置文件](/blog/fdae6905/#写配置文件)
+- [实例](/blog/fdae6905/#实例)
+    - [读取一个配置](/blog/fdae6905/#读取一个配置)
+- [部署网站的地址](/blog/fdae6905/#部署网站的地址)
+    - [遍历配置文件](/blog/fdae6905/#遍历配置文件)
+- [参考链接](/blog/fdae6905/#参考链接)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">
 <script>
     function open_closeTOC() {var id = document.querySelector(".post-body > ul"); if (id.style.display == "block") {id.style.display = "none";document.getElementById("showcloseButton").value= "展开目录";}else if (id.style.display == "none") {id.style.display = "block";document.getElementById("showcloseButton").value="折叠目录";}}(function () {document.querySelector(".post-body > ul").style.display = "none";document.getElementById("showcloseButton").value="展开目录";})();

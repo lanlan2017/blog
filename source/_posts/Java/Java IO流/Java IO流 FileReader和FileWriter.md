@@ -4,10 +4,26 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-10 14:57:46
-updated: 2019-12-09 20:34:56
+updated: 2019-12-15 22:01:44
 abbrlink: f1ceb471
 ---
----------------------------
+<div id='my_toc'>
+
+- [FileWriter类](/blog/f1ceb471/#FileWriter类)
+    - [继承关系](/blog/f1ceb471/#继承关系)
+    - [构造方法：](/blog/f1ceb471/#构造方法：)
+    - [读操作方法](/blog/f1ceb471/#读操作方法)
+    - [FileWriter类和OutputStreamWriter类的区别](/blog/f1ceb471/#FileWriter类和OutputStreamWriter类的区别)
+- [读写实例:复制文件](/blog/f1ceb471/#读写实例-复制文件)
+    - [使用FileReader和FileWriter复制文件](/blog/f1ceb471/#使用FileReader和FileWriter复制文件)
+    - [编码问题](/blog/f1ceb471/#编码问题)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
+------------------------
 gbk file
 这里是一句中文
 ```

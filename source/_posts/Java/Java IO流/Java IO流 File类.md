@@ -4,9 +4,31 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-11 16:19:23
-updated: 2019-12-09 20:34:56
+updated: 2019-12-15 22:01:44
 abbrlink: 833486b4
 ---
+<div id='my_toc'>
+
+- [File类简介](/blog/833486b4/#File类简介)
+- [File类方法](/blog/833486b4/#File类方法)
+    - [继承关系](/blog/833486b4/#继承关系)
+    - [字段](/blog/833486b4/#字段)
+    - [构造函数](/blog/833486b4/#构造函数)
+    - [判断方法](/blog/833486b4/#判断方法)
+        - [详细说明：](/blog/833486b4/#详细说明：)
+    - [创建文件或目录方法](/blog/833486b4/#创建文件或目录方法)
+        - [当文件不存在时创建该文件](/blog/833486b4/#当文件不存在时创建该文件)
+        - [当目录不存在时创建该目录:](/blog/833486b4/#当目录不存在时创建该目录)
+    - [删除文件或目录](/blog/833486b4/#删除文件或目录)
+    - [获取文件信息方法](/blog/833486b4/#获取文件信息方法)
+    - [路径相关方法](/blog/833486b4/#路径相关方法)
+        - [返回目录列表](/blog/833486b4/#返回目录列表)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 Java IO流 File类
 
 # File类简介 #

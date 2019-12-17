@@ -5,9 +5,21 @@ categories:
   - Java 基础
   - 字符串处理
 date: 2019-04-03 22:05:32
-updated: 2019-12-09 19:45:21
+updated: 2019-12-15 22:01:44
 abbrlink: 9d84ecc2
 ---
+<div id='my_toc'>
+
+- [原理](/blog/9d84ecc2/#原理)
+    - [ASCII码运算](/blog/9d84ecc2/#ASCII码运算)
+    - [结论](/blog/9d84ecc2/#结论)
+- [代码](/blog/9d84ecc2/#代码)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 ## 原理 ##
 ### ASCII码运算 ###
 先来看实例代码:

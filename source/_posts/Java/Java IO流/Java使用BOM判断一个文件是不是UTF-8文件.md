@@ -4,9 +4,20 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-29 19:35:00
-updated: 2019-12-09 20:34:57
+updated: 2019-12-15 22:01:44
 abbrlink: 2fe8061d
 ---
+<div id='my_toc'>
+
+- [查看16进制的源文件](/blog/2fe8061d/#查看16进制的源文件)
+- [判断文件是不是udf-8加BOM](/blog/2fe8061d/#判断文件是不是udf-8加BOM)
+- [缺点](/blog/2fe8061d/#缺点)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 # 查看16进制的源文件
 例如test_utf8.py这个文件用的是utf-8+BOM编码的.
 现在打开这个文件，然后**以16进制的方式**查看该文件。

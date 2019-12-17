@@ -6,9 +6,21 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-19 01:19:37
-updated: 2019-12-09 20:34:55
+updated: 2019-12-15 22:01:44
 abbrlink: 511c4c42
 ---
+<div id='my_toc'>
+
+- [eclipse中字体的中英文大小不一致](/blog/511c4c42/#eclipse中字体的中英文大小不一致)
+    - [分析原因](/blog/511c4c42/#分析原因)
+    - [解决方案](/blog/511c4c42/#解决方案)
+    - [eclipse中使用](/blog/511c4c42/#eclipse中使用)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 # eclipse中字体的中英文大小不一致 #
 ## 分析原因 ##
 `eclipse`的默认字体好像是`Consolas`,但

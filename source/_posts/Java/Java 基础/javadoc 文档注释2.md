@@ -4,9 +4,33 @@ categories:
   - Java
   - Java 基础
 date: 2019-02-10 18:15:08
-updated: 2019-12-09 19:45:21
+updated: 2019-12-15 22:01:44
 abbrlink: a9f85f8d
 ---
+<div id='my_toc'>
+
+- [文档注释的格式化](/blog/a9f85f8d/#文档注释的格式化)
+- [文档注释的三部分](/blog/a9f85f8d/#文档注释的三部分)
+    - [第一部分 简述](/blog/a9f85f8d/#第一部分-简述)
+    - [第二部分 详细说明](/blog/a9f85f8d/#第二部分-详细说明)
+    - [第三部分 特殊说明](/blog/a9f85f8d/#第三部分-特殊说明)
+- [javadoc  标记](/blog/a9f85f8d/#javadoc-标记)
+    - [@see  的使用](/blog/a9f85f8d/#-see-的使用)
+    - [@see 方法名或者属性名](/blog/a9f85f8d/#-see-方法名或者属性名)
+    - [@see 类名](/blog/a9f85f8d/#-see-类名)
+    - [使用 @author、@version  说明类](/blog/a9f85f8d/#使用-author、-version-说明类)
+    - [使用 @param 、@return  和 @exception  说明方法](/blog/a9f85f8d/#使用-param-、-return-和-exception-说明方法)
+- [javadoc  命令](/blog/a9f85f8d/#javadoc-命令)
+    - [-public 、-protected 、-package、-private  四个选项](/blog/a9f85f8d/#-public-、-protected-、-package、-private-四个选项)
+    - [-d  选项](/blog/a9f85f8d/#-d-选项)
+    - [-splitindex](/blog/a9f85f8d/#-splitindex)
+    - [-windowtitle](/blog/a9f85f8d/#-windowtitle)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 文档注释可以用于对`类`、 `属性`、`方法`等进行说明。 写文档注释时除了需要使用 `/** .... */ ` 限定之外，还需要注意注释内部的一些细节问题。
 ## 文档注释的格式化 ##
 javadoc生成的文档是HTML格式的，而这些HTML格式的标识符并不是javadoc添加的，而是我们在写注释的时候写上去的。比如，需要换行时，不是敲入一个回车符，而是写入`<br>` ，如果要分段，就应该在段前写入`<p>`。

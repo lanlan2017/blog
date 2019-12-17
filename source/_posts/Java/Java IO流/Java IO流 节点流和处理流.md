@@ -4,9 +4,20 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-21 22:26:21
-updated: 2019-12-09 20:34:56
+updated: 2019-12-15 22:01:44
 abbrlink: 2e0f7472
 ---
+<div id='my_toc'>
+
+- [常用处理流（关闭处理流使用关闭里面的节点流）](/blog/2e0f7472/#常用处理流（关闭处理流使用关闭里面的节点流）)
+- [流的关闭顺序](/blog/2e0f7472/#流的关闭顺序)
+    - [注意：](/blog/2e0f7472/#注意：)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 ## 常用处理流（关闭处理流使用关闭里面的节点流） ##
 
 - 缓冲流：BufferedInputStrean BufferedOutputStream BufferedReader BufferedWriter---增加缓冲功能，避免频繁读写硬盘。

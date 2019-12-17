@@ -6,9 +6,18 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-12 22:26:13
-updated: 2019-12-09 20:34:55
+updated: 2019-12-15 22:01:44
 abbrlink: 2f2a13a0
 ---
+<div id='my_toc'>
+
+- [eclipse中如何创建log4j文件](/blog/2f2a13a0/#eclipse中如何创建log4j文件)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 # eclipse中如何创建log4j文件 #
 在项目`src`目录上右键,然后依次选择`new`,`other`...,`XML`,`XML File`,然后点击`next`,
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/log4j/newLog4jXmlFile/1.png)

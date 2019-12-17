@@ -4,9 +4,27 @@ categories:
   - Java
   - Java 基础
 date: 2019-01-30 21:28:29
-updated: 2019-12-09 19:45:21
+updated: 2019-12-15 22:01:44
 abbrlink: 4b9baef8
 ---
+<div id='my_toc'>
+
+- [文档注释写法](/blog/4b9baef8/#文档注释写法)
+- [api文档生成](/blog/4b9baef8/#api文档生成)
+    - [javadoc作用命令处理范文](/blog/4b9baef8/#javadoc作用命令处理范文)
+    - [提取private的内容](/blog/4b9baef8/#提取private的内容)
+    - [javadoc命令格式](/blog/4b9baef8/#javadoc命令格式)
+    - [实例](/blog/4b9baef8/#实例)
+- [javadoc标记](/blog/4b9baef8/#javadoc标记)
+- [javadoc标记](/blog/4b9baef8/#javadoc标记)
+    - [@see的运用](/blog/4b9baef8/#-see的运用)
+- [参考链接](/blog/4b9baef8/#参考链接)
+
+</div>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+
+<!--end-->
 ## 文档注释写法 ##
 文档注释:`/**...*/`则是为支持jdk 工具javadoc.exe而特有的注释语句。javadoc 工具能从java 源文件中读取第三种注释， 并能识别注释中用`@标识`的一些特殊变量,制作成HTML 格式的类说明文档。javadoc不但能对一个 java 源文件生成注释文档，而且能对`目录`和`包`生成`交叉链接`的 html 格式的类说明文档
 @author        作者名  
