@@ -6,29 +6,34 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-19 15:11:39
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:39:21
 abbrlink: ddf72c82
 ---
-<div id='my_toc'>
-
-- [response内置对象简介](/blog/ddf72c82/#response内置对象简介)
-- [常用方法](/blog/ddf72c82/#常用方法)
-- [请求重定向和请求转发的区别](/blog/ddf72c82/#请求重定向和请求转发的区别)
-    - [请求重定向](/blog/ddf72c82/#请求重定向)
-    - [请求转发](/blog/ddf72c82/#请求转发)
-    - [生活中的例子](/blog/ddf72c82/#生活中的例子)
-- [设置HTP响应报头](/blog/ddf72c82/#设置HTP响应报头)
-    - [禁用缓存](/blog/ddf72c82/#禁用缓存)
-    - [设置过期的时间期限](/blog/ddf72c82/#设置过期的时间期限)
-    - [定时刷新页面](/blog/ddf72c82/#定时刷新页面)
-    - [定时跳转页面](/blog/ddf72c82/#定时跳转页面)
-- [设置输出缓冲](/blog/ddf72c82/#设置输出缓冲)
-    - [缓冲相关方法](/blog/ddf72c82/#缓冲相关方法)
-- [参考链接](/blog/ddf72c82/#参考链接)
-
-</div>
+<div id='my_toc'><a href="/blog/ddf72c82/#response内置对象简介" class="header_2">response内置对象简介</a><br><a href="/blog/ddf72c82/#常用方法" class="header_2">常用方法</a><br><a href="/blog/ddf72c82/#请求重定向和请求转发的区别" class="header_2">请求重定向和请求转发的区别</a><br><a href="/blog/ddf72c82/#请求重定向" class="header_3">请求重定向</a><br><a href="/blog/ddf72c82/#请求转发" class="header_3">请求转发</a><br><a href="/blog/ddf72c82/#生活中的例子" class="header_3">生活中的例子</a><br><a href="/blog/ddf72c82/#实例" class="header_4">实例</a><br><a href="/blog/ddf72c82/#请求重定向" class="header_4">请求重定向</a><br><a href="/blog/ddf72c82/#请求转发" class="header_4">请求转发</a><br><a href="/blog/ddf72c82/#设置HTP响应报头" class="header_2">设置HTP响应报头</a><br><a href="/blog/ddf72c82/#禁用缓存" class="header_3">禁用缓存</a><br><a href="/blog/ddf72c82/#设置过期的时间期限" class="header_3">设置过期的时间期限</a><br><a href="/blog/ddf72c82/#定时刷新页面" class="header_3">定时刷新页面</a><br><a href="/blog/ddf72c82/#定时跳转页面" class="header_3">定时跳转页面</a><br><a href="/blog/ddf72c82/#设置输出缓冲" class="header_2">设置输出缓冲</a><br><a href="/blog/ddf72c82/#缓冲相关方法" class="header_3">缓冲相关方法</a><br><a href="/blog/ddf72c82/#实例" class="header_4">实例</a><br><a href="/blog/ddf72c82/#参考链接" class="header_2">参考链接</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## response内置对象简介 ##

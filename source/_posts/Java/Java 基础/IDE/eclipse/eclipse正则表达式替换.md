@@ -6,18 +6,34 @@ categories:
   - IDE
   - eclipse
 date: 2018-12-11 20:43:57
-updated: 2019-12-15 22:01:43
+updated: 2019-12-16 02:40:42
 abbrlink: eee91bf3
 ---
-<div id='my_toc'>
-
-- [查找替换框设置](/blog/eee91bf3/#查找替换框设置)
-- [英文意思](/blog/eee91bf3/#英文意思)
-- [参考链接](/blog/eee91bf3/#参考链接)
-
-</div>
+<div id='my_toc'><a href="/blog/eee91bf3/#查找替换框设置" class="header_2">查找替换框设置</a><br><a href="/blog/eee91bf3/#英文意思" class="header_2">英文意思</a><br><a href="/blog/eee91bf3/#参考链接" class="header_2">参考链接</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

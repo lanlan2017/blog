@@ -4,9 +4,36 @@ categories:
   - Hexo
   - Debug
 date: 2018-10-28 10:34:03
-updated: 2019-12-09 19:55:22
+updated: 2019-12-15 10:01:43
 abbrlink: ebaabcd4
 ---
+<div id='my_toc'><a href="/blog/ebaabcd4/#安装插件" class="header_2">安装插件</a><br><a href="/blog/ebaabcd4/#配置站点配置文件_config.yml" class="header_2">配置站点配置文件_config.yml</a><br><a href="/blog/ebaabcd4/#部署" class="header_2">部署</a><br><a href="/blog/ebaabcd4/#查看本地生成的baidusitemap.xml文件" class="header_2">查看本地生成的baidusitemap.xml文件</a><br><a href="/blog/ebaabcd4/#确认浏览器中可以打开baidusitemap.xml文件" class="header_2">确认浏览器中可以打开baidusitemap.xml文件</a><br><a href="/blog/ebaabcd4/#复制浏览器中的地址提价给百度" class="header_2">复制浏览器中的地址提价给百度</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 ## 安装插件 ##
 在站点目录下，打开git-bash,输入下面的命令安装插件。
 ```

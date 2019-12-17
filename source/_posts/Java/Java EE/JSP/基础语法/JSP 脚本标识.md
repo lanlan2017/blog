@@ -6,25 +6,34 @@ categories:
   - JSP
   - 基础语法
 date: 2018-12-20 01:09:14
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:39:28
 abbrlink: 99c62cee
 ---
-<div id='my_toc'>
-
-- [脚本标识概述](/blog/99c62cee/#脚本标识概述)
-- [JSP声明](/blog/99c62cee/#JSP声明)
-    - [语法](/blog/99c62cee/#语法)
-    - [实例](/blog/99c62cee/#实例)
-- [JSP表达式](/blog/99c62cee/#JSP表达式)
-    - [实例](/blog/99c62cee/#实例)
-- [代码片段](/blog/99c62cee/#代码片段)
-    - [语法格式](/blog/99c62cee/#语法格式)
-    - [代码片段与声明的区别](/blog/99c62cee/#代码片段与声明的区别)
-    - [实例](/blog/99c62cee/#实例)
-
-</div>
+<div id='my_toc'><a href="/blog/99c62cee/#脚本标识概述" class="header_2">脚本标识概述</a><br><a href="/blog/99c62cee/#JSP声明" class="header_2">JSP声明</a><br><a href="/blog/99c62cee/#语法" class="header_3">语法</a><br><a href="/blog/99c62cee/#实例" class="header_3">实例</a><br><a href="/blog/99c62cee/#JSP表达式" class="header_2">JSP表达式</a><br><a href="/blog/99c62cee/#实例" class="header_3">实例</a><br><a href="/blog/99c62cee/#代码片段" class="header_2">代码片段</a><br><a href="/blog/99c62cee/#语法格式" class="header_3">语法格式</a><br><a href="/blog/99c62cee/#代码片段与声明的区别" class="header_3">代码片段与声明的区别</a><br><a href="/blog/99c62cee/#实例" class="header_3">实例</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 脚本标识概述 ##

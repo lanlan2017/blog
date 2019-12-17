@@ -4,17 +4,34 @@ categories:
   - Java
   - java GUI
 date: 2018-09-16 13:07:25
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:39:58
 abbrlink: 77feedee
 ---
-<div id='my_toc'>
-
-- [需求](/blog/77feedee/#需求)
-- [升级2](/blog/77feedee/#升级2)
-
-</div>
+<div id='my_toc'><a href="/blog/77feedee/#需求" class="header_2">需求</a><br><a href="/blog/77feedee/#升级2" class="header_2">升级2</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 之前已经完成了程序的开发，也加入了热键，不过每次截图(ctrl+alt+w)都要手动的去点击文字识别按钮，显然有点浪费时间。

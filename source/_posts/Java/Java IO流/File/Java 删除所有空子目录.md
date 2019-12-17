@@ -5,19 +5,34 @@ categories:
   - Java IO流
   - File
 date: 2018-12-22 19:15:36
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:39:59
 abbrlink: efd55c13
 ---
-<div id='my_toc'>
-
-- [向下递归 删除所有空子目录](/blog/efd55c13/#向下递归-删除所有空子目录)
-- [向上递归 删除所有空父目录](/blog/efd55c13/#向上递归-删除所有空父目录)
-- [删除空目录完整代码](/blog/efd55c13/#删除空目录完整代码)
-- [测试](/blog/efd55c13/#测试)
-
-</div>
+<div id='my_toc'><a href="/blog/efd55c13/#向下递归-删除所有空子目录" class="header_2">向下递归 删除所有空子目录</a><br><a href="/blog/efd55c13/#向上递归-删除所有空父目录" class="header_2">向上递归 删除所有空父目录</a><br><a href="/blog/efd55c13/#删除空目录完整代码" class="header_2">删除空目录完整代码</a><br><a href="/blog/efd55c13/#测试" class="header_2">测试</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 向下递归 删除所有空子目录 ##

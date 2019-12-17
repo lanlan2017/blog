@@ -4,9 +4,36 @@ categories:
   - Hexo
   - 插件
 date: 2018-09-26 20:00:35
-updated: 2019-12-09 20:34:40
+updated: 2019-12-15 08:49:18
 abbrlink: 8eadc39
 ---
+<div id='my_toc'></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 [头像设置](/2018/09/27/Hexo搭建博客/添加功能/Hexo Valine使用Gravatars头像/)参见
 
 评论系统的具体介绍如下图所示:

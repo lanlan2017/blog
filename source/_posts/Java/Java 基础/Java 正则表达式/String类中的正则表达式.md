@@ -5,19 +5,34 @@ categories:
   - Java 基础
   - Java 正则表达式
 date: 2018-08-06 23:46:40
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:43
 abbrlink: 12fb64fe
 ---
-<div id='my_toc'>
-
-- [replaceFirst()方法](/blog/12fb64fe/#replaceFirst-方法)
-    - [实例](/blog/12fb64fe/#实例)
-- [replaceAll()方法](/blog/12fb64fe/#replaceAll-方法)
-    - [实例](/blog/12fb64fe/#实例)
-
-</div>
+<div id='my_toc'></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ------------------------

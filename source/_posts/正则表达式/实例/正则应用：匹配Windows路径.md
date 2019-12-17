@@ -4,9 +4,36 @@ categories:
   - 正则表达式
   - 实例
 date: 2018-10-23 16:02:37
-updated: 2019-12-09 19:45:24
+updated: 2019-12-15 10:01:44
 abbrlink: 93d942f1
 ---
+<div id='my_toc'><a href="/blog/93d942f1/#问题描述" class="header_2">问题描述</a><br><a href="/blog/93d942f1/#应用正则" class="header_2">应用正则</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 ## 问题描述 ##
 下面的文本中有好多路径如:`D:\dev\workspace\HexoTools`，我想用markdown`代码段标记`出来。
 ```

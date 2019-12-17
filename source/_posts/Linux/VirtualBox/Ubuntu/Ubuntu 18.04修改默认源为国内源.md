@@ -5,9 +5,36 @@ categories:
   - VirtualBox
   - Ubuntu
 date: 2019-11-25 17:44:39
-updated: 2019-12-09 19:45:23
+updated: 2019-12-15 10:01:44
 abbrlink: 4fc37c0d
 ---
+<div id='my_toc'><a href="/blog/4fc37c0d/#Ubuntu-18.04修改默认源为国内源" class="header_1">Ubuntu 18.04修改默认源为国内源</a><br><a href="/blog/4fc37c0d/#获取当前Ubuntu版本系统代号" class="header_2">获取当前Ubuntu版本系统代号</a><br><a href="/blog/4fc37c0d/#其他Ubuntu版本系统代号" class="header_3">其他Ubuntu版本系统代号</a><br><a href="/blog/4fc37c0d/#备份/etc/apt/sources.list" class="header_2">备份/etc/apt/sources.list</a><br><a href="/blog/4fc37c0d/#添加国内apt源" class="header_2">添加国内apt源</a><br><a href="/blog/4fc37c0d/#更新程序" class="header_2">更新程序</a><br><a href="/blog/4fc37c0d/#更新软件列表" class="header_3">更新软件列表</a><br><a href="/blog/4fc37c0d/#更新软件" class="header_3">更新软件</a><br><a href="/blog/4fc37c0d/#参考资料" class="header_1">参考资料</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 # Ubuntu 18.04修改默认源为国内源 #
 修改阿里源为Ubuntu 18.04默认的源
 ## 获取当前Ubuntu版本系统代号 ##

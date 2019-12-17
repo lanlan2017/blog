@@ -4,9 +4,36 @@ categories:
   - Git
   - Debug
 date: 2019-12-08 22:44:49
-updated: 2019-12-09 19:55:22
+updated: 2019-12-15 10:01:43
 abbrlink: 331932fd
 ---
+<div id='my_toc'><a href="/blog/331932fd/#fatal-refusing-to-merge-unrelated-histories" class="header_1">fatal: refusing to merge unrelated histories</a><br><a href="/blog/331932fd/#原因" class="header_1">原因</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 # fatal: refusing to merge unrelated histories
 今天拉取远程分支时报错如下:
 ````shell

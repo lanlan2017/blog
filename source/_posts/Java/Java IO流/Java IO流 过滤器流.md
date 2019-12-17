@@ -4,16 +4,34 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-21 22:19:08
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:30
 abbrlink: c52cb4ad
 ---
-<div id='my_toc'>
-
-- [过滤器使用规则](/blog/c52cb4ad/#过滤器使用规则)
-
-</div>
+<div id='my_toc'><a href="/blog/c52cb4ad/#过滤器使用规则" class="header_2">过滤器使用规则</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 过滤器使用规则 ##

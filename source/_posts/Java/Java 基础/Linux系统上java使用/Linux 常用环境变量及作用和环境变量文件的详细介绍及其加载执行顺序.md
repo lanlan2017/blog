@@ -5,24 +5,34 @@ categories:
   - Java 基础
   - Linux系统上java使用
 date: 2018-08-11 15:28:20
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:47
 abbrlink: 6249459e
 ---
-<div id='my_toc'>
-
-- [前言：](/blog/6249459e/#前言：)
-- [一、环境变量文件介绍](/blog/6249459e/#一、环境变量文件介绍)
-- [二、Linux的变量种类](/blog/6249459e/#二、Linux的变量种类)
-- [三、Linux 环境变量文件](/blog/6249459e/#三、Linux-环境变量文件)
-    - [系统级：](/blog/6249459e/#系统级：)
-    - [/etc/bashrc](/blog/6249459e/#-etc-bashrc)
-- [用户级：](/blog/6249459e/#用户级：)
-    - [**~/.profile**](/blog/6249459e/#~-profile)
-    - [~/.bashrc](/blog/6249459e/#~-bashrc)
-
-</div>
+<div id='my_toc'><a href="/blog/6249459e/#前言：" class="header_2">前言：</a><br><a href="/blog/6249459e/#一、环境变量文件介绍" class="header_2">一、环境变量文件介绍</a><br><a href="/blog/6249459e/#二、Linux的变量种类" class="header_2">二、Linux的变量种类</a><br><a href="/blog/6249459e/#三、Linux-环境变量文件" class="header_2">三、Linux 环境变量文件</a><br><a href="/blog/6249459e/#系统级：" class="header_3">系统级：</a><br><a href="/blog/6249459e/#/etc/environment" class="header_4">/etc/environment</a><br><a href="/blog/6249459e/#/etc/profile" class="header_4">/etc/profile</a><br><a href="/blog/6249459e/#/etc/bashrc" class="header_3">/etc/bashrc</a><br><a href="/blog/6249459e/#用户级：" class="header_2">用户级：</a><br><a href="/blog/6249459e/#-~/.profile-" class="header_3">`~/.profile`</a><br><a href="/blog/6249459e/#~/.bashrc" class="header_3">~/.bashrc</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 Linux 常用环境变量及作用和环境变量文件的详细介绍及其加载执行顺序

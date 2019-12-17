@@ -6,20 +6,34 @@ categories:
   - IDE
   - eclipse
 date: 2019-06-02 21:03:06
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:39:07
 abbrlink: c9f81303
 ---
-<div id='my_toc'>
-
-- [打开eclipse marketplace](/blog/c9f81303/#打开eclipse-marketplace)
-- [安装mybatis-generator](/blog/c9f81303/#安装mybatis-generator)
-    - [插件主页](/blog/c9f81303/#插件主页)
-    - [拖动安装插件](/blog/c9f81303/#拖动安装插件)
-    - [同意许可](/blog/c9f81303/#同意许可)
-
-</div>
+<div id='my_toc'><a href="/blog/c9f81303/#打开eclipse-marketplace" class="header_1">打开eclipse marketplace</a><br><a href="/blog/c9f81303/#安装mybatis-generator" class="header_1">安装mybatis-generator</a><br><a href="/blog/c9f81303/#插件主页" class="header_2">插件主页</a><br><a href="/blog/c9f81303/#拖动安装插件" class="header_2">拖动安装插件</a><br><a href="/blog/c9f81303/#同意许可" class="header_2">同意许可</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 打开eclipse marketplace #

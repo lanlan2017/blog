@@ -6,20 +6,34 @@ categories:
   - IDE
   - eclipse
 date: 2019-01-03 19:17:47
-updated: 2019-12-15 22:01:43
+updated: 2019-12-16 02:40:41
 abbrlink: '5285183'
 ---
-<div id='my_toc'>
-
-- [安装JavaFX插件e(fx)clipse](/blog/5285183/#安装JavaFX插件e-fx-clipse)
-- [下载 scene builder](/blog/5285183/#下载-scene-builder)
-- [安装](/blog/5285183/#安装)
-- [eclipse中指定scene builder路径](/blog/5285183/#eclipse中指定scene-builder路径)
-- [参考资料](/blog/5285183/#参考资料)
-
-</div>
+<div id='my_toc'><a href="/blog/5285183/#安装JavaFX插件e(fx)clipse" class="header_2">安装JavaFX插件e(fx)clipse</a><br><a href="/blog/5285183/#下载-scene-builder" class="header_2">下载 scene builder</a><br><a href="/blog/5285183/#安装" class="header_2">安装</a><br><a href="/blog/5285183/#eclipse中指定scene-builder路径" class="header_2">eclipse中指定scene builder路径</a><br><a href="/blog/5285183/#参考资料" class="header_2">参考资料</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 安装JavaFX插件e(fx)clipse ##

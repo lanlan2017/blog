@@ -4,9 +4,36 @@ categories:
   - HTML
   - 超链接
 date: 2019-02-13 00:22:04
-updated: 2019-12-09 19:55:23
+updated: 2019-12-15 10:01:43
 abbrlink: b4a0eaf6
 ---
+<div id='my_toc'><a href="/blog/b4a0eaf6/#根据ID属性跳转的锚点" class="header_2">根据ID属性跳转的锚点</a><br><a href="/blog/b4a0eaf6/#自动生成" class="header_2">自动生成</a><br><a href="/blog/b4a0eaf6/#Java实现" class="header_3">Java实现</a><br><a href="/blog/b4a0eaf6/#生成唯一的数字串工具类" class="header_4">生成唯一的数字串工具类</a><br><a href="/blog/b4a0eaf6/#生成唯一锚点Java类" class="header_4">生成唯一锚点Java类</a><br><a href="/blog/b4a0eaf6/#javascript实现" class="header_3">javascript实现</a><br><a href="/blog/b4a0eaf6/#js-生成格式化字符串" class="header_4">js 生成格式化字符串</a><br><a href="/blog/b4a0eaf6/#拼接成html锚点链接" class="header_4">拼接成html锚点链接</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 这里介绍使用id属性来设置锚点，并通过代码自动生成ID唯一的锚点。
 ## 根据ID属性跳转的锚点 ##
 html代码如下:

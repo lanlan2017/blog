@@ -5,9 +5,36 @@ categories:
   - 实例
   - 匹配HTML标签
 date: 2018-09-27 22:00:53
-updated: 2019-12-09 19:45:23
+updated: 2019-12-15 08:49:18
 abbrlink: de8eb4f9
 ---
+<div id='my_toc'></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 写到HTML这章的时候，在Markdown中添加了好多html标记，这样会引起文章渲染乱码。所以需要都让对一些HTML标记进行"转义"。我这里的做法是，使用反引号把HTML标记包裹起来。如下所示:
 ```
 `<h1>`

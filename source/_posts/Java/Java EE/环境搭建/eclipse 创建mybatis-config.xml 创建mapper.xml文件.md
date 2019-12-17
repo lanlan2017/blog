@@ -5,23 +5,34 @@ categories:
   - Java EE
   - 环境搭建
 date: 2019-06-07 15:34:05
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:39:52
 abbrlink: 44aa2f70
 ---
-<div id='my_toc'>
-
-- [eclipse 创建mybatis-config.xml 创建mapper.xml文件](/blog/44aa2f70/#eclipse-创建mybatis-config-xml-创建mapper-xml文件)
-    - [下载mybatis的jar包](/blog/44aa2f70/#下载mybatis的jar包)
-    - [从mybatis的jar包复制模板文件](/blog/44aa2f70/#从mybatis的jar包复制模板文件)
-    - [保存模板文件到本地](/blog/44aa2f70/#保存模板文件到本地)
-    - [引入模板文件到eclipse中](/blog/44aa2f70/#引入模板文件到eclipse中)
-        - [引入mybatis-3-config.dtd](/blog/44aa2f70/#引入mybatis-3-config-dtd)
-        - [引入mybatis-3-mapper.dtd](/blog/44aa2f70/#引入mybatis-3-mapper-dtd)
-    - [使用模板文件创建mybatis-config.xml文件](/blog/44aa2f70/#使用模板文件创建mybatis-config-xml文件)
-
-</div>
+<div id='my_toc'><a href="/blog/44aa2f70/#eclipse-创建mybatis-config.xml-创建mapper.xml文件" class="header_1">eclipse 创建mybatis-config.xml 创建mapper.xml文件</a><br><a href="/blog/44aa2f70/#下载mybatis的jar包" class="header_2">下载mybatis的jar包</a><br><a href="/blog/44aa2f70/#从mybatis的jar包复制模板文件" class="header_2">从mybatis的jar包复制模板文件</a><br><a href="/blog/44aa2f70/#保存模板文件到本地" class="header_2">保存模板文件到本地</a><br><a href="/blog/44aa2f70/#引入模板文件到eclipse中" class="header_2">引入模板文件到eclipse中</a><br><a href="/blog/44aa2f70/#引入mybatis-3-config.dtd" class="header_3">引入mybatis-3-config.dtd</a><br><a href="/blog/44aa2f70/#引入mybatis-3-mapper.dtd" class="header_3">引入mybatis-3-mapper.dtd</a><br><a href="/blog/44aa2f70/#使用模板文件创建mybatis-config.xml文件" class="header_2">使用模板文件创建mybatis-config.xml文件</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # eclipse 创建mybatis-config.xml 创建mapper.xml文件 #

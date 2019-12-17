@@ -4,41 +4,34 @@ categories:
   - Java
   - Java 网络编程
 date: 2019-05-30 17:00:03
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:57
 abbrlink: 691d97e3
 ---
-<div id='my_toc'>
-
-- [Java TCP程序设计](/blog/691d97e3/#Java-TCP程序设计)
-    - [SeverSocket类与Socket类](/blog/691d97e3/#SeverSocket类与Socket类)
-    - [第一个TCP程序](/blog/691d97e3/#第一个TCP程序)
-        - [服务端代码](/blog/691d97e3/#服务端代码)
-        - [客户端代码](/blog/691d97e3/#客户端代码)
-        - [编码问题](/blog/691d97e3/#编码问题)
-        - [CMD 中编译运行服务端](/blog/691d97e3/#CMD-中编译运行服务端)
-        - [CMD 中编译运行客户端](/blog/691d97e3/#CMD-中编译运行客户端)
-    - [使用telnet命令连接服务器端进行验证](/blog/691d97e3/#使用telnet命令连接服务器端进行验证)
-        - [telnet运行不正正常的情况: 没有开启telnet服务](/blog/691d97e3/#telnet运行不正正常的情况-没有开启telnet服务)
-        - [如何启动telnet](/blog/691d97e3/#如何启动telnet)
-    - [TCP实例：Echo程序](/blog/691d97e3/#TCP实例：Echo程序)
-        - [实例：EchoServer](/blog/691d97e3/#实例：EchoServer)
-        - [实例：EchoClient](/blog/691d97e3/#实例：EchoClient)
-    - [在服务器上应用多线程](/blog/691d97e3/#在服务器上应用多线程)
-        - [实例：EchoThread](/blog/691d97e3/#实例：EchoThread)
-        - [实例：EchoThreadServer类](/blog/691d97e3/#实例：EchoThreadServer类)
-        - [运行服务端EchoThreadServer](/blog/691d97e3/#运行服务端EchoThreadServer)
-        - [然后运行客户端:EchoClient](/blog/691d97e3/#然后运行客户端-EchoClient)
-    - [使用回调函数](/blog/691d97e3/#使用回调函数)
-        - [回调函数](/blog/691d97e3/#回调函数)
-    - [如何通过客户端关闭服务器](/blog/691d97e3/#如何通过客户端关闭服务器)
-        - [EchoThreadServer](/blog/691d97e3/#EchoThreadServer)
-        - [EchoThread](/blog/691d97e3/#EchoThread)
-        - [EchoClient](/blog/691d97e3/#EchoClient)
-        - [运行效果](/blog/691d97e3/#运行效果)
-
-</div>
+<div id='my_toc'><a href="/blog/691d97e3/#Java-TCP程序设计" class="header_1">Java TCP程序设计</a><br><a href="/blog/691d97e3/#SeverSocket类与Socket类" class="header_2">SeverSocket类与Socket类</a><br><a href="/blog/691d97e3/#第一个TCP程序" class="header_2">第一个TCP程序</a><br><a href="/blog/691d97e3/#服务端代码" class="header_3">服务端代码</a><br><a href="/blog/691d97e3/#客户端代码" class="header_3">客户端代码</a><br><a href="/blog/691d97e3/#编码问题" class="header_3">编码问题</a><br><a href="/blog/691d97e3/#CMD-中编译运行服务端" class="header_3">CMD 中编译运行服务端</a><br><a href="/blog/691d97e3/#CMD-中编译运行客户端" class="header_3">CMD 中编译运行客户端</a><br><a href="/blog/691d97e3/#使用telnet命令连接服务器端进行验证" class="header_2">使用telnet命令连接服务器端进行验证</a><br><a href="/blog/691d97e3/#telnet运行不正正常的情况-没有开启telnet服务" class="header_3">telnet运行不正正常的情况: 没有开启telnet服务</a><br><a href="/blog/691d97e3/#如何启动telnet" class="header_3">如何启动telnet</a><br><a href="/blog/691d97e3/#TCP实例：Echo程序" class="header_2">TCP实例：Echo程序</a><br><a href="/blog/691d97e3/#实例：EchoServer" class="header_3">实例：EchoServer</a><br><a href="/blog/691d97e3/#实例：EchoClient" class="header_3">实例：EchoClient</a><br><a href="/blog/691d97e3/#在服务器上应用多线程" class="header_2">在服务器上应用多线程</a><br><a href="/blog/691d97e3/#实例：EchoThread" class="header_3">实例：EchoThread</a><br><a href="/blog/691d97e3/#实例：EchoThreadServer类" class="header_3">实例：EchoThreadServer类</a><br><a href="/blog/691d97e3/#运行服务端EchoThreadServer" class="header_3">运行服务端EchoThreadServer</a><br><a href="/blog/691d97e3/#然后运行客户端-EchoClient" class="header_3">然后运行客户端:EchoClient</a><br><a href="/blog/691d97e3/#使用回调函数" class="header_2">使用回调函数</a><br><a href="/blog/691d97e3/#回调函数" class="header_3">回调函数</a><br><a href="/blog/691d97e3/#如何通过客户端关闭服务器" class="header_2">如何通过客户端关闭服务器</a><br><a href="/blog/691d97e3/#EchoThreadServer" class="header_3">EchoThreadServer</a><br><a href="/blog/691d97e3/#EchoThread" class="header_3">EchoThread</a><br><a href="/blog/691d97e3/#EchoClient" class="header_3">EchoClient</a><br><a href="/blog/691d97e3/#运行效果" class="header_3">运行效果</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # Java TCP程序设计 #

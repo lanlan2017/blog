@@ -5,19 +5,34 @@ categories:
   - Java 基础
   - 字符串处理
 date: 2019-04-03 22:05:32
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:47
 abbrlink: 9d84ecc2
 ---
-<div id='my_toc'>
-
-- [原理](/blog/9d84ecc2/#原理)
-    - [ASCII码运算](/blog/9d84ecc2/#ASCII码运算)
-    - [结论](/blog/9d84ecc2/#结论)
-- [代码](/blog/9d84ecc2/#代码)
-
-</div>
+<div id='my_toc'><a href="/blog/9d84ecc2/#原理" class="header_2">原理</a><br><a href="/blog/9d84ecc2/#ASCII码运算" class="header_3">ASCII码运算</a><br><a href="/blog/9d84ecc2/#结论" class="header_3">结论</a><br><a href="/blog/9d84ecc2/#代码" class="header_2">代码</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 原理 ##

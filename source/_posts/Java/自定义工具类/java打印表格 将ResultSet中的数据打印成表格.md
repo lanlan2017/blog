@@ -4,24 +4,34 @@ categories:
   - Java
   - 自定义工具类
 date: 2019-10-23 22:19:13
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:41:01
 abbrlink: d58ef648
 ---
-<div id='my_toc'>
-
-- [java打印表格 将ResultSet中的数据打印成表格](/blog/d58ef648/#java打印表格-将ResultSet中的数据打印成表格)
-    - [问题描述](/blog/d58ef648/#问题描述)
-    - [思路](/blog/d58ef648/#思路)
-    - [字符串格式化方式](/blog/d58ef648/#字符串格式化方式)
-        - [左对齐](/blog/d58ef648/#左对齐)
-        - [右对齐](/blog/d58ef648/#右对齐)
-    - [实现](/blog/d58ef648/#实现)
-    - [测试](/blog/d58ef648/#测试)
-    - [运行结果](/blog/d58ef648/#运行结果)
-
-</div>
+<div id='my_toc'><a href="/blog/d58ef648/#java打印表格-将ResultSet中的数据打印成表格" class="header_1">java打印表格 将ResultSet中的数据打印成表格</a><br><a href="/blog/d58ef648/#问题描述" class="header_2">问题描述</a><br><a href="/blog/d58ef648/#思路" class="header_2">思路</a><br><a href="/blog/d58ef648/#字符串格式化方式" class="header_2">字符串格式化方式</a><br><a href="/blog/d58ef648/#左对齐" class="header_3">左对齐</a><br><a href="/blog/d58ef648/#右对齐" class="header_3">右对齐</a><br><a href="/blog/d58ef648/#实现" class="header_2">实现</a><br><a href="/blog/d58ef648/#测试" class="header_2">测试</a><br><a href="/blog/d58ef648/#运行结果" class="header_2">运行结果</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # java打印表格 将ResultSet中的数据打印成表格 #

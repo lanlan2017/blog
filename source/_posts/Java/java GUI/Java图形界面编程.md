@@ -4,29 +4,34 @@ categories:
   - Java
   - java GUI
 date: 2018-09-13 14:26:54
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:39:54
 abbrlink: 795fc6f9
 ---
-<div id='my_toc'>
-
-- [AWT简介](/blog/795fc6f9/#AWT简介)
-    - [GUI设计工具组件](/blog/795fc6f9/#GUI设计工具组件)
-- [Swing简介](/blog/795fc6f9/#Swing简介)
-- [容器类](/blog/795fc6f9/#容器类)
-    - [JFrame类](/blog/795fc6f9/#JFrame类)
-- [JDialog类](/blog/795fc6f9/#JDialog类)
-    - [JDialog与Jframe的区别](/blog/795fc6f9/#JDialog与Jframe的区别)
-- [JPanel类](/blog/795fc6f9/#JPanel类)
-- [Swing常用基本组件](/blog/795fc6f9/#Swing常用基本组件)
-    - [常用组件的共性操作](/blog/795fc6f9/#常用组件的共性操作)
-    - [按钮( JButton)](/blog/795fc6f9/#按钮-JButton)
-    - [文本框( JTextField)与密码输入框( JPasswordField)](/blog/795fc6f9/#文本框-JTextField-与密码输入框-JPasswordField)
-    - [文本域( JTextArea)](/blog/795fc6f9/#文本域-JTextArea)
-    - [标签( JLabel)](/blog/795fc6f9/#标签-JLabel)
-
-</div>
+<div id='my_toc'><a href="/blog/795fc6f9/#AWT简介" class="header_2">AWT简介</a><br><a href="/blog/795fc6f9/#GUI设计工具组件" class="header_3">GUI设计工具组件</a><br><a href="/blog/795fc6f9/#Swing简介" class="header_2">Swing简介</a><br><a href="/blog/795fc6f9/#容器类" class="header_2">容器类</a><br><a href="/blog/795fc6f9/#JFrame类" class="header_3">JFrame类</a><br><a href="/blog/795fc6f9/#JDialog类" class="header_2">JDialog类</a><br><a href="/blog/795fc6f9/#JDialog与Jframe的区别" class="header_3">JDialog与Jframe的区别</a><br><a href="/blog/795fc6f9/#JPanel类" class="header_2">JPanel类</a><br><a href="/blog/795fc6f9/#Swing常用基本组件" class="header_2">Swing常用基本组件</a><br><a href="/blog/795fc6f9/#常用组件的共性操作" class="header_3">常用组件的共性操作</a><br><a href="/blog/795fc6f9/#按钮(-JButton)" class="header_3">按钮( JButton)</a><br><a href="/blog/795fc6f9/#文本框(-JTextField)与密码输入框(-JPasswordField)" class="header_3">文本框( JTextField)与密码输入框( JPasswordField)</a><br><a href="/blog/795fc6f9/#文本域(-JTextArea)" class="header_3">文本域( JTextArea)</a><br><a href="/blog/795fc6f9/#标签(-JLabel)" class="header_3">标签( JLabel)</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## AWT简介 ##

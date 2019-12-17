@@ -5,20 +5,34 @@ categories:
   - Java EE
   - JSTL
 date: 2019-04-22 12:32:02
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:39:28
 abbrlink: 80d567ab
 ---
-<div id='my_toc'>
-
-- [JSTL 库安装](/blog/80d567ab/#JSTL-库安装)
-    - [下载JSTL库](/blog/80d567ab/#下载JSTL库)
-    - [复制jar文件到项目中](/blog/80d567ab/#复制jar文件到项目中)
-    - [复制tld文件到项目中](/blog/80d567ab/#复制tld文件到项目中)
-    - [在JSP页面引入](/blog/80d567ab/#在JSP页面引入)
-
-</div>
+<div id='my_toc'><a href="/blog/80d567ab/#JSTL-库安装" class="header_2">JSTL 库安装</a><br><a href="/blog/80d567ab/#下载JSTL库" class="header_3">下载JSTL库</a><br><a href="/blog/80d567ab/#复制jar文件到项目中" class="header_3">复制jar文件到项目中</a><br><a href="/blog/80d567ab/#复制tld文件到项目中" class="header_3">复制tld文件到项目中</a><br><a href="/blog/80d567ab/#在JSP页面引入" class="header_3">在JSP页面引入</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## JSTL 库安装 ##

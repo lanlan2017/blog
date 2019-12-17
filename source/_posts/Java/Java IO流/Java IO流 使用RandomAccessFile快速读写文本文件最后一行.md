@@ -4,28 +4,34 @@ categories:
   - Java
   - Java IO流
 date: 2018-10-30 18:36:12
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:29
 abbrlink: 4cd2c62c
 ---
-<div id='my_toc'>
-
-- [返回文本文件中最后一行的起始位置](/blog/4cd2c62c/#返回文本文件中最后一行的起始位置)
-    - [重载方法1 使用File参数表示的文件](/blog/4cd2c62c/#重载方法1-使用File参数表示的文件)
-    - [重载方法2 使用RandomAccessFile参数表示的文件](/blog/4cd2c62c/#重载方法2-使用RandomAccessFile参数表示的文件)
-- [获取文本文件中最后一行文本](/blog/4cd2c62c/#获取文本文件中最后一行文本)
-- [在文本文件最后一行追加文本](/blog/4cd2c62c/#在文本文件最后一行追加文本)
-    - [重载方法1 使用File参数表示的文件](/blog/4cd2c62c/#重载方法1-使用File参数表示的文件)
-    - [重载方法2 使用RandomAccessFile参数表示的文件](/blog/4cd2c62c/#重载方法2-使用RandomAccessFile参数表示的文件)
-- [在文本文件最后一行后插入另一行文本](/blog/4cd2c62c/#在文本文件最后一行后插入另一行文本)
-- [删除文本文件最后一行](/blog/4cd2c62c/#删除文本文件最后一行)
-    - [重载方法1 使用File参数表示的文件](/blog/4cd2c62c/#重载方法1-使用File参数表示的文件)
-    - [重载方法2 使用RandomAccessFile参数表示的文件](/blog/4cd2c62c/#重载方法2-使用RandomAccessFile参数表示的文件)
-- [更新文本文件最后一行](/blog/4cd2c62c/#更新文本文件最后一行)
-- [整个类的代码](/blog/4cd2c62c/#整个类的代码)
-
-</div>
+<div id='my_toc'><a href="/blog/4cd2c62c/#返回文本文件中最后一行的起始位置" class="header_2">返回文本文件中最后一行的起始位置</a><br><a href="/blog/4cd2c62c/#重载方法1-使用File参数表示的文件" class="header_3">重载方法1 使用File参数表示的文件</a><br><a href="/blog/4cd2c62c/#重载方法2-使用RandomAccessFile参数表示的文件" class="header_3">重载方法2 使用RandomAccessFile参数表示的文件</a><br><a href="/blog/4cd2c62c/#获取文本文件中最后一行文本" class="header_2">获取文本文件中最后一行文本</a><br><a href="/blog/4cd2c62c/#在文本文件最后一行追加文本" class="header_2">在文本文件最后一行追加文本</a><br><a href="/blog/4cd2c62c/#重载方法1-使用File参数表示的文件" class="header_3">重载方法1 使用File参数表示的文件</a><br><a href="/blog/4cd2c62c/#重载方法2-使用RandomAccessFile参数表示的文件" class="header_3">重载方法2 使用RandomAccessFile参数表示的文件</a><br><a href="/blog/4cd2c62c/#在文本文件最后一行后插入另一行文本" class="header_2">在文本文件最后一行后插入另一行文本</a><br><a href="/blog/4cd2c62c/#删除文本文件最后一行" class="header_2">删除文本文件最后一行</a><br><a href="/blog/4cd2c62c/#重载方法1-使用File参数表示的文件" class="header_3">重载方法1 使用File参数表示的文件</a><br><a href="/blog/4cd2c62c/#重载方法2-使用RandomAccessFile参数表示的文件" class="header_3">重载方法2 使用RandomAccessFile参数表示的文件</a><br><a href="/blog/4cd2c62c/#更新文本文件最后一行" class="header_2">更新文本文件最后一行</a><br><a href="/blog/4cd2c62c/#整个类的代码" class="header_2">整个类的代码</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 返回文本文件中最后一行的起始位置 ##

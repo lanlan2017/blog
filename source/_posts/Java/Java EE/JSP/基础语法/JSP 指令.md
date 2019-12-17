@@ -6,29 +6,34 @@ categories:
   - JSP
   - 基础语法
 date: 2018-12-20 23:51:51
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:39:28
 abbrlink: 7b20b86
 ---
-<div id='my_toc'>
-
-- [page指令](/blog/7b20b86/#page指令)
-    - [language属性](/blog/7b20b86/#language属性)
-    - [extends属性](/blog/7b20b86/#extends属性)
-    - [import属性](/blog/7b20b86/#import属性)
-    - [pageEccoding属性](/blog/7b20b86/#pageEccoding属性)
-    - [contentType属性](/blog/7b20b86/#contentType属性)
-    - [session属性](/blog/7b20b86/#session属性)
-    - [buffer属性](/blog/7b20b86/#buffer属性)
-    - [autoFlush属性](/blog/7b20b86/#autoFlush属性)
-    - [isErrorPage属性](/blog/7b20b86/#isErrorPage属性)
-    - [errorPage属性](/blog/7b20b86/#errorPage属性)
-- [inc|ude指令](/blog/7b20b86/#inc|ude指令)
-    - [实例](/blog/7b20b86/#实例)
-- [taglib指令](/blog/7b20b86/#taglib指令)
-
-</div>
+<div id='my_toc'><a href="/blog/7b20b86/#page指令" class="header_1">page指令</a><br><a href="/blog/7b20b86/#language属性" class="header_2">language属性</a><br><a href="/blog/7b20b86/#extends属性" class="header_2">extends属性</a><br><a href="/blog/7b20b86/#import属性" class="header_2">import属性</a><br><a href="/blog/7b20b86/#pageEccoding属性" class="header_2">pageEccoding属性</a><br><a href="/blog/7b20b86/#contentType属性" class="header_2">contentType属性</a><br><a href="/blog/7b20b86/#session属性" class="header_2">session属性</a><br><a href="/blog/7b20b86/#buffer属性" class="header_2">buffer属性</a><br><a href="/blog/7b20b86/#autoFlush属性" class="header_2">autoFlush属性</a><br><a href="/blog/7b20b86/#isErrorPage属性" class="header_2">isErrorPage属性</a><br><a href="/blog/7b20b86/#errorPage属性" class="header_2">errorPage属性</a><br><a href="/blog/7b20b86/#inc|ude指令" class="header_1">inc|ude指令</a><br><a href="/blog/7b20b86/#实例" class="header_2">实例</a><br><a href="/blog/7b20b86/#taglib指令" class="header_1">taglib指令</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # page指令 #

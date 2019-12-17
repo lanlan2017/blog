@@ -6,22 +6,34 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-19 15:51:37
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:39:07
 abbrlink: af6b423c
 ---
-<div id='my_toc'>
-
-- [eclipse自身设置的原因](/blog/af6b423c/#eclipse自身设置的原因)
-    - [指定JRE路径](/blog/af6b423c/#指定JRE路径)
-    - [关闭用不到的插件](/blog/af6b423c/#关闭用不到的插件)
-- [被Windows Defender拦截](/blog/af6b423c/#被Windows-Defender拦截)
-    - [Windows Defender不扫描eclipse的安装目录](/blog/af6b423c/#Windows-Defender不扫描eclipse的安装目录)
-        - [解决方案](/blog/af6b423c/#解决方案)
-        - [参考资料](/blog/af6b423c/#参考资料)
-
-</div>
+<div id='my_toc'><a href="/blog/af6b423c/#eclipse自身设置的原因" class="header_1">eclipse自身设置的原因</a><br><a href="/blog/af6b423c/#指定JRE路径" class="header_2">指定JRE路径</a><br><a href="/blog/af6b423c/#关闭用不到的插件" class="header_2">关闭用不到的插件</a><br><a href="/blog/af6b423c/#被Windows-Defender拦截" class="header_1">被Windows Defender拦截</a><br><a href="/blog/af6b423c/#Windows-Defender不扫描eclipse的安装目录" class="header_2">Windows Defender不扫描eclipse的安装目录</a><br><a href="/blog/af6b423c/#解决方案" class="header_3">解决方案</a><br><a href="/blog/af6b423c/#参考资料" class="header_3">参考资料</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # eclipse自身设置的原因 #

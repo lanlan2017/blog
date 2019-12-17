@@ -4,25 +4,34 @@ categories:
   - Java
   - Java 基础
 date: 2019-01-30 21:28:29
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:43
 abbrlink: 4b9baef8
 ---
-<div id='my_toc'>
-
-- [文档注释写法](/blog/4b9baef8/#文档注释写法)
-- [api文档生成](/blog/4b9baef8/#api文档生成)
-    - [javadoc作用命令处理范文](/blog/4b9baef8/#javadoc作用命令处理范文)
-    - [提取private的内容](/blog/4b9baef8/#提取private的内容)
-    - [javadoc命令格式](/blog/4b9baef8/#javadoc命令格式)
-    - [实例](/blog/4b9baef8/#实例)
-- [javadoc标记](/blog/4b9baef8/#javadoc标记)
-- [javadoc标记](/blog/4b9baef8/#javadoc标记)
-    - [@see的运用](/blog/4b9baef8/#-see的运用)
-- [参考链接](/blog/4b9baef8/#参考链接)
-
-</div>
+<div id='my_toc'><a href="/blog/4b9baef8/#文档注释写法" class="header_2">文档注释写法</a><br><a href="/blog/4b9baef8/#api文档生成" class="header_2">api文档生成</a><br><a href="/blog/4b9baef8/#javadoc作用命令处理范文" class="header_3">javadoc作用命令处理范文</a><br><a href="/blog/4b9baef8/#提取private的内容" class="header_3">提取private的内容</a><br><a href="/blog/4b9baef8/#javadoc命令格式" class="header_3">javadoc命令格式</a><br><a href="/blog/4b9baef8/#实例" class="header_3">实例</a><br><a href="/blog/4b9baef8/#javadoc标记" class="header_2">javadoc标记</a><br><a href="/blog/4b9baef8/#javadoc标记" class="header_2">javadoc标记</a><br><a href="/blog/4b9baef8/#@see的运用" class="header_3">@see的运用</a><br><a href="/blog/4b9baef8/#参考链接" class="header_2">参考链接</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ## 文档注释写法 ##

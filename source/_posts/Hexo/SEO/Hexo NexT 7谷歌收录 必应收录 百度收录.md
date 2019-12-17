@@ -4,9 +4,36 @@ categories:
   - Hexo
   - SEO
 date: 2019-12-01 12:12:27
-updated: 2019-12-09 19:55:22
+updated: 2019-12-15 10:01:43
 abbrlink: 242f5d55
 ---
+<div id='my_toc'><a href="/blog/242f5d55/#前言" class="header_1">前言</a><br><a href="/blog/242f5d55/#安装生成站点地图的插件" class="header_1">安装生成站点地图的插件</a><br><a href="/blog/242f5d55/#谷歌收录" class="header_1">谷歌收录</a><br><a href="/blog/242f5d55/#验证网站所有权" class="header_2">验证网站所有权</a><br><a href="/blog/242f5d55/#配置主题配置文件" class="header_2">配置主题配置文件</a><br><a href="/blog/242f5d55/#重新部署" class="header_2">重新部署</a><br><a href="/blog/242f5d55/#提交站点地图" class="header_2">提交站点地图</a><br><a href="/blog/242f5d55/#必应收录" class="header_1">必应收录</a><br><a href="/blog/242f5d55/#百度收录" class="header_1">百度收录</a><br><a href="/blog/242f5d55/#安装插件" class="header_2">安装插件</a><br><a href="/blog/242f5d55/#获取content" class="header_2">获取content</a><br><a href="/blog/242f5d55/#配置主题配置文件" class="header_2">配置主题配置文件</a><br><a href="/blog/242f5d55/#重新部署" class="header_2">重新部署</a><br><a href="/blog/242f5d55/#提交sitemap" class="header_2">提交sitemap</a><br><a href="/blog/242f5d55/#查看被收录的文章" class="header_1">查看被收录的文章</a><br><a href="/blog/242f5d55/#参考资料" class="header_1">参考资料</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 # 前言
 本文基于Hexo+NexT7.
 # 安装生成站点地图的插件

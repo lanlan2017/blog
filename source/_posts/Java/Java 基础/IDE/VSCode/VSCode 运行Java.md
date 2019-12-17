@@ -6,19 +6,34 @@ categories:
   - IDE
   - VSCode
 date: 2019-07-06 22:11:24
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:42
 abbrlink: c8a8df16
 ---
-<div id='my_toc'>
-
-- [VSCode 运行Java](/blog/c8a8df16/#VSCode-运行Java)
-    - [安装插件](/blog/c8a8df16/#安装插件)
-    - [设置允许参数](/blog/c8a8df16/#设置允许参数)
-    - [开始调试](/blog/c8a8df16/#开始调试)
-
-</div>
+<div id='my_toc'><a href="/blog/c8a8df16/#VSCode-运行Java" class="header_1">VSCode 运行Java</a><br><a href="/blog/c8a8df16/#安装插件" class="header_2">安装插件</a><br><a href="/blog/c8a8df16/#设置允许参数" class="header_2">设置允许参数</a><br><a href="/blog/c8a8df16/#开始调试" class="header_2">开始调试</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # VSCode 运行Java #

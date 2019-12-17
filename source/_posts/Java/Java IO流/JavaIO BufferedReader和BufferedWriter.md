@@ -4,29 +4,34 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-10 15:00:32
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:31
 abbrlink: 3f2a064c
 ---
-<div id='my_toc'>
-
-- [乱码问题](/blog/3f2a064c/#乱码问题)
-- [BufferedWriter](/blog/3f2a064c/#BufferedWriter)
-- [继承关系](/blog/3f2a064c/#继承关系)
-- [构造函数：](/blog/3f2a064c/#构造函数：)
-- [成员方法](/blog/3f2a064c/#成员方法)
-- [写文件实例](/blog/3f2a064c/#写文件实例)
-- [应用：复制文本文件](/blog/3f2a064c/#应用：复制文本文件)
-- [逐个字符复制文件](/blog/3f2a064c/#逐个字符复制文件)
-- [逐个字符数组复制文件](/blog/3f2a064c/#逐个字符数组复制文件)
-- [按行复制文件](/blog/3f2a064c/#按行复制文件)
-- [测试：](/blog/3f2a064c/#测试：)
-- [bug:按行复制的时候多写换行符](/blog/3f2a064c/#bug-按行复制的时候多写换行符)
-- [bug:乱码问题](/blog/3f2a064c/#bug-乱码问题)
-    - [实例：gbk编码的文件复制到utf8编码的文件中：](/blog/3f2a064c/#实例：gbk编码的文件复制到utf8编码的文件中：)
-
-</div>
+<div id='my_toc'></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ---------------------------------

@@ -4,9 +4,36 @@ categories:
   - 正则表达式
   - 应用
 date: 2018-12-17 01:40:26
-updated: 2019-12-09 19:45:24
+updated: 2019-12-15 10:01:44
 abbrlink: f279d8a6
 ---
+<div id='my_toc'><a href="/blog/f279d8a6/#html超链接-a-转markdown" class="header_2">html超链接 a 转markdown</a><br><a href="/blog/f279d8a6/#html图片-img-转markdown" class="header_2">html图片 img 转markdown</a><br><a href="/blog/f279d8a6/#代码段-code-转markdown" class="header_2">代码段 code 转markdown</a><br><a href="/blog/f279d8a6/#逆转义" class="header_3">逆转义</a><br><a href="/blog/f279d8a6/#html加粗-转-markdown" class="header_2">html加粗 转 markdown</a><br><a href="/blog/f279d8a6/#html-标题转markdown" class="header_2">html 标题转markdown</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 ## html超链接 a 转markdown ##
 超链接如下所示
 ```

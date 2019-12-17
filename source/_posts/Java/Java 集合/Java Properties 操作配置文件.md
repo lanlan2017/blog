@@ -4,30 +4,34 @@ categories:
   - Java
   - Java 集合
 date: 2018-11-26 18:53:21
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:59
 abbrlink: fdae6905
 ---
-<div id='my_toc'>
-
-- [基本使用步骤](/blog/fdae6905/#基本使用步骤)
-    - [创建xxx.properties文件](/blog/fdae6905/#创建xxx-properties文件)
-- [部署网站的地址](/blog/fdae6905/#部署网站的地址)
-    - [实例化properties类](/blog/fdae6905/#实例化properties类)
-    - [加载配置文件](/blog/fdae6905/#加载配置文件)
-    - [读取键值对](/blog/fdae6905/#读取键值对)
-    - [设置键值对](/blog/fdae6905/#设置键值对)
-    - [获取所有键](/blog/fdae6905/#获取所有键)
-    - [写入输出流的方法](/blog/fdae6905/#写入输出流的方法)
-    - [写配置文件](/blog/fdae6905/#写配置文件)
-- [实例](/blog/fdae6905/#实例)
-    - [读取一个配置](/blog/fdae6905/#读取一个配置)
-- [部署网站的地址](/blog/fdae6905/#部署网站的地址)
-    - [遍历配置文件](/blog/fdae6905/#遍历配置文件)
-- [参考链接](/blog/fdae6905/#参考链接)
-
-</div>
+<div id='my_toc'><a href="/blog/fdae6905/#基本使用步骤" class="header_2">基本使用步骤</a><br><a href="/blog/fdae6905/#创建xxx.properties文件" class="header_3">创建xxx.properties文件</a><br><a href="/blog/fdae6905/#实例化properties类" class="header_3">实例化properties类</a><br><a href="/blog/fdae6905/#加载配置文件" class="header_3">加载配置文件</a><br><a href="/blog/fdae6905/#读取键值对" class="header_3">读取键值对</a><br><a href="/blog/fdae6905/#设置键值对" class="header_3">设置键值对</a><br><a href="/blog/fdae6905/#获取所有键" class="header_3">获取所有键</a><br><a href="/blog/fdae6905/#写入输出流的方法" class="header_3">写入输出流的方法</a><br><a href="/blog/fdae6905/#写配置文件" class="header_3">写配置文件</a><br><a href="/blog/fdae6905/#实例" class="header_2">实例</a><br><a href="/blog/fdae6905/#读取一个配置" class="header_3">读取一个配置</a><br><a href="/blog/fdae6905/#遍历配置文件" class="header_3">遍历配置文件</a><br><a href="/blog/fdae6905/#SpecialWords.properties文件" class="header_4">SpecialWords.properties文件</a><br><a href="/blog/fdae6905/#PropertyTools.java文件" class="header_4">PropertyTools.java文件</a><br><a href="/blog/fdae6905/#参考链接" class="header_2">参考链接</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">

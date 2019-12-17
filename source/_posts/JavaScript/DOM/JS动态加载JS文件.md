@@ -4,9 +4,36 @@ categories:
   - JavaScript
   - DOM
 date: 2019-12-10 11:19:12
-updated: 2019-12-10 11:20:04
+updated: 2019-12-15 10:01:44
 abbrlink: 61c2129d
 ---
+<div id='my_toc'><a href="/blog/61c2129d/#直接document.write" class="header_1">直接document.write</a><br><a href="/blog/61c2129d/#动态改变已有script的src属性" class="header_1">动态改变已有script的src属性</a><br><a href="/blog/61c2129d/#动态创建script元素" class="header_1">动态创建script元素</a><br><a href="/blog/61c2129d/#使用jQuery" class="header_1">使用jQuery</a><br><a href="/blog/61c2129d/#参考资料" class="header_1">参考资料</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 # 直接document.write
 ```html
 <script language="javascript">

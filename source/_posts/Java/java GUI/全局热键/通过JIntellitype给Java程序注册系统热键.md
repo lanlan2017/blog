@@ -5,9 +5,36 @@ categories:
   - java GUI
   - 全局热键
 date: 2018-09-13 15:17:26
-updated: 2019-12-15 20:49:18
+updated: 2019-12-16 02:39:58
 abbrlink: 9d991fe9
 ---
+<div id='my_toc'></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 参考:[https://blog.csdn.net/iteye_11213/article/details/81886200](https://blog.csdn.net/iteye_11213/article/details/81886200)
 
 JIntellitype提供了简单的调用方法去注册系统热键。操作简单，示例明确，下载后阅读一下readme.txt文档，就可以使用了。

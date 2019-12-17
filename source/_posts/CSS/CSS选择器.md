@@ -3,9 +3,36 @@ title: CSS选择器
 categories: 
   - CSS
 date: 2018-12-12 23:44:41
-updated: 2019-12-09 19:55:22
+updated: 2019-12-15 10:01:43
 abbrlink: b6981f1b
 ---
+<div id='my_toc'><a href="/blog/b6981f1b/#基础" class="header_1">基础</a><br><a href="/blog/b6981f1b/#CSS选择器分类" class="header_2">CSS选择器分类</a><br><a href="/blog/b6981f1b/#CSS-元素选择器" class="header_2">CSS 元素选择器</a><br><a href="/blog/b6981f1b/#类型选择器" class="header_2">类型选择器</a><br><a href="/blog/b6981f1b/#参考链接" class="header_2">参考链接</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 # 基础 #
 > 简而言之，选择器是 CSS 规则的一部分且位于 CSS 声明块前。
 ## CSS选择器分类 ##

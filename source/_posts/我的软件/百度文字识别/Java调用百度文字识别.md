@@ -3,11 +3,37 @@ title: Java调用百度文字识别
 categories: 
   - 我的软件
   - 百度文字识别
-tags: []
 date: 2018-09-11 19:39:00
-updated: 2019-12-09 13:05:53
+updated: 2019-12-09 07:45:23
 abbrlink: 29121dfd
 ---
+<div id='my_toc'><a href="/blog/29121dfd/#优化" class="header_1">优化</a><br><a href="/blog/29121dfd/#加入GUI" class="header_2">加入GUI</a><br><a href="/blog/29121dfd/#加入全局热键" class="header_2">加入全局热键</a><br><a href="/blog/29121dfd/#ScreenShotOCR程序入口类" class="header_3">ScreenShotOCR程序入口类</a><br><a href="/blog/29121dfd/#菜单窗口" class="header_3">菜单窗口</a><br><a href="/blog/29121dfd/#ScreenShotWindow截图窗口" class="header_3">ScreenShotWindow截图窗口</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 # 优化 #
 ## 加入GUI ##
 加入编写GUI,加入Java截图功能，截图后自动保存，然后调用百度识图API,并将从处理结果中的JSON字符串中，取出识别的数据。

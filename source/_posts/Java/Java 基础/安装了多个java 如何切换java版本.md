@@ -4,16 +4,34 @@ categories:
   - Java
   - Java 基础
 date: 2019-10-06 10:42:44
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:47
 abbrlink: 957ae50e
 ---
-<div id='my_toc'>
-
-    - [查看是否切换成功](/blog/957ae50e/#查看是否切换成功)
-
-</div>
+<div id='my_toc'></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ------------------------------------------

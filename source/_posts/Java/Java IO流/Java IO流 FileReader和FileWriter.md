@@ -4,23 +4,34 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-10 14:57:46
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:02
 abbrlink: f1ceb471
 ---
-<div id='my_toc'>
-
-- [FileWriter类](/blog/f1ceb471/#FileWriter类)
-    - [继承关系](/blog/f1ceb471/#继承关系)
-    - [构造方法：](/blog/f1ceb471/#构造方法：)
-    - [读操作方法](/blog/f1ceb471/#读操作方法)
-    - [FileWriter类和OutputStreamWriter类的区别](/blog/f1ceb471/#FileWriter类和OutputStreamWriter类的区别)
-- [读写实例:复制文件](/blog/f1ceb471/#读写实例-复制文件)
-    - [使用FileReader和FileWriter复制文件](/blog/f1ceb471/#使用FileReader和FileWriter复制文件)
-    - [编码问题](/blog/f1ceb471/#编码问题)
-
-</div>
+<div id='my_toc'></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 ------------------------

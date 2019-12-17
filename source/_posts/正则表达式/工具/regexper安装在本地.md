@@ -4,9 +4,36 @@ categories:
   - 正则表达式
   - 工具
 date: 2018-11-29 21:11:17
-updated: 2019-12-09 19:45:24
+updated: 2019-12-15 10:01:44
 abbrlink: 54be6c80
 ---
+<div id='my_toc'><a href="/blog/54be6c80/#regexper本地安装" class="header_1">regexper本地安装</a><br><a href="/blog/54be6c80/#安装yarn" class="header_2">安装yarn</a><br><a href="/blog/54be6c80/#clone到本地" class="header_2">clone到本地</a><br><a href="/blog/54be6c80/#cd进入项目" class="header_2">cd进入项目</a><br><a href="/blog/54be6c80/#安装依赖" class="header_2">安装依赖</a><br><a href="/blog/54be6c80/#启动本地服务器" class="header_2">启动本地服务器</a><br><a href="/blog/54be6c80/#浏览器打开" class="header_2">浏览器打开</a><br><a href="/blog/54be6c80/#bat脚本快速启动" class="header_2">bat脚本快速启动</a><br><a href="/blog/54be6c80/#8080端口被占用了" class="header_2">8080端口被占用了</a><br><a href="/blog/54be6c80/#问题描述" class="header_3">问题描述</a><br><a href="/blog/54be6c80/#原因" class="header_3">原因</a><br><a href="/blog/54be6c80/#解决方案" class="header_3">解决方案</a><br><a href="/blog/54be6c80/#单词读音" class="header_2">单词读音</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 # regexper本地安装 #
 regexper在github上地址为：[https://github.com/javallone/regexper-static](https://github.com/javallone/regexper-static)
 ## 安装yarn ##

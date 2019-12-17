@@ -4,9 +4,36 @@ categories:
   - JavaScript
   - Date
 date: 2018-11-24 14:03:53
-updated: 2019-12-09 19:45:22
+updated: 2019-12-15 10:01:44
 abbrlink: b57484e
 ---
+<div id='my_toc'><a href="/blog/b57484e/#算法描述" class="header_2">算法描述</a><br><a href="/blog/b57484e/#方法" class="header_2">方法</a><br><a href="/blog/b57484e/#js求两个日期之间相隔天数的方法-字符串参数" class="header_3">js求两个日期之间相隔天数的方法 字符串参数</a><br><a href="/blog/b57484e/#js获取当日的格式化时间" class="header_3">js获取当日的格式化时间</a><br><a href="/blog/b57484e/#实例" class="header_2">实例</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">
 <script>
     function open_closeTOC() {var id = document.querySelector(".post-body > ul"); if (id.style.display == "block") {id.style.display = "none";document.getElementById("showcloseButton").value= "展开目录";}else if (id.style.display == "none") {id.style.display = "block";document.getElementById("showcloseButton").value="折叠目录";}}(function () {document.querySelector(".post-body > ul").style.display = "none";document.getElementById("showcloseButton").value="展开目录";})();

@@ -6,18 +6,34 @@ categories:
   - IDE
   - Idea
 date: 2019-08-08 14:41:36
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:42
 abbrlink: 385c30d
 ---
-<div id='my_toc'>
-
-- [idea快捷键](/blog/385c30d/#idea快捷键)
-    - [idea向上/向下插入空行](/blog/385c30d/#idea向上-向下插入空行)
-- [idea中使用eclipse快捷键](/blog/385c30d/#idea中使用eclipse快捷键)
-
-</div>
+<div id='my_toc'><a href="/blog/385c30d/#idea快捷键" class="header_1">idea快捷键</a><br><a href="/blog/385c30d/#idea向上/向下插入空行" class="header_2">idea向上/向下插入空行</a><br><a href="/blog/385c30d/#idea中使用eclipse快捷键" class="header_1">idea中使用eclipse快捷键</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # idea快捷键 #

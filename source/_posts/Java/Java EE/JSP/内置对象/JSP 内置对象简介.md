@@ -6,24 +6,34 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-08 21:46:24
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:39:27
 abbrlink: 4cc31c44
 ---
-<div id='my_toc'>
-
-- [JSP内置对象概述](/blog/4cc31c44/#JSP内置对象概述)
-    - [JSP九大内置对象](/blog/4cc31c44/#JSP九大内置对象)
-- [Web程序的请求响应模式](/blog/4cc31c44/#Web程序的请求响应模式)
-- [表单的提交方式](/blog/4cc31c44/#表单的提交方式)
-    - [get](/blog/4cc31c44/#get)
-    - [post](/blog/4cc31c44/#post)
-    - [实例](/blog/4cc31c44/#实例)
-        - [测试get方法](/blog/4cc31c44/#测试get方法)
-        - [测试post方法](/blog/4cc31c44/#测试post方法)
-
-</div>
+<div id='my_toc'><a href="/blog/4cc31c44/#JSP内置对象概述" class="header_1">JSP内置对象概述</a><br><a href="/blog/4cc31c44/#JSP九大内置对象" class="header_2">JSP九大内置对象</a><br><a href="/blog/4cc31c44/#Web程序的请求响应模式" class="header_1">Web程序的请求响应模式</a><br><a href="/blog/4cc31c44/#表单的提交方式" class="header_1">表单的提交方式</a><br><a href="/blog/4cc31c44/#get" class="header_2">get</a><br><a href="/blog/4cc31c44/#post" class="header_2">post</a><br><a href="/blog/4cc31c44/#实例" class="header_2">实例</a><br><a href="/blog/4cc31c44/#测试get方法" class="header_3">测试get方法</a><br><a href="/blog/4cc31c44/#测试post方法" class="header_3">测试post方法</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # JSP内置对象概述 #

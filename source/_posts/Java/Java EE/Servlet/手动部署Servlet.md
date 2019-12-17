@@ -5,28 +5,34 @@ categories:
   - Java EE
   - Servlet
 date: 2019-04-19 14:31:25
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:39:28
 abbrlink: 4a8ee7ac
 ---
-<div id='my_toc'>
-
-- [手动部署Servlet](/blog/4a8ee7ac/#手动部署Servlet)
-    - [创建项目结构](/blog/4a8ee7ac/#创建项目结构)
-        - [java web应用部署路径](/blog/4a8ee7ac/#java-web应用部署路径)
-        - [创建项目目录](/blog/4a8ee7ac/#创建项目目录)
-        - [项目目录下创建WEB-INF目录](/blog/4a8ee7ac/#项目目录下创建WEB-INF目录)
-    - [编写Servlet](/blog/4a8ee7ac/#编写Servlet)
-    - [编译Servlet](/blog/4a8ee7ac/#编译Servlet)
-        - [配置编译环境](/blog/4a8ee7ac/#配置编译环境)
-        - [使用javac命令编译](/blog/4a8ee7ac/#使用javac命令编译)
-    - [部署Servlet](/blog/4a8ee7ac/#部署Servlet)
-        - [创建包目录](/blog/4a8ee7ac/#创建包目录)
-        - [粘贴字节码文件到包目录中](/blog/4a8ee7ac/#粘贴字节码文件到包目录中)
-    - [访问Servlet](/blog/4a8ee7ac/#访问Servlet)
-
-</div>
+<div id='my_toc'><a href="/blog/4a8ee7ac/#手动部署Servlet" class="header_1">手动部署Servlet</a><br><a href="/blog/4a8ee7ac/#创建项目结构" class="header_2">创建项目结构</a><br><a href="/blog/4a8ee7ac/#java-web应用部署路径" class="header_3">java web应用部署路径</a><br><a href="/blog/4a8ee7ac/#创建项目目录" class="header_3">创建项目目录</a><br><a href="/blog/4a8ee7ac/#项目目录下创建WEB-INF目录" class="header_3">项目目录下创建WEB-INF目录</a><br><a href="/blog/4a8ee7ac/#WEB-INF下创建lib目录" class="header_4">WEB-INF下创建lib目录</a><br><a href="/blog/4a8ee7ac/#WEB-INF下创建classes目录" class="header_4">WEB-INF下创建classes目录</a><br><a href="/blog/4a8ee7ac/#编写Servlet" class="header_2">编写Servlet</a><br><a href="/blog/4a8ee7ac/#编译Servlet" class="header_2">编译Servlet</a><br><a href="/blog/4a8ee7ac/#配置编译环境" class="header_3">配置编译环境</a><br><a href="/blog/4a8ee7ac/#使用javac命令编译" class="header_3">使用javac命令编译</a><br><a href="/blog/4a8ee7ac/#部署Servlet" class="header_2">部署Servlet</a><br><a href="/blog/4a8ee7ac/#创建包目录" class="header_3">创建包目录</a><br><a href="/blog/4a8ee7ac/#粘贴字节码文件到包目录中" class="header_3">粘贴字节码文件到包目录中</a><br><a href="/blog/4a8ee7ac/#访问Servlet" class="header_2">访问Servlet</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # 手动部署Servlet #

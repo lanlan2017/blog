@@ -5,17 +5,34 @@ categories:
   - Java 基础
   - Java 正则表达式
 date: 2018-08-06 18:24:40
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:43
 abbrlink: aa025735
 ---
-<div id='my_toc'>
-
-- [对IP地址进行排序](/blog/aa025735/#对IP地址进行排序)
-        - [小结](/blog/aa025735/#小结)
-
-</div>
+<div id='my_toc'></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 -------------------------------------------------------

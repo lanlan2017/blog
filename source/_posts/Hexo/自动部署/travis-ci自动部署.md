@@ -4,9 +4,36 @@ categories:
   - Hexo
   - 自动部署
 date: 2019-11-05 10:29:38
-updated: 2019-12-09 19:55:22
+updated: 2019-12-15 10:01:43
 abbrlink: 13f63c39
 ---
+<div id='my_toc'><a href="/blog/13f63c39/#获取Token" class="header_1">获取Token</a><br><a href="/blog/13f63c39/#配置Token" class="header_1">配置Token</a><br><a href="/blog/13f63c39/#hexo-d部署地址和.travis.yml书写的问题" class="header_1">hexo d部署地址和.travis.yml书写的问题</a><br><a href="/blog/13f63c39/#基于项目的Github-Pages的写法" class="header_2">基于项目的Github Pages的写法</a><br><a href="/blog/13f63c39/#站点配置文件中仓库地址的写法" class="header_3">站点配置文件中仓库地址的写法</a><br><a href="/blog/13f63c39/#正确的.travis.yml" class="header_3">正确的.travis.yml</a><br><a href="/blog/13f63c39/#推送到master分支" class="header_3">推送到master分支</a><br><a href="/blog/13f63c39/#基于xxxx.github.io仓库的配置" class="header_2">基于xxxx.github.io仓库的配置</a><br><a href="/blog/13f63c39/#站点配置文件中仓库地址的写法" class="header_3">站点配置文件中仓库地址的写法</a><br><a href="/blog/13f63c39/#正确的.travis.yml" class="header_3">正确的.travis.yml</a><br><a href="/blog/13f63c39/#推送到src分支" class="header_3">推送到src分支</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 # 获取Token
 登陆Github,然后获取token,网上教程一堆。省略
 # 配置Token

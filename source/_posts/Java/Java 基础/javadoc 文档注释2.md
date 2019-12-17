@@ -4,31 +4,34 @@ categories:
   - Java
   - Java 基础
 date: 2019-02-10 18:15:08
-updated: 2019-12-15 22:01:44
+updated: 2019-12-16 02:40:47
 abbrlink: a9f85f8d
 ---
-<div id='my_toc'>
-
-- [文档注释的格式化](/blog/a9f85f8d/#文档注释的格式化)
-- [文档注释的三部分](/blog/a9f85f8d/#文档注释的三部分)
-    - [第一部分 简述](/blog/a9f85f8d/#第一部分-简述)
-    - [第二部分 详细说明](/blog/a9f85f8d/#第二部分-详细说明)
-    - [第三部分 特殊说明](/blog/a9f85f8d/#第三部分-特殊说明)
-- [javadoc  标记](/blog/a9f85f8d/#javadoc-标记)
-    - [@see  的使用](/blog/a9f85f8d/#-see-的使用)
-    - [@see 方法名或者属性名](/blog/a9f85f8d/#-see-方法名或者属性名)
-    - [@see 类名](/blog/a9f85f8d/#-see-类名)
-    - [使用 @author、@version  说明类](/blog/a9f85f8d/#使用-author、-version-说明类)
-    - [使用 @param 、@return  和 @exception  说明方法](/blog/a9f85f8d/#使用-param-、-return-和-exception-说明方法)
-- [javadoc  命令](/blog/a9f85f8d/#javadoc-命令)
-    - [-public 、-protected 、-package、-private  四个选项](/blog/a9f85f8d/#-public-、-protected-、-package、-private-四个选项)
-    - [-d  选项](/blog/a9f85f8d/#-d-选项)
-    - [-splitindex](/blog/a9f85f8d/#-splitindex)
-    - [-windowtitle](/blog/a9f85f8d/#-windowtitle)
-
-</div>
+<div id='my_toc'><a href="/blog/a9f85f8d/#文档注释的格式化" class="header_2">文档注释的格式化</a><br><a href="/blog/a9f85f8d/#文档注释的三部分" class="header_2">文档注释的三部分</a><br><a href="/blog/a9f85f8d/#第一部分-简述" class="header_3">第一部分 简述</a><br><a href="/blog/a9f85f8d/#第二部分-详细说明" class="header_3">第二部分 详细说明</a><br><a href="/blog/a9f85f8d/#第三部分-特殊说明" class="header_3">第三部分 特殊说明</a><br><a href="/blog/a9f85f8d/#javadoc-标记" class="header_2">javadoc  标记</a><br><a href="/blog/a9f85f8d/#@see-的使用" class="header_3">@see  的使用</a><br><a href="/blog/a9f85f8d/#@see-类名" class="header_4">@see 类名</a><br><a href="/blog/a9f85f8d/#@see-方法名或者属性名" class="header_3">@see 方法名或者属性名</a><br><a href="/blog/a9f85f8d/#@see-类名#方法名或属性名" class="header_3">@see 类名#方法名或属性名</a><br><a href="/blog/a9f85f8d/#使用-@author、@version-说明类" class="header_3">使用 @author、@version  说明类</a><br><a href="/blog/a9f85f8d/#使用-@param-、@return-和-@exception-说明方法" class="header_3">使用 @param 、@return  和 @exception  说明方法</a><br><a href="/blog/a9f85f8d/#javadoc-命令" class="header_2">javadoc  命令</a><br><a href="/blog/a9f85f8d/#-public-、-protected-、-package、-private-四个选项" class="header_3">-public 、-protected 、-package、-private  四个选项</a><br><a href="/blog/a9f85f8d/#-d-选项" class="header_3">-d  选项</a><br><a href="/blog/a9f85f8d/#-splitindex" class="header_3">-splitindex</a><br><a href="/blog/a9f85f8d/#-windowtitle" class="header_3">-windowtitle</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 文档注释可以用于对`类`、 `属性`、`方法`等进行说明。 写文档注释时除了需要使用 `/** .... */ ` 限定之外，还需要注意注释内部的一些细节问题。

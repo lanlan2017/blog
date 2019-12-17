@@ -4,9 +4,36 @@ categories:
   - Hexo
   - 插件
 date: 2019-12-05 12:13:26
-updated: 2019-12-09 20:34:40
+updated: 2019-12-15 10:01:43
 abbrlink: fbe3df38
 ---
+<div id='my_toc'><a href="/blog/fbe3df38/#hexo-admin插件" class="header_1">hexo-admin插件</a><br><a href="/blog/fbe3df38/#安装插件" class="header_2">安装插件</a><br><a href="/blog/fbe3df38/#浏览器中编辑" class="header_2">浏览器中编辑</a><br><a href="/blog/fbe3df38/#设置密码" class="header_2">设置密码</a><br><a href="/blog/fbe3df38/#hexo-admin优缺点" class="header_2">hexo-admin优缺点</a><br><a href="/blog/fbe3df38/#缺点" class="header_3">缺点</a><br><a href="/blog/fbe3df38/#优点" class="header_3">优点</a><br><a href="/blog/fbe3df38/#hexo-myadmin插件" class="header_1">hexo-myadmin插件</a><br><a href="/blog/fbe3df38/#安装插件" class="header_2">安装插件</a><br><a href="/blog/fbe3df38/#浏览器中编辑" class="header_2">浏览器中编辑</a><br><a href="/blog/fbe3df38/#设置密码" class="header_2">设置密码</a><br><a href="/blog/fbe3df38/#hexo-myadmin优缺点" class="header_2">hexo-myadmin优缺点</a><br><a href="/blog/fbe3df38/#优点" class="header_3">优点</a><br><a href="/blog/fbe3df38/#缺点" class="header_3">缺点</a><br><a href="/blog/fbe3df38/#hexo-local-admin" class="header_1">hexo-local-admin</a><br><a href="/blog/fbe3df38/#安装" class="header_2">安装</a><br><a href="/blog/fbe3df38/#帮助文档" class="header_2">帮助文档</a><br><a href="/blog/fbe3df38/#设置站点路径" class="header_3">设置站点路径</a><br><a href="/blog/fbe3df38/#设置主题名称" class="header_3">设置主题名称</a><br><a href="/blog/fbe3df38/#hexo-local-admin配置文件路径" class="header_3">hexo-local-admin配置文件路径</a><br><a href="/blog/fbe3df38/#启动本地服务器" class="header_3">启动本地服务器</a><br><a href="/blog/fbe3df38/#优点" class="header_3">优点</a><br><a href="/blog/fbe3df38/#hexo-hey插件" class="header_1">hexo-hey插件</a><br><a href="/blog/fbe3df38/#安装" class="header_2">安装</a><br><a href="/blog/fbe3df38/#设置密码" class="header_2">设置密码</a><br><a href="/blog/fbe3df38/#缺点" class="header_2">缺点</a><br><a href="/blog/fbe3df38/#卸载" class="header_2">卸载</a><br><a href="/blog/fbe3df38/#手机端的浏览器中编辑" class="header_1">手机端的浏览器中编辑</a><br><a href="/blog/fbe3df38/#总结" class="header_1">总结</a><br><a href="/blog/fbe3df38/#参考资料" class="header_1">参考资料</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 # hexo-admin插件
 [hexo-admin](https://github.com/jaredly/hexo-admin)插件可以在浏览器中,编辑博客中的内容.类似CSDN的在线编辑器。
 ## 安装插件

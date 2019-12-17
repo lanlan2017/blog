@@ -3,9 +3,36 @@ title: PigGo GitHub图床
 categories: 
   - Hexo
 date: 2019-11-22 12:59:46
-updated: 2019-12-09 19:55:22
+updated: 2019-12-15 10:01:43
 abbrlink: b19c6a80
 ---
+<div id='my_toc'><a href="/blog/b19c6a80/#生成token" class="header_1">生成token</a><br><a href="/blog/b19c6a80/#下载安装PigGo" class="header_1">下载安装PigGo</a><br><a href="/blog/b19c6a80/#配置PigGo" class="header_1">配置PigGo</a><br><a href="/blog/b19c6a80/#Github图床配置" class="header_2">Github图床配置</a><br><a href="/blog/b19c6a80/#githubPlus插件配置" class="header_2">githubPlus插件配置</a><br><a href="/blog/b19c6a80/#同步更新删除Github" class="header_3">同步更新删除Github</a><br><a href="/blog/b19c6a80/#配置githubPlus" class="header_3">配置githubPlus</a><br><a href="/blog/b19c6a80/#PigGo其他配置" class="header_2">PigGo其他配置</a><br><a href="/blog/b19c6a80/#上传快捷方式" class="header_3">上传快捷方式</a><br><a href="/blog/b19c6a80/#参考连接" class="header_1">参考连接</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 # 生成token #
 省略...
 # 下载安装PigGo #

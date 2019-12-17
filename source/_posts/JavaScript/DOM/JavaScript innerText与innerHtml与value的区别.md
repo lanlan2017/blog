@@ -4,9 +4,36 @@ categories:
   - JavaScript
   - DOM
 date: 2019-02-13 00:12:44
-updated: 2019-12-09 19:45:22
+updated: 2019-12-15 10:01:44
 abbrlink: 37c4f730
 ---
+<div id='my_toc'><a href="/blog/37c4f730/#JavaScript-innerText与innerHtml与value的区别" class="header_2">JavaScript innerText与innerHtml与value的区别</a><br><a href="/blog/37c4f730/#实例" class="header_2">实例</a><br><a href="/blog/37c4f730/#参考链接" class="header_2">参考链接</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 ## JavaScript innerText与innerHtml与value的区别 ##
 - `innerHtml`是标签内的文本,`输入输出到该DOM内部纯HTML代码`，也就是说使用innerHTML,可以在标签里面添加html代码  也就是设置一个元素里面的HTML代码;
 - `innerText`是id为object的闭合标签内的文本,`输入输出的是转义文本(字符串)`。也就是说使用innerText可在控件中添加文本，或者读入文本。

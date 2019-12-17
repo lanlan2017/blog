@@ -6,16 +6,34 @@ categories:
   - IDE
   - eclipse
 date: 2019-05-13 10:50:02
-updated: 2019-12-15 22:01:43
+updated: 2019-12-16 02:40:41
 abbrlink: 943008b1
 ---
-<div id='my_toc'>
-
-- [eclipse如何快速导入包 快速移除导入的无用包](/blog/943008b1/#eclipse如何快速导入包-快速移除导入的无用包)
-
-</div>
+<div id='my_toc'><a href="/blog/943008b1/#eclipse如何快速导入包-快速移除导入的无用包" class="header_1">eclipse如何快速导入包 快速移除导入的无用包</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
 
 <!--end-->
 # eclipse如何快速导入包 快速移除导入的无用包 #

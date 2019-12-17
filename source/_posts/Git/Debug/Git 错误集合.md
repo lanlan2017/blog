@@ -4,9 +4,36 @@ categories:
   - Git
   - Debug
 date: 2019-04-30 23:53:43
-updated: 2019-12-09 19:55:22
+updated: 2019-12-15 10:01:43
 abbrlink: 7e675acc
 ---
+<div id='my_toc'><a href="/blog/7e675acc/#git-error-bad-signature" class="header_2">git error:bad signature</a><br><a href="/blog/7e675acc/#ERROR-You-must-verify-your-email-address." class="header_2">ERROR: You must verify your email address.</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 ## git error:bad signature ##
 **解决方案:**删除`index`文件再重新生成
 ```cmd

@@ -3,9 +3,36 @@ title: git rebase命令
 categories: 
   - Git
 date: 2019-12-09 12:15:47
-updated: 2019-12-09 20:27:33
+updated: 2019-12-15 10:01:43
 abbrlink: edcdf022
 ---
+<div id='my_toc'><a href="/blog/edcdf022/#git-rebase的作用" class="header_1">git rebase的作用</a><br><a href="/blog/edcdf022/#注意" class="header_1">注意</a><br><a href="/blog/edcdf022/#压缩多个commit为一个新的commit" class="header_1">压缩多个commit为一个新的commit</a><br><a href="/blog/edcdf022/#先查看commit历史" class="header_2">先查看commit历史</a><br><a href="/blog/edcdf022/#合并当前到远程之间的commit" class="header_2">合并当前到远程之间的commit</a><br><a href="/blog/edcdf022/#保留第一个pick-后面的pick改为squash" class="header_2">保留第一个pick 后面的pick改为squash</a><br><a href="/blog/edcdf022/#写上新的commit的描述" class="header_2">写上新的commit的描述</a><br><a href="/blog/edcdf022/#压缩效果" class="header_2">压缩效果</a><br><a href="/blog/edcdf022/#再次修改commit描述" class="header_2">再次修改commit描述</a><br><a href="/blog/edcdf022/#效果" class="header_3">效果</a><br><a href="/blog/edcdf022/#测试" class="header_1">测试</a><br><a href="/blog/edcdf022/#参考资料" class="header_1">参考资料</a><br></div>
+<style>
+    .header_1{
+        margin-left: 1em;
+    }
+    .header_2{
+        margin-left: 2em;
+    }
+    .header_3{
+        margin-left: 3em;
+    }
+    .header_4{
+        margin-left: 4em;
+    }
+    .header_5{
+        margin-left: 5em;
+    }
+    .header_6{
+        margin-left: 6em;
+    }
+</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
+</script>
+
+<!--end-->
 # git rebase的作用
 当你完成比较复杂的一个任务的时候,你可能提交了多次commit,经过一系列的commit后,你最终完成了任务,然后你想推送到远程仓库中.
 但是如果你此时直接push到远程仓库中,这样远程仓库中就有了好多冗余的commit,所以在push到远程仓库之前,应该将这些中间的commit合并成一个commit,然后再推送到远程仓库上,这样你的的commit记录就比较简洁清爽.
