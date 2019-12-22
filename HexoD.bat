@@ -13,7 +13,8 @@ for /r . %%i in (*.html) do (
 echo.
 echo ############################################################### 删除所有的html文件 结束
 echo 生成自定义目录
-java -jar "E:\dev2\idea_workspace\MyJavaTools\runable\FM.jar" toc %~dp0source\_posts\
+REM java -jar "E:\dev2\idea_workspace\MyJavaTools\runable\FM.jar" toc %~dp0source\_posts\
+call FM toc %~dp0source\_posts\
 echo 在站点目录:%~dp0 打开git-bash
 start git-bash --cd=%~dp0
 REM pause
