@@ -6,22 +6,13 @@ categories:
   - 语法
   - 构建程序相关命令
 date: 2019-02-01 21:57:48
-updated: 2019-11-29 21:19:58
+updated: 2019-12-23 10:02:32
 abbrlink: c4029a06
 ---
-<div id='my_toc'>
-
-- [命令格式](/blog/c4029a06/#命令格式)
-    - [无参数](/blog/c4029a06/#无参数)
-    - [参数 /d](/blog/c4029a06/#参数-d)
-    - [参数 /R](/blog/c4029a06/#参数-R)
-    - [参数 /L](/blog/c4029a06/#参数-L)
-    - [参数 /F](/blog/c4029a06/#参数-F)
-- [参考资料](/blog/c4029a06/#参考资料)
-
-</div>
+<div id='my_toc'><a href="/blog/c4029a06/#命令格式" class="header_2">命令格式</a><br><a href="/blog/c4029a06/#无参数" class="header_3">无参数</a><br><a href="/blog/c4029a06/#实例" class="header_4">实例</a><br><a href="/blog/c4029a06/#参数/d" class="header_3">参数 /d</a><br><a href="/blog/c4029a06/#实例" class="header_4">实例</a><br><a href="/blog/c4029a06/#参数/R" class="header_3">参数 /R</a><br><a href="/blog/c4029a06/#实例" class="header_4">实例</a><br><a href="/blog/c4029a06/#参数/L" class="header_3">参数 /L</a><br><a href="/blog/c4029a06/#参数/F" class="header_3">参数 /F</a><br><a href="/blog/c4029a06/#文件解析过程" class="header_4">文件解析过程</a><br><a href="/blog/c4029a06/#格式" class="header_4">格式</a><br><a href="/blog/c4029a06/#实例" class="header_4">实例</a><br><a href="/blog/c4029a06/#参考资料" class="header_2">参考资料</a><br></div>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 ## 命令格式 ##
@@ -222,5 +213,3 @@ lan                      WDAGUtilityAccount
 ## 参考资料 ##
 [http://www.hechaku.com/arcitle/201810398.html](http://www.hechaku.com/arcitle/201810398.html)
 [http://www.hechaku.com/arcitle/201810344.html](http://www.hechaku.com/arcitle/201810344.html)
-
->原文链接: [批处理 for命令](https://lanlan2017.github.io/blog/c4029a06/)
