@@ -3,16 +3,17 @@ title: Git 恢复某一文件到指定版本
 categories: 
   - Git
 date: 2019-12-23 09:52:43
-updated: 2019-12-23 09:53:40
+updated: 2019-12-23 11:00:27
 abbrlink: 1d8980fe
 ---
-<div id='my_toc'><a href="/blog/1d8980fe/#问题描述" class="header_1">问题描述</a><br></div>
+<div id='my_toc'><a href="/blog/1d8980fe/#问题描述" class="header_1">问题描述</a><br><a href="/blog/1d8980fe/#查看某个文件的commit记录" class="header_2">查看某个文件的commit记录</a><br><a href="/blog/1d8980fe/#比较两个版本之间文件的不同" class="header_2">比较两个版本之间文件的不同</a><br><a href="/blog/1d8980fe/#取出指定版本的文件" class="header_2">取出指定版本的文件</a><br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
 # 问题描述
+今天我查看之前的写的文章的时候我发现`'批处理 for命令.md'`**这批文章中的大部分内容都丢失**了,应该是我写的文件处理程序出bug造成的,不过幸好有版本控制,只要将该文件恢复到`文件处理程序`操作之前的状态即可.
 ## 查看某个文件的commit记录
 格式:
 ```shell
@@ -44,7 +45,9 @@ git diff commit_id1 commit_id2 -- 文件名
 ```shell
 git diff 旧版本commit_id 新版本commit_id -- 文件名
 ```
-例如比较4a7e71d88e版本(新版本),对b8abfe5249(旧版本)做了哪些修改:
+因为我不知道什么时候文件内容丢失的,所以从最久远的版本开始,一级一级的向上比较,看看究竟是哪个版本出现的问题.
+
+先来比较4a7e71d88e版本(倒数第二久远版本),对b8abfe5249(最久远版本)做了哪些修改:
 ```shell
 git diff b8abfe5249 4a7e71d88e -- '批处理 for命令.md'
 ```
@@ -105,13 +108,22 @@ index 11f5b2b..52811fc 100644
  命令成功完成。
 
 ```
-可以看到就是新的版本(4a7e71d88e)中,我的文章内容被删除掉了.所以我只要将该文件恢复到旧的版本b8abfe5249就可以恢复被错误删掉的文章内容.
-## 查看指定版本的文件
+可以看到就是倒数第二久远版本(4a7e71d88e)中,我的文章内容被删除掉了.所以我只要将该文件恢复到最久远版本(b8abfe5249)就可以恢复丢失的文章内容.
+## 取出指定版本的文件
 ```shell
 git checkout commitId 文件路径
 ```
-例如,现在要查看最初的版本的文件内容:
+现在取出最久远版本的文件'批处理 for命令.md':
 ```shell
 git checkout b8abfe5249 '批处理 for命令.md'
+```
+然后查看该文件内容:
+```
 cat '批处理 for命令.md'
 ```
+如果需要修改,那就修改,确认无误后再:
+```shell
+git add .
+git commit -m '恢复文件到xxxx版本'
+```
+添加到版本库中即可.
