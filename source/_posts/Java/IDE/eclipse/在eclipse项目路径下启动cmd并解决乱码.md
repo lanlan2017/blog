@@ -2,14 +2,13 @@
 title: 在eclipse项目路径下启动cmd并解决乱码
 categories: 
   - Java
-  - Java 基础
   - IDE
   - eclipse
 date: 2019-08-29 22:34:38
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: ced73660
 ---
-<div id='my_toc'><a href="/blog/ced73660/#在eclipse项目路径下启动cmd并解决乱码" class="header_1">在eclipse项目路径下启动cmd并解决乱码</a><br><a href="/blog/ced73660/#在eclipse中启动cmd" class="header_2">在eclipse中启动cmd</a><br><a href="/blog/ced73660/#选择cmd的编码为GBK" class="header_2">选择cmd的编码为GBK</a><br><a href="/blog/ced73660/#启动cmd.exe" class="header_2">启动cmd.exe</a><br><a href="/blog/ced73660/#操作过程" class="header_2">操作过程</a><br></div>
+<div id='my_toc'><a href="/blog/ced73660/#在eclipse项目路径下启动cmd并解决乱码" class="header_1">在eclipse项目路径下启动cmd并解决乱码</a><br><a href="/blog/ced73660/#在eclipse中启动cmd" class="header_2">在eclipse中启动cmd</a><br><a href="/blog/ced73660/#选择cmd的编码为GBK" class="header_2">选择cmd的编码为GBK</a><br><a href="/blog/ced73660/#启动cmd-exe" class="header_2">启动cmd.exe</a><br><a href="/blog/ced73660/#操作过程" class="header_2">操作过程</a><br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

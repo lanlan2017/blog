@@ -2,11 +2,10 @@
 title: VSCode 运行Java
 categories: 
   - Java
-  - Java 基础
   - IDE
   - VSCode
 date: 2019-07-06 22:11:24
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: c8a8df16
 ---
 <div id='my_toc'><a href="/blog/c8a8df16/#VSCode-运行Java" class="header_1">VSCode 运行Java</a><br><a href="/blog/c8a8df16/#安装插件" class="header_2">安装插件</a><br><a href="/blog/c8a8df16/#设置允许参数" class="header_2">设置允许参数</a><br><a href="/blog/c8a8df16/#开始调试" class="header_2">开始调试</a><br></div>

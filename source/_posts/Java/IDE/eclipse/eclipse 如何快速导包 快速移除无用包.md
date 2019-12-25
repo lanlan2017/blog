@@ -2,11 +2,10 @@
 title: eclipse 如何快速导包 快速移除无用包
 categories: 
   - Java
-  - Java 基础
   - IDE
   - eclipse
 date: 2019-05-13 10:50:02
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 943008b1
 ---
 <div id='my_toc'><a href="/blog/943008b1/#eclipse如何快速导入包-快速移除导入的无用包" class="header_1">eclipse如何快速导入包 快速移除导入的无用包</a><br></div>
