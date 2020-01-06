@@ -2,9 +2,9 @@
 title: 移除win10多余的微软拼音输入法
 categories: 
   - Windows
-  - 设置
+  - Win10设置
 date: 2018-10-21 22:23:49
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 3cc3e684
 ---
 <div id='my_toc'><a href="/blog/3cc3e684/#问题描述" class="header_2">问题描述</a><br><a href="/blog/3cc3e684/#步骤" class="header_2">步骤</a><br><a href="/blog/3cc3e684/#删除无效的情况" class="header_2">删除无效的情况</a><br><a href="/blog/3cc3e684/#解决方案" class="header_3">解决方案</a><br></div>

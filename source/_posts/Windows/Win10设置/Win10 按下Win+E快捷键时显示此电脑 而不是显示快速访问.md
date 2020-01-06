@@ -2,9 +2,9 @@
 title: Win10 按下Win+E快捷键时显示此电脑 而不是显示快速访问
 categories: 
   - Windows
-  - 设置
+  - Win10设置
 date: 2019-11-24 11:33:50
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 6f73218
 ---
 <div id='my_toc'><a href="/blog/6f73218/#问题描述" class="header_1">问题描述</a><br><a href="/blog/6f73218/#设置Windows资源管理器-启动时显示此电脑" class="header_1">设置Windows资源管理器 启动时显示此电脑</a><br></div>

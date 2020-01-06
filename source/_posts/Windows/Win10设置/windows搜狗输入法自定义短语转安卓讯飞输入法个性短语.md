@@ -2,9 +2,9 @@
 title: windows搜狗输入法自定义短语转安卓讯飞输入法个性短语
 categories: 
   - Windows
-  - 设置
+  - Win10设置
 date: 2019-12-06 11:57:15
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 8da2248a
 ---
 <div id='my_toc'><a href="/blog/8da2248a/#搜狗输入法个性短语格式" class="header_1">搜狗输入法个性短语格式</a><br><a href="/blog/8da2248a/#单行格式" class="header_2">单行格式</a><br><a href="/blog/8da2248a/#多行格式" class="header_2">多行格式</a><br><a href="/blog/8da2248a/#讯飞输入法个性短语格式" class="header_1">讯飞输入法个性短语格式</a><br><a href="/blog/8da2248a/#单行格式" class="header_2">单行格式</a><br><a href="/blog/8da2248a/#搜狗输入法Windows版本个性短语转讯飞输入法安卓版个性短语" class="header_1">搜狗输入法Windows版本个性短语转讯飞输入法安卓版个性短语</a><br><a href="/blog/8da2248a/#单行短语转换" class="header_2">单行短语转换</a><br><a href="/blog/8da2248a/#匹配正则" class="header_3">匹配正则</a><br><a href="/blog/8da2248a/#替换正则" class="header_3">替换正则</a><br><a href="/blog/8da2248a/#讯飞输入法安卓版转搜狗输入法Windows版" class="header_1">讯飞输入法安卓版转搜狗输入法Windows版</a><br><a href="/blog/8da2248a/#单行短语转换" class="header_2">单行短语转换</a><br><a href="/blog/8da2248a/#匹配正则" class="header_3">匹配正则</a><br><a href="/blog/8da2248a/#替换正则" class="header_3">替换正则</a><br></div>

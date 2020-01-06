@@ -5,7 +5,7 @@ categories:
   - CMD 批处理
   - 应用
 date: 2019-08-05 00:29:34
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 5c6bafc2
 ---
 <div id='my_toc'><a href="/blog/5c6bafc2/#使用VSCode快速打开一个给定的文件" class="header_1">使用VSCode快速打开一个给定的文件</a><br></div>

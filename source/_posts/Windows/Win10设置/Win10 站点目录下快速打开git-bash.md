@@ -2,8 +2,9 @@
 title: Win10 站点目录下快速打开git-bash
 categories: 
   - Windows
+  - Win10设置
 date: 2018-12-08 00:28:36
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 15df3886
 ---
 <div id='my_toc'><a href="/blog/15df3886/#问题描述" class="header_2">问题描述</a><br><a href="/blog/15df3886/#站点目录下快速打开cmd" class="header_2">站点目录下快速打开cmd</a><br><a href="/blog/15df3886/#站点目录下快速打开git-bash" class="header_2">站点目录下快速打开git-bash</a><br></div>

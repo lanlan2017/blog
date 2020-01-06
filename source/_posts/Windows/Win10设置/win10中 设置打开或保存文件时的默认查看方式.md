@@ -2,8 +2,9 @@
 title: win10中 设置打开或保存文件时的默认查看方式
 categories: 
   - Windows
+  - Win10设置
 date: 2019-08-28 12:20:01
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: fda3d857
 ---
 <div id='my_toc'><a href="/blog/fda3d857/#win10中设置打开或保存文件时的默认查看方式" class="header_1">win10中设置打开或保存文件时的默认查看方式</a><br><a href="/blog/fda3d857/#分析" class="header_1">分析</a><br><a href="/blog/fda3d857/#Win10-设置资源管理器中的默认查看方式" class="header_1">Win10 设置资源管理器中的默认查看方式</a><br></div>

@@ -2,9 +2,9 @@
 title: Win10 设置开机启动项
 categories: 
   - Windows
-  - 设置
+  - Win10设置
 date: 2019-11-29 21:21:31
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 3c180144
 ---
 <div id='my_toc'><a href="/blog/3c180144/#查看当前用户的home目录" class="header_1">查看当前用户的home目录</a><br><a href="/blog/3c180144/#用户开机启动文件夹路径" class="header_1">用户开机启动文件夹路径</a><br><a href="/blog/3c180144/#在用户的开机启动文件夹放置程序" class="header_1">在用户的开机启动文件夹放置程序</a><br><a href="/blog/3c180144/#参考资料" class="header_1">参考资料</a><br></div>
