@@ -3,8 +3,9 @@ title: 安装了多个java 如何切换java版本
 categories: 
   - Java
   - Java 基础
+  - 版本
 date: 2019-10-06 10:42:44
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 957ae50e
 ---
 <div id='my_toc'></div>
