@@ -4,11 +4,11 @@ categories:
   - Java
   - Java 基础
 date: 2019-01-14 20:49:01
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 4badee62
 mathjax: true
 ---
-<div id='my_toc'><a href="/blog/4badee62/#基本数据类型" class="header_2">基本数据类型</a><br><a href="/blog/4badee62/#整型" class="header_2">整型</a><br><a href="/blog/4badee62/#整型的数值范围" class="header_3">整型的数值范围</a><br><a href="/blog/4badee62/#直接给出的整数值默认为int类型" class="header_3">直接给出的整数值默认为int类型</a><br><a href="/blog/4badee62/#数值的表示方式" class="header_3">数值的表示方式</a><br><a href="/blog/4badee62/#自动类型转换" class="header_2">自动类型转换</a><br></div>
+<div id='my_toc'><a href="/blog/4badee62/#基本数据类型" class="header_2">基本数据类型</a>&nbsp;<br><a href="/blog/4badee62/#整型" class="header_2">整型</a>&nbsp;<br><a href="/blog/4badee62/#整型的数值范围" class="header_3">整型的数值范围</a>&nbsp;<br><a href="/blog/4badee62/#直接给出的整数值默认为int类型" class="header_3">直接给出的整数值默认为int类型</a>&nbsp;<br><a href="/blog/4badee62/#数值的表示方式" class="header_3">数值的表示方式</a>&nbsp;<br><a href="/blog/4badee62/#自动类型转换" class="header_2">自动类型转换</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

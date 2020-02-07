@@ -5,10 +5,10 @@ categories:
   - VirtualBox
   - Ubuntu
 date: 2019-11-25 15:38:46
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: '65863024'
 ---
-<div id='my_toc'><a href="/blog/65863024/#Ubuntu-安装Vscode" class="header_1">Ubuntu 安装Vscode</a><br><a href="/blog/65863024/#下载.deb文件" class="header_2">下载.deb文件</a><br><a href="/blog/65863024/#点击.deb文件安装" class="header_2">点击.deb文件安装</a><br><a href="/blog/65863024/#命令安装" class="header_2">命令安装</a><br><a href="/blog/65863024/#安装成功效果" class="header_2">安装成功效果</a><br><a href="/blog/65863024/#vscode配置" class="header_2">vscode配置</a><br><a href="/blog/65863024/#安装中问语言包" class="header_3">安装中问语言包</a><br><a href="/blog/65863024/#在桌面创建VScode快捷方式" class="header_3">在桌面创建VScode快捷方式</a><br><a href="/blog/65863024/#手动创建" class="header_4">手动创建</a><br><a href="/blog/65863024/#命令创建" class="header_4">命令创建</a><br></div>
+<div id='my_toc'><a href="/blog/65863024/#Ubuntu-安装Vscode" class="header_1">Ubuntu 安装Vscode</a>&nbsp;<br><a href="/blog/65863024/#下载-deb文件" class="header_2">下载.deb文件</a>&nbsp;<br><a href="/blog/65863024/#点击-deb文件安装" class="header_2">点击.deb文件安装</a>&nbsp;<br><a href="/blog/65863024/#命令安装" class="header_2">命令安装</a>&nbsp;<br><a href="/blog/65863024/#安装成功效果" class="header_2">安装成功效果</a>&nbsp;<br><a href="/blog/65863024/#vscode配置" class="header_2">vscode配置</a>&nbsp;<br><a href="/blog/65863024/#安装中问语言包" class="header_3">安装中问语言包</a>&nbsp;<br><a href="/blog/65863024/#在桌面创建VScode快捷方式" class="header_3">在桌面创建VScode快捷方式</a>&nbsp;<br><a href="/blog/65863024/#手动创建" class="header_4">手动创建</a>&nbsp;<br><a href="/blog/65863024/#命令创建" class="header_4">命令创建</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

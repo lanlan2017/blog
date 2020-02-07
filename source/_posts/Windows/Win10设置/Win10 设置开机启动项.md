@@ -4,10 +4,10 @@ categories:
   - Windows
   - Win10设置
 date: 2019-11-29 21:21:31
-updated: 2019-12-17 05:18:52
+updated: 2020-01-06 12:39:10
 abbrlink: 3c180144
 ---
-<div id='my_toc'><a href="/blog/3c180144/#查看当前用户的home目录" class="header_1">查看当前用户的home目录</a><br><a href="/blog/3c180144/#用户开机启动文件夹路径" class="header_1">用户开机启动文件夹路径</a><br><a href="/blog/3c180144/#在用户的开机启动文件夹放置程序" class="header_1">在用户的开机启动文件夹放置程序</a><br><a href="/blog/3c180144/#参考资料" class="header_1">参考资料</a><br></div>
+<div id='my_toc'><a href="/blog/3c180144/#查看当前用户的home目录" class="header_1">查看当前用户的home目录</a>&nbsp;<br><a href="/blog/3c180144/#用户开机启动文件夹路径" class="header_1">用户开机启动文件夹路径</a>&nbsp;<br><a href="/blog/3c180144/#在用户的开机启动文件夹放置程序" class="header_1">在用户的开机启动文件夹放置程序</a>&nbsp;<br><a href="/blog/3c180144/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

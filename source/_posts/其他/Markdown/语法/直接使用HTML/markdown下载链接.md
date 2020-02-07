@@ -6,10 +6,10 @@ categories:
   - 语法
   - 直接使用HTML
 date: 2019-12-06 10:33:33
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:53
 abbrlink: 695eb842
 ---
-<div id='my_toc'><a href="/blog/695eb842/#HTML下载链接格式" class="header_1">HTML下载链接格式</a><br><a href="/blog/695eb842/#下载其他站点的资源" class="header_1">下载其他站点的资源</a><br><a href="/blog/695eb842/#在当前站点中没有download属性的情况" class="header_1">在当前站点中没有download属性的情况</a><br><a href="/blog/695eb842/#参考资料" class="header_1">参考资料</a><br></div>
+<div id='my_toc'><a href="/blog/695eb842/#HTML下载链接格式" class="header_1">HTML下载链接格式</a>&nbsp;<br><a href="/blog/695eb842/#下载其他站点的资源" class="header_1">下载其他站点的资源</a>&nbsp;<br><a href="/blog/695eb842/#在当前站点中没有download属性的情况" class="header_1">在当前站点中没有download属性的情况</a>&nbsp;<br><a href="/blog/695eb842/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

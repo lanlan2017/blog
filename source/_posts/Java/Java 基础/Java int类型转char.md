@@ -4,10 +4,10 @@ categories:
   - Java
   - Java 基础
 date: 2019-08-23 13:18:52
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 569c8e52
 ---
-<div id='my_toc'><a href="/blog/569c8e52/#前言" class="header_1">前言</a><br><a href="/blog/569c8e52/#原因" class="header_1">原因</a><br><a href="/blog/569c8e52/#数字0到9转为'0'到'9'字符的正确做法" class="header_1">数字0到9转为'0'到'9'字符的正确做法</a><br><a href="/blog/569c8e52/#先计算出正确的ASCII码在转为字符" class="header_2">先计算出正确的ASCII码在转为字符</a><br><a href="/blog/569c8e52/#使用自动类型转换进行计算" class="header_3">使用自动类型转换进行计算</a><br><a href="/blog/569c8e52/#直接计算" class="header_3">直接计算</a><br><a href="/blog/569c8e52/#Character.forDigit-数字,进制-方法进行转换" class="header_2">Character.forDigit(数字,进制)方法进行转换</a><br></div>
+<div id='my_toc'><a href="/blog/569c8e52/#前言" class="header_1">前言</a>&nbsp;<br><a href="/blog/569c8e52/#原因" class="header_1">原因</a>&nbsp;<br><a href="/blog/569c8e52/#数字0到9转为'0'到'9'字符的正确做法" class="header_1">数字0到9转为'0'到'9'字符的正确做法</a>&nbsp;<br><a href="/blog/569c8e52/#先计算出正确的ASCII码在转为字符" class="header_2">先计算出正确的ASCII码在转为字符</a>&nbsp;<br><a href="/blog/569c8e52/#使用自动类型转换进行计算" class="header_3">使用自动类型转换进行计算</a>&nbsp;<br><a href="/blog/569c8e52/#直接计算" class="header_3">直接计算</a>&nbsp;<br><a href="/blog/569c8e52/#Character-forDigit-数字-进制-方法进行转换" class="header_2">Character.forDigit(数字,进制)方法进行转换</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

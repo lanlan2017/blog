@@ -5,10 +5,10 @@ categories:
   - 讯飞语音
   - 讯飞语音合成
 date: 2019-03-07 15:03:05
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:53
 abbrlink: e47ffad6
 ---
-<div id='my_toc'><a href="/blog/e47ffad6/#注册讯飞账号" class="header_2">注册讯飞账号</a><br><a href="/blog/e47ffad6/#实名认证" class="header_2">实名认证</a><br><a href="/blog/e47ffad6/#创建应用" class="header_2">创建应用</a><br><a href="/blog/e47ffad6/#添加语音合成服务" class="header_2">添加语音合成服务</a><br><a href="/blog/e47ffad6/#下载SDK" class="header_2">下载SDK</a><br><a href="/blog/e47ffad6/#解压下载到的SDK压缩包" class="header_2">解压下载到的SDK压缩包</a><br><a href="/blog/e47ffad6/#应用到Java项目" class="header_2">应用到Java项目</a><br><a href="/blog/e47ffad6/#创建测试类" class="header_2">创建测试类</a><br><a href="/blog/e47ffad6/#1-设置合成监听器" class="header_3">1 设置合成监听器</a><br><a href="/blog/e47ffad6/#编写main方法" class="header_3">编写main方法</a><br><a href="/blog/e47ffad6/#完整下载Java-demo如下" class="header_2">完整下载Java demo如下</a><br><a href="/blog/e47ffad6/#用audition-cs6-打开" class="header_2">用audition cs6 打开</a><br></div>
+<div id='my_toc'><a href="/blog/e47ffad6/#注册讯飞账号" class="header_2">注册讯飞账号</a>&nbsp;<br><a href="/blog/e47ffad6/#实名认证" class="header_2">实名认证</a>&nbsp;<br><a href="/blog/e47ffad6/#创建应用" class="header_2">创建应用</a>&nbsp;<br><a href="/blog/e47ffad6/#添加语音合成服务" class="header_2">添加语音合成服务</a>&nbsp;<br><a href="/blog/e47ffad6/#下载SDK" class="header_2">下载SDK</a>&nbsp;<br><a href="/blog/e47ffad6/#解压下载到的SDK压缩包" class="header_2">解压下载到的SDK压缩包</a>&nbsp;<br><a href="/blog/e47ffad6/#应用到Java项目" class="header_2">应用到Java项目</a>&nbsp;<br><a href="/blog/e47ffad6/#创建测试类" class="header_2">创建测试类</a>&nbsp;<br><a href="/blog/e47ffad6/#1-设置合成监听器" class="header_3">1 设置合成监听器</a>&nbsp;<br><a href="/blog/e47ffad6/#编写main方法" class="header_3">编写main方法</a>&nbsp;<br><a href="/blog/e47ffad6/#完整下载Java-demo如下" class="header_2">完整下载Java demo如下</a>&nbsp;<br><a href="/blog/e47ffad6/#用audition-cs6-打开" class="header_2">用audition cs6 打开</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

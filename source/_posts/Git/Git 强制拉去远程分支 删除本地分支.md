@@ -3,10 +3,10 @@ title: Git 强制拉去远程分支 删除本地分支
 categories: 
   - Git
 date: 2019-12-03 19:17:52
-updated: 2019-12-17 05:17:08
+updated: 2019-12-17 05:18:52
 abbrlink: ecbd02e2
 ---
-<div id='my_toc'><a href="/blog/ecbd02e2/#问题描述" class="header_1">问题描述</a><br><a href="/blog/ecbd02e2/#解决方案" class="header_1">解决方案</a><br><a href="/blog/ecbd02e2/#方案1-删除本地仓库-重新克隆src分支" class="header_2">方案1 删除本地仓库 重新克隆src分支</a><br><a href="/blog/ecbd02e2/#方案2-下载src分支-然后删除本地master分支" class="header_2">方案2 下载src分支 然后删除本地master分支</a><br><a href="/blog/ecbd02e2/#删除远程master分支的记录" class="header_3">删除远程master分支的记录</a><br></div>
+<div id='my_toc'><a href="/blog/ecbd02e2/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/ecbd02e2/#解决方案" class="header_1">解决方案</a>&nbsp;<br><a href="/blog/ecbd02e2/#方案1-删除本地仓库-重新克隆src分支" class="header_2">方案1 删除本地仓库 重新克隆src分支</a>&nbsp;<br><a href="/blog/ecbd02e2/#方案2-下载src分支-然后删除本地master分支" class="header_2">方案2 下载src分支 然后删除本地master分支</a>&nbsp;<br><a href="/blog/ecbd02e2/#删除远程master分支的记录" class="header_3">删除远程master分支的记录</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

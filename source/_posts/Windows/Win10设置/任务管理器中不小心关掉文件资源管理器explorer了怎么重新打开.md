@@ -4,10 +4,10 @@ categories:
   - Windows
   - Win10设置
 date: 2018-11-13 15:03:20
-updated: 2019-12-17 05:18:52
+updated: 2020-01-06 12:39:10
 abbrlink: d400453f
 ---
-<div id='my_toc'><a href="/blog/d400453f/#我的问题" class="header_2">我的问题</a><br><a href="/blog/d400453f/#解决方案" class="header_2">解决方案</a><br></div>
+<div id='my_toc'><a href="/blog/d400453f/#我的问题" class="header_2">我的问题</a>&nbsp;<br><a href="/blog/d400453f/#解决方案" class="header_2">解决方案</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

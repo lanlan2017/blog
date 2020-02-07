@@ -4,10 +4,10 @@ categories:
   - Windows
   - 安卓模拟器
 date: 2019-12-03 21:30:26
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: c57ac4f
 ---
-<div id='my_toc'><a href="/blog/c57ac4f/#简介" class="header_1">简介</a><br><a href="/blog/c57ac4f/#Scrcpy" class="header_2">Scrcpy</a><br><a href="/blog/c57ac4f/#Scrcpy-GUI" class="header_2">Scrcpy GUI</a><br><a href="/blog/c57ac4f/#Scrcpy-GUI" class="header_2">Scrcpy GUI</a><br><a href="/blog/c57ac4f/#配置scrcpy" class="header_1">配置scrcpy</a><br><a href="/blog/c57ac4f/#下载-解压scrcpy" class="header_2">下载 解压scrcpy</a><br><a href="/blog/c57ac4f/#配置scrcpy到Path环境变量" class="header_2">配置scrcpy到Path环境变量</a><br><a href="/blog/c57ac4f/#下载Scrcpy-GUI" class="header_1">下载Scrcpy GUI</a><br><a href="/blog/c57ac4f/#使用" class="header_1">使用</a><br><a href="/blog/c57ac4f/#前提" class="header_2">前提</a><br><a href="/blog/c57ac4f/#参考资料" class="header_1">参考资料</a><br></div>
+<div id='my_toc'><a href="/blog/c57ac4f/#简介" class="header_1">简介</a>&nbsp;<br><a href="/blog/c57ac4f/#Scrcpy" class="header_2">Scrcpy</a>&nbsp;<br><a href="/blog/c57ac4f/#Scrcpy-GUI" class="header_2">Scrcpy GUI</a>&nbsp;<br><a href="/blog/c57ac4f/#Scrcpy-GUI" class="header_2">Scrcpy GUI</a>&nbsp;<br><a href="/blog/c57ac4f/#配置scrcpy" class="header_1">配置scrcpy</a>&nbsp;<br><a href="/blog/c57ac4f/#下载-解压scrcpy" class="header_2">下载 解压scrcpy</a>&nbsp;<br><a href="/blog/c57ac4f/#配置scrcpy到Path环境变量" class="header_2">配置scrcpy到Path环境变量</a>&nbsp;<br><a href="/blog/c57ac4f/#下载Scrcpy-GUI" class="header_1">下载Scrcpy GUI</a>&nbsp;<br><a href="/blog/c57ac4f/#使用" class="header_1">使用</a>&nbsp;<br><a href="/blog/c57ac4f/#前提" class="header_2">前提</a>&nbsp;<br><a href="/blog/c57ac4f/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

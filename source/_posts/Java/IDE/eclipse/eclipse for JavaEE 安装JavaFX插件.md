@@ -5,10 +5,10 @@ categories:
   - IDE
   - eclipse
 date: 2019-01-03 19:17:47
-updated: 2019-12-17 05:18:52
+updated: 2019-12-25 01:16:51
 abbrlink: '5285183'
 ---
-<div id='my_toc'><a href="/blog/5285183/#安装JavaFX插件e-fx-clipse" class="header_2">安装JavaFX插件e(fx)clipse</a><br><a href="/blog/5285183/#下载-scene-builder" class="header_2">下载 scene builder</a><br><a href="/blog/5285183/#安装" class="header_2">安装</a><br><a href="/blog/5285183/#eclipse中指定scene-builder路径" class="header_2">eclipse中指定scene builder路径</a><br><a href="/blog/5285183/#参考资料" class="header_2">参考资料</a><br></div>
+<div id='my_toc'><a href="/blog/5285183/#安装JavaFX插件e-fx-clipse" class="header_2">安装JavaFX插件e(fx)clipse</a>&nbsp;<br><a href="/blog/5285183/#下载-scene-builder" class="header_2">下载 scene builder</a>&nbsp;<br><a href="/blog/5285183/#安装" class="header_2">安装</a>&nbsp;<br><a href="/blog/5285183/#eclipse中指定scene-builder路径" class="header_2">eclipse中指定scene builder路径</a>&nbsp;<br><a href="/blog/5285183/#参考资料" class="header_2">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

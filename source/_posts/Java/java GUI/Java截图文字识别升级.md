@@ -4,10 +4,10 @@ categories:
   - Java
   - java GUI
 date: 2018-09-16 13:07:25
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 77feedee
 ---
-<div id='my_toc'><a href="/blog/77feedee/#需求" class="header_2">需求</a><br><a href="/blog/77feedee/#升级2" class="header_2">升级2</a><br></div>
+<div id='my_toc'><a href="/blog/77feedee/#需求" class="header_2">需求</a>&nbsp;<br><a href="/blog/77feedee/#升级2" class="header_2">升级2</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

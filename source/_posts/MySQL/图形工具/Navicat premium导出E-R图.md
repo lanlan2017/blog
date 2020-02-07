@@ -4,10 +4,10 @@ categories:
   - MySQL
   - 图形工具
 date: 2019-11-23 23:05:36
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 50cd694e
 ---
-<div id='my_toc'><a href="/blog/50cd694e/#大学数据库模式" class="header_1">大学数据库模式</a><br><a href="/blog/50cd694e/#逆向数据库到模型" class="header_1">逆向数据库到模型</a><br><a href="/blog/50cd694e/#切换E-R图-表示方式" class="header_1">切换E-R图 表示方式</a><br><a href="/blog/50cd694e/#UML格式的E-R图如下所示" class="header_2">UML格式的E-R图如下所示</a><br></div>
+<div id='my_toc'><a href="/blog/50cd694e/#大学数据库模式" class="header_1">大学数据库模式</a>&nbsp;<br><a href="/blog/50cd694e/#逆向数据库到模型" class="header_1">逆向数据库到模型</a>&nbsp;<br><a href="/blog/50cd694e/#切换E-R图-表示方式" class="header_1">切换E-R图 表示方式</a>&nbsp;<br><a href="/blog/50cd694e/#UML格式的E-R图如下所示" class="header_2">UML格式的E-R图如下所示</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

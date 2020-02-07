@@ -4,10 +4,10 @@ categories:
   - Windows
   - 软件设置
 date: 2019-12-18 01:08:09
-updated: 2019-12-18 01:08:27
+updated: 2019-12-18 01:09:36
 abbrlink: ed5250a2
 ---
-<div id='my_toc'><a href="/blog/ed5250a2/#安装" class="header_1">安装</a><br><a href="/blog/ed5250a2/#配置" class="header_1">配置</a><br><a href="/blog/ed5250a2/#打开配置文件" class="header_2">打开配置文件</a><br><a href="/blog/ed5250a2/#选择默认启动的终端" class="header_2">选择默认启动的终端</a><br><a href="/blog/ed5250a2/#配置快捷键" class="header_2">配置快捷键</a><br><a href="/blog/ed5250a2/#在鼠标右键打开" class="header_2">在鼠标右键打开</a><br><a href="/blog/ed5250a2/#下载Terminal图标" class="header_3">下载Terminal图标</a><br><a href="/blog/ed5250a2/#添加到鼠标右键" class="header_3">添加到鼠标右键</a><br><a href="/blog/ed5250a2/#批处理修改注册表" class="header_4">批处理修改注册表</a><br><a href="/blog/ed5250a2/#手动修改注册表" class="header_4">手动修改注册表</a><br><a href="/blog/ed5250a2/#在当前目录打开" class="header_3">在当前目录打开</a><br><a href="/blog/ed5250a2/#完整配置示例" class="header_2">完整配置示例</a><br><a href="/blog/ed5250a2/#效果" class="header_2">效果</a><br><a href="/blog/ed5250a2/#参考资料" class="header_1">参考资料</a><br></div>
+<div id='my_toc'><a href="/blog/ed5250a2/#安装" class="header_1">安装</a>&nbsp;<br><a href="/blog/ed5250a2/#配置" class="header_1">配置</a>&nbsp;<br><a href="/blog/ed5250a2/#打开配置文件" class="header_2">打开配置文件</a>&nbsp;<br><a href="/blog/ed5250a2/#选择默认启动的终端" class="header_2">选择默认启动的终端</a>&nbsp;<br><a href="/blog/ed5250a2/#配置快捷键" class="header_2">配置快捷键</a>&nbsp;<br><a href="/blog/ed5250a2/#在鼠标右键打开" class="header_2">在鼠标右键打开</a>&nbsp;<br><a href="/blog/ed5250a2/#下载Terminal图标" class="header_3">下载Terminal图标</a>&nbsp;<br><a href="/blog/ed5250a2/#添加到鼠标右键" class="header_3">添加到鼠标右键</a>&nbsp;<br><a href="/blog/ed5250a2/#批处理修改注册表" class="header_4">批处理修改注册表</a>&nbsp;<br><a href="/blog/ed5250a2/#手动修改注册表" class="header_4">手动修改注册表</a>&nbsp;<br><a href="/blog/ed5250a2/#在当前目录打开" class="header_3">在当前目录打开</a>&nbsp;<br><a href="/blog/ed5250a2/#完整配置示例" class="header_2">完整配置示例</a>&nbsp;<br><a href="/blog/ed5250a2/#效果" class="header_2">效果</a>&nbsp;<br><a href="/blog/ed5250a2/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

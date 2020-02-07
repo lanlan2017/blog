@@ -1,14 +1,20 @@
 ---
 title: cmd taskkill命令
-categories:
+categories: 
   - Windows
   - CMD 批处理
   - 语法
   - 系统相关命令
-abbrlink: 413c8d35
 date: 2019-12-22 10:50:21
-updated: 2019-12-22 10:50:21
+updated: 2019-12-22 11:00:28
+abbrlink: 413c8d35
 ---
+<div id='my_toc'><a href="/blog/413c8d35/#taskill命令帮助文档" class="header_1">taskill命令帮助文档</a>&nbsp;<br><a href="/blog/413c8d35/#根据进程名杀进程" class="header_2">根据进程名杀进程</a>&nbsp;<br><a href="/blog/413c8d35/#根据pid杀死进程" class="header_2">根据pid杀死进程</a>&nbsp;<br><a href="/blog/413c8d35/#查找pid" class="header_3">查找pid</a>&nbsp;<br><a href="/blog/413c8d35/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
 # taskill命令帮助文档
 ```cmd
 TASKKILL [/S system [/U username [/P [password]]]]

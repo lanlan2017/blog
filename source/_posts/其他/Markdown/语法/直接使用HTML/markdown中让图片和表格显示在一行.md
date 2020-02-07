@@ -6,10 +6,10 @@ categories:
   - 语法
   - 直接使用HTML
 date: 2018-10-29 18:26:12
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:53
 abbrlink: f0d2185d
 ---
-<div id='my_toc'><a href="/blog/f0d2185d/#问题描述" class="header_2">问题描述</a><br><a href="/blog/f0d2185d/#效果" class="header_2">效果</a><br></div>
+<div id='my_toc'><a href="/blog/f0d2185d/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/f0d2185d/#效果" class="header_2">效果</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

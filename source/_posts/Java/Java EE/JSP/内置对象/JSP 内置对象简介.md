@@ -6,10 +6,10 @@ categories:
   - JSP
   - 内置对象
 date: 2018-12-08 21:46:24
-updated: 2019-12-17 05:17:08
+updated: 2019-12-17 05:18:52
 abbrlink: 4cc31c44
 ---
-<div id='my_toc'><a href="/blog/4cc31c44/#JSP内置对象概述" class="header_1">JSP内置对象概述</a><br><a href="/blog/4cc31c44/#JSP九大内置对象" class="header_2">JSP九大内置对象</a><br><a href="/blog/4cc31c44/#Web程序的请求响应模式" class="header_1">Web程序的请求响应模式</a><br><a href="/blog/4cc31c44/#表单的提交方式" class="header_1">表单的提交方式</a><br><a href="/blog/4cc31c44/#get" class="header_2">get</a><br><a href="/blog/4cc31c44/#post" class="header_2">post</a><br><a href="/blog/4cc31c44/#实例" class="header_2">实例</a><br><a href="/blog/4cc31c44/#测试get方法" class="header_3">测试get方法</a><br><a href="/blog/4cc31c44/#测试post方法" class="header_3">测试post方法</a><br></div>
+<div id='my_toc'><a href="/blog/4cc31c44/#JSP内置对象概述" class="header_1">JSP内置对象概述</a>&nbsp;<br><a href="/blog/4cc31c44/#JSP九大内置对象" class="header_2">JSP九大内置对象</a>&nbsp;<br><a href="/blog/4cc31c44/#Web程序的请求响应模式" class="header_1">Web程序的请求响应模式</a>&nbsp;<br><a href="/blog/4cc31c44/#表单的提交方式" class="header_1">表单的提交方式</a>&nbsp;<br><a href="/blog/4cc31c44/#get" class="header_2">get</a>&nbsp;<br><a href="/blog/4cc31c44/#post" class="header_2">post</a>&nbsp;<br><a href="/blog/4cc31c44/#实例" class="header_2">实例</a>&nbsp;<br><a href="/blog/4cc31c44/#测试get方法" class="header_3">测试get方法</a>&nbsp;<br><a href="/blog/4cc31c44/#测试post方法" class="header_3">测试post方法</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

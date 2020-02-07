@@ -6,10 +6,10 @@ categories:
   - JSP
   - Java Web简介
 date: 2018-12-01 11:52:15
-updated: 2019-12-17 05:17:08
+updated: 2019-12-17 05:18:52
 abbrlink: ccc57c12
 ---
-<div id='my_toc'><a href="/blog/ccc57c12/#步骤" class="header_1">步骤</a><br><a href="/blog/ccc57c12/#创建项目目录结构" class="header_1">创建项目目录结构</a><br><a href="/blog/ccc57c12/#创建项目目录" class="header_2">创建项目目录</a><br><a href="/blog/ccc57c12/#创建index.jsp" class="header_2">创建index.jsp</a><br><a href="/blog/ccc57c12/#创建Web_INF文件夹" class="header_2">创建Web_INF文件夹</a><br><a href="/blog/ccc57c12/#创建web.xml文件" class="header_3">创建web.xml文件</a><br><a href="/blog/ccc57c12/#编写web.xml文件" class="header_3">编写web.xml文件</a><br><a href="/blog/ccc57c12/#创建classes目录" class="header_3">创建classes目录</a><br><a href="/blog/ccc57c12/#创建lib目录" class="header_3">创建lib目录</a><br><a href="/blog/ccc57c12/#启动tomcat服务器" class="header_2">启动tomcat服务器</a><br><a href="/blog/ccc57c12/#浏览器查看" class="header_2">浏览器查看</a><br><a href="/blog/ccc57c12/#参考链接" class="header_2">参考链接</a><br></div>
+<div id='my_toc'><a href="/blog/ccc57c12/#步骤" class="header_1">步骤</a>&nbsp;<br><a href="/blog/ccc57c12/#创建项目目录结构" class="header_1">创建项目目录结构</a>&nbsp;<br><a href="/blog/ccc57c12/#创建项目目录" class="header_2">创建项目目录</a>&nbsp;<br><a href="/blog/ccc57c12/#创建index-jsp" class="header_2">创建index.jsp</a>&nbsp;<br><a href="/blog/ccc57c12/#创建Web_INF文件夹" class="header_2">创建Web_INF文件夹</a>&nbsp;<br><a href="/blog/ccc57c12/#创建web-xml文件" class="header_3">创建web.xml文件</a>&nbsp;<br><a href="/blog/ccc57c12/#编写web-xml文件" class="header_3">编写web.xml文件</a>&nbsp;<br><a href="/blog/ccc57c12/#创建classes目录" class="header_3">创建classes目录</a>&nbsp;<br><a href="/blog/ccc57c12/#创建lib目录" class="header_3">创建lib目录</a>&nbsp;<br><a href="/blog/ccc57c12/#启动tomcat服务器" class="header_2">启动tomcat服务器</a>&nbsp;<br><a href="/blog/ccc57c12/#浏览器查看" class="header_2">浏览器查看</a>&nbsp;<br><a href="/blog/ccc57c12/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

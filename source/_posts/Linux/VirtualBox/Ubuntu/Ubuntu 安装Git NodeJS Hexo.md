@@ -5,10 +5,10 @@ categories:
   - VirtualBox
   - Ubuntu
 date: 2019-11-25 19:55:24
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 92f73acb
 ---
-<div id='my_toc'><a href="/blog/92f73acb/#Ubuntu-安装-git" class="header_1">Ubuntu 安装 git</a><br><a href="/blog/92f73acb/#Ubuntu-安装-nodejs" class="header_1">Ubuntu 安装 nodejs</a><br><a href="/blog/92f73acb/#安装指定的版本" class="header_2">安装指定的版本</a><br><a href="/blog/92f73acb/#配置Nodejs" class="header_2">配置Nodejs</a><br><a href="/blog/92f73acb/#使用淘宝镜像" class="header_3">使用淘宝镜像</a><br><a href="/blog/92f73acb/#产看配置是否成功" class="header_3">产看配置是否成功</a><br><a href="/blog/92f73acb/#安装hexo" class="header_1">安装hexo</a><br><a href="/blog/92f73acb/#参考资料" class="header_1">参考资料</a><br></div>
+<div id='my_toc'><a href="/blog/92f73acb/#Ubuntu-安装-git" class="header_1">Ubuntu 安装 git</a>&nbsp;<br><a href="/blog/92f73acb/#Ubuntu-安装-nodejs" class="header_1">Ubuntu 安装 nodejs</a>&nbsp;<br><a href="/blog/92f73acb/#安装指定的版本" class="header_2">安装指定的版本</a>&nbsp;<br><a href="/blog/92f73acb/#配置Nodejs" class="header_2">配置Nodejs</a>&nbsp;<br><a href="/blog/92f73acb/#使用淘宝镜像" class="header_3">使用淘宝镜像</a>&nbsp;<br><a href="/blog/92f73acb/#产看配置是否成功" class="header_3">产看配置是否成功</a>&nbsp;<br><a href="/blog/92f73acb/#安装hexo" class="header_1">安装hexo</a>&nbsp;<br><a href="/blog/92f73acb/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

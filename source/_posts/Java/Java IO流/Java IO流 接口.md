@@ -4,10 +4,10 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-13 15:04:36
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: df6c2340
 ---
-<div id='my_toc'><a href="/blog/df6c2340/#Closeable接口" class="header_1">Closeable接口</a><br><a href="/blog/df6c2340/#Flushable接口" class="header_1">Flushable接口</a><br><a href="/blog/df6c2340/#Appendable接口" class="header_1">Appendable接口</a><br></div>
+<div id='my_toc'><a href="/blog/df6c2340/#Closeable接口" class="header_1">Closeable接口</a>&nbsp;<br><a href="/blog/df6c2340/#Flushable接口" class="header_1">Flushable接口</a>&nbsp;<br><a href="/blog/df6c2340/#Appendable接口" class="header_1">Appendable接口</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

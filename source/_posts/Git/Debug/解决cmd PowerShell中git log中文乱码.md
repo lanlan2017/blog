@@ -4,10 +4,10 @@ categories:
   - Git
   - Debug
 date: 2019-12-18 02:32:38
-updated: 2019-12-18 02:43:04
+updated: 2019-12-18 02:44:23
 abbrlink: 4f38856c
 ---
-<div id='my_toc'><a href="/blog/4f38856c/#解决cmd下git-log中文乱码" class="header_1">解决cmd下git log中文乱码</a><br><a href="/blog/4f38856c/#问题描述" class="header_2">问题描述</a><br><a href="/blog/4f38856c/#解决方案" class="header_2">解决方案</a><br><a href="/blog/4f38856c/#永久生效" class="header_2">永久生效</a><br><a href="/blog/4f38856c/#效果" class="header_3">效果</a><br><a href="/blog/4f38856c/#参考资料" class="header_1">参考资料</a><br></div>
+<div id='my_toc'><a href="/blog/4f38856c/#解决cmd下git-log中文乱码" class="header_1">解决cmd下git log中文乱码</a>&nbsp;<br><a href="/blog/4f38856c/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/4f38856c/#解决方案" class="header_2">解决方案</a>&nbsp;<br><a href="/blog/4f38856c/#永久生效" class="header_2">永久生效</a>&nbsp;<br><a href="/blog/4f38856c/#效果" class="header_3">效果</a>&nbsp;<br><a href="/blog/4f38856c/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

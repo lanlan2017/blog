@@ -4,10 +4,10 @@ categories:
   - Java
   - Java IO流
 date: 2018-10-26 19:56:09
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 18ab79a8
 ---
-<div id='my_toc'><a href="/blog/18ab79a8/#首先介绍怎么把资源文件打包到可执行jar包中" class="header_2">首先介绍怎么把资源文件打包到可执行jar包中</a><br><a href="/blog/18ab79a8/#读取jar包中的文件" class="header_2">读取jar包中的文件</a><br><a href="/blog/18ab79a8/#读取jar包中资源文件子目录中的文件" class="header_2">读取jar包中资源文件子目录中的文件</a><br></div>
+<div id='my_toc'><a href="/blog/18ab79a8/#首先介绍怎么把资源文件打包到可执行jar包中" class="header_2">首先介绍怎么把资源文件打包到可执行jar包中</a>&nbsp;<br><a href="/blog/18ab79a8/#读取jar包中的文件" class="header_2">读取jar包中的文件</a>&nbsp;<br><a href="/blog/18ab79a8/#读取jar包中资源文件子目录中的文件" class="header_2">读取jar包中资源文件子目录中的文件</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

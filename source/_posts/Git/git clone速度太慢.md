@@ -3,10 +3,10 @@ title: git clone速度太慢
 categories: 
   - Git
 date: 2019-08-12 12:55:50
-updated: 2019-12-17 05:17:08
+updated: 2019-12-17 05:18:51
 abbrlink: 1f883a6b
 ---
-<div id='my_toc'><a href="/blog/1f883a6b/#原文链接" class="header_1">原文链接</a><br><a href="/blog/1f883a6b/#问题描述" class="header_1">问题描述</a><br><a href="/blog/1f883a6b/#分析原因" class="header_1">分析原因</a><br><a href="/blog/1f883a6b/#解决方案" class="header_1">解决方案</a><br><a href="/blog/1f883a6b/#查找域名对应IP地址" class="header_2">查找域名对应IP地址</a><br><a href="/blog/1f883a6b/#添加IP和域名到hosts文件" class="header_2">添加IP和域名到hosts文件</a><br><a href="/blog/1f883a6b/#保存更新DNS" class="header_2">保存更新DNS</a><br><a href="/blog/1f883a6b/#测试git-clone" class="header_2">测试git clone</a><br></div>
+<div id='my_toc'><a href="/blog/1f883a6b/#原文链接" class="header_1">原文链接</a>&nbsp;<br><a href="/blog/1f883a6b/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/1f883a6b/#分析原因" class="header_1">分析原因</a>&nbsp;<br><a href="/blog/1f883a6b/#解决方案" class="header_1">解决方案</a>&nbsp;<br><a href="/blog/1f883a6b/#查找域名对应IP地址" class="header_2">查找域名对应IP地址</a>&nbsp;<br><a href="/blog/1f883a6b/#添加IP和域名到hosts文件" class="header_2">添加IP和域名到hosts文件</a>&nbsp;<br><a href="/blog/1f883a6b/#保存更新DNS" class="header_2">保存更新DNS</a>&nbsp;<br><a href="/blog/1f883a6b/#测试git-clone" class="header_2">测试git clone</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

@@ -4,10 +4,10 @@ categories:
   - Java
   - Java IO流
 date: 2018-08-21 22:26:21
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: 2e0f7472
 ---
-<div id='my_toc'><a href="/blog/2e0f7472/#常用处理流（关闭处理流使用关闭里面的节点流）" class="header_2">常用处理流（关闭处理流使用关闭里面的节点流）</a><br><a href="/blog/2e0f7472/#流的关闭顺序" class="header_2">流的关闭顺序</a><br><a href="/blog/2e0f7472/#注意：" class="header_3">注意：</a><br></div>
+<div id='my_toc'><a href="/blog/2e0f7472/#常用处理流（关闭处理流使用关闭里面的节点流）" class="header_2">常用处理流（关闭处理流使用关闭里面的节点流）</a>&nbsp;<br><a href="/blog/2e0f7472/#流的关闭顺序" class="header_2">流的关闭顺序</a>&nbsp;<br><a href="/blog/2e0f7472/#注意：" class="header_3">注意：</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

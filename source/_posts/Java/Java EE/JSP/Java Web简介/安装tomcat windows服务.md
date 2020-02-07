@@ -6,10 +6,10 @@ categories:
   - JSP
   - Java Web简介
 date: 2018-12-08 21:46:18
-updated: 2019-12-17 05:17:08
+updated: 2019-12-17 05:18:52
 abbrlink: 6d6d5543
 ---
-<div id='my_toc'><a href="/blog/6d6d5543/#什么是Windows服务" class="header_2">什么是Windows服务</a><br><a href="/blog/6d6d5543/#安装tomcat到Windows-服务" class="header_2">安装tomcat到Windows 服务</a><br><a href="/blog/6d6d5543/#启动tomcat服务器" class="header_2">启动tomcat服务器</a><br><a href="/blog/6d6d5543/#关闭tomcat服务器" class="header_2">关闭tomcat服务器</a><br><a href="/blog/6d6d5543/#重启tomcat服务" class="header_2">重启tomcat服务</a><br><a href="/blog/6d6d5543/#重启时删除日志文件" class="header_2">重启时删除日志文件</a><br><a href="/blog/6d6d5543/#删除tomcat-windows服务" class="header_2">删除tomcat windows服务</a><br><a href="/blog/6d6d5543/#比较tomcat-windows服务方式和startup.bat方法" class="header_2">比较tomcat windows服务方式和startup.bat方法</a><br><a href="/blog/6d6d5543/#参考链接" class="header_2">参考链接</a><br></div>
+<div id='my_toc'><a href="/blog/6d6d5543/#什么是Windows服务" class="header_2">什么是Windows服务</a>&nbsp;<br><a href="/blog/6d6d5543/#安装tomcat到Windows-服务" class="header_2">安装tomcat到Windows 服务</a>&nbsp;<br><a href="/blog/6d6d5543/#启动tomcat服务器" class="header_2">启动tomcat服务器</a>&nbsp;<br><a href="/blog/6d6d5543/#关闭tomcat服务器" class="header_2">关闭tomcat服务器</a>&nbsp;<br><a href="/blog/6d6d5543/#重启tomcat服务" class="header_2">重启tomcat服务</a>&nbsp;<br><a href="/blog/6d6d5543/#重启时删除日志文件" class="header_2">重启时删除日志文件</a>&nbsp;<br><a href="/blog/6d6d5543/#删除tomcat-windows服务" class="header_2">删除tomcat windows服务</a>&nbsp;<br><a href="/blog/6d6d5543/#比较tomcat-windows服务方式和startup-bat方法" class="header_2">比较tomcat windows服务方式和startup.bat方法</a>&nbsp;<br><a href="/blog/6d6d5543/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

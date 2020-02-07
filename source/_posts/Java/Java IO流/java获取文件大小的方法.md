@@ -4,10 +4,10 @@ categories:
   - Java
   - Java IO流
 date: 2018-07-30 20:05:28
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: aa316c45
 ---
-<div id='my_toc'><a href="/blog/aa316c45/#java获取文件大小的方法" class="header_1">java获取文件大小的方法</a><br><a href="/blog/aa316c45/#一、通过File类的length-方法获取文件的大小" class="header_2">一、通过File类的length()方法获取文件的大小</a><br><a href="/blog/aa316c45/#二、通过file.io.*中的流式方法获取" class="header_2">二、通过file.io.*中的流式方法获取</a><br><a href="/blog/aa316c45/#三、通过file.nio.*中的FileChannel工具来获取文件大小：" class="header_2">三、通过file.nio.*中的FileChannel工具来获取文件大小：</a><br><a href="/blog/aa316c45/#四、使用小文件测试以上三种方法：" class="header_2">四、使用小文件测试以上三种方法：</a><br><a href="/blog/aa316c45/#java获取文件大小总结" class="header_2">java获取文件大小总结</a><br><a href="/blog/aa316c45/#完整的代码" class="header_2">完整的代码</a><br></div>
+<div id='my_toc'><a href="/blog/aa316c45/#java获取文件大小的方法" class="header_1">java获取文件大小的方法</a>&nbsp;<br><a href="/blog/aa316c45/#一、通过File类的length-方法获取文件的大小" class="header_2">一、通过File类的length()方法获取文件的大小</a>&nbsp;<br><a href="/blog/aa316c45/#二、通过file-io-*中的流式方法获取" class="header_2">二、通过file.io.*中的流式方法获取</a>&nbsp;<br><a href="/blog/aa316c45/#三、通过file-nio-*中的FileChannel工具来获取文件大小：" class="header_2">三、通过file.nio.*中的FileChannel工具来获取文件大小：</a>&nbsp;<br><a href="/blog/aa316c45/#四、使用小文件测试以上三种方法：" class="header_2">四、使用小文件测试以上三种方法：</a>&nbsp;<br><a href="/blog/aa316c45/#java获取文件大小总结" class="header_2">java获取文件大小总结</a>&nbsp;<br><a href="/blog/aa316c45/#完整的代码" class="header_2">完整的代码</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

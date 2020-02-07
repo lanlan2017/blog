@@ -5,10 +5,10 @@ categories:
   - 实例
   - 匹配markdown标记
 date: 2019-03-16 15:47:44
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:53
 abbrlink: b7a12cba
 ---
-<div id='my_toc'><a href="/blog/b7a12cba/#实现" class="header_2">实现</a><br><a href="/blog/b7a12cba/#匹配正则" class="header_3">匹配正则</a><br><a href="/blog/b7a12cba/#替换正则" class="header_3">替换正则</a><br></div>
+<div id='my_toc'><a href="/blog/b7a12cba/#实现" class="header_2">实现</a>&nbsp;<br><a href="/blog/b7a12cba/#匹配正则" class="header_3">匹配正则</a>&nbsp;<br><a href="/blog/b7a12cba/#替换正则" class="header_3">替换正则</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

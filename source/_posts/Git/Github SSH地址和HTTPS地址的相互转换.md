@@ -3,10 +3,10 @@ title: Github SSH地址和HTTPS地址的相互转换
 categories: 
   - Git
 date: 2019-12-03 10:38:35
-updated: 2019-12-17 05:17:08
+updated: 2019-12-17 05:18:52
 abbrlink: 9f3d9944
 ---
-<div id='my_toc'><a href="/blog/9f3d9944/#问题描述" class="header_1">问题描述</a><br><a href="/blog/9f3d9944/#实例" class="header_1">实例</a><br><a href="/blog/9f3d9944/#SSH链接格式" class="header_1">SSH链接格式</a><br><a href="/blog/9f3d9944/#Https格式" class="header_1">Https格式</a><br><a href="/blog/9f3d9944/#转换规则" class="header_1">转换规则</a><br><a href="/blog/9f3d9944/#SSH转HTTPS" class="header_2">SSH转HTTPS</a><br><a href="/blog/9f3d9944/#HTTPS转SSH" class="header_2">HTTPS转SSH</a><br><a href="/blog/9f3d9944/#源码" class="header_1">源码</a><br></div>
+<div id='my_toc'><a href="/blog/9f3d9944/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/9f3d9944/#实例" class="header_1">实例</a>&nbsp;<br><a href="/blog/9f3d9944/#SSH链接格式" class="header_1">SSH链接格式</a>&nbsp;<br><a href="/blog/9f3d9944/#Https格式" class="header_1">Https格式</a>&nbsp;<br><a href="/blog/9f3d9944/#转换规则" class="header_1">转换规则</a>&nbsp;<br><a href="/blog/9f3d9944/#SSH转HTTPS" class="header_2">SSH转HTTPS</a>&nbsp;<br><a href="/blog/9f3d9944/#HTTPS转SSH" class="header_2">HTTPS转SSH</a>&nbsp;<br><a href="/blog/9f3d9944/#源码" class="header_1">源码</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

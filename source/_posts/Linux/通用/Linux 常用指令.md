@@ -4,10 +4,10 @@ categories:
   - Linux
   - 通用
 date: 2018-11-11 16:35:46
-updated: 2019-12-17 05:17:09
+updated: 2019-12-17 05:18:52
 abbrlink: e44da
 ---
-<div id='my_toc'><a href="/blog/e44da/#前言" class="header_1">前言</a><br><a href="/blog/e44da/#文件目录相关命令" class="header_1">文件目录相关命令</a><br><a href="/blog/e44da/#创建一个空白文件命令touch" class="header_2">创建一个空白文件命令touch</a><br><a href="/blog/e44da/#文件复制命令cp" class="header_2">文件复制命令cp</a><br><a href="/blog/e44da/#文件移动命令mv" class="header_2">文件移动命令mv</a><br><a href="/blog/e44da/#实例-移动文件到其他目录" class="header_3">实例 移动文件到其他目录</a><br><a href="/blog/e44da/#使用移动命令重命名文件" class="header_3">使用移动命令重命名文件</a><br><a href="/blog/e44da/#文件删除命令rm" class="header_2">文件删除命令rm</a><br><a href="/blog/e44da/#无法删除的情况" class="header_3">无法删除的情况</a><br><a href="/blog/e44da/#参考链接" class="header_2">参考链接</a><br></div>
+<div id='my_toc'><a href="/blog/e44da/#前言" class="header_1">前言</a>&nbsp;<br><a href="/blog/e44da/#文件目录相关命令" class="header_1">文件目录相关命令</a>&nbsp;<br><a href="/blog/e44da/#创建一个空白文件命令touch" class="header_2">创建一个空白文件命令touch</a>&nbsp;<br><a href="/blog/e44da/#文件复制命令cp" class="header_2">文件复制命令cp</a>&nbsp;<br><a href="/blog/e44da/#文件移动命令mv" class="header_2">文件移动命令mv</a>&nbsp;<br><a href="/blog/e44da/#实例-移动文件到其他目录" class="header_3">实例 移动文件到其他目录</a>&nbsp;<br><a href="/blog/e44da/#使用移动命令重命名文件" class="header_3">使用移动命令重命名文件</a>&nbsp;<br><a href="/blog/e44da/#文件删除命令rm" class="header_2">文件删除命令rm</a>&nbsp;<br><a href="/blog/e44da/#无法删除的情况" class="header_3">无法删除的情况</a>&nbsp;<br><a href="/blog/e44da/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
