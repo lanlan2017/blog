@@ -1,11 +1,10 @@
 ---
 title: eclipse发布web项目到tomcat的webapps中
 categories: 
-  - Java
   - IDE
   - eclipse
 date: 2018-12-11 20:43:57
-updated: 2019-12-25 01:16:51
+updated: 2020-02-12 08:10:56
 abbrlink: 37dcd881
 ---
 <div id='my_toc'><a href="/blog/37dcd881/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/37dcd881/#缺点" class="header_3">缺点</a>&nbsp;<br><a href="/blog/37dcd881/#解决方案" class="header_3">解决方案</a>&nbsp;<br><a href="/blog/37dcd881/#eclipse中设置把Web项目发布到Tomcat-webapps中" class="header_3">eclipse中设置把Web项目发布到Tomcat webapps中</a>&nbsp;<br><a href="/blog/37dcd881/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>

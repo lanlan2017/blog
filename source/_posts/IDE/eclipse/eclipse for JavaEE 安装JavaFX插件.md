@@ -1,11 +1,10 @@
 ---
 title: eclipse for JavaEE 安装JavaFX插件
 categories: 
-  - Java
   - IDE
   - eclipse
 date: 2019-01-03 19:17:47
-updated: 2019-12-25 01:16:51
+updated: 2020-02-12 08:10:56
 abbrlink: '5285183'
 ---
 <div id='my_toc'><a href="/blog/5285183/#安装JavaFX插件e-fx-clipse" class="header_2">安装JavaFX插件e(fx)clipse</a>&nbsp;<br><a href="/blog/5285183/#下载-scene-builder" class="header_2">下载 scene builder</a>&nbsp;<br><a href="/blog/5285183/#安装" class="header_2">安装</a>&nbsp;<br><a href="/blog/5285183/#eclipse中指定scene-builder路径" class="header_2">eclipse中指定scene builder路径</a>&nbsp;<br><a href="/blog/5285183/#参考资料" class="header_2">参考资料</a>&nbsp;<br></div>

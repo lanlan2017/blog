@@ -1,11 +1,10 @@
 ---
 title: eclipse正则表达式替换
 categories: 
-  - Java
   - IDE
   - eclipse
 date: 2018-12-11 20:43:57
-updated: 2019-12-25 01:16:51
+updated: 2020-02-12 08:10:56
 abbrlink: eee91bf3
 ---
 <div id='my_toc'><a href="/blog/eee91bf3/#查找替换框设置" class="header_2">查找替换框设置</a>&nbsp;<br><a href="/blog/eee91bf3/#英文意思" class="header_2">英文意思</a>&nbsp;<br><a href="/blog/eee91bf3/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>

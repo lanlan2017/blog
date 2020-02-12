@@ -1,11 +1,10 @@
 ---
 title: eclipse 设置tab键为四个空格
 categories: 
-  - Java
   - IDE
   - eclipse
 date: 2019-04-20 13:48:50
-updated: 2019-12-25 01:16:51
+updated: 2020-02-12 08:10:56
 abbrlink: afd38322
 ---
 <div id='my_toc'><a href="/blog/afd38322/#Java代码中设置tab键为4个空格" class="header_2">Java代码中设置tab键为4个空格</a>&nbsp;<br><a href="/blog/afd38322/#JavaScript代码中设置tab键为4个空格" class="header_2">JavaScript代码中设置tab键为4个空格</a>&nbsp;<br><a href="/blog/afd38322/#XML代码中设置tab键为4个空格" class="header_2">XML代码中设置tab键为4个空格</a>&nbsp;<br><a href="/blog/afd38322/#CSS代码中设置tab键为4个空格" class="header_2">CSS代码中设置tab键为4个空格</a>&nbsp;<br><a href="/blog/afd38322/#HTML-JSP代码中设置tab键为4个空格" class="header_2">HTML JSP代码中设置tab键为4个空格</a>&nbsp;<br><a href="/blog/afd38322/#参考资料" class="header_2">参考资料</a>&nbsp;<br></div>

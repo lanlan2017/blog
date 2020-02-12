@@ -1,11 +1,10 @@
 ---
 title: VSCode 中文翻译并替换为英文插件 翻译替换插件
 categories: 
-  - Java
   - IDE
   - VSCode
 date: 2020-02-12 01:53:57
-updated: 2020-02-12 02:01:45
+updated: 2020-02-12 08:10:56
 abbrlink: f539cba6
 ---
 <div id='my_toc'><a href="/blog/f539cba6/#插件地址" class="header_1">插件地址</a>&nbsp;<br><a href="/blog/f539cba6/#安装" class="header_1">安装</a>&nbsp;<br><a href="/blog/f539cba6/#如何使用翻译替换功能" class="header_1">如何使用翻译替换功能</a>&nbsp;<br></div>

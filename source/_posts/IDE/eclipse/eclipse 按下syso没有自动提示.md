@@ -1,11 +1,10 @@
 ---
 title: eclipse 按下syso没有自动提示
 categories: 
-  - Java
   - IDE
   - eclipse
 date: 2019-04-23 21:49:49
-updated: 2019-12-25 01:16:51
+updated: 2020-02-12 08:10:56
 abbrlink: 3c99547f
 ---
 <div id='my_toc'><a href="/blog/3c99547f/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/3c99547f/#原因" class="header_2">原因</a>&nbsp;<br><a href="/blog/3c99547f/#步骤" class="header_2">步骤</a>&nbsp;<br></div>

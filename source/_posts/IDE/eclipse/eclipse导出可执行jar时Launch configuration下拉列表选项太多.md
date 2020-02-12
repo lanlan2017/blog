@@ -1,11 +1,10 @@
 ---
 title: eclipse导出可执行jar时Launch configuration下拉列表选项太多
 categories: 
-  - Java
   - IDE
   - eclipse
 date: 2018-10-25 16:45:17
-updated: 2019-12-25 01:16:51
+updated: 2020-02-12 08:10:56
 abbrlink: 956cc103
 ---
 <div id='my_toc'></div>
