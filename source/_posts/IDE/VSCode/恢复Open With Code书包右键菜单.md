@@ -81,3 +81,5 @@ C:\\Users\\lan\\AppData\\Local\\Programs\\Microsoft VS Code\\code.ico
 替换成你的图标路径即可.注意**路径分隔符要是两个斜杠**
 ## 点击运行
 然后保存这个.reg文件,点击这个.reg文件即可导入注册表.
+# 方法3 更新VSCode
+今天我发现VSCode自动更新了,然后惊喜的是上面的鼠标右键快捷方式又回来了,所以更新VSCode也可以恢复鼠标右键快捷方式
