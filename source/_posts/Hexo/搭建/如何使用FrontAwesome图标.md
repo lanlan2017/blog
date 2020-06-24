@@ -1,11 +1,11 @@
 ---
 title: 如何使用FrontAwesome图标
-categories:
+categories: 
   - Hexo
   - 搭建
-abbrlink: 4181f9ed
 date: 2019-03-11 21:02:57
-updated: 2019-12-17 05:18:52
+updated: 2020-06-24 08:10:06
+abbrlink: 4181f9ed
 ---
 <div id='my_toc'><a href="/blog/4181f9ed/#选择图标" class="header_2">选择图标</a>&nbsp;<br><a href="/blog/4181f9ed/#NexT主题中使用" class="header_2">NexT主题中使用</a>&nbsp;<br><a href="/blog/4181f9ed/#实例" class="header_2">实例</a>&nbsp;<br><a href="/blog/4181f9ed/#向上箭头图标" class="header_3">向上箭头图标</a>&nbsp;<br><a href="/blog/4181f9ed/#github图标" class="header_3">github图标</a>&nbsp;<br><a href="/blog/4181f9ed/#设置图标颜色" class="header_2">设置图标颜色</a>&nbsp;<br><a href="/blog/4181f9ed/#参考资料" class="header_2">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

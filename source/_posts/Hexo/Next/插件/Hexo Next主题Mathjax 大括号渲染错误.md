@@ -2,9 +2,10 @@
 title: Hexo Next主题Mathjax 大括号渲染错误
 categories: 
   - Hexo
+  - Next
   - 插件
 date: 2019-12-07 22:23:13
-updated: 2019-12-17 05:18:52
+updated: 2020-06-24 08:16:18
 abbrlink: 14ee6880
 mathjax: true
 ---

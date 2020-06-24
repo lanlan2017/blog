@@ -1,11 +1,11 @@
 ---
 title: PigGo GitHub图床
-categories:
+categories: 
   - Hexo
   - 搭建
-abbrlink: b19c6a80
 date: 2019-11-22 12:59:46
-updated: 2019-12-17 05:18:52
+updated: 2020-06-24 08:10:06
+abbrlink: b19c6a80
 ---
 <div id='my_toc'><a href="/blog/b19c6a80/#生成token" class="header_1">生成token</a>&nbsp;<br><a href="/blog/b19c6a80/#下载安装PigGo" class="header_1">下载安装PigGo</a>&nbsp;<br><a href="/blog/b19c6a80/#配置PigGo" class="header_1">配置PigGo</a>&nbsp;<br><a href="/blog/b19c6a80/#Github图床配置" class="header_2">Github图床配置</a>&nbsp;<br><a href="/blog/b19c6a80/#githubPlus插件配置" class="header_2">githubPlus插件配置</a>&nbsp;<br><a href="/blog/b19c6a80/#同步更新删除Github" class="header_3">同步更新删除Github</a>&nbsp;<br><a href="/blog/b19c6a80/#配置githubPlus" class="header_3">配置githubPlus</a>&nbsp;<br><a href="/blog/b19c6a80/#PigGo其他配置" class="header_2">PigGo其他配置</a>&nbsp;<br><a href="/blog/b19c6a80/#上传快捷方式" class="header_3">上传快捷方式</a>&nbsp;<br><a href="/blog/b19c6a80/#参考连接" class="header_1">参考连接</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

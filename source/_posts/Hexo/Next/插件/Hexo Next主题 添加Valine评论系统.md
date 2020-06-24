@@ -2,9 +2,10 @@
 title: Hexo Next主题 添加Valine评论系统
 categories: 
   - Hexo
+  - Next
   - 插件
 date: 2018-09-26 20:00:35
-updated: 2019-12-17 05:18:52
+updated: 2020-06-24 08:16:18
 abbrlink: 8eadc39
 ---
 <div id='my_toc'></div>

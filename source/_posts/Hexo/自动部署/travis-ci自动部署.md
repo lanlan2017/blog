@@ -4,7 +4,7 @@ categories:
   - Hexo
   - 自动部署
 date: 2019-11-05 10:29:38
-updated: 2019-12-17 05:18:52
+updated: 2020-06-24 08:10:06
 abbrlink: 13f63c39
 ---
 <div id='my_toc'><a href="/blog/13f63c39/#获取Token" class="header_1">获取Token</a>&nbsp;<br><a href="/blog/13f63c39/#配置Token" class="header_1">配置Token</a>&nbsp;<br><a href="/blog/13f63c39/#hexo-d部署地址和-travis-yml书写的问题" class="header_1">hexo d部署地址和.travis.yml书写的问题</a>&nbsp;<br><a href="/blog/13f63c39/#基于项目的Github-Pages的写法" class="header_2">基于项目的Github Pages的写法</a>&nbsp;<br><a href="/blog/13f63c39/#站点配置文件中仓库地址的写法" class="header_3">站点配置文件中仓库地址的写法</a>&nbsp;<br><a href="/blog/13f63c39/#正确的-travis-yml" class="header_3">正确的.travis.yml</a>&nbsp;<br><a href="/blog/13f63c39/#推送到master分支" class="header_3">推送到master分支</a>&nbsp;<br><a href="/blog/13f63c39/#基于xxxx-github-io仓库的配置" class="header_2">基于xxxx.github.io仓库的配置</a>&nbsp;<br><a href="/blog/13f63c39/#站点配置文件中仓库地址的写法" class="header_3">站点配置文件中仓库地址的写法</a>&nbsp;<br><a href="/blog/13f63c39/#正确的-travis-yml" class="header_3">正确的.travis.yml</a>&nbsp;<br><a href="/blog/13f63c39/#推送到src分支" class="header_3">推送到src分支</a>&nbsp;<br></div>

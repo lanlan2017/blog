@@ -4,7 +4,7 @@ categories:
   - Hexo
   - Debug
 date: 2018-08-29 19:35:07
-updated: 2019-12-17 05:18:52
+updated: 2020-06-24 08:10:06
 abbrlink: 87aa90c2
 ---
 <div id='my_toc'><a href="/blog/87aa90c2/#设置语言为简体中文" class="header_2">设置语言为简体中文</a>&nbsp;<br><a href="/blog/87aa90c2/#修改站点配置文件的编码为UTF-8" class="header_2">修改站点配置文件的编码为UTF-8</a>&nbsp;<br><a href="/blog/87aa90c2/#重新启动" class="header_2">重新启动</a>&nbsp;<br></div>

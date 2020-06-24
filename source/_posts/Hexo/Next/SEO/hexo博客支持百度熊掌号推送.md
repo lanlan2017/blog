@@ -2,9 +2,10 @@
 title: hexo博客支持百度熊掌号推送
 categories: 
   - Hexo
+  - Next
   - SEO
 date: 2018-10-30 11:11:24
-updated: 2019-12-17 05:18:52
+updated: 2020-06-24 08:16:02
 abbrlink: 5f9ceba2
 ---
 <div id='my_toc'><a href="/blog/5f9ceba2/#Hexo安装插件支持百度熊掌号自动推送" class="header_2">Hexo安装插件支持百度熊掌号自动推送</a>&nbsp;<br></div>

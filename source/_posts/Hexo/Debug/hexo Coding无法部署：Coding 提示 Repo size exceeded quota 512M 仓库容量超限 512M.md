@@ -4,7 +4,7 @@ categories:
   - Hexo
   - Debug
 date: 2018-11-06 14:35:04
-updated: 2019-12-17 05:18:52
+updated: 2020-06-24 08:10:06
 abbrlink: 39481c48
 ---
 <div id='my_toc'><a href="/blog/39481c48/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/39481c48/#解决方案" class="header_2">解决方案</a>&nbsp;<br><a href="/blog/39481c48/#登录coding-清空仓库" class="header_3">登录coding 清空仓库</a>&nbsp;<br><a href="/blog/39481c48/#重新部署" class="header_3">重新部署</a>&nbsp;<br><a href="/blog/39481c48/#重新开启pages服务" class="header_3">重新开启pages服务</a>&nbsp;<br><a href="/blog/39481c48/#重新绑定域名" class="header_3">重新绑定域名</a>&nbsp;<br></div>
