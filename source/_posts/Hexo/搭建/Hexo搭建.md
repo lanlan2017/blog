@@ -6,15 +6,14 @@ categories:
 comments: false
 abbrlink: 57ee7c1d
 date: 2018-08-26 23:59:13
-updated: 2019-12-17 05:18:52
+updated: 2020-06-24 02:38:42
 ---
-<div id='my_toc'><a href="/blog/57ee7c1d/#Sidebar-Avatar" class="header_1">Sidebar Avatar</a>&nbsp;<br><a href="/blog/57ee7c1d/#Deployment" class="header_1">Deployment</a>&nbsp;<br><a href="/blog/57ee7c1d/#Docs-https//hexo-io/docs/deployment-html" class="header_2">Docs: https://hexo.io/docs/deployment.html</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/null/#基本配置" class="header_1">基本配置</a>&nbsp;<br><a href="/blog/null/#修改菜单" class="header_2">修改菜单</a>&nbsp;<br><a href="/blog/null/#添加标签页面" class="header_2">添加标签页面</a>&nbsp;<br><a href="/blog/null/#创建页面" class="header_3">创建页面</a>&nbsp;<br><a href="/blog/null/#打开菜单" class="header_3">打开菜单</a>&nbsp;<br><a href="/blog/null/#设置代码高亮主题" class="header_2">设置代码高亮主题</a>&nbsp;<br><a href="/blog/null/#设置头像" class="header_2">设置头像</a>&nbsp;<br><a href="/blog/null/#设置图标" class="header_2">设置图标</a>&nbsp;<br><a href="/blog/null/#图标显示N的问题" class="header_3">图标显示N的问题</a>&nbsp;<br><a href="/blog/null/#开启打赏" class="header_2">开启打赏</a>&nbsp;<br><a href="/blog/null/#修改内容区域显示宽度" class="header_2">修改内容区域显示宽度</a>&nbsp;<br><a href="/blog/null/#修改代码块字体" class="header_2">修改代码块字体</a>&nbsp;<br><a href="/blog/null/#插件" class="header_1">插件</a>&nbsp;<br><a href="/blog/null/#插件库" class="header_2">插件库</a>&nbsp;<br><a href="/blog/null/#本地搜索" class="header_2">本地搜索</a>&nbsp;<br><a href="/blog/null/#安装" class="header_3">安装</a>&nbsp;<br><a href="/blog/null/#修改站点配置文件" class="header_3">修改站点配置文件</a>&nbsp;<br><a href="/blog/null/#修改Next主题配置文件" class="header_3">修改Next主题配置文件</a>&nbsp;<br><a href="/blog/null/#github远程仓库推送" class="header_2">github远程仓库推送</a>&nbsp;<br><a href="/blog/null/#安装" class="header_3">安装</a>&nbsp;<br><a href="/blog/null/#修改站点配置文件" class="header_3">修改站点配置文件</a>&nbsp;<br><a href="/blog/null/#持久化链接" class="header_2">持久化链接</a>&nbsp;<br><a href="/blog/null/#安装" class="header_3">安装</a>&nbsp;<br><a href="/blog/null/#修改站点配置文件" class="header_3">修改站点配置文件</a>&nbsp;<br><a href="/blog/null/#文章置顶" class="header_2">文章置顶</a>&nbsp;<br><a href="/blog/null/#卸载hexo-generator-index插件" class="header_3">卸载hexo-generator-index插件</a>&nbsp;<br><a href="/blog/null/#安装hexo-generator-index-pin-top插件" class="header_3">安装hexo-generator-index-pin-top插件</a>&nbsp;<br><a href="/blog/null/#问题" class="header_1">问题</a>&nbsp;<br><a href="/blog/null/#端口被占用-则修改端口" class="header_2">端口被占用 则修改端口</a>&nbsp;<br><a href="/blog/null/#临时改动" class="header_3">临时改动</a>&nbsp;<br><a href="/blog/null/#永久改动" class="header_2">永久改动</a>&nbsp;<br><a href="/blog/null/#自定义样式" class="header_1">自定义样式</a>&nbsp;<br><a href="/blog/null/#修改代码段样式" class="header_2">修改代码段样式</a>&nbsp;<br><a href="/blog/null/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-<!-- <script type="text/javascript" src="//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js" homePageName="返回首页" homePageUrl="/"></script> -->
 # 基本配置
 ## 修改菜单
 在菜单中添加链接。编辑 **主题配置文件** ， 取消`categories`前面的注释`#`，添加 categories 到 menu 中，如下: 
