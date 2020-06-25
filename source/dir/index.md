@@ -4,17 +4,13 @@ date: 2019-12-17 04:08:18
 ---
 # [Hexo](/blog/categories/Hexo)
 
-## [Debug](/blog/categories/Hexo/Debug)
-
-## [Next](/blog/categories/Hexo/Next)
-- [SEO](/blog/categories/Hexo/Next/SEO)
-- [插件](/blog/categories/Hexo/Next/插件)
-
-## [个性化](/blog/categories/Hexo/个性化)
-
-## [搭建](/blog/categories/Hexo/搭建)
-
-## [自动部署](/blog/categories/Hexo/自动部署)
+## [next主题](/blog/categories/Hexo/next主题)
+- [Debug](/blog/categories/Hexo/next主题/Debug)
+- [SEO](/blog/categories/Hexo/next主题/SEO)
+- [个性化](/blog/categories/Hexo/next主题/个性化)
+- [插件](/blog/categories/Hexo/next主题/插件)
+- [搭建](/blog/categories/Hexo/next主题/搭建)
+- [自动部署](/blog/categories/Hexo/next主题/自动部署)
 
 # [Windows](/blog/categories/Windows)
 

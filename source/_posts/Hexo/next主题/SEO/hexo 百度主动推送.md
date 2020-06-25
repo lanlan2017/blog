@@ -2,10 +2,10 @@
 title: hexo 百度主动推送
 categories: 
   - Hexo
-  - Next
+  - next主题
   - SEO
 date: 2018-10-31 11:18:30
-updated: 2020-06-24 08:16:02
+updated: 2020-06-24 08:17:43
 abbrlink: 7ac3f85
 ---
 <div id='my_toc'><a href="/blog/7ac3f85/#百度主动推送的作用" class="header_2">百度主动推送的作用</a>&nbsp;<br><a href="/blog/7ac3f85/#在hexo中添加百度主动推送功能" class="header_2">在hexo中添加百度主动推送功能</a>&nbsp;<br><a href="/blog/7ac3f85/#安装hexo-baidu-url-submit插件" class="header_2">安装hexo-baidu-url-submit插件</a>&nbsp;<br><a href="/blog/7ac3f85/#在站点配置文件中添加baidu-url-submit的配置项" class="header_3">在站点配置文件中添加baidu-url-submit的配置项</a>&nbsp;<br><a href="/blog/7ac3f85/#在站点配置文件中加入新的deploy配置项" class="header_3">在站点配置文件中加入新的deploy配置项</a>&nbsp;<br><a href="/blog/7ac3f85/#验证配置是否成功" class="header_2">验证配置是否成功</a>&nbsp;<br><a href="/blog/7ac3f85/#卸载" class="header_2">卸载</a>&nbsp;<br><a href="/blog/7ac3f85/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>

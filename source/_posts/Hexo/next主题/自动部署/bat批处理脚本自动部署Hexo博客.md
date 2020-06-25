@@ -2,9 +2,10 @@
 title: bat批处理脚本自动部署Hexo博客
 categories: 
   - Hexo
+  - next主题
   - 自动部署
 date: 2018-12-07 00:23:50
-updated: 2020-06-24 08:10:06
+updated: 2020-06-24 08:17:43
 abbrlink: 5d465f14
 ---
 <div id='my_toc'><a href="/blog/5d465f14/#使用bat批处理的好处：省时间" class="header_2">使用bat批处理的好处：省时间</a>&nbsp;<br><a href="/blog/5d465f14/#bat脚本启动hexo本地服务器" class="header_2">bat脚本启动hexo本地服务器</a>&nbsp;<br><a href="/blog/5d465f14/#指令说明" class="header_3">指令说明</a>&nbsp;<br><a href="/blog/5d465f14/#如何使用" class="header_3">如何使用</a>&nbsp;<br><a href="/blog/5d465f14/#bat脚本部署hexo博客" class="header_2">bat脚本部署hexo博客</a>&nbsp;<br></div>

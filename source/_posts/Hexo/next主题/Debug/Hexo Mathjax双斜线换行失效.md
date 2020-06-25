@@ -2,9 +2,10 @@
 title: Hexo Mathjax双斜线换行失效
 categories: 
   - Hexo
+  - next主题
   - Debug
 date: 2019-12-09 17:31:25
-updated: 2020-06-24 08:10:06
+updated: 2020-06-24 08:17:42
 abbrlink: eb86e892
 mathjax: true
 ---

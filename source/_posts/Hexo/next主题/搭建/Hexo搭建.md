@@ -2,9 +2,10 @@
 title: Hexo搭建
 categories: 
   - Hexo
+  - next主题
   - 搭建
 date: 2018-08-26 23:59:13
-updated: 2020-06-24 08:10:06
+updated: 2020-06-24 08:17:43
 comments: false
 abbrlink: 57ee7c1d
 ---
