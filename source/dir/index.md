@@ -14,26 +14,24 @@ date: 2019-12-17 04:08:18
 
 # [Windows](/blog/categories/Windows)
 
-## [CMD 批处理](/blog/categories/Windows/CMD-批处理)
-- [Debug](/blog/categories/Windows/CMD-批处理/Debug)
-- [应用](/blog/categories/Windows/CMD-批处理/应用)
-- [语法](/blog/categories/Windows/CMD-批处理/语法)
-    - [操作文件或目录的命令](/blog/categories/Windows/CMD-批处理/语法/操作文件或目录的命令)
-    - [构建程序相关命令](/blog/categories/Windows/CMD-批处理/语法/构建程序相关命令)
-    - [系统相关命令](/blog/categories/Windows/CMD-批处理/语法/系统相关命令)
-    - [自定义命令](/blog/categories/Windows/CMD-批处理/语法/自定义命令)
+## [CMD批处理](/blog/categories/Windows/CMD批处理)
+- [Debug](/blog/categories/Windows/CMD批处理/Debug)
+- [应用](/blog/categories/Windows/CMD批处理/应用)
+- [语法](/blog/categories/Windows/CMD批处理/语法)
+    - [操作文件或目录的命令](/blog/categories/Windows/CMD批处理/语法/操作文件或目录的命令)
+    - [构建程序相关命令](/blog/categories/Windows/CMD批处理/语法/构建程序相关命令)
+    - [系统相关命令](/blog/categories/Windows/CMD批处理/语法/系统相关命令)
+    - [自定义命令](/blog/categories/Windows/CMD批处理/语法/自定义命令)
 
-## [Office](/blog/categories/Windows/Office)
-- [Excel](/blog/categories/Windows/Office/Excel)
-- [word](/blog/categories/Windows/Office/word)
-
-## [Win10设置](/blog/categories/Windows/Win10设置)
-
-## [安卓模拟器](/blog/categories/Windows/安卓模拟器)
-
-## [科学上网](/blog/categories/Windows/科学上网)
-
-## [软件设置](/blog/categories/Windows/软件设置)
+## [软件](/blog/categories/Windows/软件)
+- [Chrome浏览器](/blog/categories/Windows/软件/Chrome浏览器)
+- [Office](/blog/categories/Windows/软件/Office)
+    - [Excel](/blog/categories/Windows/软件/Office/Excel)
+    - [word](/blog/categories/Windows/软件/Office/word)
+- [VSCode](/blog/categories/Windows/软件/VSCode)
+- [Win10设置](/blog/categories/Windows/软件/Win10设置)
+- [安卓模拟器](/blog/categories/Windows/软件/安卓模拟器)
+- [科学上网](/blog/categories/Windows/软件/科学上网)
 
 # [其他](/blog/categories/其他)
 
