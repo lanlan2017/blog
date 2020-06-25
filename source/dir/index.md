@@ -6,11 +6,11 @@ date: 2019-12-17 04:08:18
 
 ## [Debug](/blog/categories/Hexo/Debug)
 
-## [SEO](/blog/categories/Hexo/SEO)
+## [Next](/blog/categories/Hexo/Next)
+- [SEO](/blog/categories/Hexo/Next/SEO)
+- [插件](/blog/categories/Hexo/Next/插件)
 
 ## [个性化](/blog/categories/Hexo/个性化)
-
-## [插件](/blog/categories/Hexo/插件)
 
 ## [搭建](/blog/categories/Hexo/搭建)
 
