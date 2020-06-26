@@ -48,6 +48,7 @@ https://githubusercontent.com.ipaddress.com/raw.githubusercontent.com
 151.101.76.133 raw.githubusercontent.com
 ```
 ### 修改hosts
+#### Win10电脑上修改
 进入目录:C:\Windows\System32\drivers\etc,打开hosts文件,在**末尾**,填入上述地址即可.
 ```
 151.101.108.133 raw.githubusercontent.com
@@ -56,7 +57,7 @@ https://githubusercontent.com.ipaddress.com/raw.githubusercontent.com
 51.101.192.133 raw.githubusercontent.com
 151.101.228.133 raw.githubusercontent.com
 ```
-### 刷新DNS
+##### 刷新DNS
 打开cmd,输入:
 ```
 ipconfig /flushdns
@@ -72,6 +73,14 @@ Windows IP 配置
 C:\Users\lan>
 ```
 这样你电脑上就可以访问到保存在github raw上面的图片了.
+#### 安卓手机上修改hosts
+##### 编辑hosts文件
+这要求你的手机root过,具体可以查找其他教程进行设置.
+#### 下载修改hosts的软件
+- [Hosts Go
+](https://play.google.com/store/apps/details?id=dns.hosts.server.change&hl=en_US)
+##### Hosts Go添加hosts
+点击**HOSTS设置**按钮,然后点击顶部的 **+** (加号),分别输入ip地址和域名,最后点击**启动**即可
 
 # 参考资料
 https://www.jianshu.com/p/bbd79e0444ea
