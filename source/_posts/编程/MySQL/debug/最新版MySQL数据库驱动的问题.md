@@ -20,7 +20,7 @@ updated: 2019-12-17 05:18:52
 Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
 ```
 ### 解决方案
-将数据库驱动名称`com.mysql.jdbc.Driver`改成`com.mysql.cj.jdbc.Driver`.
+将数据库驱动名称`com.mysql.jdbc.Driver`改成`com.mysql.cj.jdbc.Driver`
 
 ## 问题2 没有指定时区
 ```cmd
@@ -38,10 +38,6 @@ jdbcUrl=jdbc:mysql://localhost:3306/spring?serverTimezone=UTC
 ## 问题3 查询字符串分隔符没有使用转义字符
 **如果有多个查询字符串要用&隔开,并且&要转义成`&amp;`**
 但如果你的jdbcUrl类似下面：
-```
-jdbcUrl=jdbc:mysql://localhost:3306/spring?serverTimezone=UTC&characterEncoding=utf-8
-```
+`jdbcUrl=jdbc:mysql://localhost:3306/spring?serverTimezone=UTC&characterEncoding=utf-8`
 就是有多个`params`的时候需要以`&`分开，但`&`要改为`&amp;`  如下：
-<pre>
-jdbcUrl=jdbc:mysql://localhost:3306/spring?serverTimezone=UTC&amp;characterEncoding=utf-8
-</pre>
+`jdbc:mysql://localhost:3306/spring?serverTimezone=UTC&amp;characterEncoding=utf-8`
