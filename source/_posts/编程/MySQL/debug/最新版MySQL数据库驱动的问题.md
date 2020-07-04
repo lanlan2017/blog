@@ -41,3 +41,5 @@ jdbcUrl=jdbc:mysql://localhost:3306/spring?serverTimezone=UTC
 `jdbcUrl=jdbc:mysql://localhost:3306/spring?serverTimezone=UTC&characterEncoding=utf-8`
 就是有多个`params`的时候需要以`&`分开，但`&`要改为`&amp;`  如下：
 `jdbc:mysql://localhost:3306/spring?serverTimezone=UTC&amp;characterEncoding=utf-8`
+### 不需要转义的情况
+经过为的实践,也不一定都要对`&`进行转义,在使用Mybatis时,如果把URL写在`.properties`文件中,然后在mybatis配置文件中通过`${}`来引用,这种情况下不需要`对URL中`的`&`进行转义.

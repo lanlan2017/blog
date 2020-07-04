@@ -23,6 +23,8 @@ date: 2019-12-17 04:08:18
     - [系统相关命令](/blog/categories/Windows/CMD批处理/语法/系统相关命令)
     - [自定义命令](/blog/categories/Windows/CMD批处理/语法/自定义命令)
 
+## [下载](/blog/categories/Windows/下载)
+
 ## [软件](/blog/categories/Windows/软件)
 - [Chrome浏览器](/blog/categories/Windows/软件/Chrome浏览器)
 - [Office](/blog/categories/Windows/软件/Office)
@@ -30,6 +32,7 @@ date: 2019-12-17 04:08:18
     - [word](/blog/categories/Windows/软件/Office/word)
 - [VSCode](/blog/categories/Windows/软件/VSCode)
 - [Win10设置](/blog/categories/Windows/软件/Win10设置)
+    - [视频音频](/blog/categories/Windows/软件/Win10设置/视频音频)
 - [安卓模拟器](/blog/categories/Windows/软件/安卓模拟器)
 - [科学上网](/blog/categories/Windows/软件/科学上网)
 

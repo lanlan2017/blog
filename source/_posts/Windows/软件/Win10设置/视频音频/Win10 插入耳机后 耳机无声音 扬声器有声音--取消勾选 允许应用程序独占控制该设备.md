@@ -1,12 +1,13 @@
 ---
 title: Win10 插入耳机后 耳机无声音 扬声器有声音--取消勾选 允许应用程序独占控制该设备
-categories: 
+categories:
   - Windows
   - 软件
   - Win10设置
+  - 视频音频
+abbrlink: a6d17185
 date: 2020-06-26 00:23:32
 updated: 2020-06-26 02:51:15
-abbrlink: a6d17185
 ---
 <div id='my_toc'><a href="/blog/a6d17185/#Win10-插入耳机后-耳机无声音-扬声器有声音" class="header_1">Win10 插入耳机后 耳机无声音 扬声器有声音</a>&nbsp;<br><a href="/blog/a6d17185/#打开声音设置" class="header_2">打开声音设置</a>&nbsp;<br><a href="/blog/a6d17185/#声音控制面板" class="header_2">声音控制面板</a>&nbsp;<br><a href="/blog/a6d17185/#取消勾选-允许应用程序独占控制该设备" class="header_2">取消勾选 允许应用程序独占控制该设备</a>&nbsp;<br><a href="/blog/a6d17185/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
