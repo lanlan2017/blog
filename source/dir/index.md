@@ -147,6 +147,7 @@ date: 2019-12-17 04:08:18
 - [Java 网络编程](/blog/categories/编程/Java/Java-网络编程)
 - [Java 集合](/blog/categories/编程/Java/Java-集合)
 - [JDBC](/blog/categories/编程/Java/JDBC)
+- [Log4j教程](/blog/categories/编程/Java/Log4j教程)
 - [反射](/blog/categories/编程/Java/反射)
 - [自定义工具类](/blog/categories/编程/Java/自定义工具类)
 
