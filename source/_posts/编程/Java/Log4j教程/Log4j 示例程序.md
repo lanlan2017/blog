@@ -23,27 +23,59 @@ E:\workspacne_JDK8Tomcat8.5\Log4jDemo
 │ ├─commons-logging-1.2.jar
 │ ├─log4j-1.2.17.jar
 │ ├─log4j-api-2.13.3.jar
-│ └─log4j-core-2.13.3.jar
+│ ├─log4j-core-2.13.3.jar
+│ └─mysql-connector-java-8.0.17.jar
+├─log.out
 ├─Log4jConfig\
+│ ├─DailyRollingFileAppender\
+│ │ └─log4j.properties
 │ ├─file\
 │ │ └─log4j.properties
+│ ├─FileAppender\
+│ │ ├─log4j.properties
+│ │ └─log4j.xml
 │ ├─file_and_stout\
 │ │ └─log4j.properties
 │ ├─grammar\
 │ │ └─log4j.properties
+│ ├─HTMLLayout\
+│ │ └─log4j.properties
+│ ├─JDBCAppender\
+│ │ ├─log4j.properties
+│ │ └─log4j.xml
 │ ├─Level\
 │ │ └─log4j.properties
-│ └─stdout\
-│   └─log4j.properties
+│ ├─loggerPackage\
+│ │ └─log4j.xml
+│ ├─PatternLayout\
+│ │ └─log4j.properties
+│ ├─RollingFileAppender\
+│ │ └─log4j.properties
+│ ├─stdout\
+│ │ └─log4j.properties
+│ └─xml_file_stdout\
+│   └─log4j.xml
+├─README.md
 └─src\
-  └─demo\
-    ├─level\
-    │ ├─SetLevelByMethod.java
-    │ └─SetLevleByConfig.java
-    ├─Log4jExample.java
-    └─method\
-      └─LoggerMethodTest.java
+  ├─demo\
+  │ ├─file\
+  │ │ └─appender\
+  │ │   └─XMLFileAppenderTest.java
+  │ ├─level\
+  │ │ ├─SetLevelByMethod.java
+  │ │ └─SetLevleByConfig.java
+  │ ├─Log4jExample.java
+  │ ├─logpackage\
+  │ │ └─LoggerPackage.java
+  │ └─method\
+  │   └─LoggerMethodTest.java
+  └─log4j.properties
 </pre></details>
+
+
+## 源代码
+[https://github.com/lanlan2017/Log4jDemo](https://github.com/lanlan2017/Log4jDemo) 
+
 
 ## 日志输出到文件
 ### Log4j.properties
