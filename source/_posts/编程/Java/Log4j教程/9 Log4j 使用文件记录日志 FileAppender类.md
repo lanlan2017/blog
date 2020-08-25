@@ -1,11 +1,11 @@
 ---
-title: Log4j 使用文件记录日志 FileAppender类
+title: 9 Log4j 使用文件记录日志 FileAppender类
 categories: 
   - 编程
   - Java
   - Log4j教程
 date: 2020-08-03 07:03:03
-updated: 2020-08-06 01:07:15
+updated: 2020-08-18 12:01:55
 abbrlink: 6296507b
 ---
 <div id='my_toc'><a href="/blog/6296507b/#Log4j-使用文件记录日志-FileAppender类" class="header_1">Log4j 使用文件记录日志 FileAppender类</a>&nbsp;<br><a href="/blog/6296507b/#FileAppender配置参数" class="header_2">FileAppender配置参数</a>&nbsp;<br><a href="/blog/6296507b/#示例代码" class="header_2">示例代码</a>&nbsp;<br><a href="/blog/6296507b/#log4j-xml中如何使用变量替换" class="header_3">log4j.xml中如何使用变量替换</a>&nbsp;<br><a href="/blog/6296507b/#运行Java时给定参数" class="header_4">运行Java时给定参数</a>&nbsp;<br><a href="/blog/6296507b/#编程方式指定" class="header_4">编程方式指定</a>&nbsp;<br><a href="/blog/6296507b/#示例" class="header_4">示例</a>&nbsp;<br><a href="/blog/6296507b/#使用绝对路径不使用变量替换" class="header_4">使用绝对路径不使用变量替换</a>&nbsp;<br><a href="/blog/6296507b/#使用相对路径" class="header_4">使用相对路径</a>&nbsp;<br></div>

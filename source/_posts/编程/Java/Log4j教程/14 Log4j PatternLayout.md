@@ -1,11 +1,11 @@
 ---
-title: Log4j PatternLayout
+title: 14 Log4j PatternLayout
 categories: 
   - 编程
   - Java
   - Log4j教程
 date: 2020-08-06 01:38:36
-updated: 2020-08-06 03:34:50
+updated: 2020-08-18 12:02:42
 abbrlink: 5c0e8258
 ---
 <div id='my_toc'><a href="/blog/5c0e8258/#Log4j-PatternLayout" class="header_1">Log4j PatternLayout</a>&nbsp;<br><a href="/blog/5c0e8258/#模式转换字符" class="header_2">模式转换字符</a>&nbsp;<br><a href="/blog/5c0e8258/#格式修饰符" class="header_2">格式修饰符</a>&nbsp;<br><a href="/blog/5c0e8258/#PatternLayout示例" class="header_2">PatternLayout示例</a>&nbsp;<br></div>
@@ -25,10 +25,24 @@ abbrlink: 5c0e8258
 |:---|:---|
 |`ConversionPattern`|设置转换模式，默认为 `%r [%t] %p %c %x - %m%n`。|
 
+> ## TTCC
+> https://zh.wikipedia.org/wiki/Log4j#TTCC
+> `TTCC`是`log4j`使用的消息格式。`TTCC`是`Time Thread Category Component`（时间、线程、类别、组件）的缩写。例如，采用以下模式（`pattern`）：
+> `%r [%t] %-5p %c %x - %m%n`
+> 
+> |模式参数|描述|
+> |:---|:---|
+> |`%r`|用于输出从`layout`（布局）的构建到日志事件创建所经过的毫秒数。|
+> |`%t`|用来输出生成该日志事件的**线程的名称**。|
+> |`%p`|用于输出**日志事件的优先级**。|
+> |`%c`|用于输出日志事件的`category`（类别）。|
+> |`%x`|用于输出与产生该日志事件的线程相关联的`NDC`（嵌套诊断上下文，`nested diagnostic context`）。|
+> |`%X{key}`|用于输出与产生指定的`key`的日志事件的线程相关联的`MDC`（映射诊断上下文，`mapped diagnostic context`）[4]|
+> |`%m`|用于输出与日志记录事件相关联的**应用程序提供的消息**。|
+> |`%n`|用来输出所在的特定平台的**换行字符**。|
 
 ## 模式转换字符
 下面的表格解释了上面模式中用到的字符，以及所有定制模式时能用到的字符：
-
 
 |转换字符|含义|
 |:---|:---|

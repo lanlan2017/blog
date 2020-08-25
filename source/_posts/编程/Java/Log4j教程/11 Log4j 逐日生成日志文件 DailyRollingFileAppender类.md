@@ -1,11 +1,11 @@
 ---
-title: Log4j 逐日生成日志文件 DailyRollingFileAppender类
+title: 11 Log4j 逐日生成日志文件 DailyRollingFileAppender类
 categories: 
   - 编程
   - Java
   - Log4j教程
 date: 2020-08-03 11:20:11
-updated: 2020-08-06 01:07:22
+updated: 2020-08-18 12:02:15
 abbrlink: 7cb1400
 ---
 <div id='my_toc'><a href="/blog/7cb1400/#逐日生成日志文件" class="header_1">逐日生成日志文件</a>&nbsp;<br><a href="/blog/7cb1400/#log4j-properties" class="header_2">log4j.properties</a>&nbsp;<br></div>

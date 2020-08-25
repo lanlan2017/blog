@@ -1,11 +1,11 @@
 ---
-title: Log4j概述
+title: 1 Log4j 概述
 categories: 
   - 编程
   - Java
   - Log4j教程
 date: 2020-08-03 03:30:02
-updated: 2020-08-03 11:21:24
+updated: 2020-08-18 11:58:55
 abbrlink: f69dab82
 ---
 <div id='my_toc'><a href="/blog/f69dab82/#Log4j概述" class="header_1">Log4j概述</a>&nbsp;<br><a href="/blog/f69dab82/#Log4j组成部分" class="header_2">Log4j组成部分</a>&nbsp;<br><a href="/blog/f69dab82/#Log4j的历史" class="header_2">Log4j的历史</a>&nbsp;<br><a href="/blog/f69dab82/#Log4j的功能" class="header_2">Log4j的功能</a>&nbsp;<br><a href="/blog/f69dab82/#记录日志的优缺点" class="header_2">记录日志的优缺点</a>&nbsp;<br></div>

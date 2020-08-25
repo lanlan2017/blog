@@ -1,11 +1,11 @@
 ---
-title: Log4j 日志格式 Layout类
+title: 8 Log4j 日志格式 Layout类
 categories: 
   - 编程
   - Java
   - Log4j教程
 date: 2020-08-03 06:52:28
-updated: 2020-08-06 01:06:42
+updated: 2020-08-18 12:01:42
 abbrlink: 6356f492
 ---
 <div id='my_toc'><a href="/blog/6356f492/#Log4j-日志格式-Layout类" class="header_1">Log4j 日志格式 Layout类</a>&nbsp;<br><a href="/blog/6356f492/#Layout类型" class="header_2">Layout类型</a>&nbsp;<br><a href="/blog/6356f492/#Layout方法" class="header_2">Layout方法</a>&nbsp;<br></div>

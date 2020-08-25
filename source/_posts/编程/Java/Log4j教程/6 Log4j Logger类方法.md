@@ -1,11 +1,11 @@
 ---
-title: Log4j Logger类方法
+title: 6 Log4j Logger类方法
 categories: 
   - 编程
   - Java
   - Log4j教程
 date: 2020-08-03 05:44:24
-updated: 2020-08-06 01:07:31
+updated: 2020-08-18 12:03:51
 abbrlink: 295e501e
 ---
 <div id='my_toc'><a href="/blog/295e501e/#Log4j-Logger类方法" class="header_1">Log4j Logger类方法</a>&nbsp;<br><a href="/blog/295e501e/#获取Logger类实例" class="header_2">获取Logger类实例</a>&nbsp;<br><a href="/blog/295e501e/#打印日志信息的方法" class="header_2">打印日志信息的方法</a>&nbsp;<br><a href="/blog/295e501e/#示例程序" class="header_2">示例程序</a>&nbsp;<br></div>
@@ -21,7 +21,7 @@ abbrlink: 295e501e
 |Logger类获取Logger实例的方法|描述|
 |:---|:---|
 |`public static Logger getRootLogger();`|返回没有名称的根日志记录器|
-|`public static Logger getLogger(String name);`|按名称返回记录器。日志的名字是传入的任何字符串，通常为类名或包名。例如:<br>`static Logger log = Logger.getLogger(log4jExample.class.getName());`|
+|`public static Logger getLogger(String name);`|按名称返回记录器。<br>日志的名字是传入的任何字符串，通常为**类名或者包名**。例如:<br>`static Logger log = Logger.getLogger(log4jExample.class.getName());`|
 
 ## 打印日志信息的方法
 一旦获取一个有名字的`logger`实例，就可以使用多个方法记录日志。`Logger`类拥有如下方法用于打印日志信息。

@@ -1,11 +1,11 @@
 ---
-title: Log4j 使用多个文件记录日志 RollingFileAppender类
+title: 10 Log4j 使用多个文件记录日志 RollingFileAppender类
 categories: 
   - 编程
   - Java
   - Log4j教程
 date: 2020-08-03 09:56:40
-updated: 2020-08-03 11:21:29
+updated: 2020-08-18 12:02:10
 abbrlink: cbcda66c
 ---
 <div id='my_toc'><a href="/blog/cbcda66c/#Log4j-使用多个文件记录日志-RollingFileAppender类" class="header_1">Log4j 使用多个文件记录日志 RollingFileAppender类</a>&nbsp;<br><a href="/blog/cbcda66c/#log4j-properties" class="header_2">log4j.properties</a>&nbsp;<br></div>

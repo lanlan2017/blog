@@ -1,11 +1,11 @@
 ---
-title: log4j配置
+title: 4 Log4j 配置
 categories: 
   - 编程
   - Java
   - Log4j教程
 date: 2020-08-03 04:04:18
-updated: 2020-08-06 01:07:50
+updated: 2020-08-18 12:00:10
 abbrlink: 9c30cbde
 ---
 <div id='my_toc'><a href="/blog/9c30cbde/#log4j配置" class="header_1">log4j配置</a>&nbsp;<br><a href="/blog/9c30cbde/#Log4j-properties的语法" class="header_2">Log4j.properties的语法</a>&nbsp;<br><a href="/blog/9c30cbde/#Define-the-root-logger-with-appender-XXX" class="header_1">Define the root logger with appender XXX</a>&nbsp;<br><a href="/blog/9c30cbde/#Set-the-appender-named-XXX-to-be-a-File-appender" class="header_1">Set the appender named XXX to be a File appender</a>&nbsp;<br><a href="/blog/9c30cbde/#Define-the-layout-for-XXX-appender" class="header_1">Define the layout for XXX appender</a>&nbsp;<br><a href="/blog/9c30cbde/#Log4j-properties示例" class="header_2">Log4j.properties示例</a>&nbsp;<br><a href="/blog/9c30cbde/#变量替换" class="header_3">变量替换</a>&nbsp;<br><a href="/blog/9c30cbde/#级别" class="header_3">级别</a>&nbsp;<br><a href="/blog/9c30cbde/#Appender对象" class="header_2">Appender对象</a>&nbsp;<br><a href="/blog/9c30cbde/#Appender对象属性" class="header_3">Appender对象属性</a>&nbsp;<br><a href="/blog/9c30cbde/#将Appender添加到Logger对象" class="header_3">将Appender添加到Logger对象</a>&nbsp;<br><a href="/blog/9c30cbde/#在程序中为Logger对象添加Appender对象" class="header_3">在程序中为Logger对象添加Appender对象</a>&nbsp;<br><a href="/blog/9c30cbde/#所有可用的Appender" class="header_3">所有可用的Appender</a>&nbsp;<br><a href="/blog/9c30cbde/#Layout对象" class="header_2">Layout对象</a>&nbsp;<br></div>
@@ -31,14 +31,14 @@ abbrlink: 9c30cbde
 为`appender XXXXX`定义的`Log4j.properties`的语法如下：
 <pre>
 # Define the root logger with appender XXX
-Log4j.rootLogger = DEBUG, <mark>XXX</mark>
+log4j.rootLogger = DEBUG, <mark>XXX</mark>
 
 # Set the appender named XXX to be a File appender
-<strong>Log4j.appender.<mark>XXX</mark></strong>=org.apache.log4j.FileAppender
+<strong>log4j.appender.<mark>XXX</mark></strong>=org.apache.log4j.FileAppender
 
 # Define the layout for XXX appender
-<strong>Log4j.appender.<mark>XXX</mark>.layout</strong>=org.apache.log4j.PatternLayout
-<strong>Log4j.appender.<mark>XXX</mark>.layout.conversionPattern</strong>=%m%n
+<strong>log4j.appender.<mark>XXX</mark>.layout</strong>=org.apache.log4j.PatternLayout
+<strong>log4j.appender.<mark>XXX</mark>.layout.conversionPattern</strong>=%m%n
 </pre>
 
 ## Log4j.properties示例
@@ -77,7 +77,7 @@ log4j.appender.FILE.layout.conversionPattern=%m%n
 这些级别会在本教程的后续部分讲解。
 
 ## Appender对象
-`Apache Log4j`提供的`Appender`对象主要负责将日志信息打印至不同目的地，比如控制台、文件、网络套接字、`NT`事件日志等。
+**`Apache Log4j`提供的`Appender`对象主要负责将日志信息打印至不同目的地**，比如控制台、文件、网络套接字、`NT`事件日志等。
 ### Appender对象属性
 每个`Appender`对象都有不同的属性，这些属性决定了该对象的行为。
 
@@ -92,7 +92,7 @@ log4j.appender.FILE.layout.conversionPattern=%m%n
 ### 将Appender添加到Logger对象
 通过在配置文件中使用如下方法，将`Appender`对象添加至`Logger`对象：
 ```properties
-Log4j.logger.[logger-name]=level, appender1,appender2...appendern
+log4j.logger.[logger-name]=level, appender1,appender2...appendern
 ```
 也可以在`XML`中定义同样的配置：
 ```xml
@@ -128,7 +128,7 @@ public void addAppender(Appender appender);
 - `TelnetAppender`、
 - `WriterAppender`。
 
-我们将在**使用文件记录日志**一章讲解`FileAppender`，在**使用数据库记录日志**一章讲解`JDBCAppender`。
+我们将在[使用文件记录日志](https://lanlan2017.github.io/blog/6296507b/)一章讲解`FileAppender`，在[使用数据库记录日志](https://lanlan2017.github.io/blog/17eaff0a/)一章讲解`JDBCAppender`。
 
 
 ## Layout对象

@@ -1,11 +1,11 @@
 ---
-title: Log4j HTMLLayout
+title: 13 Log4j HTMLLayout
 categories: 
   - 编程
   - Java
   - Log4j教程
 date: 2020-08-06 01:04:20
-updated: 2020-08-06 03:34:50
+updated: 2020-08-18 12:02:35
 abbrlink: 6cc119f
 ---
 <div id='my_toc'><a href="/blog/6cc119f/#Log4j-HTMLLayout" class="header_1">Log4j HTMLLayout</a>&nbsp;<br><a href="/blog/6cc119f/#HTMLLayout方法" class="header_2">HTMLLayout方法</a>&nbsp;<br><a href="/blog/6cc119f/#HTMLLayout示例" class="header_2">HTMLLayout示例</a>&nbsp;<br><a href="/blog/6cc119f/#Log4jExample-java" class="header_2">Log4jExample.java</a>&nbsp;<br><a href="/blog/6cc119f/#运行结果" class="header_2">运行结果</a>&nbsp;<br></div>

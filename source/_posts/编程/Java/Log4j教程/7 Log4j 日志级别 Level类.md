@@ -1,11 +1,11 @@
 ---
-title: Log4j 日志级别 Level类
+title: 7 Log4j 日志级别 Level类
 categories: 
   - 编程
   - Java
   - Log4j教程
 date: 2020-08-03 06:03:06
-updated: 2020-08-03 11:21:24
+updated: 2020-08-18 12:08:25
 abbrlink: 9f922eef
 ---
 <div id='my_toc'><a href="/blog/9f922eef/#Log4j-日志级别Level类" class="header_1">Log4j 日志级别Level类</a>&nbsp;<br><a href="/blog/9f922eef/#日志级别是如何工作的" class="header_2">日志级别是如何工作的</a>&nbsp;<br><a href="/blog/9f922eef/#在程序中设置日志级别" class="header_2">在程序中设置日志级别</a>&nbsp;<br><a href="/blog/9f922eef/#示例程序" class="header_3">示例程序</a>&nbsp;<br><a href="/blog/9f922eef/#使用配置文件设置日志级别" class="header_2">使用配置文件设置日志级别</a>&nbsp;<br><a href="/blog/9f922eef/#log4j-properties" class="header_3">log4j.properties</a>&nbsp;<br><a href="/blog/9f922eef/#SetLevleByConfig-java" class="header_3">SetLevleByConfig.java</a>&nbsp;<br></div>
@@ -31,10 +31,10 @@ abbrlink: 9f922eef
 ## 日志级别是如何工作的
 在一个级别为q的`logger`对象中，一个级别为p的日志请求在`p >= q`的情况下是开启的。该规则是`Log4j`的核心，它假设级别是有序的。
 对于标准级别，其顺序为：`ALL`<`TRACE`<`DEBUG`<`INFO`<`WARN`<`ERROR`<`FATAL`<`OFF`。
-例如设置级别为`DEBUG`这更高的`INFO`,`WARN`,`ERROR`,`FATAL`都是开启的.
+例如设置级别为`DEBUG`,则比`DEBUG`高的`INFO`,`WARN`,`ERROR`,`FATAL`都是开启的.
 ## 在程序中设置日志级别
 使用`logger`对象的`setLevel(Level.级别)`方法可以设置期望的日志级别：
-### 示例程序
+### SetLevelByMethod.java
 ```java /Log4jDemo/src/demo/level/SetLevelByMethod.java
 package demo.level;
 
@@ -58,13 +58,13 @@ public class SetLevelByMethod
     }
 }
 ```
-运行效果
+### 运行效果
 ```
 2020-08-03 18:32:58 WARN  SetLevelByMethod:17 - Warn Message!
 2020-08-03 18:32:58 ERROR SetLevelByMethod:18 - Error Message!
 2020-08-03 18:32:58 FATAL SetLevelByMethod:19 - Fatal Message!
 ```
-可以看到,程序只输出`WARM`级别和比`WARN`更高的级别
+可以看到,程序只输出`WARM`级别和比`WARN`更高的级别的日志输出
 
 ## 使用配置文件设置日志级别
 `Log4j`提供了基于配置文件设置日志级别的功能.当您需要改变调试级别时，只需要修改配置文件即可,不用再去修改代码。
@@ -111,7 +111,7 @@ public class SetLevleByConfig
     }
 }
 ```
-运行结果:
+### 运行结果
 ```
 2020-08-03 18:49:27 INFO  SetLevleByConfig:14 - Info Message!
 2020-08-03 18:49:27 WARN  SetLevleByConfig:15 - Warn Message!
