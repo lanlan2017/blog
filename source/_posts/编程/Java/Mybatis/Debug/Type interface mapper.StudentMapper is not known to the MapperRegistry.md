@@ -1,4 +1,22 @@
+---
+title: Type interface mapper.StudentMapper is not known to the MapperRegistry
+categories: 
+  - 编程
+  - Java
+  - Mybatis
+  - Debug
+date: 2020-08-25 02:09:13
+updated: 2020-08-25 02:14:29
+abbrlink: 2b1c3f5b
+---
+<div id='my_toc'><a href="/blog/2b1c3f5b/#错误提示" class="header_1">错误提示</a>&nbsp;<br><a href="/blog/2b1c3f5b/#原因" class="header_1">原因</a>&nbsp;<br><a href="/blog/2b1c3f5b/#解决方案" class="header_1">解决方案</a>&nbsp;<br></div>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
 # 错误提示
+
 <details><summary>展开/折叠</summary><pre>
 org.apache.ibatis.binding.BindingException: Type interface mapper.StudentMapper is not known to the MapperRegistry.
 	at org.apache.ibatis.binding.MapperRegistry.getMapper(MapperRegistry.java:47)
