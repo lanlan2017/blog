@@ -227,6 +227,8 @@ public class SystemTrayFrame extends JFrame
 ## 参考资料
 [https://blog.csdn.net/jianggujin/article/details/50577491](https://blog.csdn.net/jianggujin/article/details/50577491)
 [https://blog.csdn.net/qq_36761831/article/details/81516535](https://blog.csdn.net/qq_36761831/article/details/81516535)
+[https://www.docs4dev.com/docs/zh/java/java8/tutorials/uiswing-misc-systemtray.html](https://www.docs4dev.com/docs/zh/java/java8/tutorials/uiswing-misc-systemtray.html)
+[https://blog.csdn.net/xietansheng/article/details/78389278](https://blog.csdn.net/xietansheng/article/details/78389278)
 <!-- 
 Blog/programming/Java/Swing/SwingSystemTrayProgram/3
 Blog/programming/Java/Swing/SwingSystemTrayProgram/4

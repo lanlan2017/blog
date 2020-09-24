@@ -57,6 +57,8 @@ date: 2019-12-17 04:08:18
 - [讯飞语音](/blog/categories/其他/我的软件/讯飞语音)
     - [讯飞语音合成](/blog/categories/其他/我的软件/讯飞语音/讯飞语音合成)
 
+## [手机刷机](/blog/categories/其他/手机刷机)
+
 ## [排序](/blog/categories/其他/排序)
 
 ## [搜索](/blog/categories/其他/搜索)
@@ -148,6 +150,10 @@ date: 2019-12-17 04:08:18
 - [Java 集合](/blog/categories/编程/Java/Java-集合)
 - [JDBC](/blog/categories/编程/Java/JDBC)
 - [Log4j教程](/blog/categories/编程/Java/Log4j教程)
+    - [Debug](/blog/categories/编程/Java/Log4j教程/Debug)
+- [Mybatis](/blog/categories/编程/Java/Mybatis)
+    - [Debug](/blog/categories/编程/Java/Mybatis/Debug)
+- [Swing](/blog/categories/编程/Java/Swing)
 - [反射](/blog/categories/编程/Java/反射)
 - [自定义工具类](/blog/categories/编程/Java/自定义工具类)
 
