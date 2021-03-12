@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="gitbook安装和使用安装低于v10.21.0版本的node.js我之前用的是12.x版本的LTS办的nodejs,但是在安装gitbook的时候,有如下报错:经过一段排查之后,我发现gitbook不支持高版本的node.js,安装gitbook1npm install gitbook-cli -g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gitbook安装和使用">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/a7b54d2e/index.html">
+<meta property="og:site_name" content="蓝蓝博客">
+<meta property="og:description" content="gitbook安装和使用安装低于v10.21.0版本的node.js我之前用的是12.x版本的LTS办的nodejs,但是在安装gitbook的时候,有如下报错:经过一段排查之后,我发现gitbook不支持高版本的node.js,安装gitbook1npm install gitbook-cli -g">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-11T08:16:58.000Z">
+<meta property="article:modified_time" content="2020-10-11T08:16:58.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="批处理">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/blog/a7b54d2e/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>gitbook安装和使用 | 蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/blog/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/blog/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/blog/a7b54d2e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="先看视频再看书">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">gitbook安装和使用
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-10-11 08:16:58" itemprop="dateCreated datePublished" datetime="2020-10-11T08:16:58+00:00">2020-10-11</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/JavaScript/NodeJS/" itemprop="url" rel="index"><span itemprop="name">NodeJS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/a7b54d2e/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/a7b54d2e/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="gitbook安装和使用"><a href="#gitbook安装和使用" class="headerlink" title="gitbook安装和使用"></a>gitbook安装和使用</h1><h2 id="安装低于v10-21-0版本的node-js"><a href="#安装低于v10-21-0版本的node-js" class="headerlink" title="安装低于v10.21.0版本的node.js"></a>安装低于v10.21.0版本的node.js</h2><p>我之前用的是12.x版本的LTS办的nodejs,但是在安装gitbook的时候,有如下报错:</p><p>经过一段排查之后,我发现gitbook不支持高版本的node.js,</p><h2 id="安装gitbook"><a href="#安装gitbook" class="headerlink" title="安装gitbook"></a>安装gitbook</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install gitbook-cli -g</span><br></pre></td></tr></table></figure><a id="more"></a>
+
+
+<p>运行效果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">E:\Blog\MyGitBook&gt;node -v</span><br><span class="line">v10.21.0</span><br><span class="line"></span><br><span class="line">E:\Blog\MyGitBook&gt;npm install gitbook-cli -g</span><br><span class="line">E:\Program Files\nodejs\npm_global\gitbook -&gt; E:\Program Files\nodejs\npm_global\node_modules\gitbook-cli\bin\gitbook.js</span><br><span class="line">+ gitbook-cli@2.3.2</span><br><span class="line">updated 3 packages in 15.526s</span><br></pre></td></tr></table></figure><br>此时并没有安装完毕,输入如下命令继续安装:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook -V</span><br></pre></td></tr></table></figure><br>运行效果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">E:\Blog\MyGitBook&gt;gitbook -V</span><br><span class="line">CLI version: 2.3.2</span><br><span class="line">Installing GitBook 3.2.3</span><br><span class="line">gitbook@3.2.3 C:\Users\lan\AppData\Local\Temp\tmp-12016inN44NmImh8T\node_modules\gitbook</span><br><span class="line">├── escape-html@1.0.3</span><br><span class="line">├── escape-string-regexp@1.0.5</span><br><span class="line">├── destroy@1.0.4</span><br><span class="line">├── 省略。。。。。。。。。。。。。。。。。。。。</span><br><span class="line">commander@2.9.0, cross-spawn-async@2.2.5, web-resource-inliner@2.0.0)</span><br><span class="line">└── nunjucks@2.5.2 (asap@2.0.6, yargs@3.32.0, chokidar@1.7.0)</span><br><span class="line">GitBook version: 3.2.3</span><br></pre></td></tr></table></figure></p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook init</span><br></pre></td></tr></table></figure>
+<p>运行效果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">E:\Blog\MyGitBook&gt;gitbook init</span><br><span class="line">warn: no summary file in this book</span><br><span class="line">info: create README.md</span><br><span class="line">info: create SUMMARY.md</span><br><span class="line">info: initialization is finished</span><br></pre></td></tr></table></figure><br>这将会生成两个文件:README.md和SUMMARY.md：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">E:\Blog\MyGitBook&gt;mytree f</span><br><span class="line">E:\Blog\MyGitBook</span><br><span class="line">├─README.md</span><br><span class="line">└─SUMMARY.md</span><br></pre></td></tr></table></figure><br>其中,README.md中存放的时候书的简介,SUMMARY.md文件中存放的是书的目录.</p>
+<h2 id="编写目录"><a href="#编写目录" class="headerlink" title="编写目录"></a>编写目录</h2><figure class="highlight md"><figcaption><span>README.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&amp;#35; Introduction</span><br><span class="line"></span><br><span class="line">这是我的第一本GitBook</span><br></pre></td></tr></table></figure>
+<h2 id="编写目录-1"><a href="#编写目录-1" class="headerlink" title="编写目录"></a>编写目录</h2><figure class="highlight md"><figcaption><span>SUMMARY.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&amp;#35; Summary</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>[<span class="string">Introduction</span>](<span class="link">README.md</span>)</span><br><span class="line"><span class="bullet">- </span>[<span class="string">第1章 Hello</span>](<span class="link">Chapter1/README.md</span>)</span><br><span class="line"><span class="bullet">  - </span>[<span class="string">1.1 xxxx</span>](<span class="link">Chapter1/xxxx.md</span>)</span><br><span class="line"><span class="bullet">  - </span>[<span class="string">1.2 yyyy</span>](<span class="link">Chapter1/yyyy.md</span>)</span><br><span class="line"><span class="bullet">  - </span>[<span class="string">1.3 zzzz</span>](<span class="link">Chapter1/zzzz.md</span>)</span><br><span class="line"><span class="bullet">- </span>[<span class="string">第2章 World</span>](<span class="link">Chapter2/README.md</span>)</span><br><span class="line"><span class="bullet">  - </span>[<span class="string">2.1 xxxx</span>](<span class="link">Chapter2/xxxx.md</span>)</span><br><span class="line"><span class="bullet">  - </span>[<span class="string">2.2 yyyy</span>](<span class="link">Chapter2/yyyy.md</span>)</span><br><span class="line"><span class="bullet">  - </span>[<span class="string">2.3 zzzz</span>](<span class="link">Chapter2/zzzz.md</span>)</span><br><span class="line"><span class="bullet">  - </span>[<span class="string">2.2 iiii</span>](<span class="link">Chapter2/iiii.md</span>)</span><br><span class="line"><span class="bullet">  - </span>[<span class="string">2.3 jjjj</span>](<span class="link">Chapter2/jjjj.md</span>)</span><br><span class="line"><span class="bullet">  - </span>[<span class="string">2.3 kkkk</span>](<span class="link">Chapter2/kkkk.md</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="再次初始化"><a href="#再次初始化" class="headerlink" title="再次初始化"></a>再次初始化</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook init</span><br></pre></td></tr></table></figure>
+<p>运行效果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">E:\Blog\MyGitBook&gt;gitbook init</span><br><span class="line">info: create Chapter2&#x2F;README.md</span><br><span class="line">info: create Chapter2&#x2F;xxxx.md</span><br><span class="line">info: create Chapter2&#x2F;yyyy.md</span><br><span class="line">info: create Chapter2&#x2F;zzzz.md</span><br><span class="line">info: create Chapter2&#x2F;iiii.md</span><br><span class="line">info: create Chapter2&#x2F;jjjj.md</span><br><span class="line">info: create Chapter2&#x2F;kkkk.md</span><br><span class="line">info: create SUMMARY.md</span><br><span class="line">info: initialization is finished</span><br></pre></td></tr></table></figure><br>此时的项目结构如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">E:\Blog\MyGitBook&gt;mytree f</span><br><span class="line">E:\Blog\MyGitBook</span><br><span class="line">├─Chapter1\</span><br><span class="line">│ ├─iiii.md</span><br><span class="line">│ ├─jjjj.md</span><br><span class="line">│ ├─kkkk.md</span><br><span class="line">│ ├─README.md</span><br><span class="line">│ ├─xxxx.md</span><br><span class="line">│ ├─yyyy.md</span><br><span class="line">│ └─zzzz.md</span><br><span class="line">├─Chapter2\</span><br><span class="line">│ ├─iiii.md</span><br><span class="line">│ ├─jjjj.md</span><br><span class="line">│ ├─kkkk.md</span><br><span class="line">│ ├─README.md</span><br><span class="line">│ ├─xxxx.md</span><br><span class="line">│ ├─yyyy.md</span><br><span class="line">│ └─zzzz.md</span><br><span class="line">├─README.md</span><br><span class="line">└─SUMMARY.md</span><br></pre></td></tr></table></figure><br>继续在上面生成的新文件中编写一些内容</p>
+<h2 id="启动本地服务器"><a href="#启动本地服务器" class="headerlink" title="启动本地服务器"></a>启动本地服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook serve</span><br></pre></td></tr></table></figure>
+<p>运行效果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">E:\Blog\MyGitBook&gt;gitbook serve</span><br><span class="line">Live reload server started on port: 35729</span><br><span class="line">Press CTRL+C to quit ...</span><br><span class="line"></span><br><span class="line">info: 7 plugins are installed</span><br><span class="line">info: loading plugin &quot;livereload&quot;... OK</span><br><span class="line">info: loading plugin &quot;highlight&quot;... OK</span><br><span class="line">info: loading plugin &quot;search&quot;... OK</span><br><span class="line">info: loading plugin &quot;lunr&quot;... OK</span><br><span class="line">info: loading plugin &quot;sharing&quot;... OK</span><br><span class="line">info: loading plugin &quot;fontsettings&quot;... OK</span><br><span class="line">info: loading plugin &quot;theme-default&quot;... OK</span><br><span class="line">info: found 12 pages</span><br><span class="line">info: found 14 asset files</span><br><span class="line">info: &gt;&gt; generation finished with success in 1.7s !</span><br><span class="line"></span><br><span class="line">Starting server ...</span><br><span class="line">Serving book on http:&#x2F;&#x2F;localhost:4000</span><br></pre></td></tr></table></figure></p>
+<h2 id="打包文档"><a href="#打包文档" class="headerlink" title="打包文档"></a>打包文档</h2><h2 id="生成电子书"><a href="#生成电子书" class="headerlink" title="生成电子书"></a>生成电子书</h2><h2 id="配置文件book-json"><a href="#配置文件book-json" class="headerlink" title="配置文件book.json"></a>配置文件book.json</h2><h1 id="gitbook插件"><a href="#gitbook插件" class="headerlink" title="gitbook插件"></a>gitbook插件</h1><h2 id="插件官网"><a href="#插件官网" class="headerlink" title="插件官网"></a>插件官网</h2><p><a href="https://plugins.gitbook.com/plugin/" target="_blank" rel="noopener">https://plugins.gitbook.com/plugin/</a></p>
+<h2 id="安装和使用插件方法"><a href="#安装和使用插件方法" class="headerlink" title="安装和使用插件方法"></a>安装和使用插件方法</h2><p>在根目录下创建book.json配置文件,在配置文件中按照指定格式插入插件对应的代码。</p>
+<p>安装插件有两种方式 ：</p>
+<ul>
+<li>一种是在book.json写入相应插件和配置后，使用gitbook install命令,进行全局安装</li>
+<li>一种是使用npm install gitbook-plugin-插件名,单独安装。<h2 id="hide-element-隐藏元素"><a href="#hide-element-隐藏元素" class="headerlink" title="hide-element 隐藏元素"></a>hide-element 隐藏元素</h2>主要用来隐藏不想看到的元素。<br>如：默认的gitbook左侧提示：Published with GitBook</li>
+</ul>
+<p>使用方式： 在book.json中写入以下内容:<br><figure class="highlight json"><figcaption><span>book.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"plugins"</span>: [</span><br><span class="line">        <span class="string">"hide-element"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</span><br><span class="line">        <span class="attr">"hide-element"</span>: &#123;</span><br><span class="line">            <span class="attr">"elements"</span>: [<span class="string">".gitbook-link"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>然后运行gitbook install命令进行安装,安装效果如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ gitbook install</span><br><span class="line">info: installing 1 plugins using npm@3.9.2</span><br><span class="line">info:</span><br><span class="line">info: installing plugin <span class="string">"hide-element"</span></span><br><span class="line">info: install plugin <span class="string">"hide-element"</span> (*) from NPM with version 0.0.4</span><br><span class="line">E:\Blog\MyGitBook</span><br><span class="line">`-- gitbook-plugin-hide-element@0.0.4</span><br><span class="line"></span><br><span class="line">info: &gt;&gt; plugin <span class="string">"hide-element"</span> installed with success</span><br></pre></td></tr></table></figure></p>
+<h2 id="back-to-top-button-回到顶部"><a href="#back-to-top-button-回到顶部" class="headerlink" title="back-to-top-button 回到顶部"></a>back-to-top-button 回到顶部</h2><p>当文章篇幅较长时，页面底部会显示按钮，一键点击自动回到顶部。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"plugins"</span>: [</span><br><span class="line">        <span class="string">"hide-element"</span>,</span><br><span class="line">        <span class="string">"back-to-top-button"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</span><br><span class="line">        <span class="attr">"hide-element"</span>: &#123;</span><br><span class="line">            <span class="attr">"elements"</span>: [<span class="string">".gitbook-link"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="chapter-fold-导航目录折叠"><a href="#chapter-fold-导航目录折叠" class="headerlink" title="chapter-fold 导航目录折叠"></a>chapter-fold 导航目录折叠</h2><p>gitbook默认目录没有折叠效果。</p>
+<h2 id="code-复制代码"><a href="#code-复制代码" class="headerlink" title="code 复制代码"></a>code 复制代码</h2><p>在代码域的右上角添加一个复制按钮，点击一键复制代码。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"plugins"</span>: [</span><br><span class="line">        <span class="string">"hide-element"</span>,</span><br><span class="line">        <span class="string">"back-to-top-button"</span>,</span><br><span class="line">        <span class="string">"code"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</span><br><span class="line">        <span class="attr">"hide-element"</span>: &#123;</span><br><span class="line">            <span class="attr">"elements"</span>: [<span class="string">".gitbook-link"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="splitter-侧边栏宽度可调节"><a href="#splitter-侧边栏宽度可调节" class="headerlink" title="splitter 侧边栏宽度可调节"></a>splitter 侧边栏宽度可调节</h2><p>左侧目录和右侧文章可以拖动调节宽度。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"plugins"</span>: [</span><br><span class="line">        <span class="string">"hide-element"</span>,</span><br><span class="line">        <span class="string">"back-to-top-button"</span>,</span><br><span class="line">        <span class="string">"code"</span>,</span><br><span class="line">        <span class="string">"splitter"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</span><br><span class="line">        <span class="attr">"hide-element"</span>: &#123;</span><br><span class="line">            <span class="attr">"elements"</span>: [<span class="string">".gitbook-link"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="search-pro-高级搜索"><a href="#search-pro-高级搜索" class="headerlink" title="search-pro 高级搜索"></a>search-pro 高级搜索</h2><p>支持中英文，准确率更高一些。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"plugins"</span>: [</span><br><span class="line">        <span class="string">"hide-element"</span>,</span><br><span class="line">        <span class="string">"back-to-top-button"</span>,</span><br><span class="line">        <span class="string">"code"</span>,</span><br><span class="line">        <span class="string">"splitter"</span>,</span><br><span class="line">        <span class="string">"-lunr"</span>, </span><br><span class="line">        <span class="string">"-search"</span>, </span><br><span class="line">        <span class="string">"search-pro"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</span><br><span class="line">        <span class="attr">"hide-element"</span>: &#123;</span><br><span class="line">            <span class="attr">"elements"</span>: [<span class="string">".gitbook-link"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="insert-logo-插入logo"><a href="#insert-logo-插入logo" class="headerlink" title="insert-logo 插入logo"></a>insert-logo 插入logo</h2><p>在左侧导航栏上方插入logo。url支持本地图片也支持网络图片链接<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"plugins"</span>: [</span><br><span class="line">        <span class="string">"hide-element"</span>,</span><br><span class="line">        <span class="string">"back-to-top-button"</span>,</span><br><span class="line">        <span class="string">"code"</span>,</span><br><span class="line">        <span class="string">"splitter"</span>,</span><br><span class="line">        <span class="string">"-lunr"</span>, </span><br><span class="line">        <span class="string">"-search"</span>, </span><br><span class="line">        <span class="string">"search-pro"</span>,</span><br><span class="line">        <span class="string">"insert-logo"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</span><br><span class="line">        <span class="attr">"hide-element"</span>: &#123;</span><br><span class="line">            <span class="attr">"elements"</span>: [<span class="string">".gitbook-link"</span>]</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">"insert-logo"</span>: &#123;</span><br><span class="line">            <span class="attr">"url"</span>: <span class="string">"images/logo.png"</span>,</span><br><span class="line">            <span class="attr">"style"</span>: <span class="string">"background: none; max-height: 30px; min-height: 30px"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="custom-favicon-修改标题栏图标"><a href="#custom-favicon-修改标题栏图标" class="headerlink" title="custom-favicon 修改标题栏图标"></a>custom-favicon 修改标题栏图标</h2><p>设置浏览器选项卡标题栏的小图标。<br>注意只支持ico后缀的图片，并且只支持本地图片，不支持网络图片链接。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"plugins"</span>: [</span><br><span class="line">        <span class="string">"hide-element"</span>,</span><br><span class="line">        <span class="string">"back-to-top-button"</span>,</span><br><span class="line">        <span class="string">"code"</span>,</span><br><span class="line">        <span class="string">"splitter"</span>,</span><br><span class="line">        <span class="string">"-lunr"</span>, </span><br><span class="line">        <span class="string">"-search"</span>, </span><br><span class="line">        <span class="string">"search-pro"</span>,</span><br><span class="line">        <span class="string">"insert-logo"</span>,</span><br><span class="line">        <span class="string">"custom-favicon"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</span><br><span class="line">        <span class="attr">"hide-element"</span>: &#123;</span><br><span class="line">            <span class="attr">"elements"</span>: [<span class="string">".gitbook-link"</span>]</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">"insert-logo"</span>: &#123;</span><br><span class="line">            <span class="attr">"url"</span>: <span class="string">"images/logo.png"</span>,</span><br><span class="line">            <span class="attr">"style"</span>: <span class="string">"background: none; max-height: 30px; min-height: 30px"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">"favicon"</span>: <span class="string">"icon/favicon.ico"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="pageview-count-阅读量计数"><a href="#pageview-count-阅读量计数" class="headerlink" title="pageview-count 阅读量计数"></a>pageview-count 阅读量计数</h2><p>记录每个文章页面被访问的次数。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"plugins"</span>: [</span><br><span class="line">        <span class="string">"hide-element"</span>,</span><br><span class="line">        <span class="string">"back-to-top-button"</span>,</span><br><span class="line">        <span class="string">"code"</span>,</span><br><span class="line">        <span class="string">"splitter"</span>,</span><br><span class="line">        <span class="string">"-lunr"</span>, </span><br><span class="line">        <span class="string">"-search"</span>, </span><br><span class="line">        <span class="string">"search-pro"</span>,</span><br><span class="line">        <span class="string">"insert-logo"</span>,</span><br><span class="line">        <span class="string">"custom-favicon"</span>,</span><br><span class="line">        <span class="string">"pageview-count"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</span><br><span class="line">        <span class="attr">"hide-element"</span>: &#123;</span><br><span class="line">            <span class="attr">"elements"</span>: [<span class="string">".gitbook-link"</span>]</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">"insert-logo"</span>: &#123;</span><br><span class="line">            <span class="attr">"url"</span>: <span class="string">"images/logo.png"</span>,</span><br><span class="line">            <span class="attr">"style"</span>: <span class="string">"background: none; max-height: 30px; min-height: 30px"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">"favicon"</span>: <span class="string">"icon/favicon.ico"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="tbfed-pagefooter-页面添加页脚"><a href="#tbfed-pagefooter-页面添加页脚" class="headerlink" title="tbfed-pagefooter 页面添加页脚"></a>tbfed-pagefooter 页面添加页脚</h2><p>在每个文章下面标注版权信息和文章时间。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"plugins"</span>: [</span><br><span class="line">        <span class="string">"hide-element"</span>,</span><br><span class="line">        <span class="string">"back-to-top-button"</span>,</span><br><span class="line">        <span class="string">"code"</span>,</span><br><span class="line">        <span class="string">"splitter"</span>,</span><br><span class="line">        <span class="string">"-lunr"</span>, </span><br><span class="line">        <span class="string">"-search"</span>, </span><br><span class="line">        <span class="string">"search-pro"</span>,</span><br><span class="line">        <span class="string">"insert-logo"</span>,</span><br><span class="line">        <span class="string">"custom-favicon"</span>,</span><br><span class="line">        <span class="string">"pageview-count"</span>,</span><br><span class="line">        <span class="string">"tbfed-pagefooter"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</span><br><span class="line">        <span class="attr">"hide-element"</span>: &#123;</span><br><span class="line">            <span class="attr">"elements"</span>: [<span class="string">".gitbook-link"</span>]</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">"insert-logo"</span>: &#123;</span><br><span class="line">            <span class="attr">"url"</span>: <span class="string">"images/logo.png"</span>,</span><br><span class="line">            <span class="attr">"style"</span>: <span class="string">"background: none; max-height: 30px; min-height: 30px"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">"favicon"</span>: <span class="string">"icon/favicon.ico"</span>,</span><br><span class="line">        <span class="attr">"tbfed-pagefooter"</span>: &#123;</span><br><span class="line">            <span class="attr">"copyright"</span>:<span class="string">"Copyright &amp;copy dsx2016.com 2019"</span>,</span><br><span class="line">            <span class="attr">"modify_label"</span>: <span class="string">"该文章修订时间："</span>,</span><br><span class="line">            <span class="attr">"modify_format"</span>: <span class="string">"YYYY-MM-DD HH:mm:ss"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="popup-弹出大图"><a href="#popup-弹出大图" class="headerlink" title="popup 弹出大图"></a>popup 弹出大图</h2><p>点击可以在新窗口展示图片。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"plugins"</span>: [</span><br><span class="line">        <span class="string">"hide-element"</span>,</span><br><span class="line">        <span class="string">"back-to-top-button"</span>,</span><br><span class="line">        <span class="string">"code"</span>,</span><br><span class="line">        <span class="string">"splitter"</span>,</span><br><span class="line">        <span class="string">"-lunr"</span>, </span><br><span class="line">        <span class="string">"-search"</span>, </span><br><span class="line">        <span class="string">"search-pro"</span>,</span><br><span class="line">        <span class="string">"insert-logo"</span>,</span><br><span class="line">        <span class="string">"custom-favicon"</span>,</span><br><span class="line">        <span class="string">"pageview-count"</span>,</span><br><span class="line">        <span class="string">"tbfed-pagefooter"</span>,</span><br><span class="line">        <span class="string">"popup"</span>,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</span><br><span class="line">        <span class="attr">"hide-element"</span>: &#123;</span><br><span class="line">            <span class="attr">"elements"</span>: [<span class="string">".gitbook-link"</span>]</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">"insert-logo"</span>: &#123;</span><br><span class="line">            <span class="attr">"url"</span>: <span class="string">"images/logo.png"</span>,</span><br><span class="line">            <span class="attr">"style"</span>: <span class="string">"background: none; max-height: 30px; min-height: 30px"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">"favicon"</span>: <span class="string">"icon/favicon.ico"</span>,</span><br><span class="line">        <span class="attr">"tbfed-pagefooter"</span>: &#123;</span><br><span class="line">            <span class="attr">"copyright"</span>:<span class="string">"Copyright &amp;copy dsx2016.com 2019"</span>,</span><br><span class="line">            <span class="attr">"modify_label"</span>: <span class="string">"该文章修订时间："</span>,</span><br><span class="line">            <span class="attr">"modify_format"</span>: <span class="string">"YYYY-MM-DD HH:mm:ss"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="sharing-plus-分享当前页面"><a href="#sharing-plus-分享当前页面" class="headerlink" title="sharing-plus 分享当前页面"></a>sharing-plus 分享当前页面</h2><p>gitbook默认只有Facebook、Google+、Twiter、Weibo、Instapaper</p>
+<p>插件可以有更多分享方式，也可以关闭指定分享方式。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"plugins"</span>: [</span><br><span class="line">        <span class="string">"hide-element"</span>,</span><br><span class="line">        <span class="string">"back-to-top-button"</span>,</span><br><span class="line">        <span class="string">"code"</span>,</span><br><span class="line">        <span class="string">"splitter"</span>,</span><br><span class="line">        <span class="string">"-lunr"</span>,</span><br><span class="line">        <span class="string">"-search"</span>,</span><br><span class="line">        <span class="string">"search-pro"</span>,</span><br><span class="line">        <span class="string">"insert-logo"</span>,</span><br><span class="line">        <span class="string">"custom-favicon"</span>,</span><br><span class="line">        <span class="string">"pageview-count"</span>,</span><br><span class="line">        <span class="string">"tbfed-pagefooter"</span>,</span><br><span class="line">        <span class="string">"popup"</span>,</span><br><span class="line">        <span class="string">"-sharing"</span>,</span><br><span class="line">        <span class="string">"sharing-plus"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</span><br><span class="line">        <span class="attr">"hide-element"</span>: &#123;</span><br><span class="line">            <span class="attr">"elements"</span>: [<span class="string">".gitbook-link"</span>]</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">"insert-logo"</span>: &#123;</span><br><span class="line">            <span class="attr">"url"</span>: <span class="string">"images/logo.png"</span>,</span><br><span class="line">            <span class="attr">"style"</span>: <span class="string">"background: none; max-height: 30px; min-height: 30px"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">"favicon"</span>: <span class="string">"icon/favicon.ico"</span>,</span><br><span class="line">        <span class="attr">"tbfed-pagefooter"</span>: &#123;</span><br><span class="line">            <span class="attr">"copyright"</span>: <span class="string">"Copyright &amp;copy dsx2016.com 2019"</span>,</span><br><span class="line">            <span class="attr">"modify_label"</span>: <span class="string">"该文章修订时间："</span>,</span><br><span class="line">            <span class="attr">"modify_format"</span>: <span class="string">"YYYY-MM-DD HH:mm:ss"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">"sharing"</span>: &#123;</span><br><span class="line">            <span class="attr">"douban"</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="attr">"facebook"</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="attr">"google"</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="attr">"pocket"</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="attr">"qq"</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="attr">"qzone"</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="attr">"twitter"</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="attr">"weibo"</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="attr">"all"</span>: [</span><br><span class="line">                <span class="string">"douban"</span>, <span class="string">"facebook"</span>, <span class="string">"google"</span>, <span class="string">"instapaper"</span>, <span class="string">"linkedin"</span>, <span class="string">"twitter"</span>, <span class="string">"weibo"</span>,</span><br><span class="line">                <span class="string">"messenger"</span>, <span class="string">"qq"</span>, <span class="string">"qzone"</span>, <span class="string">"viber"</span>, <span class="string">"whatsapp"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Prism-代码高亮"><a href="#Prism-代码高亮" class="headerlink" title="Prism 代码高亮"></a>Prism 代码高亮</h2><p>使用 Prism.js 为语法添加高亮显示，需要将 highlight 插件去掉。该插件自带的主题样式较少，可以再安装 prism-themes 插件，里面多提供了几种样式，具体的样式可以参考 这里，在设置样式时要注意设置 css 文件名，而不是样式名。<br><a href="https://plugins.gitbook.com/plugin/prism" target="_blank" rel="noopener">Prism 插件地址</a><br><a href="https://plugins.gitbook.com/plugin/prism-themes" target="_blank" rel="noopener">prism-themes 插件地址</a><br><figure class="highlight json"><figcaption><span>book.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"plugins"</span>: [</span><br><span class="line">        <span class="string">"-highlight"</span>,</span><br><span class="line">        <span class="string">"prism"</span>,</span><br><span class="line">        <span class="string">"prism-themes"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</span><br><span class="line">        <span class="attr">"prism"</span>: &#123;</span><br><span class="line">            <span class="attr">"css"</span>: [</span><br><span class="line">                <span class="string">"prismjs/themes/prism-solarizedlight.css"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="如何切换样式"><a href="#如何切换样式" class="headerlink" title="如何切换样式"></a>如何切换样式</h3><h4 id="查看样式效果"><a href="#查看样式效果" class="headerlink" title="查看样式效果"></a>查看样式效果</h4><p><a href="https://github.com/PrismJS/prism-themes#available-themes" target="_blank" rel="noopener">https://github.com/PrismJS/prism-themes#available-themes</a></p>
+<h3 id="prism样式的本地css文件路径"><a href="#prism样式的本地css文件路径" class="headerlink" title="prism样式的本地css文件路径"></a>prism样式的本地css文件路径</h3><p><code>gitbook install</code>安装完毕后,样式已经保存在项目路径下的<code>node_modules\prism-themes\themes</code>路径下了:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">E:\Blog\MyGitBook\node_modules\prism-themes\themes&gt;mytree f</span><br><span class="line">E:\Blog\MyGitBook\node_modules\prism-themes\themes</span><br><span class="line">├─prism-a11y-dark.css</span><br><span class="line">├─prism-atom-dark.css</span><br><span class="line">├─prism-base16-ateliersulphurpool.light.css</span><br><span class="line">├─prism-cb.css</span><br><span class="line">├─prism-darcula.css</span><br><span class="line">├─prism-dracula.css</span><br><span class="line">├─prism-duotone-dark.css</span><br><span class="line">├─prism-duotone-earth.css</span><br><span class="line">├─prism-duotone-forest.css</span><br><span class="line">├─prism-duotone-light.css</span><br><span class="line">├─prism-duotone-sea.css</span><br><span class="line">├─prism-duotone-space.css</span><br><span class="line">├─prism-ghcolors.css</span><br><span class="line">├─prism-hopscotch.css</span><br><span class="line">├─prism-material-dark.css</span><br><span class="line">├─prism-material-light.css</span><br><span class="line">├─prism-material-oceanic.css</span><br><span class="line">├─prism-nord.css</span><br><span class="line">├─prism-pojoaque.css</span><br><span class="line">├─prism-shades-of-purple.css</span><br><span class="line">├─prism-synthwave84.css</span><br><span class="line">├─prism-vs.css</span><br><span class="line">├─prism-vsc-dark-plus.css</span><br><span class="line">└─prism-xonokai.css</span><br></pre></td></tr></table></figure><br>去掉前面的使用相对于node_modules目录的相对路径即可使用该css文件,例如如果你想使用VS样式(vscode)的css文件相对于node_modules的路径为:prism-themes\themes\prism-vs.css,则路径为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;prism-themes&#x2F;themes&#x2F;prism-vs.css&quot;</span><br></pre></td></tr></table></figure><br>即可定位到该CSS文件<br>也就是将上面的book.json改成:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"plugins"</span>: [</span><br><span class="line">        <span class="string">"-highlight"</span>,</span><br><span class="line">        <span class="string">"prism"</span>,</span><br><span class="line">        <span class="string">"prism-themes"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"pluginsConfig"</span>: &#123;</span><br><span class="line">        <span class="attr">"prism"</span>: &#123;</span><br><span class="line">            <span class="attr">"css"</span>: [</span><br><span class="line">                <span class="string">"prism-themes/themes/prism-vs.css"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>即可使用该CSS。</p>
+<h2 id="添加github图标"><a href="#添加github图标" class="headerlink" title="添加github图标"></a>添加github图标</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">"plugins": [</span><br><span class="line">    <span class="string">"github"</span></span><br><span class="line">],</span><br><span class="line">"pluginsConfig": &#123;</span><br><span class="line">    "github": &#123;</span><br><span class="line">        "url": "https://github.com/你的地址"</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="数学公式-KaTex"><a href="#数学公式-KaTex" class="headerlink" title="数学公式 KaTex"></a>数学公式 KaTex</h2><p>为了支持数学公式, 我们可以使用KaTex和MathJax插件, 官网上说Katex速度要快于MathJax</p>
+<p>MathJax使用LaTeX语法编写数学公式教程</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/Lowerce/article/details/107579261" target="_blank" rel="noopener">https://blog.csdn.net/Lowerce/article/details/107579261</a><br><a href="https://www.npmjs.com/package/gitbook" target="_blank" rel="noopener">https://www.npmjs.com/package/gitbook</a><br><a href="http://gitbook.zhangjikai.com/plugins.html" target="_blank" rel="noopener">GitBook 插件</a><br><a href="https://juejin.im/post/6844903865146441741" target="_blank" rel="noopener">推荐12个实用的gitbook插件</a><br><a href="https://www.npmjs.com/search?q=gitbook-plugin" target="_blank" rel="noopener">https://www.npmjs.com/search?q=gitbook-plugin</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/blog/a7b54d2e/" title="gitbook安装和使用">https://lanlan2017.github.io/blog/a7b54d2e/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/102bf6f5/" rel="next" title="windows系统中 使用nvm切换多个nodejs版本">
+                  <i class="fa fa-chevron-left"></i> windows系统中 使用nvm切换多个nodejs版本
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/c3c2965c/" rel="prev" title="gitbook发布到github pages">
+                  gitbook发布到github pages <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#gitbook安装和使用"><span class="nav-number">1.</span> <span class="nav-text">gitbook安装和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装低于v10-21-0版本的node-js"><span class="nav-number">1.1.</span> <span class="nav-text">安装低于v10.21.0版本的node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装gitbook"><span class="nav-number">1.2.</span> <span class="nav-text">安装gitbook</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">1.3.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写目录"><span class="nav-number">1.4.</span> <span class="nav-text">编写目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写目录-1"><span class="nav-number">1.5.</span> <span class="nav-text">编写目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再次初始化"><span class="nav-number">1.6.</span> <span class="nav-text">再次初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动本地服务器"><span class="nav-number">1.7.</span> <span class="nav-text">启动本地服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打包文档"><span class="nav-number">1.8.</span> <span class="nav-text">打包文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成电子书"><span class="nav-number">1.9.</span> <span class="nav-text">生成电子书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件book-json"><span class="nav-number">1.10.</span> <span class="nav-text">配置文件book.json</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gitbook插件"><span class="nav-number">2.</span> <span class="nav-text">gitbook插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插件官网"><span class="nav-number">2.1.</span> <span class="nav-text">插件官网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装和使用插件方法"><span class="nav-number">2.2.</span> <span class="nav-text">安装和使用插件方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hide-element-隐藏元素"><span class="nav-number">2.3.</span> <span class="nav-text">hide-element 隐藏元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#back-to-top-button-回到顶部"><span class="nav-number">2.4.</span> <span class="nav-text">back-to-top-button 回到顶部</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter-fold-导航目录折叠"><span class="nav-number">2.5.</span> <span class="nav-text">chapter-fold 导航目录折叠</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#code-复制代码"><span class="nav-number">2.6.</span> <span class="nav-text">code 复制代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#splitter-侧边栏宽度可调节"><span class="nav-number">2.7.</span> <span class="nav-text">splitter 侧边栏宽度可调节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#search-pro-高级搜索"><span class="nav-number">2.8.</span> <span class="nav-text">search-pro 高级搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#insert-logo-插入logo"><span class="nav-number">2.9.</span> <span class="nav-text">insert-logo 插入logo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#custom-favicon-修改标题栏图标"><span class="nav-number">2.10.</span> <span class="nav-text">custom-favicon 修改标题栏图标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pageview-count-阅读量计数"><span class="nav-number">2.11.</span> <span class="nav-text">pageview-count 阅读量计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tbfed-pagefooter-页面添加页脚"><span class="nav-number">2.12.</span> <span class="nav-text">tbfed-pagefooter 页面添加页脚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#popup-弹出大图"><span class="nav-number">2.13.</span> <span class="nav-text">popup 弹出大图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sharing-plus-分享当前页面"><span class="nav-number">2.14.</span> <span class="nav-text">sharing-plus 分享当前页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prism-代码高亮"><span class="nav-number">2.15.</span> <span class="nav-text">Prism 代码高亮</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何切换样式"><span class="nav-number">2.15.1.</span> <span class="nav-text">如何切换样式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看样式效果"><span class="nav-number">2.15.1.1.</span> <span class="nav-text">查看样式效果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prism样式的本地css文件路径"><span class="nav-number">2.15.2.</span> <span class="nav-text">prism样式的本地css文件路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加github图标"><span class="nav-number">2.16.</span> <span class="nav-text">添加github图标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数学公式-KaTex"><span class="nav-number">2.17.</span> <span class="nav-text">数学公式 KaTex</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/blog/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">先看视频再看书</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">370</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">148</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/lanlan2017" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;lanlan2017" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/ReadingNotes/" title="ReadingNotes &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;ReadingNotes&#x2F;"><i class="fa fa-fw fa-book"></i>ReadingNotes</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/" title="blog &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;"><i class="fa fa-fw fa-book"></i>blog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/tools/" title="tools &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;tools&#x2F;"><i class="fa fa-fw fa-wrench"></i>tools</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/blog/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/blog/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里输入评论',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

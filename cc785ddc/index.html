@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Ubuntu 为shell脚本创建.destop快捷方式&amp;nbsp;HexoS.sh&amp;nbsp;启动博客.desktop&amp;nbsp;.desktop 配置详解&amp;nbsp;Desktop Entry 文件结构&amp;nbsp;关键字详解&amp;nbsp;必选关键字&amp;nbsp;可选关键字&amp;nbsp;以&quot;Type&quot;类型是&quot;Application&quot;为前提的关键字&amp;nbsp;以&quot;Type&quot;类型是&quot;Link&quot;为前提的关键">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 为shell脚本创建.destop快捷方式">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/cc785ddc/index.html">
+<meta property="og:site_name" content="蓝蓝博客">
+<meta property="og:description" content="Ubuntu 为shell脚本创建.destop快捷方式&amp;nbsp;HexoS.sh&amp;nbsp;启动博客.desktop&amp;nbsp;.desktop 配置详解&amp;nbsp;Desktop Entry 文件结构&amp;nbsp;关键字详解&amp;nbsp;必选关键字&amp;nbsp;可选关键字&amp;nbsp;以&quot;Type&quot;类型是&quot;Application&quot;为前提的关键字&amp;nbsp;以&quot;Type&quot;类型是&quot;Link&quot;为前提的关键">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-26T00:48:27.000Z">
+<meta property="article:modified_time" content="2019-12-17T05:18:52.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="批处理">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/blog/cc785ddc/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Ubuntu 为shell脚本创建.destop快捷方式 | 蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/blog/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/blog/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/blog/cc785ddc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="先看视频再看书">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">Ubuntu 为shell脚本创建.destop快捷方式
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-26 00:48:27" itemprop="dateCreated datePublished" datetime="2019-11-26T00:48:27+00:00">2019-11-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-17 05:18:52" itemprop="dateModified" datetime="2019-12-17T05:18:52+00:00">2019-12-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Linux/VirtualBox/" itemprop="url" rel="index"><span itemprop="name">VirtualBox</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Linux/VirtualBox/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/cc785ddc/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/cc785ddc/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/blog/cc785ddc/#Ubuntu-为shell脚本创建-destop快捷方式" class="header_1">Ubuntu 为shell脚本创建.destop快捷方式</a>&nbsp;<br><a href="/blog/cc785ddc/#HexoS-sh" class="header_2">HexoS.sh</a>&nbsp;<br><a href="/blog/cc785ddc/#启动博客-desktop" class="header_2">启动博客.desktop</a>&nbsp;<br><a href="/blog/cc785ddc/#-desktop-配置详解" class="header_2">.desktop 配置详解</a>&nbsp;<br><a href="/blog/cc785ddc/#Desktop-Entry-文件结构" class="header_2">Desktop Entry 文件结构</a>&nbsp;<br><a href="/blog/cc785ddc/#关键字详解" class="header_2">关键字详解</a>&nbsp;<br><a href="/blog/cc785ddc/#必选关键字" class="header_3">必选关键字</a>&nbsp;<br><a href="/blog/cc785ddc/#可选关键字" class="header_3">可选关键字</a>&nbsp;<br><a href="/blog/cc785ddc/#以"Type"类型是"Application"为前提的关键字" class="header_4">以"Type"类型是"Application"为前提的关键字</a>&nbsp;<br><a href="/blog/cc785ddc/#以"Type"类型是"Link"为前提的关键字" class="header_4">以"Type"类型是"Link"为前提的关键字</a>&nbsp;<br><a href="/blog/cc785ddc/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h1 id="Ubuntu-为shell脚本创建-destop快捷方式"><a href="#Ubuntu-为shell脚本创建-destop快捷方式" class="headerlink" title="Ubuntu 为shell脚本创建.destop快捷方式"></a>Ubuntu 为shell脚本创建.destop快捷方式</h1><h2 id="HexoS-sh"><a href="#HexoS-sh" class="headerlink" title="HexoS.sh"></a>HexoS.sh</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 杀死占用端口的所有进程</span></span><br><span class="line">kill -s 9 $(lsof -i:4007 -t)</span><br><span class="line">cd /home/blue/桌面/Blog/blog9/</span><br><span class="line">hexo s -p 4007</span><br></pre></td></tr></table></figure>
+<h2 id="启动博客-desktop"><a href="#启动博客-desktop" class="headerlink" title="启动博客.desktop"></a>启动博客.desktop</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Encoding=UTF-8</span><br><span class="line">Name=启动博客</span><br><span class="line">Type=Application</span><br><span class="line">Categories=Application;</span><br><span class="line">StartupNotify=true</span><br><span class="line">Terminal=true</span><br><span class="line">Exec=sh /home/blue/桌面/Blog/blog9/HexoS.sh</span><br></pre></td></tr></table></figure>
+<h2 id="desktop-配置详解"><a href="#desktop-配置详解" class="headerlink" title=".desktop 配置详解"></a>.desktop 配置详解</h2><p><code>Desktop Entry</code> 文件以”<code>.desktop</code>“为后缀名。<br>以 <code>Linux GNOME</code> 桌面系统为例，用户打开应用程序浏览器后（见图1）会看见很多应用程序快捷方式。<br>事实上，每个应用程序快捷方式都和一个 <code>Desktop Entry</code> 文件相对应。<br>这些 <code>Desktop Entry</code> 文件通常被存放在 /<code>usr/share/applications/</code> 和/<code>opt/gnome/share/applications/</code> 等目录下。<br>从文件浏览器进入这些目录，点击相应的 <code>Desktop Entry</code> 文件就可以启动相对应的应用程序。</p>
+<h2 id="Desktop-Entry-文件结构"><a href="#Desktop-Entry-文件结构" class="headerlink" title="Desktop Entry 文件结构"></a>Desktop Entry 文件结构</h2><p>Desktop Entry 文件通常以字符串”[Desktop Entry]”开始</p>
+<p>Desktop Entry文件的剩余内容由若干形如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">标准关键字＝值</span><br></pre></td></tr></table></figure><br>的键值对组成。</p>
+<h2 id="关键字详解"><a href="#关键字详解" class="headerlink" title="关键字详解"></a>关键字详解</h2><p>Desktop Entry 文件标准定义了一系列标准关键字。<br>标准关键字分为<strong>必选</strong>和<strong>可选</strong>两种：</p>
+<ul>
+<li>必选标准关键字必须在 .desktop 文件中被定义；</li>
+<li>可选关键字则可以省略不写</li>
+</ul>
+<h3 id="必选关键字"><a href="#必选关键字" class="headerlink" title="必选关键字"></a>必选关键字</h3><p>关键字”Name”：[必选]<br>该数值指定了相关应用程序的名称，快捷方式的显示名称由关键字”Name”的数值所决定<br>关键字”Type”：[必选]<br>关键字”Type”定义了Desktop Entry文件的类型。常见的”Type”数值是”Application”和”Link”。</p>
+<ul>
+<li>“Type = Application”表示当前Desktop Entry文件指向了一个应用程序；</li>
+<li>而”Type = Link”表示当前Desktop Entry文件指向了一个URL</li>
+</ul>
+<h3 id="可选关键字"><a href="#可选关键字" class="headerlink" title="可选关键字"></a>可选关键字</h3><p>关键字”Version”：[可选] 该数值指定了当前 Desktop Entry 文件所遵循的 Desktop Entry 文件标准版本。<br>关键字”Encoding”：[1.0 版本不推荐使用] 该数值指定了当前 Desktop Entry 文件中特定字符串所使用的编码方式。尽管Desktop Entry 文件标准 1.0 不再推荐使用该关键字，但由于历史原因该关键字仍然广泛出现在现有的 Desktop Entry 文件中。<br>关键字”GenericName”：[可选]<br>该数值指定了相关应用程序的通用名称<br>关键字”Comment”：[可选]<br>该数值是对当前Desktop Entry的简单描述。<br>关键字”Icon”：[可选]<br>该数值定义了当前Desktop Entry文件在应用程序浏览器或是在文件浏览器中所显示的图标<br>关键字”OnlyShowIn”和”NotShowIn”：[可选]<br>这两个关键字分别定义了当前Desktop Entry是否在特定Linux 桌面系统（例如：Linux GNOME 或 Linux KDE）下显示（由”OnlyShowIn”定义），或不显示（由”NotShowIn”定义）。具体定义请参考”Desktop Specification Menu”[4]</p>
+<h4 id="以”Type”类型是”Application”为前提的关键字"><a href="#以”Type”类型是”Application”为前提的关键字" class="headerlink" title="以”Type”类型是”Application”为前提的关键字"></a>以”Type”类型是”Application”为前提的关键字</h4><p>关键字”Exec”：[可选]<br>关键字”Exec”只有在”Type”类型是”Application”时才有意义。”Exec”的数值定义了启动指定应用程序所要执行的命令，在此命令 是可以带参数的</p>
+<p>关键字”StartupNotify”：[可选]<br>关键字”StartupNotify”的数值是布尔值（true 或是 false）。该关键字只有在”Type”类型是”Application”时才有意义。其数值的含义由规范”Startup Notification Protocol Specifications”[3]定义，在此不再详述。<br>关键字”Terminal”：[可选]<br>和”StartupNotify”一样，关键字”StartupNotify”的数值也是布尔值，并且该关键字只有在”Type”类型 是”Application”时才有意义。其数值指出了关键字”Exec”的指定的应用程序<strong>是否需要在终端窗口中运行</strong>。<br>关键字”Categories”只有在”Type”类型是”Application”时才有意义。”Categories”的数值指出了相关应用程序在菜单中显示的类别。具体菜单分类由规范”Desktop Specification Menu”具体定义[4]。</p>
+<h4 id="以”Type”类型是”Link”为前提的关键字"><a href="#以”Type”类型是”Link”为前提的关键字" class="headerlink" title="以”Type”类型是”Link”为前提的关键字"></a>以”Type”类型是”Link”为前提的关键字</h4><p>关键字”URL”：[可选]<br>关键字”URL”只有在”Type”类型是”Link”时才有意义。”URL”的数值定义了该Desktop Entry文件指向的URL<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Type = Link</span><br><span class="line">URL = http:<span class="comment">//www.ibm.com/developerworks</span></span><br></pre></td></tr></table></figure><br>则双击含有上述内容的Desktop Entry文件将启动web浏览器，并打开指定网页”<a href="http://www.ibm.com/developerworks" target="_blank" rel="noopener">http://www.ibm.com/developerworks</a>“</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://m.blog.chinaunix.net/uid-20332519-id-3015914" target="_blank" rel="noopener">Linux桌面快捷方式 Desktop Entry 详解</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/blog/cc785ddc/" title="Ubuntu 为shell脚本创建.destop快捷方式">https://lanlan2017.github.io/blog/cc785ddc/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/e2b78dd9/" rel="next" title="Linux 杀死占用端口的所有进程">
+                  <i class="fa fa-chevron-left"></i> Linux 杀死占用端口的所有进程
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/9ed0e635/" rel="prev" title="Linux 输出重定向到剪贴板">
+                  Linux 输出重定向到剪贴板 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu-为shell脚本创建-destop快捷方式"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu 为shell脚本创建.destop快捷方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HexoS-sh"><span class="nav-number">1.1.</span> <span class="nav-text">HexoS.sh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动博客-desktop"><span class="nav-number">1.2.</span> <span class="nav-text">启动博客.desktop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#desktop-配置详解"><span class="nav-number">1.3.</span> <span class="nav-text">.desktop 配置详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Desktop-Entry-文件结构"><span class="nav-number">1.4.</span> <span class="nav-text">Desktop Entry 文件结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字详解"><span class="nav-number">1.5.</span> <span class="nav-text">关键字详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#必选关键字"><span class="nav-number">1.5.1.</span> <span class="nav-text">必选关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可选关键字"><span class="nav-number">1.5.2.</span> <span class="nav-text">可选关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#以”Type”类型是”Application”为前提的关键字"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">以”Type”类型是”Application”为前提的关键字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以”Type”类型是”Link”为前提的关键字"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">以”Type”类型是”Link”为前提的关键字</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/blog/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">先看视频再看书</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">370</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">148</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/lanlan2017" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;lanlan2017" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/ReadingNotes/" title="ReadingNotes &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;ReadingNotes&#x2F;"><i class="fa fa-fw fa-book"></i>ReadingNotes</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/" title="blog &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;"><i class="fa fa-fw fa-book"></i>blog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/tools/" title="tools &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;tools&#x2F;"><i class="fa fa-fw fa-wrench"></i>tools</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/blog/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/blog/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里输入评论',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

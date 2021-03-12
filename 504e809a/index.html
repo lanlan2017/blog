@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="分支相关&amp;nbsp;查询分支&amp;nbsp;创建分支&amp;nbsp;查看当前分支&amp;nbsp;切换分支&amp;nbsp;合并分支&amp;nbsp;删除分支&amp;nbsp;忽略文件&amp;nbsp;忽略文件的便捷写法&amp;nbsp;忽略已加入版本控制的文件&amp;nbsp;问题描述&amp;nbsp;原因&amp;nbsp;查看要从版本库中删除的文件&amp;nbsp;查看要从版本库中删除的目录&amp;nbsp;实例:从版本库中移除一个文件&amp;nbsp;1.清除该文件的缓">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 命令集合">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/504e809a/index.html">
+<meta property="og:site_name" content="蓝蓝博客">
+<meta property="og:description" content="分支相关&amp;nbsp;查询分支&amp;nbsp;创建分支&amp;nbsp;查看当前分支&amp;nbsp;切换分支&amp;nbsp;合并分支&amp;nbsp;删除分支&amp;nbsp;忽略文件&amp;nbsp;忽略文件的便捷写法&amp;nbsp;忽略已加入版本控制的文件&amp;nbsp;问题描述&amp;nbsp;原因&amp;nbsp;查看要从版本库中删除的文件&amp;nbsp;查看要从版本库中删除的目录&amp;nbsp;实例:从版本库中移除一个文件&amp;nbsp;1.清除该文件的缓">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/git/git%20cmd/delete_gitignore.png">
+<meta property="article:published_time" content="2018-10-29T20:55:48.000Z">
+<meta property="article:modified_time" content="2020-02-07T01:36:54.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="批处理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/git/git%20cmd/delete_gitignore.png">
+  <link rel="canonical" href="https://lanlan2017.github.io/blog/504e809a/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Git 命令集合 | 蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/blog/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/blog/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/blog/504e809a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="先看视频再看书">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">Git 命令集合
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-29 20:55:48" itemprop="dateCreated datePublished" datetime="2018-10-29T20:55:48+00:00">2018-10-29</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-07 01:36:54" itemprop="dateModified" datetime="2020-02-07T01:36:54+00:00">2020-02-07</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Git/%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">命令</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/504e809a/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/504e809a/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/blog/504e809a/#分支相关" class="header_2">分支相关</a>&nbsp;<br><a href="/blog/504e809a/#查询分支" class="header_3">查询分支</a>&nbsp;<br><a href="/blog/504e809a/#创建分支" class="header_3">创建分支</a>&nbsp;<br><a href="/blog/504e809a/#查看当前分支" class="header_3">查看当前分支</a>&nbsp;<br><a href="/blog/504e809a/#切换分支" class="header_3">切换分支</a>&nbsp;<br><a href="/blog/504e809a/#合并分支" class="header_3">合并分支</a>&nbsp;<br><a href="/blog/504e809a/#删除分支" class="header_3">删除分支</a>&nbsp;<br><a href="/blog/504e809a/#忽略文件" class="header_2">忽略文件</a>&nbsp;<br><a href="/blog/504e809a/#忽略文件的便捷写法" class="header_3">忽略文件的便捷写法</a>&nbsp;<br><a href="/blog/504e809a/#忽略已加入版本控制的文件" class="header_3">忽略已加入版本控制的文件</a>&nbsp;<br><a href="/blog/504e809a/#问题描述" class="header_4">问题描述</a>&nbsp;<br><a href="/blog/504e809a/#原因" class="header_4">原因</a>&nbsp;<br><a href="/blog/504e809a/#查看要从版本库中删除的文件" class="header_4">查看要从版本库中删除的文件</a>&nbsp;<br><a href="/blog/504e809a/#查看要从版本库中删除的目录" class="header_4">查看要从版本库中删除的目录</a>&nbsp;<br><a href="/blog/504e809a/#实例-从版本库中移除一个文件" class="header_4">实例:从版本库中移除一个文件</a>&nbsp;<br><a href="/blog/504e809a/#1-清除该文件的缓存" class="header_5">1.清除该文件的缓存</a>&nbsp;<br><a href="/blog/504e809a/#2-重新添加提交" class="header_5">2.重新添加提交</a>&nbsp;<br><a href="/blog/504e809a/#实例-从版本库中移除目录" class="header_4">实例:从版本库中移除目录</a>&nbsp;<br><a href="/blog/504e809a/#克隆的仓库中-忽略已经加入文件的更新" class="header_3">克隆的仓库中 忽略已经加入文件的更新</a>&nbsp;<br><a href="/blog/504e809a/#问题描述" class="header_4">问题描述</a>&nbsp;<br><a href="/blog/504e809a/#删除本地仓库" class="header_4">删除本地仓库</a>&nbsp;<br><a href="/blog/504e809a/#重新克隆" class="header_4">重新克隆</a>&nbsp;<br><a href="/blog/504e809a/#远程仓库" class="header_2">远程仓库</a>&nbsp;<br><a href="/blog/504e809a/#添加远程仓库" class="header_3">添加远程仓库</a>&nbsp;<br><a href="/blog/504e809a/#查看远程仓库" class="header_3">查看远程仓库</a>&nbsp;<br><a href="/blog/504e809a/#推送到远程仓库" class="header_3">推送到远程仓库</a>&nbsp;<br><a href="/blog/504e809a/#版本回退" class="header_2">版本回退</a>&nbsp;<br><a href="/blog/504e809a/#查看版本日志" class="header_3">查看版本日志</a>&nbsp;<br><a href="/blog/504e809a/#撤销添加" class="header_3">撤销添加</a>&nbsp;<br><a href="/blog/504e809a/#回退到某次commit" class="header_3">回退到某次commit</a>&nbsp;<br><a href="/blog/504e809a/#撤销修改###" class="header_3">撤销修改###</a>&nbsp;<br><a href="/blog/504e809a/#撤销一个文件的修改" class="header_4">撤销一个文件的修改</a>&nbsp;<br><a href="/blog/504e809a/#撤销所有修改" class="header_4">撤销所有修改</a>&nbsp;<br><a href="/blog/504e809a/#删除新增文件" class="header_4">删除新增文件</a>&nbsp;<br><a href="/blog/504e809a/#冲突" class="header_2">冲突</a>&nbsp;<br><a href="/blog/504e809a/#产生冲突的情况" class="header_3">产生冲突的情况</a>&nbsp;<br><a href="/blog/504e809a/#查找冲突的文件" class="header_3">查找冲突的文件</a>&nbsp;<br><a href="/blog/504e809a/#修改冲突的文件" class="header_3">修改冲突的文件</a>&nbsp;<br><a href="/blog/504e809a/#再次提交" class="header_3">再次提交</a>&nbsp;<br><a href="/blog/504e809a/#切换分支合并修改" class="header_3">切换分支合并修改</a>&nbsp;<br><a href="/blog/504e809a/#显示分支的合并情况" class="header_3">显示分支的合并情况</a>&nbsp;<br><a href="/blog/504e809a/#git-rebase-进行-git-压缩" class="header_2">git rebase 进行 git 压缩</a>&nbsp;<br><a href="/blog/504e809a/#压缩最近的分支" class="header_3">压缩最近的分支</a>&nbsp;<br><a href="/blog/504e809a/#强制覆盖远程仓库" class="header_2">强制覆盖远程仓库</a>&nbsp;<br><a href="/blog/504e809a/#查看分支时间" class="header_2">查看分支时间</a>&nbsp;<br><a href="/blog/504e809a/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h2 id="分支相关"><a href="#分支相关" class="headerlink" title="分支相关"></a>分支相关</h2><h3 id="查询分支"><a href="#查询分支" class="headerlink" title="查询分支"></a>查询分支</h3><p><code>git branch</code></p>
+<h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev</span><br></pre></td></tr></table></figure>
+<p><code>git checkout</code>命令加上-b参数表示创建并切换，相当于以下两条命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch dev</span><br><span class="line">git checkout dev</span><br></pre></td></tr></table></figure></p>
+<h3 id="查看当前分支"><a href="#查看当前分支" class="headerlink" title="查看当前分支"></a>查看当前分支</h3><p>用<code>git branch</code>命令查看当前分支：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /D/dev/workspace/HexoTools (dev)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch</span></span><br><span class="line">* dev</span><br><span class="line">  master</span><br></pre></td></tr></table></figure><br><code>git branch</code>命令会列出所有分支，当前分支前面会标一个<code>*</code>号。</p>
+<h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><p>在dev分支的工作完成后，我们就可以切换回master分支：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /D/dev/workspace/HexoTools (dev)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout master</span></span><br><span class="line">Switched to branch 'master'</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /D/dev/workspace/HexoTools (master)</span><br></pre></td></tr></table></figure></p>
+<h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><p>使用<code>git merge 指定分支</code>命令合并指定分支到当前分支。现在，把dev分支的工作成果合并到master分支上,<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /D/dev/workspace/HexoTools (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git merge dev</span></span><br><span class="line">Updating ec6d299..616432d</span><br><span class="line">Fast-forward</span><br><span class="line"> src/front/matter/tools/AddFrontMatter.java         | 198 ---------</span><br><span class="line">......</span><br><span class="line"> .../to/this_article/CurrentArticlesHyperlinks.java | 194 ++++++++</span><br><span class="line"> 25 files changed, 1842 insertions(+), 1446 deletions(-)</span><br><span class="line"> delete mode 100644 src/front/matter/tools/AddFrontMatter.java</span><br><span class="line">......</span><br><span class="line"> delete mode 100644 src/markdown/add/horizontal/line/AddHorizontalLine.java</span><br><span class="line">......</span><br><span class="line"> create mode 100644 src/useless/generate/links/to/this_article/CurrentArticlesHyperlinks.java</span><br></pre></td></tr></table></figure><br>注意到上面的<code>Fast-forward</code>信息，Git告诉我们，这次合并是“<code>快进模式</code>”，也就是直接把master指向dev的当前提交，所以合并速度非常快。</p>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><p>和并到主分支后，就可以删除dev分支了:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /D/dev/workspace/HexoTools (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -d dev</span></span><br><span class="line">Deleted branch dev (was 616432d).</span><br></pre></td></tr></table></figure><br>删除后，查看branch，就只剩下master分支了：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /D/dev/workspace/HexoTools (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch</span></span><br><span class="line">* master</span><br></pre></td></tr></table></figure></p>
+<h2 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h2><h3 id="忽略文件的便捷写法"><a href="#忽略文件的便捷写法" class="headerlink" title="忽略文件的便捷写法"></a>忽略文件的便捷写法</h3><p>在<code>.gitignore</code>文件中，写入想要忽略的文件或者目录的相对地址即可。下面介绍一个快速写<code>.gitignore</code>文件的技巧：<br>打开git-bash，输入<code>touch .gitignore</code>创建.gitignore文件。然后输入：<code>ls -ah &gt;.gitignore</code>命令把当前目录下所有的文件以及目录都写入到.gitignore文件中。这表示忽略项目中所有的目录以及文件。可以输入<code>cat .gitignore</code>命令所有忽略的文件或目录，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 &#x2F;d&#x2F;dev&#x2F;workspace&#x2F;Coding (master)</span><br><span class="line">$ cat .gitignore</span><br><span class="line">.&#x2F;</span><br><span class="line">..&#x2F;</span><br><span class="line">.classpath</span><br><span class="line">.git&#x2F;</span><br><span class="line">.gitignore</span><br><span class="line">.project</span><br><span class="line">.settings&#x2F;</span><br><span class="line">bin&#x2F;</span><br><span class="line">res&#x2F;</span><br><span class="line">src&#x2F;</span><br></pre></td></tr></table></figure><br>最后使用<code>vim .gitigonre</code>命令编辑文件，删除(按下<code>dd</code>)你要加入版本管理的文件以及目录,想要忽略的就保留。这样比我们手动的往里面写要快的多：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/git/git%20cmd/delete_gitignore.png" alt=""></p>
+<h3 id="忽略已加入版本控制的文件"><a href="#忽略已加入版本控制的文件" class="headerlink" title="忽略已加入版本控制的文件"></a>忽略已加入版本控制的文件</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p><code>.gitignore</code>中已经标明忽略某个文件或目录,但是这个文件还是默认加到版本库中.</p>
+<h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><p><strong>如果某些文件已经被纳入了版本管理中，就算是在<code>.gitignore</code>中已经声明了忽略路径也是不起作用的</strong>,<strong>因为.gitignore只对还没有加入版本库的文件有效.</strong><br>这个使用使用<code>git rm</code>命令可以从版本库中删除文件.</p>
+<h4 id="查看要从版本库中删除的文件"><a href="#查看要从版本库中删除的文件" class="headerlink" title="查看要从版本库中删除的文件"></a>查看要从版本库中删除的文件</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -n --cached 文件</span><br></pre></td></tr></table></figure>
+<h4 id="查看要从版本库中删除的目录"><a href="#查看要从版本库中删除的目录" class="headerlink" title="查看要从版本库中删除的目录"></a>查看要从版本库中删除的目录</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r -n --cached 目录</span><br></pre></td></tr></table></figure>
+<p>注意不要使用<code>git rm -r --cached .</code>这个命令很危险,有可能把<code>IDE</code>的配置文件给删掉,免得到时候打不开又得重新建工程。</p>
+<h4 id="实例-从版本库中移除一个文件"><a href="#实例-从版本库中移除一个文件" class="headerlink" title="实例:从版本库中移除一个文件"></a>实例:从版本库中移除一个文件</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/HexoTools (dev)</span><br><span class="line">$ cat .gitignore</span><br><span class="line">bin/</span><br><span class="line">.settings/</span><br><span class="line">*.txt</span><br><span class="line">.project</span><br><span class="line">.classpath</span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/HexoTools (dev)</span><br><span class="line">$ git status</span><br><span class="line">On branch dev</span><br><span class="line">        ...</span><br><span class="line">Changes <span class="keyword">not</span> staged <span class="keyword">for</span> commit:</span><br><span class="line">  (use "git add &lt;file&gt;..." to update what will be committed)</span><br><span class="line">  (use "git checkout -- &lt;file&gt;..." to discard changes <span class="keyword">in</span> working directory)</span><br><span class="line"><span class="function">        modified:   <span class="title">HexoFrontMatter.txt</span></span></span><br><span class="line"><span class="function">        ...</span></span><br></pre></td></tr></table></figure>
+<h5 id="1-清除该文件的缓存"><a href="#1-清除该文件的缓存" class="headerlink" title="1.清除该文件的缓存"></a>1.清除该文件的缓存</h5><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/HexoTools (dev)</span><br><span class="line">$ git rm -n --cached HexoFrontMatter.txt</span><br><span class="line">rm 'HexoFrontMatter.txt'</span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/HexoTools (dev)</span><br><span class="line">$ git rm --cached HexoFrontMatter.txt</span><br><span class="line">rm 'HexoFrontMatter.txt'</span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/HexoTools (dev)</span><br><span class="line">$ git status</span><br><span class="line">On branch dev</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use "git reset HEAD &lt;file&gt;..." to unstage)</span><br><span class="line"><span class="function">        deleted:    <span class="title">HexoFrontMatter.txt</span></span></span><br><span class="line"><span class="function">        ......</span></span><br></pre></td></tr></table></figure>
+<p>加上<code>-n</code>参数表示显示要即将要删除的文件,并不会真正则删除.这个参数用来验证自己删除的对不对,以免误删。</p>
+<h5 id="2-重新添加提交"><a href="#2-重新添加提交" class="headerlink" title="2.重新添加提交"></a>2.重新添加提交</h5><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/HexoTools (dev)</span><br><span class="line">$ git add .</span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/HexoTools (dev)</span><br><span class="line">$ git status</span><br><span class="line">On branch dev</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use "git reset HEAD &lt;file&gt;..." to unstage)</span><br><span class="line"><span class="function">        deleted:    <span class="title">HexoFrontMatter.txt</span></span></span><br><span class="line"><span class="function">        ......</span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">HexoTools</span> (<span class="title">dev</span>)</span></span><br><span class="line"><span class="function">$ <span class="title">git</span> <span class="title">commit</span> -<span class="title">m</span> '</span></span><br><span class="line"><span class="function">&gt; 从版本库中移除日志文件(<span class="title">txt</span>)'</span></span><br><span class="line"><span class="function">[<span class="title">dev</span> 191<span class="title">c3cd</span>] 从版本库中移除日志文件(<span class="title">txt</span>)</span></span><br><span class="line"><span class="function"> 8 <span class="title">files</span> <span class="title">changed</span>, 134 <span class="title">insertions</span>(+), 28 <span class="title">deletions</span>(-)</span></span><br><span class="line"><span class="function"> <span class="title">delete</span> <span class="title">mode</span> 100644 <span class="title">HexoFrontMatter.txt</span></span></span><br><span class="line"><span class="function"> <span class="title">create</span> <span class="title">mode</span> 100644 <span class="title">src</span>/<span class="title">find</span>/<span class="title">not</span>/<span class="title">fm</span>/<span class="title">FindNotFM.java</span></span></span><br><span class="line"><span class="function"> <span class="title">rename</span> <span class="title">src</span>/<span class="title">tools</span>/<span class="title">readlastlineinbigfile</span>/&#123;<span class="title">LastLineInFileTools.java</span> =&gt; <span class="title">LastLineReader.java</span>&#125; (94%)</span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">HexoTools</span> (<span class="title">dev</span>)</span></span><br><span class="line"><span class="function">$ <span class="title">git</span> <span class="title">status</span></span></span><br><span class="line"><span class="function"><span class="title">On</span> <span class="title">branch</span> <span class="title">dev</span></span></span><br><span class="line"><span class="function"><span class="title">nothing</span> <span class="title">to</span> <span class="title">commit</span>, <span class="title">working</span> <span class="title">tree</span> <span class="title">clean</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">HexoTools</span> (<span class="title">dev</span>)</span></span><br></pre></td></tr></table></figure>
+<p>这个时候该<code>txt</code>文件已经从版本库中删除掉了,不过并不会删除工作区的文件,可以用ls命令查看:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">bin/  HexoFrontMatter.txt  lib/  README.<span class="built_in">md</span>  res/  runable/  src/</span><br></pre></td></tr></table></figure></p>
+<h4 id="实例-从版本库中移除目录"><a href="#实例-从版本库中移除目录" class="headerlink" title="实例:从版本库中移除目录"></a>实例:从版本库中移除目录</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/XunFeiTTS (dev)</span><br><span class="line">$ git status</span><br><span class="line">On branch dev</span><br><span class="line">Changes <span class="keyword">not</span> staged <span class="keyword">for</span> commit:</span><br><span class="line">  (use "git add &lt;file&gt;..." to update what will be committed)</span><br><span class="line">  (use "git checkout -- &lt;file&gt;..." to discard changes <span class="keyword">in</span> working directory)</span><br><span class="line"><span class="function">        modified:   .<span class="title">settings</span>/<span class="title">org.eclipse.core.resources.prefs</span></span></span><br><span class="line"><span class="function">        .......</span></span><br><span class="line"><span class="function"><span class="title">no</span> <span class="title">changes</span> <span class="title">added</span> <span class="title">to</span> <span class="title">commit</span> (<span class="title">use</span> "<span class="title">git</span> <span class="title">add</span>" <span class="title">and</span>/<span class="title">or</span> "<span class="title">git</span> <span class="title">commit</span> -<span class="title">a</span>")</span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">XunFeiTTS</span> (<span class="title">dev</span>)</span></span><br><span class="line"><span class="function">$ <span class="title">git</span> <span class="title">rm</span> -<span class="title">r</span> -<span class="title">n</span> --<span class="title">cached</span> .<span class="title">settings</span>/</span></span><br><span class="line"><span class="function"><span class="title">rm</span> '.<span class="title">settings</span>/<span class="title">org.eclipse.core.resources.prefs</span>'</span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">XunFeiTTS</span> (<span class="title">dev</span>)</span></span><br><span class="line"><span class="function">$ <span class="title">git</span> <span class="title">rm</span> -<span class="title">r</span> --<span class="title">cached</span> .<span class="title">settings</span>/</span></span><br><span class="line"><span class="function"><span class="title">rm</span> '.<span class="title">settings</span>/<span class="title">org.eclipse.core.resources.prefs</span>'</span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">XunFeiTTS</span> (<span class="title">dev</span>)</span></span><br><span class="line"><span class="function">$ <span class="title">git</span> <span class="title">add</span> .</span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">XunFeiTTS</span> (<span class="title">dev</span>)</span></span><br><span class="line"><span class="function">$ <span class="title">git</span> <span class="title">commit</span> -<span class="title">m</span> '</span></span><br><span class="line"><span class="function">&gt; 1.支持输入字符串合成音频</span></span><br><span class="line"><span class="function">&gt; 2.从版本库中移除<span class="title">IDE</span>的配置文件目录.</span></span><br><span class="line"><span class="function">&gt; '</span></span><br><span class="line"><span class="function">[<span class="title">dev</span> <span class="title">bfd69df</span>] 1.支持输入字符串合成音频 2.从版本库中移除<span class="title">IDE</span>的配置文件目录.</span></span><br><span class="line"><span class="function"> 5 <span class="title">files</span> <span class="title">changed</span>, 28 <span class="title">insertions</span>(+), 28 <span class="title">deletions</span>(-)</span></span><br><span class="line"><span class="function"> <span class="title">delete</span> <span class="title">mode</span> 100644 .<span class="title">settings</span>/<span class="title">org.eclipse.core.resources.prefs</span></span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">XunFeiTTS</span> (<span class="title">dev</span>)</span></span><br></pre></td></tr></table></figure>
+<h3 id="克隆的仓库中-忽略已经加入文件的更新"><a href="#克隆的仓库中-忽略已经加入文件的更新" class="headerlink" title="克隆的仓库中 忽略已经加入文件的更新"></a>克隆的仓库中 忽略已经加入文件的更新</h3><h4 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h4><p>经过上一步,我已经从本地仓库中把一个文件彻底移除了，然后我用<code>git push</code>命令推送到远程仓库中,这样远程仓库也没有了该文件.</p>
+<p>但是我之间在另一个目录中已经克隆了这个仓库,现在我叫这个仓库为<code>克隆的仓库</code>。<br>我想在<code>克隆的仓库</code>中使用<code>git pull</code>进行更新,但是更新之后,<code>克隆的仓库</code>中还是存在这个文件(这是因为在克隆仓库中我修改了这个文件),那又怎么删除呢？<br>我这里不知道其他方法,最后我现在先删除本地克隆仓库，然后再从远程仓库中克隆。这样克隆的仓库中也就没有了这个文件了。</p>
+<h4 id="删除本地仓库"><a href="#删除本地仓库" class="headerlink" title="删除本地仓库"></a>删除本地仓库</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf <span class="built_in">MD</span>/</span><br></pre></td></tr></table></figure>
+<h4 id="重新克隆"><a href="#重新克隆" class="headerlink" title="重新克隆"></a>重新克隆</h4><p>现在重新克隆到本地仓库中,并重名为<code>MD</code><br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:lanlan2017/markdown-command-line-generator.git <span class="built_in">MD</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><h3 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h3><p>语法：<code>git remote add 远程仓库别名 远程仓库地址</code><br>如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:lanlan2017&#x2F;GetWiFiPassWord.git</span><br></pre></td></tr></table></figure></p>
+<h3 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<h3 id="推送到远程仓库"><a href="#推送到远程仓库" class="headerlink" title="推送到远程仓库"></a>推送到远程仓库</h3><p>推送到master分支：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure><br>如果是远程仓库是空的,第一次推送master分支时，则在push后面加上参数<code>-u</code>:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><h3 id="查看版本日志"><a href="#查看版本日志" class="headerlink" title="查看版本日志"></a>查看版本日志</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty&#x3D;oneline</span><br></pre></td></tr></table></figure>
+<p>显示效果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git log --pretty&#x3D;oneline</span><br><span class="line">c8f251788d8cc9dd69b8622dd1bba0384f2a6d48 (HEAD -&gt; master) 修改README.md文件</span><br><span class="line">8304fffa30f0fd96d317244daaa327ada7f1af6d (origin&#x2F;master, origin&#x2F;HEAD) 修改代码输出文件使用相对路径</span><br><span class="line">8f3abbee855216adfd92e7727e4c91204fd451c2 获取所有连接过的wifi密码.</span><br><span class="line">931319f6d7f157fef8558662c5a23693cbf8178c Initial commit</span><br></pre></td></tr></table></figure><br>这里可以看到远程仓库和本地仓库的信息。</p>
+<h3 id="撤销添加"><a href="#撤销添加" class="headerlink" title="撤销添加"></a>撤销添加</h3><p>使用<code>git add</code>命令之后,可以输入:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD</span><br></pre></td></tr></table></figure><br>撤销本次添加,也可以输入:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD filename</span><br></pre></td></tr></table></figure><br>撤销添加某个文件,例如要撤销添加<code>src/mainclass/MMD.java</code>这个文件可以输入:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD src/mainclass/MMD.java</span><br></pre></td></tr></table></figure></p>
+<h3 id="回退到某次commit"><a href="#回退到某次commit" class="headerlink" title="回退到某次commit"></a>回退到某次commit</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard commit_id</span><br></pre></td></tr></table></figure>
+<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><p>有时候会把代码写蹦了，这个时候就要撤销这次的修改。</p>
+<h4 id="撤销一个文件的修改"><a href="#撤销一个文件的修改" class="headerlink" title="撤销一个文件的修改"></a>撤销一个文件的修改</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- filename</span><br></pre></td></tr></table></figure>
+<h4 id="撤销所有修改"><a href="#撤销所有修改" class="headerlink" title="撤销所有修改"></a>撤销所有修改</h4><p>有时候，可能修改了不止一个文件，一个个的修改比较麻烦，所以要，撤销所有的修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout .</span><br></pre></td></tr></table></figure></p>
+<h4 id="删除新增文件"><a href="#删除新增文件" class="headerlink" title="删除新增文件"></a>删除新增文件</h4><p>上面的撤销修改只能对已经修改的文件有效,但是如果你新创建了一些新的文件的话,这些文件没有添加到版本库中,是不会自动删除掉的,使用如下命令删除这些新增的文件:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clean -df</span><br></pre></td></tr></table></figure></p>
+<h2 id="冲突"><a href="#冲突" class="headerlink" title="冲突"></a>冲突</h2><h3 id="产生冲突的情况"><a href="#产生冲突的情况" class="headerlink" title="产生冲突的情况"></a>产生冲突的情况</h3><p>当<code>两个分支``都</code>分别<code>有新的提交</code>的时候,在合并的时候就会出现冲突.</p>
+<h3 id="查找冲突的文件"><a href="#查找冲突的文件" class="headerlink" title="查找冲突的文件"></a>查找冲突的文件</h3><p>使用<code>git status</code>可以看到发生冲突的文件:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (master|MERGING)</span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Your branch is up to <span class="built_in">date</span> with 'origin/master'.</span><br><span class="line">You have unmerged paths.</span><br><span class="line">  (fix conflicts and run "git commit")</span><br><span class="line">  (use "git merge --abort" to abort the merge)</span><br><span class="line">Unmerged paths:</span><br><span class="line">  (use "git add &lt;file&gt;..." to mark resolution)</span><br><span class="line">        both modified:   src/delete/Delete.java</span><br><span class="line">no changes added to commit (use "git add" and/or "git commit -a")</span><br></pre></td></tr></table></figure><br>注意其中的这两个提示:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">both modified:   src/delete/Delete.java</span><br></pre></td></tr></table></figure><br>这说明<code>src/delete/Delete.java</code>这个文件冲突了。</p>
+<h3 id="修改冲突的文件"><a href="#修改冲突的文件" class="headerlink" title="修改冲突的文件"></a>修改冲突的文件</h3><p>首先不要慌张.<code>git</code>已经合并了没有冲突的地方,我们只需要修改上面两个文件中发生冲突的地方即可.现在打开冲突的文件<code>src/delete/Delete.java</code>然后修改<code>git</code>提示的有冲突的地方,如下所示:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">deleteSpacesBetweenChinese</span><span class="params">(String text)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 删除英文空格</span></span><br><span class="line">        text = text.replaceAll(<span class="string">"([\\u4e00-\\u9fa5])\\s+([\\u4e00-\\u9fa5])"</span>,</span><br><span class="line">                <span class="string">"$1$2"</span>);</span><br><span class="line">        <span class="comment">// 删除中文空格</span></span><br><span class="line">        text = text.replaceAll(<span class="string">"[ ]+"</span>, <span class="string">""</span>);</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">=======</span><br><span class="line">        text = text.replaceAll(<span class="string">"　"</span>, <span class="string">""</span>);</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev</span><br><span class="line">        <span class="keyword">return</span> text;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><br>Git用<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>，<code>=======</code>，<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>标记出不同分支的中有冲突的地方如下所示:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">=======</span><br><span class="line">        text = text.replaceAll(<span class="string">"　"</span>, <span class="string">""</span>);</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev</span><br></pre></td></tr></table></figure><br>等号分割了两个分支,上面的是HEAD分支的新内容,这里为空,等号下面的是dev分支上的新内容。修改这部分内容,然后删掉<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>这些提示符就行了。这步叫做<code>手动解决冲突</code>。</p>
+<h3 id="再次提交"><a href="#再次提交" class="headerlink" title="再次提交"></a>再次提交</h3><p>然后<code>再次添加,</code>然后<code>再次提交</code>.<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (master|MERGING)</span><br><span class="line">$ git add .</span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (master|MERGING)</span><br><span class="line">$ git commit -m '</span><br><span class="line">&gt; 合并冲突'</span><br><span class="line">[master <span class="number">7</span>d0e456] 合并冲突</span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (master)</span><br></pre></td></tr></table></figure></p>
+<h3 id="切换分支合并修改"><a href="#切换分支合并修改" class="headerlink" title="切换分支合并修改"></a>切换分支合并修改</h3><p>这样master分支上就没有冲突了,接着切换到dev分支,然后dev分支合并没有冲突的master分支,这样两者就都没有冲突了。<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (master)</span><br><span class="line">$ git checkout dev</span><br><span class="line">Switched to branch 'dev'</span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (dev)</span><br><span class="line">$ git merge master</span><br><span class="line">Updating <span class="number">9</span>d7c83e..<span class="number">7</span>d0e456</span><br><span class="line">Fast-forward</span><br><span class="line"> M.jar                  | Bin <span class="number">25388</span> -&gt; <span class="number">25372</span> bytes</span><br><span class="line"> src/add/Add.java       |   <span class="number">2</span> +-</span><br><span class="line"> src/delete/Delete.java |   <span class="number">2</span> +-</span><br><span class="line"> <span class="number">3</span> files changed, <span class="number">2</span> insertions(+), <span class="number">2</span> deletions(-)</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (dev)</span><br><span class="line">$ git status</span><br><span class="line">On branch dev</span><br><span class="line">nothing to commit, working <span class="built_in">tree</span> clean</span><br></pre></td></tr></table></figure></p>
+<h3 id="显示分支的合并情况"><a href="#显示分支的合并情况" class="headerlink" title="显示分支的合并情况"></a>显示分支的合并情况</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --graph --pretty=oneline --abbrev-commit</span><br></pre></td></tr></table></figure>
+<p>如果提交过多的,可以加上<code>-n</code>参数指定显示提交的次数.例如下面指定显示提交最近8个分支.<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (dev)</span><br><span class="line">$ git log -<span class="number">8</span> --graph --pretty=oneline --abbrev-commit</span><br><span class="line">*   <span class="number">7</span>d0e456 (HEAD -&gt; dev, master) 合并冲突</span><br><span class="line">|\</span><br><span class="line">| * <span class="number">9</span>d7c83e `dsbc`参数对应的方法中加入移除中文全角空格的功能.</span><br><span class="line">* |   <span class="number">87</span>ef36d (origin/master) 修改`dsbc`参数对应方法中匹配中文空格的正则表达式,支持匹配多个中文空格.</span><br><span class="line">|\ \</span><br><span class="line">| |/</span><br><span class="line">| * cfef0c2 在dsbc参数对应的方法中,添加删除中文空格的功能.^</span><br><span class="line">* | d5527e8 修改参数 enhl对应的方法.\r\n支持\xxxx格式的linux格式路径.</span><br><span class="line">|/</span><br><span class="line">* c51cc3b 修改 enhl参数方法,支持后缀名.xxx以及路径/xxxx的高亮.</span><br><span class="line">* <span class="number">1</span>c18026 update .gitignore</span><br><span class="line">* bd63151 update .gitignore</span><br></pre></td></tr></table></figure></p>
+<h2 id="git-rebase-进行-git-压缩"><a href="#git-rebase-进行-git-压缩" class="headerlink" title="git rebase 进行 git 压缩"></a>git rebase 进行 git 压缩</h2><h3 id="压缩最近的分支"><a href="#压缩最近的分支" class="headerlink" title="压缩最近的分支"></a>压缩最近的分支</h3><p>这个命令不是很熟悉,后面再了解了解.</p>
+<h2 id="强制覆盖远程仓库"><a href="#强制覆盖远程仓库" class="headerlink" title="强制覆盖远程仓库"></a>强制覆盖远程仓库</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master --force</span><br></pre></td></tr></table></figure>
+<h2 id="查看分支时间"><a href="#查看分支时间" class="headerlink" title="查看分支时间"></a>查看分支时间</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog show --<span class="built_in">date</span>=iso &lt;branch name&gt;</span><br></pre></td></tr></table></figure>
+<p>运行效果:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git reflog show --<span class="built_in">date</span>=iso master</span><br><span class="line">bfd69df (HEAD -&gt; dev, origin/master, origin/HEAD, master) master@&#123;<span class="number">2019</span>-<span class="number">05</span>-<span class="number">25</span> <span class="number">00</span>:<span class="number">24</span>:<span class="number">04</span> +<span class="number">0800</span>&#125;: merge dev: Fast-forward</span><br><span class="line"><span class="number">0</span>dab55b master@&#123;<span class="number">2019</span>-<span class="number">05</span>-<span class="number">23</span> <span class="number">13</span>:<span class="number">49</span>:<span class="number">04</span> +<span class="number">0800</span>&#125;: merge dev: Fast-forward</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">Pro Git</a><br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000" target="_blank" rel="noopener">创建与合并分支|廖雪峰的官方网站</a><br><a href="https://blog.csdn.net/seikenwu/article/details/81025711" target="_blank" rel="noopener">.gitignore忽略已加入版本控制的文件</a><br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013752340242354807e192f02a44359908df8a5643103a000" target="_blank" rel="noopener">添加远程库</a><br><a href="https://blog.csdn.net/Al_assad/article/details/81145856#t0" target="_blank" rel="noopener">Git 合并多次 commit 、 删除某次 commit</a><br><a href="https://www.cnblogs.com/dhcn/p/7125099.html" target="_blank" rel="noopener">git如何移除某文件夹的版本控制</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/blog/504e809a/" title="Git 命令集合">https://lanlan2017.github.io/blog/504e809a/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/f0d2185d/" rel="next" title="markdown中让图片和表格显示在一行">
+                  <i class="fa fa-chevron-left"></i> markdown中让图片和表格显示在一行
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/487a7f53/" rel="prev" title="Java快速读取一个很大的文本文件的最后一行">
+                  Java快速读取一个很大的文本文件的最后一行 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分支相关"><span class="nav-number">1.</span> <span class="nav-text">分支相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查询分支"><span class="nav-number">1.1.</span> <span class="nav-text">查询分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建分支"><span class="nav-number">1.2.</span> <span class="nav-text">创建分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看当前分支"><span class="nav-number">1.3.</span> <span class="nav-text">查看当前分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换分支"><span class="nav-number">1.4.</span> <span class="nav-text">切换分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并分支"><span class="nav-number">1.5.</span> <span class="nav-text">合并分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除分支"><span class="nav-number">1.6.</span> <span class="nav-text">删除分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#忽略文件"><span class="nav-number">2.</span> <span class="nav-text">忽略文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#忽略文件的便捷写法"><span class="nav-number">2.1.</span> <span class="nav-text">忽略文件的便捷写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#忽略已加入版本控制的文件"><span class="nav-number">2.2.</span> <span class="nav-text">忽略已加入版本控制的文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述"><span class="nav-number">2.2.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原因"><span class="nav-number">2.2.2.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看要从版本库中删除的文件"><span class="nav-number">2.2.3.</span> <span class="nav-text">查看要从版本库中删除的文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看要从版本库中删除的目录"><span class="nav-number">2.2.4.</span> <span class="nav-text">查看要从版本库中删除的目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例-从版本库中移除一个文件"><span class="nav-number">2.2.5.</span> <span class="nav-text">实例:从版本库中移除一个文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-清除该文件的缓存"><span class="nav-number">2.2.5.1.</span> <span class="nav-text">1.清除该文件的缓存</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-重新添加提交"><span class="nav-number">2.2.5.2.</span> <span class="nav-text">2.重新添加提交</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例-从版本库中移除目录"><span class="nav-number">2.2.6.</span> <span class="nav-text">实例:从版本库中移除目录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#克隆的仓库中-忽略已经加入文件的更新"><span class="nav-number">2.3.</span> <span class="nav-text">克隆的仓库中 忽略已经加入文件的更新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除本地仓库"><span class="nav-number">2.3.2.</span> <span class="nav-text">删除本地仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重新克隆"><span class="nav-number">2.3.3.</span> <span class="nav-text">重新克隆</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程仓库"><span class="nav-number">3.</span> <span class="nav-text">远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加远程仓库"><span class="nav-number">3.1.</span> <span class="nav-text">添加远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看远程仓库"><span class="nav-number">3.2.</span> <span class="nav-text">查看远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送到远程仓库"><span class="nav-number">3.3.</span> <span class="nav-text">推送到远程仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本回退"><span class="nav-number">4.</span> <span class="nav-text">版本回退</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看版本日志"><span class="nav-number">4.1.</span> <span class="nav-text">查看版本日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销添加"><span class="nav-number">4.2.</span> <span class="nav-text">撤销添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回退到某次commit"><span class="nav-number">4.3.</span> <span class="nav-text">回退到某次commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销修改"><span class="nav-number">4.4.</span> <span class="nav-text">撤销修改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#撤销一个文件的修改"><span class="nav-number">4.4.1.</span> <span class="nav-text">撤销一个文件的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#撤销所有修改"><span class="nav-number">4.4.2.</span> <span class="nav-text">撤销所有修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除新增文件"><span class="nav-number">4.4.3.</span> <span class="nav-text">删除新增文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冲突"><span class="nav-number">5.</span> <span class="nav-text">冲突</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#产生冲突的情况"><span class="nav-number">5.1.</span> <span class="nav-text">产生冲突的情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找冲突的文件"><span class="nav-number">5.2.</span> <span class="nav-text">查找冲突的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改冲突的文件"><span class="nav-number">5.3.</span> <span class="nav-text">修改冲突的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再次提交"><span class="nav-number">5.4.</span> <span class="nav-text">再次提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换分支合并修改"><span class="nav-number">5.5.</span> <span class="nav-text">切换分支合并修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示分支的合并情况"><span class="nav-number">5.6.</span> <span class="nav-text">显示分支的合并情况</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-rebase-进行-git-压缩"><span class="nav-number">6.</span> <span class="nav-text">git rebase 进行 git 压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩最近的分支"><span class="nav-number">6.1.</span> <span class="nav-text">压缩最近的分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强制覆盖远程仓库"><span class="nav-number">7.</span> <span class="nav-text">强制覆盖远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看分支时间"><span class="nav-number">8.</span> <span class="nav-text">查看分支时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">9.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/blog/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">先看视频再看书</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">370</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">148</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/lanlan2017" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;lanlan2017" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/ReadingNotes/" title="ReadingNotes &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;ReadingNotes&#x2F;"><i class="fa fa-fw fa-book"></i>ReadingNotes</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/" title="blog &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;"><i class="fa fa-fw fa-book"></i>blog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/tools/" title="tools &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;tools&#x2F;"><i class="fa fa-fw fa-wrench"></i>tools</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/blog/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/blog/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里输入评论',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

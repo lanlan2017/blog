@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="session内置对象简介&amp;nbsp;session对象&amp;nbsp;session对象常用方法&amp;nbsp;属性方法&amp;nbsp;实例&amp;nbsp;session有效时间方法&amp;nbsp;设置session生存时间实例&amp;nbsp;实例&amp;nbsp;session生命周期&amp;nbsp;创建&amp;nbsp;活动&amp;nbsp;验证说法1&amp;nbsp;验证说法2&amp;nbsp;我的观察结果&amp;nbsp;tomcat中查看一个项目的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP session 内置对象">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/240051d/index.html">
+<meta property="og:site_name" content="蓝蓝博客">
+<meta property="og:description" content="session内置对象简介&amp;nbsp;session对象&amp;nbsp;session对象常用方法&amp;nbsp;属性方法&amp;nbsp;实例&amp;nbsp;session有效时间方法&amp;nbsp;设置session生存时间实例&amp;nbsp;实例&amp;nbsp;session生命周期&amp;nbsp;创建&amp;nbsp;活动&amp;nbsp;验证说法1&amp;nbsp;验证说法2&amp;nbsp;我的观察结果&amp;nbsp;tomcat中查看一个项目的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/oneUseOneSession.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/session_1.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/session2_1.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/session.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/session2.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/session_2.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/session2_2.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/newsession2InnewWindow.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/my/session.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/my/close-session_session2.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/my/open_session.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/my/open_session2_by_session.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/my/open_session_by_new_window.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/my/close_all_window_open_new.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/tomcat/manageapp.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/tomcat/password.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/tomcat/applist.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/tomcat/sesionlist.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/tomcat/xuming.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/tomcat/deal.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/xiaohui/session.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/xiaohui/nosession.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/xiaohui/session_new.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/setTimeOut/setTimeOut60.png">
+<meta property="article:published_time" content="2018-12-19T15:11:39.000Z">
+<meta property="article:modified_time" content="2019-12-17T05:18:52.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="批处理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/oneUseOneSession.png">
+  <link rel="canonical" href="https://lanlan2017.github.io/blog/240051d/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>JSP session 内置对象 | 蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/blog/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/blog/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/blog/240051d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="先看视频再看书">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">JSP session 内置对象
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-19 15:11:39" itemprop="dateCreated datePublished" datetime="2018-12-19T15:11:39+00:00">2018-12-19</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-17 05:18:52" itemprop="dateModified" datetime="2019-12-17T05:18:52+00:00">2019-12-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-EE/JSP/" itemprop="url" rel="index"><span itemprop="name">JSP</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-EE/JSP/%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="index"><span itemprop="name">内置对象</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/240051d/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/240051d/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/blog/240051d/#session内置对象简介" class="header_2">session内置对象简介</a>&nbsp;<br><a href="/blog/240051d/#session对象" class="header_2">session对象</a>&nbsp;<br><a href="/blog/240051d/#session对象常用方法" class="header_2">session对象常用方法</a>&nbsp;<br><a href="/blog/240051d/#属性方法" class="header_3">属性方法</a>&nbsp;<br><a href="/blog/240051d/#实例" class="header_4">实例</a>&nbsp;<br><a href="/blog/240051d/#session有效时间方法" class="header_3">session有效时间方法</a>&nbsp;<br><a href="/blog/240051d/#设置session生存时间实例" class="header_4">设置session生存时间实例</a>&nbsp;<br><a href="/blog/240051d/#实例" class="header_3">实例</a>&nbsp;<br><a href="/blog/240051d/#session生命周期" class="header_2">session生命周期</a>&nbsp;<br><a href="/blog/240051d/#创建" class="header_3">创建</a>&nbsp;<br><a href="/blog/240051d/#活动" class="header_3">活动</a>&nbsp;<br><a href="/blog/240051d/#验证说法1" class="header_4">验证说法1</a>&nbsp;<br><a href="/blog/240051d/#验证说法2" class="header_4">验证说法2</a>&nbsp;<br><a href="/blog/240051d/#我的观察结果" class="header_4">我的观察结果</a>&nbsp;<br><a href="/blog/240051d/#tomcat中查看一个项目的所有session" class="header_3">tomcat中查看一个项目的所有session</a>&nbsp;<br><a href="/blog/240051d/#销毁" class="header_2">销毁</a>&nbsp;<br><a href="/blog/240051d/#使用invalidate方法直接销毁" class="header_3">使用invalidate方法直接销毁</a>&nbsp;<br><a href="/blog/240051d/#超时销毁" class="header_3">超时销毁</a>&nbsp;<br><a href="/blog/240051d/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h2 id="session内置对象简介"><a href="#session内置对象简介" class="headerlink" title="session内置对象简介"></a>session内置对象简介</h2><p>session是较常用的内置对象之一,与 request对象相比其作用范围更大。<br>session在网络中被称为会话。由于HTTP协议是一种<strong>无状态协议,也就是当一个客户向服务器发出请求,服务器接收请求,并返回响应后,该连接就结束了,而服务器并不保存相关的信息</strong>。为了弥补这一缺点,HTTP协议提供了session。通过session可以在应用程序的Web页面间进行跳转时,保存用户的状态,使整个用户会话一直存在下去,<strong>直到关闭浏览器</strong>。但是,如果在一个会话中,客户端长时间不向服务器发出请求, session对象就会自动消失。这个时间取决于服务器,例如, Tomcat服务器默认为30分钟。不过这个时间可以通过编写程序进行修改。</p>
+<ul>
+<li>session表示客户端与服务器的一次会话</li>
+<li>Web中的 session指的是用户在浏览某个网站时,<strong>从进入网站到<code>浏览器关闭</code>所经过的这段<code>时间</code></strong>,也就是<code>用户浏览这个网站所花费的时间</code></li>
+<li>从上述定义中可以看到, session实际上是一个特定的时间概念</li>
+<li>session保存在服务器的内存中，每一个客户都对应一个session。<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/oneUseOneSession.png" alt=""></li>
+</ul>
+<h2 id="session对象"><a href="#session对象" class="headerlink" title="session对象"></a>session对象</h2><p>session对象是一个JSP内置对象，是 Httpsession类的实例。<br>session对象在第一次访问JSP页面的时候被自动创建,用来完成客户端与服务器的一次会话管理。<br>当一个客户访问一个服务器时,可能会在几个页面之间切换,使用session就能知道这几个界面是都是同一个客户访问的。<br>session会话对象，一般用来保存帐户信息，一般购物车的实现也是用session完成 </p>
+<h2 id="session对象常用方法"><a href="#session对象常用方法" class="headerlink" title="session对象常用方法"></a>session对象常用方法</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">long getCreation Time()</td>
+<td style="text-align:left">返回 session的创建时间</td>
+</tr>
+<tr>
+<td style="text-align:left">public String getId()</td>
+<td style="text-align:left">返回session创建时JSP引擎为它设的唯一ID号</td>
+</tr>
+<tr>
+<td style="text-align:left">String[] getValueNames()</td>
+<td style="text-align:left">返回一个包含此session中所有可用属性的数组</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="属性方法"><a href="#属性方法" class="headerlink" title="属性方法"></a>属性方法</h3><p>通过session对象可以存储或读取客户相关的信息。例如,用户名或购物信息等。这可以通过 session对象的<code>setAttribute()</code>方法和<code>getAttribute()</code>方法实现。<br>对于存储在 session会话中的对象,如果想将其从 session会话中移除,可以使用 session对象的<code>removeAttributr()</code>方法,该方法的语法格式如下:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>void setAttribute(String name, Object value)</code></td>
+<td style="text-align:left">设置属性</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Object getAttribute(String name)</code></td>
+<td style="text-align:left">取得属性名称对应的属性值，没有该属性则返回null</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Enumeration&lt;String&gt; getAttributeNames()</code></td>
+<td style="text-align:left">取得session中所有属性名称的枚举</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void removeAttribute(String name)</code></td>
+<td style="text-align:left">移除属性名为name的属性</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Enumeration"</span>%&gt;</span><br><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span></span><br><span class="line">    pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">&lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        session.setAttribute(<span class="string">"user"</span>, <span class="string">"小明"</span>);</span><br><span class="line">        session.setAttribute(<span class="string">"password"</span>, <span class="string">"123456"</span>);</span><br><span class="line">        session.setAttribute(<span class="string">"sex"</span>, <span class="string">"男"</span>);</span><br><span class="line">        session.removeAttribute(<span class="string">"sex"</span>);</span><br><span class="line">        Enumeration&lt;String&gt; attrNames = session.getAttributeNames();</span><br><span class="line">        String name;</span><br><span class="line">        <span class="keyword">while</span> (attrNames.hasMoreElements())</span><br><span class="line">        &#123;</span><br><span class="line">            name = attrNames.nextElement();</span><br><span class="line">            out.print(name+<span class="string">"="</span>+session.getAttribute(name)+<span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="session有效时间方法"><a href="#session有效时间方法" class="headerlink" title="session有效时间方法"></a>session有效时间方法</h3><p>在应用 session对象时应该注意 session的生命周期。一般来说, session的生命周期在20~30分钟之间。<strong>当用户首次访问时将产生一个新的会话</strong>,以后服务器就可以记住这个会话状态,当会话生命周期超时时,或者服务器端强制使会话失效时,这个 session就不能使用了。在开发程序时应该考虑到用户访问网站时可能发生的各种情况,例如用户登录网站后在 session的有效期外进行相应操作,用户会看到一张错误页面。这样的现象是不允许发生的。为了避免这种情况的发生,在开发系统时应该对session的有效性进行判断。<br>在 session对象中提供了设置会话生命周期的方法,分别介绍如下。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">void setMaxInactiveInterval(int interval)</td>
+<td style="text-align:left">以秒为单位设置 session的有效时间。</td>
+</tr>
+<tr>
+<td style="text-align:left">int getMaxInactiveInterval()</td>
+<td style="text-align:left">以秒为单位返回一个会话内两个请求最大时间间隔(session的最大存活时间)。默认是1800秒。如果超过这个时间没有客户没有继续请求服务器，则该session对象被销毁</td>
+</tr>
+<tr>
+<td style="text-align:left">long getLastAccessedTime()</td>
+<td style="text-align:left">返回客户端最后一次与会话相关联的请求时间,单位毫秒。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="设置session生存时间实例"><a href="#设置session生存时间实例" class="headerlink" title="设置session生存时间实例"></a>设置session生存时间实例</h4><p>通过<code>session.setMaxInactiveInterval(int seconds);</code>可以设置session的生存时间,当超时候，当前的session会被销毁。如果再新打开一个页面，则此时的session为新建的session对象，与原来旧的session无关。<br>修改上述的session.jsp如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.text.SimpleDateFormat"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Date"</span>%&gt;</span><br><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=ISO-8859-1"</span>&gt;</span><br><span class="line">&lt;title&gt;session&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h2&gt;session内置对象&lt;/h2&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="comment">//获取session的创建时间</span></span><br><span class="line">        Date date = <span class="keyword">new</span> Date(session.getCreationTime());</span><br><span class="line">        SimpleDateFormat format = <span class="keyword">new</span> SimpleDateFormat(</span><br><span class="line">                <span class="string">"yyyy年MM月dd日 HH:mm:ss"</span>);</span><br><span class="line">        <span class="comment">//设置session属性</span></span><br><span class="line">        session.setAttribute(<span class="string">"user"</span>, <span class="string">"admin"</span>);</span><br><span class="line">        session.setAttribute(<span class="string">"password"</span>, <span class="string">"123456"</span>);</span><br><span class="line">        <span class="comment">//设置session生存周期为2秒</span></span><br><span class="line">        session.setMaxInactiveInterval(<span class="number">2</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    session对象的创建时间:</span><br><span class="line">    &lt;%=format.format(date)%&gt;&lt;br&gt; session对象的ID:&lt;%=session.getId()%&gt;&lt;br&gt;</span><br><span class="line">    &lt;a href="http://localhost:8080/HelloWorld/session2.jsp" target="_blank"&gt;跳转到session2&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><br>修改session2.jsp如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.text.SimpleDateFormat"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Date"</span>%&gt;</span><br><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=ISO-8859-1"</span>&gt;</span><br><span class="line">&lt;title&gt;session2&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h2&gt;session内置对象&lt;/h2&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="comment">//获取session的创建时间</span></span><br><span class="line">        Date date = <span class="keyword">new</span> Date(session.getCreationTime());</span><br><span class="line">        SimpleDateFormat format = <span class="keyword">new</span> SimpleDateFormat(</span><br><span class="line">                <span class="string">"yyyy年MM月dd日 HH:mm:ss"</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    session对象的创建时间:</span><br><span class="line">    &lt;%=format.format(date)%&gt;&lt;br&gt;</span><br><span class="line">    session对象的ID:&lt;%=session.getId()%&gt;&lt;br&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><br>打开session.jsp,然后稍微等待2秒钟，然后点击超链接，打开session2.jsp。可以看到两者的session id不一样，创建时间也不一样。<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/session_1.png" alt=""><br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/session2_1.png" alt=""><br>这说明之前的session对象已经过期了。session2.jsp中的session对象为新建的session对象。这两个页面不属于同一个会话</p>
+<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><p>下面创建两个jsp文件：session.jsp，session2.jsp。session.jsp中设置了两个属性。session2.jsp不设置属性，直接获取属性：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.text.SimpleDateFormat"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Date"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Enumeration"</span>%&gt;</span><br><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=ISO-8859-1"</span>&gt;</span><br><span class="line">&lt;title&gt;session2&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h2&gt;session内置对象&lt;/h2&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="comment">//获取session的创建时间</span></span><br><span class="line">        Date date = <span class="keyword">new</span> Date(session.getCreationTime());</span><br><span class="line">        SimpleDateFormat format = <span class="keyword">new</span> SimpleDateFormat(</span><br><span class="line">                <span class="string">"yyyy年MM月dd日 HH:mm:ss"</span>);</span><br><span class="line">        <span class="comment">//设置session属性</span></span><br><span class="line">        session.setAttribute(<span class="string">"user"</span>, <span class="string">"admin"</span>);</span><br><span class="line">        session.setAttribute(<span class="string">"password"</span>, <span class="string">"123456"</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    session对象的创建时间:</span><br><span class="line">    &lt;%=format.format(date)%&gt;&lt;br&gt;</span><br><span class="line">    session对象的ID:&lt;%=session.getId()%&gt;&lt;br&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    遍历session中的属性/属性值对:</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="comment">//获取session中的所有属性</span></span><br><span class="line">        Enumeration&lt;String&gt; enu = session.getAttributeNames();</span><br><span class="line">        String attr = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">//判断是否有内容</span></span><br><span class="line">        <span class="keyword">while</span> (enu.hasMoreElements())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//获取一个内容</span></span><br><span class="line">            attr = enu.nextElement();</span><br><span class="line">            out.println(<span class="string">"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"</span> + attr + <span class="string">"="</span></span><br><span class="line">                    + session.getAttribute(attr) + <span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    %&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    session最大存活时间:&lt;%=session.getMaxInactiveInterval() %&gt;秒=&lt;%=session.getMaxInactiveInterval()/<span class="number">60</span> %&gt;分钟&lt;br&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><br>session2.jsp:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.text.SimpleDateFormat"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Date"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Enumeration"</span>%&gt;</span><br><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=ISO-8859-1"</span>&gt;</span><br><span class="line">&lt;title&gt;session2&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h2&gt;session内置对象&lt;/h2&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="comment">//获取session的创建时间</span></span><br><span class="line">        Date date = <span class="keyword">new</span> Date(session.getCreationTime());</span><br><span class="line">        SimpleDateFormat format = <span class="keyword">new</span> SimpleDateFormat(</span><br><span class="line">                <span class="string">"yyyy年MM月dd日 HH:mm:ss"</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    session对象的创建时间:</span><br><span class="line">    &lt;%=format.format(date)%&gt;&lt;br&gt;</span><br><span class="line">    session对象的ID:&lt;%=session.getId()%&gt;&lt;br&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    遍历session中的属性/属性值对:</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="comment">//获取session中的所有属性</span></span><br><span class="line">        Enumeration&lt;String&gt; enu = session.getAttributeNames();</span><br><span class="line">        String attr = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">//判断是否有内容</span></span><br><span class="line">        <span class="keyword">while</span> (enu.hasMoreElements())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//获取一个内容</span></span><br><span class="line">            attr = enu.nextElement();</span><br><span class="line">            out.println(<span class="string">"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"</span> + attr + <span class="string">"="</span></span><br><span class="line">                    + session.getAttribute(attr) + <span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    %&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    session最大存活时间:&lt;%=session.getMaxInactiveInterval() %&gt;秒=&lt;%=session.getMaxInactiveInterval()/<span class="number">60</span> %&gt;分钟&lt;br&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><br>运行结果：<br>session.jsp访问效果：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/session.png" alt=""><br>session2.jsp访问效果：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/session2.png" alt=""><br>可以看到这虽然是两个不同的界面，但是他们的输出结果都是一模一样的。这是因为这两个页面除以相同的会话之中。共享一个session对象。这里session对象还是理解的不够通透，后续再深入，我先往前面吃。</p>
+<h2 id="session生命周期"><a href="#session生命周期" class="headerlink" title="session生命周期"></a>session生命周期</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>当客户端第一次访问某个jsp或者 Servlet时候,服务器会为当前会话创建一个SessionId每次客户端向服务端发送请求时,都会将此 SessionId携带过去,服务端会对此 Session进行校验。</p>
+<h3 id="活动"><a href="#活动" class="headerlink" title="活动"></a>活动</h3><ul>
+<li>1 某次会话中通过超链接打开的新页面属于同一次会话。</li>
+<li>2 只要当前会话页面没有全部关闭,重新打开新的浏览器窗口访问同一项目资源时属于同一次会话。</li>
+<li>3 除非本次会话的所有页面都关闭(关闭所有相关浏览器窗口)后再重新访问某个JSP或者servlet将会创建新的会话。<ul>
+<li>注意: <code>原有会话还存在</code>,只是这个旧的 Session仍然存在于服务端,<code>只不过再也没有客户端会携带它然后交予服务端校验</code>,除非旧的会话超时了，旧的会话才结束。</li>
+</ul>
+</li>
+</ul>
+<h4 id="验证说法1"><a href="#验证说法1" class="headerlink" title="验证说法1"></a>验证说法1</h4><p>修改session.jsp,session2.jsp如下：<br>session.jsp：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.text.SimpleDateFormat"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.text.SimpleDateFormat"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Date"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Enumeration"</span>%&gt;</span><br><span class="line">&lt;%-- &lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Enumeration"</span>%&gt; --%&gt;</span><br><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=ISO-8859-1"</span>&gt;</span><br><span class="line">&lt;title&gt;session&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h2&gt;session内置对象&lt;/h2&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="comment">//获取session的创建时间</span></span><br><span class="line">        Date date = <span class="keyword">new</span> Date(session.getCreationTime());</span><br><span class="line">        SimpleDateFormat format = <span class="keyword">new</span> SimpleDateFormat(</span><br><span class="line">                <span class="string">"yyyy年MM月dd日 HH:mm:ss"</span>);</span><br><span class="line">        <span class="comment">//设置session属性</span></span><br><span class="line">        session.setAttribute(<span class="string">"user"</span>, <span class="string">"admin"</span>);</span><br><span class="line">        session.setAttribute(<span class="string">"password"</span>, <span class="string">"123456"</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    session对象的创建时间:</span><br><span class="line">    &lt;%=format.format(date)%&gt;&lt;br&gt; session对象的ID:&lt;%=session.getId()%&gt;&lt;br&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    遍历session中的属性/属性值对:</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="comment">//获取session中的所有属性</span></span><br><span class="line">        Enumeration&lt;String&gt; enu = session.getAttributeNames();</span><br><span class="line">        String attr = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">//判断是否有内容</span></span><br><span class="line">        <span class="keyword">while</span> (enu.hasMoreElements())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//获取一个内容</span></span><br><span class="line">            attr = enu.nextElement();</span><br><span class="line">            out.println(<span class="string">"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"</span> + attr + <span class="string">"="</span></span><br><span class="line">                    + session.getAttribute(attr) + <span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    %&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;a href="http://localhost:8080/HelloWorld/session2.jsp" target="_blank"&gt;跳转到session2&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><br>session2.jsp:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.text.SimpleDateFormat"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Date"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Enumeration"</span>%&gt;</span><br><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=ISO-8859-1"</span>&gt;</span><br><span class="line">&lt;title&gt;session2&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h2&gt;session内置对象&lt;/h2&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="comment">//获取session的创建时间</span></span><br><span class="line">        Date date = <span class="keyword">new</span> Date(session.getCreationTime());</span><br><span class="line">        SimpleDateFormat format = <span class="keyword">new</span> SimpleDateFormat(</span><br><span class="line">                <span class="string">"yyyy年MM月dd日 HH:mm:ss"</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    session对象的创建时间:</span><br><span class="line">    &lt;%=format.format(date)%&gt;&lt;br&gt;</span><br><span class="line">    session对象的ID:&lt;%=session.getId()%&gt;&lt;br&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    遍历session中的属性/属性值对:</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="comment">//获取session中的所有属性</span></span><br><span class="line">        Enumeration&lt;String&gt; enu = session.getAttributeNames();</span><br><span class="line">        String attr = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">//判断是否有内容</span></span><br><span class="line">        <span class="keyword">while</span> (enu.hasMoreElements())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//获取一个内容</span></span><br><span class="line">            attr = enu.nextElement();</span><br><span class="line">            out.println(<span class="string">"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"</span> + attr + <span class="string">"="</span></span><br><span class="line">                    + session.getAttribute(attr) + <span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    %&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><br>打开ssession.jsp,显示如下：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/session_2.png" alt=""><br>然后通过下面的超链接打开session2.jsp:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/session2_2.png" alt=""><br>可以看到两者的session id一样，所以<code>某次会话中通过超链接打开的新页面属于同一次会话。</code>这句话得到验证。</p>
+<h4 id="验证说法2"><a href="#验证说法2" class="headerlink" title="验证说法2"></a>验证说法2</h4><p>不要关闭当前浏览器窗口，再打开一个浏览器窗口，访问ssession2.jsp:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/newsession2InnewWindow.png" alt=""><br>可以看到新浏览器窗口中的session2.jsp中session id(<code>BE58A27556C3883C7DA49083CDC6D4BD</code>)依然和旧浏览器窗口中的session2.jsp的session id一样。这说明第二点<code>只要当前会话页面没有全部关闭,重新打开新的浏览器窗口访问同一项目资源时属于同一次会话。</code>是正确的。<br>关闭新的浏览器窗口，旧的浏览器窗口中关闭掉全部Helloworld项目中的页面。</p>
+<h4 id="我的观察结果"><a href="#我的观察结果" class="headerlink" title="我的观察结果"></a>我的观察结果</h4><p>验证过程中，我发现即使在浏览器中关闭了所有HelloWorld项目打开的标签页。但是只要没有关闭当前浏览器窗口。该session就还是有效的。<br>例如：在浏览器窗口中打开的session.jsp,session2.jsp和一个无关的页面:其中session.jsp中的session id为：<code>790B84D02E1ED3D7CB3FBB1910C33343</code><br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/my/session.png" alt=""><br>现在我关闭掉session.jsp,session2.jsp，只留了一个无关的页面：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/my/close-session_session2.png" alt=""><br>然后我输入session.jsp的地址，进行访问,如下图：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/my/open_session.png" alt=""><br>可以发现session id还是<code>790B84D02E1ED3D7CB3FBB1910C33343</code>，然后点击超链接打开session2.jsp:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/my/open_session2_by_session.png" alt=""><br>打开一个新的浏览器窗口，访问session.jsp:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/my/open_session_by_new_window.png" alt=""><br>可以发现session id还是<code>790B84D02E1ED3D7CB3FBB1910C33343</code>。所以只要我旧的浏览器窗口没有关闭，这个session就会一直有效(不超时的情况下)。</p>
+<p>所以我的结论是：<code>在不超时的情况下，即使你关闭了在一个Web项目中打开的所有页面，只要不关闭当前的浏览器窗口，等你下次访问该项目的时候，新标签页或者是新窗口中的session对象还是原来的session对象</code>。</p>
+<p>关闭所有的浏览器，然后重新打开浏览器，访问session.jsp:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/my/close_all_window_open_new.png" alt=""><br>可以看到这次的sesion id已经变成了：<code>60F84C6ED79AD13DA8CD8BA12E8D4129</code>而不是原来的<code>790B84D02E1ED3D7CB3FBB1910C33343</code>。这说明原来的session已经不再使用了。</p>
+<h3 id="tomcat中查看一个项目的所有session"><a href="#tomcat中查看一个项目的所有session" class="headerlink" title="tomcat中查看一个项目的所有session"></a>tomcat中查看一个项目的所有session</h3><p>进入tomcat首页<a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a>,然后点击<code>Manager App</code>：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/tomcat/manageapp.png" alt=""><br>输入用户和密码，如果不知道用户和密码的话先设置。<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/tomcat/password.png" alt=""><br>进入之后就可以看到tomcat中的项目表：同时在表中的Session列中，可以看到每个项目中有多少个session,例如现在HelloWorld这个项目就有2个session：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/tomcat/applist.png" alt=""><br>点击这个数字可以查看项目中的Session列表：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/tomcat/sesionlist.png" alt=""><br>可以看到这里有两个session:<code>790B84D02E1ED3D7CB3FBB1910C33343</code>和<code>60F84C6ED79AD13DA8CD8BA12E8D4129</code>,而<code>790B84D02E1ED3D7CB3FBB1910C33343</code>这个session已经不再使用了，处于等死状态中，不过还没有被销毁，还在服务器内存中苟活，等到剩余的时间为0后，才会从服务器内存中被销毁。<code>60F84C6ED79AD13DA8CD8BA12E8D4129</code>这个session是目前正在使用的session。我们肯继续访问HelloWorld项目，来为当前的session续命:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/tomcat/xuming.png" alt=""><br>而以前的session就只有等死的份了，剩余时间会一直减少，直到为0后被销毁掉：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/tomcat/deal.png" alt=""></p>
+<h2 id="销毁"><a href="#销毁" class="headerlink" title="销毁"></a>销毁</h2><p>Session的销毁只有三种方式:</p>
+<ul>
+<li>调用了 <code>session.invalidate()</code>方法</li>
+<li>Session过期(超时)</li>
+<li>服务器重新启动</li>
+</ul>
+<p>虽然当客户端长时间不向服务器发送请求后, session对象会自动消失,但对于某些实时统计在线人数的网站(例如聊天室),每次都等 session过期后,才能统计出准确的人数,这是远远不够的。所以还需要手动销毁 session。通过 session对象的 invalidate方法可以销毁 session,其语法格式如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session. invalidate()</span><br></pre></td></tr></table></figure><br>session对象被销毁后,将不可以再使用该 session对象了。如果在 session被销毁后,再调用 session对象的任何方法,都将报出 <code>Session already invalidated</code>异常。</p>
+<h3 id="使用invalidate方法直接销毁"><a href="#使用invalidate方法直接销毁" class="headerlink" title="使用invalidate方法直接销毁"></a>使用invalidate方法直接销毁</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//销毁当前session</span></span><br><span class="line">session.invalidate();</span><br></pre></td></tr></table></figure>
+<p>修改session.jsp如下，输出完信息后，就关闭当前的session:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.text.SimpleDateFormat"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.text.SimpleDateFormat"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Date"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Enumeration"</span>%&gt;</span><br><span class="line">&lt;%-- &lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.Enumeration"</span>%&gt; --%&gt;</span><br><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=ISO-8859-1"</span>&gt;</span><br><span class="line">&lt;title&gt;session&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h2&gt;session内置对象&lt;/h2&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="comment">//获取session的创建时间</span></span><br><span class="line">        Date date = <span class="keyword">new</span> Date(session.getCreationTime());</span><br><span class="line">        SimpleDateFormat format = <span class="keyword">new</span> SimpleDateFormat(</span><br><span class="line">                <span class="string">"yyyy年MM月dd日 HH:mm:ss"</span>);</span><br><span class="line">        <span class="comment">//设置session属性</span></span><br><span class="line">        session.setAttribute(<span class="string">"user"</span>, <span class="string">"admin"</span>);</span><br><span class="line">        session.setAttribute(<span class="string">"password"</span>, <span class="string">"123456"</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    session对象的创建时间:</span><br><span class="line">    &lt;%=format.format(date)%&gt;&lt;br&gt; session对象的ID:&lt;%=session.getId()%&gt;&lt;br&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    遍历session中的属性/属性值对:</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="comment">//获取session中的所有属性</span></span><br><span class="line">        Enumeration&lt;String&gt; enu = session.getAttributeNames();</span><br><span class="line">        String attr = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">//判断是否有内容</span></span><br><span class="line">        <span class="keyword">while</span> (enu.hasMoreElements())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//获取一个内容</span></span><br><span class="line">            attr = enu.nextElement();</span><br><span class="line">            out.println(<span class="string">"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"</span> + attr + <span class="string">"="</span></span><br><span class="line">                    + session.getAttribute(attr) + <span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//销毁当前session</span></span><br><span class="line">        session.invalidate();</span><br><span class="line">    %&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;a href="http://localhost:8080/HelloWorld/session2.jsp" target="_blank"&gt;跳转到session2&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><br>如下所示：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/xiaohui/session.png" alt=""><br>访问完毕后，当前session就已经销毁掉了，可以打开管理页面<a href="http://localhost:8080/manager/html" target="_blank" rel="noopener">http://localhost:8080/manager/html</a>查看：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/xiaohui/nosession.png" alt=""><br>可以看到当前没有session，说明上面的session对象确实用完就被销毁掉了。我们每次访问后，都会是一个新的session:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/xiaohui/session_new.png" alt=""></p>
+<h3 id="超时销毁"><a href="#超时销毁" class="headerlink" title="超时销毁"></a>超时销毁</h3><p>这里有两种方式：</p>
+<ul>
+<li>一种是通过<code>session.setMaxInactiveInterval(int seconds);</code>方法设置session的生存时间。</li>
+<li>另一种是在<code>web.xml</code>中跟标签<web-app>下进行配置：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 设置会话60分钟后过期 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">session-config</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">session-timeout</span>&gt;</span>60<span class="tag">&lt;/<span class="name">session-timeout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">session-config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>可以进入tomcat后天管理查看当前会话的活动时间已经被设置为60分钟了，而不是默认的30分钟：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/session/setTimeOut/setTimeOut60.png" alt=""></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://www.runoob.com/jsp/jsp-session.html" target="_blank" rel="noopener">JSP Session</a><br><a href="https://wenku.baidu.com/view/08dd8ef3f90f76c661371a0d.html?sxts=1544369585905" target="_blank" rel="noopener">https://wenku.baidu.com/view/08dd8ef3f90f76c661371a0d.html?sxts=1544369585905</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/blog/240051d/" title="JSP session 内置对象">https://lanlan2017.github.io/blog/240051d/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/bc7737a8/" rel="next" title="JSP application 内置对象">
+                  <i class="fa fa-chevron-left"></i> JSP application 内置对象
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/ddf72c82/" rel="prev" title="JSP response 内置对象">
+                  JSP response 内置对象 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#session内置对象简介"><span class="nav-number">1.</span> <span class="nav-text">session内置对象简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#session对象"><span class="nav-number">2.</span> <span class="nav-text">session对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#session对象常用方法"><span class="nav-number">3.</span> <span class="nav-text">session对象常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性方法"><span class="nav-number">3.1.</span> <span class="nav-text">属性方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">3.1.1.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session有效时间方法"><span class="nav-number">3.2.</span> <span class="nav-text">session有效时间方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置session生存时间实例"><span class="nav-number">3.2.1.</span> <span class="nav-text">设置session生存时间实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-1"><span class="nav-number">3.3.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#session生命周期"><span class="nav-number">4.</span> <span class="nav-text">session生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建"><span class="nav-number">4.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#活动"><span class="nav-number">4.2.</span> <span class="nav-text">活动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#验证说法1"><span class="nav-number">4.2.1.</span> <span class="nav-text">验证说法1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证说法2"><span class="nav-number">4.2.2.</span> <span class="nav-text">验证说法2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我的观察结果"><span class="nav-number">4.2.3.</span> <span class="nav-text">我的观察结果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat中查看一个项目的所有session"><span class="nav-number">4.3.</span> <span class="nav-text">tomcat中查看一个项目的所有session</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#销毁"><span class="nav-number">5.</span> <span class="nav-text">销毁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用invalidate方法直接销毁"><span class="nav-number">5.1.</span> <span class="nav-text">使用invalidate方法直接销毁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#超时销毁"><span class="nav-number">5.2.</span> <span class="nav-text">超时销毁</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">6.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/blog/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">先看视频再看书</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">370</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">148</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/lanlan2017" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;lanlan2017" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/ReadingNotes/" title="ReadingNotes &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;ReadingNotes&#x2F;"><i class="fa fa-fw fa-book"></i>ReadingNotes</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/" title="blog &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;"><i class="fa fa-fw fa-book"></i>blog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/tools/" title="tools &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;tools&#x2F;"><i class="fa fa-fw fa-wrench"></i>tools</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/blog/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/blog/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里输入评论',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

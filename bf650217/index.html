@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="问题描述&amp;nbsp;文件名称过滤器&amp;nbsp;默认文件&amp;nbsp;Maven Java Web项目文件名称过滤器&amp;nbsp;打印目录树主类 MyTree.java&amp;nbsp;MyTree程序参数说明&amp;nbsp;不带参数&amp;nbsp;带一个参数&amp;nbsp;运行结果&amp;nbsp;只打印目录&amp;nbsp;打印目录和文件&amp;nbsp;显示Maven Java Web项目结构&amp;nbsp; .header_1{mar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 实现tree命令">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/bf650217/index.html">
+<meta property="og:site_name" content="蓝蓝博客">
+<meta property="og:description" content="问题描述&amp;nbsp;文件名称过滤器&amp;nbsp;默认文件&amp;nbsp;Maven Java Web项目文件名称过滤器&amp;nbsp;打印目录树主类 MyTree.java&amp;nbsp;MyTree程序参数说明&amp;nbsp;不带参数&amp;nbsp;带一个参数&amp;nbsp;运行结果&amp;nbsp;只打印目录&amp;nbsp;打印目录和文件&amp;nbsp;显示Maven Java Web项目结构&amp;nbsp; .header_1{mar">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-04-30T20:00:58.000Z">
+<meta property="article:modified_time" content="2019-12-17T05:18:52.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="批处理">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/blog/bf650217/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Java 实现tree命令 | 蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/blog/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/blog/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/blog/bf650217/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="先看视频再看书">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">Java 实现tree命令
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-30 20:00:58" itemprop="dateCreated datePublished" datetime="2019-04-30T20:00:58+00:00">2019-04-30</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-17 05:18:52" itemprop="dateModified" datetime="2019-12-17T05:18:52+00:00">2019-12-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-IO%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">Java IO流</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-IO%E6%B5%81/File/" itemprop="url" rel="index"><span itemprop="name">File</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/bf650217/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/bf650217/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/blog/bf650217/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/bf650217/#文件名称过滤器" class="header_2">文件名称过滤器</a>&nbsp;<br><a href="/blog/bf650217/#默认文件" class="header_3">默认文件</a>&nbsp;<br><a href="/blog/bf650217/#Maven-Java-Web项目文件名称过滤器" class="header_3">Maven Java Web项目文件名称过滤器</a>&nbsp;<br><a href="/blog/bf650217/#打印目录树主类-MyTree-java" class="header_2">打印目录树主类 MyTree.java</a>&nbsp;<br><a href="/blog/bf650217/#MyTree程序参数说明" class="header_2">MyTree程序参数说明</a>&nbsp;<br><a href="/blog/bf650217/#不带参数" class="header_3">不带参数</a>&nbsp;<br><a href="/blog/bf650217/#带一个参数" class="header_3">带一个参数</a>&nbsp;<br><a href="/blog/bf650217/#运行结果" class="header_2">运行结果</a>&nbsp;<br><a href="/blog/bf650217/#只打印目录" class="header_3">只打印目录</a>&nbsp;<br><a href="/blog/bf650217/#打印目录和文件" class="header_3">打印目录和文件</a>&nbsp;<br><a href="/blog/bf650217/#显示Maven-Java-Web项目结构" class="header_3">显示Maven Java Web项目结构</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>最近先现实项目的目录结构,查了一下<code>cmd</code>之后由<code>tree</code>命令,但是项目中有些目录和文件(如<code>.class</code>文件)是项目自动生成的,并不全部显示出来,我这想显示该项目必须要有的目录和文件即可,对于<code>IDE</code>等工具生成的目录忽略掉。这样使用<code>cmd</code>提供的<code>tree</code>命令无法满足我的要求,我有必要自己实现一个<code>tree</code>命令。下来是我用<code>java</code>实现的一个满足我特定要求的<code>tree</code>命令。</p>
+<h2 id="文件名称过滤器"><a href="#文件名称过滤器" class="headerlink" title="文件名称过滤器"></a>文件名称过滤器</h2><h3 id="默认文件"><a href="#默认文件" class="headerlink" title="默认文件"></a>默认文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tree;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FilenameFilter;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DefaultFileNameFileter</span> <span class="keyword">implements</span> <span class="title">FilenameFilter</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">accept</span><span class="params">(File dir, String name)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Maven-Java-Web项目文件名称过滤器"><a href="#Maven-Java-Web项目文件名称过滤器" class="headerlink" title="Maven Java Web项目文件名称过滤器"></a>Maven Java Web项目文件名称过滤器</h3><p>对于项目中的<code>.setting</code>目录,<code>bin</code>目录,<code>.class</code>文件<code>.project</code>文件,这些文件都是<code>eclipse</code>自动生成的,在打印项目目录时候,这些目录都不需要打印出来.为了满足这个需求我使用文件名过滤器。代码如下所示：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tree;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FilenameFilter;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MavenJavaWebFileNameFilter</span> <span class="keyword">implements</span> <span class="title">FilenameFilter</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String RootPath = <span class="keyword">null</span>;</span><br><span class="line">    MavenJavaWebFileNameFilter(String RootPath)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.RootPath = RootPath;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">accept</span><span class="params">(File dir, String name)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 该文件不能以点号开头,</span></span><br><span class="line">        <span class="comment">// 也不能以txt文件结尾</span></span><br><span class="line">        <span class="comment">// 文件名称不能是bin</span></span><br><span class="line">        <span class="comment">// 文件名称不能是target</span></span><br><span class="line">        <span class="keyword">if</span> (name.startsWith(<span class="string">"."</span>) || name.endsWith(<span class="string">".txt"</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果是根目录</span></span><br><span class="line">        <span class="keyword">if</span> (RootPath.equals(dir.getAbsolutePath()))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 第一级目录下的bin目录,</span></span><br><span class="line">            <span class="comment">// 或者target目录(maven,输出)不是java项目必须目录所以不输出</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="string">"bin"</span>.equals(name) || <span class="string">"target"</span>.equals(name)</span><br><span class="line">                    || <span class="string">"test"</span>.equals(name))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="打印目录树主类-MyTree-java"><a href="#打印目录树主类-MyTree-java" class="headerlink" title="打印目录树主类 MyTree.java"></a>打印目录树主类 MyTree.java</h2><p><code>MyTree.java</code>用来打印目录树,如下所示：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tree;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FilenameFilter;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTree</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String RootPath = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> MavenJavaWebFileNameFilter mavenJaveWebFileNameFilter = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> DefaultFileNameFileter defaultFileNameFileter=<span class="keyword">new</span> DefaultFileNameFileter();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// String path = "E:\\workspace\\Regex";</span></span><br><span class="line">        <span class="comment">// String path = "E:\\workspace_web\\app17a";</span></span><br><span class="line">        <span class="comment">// 通过剪贴板读入目录</span></span><br><span class="line">        <span class="comment">// String path =SysClipboardUtil.getSysClipboardText();</span></span><br><span class="line">        <span class="comment">// 使用当前目录作为目录</span></span><br><span class="line">        String path = System.getProperty(<span class="string">"user.dir"</span>);</span><br><span class="line">        <span class="comment">// 保存根目录,后续要用到</span></span><br><span class="line">        RootPath = path;</span><br><span class="line">        mavenJaveWebFileNameFilter = <span class="keyword">new</span> MavenJavaWebFileNameFilter(RootPath);</span><br><span class="line">        File dir = <span class="keyword">new</span> File(path);</span><br><span class="line">        <span class="keyword">switch</span> (args.length)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span> :</span><br><span class="line">                oneArgs(args, dir);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span> :</span><br><span class="line">                printTreeDir(dir);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 输入一个参数的情况.</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> args</span></span><br><span class="line"><span class="comment">     *            参数列表</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> dir</span></span><br><span class="line"><span class="comment">     *            目录的File对象.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">oneArgs</span><span class="params">(String[] args, File dir)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">        String arg1 = args[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">switch</span> (arg1)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"f"</span> :</span><br><span class="line">                printTreeFileAndDir(dir, defaultFileNameFileter);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"java"</span> :</span><br><span class="line">                printTreeFileAndDir(dir, mavenJaveWebFileNameFilter);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span> :</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 打印dir表示的目录的目录树.</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> dir</span></span><br><span class="line"><span class="comment">     *            表示目录的File对象.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printTreeDir</span><span class="params">(File dir)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(dir.getAbsolutePath());</span><br><span class="line">        printTreeDir(dir, <span class="string">""</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> dir</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printTreeDir</span><span class="params">(File dir, String prefix, <span class="keyword">int</span> deep)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (dir.isDirectory())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 生成目录下的子目录列表</span></span><br><span class="line">            File[] dirList = dir.listFiles(<span class="keyword">new</span> FilenameFilter()</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">accept</span><span class="params">(File dir, String name)</span></span></span><br><span class="line"><span class="function">                </span>&#123;</span><br><span class="line">                    <span class="comment">// 该文件是目录,并且不能以点号开头,</span></span><br><span class="line">                    <span class="comment">// 点号开头的一般是隐藏文件</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> File(dir, name).isDirectory()</span><br><span class="line">                            &amp;&amp; !name.startsWith(<span class="string">"."</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            String thisPrefix = <span class="string">""</span>;</span><br><span class="line">            String nextPrefix = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dirList.length; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (deep &gt;= <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 如果不是最后一个元素</span></span><br><span class="line">                    <span class="keyword">if</span> ((i + <span class="number">1</span> &lt; dirList.length))</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="comment">// 不是最后一个目录都打印这个符号</span></span><br><span class="line">                        thisPrefix = prefix + <span class="string">"├─"</span>;</span><br><span class="line">                        <span class="comment">// 下一个打印这符号表示展开目录</span></span><br><span class="line">                        nextPrefix = prefix + <span class="string">"│ "</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="comment">// 最后一个子目录项</span></span><br><span class="line">                        thisPrefix = prefix + <span class="string">"└─"</span>;</span><br><span class="line">                        <span class="comment">//</span></span><br><span class="line">                        nextPrefix = prefix + <span class="string">"  "</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(thisPrefix + dirList[i].getName());</span><br><span class="line">                printTreeDir(dirList[i], nextPrefix, deep + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> dir</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printTreeFileAndDir</span><span class="params">(File dir,FilenameFilter fileNameFilter)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 打印根目录</span></span><br><span class="line">        System.out.println(dir.getAbsolutePath());</span><br><span class="line">        printTreeFileAndDir(dir, fileNameFilter,<span class="string">""</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 打印目录树</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> dir</span></span><br><span class="line"><span class="comment">     *            目录</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> prefix</span></span><br><span class="line"><span class="comment">     *            前缀,需要打印在文件或者目录之前</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> deep</span></span><br><span class="line"><span class="comment">     *            深度</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printTreeFileAndDir</span><span class="params">(File dir,</span></span></span><br><span class="line"><span class="function"><span class="params">            FilenameFilter fileNameFilter, String prefix, <span class="keyword">int</span> deep)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 列出目录下的子目录</span></span><br><span class="line">        File[] childs = dir.listFiles(fileNameFilter);</span><br><span class="line">        <span class="comment">// 遍历子目录</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; childs.length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 本次递归的前缀</span></span><br><span class="line">            String thisPrefix = <span class="string">""</span>;</span><br><span class="line">            <span class="comment">// 下一个递归的前缀</span></span><br><span class="line">            String nextPrefix = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">if</span> (deep &gt;= <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 如果不是最后一个元素</span></span><br><span class="line">                <span class="keyword">if</span> ((i + <span class="number">1</span> &lt; childs.length))</span><br><span class="line">                &#123;</span><br><span class="line">                    nextPrefix = prefix + <span class="string">"│ "</span>;</span><br><span class="line">                    thisPrefix = prefix + <span class="string">"├─"</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    nextPrefix = prefix + <span class="string">"  "</span>;</span><br><span class="line">                    thisPrefix = prefix + <span class="string">"└─"</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(thisPrefix + childs[i].getName());</span><br><span class="line">            <span class="keyword">if</span> (childs[i].isDirectory())</span><br><span class="line">            &#123;</span><br><span class="line">                printTreeFileAndDir(childs[i], fileNameFilter, nextPrefix,</span><br><span class="line">                        deep + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="MyTree程序参数说明"><a href="#MyTree程序参数说明" class="headerlink" title="MyTree程序参数说明"></a>MyTree程序参数说明</h2><h3 id="不带参数"><a href="#不带参数" class="headerlink" title="不带参数"></a>不带参数</h3><p>该程序默认<strong>不带参数</strong>,默认情况下<strong>只打印</strong>当前目录下的所有非点号<code>.</code>开头的<strong>目录</strong>。</p>
+<h3 id="带一个参数"><a href="#带一个参数" class="headerlink" title="带一个参数"></a>带一个参数</h3><p>目前该程序只允许带一个参数,如下所示：</p>
+<ul>
+<li><strong><code>f</code>参数</strong>:<strong>不仅打印目录,还会打印目录下的文件</strong>.</li>
+<li><code>java</code>参数,显示<code>java</code>项目的目录结构,隐藏<code>IDE</code>等工具生成的文件</li>
+</ul>
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><h3 id="只打印目录"><a href="#只打印目录" class="headerlink" title="只打印目录"></a>只打印目录</h3><p><strong>执行程序,不带任何参数</strong>将会只打印目录<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E:\<span class="title">workspace_web</span>\<span class="title">app17a</span></span></span><br><span class="line"><span class="function">├─<span class="title">src</span></span></span><br><span class="line"><span class="function">│ ├─<span class="title">main</span></span></span><br><span class="line"><span class="function">│ │ ├─<span class="title">java</span></span></span><br><span class="line"><span class="function">│ │ │ └─<span class="title">app17a</span></span></span><br><span class="line"><span class="function">│ │ │   ├─<span class="title">controller</span></span></span><br><span class="line"><span class="function">│ │ │   ├─<span class="title">domain</span></span></span><br><span class="line"><span class="function">│ │ │   └─<span class="title">form</span></span></span><br><span class="line"><span class="function">│ │ ├─<span class="title">resources</span></span></span><br><span class="line"><span class="function">│ │ └─<span class="title">webapp</span></span></span><br><span class="line"><span class="function">│ │   ├─<span class="title">css</span></span></span><br><span class="line"><span class="function">│ │   ├─<span class="title">META</span>-<span class="title">INF</span></span></span><br><span class="line"><span class="function">│ │   └─<span class="title">WEB</span>-<span class="title">INF</span></span></span><br><span class="line"><span class="function">│ │     ├─<span class="title">jsp</span></span></span><br><span class="line"><span class="function">│ │     └─<span class="title">lib</span></span></span><br><span class="line"><span class="function">│ └─<span class="title">test</span></span></span><br><span class="line"><span class="function">│   └─<span class="title">java</span></span></span><br><span class="line"><span class="function">└─<span class="title">target</span></span></span><br><span class="line"><span class="function">  ├─<span class="title">classes</span></span></span><br><span class="line"><span class="function">  │ └─<span class="title">app17a</span></span></span><br><span class="line"><span class="function">  │   ├─<span class="title">controller</span></span></span><br><span class="line"><span class="function">  │   ├─<span class="title">domain</span></span></span><br><span class="line"><span class="function">  │   └─<span class="title">form</span></span></span><br><span class="line"><span class="function">  ├─<span class="title">m2e</span>-<span class="title">wtp</span></span></span><br><span class="line"><span class="function">  │ └─<span class="title">web</span>-<span class="title">resources</span></span></span><br><span class="line"><span class="function">  │   └─<span class="title">META</span>-<span class="title">INF</span></span></span><br><span class="line"><span class="function">  │     └─<span class="title">maven</span></span></span><br><span class="line"><span class="function">  │       └─<span class="title">com.lan</span></span></span><br><span class="line"><span class="function">  │         └─<span class="title">app17a</span></span></span><br><span class="line"><span class="function">  └─<span class="title">test</span>-<span class="title">classes</span></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="打印目录和文件"><a href="#打印目录和文件" class="headerlink" title="打印目录和文件"></a>打印目录和文件</h3><p><strong>使用参数<code>f</code>,将打印目录和文件</strong>,如下所示:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E:\<span class="title">workspace_web</span>\<span class="title">app17a</span></span></span><br><span class="line"><span class="function">├─.<span class="title">classpath</span></span></span><br><span class="line"><span class="function">├─.<span class="title">project</span></span></span><br><span class="line"><span class="function">├─.<span class="title">settings</span></span></span><br><span class="line"><span class="function">│ ├─.<span class="title">jsdtscope</span></span></span><br><span class="line"><span class="function">│ ├─<span class="title">org.eclipse.jdt.core.prefs</span></span></span><br><span class="line"><span class="function">│ ├─<span class="title">org.eclipse.m2e.core.prefs</span></span></span><br><span class="line"><span class="function">│ ├─<span class="title">org.eclipse.wst.common.component</span></span></span><br><span class="line"><span class="function">│ ├─<span class="title">org.eclipse.wst.common.project.facet.core.xml</span></span></span><br><span class="line"><span class="function">│ ├─<span class="title">org.eclipse.wst.jsdt.ui.superType.container</span></span></span><br><span class="line"><span class="function">│ ├─<span class="title">org.eclipse.wst.jsdt.ui.superType.name</span></span></span><br><span class="line"><span class="function">│ └─<span class="title">org.eclipse.wst.validation.prefs</span></span></span><br><span class="line"><span class="function">├─<span class="title">pom.xml</span></span></span><br><span class="line"><span class="function">├─<span class="title">src</span></span></span><br><span class="line"><span class="function">│ ├─<span class="title">main</span></span></span><br><span class="line"><span class="function">│ │ ├─<span class="title">java</span></span></span><br><span class="line"><span class="function">│ │ │ └─<span class="title">app17a</span></span></span><br><span class="line"><span class="function">│ │ │   ├─<span class="title">controller</span></span></span><br><span class="line"><span class="function">│ │ │   │ ├─<span class="title">InputProductController.java</span></span></span><br><span class="line"><span class="function">│ │ │   │ └─<span class="title">SaveProductController.java</span></span></span><br><span class="line"><span class="function">│ │ │   ├─<span class="title">domain</span></span></span><br><span class="line"><span class="function">│ │ │   │ └─<span class="title">Product.java</span></span></span><br><span class="line"><span class="function">│ │ │   └─<span class="title">form</span></span></span><br><span class="line"><span class="function">│ │ │     └─<span class="title">ProductForm.java</span></span></span><br><span class="line"><span class="function">│ │ ├─<span class="title">resources</span></span></span><br><span class="line"><span class="function">│ │ └─<span class="title">webapp</span></span></span><br><span class="line"><span class="function">│ │   ├─<span class="title">css</span></span></span><br><span class="line"><span class="function">│ │   │ └─<span class="title">main.css</span></span></span><br><span class="line"><span class="function">│ │   ├─<span class="title">index.jsp</span></span></span><br><span class="line"><span class="function">│ │   ├─<span class="title">META</span>-<span class="title">INF</span></span></span><br><span class="line"><span class="function">│ │   │ └─<span class="title">MANIFEST.MF</span></span></span><br><span class="line"><span class="function">│ │   └─<span class="title">WEB</span>-<span class="title">INF</span></span></span><br><span class="line"><span class="function">│ │     ├─<span class="title">jsp</span></span></span><br><span class="line"><span class="function">│ │     │ ├─<span class="title">ProductDetails.jsp</span></span></span><br><span class="line"><span class="function">│ │     │ └─<span class="title">ProductForm.jsp</span></span></span><br><span class="line"><span class="function">│ │     ├─<span class="title">lib</span></span></span><br><span class="line"><span class="function">│ │     ├─<span class="title">springmvc</span>-<span class="title">servlet.xml</span></span></span><br><span class="line"><span class="function">│ │     └─<span class="title">web.xml</span></span></span><br><span class="line"><span class="function">│ └─<span class="title">test</span></span></span><br><span class="line"><span class="function">│   └─<span class="title">java</span></span></span><br><span class="line"><span class="function">└─<span class="title">target</span></span></span><br><span class="line"><span class="function">  ├─<span class="title">classes</span></span></span><br><span class="line"><span class="function">  │ └─<span class="title">app17a</span></span></span><br><span class="line"><span class="function">  │   ├─<span class="title">controller</span></span></span><br><span class="line"><span class="function">  │   │ ├─<span class="title">InputProductController.class</span></span></span><br><span class="line"><span class="function">  │   │ └─<span class="title">SaveProductController.class</span></span></span><br><span class="line"><span class="function">  │   ├─<span class="title">domain</span></span></span><br><span class="line"><span class="function">  │   │ └─<span class="title">Product.class</span></span></span><br><span class="line"><span class="function">  │   └─<span class="title">form</span></span></span><br><span class="line"><span class="function">  │     └─<span class="title">ProductForm.class</span></span></span><br><span class="line"><span class="function">  ├─<span class="title">m2e</span>-<span class="title">wtp</span></span></span><br><span class="line"><span class="function">  │ └─<span class="title">web</span>-<span class="title">resources</span></span></span><br><span class="line"><span class="function">  │   └─<span class="title">META</span>-<span class="title">INF</span></span></span><br><span class="line"><span class="function">  │     ├─<span class="title">MANIFEST.MF</span></span></span><br><span class="line"><span class="function">  │     └─<span class="title">maven</span></span></span><br><span class="line"><span class="function">  │       └─<span class="title">com.lan</span></span></span><br><span class="line"><span class="function">  │         └─<span class="title">app17a</span></span></span><br><span class="line"><span class="function">  │           ├─<span class="title">pom.properties</span></span></span><br><span class="line"><span class="function">  │           └─<span class="title">pom.xml</span></span></span><br><span class="line"><span class="function">  └─<span class="title">test</span>-<span class="title">classes</span></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="显示Maven-Java-Web项目结构"><a href="#显示Maven-Java-Web项目结构" class="headerlink" title="显示Maven Java Web项目结构"></a>显示Maven Java Web项目结构</h3><p>输入参数<code>java</code>,将调用这个功能.这个是我定制的功能,可能还是有些不足的地方,先这样用吧.<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E:\<span class="title">workspace_web</span>\<span class="title">app17a</span></span></span><br><span class="line"><span class="function">├─<span class="title">pom.xml</span></span></span><br><span class="line"><span class="function">└─<span class="title">src</span></span></span><br><span class="line"><span class="function">  ├─<span class="title">main</span></span></span><br><span class="line"><span class="function">  │ ├─<span class="title">java</span></span></span><br><span class="line"><span class="function">  │ │ └─<span class="title">app17a</span></span></span><br><span class="line"><span class="function">  │ │   ├─<span class="title">controller</span></span></span><br><span class="line"><span class="function">  │ │   │ ├─<span class="title">InputProductController.java</span></span></span><br><span class="line"><span class="function">  │ │   │ └─<span class="title">SaveProductController.java</span></span></span><br><span class="line"><span class="function">  │ │   ├─<span class="title">domain</span></span></span><br><span class="line"><span class="function">  │ │   │ └─<span class="title">Product.java</span></span></span><br><span class="line"><span class="function">  │ │   └─<span class="title">form</span></span></span><br><span class="line"><span class="function">  │ │     └─<span class="title">ProductForm.java</span></span></span><br><span class="line"><span class="function">  │ ├─<span class="title">resources</span></span></span><br><span class="line"><span class="function">  │ └─<span class="title">webapp</span></span></span><br><span class="line"><span class="function">  │   ├─<span class="title">css</span></span></span><br><span class="line"><span class="function">  │   │ └─<span class="title">main.css</span></span></span><br><span class="line"><span class="function">  │   ├─<span class="title">index.jsp</span></span></span><br><span class="line"><span class="function">  │   ├─<span class="title">META</span>-<span class="title">INF</span></span></span><br><span class="line"><span class="function">  │   │ └─<span class="title">MANIFEST.MF</span></span></span><br><span class="line"><span class="function">  │   └─<span class="title">WEB</span>-<span class="title">INF</span></span></span><br><span class="line"><span class="function">  │     ├─<span class="title">jsp</span></span></span><br><span class="line"><span class="function">  │     │ ├─<span class="title">ProductDetails.jsp</span></span></span><br><span class="line"><span class="function">  │     │ └─<span class="title">ProductForm.jsp</span></span></span><br><span class="line"><span class="function">  │     ├─<span class="title">lib</span></span></span><br><span class="line"><span class="function">  │     ├─<span class="title">springmvc</span>-<span class="title">servlet.xml</span></span></span><br><span class="line"><span class="function">  │     └─<span class="title">web.xml</span></span></span><br><span class="line"><span class="function">  └─<span class="title">test</span></span></span><br><span class="line"><span class="function">    └─<span class="title">java</span></span></span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/blog/bf650217/" title="Java 实现tree命令">https://lanlan2017.github.io/blog/bf650217/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/c20afdb9/" rel="next" title="Java Web项目常用Maven依赖">
+                  <i class="fa fa-chevron-left"></i> Java Web项目常用Maven依赖
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/7e675acc/" rel="prev" title="Git 错误集合">
+                  Git 错误集合 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件名称过滤器"><span class="nav-number">2.</span> <span class="nav-text">文件名称过滤器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认文件"><span class="nav-number">2.1.</span> <span class="nav-text">默认文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven-Java-Web项目文件名称过滤器"><span class="nav-number">2.2.</span> <span class="nav-text">Maven Java Web项目文件名称过滤器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打印目录树主类-MyTree-java"><span class="nav-number">3.</span> <span class="nav-text">打印目录树主类 MyTree.java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MyTree程序参数说明"><span class="nav-number">4.</span> <span class="nav-text">MyTree程序参数说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不带参数"><span class="nav-number">4.1.</span> <span class="nav-text">不带参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带一个参数"><span class="nav-number">4.2.</span> <span class="nav-text">带一个参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行结果"><span class="nav-number">5.</span> <span class="nav-text">运行结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#只打印目录"><span class="nav-number">5.1.</span> <span class="nav-text">只打印目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打印目录和文件"><span class="nav-number">5.2.</span> <span class="nav-text">打印目录和文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示Maven-Java-Web项目结构"><span class="nav-number">5.3.</span> <span class="nav-text">显示Maven Java Web项目结构</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/blog/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">先看视频再看书</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">370</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">148</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/lanlan2017" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;lanlan2017" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/ReadingNotes/" title="ReadingNotes &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;ReadingNotes&#x2F;"><i class="fa fa-fw fa-book"></i>ReadingNotes</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/" title="blog &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;"><i class="fa fa-fw fa-book"></i>blog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/tools/" title="tools &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;tools&#x2F;"><i class="fa fa-fw fa-wrench"></i>tools</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/blog/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/blog/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里输入评论',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

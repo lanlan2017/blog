@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="response内置对象简介&amp;nbsp;常用方法&amp;nbsp;请求重定向和请求转发的区别&amp;nbsp;请求重定向&amp;nbsp;请求转发&amp;nbsp;生活中的例子&amp;nbsp;实例&amp;nbsp;请求重定向&amp;nbsp;请求转发&amp;nbsp;设置HTP响应报头&amp;nbsp;禁用缓存&amp;nbsp;设置过期的时间期限&amp;nbsp;定时刷新页面&amp;nbsp;定时跳转页面&amp;nbsp;设置输出缓冲&amp;nbsp;缓冲相关方法&amp;nbsp;实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP response 内置对象">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/ddf72c82/index.html">
+<meta property="og:site_name" content="蓝蓝博客">
+<meta property="og:description" content="response内置对象简介&amp;nbsp;常用方法&amp;nbsp;请求重定向和请求转发的区别&amp;nbsp;请求重定向&amp;nbsp;请求转发&amp;nbsp;生活中的例子&amp;nbsp;实例&amp;nbsp;请求重定向&amp;nbsp;请求转发&amp;nbsp;设置HTP响应报头&amp;nbsp;禁用缓存&amp;nbsp;设置过期的时间期限&amp;nbsp;定时刷新页面&amp;nbsp;定时跳转页面&amp;nbsp;设置输出缓冲&amp;nbsp;缓冲相关方法&amp;nbsp;实">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/chongdingxiang_zhuanfa/login.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/chongdingxiang_zhuanfa/chongdingxiang.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/chongdingxiang_zhuanfa/qingqiuzhuanfa.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/response/getWriter/result.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/response/getWriter/flush.png">
+<meta property="article:published_time" content="2018-12-19T15:11:39.000Z">
+<meta property="article:modified_time" content="2019-12-17T05:18:52.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="批处理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/chongdingxiang_zhuanfa/login.png">
+  <link rel="canonical" href="https://lanlan2017.github.io/blog/ddf72c82/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>JSP response 内置对象 | 蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/blog/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/blog/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/blog/ddf72c82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="先看视频再看书">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">JSP response 内置对象
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-19 15:11:39" itemprop="dateCreated datePublished" datetime="2018-12-19T15:11:39+00:00">2018-12-19</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-17 05:18:52" itemprop="dateModified" datetime="2019-12-17T05:18:52+00:00">2019-12-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-EE/JSP/" itemprop="url" rel="index"><span itemprop="name">JSP</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-EE/JSP/%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="index"><span itemprop="name">内置对象</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/ddf72c82/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/ddf72c82/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/blog/ddf72c82/#response内置对象简介" class="header_2">response内置对象简介</a>&nbsp;<br><a href="/blog/ddf72c82/#常用方法" class="header_2">常用方法</a>&nbsp;<br><a href="/blog/ddf72c82/#请求重定向和请求转发的区别" class="header_2">请求重定向和请求转发的区别</a>&nbsp;<br><a href="/blog/ddf72c82/#请求重定向" class="header_3">请求重定向</a>&nbsp;<br><a href="/blog/ddf72c82/#请求转发" class="header_3">请求转发</a>&nbsp;<br><a href="/blog/ddf72c82/#生活中的例子" class="header_3">生活中的例子</a>&nbsp;<br><a href="/blog/ddf72c82/#实例" class="header_4">实例</a>&nbsp;<br><a href="/blog/ddf72c82/#请求重定向" class="header_4">请求重定向</a>&nbsp;<br><a href="/blog/ddf72c82/#请求转发" class="header_4">请求转发</a>&nbsp;<br><a href="/blog/ddf72c82/#设置HTP响应报头" class="header_2">设置HTP响应报头</a>&nbsp;<br><a href="/blog/ddf72c82/#禁用缓存" class="header_3">禁用缓存</a>&nbsp;<br><a href="/blog/ddf72c82/#设置过期的时间期限" class="header_3">设置过期的时间期限</a>&nbsp;<br><a href="/blog/ddf72c82/#定时刷新页面" class="header_3">定时刷新页面</a>&nbsp;<br><a href="/blog/ddf72c82/#定时跳转页面" class="header_3">定时跳转页面</a>&nbsp;<br><a href="/blog/ddf72c82/#设置输出缓冲" class="header_2">设置输出缓冲</a>&nbsp;<br><a href="/blog/ddf72c82/#缓冲相关方法" class="header_3">缓冲相关方法</a>&nbsp;<br><a href="/blog/ddf72c82/#实例" class="header_4">实例</a>&nbsp;<br><a href="/blog/ddf72c82/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h2 id="response内置对象简介"><a href="#response内置对象简介" class="headerlink" title="response内置对象简介"></a>response内置对象简介</h2><ul>
+<li>是HttpServletrResponse类的实例</li>
+<li>response对象用于响应客户请求,向客户端输出信息。它封装了JSP产生的响应,并发送到客户端以响应客户端的请求。请求的数据可以是各种数据类型,甚至是文件。</li>
+<li>response对象具有<code>页面作用域</code>,<strong>即访问一个页面时,该页面内的 response对象只<code>能对这次访问</code>有效,其它页面的 response对象对当前页面无效</strong></li>
+</ul>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">String getCharacterEncoding()</td>
+<td style="text-align:left">返回响应用的是何种字符编码</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">void setContentType(String type)</td>
+<td style="text-align:left">设置响应的MIME类型</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">PrintWriter getwriter()</td>
+<td style="text-align:left">返回可以向客户端输出字符的一个输出流对象(注意比较PrintWriter与内置out对象的区别)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="请求重定向和请求转发的区别"><a href="#请求重定向和请求转发的区别" class="headerlink" title="请求重定向和请求转发的区别"></a>请求重定向和请求转发的区别</h2><h3 id="请求重定向"><a href="#请求重定向" class="headerlink" title="请求重定向"></a>请求重定向</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">sendRedirect(String path)</td>
+<td style="text-align:left">重新定向客户端的请求,path:用于指定目标路径,可以是相对路径,也可以是不同主机的其他URL地址。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>使用 response对象提供的 <code>sendRedirect(String path);</code>方法可以将网页重定向到另一个页面。重定向操作支持将地址重定向到不同的主机上。重定向时,在客户端浏览器上将会得到跳转的地址显示在浏览器的地址栏,并重新发送请求链接。因为重发了请求,所以此时的request对象是新的request对象，原先resquest对象中的属性也就全部失效。</p>
+<p><strong>注意</strong>:在JSP页面中使用该方法时,不要再用JSP脚本代码(包括 retun语句),因为<strong>重定向之后的JSP脚本代码已经没有意义了,并且还可能产生错误</strong>。<br><strong>总结</strong>：请求重定向,是客户端行为,从本质上讲<strong>等同于两次请求,前一次的请求对象不会保存,同时地址栏的URL地址<code>会改变</code>。</strong></p>
+<h3 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h3><p>请求转发是服务器行为,<code>request.getRequestDispatcher(&quot;转发的页面&quot;).forward(request,response);</code>是一次请求,转发后请求对象会保存,地址栏的URL地址<code>不会改变</code>。</p>
+<h3 id="生活中的例子"><a href="#生活中的例子" class="headerlink" title="生活中的例子"></a>生活中的例子</h3><p>假设你去办理某个护照<br>重定向:你先去了A局,A局的人说:“这个事不归我们管,去B局”,然后,你就从A退了出来,自己乘车去了B局。<br>转发:你去了A局,A局看了以后,知道这个事情其实应该B局来管,但是他没有把你退回来,而是让你坐一会儿,自己到后面办公室联系了B的人,让他们办好后,送了过来</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>修改login.jsp,requset.jsp，response.jsp如下所示：<br>login.jsp:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=utf-8"</span>&gt;</span><br><span class="line">&lt;title&gt;用户登录&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;!-- &lt;form action=<span class="string">"request.jsp"</span> name=<span class="string">"loginForm"</span> method=<span class="string">"get"</span>&gt; --&gt;</span><br><span class="line">&lt;form action=<span class="string">"response.jsp"</span> name=<span class="string">"loginForm"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">    &lt;table&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td align="right"&gt;用户名:&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type="text" name="userName"&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td align="right"&gt;爱好:&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;</span><br><span class="line">            &lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"hobbys"</span> value=<span class="string">"book"</span>&gt;读书</span><br><span class="line">            &lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"hobbys"</span> value=<span class="string">"music"</span>&gt;音乐</span><br><span class="line">            &lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"hobbys"</span> value=<span class="string">"sports"</span>&gt;运动</span><br><span class="line">            &lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"hobbys"</span> value=<span class="string">"movie"</span>&gt;电影</span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td align="right"&gt;密码:&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type="password" name="password"&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type="reset" value="重置"&gt;&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type="submit" value="登录"&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">    &lt;a href="http://localhost:8080/HelloWorld/request.jsp?userName=%E5%B0%8F%E6%98%8E&amp;hobbys=book&amp;password=123"&gt;直接提交&lt;/a&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><br>response.jsp:<br><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    <span class="comment">//     //暂停五秒，以查看跳转的效果</span></span><br><span class="line">    Thread.sleep(<span class="number">5</span> * <span class="number">1000</span>);</span><br><span class="line">    <span class="comment">//请求重定向到requset.jsp</span></span><br><span class="line">    response.sendRedirect(<span class="string">"request.jsp"</span>);</span><br><span class="line">    <span class="comment">//请求转发</span></span><br><span class="line">    <span class="comment">// request.getRequestDispatcher("requset.jsp").forward(request,response);</span></span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure><br>request.jsp:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=utf-8"</span>&gt;</span><br><span class="line">&lt;title&gt;request内置对象测试&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h2&gt;request内置对象&lt;/h2&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="comment">//解决post提交的数据中的。中文乱码问题.无法解决URL传参方式的中文乱码问题</span></span><br><span class="line">        request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    获取到用户名:&lt;%=request.getParameter(<span class="string">"userName"</span>)%&gt;&lt;br&gt; 爱好:&lt;%</span><br><span class="line">        String[] hobbys = request.getParameterValues(<span class="string">"hobbys"</span>);</span><br><span class="line">        <span class="keyword">if</span> (hobbys != <span class="keyword">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; hobbys.length; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                out.println(hobbys[i] + <span class="string">","</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    %&gt;&lt;br&gt; 密码:&lt;%=request.getParameter(<span class="string">"password"</span>)%&gt;&lt;br&gt; </span><br><span class="line">    请求体的MME类型:&lt;%=request.getContentType()%&gt;&lt;br&gt; </span><br><span class="line">    请求体的长度:&lt;%=request.getContentLength()%&gt;字节&lt;br&gt;</span><br><span class="line">    请求用的协议类型及版本号:&lt;%=request.getProtocol()%&gt;&lt;br&gt;</span><br><span class="line">    请求的服务器主机名:&lt;%=request.getServerName()%&gt;&lt;br&gt; </span><br><span class="line">    服务器接受此请求所用的端口号:&lt;%=request.getServerPort()%&gt;&lt;br&gt;</span><br><span class="line">    请求的客户端IP地址:&lt;%=request.getRemoteAddr()%&gt;&lt;br&gt;</span><br><span class="line">    请求的物理路径:&lt;%=request.getRealPath(<span class="string">"request.jsp"</span>) %&gt;&lt;br&gt;</span><br><span class="line">    请求的上下文路径:&lt;%=request.getContextPath() %&gt;&lt;br&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="请求重定向-1"><a href="#请求重定向-1" class="headerlink" title="请求重定向"></a>请求重定向</h4><p>浏览器打开login.jsp,填写表单，登录：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/chongdingxiang_zhuanfa/login.png" alt=""><br>虽然我们请求的是response.jsp页面，但是5秒钟后，浏览器却跳转到requset.jsp页面：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/chongdingxiang_zhuanfa/chongdingxiang.png" alt=""><br>可以看到页面中的表单信息(用户名，爱好，密码)为空。这是因为请求中定向不保存第一次请求，第二次请求是新的请求，新的请求中不带有用户登录信息，所以requset.jsp页面中获取不到。</p>
+<h4 id="请求转发-1"><a href="#请求转发-1" class="headerlink" title="请求转发"></a>请求转发</h4><p>修改上述的response.jsp，把请求重定向注释，取消强求转发的注释：<br><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    <span class="comment">//     //暂停五秒，以查看跳转的效果</span></span><br><span class="line">    Thread.sleep(<span class="number">5</span> * <span class="number">1000</span>);</span><br><span class="line">    <span class="comment">//请求重定向到requset.jsp</span></span><br><span class="line"><span class="comment">//     response.sendRedirect("request.jsp");</span></span><br><span class="line">    <span class="comment">//请求转发</span></span><br><span class="line">    request.getRequestDispatcher(<span class="string">"requset.jsp"</span>).forward(request,response);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure><br>重复上面的步骤：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/chongdingxiang_zhuanfa/qingqiuzhuanfa.png" alt=""><br>我们可以发现，地址栏上的地址没有改变，还是我们请求的response.jsp，而内容是requset.jsp的内容，并且用户信息也能正常显示。</p>
+<h2 id="设置HTP响应报头"><a href="#设置HTP响应报头" class="headerlink" title="设置HTP响应报头"></a>设置HTP响应报头</h2><p>通过 response对象可以设置HTP响应报头,其中,最常用的是<code>禁用缓存</code>、<code>设置页面自动刷新</code>和<code>定时跳转网页</code>。下面分别进行介绍。<br><code>response.setHeader()</code>方法 是用来设置返回页面的头 meta 信息</p>
+<h3 id="禁用缓存"><a href="#禁用缓存" class="headerlink" title="禁用缓存"></a>禁用缓存</h3><p>在默认的情况下,浏览器将会对显示的网页内容进行缓存。这样,当用户再次访问相关网页时,浏览器会判断网页是否有变化,如果没有变化则直接显示缓存中的内容,这样可以提高网页的显示速度。对于一些安全性要求较高的网站,通常需要禁用缓存。<br><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">response. setHeader(<span class="string">"Cache-Control"</span>, <span class="string">"no-store"</span>);</span><br><span class="line">response. setDateHeader(<span class="string">"Expires"</span>,<span class="number">0</span>);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="设置过期的时间期限"><a href="#设置过期的时间期限" class="headerlink" title="设置过期的时间期限"></a>设置过期的时间期限</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setDateHeader(<span class="string">"Expires"</span>, System.currentTimeMillis()+自己设置的时间期限);</span><br></pre></td></tr></table></figure>
+<h3 id="定时刷新页面"><a href="#定时刷新页面" class="headerlink" title="定时刷新页面"></a>定时刷新页面</h3><p>通过设置HTTP头还可以实现页面的自动刷新。使网页每隔10秒自动刷新一次。示例代码如下:<br><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(<span class="string">"refresh"</span>, <span class="string">"10"</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="定时跳转页面"><a href="#定时跳转页面" class="headerlink" title="定时跳转页面"></a>定时跳转页面</h3><p>通过设置HTTP头还可以实现定时跳转网页的功能,使网页20秒钟后自动跳转到指定的网页(login.jsp)。示例代码如下:<br><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(<span class="string">"refresh"</span>, <span class="string">"10;URL=login.jsp"</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="设置输出缓冲"><a href="#设置输出缓冲" class="headerlink" title="设置输出缓冲"></a>设置输出缓冲</h2><p>通常情况下,服务器要输出到客户端的内容不会直接写到客户端,而是先写到一个输出缓冲区,在计算机术语中,<strong>缓冲区被定义为暂时放置输入或输出资料的内存</strong>。实际上,缓冲区也可以这样理解在一个粮库中,由于装卸车队的速度要快于传送带的传输速度,为了不造成装卸车队的浪费,粮库设计了一个站台,装卸车队可以先将运送的粮食卸到这个平台上,然后让传送机慢慢传送。粮库的这个站台就起到了缓冲的作用。当满足以下3种情况之一,就会把缓冲区的内容写到客户端。</p>
+<ul>
+<li>JSP页面的输出信息已经全部写入到了缓冲区。</li>
+<li>缓冲区已满。</li>
+<li>在JSP页面中,调用了 response对象的 flush Buffer方法或out对象的 flush方法。</li>
+</ul>
+<h3 id="缓冲相关方法"><a href="#缓冲相关方法" class="headerlink" title="缓冲相关方法"></a>缓冲相关方法</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">flushBuffer()</td>
+<td style="text-align:left">强制将缓冲区的内容输出到客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">getBufferSize()</td>
+<td style="text-align:left">获取响应所使用的缓冲区的实际大小,如果没有使用缓冲区,则返回0</td>
+</tr>
+<tr>
+<td style="text-align:left">setBufferSize(int size)</td>
+<td style="text-align:left">设置缓冲区的大小为size<code>KB</code>,如果size为0则表示不缓冲</td>
+</tr>
+<tr>
+<td style="text-align:left">rese()</td>
+<td style="text-align:left">清除缓冲区的内容,同时清除状态码和报头</td>
+</tr>
+<tr>
+<td style="text-align:left">isCommitted()</td>
+<td style="text-align:left">检测服务器端是否已经把数据写入到了客户端</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setBufferSize(<span class="number">32</span>);<span class="comment">//设置缓冲区的大小为32KB</span></span><br></pre></td></tr></table></figure>
+<h4 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h4><p>创建<code>response.jsp</code>,写入如下的代码：<br><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.io.PrintWriter"</span>%&gt;</span><br><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    <span class="comment">//设置响应的MIME类型</span></span><br><span class="line">    response.setContentType(<span class="string">"text/html; charset=utf-8"</span>);</span><br><span class="line">    out.println(<span class="string">"&lt;h2&gt; 测试response内置对象 &lt;/h2&gt;&lt;br&gt;"</span>);</span><br><span class="line"><span class="comment">//     out.flush();//强制清空缓冲区,先写内置的out输出流对象</span></span><br><span class="line">    <span class="comment">//在打印的时候,会提前于内置的out对象</span></span><br><span class="line">    PrintWriter writer=response.getWriter();</span><br><span class="line">    writer.println(<span class="string">"response.getWriter()输出"</span>);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure><br>运行效果：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/response/getWriter/result.png" alt=""><br>可以看到内置输出流对象out先于writer对象打印，但是浏览器访问的时候，writer对象却先打印，如果想要顺序打印，可以先刷新内置out对象的缓冲区,把缓冲区的内容写到到浏览器上。取消<code>out.flush();</code>前面的注释，再次打开response.jsp，这时候就按顺序显示了：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/response/getWriter/flush.png" alt=""></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.jb51.net/article/107218.htm" target="_blank" rel="noopener">response.setHeader各种用法详解</a><br><a href="https://www.jb51.net/article/16437.htm" target="_blank" rel="noopener">response.setHeader参数、用法的介绍</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/blog/ddf72c82/" title="JSP response 内置对象">https://lanlan2017.github.io/blog/ddf72c82/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/240051d/" rel="next" title="JSP session 内置对象">
+                  <i class="fa fa-chevron-left"></i> JSP session 内置对象
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/ee24a152/" rel="prev" title="JSP pageContext config page exception 内置对象">
+                  JSP pageContext config page exception 内置对象 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#response内置对象简介"><span class="nav-number">1.</span> <span class="nav-text">response内置对象简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法"><span class="nav-number">2.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请求重定向和请求转发的区别"><span class="nav-number">3.</span> <span class="nav-text">请求重定向和请求转发的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#请求重定向"><span class="nav-number">3.1.</span> <span class="nav-text">请求重定向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求转发"><span class="nav-number">3.2.</span> <span class="nav-text">请求转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生活中的例子"><span class="nav-number">3.3.</span> <span class="nav-text">生活中的例子</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">3.3.1.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求重定向-1"><span class="nav-number">3.3.2.</span> <span class="nav-text">请求重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求转发-1"><span class="nav-number">3.3.3.</span> <span class="nav-text">请求转发</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置HTP响应报头"><span class="nav-number">4.</span> <span class="nav-text">设置HTP响应报头</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#禁用缓存"><span class="nav-number">4.1.</span> <span class="nav-text">禁用缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置过期的时间期限"><span class="nav-number">4.2.</span> <span class="nav-text">设置过期的时间期限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定时刷新页面"><span class="nav-number">4.3.</span> <span class="nav-text">定时刷新页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定时跳转页面"><span class="nav-number">4.4.</span> <span class="nav-text">定时跳转页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置输出缓冲"><span class="nav-number">5.</span> <span class="nav-text">设置输出缓冲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#缓冲相关方法"><span class="nav-number">5.1.</span> <span class="nav-text">缓冲相关方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例-1"><span class="nav-number">5.1.1.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">6.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/blog/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">先看视频再看书</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">370</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">148</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/lanlan2017" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;lanlan2017" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/ReadingNotes/" title="ReadingNotes &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;ReadingNotes&#x2F;"><i class="fa fa-fw fa-book"></i>ReadingNotes</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/" title="blog &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;"><i class="fa fa-fw fa-book"></i>blog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/tools/" title="tools &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;tools&#x2F;"><i class="fa fa-fw fa-wrench"></i>tools</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/blog/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/blog/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里输入评论',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

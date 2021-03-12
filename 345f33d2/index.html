@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="2.2 隐藏域&amp;nbsp;Demo&amp;nbsp;完整代码&amp;nbsp;User类&amp;nbsp;UserServlet类&amp;nbsp;代码详解&amp;nbsp;URL映射&amp;nbsp;初始化数据&amp;nbsp;工具方法&amp;nbsp;根据用户id获取该用户对象的引用&amp;nbsp;输出HTML字符串到响应对象中&amp;nbsp;显示所有用户数据&amp;nbsp;修改用户数据&amp;nbsp;服务器端更新数据&amp;nbsp;添加用户&amp;nbsp;小结&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2.2 Java Servlet 会话管理 使用隐藏域">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/345f33d2/index.html">
+<meta property="og:site_name" content="蓝蓝博客">
+<meta property="og:description" content="2.2 隐藏域&amp;nbsp;Demo&amp;nbsp;完整代码&amp;nbsp;User类&amp;nbsp;UserServlet类&amp;nbsp;代码详解&amp;nbsp;URL映射&amp;nbsp;初始化数据&amp;nbsp;工具方法&amp;nbsp;根据用户id获取该用户对象的引用&amp;nbsp;输出HTML字符串到响应对象中&amp;nbsp;显示所有用户数据&amp;nbsp;修改用户数据&amp;nbsp;服务器端更新数据&amp;nbsp;添加用户&amp;nbsp;小结&amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/7.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/8.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/9.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/10.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/11.png">
+<meta property="article:published_time" content="2019-03-20T17:34:13.000Z">
+<meta property="article:modified_time" content="2019-12-17T05:18:52.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="批处理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/7.png">
+  <link rel="canonical" href="https://lanlan2017.github.io/blog/345f33d2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>2.2 Java Servlet 会话管理 使用隐藏域 | 蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/blog/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/blog/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/blog/345f33d2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="先看视频再看书">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">2.2 Java Servlet 会话管理 使用隐藏域
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-20 17:34:13" itemprop="dateCreated datePublished" datetime="2019-03-20T17:34:13+00:00">2019-03-20</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-17 05:18:52" itemprop="dateModified" datetime="2019-12-17T05:18:52+00:00">2019-12-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-EE/%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">会话管理</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/345f33d2/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/345f33d2/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/blog/345f33d2/#2-2-隐藏域" class="header_2">2.2 隐藏域</a>&nbsp;<br><a href="/blog/345f33d2/#Demo" class="header_2">Demo</a>&nbsp;<br><a href="/blog/345f33d2/#完整代码" class="header_3">完整代码</a>&nbsp;<br><a href="/blog/345f33d2/#User类" class="header_4">User类</a>&nbsp;<br><a href="/blog/345f33d2/#UserServlet类" class="header_4">UserServlet类</a>&nbsp;<br><a href="/blog/345f33d2/#代码详解" class="header_3">代码详解</a>&nbsp;<br><a href="/blog/345f33d2/#URL映射" class="header_4">URL映射</a>&nbsp;<br><a href="/blog/345f33d2/#初始化数据" class="header_4">初始化数据</a>&nbsp;<br><a href="/blog/345f33d2/#工具方法" class="header_4">工具方法</a>&nbsp;<br><a href="/blog/345f33d2/#根据用户id获取该用户对象的引用" class="header_5">根据用户id获取该用户对象的引用</a>&nbsp;<br><a href="/blog/345f33d2/#输出HTML字符串到响应对象中" class="header_5">输出HTML字符串到响应对象中</a>&nbsp;<br><a href="/blog/345f33d2/#显示所有用户数据" class="header_4">显示所有用户数据</a>&nbsp;<br><a href="/blog/345f33d2/#修改用户数据" class="header_4">修改用户数据</a>&nbsp;<br><a href="/blog/345f33d2/#服务器端更新数据" class="header_4">服务器端更新数据</a>&nbsp;<br><a href="/blog/345f33d2/#添加用户" class="header_4">添加用户</a>&nbsp;<br><a href="/blog/345f33d2/#小结" class="header_3">小结</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h2 id="2-2-隐藏域"><a href="#2-2-隐藏域" class="headerlink" title="2.2 隐藏域"></a>2.2 隐藏域</h2><p>使用隐藏域来保持状态类似于<code>URL</code>重写技术，但不是<strong>将值</strong>附加到<code>URL</code>上，而是<strong>放到<code>HTML</code>表单的隐藏域中。当表单提交时，隐藏域的值也同时提交到服务器端。隐藏域技术只在网页有表单时有效</strong>。隐藏域技术相对于 <code>URL</code>重写的优势在于：没有字符数限制，同时无须额外的编码。但隐藏域技术同<code>URL重写</code>一样，不适合跨越多个界面。</p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><h4 id="User类"><a href="#User类" class="headerlink" title="User类"></a>User类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> session.management.hiddenfields;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">//编号</span></span><br><span class="line">    String id;</span><br><span class="line">    <span class="comment">//姓名</span></span><br><span class="line">    String name;</span><br><span class="line">    <span class="comment">//所在地</span></span><br><span class="line">    String city;</span><br><span class="line">    <span class="comment">//姓名</span></span><br><span class="line">    String sex;</span><br><span class="line">    <span class="comment">//getter setter方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getId</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(String id)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getCity</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> city;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCity</span><span class="params">(String city)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.city = city;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSex</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sex;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSex</span><span class="params">(String sex)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.sex = sex;</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的User类用来存放我们要操作的数据.</p>
+<h4 id="UserServlet类"><a href="#UserServlet类" class="headerlink" title="UserServlet类"></a>UserServlet类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> session.management.hiddenfields;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="meta">@WebServlet</span>(</span><br><span class="line">    name = <span class="string">"UserServlet"</span>,</span><br><span class="line">    <span class="comment">// 这些URL都用当前这个Servlet来处理</span></span><br><span class="line">    urlPatterns =</span><br><span class="line">    &#123;<span class="string">"/showUsers"</span>, <span class="string">"/editUser"</span>, <span class="string">"/updateUser"</span>, <span class="string">"/addUser"</span>&#125;</span><br><span class="line">)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">// 数据</span></span><br><span class="line">    ArrayList&lt;User&gt;                userList;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span>    serialVersionUID    = <span class="number">2L</span>;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> User <span class="title">findUserById</span><span class="params">(String id)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (User person : userList) &#123;</span><br><span class="line">            <span class="keyword">if</span> (person.getId().equals(id)) &#123;</span><br><span class="line">                <span class="keyword">return</span> person;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 初始化数据</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        userList = <span class="keyword">new</span> ArrayList&lt;User&gt;();</span><br><span class="line">        User p1 = <span class="keyword">new</span> User();</span><br><span class="line">        User p2 = <span class="keyword">new</span> User();</span><br><span class="line">        p1.setId(<span class="string">"1"</span>);</span><br><span class="line">        p1.setName(<span class="string">"小明"</span>);</span><br><span class="line">        p1.setCity(<span class="string">"南京"</span>);</span><br><span class="line">        p1.setSex(<span class="string">"男"</span>);</span><br><span class="line">        userList.add(p1);</span><br><span class="line">        p2.setId(<span class="string">"2"</span>);</span><br><span class="line">        p2.setName(<span class="string">"小王"</span>);</span><br><span class="line">        p2.setCity(<span class="string">"南京"</span>);</span><br><span class="line">        p2.setSex(<span class="string">"男"</span>);</span><br><span class="line">        userList.add(p2);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">        HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 用utf-8来发送数据</span></span><br><span class="line">        response.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">        <span class="comment">// 让浏览器用utf-8解析</span></span><br><span class="line">        response.setHeader(<span class="string">"Content-type"</span>, <span class="string">"text/html;charset=UTF-8"</span>);</span><br><span class="line">        <span class="comment">// 获取调用带Servlet的请求所用的链接</span></span><br><span class="line">        String url = request.getRequestURI();</span><br><span class="line">        <span class="keyword">if</span> (url.endsWith(<span class="string">"/showUsers"</span>)) &#123;</span><br><span class="line">            <span class="comment">// 显示用户列表</span></span><br><span class="line">            showUserList(response);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url.endsWith(<span class="string">"/editUser"</span>)) &#123;</span><br><span class="line">            <span class="comment">// 发送修改表单</span></span><br><span class="line">            sendEditForm(request, response);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url.endsWith(<span class="string">"/addUser"</span>)) &#123;</span><br><span class="line">            sendAddForm(request, response);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sendAddForm</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">        HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        String html = <span class="string">"&lt;html&gt;&lt;head&gt;&lt;title&gt;添加User&lt;/title&gt;&lt;meta charset='utf-8'&gt;&lt;/head&gt;&lt;body&gt;&lt;h2&gt;添加User&lt;/h2&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;form method='post' action='addUser'&gt;&lt;table&gt;&lt;tbody&gt;"</span></span><br><span class="line">            + <span class="string">"&lt;tr&gt;&lt;td style='text-align:right'&gt;编号:&lt;/td&gt;&lt;td&gt;&lt;input type='text' name='id' value='"</span></span><br><span class="line">            + (userList.size() + <span class="number">1</span>)</span><br><span class="line">            + <span class="string">"' readonly='readonly' title='编号由系统指定,无法修改'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;tr&gt;&lt;td style='text-align:right'&gt;姓名:&lt;/td&gt;&lt;td&gt;&lt;input type='text' name='name'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;tr&gt;&lt;td style='text-align:right'&gt;城市:&lt;/td&gt;&lt;td&gt;&lt;input type='text' name='city'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;tr&gt;&lt;td style='text-align:right'&gt;性别:&lt;/td&gt;&lt;td&gt;&lt;input type='text' name='sex'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;tr&gt;&lt;td colspan='2' style='text-align:right'&gt;&lt;input type='submit' value='add'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;tr&gt;&lt;td colspan='2'&gt;&lt;a href='showUsers'&gt;返回用户列表&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;"</span></span><br><span class="line">            + <span class="string">"&lt;/tbody&gt;&lt;/table&gt;&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;"</span>;</span><br><span class="line">        responseHTML(response, html);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">        HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 设置请求体的编码,用utf-8来解析表单数据</span></span><br><span class="line">        request.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">        <span class="comment">// 用utf-8编码来发送数据</span></span><br><span class="line">        response.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">        <span class="comment">// 让浏览器用utf-8解析数据</span></span><br><span class="line">        response.setHeader(<span class="string">"Content-type"</span>, <span class="string">"text/html;charset=UTF-8"</span>);</span><br><span class="line">        String url = request.getRequestURI();</span><br><span class="line">        <span class="keyword">if</span> (url.endsWith(<span class="string">"/updateUser"</span>)) &#123;</span><br><span class="line">            updateUser(request, response);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url.endsWith(<span class="string">"/addUser"</span>)) &#123;</span><br><span class="line">            addUser(request, response);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addUser</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">        HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        String id = request.getParameter(<span class="string">"id"</span>);</span><br><span class="line">        <span class="comment">// 创建一个新用户</span></span><br><span class="line">        User user = findUserById(id);</span><br><span class="line">        <span class="keyword">if</span> (user == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 创建一个新用户</span></span><br><span class="line">            user = <span class="keyword">new</span> User();</span><br><span class="line">            user.setId(id);</span><br><span class="line">            user.setName(request.getParameter(<span class="string">"name"</span>));</span><br><span class="line">            user.setCity(request.getParameter(<span class="string">"city"</span>));</span><br><span class="line">            user.setSex(request.getParameter(<span class="string">"sex"</span>));</span><br><span class="line">            userList.add(user);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//请求重定向 显示主界面</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            response.sendRedirect(<span class="string">"showUsers"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">updateUser</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">        HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        String id = request.getParameter(<span class="string">"id"</span>);</span><br><span class="line">        User person = findUserById(id);</span><br><span class="line">        <span class="keyword">if</span> (person != <span class="keyword">null</span>) &#123;</span><br><span class="line">            person.setName(request.getParameter(<span class="string">"name"</span>));</span><br><span class="line">            person.setSex(request.getParameter(<span class="string">"sex"</span>));</span><br><span class="line">            person.setCity(request.getParameter(<span class="string">"city"</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//请求重定向 显示主界面</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            response.sendRedirect(<span class="string">"showUsers"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sendEditForm</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">        HttpServletResponse response)</span> <span class="keyword">throws</span> IOException</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 获取URL中的id参数</span></span><br><span class="line">        String id = request.getParameter(<span class="string">"id"</span>);</span><br><span class="line">        PrintWriter writer;</span><br><span class="line">        writer = response.getWriter();</span><br><span class="line">        User person = findUserById(id);</span><br><span class="line">        <span class="keyword">if</span> (person != <span class="keyword">null</span>) &#123;</span><br><span class="line">            setEditFormByID(response, person);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            writer.println(<span class="string">"&lt;h2&gt;查无此人&lt;/h2&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setEditFormByID</span><span class="params">(HttpServletResponse response, User person)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        String htmlFirst = <span class="string">"&lt;html&gt;\r\n"</span> + <span class="string">"&lt;head&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;title&gt;更新User&lt;/title&gt;\r\n"</span> + <span class="string">"&lt;/head&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;meta charset=\"utf-8\"&gt;\r\n"</span> + <span class="string">"&lt;body&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;h2&gt;更新User&lt;/h2&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;form method='post' action='updateUser'&gt;\r\n"</span> + <span class="string">"&lt;table&gt;"</span>;</span><br><span class="line">        String htmlTrs = <span class="string">"&lt;tr&gt;&lt;td style='text-align:right'&gt;姓名:&lt;/td&gt;&lt;td&gt;&lt;input name='name' value='"</span></span><br><span class="line">            + person.getName() + <span class="string">"'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;tr&gt;&lt;td style='text-align:right'&gt;城市:&lt;/td&gt;&lt;td&gt;&lt;input name='city' value='"</span></span><br><span class="line">            + person.getCity() + <span class="string">"'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;tr&gt;&lt;td style='text-align:right'&gt;性别:&lt;/td&gt;&lt;td&gt;&lt;input name='sex' value='"</span></span><br><span class="line">            + person.getSex() + <span class="string">"'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;tr&gt;&lt;td colspan='2' style='text-align:right'&gt;&lt;input type='submit' value='Update'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;tr&gt;&lt;td colspan='2'&gt;&lt;a href='showUsers'&gt;返回用户列表&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;"</span>;</span><br><span class="line">        String htmlAfter = <span class="string">"&lt;/table&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;input type=\"hidden\" name=\"id\" value=\""</span> + person.getId()</span><br><span class="line">            + <span class="string">"\"&gt;\r\n"</span> + <span class="string">"&lt;/form&gt;\r\n"</span> + <span class="string">"&lt;/body&gt;\r\n"</span> + <span class="string">"&lt;/html&gt;"</span>;</span><br><span class="line">        String html = htmlFirst + htmlTrs + htmlAfter;</span><br><span class="line">        responseHTML(response, html);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">showUserList</span><span class="params">(HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 拼接HTML代码</span></span><br><span class="line">        String HTML = createShowPersonHTML();</span><br><span class="line">        <span class="comment">// 响应</span></span><br><span class="line">        responseHTML(response, HTML);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">createShowPersonHTML</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 拼凑html代码</span></span><br><span class="line">        String htmlBefore = <span class="string">"&lt;html&gt;\r\n"</span> + <span class="string">"&lt;head&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;title&gt;Person&lt;/title&gt;\r\n"</span> + <span class="string">"&lt;/head&gt;\r\n"</span> + <span class="string">"&lt;body&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;h2&gt;Users:&lt;/h2&gt;\r\n"</span> + <span class="string">"&lt;table border=\"1\"&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;tr&gt;&lt;th&gt;编号&lt;/th&gt;&lt;th&gt;姓名&lt;/th&gt;&lt;th&gt;城市&lt;/th&gt;&lt;th&gt;性别&lt;/th&gt;&lt;th&gt;操作&lt;/th&gt;&lt;/tr&gt;"</span>;</span><br><span class="line">        String tr;</span><br><span class="line">        String htmlAfter = <span class="string">"&lt;tr&gt;&lt;td colspan=\"5\" style=\"text-align:right\"&gt;&lt;a href=\"addUser\"&gt;添加用户&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;/body&gt;\r\n"</span> + <span class="string">"&lt;/html&gt;"</span>;</span><br><span class="line">        StringBuffer sb = <span class="keyword">new</span> StringBuffer(htmlBefore);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, lenght = userList.size(); i &lt; lenght; i++) &#123;</span><br><span class="line">            <span class="comment">// 从列表中取出一个对象</span></span><br><span class="line">            User person = userList.get(i);</span><br><span class="line">            tr = <span class="string">"&lt;tr&gt;\r\n"</span> + <span class="string">"&lt;td&gt;"</span> + person.getId() + <span class="string">"&lt;/td&gt;\r\n"</span> + <span class="string">"&lt;td&gt;"</span></span><br><span class="line">                + person.getName() + <span class="string">"&lt;/td&gt;\r\n"</span> + <span class="string">"&lt;td&gt;"</span> + person.getCity()</span><br><span class="line">                + <span class="string">"&lt;/td&gt;\r\n"</span> + <span class="string">"&lt;td&gt;"</span> + person.getSex() + <span class="string">"&lt;/td&gt;\r\n"</span></span><br><span class="line">                + <span class="string">"&lt;td&gt;\r\n"</span> + <span class="string">"&lt;a href=\"editUser?id="</span> + person.getId()</span><br><span class="line">                + <span class="string">"\"&gt;编辑&lt;/a&gt;\r\n"</span> + <span class="string">"&lt;/td&gt;\r\n"</span> + <span class="string">"&lt;/tr&gt;"</span>;</span><br><span class="line">            sb.append(tr);</span><br><span class="line">        &#125;</span><br><span class="line">        sb.append(htmlAfter);</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">responseHTML</span><span class="params">(HttpServletResponse response, String HTML)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        PrintWriter writer;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            writer = response.getWriter();</span><br><span class="line">            writer.write(HTML);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码详解"><a href="#代码详解" class="headerlink" title="代码详解"></a>代码详解</h3><h4 id="URL映射"><a href="#URL映射" class="headerlink" title="URL映射"></a>URL映射</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet</span>(</span><br><span class="line">    name = <span class="string">"PersonServlet"</span>,</span><br><span class="line">    <span class="comment">// 这些URL都用当前这个Servlet来处理</span></span><br><span class="line">    urlPatterns =</span><br><span class="line">    &#123;<span class="string">"/showUsers"</span>, <span class="string">"/editUser"</span>, <span class="string">"/updateUser"</span>&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>这里为这个Servlet映射了三个URL,分别用于展示数据<a href="http://localhost:8080/SessionManagement/showUsers" target="_blank" rel="noopener">http://localhost:8080/SessionManagement/showUsers</a>,修改数据,展示更新后的数据。</p>
+<h4 id="初始化数据"><a href="#初始化数据" class="headerlink" title="初始化数据"></a>初始化数据</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数据</span></span><br><span class="line">ArrayList&lt;User&gt;                userList;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span>    serialVersionUID    = <span class="number">2L</span>;</span><br><span class="line"><span class="comment">// 初始化数据</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    userList = <span class="keyword">new</span> ArrayList&lt;User&gt;();</span><br><span class="line">    User p1 = <span class="keyword">new</span> User();</span><br><span class="line">    User p2 = <span class="keyword">new</span> User();</span><br><span class="line">    p1.setId(<span class="string">"1"</span>);</span><br><span class="line">    p1.setName(<span class="string">"小明"</span>);</span><br><span class="line">    p1.setCity(<span class="string">"南京"</span>);</span><br><span class="line">    p1.setSex(<span class="string">"男"</span>);</span><br><span class="line">    userList.add(p1);</span><br><span class="line">    p2.setId(<span class="string">"2"</span>);</span><br><span class="line">    p2.setName(<span class="string">"小王"</span>);</span><br><span class="line">    p2.setCity(<span class="string">"南京"</span>);</span><br><span class="line">    p2.setSex(<span class="string">"男"</span>);</span><br><span class="line">    userList.add(p2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里首先声明了一个装有<code>User</code>对象的容器,当用户第一次请求页面时,<code>Tomcat</code>调用<code>init()</code>方法,<code>init()</code>方法,创建并初始化两个<code>User</code>对象,并把它们放到<code>userList</code>中。</p>
+<h4 id="工具方法"><a href="#工具方法" class="headerlink" title="工具方法"></a>工具方法</h4><h5 id="根据用户id获取该用户对象的引用"><a href="#根据用户id获取该用户对象的引用" class="headerlink" title="根据用户id获取该用户对象的引用"></a>根据用户id获取该用户对象的引用</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> User <span class="title">findUserById</span><span class="params">(String id)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (User person : userList) &#123;</span><br><span class="line">        <span class="keyword">if</span> (person.getId().equals(id)) &#123;</span><br><span class="line">            <span class="keyword">return</span> person;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个方法可以根据用户的<code>id</code>,从userList中查找User,如果没有将返回null.</p>
+<h5 id="输出HTML字符串到响应对象中"><a href="#输出HTML字符串到响应对象中" class="headerlink" title="输出HTML字符串到响应对象中"></a>输出HTML字符串到响应对象中</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">responseHTML</span><span class="params">(HttpServletResponse response, String HTML)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    PrintWriter writer;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        writer = response.getWriter();</span><br><span class="line">        writer.write(HTML);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="显示所有用户数据"><a href="#显示所有用户数据" class="headerlink" title="显示所有用户数据"></a>显示所有用户数据</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">    HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 用utf-8来发送数据</span></span><br><span class="line">    response.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">    <span class="comment">// 让浏览器用utf-8解析</span></span><br><span class="line">    response.setHeader(<span class="string">"Content-type"</span>, <span class="string">"text/html;charset=UTF-8"</span>);</span><br><span class="line">    <span class="comment">// 获取调用带Servlet的请求所用的链接</span></span><br><span class="line">    String url = request.getRequestURI();</span><br><span class="line">    <span class="keyword">if</span> (url.endsWith(<span class="string">"/showUsers"</span>)) &#123;</span><br><span class="line">        <span class="comment">// 显示用户列表</span></span><br><span class="line">        showUserList(response);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url.endsWith(<span class="string">"/editUser"</span>)) &#123;</span><br><span class="line">        <span class="comment">// 发送修改用户表单</span></span><br><span class="line">        sendEditForm(request, response);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url.endsWith(<span class="string">"/addUser"</span>)) &#123;</span><br><span class="line">        <span class="comment">//发送添加用户表单</span></span><br><span class="line">        sendAddForm(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">showUserList</span><span class="params">(HttpServletResponse response)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 拼接HTML代码</span></span><br><span class="line">    String HTML = createShowPersonHTML();</span><br><span class="line">    <span class="comment">// 响应</span></span><br><span class="line">    responseHTML(response, HTML);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> String <span class="title">createShowPersonHTML</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 拼凑html代码</span></span><br><span class="line">    String htmlBefore = <span class="string">"&lt;html&gt;\r\n"</span> + <span class="string">"&lt;head&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;title&gt;Person&lt;/title&gt;\r\n"</span> + <span class="string">"&lt;/head&gt;\r\n"</span> + <span class="string">"&lt;body&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;h2&gt;Users:&lt;/h2&gt;\r\n"</span> + <span class="string">"&lt;table border=\"1\"&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;tr&gt;&lt;th&gt;编号&lt;/th&gt;&lt;th&gt;姓名&lt;/th&gt;&lt;th&gt;城市&lt;/th&gt;&lt;th&gt;性别&lt;/th&gt;&lt;th&gt;操作&lt;/th&gt;&lt;/tr&gt;"</span>;</span><br><span class="line">    String tr;</span><br><span class="line">    String htmlAfter = <span class="string">"&lt;tr&gt;&lt;td colspan=\"5\" style=\"text-align:right\"&gt;&lt;a href=\"addUser\"&gt;添加用户&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;/body&gt;\r\n"</span> + <span class="string">"&lt;/html&gt;"</span>;</span><br><span class="line"></span><br><span class="line">    StringBuffer sb = <span class="keyword">new</span> StringBuffer(htmlBefore);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, lenght = userList.size(); i &lt; lenght; i++) &#123;</span><br><span class="line">        <span class="comment">// 从列表中取出一个对象</span></span><br><span class="line">        User person = userList.get(i);</span><br><span class="line">        tr = <span class="string">"&lt;tr&gt;\r\n"</span> + <span class="string">"&lt;td&gt;"</span> + person.getId() + <span class="string">"&lt;/td&gt;\r\n"</span> + <span class="string">"&lt;td&gt;"</span></span><br><span class="line">            + person.getName() + <span class="string">"&lt;/td&gt;\r\n"</span> + <span class="string">"&lt;td&gt;"</span> + person.getCity()</span><br><span class="line">            + <span class="string">"&lt;/td&gt;\r\n"</span> + <span class="string">"&lt;td&gt;"</span> + person.getSex() + <span class="string">"&lt;/td&gt;\r\n"</span></span><br><span class="line">            + <span class="string">"&lt;td&gt;\r\n"</span> + <span class="string">"&lt;a href=\"editUser?id="</span> + person.getId()</span><br><span class="line">            + <span class="string">"\"&gt;编辑&lt;/a&gt;\r\n"</span> + <span class="string">"&lt;/td&gt;\r\n"</span> + <span class="string">"&lt;/tr&gt;"</span>;</span><br><span class="line">        sb.append(tr);</span><br><span class="line">    &#125;</span><br><span class="line">    sb.append(htmlAfter);</span><br><span class="line">    <span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>显示效果如下:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/7.png" alt="这里有一张图片"><br><strong>其中超链接HTML代码如下</strong>:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"editUser?id=1"</span>&gt;</span>编辑<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"editUser?id=2"</span>&gt;</span>编辑<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"addUser"</span>&gt;</span>添加用户<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure><br>这是前面介绍的<code>URL重写技术</code>,因为前面路径省略,浏览器会发给父路径<code>http://localhost:8080/SessionManagement/</code>,最终得到URL为:<code>http://localhost:8080/SessionManagement/editUser?id=1</code>,点击这个URL可以可以进入修改页面。</p>
+<h4 id="修改用户数据"><a href="#修改用户数据" class="headerlink" title="修改用户数据"></a>修改用户数据</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sendEditForm</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">    HttpServletResponse response)</span> <span class="keyword">throws</span> IOException</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 获取URL中的id参数</span></span><br><span class="line">    String id = request.getParameter(<span class="string">"id"</span>);</span><br><span class="line">    PrintWriter writer;</span><br><span class="line">    writer = response.getWriter();</span><br><span class="line">    User person = findUserById(id);</span><br><span class="line">    <span class="keyword">if</span> (person != <span class="keyword">null</span>) &#123;</span><br><span class="line">        setEditFormByID(response, person);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        writer.println(<span class="string">"&lt;h2&gt;查无此人&lt;/h2&gt;"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setEditFormByID</span><span class="params">(HttpServletResponse response, User person)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    String htmlFirst = <span class="string">"&lt;html&gt;\r\n"</span> + <span class="string">"&lt;head&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;title&gt;更新User&lt;/title&gt;\r\n"</span> + <span class="string">"&lt;/head&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;meta charset=\"utf-8\"&gt;\r\n"</span> + <span class="string">"&lt;body&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;h2&gt;更新User&lt;/h2&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;form method='post' action='updateUser'&gt;\r\n"</span> + <span class="string">"&lt;table&gt;"</span>;</span><br><span class="line">    String htmlTrs = <span class="string">"&lt;tr&gt;&lt;td style='text-align:right'&gt;姓名:&lt;/td&gt;&lt;td&gt;&lt;input name='name' value='"</span></span><br><span class="line">        + person.getName() + <span class="string">"'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;tr&gt;&lt;td style='text-align:right'&gt;城市:&lt;/td&gt;&lt;td&gt;&lt;input name='city' value='"</span></span><br><span class="line">        + person.getCity() + <span class="string">"'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;tr&gt;&lt;td style='text-align:right'&gt;性别:&lt;/td&gt;&lt;td&gt;&lt;input name='sex' value='"</span></span><br><span class="line">        + person.getSex() + <span class="string">"'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;tr&gt;&lt;td colspan='2' style='text-align:right'&gt;&lt;input type='submit' value='Update'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;tr&gt;&lt;td colspan='2'&gt;&lt;a href='showUsers'&gt;返回用户列表&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;"</span>;</span><br><span class="line">    String htmlAfter = <span class="string">"&lt;/table&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;input type=\"hidden\" name=\"id\" value=\""</span> + person.getId()</span><br><span class="line">        + <span class="string">"\"&gt;\r\n"</span> + <span class="string">"&lt;/form&gt;\r\n"</span> + <span class="string">"&lt;/body&gt;\r\n"</span> + <span class="string">"&lt;/html&gt;"</span>;</span><br><span class="line">    String html = htmlFirst + htmlTrs + htmlAfter;</span><br><span class="line">    responseHTML(response, html);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>假设用户点击的是第一个超链接,也就是通过<a href="http://localhost:8080/SessionManagement/editUser?id=1" target="_blank" rel="noopener">http://localhost:8080/SessionManagement/editUser?id=1</a>这个<code>URL</code>访问。<br>此时,Tomcat将调用doGet方法,doGet方法调用sendEditForm方法，该根据<code>Id</code>找出一个<code>User</code>对象,然后doGet调用<code>setEditFormByID</code>这个方法,把User对象中的数据填入表单,封装成HTML<br>,发送给浏览器显示,用户在浏览器中修改表单中的数据即可完成修改,然后点击<code>update</code>按钮进行更新。如下图所示:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/8.png" alt="这里有一张图片"><br>在服务器发送HTML的时候在表单之中偷偷塞了一个如下的隐藏域:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span></span><br></pre></td></tr></table></figure><br>这个隐藏域存放用户的<code>id</code>信息,这样当用户提交表单的时候,服务器就可根据这id信息，知道要修改的是哪个User对象的数据。<br>还是有就是表达的两个属性:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;form method=<span class="string">"post"</span> action=<span class="string">"updateUser"</span>&gt;</span><br></pre></td></tr></table></figure><br>这表明提交方法为<code>post</code>方法,提交给<code>/updateUser</code>这个URL。提交后Tomcat将调用<code>/updateUser</code>这个URL对应的Servlet的<code>doPost()</code>方法。</p>
+<h4 id="服务器端更新数据"><a href="#服务器端更新数据" class="headerlink" title="服务器端更新数据"></a>服务器端更新数据</h4><p>假设用户在表单中修改好了数据,然后点击update按键提交,调用的方法如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">    HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 设置请求体的编码,用utf-8来解析表单数据</span></span><br><span class="line">    request.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">    <span class="comment">// 用utf-8编码来发送数据</span></span><br><span class="line">    response.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 让浏览器用utf-8解析数据</span></span><br><span class="line">    response.setHeader(<span class="string">"Content-type"</span>, <span class="string">"text/html;charset=UTF-8"</span>);</span><br><span class="line">    String url = request.getRequestURI();</span><br><span class="line">    <span class="keyword">if</span> (url.endsWith(<span class="string">"/updateUser"</span>)) &#123;</span><br><span class="line">        updateUser(request, response);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url.endsWith(<span class="string">"/addUser"</span>)) &#123;</span><br><span class="line">        addUser(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">updateUser</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">    HttpServletResponse response)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    String id = request.getParameter(<span class="string">"id"</span>);</span><br><span class="line">    User person = findUserById(id);</span><br><span class="line">    <span class="keyword">if</span> (person != <span class="keyword">null</span>) &#123;</span><br><span class="line">        person.setName(request.getParameter(<span class="string">"name"</span>));</span><br><span class="line">        person.setSex(request.getParameter(<span class="string">"sex"</span>));</span><br><span class="line">        person.setCity(request.getParameter(<span class="string">"city"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//请求重定向 显示主界面</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        response.sendRedirect(<span class="string">"showUsers"</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>因为表单提交方式为post,所以Tomcat调用doPost()方法来做出响应。doPost()中做了写编码相关的设置，然后调用<code>updateUser</code>方法，<code>updateUser</code>这个方法,先获取id参数。然后根据id参数找到要修改的User对象。使用文本框中修改过的值更新这个对象的内容。这样就完成了更新数据的操作，最后请求重定向到<code>showUsers</code>这个<code>URL</code>上,也就是显示主界面<br>显示效果如下:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/9.png" alt="这里有一张图片"></p>
+<h4 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h4><p>在主界面中点击最下方的超链接<code>&lt;a href=&quot;addUser&quot;&gt;添加用户&lt;/a&gt;</code>可以添加一个用户,浏览器请求<a href="http://localhost:8080/SessionManagement/addUser" target="_blank" rel="noopener">http://localhost:8080/SessionManagement/addUser</a>这个URL响应,这是一个get请求.Tomcat调用doGet方法响应,doGet方法根据请求的URL,调用sendAddForm方法,这个方法发给浏览器一个表单。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sendAddForm</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">    HttpServletResponse response)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    String html = <span class="string">"&lt;html&gt;&lt;head&gt;&lt;title&gt;添加User&lt;/title&gt;&lt;meta charset='utf-8'&gt;&lt;/head&gt;&lt;body&gt;&lt;h2&gt;添加User&lt;/h2&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;form method='post' action='addUser'&gt;&lt;table&gt;&lt;tbody&gt;"</span></span><br><span class="line">        + <span class="string">"&lt;tr&gt;&lt;td style='text-align:right'&gt;编号:&lt;/td&gt;&lt;td&gt;&lt;input type='text' name='id' value='"</span></span><br><span class="line">        + (userList.size() + <span class="number">1</span>)</span><br><span class="line">        + <span class="string">"' readonly='readonly' title='编号由系统指定,无法修改'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;tr&gt;&lt;td style='text-align:right'&gt;姓名:&lt;/td&gt;&lt;td&gt;&lt;input type='text' name='name'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;tr&gt;&lt;td style='text-align:right'&gt;城市:&lt;/td&gt;&lt;td&gt;&lt;input type='text' name='city'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;tr&gt;&lt;td style='text-align:right'&gt;性别:&lt;/td&gt;&lt;td&gt;&lt;input type='text' name='sex'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;tr&gt;&lt;td colspan='2' style='text-align:right'&gt;&lt;input type='submit' value='add'&gt;&lt;/td&gt;&lt;/tr&gt;\r\n"</span></span><br><span class="line">        + <span class="string">"&lt;tr&gt;&lt;td colspan='2'&gt;&lt;a href='showUsers'&gt;返回用户列表&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;"</span></span><br><span class="line">        + <span class="string">"&lt;/tbody&gt;&lt;/table&gt;&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;"</span>;</span><br><span class="line">    responseHTML(response, html);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>需要注意的是id信息,我这里放在隐藏域中:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span></span><br></pre></td></tr></table></figure><br>需要注意的是表单的属性:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">'post'</span> <span class="attr">action</span>=<span class="string">'addUser'</span>&gt;</span></span><br></pre></td></tr></table></figure><br>这表明表单将会发送给<code>addUser</code>这个URL,虽然还是调用的这个URL,但是这次是post请求,而不是get请求。<br>填写表单如下:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/10.png" alt="这里有一张图片"><br>所以Tomcat会调用doPost方法来响应。doPost根据请求中的URL,调用<code>addUser</code>方法,如下所示:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addUser</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">    HttpServletResponse response)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    String id = request.getParameter(<span class="string">"id"</span>);</span><br><span class="line">    <span class="comment">// 创建一个新用户</span></span><br><span class="line">    User user = findUserById(id);</span><br><span class="line">    <span class="keyword">if</span> (user == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="comment">// 创建一个新用户</span></span><br><span class="line">        user = <span class="keyword">new</span> User();</span><br><span class="line">        user.setId(id);</span><br><span class="line">        user.setName(request.getParameter(<span class="string">"name"</span>));</span><br><span class="line">        user.setCity(request.getParameter(<span class="string">"city"</span>));</span><br><span class="line">        user.setSex(request.getParameter(<span class="string">"sex"</span>));</span><br><span class="line">        userList.add(user);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 请求重定向 显示主界面</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        response.sendRedirect(<span class="string">"showUsers"</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>这个方法,把表单中提交的数据转换成User对象，然后添加到userList中保存。最后重定向到<code>showUser</code>这个URL去显示添加的效果,如下所示:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/11.png" alt="这里有一张图片"></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>这个demo就到这里了,本来我还想搞个删除的功能,但是懒得搞了,先这样。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/blog/345f33d2/" title="2.2 Java Servlet 会话管理 使用隐藏域">https://lanlan2017.github.io/blog/345f33d2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/2cf9b569/" rel="next" title="2.1 Java Servlet 会话管理 通过URL重写">
+                  <i class="fa fa-chevron-left"></i> 2.1 Java Servlet 会话管理 通过URL重写
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/42b9c4c7/" rel="prev" title="2.3 Java Servlet 会话管理 使用Cookies">
+                  2.3 Java Servlet 会话管理 使用Cookies <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-隐藏域"><span class="nav-number">1.</span> <span class="nav-text">2.2 隐藏域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Demo"><span class="nav-number">2.</span> <span class="nav-text">Demo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#完整代码"><span class="nav-number">2.1.</span> <span class="nav-text">完整代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#User类"><span class="nav-number">2.1.1.</span> <span class="nav-text">User类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UserServlet类"><span class="nav-number">2.1.2.</span> <span class="nav-text">UserServlet类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码详解"><span class="nav-number">2.2.</span> <span class="nav-text">代码详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#URL映射"><span class="nav-number">2.2.1.</span> <span class="nav-text">URL映射</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化数据"><span class="nav-number">2.2.2.</span> <span class="nav-text">初始化数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工具方法"><span class="nav-number">2.2.3.</span> <span class="nav-text">工具方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#根据用户id获取该用户对象的引用"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">根据用户id获取该用户对象的引用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#输出HTML字符串到响应对象中"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">输出HTML字符串到响应对象中</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示所有用户数据"><span class="nav-number">2.2.4.</span> <span class="nav-text">显示所有用户数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改用户数据"><span class="nav-number">2.2.5.</span> <span class="nav-text">修改用户数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务器端更新数据"><span class="nav-number">2.2.6.</span> <span class="nav-text">服务器端更新数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加用户"><span class="nav-number">2.2.7.</span> <span class="nav-text">添加用户</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">2.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/blog/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">先看视频再看书</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">370</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">148</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/lanlan2017" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;lanlan2017" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/ReadingNotes/" title="ReadingNotes &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;ReadingNotes&#x2F;"><i class="fa fa-fw fa-book"></i>ReadingNotes</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/" title="blog &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;"><i class="fa fa-fw fa-book"></i>blog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/tools/" title="tools &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;tools&#x2F;"><i class="fa fa-fw fa-wrench"></i>tools</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/blog/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/blog/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里输入评论',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

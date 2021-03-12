@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="如何cmd命令帮助文档&amp;nbsp;copy命令&amp;nbsp;实例&amp;nbsp;直接覆盖同名文件&amp;nbsp;复制改名&amp;nbsp;路径中带空格等特殊符号&amp;nbsp;合并文件&amp;nbsp;xcopy命令&amp;nbsp;xcopy实例&amp;nbsp;只复制更新过的文件&amp;nbsp;复制隐藏文件&amp;nbsp;从中断处继续复制&amp;nbsp;参考资料&amp;nbsp; .header_1{margin-left: 1em;}.heade">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cmd 复制文件命令copy 复制目录树命令xcopy">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/1752f9e6/index.html">
+<meta property="og:site_name" content="蓝蓝博客">
+<meta property="og:description" content="如何cmd命令帮助文档&amp;nbsp;copy命令&amp;nbsp;实例&amp;nbsp;直接覆盖同名文件&amp;nbsp;复制改名&amp;nbsp;路径中带空格等特殊符号&amp;nbsp;合并文件&amp;nbsp;xcopy命令&amp;nbsp;xcopy实例&amp;nbsp;只复制更新过的文件&amp;nbsp;复制隐藏文件&amp;nbsp;从中断处继续复制&amp;nbsp;参考资料&amp;nbsp; .header_1{margin-left: 1em;}.heade">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-01-31T16:44:38.000Z">
+<meta property="article:modified_time" content="2020-04-11T09:15:21.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="批处理">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/blog/1752f9e6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>cmd 复制文件命令copy 复制目录树命令xcopy | 蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/blog/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/blog/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/blog/1752f9e6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="先看视频再看书">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">cmd 复制文件命令copy 复制目录树命令xcopy
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-31 16:44:38" itemprop="dateCreated datePublished" datetime="2019-01-31T16:44:38+00:00">2019-01-31</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-11 09:15:21" itemprop="dateModified" datetime="2020-04-11T09:15:21+00:00">2020-04-11</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Windows/CMD%E6%89%B9%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">CMD批处理</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Windows/CMD%E6%89%B9%E5%A4%84%E7%90%86/%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">语法</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Windows/CMD%E6%89%B9%E5%A4%84%E7%90%86/%E8%AF%AD%E6%B3%95/%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">操作文件或目录的命令</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/1752f9e6/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/1752f9e6/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/blog/1752f9e6/#如何cmd命令帮助文档" class="header_2">如何cmd命令帮助文档</a>&nbsp;<br><a href="/blog/1752f9e6/#copy命令" class="header_2">copy命令</a>&nbsp;<br><a href="/blog/1752f9e6/#实例" class="header_3">实例</a>&nbsp;<br><a href="/blog/1752f9e6/#直接覆盖同名文件" class="header_4">直接覆盖同名文件</a>&nbsp;<br><a href="/blog/1752f9e6/#复制改名" class="header_4">复制改名</a>&nbsp;<br><a href="/blog/1752f9e6/#路径中带空格等特殊符号" class="header_4">路径中带空格等特殊符号</a>&nbsp;<br><a href="/blog/1752f9e6/#合并文件" class="header_4">合并文件</a>&nbsp;<br><a href="/blog/1752f9e6/#xcopy命令" class="header_2">xcopy命令</a>&nbsp;<br><a href="/blog/1752f9e6/#xcopy实例" class="header_3">xcopy实例</a>&nbsp;<br><a href="/blog/1752f9e6/#只复制更新过的文件" class="header_4">只复制更新过的文件</a>&nbsp;<br><a href="/blog/1752f9e6/#复制隐藏文件" class="header_4">复制隐藏文件</a>&nbsp;<br><a href="/blog/1752f9e6/#从中断处继续复制" class="header_3">从中断处继续复制</a>&nbsp;<br><a href="/blog/1752f9e6/#参考资料" class="header_2">参考资料</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h2 id="如何cmd命令帮助文档"><a href="#如何cmd命令帮助文档" class="headerlink" title="如何cmd命令帮助文档"></a>如何cmd命令帮助文档</h2><p>在命令后面输入<code>/?</code>即可查看帮助文档,注意斜杠前面有个空格。</p>
+<h2 id="copy命令"><a href="#copy命令" class="headerlink" title="copy命令"></a>copy命令</h2><p>先来查看copy命令的帮助文档：<code>copy /?</code>:<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">lan</span>&gt;<span class="title">copy</span> /?</span></span><br><span class="line"><span class="function">将一份或多份文件复制到另一个位置。</span></span><br><span class="line"><span class="function"><span class="title">COPY</span> [/<span class="title">D</span>] [/<span class="title">V</span>] [/<span class="title">N</span>] [/<span class="title">Y</span> | /-<span class="title">Y</span>] [/<span class="title">Z</span>] [/<span class="title">L</span>] [/<span class="title">A</span> | /<span class="title">B</span> ] <span class="title">source</span> [/<span class="title">A</span> | /<span class="title">B</span>]</span></span><br><span class="line"><span class="function">     [+ <span class="title">source</span> [/<span class="title">A</span> | /<span class="title">B</span>] [+ ...]] [<span class="title">destination</span> [/<span class="title">A</span> | /<span class="title">B</span>]]</span></span><br><span class="line"><span class="function">  <span class="title">source</span>       指定要复制的文件。</span></span><br><span class="line"><span class="function">  /<span class="title">A</span>           表示一个 <span class="title">ASCII</span> 文本文件。</span></span><br><span class="line"><span class="function">  /<span class="title">B</span>           表示一个二进位文件。</span></span><br><span class="line"><span class="function">  /<span class="title">D</span>           允许解密要创建的目标文件</span></span><br><span class="line"><span class="function">  <span class="title">destination</span>  为新文件指定目录和/或文件名。</span></span><br><span class="line"><span class="function">  /<span class="title">V</span>           验证新文件写入是否正确。</span></span><br><span class="line"><span class="function">  /<span class="title">N</span>           复制带有非 8<span class="title">dot3</span> 名称的文件时，</span></span><br><span class="line"><span class="function">               尽可能使用短文件名。</span></span><br><span class="line"><span class="function">  /<span class="title">Y</span>           不使用确认是否要覆盖现有目标文件</span></span><br><span class="line"><span class="function">               的提示。</span></span><br><span class="line"><span class="function">  /-<span class="title">Y</span>          使用确认是否要覆盖现有目标文件</span></span><br><span class="line"><span class="function">               的提示。</span></span><br><span class="line"><span class="function">  /<span class="title">Z</span>           用可重新启动模式复制已联网的文件。</span></span><br><span class="line"><span class="function">/<span class="title">L</span>           如果源是符号链接，请将链接复制</span></span><br><span class="line"><span class="function">               到目标而不是源链接指向的实际文件。</span></span><br><span class="line"><span class="function">命令行开关 /<span class="title">Y</span> 可以在 <span class="title">COPYCMD</span> 环境变量中预先设定。</span></span><br><span class="line"><span class="function">这可能会被命令行上的 /-<span class="title">Y</span> 替代。除非 <span class="title">COPY</span></span></span><br><span class="line"><span class="function">命令是在一个批处理脚本中执行的，默认值应为</span></span><br><span class="line"><span class="function">在覆盖时进行提示。</span></span><br><span class="line"><span class="function">要附加文件，请为目标指定一个文件，为源指定</span></span><br><span class="line"><span class="function">数个文件(用通配符或 <span class="title">file1</span>+<span class="title">file2</span>+<span class="title">file3</span> 格式)。</span></span><br></pre></td></tr></table></figure><br>可以看到copy命令是用来复制<code>文件</code>的。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><h4 id="直接覆盖同名文件"><a href="#直接覆盖同名文件" class="headerlink" title="直接覆盖同名文件"></a>直接覆盖同名文件</h4><p>如果D盘根目录下已经存在了一个名为test.txt的文件，那么，复制过去的时候，copy命令就会提示你是覆盖原文件、是放弃复制还是覆盖所有文件。如果你在批量复制的时候，一概覆盖原文件，那么，一个一个地选择十分麻烦，这个时候，你可以使用不加提示就覆盖原文件的参数 /y （相当于自动选择了Yes选项），完整的命令为：<code>copy /y d:\test\test.txt d:\testcopy</code> </p>
+<h4 id="复制改名"><a href="#复制改名" class="headerlink" title="复制改名"></a>复制改名</h4><p>如果复制的时候，你还需要把源文件改个名，比如把test.txt改为1.txt的时候，可以直接使用：<code>copy d:\test\test.txt d:\testcopy\1.txt</code> 这样的命令，也就是说，<strong>在指定目的路径的时候，直接指定文件名，那么，新的文件名就是源文件复制之后的名字</strong>。 </p>
+<h4 id="路径中带空格等特殊符号"><a href="#路径中带空格等特殊符号" class="headerlink" title="路径中带空格等特殊符号"></a>路径中带空格等特殊符号</h4><p>如果要复制的路径带有空格、&amp;等特殊符号的时候，请使用引号把这些特殊字符括起来，比如:<code>copy &quot;d:\test abc\test.txt&quot; &quot;d:\test&amp;copy&quot;</code></p>
+<h4 id="合并文件"><a href="#合并文件" class="headerlink" title="合并文件"></a>合并文件</h4><p>copy命令除了“复制”文件的功能外，还有一个绝活：合并多个文件为一个文件，具体的格式为：<br><code>copy 文件1+文件2+文件3+…… 目的路径\新文件名</code> 。例如：<code>copy d:\test.txt+d:\abc.txt d:\test\test.txt</code>，那么，就把D盘根目录下的test.txt和abc.txt两个文件的内容合并为test.txt，并保存到d:\test目录下。 </p>
+<p>必须注意的是，copy只能复制文件，对于文件夹的复制，则需要另请高明，动用xcopy来复制。xcopy是copy的高级版本，有更丰富的参数，能实现更加复杂的功能，通吃文件和文件夹的复制。</p>
+<h2 id="xcopy命令"><a href="#xcopy命令" class="headerlink" title="xcopy命令"></a>xcopy命令</h2><p>还是先查看帮助文档，<code>xcopy /?</code>：<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">lan</span>&gt;<span class="title">xcopy</span> /?</span></span><br><span class="line"><span class="function">复制文件和目录树。</span></span><br><span class="line"><span class="function"><span class="title">XCOPY</span> <span class="title">source</span> [<span class="title">destination</span>] [/<span class="title">A</span> | /<span class="title">M</span>] [/<span class="title">D</span>[:<span class="title">date</span>]] [/<span class="title">P</span>] [/<span class="title">S</span> [/<span class="title">E</span>]] [/<span class="title">V</span>] [/<span class="title">W</span>]</span></span><br><span class="line"><span class="function">                           [/<span class="title">C</span>] [/<span class="title">I</span>] [/<span class="title">Q</span>] [/<span class="title">F</span>] [/<span class="title">L</span>] [/<span class="title">G</span>] [/<span class="title">H</span>] [/<span class="title">R</span>] [/<span class="title">T</span>] [/<span class="title">U</span>]</span></span><br><span class="line"><span class="function">                           [/<span class="title">K</span>] [/<span class="title">N</span>] [/<span class="title">O</span>] [/<span class="title">X</span>] [/<span class="title">Y</span>] [/-<span class="title">Y</span>] [/<span class="title">Z</span>] [/<span class="title">B</span>] [/<span class="title">J</span>]</span></span><br><span class="line"><span class="function">                           [/<span class="title">EXCLUDE:file1</span>[+<span class="title">file2</span>][+<span class="title">file3</span>]...]</span></span><br><span class="line"><span class="function">  <span class="title">source</span>       指定要复制的文件。</span></span><br><span class="line"><span class="function">  <span class="title">destination</span>  指定新文件的位置和/或名称。</span></span><br><span class="line"><span class="function">  /<span class="title">A</span>           仅复制有存档属性集的文件，</span></span><br><span class="line"><span class="function">               但不更改属性。</span></span><br><span class="line"><span class="function">  /<span class="title">M</span>           仅复制有存档属性集的文件，</span></span><br><span class="line"><span class="function">               并关闭存档属性。</span></span><br><span class="line"><span class="function">  /<span class="title">D:m</span>-<span class="title">d</span>-<span class="title">y</span>     复制在指定日期或指定日期以后更改的文件。</span></span><br><span class="line"><span class="function">               如果没有提供日期，只复制那些</span></span><br><span class="line"><span class="function">               源时间比目标时间新的文件。</span></span><br><span class="line"><span class="function">  /<span class="title">EXCLUDE:file1</span>[+<span class="title">file2</span>][+<span class="title">file3</span>]...</span></span><br><span class="line"><span class="function">               指定含有字符串的文件列表。每个字符串</span></span><br><span class="line"><span class="function">               在文件中应位于单独的一行。如果任何</span></span><br><span class="line"><span class="function">               字符串与复制文件的绝对路径的任何部分相符，</span></span><br><span class="line"><span class="function">               则排除复制该文件。例如，</span></span><br><span class="line"><span class="function">               指定如 \<span class="title">obj</span>\ 或 .<span class="title">obj</span> 的字符串会分别</span></span><br><span class="line"><span class="function">               排除目录 <span class="title">obj</span> 下面的所有文件或带有</span></span><br><span class="line"><span class="function">               .<span class="title">obj</span> 扩展名的所有文件。</span></span><br><span class="line"><span class="function">  /<span class="title">P</span>           创建每个目标文件之前提示你。</span></span><br><span class="line"><span class="function">  /<span class="title">S</span>           复制目录和子目录，不包括空目录。</span></span><br><span class="line"><span class="function">  /<span class="title">E</span>           复制目录和子目录，包括空目录。</span></span><br><span class="line"><span class="function">               与 /<span class="title">S</span> /<span class="title">E</span> 相同。可以用来修改 /<span class="title">T</span>。</span></span><br><span class="line"><span class="function">  /<span class="title">V</span>           验证每个新文件的大小。</span></span><br><span class="line"><span class="function">  /<span class="title">W</span>           提示你在复制前按键。</span></span><br><span class="line"><span class="function">  /<span class="title">C</span>           即使有错误，也继续复制。</span></span><br><span class="line"><span class="function">  /<span class="title">I</span>           如果目标不存在，且要复制多个文件，</span></span><br><span class="line"><span class="function">               则假定目标必须是目录。</span></span><br><span class="line"><span class="function">  /<span class="title">Q</span>           复制时不显示文件名。</span></span><br><span class="line"><span class="function">  /<span class="title">F</span>           复制时显示完整的源文件名和目标文件名。</span></span><br><span class="line"><span class="function">  /<span class="title">L</span>           显示要复制的文件。</span></span><br><span class="line"><span class="function">  /<span class="title">G</span>           允许将加密文件复制到</span></span><br><span class="line"><span class="function">               不支持加密的目标。</span></span><br><span class="line"><span class="function">  /<span class="title">H</span>           也复制隐藏文件和系统文件。</span></span><br><span class="line"><span class="function">  /<span class="title">R</span>           覆盖只读文件。</span></span><br><span class="line"><span class="function">  /<span class="title">T</span>           创建目录结构，但不复制文件。不</span></span><br><span class="line"><span class="function">               包括空目录或子目录。/<span class="title">T</span> /<span class="title">E</span> 包括</span></span><br><span class="line"><span class="function">               空目录和子目录。</span></span><br><span class="line"><span class="function">  /<span class="title">U</span>           只复制已经存在于目标中的文件。</span></span><br><span class="line"><span class="function">  /<span class="title">K</span>           复制属性。一般的 <span class="title">Xcopy</span> 会重置只读属性。</span></span><br><span class="line"><span class="function">  /<span class="title">N</span>           用生成的短名称复制。</span></span><br><span class="line"><span class="function">  /<span class="title">O</span>           复制文件所有权和 <span class="title">ACL</span> 信息。</span></span><br><span class="line"><span class="function">  /<span class="title">X</span>           复制文件审核设置(隐含 /<span class="title">O</span>)。</span></span><br><span class="line"><span class="function">  /<span class="title">Y</span>           取消提示以确认要覆盖</span></span><br><span class="line"><span class="function">               现有目标文件。</span></span><br><span class="line"><span class="function">  /-<span class="title">Y</span>          要提示以确认要覆盖</span></span><br><span class="line"><span class="function">               现有目标文件。</span></span><br><span class="line"><span class="function">  /<span class="title">Z</span>           在可重新启动模式下复制网络文件。</span></span><br><span class="line"><span class="function">  /<span class="title">B</span>           复制符号链接本身与链接目标。</span></span><br><span class="line"><span class="function">  /<span class="title">J</span>           复制时不使用缓冲的 <span class="title">I</span>/<span class="title">O</span>。推荐复制大文件时使用。</span></span><br><span class="line"><span class="function">开关 /<span class="title">Y</span> 可以预先在 <span class="title">COPYCMD</span> 环境变量中设置。</span></span><br><span class="line"><span class="function">这可能被命令行上的 /-<span class="title">Y</span> 覆盖。</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="xcopy实例"><a href="#xcopy实例" class="headerlink" title="xcopy实例"></a>xcopy实例</h3><h4 id="只复制更新过的文件"><a href="#只复制更新过的文件" class="headerlink" title="只复制更新过的文件"></a>只复制更新过的文件</h4><p>在备份的时候，源目录中有些文件更新过，有些文件没更新过。我们只需要复制更新过的文件即可，没必要一股脑复制(覆盖)。<br>例如：<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">xcopy</span> E:\Blog\blog5\source\_posts E:\Blog\blog5MD /e /Y /d</span><br></pre></td></tr></table></figure><br>就是把<code>E:\Blog\blog5\source\_posts</code>这个下的子目录树，复制到<code>E:\Blog\blog5M</code>中，<br>参数描述：<br><code>/e</code> 参数表示，复制<code>E:\Blog\blog5\source\_posts</code>下面的目录和子目录，包括空目录<br><code>/y</code>参数表示，如果目标目录下有同名文件了，不询问，就直接覆盖。<br><code>/d</code>对应同名文件，只复制那些源文件时间比目标文件时间新的那些文件。这样可以节省复制的操作。就不会全部一股脑的复制(覆盖)。</p>
+<h4 id="复制隐藏文件"><a href="#复制隐藏文件" class="headerlink" title="复制隐藏文件"></a>复制隐藏文件</h4><p>如只是单纯地复制一个目录内的所有文件到另一个目录中上，就输入<code>xcopy 源目录 目的目录 /s /h</code>，如果复制到一半你发现不对劲，可以按键盘热键“Ctrl “ +”Pause /break” 二个热键 来中断复制。</p>
+<ul>
+<li>/s 表示复制目录或子目录</li>
+<li>/h 表示复制隐藏文件，系统文件</li>
+</ul>
+<p>例如<code>xcopy E:\Blog\blog5\source\_posts\java* E:\Blog\blog5Test /s /h</code></p>
+<h3 id="从中断处继续复制"><a href="#从中断处继续复制" class="headerlink" title="从中断处继续复制"></a>从中断处继续复制</h3><p>如果想把E:\ 盘上所有文件复制到D:\盘上，分为今天复制一点，明天再接着复制一些，后天再接着复制一些。或者是某种原因上次没有复制完成，今天想接着复制。（这种情况是经常在复制文件中出现的）那可怎么办才好呢？<br>那就输入 <code>xcopy 源目录 目标目录 /s /h /d /y</code>就行啦。他能查出那些文件是已经复制过去啦，那些文件还没有复制过去的。</p>
+<ul>
+<li>/s 复制目录和子目录，不复制空目录</li>
+<li>/h 复制隐藏文件以及系统文件</li>
+<li>/d 这没有提供时间，所以只复制那些源文件时间比目标文件时间新的那些文件。</li>
+<li>/y 直接覆盖，不询问。</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.cnblogs.com/KevinJasmine/p/4159234.html" target="_blank" rel="noopener">https://www.cnblogs.com/KevinJasmine/p/4159234.html</a><br><a href="https://www.jb51.net/article/18981.htm" target="_blank" rel="noopener">cmd copy命令 文件复制</a><br><a href="https://www.jb51.net/article/29055.htm" target="_blank" rel="noopener">xcopy 实现批处理拷贝文件或文件夹</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/blog/1752f9e6/" title="cmd 复制文件命令copy 复制目录树命令xcopy">https://lanlan2017.github.io/blog/1752f9e6/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/4b9baef8/" rel="next" title="javadoc 文档注释">
+                  <i class="fa fa-chevron-left"></i> javadoc 文档注释
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/5d4c4249/" rel="prev" title="cmd 删除文件命令del 删除目录树命令rmdir">
+                  cmd 删除文件命令del 删除目录树命令rmdir <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何cmd命令帮助文档"><span class="nav-number">1.</span> <span class="nav-text">如何cmd命令帮助文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#copy命令"><span class="nav-number">2.</span> <span class="nav-text">copy命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">2.1.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接覆盖同名文件"><span class="nav-number">2.1.1.</span> <span class="nav-text">直接覆盖同名文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制改名"><span class="nav-number">2.1.2.</span> <span class="nav-text">复制改名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路径中带空格等特殊符号"><span class="nav-number">2.1.3.</span> <span class="nav-text">路径中带空格等特殊符号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并文件"><span class="nav-number">2.1.4.</span> <span class="nav-text">合并文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xcopy命令"><span class="nav-number">3.</span> <span class="nav-text">xcopy命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#xcopy实例"><span class="nav-number">3.1.</span> <span class="nav-text">xcopy实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#只复制更新过的文件"><span class="nav-number">3.1.1.</span> <span class="nav-text">只复制更新过的文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制隐藏文件"><span class="nav-number">3.1.2.</span> <span class="nav-text">复制隐藏文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从中断处继续复制"><span class="nav-number">3.2.</span> <span class="nav-text">从中断处继续复制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/blog/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">先看视频再看书</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">370</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">148</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/lanlan2017" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;lanlan2017" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/ReadingNotes/" title="ReadingNotes &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;ReadingNotes&#x2F;"><i class="fa fa-fw fa-book"></i>ReadingNotes</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/" title="blog &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;"><i class="fa fa-fw fa-book"></i>blog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/tools/" title="tools &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;tools&#x2F;"><i class="fa fa-fw fa-wrench"></i>tools</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/blog/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/blog/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里输入评论',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

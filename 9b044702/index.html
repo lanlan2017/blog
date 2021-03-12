@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="使用的软件版本&amp;nbsp;Maven安装&amp;nbsp;下载&amp;nbsp;解压&amp;nbsp;配置环境变量&amp;nbsp;M2_HOME环境变量&amp;nbsp;path环境变量&amp;nbsp;集成到Eclipse&amp;nbsp;Eclipse之中创建Maven Web项目&amp;nbsp;创建Maven Web项目&amp;nbsp;修改项目配置&amp;nbsp;把Maven Web项目改为Java Web项目&amp;nbsp;选择JDK版本&amp;nb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eclipse使用Maven搭建Java Web项目并直接部署到Tomcat8">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/9b044702/index.html">
+<meta property="og:site_name" content="蓝蓝博客">
+<meta property="og:description" content="使用的软件版本&amp;nbsp;Maven安装&amp;nbsp;下载&amp;nbsp;解压&amp;nbsp;配置环境变量&amp;nbsp;M2_HOME环境变量&amp;nbsp;path环境变量&amp;nbsp;集成到Eclipse&amp;nbsp;Eclipse之中创建Maven Web项目&amp;nbsp;创建Maven Web项目&amp;nbsp;修改项目配置&amp;nbsp;把Maven Web项目改为Java Web项目&amp;nbsp;选择JDK版本&amp;nb">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/1.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/2.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/3.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/4.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/5.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/6.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/7.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/8.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/18.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/19.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/20.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/21.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/22.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/24.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/23.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/12.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/13.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/14.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/15.png">
+<meta property="article:published_time" content="2019-04-26T17:42:04.000Z">
+<meta property="article:modified_time" content="2019-12-17T05:18:52.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="批处理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/1.png">
+  <link rel="canonical" href="https://lanlan2017.github.io/blog/9b044702/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Eclipse使用Maven搭建Java Web项目并直接部署到Tomcat8 | 蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/blog/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/blog/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/blog/9b044702/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="先看视频再看书">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">Eclipse使用Maven搭建Java Web项目并直接部署到Tomcat8
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-26 17:42:04" itemprop="dateCreated datePublished" datetime="2019-04-26T17:42:04+00:00">2019-04-26</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-17 05:18:52" itemprop="dateModified" datetime="2019-12-17T05:18:52+00:00">2019-12-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-EE/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index"><span itemprop="name">环境搭建</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/9b044702/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/9b044702/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/blog/9b044702/#使用的软件版本" class="header_1">使用的软件版本</a>&nbsp;<br><a href="/blog/9b044702/#Maven安装" class="header_1">Maven安装</a>&nbsp;<br><a href="/blog/9b044702/#下载" class="header_2">下载</a>&nbsp;<br><a href="/blog/9b044702/#解压" class="header_2">解压</a>&nbsp;<br><a href="/blog/9b044702/#配置环境变量" class="header_2">配置环境变量</a>&nbsp;<br><a href="/blog/9b044702/#M2_HOME环境变量" class="header_3">M2_HOME环境变量</a>&nbsp;<br><a href="/blog/9b044702/#path环境变量" class="header_3">path环境变量</a>&nbsp;<br><a href="/blog/9b044702/#集成到Eclipse" class="header_2">集成到Eclipse</a>&nbsp;<br><a href="/blog/9b044702/#Eclipse之中创建Maven-Web项目" class="header_1">Eclipse之中创建Maven Web项目</a>&nbsp;<br><a href="/blog/9b044702/#创建Maven-Web项目" class="header_2">创建Maven Web项目</a>&nbsp;<br><a href="/blog/9b044702/#修改项目配置" class="header_2">修改项目配置</a>&nbsp;<br><a href="/blog/9b044702/#把Maven-Web项目改为Java-Web项目" class="header_3">把Maven Web项目改为Java Web项目</a>&nbsp;<br><a href="/blog/9b044702/#选择JDK版本" class="header_4">选择JDK版本</a>&nbsp;<br><a href="/blog/9b044702/#选择Dynamic-Web-Module版本" class="header_4">选择Dynamic Web Module版本</a>&nbsp;<br><a href="/blog/9b044702/#选择Tomcat" class="header_4">选择Tomcat</a>&nbsp;<br><a href="/blog/9b044702/#创建java目录" class="header_4">创建java目录</a>&nbsp;<br><a href="/blog/9b044702/#效果" class="header_4">效果</a>&nbsp;<br><a href="/blog/9b044702/#修改web-xml" class="header_3">修改web.xml</a>&nbsp;<br><a href="/blog/9b044702/#修改pom-xml" class="header_3">修改pom.xml</a>&nbsp;<br><a href="/blog/9b044702/#测试" class="header_3">测试</a>&nbsp;<br><a href="/blog/9b044702/#编写HelloWorldServlet" class="header_4">编写HelloWorldServlet</a>&nbsp;<br><a href="/blog/9b044702/#使用Maven一键部署到Tomcat中" class="header_1">使用Maven一键部署到Tomcat中</a>&nbsp;<br><a href="/blog/9b044702/#设置tomcat用户密码" class="header_2">设置tomcat用户密码</a>&nbsp;<br><a href="/blog/9b044702/#修改Mawen的配置文件" class="header_2">修改Mawen的配置文件</a>&nbsp;<br><a href="/blog/9b044702/#安装Tomcat-Maven部署插件" class="header_2">安装Tomcat Maven部署插件</a>&nbsp;<br><a href="/blog/9b044702/#部署" class="header_2">部署</a>&nbsp;<br><a href="/blog/9b044702/#运行服务器" class="header_3">运行服务器</a>&nbsp;<br><a href="/blog/9b044702/#使用Maven部署项目" class="header_3">使用Maven部署项目</a>&nbsp;<br><a href="/blog/9b044702/#Tomcat之中部署的效果" class="header_2">Tomcat之中部署的效果</a>&nbsp;<br><a href="/blog/9b044702/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h1 id="使用的软件版本"><a href="#使用的软件版本" class="headerlink" title="使用的软件版本"></a>使用的软件版本</h1><ul>
+<li><code>eclipse for Java EE 2019</code></li>
+<li><code>jdk 1.8</code></li>
+<li><code>Tomacat 8.5</code></li>
+<li><code>Maven 3.5.4</code></li>
+</ul>
+<h1 id="Maven安装"><a href="#Maven安装" class="headerlink" title="Maven安装"></a>Maven安装</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><h3 id="M2-HOME环境变量"><a href="#M2-HOME环境变量" class="headerlink" title="M2_HOME环境变量"></a>M2_HOME环境变量</h3><h3 id="path环境变量"><a href="#path环境变量" class="headerlink" title="path环境变量"></a>path环境变量</h3><h2 id="集成到Eclipse"><a href="#集成到Eclipse" class="headerlink" title="集成到Eclipse"></a>集成到Eclipse</h2><h1 id="Eclipse之中创建Maven-Web项目"><a href="#Eclipse之中创建Maven-Web项目" class="headerlink" title="Eclipse之中创建Maven Web项目"></a>Eclipse之中创建Maven Web项目</h1><h2 id="创建Maven-Web项目"><a href="#创建Maven-Web项目" class="headerlink" title="创建Maven Web项目"></a>创建Maven Web项目</h2><p>在<code>Eclipse</code>显示项目的<code>Package Explorer</code>的空白处点击鼠标右键,然后依次选择:<code>New-Other...</code><br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/1.png" alt="这里有一张图片"><br>在弹出的<code>New</code>窗口中,展开<code>Maven</code>,选择<code>Maven Project</code>,然后点击<code>Next</code>。<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/2.png" alt="这里有一张图片"><br>然后默认,点击<code>Next</code><br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/3.png" alt="这里有一张图片"><br>往下拖动滚动条到最后,选择<code>maven-archetype-webapp</code>,点击<code>Next</code><br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/4.png" alt="这里有一张图片"><br>填入坐标,<code>Group Id</code>，<code>Artifact Id</code>,剩下的随意,最后点击<code>Finish</code>即可<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/5.png" alt="这里有一张图片"><br>这样就创建好了一个<code>Maven</code>的<code>Web</code>项目,这个项目会报错,如下图所示,这是因为还没有引入<code>Tomcat</code>的库导致的.<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/6.png" alt="这里有一张图片"></p>
+<h2 id="修改项目配置"><a href="#修改项目配置" class="headerlink" title="修改项目配置"></a>修改项目配置</h2><h3 id="把Maven-Web项目改为Java-Web项目"><a href="#把Maven-Web项目改为Java-Web项目" class="headerlink" title="把Maven Web项目改为Java Web项目"></a>把Maven Web项目改为Java Web项目</h3><p>在项目上点击右键,选择<code>Properties</code>：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/7.png" alt="这里有一张图片"></p>
+<h4 id="选择JDK版本"><a href="#选择JDK版本" class="headerlink" title="选择JDK版本"></a>选择JDK版本</h4><p>展开<code>Maven</code>,选择<code>Proiect Facets</code>,取消勾选<code>Dynamic Web Module</code>,然后把Java的版本改为<code>1.8</code>,然后点击<code>Apply</code><br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/8.png" alt="这里有一张图片"></p>
+<h4 id="选择Dynamic-Web-Module版本"><a href="#选择Dynamic-Web-Module版本" class="headerlink" title="选择Dynamic Web Module版本"></a>选择Dynamic Web Module版本</h4><p>接着把<code>Dynamic Web Module</code>的版本改为<code>3.1</code>,然后勾选上<code>Dynamic Web Module</code>,这个时候下面会弹出这个链接<code>Further configuration available....</code>:</p>
+<h3 id="3-指定Web应用根目录"><a href="#3-指定Web应用根目录" class="headerlink" title="3 指定Web应用根目录"></a>3 指定Web应用根目录</h3><p><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/18.png" alt="这里有一张图片"><br>点击这个连接,然后勾选上<code>Generate web. xml deployment descriptor</code>,点击<code>OK</code><br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/19.png" alt="这里有一张图片"></p>
+<h4 id="选择Tomcat"><a href="#选择Tomcat" class="headerlink" title="选择Tomcat"></a>选择Tomcat</h4><p>然后点击右边的<code>Runtimes</code>勾选上对应的<code>Tomcat</code>,最后点击<code>Apply and Close</code>即可。<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/20.png" alt="这里有一张图片"></p>
+<h4 id="创建java目录"><a href="#创建java目录" class="headerlink" title="创建java目录"></a>创建java目录</h4><p>在<code>src</code>下面的<code>main</code>目录下创建一个<code>java</code>目录,我们后面的<code>java</code>代码会放在这里<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/21.png" alt="这里有一张图片"></p>
+<h4 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h4><p>此时的项目结构如下图所示:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/22.png" alt="这里有一张图片"></p>
+<h3 id="修改web-xml"><a href="#修改web-xml" class="headerlink" title="修改web.xml"></a>修改web.xml</h3><p>打开<code>web.xml</code>文件,可以看到默认生成的代码如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">web-app</span> <span class="meta-keyword">PUBLIC</span></span></span><br><span class="line"><span class="meta"> <span class="meta-string">"-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"</span></span></span><br><span class="line"><span class="meta"> <span class="meta-string">"http://java.sun.com/dtd/web-app_2_3.dtd"</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">display-name</span>&gt;</span>Archetype Created Web Application<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure><br>全选,然后粘贴如下代码:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">id</span>=<span class="string">"WebApp_ID"</span> <span class="attr">version</span>=<span class="string">"3.1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">display-name</span>&gt;</span>HelloWorld<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure><br>到这里就可启动项目了,看到效果了。</p>
+<h3 id="修改pom-xml"><a href="#修改pom-xml" class="headerlink" title="修改pom.xml"></a>修改pom.xml</h3><p>把<code>junit</code>版本改为4.12.</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>启动项目,浏览器将显示<code>index.jsp</code>页面之中的内容,如下图所示:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/24.png" alt="这里有一张图片"></p>
+<h4 id="编写HelloWorldServlet"><a href="#编写HelloWorldServlet" class="headerlink" title="编写HelloWorldServlet"></a>编写HelloWorldServlet</h4><p>在<code>src/main/java</code>下创建一个<code>hello</code>包,创建一个<code>HelloWorldServlet.java</code>文件,粘贴如下代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> hello;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/HelloWorldServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">        HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> ServletException,IOException</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        response.setContentType(<span class="string">"text/html,charset=utf-8;"</span>);</span><br><span class="line">        PrintWriter writer = response.getWriter();</span><br><span class="line">        writer.println(</span><br><span class="line">            <span class="string">"&lt;html&gt;&lt;head&gt;&lt;title&gt;helloworld&lt;/title&gt;&lt;/head&gt;"</span></span><br><span class="line">                + <span class="string">"&lt;body&gt;&lt;h2&gt;HelloWorld&lt;/h2&gt;&lt;/body&gt;"</span></span><br><span class="line">                + <span class="string">"&lt;/html&gt;"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>地址上面输入URL:<a href="http://localhost:8080/HelloWorld/HelloWorldServlet" target="_blank" rel="noopener">http://localhost:8080/HelloWorld/HelloWorldServlet</a>即可访问到该<code>Servlet</code>,显示效果如下:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/23.png" alt="这里有一张图片"></p>
+<h1 id="使用Maven一键部署到Tomcat中"><a href="#使用Maven一键部署到Tomcat中" class="headerlink" title="使用Maven一键部署到Tomcat中"></a>使用Maven一键部署到Tomcat中</h1><p>上面我们用的是<code>Eclipse</code>部署的,使用<code>Maven</code>可以打包把项目部署成<code>war</code>包</p>
+<h2 id="设置tomcat用户密码"><a href="#设置tomcat用户密码" class="headerlink" title="设置tomcat用户密码"></a>设置tomcat用户密码</h2><p>打开<code>Tomcat</code>安装目录中<code>conf</code>目录下的<code>tomcat-users.xml</code>配置文件,或者<code>Eclipse</code>中<code>Server</code>项目中的<code>tomcat-users.xml</code>,在<code>&lt;tomcat-users&gt;&lt;/tomcat-users&gt;</code>之中添加如下代码:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-gui"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-script"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-jmx"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-status"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">user</span> <span class="attr">password</span>=<span class="string">"admin"</span> <span class="attr">username</span>=<span class="string">"admin"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">roles</span>=<span class="string">"manager-gui,manager-script,manager-jmx,manager-status"</span> /&gt;</span></span><br></pre></td></tr></table></figure><br><code>user</code>标签表示一个后台管理员，其中<code>username</code>,<code>password</code>分别是该后台管理员的账户和密码,<code>roles</code>属性对应上面的<code>role</code>标签,一个<code>role</code>表示一个权限</p>
+<h2 id="修改Mawen的配置文件"><a href="#修改Mawen的配置文件" class="headerlink" title="修改Mawen的配置文件"></a>修改Mawen的配置文件</h2><p>打开<code>Maven</code>安装目录下<code>conf</code>目录下的<code>settings.xml</code>配置文件,或者%<code>HOME</code>%<code>\.m2</code>目录下的<code>settings.xml</code><br><code>&lt;servers&gt;&lt;/servers&gt;</code>标签中添加如下代码:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">server</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>tomcat8<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">username</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">password</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="安装Tomcat-Maven部署插件"><a href="#安装Tomcat-Maven部署插件" class="headerlink" title="安装Tomcat Maven部署插件"></a>安装Tomcat Maven部署插件</h2><p>项目中的<code>pom.xml</code>,在<code>&lt;build&gt;&lt;/build&gt;</code>标签之中添加如下代码:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://127.0.0.1:8080/manager/text<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">username</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">password</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">path</span>&gt;</span>/HelloWorld<span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br></pre></td></tr></table></figure><br>用户名和密码与上面一致，其中&lt;<code>path</code>&gt;标签表示部署在<code>tomcat</code>,<code>webapp</code>下的路径,</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><p>在eclipse之中运行服务器,</p>
+<h3 id="使用Maven部署项目"><a href="#使用Maven部署项目" class="headerlink" title="使用Maven部署项目"></a>使用Maven部署项目</h3><p>右键项目，</p>
+<p><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/12.png" alt="这里有一张图片"><br>输入如下命令:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clean install tomcat7:redeploy</span><br></pre></td></tr></table></figure><br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/13.png" alt="这里有一张图片"><br>部署成功控制台输出如下：<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[INFO] Deploying war to http://<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">8080</span>/HelloWorld  </span><br><span class="line"><span class="function">Uploading: <span class="title">http</span>://127.0.0.1:8080/<span class="title">manager</span>/<span class="title">text</span>/<span class="title">deploy</span>?<span class="title">path</span>=%2<span class="title">FHelloWorld</span>&amp;<span class="title">update</span>=<span class="title">true</span></span></span><br><span class="line"><span class="function"><span class="title">Uploaded</span>: <span class="title">http</span>://127.0.0.1:8080/<span class="title">manager</span>/<span class="title">text</span>/<span class="title">deploy</span>?<span class="title">path</span>=%2<span class="title">FHelloWorld</span>&amp;<span class="title">update</span>=<span class="title">true</span> (3 <span class="title">KB</span> <span class="title">at</span> 2249.0 <span class="title">KB</span>/<span class="title">sec</span>)</span></span><br><span class="line"><span class="function">[<span class="title">INFO</span>] <span class="title">tomcatManager</span> <span class="title">status</span> <span class="title">code</span>:200, <span class="title">ReasonPhrase</span>:</span></span><br><span class="line"><span class="function">[<span class="title">INFO</span>] <span class="title">OK</span> - <span class="title">Deployed</span> <span class="title">application</span> <span class="title">at</span> <span class="title">context</span> <span class="title">path</span> [/<span class="title">HelloWorld</span>]</span></span><br><span class="line"><span class="function">[<span class="title">INFO</span>] ------------------------------------------------------------------------</span></span><br><span class="line"><span class="function">[<span class="title">INFO</span>] <span class="title">BUILD</span> <span class="title">SUCCESS</span></span></span><br><span class="line"><span class="function">[<span class="title">INFO</span>] ------------------------------------------------------------------------</span></span><br><span class="line"><span class="function">[<span class="title">INFO</span>] <span class="title">Total</span> <span class="title">time</span>: 3.765 <span class="title">s</span></span></span><br><span class="line"><span class="function">[<span class="title">INFO</span>] <span class="title">Finished</span> <span class="title">at</span>: 2019-04-26<span class="title">T18</span>:45:17+08:00</span></span><br><span class="line"><span class="function">[<span class="title">INFO</span>] ------------------------------------------------------------------------</span></span><br></pre></td></tr></table></figure><br>看到<code>BUILD SUCCESS</code>这句话就表示部署成功了,<code>Deploying war to http://127.0.0.1:8080/HelloWorld</code><br>这句话表示部署到了<a href="http://127.0.0.1:8080/HelloWorld" target="_blank" rel="noopener">http://127.0.0.1:8080/HelloWorld</a>这个URL上.打开这个<code>URL</code>即可看到效果：<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/14.png" alt="这里有一张图片"></p>
+<h2 id="Tomcat之中部署的效果"><a href="#Tomcat之中部署的效果" class="headerlink" title="Tomcat之中部署的效果"></a>Tomcat之中部署的效果</h2><p>打开<code>tomcat</code>的<code>webapps</code>目录可以看到<code>Maven</code>部署的<code>war</code>包:<br><img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/15.png" alt="这里有一张图片"></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/ai_lian_shuo/article/details/77096071#t11" target="_blank" rel="noopener">https://blog.csdn.net/ai_lian_shuo/article/details/77096071#t11</a><br><a href="https://www.linuxidc.com/Linux/2017-05/143308.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2017-05/143308.htm</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/blog/9b044702/" title="Eclipse使用Maven搭建Java Web项目并直接部署到Tomcat8">https://lanlan2017.github.io/blog/9b044702/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/80d567ab/" rel="next" title="JSTL使用步骤">
+                  <i class="fa fa-chevron-left"></i> JSTL使用步骤
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/979e79b0/" rel="prev" title="cmd 显示目录树tree命令">
+                  cmd 显示目录树tree命令 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用的软件版本"><span class="nav-number">1.</span> <span class="nav-text">使用的软件版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Maven安装"><span class="nav-number">2.</span> <span class="nav-text">Maven安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">2.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解压"><span class="nav-number">2.2.</span> <span class="nav-text">解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境变量"><span class="nav-number">2.3.</span> <span class="nav-text">配置环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#M2-HOME环境变量"><span class="nav-number">2.3.1.</span> <span class="nav-text">M2_HOME环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#path环境变量"><span class="nav-number">2.3.2.</span> <span class="nav-text">path环境变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成到Eclipse"><span class="nav-number">2.4.</span> <span class="nav-text">集成到Eclipse</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Eclipse之中创建Maven-Web项目"><span class="nav-number">3.</span> <span class="nav-text">Eclipse之中创建Maven Web项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建Maven-Web项目"><span class="nav-number">3.1.</span> <span class="nav-text">创建Maven Web项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改项目配置"><span class="nav-number">3.2.</span> <span class="nav-text">修改项目配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#把Maven-Web项目改为Java-Web项目"><span class="nav-number">3.2.1.</span> <span class="nav-text">把Maven Web项目改为Java Web项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择JDK版本"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">选择JDK版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择Dynamic-Web-Module版本"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">选择Dynamic Web Module版本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-指定Web应用根目录"><span class="nav-number">3.2.2.</span> <span class="nav-text">3 指定Web应用根目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择Tomcat"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">选择Tomcat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建java目录"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">创建java目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#效果"><span class="nav-number">3.2.2.3.</span> <span class="nav-text">效果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改web-xml"><span class="nav-number">3.2.3.</span> <span class="nav-text">修改web.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改pom-xml"><span class="nav-number">3.2.4.</span> <span class="nav-text">修改pom.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">3.2.5.</span> <span class="nav-text">测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编写HelloWorldServlet"><span class="nav-number">3.2.5.1.</span> <span class="nav-text">编写HelloWorldServlet</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Maven一键部署到Tomcat中"><span class="nav-number">4.</span> <span class="nav-text">使用Maven一键部署到Tomcat中</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置tomcat用户密码"><span class="nav-number">4.1.</span> <span class="nav-text">设置tomcat用户密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改Mawen的配置文件"><span class="nav-number">4.2.</span> <span class="nav-text">修改Mawen的配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Tomcat-Maven部署插件"><span class="nav-number">4.3.</span> <span class="nav-text">安装Tomcat Maven部署插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署"><span class="nav-number">4.4.</span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运行服务器"><span class="nav-number">4.4.1.</span> <span class="nav-text">运行服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Maven部署项目"><span class="nav-number">4.4.2.</span> <span class="nav-text">使用Maven部署项目</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat之中部署的效果"><span class="nav-number">4.5.</span> <span class="nav-text">Tomcat之中部署的效果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/blog/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">先看视频再看书</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">370</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">148</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/lanlan2017" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;lanlan2017" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/ReadingNotes/" title="ReadingNotes &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;ReadingNotes&#x2F;"><i class="fa fa-fw fa-book"></i>ReadingNotes</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/" title="blog &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;"><i class="fa fa-fw fa-book"></i>blog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/tools/" title="tools &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;tools&#x2F;"><i class="fa fa-fw fa-wrench"></i>tools</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/blog/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/blog/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里输入评论',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

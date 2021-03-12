@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="AWT简介&amp;nbsp;GUI设计工具组件&amp;nbsp;Swing简介&amp;nbsp;容器类&amp;nbsp;JFrame类&amp;nbsp;JDialog类&amp;nbsp;JDialog与Jframe的区别&amp;nbsp;JPanel类&amp;nbsp;Swing常用基本组件&amp;nbsp;常用组件的共性操作&amp;nbsp;按钮( JButton)&amp;nbsp;文本框( JTextField)与密码输入框( JPasswordField)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java图形界面编程">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/795fc6f9/index.html">
+<meta property="og:site_name" content="蓝蓝博客">
+<meta property="og:description" content="AWT简介&amp;nbsp;GUI设计工具组件&amp;nbsp;Swing简介&amp;nbsp;容器类&amp;nbsp;JFrame类&amp;nbsp;JDialog类&amp;nbsp;JDialog与Jframe的区别&amp;nbsp;JPanel类&amp;nbsp;Swing常用基本组件&amp;nbsp;常用组件的共性操作&amp;nbsp;按钮( JButton)&amp;nbsp;文本框( JTextField)与密码输入框( JPasswordField)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://pefsyzdwh.bkt.clouddn.com/18-9-12/77483434.jpg">
+<meta property="og:image" content="http://pefsyzdwh.bkt.clouddn.com/18-9-12/21263787.jpg">
+<meta property="og:image" content="http://pefsyzdwh.bkt.clouddn.com/18-9-12/64122628.jpg">
+<meta property="og:image" content="http://pefsyzdwh.bkt.clouddn.com/18-9-12/64122628.jpg">
+<meta property="og:image" content="http://pefsyzdwh.bkt.clouddn.com/18-9-12/6477777.jpg">
+<meta property="og:image" content="http://pefsyzdwh.bkt.clouddn.com/18-9-12/27250573.jpg">
+<meta property="article:published_time" content="2018-09-13T14:26:54.000Z">
+<meta property="article:modified_time" content="2019-12-17T05:18:52.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="批处理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://pefsyzdwh.bkt.clouddn.com/18-9-12/77483434.jpg">
+  <link rel="canonical" href="https://lanlan2017.github.io/blog/795fc6f9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Java图形界面编程 | 蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/blog/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/blog/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/blog/795fc6f9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="先看视频再看书">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">Java图形界面编程
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-13 14:26:54" itemprop="dateCreated datePublished" datetime="2018-09-13T14:26:54+00:00">2018-09-13</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-17 05:18:52" itemprop="dateModified" datetime="2019-12-17T05:18:52+00:00">2019-12-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/java-GUI/" itemprop="url" rel="index"><span itemprop="name">java GUI</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/795fc6f9/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/795fc6f9/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/blog/795fc6f9/#AWT简介" class="header_2">AWT简介</a>&nbsp;<br><a href="/blog/795fc6f9/#GUI设计工具组件" class="header_3">GUI设计工具组件</a>&nbsp;<br><a href="/blog/795fc6f9/#Swing简介" class="header_2">Swing简介</a>&nbsp;<br><a href="/blog/795fc6f9/#容器类" class="header_2">容器类</a>&nbsp;<br><a href="/blog/795fc6f9/#JFrame类" class="header_3">JFrame类</a>&nbsp;<br><a href="/blog/795fc6f9/#JDialog类" class="header_2">JDialog类</a>&nbsp;<br><a href="/blog/795fc6f9/#JDialog与Jframe的区别" class="header_3">JDialog与Jframe的区别</a>&nbsp;<br><a href="/blog/795fc6f9/#JPanel类" class="header_2">JPanel类</a>&nbsp;<br><a href="/blog/795fc6f9/#Swing常用基本组件" class="header_2">Swing常用基本组件</a>&nbsp;<br><a href="/blog/795fc6f9/#常用组件的共性操作" class="header_3">常用组件的共性操作</a>&nbsp;<br><a href="/blog/795fc6f9/#按钮-JButton" class="header_3">按钮( JButton)</a>&nbsp;<br><a href="/blog/795fc6f9/#文本框-JTextField-与密码输入框-JPasswordField" class="header_3">文本框( JTextField)与密码输入框( JPasswordField)</a>&nbsp;<br><a href="/blog/795fc6f9/#文本域-JTextArea" class="header_3">文本域( JTextArea)</a>&nbsp;<br><a href="/blog/795fc6f9/#标签-JLabel" class="header_3">标签( JLabel)</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h2 id="AWT简介"><a href="#AWT简介" class="headerlink" title="AWT简介"></a>AWT简介</h2><p>Java1.0的出现带来了<code>抽象窗口工具箱(AWT)</code>。设计目标是希望构建一个通用的GUI,使得利用它编写的程序能够运行在所有的平台上,以实现Sun公司提出的口号“一次编写,随处运行”。 Java AWT中包含了许多类来支持GUI设计。AWT由Java的 Java.awt包提供,该包中有许多用来设计GU的组件类,如按钮、菜单、列表、文本框等组件类;同时还包含窗口、面板等容器类。AWT的具体层次结构如图16.1所示。<br><img src="http://pefsyzdwh.bkt.clouddn.com/18-9-12/77483434.jpg" alt=""></p>
+<p>Java提供了一系列AWT软件包,其中主要的包及包的描述如图16.2所示。<br><img src="http://pefsyzdwh.bkt.clouddn.com/18-9-12/21263787.jpg" alt=""></p>
+<ul>
+<li><p>java.awt包:是AWT的核心包，包含用于创建用户界面和绘制图形图像的所有类</p>
+</li>
+<li><p>java.awt包：</p>
+<ul>
+<li>AWT的核心包,包含用于创建用户界面和绘制图形图像的所有类</li>
+</ul>
+</li>
+<li>java.awt.color包：<ul>
+<li>提供定义颜色及其空间</li>
+</ul>
+</li>
+<li>java.awt.datatransfer包：<ul>
+<li>提供在应用程序之间和在应用程序内部传输数据的接口和类</li>
+</ul>
+</li>
+<li>java.awt.event包:<ul>
+<li>提供处理由AWT组件所激发的各类事件的接口和类</li>
+</ul>
+</li>
+<li>java.awt.font包:<ul>
+<li>提供各种字体,包括类及接口</li>
+</ul>
+</li>
+<li>java.awt.image包:<ul>
+<li>用于图像处理,提供创建和修改图像的各种类</li>
+</ul>
+</li>
+<li>java.awt.print包:<ul>
+<li>2D图像的API包,为通用的打印API提供类和接口<br>java.awt包提供了基本的Java程序的GUI设计工具。主要包括<code>组件、容器和布局管理器</code>三个概念,其具体描述如下所示。</li>
+</ul>
+</li>
+</ul>
+<h3 id="GUI设计工具组件"><a href="#GUI设计工具组件" class="headerlink" title="GUI设计工具组件"></a>GUI设计工具组件</h3><ul>
+<li>组件Component)：图形用户界面的最基本组成部分是组件,组件是<code>一个可以以图形化的方式显示在屏幕上并能与用户进行交互的对象</code>,例如个按钮,一个标签等</li>
+<li>容器( Container)：是Component(组件)的子类,容器本身是一个组件具有组件的所有性质,但是其<code>主要功能是容纳其他组件和容器</code></li>
+<li>布局管理器(LayoutManager): 每个容器都有一个布局管理器,使用<strong>布局管理器可以对容器中的某个组件进行定位或判断其大小尺寸</strong>等</li>
+</ul>
+<h2 id="Swing简介"><a href="#Swing简介" class="headerlink" title="Swing简介"></a>Swing简介</h2><p>Swing是Java基础类库( Java Foundation Classes)中有关图形界面的类库。 <code>Swing扩展自AWT</code>。例如JFrame扩展自 Frame, JButton扩展自Component等。<code>基本上AWT中的每种控件都能在Swing中找到替代品</code>,比如AWT中的Button对应于 Swing中的 JButton,AWT中的 TextField对应于 Swing中的 JTextField等。</p>
+<p>Swing包是JFC(Java Foundation Classes)的一部分,它由许多包组成,这些包的名称及描述如表16.1所示。<br><img src="http://pefsyzdwh.bkt.clouddn.com/18-9-12/64122628.jpg" alt=""></p>
+<h2 id="容器类"><a href="#容器类" class="headerlink" title="容器类"></a>容器类</h2><p>窗口( JFrame)、面板( JPanel)和对话框(J)是Swing中提供用来创建表示图形用户界面的类。该类的对象将被当作容器使用,所有的 Swing组件都必须被添加到容器中,才能被显示出来。</p>
+<h3 id="JFrame类"><a href="#JFrame类" class="headerlink" title="JFrame类"></a>JFrame类</h3><p>Jframe是一个窗口容器组件,可以被显示在用户桌面上,同时也是一个框架,在其中,可以添加需要的其他的Swing组件。 <strong>Jframe是少数几个不<code>是通过绘制的方式显示的Swing组件</code></strong>。 Jframe类的构造方法如下所示</p>
+<ul>
+<li>public JFrame(String title)<ul>
+<li>构造一个初始状态是不可见的、有指定标题的JFrame对象。参数 title指明了 JFrame对象的标题</li>
+</ul>
+</li>
+</ul>
+<p>Jframe类中还提供了一些与窗口有关的方法。其主要方法与方法描述如表16.2所示。<br><img src="http://pefsyzdwh.bkt.clouddn.com/18-9-12/64122628.jpg" alt=""></p>
+<h2 id="JDialog类"><a href="#JDialog类" class="headerlink" title="JDialog类"></a>JDialog类</h2><p>JDialog是一个用来<strong>创建对话框的类</strong>,是 Dialog类的子类。创建的 <strong>JDialog对象可以用来向用户返回信息,接收用户的输入,实现与用户的交互</strong>。 </p>
+<h3 id="JDialog与Jframe的区别"><a href="#JDialog与Jframe的区别" class="headerlink" title="JDialog与Jframe的区别"></a>JDialog与Jframe的区别</h3><p>JDialog对象需要依赖于其他的对话框(比如 Jframe)而存在,当它所依赖的对话框关闭或最小化的时候,该对话框也随之关闭或最小化。</p>
+<p>JDialog类创建对话框对象的构造方法如图16.7所示。</p>
+<ul>
+<li>Dialog(JFrame frame,String s)<ul>
+<li>创建一个对话框对象,初始状态为不可见。参数s用来设置对话框的名字</li>
+</ul>
+</li>
+<li>Dialog(frame frame, String s, boolean b)<ul>
+<li>创建一个对话框对象。参数s用来设置对话框的名字,参数b用来决定该对话框的模式</li>
+</ul>
+</li>
+</ul>
+<p>JDialog类中的主要方法及方法描述如表16.3所示。<br><img src="http://pefsyzdwh.bkt.clouddn.com/18-9-12/6477777.jpg" alt=""></p>
+<h2 id="JPanel类"><a href="#JPanel类" class="headerlink" title="JPanel类"></a>JPanel类</h2><p>在得到了 JFrame的内容面板后我们就可以直接将其他的 Swing组件放在其中,或者直接在上面描绘图画或文字,但是习惯上一般不会这么做。<strong>通常会将这些图画或文字信息描绘在名为JPanel的容器上,然后再将 JPanel实例放在内容面板上。这样可以使得面板上的布局更合理</strong>。JPanel通常只作为纯粹的容器来使用,它不能像框架、窗口或者对话框那样独立存在。 JPanel的构造方法如下所示。</p>
+<ul>
+<li>JPanel()<ul>
+<li>构造一个使用默认的布局管理器创建的面板</li>
+</ul>
+</li>
+<li>JPanel(LayoutManager layout)<ul>
+<li>构造一个使用指定布局管理器的面板</li>
+</ul>
+</li>
+</ul>
+<h2 id="Swing常用基本组件"><a href="#Swing常用基本组件" class="headerlink" title="Swing常用基本组件"></a>Swing常用基本组件</h2><p>创建图形用户界面GUI,就是为了让计算机程序更好的和用户交互。 Java Swing提供了二十多种不同的用户界面组件。<strong>所有的Swng组件都是从javax.swing.Jcomponent类中派生而来的,从而继承了组件所特有的属性和方法</strong>。</p>
+<h3 id="常用组件的共性操作"><a href="#常用组件的共性操作" class="headerlink" title="常用组件的共性操作"></a>常用组件的共性操作</h3><p>Swing类库中的组件都继承自 javax.swing.JComponent,因此都具有 JComponent的操作,包括<code>设置背景色</code>,<code>设置前景色</code>、<code>设置字体</code>以及<code>设置是否禁用</code>等。表16.4中是 JComponent中常用的方法及方法描述。<br><img src="http://pefsyzdwh.bkt.clouddn.com/18-9-12/27250573.jpg" alt=""></p>
+<h3 id="按钮-JButton"><a href="#按钮-JButton" class="headerlink" title="按钮( JButton)"></a>按钮( JButton)</h3><p>按钮是用户界面中常用的组件。用户使用 Swing按钮可以显示图像,将整个按钮设置为窗口默认图标,来处理鼠标在按钮上的事件。java.swing包中提供了标准的按压式按钮( JButton)。同时提供了选择式按钮:多选择( JCheckBox)、单选择( JRadioButton)等。我们在这里先来讲解 JButton的知识JButton的构造方法如图16.1所示。</p>
+<ul>
+<li>public JButton ()方法<ul>
+<li>用于创建不带有设置文本或图标的按钮</li>
+</ul>
+</li>
+<li>public JButton(Icon icon)方法<ul>
+<li>用于创建一个带图标的按钮</li>
+</ul>
+</li>
+<li>public JButton(String text)方法<ul>
+<li>用于创建一个带文本的按钮</li>
+</ul>
+</li>
+<li>public JButton(Action a)方法<ul>
+<li>用于创建一个按钮,其属性从所提供的 Action中获取</li>
+</ul>
+</li>
+</ul>
+<h3 id="文本框-JTextField-与密码输入框-JPasswordField"><a href="#文本框-JTextField-与密码输入框-JPasswordField" class="headerlink" title="文本框( JTextField)与密码输入框( JPasswordField)"></a>文本框( JTextField)与密码输入框( JPasswordField)</h3><p><strong>文本框( JTextField)</strong>也是一种常见的组件<strong>,用于处理一行文本</strong>(中间没有回车符)。 JTextField是JTextComponent的子类。密码输入框是 JTextField的个子类。 JTextField和 PasswordField的构造函数形式和常用方法完全一样。这里只列出 JTextField的构造函数,如下所示。</p>
+<ul>
+<li>JTextField()<ul>
+<li>构造一个空文本域</li>
+</ul>
+</li>
+<li>JTextField(String text)<ul>
+<li>构造一个显示指定字符串的文本域</li>
+</ul>
+</li>
+<li>JTextField(int columns)<ul>
+<li>构造一个显示指定列数的空文本域</li>
+</ul>
+</li>
+<li>JTextField(String text,int columns)<ul>
+<li>构造一个具有显示指定字符串,指定列数的文本域<h3 id="文本域-JTextArea"><a href="#文本域-JTextArea" class="headerlink" title="文本域( JTextArea)"></a>文本域( JTextArea)</h3>文本域( JTextArea)也是一种常用组件,<strong>用于处理多行文本</strong>。 JTextArea同 JTextField一样,都是JTextcomponent的子类,因此它们的很多操作都类似,我们不再赘述。 JTextArea的构造函数如下所示：</li>
+</ul>
+</li>
+<li>JTextArea</li>
+<li>构造一个空文本区</li>
+<li>JTextArea(String text)<ul>
+<li>构造一个显示指定字符串的文本区</li>
+</ul>
+</li>
+<li>JTextArea(int columns)<ul>
+<li>构造一个显示指定列数的空文本区</li>
+</ul>
+</li>
+<li>JTextArea(String text, int columns)<ul>
+<li>构造一个具有显示指定字符串,指定列数的文本区</li>
+</ul>
+</li>
+</ul>
+<h3 id="标签-JLabel"><a href="#标签-JLabel" class="headerlink" title="标签( JLabel)"></a>标签( JLabel)</h3><p>标签( JLabel)用来显示一段文本,常用在 JTextField或者 JTextArea前面,提示用户要填写什么样的信息。JLabel用于显示文字,也可以同时显示文字和图标,一般不用于接收鼠标键盘的动作。 JLabel的构造方法如下所示。</p>
+<ul>
+<li>public JLabel (String text)</li>
+<li>使用左对齐字符串来构造一个标签</li>
+<li>public JLabel (Icon icon)<ul>
+<li>使用左对齐图标来构造一个标签 </li>
+</ul>
+</li>
+<li>public JLabel (String text, int align)<ul>
+<li>构造一个显示指定列数的空文本区</li>
+</ul>
+</li>
+<li>public JLabel(String text, Icon icon, int align)<ul>
+<li>构造一个具有显示指定字符串,指定列数的文本区</li>
+</ul>
+</li>
+</ul>
+<p>先搬运到这里,后面再看看。看了这么多还是没能达到我想要的结果:设置一个截图的软件，然后自动调用百度识图获取JSON数据，并去除识别的文字，复制到剪贴板中。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/blog/795fc6f9/" title="Java图形界面编程">https://lanlan2017.github.io/blog/795fc6f9/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/14ec9002/" rel="next" title="Java截图">
+                  <i class="fa fa-chevron-left"></i> Java截图
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/9d991fe9/" rel="prev" title="通过JIntellitype给Java程序注册系统热键">
+                  通过JIntellitype给Java程序注册系统热键 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AWT简介"><span class="nav-number">1.</span> <span class="nav-text">AWT简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GUI设计工具组件"><span class="nav-number">1.1.</span> <span class="nav-text">GUI设计工具组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Swing简介"><span class="nav-number">2.</span> <span class="nav-text">Swing简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器类"><span class="nav-number">3.</span> <span class="nav-text">容器类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JFrame类"><span class="nav-number">3.1.</span> <span class="nav-text">JFrame类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDialog类"><span class="nav-number">4.</span> <span class="nav-text">JDialog类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDialog与Jframe的区别"><span class="nav-number">4.1.</span> <span class="nav-text">JDialog与Jframe的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JPanel类"><span class="nav-number">5.</span> <span class="nav-text">JPanel类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Swing常用基本组件"><span class="nav-number">6.</span> <span class="nav-text">Swing常用基本组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用组件的共性操作"><span class="nav-number">6.1.</span> <span class="nav-text">常用组件的共性操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按钮-JButton"><span class="nav-number">6.2.</span> <span class="nav-text">按钮( JButton)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本框-JTextField-与密码输入框-JPasswordField"><span class="nav-number">6.3.</span> <span class="nav-text">文本框( JTextField)与密码输入框( JPasswordField)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本域-JTextArea"><span class="nav-number">6.4.</span> <span class="nav-text">文本域( JTextArea)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标签-JLabel"><span class="nav-number">6.5.</span> <span class="nav-text">标签( JLabel)</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/blog/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">先看视频再看书</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">370</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">148</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/lanlan2017" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;lanlan2017" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/ReadingNotes/" title="ReadingNotes &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;ReadingNotes&#x2F;"><i class="fa fa-fw fa-book"></i>ReadingNotes</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/" title="blog &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;"><i class="fa fa-fw fa-book"></i>blog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/tools/" title="tools &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;tools&#x2F;"><i class="fa fa-fw fa-wrench"></i>tools</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/blog/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/blog/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里输入评论',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

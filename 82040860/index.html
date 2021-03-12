@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="继承关系&amp;nbsp;构造方法&amp;nbsp;成员方法&amp;nbsp;write(...)方法&amp;nbsp;write(int b)源码：&amp;nbsp;write(int b)详细描述&amp;nbsp;关于自动刷新&amp;nbsp;write(byte buf[], int off, int len)源码&amp;nbsp;write(byte buf[], int off, int len)详细描述&amp;nbsp;print(...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java IO流 PrintStream类">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/82040860/index.html">
+<meta property="og:site_name" content="蓝蓝博客">
+<meta property="og:description" content="继承关系&amp;nbsp;构造方法&amp;nbsp;成员方法&amp;nbsp;write(...)方法&amp;nbsp;write(int b)源码：&amp;nbsp;write(int b)详细描述&amp;nbsp;关于自动刷新&amp;nbsp;write(byte buf[], int off, int len)源码&amp;nbsp;write(byte buf[], int off, int len)详细描述&amp;nbsp;print(...">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-08-14T15:19:37.000Z">
+<meta property="article:modified_time" content="2019-12-17T05:18:52.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="批处理">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/blog/82040860/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Java IO流 PrintStream类 | 蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/blog/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/blog/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/blog/82040860/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="先看视频再看书">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">Java IO流 PrintStream类
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-14 15:19:37" itemprop="dateCreated datePublished" datetime="2018-08-14T15:19:37+00:00">2018-08-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-17 05:18:52" itemprop="dateModified" datetime="2019-12-17T05:18:52+00:00">2019-12-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-IO%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">Java IO流</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/82040860/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/82040860/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div id='my_toc'><a href="/blog/82040860/#继承关系" class="header_2">继承关系</a>&nbsp;<br><a href="/blog/82040860/#构造方法" class="header_2">构造方法</a>&nbsp;<br><a href="/blog/82040860/#成员方法" class="header_2">成员方法</a>&nbsp;<br><a href="/blog/82040860/#write-方法" class="header_3">write(...)方法</a>&nbsp;<br><a href="/blog/82040860/#write-int-b-源码：" class="header_4">write(int b)源码：</a>&nbsp;<br><a href="/blog/82040860/#write-int-b-详细描述" class="header_4">write(int b)详细描述</a>&nbsp;<br><a href="/blog/82040860/#关于自动刷新" class="header_4">关于自动刷新</a>&nbsp;<br><a href="/blog/82040860/#write-byte-buf-int-off-int-len-源码" class="header_4">write(byte buf[], int off, int len)源码</a>&nbsp;<br><a href="/blog/82040860/#write-byte-buf-int-off-int-len-详细描述" class="header_4">write(byte buf[], int off, int len)详细描述</a>&nbsp;<br><a href="/blog/82040860/#print-方法" class="header_3">print(...)方法</a>&nbsp;<br><a href="/blog/82040860/#print-boolean-b-方法源码" class="header_4">print(boolean b)方法源码</a>&nbsp;<br><a href="/blog/82040860/#print-boolean-b-方法详细描述" class="header_4">print(boolean b)方法详细描述</a>&nbsp;<br><a href="/blog/82040860/#print-char-c-方法源码" class="header_4">print(char c)方法源码</a>&nbsp;<br><a href="/blog/82040860/#print-char-c-方法详细描述" class="header_4">print(char c)方法详细描述</a>&nbsp;<br><a href="/blog/82040860/#print-long-l-方法源码" class="header_4">print(long l)方法源码</a>&nbsp;<br><a href="/blog/82040860/#其他print-方法源码" class="header_4">其他print(...)方法源码</a>&nbsp;<br><a href="/blog/82040860/#println-方法" class="header_3">println(...)方法</a>&nbsp;<br><a href="/blog/82040860/#println-方法源码" class="header_4">println(...)方法源码</a>&nbsp;<br><a href="/blog/82040860/#format-方法" class="header_3">format(...)方法</a>&nbsp;<br><a href="/blog/82040860/#format-方法源码" class="header_4">format(...)方法源码</a>&nbsp;<br><a href="/blog/82040860/#append-方法" class="header_3">append(...)方法</a>&nbsp;<br><a href="/blog/82040860/#错误相关方法" class="header_3">错误相关方法</a>&nbsp;<br></div>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
+<a id="more"></a>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+## 继承关系 ##
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object</span><br><span class="line">  |----&gt; java.io.OutputStream</span><br><span class="line">      |----&gt; java.io.FilterOutputStream</span><br><span class="line">          |----&gt; java.io.PrintStream</span><br></pre></td></tr></table></figure>
+`public class PrintStream extends FilterOutputStream implements Appendable`, `Closeable`
+**`PrintStream` 为其他输出流添加了功能，使它们能够方便地打印各种数据值表示形式。**它还提供其他两项功能。与其他输出流不同，`PrintStream` 永远不会抛出 `IOException`；而是，异常情况仅设置可通过 `checkError` 方法测试的内部标志。另外，为了自动刷新，可以创建一个 `PrintStream`；这意味着可在写入 `byte` 数组之后自动调用 `flush` 方法，可调用其中一个 `println` 方法，或写入一个换行符或字节 ('`\n`')。 
+
+`PrintStream` 打印的所有字符都使用平台的默认字符编码转换为字节。在需要写入字符而不是写入字节的情况下，应该使用 `PrintWriter` 类。 
+
+## 构造方法 ##
+
+|方法|描述|
+|:-|:-|
+|`PrintStream(File file)`|创建具有指定文件且不带自动行刷新的新打印流。 |
+|`PrintStream(File file, String csn)`|创建具有指定文件名称和字符集且不带自动行刷新的新打印流。 |
+|`PrintStream(OutputStream out)`|创建新的打印流。 |
+|`PrintStream(OutputStream out, boolean autoFlush)`|创建新的打印流。 |
+|`PrintStream(OutputStream out, boolean autoFlush, String encoding)`|创建新的打印流。 |
+|`PrintStream(String fileName)`|创建具有指定文件名称且不带自动行刷新的新打印流。 |
+|`PrintStream(String fileName, String csn)`|创建具有指定文件名称和字符集且不带自动行刷新的新打印流。 |
+## 成员方法 ##
+
+### write(...)方法 ###
+|方法|描述|
+|:-|:-|
+|`void write(byte[] buf, int off, int len)`|将 len 字节从指定的初始偏移量为 off 的 byte 数组写入此流。 |
+|`void write(int b)`|将指定的字节写入此流。 |
+#### write(int b)源码： ####
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public void write(int b) &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">        synchronized (this) &#123;</span><br><span class="line">            ensureOpen();</span><br><span class="line">            out.write(b);</span><br><span class="line">            &#x2F;&#x2F;如果这个字符是换行符,而且开启了自动刷新的话</span><br><span class="line">            if ((b &#x3D;&#x3D; &#39;\n&#39;) &amp;&amp; autoFlush)</span><br><span class="line">                out.flush();&#x2F;&#x2F;调用flush()方法</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    catch (InterruptedIOException x) &#123;</span><br><span class="line">        Thread.currentThread().interrupt();</span><br><span class="line">    &#125;</span><br><span class="line">    catch (IOException x) &#123;</span><br><span class="line">        trouble &#x3D; true;&#x2F;&#x2F;设置标志</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+#### write(int b)详细描述 ####
+> 将指定的字节写入此流，如果这个字节是换行符而且开启了自动刷新的话，就会调用flush()方法
+> 注意，字节是按给定的方式写入的。 要根据平台的默认字符编码编写一个字符，请使用print(char)或println(char)方法。 
+> 参数: b 将要写入的字节
+> 覆盖：类 FilterOutputStream 中的 write
+
+<!--
+    /**
+     * Writes the specified byte to this stream.  If the byte is a newline and
+     * automatic flushing is enabled then the <code>flush</code> method will be
+     * invoked.
+     *
+     * <p> Note that the byte is written as given; to write a character that
+     * will be translated according to the platform's default character
+     * encoding, use the <code>print(char)</code> or <code>println(char)</code>
+     * methods.
+     *
+     * @param  b  The byte to be written
+     * @see #print(char)
+     * @see #println(char)
+     */
+-->
+
+#### 关于自动刷新 ####
+所以如果开启了自动刷新，write(int b)方法在写入回车符的时候会调用flush()方法
+#### write(byte buf[], int off, int len)源码 ####
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public void write(byte buf[], int off, int len) &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">        synchronized (this) &#123;</span><br><span class="line">            ensureOpen();</span><br><span class="line">            out.write(buf, off, len);</span><br><span class="line">            if (autoFlush)</span><br><span class="line">                out.flush();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    catch (InterruptedIOException x) &#123;</span><br><span class="line">        Thread.currentThread().interrupt();</span><br><span class="line">    &#125;</span><br><span class="line">    catch (IOException x) &#123;</span><br><span class="line">        trouble &#x3D; true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+#### write(byte buf[], int off, int len)详细描述 ####
+将 len 字节从指定的初始偏移量为 off 的 byte 数组写入此流。如果启用自动刷新，则调用 flush 方法。 
+注意，字节将按给定的方式写入；
+要根据平台的默认字符编码来写入，请使用`print(char)`或`println(char)`方法。
+参数: buf 字节数组
+参数: off 相对于字节数组开始位置的偏移量
+参数: len 需要写入的字节数
+
+<!--
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * Writes &lt;code&gt;len&lt;&#x2F;code&gt; bytes from the specified byte array starting at</span><br><span class="line"> * offset &lt;code&gt;off&lt;&#x2F;code&gt; to this stream.  If automatic flushing is</span><br><span class="line"> * enabled then the &lt;code&gt;flush&lt;&#x2F;code&gt; method will be invoked.</span><br><span class="line"> *</span><br><span class="line"> * &lt;p&gt; Note that the bytes will be written as given; to write characters</span><br><span class="line"> * that will be translated according to the platform&#39;s default character</span><br><span class="line"> * encoding, use the &lt;code&gt;print(char)&lt;&#x2F;code&gt; or &lt;code&gt;println(char)&lt;&#x2F;code&gt;</span><br><span class="line"> * methods.</span><br><span class="line"> *</span><br><span class="line"> * @param  buf   A byte array</span><br><span class="line"> * @param  off   Offset from which to start taking bytes</span><br><span class="line"> * @param  len   Number of bytes to write</span><br><span class="line"> *&#x2F;</span><br></pre></td></tr></table></figure>
+-->
+
+### print(...)方法 ###
+|方法|描述|
+|:-|:-|
+|`void print(boolean b)`|打印 boolean 值。 |
+|`void print(char c)`|打印字符。 |
+|`void print(char[] s)`|打印字符数组。 |
+|`void print(double d)`|打印双精度浮点数。 |
+|`void print(float f)`|打印浮点数。 |
+|`void print(int i)`|打印整数。 |
+|`void print(long l)`|打印 long 整数。 |
+|`void print(Object obj)`|打印对象。 |
+|`void print(String s)`|打印字符串。 |
+
+#### print(boolean b)方法源码 ####
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void print(boolean b) &#123;</span><br><span class="line">    write(b ? &quot;true&quot; : &quot;false&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+#### print(boolean b)方法详细描述 ####
+> 描述：
+> 打印 boolean 值。按照平台的默认字符编码将 String.valueOf(boolean) 生成的字符串转换为字节，并完全以 write(int) 方法的方式写入这些字节。 
+> 
+> 参数：
+> b - 要打印的 boolean
+
+<!--
+    /**
+     * Prints a boolean value.  The string produced by <code>{@link
+     * java.lang.String#valueOf(boolean)}</code> is translated into bytes
+     * according to the platform's default character encoding, and these bytes
+     * are written in exactly the manner of the
+     * <code>{@link #write(int)}</code> method.
+     *
+     * @param      b   The <code>boolean</code> to be printed
+     */
+-->
+#### print(char c)方法源码 ####
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void print(char c) &#123;</span><br><span class="line">    write(String.valueOf(c));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+#### print(char c)方法详细描述 ####
+打印一个字符，根据平台默认字符编码把这个字符转换为一个或者多个字节,然后这些字节完全以`write(int)`方法的方式进行写入。
+<div><!--
+    /**
+     * Prints a character.  The character is translated into one or more bytes
+     * according to the platform's default character encoding, and these bytes
+     * are written in exactly the manner of the
+     * <code>{@link #write(int)}</code> method.
+     *
+     * @param      c   The <code>char</code> to be printed
+     */
+--></div>
+
+<h4 id="print-int-i-方法源码"><a href="#print-int-i-方法源码" class="headerlink" title="print(int i)方法源码"></a>print(int i)方法源码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void print(int i) &#123;</span><br><span class="line">    write(String.valueOf(i));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="print-int-i-方法详细描述"><a href="#print-int-i-方法详细描述" class="headerlink" title="print(int i)方法详细描述"></a>print(int i)方法详细描述</h4><p>打印整数。按照平台的默认字节编码将 <code>String.valueOf(i)</code> 生成的字符串转换为字节，并完全以 <code>write(int)</code> 方法的方式写入这些字节。 </p>
+<p>参数：<br>i - 要打印的 int</p>
+<div><!--
+    /**
+     * Prints an integer.  The string produced by <code>{@link
+     * java.lang.String#valueOf(int)}</code> is translated into bytes
+     * according to the platform's default character encoding, and these bytes
+     * are written in exactly the manner of the
+     * <code>{@link #write(int)}</code> method.
+     *
+     * @param      i   The <code>int</code> to be printed
+     * @see        java.lang.Integer#toString(int)
+     */
+--></div>
+
+<h4 id="print-long-l-方法源码"><a href="#print-long-l-方法源码" class="headerlink" title="print(long l)方法源码"></a>print(long l)方法源码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void print(long l) &#123;</span><br><span class="line">    write(String.valueOf(l));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>打印<code>long</code>整数，按照平台默认字节编码将<code>String.valueOf(l)</code>生成的字符串转换为字节，并完全以<code>write(int)</code>方法的方式写入这些字节</p>
+</blockquote>
+<div><!--
+    /**
+     * Prints a long integer.  The string produced by <code>{@link
+     * java.lang.String#valueOf(long)}</code> is translated into bytes
+     * according to the platform's default character encoding, and these bytes
+     * are written in exactly the manner of the
+     * <code>{@link #write(int)}</code> method.
+     *
+     * @param      l   The <code>long</code> to be printed
+     * @see        java.lang.Long#toString(long)
+     */
+--></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void print(float f) &#123;</span><br><span class="line">    write(String.valueOf(f));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div><!--
+    /**
+     * Prints a floating-point number.  The string produced by <code>{@link
+     * java.lang.String#valueOf(float)}</code> is translated into bytes
+     * according to the platform's default character encoding, and these bytes
+     * are written in exactly the manner of the
+     * <code>{@link #write(int)}</code> method.
+     *
+     * @param      f   The <code>float</code> to be printed
+     * @see        java.lang.Float#toString(float)
+     */
+--></div>
+
+<h4 id="其他print-…-方法源码"><a href="#其他print-…-方法源码" class="headerlink" title="其他print(…)方法源码"></a>其他print(…)方法源码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public void print(double d) &#123;</span><br><span class="line">    write(String.valueOf(d));</span><br><span class="line">&#125;</span><br><span class="line">public void print(char s[]) &#123;</span><br><span class="line">    write(s);</span><br><span class="line">&#125;</span><br><span class="line">public void print(String s) &#123;</span><br><span class="line">    if (s &#x3D;&#x3D; null) &#123;</span><br><span class="line">        s &#x3D; &quot;null&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    write(s);</span><br><span class="line">&#125;</span><br><span class="line">public void print(Object obj) &#123;</span><br><span class="line">    write(String.valueOf(obj));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="println-…-方法"><a href="#println-…-方法" class="headerlink" title="println(…)方法"></a>println(…)方法</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>void println()</code></td>
+<td style="text-align:left">通过写入行分隔符字符串终止当前行。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void println(boolean x)</code></td>
+<td style="text-align:left">打印 boolean 值，然后终止行。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void println(char x)</code></td>
+<td style="text-align:left">打印字符，然后终止该行。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void println(char[] x)</code></td>
+<td style="text-align:left">打印字符数组，然后终止该行。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void println(double x)</code></td>
+<td style="text-align:left">打印 double，然后终止该行。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void println(float x)</code></td>
+<td style="text-align:left">打印 float，然后终止该行。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void println(int x)</code></td>
+<td style="text-align:left">打印整数，然后终止该行。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void println(long x)</code></td>
+<td style="text-align:left">打印 long，然后终止该行。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void println(Object x)</code></td>
+<td style="text-align:left">打印 Object，然后终止该行。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void println(String x)</code></td>
+<td style="text-align:left">打印 String，然后终止该行。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="println-…-方法源码"><a href="#println-…-方法源码" class="headerlink" title="println(…)方法源码"></a>println(…)方法源码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* Methods that do terminate lines *&#x2F;</span><br><span class="line"></span><br><span class="line">public void println() &#123;</span><br><span class="line">    newLine();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过写入行分隔符字符串终止当前行。行分隔符字符串由系统属性<code>line.separator</code> 定义，不一定是单个换行符 (‘<code>\n</code>‘)。 </p>
+<div><!--
+/**
+ * Terminates the current line by writing the line separator string.  The
+ * line separator string is defined by the system property
+ * <code>line.separator</code>, and is not necessarily a single newline
+ * character (<code>'\n'</code>).
+ */
+--></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public void println(boolean x) &#123;</span><br><span class="line">    synchronized (this) &#123;</span><br><span class="line">        print(x);</span><br><span class="line">        newLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印 boolean 值，然后终止行。此方法的行为就像先调用 print(boolean) 然后调用 println() 一样。 </p>
+<p>参数：<br>x - 要打印的 boolean</p>
+<div><!--
+/**
+ * Prints a boolean and then terminate the line.  This method behaves as
+ * though it invokes <code>{@link #print(boolean)}</code> and then
+ * <code>{@link #println()}</code>.
+ *
+ * @param x  The <code>boolean</code> to be printed
+ */
+--></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public void println(char x) &#123;</span><br><span class="line">    synchronized (this) &#123;</span><br><span class="line">        print(x);</span><br><span class="line">        newLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印字符，然后终止该行。此方法的行为就像先调用 print(char) 然后调用 println() 一样。 </p>
+<p>参数：<br>x - 要打印的 char。</p>
+<div><!--
+/**
+ * Prints a character and then terminate the line.  This method behaves as
+ * though it invokes <code>{@link #print(char)}</code> and then
+ * <code>{@link #println()}</code>.
+ *
+ * @param x  The <code>char</code> to be printed.
+ */
+--></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public void println(int x) &#123;</span><br><span class="line">    synchronized (this) &#123;</span><br><span class="line">        print(x);</span><br><span class="line">        newLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印整数，然后终止该行。此方法的行为就像先调用 print(int) 然后调用 println() 一样。 </p>
+<p>参数：<br>x - 要打印的 int。</p>
+<div><!--
+/**
+ * Prints an integer and then terminate the line.  This method behaves as
+ * though it invokes <code>{@link #print(int)}</code> and then
+ * <code>{@link #println()}</code>.
+ *
+ * @param x  The <code>int</code> to be printed.
+ */
+--></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public void println(long x) &#123;</span><br><span class="line">    synchronized (this) &#123;</span><br><span class="line">        print(x);</span><br><span class="line">        newLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印 long，然后终止该行。此方法的行为就像先调用 print(long) 然后调用 println() 一样。 </p>
+<p>参数：<br>x - 要打印的 long。</p>
+<div><!--
+/**
+ * Prints a long and then terminate the line.  This method behaves as
+ * though it invokes <code>{@link #print(long)}</code> and then
+ * <code>{@link #println()}</code>.
+ *
+ * @param x  a The <code>long</code> to be printed.
+ */
+--></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public void println(float x) &#123;</span><br><span class="line">    synchronized (this) &#123;</span><br><span class="line">        print(x);</span><br><span class="line">        newLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印 float，然后终止该行。此方法的行为就像先调用 print(float) 然后调用 println() 一样。<br>参数：<br>x - 要打印的 float。</p>
+<div><!--
+/**
+ * Prints a float and then terminate the line.  This method behaves as
+ * though it invokes <code>{@link #print(float)}</code> and then
+ * <code>{@link #println()}</code>.
+ *
+ * @param x  The <code>float</code> to be printed.
+ */
+--></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public void println(double x) &#123;</span><br><span class="line">    synchronized (this) &#123;</span><br><span class="line">        print(x);</span><br><span class="line">        newLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印 double，然后终止该行。此方法的行为就像先调用 print(double) 然后调用 println() 一样。 </p>
+<p>参数：<br>x - 要打印的 double。</p>
+<div><!--
+/**
+ * Prints a double and then terminate the line.  This method behaves as
+ * though it invokes <code>{@link #print(double)}</code> and then
+ * <code>{@link #println()}</code>.
+ *
+ * @param x  The <code>double</code> to be printed.
+ */
+--></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public void println(char x[]) &#123;</span><br><span class="line">    synchronized (this) &#123;</span><br><span class="line">        print(x);</span><br><span class="line">        newLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印字符数组，然后终止该行。此方法的行为就像先调用 print(char[]) 然后调用 println() 一样。<br>参数：<br>x - 要打印的字符数组。</p>
+<div><!--
+/**
+ * Prints an array of characters and then terminate the line.  This method
+ * behaves as though it invokes <code>{@link #print(char[])}</code> and
+ * then <code>{@link #println()}</code>.
+ *
+ * @param x  an array of chars to print.
+ */
+--></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public void println(String x) &#123;</span><br><span class="line">    synchronized (this) &#123;</span><br><span class="line">        print(x);</span><br><span class="line">        newLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印 String，然后终止该行。此方法的行为就像先调用 print(String) 然后调用 println() 一样。<br>参数：<br>x - 要打印的 String。</p>
+<div><!--
+/**
+ * Prints a String and then terminate the line.  This method behaves as
+ * though it invokes <code>{@link #print(String)}</code> and then
+ * <code>{@link #println()}</code>.
+ *
+ * @param x  The <code>String</code> to be printed.
+ */
+--></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public void println(Object x) &#123;</span><br><span class="line">    String s &#x3D; String.valueOf(x);</span><br><span class="line">    synchronized (this) &#123;</span><br><span class="line">        print(s);</span><br><span class="line">        newLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印 Object，然后终止该行。此方法首先调用 String.valueOf(x) 获取打印对象的字符串值，然后的行为如同先调用 print(String) 再调用 println() 一样。<br>参数：<br>x - 要打印的 Object。</p>
+<div><!--
+/**
+ * Prints an Object and then terminate the line.  This method calls
+ * at first String.valueOf(x) to get the printed object's string value,
+ * then behaves as
+ * though it invokes <code>{@link #print(String)}</code> and then
+ * <code>{@link #println()}</code>.
+ *
+ * @param x  The <code>Object</code> to be printed.
+ */
+--></div>
+
+
+<h3 id="format-…-方法"><a href="#format-…-方法" class="headerlink" title="format(…)方法"></a>format(…)方法</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>PrintStream format(Locale l, String format, Object... args)</code></td>
+<td style="text-align:left">使用指定格式字符串和参数将格式化字符串写入此输出流中。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>PrintStream format(String format, Object... args)</code></td>
+<td style="text-align:left">使用指定格式字符串和参数将格式化字符串写入此输出流中。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>PrintStream printf(Locale l, String format, Object... args)</code></td>
+<td style="text-align:left">使用指定格式字符串和参数将格式化的字符串写入此输出流的便捷方法。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>PrintStream printf(String format, Object... args)</code></td>
+<td style="text-align:left">使用指定格式字符串和参数将格式化的字符串写入此输出流的便捷方法。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="format-…-方法源码"><a href="#format-…-方法源码" class="headerlink" title="format(…)方法源码"></a>format(…)方法源码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public PrintStream format(String format, Object ... args) &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">        synchronized (this) &#123;</span><br><span class="line">            ensureOpen();</span><br><span class="line">            if ((formatter &#x3D;&#x3D; null)</span><br><span class="line">                || (formatter.locale() !&#x3D; Locale.getDefault()))</span><br><span class="line">                formatter &#x3D; new Formatter((Appendable) this);</span><br><span class="line">            formatter.format(Locale.getDefault(), format, args);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; catch (InterruptedIOException x) &#123;</span><br><span class="line">        Thread.currentThread().interrupt();</span><br><span class="line">    &#125; catch (IOException x) &#123;</span><br><span class="line">        trouble &#x3D; true;</span><br><span class="line">    &#125;</span><br><span class="line">    return this;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用指定格式字符串和参数将格式化字符串写入此输出流中。<br>始终使用的语言环境是由 Locale.getDefault() 返回的语言环境，不管以前在此对象上调用了其他什么样的格式化方法。 </p>
+<div><!--
+/**
+ * Writes a formatted string to this output stream using the specified
+ * format string and arguments.
+ *
+ * <p> The locale always used is the one returned by {@link
+ * java.util.Locale#getDefault() Locale.getDefault()}, regardless of any
+ * previous invocations of other formatting methods on this object.
+ *
+ * @param  format
+ *         A format string as described in <a
+ *         href="../util/Formatter.html#syntax">Format string syntax</a>
+ *
+ * @param  args
+ *         Arguments referenced by the format specifiers in the format
+ *         string.  If there are more arguments than format specifiers, the
+ *         extra arguments are ignored.  The number of arguments is
+ *         variable and may be zero.  The maximum number of arguments is
+ *         limited by the maximum dimension of a Java array as defined by
+ *         <cite>The Java&trade; Virtual Machine Specification</cite>.
+ *         The behaviour on a
+ *         <tt>null</tt> argument depends on the <a
+ *         href="../util/Formatter.html#syntax">conversion</a>.
+ *
+ * @throws  java.util.IllegalFormatException
+ *          If a format string contains an illegal syntax, a format
+ *          specifier that is incompatible with the given arguments,
+ *          insufficient arguments given the format string, or other
+ *          illegal conditions.  For specification of all possible
+ *          formatting errors, see the <a
+ *          href="../util/Formatter.html#detail">Details</a> section of the
+ *          formatter class specification.
+ *
+ * @throws  NullPointerException
+ *          If the <tt>format</tt> is <tt>null</tt>
+ *
+ * @return  This output stream
+ *
+ * @since  1.5
+ */
+--></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public PrintStream format(Locale l, String format, Object ... args) &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">        synchronized (this) &#123;</span><br><span class="line">            ensureOpen();</span><br><span class="line">            if ((formatter &#x3D;&#x3D; null)</span><br><span class="line">                || (formatter.locale() !&#x3D; l))</span><br><span class="line">                formatter &#x3D; new Formatter(this, l);</span><br><span class="line">            formatter.format(l, format, args);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; catch (InterruptedIOException x) &#123;</span><br><span class="line">        Thread.currentThread().interrupt();</span><br><span class="line">    &#125; catch (IOException x) &#123;</span><br><span class="line">        trouble &#x3D; true;</span><br><span class="line">    &#125;</span><br><span class="line">    return this;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用指定格式字符串和参数将格式化字符串写入此输出流中。<br>参数：</p>
+<ul>
+<li>l 格式化过程中应用的 locale。如果 l 为 null，则不应用本地化。</li>
+<li>format 在格式字符串的语法中描述的格式字符串</li>
+<li>args 格式字符串中的格式说明符引用的参数。如果参数多于格式说明符，则忽略额外的参数。参数的数量是可变的，并且可以为零。参数的最大数量受到 Java Virtual Machine Specification 定义的 Ja</li>
+<li></li>
+<li>va 数组的最大维数的限制。针对 null 参数的行为依赖于 conversion。<br>返回： 此输出流<br>抛出： </li>
+<li>IllegalFormatException 如果格式字符串包含非法语法、与给定参数不兼容的格式说明符、对给定格式字符串而言不够充足的参数或其他非法条件。有关所有可能的格式错误的规范，请参阅 formatter 类规范的详细信息部分。 </li>
+<li>NullPointerException 如果 format 为 null<br>从以下版本开始：<br>1.5 </li>
+</ul>
+<div><!--
+/**
+ * Writes a formatted string to this output stream using the specified
+ * format string and arguments.
+ *
+ * @param  l
+ *         The {@linkplain java.util.Locale locale} to apply during
+ *         formatting.  If <tt>l</tt> is <tt>null</tt> then no localization
+ *         is applied.
+ *
+ * @param  format
+ *         A format string as described in <a
+ *         href="../util/Formatter.html#syntax">Format string syntax</a>
+ *
+ * @param  args
+ *         Arguments referenced by the format specifiers in the format
+ *         string.  If there are more arguments than format specifiers, the
+ *         extra arguments are ignored.  The number of arguments is
+ *         variable and may be zero.  The maximum number of arguments is
+ *         limited by the maximum dimension of a Java array as defined by
+ *         <cite>The Java&trade; Virtual Machine Specification</cite>.
+ *         The behaviour on a
+ *         <tt>null</tt> argument depends on the <a
+ *         href="../util/Formatter.html#syntax">conversion</a>.
+ *
+ * @throws  java.util.IllegalFormatException
+ *          If a format string contains an illegal syntax, a format
+ *          specifier that is incompatible with the given arguments,
+ *          insufficient arguments given the format string, or other
+ *          illegal conditions.  For specification of all possible
+ *          formatting errors, see the <a
+ *          href="../util/Formatter.html#detail">Details</a> section of the
+ *          formatter class specification.
+ *
+ * @throws  NullPointerException
+ *          If the <tt>format</tt> is <tt>null</tt>
+ *
+ * @return  This output stream
+ *
+ * @since  1.5
+ */
+--></div>
+
+
+<h3 id="append-…-方法"><a href="#append-…-方法" class="headerlink" title="append(…)方法"></a>append(…)方法</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>PrintStream append(char c)</code></td>
+<td style="text-align:left">将指定字符添加到此输出流。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>PrintStream append(CharSequence csq)</code></td>
+<td style="text-align:left">将指定字符序列添加到此输出流。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>PrintStream append(CharSequence csq, int start, int end)</code></td>
+<td style="text-align:left">将指定字符序列的子序列添加到此输出流。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public PrintStream append(CharSequence csq, int start, int end) &#123;</span><br><span class="line">    CharSequence cs &#x3D; (csq &#x3D;&#x3D; null ? &quot;null&quot; : csq);</span><br><span class="line">    write(cs.subSequence(start, end).toString());</span><br><span class="line">    return this;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>将指定字符序列添加到此输出流。<br>此方法调用 out.append(csq) 的行为与调用下列方法完全相同：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">out.print(csq.toString()) </span><br></pre></td></tr></table></figure><br>可能不添加整个序列，也可能添加，具体取决于字符序列 csq 的 toString 规范。例如，调用一个字符缓冲区的 toString 方法将返回一个子序列，其内容取决于缓冲区的位置和限制。<br>指定者：接口 Appendable 中的 append<br>参数：csq - 要添加的字符序列。如果 csq 为 null，则向此输出流添加四个字符 “null”。<br>返回：此输出流<br>从以下版本开始： 1.5 </p>
+</blockquote>
+<div><!--
+/**
+ * Appends a subsequence of the specified character sequence to this output
+ * stream.
+ *
+ * <p> An invocation of this method of the form <tt>out.append(csq, start,
+ * end)</tt> when <tt>csq</tt> is not <tt>null</tt>, behaves in
+ * exactly the same way as the invocation
+ *
+ * <pre>
+ *     out.print(csq.subSequence(start, end).toString()) </pre>
+ *
+ * @param  csq
+ *         The character sequence from which a subsequence will be
+ *         appended.  If <tt>csq</tt> is <tt>null</tt>, then characters
+ *         will be appended as if <tt>csq</tt> contained the four
+ *         characters <tt>"null"</tt>.
+ *
+ * @param  start
+ *         The index of the first character in the subsequence
+ *
+ * @param  end
+ *         The index of the character following the last character in the
+ *         subsequence
+ *
+ * @return  This output stream
+ *
+ * @throws  IndexOutOfBoundsException
+ *          If <tt>start</tt> or <tt>end</tt> are negative, <tt>start</tt>
+ *          is greater than <tt>end</tt>, or <tt>end</tt> is greater than
+ *          <tt>csq.length()</tt>
+ *
+ * @since  1.5
+ */
+--></div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * Appends the specified character to this output stream.</span><br><span class="line"> *</span><br><span class="line"> * &lt;p&gt; An invocation of this method of the form &lt;tt&gt;out.append(c)&lt;&#x2F;tt&gt;</span><br><span class="line"> * behaves in exactly the same way as the invocation</span><br><span class="line"> *</span><br><span class="line"> * &lt;pre&gt;</span><br><span class="line"> *     out.print(c) &lt;&#x2F;pre&gt;</span><br><span class="line"> *</span><br><span class="line"> * @param  c</span><br><span class="line"> *         The 16-bit character to append</span><br><span class="line"> *</span><br><span class="line"> * @return  This output stream</span><br><span class="line"> *</span><br><span class="line"> * @since  1.5</span><br><span class="line"> *&#x2F;</span><br><span class="line">public PrintStream append(char c) &#123;</span><br><span class="line">    print(c);</span><br><span class="line">    return this;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="错误相关方法"><a href="#错误相关方法" class="headerlink" title="错误相关方法"></a>错误相关方法</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>boolean checkError()</code></td>
+<td style="text-align:left">刷新流并检查其错误状态。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>protected  void clearError()</code></td>
+<td style="text-align:left">清除此流的内部错误状态。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void close()</code></td>
+<td style="text-align:left">关闭流。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void flush()</code></td>
+<td style="text-align:left">刷新该流的缓冲。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>protected  void setError()</code></td>
+<td style="text-align:left">将该流的错误状态设置为 true。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/blog/82040860/" title="Java IO流 PrintStream类">https://lanlan2017.github.io/blog/82040860/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/492ea8e8/" rel="next" title="Java IO流 PrintWriter类">
+                  <i class="fa fa-chevron-left"></i> Java IO流 PrintWriter类
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/9d21d6ad/" rel="prev" title="markdown表格支持单元格合并">
+                  markdown表格支持单元格合并 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#print-int-i-方法源码"><span class="nav-number">1.</span> <span class="nav-text">print(int i)方法源码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#print-int-i-方法详细描述"><span class="nav-number">2.</span> <span class="nav-text">print(int i)方法详细描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#print-long-l-方法源码"><span class="nav-number">3.</span> <span class="nav-text">print(long l)方法源码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他print-…-方法源码"><span class="nav-number">4.</span> <span class="nav-text">其他print(…)方法源码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#println-…-方法"><span class="nav-number"></span> <span class="nav-text">println(…)方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#println-…-方法源码"><span class="nav-number">1.</span> <span class="nav-text">println(…)方法源码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#format-…-方法"><span class="nav-number"></span> <span class="nav-text">format(…)方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#format-…-方法源码"><span class="nav-number">1.</span> <span class="nav-text">format(…)方法源码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#append-…-方法"><span class="nav-number"></span> <span class="nav-text">append(…)方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误相关方法"><span class="nav-number"></span> <span class="nav-text">错误相关方法</span></a></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/blog/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">先看视频再看书</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">370</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">148</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/lanlan2017" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;lanlan2017" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/ReadingNotes/" title="ReadingNotes &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;ReadingNotes&#x2F;"><i class="fa fa-fw fa-book"></i>ReadingNotes</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/" title="blog &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;"><i class="fa fa-fw fa-book"></i>blog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/tools/" title="tools &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;tools&#x2F;"><i class="fa fa-fw fa-wrench"></i>tools</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/blog/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/blog/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里输入评论',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

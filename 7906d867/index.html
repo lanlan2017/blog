@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="formatter方法&amp;nbsp;格式化规则&amp;nbsp;&#96; 常规类型&#96;、&#96;字符类型&#96;和&#96;数值类型&#96;的&#96;格式说明符语法&#96;&amp;nbsp;用来表示&#96;日期和时间类型&#96;的格式说明符语法&amp;nbsp;与参数不对应的格式说明符语法&amp;nbsp;语法规则详细说明&amp;nbsp;可选项&#96;[argument_index$]&#96;&amp;nbsp;必选项&#96;conversion&#96;&amp;nbsp;&#96;conversion&#96;分类：&amp;nbsp;常规格式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java_util_Formatter类">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/7906d867/index.html">
+<meta property="og:site_name" content="蓝蓝博客">
+<meta property="og:description" content="formatter方法&amp;nbsp;格式化规则&amp;nbsp;&#96; 常规类型&#96;、&#96;字符类型&#96;和&#96;数值类型&#96;的&#96;格式说明符语法&#96;&amp;nbsp;用来表示&#96;日期和时间类型&#96;的格式说明符语法&amp;nbsp;与参数不对应的格式说明符语法&amp;nbsp;语法规则详细说明&amp;nbsp;可选项&#96;[argument_index$]&#96;&amp;nbsp;必选项&#96;conversion&#96;&amp;nbsp;&#96;conversion&#96;分类：&amp;nbsp;常规格式">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.imgur.com/m6maPtX.png">
+<meta property="article:published_time" content="2018-08-13T14:50:18.000Z">
+<meta property="article:modified_time" content="2019-12-17T05:18:52.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="批处理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/m6maPtX.png">
+  <link rel="canonical" href="https://lanlan2017.github.io/blog/7906d867/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>java_util_Formatter类 | 蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/blog/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/blog/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/blog/7906d867/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="先看视频再看书">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">java_util_Formatter类
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-13 14:50:18" itemprop="dateCreated datePublished" datetime="2018-08-13T14:50:18+00:00">2018-08-13</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-17 05:18:52" itemprop="dateModified" datetime="2019-12-17T05:18:52+00:00">2019-12-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Java-%E5%9F%BA%E7%A1%80/API%E6%95%B4%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">API整理</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/7906d867/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/7906d867/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/blog/7906d867/#formatter方法" class="header_1">formatter方法</a>&nbsp;<br><a href="/blog/7906d867/#格式化规则" class="header_1">格式化规则</a>&nbsp;<br><a href="/blog/7906d867/#-常规类型-、-字符类型-和-数值类型-的-格式说明符语法" class="header_2">` 常规类型`、`字符类型`和`数值类型`的`格式说明符语法`</a>&nbsp;<br><a href="/blog/7906d867/#用来表示-日期和时间类型-的格式说明符语法" class="header_2">用来表示`日期和时间类型`的格式说明符语法</a>&nbsp;<br><a href="/blog/7906d867/#与参数不对应的格式说明符语法" class="header_2">与参数不对应的格式说明符语法</a>&nbsp;<br><a href="/blog/7906d867/#语法规则详细说明" class="header_1">语法规则详细说明</a>&nbsp;<br><a href="/blog/7906d867/#可选项-argument_index$" class="header_2">可选项`[argument_index$]`</a>&nbsp;<br><a href="/blog/7906d867/#必选项-conversion" class="header_2">必选项`conversion`</a>&nbsp;<br><a href="/blog/7906d867/#-conversion-分类：" class="header_3">`conversion`分类：</a>&nbsp;<br><a href="/blog/7906d867/#常规格式符" class="header_3">常规格式符</a>&nbsp;<br><a href="/blog/7906d867/#Unicode字符" class="header_3">Unicode字符</a>&nbsp;<br><a href="/blog/7906d867/#整数格式符" class="header_3">整数格式符</a>&nbsp;<br><a href="/blog/7906d867/#浮点数格式符号" class="header_3">浮点数格式符号</a>&nbsp;<br><a href="/blog/7906d867/#日期/时间转换前缀" class="header_3">日期/时间转换前缀</a>&nbsp;<br><a href="/blog/7906d867/#日期/时间转换后缀" class="header_3">日期/时间转换后缀</a>&nbsp;<br><a href="/blog/7906d867/#格式化时间后缀" class="header_4">格式化时间后缀</a>&nbsp;<br><a href="/blog/7906d867/#格式化日期后缀" class="header_4">格式化日期后缀</a>&nbsp;<br><a href="/blog/7906d867/#常见的日期/时间组合简写" class="header_4">常见的日期/时间组合简写</a>&nbsp;<br><a href="/blog/7906d867/#格式化百分号" class="header_3">格式化百分号</a>&nbsp;<br><a href="/blog/7906d867/#格式化行分隔符" class="header_3">格式化行分隔符</a>&nbsp;<br><a href="/blog/7906d867/#可选项-width" class="header_3">可选项`[width]`</a>&nbsp;<br><a href="/blog/7906d867/#可选项-precision" class="header_3">可选项`[.precision]`</a>&nbsp;<br><a href="/blog/7906d867/#可选项-flags" class="header_2">可选项`[flags]`</a>&nbsp;<br><a href="/blog/7906d867/#设置左右对齐-0补齐" class="header_3">设置左右对齐,0补齐</a>&nbsp;<br><a href="/blog/7906d867/#正负数符号表示" class="header_3">正负数符号表示</a>&nbsp;<br><a href="/blog/7906d867/#加进制标志加小数点" class="header_3">加进制标志加小数点</a>&nbsp;<br><a href="/blog/7906d867/#组分隔符" class="header_3">组分隔符</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h1 id="formatter方法"><a href="#formatter方法" class="headerlink" title="formatter方法"></a>formatter方法</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>void close()</code></td>
+<td style="text-align:left">关闭此 formatter。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>void flush()</code></td>
+<td style="text-align:left">刷新此 formatter。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Formatter format(Locale l, String format, Object... args)</code></td>
+<td style="text-align:left">使用指定的语言环境、格式字符串和参数，将一个格式化字符串写入此对象的目标文件中。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Formatter format(String format, Object... args)</code></td>
+<td style="text-align:left">使用指定格式字符串和参数将一个格式化字符串写入此对象的目标文件中。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>IOException ioException()</code></td>
+<td style="text-align:left">返回由此 formatter 的 Appendable 方法上次抛出的 IOException 异常。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Locale locale()</code></td>
+<td style="text-align:left">返回构造此 formatter 时设置的语言环境。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Appendable out()</code></td>
+<td style="text-align:left">返回输出的目标文件。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>String toString()</code></td>
+<td style="text-align:left">返回对输出的目标文件调用 toString() 的结果。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code>Formatter</code>是广泛被用到的格式化方法，它能让一些东西变得更加有规范，例如：超市小票，信息单，用这个方法来格式化就显得很不错。</p>
+<p>参考：<a href="https://blog.csdn.net/ouyang_peng/article/details/16355237" target="_blank" rel="noopener">https://blog.csdn.net/ouyang_peng/article/details/16355237</a></p>
+<p>有时会想把数字，日期，字符串<code>按照给定规则给格式化</code>。<code>SUN JDK</code>为我们提供了这个<code>API</code>，它是<code>java.util.Formatter</code>。</p>
+<p><code>Formatter</code>提供了对布局对齐和排列的支持，以及对数值、字符串和日期/时间数据的常规格式和特定于语言环境的输出的支持。</p>
+<h1 id="格式化规则"><a href="#格式化规则" class="headerlink" title="格式化规则"></a>格式化规则</h1><p>要想按照自己的想法格式化必须事先编写一个规则。这个规则的语法如下。</p>
+<h2 id="常规类型、字符类型和数值类型的格式说明符语法"><a href="#常规类型、字符类型和数值类型的格式说明符语法" class="headerlink" title="常规类型、字符类型和数值类型的格式说明符语法"></a><code>常规类型</code>、<code>字符类型</code>和<code>数值类型</code>的<code>格式说明符语法</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%[argument_index$][flags][width][.precision]conversion</span><br></pre></td></tr></table></figure>
+<h2 id="用来表示日期和时间类型的格式说明符语法"><a href="#用来表示日期和时间类型的格式说明符语法" class="headerlink" title="用来表示日期和时间类型的格式说明符语法"></a>用来表示<code>日期和时间类型</code>的格式说明符语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%[argument_index$][flags][width]conversion</span><br></pre></td></tr></table></figure>
+<h2 id="与参数不对应的格式说明符语法"><a href="#与参数不对应的格式说明符语法" class="headerlink" title="与参数不对应的格式说明符语法"></a>与参数不对应的格式说明符语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%[flags][width]conversion</span><br></pre></td></tr></table></figure>
+<p><code>API</code>中有这样三种规则，很显然第一个规则的内容是最全面的。其它规则的内容和第一规则的内容有重复，那单说第一规则内容，其它规则依次类推。</p>
+<p>注意：规则一中的<code>precision</code>前面要加英文句号“<code>.</code>”</p>
+<h1 id="语法规则详细说明"><a href="#语法规则详细说明" class="headerlink" title="语法规则详细说明"></a>语法规则详细说明</h1><h2 id="可选项-argument-index"><a href="#可选项-argument-index" class="headerlink" title="可选项[argument_index$]"></a>可选项<code>[argument_index$]</code></h2><ul>
+<li>可选的 <code>argument_index</code> 是一个<code>十进制整数</code>，<strong>用于表明参数在参数列表中的位置</strong>。</li>
+<li>第一个参数由 “1$”引用，第二个参数由”2$”引用，依此类推。<br><code>argument_index</code>很好理解，就是一参数占位符，用来表示要被格式化的参数。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String str1&#x3D;&quot;hello&quot;;</span><br><span class="line">String str2&#x3D;&quot;world&quot;;</span><br><span class="line">Formatter formatter&#x3D;new Formatter();</span><br><span class="line">formatter.format(&quot;%2$s,%1$s&quot;, str1,str2);</span><br><span class="line">System.out.println(formatter);</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">world,hello</span><br></pre></td></tr></table></figure><br>上面的<code>%2$s</code>,中的<code>s</code>表示这个参数字符串。详细往后看</p>
+<h2 id="必选项conversion"><a href="#必选项conversion" class="headerlink" title="必选项conversion"></a>必选项<code>conversion</code></h2><p>注意：<code>conversion</code>和前面的<code>%</code>是格式化规则中必须要有的,这两者是必选项。其他的都是可以选项。</p>
+<p><code>conversion</code> 是一个表明应该如何格式化参数的字符。用这个来确定被格式内容的类型，如果类型不匹配会报错。</p>
+<h3 id="conversion分类："><a href="#conversion分类：" class="headerlink" title="conversion分类："></a><code>conversion</code>分类：</h3><ul>
+<li><p><strong>常规</strong>-可应用于任何参数类型</p>
+</li>
+<li><p><strong>字符</strong>-可应用于表示Unicode字符的基本类型：char、Character、byte、Byte、short和Short。当Character.isValidCodePoint(int) 返回 true时，可将此转换应用于 int和Integer 类型</p>
+</li>
+<li><strong>数值</strong><ul>
+<li><strong>整数</strong>-可应用于Java的整数类型：byte、Byte、short、Short、int、Integer、long、Long 和 BigInteger</li>
+<li><strong>浮点数</strong>-可用于Java的浮点数类型：float、Float、double、Double 和 BigDecimal</li>
+</ul>
+</li>
+<li><p><strong>日期/时间</strong>-可应用于Java的、能够对日期或时间进行编码的类型：long、Long、Calendar 和 Date。</p>
+</li>
+<li><p><strong>百分比</strong>-产生字面值’%’ (‘\u0025’)</p>
+</li>
+<li><strong>行分隔符</strong>-产生特定于平台的行分隔符</li>
+</ul>
+<h3 id="常规格式符"><a href="#常规格式符" class="headerlink" title="常规格式符"></a>常规格式符</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">常规格式符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>B b</code></td>
+<td style="text-align:left">格式化为布尔字符串，如果参数arg 为 null，则结果为 “false”。如果arg 是一个 boolean 值或Boolean，则结果为String.valueOf() 返回的字符串。否则结果为 “true”。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>H h</code></td>
+<td style="text-align:left">格式化为哈希码，如果参数arg 为 null，则结果为 “null”。否则，结果为调用Integer.toHexString(arg.hashCode()) 得到的结果。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>S s</code></td>
+<td style="text-align:left">格式化为字符串，如果参数arg 为 null，则结果为 “null”。如果arg 实现 Formattable，则调用arg.formatTo。否则，结果为调用 arg.toString() 得到的结果。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>实例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test_conversion_s</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Formatter formatter=<span class="keyword">new</span> Formatter();</span><br><span class="line">    String name = <span class="string">"World"</span>;</span><br><span class="line">    formatter.format(<span class="string">"Hello %s !"</span>, name);</span><br><span class="line">    System.out.println(formatter.toString());</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test_conversion_S</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Formatter formatter=<span class="keyword">new</span> Formatter();</span><br><span class="line">    String name = <span class="string">"World"</span>;</span><br><span class="line">    formatter.format(<span class="string">"Hello %S !"</span>, name);</span><br><span class="line">    System.out.println(formatter.toString());</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test_conversion_b</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Formatter formatter=<span class="keyword">new</span> Formatter();</span><br><span class="line">    String name = <span class="string">"World"</span>;</span><br><span class="line">    formatter.format(<span class="string">"Hello %b !"</span>, name);</span><br><span class="line">    System.out.println(formatter.toString());</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test_conversion_B</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Formatter formatter=<span class="keyword">new</span> Formatter();</span><br><span class="line">    String name = <span class="string">"World"</span>;</span><br><span class="line">    formatter.format(<span class="string">"Hello %B !"</span>, name);</span><br><span class="line">    System.out.println(formatter.toString());</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test_conversion_h</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Formatter formatter=<span class="keyword">new</span> Formatter();</span><br><span class="line">    String name = <span class="string">"World"</span>;</span><br><span class="line">    formatter.format(<span class="string">"Hello %h !"</span>, name);</span><br><span class="line">    System.out.println(formatter.toString());</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test_conversion_H</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Formatter formatter=<span class="keyword">new</span> Formatter();</span><br><span class="line">    String name = <span class="string">"World"</span>;</span><br><span class="line">    formatter.format(<span class="string">"Hello %H !"</span>, name);</span><br><span class="line">    System.out.println(formatter.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Hello World !</span><br><span class="line">Hello WORLD !</span><br><span class="line">Hello <span class="keyword">true</span> !</span><br><span class="line">Hello TRUE !</span><br><span class="line">Hello <span class="number">4f</span>e2b72 !</span><br><span class="line">Hello <span class="number">4F</span>E2B72 !</span><br></pre></td></tr></table></figure><br>从结果中我们可以看出：大写<code>%S</code>就会格式化为大写的字符串，小写的<code>%s</code>就会格式化成小写的字符串。大写的<code>%B</code>就会格式化为大写的布尔字符串，小写的<code>%b</code>就格式化为小写的。<code>%H</code>格式化为大写的哈希码，<code>%h</code>格式化为小写的哈希码</p>
+<h3 id="Unicode字符"><a href="#Unicode字符" class="headerlink" title="Unicode字符"></a>Unicode字符</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字符格式符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>C c</code></td>
+<td style="text-align:left">结果是一个 Unicode字符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>实例：中文对应的Unicode字符(Utf-16be)为<code>\u4E2D\u6587</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test_conversion_c</span><span class="params">(Formatter formatter)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span>[] chs=&#123;<span class="string">'\u4E2D'</span>,<span class="string">'\u6587'</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">char</span> c : chs)</span><br><span class="line">    &#123;</span><br><span class="line">        formatter.format(<span class="string">"%c"</span>, c);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(formatter);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>运行结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">中文</span><br></pre></td></tr></table></figure><br>这里提一下，中文转为Unicode字符这个我还没去研究，暂时想到下面这种方式实现：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"中文"</span>;</span><br><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">    String encodeStr = URLEncoder.encode(str, <span class="string">"utf-16be"</span>);</span><br><span class="line">    encodeStr = encodeStr.replaceAll(<span class="string">"%(.&#123;2&#125;)%(.&#123;2&#125;)"</span>, <span class="string">"\\\\u$1$2"</span>);</span><br><span class="line">    System.out.println(encodeStr);</span><br><span class="line">&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>运行结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\u4E2D\u6587</span><br></pre></td></tr></table></figure></p>
+<h3 id="整数格式符"><a href="#整数格式符" class="headerlink" title="整数格式符"></a>整数格式符</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">整数格式符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>d</code></td>
+<td style="text-align:left">结果被格式化为十进制整数</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>o</code></td>
+<td style="text-align:left">结果被格式化为八进制整数</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>X x</code></td>
+<td style="text-align:left">结果被格式化为十六进制整数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Formatter formatter&#x3D;new Formatter();</span><br><span class="line">int value&#x3D;233;</span><br><span class="line">formatter.format(&quot;十进制:%d\n&quot;, value);</span><br><span class="line">formatter.format(&quot;八进制:%o\n&quot;, value);</span><br><span class="line">formatter.format(&quot;小写十六进制:%x\n&quot;, value);</span><br><span class="line">formatter.format(&quot;大写十六进制:%X\n&quot;, value);</span><br><span class="line">System.out.println(formatter);</span><br></pre></td></tr></table></figure><br>运行结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">十进制:233</span><br><span class="line">八进制:351</span><br><span class="line">小写十六进制:e9</span><br><span class="line">大写十六进制:E9</span><br></pre></td></tr></table></figure></p>
+<h3 id="浮点数格式符号"><a href="#浮点数格式符号" class="headerlink" title="浮点数格式符号"></a>浮点数格式符号</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">浮点数格式符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>f</code></td>
+<td style="text-align:left">结果被格式化为十进制数</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>E e</code></td>
+<td style="text-align:left">结果被格式化为用计算机科学记数法表示的十进制数</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>G g</code></td>
+<td style="text-align:left">根据精度和舍入运算后的值，使用计算机科学记数形式或十进制格式对结果进行格式化。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>A a</code></td>
+<td style="text-align:left">结果被格式化为带有效位数和指数的十六进制浮点数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Formatter formatter&#x3D;new Formatter();</span><br><span class="line">double value&#x3D;1230000.45678;</span><br><span class="line">formatter.format(&quot;十进制浮点数:%f\n&quot;, value);</span><br><span class="line">formatter.format(&quot;科学计数法十进制浮点数:%e\n&quot;, value);</span><br><span class="line">formatter.format(&quot;科学计数法十进制浮点数:%E\n&quot;, value);</span><br><span class="line">formatter.format(&quot;根据精度和舍入运算后的值:%g\n&quot;, value);</span><br><span class="line">formatter.format(&quot;根据进度和舍入运算后的值:%G\n&quot;, value);</span><br><span class="line">value&#x3D;12345.456789;</span><br><span class="line">formatter.format(&quot;根据精度和舍入运算后的值:%g\n&quot;, value);</span><br><span class="line">formatter.format(&quot;根据进度和舍入运算后的值:%G\n&quot;, value);</span><br><span class="line">formatter.format(&quot;带有效位数和指数的十六进制浮点数:%a\n&quot;, value);</span><br><span class="line">formatter.format(&quot;带有效位数和指数的十六进制浮点数:%A\n&quot;, value);</span><br><span class="line">System.out.println(formatter);</span><br></pre></td></tr></table></figure><br>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">十进制浮点数:1230000.456780</span><br><span class="line">科学计数法十进制浮点数:1.230000e+06</span><br><span class="line">科学计数法十进制浮点数:1.230000E+06</span><br><span class="line">根据精度和舍入运算后的值:1.23000e+06</span><br><span class="line">根据进度和舍入运算后的值:1.23000E+06</span><br><span class="line">根据精度和舍入运算后的值:12345.5</span><br><span class="line">根据进度和舍入运算后的值:12345.5</span><br><span class="line">带有效位数和指数的十六进制浮点数:0x1.81cba780fdc16p13</span><br><span class="line">带有效位数和指数的十六进制浮点数:0X1.81CBA780FDC16P13</span><br></pre></td></tr></table></figure></p>
+<h3 id="日期-时间转换前缀"><a href="#日期-时间转换前缀" class="headerlink" title="日期/时间转换前缀"></a>日期/时间转换前缀</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">日期格式符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>T t</code></td>
+<td style="text-align:left">日期和时间转换字符的<code>前缀</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注意这里的<code>t/T</code>只是一个缀，它必须加上后缀才起作用。</p>
+<h3 id="日期-时间转换后缀"><a href="#日期-时间转换后缀" class="headerlink" title="日期/时间转换后缀"></a>日期/时间转换后缀</h3><p>后缀如下</p>
+<p>以下日期和时间转换的后缀字符是为 ‘t’ 和 ‘T’ 转换定义的。这些类型相似于但不完全等同于那些由 GNU date 和 POSIX strftime(3c) 定义的类型。提供其他转换类型是为了访问特定于 Java 的功能（如将 ‘L’ 用作秒中的毫秒）。 </p>
+<h4 id="格式化时间后缀"><a href="#格式化时间后缀" class="headerlink" title="格式化时间后缀"></a>格式化时间后缀</h4><p>以下转换字符用来<code>格式化时间</code>：   </p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">时间后缀</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">‘<code>H</code>‘</td>
+<td style="text-align:left"><code>24 小时制的小时</code>，被格式化<code>为必要时带前导零的两位数</code>，即 00 - 23。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>I</code>‘</td>
+<td style="text-align:left"><code>12 小时制的小时</code>，被格式化为<code>必要时带前导零的两位数</code>，即 01 - 12。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>k</code>‘</td>
+<td style="text-align:left"><code>24 小时制的小时</code>，即 0 - 23。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>l</code>‘</td>
+<td style="text-align:left"><code>12 小时制的小时</code>，即 1 - 12。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>M</code>‘`</td>
+<td style="text-align:left">小时中的分钟<code>，被格式化为</code>必要时带前导零的两位数`，即 00 - 59。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>S</code>‘</td>
+<td style="text-align:left"><code>分钟中的秒</code>，被格式化为<code>必要时带前导零的两位数</code>，即 00 - 60 （”60” 是支持闰秒所需的一个特殊值）。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>L</code>‘</td>
+<td style="text-align:left"><code>秒中的毫秒</code>，被格式化为<code>必要时带前导零的三位数</code>，即 000 - 999。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>N</code>‘</td>
+<td style="text-align:left">秒中的<code>毫微秒</code>，被格式化为<code>必要时带前导零的九位数</code>，即 000000000 - 999999999。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>p</code>‘</td>
+<td style="text-align:left">特定于语言环境的 <code>上午或下午</code> 标记以小写形式表示，例如 “am” 或 “pm”。使用转换前缀 ‘T’ 可以强行将此输出转换为大写形式。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>z</code>‘</td>
+<td style="text-align:left">相对于 GMT 的 RFC 822 格式的数字时区偏移量，例如 -0800。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>Z</code>‘</td>
+<td style="text-align:left">表示<code>时区缩写形式</code>的字符串。Formatter 的语言环境将取代参数的语言环境（如果有）。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>s</code>‘</td>
+<td style="text-align:left">自<code>协调世界时</code> (UTC) 1970 年 1 月 1 日 00:00:00 <code>至现在所经过的秒数</code>，即 Long.MIN_VALUE/1000 与 Long.MAX_VALUE/1000 之间的差值。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>Q</code>‘</td>
+<td style="text-align:left">自<code>协调世界时</code> (UTC) 1970 年 1 月 1 日 00:00:00 <code>至现在所经过的毫秒数</code>，即 Long.MIN_VALUE 与 Long.MAX_VALUE 之间的差值。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="格式化日期后缀"><a href="#格式化日期后缀" class="headerlink" title="格式化日期后缀"></a>格式化日期后缀</h4><p>以下转换字符用来<code>格式化日期</code>：</p>
+<p><strong>大写表示全称，小写表示简称</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">日期后缀</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">‘<code>B</code>‘</td>
+<td style="text-align:left">特定于语言环境的<code>月份全称</code>，例如 “January” 和 “February”。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>b</code>‘</td>
+<td style="text-align:left">特定于语言环境的<code>月份简称</code>，例如 “Jan” 和 “Feb”。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>h</code>‘</td>
+<td style="text-align:left">与 ‘<code>b</code>‘ 相同。也就是月份的简称</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>A</code>‘</td>
+<td style="text-align:left">特定于语言环境的<code>星期几全称</code>，例如 “Sunday” 和 “Monday”</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>a</code>‘</td>
+<td style="text-align:left">特定于语言环境的<code>星期几简称</code>，例如 “Sun” 和 “Mon”</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>C</code>‘</td>
+<td style="text-align:left"><code>除以 100 的四位数表示的年份</code>，被格式化为必要时带前导零的两位数，即 00 - 99</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>Y</code>‘</td>
+<td style="text-align:left"><code>年份</code>，被格式化为<code>必要时带前导零的四位数</code>（至少），例如，0092 等于格里高利历的 92 CE。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>y</code>‘</td>
+<td style="text-align:left"><code>年份的最后两位数</code>，被格式化为<code>必要时带前导零的两位数</code>，即 00 - 99。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>j</code>‘</td>
+<td style="text-align:left"><code>一年中的天数</code>，被格式化为必要时带前导零的三位数，例如，对于格里高利历是 001 - 366。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>m</code>‘</td>
+<td style="text-align:left"><code>月份</code>，被格式化为<code>必要时带前导零的两位数</code>，即 01 - 13。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>d</code>‘</td>
+<td style="text-align:left"><code>一个月中的天数</code>，被格式化为<code>必要时带前导零两位数</code>，即 01 - 31</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>e</code>‘</td>
+<td style="text-align:left"><code>一个月中的天数</code>，被格式化为两位数，即 1 - 31。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="常见的日期-时间组合简写"><a href="#常见的日期-时间组合简写" class="headerlink" title="常见的日期/时间组合简写"></a>常见的日期/时间组合简写</h4><p>以下转换字符用于格式化<code>常见的日期/时间组合</code>。 </p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">日期/时间组合</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">‘<code>R</code>‘</td>
+<td style="text-align:left"><code>24 小时制的时间</code>，被格式化为 “<code>%tH:%tM</code>“</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>T</code>‘</td>
+<td style="text-align:left"><code>24 小时制的时间</code>，被格式化为 “<code>%tH:%tM:%tS</code>“。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>r</code>‘</td>
+<td style="text-align:left"><code>12 小时制的时间</code>，被格式化为 “<code>%tI:%tM:%tS %Tp</code>“。上午或下午标记 (‘%Tp’) 的位置可能与语言环境有关。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>D</code>‘</td>
+<td style="text-align:left"><code>日期</code>，被格式化为 “<code>%tm/%td/%ty</code>“。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>F</code>‘</td>
+<td style="text-align:left"><code>ISO 8601 格式的完整日期</code>，被格式化为 “<code>%tY-%tm-%td</code>“。</td>
+</tr>
+<tr>
+<td style="text-align:left">‘<code>c</code>‘</td>
+<td style="text-align:left"><code>日期和时间</code>，被格式化为 “<code>%ta %tb %td %tT %tZ %tY</code>“，例如 “<code>Sun Jul 20 16:17:00 EDT 1969</code>“。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>任何未明确定义为转换的字符都是非法字符，并且都被保留，以供将来扩展使用。</p>
+<p>实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Formatter formatter &#x3D; new Formatter();</span><br><span class="line">Date date &#x3D; new Date();</span><br><span class="line">formatter.format(&quot;年月日:%1$tY-%1$tm-%1$td\n&quot;, date);</span><br><span class="line">formatter.format(&quot;时分秒:%1$tH:%1$tM:%1$tS\n&quot;, date);</span><br><span class="line">formatter.format(&quot;月份    :%1$tB 星期:%1$tA\n&quot;, date);</span><br><span class="line">formatter.format(&quot;年月日时分秒:%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS\n&quot;, date);</span><br><span class="line">formatter.format(&quot;日期年份        :%1$tc\n&quot;, date);</span><br><span class="line">formatter.format(&quot;年月日时分    简写:%1$tF %1$tR\n&quot;, date);</span><br><span class="line">formatter.format(&quot;年月日时分秒简写:%1$tF %1$tT\n&quot;, date);</span><br><span class="line">System.out.println(formatter);</span><br></pre></td></tr></table></figure><br>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">年月日:2018-08-12</span><br><span class="line">时分秒:19:02:20</span><br><span class="line">月份    :八月 星期:星期日</span><br><span class="line">年月日时分秒:2018-08-12 19:02:20</span><br><span class="line">日期年份        :星期日 八月 12 19:02:20 CST 2018</span><br><span class="line">年月日时分    简写:2018-08-12 19:02</span><br><span class="line">年月日时分秒简写:2018-08-12 19:02:20</span><br></pre></td></tr></table></figure></p>
+<h3 id="格式化百分号"><a href="#格式化百分号" class="headerlink" title="格式化百分号"></a>格式化百分号</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">百分号</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>%</code></td>
+<td style="text-align:left">结果为字面值 ‘<code>%</code>‘</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>这是因为<code>%</code>在格式语法中是必选项，<code>%</code>有特殊含义所以在格式的时候，使用<code>%%</code>来表示<code>%</code>这个符号本身。</p>
+<p>实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public static void testFormatPercent()</span><br><span class="line">&#123;</span><br><span class="line">    Formatter formatter &#x3D; new Formatter();</span><br><span class="line">    String string&#x3D;&quot;Hello World!&quot;;</span><br><span class="line">    formatter.format(&quot;%% %s %%&quot;, string);</span><br><span class="line">    System.out.println(formatter);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% Hello World! %</span><br></pre></td></tr></table></figure></p>
+<h3 id="格式化行分隔符"><a href="#格式化行分隔符" class="headerlink" title="格式化行分隔符"></a>格式化行分隔符</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">行分隔符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>n</code></td>
+<td style="text-align:left">结果为特定于平台的行分隔符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Formatter formatter &#x3D; new Formatter();</span><br><span class="line">String string&#x3D;&quot;Hello%nWorld!&quot;;</span><br><span class="line">formatter.format(string);</span><br><span class="line">System.out.println(formatter);</span><br></pre></td></tr></table></figure><br>运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hello</span><br><span class="line">World!</span><br></pre></td></tr></table></figure>
+<h3 id="可选项-width"><a href="#可选项-width" class="headerlink" title="可选项[width]"></a>可选项<code>[width]</code></h3><p>可选项<code>width</code> 是一个非负十进制整数，表明要向输出中写入的最少字符<br><code>width</code> 就表示一最少字符数，被格式化参数字符个数如果小于<code>width</code> ，则补上字符让字符宽度等于<code>width</code> 。如果被格式化字符宽度大于<code>width</code>则不用补齐，<code>width</code>不起作用。所以<code>width</code> 的作用就是<code>为少补齐</code><br>实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public static void testWidth()</span><br><span class="line">&#123;</span><br><span class="line">    int value &#x3D; 123;</span><br><span class="line">    Formatter formatter &#x3D; new Formatter();</span><br><span class="line">    formatter.format(&quot;%4d%6d%10d\n&quot;, value,value,value);</span><br><span class="line">    formatter.format(&quot;%1$4d%1$6d%1$10d&quot;, value);</span><br><span class="line">    System.out.println(formatter);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">123   123       123</span><br><span class="line">123   123       123</span><br></pre></td></tr></table></figure></p>
+<h3 id="可选项-precision"><a href="#可选项-precision" class="headerlink" title="可选项[.precision]"></a>可选项<code>[.precision]</code></h3><p>可选 <code>precision</code> 是一个非负十进制整数，通常用来限制字符数。特定行为取决于转换类型。<br><code>precision</code> 是一个截取器，用于截取被格式化参数。被格式化参数用<code>precision</code> 截取器截取后与<code>width</code> 相比，<br>实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">double value&#x3D;321.123456789;</span><br><span class="line">Formatter formatter&#x3D;new Formatter();</span><br><span class="line">formatter.format(&quot;只精确到小数点后三位:%1$.3f\n&quot;, value);</span><br><span class="line">formatter.format(&quot;总共占10位,只精确到小数点后三位:%10.3f\n&quot;, value);</span><br><span class="line">System.out.println(formatter);</span><br></pre></td></tr></table></figure><br>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">只精确到小数点后三位:321.123</span><br><span class="line">总共占10位,只精确到小数点后三位:   321.123</span><br></pre></td></tr></table></figure><br>要注意的是<code>[width]</code>选项掌管的是整个格式化字符串的宽度，<code>[.precision]</code>设置的是小数点后面能显示几位。小数点和小数点后面的宽度都在都包含在width宽度之内，例如上面的<code>321.123</code>占7个字符，而<strong><code>%10.3f</code>表示整个占<code>10</code>个字符，这十个字符里面小数点后面占<code>3</code></strong>位，所以会在<code>321.123</code>前面补上三个空格占满10个字符。如果设置为<code>%6.3f</code>则真正的宽度为<code>7</code>大于<code>6</code>，<code>width</code>属性失效。</p>
+<h2 id="可选项-flags"><a href="#可选项-flags" class="headerlink" title="可选项[flags]"></a>可选项<code>[flags]</code></h2><p>可选项<code>flags</code> 是修改输出格式的字符集。有效标志集取决于转换类型。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>标记</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-</code></td>
+<td>结果将是<code>左对齐</code>的。</td>
+<td><code>%-4d</code> 宽度最小为四位并且左对齐</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>结果将用<code>零来填充</code></td>
+<td><code>%010d</code> 所有宽度不满10位的数字填充前导0</td>
+</tr>
+<tr>
+<td><code>#</code></td>
+<td>如果是浮点数则结果加小数点，十六进制和八进制分别加<code>0x</code>和<code>0</code></td>
+<td><code>%#x</code> 最后输出结果变为16进制并且加0x</td>
+</tr>
+<tr>
+<td><code>,</code></td>
+<td>结果将包括特定于语言环境的<code>组分隔符</code></td>
+<td><code>%，d</code> 每三位数字来个逗号，看起来清晰</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>正数数字会额外显示一个<code>+</code>号</td>
+<td><code>%+d</code> 结果如果是正数则显示＋号</td>
+</tr>
+<tr>
+<td><code>一个空格</code></td>
+<td>对于正值，结果中将包括一个前导空格</td>
+<td><code>% d</code> 如果结果是正数则在前面加个空格</td>
+</tr>
+<tr>
+<td><code>(</code></td>
+<td>结果将是用圆括号括起来的负数</td>
+<td><code>%（d</code> 如果结果是负数，不写符号而是用（）括起来</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注意支持的类型：</p>
+<p>下表总结了受支持的标志。<code>y</code> 表示该标志受指示参数类型支持。 </p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>标志</th>
+<th>常规</th>
+<th>字符</th>
+<th>整数</th>
+<th>浮点</th>
+<th>日期/时间</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>‘<code>-</code>‘</td>
+<td>y</td>
+<td>y</td>
+<td>y</td>
+<td>y</td>
+<td>y</td>
+<td>结果将是左对齐的。</td>
+</tr>
+<tr>
+<td>‘<code>#</code>‘</td>
+<td>y1</td>
+<td>-</td>
+<td>y3</td>
+<td>y</td>
+<td>-</td>
+<td>结果应该使用依赖于转换类型的替换形式</td>
+</tr>
+<tr>
+<td>‘<code>+</code>‘</td>
+<td>-</td>
+<td>-</td>
+<td>y4</td>
+<td>y</td>
+<td>-</td>
+<td>结果总是包括一个符号</td>
+</tr>
+<tr>
+<td>‘<code> </code>‘</td>
+<td>-</td>
+<td>-</td>
+<td>y4</td>
+<td>y</td>
+<td>-</td>
+<td>对于正值，结果中将包括一个前导空格</td>
+</tr>
+<tr>
+<td>‘<code>0</code>‘</td>
+<td>-</td>
+<td>-</td>
+<td>y</td>
+<td>y</td>
+<td>-</td>
+<td>结果将用零来填充</td>
+</tr>
+<tr>
+<td>‘<code>,</code>‘</td>
+<td>-</td>
+<td>-</td>
+<td>y2</td>
+<td>y5</td>
+<td>-</td>
+<td>结果将包括特定于语言环境的组分隔符</td>
+</tr>
+<tr>
+<td>‘<code>(</code>‘</td>
+<td>-</td>
+<td>-</td>
+<td>y4</td>
+<td>y5</td>
+<td>-</td>
+<td>结果将是用圆括号括起来的负数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="设置左右对齐-0补齐"><a href="#设置左右对齐-0补齐" class="headerlink" title="设置左右对齐,0补齐"></a>设置左右对齐,0补齐</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>标记</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-</code></td>
+<td>结果将是左对齐的。</td>
+<td><code>%-4d</code> 宽度最小为四位并且左对齐</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>结果将用零来填充</td>
+<td><code>%010d</code> 所有宽度不满10位的数字填充前导0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static void testAlign()</span><br><span class="line">&#123;</span><br><span class="line">    double value&#x3D;321.123456789;</span><br><span class="line">    Formatter formatter&#x3D;new Formatter();</span><br><span class="line">    formatter.format(&quot;总共占10位,只精确到小数点后三位:%10.3f##\n&quot;, value);</span><br><span class="line">    formatter.format(&quot;左对齐,总共占10位,不足0填充,只精确到小数点后三位:%010.3f##\n&quot;, value);</span><br><span class="line">    formatter.format(&quot;左对齐,总共占10位,只精确到小数点后三位:%-10.3f##\n&quot;, value);</span><br><span class="line">    System.out.println(formatter);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">总共占10位,只精确到小数点后三位:   321.123##</span><br><span class="line">左对齐,总共占10位,不足0填充,只精确到小数点后三位:000321.123##</span><br><span class="line">左对齐,总共占10位,只精确到小数点后三位:321.123   ##</span><br></pre></td></tr></table></figure></p>
+<h3 id="正负数符号表示"><a href="#正负数符号表示" class="headerlink" title="正负数符号表示"></a>正负数符号表示</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>标记</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>正数数字会额外显示一个<code>+</code>号</td>
+<td><code>%+d</code> 结果如果是正数则显示＋号</td>
+</tr>
+<tr>
+<td><code>一个空格</code></td>
+<td>对于正值，结果中将包括一个前导空格</td>
+<td><code>% d</code> 如果结果是正数则在前面加个空格</td>
+</tr>
+<tr>
+<td><code>(</code></td>
+<td>结果将是用圆括号括起来的负数</td>
+<td><code>%（d</code> 如果结果是负数，不写符号而是用（）括起来</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">double value&#x3D;321.123456789;</span><br><span class="line"></span><br><span class="line">StringBuilder builder&#x3D;new StringBuilder();</span><br><span class="line">&#x2F;&#x2F;格式化结果输出到StringBuilder中</span><br><span class="line">Formatter formatter &#x3D; new Formatter(builder);</span><br><span class="line"></span><br><span class="line">formatter.format(&quot;显示正负号        ,左对齐,总共占10位,只精确到小数点后三位:%+-10.3f##\n&quot;, value);</span><br><span class="line">formatter.format(&quot;用空格表示正数,左对齐,总共占10位,只精确到小数点后三位:% -10.3f##\n&quot;, value);</span><br><span class="line">formatter.format(&quot;用空格表示正数,左对齐,总共占10位,只精确到小数点后三位:%(-10.3f##\n&quot;, value);</span><br><span class="line">value&#x3D;-value;</span><br><span class="line">formatter.format(&quot;显示正负号        ,左对齐,总共占10位,只精确到小数点后三位:%+-10.3f##\n&quot;, value);</span><br><span class="line">formatter.format(&quot;用空格表示正数,左对齐,总共占10位,只精确到小数点后三位:% -10.3f##\n&quot;, value);</span><br><span class="line">formatter.format(&quot;用空格表示正数,左对齐,总共占10位,只精确到小数点后三位:%(-10.3f##\n&quot;, value);</span><br><span class="line">formatter.close();</span><br><span class="line">System.out.println(builder);</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="https://i.imgur.com/m6maPtX.png" alt=""></p>
+<h3 id="加进制标志加小数点"><a href="#加进制标志加小数点" class="headerlink" title="加进制标志加小数点"></a>加进制标志加小数点</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>标记</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#</code></td>
+<td>如果是浮点数则结果加小数点，十六进制和八进制分别加<code>0x</code>和<code>0</code></td>
+<td><code>%#x</code> 最后输出结果变为16进制并且加0x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>先来回顾一下java，二进制，八进制，十六进制整数的静态初始化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a&#x3D;0123;&#x2F;&#x2F;8进制数</span><br><span class="line">int b&#x3D;0xAA;&#x2F;&#x2F;16进制数</span><br><span class="line">int c&#x3D;0b1010;&#x2F;&#x2F;二进制数</span><br></pre></td></tr></table></figure><br>也可以使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;解析16进制数为十进制数</span><br><span class="line">int x&#x3D;Integer.parseInt(&quot;FF&quot;, 16);</span><br></pre></td></tr></table></figure><br>这种方式来把其他进制转成10进制。<br>实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">int a &#x3D; 0123;&#x2F;&#x2F; 8进制数</span><br><span class="line">int b &#x3D; 0xAA;&#x2F;&#x2F; 16进制数</span><br><span class="line">int c &#x3D; 0b1010;&#x2F;&#x2F; 二进制数</span><br><span class="line">StringBuilder builder&#x3D;new StringBuilder();</span><br><span class="line">&#x2F;&#x2F;格式化结果输出到StringBuilder中</span><br><span class="line">Formatter formatter &#x3D; new Formatter(builder);</span><br><span class="line">&#x2F;&#x2F; 解析16进制数为十进制数</span><br><span class="line">int x &#x3D; Integer.parseInt(&quot;FF&quot;, 16);</span><br><span class="line">formatter.format(&quot;十进制:%1$-4d 等于%2$-3d进制:%1$#o\n&quot;, a, 8);</span><br><span class="line">formatter.format(&quot;十进制:%1$-4d 等于%2$-3d进制:%1$#x\n&quot;, a, 16);</span><br><span class="line">formatter.format(&quot;十进制:%1$-4d 等于%2$-3d进制:%1$#o\n&quot;, b, 8);</span><br><span class="line">formatter.format(&quot;十进制:%1$-4d 等于%2$-3d进制:%1$#x\n&quot;, b, 16);</span><br><span class="line">formatter.format(&quot;十进制:%1$-4d 等于%2$-3d进制:%1$#o\n&quot;, c, 8);</span><br><span class="line">formatter.format(&quot;十进制:%1$-4d 等于%2$-3d进制:%1$#x\n&quot;, c, 16);</span><br><span class="line">formatter.format(&quot;十进制:%1$-4d 等于%2$-3d进制:%1$#o\n&quot;, x, 8);</span><br><span class="line">formatter.format(&quot;十进制:%1$-4d 等于%2$-3d进制:%1$#x\n&quot;, x, 16);</span><br><span class="line">&#x2F;&#x2F; formatter.format(&quot;%#b\n&quot;,c);</span><br><span class="line">formatter.close();</span><br><span class="line">System.out.println(builder.toString());</span><br></pre></td></tr></table></figure><br>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">十进制:83   等于8  进制:0123</span><br><span class="line">十进制:83   等于16 进制:0x53</span><br><span class="line">十进制:170  等于8  进制:0252</span><br><span class="line">十进制:170  等于16 进制:0xaa</span><br><span class="line">十进制:10   等于8  进制:012</span><br><span class="line">十进制:10   等于16 进制:0xa</span><br><span class="line">十进制:255  等于8  进制:0377</span><br><span class="line">十进制:255  等于16 进制:0xff</span><br></pre></td></tr></table></figure><br>中英文混合输出的情况下英文应该使用左对齐，这样排列起来才整齐，还有就是使用等宽字体。</p>
+<h3 id="组分隔符"><a href="#组分隔符" class="headerlink" title="组分隔符"></a>组分隔符</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>标记</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>,</code></td>
+<td>结果将包括特定于语言环境的<code>组分隔符</code></td>
+<td><code>%，d</code> 每三位数字来个逗号，看起来清晰</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder builder&#x3D;new StringBuilder();</span><br><span class="line">&#x2F;&#x2F;格式化结果输出到StringBuilder中</span><br><span class="line">Formatter formatter &#x3D; new Formatter(builder);</span><br><span class="line">&#x2F;&#x2F;formatter.close();</span><br><span class="line">&#x2F;&#x2F;System.out.println(builder);</span><br><span class="line">int value&#x3D;123456789;</span><br><span class="line">formatter.format(&quot;%,d\n&quot;,value);</span><br><span class="line">formatter.close();</span><br><span class="line">System.out.println(builder);</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">123,456,789</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/blog/7906d867/" title="java_util_Formatter类">https://lanlan2017.github.io/blog/7906d867/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/eaae884d/" rel="next" title="Java IO流 Console类">
+                  <i class="fa fa-chevron-left"></i> Java IO流 Console类
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/df6c2340/" rel="prev" title="Java IO流 接口">
+                  Java IO流 接口 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#formatter方法"><span class="nav-number">1.</span> <span class="nav-text">formatter方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#格式化规则"><span class="nav-number">2.</span> <span class="nav-text">格式化规则</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常规类型、字符类型和数值类型的格式说明符语法"><span class="nav-number">2.1.</span> <span class="nav-text">常规类型、字符类型和数值类型的格式说明符语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用来表示日期和时间类型的格式说明符语法"><span class="nav-number">2.2.</span> <span class="nav-text">用来表示日期和时间类型的格式说明符语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与参数不对应的格式说明符语法"><span class="nav-number">2.3.</span> <span class="nav-text">与参数不对应的格式说明符语法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法规则详细说明"><span class="nav-number">3.</span> <span class="nav-text">语法规则详细说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可选项-argument-index"><span class="nav-number">3.1.</span> <span class="nav-text">可选项[argument_index$]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#必选项conversion"><span class="nav-number">3.2.</span> <span class="nav-text">必选项conversion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#conversion分类："><span class="nav-number">3.2.1.</span> <span class="nav-text">conversion分类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常规格式符"><span class="nav-number">3.2.2.</span> <span class="nav-text">常规格式符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode字符"><span class="nav-number">3.2.3.</span> <span class="nav-text">Unicode字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整数格式符"><span class="nav-number">3.2.4.</span> <span class="nav-text">整数格式符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数格式符号"><span class="nav-number">3.2.5.</span> <span class="nav-text">浮点数格式符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日期-时间转换前缀"><span class="nav-number">3.2.6.</span> <span class="nav-text">日期&#x2F;时间转换前缀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日期-时间转换后缀"><span class="nav-number">3.2.7.</span> <span class="nav-text">日期&#x2F;时间转换后缀</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#格式化时间后缀"><span class="nav-number">3.2.7.1.</span> <span class="nav-text">格式化时间后缀</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式化日期后缀"><span class="nav-number">3.2.7.2.</span> <span class="nav-text">格式化日期后缀</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的日期-时间组合简写"><span class="nav-number">3.2.7.3.</span> <span class="nav-text">常见的日期&#x2F;时间组合简写</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化百分号"><span class="nav-number">3.2.8.</span> <span class="nav-text">格式化百分号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化行分隔符"><span class="nav-number">3.2.9.</span> <span class="nav-text">格式化行分隔符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可选项-width"><span class="nav-number">3.2.10.</span> <span class="nav-text">可选项[width]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可选项-precision"><span class="nav-number">3.2.11.</span> <span class="nav-text">可选项[.precision]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可选项-flags"><span class="nav-number">3.3.</span> <span class="nav-text">可选项[flags]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置左右对齐-0补齐"><span class="nav-number">3.3.1.</span> <span class="nav-text">设置左右对齐,0补齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正负数符号表示"><span class="nav-number">3.3.2.</span> <span class="nav-text">正负数符号表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加进制标志加小数点"><span class="nav-number">3.3.3.</span> <span class="nav-text">加进制标志加小数点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组分隔符"><span class="nav-number">3.3.4.</span> <span class="nav-text">组分隔符</span></a></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/blog/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">先看视频再看书</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">370</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">148</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/lanlan2017" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;lanlan2017" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/ReadingNotes/" title="ReadingNotes &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;ReadingNotes&#x2F;"><i class="fa fa-fw fa-book"></i>ReadingNotes</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/" title="blog &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;"><i class="fa fa-fw fa-book"></i>blog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/tools/" title="tools &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;tools&#x2F;"><i class="fa fa-fw fa-wrench"></i>tools</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/blog/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/blog/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里输入评论',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

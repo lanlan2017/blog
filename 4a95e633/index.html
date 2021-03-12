@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="安装termux&amp;nbsp;下载termux&amp;nbsp;更换国内源&amp;nbsp;官方方法&amp;nbsp;直接编辑源文件&amp;nbsp;修改效果&amp;nbsp;Termux获取管理员权限&amp;nbsp;Termux优化&amp;nbsp;终端配色&amp;nbsp;访问外置存储优化&amp;nbsp;创建QQ文件夹软连接&amp;nbsp;安装git&amp;nbsp;Termux 上搭建Hexo博客&amp;nbsp;安装nodejs长期支持版本&amp;nbsp;使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="termux 搭建hexo博客教程">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/4a95e633/index.html">
+<meta property="og:site_name" content="蓝蓝博客">
+<meta property="og:description" content="安装termux&amp;nbsp;下载termux&amp;nbsp;更换国内源&amp;nbsp;官方方法&amp;nbsp;直接编辑源文件&amp;nbsp;修改效果&amp;nbsp;Termux获取管理员权限&amp;nbsp;Termux优化&amp;nbsp;终端配色&amp;nbsp;访问外置存储优化&amp;nbsp;创建QQ文件夹软连接&amp;nbsp;安装git&amp;nbsp;Termux 上搭建Hexo博客&amp;nbsp;安装nodejs长期支持版本&amp;nbsp;使用">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-10-31T15:08:27.000Z">
+<meta property="article:modified_time" content="2019-12-17T05:18:52.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="批处理">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/blog/4a95e633/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>termux 搭建hexo博客教程 | 蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/blog/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/blog/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/blog/4a95e633/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="先看视频再看书">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">termux 搭建hexo博客教程
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-31 15:08:27" itemprop="dateCreated datePublished" datetime="2019-10-31T15:08:27+00:00">2019-10-31</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-17 05:18:52" itemprop="dateModified" datetime="2019-12-17T05:18:52+00:00">2019-12-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/%E7%BC%96%E7%A8%8B/Linux/Termux/" itemprop="url" rel="index"><span itemprop="name">Termux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/4a95e633/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/blog/4a95e633/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/blog/4a95e633/#安装termux" class="header_1">安装termux</a>&nbsp;<br><a href="/blog/4a95e633/#下载termux" class="header_2">下载termux</a>&nbsp;<br><a href="/blog/4a95e633/#更换国内源" class="header_1">更换国内源</a>&nbsp;<br><a href="/blog/4a95e633/#官方方法" class="header_2">官方方法</a>&nbsp;<br><a href="/blog/4a95e633/#直接编辑源文件" class="header_2">直接编辑源文件</a>&nbsp;<br><a href="/blog/4a95e633/#修改效果" class="header_2">修改效果</a>&nbsp;<br><a href="/blog/4a95e633/#Termux获取管理员权限" class="header_1">Termux获取管理员权限</a>&nbsp;<br><a href="/blog/4a95e633/#Termux优化" class="header_1">Termux优化</a>&nbsp;<br><a href="/blog/4a95e633/#终端配色" class="header_2">终端配色</a>&nbsp;<br><a href="/blog/4a95e633/#访问外置存储优化" class="header_2">访问外置存储优化</a>&nbsp;<br><a href="/blog/4a95e633/#创建QQ文件夹软连接" class="header_3">创建QQ文件夹软连接</a>&nbsp;<br><a href="/blog/4a95e633/#安装git" class="header_1">安装git</a>&nbsp;<br><a href="/blog/4a95e633/#Termux-上搭建Hexo博客" class="header_1">Termux 上搭建Hexo博客</a>&nbsp;<br><a href="/blog/4a95e633/#安装nodejs长期支持版本" class="header_2">安装nodejs长期支持版本</a>&nbsp;<br><a href="/blog/4a95e633/#使用淘宝镜像" class="header_2">使用淘宝镜像</a>&nbsp;<br><a href="/blog/4a95e633/#安装hexo" class="header_2">安装hexo</a>&nbsp;<br><a href="/blog/4a95e633/#创建站点" class="header_2">创建站点</a>&nbsp;<br><a href="/blog/4a95e633/#进入站点" class="header_2">进入站点</a>&nbsp;<br><a href="/blog/4a95e633/#启动本地服务器" class="header_2">启动本地服务器</a>&nbsp;<br><a href="/blog/4a95e633/#手机浏览器上进入网站" class="header_2">手机浏览器上进入网站</a>&nbsp;<br><a href="/blog/4a95e633/#在非Termux目录下写博客" class="header_1">在非Termux目录下写博客</a>&nbsp;<br><a href="/blog/4a95e633/#克隆博客源码" class="header_2">克隆博客源码</a>&nbsp;<br><a href="/blog/4a95e633/#题外话" class="header_1">题外话</a>&nbsp;<br><a href="/blog/4a95e633/#设置npm全局安装路径和全局缓存路径" class="header_2">设置npm全局安装路径和全局缓存路径</a>&nbsp;<br><a href="/blog/4a95e633/#取消自定义个npm全局安装路径" class="header_2">取消自定义个npm全局安装路径</a>&nbsp;<br><a href="/blog/4a95e633/#设置Linux环境变量" class="header_2">设置Linux环境变量</a>&nbsp;<br><a href="/blog/4a95e633/#安装指定版本的nodejs" class="header_2">安装指定版本的nodejs</a>&nbsp;<br><a href="/blog/4a95e633/#安装n模块" class="header_3">安装n模块</a>&nbsp;<br><a href="/blog/4a95e633/#升级node-js到最新稳定版" class="header_3">升级node.js到最新稳定版</a>&nbsp;<br><a href="/blog/4a95e633/#查看Nodejs历史版本" class="header_3">查看Nodejs历史版本</a>&nbsp;<br><a href="/blog/4a95e633/#安装指定版本的nodejs" class="header_3">安装指定版本的nodejs</a>&nbsp;<br><a href="/blog/4a95e633/#切换到指定版本的nodejs" class="header_3">切换到指定版本的nodejs</a>&nbsp;<br><a href="/blog/4a95e633/#清除npm缓存" class="header_1">清除npm缓存</a>&nbsp;<br><a href="/blog/4a95e633/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h1 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h1><blockquote>
+<p><a href="https://wiki.termux.com/wiki/Main_Page" target="_blank" rel="noopener">System requirements:</a><br><strong>Android 7.0 - 9.0 (10+ may have issues)</strong><br>CPU: AArch64, ARM, i686, x86_64.<br>At least 200 MB of disk space.</p>
+</blockquote>
+<h1 id="安装termux"><a href="#安装termux" class="headerlink" title="安装termux"></a>安装termux</h1><p>官网:<br><a href="https://termux.com/" target="_blank" rel="noopener">https://termux.com/</a><br>github仓库:<br><a href="https://github.com/termux/termux-app" target="_blank" rel="noopener">https://github.com/termux/termux-app</a></p>
+<h2 id="下载termux"><a href="#下载termux" class="headerlink" title="下载termux"></a>下载termux</h2><p><a href="https://f-droid.org/packages/com.termux/" target="_blank" rel="noopener">f-droid 下载</a><br><a href="https://play.google.com/store/apps/details?id=com.termux" target="_blank" rel="noopener">Google Play 下载</a></p>
+<h1 id="更换国内源"><a href="#更换国内源" class="headerlink" title="更换国内源"></a>更换国内源</h1><p>更换<code>Termux</code>清华大学源,加快软件包下载速度. </p>
+<h2 id="官方方法"><a href="#官方方法" class="headerlink" title="官方方法"></a>官方方法</h2><p>设置默认编辑器<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export EDITOR=vi</span><br></pre></td></tr></table></figure><br>编辑源文件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt edit-sources</span><br></pre></td></tr></table></figure><br>将原来的<code>https://termux.net</code>官方源替换为<code>http://mirrors.tuna.tsinghua.edu.cn/termux</code></p>
+<h2 id="直接编辑源文件"><a href="#直接编辑源文件" class="headerlink" title="直接编辑源文件"></a>直接编辑源文件</h2><p>上面是官方推荐的方法,其实还有更简单的方法,类似于Linux下直接去编辑源文件:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi  $PREFIX/etc/apt/sources.list</span><br></pre></td></tr></table></figure></p>
+<h2 id="修改效果"><a href="#修改效果" class="headerlink" title="修改效果"></a>修改效果</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">u0_a391@localhost~ cat $PREFIX/etc/apt/sources.list</span><br><span class="line"><span class="meta">#</span><span class="bash"> The main termux repository:</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> deb https://termux.org/packages/ stable main</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> The termux repository mirror from TUNA:</span></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main</span><br></pre></td></tr></table></figure>
+<h1 id="更新软件"><a href="#更新软件" class="headerlink" title="更新软件"></a>更新软件</h1><p>依次输入如下命令，更新软件:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg update</span><br><span class="line">pkg upgrade</span><br></pre></td></tr></table></figure></p>
+<h2 id="pkg命令介绍"><a href="#pkg命令介绍" class="headerlink" title="pkg命令介绍"></a>pkg命令介绍</h2><p>基本命令<br>Termux除了支持apt命令外,还在此基础上封装了pkg命令,pkg命令向下兼容apt命令.apt命令大家应该都比较熟悉了,这里直接简单的介绍下pkg命令:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">基本命令</span><br><span class="line">Termux除了支持apt命令外,还在此基础上封装了pkg命令,pkg命令向下兼容apt命令.apt命令大家应该都比较熟悉了,这里直接简单的介绍下pkg命令:</span><br><span class="line"></span><br><span class="line">pkg search &lt;query&gt;              搜索包</span><br><span class="line">pkg install &lt;package&gt;           安装包</span><br><span class="line">pkg uninstall &lt;package&gt;         卸载包</span><br><span class="line">pkg reinstall &lt;package&gt;         重新安装包</span><br><span class="line">pkg update                      更新源</span><br><span class="line">pkg upgrade                     升级软件包</span><br><span class="line">pkg list-all                    列出可供安装的所有包</span><br><span class="line">pkg list-installed              列出已经安装的包</span><br><span class="line">pkg shoe &lt;package&gt;              显示某个包的详细信息</span><br><span class="line">pkg files &lt;package&gt;             显示某个包的相关文件夹路径</span><br></pre></td></tr></table></figure></p>
+<h1 id="Termux获取管理员权限"><a href="#Termux获取管理员权限" class="headerlink" title="Termux获取管理员权限"></a>Termux获取管理员权限</h1><p>没有 <code>root</code> 的手机是没有 <code>root</code> 权限的。不过 <code>termux</code> 给我们提供了一个解决办法可以模拟 <code>root</code> 权限。<br>我们下载安装 proot<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install proot</span><br></pre></td></tr></table></figure><br>然后执行下面的命令即可获得 root 权限<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termux-chroot</span><br></pre></td></tr></table></figure><br>root 时输入exit可以退回普通用户</p>
+<h1 id="Termux优化"><a href="#Termux优化" class="headerlink" title="Termux优化"></a>Termux优化</h1><p>要翻墙，不翻墙无法访问</p>
+<h2 id="终端配色"><a href="#终端配色" class="headerlink" title="终端配色"></a>终端配色</h2><p>主要使用了zsh来替代bash作为默认shell.<br>使用一键安装脚本来安装,一步到位,顺便启动了外置存储,可以直接访问SD卡下的目录.</p>
+<p>执行下面这个命令确保已经安装好了curl<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c "$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)"</span><br></pre></td></tr></table></figure><br>Android6.0以上会弹框确认是否授权,允许授权后Termux可以方便的访问SD卡文件.<br>脚本允许后先后有如下两个选项:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter a number, leave blank to not to change: 14 Enter a number, leave blank to not to change: 6</span><br></pre></td></tr></table></figure><br>分别选择背景色和字体<br>想要继续更改挑选配色的话,继续运行脚本来再次筛选:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/termux-ohmyzsh/install.sh</span><br></pre></td></tr></table></figure></p>
+<h2 id="访问外置存储优化"><a href="#访问外置存储优化" class="headerlink" title="访问外置存储优化"></a>访问外置存储优化</h2><p>执行过上面的zsh一键配置脚本后,并且授予文件访问权限的话,会在家目录生成storage目录，并且生成若干目录，软连接都指向外置存储卡的相应目录</p>
+<h3 id="创建QQ文件夹软连接"><a href="#创建QQ文件夹软连接" class="headerlink" title="创建QQ文件夹软连接"></a>创建QQ文件夹软连接</h3><p>手机上一般经常使用手机QQ来接收文件,这里为了方便文件传输,直接在storage目录下创建软链接.<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /data/data/com.termux/files/home/storage/shared/tencent/QQfile_recv qq</span><br></pre></td></tr></table></figure></p>
+<h1 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install git</span><br></pre></td></tr></table></figure>
+<h1 id="Termux-上搭建Hexo博客"><a href="#Termux-上搭建Hexo博客" class="headerlink" title="Termux 上搭建Hexo博客"></a>Termux 上搭建Hexo博客</h1><h2 id="安装nodejs长期支持版本"><a href="#安装nodejs长期支持版本" class="headerlink" title="安装nodejs长期支持版本"></a>安装nodejs长期支持版本</h2><p>注意安装长期支持版的<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install nodejs-lts</span><br></pre></td></tr></table></figure><br>卸载nodejs长期支持版本:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg unstall nodejs-lts</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用淘宝镜像"><a href="#使用淘宝镜像" class="headerlink" title="使用淘宝镜像"></a>使用淘宝镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry http://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<h2 id="创建站点"><a href="#创建站点" class="headerlink" title="创建站点"></a>创建站点</h2><p>在<strong>用户主目录</strong>下,输入如下命令创建一个Hexo站点:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blogTest</span><br></pre></td></tr></table></figure><br>注意<strong>必须在Termux自己的目录</strong>下才可以<strong>创建站点</strong><br>如果在非Termux的目录下执行上面的命令,则会报错如下:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm WARN tar EPERM: operation not permitted, futime</span><br><span class="line">npm WARN tar EPERM: operation not permitted, futime</span><br><span class="line">npm WARN tar EPERM: operation not permitted, futime</span><br><span class="line">npm WARN tar EPERM: operation not permitted, futime</span><br><span class="line">npm WARN tar EPERM: operation not permitted, futime</span><br><span class="line">npm WARN tar EPERM: operation not permitted, futime</span><br><span class="line">npm WARN tar EPERM: operation not permitted, futime</span><br><span class="line">npm WARN tar EPERM: operation not permitted, futime</span><br><span class="line">npm ERR! cb() never called!</span><br><span class="line"></span><br><span class="line">npm ERR! This is an error with npm itself. Please report this error at:</span><br><span class="line">npm ERR!     &lt;https://npm.community&gt;</span><br><span class="line">WARN  Failed to install dependencies. Please run 'npm install' manually!</span><br></pre></td></tr></table></figure></p>
+<h2 id="进入站点"><a href="#进入站点" class="headerlink" title="进入站点"></a>进入站点</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blogTest</span><br></pre></td></tr></table></figure>
+<h2 id="启动本地服务器"><a href="#启动本地服务器" class="headerlink" title="启动本地服务器"></a>启动本地服务器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<h2 id="手机浏览器上进入网站"><a href="#手机浏览器上进入网站" class="headerlink" title="手机浏览器上进入网站"></a>手机浏览器上进入网站</h2><p><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+<h1 id="在非Termux目录下写博客"><a href="#在非Termux目录下写博客" class="headerlink" title="在非Termux目录下写博客"></a>在非Termux目录下写博客</h1><p>虽然在Termux下面可以搭建好Hexo,但是不好的是:手机中无法通过其他markdown软件编辑Termux中的文件。虽然使用进入Termux中使用vim编辑也是可以的,但是很麻烦.</p>
+<p>现在我只用git管理博客源码就行了,然后通过markdown编辑软件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /data/data/com.termux/files/home/storage/shared/blog blog</span><br></pre></td></tr></table></figure><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~blog</span><br></pre></td></tr></table></figure></p>
+<h2 id="克隆博客源码"><a href="#克隆博客源码" class="headerlink" title="克隆博客源码"></a>克隆博客源码</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b master https://github.com/lanlan2017/blog.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b master https://github.com/lanlan2017/ReadingNotes.git</span><br></pre></td></tr></table></figure>
+<h1 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h1><h2 id="设置npm全局安装路径和全局缓存路径"><a href="#设置npm全局安装路径和全局缓存路径" class="headerlink" title="设置npm全局安装路径和全局缓存路径"></a>设置npm全局安装路径和全局缓存路径</h2><p>可以不设置<br>cd ~<br>mkdir nodejs_data<br>cd ~/nodejs_data<br>mkdir npm_global<br>mkdir node_cache<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set cache "~/nodejs_data/node_cache"</span><br></pre></td></tr></table></figure><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix "~/nodejs_data/npm_global"</span><br></pre></td></tr></table></figure><br>上面配置好的全局安装目录的信息会下载用户home目录下的<code>.npmrc</code>文件中<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .npmrc</span><br></pre></td></tr></table></figure><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> u0_a391@localhost  ~  cat .npmrc </span><br><span class="line">registry=http://registry.npm.taobao.org</span><br><span class="line">prefix=/data/data/com.termux/files/home/nodejs_data/npm_global</span><br><span class="line">cache=/data/data/com.termux/files/home/nodejs_data/node_cache</span><br></pre></td></tr></table></figure></p>
+<h2 id="取消自定义个npm全局安装路径"><a href="#取消自定义个npm全局安装路径" class="headerlink" title="取消自定义个npm全局安装路径"></a>取消自定义个npm全局安装路径</h2><p>删除用户home目录下的配置文件<code>.npmrc</code>中的<code>prefix</code>和<code>cache</code>即可:</p>
+<h2 id="设置Linux环境变量"><a href="#设置Linux环境变量" class="headerlink" title="设置Linux环境变量"></a>设置Linux环境变量</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/profile /etc/profile.bak</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+<p>在最后添加:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装指定版本的nodejs"><a href="#安装指定版本的nodejs" class="headerlink" title="安装指定版本的nodejs"></a>安装指定版本的nodejs</h2><p>node有一个模块n，是专门用来管理node.js的版本的。</p>
+<h3 id="安装n模块"><a href="#安装n模块" class="headerlink" title="安装n模块"></a>安装n模块</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g n</span><br></pre></td></tr></table></figure>
+<h3 id="升级node-js到最新稳定版"><a href="#升级node-js到最新稳定版" class="headerlink" title="升级node.js到最新稳定版"></a>升级node.js到最新稳定版</h3><p>先获取root权限<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termux-chroot</span><br></pre></td></tr></table></figure><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n stable</span><br></pre></td></tr></table></figure></p>
+<h3 id="查看Nodejs历史版本"><a href="#查看Nodejs历史版本" class="headerlink" title="查看Nodejs历史版本"></a>查看Nodejs历史版本</h3><p><a href="https://nodejs.org/en/about/releases/" target="_blank" rel="noopener">https://nodejs.org/en/about/releases/</a><br>点击上面的<strong>版本号</strong>即可看到安装的版本,例如点击<a href="https://nodejs.org/download/release/latest-v10.x/" target="_blank" rel="noopener">v10</a>,然后拉到最后,可以看到当前最新的nodejs 10的版本为:<code>v10.17.0</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-v10.17.0.tar.xz                               22-Oct-2019 16:41            21514260</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装指定版本的nodejs-1"><a href="#安装指定版本的nodejs-1" class="headerlink" title="安装指定版本的nodejs"></a>安装指定版本的nodejs</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n v10.17.0</span><br></pre></td></tr></table></figure>
+<h3 id="切换到指定版本的nodejs"><a href="#切换到指定版本的nodejs" class="headerlink" title="切换到指定版本的nodejs"></a>切换到指定版本的nodejs</h3><p>输入<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n</span><br></pre></td></tr></table></figure></p>
+<h1 id="清除npm缓存"><a href="#清除npm缓存" class="headerlink" title="清除npm缓存"></a>清除npm缓存</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm cache clean --force</span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://www.sqlsec.com/2018/05/termux.html" target="_blank" rel="noopener">https://www.sqlsec.com/2018/05/termux.html</a><br><a href="https://www.cnblogs.com/anyun/p/8328397.html" target="_blank" rel="noopener">https://www.cnblogs.com/anyun/p/8328397.html</a><br><a href="https://blog.csdn.net/flw8840488/article/details/90513873" target="_blank" rel="noopener">https://blog.csdn.net/flw8840488/article/details/90513873</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/blog/4a95e633/" title="termux 搭建hexo博客教程">https://lanlan2017.github.io/blog/4a95e633/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/blog/e1bb0d5c/" rel="next" title="Navicat premium 12 mysql-命令列界面 清屏功能">
+                  <i class="fa fa-chevron-left"></i> Navicat premium 12 mysql-命令列界面 清屏功能
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/blog/45517ea0/" rel="prev" title="termux 安装linux">
+                  termux 安装linux <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#系统要求"><span class="nav-number">1.</span> <span class="nav-text">系统要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装termux"><span class="nav-number">2.</span> <span class="nav-text">安装termux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载termux"><span class="nav-number">2.1.</span> <span class="nav-text">下载termux</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换国内源"><span class="nav-number">3.</span> <span class="nav-text">更换国内源</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#官方方法"><span class="nav-number">3.1.</span> <span class="nav-text">官方方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接编辑源文件"><span class="nav-number">3.2.</span> <span class="nav-text">直接编辑源文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改效果"><span class="nav-number">3.3.</span> <span class="nav-text">修改效果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更新软件"><span class="nav-number">4.</span> <span class="nav-text">更新软件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pkg命令介绍"><span class="nav-number">4.1.</span> <span class="nav-text">pkg命令介绍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Termux获取管理员权限"><span class="nav-number">5.</span> <span class="nav-text">Termux获取管理员权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Termux优化"><span class="nav-number">6.</span> <span class="nav-text">Termux优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#终端配色"><span class="nav-number">6.1.</span> <span class="nav-text">终端配色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问外置存储优化"><span class="nav-number">6.2.</span> <span class="nav-text">访问外置存储优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建QQ文件夹软连接"><span class="nav-number">6.2.1.</span> <span class="nav-text">创建QQ文件夹软连接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装git"><span class="nav-number">7.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Termux-上搭建Hexo博客"><span class="nav-number">8.</span> <span class="nav-text">Termux 上搭建Hexo博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装nodejs长期支持版本"><span class="nav-number">8.1.</span> <span class="nav-text">安装nodejs长期支持版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用淘宝镜像"><span class="nav-number">8.2.</span> <span class="nav-text">使用淘宝镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo"><span class="nav-number">8.3.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建站点"><span class="nav-number">8.4.</span> <span class="nav-text">创建站点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进入站点"><span class="nav-number">8.5.</span> <span class="nav-text">进入站点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动本地服务器"><span class="nav-number">8.6.</span> <span class="nav-text">启动本地服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手机浏览器上进入网站"><span class="nav-number">8.7.</span> <span class="nav-text">手机浏览器上进入网站</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在非Termux目录下写博客"><span class="nav-number">9.</span> <span class="nav-text">在非Termux目录下写博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#克隆博客源码"><span class="nav-number">9.1.</span> <span class="nav-text">克隆博客源码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题外话"><span class="nav-number">10.</span> <span class="nav-text">题外话</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置npm全局安装路径和全局缓存路径"><span class="nav-number">10.1.</span> <span class="nav-text">设置npm全局安装路径和全局缓存路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取消自定义个npm全局安装路径"><span class="nav-number">10.2.</span> <span class="nav-text">取消自定义个npm全局安装路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置Linux环境变量"><span class="nav-number">10.3.</span> <span class="nav-text">设置Linux环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装指定版本的nodejs"><span class="nav-number">10.4.</span> <span class="nav-text">安装指定版本的nodejs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装n模块"><span class="nav-number">10.4.1.</span> <span class="nav-text">安装n模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级node-js到最新稳定版"><span class="nav-number">10.4.2.</span> <span class="nav-text">升级node.js到最新稳定版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看Nodejs历史版本"><span class="nav-number">10.4.3.</span> <span class="nav-text">查看Nodejs历史版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装指定版本的nodejs-1"><span class="nav-number">10.4.4.</span> <span class="nav-text">安装指定版本的nodejs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换到指定版本的nodejs"><span class="nav-number">10.4.5.</span> <span class="nav-text">切换到指定版本的nodejs</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#清除npm缓存"><span class="nav-number">11.</span> <span class="nav-text">清除npm缓存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">12.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/blog/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">先看视频再看书</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/blog/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">370</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/blog/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">148</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/lanlan2017" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;lanlan2017" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/ReadingNotes/" title="ReadingNotes &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;ReadingNotes&#x2F;"><i class="fa fa-fw fa-book"></i>ReadingNotes</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/" title="blog &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;"><i class="fa fa-fw fa-book"></i>blog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/tools/" title="tools &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;tools&#x2F;"><i class="fa fa-fw fa-wrench"></i>tools</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/blog/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/blog/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/blog/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里输入评论',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>
