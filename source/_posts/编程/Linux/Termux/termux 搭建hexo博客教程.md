@@ -14,6 +14,12 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
+# 系统要求
+> [System requirements:](https://wiki.termux.com/wiki/Main_Page)
+> **Android 7.0 - 9.0 (10+ may have issues)**
+> CPU: AArch64, ARM, i686, x86_64.
+> At least 200 MB of disk space.
+
 # 安装termux
 官网:
 [https://termux.com/](https://termux.com/)
@@ -50,6 +56,33 @@ u0_a391@localhost~ cat $PREFIX/etc/apt/sources.list
 deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main
 
 ```
+# 更新软件
+依次输入如下命令，更新软件:
+```cmd
+pkg update
+pkg upgrade
+```
+
+## pkg命令介绍
+基本命令
+Termux除了支持apt命令外,还在此基础上封装了pkg命令,pkg命令向下兼容apt命令.apt命令大家应该都比较熟悉了,这里直接简单的介绍下pkg命令:
+```cmd
+基本命令
+Termux除了支持apt命令外,还在此基础上封装了pkg命令,pkg命令向下兼容apt命令.apt命令大家应该都比较熟悉了,这里直接简单的介绍下pkg命令:
+
+pkg search <query>              搜索包
+pkg install <package>           安装包
+pkg uninstall <package>         卸载包
+pkg reinstall <package>         重新安装包
+pkg update                      更新源
+pkg upgrade                     升级软件包
+pkg list-all                    列出可供安装的所有包
+pkg list-installed              列出已经安装的包
+pkg shoe <package>              显示某个包的详细信息
+pkg files <package>             显示某个包的相关文件夹路径
+```
+
+
 # Termux获取管理员权限
 没有 `root` 的手机是没有 `root` 权限的。不过 `termux` 给我们提供了一个解决办法可以模拟 `root` 权限。
 我们下载安装 proot

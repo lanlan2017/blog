@@ -16,6 +16,13 @@ abbrlink: 57ee7c1d
 
 <!--end-->
 # 基本配置
+## Hexo安装
+### 安装nodejs
+### 安装Hexo
+```bash
+npm install hexo-cli -g
+```
+
 ## 修改菜单
 在菜单中添加链接。编辑 **主题配置文件** ， 取消`categories`前面的注释`#`，添加 categories 到 menu 中，如下: 
 ```

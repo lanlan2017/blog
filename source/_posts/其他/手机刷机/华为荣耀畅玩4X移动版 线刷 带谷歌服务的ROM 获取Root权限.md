@@ -52,7 +52,7 @@ cofface Recovery下载地址：
 ### 重命名root包
 将ROOT_For_EMUI3.0.zip,重命名为root.zip
 ### 复制root.zip到内部存储根目录
-将root.zip复制到SD卡,然后使用手机的文件管理器,将这个root.zip复制到内部存储的根目录.
+将root.zip复制到SD卡,然后使用手机的文件管理器,将这个root.zip复制到**内部存储**的根目录.
 ### 使用cofface Recovery开启Root权限
 
 ## 安装谷歌应用
