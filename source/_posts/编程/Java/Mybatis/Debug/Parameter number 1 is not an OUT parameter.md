@@ -1,11 +1,20 @@
 ---
-categories:
+title: Parameter number 1 is not an OUT parameter
+categories: 
   - 编程
   - Java
   - Mybatis
   - Debug
+date: 2020-09-02 11:57:29
+updated: 2020-09-02 11:57:29
 abbrlink: c5a0d373
 ---
+<div id='my_toc'><a href="/blog/c5a0d373/#错误提示" class="header_1">错误提示</a>&nbsp;<br><a href="/blog/c5a0d373/#原因" class="header_1">原因</a>&nbsp;<br><a href="/blog/c5a0d373/#解决方案" class="header_1">解决方案</a>&nbsp;<br></div>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
 # 错误提示
 今天复习的时候,运行以前的测试项目出现了如下错误:
 <pre>
