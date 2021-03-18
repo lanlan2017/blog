@@ -5,7 +5,7 @@ categories:
   - Linux
   - LinuxDeploy
 date: 2021-03-16 03:29:46
-updated: 2021-03-17 09:37:02
+updated: 2021-03-17 11:20:44
 abbrlink: 21008dc5
 ---
 <div id='my_toc'><a href="/blog/21008dc5/#安装" class="header_1">安装</a>&nbsp;<br><a href="/blog/21008dc5/#查看安装成功" class="header_1">查看安装成功</a>&nbsp;<br><a href="/blog/21008dc5/#配置基本信息" class="header_1">配置基本信息</a>&nbsp;<br><a href="/blog/21008dc5/#参考链接" class="header_1">参考链接</a>&nbsp;<br><a href="/blog/21008dc5/#安装nano" class="header_1">安装nano</a>&nbsp;<br></div>

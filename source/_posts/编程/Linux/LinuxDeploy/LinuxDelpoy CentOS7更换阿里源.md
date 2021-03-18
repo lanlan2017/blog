@@ -5,7 +5,7 @@ categories:
   - Linux
   - LinuxDeploy
 date: 2021-03-16 02:19:57
-updated: 2021-03-17 09:25:03
+updated: 2021-03-17 11:20:44
 abbrlink: 3c20575c
 ---
 <div id='my_toc'><a href="/blog/3c20575c/#安装wget" class="header_1">安装wget</a>&nbsp;<br><a href="/blog/3c20575c/#更换阿里源" class="header_1">更换阿里源</a>&nbsp;<br><a href="/blog/3c20575c/#更换成功后清除缓存并重建" class="header_1">更换成功后清除缓存并重建</a>&nbsp;<br><a href="/blog/3c20575c/#安装vim" class="header_1">安装vim</a>&nbsp;<br></div>

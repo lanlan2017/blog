@@ -1,13 +1,19 @@
 ---
 title: LinuxDeploy CentOS7 搭建Hexo博客
-categories:
+categories: 
   - 编程
   - Linux
   - LinuxDeploy
-abbrlink: 4562533d
 date: 2021-03-18 03:02:03
-updated: 2021-03-18 03:02:03
+updated: 2021-03-18 02:13:58
+abbrlink: 4562533d
 ---
+<div id='my_toc'><a href="/blog/4562533d/#前言" class="header_1">前言</a>&nbsp;<br><a href="/blog/4562533d/#安装hexo" class="header_1">安装hexo</a>&nbsp;<br><a href="/blog/4562533d/#创建站点或克隆已有站点" class="header_1">创建站点或克隆已有站点</a>&nbsp;<br><a href="/blog/4562533d/#创建站点" class="header_2">创建站点</a>&nbsp;<br><a href="/blog/4562533d/#克隆已有站点" class="header_2">克隆已有站点</a>&nbsp;<br><a href="/blog/4562533d/#测试hexo" class="header_1">测试hexo</a>&nbsp;<br><a href="/blog/4562533d/#浏览器查看" class="header_2">浏览器查看</a>&nbsp;<br><a href="/blog/4562533d/#当前手机上的浏览器查看" class="header_3">当前手机上的浏览器查看</a>&nbsp;<br><a href="/blog/4562533d/#其他设备查看" class="header_3">其他设备查看</a>&nbsp;<br><a href="/blog/4562533d/#确保当前手机和其他设备在同一个网络下" class="header_4">确保当前手机和其他设备在同一个网络下</a>&nbsp;<br><a href="/blog/4562533d/#更新hexo插件" class="header_1">更新hexo插件</a>&nbsp;<br><a href="/blog/4562533d/#手动更新" class="header_2">手动更新</a>&nbsp;<br><a href="/blog/4562533d/#检查更新" class="header_3">检查更新</a>&nbsp;<br><a href="/blog/4562533d/#更新package-json文件中插件的版本号" class="header_3">更新package.json文件中插件的版本号</a>&nbsp;<br><a href="/blog/4562533d/#安装更新" class="header_3">安装更新</a>&nbsp;<br><a href="/blog/4562533d/#回退hexo版本" class="header_3">回退hexo版本</a>&nbsp;<br><a href="/blog/4562533d/#自动更新" class="header_2">自动更新</a>&nbsp;<br><a href="/blog/4562533d/#安装npm-check" class="header_2">安装npm-check</a>&nbsp;<br></div>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
 # 前言
 安装hexo之前，需要先安装好nodejs,如果还没安装好nodejs，请先安装好nodejs
 ```shell
