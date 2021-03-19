@@ -5,7 +5,7 @@ categories:
   - next主题
   - 插件
 date: 2019-02-15 21:49:16
-updated: 2020-06-24 08:17:43
+updated: 2020-06-25 09:00:59
 abbrlink: 7162b91b
 ---
 <div id='my_toc'><a href="/blog/7162b91b/#卸载hexo-generator-index插件" class="header_2">卸载hexo-generator-index插件</a>&nbsp;<br><a href="/blog/7162b91b/#安装hexo-generator-index-pin-top插件" class="header_2">安装hexo-generator-index-pin-top插件</a>&nbsp;<br><a href="/blog/7162b91b/#添加front-matter配置项" class="header_2">添加front-matter配置项</a>&nbsp;<br><a href="/blog/7162b91b/#重新部署" class="header_2">重新部署</a>&nbsp;<br><a href="/blog/7162b91b/#添加置顶标识" class="header_2">添加置顶标识</a>&nbsp;<br><a href="/blog/7162b91b/#参考资料" class="header_2">参考资料</a>&nbsp;<br></div>
