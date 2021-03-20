@@ -1,12 +1,13 @@
 ---
 title: 14 Log4j PatternLayout
-categories: 
+categories:
   - 编程
   - Java
   - Log4j教程
+  - 简介
+abbrlink: 5c0e8258
 date: 2020-08-06 01:38:36
 updated: 2020-08-18 12:02:42
-abbrlink: 5c0e8258
 ---
 <div id='my_toc'><a href="/blog/5c0e8258/#Log4j-PatternLayout" class="header_1">Log4j PatternLayout</a>&nbsp;<br><a href="/blog/5c0e8258/#模式转换字符" class="header_2">模式转换字符</a>&nbsp;<br><a href="/blog/5c0e8258/#格式修饰符" class="header_2">格式修饰符</a>&nbsp;<br><a href="/blog/5c0e8258/#PatternLayout示例" class="header_2">PatternLayout示例</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

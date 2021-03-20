@@ -1,12 +1,13 @@
 ---
 title: 4 Log4j 配置
-categories: 
+categories:
   - 编程
   - Java
   - Log4j教程
+  - 简介
+abbrlink: 9c30cbde
 date: 2020-08-03 04:04:18
 updated: 2020-08-18 12:00:10
-abbrlink: 9c30cbde
 ---
 <div id='my_toc'><a href="/blog/9c30cbde/#log4j配置" class="header_1">log4j配置</a>&nbsp;<br><a href="/blog/9c30cbde/#Log4j-properties的语法" class="header_2">Log4j.properties的语法</a>&nbsp;<br><a href="/blog/9c30cbde/#Define-the-root-logger-with-appender-XXX" class="header_1">Define the root logger with appender XXX</a>&nbsp;<br><a href="/blog/9c30cbde/#Set-the-appender-named-XXX-to-be-a-File-appender" class="header_1">Set the appender named XXX to be a File appender</a>&nbsp;<br><a href="/blog/9c30cbde/#Define-the-layout-for-XXX-appender" class="header_1">Define the layout for XXX appender</a>&nbsp;<br><a href="/blog/9c30cbde/#Log4j-properties示例" class="header_2">Log4j.properties示例</a>&nbsp;<br><a href="/blog/9c30cbde/#变量替换" class="header_3">变量替换</a>&nbsp;<br><a href="/blog/9c30cbde/#级别" class="header_3">级别</a>&nbsp;<br><a href="/blog/9c30cbde/#Appender对象" class="header_2">Appender对象</a>&nbsp;<br><a href="/blog/9c30cbde/#Appender对象属性" class="header_3">Appender对象属性</a>&nbsp;<br><a href="/blog/9c30cbde/#将Appender添加到Logger对象" class="header_3">将Appender添加到Logger对象</a>&nbsp;<br><a href="/blog/9c30cbde/#在程序中为Logger对象添加Appender对象" class="header_3">在程序中为Logger对象添加Appender对象</a>&nbsp;<br><a href="/blog/9c30cbde/#所有可用的Appender" class="header_3">所有可用的Appender</a>&nbsp;<br><a href="/blog/9c30cbde/#Layout对象" class="header_2">Layout对象</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

@@ -1,12 +1,13 @@
 ---
 title: 6 Log4j Logger类方法
-categories: 
+categories:
   - 编程
   - Java
   - Log4j教程
+  - 简介
+abbrlink: 295e501e
 date: 2020-08-03 05:44:24
 updated: 2020-08-18 12:03:51
-abbrlink: 295e501e
 ---
 <div id='my_toc'><a href="/blog/295e501e/#Log4j-Logger类方法" class="header_1">Log4j Logger类方法</a>&nbsp;<br><a href="/blog/295e501e/#获取Logger类实例" class="header_2">获取Logger类实例</a>&nbsp;<br><a href="/blog/295e501e/#打印日志信息的方法" class="header_2">打印日志信息的方法</a>&nbsp;<br><a href="/blog/295e501e/#示例程序" class="header_2">示例程序</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

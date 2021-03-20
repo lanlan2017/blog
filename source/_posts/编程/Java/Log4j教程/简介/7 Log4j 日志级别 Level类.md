@@ -1,12 +1,13 @@
 ---
 title: 7 Log4j 日志级别 Level类
-categories: 
+categories:
   - 编程
   - Java
   - Log4j教程
+  - 简介
+abbrlink: 9f922eef
 date: 2020-08-03 06:03:06
 updated: 2020-08-18 12:08:25
-abbrlink: 9f922eef
 ---
 <div id='my_toc'><a href="/blog/9f922eef/#Log4j-日志级别Level类" class="header_1">Log4j 日志级别Level类</a>&nbsp;<br><a href="/blog/9f922eef/#日志级别是如何工作的" class="header_2">日志级别是如何工作的</a>&nbsp;<br><a href="/blog/9f922eef/#在程序中设置日志级别" class="header_2">在程序中设置日志级别</a>&nbsp;<br><a href="/blog/9f922eef/#示例程序" class="header_3">示例程序</a>&nbsp;<br><a href="/blog/9f922eef/#使用配置文件设置日志级别" class="header_2">使用配置文件设置日志级别</a>&nbsp;<br><a href="/blog/9f922eef/#log4j-properties" class="header_3">log4j.properties</a>&nbsp;<br><a href="/blog/9f922eef/#SetLevleByConfig-java" class="header_3">SetLevleByConfig.java</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

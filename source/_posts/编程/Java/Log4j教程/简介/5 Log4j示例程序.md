@@ -1,12 +1,13 @@
 ---
 title: 5 Log4j 示例程序
-categories: 
+categories:
   - 编程
   - Java
   - Log4j教程
+  - 简介
+abbrlink: 37d9cc03
 date: 2020-08-03 05:07:11
 updated: 2020-08-18 12:00:17
-abbrlink: 37d9cc03
 ---
 <div id='my_toc'><a href="/blog/37d9cc03/#Log4j示例程序" class="header_1">Log4j示例程序</a>&nbsp;<br><a href="/blog/37d9cc03/#项目结构" class="header_2">项目结构</a>&nbsp;<br><a href="/blog/37d9cc03/#源代码" class="header_2">源代码</a>&nbsp;<br><a href="/blog/37d9cc03/#日志输出到文件" class="header_2">日志输出到文件</a>&nbsp;<br><a href="/blog/37d9cc03/#Log4j-properties" class="header_3">Log4j.properties</a>&nbsp;<br><a href="/blog/37d9cc03/#Log4jExample-java" class="header_3">Log4jExample.java</a>&nbsp;<br><a href="/blog/37d9cc03/#运行效果" class="header_3">运行效果</a>&nbsp;<br><a href="/blog/37d9cc03/#日志输出到控制台" class="header_2">日志输出到控制台</a>&nbsp;<br><a href="/blog/37d9cc03/#log4j-properties" class="header_3">log4j.properties</a>&nbsp;<br><a href="/blog/37d9cc03/#替换log4j配置文件-重新运行" class="header_3">替换log4j配置文件 重新运行</a>&nbsp;<br><a href="/blog/37d9cc03/#日志同时输出到文件和控制台" class="header_2">日志同时输出到文件和控制台</a>&nbsp;<br><a href="/blog/37d9cc03/#log4j-properties" class="header_3">log4j.properties</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
