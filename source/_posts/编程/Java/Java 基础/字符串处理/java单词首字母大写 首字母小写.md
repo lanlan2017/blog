@@ -1,13 +1,13 @@
 ---
 title: java单词首字母大写 首字母小写
-categories:
+categories: 
   - 编程
   - Java
   - Java 基础
   - 字符串处理
-abbrlink: 9d84ecc2
 date: 2019-04-03 22:05:32
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 07:57:49
+abbrlink: 9d84ecc2
 ---
 <div id='my_toc'><a href="/blog/9d84ecc2/#原理" class="header_2">原理</a>&nbsp;<br><a href="/blog/9d84ecc2/#ASCII码运算" class="header_3">ASCII码运算</a>&nbsp;<br><a href="/blog/9d84ecc2/#结论" class="header_3">结论</a>&nbsp;<br><a href="/blog/9d84ecc2/#代码" class="header_2">代码</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
@@ -15,8 +15,8 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## 原理 ##
-### ASCII码运算 ###
+## 原理
+### ASCII码运算
 先来看实例代码:
 ```java
 System.out.println("a-z:"+(int)'a'+"-"+(int)'z');
@@ -31,12 +31,12 @@ A-Z:65-90
 0-9:48-57
 a减去A=32
 ```
-### 结论 ###
+### 结论
 - 小写字母`a到z`的`ASCII`码范围为:`97到122`。
 - 大写字母`A到Z`的`ASCII`码范围为:`65到90`,
 - **小写字母减去`32`就得到大写字母,同样的大写字母加上`32`就得到了小写字母.**
 
-## 代码 ##
+## 代码
 ```java
 package first.letter;
 public class LowerUpperCaseFirstLetter

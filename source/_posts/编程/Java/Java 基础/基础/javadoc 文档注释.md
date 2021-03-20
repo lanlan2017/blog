@@ -1,20 +1,21 @@
 ---
 title: javadoc 文档注释
-categories:
+categories: 
   - 编程
   - Java
   - Java 基础
-abbrlink: 4b9baef8
+  - 基础
 date: 2019-01-30 21:28:29
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 08:12:32
+abbrlink: 4b9baef8
 ---
-<div id='my_toc'><a href="/blog/4b9baef8/#文档注释写法" class="header_2">文档注释写法</a>&nbsp;<br><a href="/blog/4b9baef8/#api文档生成" class="header_2">api文档生成</a>&nbsp;<br><a href="/blog/4b9baef8/#javadoc作用命令处理范文" class="header_3">javadoc作用命令处理范文</a>&nbsp;<br><a href="/blog/4b9baef8/#提取private的内容" class="header_3">提取private的内容</a>&nbsp;<br><a href="/blog/4b9baef8/#javadoc命令格式" class="header_3">javadoc命令格式</a>&nbsp;<br><a href="/blog/4b9baef8/#实例" class="header_3">实例</a>&nbsp;<br><a href="/blog/4b9baef8/#javadoc标记" class="header_2">javadoc标记</a>&nbsp;<br><a href="/blog/4b9baef8/#javadoc标记" class="header_2">javadoc标记</a>&nbsp;<br><a href="/blog/4b9baef8/#@see的运用" class="header_3">@see的运用</a>&nbsp;<br><a href="/blog/4b9baef8/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/4b9baef8/#文档注释写法" class="header_1">文档注释写法</a>&nbsp;<br><a href="/blog/4b9baef8/#api文档生成" class="header_1">api文档生成</a>&nbsp;<br><a href="/blog/4b9baef8/#javadoc作用命令处理范文" class="header_2">javadoc作用命令处理范文</a>&nbsp;<br><a href="/blog/4b9baef8/#提取private的内容" class="header_2">提取private的内容</a>&nbsp;<br><a href="/blog/4b9baef8/#javadoc命令格式" class="header_2">javadoc命令格式</a>&nbsp;<br><a href="/blog/4b9baef8/#实例" class="header_2">实例</a>&nbsp;<br><a href="/blog/4b9baef8/#javadoc标记" class="header_1">javadoc标记</a>&nbsp;<br><a href="/blog/4b9baef8/#javadoc标记" class="header_1">javadoc标记</a>&nbsp;<br><a href="/blog/4b9baef8/#-see的运用" class="header_2">@see的运用</a>&nbsp;<br><a href="/blog/4b9baef8/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## 文档注释写法 ##
+# 文档注释写法
 文档注释:`/**...*/`则是为支持jdk 工具javadoc.exe而特有的注释语句。javadoc 工具能从java 源文件中读取第三种注释， 并能识别注释中用`@标识`的一些特殊变量,制作成HTML 格式的类说明文档。javadoc不但能对一个 java 源文件生成注释文档，而且能对`目录`和`包`生成`交叉链接`的 html 格式的类说明文档
 @author        作者名  
 @version       版本标识  
@@ -25,8 +26,8 @@ updated: 2019-12-17 05:18:52
 @see           交叉参考     
 
 
-## api文档生成 ##
-### javadoc作用命令处理范文 ###
+# api文档生成
+## javadoc作用命令处理范文
 javadoc工具默认只处理以`public`或 `protected`修饰的
 1. 类、
 2. 接口、
@@ -36,9 +37,9 @@ javadoc工具默认只处理以`public`或 `protected`修饰的
 6. 内部类`之前`的文档注释。
 
 其他地方，如方法中,构造函数中,......的文档注释,javadoc工具不会处理。
-### 提取private的内容 ###
+## 提取private的内容
 如果开发者确实希望 javadoc工具可以提取 private修饰的内容,则可以在使用 javadoc工具时增加 `-private`选项
-### javadoc命令格式 ###
+## javadoc命令格式
 javadoc命令的基本用法如下:
 ```
 javadoc 选项 Java源文件|包
@@ -51,7 +52,7 @@ javadoc 选项 Java源文件|包
 
 除此之外, javadoc命令还包含了大量其他选项,读者可以通过在命令行窗口执行` javadoc-help`来查看 javadoc命令的所有选项。
 javadoc命令可对`源文件`、`包`生成API文档,在上面的语法格式中,`Java源文件`可以支持通配符,例如,使用`*.java`来代表当前路径下所有的Java源文件。
-### 实例 ###
+## 实例
 **JavadocTagTest.java:**
 ```java
 package myjavadoc.test;
@@ -113,7 +114,7 @@ javadoc -d C:\Users\lan\Desktop\TestJavaDoc Test.java JavadocTagTest.java
 ```
 显示效果:
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/no_windowtitle_header_doctitle.png)
-## javadoc标记 ##
+# javadoc标记
 标记的使用是有位置限制的
 可以出现在类或者接口文档注释中的有@see、`@deprecated`、 `@author`、 `@version`等;
 
@@ -134,9 +135,9 @@ javadoc -d C:\Users\lan\Desktop\TestJavaDoc Test.java JavadocTagTest.java
     function paly_audioID20190131222419() {var id = document.getElementById("audioID20190131222419");if (id != null) {id.play();}}
 </script>
 
-## javadoc标记 ##
-### @see的运用 ###
+# javadoc标记
+## @see的运用
 see的句法有三种：
 
-## 参考链接 ##
+# 参考链接
 [Javadoc 使用详解](https://blog.csdn.net/vbirdbest/article/details/80296136)

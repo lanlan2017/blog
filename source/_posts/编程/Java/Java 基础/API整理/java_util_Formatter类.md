@@ -1,13 +1,13 @@
 ---
 title: java_util_Formatter类
-categories:
+categories: 
   - 编程
   - Java
   - Java 基础
   - API整理
-abbrlink: 7906d867
 date: 2018-08-13 14:50:18
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 08:01:54
+abbrlink: 7906d867
 ---
 <div id='my_toc'><a href="/blog/7906d867/#formatter方法" class="header_1">formatter方法</a>&nbsp;<br><a href="/blog/7906d867/#格式化规则" class="header_1">格式化规则</a>&nbsp;<br><a href="/blog/7906d867/#-常规类型-、-字符类型-和-数值类型-的-格式说明符语法" class="header_2">` 常规类型`、`字符类型`和`数值类型`的`格式说明符语法`</a>&nbsp;<br><a href="/blog/7906d867/#用来表示-日期和时间类型-的格式说明符语法" class="header_2">用来表示`日期和时间类型`的格式说明符语法</a>&nbsp;<br><a href="/blog/7906d867/#与参数不对应的格式说明符语法" class="header_2">与参数不对应的格式说明符语法</a>&nbsp;<br><a href="/blog/7906d867/#语法规则详细说明" class="header_1">语法规则详细说明</a>&nbsp;<br><a href="/blog/7906d867/#可选项-argument_index$" class="header_2">可选项`[argument_index$]`</a>&nbsp;<br><a href="/blog/7906d867/#必选项-conversion" class="header_2">必选项`conversion`</a>&nbsp;<br><a href="/blog/7906d867/#-conversion-分类：" class="header_3">`conversion`分类：</a>&nbsp;<br><a href="/blog/7906d867/#常规格式符" class="header_3">常规格式符</a>&nbsp;<br><a href="/blog/7906d867/#Unicode字符" class="header_3">Unicode字符</a>&nbsp;<br><a href="/blog/7906d867/#整数格式符" class="header_3">整数格式符</a>&nbsp;<br><a href="/blog/7906d867/#浮点数格式符号" class="header_3">浮点数格式符号</a>&nbsp;<br><a href="/blog/7906d867/#日期/时间转换前缀" class="header_3">日期/时间转换前缀</a>&nbsp;<br><a href="/blog/7906d867/#日期/时间转换后缀" class="header_3">日期/时间转换后缀</a>&nbsp;<br><a href="/blog/7906d867/#格式化时间后缀" class="header_4">格式化时间后缀</a>&nbsp;<br><a href="/blog/7906d867/#格式化日期后缀" class="header_4">格式化日期后缀</a>&nbsp;<br><a href="/blog/7906d867/#常见的日期/时间组合简写" class="header_4">常见的日期/时间组合简写</a>&nbsp;<br><a href="/blog/7906d867/#格式化百分号" class="header_3">格式化百分号</a>&nbsp;<br><a href="/blog/7906d867/#格式化行分隔符" class="header_3">格式化行分隔符</a>&nbsp;<br><a href="/blog/7906d867/#可选项-width" class="header_3">可选项`[width]`</a>&nbsp;<br><a href="/blog/7906d867/#可选项-precision" class="header_3">可选项`[.precision]`</a>&nbsp;<br><a href="/blog/7906d867/#可选项-flags" class="header_2">可选项`[flags]`</a>&nbsp;<br><a href="/blog/7906d867/#设置左右对齐-0补齐" class="header_3">设置左右对齐,0补齐</a>&nbsp;<br><a href="/blog/7906d867/#正负数符号表示" class="header_3">正负数符号表示</a>&nbsp;<br><a href="/blog/7906d867/#加进制标志加小数点" class="header_3">加进制标志加小数点</a>&nbsp;<br><a href="/blog/7906d867/#组分隔符" class="header_3">组分隔符</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
@@ -36,18 +36,18 @@ updated: 2019-12-17 05:18:52
 
 `Formatter`提供了对布局对齐和排列的支持，以及对数值、字符串和日期/时间数据的常规格式和特定于语言环境的输出的支持。
 
-# 格式化规则 #
+# 格式化规则
 要想按照自己的想法格式化必须事先编写一个规则。这个规则的语法如下。
 
-## ` 常规类型`、`字符类型`和`数值类型`的`格式说明符语法` ##
+## ` 常规类型`、`字符类型`和`数值类型`的`格式说明符语法`
 ```
 %[argument_index$][flags][width][.precision]conversion
 ```
-## 用来表示`日期和时间类型`的格式说明符语法 ##
+## 用来表示`日期和时间类型`的格式说明符语法
 ```
    %[argument_index$][flags][width]conversion
 ```
-## 与参数不对应的格式说明符语法 ##
+## 与参数不对应的格式说明符语法
 ```
   %[flags][width]conversion
 ```
@@ -55,9 +55,9 @@ updated: 2019-12-17 05:18:52
 
 注意：规则一中的`precision`前面要加英文句号“`.`”
 
-# 语法规则详细说明 #
+# 语法规则详细说明
 
-## 可选项`[argument_index$]` ##
+## 可选项`[argument_index$]`
 - 可选的 `argument_index` 是一个`十进制整数`，**用于表明参数在参数列表中的位置**。
 - 第一个参数由 "1$"引用，第二个参数由"2$"引用，依此类推。
 `argument_index`很好理解，就是一参数占位符，用来表示要被格式化的参数。
@@ -75,12 +75,12 @@ world,hello
 ```
 上面的`%2$s`,中的`s`表示这个参数字符串。详细往后看
 
-## 必选项`conversion` ##
+## 必选项`conversion`
 注意：`conversion`和前面的`%`是格式化规则中必须要有的,这两者是必选项。其他的都是可以选项。
 
 `conversion` 是一个表明应该如何格式化参数的字符。用这个来确定被格式内容的类型，如果类型不匹配会报错。
 
-### `conversion`分类： ###
+### `conversion`分类：
 
 - **常规**-可应用于任何参数类型
 
@@ -93,7 +93,7 @@ world,hello
 -  **百分比**-产生字面值'%' ('\u0025')
 -  **行分隔符**-产生特定于平台的行分隔符
 
-### 常规格式符 ###
+### 常规格式符
 
 |常规格式符|描述|
 |:-|:-|
@@ -158,7 +158,7 @@ Hello 4FE2B72 !
 ```
 从结果中我们可以看出：大写`%S`就会格式化为大写的字符串，小写的`%s`就会格式化成小写的字符串。大写的`%B`就会格式化为大写的布尔字符串，小写的`%b`就格式化为小写的。`%H`格式化为大写的哈希码，`%h`格式化为小写的哈希码
 
-### Unicode字符 ###
+### Unicode字符
 
 |字符格式符|描述|
 |:-|:-|
@@ -198,7 +198,7 @@ try
 ```
 \u4E2D\u6587
 ```
-### 整数格式符 ###
+### 整数格式符
 
 |整数格式符|描述|
 |:-|:-|
@@ -262,20 +262,20 @@ System.out.println(formatter);
 带有效位数和指数的十六进制浮点数:0x1.81cba780fdc16p13
 带有效位数和指数的十六进制浮点数:0X1.81CBA780FDC16P13
 ```
-### 日期/时间转换前缀 ###
+### 日期/时间转换前缀
 
 |日期格式符|描述|
 |:-|:-|
 |`T t`|日期和时间转换字符的`前缀`|
 注意这里的`t/T`只是一个缀，它必须加上后缀才起作用。
 
-### 日期/时间转换后缀 ###
+### 日期/时间转换后缀
 
 后缀如下
 
 以下日期和时间转换的后缀字符是为 't' 和 'T' 转换定义的。这些类型相似于但不完全等同于那些由 GNU date 和 POSIX strftime(3c) 定义的类型。提供其他转换类型是为了访问特定于 Java 的功能（如将 'L' 用作秒中的毫秒）。 
 
-#### 格式化时间后缀 ####
+#### 格式化时间后缀
 
 以下转换字符用来`格式化时间`：   
 
@@ -295,7 +295,7 @@ System.out.println(formatter);
 |'`s`'|自`协调世界时` (UTC) 1970 年 1 月 1 日 00:00:00 `至现在所经过的秒数`，即 Long.MIN_VALUE/1000 与 Long.MAX_VALUE/1000 之间的差值。|
 |'`Q`'|自`协调世界时` (UTC) 1970 年 1 月 1 日 00:00:00 `至现在所经过的毫秒数`，即 Long.MIN_VALUE 与 Long.MAX_VALUE 之间的差值。|
 
-#### 格式化日期后缀 ####
+#### 格式化日期后缀
 
 以下转换字符用来`格式化日期`：
 
@@ -316,7 +316,7 @@ System.out.println(formatter);
 |'`d`'|`一个月中的天数`，被格式化为`必要时带前导零两位数`，即 01 - 31|
 |'`e`'|`一个月中的天数`，被格式化为两位数，即 1 - 31。|
 
-#### 常见的日期/时间组合简写 ####
+#### 常见的日期/时间组合简写
 
 以下转换字符用于格式化`常见的日期/时间组合`。 
 
@@ -354,7 +354,7 @@ System.out.println(formatter);
 年月日时分    简写:2018-08-12 19:02
 年月日时分秒简写:2018-08-12 19:02:20
 ```
-### 格式化百分号 ###
+### 格式化百分号
 |百分号|描述|
 |:-|:-|
 |`%`|结果为字面值 '`%`'|
@@ -374,7 +374,7 @@ public static void testFormatPercent()
 ```
 % Hello World! %
 ```
-### 格式化行分隔符 ###
+### 格式化行分隔符
 
 |行分隔符|描述|
 |:-|:-|
@@ -394,7 +394,7 @@ Hello
 World!
 ```
 
-### 可选项`[width]` ###
+### 可选项`[width]`
 可选项`width` 是一个非负十进制整数，表明要向输出中写入的最少字符
 `width` 就表示一最少字符数，被格式化参数字符个数如果小于`width` ，则补上字符让字符宽度等于`width` 。如果被格式化字符宽度大于`width`则不用补齐，`width`不起作用。所以`width` 的作用就是`为少补齐`
 实例：
@@ -413,7 +413,7 @@ public static void testWidth()
  123   123       123
  123   123       123
 ```
-### 可选项`[.precision]` ###
+### 可选项`[.precision]`
 可选 `precision` 是一个非负十进制整数，通常用来限制字符数。特定行为取决于转换类型。
 `precision` 是一个截取器，用于截取被格式化参数。被格式化参数用`precision` 截取器截取后与`width` 相比，
 实例：
@@ -432,7 +432,7 @@ System.out.println(formatter);
 要注意的是`[width]`选项掌管的是整个格式化字符串的宽度，`[.precision]`设置的是小数点后面能显示几位。小数点和小数点后面的宽度都在都包含在width宽度之内，例如上面的`321.123`占7个字符，而**`%10.3f`表示整个占`10`个字符，这十个字符里面小数点后面占`3`**位，所以会在`321.123`前面补上三个空格占满10个字符。如果设置为`%6.3f`则真正的宽度为`7`大于`6`，`width`属性失效。
 
 
-## 可选项`[flags]` ##
+## 可选项`[flags]`
 可选项`flags` 是修改输出格式的字符集。有效标志集取决于转换类型。
 
 |标记|含义|示例|
@@ -461,7 +461,7 @@ System.out.println(formatter);
  
 
 
-### 设置左右对齐,0补齐 ###
+### 设置左右对齐,0补齐
 |标记|含义|示例|
 |-|-|-|
 |`-`|结果将是左对齐的。|`%-4d` 宽度最小为四位并且左对齐|
@@ -483,10 +483,10 @@ public static void testAlign()
 ```
 总共占10位,只精确到小数点后三位:   321.123##
 左对齐,总共占10位,不足0填充,只精确到小数点后三位:000321.123##
-左对齐,总共占10位,只精确到小数点后三位:321.123   ##
+左对齐,总共占10位,只精确到小数点后三位:321.123  
 ```
 
-### 正负数符号表示 ###
+### 正负数符号表示
 
 |标记|含义|示例|
 |-|-|-|
@@ -516,7 +516,7 @@ System.out.println(builder);
 运行结果：
 ![](https://i.imgur.com/m6maPtX.png)
 
-### 加进制标志加小数点 ###
+### 加进制标志加小数点
 |标记|含义|示例|
 |-|-|-|
 |`#`|如果是浮点数则结果加小数点，十六进制和八进制分别加`0x`和`0`|`%#x` 最后输出结果变为16进制并且加0x|
@@ -567,7 +567,7 @@ System.out.println(builder.toString());
 十进制:255  等于16 进制:0xff
 ```
 中英文混合输出的情况下英文应该使用左对齐，这样排列起来才整齐，还有就是使用等宽字体。
-### 组分隔符 ###
+### 组分隔符
 |标记|含义|示例|
 |-|-|-|
 |`,`|结果将包括特定于语言环境的`组分隔符`|`%，d` 每三位数字来个逗号，看起来清晰|
