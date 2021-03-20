@@ -1,12 +1,12 @@
 ---
 title: java 集合 Map遍历方式
-categories:
+categories: 
   - 编程
   - Java
   - Java 集合
-abbrlink: ef2dac38
 date: 2018-12-14 21:43:36
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 09:25:35
+abbrlink: ef2dac38
 ---
 <div id='my_toc'><a href="/blog/ef2dac38/#方式1-通过keysSet遍历Map" class="header_2">方式1 通过keysSet遍历Map</a>&nbsp;<br><a href="/blog/ef2dac38/#实例" class="header_3">实例</a>&nbsp;<br><a href="/blog/ef2dac38/#方式2-通过Map-Entry对象遍历Map" class="header_2">方式2 通过Map.Entry对象遍历Map</a>&nbsp;<br><a href="/blog/ef2dac38/#实例" class="header_3">实例</a>&nbsp;<br><a href="/blog/ef2dac38/#直接遍历所有的值" class="header_2">直接遍历所有的值</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
@@ -14,12 +14,12 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## 方式1 通过keysSet遍历Map ##
+# 方式1 通过keysSet遍历Map
 - 先通过keySet方法先生成键key的Set集合，
 - 然后再根据Set集合的迭代器从set集合里取出键key 
 - 再根据键key 通过 Map 的get(key)方法取出值，这样就取出了键值对：key-value
 
-### 实例 ###
+## 实例
 **先设置Map中的数据**
 ```java
 Map<String, Integer> map2=new HashMap<String,Integer>();
@@ -43,12 +43,12 @@ while(its.hasNext())
     System.out.println("key="+key+" value="+value);
 }
 ```
-## 方式2 通过Map.Entry对象遍历Map ##
+# 方式2 通过Map.Entry对象遍历Map
 - 获取Map的Map.Entry对象的Set集合 
 - 然后通过Map.Entry对象的迭代器 从Map.Entry对象的Set集合中，取出一个 Map.Entry对象：
 - 再从该Map.Entry中分别取出key和value
 
-### 实例 ###
+## 实例
 ```java
 //1 获取Map.Entry对象的Set集合
 Set<Map.Entry<String, Integer>> mapEntry=map2.entrySet();
@@ -64,7 +64,7 @@ while(mapEntryIt.hasNext())
     System.out.println("key="+key+"value="+value);
 }
 ```
-## 直接遍历所有的值 ##
+# 直接遍历所有的值
 ```java
 Collection<Integer> values = map2.values();
 Iterator<Integer> it = values.iterator();

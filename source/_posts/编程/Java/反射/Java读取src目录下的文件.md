@@ -14,14 +14,14 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-# 如何读取src目录下的文件 #
+# 如何读取src目录下的文件
 `src`目录下的文件都是**资源文件**,运行程序时,可以通过反射来获取这些资源文件的输入流,进而读取这些文件中的内容。
 **放到`src`目录下的文件会被打包到`jar`包中**。
-# 我的用法 #
+# 我的用法
 平常会用到好多代码模板,我会把这些`代码的模板`放到`src`目录下,这样当打包成可执行`jar`的时候,这些代码会被打包到`jar`文件中。
 以后我要获取这些`代码模板`时候.我只需要运行这个可执行`jar`包.然后通过命令行参数确定我要使用哪个模板文件,然后程序读取`jar`包中的这个模板文件的内容,然后输出到剪贴板上.
 这样我就直接粘贴即可使用这些代码模板。
-# 读取资源文件的工具类 #
+# 读取资源文件的工具类
 ```java
 /**
  * 这个类专门用来读取资源文件
@@ -77,7 +77,7 @@ public class ResourceFileReader
     }
 }
 ```
-# 使用示例 #
+# 使用示例
 例如现在有一个`MybatisMapperTemplete.xml`文件，路径`/CodeGenerator/src/res/MybatisMapperTemplete.xml`,内容如下:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

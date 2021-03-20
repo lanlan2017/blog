@@ -30,13 +30,13 @@ abbrlink: 9c30cbde
 ## Log4j.properties的语法
 为`appender XXXXX`定义的`Log4j.properties`的语法如下：
 <pre>
-# Define the root logger with appender XXX
+&#35; Define the root logger with appender XXX
 log4j.rootLogger = DEBUG, <mark>XXX</mark>
 
-# Set the appender named XXX to be a File appender
+&#35; Set the appender named XXX to be a File appender
 <strong>log4j.appender.<mark>XXX</mark></strong>=org.apache.log4j.FileAppender
 
-# Define the layout for XXX appender
+&#35; Define the layout for XXX appender
 <strong>log4j.appender.<mark>XXX</mark>.layout</strong>=org.apache.log4j.PatternLayout
 <strong>log4j.appender.<mark>XXX</mark>.layout.conversionPattern</strong>=%m%n
 </pre>
@@ -48,16 +48,16 @@ log4j.rootLogger = DEBUG, <mark>XXX</mark>
 - `layout`被定义为`%m%n`，其中`%m`表示日志信息,`%n`表示换行符,则`%m%n`表示打印出日志信息并在末尾加入换行。
 
 ```properties Log4j.properties
-# 定义变量,该变量表示日志文件所在的目录
+&#35; 定义变量,该变量表示日志文件所在的目录
 log = E:/workspacne_JDK8Tomcat8.5/Log4jDemo
-# Define the root logger with appender file
+&#35; Define the root logger with appender file
 log4j.rootLogger = DEBUG, FILE
 
-# Define the file appender
+&#35; Define the file appender
 log4j.appender.FILE=org.apache.log4j.FileAppender
 log4j.appender.FILE.File=${log}/log.out
 
-# Define the layout for file appender
+&#35; Define the layout for file appender
 log4j.appender.FILE.layout=org.apache.log4j.PatternLayout
 log4j.appender.FILE.layout.conversionPattern=%m%n
 ```

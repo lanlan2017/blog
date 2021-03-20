@@ -1,13 +1,13 @@
 ---
 title: Java IO 合并多个二进制文件为一个二进制文件
-categories:
+categories: 
   - 编程
   - Java
   - Java IO流
   - 应用
-abbrlink: e4a1ea9f
 date: 2019-06-27 17:54:33
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 09:20:37
+abbrlink: e4a1ea9f
 ---
 <div id='my_toc'><a href="/blog/e4a1ea9f/#Java-IO-合并多个二进制文件为一个二进制文件" class="header_1">Java IO 合并多个二进制文件为一个二进制文件</a>&nbsp;<br><a href="/blog/e4a1ea9f/#背景" class="header_2">背景</a>&nbsp;<br><a href="/blog/e4a1ea9f/#算法描述" class="header_2">算法描述</a>&nbsp;<br><a href="/blog/e4a1ea9f/#关键代码" class="header_2">关键代码</a>&nbsp;<br><a href="/blog/e4a1ea9f/#合并多个源文件到目标文件并删除源文件" class="header_2">合并多个源文件到目标文件并删除源文件</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
@@ -15,9 +15,8 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=193870569&type=red" frameborder=0 allowfullscreen></iframe>
-# Java IO 合并多个二进制文件为一个二进制文件 #
-## 背景 ##
+# Java IO 合并多个二进制文件为一个二进制文件
+## 背景
 - 我最近在调用讯飞语音的`API`来把我的博客中的文字转成音频,
 - 讯飞语音合成有数字限制,如果超过字数限制,会合成失败.
 - 为了不超过字数限制,我把文章分割成好几部分,分别合成,
@@ -25,7 +24,7 @@ updated: 2019-12-17 05:18:52
 - 讯飞合成的音频文件是`.pcm`文件,这是个二进制文件,
 
 好了,废话就说到这,下面介绍**如何把多个二进制文件合并为一个二进制文件**.
-## 算法描述 ##
+## 算法描述
 复制文件的算法如下:
 - 从源文件中读入一些字节到内存(字节数组)中
 - 把内存中的这些字节写到目标文件中.
@@ -36,7 +35,7 @@ updated: 2019-12-17 05:18:52
 - 然后读取第三个源文件中的内容,然后输出到目标文件中.
 - 依次类推,直到处理所有的源文件完成。
 
-## 关键代码 ##
+## 关键代码
 ```java
 // 缓存数组
 byte[] buffer = new byte[2048];
@@ -51,7 +50,7 @@ while ((inSize = in.read(buffer)) != -1)
     out.write(buffer, 0, inSize);
 }
 ```
-## 合并多个源文件到目标文件并删除源文件 ##
+## 合并多个源文件到目标文件并删除源文件
 ```java
 /**
  * 合并文件ArrayList中的多个源文件为一个文件.

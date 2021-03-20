@@ -1,24 +1,24 @@
 ---
 title: Java 实现tree命令
-categories:
+categories: 
   - 编程
   - Java
   - Java IO流
   - File
-abbrlink: bf650217
 date: 2019-04-30 20:00:58
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 09:19:15
+abbrlink: bf650217
 ---
-<div id='my_toc'><a href="/blog/bf650217/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/bf650217/#文件名称过滤器" class="header_2">文件名称过滤器</a>&nbsp;<br><a href="/blog/bf650217/#默认文件" class="header_3">默认文件</a>&nbsp;<br><a href="/blog/bf650217/#Maven-Java-Web项目文件名称过滤器" class="header_3">Maven Java Web项目文件名称过滤器</a>&nbsp;<br><a href="/blog/bf650217/#打印目录树主类-MyTree-java" class="header_2">打印目录树主类 MyTree.java</a>&nbsp;<br><a href="/blog/bf650217/#MyTree程序参数说明" class="header_2">MyTree程序参数说明</a>&nbsp;<br><a href="/blog/bf650217/#不带参数" class="header_3">不带参数</a>&nbsp;<br><a href="/blog/bf650217/#带一个参数" class="header_3">带一个参数</a>&nbsp;<br><a href="/blog/bf650217/#运行结果" class="header_2">运行结果</a>&nbsp;<br><a href="/blog/bf650217/#只打印目录" class="header_3">只打印目录</a>&nbsp;<br><a href="/blog/bf650217/#打印目录和文件" class="header_3">打印目录和文件</a>&nbsp;<br><a href="/blog/bf650217/#显示Maven-Java-Web项目结构" class="header_3">显示Maven Java Web项目结构</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/bf650217/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/bf650217/#文件名称过滤器" class="header_1">文件名称过滤器</a>&nbsp;<br><a href="/blog/bf650217/#默认文件" class="header_2">默认文件</a>&nbsp;<br><a href="/blog/bf650217/#Maven-Java-Web项目文件名称过滤器" class="header_2">Maven Java Web项目文件名称过滤器</a>&nbsp;<br><a href="/blog/bf650217/#打印目录树主类-MyTree-java" class="header_1">打印目录树主类 MyTree.java</a>&nbsp;<br><a href="/blog/bf650217/#MyTree程序参数说明" class="header_1">MyTree程序参数说明</a>&nbsp;<br><a href="/blog/bf650217/#不带参数" class="header_2">不带参数</a>&nbsp;<br><a href="/blog/bf650217/#带一个参数" class="header_2">带一个参数</a>&nbsp;<br><a href="/blog/bf650217/#运行结果" class="header_1">运行结果</a>&nbsp;<br><a href="/blog/bf650217/#只打印目录" class="header_2">只打印目录</a>&nbsp;<br><a href="/blog/bf650217/#打印目录和文件" class="header_2">打印目录和文件</a>&nbsp;<br><a href="/blog/bf650217/#显示Maven-Java-Web项目结构" class="header_2">显示Maven Java Web项目结构</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## 问题描述 ##
+# 问题描述
 最近先现实项目的目录结构,查了一下`cmd`之后由`tree`命令,但是项目中有些目录和文件(如`.class`文件)是项目自动生成的,并不全部显示出来,我这想显示该项目必须要有的目录和文件即可,对于`IDE`等工具生成的目录忽略掉。这样使用`cmd`提供的`tree`命令无法满足我的要求,我有必要自己实现一个`tree`命令。下来是我用`java`实现的一个满足我特定要求的`tree`命令。
-## 文件名称过滤器 ##
-### 默认文件 ###
+# 文件名称过滤器
+## 默认文件
 ```java
 package tree;
 import java.io.File;
@@ -32,7 +32,7 @@ public class DefaultFileNameFileter implements FilenameFilter
     }
 }
 ```
-### Maven Java Web项目文件名称过滤器 ###
+## Maven Java Web项目文件名称过滤器
 对于项目中的`.setting`目录,`bin`目录,`.class`文件`.project`文件,这些文件都是`eclipse`自动生成的,在打印项目目录时候,这些目录都不需要打印出来.为了满足这个需求我使用文件名过滤器。代码如下所示：
 ```java
 package tree;
@@ -71,7 +71,7 @@ public class MavenJavaWebFileNameFilter implements FilenameFilter
     }
 }
 ```
-## 打印目录树主类 MyTree.java ##
+# 打印目录树主类 MyTree.java
 `MyTree.java`用来打印目录树,如下所示：
 ```java
 package tree;
@@ -238,17 +238,17 @@ public class MyTree
     }
 }
 ```
-## MyTree程序参数说明 ##
-### 不带参数 ###
+# MyTree程序参数说明
+## 不带参数
 该程序默认**不带参数**,默认情况下**只打印**当前目录下的所有非点号`.`开头的**目录**。
-### 带一个参数 ###
+## 带一个参数
 目前该程序只允许带一个参数,如下所示：
 - **`f`参数**:**不仅打印目录,还会打印目录下的文件**.
 - `java`参数,显示`java`项目的目录结构,隐藏`IDE`等工具生成的文件
 
 
-## 运行结果 ##
-### 只打印目录 ###
+# 运行结果
+## 只打印目录
 **执行程序,不带任何参数**将会只打印目录
 ```cmd
 E:\workspace_web\app17a
@@ -282,7 +282,7 @@ E:\workspace_web\app17a
   │         └─app17a
   └─test-classes
 ```
-### 打印目录和文件 ###
+## 打印目录和文件
 **使用参数`f`,将打印目录和文件**,如下所示:
 ```cmd
 E:\workspace_web\app17a
@@ -346,7 +346,7 @@ E:\workspace_web\app17a
   │           └─pom.xml
   └─test-classes
 ```
-### 显示Maven Java Web项目结构 ###
+## 显示Maven Java Web项目结构
 输入参数`java`,将调用这个功能.这个是我定制的功能,可能还是有些不足的地方,先这样用吧.
 ```cmd
 E:\workspace_web\app17a

@@ -1,13 +1,13 @@
 ---
 title: 转换Java项目的文件编码
-categories:
+categories: 
   - 编程
   - Java
   - Java IO流
   - 应用
-abbrlink: 16108e1f
 date: 2019-08-15 03:00:03
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 09:20:14
+abbrlink: 16108e1f
 ---
 <div id='my_toc'><a href="/blog/16108e1f/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/16108e1f/#需求分析" class="header_1">需求分析</a>&nbsp;<br><a href="/blog/16108e1f/#实现思路" class="header_1">实现思路</a>&nbsp;<br><a href="/blog/16108e1f/#编码实现" class="header_1">编码实现</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
@@ -15,19 +15,19 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-# 问题描述 #
+# 问题描述
 今天在`idea`中导入一个项目的时候出现了乱码,乱码的原因时因为这个项目的编码是`GBK`,但是我设置`idea`的编码为`UTF-8`。
 我知道怎么在`idea`把一个文件从`gbk`转为`utf-8`.但是我还不知道怎么快速把转换整个项目得我编码。
 倒是可以手动一个文件一个文件的该,但是我懒得手动改.所以我决定写个程序来实现。
-# 需求分析 #
+# 需求分析
 - 可以转换一个文件的编码
 - 可以转换整个目录(项目)的编码
 
-# 实现思路 #
+# 实现思路
 - 通过IO流以一种编码方式从源文件中读入,然后以另一种编码写到临时文件中.
 - 然后删除源文件,把临时文件重命名为源文件即可。
 
-# 编码实现 #
+# 编码实现
 
 ```java
 package args.java.file;

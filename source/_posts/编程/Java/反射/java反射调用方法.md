@@ -14,7 +14,7 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-# 反射调用方法步骤 #
+# 反射调用方法步骤
 - 1.获取`Class`对象,使用`Class.forName("类的全限定名")`来加载类的实例,
 - 2.获取要调用的方法的`Method`对象,使用`Class对象.getMethod("方法名",形参列表)`获取要调用的方法.
 - 3.使用`Method对象.invoke(该方法的拥有者,实参列表)`调用方法.
@@ -24,8 +24,8 @@ updated: 2019-12-17 05:18:52
             - 创建实例时,可以通过调用无参构造方法来创建。`Class对象.newInstance()`可以调用无参构造器,创建默认实例
             - 创建实例时,也可以调用带参构造器,通过`Class对象.getConstructor(形参列表)`可以创建一个指定的构造器(`Constructor`),然后调用`Constructor对象.newInstance(实参列表);`就可创建指定参数的实例.
 
-# 实例 #
-## 项目结构 ##
+# 实例
+## 项目结构
 ```cmd
 E:\workspace_web2\TestReflect
 └─src
@@ -34,7 +34,7 @@ E:\workspace_web2\TestReflect
   └─tools
     └─Tools.java
 ```
-## Tool.java ##
+## Tool.java
 ```java
 package tools;
 public class Tools {
@@ -72,7 +72,7 @@ public class Tools {
 }
 ```
 `Tools.java`中定义了一个带参的构造方法,以及无参的静态方法,带参的静态方法,无参的实例方法,带参的实例方法.下面使用反射来调用这些方法.
-## Test.java ##
+## Test.java
 使用反射会抛出大量的异常,但是本文的重点在于反射,所以我把所有的异常简单的抛出.
 ```java
 package test;
@@ -144,8 +144,8 @@ public class Test {
     }
 }
 ```
-## 调用静态方法 ##
-### 调用无参的静态方法 ###
+## 调用静态方法
+### 调用无参的静态方法
 ```java
 private static void callPublicStaticMethod() throws Exception
 {
@@ -159,11 +159,11 @@ private static void callPublicStaticMethod() throws Exception
     method.invoke(classIns);
 }
 ```
-#### 运行效果 ####
+#### 运行效果
 ```cmd
 公有 无参 静态 方法 被调用...
 ```
-### 调用带参的静态方法 ###
+### 调用带参的静态方法
 ```java
 private static void callPublicStaticMethod(String arg1, String age2) throws Exception
 {
@@ -177,13 +177,13 @@ private static void callPublicStaticMethod(String arg1, String age2) throws Exce
     method.invoke(classIns, arg1, age2);
 }
 ```
-#### 运行效果 ####
+#### 运行效果
 ```cmd
 公有 带参 静态 方法 被调用...
     参数1:Hello,参数2:World
 ```
-## 调用实例方法 ##
-### 调用无参实例方法 ###
+## 调用实例方法
+### 调用无参实例方法
 ```java
 private static void callPublicInstanceMethod() throws Exception
 {
@@ -205,7 +205,7 @@ private static void callPublicInstanceMethod() throws Exception
 公有 无参 实例 方法 被调用...
 Tools [name=小明, sex=男]
 ```
-### 调用带参实例方法 ###
+### 调用带参实例方法
 ```java
 private static void callPublicInstanceMethod(String arg1, String arg2) throws Exception
 {

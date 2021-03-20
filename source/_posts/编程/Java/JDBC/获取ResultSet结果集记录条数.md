@@ -14,6 +14,7 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
+# 获取ResultSet结果集记录条数
 ResultSet表示数据库结果集的数据表，通常通过执行查询数据库的语句生成。 
 ResultSet 对象具有指向其当前数据行的`光标`。在最开始的时候，光标被置于第一行`之前`。next() 方法将光标移动到下一行；next()方法在 ResultSet 对象没有下一行时返回 false，所以可以在 while 循环中使用它来迭代结果集。 
 ## 问题描述 ##

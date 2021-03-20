@@ -14,10 +14,10 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## 迭代器 ##
+# 迭代器
 迭代器是一种设计模式，Iterator是Java迭代器最简单的实现。它是一个对象，它可以遍历并选择序列中的对象，而开发人员不需要了解该序列的底层结构。
 使用集合对象的`.iterator()`返回一个Iterator。第一次调用Iterator的next()方法时，它返回序列的第一个元素。
-## Iterator的接口 ##
+# Iterator的接口
 ```java
 public interface Iterator 
 {  
@@ -26,13 +26,13 @@ public interface Iterator
 　　void remove();  //将迭代器新返回的元素删除。
 }  
 ```
-## 迭代方法 ##
+# 迭代方法
 ```java
 for(Iterator it = c.iterator(); it.hasNext(); ){  
 　　Object o = it.next();  
 　　 //do something  
 }  
 ```
-## 参考链接 ##
+# 参考链接
 [https://www.cnblogs.com/hasse/p/5024193.html](https://www.cnblogs.com/hasse/p/5024193.html)
 [http://www.cnblogs.com/lxqiaoyixuan/p/7156944.html](http://www.cnblogs.com/lxqiaoyixuan/p/7156944.html)

@@ -14,9 +14,9 @@ updated: 2020-02-07 01:23:34
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-# Java网络编程 TCP编程 发送接收对象 对象序列化反序列化 #
+# Java网络编程 TCP编程 发送接收对象 对象序列化反序列化
 
-## 对象序列化 ##
+## 对象序列化
 前提条件:必须实现`java.io.Serializable`接口.
 ```java
 //ObjectOutputStream(OutputStream out)
@@ -29,20 +29,20 @@ outputToServer.flush();
 // 4.在最后关闭
 //outputToServer.close();
 ```
-## 对象反序列化 ##
+## 对象反序列化
 ```java
 // 接收服务端的序列化信息
 inputByServer = new ObjectInputStream(client.getInputStream());
 // 反序列化成对象(字符串数组)
 String[] inputArg = (String[]) inputByServer.readObject();
 ```
-## 实例 ##
-### 通信流程 ###
+## 实例
+### 通信流程
 客户端和服务端通信流程如下
 客户端会把接收到的命令行参数(String数组)发送给服务端,
 服务端接收该字符串数组,然后、打印到服务端的控制台上,并把这个字符串数组原样发送给客户端,
 然后客户端接收服务端发送过来的字符串数组,转换之后打印到控制台上.
-### 服务端主线程 ###
+### 服务端主线程
 ```java
 package tcp.arg;
 import java.net.ServerSocket;
@@ -101,7 +101,7 @@ public class EchoThreadServerByArgs
     }
 }
 ```
-### 服务端响应线程 ###
+### 服务端响应线程
 ```java
 package tcp.arg;
 import java.io.IOException;
@@ -170,7 +170,7 @@ public class EchoThreadByArgs implements Runnable
     }
 }
 ```
-### 客户端线程 ###
+### 客户端线程
 ```java
 package tcp.arg;
 import java.io.IOException;
@@ -242,5 +242,5 @@ public class EchoClientByArgs
     }
 }
 ```
-### 运行效果 ###
+### 运行效果
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/net/TCP/6.png)

@@ -14,10 +14,10 @@ updated: 2020-01-03 12:45:16
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## 前言
+# 前言
 Properties 继承于 Hashtable.表示一个持久的属性集.属性列表中每个键及其对应值都是一个字符串。Properties 类被许多Java类使用。例如，在获取环境变量时它就作为System.getProperties()方法的返回值。
-## 基本使用步骤 ##
-### 创建xxx.properties文件 ###
+# 基本使用步骤
+## 创建xxx.properties文件
 先在创建一个名为xxx.properties的文件，然后在里面写入键值对的信息。
 - 键和值用等号隔开，等号左边的是键，等号右边的是值。
 - 井号后面是注释。
@@ -28,14 +28,14 @@ Properties 继承于 Hashtable.表示一个持久的属性集.属性列表中每
 site = https://www.lansheng.net.cn/
 ```
 
-### 实例化properties类 ###
+## 实例化properties类
 
 |方法|描述|
 |:-|:-|
 |`Properties()`|创建一个无默认值的空属性列表。 |
 |`Properties(Properties defaults)`|创建一个带有指定默认值的空属性列表。 |
 
-### 加载配置文件 ###
+## 加载配置文件
 利用Properties中的load()方法加载配置文件,查看api可以看到有两个load()方法，如下表所示:
 
 |方法|描述|
@@ -48,7 +48,7 @@ load()方法可以从`.properties`文件对应的文件输入流中，加载到P
 
 加载好了之后，文件中的键值对就已经保存在Properties类对象中了,可以对该对象中的信息进行读写。
 
-### 读取键值对 ###
+## 读取键值对
 
 |方法|描述|
 |:-|:-|
@@ -66,7 +66,7 @@ load()方法可以从`.properties`文件对应的文件输入流中，加载到P
     -  返回：属性列表中具有指定键值的值。 
 
 
-### 设置键值对 ###
+## 设置键值对
 
 |方法|描述|
 |:-|:-|
@@ -77,7 +77,7 @@ load()方法可以从`.properties`文件对应的文件输入流中，加载到P
     - key - 要置于属性列表中的键。
     - value - 对应于 key 的值。 
 - 返回：属性列表中指定键的`旧值`，如果没有值，则为 null。
-### 获取所有键 ###
+## 获取所有键
 
 |方法|描述|
 |:-|:-|
@@ -85,7 +85,7 @@ load()方法可以从`.properties`文件对应的文件输入流中，加载到P
 |`Enumeration<?> propertyNames()`|返回属性列表中所有`键的枚举`，如果在主属性列表中未找到同名的键，则包括默认属性列表中不同的键。 |
 > `stringPropertyNames()`方法返回此属性列表中的键集，其中该键及其对应值是字符串，如果在主属性列表中未找到同名的键，则还包括默认属性列表中不同的键。其键或值不是 String 类型的属性被忽略。 返回的 set 不受 Properties 对象支持。对此 Properties 的改变不能在该 set 中反映出来，反之亦然。就是说，你用setter方法改变了Property对象中的键值对后，键集中的键不会跟着改变，要想再次正确的遍历，你就要再调用一次stringPropertyNames()来获取更新后的键集。
 返回：此属性列表中的`键集`，其中该键及其对应值是字符串，包括默认属性列表中的键。
-### 写入输出流的方法 ###
+## 写入输出流的方法
 
 |方法|描述|
 |:-|:-|
@@ -93,7 +93,7 @@ load()方法可以从`.properties`文件对应的文件输入流中，加载到P
 |`void list(PrintWriter out)`|将属性列表输出到指定的输出流。 |
 
 
-### 写配置文件 ###
+## 写配置文件
 
 |方法|描述|
 |:-|:-|
@@ -105,8 +105,8 @@ store()方法第一个参数表示输出流对象，第二个参数表示注释�
 - 如果comments不为空，保存后的属性文件第一行会是#comments,表示注释信息；
 - 如果为空则没有注释信息,注释信息后面是属性文件的当前保存时间信息。
 
-## 实例 ##
-### 读取一个配置 ###
+# 实例
+## 读取一个配置
 我这里有一个配置文件`E:\Blog\blog5Copy\FM.properties`,内容如下:
 ```
 # 部署网站的地址
@@ -158,8 +158,8 @@ public static void main(String[] args)
 网站地址:https://www.lansheng.net.cn/
 ```
 嗯，这里就读取成功了，目前暂时只需要读取功能，后面有需求了。再更新吧。
-### 遍历配置文件 ###
-#### SpecialWords.properties文件 ####
+## 遍历配置文件
+### SpecialWords.properties文件
 文件路径:`Tools/src/property/reader/SpecialWords.properties`,该文件位于Tools项目的`property.reader`包下.
 ```java
 id=ID
@@ -170,7 +170,7 @@ CRUD=C R U D
 JavaEE=Java E E
 SpringMVC=Spring MVC
 ```
-#### PropertyTools.java文件 ####
+### PropertyTools.java文件
 文件路径:`Tools/src/property/reader/PropertyTools.java`
 ```java
 package property.reader;
@@ -228,7 +228,7 @@ key=SpringMVC,value=Spring MVC
 key=id,value=ID
 ```
 
-## 参考链接 ##
+# 参考链接
 [https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html#method.summary](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html#method.summary)
 [https://www.cnblogs.com/xudong-bupt/p/3758136.html](https://www.cnblogs.com/xudong-bupt/p/3758136.html)
 [https://blog.csdn.net/wangdajiao/article/details/54315237](https://blog.csdn.net/wangdajiao/article/details/54315237)

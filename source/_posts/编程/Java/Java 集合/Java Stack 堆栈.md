@@ -14,17 +14,17 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## Stack对象简介 ##
+# Stack对象简介
 Stack 类表示`后进先出`（LIFO）的对象堆栈。它通过五个操作对类 Vector 进行了扩展 ，允许将向量视为堆栈。它提供了通常的 push 和 pop 操作，以及取堆栈顶点的 peek 方法、测试堆栈是否为空的 empty 方法、在堆栈中查找项并确定到堆栈顶距离的 search 方法。 
 
 
-## Stack对象方法 ##
-### 构造方法 ###
+# Stack对象方法
+## 构造方法
 |方法|描述|
 |:-|:-|
 |`Stack()`|创建一个空堆栈。|
 
-### 常用方法 ###
+## 常用方法
 |方法|描述|
 |:-|:-|
 |`boolean empty()`|测试堆栈是否为空。 |

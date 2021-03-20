@@ -14,12 +14,13 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-# Java TCP程序设计 #
+# Java TCP程序设计
 在`Java`中使用`Socket`(即套接字)完成`TCP`程序的开发，使用此类可以方便的建立可靠的，双向的，持续的，点对点的通信连接。
 在`Socket`的程序开发中，服务器段使用`SeverSocket`等待客户端的连接，对于`Java`的网络编程，每一个客户端都使用一个`Socket`对象表示,如下图所示。
 ![Socket与SeverSocket](https://img-blog.csdn.net/20180712190751259?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-## SeverSocket类与Socket类 ##
+## SeverSocket类与Socket类
 `SeverSocket`类主要用于在服务器端程序的开发上，用于接收客户端的连接请求。`SeverSocket`类的常用方法如下表所示。
+
 |序号|方法|描述|
 |-|-|-|
 |1|`ServerSocket(int port)`|创建SeverSocket实例，并制定监听窗口|
@@ -27,7 +28,9 @@ updated: 2019-12-17 05:18:52
 |3|`InetAddress getInetAddress()`|返回服务器的IP地址|
 |4|`boolean isClosed()`|返回 ServerSocket 的关闭状态。|
 |5|`void close()`|关闭此套接字。|
+
 在服务器端每次运行时都要使用`accept()`方法等待客户端连接，此方法发执行之后服务器段将进入到阻塞状态，直到客户端连接之后程序才能向下继续执行。此方法的返回值是`Socket`,每一个`Socket`都表示一个客户端对象，`Socket`的常用方法如下表所示。
+
 |序号|方法|描述|
 |-|-|-|
 |1|`Socket(String host, int port)`|创建一个流套接字并将其连接到指定主机上的指定端口号。|
@@ -35,12 +38,13 @@ updated: 2019-12-17 05:18:52
 |3|`OutputStream getOutputStream()`|返回此套接字的输出流。|
 |4|`boolean isClosed()`|判断此套接字是否被关闭|
 |5|`void close()`|关闭此套接字。|
+
 &emsp;&emsp;在客户端，程序可以通过`Socket`类的`getInputStream()`方法取得服务器的输出信息，在服务端可以通过`getOutputStream()`方法取得客户端的输出信息,如下图所示：
 ![服务器和客户端的连接](https://img-blog.csdn.net/20180712221756197?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 在网络编程中需要使用输入及输出流的形式完成信息的传递，所以在开发时需要导入`java.io`包。
-## 第一个TCP程序 ##
+## 第一个TCP程序
 &emsp;&emsp;下面通过`ServerSocket`类及`Socket`类完成 一个服务器的程序开发，此服务向客户端输出"`hello` `world`!"的字符串信息。
-### 服务端代码 ###
+### 服务端代码
 ```java
 package my.net.tcp;
 
@@ -68,7 +72,7 @@ public class HelloServer
 }
 
 ```
-### 客户端代码 ###
+### 客户端代码
 
 ```java
 package my.net.tcp;
@@ -94,14 +98,14 @@ public class HelloClient
 }
 
 ```
-### 编码问题 ###
+### 编码问题
 上面的代码在`eclipse`中运行控制台输出可能有问题,所以到命令行中去编译和运行。因为用的编码是`UTF-8`编码的,所以编译的时候要指定编码。
 如果不指定编码的话,会造成无法编译:
 ```
 HelloServer.java:10: 错误: 编码GBK的不可映射字符
 ```
 ![编码GBK的不可映射字符](https://img-blog.csdn.net/20180712212103511?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-### CMD 中编译运行服务端 ###
+### CMD 中编译运行服务端
 **编译服务端：**
 ```
 javac -encoding UTF-8 -d . HelloServer.java
@@ -114,7 +118,7 @@ java my.net.tcp.HelloServer
 **此时的运行结果:**
 ![这里写图片描述](https://img-blog.csdn.net/20180712212338858?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 可以看到服务器正在等待客户端的连接，如果没有收到客户端的连接，服务器端的将一直等待客户端的连接。
-### CMD 中编译运行客户端 ###
+### CMD 中编译运行客户端
 **编译客户端：**
 ```
 javac -encoding utf-8 -d . HelloClient.java
@@ -131,7 +135,7 @@ java my.net.tcp.HelloClient
 ![客户端运行结果](https://img-blog.csdn.net/20180712211854366?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 从上面的程序的运行结果可以发现，服务器程序一执行到accept()方法后，程序将进入阻塞状态，直到客户端连接上之后，服务器才会继续往下执行。
-## 使用telnet命令连接服务器端进行验证 ##
+## 使用telnet命令连接服务器端进行验证
 服务器端程序建立完成之后，因为这里使用的是`TCP`通信协议连接的，所以可以直接使用`telnet`即可取得服务器的输出信息。
 步骤：
 在命令行下输入`telnet`即可进入`telnet`：
@@ -158,21 +162,21 @@ open localhost 8888
 **服务端运行结果：**
 ![服务端运行结果](https://img-blog.csdn.net/20180712223147394?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 可以看到`telnet`连接到服务端之后，服务器停止监听，继续往下运行。打印一条信息后服务端后停止运行。
-### telnet运行不正正常的情况: 没有开启telnet服务  ###
+### telnet运行不正正常的情况: 没有开启telnet服务 
 如果还没有开启telnet服务的话，是无法启动telnet的。输入telnet显示如下的错误信息：
 ![没有启动telnet的情况](https://img-blog.csdn.net/20180712223742871?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 解决方法是启动telnet即可
-### 如何启动telnet ###
+### 如何启动telnet
 首先进入控制面板：
 ![进入控制面板](https://img-blog.csdn.net/20180712223916700?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 然后在控制面板的收缩框中输入：`启用或关闭Windows功能`，然后点击`启用或关闭Windows功能`进入
 ![点击启用或关闭Windows功能进入](https://img-blog.csdn.net/20180712224037403?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 然后下拉滚动条，找到Telnet客户端，在前面打钩，然后点确定即可启动Telnet客户端。
 ![这里写图片描述](https://img-blog.csdn.net/20180712224235617?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-## TCP实例：Echo程序 ##
+## TCP实例：Echo程序
 `Echo`程序是一个网络编程通信交互的一个经典案例，称为回应程序，即客户端输入什么内容，服务器端就会在这些内容前面加上"`Echo:`"，然后把这些信息发回给客户端，下面实现这样的一个程序。
 在上面的代码中，服务器端每次执行完毕后服务器都会退出，这是因为服务器端指定接收一个客户端的连接，主要是由于`accpet()`方法只能使用一次。下面的程序中将通过循环的方式使用`accpt()`,这样每一个客户端执行完毕后，服务器端都可以重新等待用户连接。
-### 实例：EchoServer ###
+### 实例：EchoServer
 ```java
 package my.net.tcp;
 
@@ -234,7 +238,7 @@ public class EchoServer
 **程序运行结果：**
 ![启动服务器](https://img-blog.csdn.net/20180713100717682?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 可以看到服务器运行之后，和之前的一样，要等待客户端的连接。下面是客户端程序的代码。
-### 实例：EchoClient ###
+### 实例：EchoClient
 ```java
 package my.net.tcp;
 
@@ -295,11 +299,11 @@ public class EchoClient
 
 为了能保证服务器可以同时连接多个客户端，可以加入多线程机制，即每一个客户端连接之后都启动一个线程，这样一个服务器就可以同时支持多个客户端的连接。
 ![使用多线程机制，实现多个客户端同时连接](https://img-blog.csdn.net/20180713102053995?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-## 在服务器上应用多线程 ##
+## 在服务器上应用多线程
 对于服务器端来说，如果要加入多线程机制，则应该在每个用户连接之后启动一个新的线程提供服务。下面先建立一个EchoThread类，EchoThread类是专门用于提供服务的多线程操作，这里的多线程使用Runnable接口的方式实现。
 把EchoSever.java中的accpet()之后的服务代码打包成线程，这样客户端连接上之后服务器就启动一个线程为该客户端提供服务，然后等待下一个客户端的连接。这样就能接收多个客户端的连接，并同时为多个客户端提供服务。
 具体的做法是，把EchoSever.java中的accpet()之后的提供服务的代码，放到EchoThread.java的run()方法中。
-### 实例：EchoThread ###
+### 实例：EchoThread
 
 ```java
 package my.net.tcp;
@@ -360,7 +364,7 @@ public class EchoThread implements Runnable
 ```
 EchoThread.java的主要功能就是接受一个客户端的Socket，并通过循环的方式接受客户端的输入信息，然后向客户端回送刚才输入的信息。
 下面创建EchoThreadServer类，使用上面的EchoThread来为客户端提供服务。
-### 实例：EchoThreadServer类 ###
+### 实例：EchoThreadServer类
 
 ```java
 package my.net.tcp;
@@ -390,21 +394,21 @@ public class EchoThreadServer
 }
 ```
 还是对比上面的EchoServer.java，我们发现把EchoServer.java的**接受连接的部分**和**提供服务功能部分**分割出来成两个类，即可得到接受连接部分EchoThreadServer.java，和提供服务功能部分：EchoThread.java
-### 运行服务端EchoThreadServer ###
+### 运行服务端EchoThreadServer
 ![运行服务端](https://img-blog.csdn.net/20180713113701338?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-### 然后运行客户端:EchoClient ###
+### 然后运行客户端:EchoClient
 ![运行客户端](https://img-blog.csdn.net/20180713113820305?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 此时服务器端程序会创建一个服务进程来提供服务，然后进入下一个循环，等待下一个客户端的连接
 ![等待下一个客户端的连接](https://img-blog.csdn.net/20180713114025634?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 再打开一个cmd窗口，然后启动另一个客户端：
 ![多个窗口同时连接到服务器端](https://img-blog.csdn.net/20180713114426691?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 可以看到此时已经成功连接上两个客户端了，这两个客户端都正常运行，且服务器端已经准备等待第三个客户端的连接。这样，在服务端，每一个连接到服务器的客户端Socket都会以一个线程的方式运行，无论有多少个客户端连接都可以同时完成操作。
-## 使用回调函数 ##
+## 使用回调函数
 如果想知道到底有多少个客户端正在和服务器进行通讯,可以通过回调函数来实现.
-### 回调函数 ###
+### 回调函数
 假设A线程创建了B线程,B线程运行过程中调用了A线程的方法,则该方法就叫回调方法.
-## 如何通过客户端关闭服务器 ##
-### EchoThreadServer ###
+## 如何通过客户端关闭服务器
+### EchoThreadServer
 ```java
 package tcp;
 import java.net.*;
@@ -463,7 +467,7 @@ public class EchoThreadServer
 }
 ```
 `EchoThreadServer`这个类中的,`minusClientNum`,`getClientNum`,`shutdownServer`这三个方法都是给子线程调用的方法,也就是所谓的回调方法.
-### EchoThread ###
+### EchoThread
 ```java
 package tcp;
 import java.net.*;
@@ -530,7 +534,7 @@ public class EchoThread implements Runnable
 ```
 当`EchoThread`的一个线程启动时,将会调用主线程的`addClientNum`方法对主线程中的计数器`加1`,该线程结束时调用`minusClientNum`方法对主线程中的计数器`减1`.
 当服务线程收到`shutdownServer`这个字符串的时候,将调用主线程的`shutdownServer`方法关闭服务器的主线程,这样服务器就不能响应新的客户端连接了.等到之前连接过的客户端都结束后客户端将会真正结束。
-### EchoClient ###
+### EchoClient
 ```java
 package tcp;
 import java.net.*;
@@ -586,7 +590,7 @@ public class EchoClient
     }
 }
 ```
-### 运行效果 ###
+### 运行效果
 打开两个客户端,并各自发送两个字符串,显示效果如下图:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/net/TCP/1.png)
 关闭一个客户端,然后再打开,则此时服务线程的数量先减一后加一,服务线程(等于客户端数量)数量不变.
