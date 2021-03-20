@@ -56,7 +56,7 @@ git diff b8abfe5249 4a7e71d88e -- '批处理 for命令.md'
 运行效果:
 ```
 lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/blog/source/_posts/Windows/CMD 批处理/语法/构建程序相关命令 (master)
-$ git diff b8abfe5249 4a7e71d88e -- '批处理 for命令.md'
+$ git diff b8abfe5249 4a7e71d88e -- &#x27;批处理 for命令.md&#x27;
 diff --git a/source/_posts/Windows/CMD 批处理/语法/构建程序相关命令/批处理 for命令.md b/source/_posts/Windows/CMD 批处理/语法/构建程序相关命令/批处理 for命令.md
 index 11f5b2b..52811fc 100644
 --- a/source/_posts/Windows/CMD 批处理/语法/构建程序相关命令/批处理 for命令.md
@@ -69,7 +69,7 @@ index 11f5b2b..52811fc 100644
 +updated: 2019-12-09 19:45:23
  abbrlink: c4029a06
  ---
--<div id='my_toc'>
+-&lt;div id=&#x27;my_toc&#x27;&gt;
 -
 -- [命令格式](/blog/c4029a06/#命令格式)
 -    - [无参数](/blog/c4029a06/#无参数)
@@ -79,36 +79,35 @@ index 11f5b2b..52811fc 100644
 -    - [参数 /F](/blog/c4029a06/#参数-F)
 -- [参考资料](/blog/c4029a06/#参考资料)
 -
--</div>
--<!--more-->
--<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
-+<div id='my_toc'>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog/c4029a06/#参考资料">参考资料</a><br/></div><!--more-->
-+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}
-+var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}
-+</script>
+-&lt;/div&gt;
+-&lt;!--more--&gt;
+-&lt;script&gt;if (navigator.platform.search(&#x27;arm&#x27;)==-1){document.getElementById(&#x27;my_toc&#x27;).style.display = &#x27;none&#x27;;}&lt;/script&gt;
++&lt;div id=&#x27;my_toc&#x27;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;/blog/c4029a06/#参考资料&quot;&gt;参考资料&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;!--more--&gt;
++&lt;script&gt;if (navigator.platform.search(&#x27;arm&#x27;)==-1){document.getElementById(&#x27;my_toc&#x27;).style.display = &#x27;none&#x27;;}
++var e,p = document.getElementsByTagName(&#x27;p&#x27;);while (p.length&gt;0) {e = p[0];e.parentElement.removeChild(e);}
++&lt;/script&gt;
 
- <!--end-->
--## 命令格式 ##
--```cmd
+ &lt;!--end--&gt;
+-&#35;&#35; 命令格式 &#35;&#35;
+-&#x60;&#x60;&#x60;cmd
 -for [参数] %%变量名 in (相关文件或命令) do 执行的命令
--```
--对一个或一组`文件`，`字符串`或`命令结果`中的每一个对象执行特定命令，达到我们想要的结果。
+-&#x60;&#x60;&#x60;
+-对一个或一组&#x60;文件&#x60;，&#x60;字符串&#x60;或&#x60;命令结果&#x60;中的每一个对象执行特定命令，达到我们想要的结果。
 -**注意**:
--- 在`批处理文件`中使用 `for` 命令时，指定变量请使用 `%%variable`,而不要用 `%variable`,而在cmd窗口中直接输入的for命令则使用`%variable`的形式。
--- 变量名称是区分大小写的，所以 `%i` 不同于 `%I`.
+-- 在&#x60;批处理文件&#x60;中使用 &#x60;for&#x60; 命令时，指定变量请使用 &#x60;%%variable&#x60;,而不要用 &#x60;%variable&#x60;,而在cmd窗口中直接输入的for命令则使用&#x60;%variable&#x60;的形式。
+-- 变量名称是区分大小写的，所以 &#x60;%i&#x60; 不同于 &#x60;%I&#x60;.
 -
--for命令可以带参数或不带参数，带参数时支持以下参数:`/d`,`/l`,`/r`,`/f`.
--### 无参数 ###
+-for命令可以带参数或不带参数，带参数时支持以下参数:&#x60;/d&#x60;,&#x60;/l&#x60;,&#x60;/r&#x60;,&#x60;/f&#x60;.
+-&#35;&#35;&#35; 无参数 &#35;&#35;&#35;
 -......省略
--```
--D:\学习9\书籍\批处理>for_f4.bat
+-&#x60;&#x60;&#x60;
+-D:\学习9\书籍\批处理&gt;for_f4.bat
 -\\DESKTOP-8ISAT6B 的用户帐户
 --------------------------------------------------------------------------------
 +----------------------------------------------------------------------------
  Administrator            DefaultAccount           Guest
  lan                      WDAGUtilityAccount
  命令成功完成。
-
 ```
 可以看到就是倒数第二久远版本(4a7e71d88e)中,我的文章内容被删除掉了.所以我只要将该文件恢复到最久远版本(b8abfe5249)就可以恢复丢失的文章内容.
 ## 取出指定版本的文件
