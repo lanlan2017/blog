@@ -15,8 +15,8 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-------------------------
-```
+# 本文内容已丢失
+
 所以平常使用的时候为了不分割到空字符串，还是设置`limit=0`比较好，可以就是直接调用`String.split(regex)`就行了。
 
 ## replaceFirst()方法 ##

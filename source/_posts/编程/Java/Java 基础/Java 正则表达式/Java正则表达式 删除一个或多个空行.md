@@ -15,8 +15,8 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-# 删除一个或多个空行 #
-## 正则表达式 ##
+# 删除一个或多个空行
+## 正则表达式
 ```
 ^\s*$(?:\n|\r\n)
 ```
@@ -27,14 +27,14 @@ updated: 2019-12-17 05:18:52
 但是这样还是存在一个问题，那就是如果最后一行如果是空行的话，上面的正则是无法删除的。
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/regex/Examples/BlankLine/after.png)
 所以还要再执行一步正则替换，把最后一行的换行符给删除掉:
-## 匹配空行正则2 ##
+## 匹配空行正则2
 ```
 (?:\n|\r\n)^\s*$
 ```
 匹配效果:
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/regex/Examples/BlankLine/after2.png)
 这两个正则一起使用就可以删除掉所有空行了，两个正则的顺序可以随意。
-## 删除所有空行Java代码 ##
+## 删除所有空行Java代码
 ```java
 public static String deleteEmptyLine(String input)
 {
@@ -44,7 +44,7 @@ public static String deleteEmptyLine(String input)
 }
 ```
 
-# 移除多余的连续空格，只留下一个空格。 #
+# 移除多余的连续空格，只留下一个空格。
 
 ```
 string.replaceAll("[ ]+", " ");
@@ -52,7 +52,7 @@ string.replaceAll("[ ]+", " ");
 `[ ]+`表示一个或多个空格，`" "`表示一个空格。这句话的意思就是把多个空格替换为一个空格。
 原文:[https://blog.csdn.net/kaukiyou/article/details/46829375](https://blog.csdn.net/kaukiyou/article/details/46829375)
 
-# 在线正则图形化工具 #
+# 在线正则图形化工具
 [https://regexper.com/](https://regexper.com/)这个在线工具支持javascirpt类型的正则表达式。`(?:(?:^\s*$(?:\n|\r\n))|(?:(?:\n|\r\n)^\s*$))`的图形如下:
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/regex/Examples/BlankLine/picture.png)
 [https://www.debuggex.com/](https://www.debuggex.com/),这个在线工具支持javascript,python,pcre这三种方式，同时还支持在线匹配测试,`(?:(?:^\s*$(?:\n|\r\n))|(?:(?:\n|\r\n)^\s*$))`的图形如下:

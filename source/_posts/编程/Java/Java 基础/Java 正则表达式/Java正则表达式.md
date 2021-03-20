@@ -15,14 +15,8 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
----------------------------------------
-#######################################
-上述替换完成后StringBuffer中的内容------>before_ONEA
-加上文本中剩余子串后StringBuffer中的内容-->before_ONEA_TWOa_THREEa_End
-替换之前的文本:before_ONEa_TWOa_THREEa_End
-全部替换之后的:before_ONEA_TWOa_THREEa_End
-
-```
+# 本文内容已经丢失
+只剩下如下内容：
 这里我们只替换了第一次，before_ONE`a`_TWOa_THREEa_End,然后StringBuffer中处理完毕的文本为`before_ONEA`，未处理的文本为`_TWOa_THREEa_End`，最后调用m.appendTail(sb);把未处理的文本也追加入到StringBuffer中，处理完毕的文本为:`before_ONEA_TWOa_THREEa_End`
 
 ### 小结： ###
