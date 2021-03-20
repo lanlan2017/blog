@@ -14,7 +14,7 @@ updated: 2019-12-17 05:18:51
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## C语言创建文件 ##
+# C语言创建文件
 以`只写方式`打开文件，如果没有改文件的话则会创建该文件
 ```c
 FILE* trainFILETemp=getFILE("trainTemp.txt","w");
@@ -22,7 +22,7 @@ fprintf(trainFILETemp,"使用C语言创建文件");
 //关闭文件
 fclose(trainFILETemp);
 ```
-## C语言重命名文件 ##
+# C语言重命名文件
 
 ```c
     int result;
@@ -34,13 +34,14 @@ fclose(trainFILETemp);
     else
         perror( "Error renaming file" );
 ```
-## C语言删除文件 ##
+# C语言删除文件
 > 在C语言中，有专门的删除文件函数remove。
 > 1、头文件：`stdio.h`
 > 2、声明：`int remove(const char* filename);`
 > 3、功能：删除文件名为filename的文件。 
 > 4、返回值：`删除成功，返回0`.`否则返回-1`.
-### 实例 ###
+
+## 实例
 ```c
     int ret;
     char deleteFile[]="trainRename.txt";
@@ -50,7 +51,7 @@ fclose(trainFILETemp);
     else
         printf("删除文件失败\n");
 ```
-## 参考链接 ##
+# 参考链接
 [详解C语言中的rename()函数和remove()函数的使用方法](https://www.jb51.net/article/71801.htm)
 [如何用C语言创建和删除文件](https://zhidao.baidu.com/question/267104376240933125.html)
 [c 重命名文件](https://blog.csdn.net/goodboy_wkx/article/details/45561327)

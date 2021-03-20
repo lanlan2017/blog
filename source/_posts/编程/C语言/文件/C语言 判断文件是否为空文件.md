@@ -14,7 +14,7 @@ updated: 2019-12-17 05:18:51
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## 代码 ##
+# 代码
 ```c
 FILE* movieFile=fopen("movie.txt","r");
 //如果文件打开失败
@@ -37,5 +37,5 @@ else
 
 fclose(movieFile);//关闭文件
 ```
-## 参考链接 ##
+# 参考链接
 [C语言怎么判断文件是否为空](https://blog.csdn.net/lwpping/article/details/7441950)

@@ -14,7 +14,7 @@ updated: 2019-12-17 05:18:51
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## 一般写法 ##
+# 一般写法
 例如这样有一根file.h头文件，一般写法如下
 ```c
 //file.h
@@ -29,8 +29,8 @@ updated: 2019-12-17 05:18:51
     void updateOldFileByNew(char*oldFileName,char*newFileName);
 #endif
 ```
-## 自动生成 ##
-### 源码 ###
+# 自动生成
+## 源码
 当然，手动写还是有点麻烦，所以我写了点js代码来自动生成：
 ```html
 <html>
@@ -92,7 +92,7 @@ updated: 2019-12-17 05:18:51
 ```
 
 效果,在下面文本框中输入文件名即可生成,然后把代码粘贴到头文件`file.h`中即可。
-### C语言头文件生成工具 ###
+## C语言头文件生成工具
 <textarea rows="5" id="output" style="width:99%;margin-right:auto"></textarea><br><input type="button" name="button1" id="button1" value="变成大写" onclick="daxie()" /><input type="button" name="button1" id="button1" value="变成小写" onclick="xiaoxie()" /><input type="button" name="butto2" id="button2" value="生成c语言头文件声明" onclick="cyuyantouwenjianshengming()" /><input type="button" name="butto2" id="button2" value="清空输入框" onclick="clean()" />
 
 <script>
@@ -146,7 +146,7 @@ updated: 2019-12-17 05:18:51
     }
 </script>
 
-## 参考链接 ##
+# 参考链接
 [https://blog.csdn.net/Com_ma/article/details/78546807](https://blog.csdn.net/Com_ma/article/details/78546807)
 [https://blog.csdn.net/K346K346/article/details/48877773](https://blog.csdn.net/K346K346/article/details/48877773)
 [https://blog.csdn.net/wr132/article/details/65635003](https://blog.csdn.net/wr132/article/details/65635003)
