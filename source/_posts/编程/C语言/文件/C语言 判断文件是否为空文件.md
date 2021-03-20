@@ -1,14 +1,14 @@
 ---
 title: C语言 判断文件是否为空文件
-categories:
+categories: 
   - 编程
   - C语言
   - 文件
-abbrlink: a579418
 date: 2018-11-16 23:11:18
-updated: 2019-12-17 05:18:51
+updated: 2021-03-20 09:53:47
+abbrlink: a579418
 ---
-<div id='my_toc'><a href="/blog/a579418/#代码" class="header_2">代码</a>&nbsp;<br><a href="/blog/a579418/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/a579418/#代码" class="header_1">代码</a>&nbsp;<br><a href="/blog/a579418/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

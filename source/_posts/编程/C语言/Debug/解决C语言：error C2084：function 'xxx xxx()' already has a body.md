@@ -1,14 +1,14 @@
 ---
 title: 解决C语言：error C2084：function 'xxx xxx()' already has a body
-categories:
+categories: 
   - 编程
   - C语言
   - Debug
-abbrlink: 38f33943
 date: 2018-11-14 19:25:05
-updated: 2019-12-17 05:18:51
+updated: 2021-03-20 09:54:29
+abbrlink: 38f33943
 ---
-<div id='my_toc'><a href="/blog/38f33943/#分析原因" class="header_2">分析原因</a>&nbsp;<br><a href="/blog/38f33943/#解决方案" class="header_2">解决方案</a>&nbsp;<br><a href="/blog/38f33943/#总结" class="header_2">总结</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/38f33943/#分析原因" class="header_1">分析原因</a>&nbsp;<br><a href="/blog/38f33943/#解决方案" class="header_1">解决方案</a>&nbsp;<br><a href="/blog/38f33943/#总结" class="header_1">总结</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
