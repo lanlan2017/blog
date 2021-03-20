@@ -1,12 +1,12 @@
 ---
 title: VSCode代码比较功能
-categories:
+categories: 
   - 编程
   - IDE
   - VSCode
-abbrlink: ce242185
 date: 2019-12-25 01:17:03
-updated: 2020-02-12 08:10:56
+updated: 2021-03-20 10:32:49
+abbrlink: ce242185
 ---
 <div id='my_toc'><a href="/blog/ce242185/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/ce242185/#使用VSCode代码比较步骤" class="header_1">使用VSCode代码比较步骤</a>&nbsp;<br><a href="/blog/ce242185/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

@@ -1,12 +1,12 @@
 ---
 title: git rebase命令
-categories:
+categories: 
   - 编程
   - Git
   - 命令
-abbrlink: edcdf022
 date: 2019-12-09 12:15:47
-updated: 2020-02-07 01:36:54
+updated: 2021-03-20 10:05:16
+abbrlink: edcdf022
 ---
 <div id='my_toc'><a href="/blog/edcdf022/#git-rebase的作用" class="header_1">git rebase的作用</a>&nbsp;<br><a href="/blog/edcdf022/#注意" class="header_1">注意</a>&nbsp;<br><a href="/blog/edcdf022/#压缩多个commit为一个新的commit" class="header_1">压缩多个commit为一个新的commit</a>&nbsp;<br><a href="/blog/edcdf022/#先查看commit历史" class="header_2">先查看commit历史</a>&nbsp;<br><a href="/blog/edcdf022/#合并当前到远程之间的commit" class="header_2">合并当前到远程之间的commit</a>&nbsp;<br><a href="/blog/edcdf022/#保留第一个pick-后面的pick改为squash" class="header_2">保留第一个pick 后面的pick改为squash</a>&nbsp;<br><a href="/blog/edcdf022/#写上新的commit的描述" class="header_2">写上新的commit的描述</a>&nbsp;<br><a href="/blog/edcdf022/#压缩效果" class="header_2">压缩效果</a>&nbsp;<br><a href="/blog/edcdf022/#再次修改commit描述" class="header_2">再次修改commit描述</a>&nbsp;<br><a href="/blog/edcdf022/#效果" class="header_3">效果</a>&nbsp;<br><a href="/blog/edcdf022/#测试" class="header_1">测试</a>&nbsp;<br><a href="/blog/edcdf022/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
@@ -57,24 +57,24 @@ git rebase -i 92bf7d32990a43ca242e3b0a40b2e0f199ad1dd2
     pick 1fcec38 更新文章
     pick dce93fd 更新文章
 
-    # Rebase 92bf7d3..dce93fd onto 92bf7d3 (3 commands)
-    #
-    # Commands:
-    # p, pick <commit> = use commit
-    # r, reword <commit> = use commit, but edit the commit message
-    # e, edit <commit> = use commit, but stop for amending
-    # s, squash <commit> = use commit, but meld into previous commit
-    # f, fixup <commit> = like "squash", but discard this commit's log message
-    # x, exec <command> = run command (the rest of the line) using shell
-    # b, break = stop here (continue rebase later with 'git rebase --continue')
-    # d, drop <commit> = remove commit
-    # l, label <label> = label current HEAD with a name
-    # t, reset <label> = reset HEAD to a label
-    # m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
-    # .       create a merge commit using the original merge commit's
-    # .       message (or the oneline, if no original merge commit was
-    # .       specified). Use -c <commit> to reword the commit message.
-    #
+    &#35; Rebase 92bf7d3..dce93fd onto 92bf7d3 (3 commands)
+    &#35;
+    &#35; Commands:
+    &#35; p, pick &lt;commit&gt; = use commit
+    &#35; r, reword &lt;commit&gt; = use commit, but edit the commit message
+    &#35; e, edit &lt;commit&gt; = use commit, but stop for amending
+    &#35; s, squash &lt;commit&gt; = use commit, but meld into previous commit
+    &#35; f, fixup &lt;commit&gt; = like "squash", but discard this commit's log message
+    &#35; x, exec &lt;command&gt; = run command (the rest of the line) using shell
+    &#35; b, break = stop here (continue rebase later with 'git rebase --continue')
+    &#35; d, drop &lt;commit&gt; = remove commit
+    &#35; l, label &lt;label&gt; = label current HEAD with a name
+    &#35; t, reset &lt;label&gt; = reset HEAD to a label
+    &#35; m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [&#35; &lt;oneline&gt;]
+    &#35; .       create a merge commit using the original merge commit's
+    &#35; .       message (or the oneline, if no original merge commit was
+    &#35; .       specified). Use -c &lt;commit&gt; to reword the commit message.
+    &#35;
     E:/Blog/blog/.git/rebase-merge/git-rebase-todo [unix] (13:12 09/12/2019)2,1 顶端
     "E:/Blog/blog/.git/rebase-merge/git-rebase-todo" [unix] 29L, 1214C
 
@@ -85,24 +85,24 @@ git rebase -i 92bf7d32990a43ca242e3b0a40b2e0f199ad1dd2
     s 1fcec38 更新文章
     s dce93fd 更新文章
 
-    # Rebase 92bf7d3..dce93fd onto 92bf7d3 (3 commands)
-    #
-    # Commands:
-    # p, pick <commit> = use commit
-    # r, reword <commit> = use commit, but edit the commit message
-    # e, edit <commit> = use commit, but stop for amending
-    # s, squash <commit> = use commit, but meld into previous commit
-    # f, fixup <commit> = like "squash", but discard this commit's log message
-    # x, exec <command> = run command (the rest of the line) using shell
-    # b, break = stop here (continue rebase later with 'git rebase --continue')
-    # d, drop <commit> = remove commit
-    # l, label <label> = label current HEAD with a name
-    # t, reset <label> = reset HEAD to a label
-    # m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
-    # .       create a merge commit using the original merge commit's
-    # .       message (or the oneline, if no original merge commit was
-    # .       specified). Use -c <commit> to reword the commit message.
-    #
+    &#35; Rebase 92bf7d3..dce93fd onto 92bf7d3 (3 commands)
+    &#35;
+    &#35; Commands:
+    &#35; p, pick &lt;commit&gt; = use commit
+    &#35; r, reword &lt;commit&gt; = use commit, but edit the commit message
+    &#35; e, edit &lt;commit&gt; = use commit, but stop for amending
+    &#35; s, squash &lt;commit&gt; = use commit, but meld into previous commit
+    &#35; f, fixup &lt;commit&gt; = like "squash", but discard this commit's log message
+    &#35; x, exec &lt;command&gt; = run command (the rest of the line) using shell
+    &#35; b, break = stop here (continue rebase later with 'git rebase --continue')
+    &#35; d, drop &lt;commit&gt; = remove commit
+    &#35; l, label &lt;label&gt; = label current HEAD with a name
+    &#35; t, reset &lt;label&gt; = reset HEAD to a label
+    &#35; m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [&#35; &lt;oneline&gt;]
+    &#35; .       create a merge commit using the original merge commit's
+    &#35; .       message (or the oneline, if no original merge commit was
+    &#35; .       specified). Use -c &lt;commit&gt; to reword the commit message.
+    &#35;
 
 ```
 修改好了之后,按下**ESC**,然后输入`:wq`进行保存,这样会将上面的三个commit压缩到一个新的分支上.
@@ -122,15 +122,15 @@ git rebase -i 92bf7d32990a43ca242e3b0a40b2e0f199ad1dd2
 
     更新文章
 
-    # Please enter the commit message for your changes. Lines starting
-    # with '#' will be ignored, and an empty message aborts the commit.
-    #
-    # Date:      Mon Dec 9 13:08:03 2019 +0800
-    #
-    # interactive rebase in progress; onto 92bf7d3
-    # Last commands done (3 commands done):
-    #    squash 1fcec38 更新文章
-    #    squash dce93fd 更新文章
+    &#35; Please enter the commit message for your changes. Lines starting
+    &#35; with '&#35;' will be ignored, and an empty message aborts the commit.
+    &#35;
+    &#35; Date:      Mon Dec 9 13:08:03 2019 +0800
+    &#35;
+    &#35; interactive rebase in progress; onto 92bf7d3
+    &#35; Last commands done (3 commands done):
+    &#35;    squash 1fcec38 更新文章
+    &#35;    squash dce93fd 更新文章
 
 ```
 这个地方按你的实际情况书写即可,为了演示方便,我改成如下内容:
@@ -148,15 +148,15 @@ git rebase -i 92bf7d32990a43ca242e3b0a40b2e0f199ad1dd2
 
     更新文章_之前的commit描述2
 
-    # Please enter the commit message for your changes. Lines starting
-    # with '#' will be ignored, and an empty message aborts the commit.
-    #
-    # Date:      Mon Dec 9 13:08:03 2019 +0800
-    #
-    # interactive rebase in progress; onto 92bf7d3
-    # Last commands done (3 commands done):
-    #    squash 1fcec38 更新文章
-    #    squash dce93fd 更新文章
+    &#35; Please enter the commit message for your changes. Lines starting
+    &#35; with '&#35;' will be ignored, and an empty message aborts the commit.
+    &#35;
+    &#35; Date:      Mon Dec 9 13:08:03 2019 +0800
+    &#35;
+    &#35; interactive rebase in progress; onto 92bf7d3
+    &#35; Last commands done (3 commands done):
+    &#35;    squash 1fcec38 更新文章
+    &#35;    squash dce93fd 更新文章
 
 ```
 然后再次**保存退出即可**.
@@ -198,18 +198,18 @@ git commit --amend
 
     更新文章_之前的commit描述2
 
-    # Please enter the commit message for your changes. Lines starting
-    # with '#' will be ignored, and an empty message aborts the commit.
-    #
-    # Date:      Mon Dec 9 13:08:03 2019 +0800
-    #
-    # On branch master
-    # Your branch is ahead of 'origin/master' by 1 commit.
-    #   (use "git push" to publish your local commits)
-    #
-    # Changes to be committed:
-    #       modified:   source/_posts/Git/git rebase命令.md
-    #
+    &#35; Please enter the commit message for your changes. Lines starting
+    &#35; with '&#35;' will be ignored, and an empty message aborts the commit.
+    &#35;
+    &#35; Date:      Mon Dec 9 13:08:03 2019 +0800
+    &#35;
+    &#35; On branch master
+    &#35; Your branch is ahead of 'origin/master' by 1 commit.
+    &#35;   (use "git push" to publish your local commits)
+    &#35;
+    &#35; Changes to be committed:
+    &#35;       modified:   source/_posts/Git/git rebase命令.md
+    &#35;
 ```
 修改为如下内容:
 ```shell
@@ -219,33 +219,33 @@ git commit --amend
 
     更新文章_之前的commit描述2
 
-    # Please enter the commit message for your changes. Lines starting
-    # with '#' will be ignored, and an empty message aborts the commit.
-    #
-    # Date:      Mon Dec 9 13:08:03 2019 +0800
-    #
-    # On branch master
-    # Your branch is ahead of 'origin/master' by 1 commit.
-    #   (use "git push" to publish your local commits)
-    #
-    # Changes to be committed:
-    #       modified:   source/_posts/Git/git rebase命令.md
-    #
+    &#35; Please enter the commit message for your changes. Lines starting
+    &#35; with '&#35;' will be ignored, and an empty message aborts the commit.
+    &#35;
+    &#35; Date:      Mon Dec 9 13:08:03 2019 +0800
+    &#35;
+    &#35; On branch master
+    &#35; Your branch is ahead of 'origin/master' by 1 commit.
+    &#35;   (use "git push" to publish your local commits)
+    &#35;
+    &#35; Changes to be committed:
+    &#35;       modified:   source/_posts/Git/git rebase命令.md
+    &#35;
 ```
 ```shell
     更新文章
-    # Please enter the commit message for your changes. Lines starting
-    # with '#' will be ignored, and an empty message aborts the commit.
-    #
-    # Date:      Mon Dec 9 13:08:03 2019 +0800
-    #
-    # On branch master
-    # Your branch is ahead of 'origin/master' by 1 commit.
-    #   (use "git push" to publish your local commits)
-    #
-    # Changes to be committed:
-    #       modified:   source/_posts/Git/git rebase命令.md
-    #
+    &#35; Please enter the commit message for your changes. Lines starting
+    &#35; with '&#35;' will be ignored, and an empty message aborts the commit.
+    &#35;
+    &#35; Date:      Mon Dec 9 13:08:03 2019 +0800
+    &#35;
+    &#35; On branch master
+    &#35; Your branch is ahead of 'origin/master' by 1 commit.
+    &#35;   (use "git push" to publish your local commits)
+    &#35;
+    &#35; Changes to be committed:
+    &#35;       modified:   source/_posts/Git/git rebase命令.md
+    &#35;
 ```
 ### 效果
 ```shell

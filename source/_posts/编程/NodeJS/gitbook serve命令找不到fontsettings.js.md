@@ -2,13 +2,12 @@
 title: gitbook serve命令找不到fontsettings.js
 categories: 
   - 编程
-  - JavaScript
   - NodeJS
 date: 2020-10-13 12:35:31
-updated: 2020-10-13 12:35:31
+updated: 2020-10-13 12:43:15
 abbrlink: 2e333fd8
 ---
-<div id='my_toc'></div>
+<div id='my_toc'><a href="/blog/2e333fd8/#gitbook-serve命令找不到fontsettings-js" class="header_1">gitbook serve命令找不到fontsettings.js</a>&nbsp;<br><a href="/blog/2e333fd8/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/2e333fd8/#解决方案" class="header_2">解决方案</a>&nbsp;<br><a href="/blog/2e333fd8/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

@@ -1,22 +1,22 @@
 ---
 title: git bash中使用多个github用户
-categories:
+categories: 
   - 编程
   - Git
   - GitBash
-abbrlink: 4190ffbf
 date: 2018-11-20 20:19:24
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 10:08:13
+abbrlink: 4190ffbf
 ---
-<div id='my_toc'><a href="/blog/4190ffbf/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/4190ffbf/#生成新ssh-key" class="header_3">生成新ssh key</a>&nbsp;<br><a href="/blog/4190ffbf/#添加新ssh-key" class="header_3">添加新ssh key</a>&nbsp;<br><a href="/blog/4190ffbf/#添加公钥到github上" class="header_3">添加公钥到github上</a>&nbsp;<br><a href="/blog/4190ffbf/#配置config文件" class="header_3">配置config文件</a>&nbsp;<br><a href="/blog/4190ffbf/#测试是否配置成功" class="header_3">测试是否配置成功</a>&nbsp;<br><a href="/blog/4190ffbf/#使用新用户时修改远程仓库的地址" class="header_3">使用新用户时修改远程仓库的地址</a>&nbsp;<br><a href="/blog/4190ffbf/#下面是个人的操作" class="header_3">下面是个人的操作</a>&nbsp;<br><a href="/blog/4190ffbf/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/4190ffbf/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/4190ffbf/#生成新ssh-key" class="header_2">生成新ssh key</a>&nbsp;<br><a href="/blog/4190ffbf/#添加新ssh-key" class="header_2">添加新ssh key</a>&nbsp;<br><a href="/blog/4190ffbf/#添加公钥到github上" class="header_2">添加公钥到github上</a>&nbsp;<br><a href="/blog/4190ffbf/#配置config文件" class="header_2">配置config文件</a>&nbsp;<br><a href="/blog/4190ffbf/#测试是否配置成功" class="header_2">测试是否配置成功</a>&nbsp;<br><a href="/blog/4190ffbf/#使用新用户时修改远程仓库的地址" class="header_2">使用新用户时修改远程仓库的地址</a>&nbsp;<br><a href="/blog/4190ffbf/#下面是个人的操作" class="header_2">下面是个人的操作</a>&nbsp;<br><a href="/blog/4190ffbf/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## 问题描述 ##
+# 问题描述
 我在github注册了两个账号，想在在git-bash上同时使用这两个github账号。前提是现在github上注册好账号了。
-### 生成新ssh key ###
+## 生成新ssh key
 在git-bash中,cd到一个目录下(/e/Blog)，输入命令`ssh-keygen -t rsa -C 新用户的邮箱`,然后在该命令的第一个输入项时，为生成的秘钥换个名字，我这里是`id_rsa_lanlan233`,其他的直接回车即可。
 ```
 lan@DESKTOP-8ISAT6B MINGW64 /e/Blog
@@ -45,7 +45,7 @@ lan@DESKTOP-8ISAT6B MINGW64 /e/Blog
 
 ```
 然后，复制生成的私钥`id_rsa_lanlan233`，和公钥`id_rsa_lanlan233.pub`到`~/.ssh/`目录下。接下来用新的github账号登录github。把公钥`id_rsa_lanlan233.pub`添加到上面。
-### 添加新ssh key ###
+## 添加新ssh key
 默认SSH只会读取`id_rsa`，所以为了让SSH识别新的私钥，需要将其添加到`SSH agent`
 使用命令：`ssh-add ~/.ssh/id_rsa_lanlan233`
 如果报错：`Could not open a connection to your authentication agent.`无法连接到ssh agent
@@ -64,10 +64,10 @@ $ ssh-add id_rsa_lanlan233
 Identity added: id_rsa_lanlan233 (id_rsa_lanlan233)
 
 ```
-### 添加公钥到github上 ###
+## 添加公钥到github上
 复制公钥,粘贴到`github`之中.
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/git/GitBash/MoreAccont/1.png)
-### 配置config文件 ###
+## 配置config文件
 查看`~/.ssh/`目录中是否存在`config`文件
 
 如果已存在则直接编辑config文件。如果不存在则需要创建config文件，命令：`touch config`，再对config文件进行编辑，如下所示：
@@ -84,7 +84,7 @@ Host lanlan233
     IdentityFile ~/.ssh/id_rsa_lanlan233
 ```
 其中Host 后的名字可以随意方便自己记忆，但`HostName必须为github.com(或者其它git地址)`。
-### 测试是否配置成功 ###
+## 测试是否配置成功
 使用命令：`ssh -T git@lanlan233`,如果看到下面的命令表示配置成功了。
 ```
 lan@DESKTOP-8ISAT6B MINGW64 ~/.ssh
@@ -98,7 +98,7 @@ $ ssh -T git@blueblue233
 git@github.com: Permission denied (publickey).
 
 ```
-### 使用新用户时修改远程仓库的地址 ###
+## 使用新用户时修改远程仓库的地址
 配置完成后，在连接Host不是github.com的github仓库时，远程库的地址要对应地做一些修改:
 
 例如对于地址
@@ -124,13 +124,13 @@ Receiving objects: 100% (6/6), done.
 ```
 到这里就可以了
 
-### 下面是个人的操作 ###
+## 下面是个人的操作
 我还是用来写东西的，所以懒得再配置主题了。使用的是hexo+next.这里我直接把之前的博客文件夹`bolg5`，复制一份到新的站点目录`xuexi`下即可。
 ```
 cp -r bolg5/ xuexi
 ```
 复制完毕后，进入学习，修改站点配置文件中的远程仓库地址即可。
 
-## 参考链接 ##
+# 参考链接
 
 [多个git账号之间的切换](https://www.cnblogs.com/williamjie/p/9145570.html)

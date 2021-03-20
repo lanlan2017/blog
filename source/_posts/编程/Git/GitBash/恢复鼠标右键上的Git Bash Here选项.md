@@ -1,12 +1,12 @@
 ---
 title: 恢复鼠标右键上的Git Bash Here选项
-categories:
+categories: 
   - 编程
   - Git
   - GitBash
-abbrlink: 6aa7c987
 date: 2019-12-06 15:02:25
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 10:07:47
+abbrlink: 6aa7c987
 ---
 <div id='my_toc'><a href="/blog/6aa7c987/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/6aa7c987/#打开注册表编辑器" class="header_1">打开注册表编辑器</a>&nbsp;<br><a href="/blog/6aa7c987/#进入shell目录" class="header_1">进入shell目录</a>&nbsp;<br><a href="/blog/6aa7c987/#新建项Git-Bash-Here" class="header_1">新建项Git Bash Here</a>&nbsp;<br><a href="/blog/6aa7c987/#设置图标" class="header_2">设置图标</a>&nbsp;<br><a href="/blog/6aa7c987/#设置命令" class="header_2">设置命令</a>&nbsp;<br><a href="/blog/6aa7c987/#地址中有空格要用引号包裹" class="header_1">地址中有空格要用引号包裹</a>&nbsp;<br><a href="/blog/6aa7c987/#使用" class="header_1">使用</a>&nbsp;<br><a href="/blog/6aa7c987/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
@@ -27,7 +27,7 @@ updated: 2019-12-17 05:18:52
 计算机\HKEY_CLASSES_ROOT\Directory\Background\shell
 ```
 此时虽然定位到shell目录,但是shell目录可能显示在屏幕底部,为了便于后续操作,可以按**上/下箭头键**,将shell目录显示在**屏幕中间**
-# 新建项Git Bash Here #
+# 新建项Git Bash Here
 在**shell目录**上**右键**,然后选择**新建**,**项**,输入名称:
 ```
 Git Bash Here

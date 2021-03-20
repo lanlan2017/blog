@@ -1,20 +1,20 @@
 ---
 title: JavaScript 控制html5 audio的播放 暂停 重播
-categories:
+categories: 
   - 编程
   - JavaScript
   - 播放音频
-abbrlink: ff5ef3ed
 date: 2019-04-27 11:27:54
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 10:24:30
+abbrlink: ff5ef3ed
 ---
-<div id='my_toc'><a href="/blog/ff5ef3ed/#实例代码" class="header_2">实例代码</a>&nbsp;<br><a href="/blog/ff5ef3ed/#压缩的代码" class="header_2">压缩的代码</a>&nbsp;<br><a href="/blog/ff5ef3ed/#运行效果" class="header_2">运行效果</a>&nbsp;<br><a href="/blog/ff5ef3ed/#参考资料" class="header_2">参考资料</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/ff5ef3ed/#实例代码" class="header_1">实例代码</a>&nbsp;<br><a href="/blog/ff5ef3ed/#压缩的代码" class="header_1">压缩的代码</a>&nbsp;<br><a href="/blog/ff5ef3ed/#运行效果" class="header_1">运行效果</a>&nbsp;<br><a href="/blog/ff5ef3ed/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## 实例代码 ##
+# 实例代码
 ```html
 <!DOCTYPE HTML>
 <html>
@@ -58,7 +58,7 @@ updated: 2019-12-17 05:18:52
 </body>
 </html>
 ```
-## 压缩的代码 ##
+# 压缩的代码
 ```html
 <audio src="http://audio.xmcdn.com/group58/M07/C0/DC/wKgLglzBws3ydc59AAQFZSpj3Eo398.m4a" controls="controls" preload id="m" hidden></audio><input type="button" value="播放" id=p_s onclick="ps();"><input type="button" value="重播" id="rp" onclick="rp();">
 <script>
@@ -66,7 +66,7 @@ function rp(){var a = document.getElementById('m'); a.currentTime = 0; a.play();
 function ps() {var a = document.getElementById('m');var p_s=document.getElementById('p_s');if (a !== null) {if (a.paused) {p_s.value="暂停";a.play();} else {p_s.value="播放";a.pause();}}}
 </script>
 ```
-## 运行效果 ##
+# 运行效果
 
 <audio src="http://audio.xmcdn.com/group58/M07/C0/DC/wKgLglzBws3ydc59AAQFZSpj3Eo398.m4a" controls="controls" preload id="m" hidden></audio><input type="button" value="播放" id=p_s onclick="ps();"><input type="button" value="重播" id="rp" onclick="rp();">
 <script>
@@ -74,5 +74,5 @@ function rp(){var a = document.getElementById('m'); a.currentTime = 0; a.play();
 function ps() {var a = document.getElementById('m');var p_s=document.getElementById('p_s');if (a !== null) {if (a.paused) {p_s.value="暂停";a.play();} else {p_s.value="播放";a.pause();}}}
 </script>
 
-## 参考资料 ##
+# 参考资料
 [https://www.cnblogs.com/kingplus/p/5587441.html](https://www.cnblogs.com/kingplus/p/5587441.html)

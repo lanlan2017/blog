@@ -1,12 +1,12 @@
 ---
 title: JavaScirpt 解决 正则表达式匹配HTML标签 的错误问题
-categories:
+categories: 
   - 编程
   - JavaScript
   - 正则表达式
-abbrlink: 2b78c799
 date: 2019-12-02 22:40:18
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: 2b78c799
 ---
 <div id='my_toc'><a href="/blog/2b78c799/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/2b78c799/#解决方案" class="header_1">解决方案</a>&nbsp;<br><a href="/blog/2b78c799/#更新" class="header_1">更新</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

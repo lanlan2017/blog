@@ -1,26 +1,26 @@
 ---
 title: Git 错误集合
-categories:
+categories: 
   - 编程
   - Git
   - Debug
-abbrlink: 7e675acc
 date: 2019-04-30 23:53:43
-updated: 2019-12-17 05:18:51
+updated: 2021-03-20 10:07:34
+abbrlink: 7e675acc
 ---
-<div id='my_toc'><a href="/blog/7e675acc/#git-error-bad-signature" class="header_2">git error:bad signature</a>&nbsp;<br><a href="/blog/7e675acc/#ERROR-You-must-verify-your-email-address" class="header_2">ERROR: You must verify your email address.</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/7e675acc/#git-error-bad-signature" class="header_1">git error:bad signature</a>&nbsp;<br><a href="/blog/7e675acc/#ERROR-You-must-verify-your-email-address" class="header_1">ERROR: You must verify your email address.</a>&nbsp;<br><a href="/blog/7e675acc/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## git error:bad signature ##
+# git error:bad signature
 **解决方案:**删除`index`文件再重新生成
 ```cmd
 rm -f .git/index
 git reset
 ```
-## ERROR: You must verify your email address. ##
+# ERROR: You must verify your email address.
 今天使用Hexo发布博客时,报了如下错误:
 ```cmd
 ERROR: You must verify your email address.
@@ -42,4 +42,5 @@ Error: Spawn failed
 这时github会给你发邮件,打开邮箱接收邮件,然后点击按钮验证即可:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/git/Error/Email/2.png)
 
-参考资料:[https://www.jianshu.com/p/d478f6fd381b](https://www.jianshu.com/p/d478f6fd381b)
+# 参考资料
+[https://www.jianshu.com/p/d478f6fd381b](https://www.jianshu.com/p/d478f6fd381b)

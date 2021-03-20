@@ -1,12 +1,12 @@
 ---
 title: grep命令
-categories:
+categories: 
   - 编程
   - Linux
   - 通用
-abbrlink: 471198f0
 date: 2019-11-03 15:40:40
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 10:13:28
+abbrlink: 471198f0
 ---
 <div id='my_toc'><a href="/blog/471198f0/#grep命令" class="header_1">grep命令</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
@@ -14,7 +14,7 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-# grep命令 #
+# grep命令
 ```shell
 grep --help                                                               
 Usage: grep [OPTION]... PATTERNS [FILE]...

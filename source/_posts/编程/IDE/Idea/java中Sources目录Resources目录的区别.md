@@ -1,12 +1,12 @@
 ---
 title: java中Sources目录Resources目录的区别
-categories:
+categories: 
   - 编程
   - IDE
   - Idea
-abbrlink: 7ac11fb
 date: 2019-12-22 12:58:12
-updated: 2020-02-12 08:10:56
+updated: 2020-04-11 09:21:19
+abbrlink: 7ac11fb
 ---
 <div id='my_toc'><a href="/blog/7ac11fb/#什么是Sources目录" class="header_1">什么是Sources目录</a>&nbsp;<br><a href="/blog/7ac11fb/#什么是Resources目录" class="header_1">什么是Resources目录</a>&nbsp;<br><a href="/blog/7ac11fb/#相同点" class="header_1">相同点</a>&nbsp;<br><a href="/blog/7ac11fb/#不同点" class="header_1">不同点</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

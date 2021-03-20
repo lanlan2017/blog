@@ -1,12 +1,12 @@
 ---
 title: git 强制推送到远程仓库
-categories:
+categories: 
   - 编程
   - Git
   - 命令
-abbrlink: 3f12657a
 date: 2019-12-01 15:16:23
-updated: 2020-02-07 01:36:54
+updated: 2020-04-11 09:21:19
+abbrlink: 3f12657a
 ---
 <div id='my_toc'><a href="/blog/3f12657a/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/3f12657a/#解决方案" class="header_1">解决方案</a>&nbsp;<br><a href="/blog/3f12657a/#格式1" class="header_1">格式1</a>&nbsp;<br><a href="/blog/3f12657a/#格式2" class="header_1">格式2</a>&nbsp;<br><a href="/blog/3f12657a/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

@@ -5,31 +5,26 @@ categories:
   - IDE
   - eclipse
 date: 2018-12-11 20:43:57
-updated: 2020-06-23 01:00:12
+updated: 2021-03-20 10:32:56
 abbrlink: 37dcd881
 ---
-<div id='my_toc'><a href="/blog/37dcd881/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/37dcd881/#缺点" class="header_3">缺点</a>&nbsp;<br><a href="/blog/37dcd881/#解决方案" class="header_3">解决方案</a>&nbsp;<br><a href="/blog/37dcd881/#eclipse中设置把Web项目发布到Tomcat-webapps中" class="header_3">eclipse中设置把Web项目发布到Tomcat webapps中</a>&nbsp;<br><a href="/blog/37dcd881/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/37dcd881/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/37dcd881/#缺点" class="header_2">缺点</a>&nbsp;<br><a href="/blog/37dcd881/#解决方案" class="header_2">解决方案</a>&nbsp;<br><a href="/blog/37dcd881/#eclipse中设置把Web项目发布到Tomcat-webapps中" class="header_2">eclipse中设置把Web项目发布到Tomcat webapps中</a>&nbsp;<br><a href="/blog/37dcd881/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-<input type="button" onclick="open_closeTOC()" id="showcloseButton">
-<script>
-    function open_closeTOC() {var id = document.querySelector(".post-body > ul"); if (id.style.display == "block") {id.style.display = "none";document.getElementById("showcloseButton").value= "展开目录";}else if (id.style.display == "none") {id.style.display = "block";document.getElementById("showcloseButton").value="折叠目录";}}(function () {document.querySelector(".post-body > ul").style.display = "none";document.getElementById("showcloseButton").value="展开目录";})();
-</script>
-
-## 问题描述 ##
+# 问题描述
 在Eclipse中，默认会把Web项目发布到Eclipse的工作空间下的：
 ```
 \.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps
 ```
 这个目录中
-### 缺点 ###
+## 缺点
 关掉eclipse后无法访问Web项目。因为Tomcat只会到自己目录下的webapps目录中去寻找Web项目，发布在其他地方的项目Tomcat是找不到的。
-### 解决方案 ###
+## 解决方案
 设置eclipse，把web项目发布到Tomcat安装目录下的webapps目录中。
-### eclipse中设置把Web项目发布到Tomcat webapps中 ###
+## eclipse中设置把Web项目发布到Tomcat webapps中
 先在Servers中展开Tomcat中运行的项目，把这些项目先`remove`掉：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/change_webapps/remove.png)
 然后在Tomcat服务器上，右键，点击`open`:
@@ -48,5 +43,5 @@ abbrlink: 37dcd881
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/change_webapps/startTomcat.png)
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/change_webapps/helloworld.png)
 
-## 参考链接 ##
+# 参考链接
 [https://www.cnblogs.com/mihu/p/4772509.html](https://www.cnblogs.com/mihu/p/4772509.html)

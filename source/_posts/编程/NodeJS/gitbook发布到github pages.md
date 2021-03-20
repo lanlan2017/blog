@@ -1,13 +1,18 @@
 ---
 title: gitbook发布到github pages
-categories:
+categories: 
   - 编程
-  - JavaScript
   - NodeJS
-abbrlink: c3c2965c
 date: 2020-10-12 10:36:57
-updated: 2020-10-12 10:36:57
+updated: 2020-10-13 06:14:58
+abbrlink: c3c2965c
 ---
+<div id='my_toc'><a href="/blog/c3c2965c/#gitbook发布到github-pages" class="header_1">gitbook发布到github pages</a>&nbsp;<br><a href="/blog/c3c2965c/#初始化git" class="header_2">初始化git</a>&nbsp;<br><a href="/blog/c3c2965c/#创建仓库和gh-pages分支" class="header_2">创建仓库和gh-pages分支</a>&nbsp;<br><a href="/blog/c3c2965c/#构建" class="header_2">构建</a>&nbsp;<br><a href="/blog/c3c2965c/#同步静态网站代码到分支" class="header_2">同步静态网站代码到分支</a>&nbsp;<br><a href="/blog/c3c2965c/#手动部署" class="header_2">手动部署</a>&nbsp;<br></div>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
 # gitbook发布到github pages
 ## 初始化git
 ```bash

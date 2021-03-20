@@ -1,19 +1,21 @@
 ---
 title: Navicat 激活
-categories:
+categories: 
   - 编程
   - MySQL
   - 图形工具
-abbrlink: 30dba46d
 date: 2019-11-23 15:47:40
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 10:19:52
+abbrlink: 30dba46d
 ---
-<div id='my_toc'></div>
+<div id='my_toc'><a href="/blog/30dba46d/#本文内容缺失了" class="header_2">本文内容缺失了</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
+## 本文内容缺失了
+
 --END PUBLIC KEY-----
 
 *******************************************************
@@ -91,11 +93,11 @@ G:\Desktop\??\RegPrivateKey.pem
 *******************************************************
 ```
 这会再当前目录下生成`RegPrivateKey.pem`这个文件.
-## 再执行命令 ##
+## 再执行命令
 ```cmd
 navicat-keygen.exe -text .\RegPrivateKey.pem
 ```
-### 然后选择程序和版本 ###
+### 然后选择程序和版本
 我用的是`Premium 12.1` `中文版`,所以
 - 先输入1,
 - 然后输入1
@@ -175,5 +177,5 @@ RKtHivokjqq6v+owtonQrOalF60FN/Xe8+8DBTObaIEIT3FGvIsIvoSDEv4KnxywQASDTL0c0L23rukC
 F2uob7A8rMPkQU7bR+Jc7KIzok1JqvSraH3eBo+ZgNUyFQm0afSYBeJ7jEkD9u/Ns+qHc4X197y4L7XHi3gybdBPc+hvU91WmzHSKA==
 ```
 粘贴到`Navicat`上就可以。
-# 参考资料 #
+# 参考资料
 [https://github.com/DoubleLabyrinth/navicat-keygen/blob/windows/doc/how-to-use.windows.zh-CN.md](https://github.com/DoubleLabyrinth/navicat-keygen/blob/windows/doc/how-to-use.windows.zh-CN.md)

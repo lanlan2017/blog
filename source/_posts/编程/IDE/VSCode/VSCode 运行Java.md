@@ -1,12 +1,12 @@
 ---
 title: VSCode 运行Java
-categories:
+categories: 
   - 编程
   - IDE
   - VSCode
-abbrlink: c8a8df16
 date: 2019-07-06 22:11:24
-updated: 2020-02-12 08:10:56
+updated: 2021-03-20 10:32:52
+abbrlink: c8a8df16
 ---
 <div id='my_toc'><a href="/blog/c8a8df16/#VSCode-运行Java" class="header_1">VSCode 运行Java</a>&nbsp;<br><a href="/blog/c8a8df16/#安装插件" class="header_2">安装插件</a>&nbsp;<br><a href="/blog/c8a8df16/#设置允许参数" class="header_2">设置允许参数</a>&nbsp;<br><a href="/blog/c8a8df16/#开始调试" class="header_2">开始调试</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
@@ -14,10 +14,10 @@ updated: 2020-02-12 08:10:56
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-# VSCode 运行Java #
-## 安装插件 ##
+# VSCode 运行Java
+## 安装插件
 依次点击`查看`,`扩展`,然后在搜索框中输入`Java Extension Pack`,然后安装这个插件,安装完毕后重启VSCode.
-## 设置允许参数 ##
+## 设置允许参数
 打开要运行的`java`文件.然后点击`查看`,`调试`,点击`添加配置`,然后选择环境为`Java`,这个时候会生成一个`launch.json`的文件,如下所示:
 ```json
 {
@@ -83,6 +83,6 @@ updated: 2020-02-12 08:10:56
 - `args`表示命令行参数.
 - 其他配置我还不懂,先这样.
 
-## 开始调试 ##
+## 开始调试
 `调试`各项功能,如下图所示:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/vscode/java/debug/1.png)

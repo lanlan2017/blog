@@ -1,21 +1,22 @@
 ---
 title: html自动生成锚点
-categories:
+categories: 
   - 编程
   - HTML
   - 超链接
-abbrlink: b4a0eaf6
 date: 2019-02-13 00:22:04
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 10:34:27
+abbrlink: b4a0eaf6
 ---
-<div id='my_toc'><a href="/blog/b4a0eaf6/#根据ID属性跳转的锚点" class="header_2">根据ID属性跳转的锚点</a>&nbsp;<br><a href="/blog/b4a0eaf6/#自动生成" class="header_2">自动生成</a>&nbsp;<br><a href="/blog/b4a0eaf6/#Java实现" class="header_3">Java实现</a>&nbsp;<br><a href="/blog/b4a0eaf6/#生成唯一的数字串工具类" class="header_4">生成唯一的数字串工具类</a>&nbsp;<br><a href="/blog/b4a0eaf6/#生成唯一锚点Java类" class="header_4">生成唯一锚点Java类</a>&nbsp;<br><a href="/blog/b4a0eaf6/#javascript实现" class="header_3">javascript实现</a>&nbsp;<br><a href="/blog/b4a0eaf6/#js-生成格式化字符串" class="header_4">js 生成格式化字符串</a>&nbsp;<br><a href="/blog/b4a0eaf6/#拼接成html锚点链接" class="header_4">拼接成html锚点链接</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/b4a0eaf6/#html自动生成锚点" class="header_1">html自动生成锚点</a>&nbsp;<br><a href="/blog/b4a0eaf6/#根据ID属性跳转的锚点" class="header_2">根据ID属性跳转的锚点</a>&nbsp;<br><a href="/blog/b4a0eaf6/#自动生成" class="header_2">自动生成</a>&nbsp;<br><a href="/blog/b4a0eaf6/#Java实现" class="header_3">Java实现</a>&nbsp;<br><a href="/blog/b4a0eaf6/#生成唯一的数字串工具类" class="header_4">生成唯一的数字串工具类</a>&nbsp;<br><a href="/blog/b4a0eaf6/#生成唯一锚点Java类" class="header_4">生成唯一锚点Java类</a>&nbsp;<br><a href="/blog/b4a0eaf6/#javascript实现" class="header_3">javascript实现</a>&nbsp;<br><a href="/blog/b4a0eaf6/#js-生成格式化字符串" class="header_4">js 生成格式化字符串</a>&nbsp;<br><a href="/blog/b4a0eaf6/#拼接成html锚点链接" class="header_4">拼接成html锚点链接</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
+# html自动生成锚点
 这里介绍使用id属性来设置锚点，并通过代码自动生成ID唯一的锚点。
-## 根据ID属性跳转的锚点 ##
+## 根据ID属性跳转的锚点
 html代码如下:
 ```html
 <a href="#AnchorPointID20181122184951">跳转到xxx</a>
@@ -39,10 +40,10 @@ html代码如下:
 </body>
 </html>
 ```
-## 自动生成 ##
+## 自动生成
 上面的id是用代码自动生成的，因为id属性要求唯一，我总不能每次都想一个名字吧。
-### Java实现 ###
-#### 生成唯一的数字串工具类 ####
+### Java实现
+#### 生成唯一的数字串工具类
 这里使用格式化时间字符串来生成的，代码如下,打包成一个类是为了后面使用。
 ```java
 package unique.id;
@@ -63,7 +64,7 @@ public class UniqueIDString
     }
 }
 ```
-#### 生成唯一锚点Java类 ####
+#### 生成唯一锚点Java类
 这个代码也很简单粗暴，直接通过字符串拼接即可。
 ```java
 package anchor.point;
@@ -104,9 +105,9 @@ public class AnchorPoint
     }
 }
 ```
-### javascript实现 ###
+### javascript实现
 也是很粗暴的代码
-#### js 生成格式化字符串 ####
+#### js 生成格式化字符串
 ```javascript
 function uniqueIdByFormatDate(date1) {
     var str = "";
@@ -136,7 +137,7 @@ function uniqueIdByFormatDate(date1) {
     return str;
 }
 ```
-#### 拼接成html锚点链接 ####
+#### 拼接成html锚点链接
 ```javascript
 function uniqueAnchorTags(text) {
     var date1 = new Date();

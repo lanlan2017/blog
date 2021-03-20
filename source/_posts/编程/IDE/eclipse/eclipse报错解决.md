@@ -5,7 +5,7 @@ categories:
   - IDE
   - eclipse
 date: 2020-06-23 12:38:43
-updated: 2020-06-23 01:00:27
+updated: 2020-06-23 01:01:06
 abbrlink: cec44542
 ---
 <div id='my_toc'><a href="/blog/cec44542/#错误信息-Multiple-annotations-found-at-this-line" class="header_1">错误信息 Multiple annotations found at this line:</a>&nbsp;<br><a href="/blog/cec44542/#解决方案" class="header_2">解决方案</a>&nbsp;<br><a href="/blog/cec44542/#eclipse导出可执行jar时Launch-configuration下拉列表选项太多" class="header_1">eclipse导出可执行jar时Launch configuration下拉列表选项太多</a>&nbsp;<br><a href="/blog/cec44542/#解决方案" class="header_2">解决方案</a>&nbsp;<br><a href="/blog/cec44542/#参考资料" class="header_2">参考资料</a>&nbsp;<br></div>

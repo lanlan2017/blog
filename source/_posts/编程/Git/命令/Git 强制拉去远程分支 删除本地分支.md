@@ -1,12 +1,12 @@
 ---
 title: Git 强制拉去远程分支 删除本地分支
-categories:
+categories: 
   - 编程
   - Git
   - 命令
-abbrlink: ecbd02e2
 date: 2019-12-03 19:17:52
-updated: 2020-02-07 01:36:54
+updated: 2020-04-11 09:21:19
+abbrlink: ecbd02e2
 ---
 <div id='my_toc'><a href="/blog/ecbd02e2/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/ecbd02e2/#解决方案" class="header_1">解决方案</a>&nbsp;<br><a href="/blog/ecbd02e2/#方案1-删除本地仓库-重新克隆src分支" class="header_2">方案1 删除本地仓库 重新克隆src分支</a>&nbsp;<br><a href="/blog/ecbd02e2/#方案2-下载src分支-然后删除本地master分支" class="header_2">方案2 下载src分支 然后删除本地master分支</a>&nbsp;<br><a href="/blog/ecbd02e2/#删除远程master分支的记录" class="header_3">删除远程master分支的记录</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

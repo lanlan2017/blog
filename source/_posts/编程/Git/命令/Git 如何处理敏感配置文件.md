@@ -1,14 +1,14 @@
 ---
 title: Git 如何处理敏感配置文件
-categories:
+categories: 
   - 编程
   - Git
   - 命令
-abbrlink: 548b8a6
 date: 2020-06-24 04:41:17
-updated: 2020-06-24 04:52:21
+updated: 2020-06-24 05:24:22
+abbrlink: 548b8a6
 ---
-<div id='my_toc'><a href="/blog/null/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/null/#解决方案" class="header_1">解决方案</a>&nbsp;<br><a href="/blog/null/#先只提交key" class="header_2">先只提交key</a>&nbsp;<br><a href="/blog/null/#填写value" class="header_2">填写value</a>&nbsp;<br><a href="/blog/null/#忽略修改" class="header_2">忽略修改</a>&nbsp;<br><a href="/blog/null/#添加到-gitignore" class="header_2">添加到.gitignore</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/548b8a6/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/548b8a6/#解决方案" class="header_1">解决方案</a>&nbsp;<br><a href="/blog/548b8a6/#先只提交key" class="header_2">先只提交key</a>&nbsp;<br><a href="/blog/548b8a6/#填写value" class="header_2">填写value</a>&nbsp;<br><a href="/blog/548b8a6/#忽略修改" class="header_2">忽略修改</a>&nbsp;<br><a href="/blog/548b8a6/#添加到-gitignore" class="header_2">添加到.gitignore</a>&nbsp;<br><a href="/blog/548b8a6/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

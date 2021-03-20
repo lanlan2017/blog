@@ -1,12 +1,12 @@
 ---
 title: Git 克隆指定分支
-categories:
+categories: 
   - 编程
   - Git
   - 命令
-abbrlink: 7aaab990
 date: 2019-12-01 15:37:28
-updated: 2020-02-07 01:36:54
+updated: 2020-04-11 09:21:19
+abbrlink: 7aaab990
 ---
 <div id='my_toc'><a href="/blog/7aaab990/#命令格式" class="header_1">命令格式</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

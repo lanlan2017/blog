@@ -1,12 +1,12 @@
 ---
 title: 按钮样式Buttons.css用法
-categories:
+categories: 
   - 编程
   - CSS
   - 按钮
-abbrlink: a0156a29
 date: 2019-11-13 20:57:05
-updated: 2019-12-17 05:18:51
+updated: 2021-03-20 10:41:23
+abbrlink: a0156a29
 ---
 <div id='my_toc'><a href="/blog/a0156a29/#首先引入样式和js" class="header_1">首先引入样式和js</a>&nbsp;<br><a href="/blog/a0156a29/#使用样式" class="header_1">使用样式</a>&nbsp;<br><a href="/blog/a0156a29/#形状" class="header_2">形状</a>&nbsp;<br><a href="/blog/a0156a29/#颜色" class="header_2">颜色</a>&nbsp;<br><a href="/blog/a0156a29/#大小" class="header_2">大小</a>&nbsp;<br><a href="/blog/a0156a29/#透明按钮" class="header_2">透明按钮</a>&nbsp;<br><a href="/blog/a0156a29/#3D按钮" class="header_2">3D按钮</a>&nbsp;<br><a href="/blog/a0156a29/#突起按钮" class="header_2">突起按钮</a>&nbsp;<br><a href="/blog/a0156a29/#长阴影" class="header_2">长阴影</a>&nbsp;<br><a href="/blog/a0156a29/#光晕效果" class="header_2">光晕效果</a>&nbsp;<br><a href="/blog/a0156a29/#带下拉菜单的按钮" class="header_2">带下拉菜单的按钮</a>&nbsp;<br><a href="/blog/a0156a29/#效果" class="header_3">效果</a>&nbsp;<br><a href="/blog/a0156a29/#按钮组" class="header_2">按钮组</a>&nbsp;<br><a href="/blog/a0156a29/#效果" class="header_3">效果</a>&nbsp;<br><a href="/blog/a0156a29/#堆叠按钮" class="header_2">堆叠按钮</a>&nbsp;<br><a href="/blog/a0156a29/#效果" class="header_3">效果</a>&nbsp;<br><a href="/blog/a0156a29/#额外的环绕效果" class="header_2">额外的环绕效果</a>&nbsp;<br><a href="/blog/a0156a29/#效果" class="header_3">效果</a>&nbsp;<br><a href="/blog/a0156a29/#表单按钮" class="header_2">表单按钮</a>&nbsp;<br><a href="/blog/a0156a29/#效果" class="header_3">效果</a>&nbsp;<br><a href="/blog/a0156a29/#各种文字样式" class="header_2">各种文字样式</a>&nbsp;<br><a href="/blog/a0156a29/#效果" class="header_3">效果</a>&nbsp;<br><a href="/blog/a0156a29/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
@@ -14,7 +14,7 @@ updated: 2019-12-17 05:18:51
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-# 首先引入样式和js #
+# 首先引入样式和js
 使用下拉列表需要使用JS
 ```html
 <link href="https://cdn.bootcss.com/Buttons/2.0.0/css/buttons.min.css" rel="stylesheet">
@@ -24,9 +24,9 @@ updated: 2019-12-17 05:18:51
 <link href="https://cdn.bootcss.com/Buttons/2.0.0/css/buttons.min.css" rel="stylesheet">
 <script src="https://cdn.bootcss.com/Buttons/2.0.0/js/buttons.min.js"></script>
 
-# 使用样式 #
+# 使用样式
 在html标签上添加特定的class即可应用样式.
-## 形状 ##
+## 形状
 ```html
 <div class="showcase-examples l-center">
 <button class="button">默认</button>
@@ -501,7 +501,7 @@ Buttons 作为表单元素也是非常棒的
     <a href="#各种文字样式" class="button button-small-caps button-primary">small caps</a>
 </div>
 
-# 参考资料 #
+# 参考资料
 [https://www.bootcss.com/p/buttons/](https://www.bootcss.com/p/buttons/)
 [https://www.bootcdn.cn/Buttons/](https://www.bootcdn.cn/Buttons/)
 [https://blog.csdn.net/wangjiaohome/article/details/49761169](https://blog.csdn.net/wangjiaohome/article/details/49761169)

@@ -1,12 +1,12 @@
 ---
 title: termux 安装软件
-categories:
+categories: 
   - 编程
   - Linux
   - Termux
-abbrlink: d305bdc
 date: 2019-11-01 10:14:33
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: d305bdc
 ---
 <div id='my_toc'><a href="/blog/d305bdc/#更新软件" class="header_1">更新软件</a>&nbsp;<br><a href="/blog/d305bdc/#查看已安装软件" class="header_1">查看已安装软件</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

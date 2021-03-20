@@ -1,12 +1,12 @@
 ---
 title: git push 和git fetch的区别
-categories:
+categories: 
   - 编程
   - Git
   - 命令
-abbrlink: bd41df27
 date: 2019-12-03 19:40:41
-updated: 2020-02-07 01:36:54
+updated: 2020-04-11 09:21:19
+abbrlink: bd41df27
 ---
 <div id='my_toc'><a href="/blog/bd41df27/#git-push和git-fetch的区别" class="header_1">git push和git fetch的区别</a>&nbsp;<br><a href="/blog/bd41df27/#推荐使用git-fetch" class="header_1">推荐使用git fetch</a>&nbsp;<br><a href="/blog/bd41df27/#git-fetch更新流程" class="header_2">git fetch更新流程</a>&nbsp;<br><a href="/blog/bd41df27/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

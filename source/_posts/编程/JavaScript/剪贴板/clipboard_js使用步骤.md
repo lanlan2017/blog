@@ -1,20 +1,20 @@
 ---
 title: clipboard_js使用步骤
-categories:
+categories: 
   - 编程
   - JavaScript
   - 剪贴板
-abbrlink: c78d87f4
 date: 2019-02-13 00:16:32
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 10:25:27
+abbrlink: c78d87f4
 ---
-<div id='my_toc'><a href="/blog/c78d87f4/#使用步骤" class="header_2">使用步骤</a>&nbsp;<br><a href="/blog/c78d87f4/#属性说明" class="header_2">属性说明</a>&nbsp;<br><a href="/blog/c78d87f4/#使用实例" class="header_2">使用实例</a>&nbsp;<br><a href="/blog/c78d87f4/#使用HTML-DOM选择器实例化" class="header_3">使用HTML DOM选择器实例化</a>&nbsp;<br><a href="/blog/c78d87f4/#使用HTML元素实例化" class="header_3">使用HTML元素实例化</a>&nbsp;<br><a href="/blog/c78d87f4/#使用html元素列表实例化" class="header_3">使用html元素列表实例化</a>&nbsp;<br><a href="/blog/c78d87f4/#复制静态文本" class="header_2">复制静态文本</a>&nbsp;<br><a href="/blog/c78d87f4/#复制其他元素的内容" class="header_2">复制其他元素的内容</a>&nbsp;<br><a href="/blog/c78d87f4/#复制一个内容" class="header_3">复制一个内容</a>&nbsp;<br><a href="/blog/c78d87f4/#复制多个内容的情况" class="header_3">复制多个内容的情况</a>&nbsp;<br><a href="/blog/c78d87f4/#剪切方式" class="header_2">剪切方式</a>&nbsp;<br><a href="/blog/c78d87f4/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/c78d87f4/#使用步骤" class="header_1">使用步骤</a>&nbsp;<br><a href="/blog/c78d87f4/#属性说明" class="header_1">属性说明</a>&nbsp;<br><a href="/blog/c78d87f4/#使用实例" class="header_1">使用实例</a>&nbsp;<br><a href="/blog/c78d87f4/#使用HTML-DOM选择器实例化" class="header_2">使用HTML DOM选择器实例化</a>&nbsp;<br><a href="/blog/c78d87f4/#使用HTML元素实例化" class="header_2">使用HTML元素实例化</a>&nbsp;<br><a href="/blog/c78d87f4/#使用html元素列表实例化" class="header_2">使用html元素列表实例化</a>&nbsp;<br><a href="/blog/c78d87f4/#复制静态文本" class="header_1">复制静态文本</a>&nbsp;<br><a href="/blog/c78d87f4/#复制其他元素的内容" class="header_1">复制其他元素的内容</a>&nbsp;<br><a href="/blog/c78d87f4/#复制一个内容" class="header_2">复制一个内容</a>&nbsp;<br><a href="/blog/c78d87f4/#复制多个内容的情况" class="header_2">复制多个内容的情况</a>&nbsp;<br><a href="/blog/c78d87f4/#剪切方式" class="header_1">剪切方式</a>&nbsp;<br><a href="/blog/c78d87f4/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## 使用步骤 ##
+# 使用步骤
 使用`clipboard.js`来可分为以下三个步骤：
 - 定义相关的html标签
 - 引入clisboard.js库，引入方式：
@@ -27,17 +27,17 @@ updated: 2019-12-17 05:18:52
 - 实例化ClipboardJS对象
     - 实例化之后可以加上监听复制成功或失败。以便给用户一些提示信息。
 
-## 属性说明 ##
+# 属性说明
 - data-clipboard-text：复制的静态内容
 - data-clipboard-target：设置为其他元素的选择器，将复制该选择器中元素的内容
 - data-clipboard-action: 复制的方式，
     - data-clipboard-action="copy" ：复制方式。默认
     - data-clipboard-action="cut": 剪切方式。
 
-## 使用实例 ##
+# 使用实例
 使用的区别主要在引入方式和ClipboardJS对象的实例化上。
 
-### 使用HTML DOM选择器实例化 ###
+## 使用HTML DOM选择器实例化
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +71,7 @@ updated: 2019-12-17 05:18:52
 </html>
 ```
 点击按钮会把`data-clipboard-text`这个属性的值文本复制到剪贴板中，这种方式使用无复制静态的文本。
-### 使用HTML元素实例化 ###
+## 使用HTML元素实例化
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -101,7 +101,7 @@ updated: 2019-12-17 05:18:52
 </html>
 ```
 
-### 使用html元素列表实例化 ###
+## 使用html元素列表实例化
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -132,10 +132,10 @@ updated: 2019-12-17 05:18:52
 </html>
 ```
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/javascript/cliborad/copyByHtmlList.png)
-## 复制静态文本 ##
+# 复制静态文本
 上面的例子都是复制按钮自己属性中的静态文本中。但是如果想要点击按钮，复制文本框中的内容则不能这么写：
-## 复制其他元素的内容 ##
-### 复制一个内容 ###
+# 复制其他元素的内容
+## 复制一个内容
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -187,7 +187,7 @@ updated: 2019-12-17 05:18:52
 </script>
 ```
 这种方式，文本框中输入什么，就复制什么。复制的内容可以是动态的，目标元素的值发生变化，复制的值也发生变化。适用于，复制内容不固定的情况。
-### 复制多个内容的情况 ###
+## 复制多个内容的情况
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -231,7 +231,7 @@ updated: 2019-12-17 05:18:52
 </html>
 ```
 
-## 剪切方式 ##
+# 剪切方式
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -266,7 +266,7 @@ updated: 2019-12-17 05:18:52
 </body>
 </html>
 ```
-## 参考链接 ##
+# 参考链接
 官网文档：[https://clipboardjs.com/](https://clipboardjs.com/)
 使用HTML DOM选择器实例化：[https://github.com/zenorocha/clipboard.js/blob/master/demo/constructor-selector.html#L18](https://github.com/zenorocha/clipboard.js/blob/master/demo/constructor-selector.html#L18)
 使用使用HTML元素实例化：[https://github.com/zenorocha/clipboard.js/blob/master/demo/constructor-node.html#L16-L17](https://github.com/zenorocha/clipboard.js/blob/master/demo/constructor-node.html#L16-L17)

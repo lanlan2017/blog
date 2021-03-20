@@ -1,12 +1,12 @@
 ---
 title: JavaScirpt 调用百度翻译接口朗读单词
-categories:
+categories: 
   - 编程
   - JavaScript
   - 播放音频
-abbrlink: 9c369915
 date: 2019-12-11 16:47:26
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: 9c369915
 ---
 <div id='my_toc'><a href="/blog/9c369915/#百度翻译音频的下载链接格式" class="header_1">百度翻译音频的下载链接格式</a>&nbsp;<br><a href="/blog/9c369915/#示例" class="header_1">示例</a>&nbsp;<br><a href="/blog/9c369915/#升级" class="header_1">升级</a>&nbsp;<br><a href="/blog/9c369915/#示例" class="header_2">示例</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

@@ -1,12 +1,12 @@
 ---
 title: fatal refusing to merge unrelated histories
-categories:
+categories: 
   - 编程
   - Git
   - Debug
-abbrlink: 331932fd
 date: 2019-12-08 22:44:49
-updated: 2019-12-17 05:18:51
+updated: 2021-03-20 10:07:02
+abbrlink: 331932fd
 ---
 <div id='my_toc'><a href="/blog/331932fd/#fatal-refusing-to-merge-unrelated-histories" class="header_1">fatal: refusing to merge unrelated histories</a>&nbsp;<br><a href="/blog/331932fd/#原因" class="header_1">原因</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
@@ -16,7 +16,7 @@ updated: 2019-12-17 05:18:51
 <!--end-->
 # fatal: refusing to merge unrelated histories
 今天拉取远程分支时报错如下:
-````shell
+```shell
 ~/blog/blogRoot   src  git pull origin master
 remote: Enumerating objects: 81, done.
 remote: Counting objects: 100% (81/81), done.

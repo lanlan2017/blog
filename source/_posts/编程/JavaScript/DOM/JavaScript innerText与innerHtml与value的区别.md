@@ -1,20 +1,20 @@
 ---
 title: JavaScript innerText与innerHtml与value的区别
-categories:
+categories: 
   - 编程
   - JavaScript
   - DOM
-abbrlink: 37c4f730
 date: 2019-02-13 00:12:44
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 10:28:37
+abbrlink: 37c4f730
 ---
-<div id='my_toc'><a href="/blog/37c4f730/#JavaScript-innerText与innerHtml与value的区别" class="header_2">JavaScript innerText与innerHtml与value的区别</a>&nbsp;<br><a href="/blog/37c4f730/#实例" class="header_2">实例</a>&nbsp;<br><a href="/blog/37c4f730/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/37c4f730/#JavaScript-innerText与innerHtml与value的区别" class="header_1">JavaScript innerText与innerHtml与value的区别</a>&nbsp;<br><a href="/blog/37c4f730/#实例" class="header_1">实例</a>&nbsp;<br><a href="/blog/37c4f730/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-## JavaScript innerText与innerHtml与value的区别 ##
+# JavaScript innerText与innerHtml与value的区别
 - `innerHtml`是标签内的文本,`输入输出到该DOM内部纯HTML代码`，也就是说使用innerHTML,可以在标签里面添加html代码  也就是设置一个元素里面的HTML代码;
 - `innerText`是id为object的闭合标签内的文本,`输入输出的是转义文本(字符串)`。也就是说使用innerText可在控件中添加文本，或者读入文本。
 - `value`是`**表单元素特有**的属性`,`输入输出的是转义文本(字符串)`;**非表单元素没有value属性**，如div，span等；value在不同表单元素里有不同的意义，如button中为按钮中的文本，input（text）为默认文本，textarea为默认文本。
@@ -22,7 +22,7 @@ updated: 2019-12-17 05:18:52
 所以**操作`表单元素`的`文本内容`用value**；而`innerHTML`与`innerText`用于操作非表单元素的内容或文本内容。
 
 
-## 实例 ##
+# 实例
 ```html
 <html>
 <head>
@@ -59,7 +59,7 @@ value:undefined
 ```
 div中时没有value属性的，所以这里返回的是`undefined`
 
-## 参考链接 ##
+# 参考链接
 [https://m.baidu.com/mip/c/www.360doc.cn/mip/564782394.html](https://m.baidu.com/mip/c/www.360doc.cn/mip/564782394.html)
 [https://blog.csdn.net/qq_30567891/article/details/60466455](https://blog.csdn.net/qq_30567891/article/details/60466455)
 [http://www.cnblogs.com/zhang-jiao/p/9589967.html](http://www.cnblogs.com/zhang-jiao/p/9589967.html)

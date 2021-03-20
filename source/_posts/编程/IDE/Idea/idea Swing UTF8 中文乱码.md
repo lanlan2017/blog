@@ -1,12 +1,12 @@
 ---
 title: idea Swing UTF8 中文乱码
-categories:
+categories: 
   - 编程
   - IDE
   - Idea
-abbrlink: eb997f87
 date: 2020-01-02 11:55:04
-updated: 2020-02-12 08:10:56
+updated: 2020-04-11 09:21:19
+abbrlink: eb997f87
 ---
 <div id='my_toc'><a href="/blog/eb997f87/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/eb997f87/#解决方案-修改主类的编码为utf-8" class="header_1">解决方案 修改主类的编码为utf-8</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

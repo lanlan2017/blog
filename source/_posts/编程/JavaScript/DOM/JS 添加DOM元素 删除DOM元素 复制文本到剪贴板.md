@@ -1,12 +1,12 @@
 ---
 title: JS 添加DOM元素 删除DOM元素 复制文本到剪贴板
-categories:
+categories: 
   - 编程
   - JavaScript
   - DOM
-abbrlink: aee7c65a
 date: 2019-11-28 15:26:51
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 10:28:48
+abbrlink: aee7c65a
 ---
 <div id='my_toc'><a href="/blog/aee7c65a/#JS-添加DOM元素-删除DOM元素" class="header_1">JS 添加DOM元素 删除DOM元素</a>&nbsp;<br><a href="/blog/aee7c65a/#创建一个DOM对象" class="header_2">创建一个DOM对象</a>&nbsp;<br><a href="/blog/aee7c65a/#DOM对象添加一个子DOM" class="header_2">DOM对象添加一个子DOM</a>&nbsp;<br><a href="/blog/aee7c65a/#DOM删除一个子DOM" class="header_2">DOM删除一个子DOM</a>&nbsp;<br><a href="/blog/aee7c65a/#JS-复制到系统剪贴板" class="header_2">JS 复制到系统剪贴板</a>&nbsp;<br><a href="/blog/aee7c65a/#完整例子" class="header_2">完整例子</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
@@ -14,12 +14,12 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-# JS 添加DOM元素 删除DOM元素 #
-## 创建一个DOM对象 ##
+# JS 添加DOM元素 删除DOM元素
+## 创建一个DOM对象
 ```javascript
 document.createElement("标签名");
 ```
-## DOM对象添加一个子DOM ##
+## DOM对象添加一个子DOM
 ```javascript
 dom.appendChild(subDOM);
 ```
@@ -33,7 +33,7 @@ function add() {
     bodyDom.appendChild(inputText);
 }
 ```
-## DOM删除一个子DOM ##
+## DOM删除一个子DOM
 格式:
 ```javascript
 dom.removeChild(subDom);
@@ -46,7 +46,7 @@ function remove() {
     bodyDom.removeChild(inputText);
 }
 ```
-## JS 复制到系统剪贴板 ##
+## JS 复制到系统剪贴板
 ```javascript
 function copy(text) {
     var temp = document.createElement("textarea");
@@ -58,7 +58,7 @@ function copy(text) {
     document.body.removeChild(temp);
 }
 ```
-## 完整例子 ##
+## 完整例子
 ```html
 <html>
 

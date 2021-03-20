@@ -1,19 +1,20 @@
 ---
 title: 根据时间生成唯一的html ID属性
-categories:
+categories: 
   - 编程
   - JavaScript
   - Date
-abbrlink: e23c09a2
 date: 2018-12-08 00:16:53
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 10:27:04
+abbrlink: e23c09a2
 ---
-<div id='my_toc'></div>
+<div id='my_toc'><a href="/blog/e23c09a2/#根据时间生成唯一的html-ID属性" class="header_1">根据时间生成唯一的html ID属性</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
+# 根据时间生成唯一的html ID属性
 ```html
 <textarea name="output" id="output20181126110146" rows="5" style="width:100%"></textarea>
 <input type="button" value="生成唯一化ID" onclick="setOutput()"/>&nbsp;<input type="button" value="生成唯一ID和对应设置方法" onclick="setOutIdFuntion()">
