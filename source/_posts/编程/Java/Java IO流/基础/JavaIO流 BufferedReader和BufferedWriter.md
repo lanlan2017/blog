@@ -6,7 +6,7 @@ categories:
   - Java IO流
   - 基础
 date: 2018-08-10 15:00:32
-updated: 2021-03-20 08:29:40
+updated: 2021-03-20 08:44:48
 abbrlink: 3f2a064c
 ---
 <div id='my_toc'><a href="/blog/3f2a064c/#部分内容已经丢失" class="header_1">部分内容已经丢失</a>&nbsp;<br><a href="/blog/3f2a064c/#乱码问题" class="header_2">乱码问题</a>&nbsp;<br><a href="/blog/3f2a064c/#BufferedWriter" class="header_1">BufferedWriter</a>&nbsp;<br><a href="/blog/3f2a064c/#继承关系" class="header_2">继承关系</a>&nbsp;<br><a href="/blog/3f2a064c/#构造函数：" class="header_2">构造函数：</a>&nbsp;<br><a href="/blog/3f2a064c/#成员方法" class="header_2">成员方法</a>&nbsp;<br><a href="/blog/3f2a064c/#写文件实例" class="header_2">写文件实例</a>&nbsp;<br><a href="/blog/3f2a064c/#应用：复制文本文件" class="header_1">应用：复制文本文件</a>&nbsp;<br><a href="/blog/3f2a064c/#逐个字符复制文件" class="header_2">逐个字符复制文件</a>&nbsp;<br><a href="/blog/3f2a064c/#逐个字符数组复制文件" class="header_2">逐个字符数组复制文件</a>&nbsp;<br><a href="/blog/3f2a064c/#按行复制文件" class="header_2">按行复制文件</a>&nbsp;<br><a href="/blog/3f2a064c/#测试：" class="header_2">测试：</a>&nbsp;<br><a href="/blog/3f2a064c/#bug-按行复制的时候多写换行符" class="header_2">bug:按行复制的时候多写换行符</a>&nbsp;<br><a href="/blog/3f2a064c/#bug-乱码问题" class="header_2">bug:乱码问题</a>&nbsp;<br><a href="/blog/3f2a064c/#实例：gbk编码的文件复制到utf8编码的文件中：" class="header_3">实例：gbk编码的文件复制到utf8编码的文件中：</a>&nbsp;<br></div>

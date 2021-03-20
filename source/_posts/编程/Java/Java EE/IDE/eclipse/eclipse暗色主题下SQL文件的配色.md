@@ -1,14 +1,14 @@
 ---
 title: eclipse暗色主题下SQL文件的配色
-categories:
+categories: 
   - 编程
   - Java
   - Java EE
   - IDE
   - eclipse
-abbrlink: 7198198c
 date: 2019-06-14 10:07:26
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: 7198198c
 ---
 <div id='my_toc'><a href="/blog/7198198c/#eclipse暗色主题下SQL文件的配色" class="header_1">eclipse暗色主题下SQL文件的配色</a>&nbsp;<br><a href="/blog/7198198c/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/7198198c/#修改eclipse-sql文件代码配色" class="header_2">修改eclipse sql文件代码配色</a>&nbsp;<br><a href="/blog/7198198c/#eclipse其他代码配色" class="header_2">eclipse其他代码配色</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

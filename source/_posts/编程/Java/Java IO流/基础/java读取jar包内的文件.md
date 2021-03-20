@@ -6,7 +6,7 @@ categories:
   - Java IO流
   - 基础
 date: 2018-10-26 19:56:09
-updated: 2020-04-11 09:21:19
+updated: 2021-03-20 08:44:48
 abbrlink: 18ab79a8
 ---
 <div id='my_toc'><a href="/blog/18ab79a8/#首先介绍怎么把资源文件打包到可执行jar包中" class="header_2">首先介绍怎么把资源文件打包到可执行jar包中</a>&nbsp;<br><a href="/blog/18ab79a8/#读取jar包中的文件" class="header_2">读取jar包中的文件</a>&nbsp;<br><a href="/blog/18ab79a8/#读取jar包中资源文件子目录中的文件" class="header_2">读取jar包中资源文件子目录中的文件</a>&nbsp;<br></div>

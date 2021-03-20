@@ -1,14 +1,14 @@
 ---
 title: 获取ResultSet结果集记录条数
-categories:
+categories: 
   - 编程
   - Java
   - JDBC
-abbrlink: 127223bf
 date: 2018-12-05 00:18:01
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 09:24:14
+abbrlink: 127223bf
 ---
-<div id='my_toc'><a href="/blog/127223bf/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/127223bf/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/127223bf/#获取ResultSet结果集记录条数" class="header_1">获取ResultSet结果集记录条数</a>&nbsp;<br><a href="/blog/127223bf/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/127223bf/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

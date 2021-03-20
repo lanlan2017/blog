@@ -1,13 +1,13 @@
 ---
-title: 3 Log4j 架构
-categories:
+title: 3 Log4j架构
+categories: 
   - 编程
   - Java
   - Log4j教程
   - 简介
-abbrlink: 39ac74b8
 date: 2020-08-03 03:47:33
-updated: 2020-08-18 11:59:37
+updated: 2021-03-20 09:38:13
+abbrlink: 39ac74b8
 ---
 <div id='my_toc'><a href="/blog/39ac74b8/#log4j架构" class="header_1">log4j架构</a>&nbsp;<br><a href="/blog/39ac74b8/#Log4j采用分层架构" class="header_2">Log4j采用分层架构</a>&nbsp;<br><a href="/blog/39ac74b8/#Log4j框架组件图" class="header_2">Log4j框架组件图</a>&nbsp;<br><a href="/blog/39ac74b8/#Log4j对象分类" class="header_2">Log4j对象分类</a>&nbsp;<br><a href="/blog/39ac74b8/#核心对象" class="header_3">核心对象</a>&nbsp;<br><a href="/blog/39ac74b8/#Logger对象" class="header_4">Logger对象</a>&nbsp;<br><a href="/blog/39ac74b8/#Layout对象" class="header_4">Layout对象</a>&nbsp;<br><a href="/blog/39ac74b8/#Appender对象" class="header_4">Appender对象</a>&nbsp;<br><a href="/blog/39ac74b8/#支持对象" class="header_3">支持对象</a>&nbsp;<br><a href="/blog/39ac74b8/#Level对象" class="header_4">Level对象</a>&nbsp;<br><a href="/blog/39ac74b8/#Filter对象" class="header_4">Filter对象</a>&nbsp;<br><a href="/blog/39ac74b8/#ObjectRenderer对象" class="header_4">ObjectRenderer对象</a>&nbsp;<br><a href="/blog/39ac74b8/#LogManager对象" class="header_4">LogManager对象</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

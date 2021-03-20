@@ -1,14 +1,14 @@
 ---
 title: java Enumeration 接口的使用
-categories:
+categories: 
   - 编程
   - Java
   - Java 集合
-abbrlink: 7b1e18da
 date: 2018-12-09 22:47:36
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 09:26:30
+abbrlink: 7b1e18da
 ---
-<div id='my_toc'><a href="/blog/7b1e18da/#API中的介绍" class="header_2">API中的介绍</a>&nbsp;<br><a href="/blog/7b1e18da/#Enumeration接口方法" class="header_2">Enumeration接口方法</a>&nbsp;<br><a href="/blog/7b1e18da/#Enumeration接口遍历实例" class="header_2">Enumeration接口遍历实例</a>&nbsp;<br><a href="/blog/7b1e18da/#另一个遍历枚举的例子" class="header_2">另一个遍历枚举的例子</a>&nbsp;<br><a href="/blog/7b1e18da/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/7b1e18da/#API中的介绍" class="header_1">API中的介绍</a>&nbsp;<br><a href="/blog/7b1e18da/#Enumeration接口方法" class="header_1">Enumeration接口方法</a>&nbsp;<br><a href="/blog/7b1e18da/#Enumeration接口遍历实例" class="header_1">Enumeration接口遍历实例</a>&nbsp;<br><a href="/blog/7b1e18da/#另一个遍历枚举的例子" class="header_1">另一个遍历枚举的例子</a>&nbsp;<br><a href="/blog/7b1e18da/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

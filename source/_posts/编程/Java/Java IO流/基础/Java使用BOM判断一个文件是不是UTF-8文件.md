@@ -6,7 +6,7 @@ categories:
   - Java IO流
   - 基础
 date: 2018-08-29 19:35:00
-updated: 2020-04-11 09:21:19
+updated: 2021-03-20 08:44:48
 abbrlink: 2fe8061d
 ---
 <div id='my_toc'><a href="/blog/2fe8061d/#查看16进制的源文件" class="header_1">查看16进制的源文件</a>&nbsp;<br><a href="/blog/2fe8061d/#判断文件是不是udf-8加BOM" class="header_1">判断文件是不是udf-8加BOM</a>&nbsp;<br><a href="/blog/2fe8061d/#缺点" class="header_1">缺点</a>&nbsp;<br></div>

@@ -6,7 +6,7 @@ categories:
   - Log4j教程
   - Debug
 date: 2020-09-02 11:57:06
-updated: 2020-09-03 01:16:31
+updated: 2020-09-03 01:18:51
 abbrlink: e06a014f
 ---
 <div id='my_toc'><a href="/blog/e06a014f/#解决eclipse-<!DOCTYPE-log4j-configuration-SYSTEM"log4j-dtd">代码报错" class="header_1">解决eclipse <!DOCTYPE log4j:configuration SYSTEM"log4j.dtd">代码报错</a>&nbsp;<br><a href="/blog/e06a014f/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/e06a014f/#解决方案1" class="header_2">解决方案1</a>&nbsp;<br><a href="/blog/e06a014f/#通过DTD-file创建log4j2-xml文件" class="header_3">通过DTD file创建log4j2.xml文件</a>&nbsp;<br><a href="/blog/e06a014f/#用log4j2-xml的DOCTYPE替换log4j-xml的DOCTYPE" class="header_3">用log4j2.xml的DOCTYPE替换log4j.xml的DOCTYPE</a>&nbsp;<br><a href="/blog/e06a014f/#解决方案2" class="header_2">解决方案2</a>&nbsp;<br><a href="/blog/e06a014f/#取出log4j-xxx-jar文件中的log4j-dtd文件" class="header_3">取出log4j-xxx.jar文件中的log4j.dtd文件</a>&nbsp;<br><a href="/blog/e06a014f/#创建Catalog-Entry" class="header_3">创建Catalog Entry</a>&nbsp;<br><a href="/blog/e06a014f/#填写Location文本框" class="header_4">填写Location文本框</a>&nbsp;<br><a href="/blog/e06a014f/#填写Key-type选择框" class="header_4">填写Key type选择框</a>&nbsp;<br><a href="/blog/e06a014f/#填写key文本框" class="header_4">填写key文本框</a>&nbsp;<br><a href="/blog/e06a014f/#在Design标签页-修改DOCTYPE" class="header_3">在Design标签页 修改DOCTYPE</a>&nbsp;<br><a href="/blog/e06a014f/#查看修改后的log4j-xml源码" class="header_3">查看修改后的log4j.xml源码</a>&nbsp;<br></div>

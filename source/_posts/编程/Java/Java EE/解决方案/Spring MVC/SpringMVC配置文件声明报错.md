@@ -1,14 +1,14 @@
 ---
 title: SpringMVC配置文件声明报错
-categories:
+categories: 
   - 编程
   - Java
   - Java EE
   - 解决方案
   - Spring MVC
-abbrlink: fb0eb9bb
 date: 2019-05-14 21:32:11
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: fb0eb9bb
 ---
 <div id='my_toc'><a href="/blog/fb0eb9bb/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/fb0eb9bb/#解决方案" class="header_1">解决方案</a>&nbsp;<br><a href="/blog/fb0eb9bb/#安装Spring-Tools3插件" class="header_2">安装Spring Tools3插件</a>&nbsp;<br><a href="/blog/fb0eb9bb/#方案1" class="header_2">方案1</a>&nbsp;<br><a href="/blog/fb0eb9bb/#方案2" class="header_2">方案2</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

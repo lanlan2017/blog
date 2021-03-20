@@ -1,13 +1,13 @@
 ---
 title: 通过JIntellitype给Java程序注册系统热键
-categories:
+categories: 
   - 编程
   - Java
   - java GUI
   - 全局热键
-abbrlink: 9d991fe9
 date: 2018-09-13 15:17:26
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: 9d991fe9
 ---
 <div id='my_toc'></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

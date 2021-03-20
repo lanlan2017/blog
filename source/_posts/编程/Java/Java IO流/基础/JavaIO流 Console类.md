@@ -6,7 +6,7 @@ categories:
   - Java IO流
   - 基础
 date: 2018-08-12 12:51:31
-updated: 2021-03-20 08:32:20
+updated: 2021-03-20 08:44:48
 abbrlink: eaae884d
 ---
 <div id='my_toc'><a href="/blog/eaae884d/#Java中Console类的用法" class="header_1">Java中Console类的用法</a>&nbsp;<br><a href="/blog/eaae884d/#读控制台方法" class="header_2">读控制台方法</a>&nbsp;<br><a href="/blog/eaae884d/#实例：读密码不回显" class="header_3">实例：读密码不回显</a>&nbsp;<br><a href="/blog/eaae884d/#获取控制台的输入输出流" class="header_2">获取控制台的输入输出流</a>&nbsp;<br><a href="/blog/eaae884d/#获取来自控制台的输入流" class="header_3">获取来自控制台的输入流</a>&nbsp;<br><a href="/blog/eaae884d/#获取对控制台的输出流" class="header_3">获取对控制台的输出流</a>&nbsp;<br><a href="/blog/eaae884d/#使用Console类自己的控制台输入和输出方法" class="header_3">使用Console类自己的控制台输入和输出方法</a>&nbsp;<br><a href="/blog/eaae884d/#控制台格式化输出方法" class="header_2">控制台格式化输出方法</a>&nbsp;<br></div>

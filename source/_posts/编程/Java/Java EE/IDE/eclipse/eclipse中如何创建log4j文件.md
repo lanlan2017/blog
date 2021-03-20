@@ -1,14 +1,14 @@
 ---
 title: eclipse中如何创建log4j文件
-categories:
+categories: 
   - 编程
   - Java
   - Java EE
   - IDE
   - eclipse
-abbrlink: 2f2a13a0
 date: 2019-06-12 22:26:13
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: 2f2a13a0
 ---
 <div id='my_toc'><a href="/blog/2f2a13a0/#eclipse中如何创建log4j文件" class="header_1">eclipse中如何创建log4j文件</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

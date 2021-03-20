@@ -1,12 +1,12 @@
 ---
 title: java打印表格 将ResultSet中的数据打印成表格
-categories:
+categories: 
   - 编程
   - Java
   - 自定义工具类
-abbrlink: d58ef648
 date: 2019-10-23 22:19:13
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 09:38:56
+abbrlink: d58ef648
 ---
 <div id='my_toc'><a href="/blog/d58ef648/#java打印表格-将ResultSet中的数据打印成表格" class="header_1">java打印表格 将ResultSet中的数据打印成表格</a>&nbsp;<br><a href="/blog/d58ef648/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/d58ef648/#思路" class="header_2">思路</a>&nbsp;<br><a href="/blog/d58ef648/#字符串格式化方式" class="header_2">字符串格式化方式</a>&nbsp;<br><a href="/blog/d58ef648/#左对齐" class="header_3">左对齐</a>&nbsp;<br><a href="/blog/d58ef648/#右对齐" class="header_3">右对齐</a>&nbsp;<br><a href="/blog/d58ef648/#实现" class="header_2">实现</a>&nbsp;<br><a href="/blog/d58ef648/#测试" class="header_2">测试</a>&nbsp;<br><a href="/blog/d58ef648/#运行结果" class="header_2">运行结果</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
@@ -14,8 +14,8 @@ updated: 2019-12-17 05:18:52
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
 
 <!--end-->
-# java打印表格 将ResultSet中的数据打印成表格 #
-## 问题描述 ##
+# java打印表格 将ResultSet中的数据打印成表格
+## 问题描述
 `MySQL`的查询语句输出如下:
 ```cmd
 mysql> select * from instructor;
@@ -43,13 +43,13 @@ mysql> select * from instructor;
 17 rows in set (0.04 sec)
 ```
 使用`JDBC`执行上述的查询语句,将结果集中的查询结果以表格的形式打印出来。
-## 思路 ##
+## 思路
 - 通过结果集的元数据可以知道结果集中的列数,和列名.
 - 然后遍历结果集,分别统计每一列中的最大字符数。
 - 然后通过`System.out.printf()`方法进行格式化输出。
 
-## 字符串格式化方式 ##
-### 左对齐 ###
+## 字符串格式化方式
+### 左对齐
 `%-10s`表示这个字符串的长度为10,不足10的地方以空格填充,带`-`的表示左对齐.
 ```java
 System.out.printf("属性:%-10s ", rsmd.getColumnName(i));
@@ -61,7 +61,7 @@ System.out.printf("类型:%-10s\n", rsmd.getColumnTypeName(i));
 属性:dept_name  类型:VARCHAR   
 属性:salary     类型:DECIMAL  
 ```
-### 右对齐 ###
+### 右对齐
 `%10s`表示这个字符串的长度为10,不足10的地方以空格填充,默认右对齐
 ```java
 System.out.printf("属性:%10s ", rsmd.getColumnName(i));
@@ -73,7 +73,7 @@ System.out.printf("类型:%10s\n", rsmd.getColumnTypeName(i));
 属性: dept_name 类型:   VARCHAR
 属性:    salary 类型:   DECIMAL
 ```
-## 实现 ##
+## 实现
 ```java
 package tools;
 
@@ -161,7 +161,7 @@ public class ResultSetPrinter {
 }
 
 ```
-## 测试 ##
+## 测试
 ```java
 package tools;
 import java.sql.*;
@@ -220,7 +220,7 @@ public class Test {
     }
 }
 ```
-## 运行结果 ##
+## 运行结果
 ```cmd
 +-----+----------+----------+---------+
 |   ID|      name| dept_name|   salary|

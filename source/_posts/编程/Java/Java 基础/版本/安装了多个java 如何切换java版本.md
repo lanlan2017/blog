@@ -6,7 +6,7 @@ categories:
   - Java 基础
   - 版本
 date: 2019-10-06 10:42:44
-updated: 2020-04-11 09:21:19
+updated: 2021-03-20 07:55:49
 abbrlink: 957ae50e
 ---
 <div id='my_toc'><a href="/blog/957ae50e/#安装了多个java-如何切换java版本" class="header_1">安装了多个java 如何切换java版本</a>&nbsp;<br><a href="/blog/957ae50e/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/957ae50e/#如何切换" class="header_2">如何切换</a>&nbsp;<br><a href="/blog/957ae50e/#解决方案" class="header_1">解决方案</a>&nbsp;<br><a href="/blog/957ae50e/#手动切换" class="header_2">手动切换</a>&nbsp;<br><a href="/blog/957ae50e/#在cmd中临时切换java版本" class="header_2">在cmd中临时切换java版本</a>&nbsp;<br><a href="/blog/957ae50e/#批处理实现" class="header_2">批处理实现</a>&nbsp;<br><a href="/blog/957ae50e/#新增环境变量" class="header_3">新增环境变量</a>&nbsp;<br><a href="/blog/957ae50e/#批处理脚本" class="header_3">批处理脚本</a>&nbsp;<br><a href="/blog/957ae50e/#TJava-bat" class="header_4">TJava.bat</a>&nbsp;<br><a href="/blog/957ae50e/#CJavaBat-bat" class="header_4">CJavaBat.bat</a>&nbsp;<br><a href="/blog/957ae50e/#给-CJavaBat-bat-设置管理员权限" class="header_3">给`CJavaBat.bat`设置管理员权限</a>&nbsp;<br><a href="/blog/957ae50e/#配置CJava到Path环境变量" class="header_3">配置CJava到Path环境变量</a>&nbsp;<br><a href="/blog/957ae50e/#通过Win-R运行CJava" class="header_3">通过Win+R运行CJava</a>&nbsp;<br><a href="/blog/957ae50e/#CJava程序说明" class="header_3">CJava程序说明</a>&nbsp;<br><a href="/blog/957ae50e/#CJava运行效果" class="header_3">CJava运行效果</a>&nbsp;<br><a href="/blog/957ae50e/#查看是否切换成功" class="header_3">查看是否切换成功</a>&nbsp;<br></div>

@@ -1,12 +1,12 @@
 ---
 title: Java反射获取方法的返回值类型名称
-categories:
+categories: 
   - 编程
   - Java
   - 反射
-abbrlink: 85a0b802
 date: 2019-12-29 09:14:06
-updated: 2020-01-03 12:45:16
+updated: 2020-04-11 09:21:19
+abbrlink: 85a0b802
 ---
 <div id='my_toc'><a href="/blog/85a0b802/#获取方法的返回值类型" class="header_1">获取方法的返回值类型</a>&nbsp;<br><a href="/blog/85a0b802/#Type接口方法" class="header_2">Type接口方法</a>&nbsp;<br><a href="/blog/85a0b802/#Class类获取类名方法" class="header_2">Class类获取类名方法</a>&nbsp;<br><a href="/blog/85a0b802/#获取方法的返回值类型名称" class="header_2">获取方法的返回值类型名称</a>&nbsp;<br><a href="/blog/85a0b802/#封装成方法" class="header_2">封装成方法</a>&nbsp;<br><a href="/blog/85a0b802/#程序示例" class="header_2">程序示例</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

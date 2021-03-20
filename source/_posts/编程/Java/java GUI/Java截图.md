@@ -1,12 +1,12 @@
 ---
 title: Java截图
-categories:
+categories: 
   - 编程
   - Java
   - java GUI
-abbrlink: 14ec9002
 date: 2018-09-13 10:31:53
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: 14ec9002
 ---
 <div id='my_toc'><a href="/blog/14ec9002/#完整的代码" class="header_2">完整的代码</a>&nbsp;<br><a href="/blog/14ec9002/#ScreenShotOCR类" class="header_3">ScreenShotOCR类</a>&nbsp;<br><a href="/blog/14ec9002/#BaiduOCR类" class="header_3">BaiduOCR类</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

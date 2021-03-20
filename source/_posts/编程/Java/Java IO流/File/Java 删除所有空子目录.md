@@ -6,7 +6,7 @@ categories:
   - Java IO流
   - File
 date: 2018-12-22 19:15:36
-updated: 2021-03-20 09:18:22
+updated: 2021-03-20 09:20:52
 abbrlink: efd55c13
 ---
 <div id='my_toc'><a href="/blog/efd55c13/#向下递归-删除所有空子目录" class="header_1">向下递归 删除所有空子目录</a>&nbsp;<br><a href="/blog/efd55c13/#向上递归-删除所有空父目录" class="header_1">向上递归 删除所有空父目录</a>&nbsp;<br><a href="/blog/efd55c13/#删除空目录完整代码" class="header_1">删除空目录完整代码</a>&nbsp;<br><a href="/blog/efd55c13/#测试" class="header_1">测试</a>&nbsp;<br></div>

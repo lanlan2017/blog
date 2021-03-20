@@ -1,14 +1,14 @@
 ---
 title: JSP out 内置对象
-categories:
+categories: 
   - 编程
   - Java
   - Java EE
   - JSP
   - 内置对象
-abbrlink: 8c60ed62
 date: 2018-12-19 15:11:38
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: 8c60ed62
 ---
 <div id='my_toc'><a href="/blog/8c60ed62/#out内置对象" class="header_1">out内置对象</a>&nbsp;<br><a href="/blog/8c60ed62/#向客户端输出数据" class="header_2">向客户端输出数据</a>&nbsp;<br><a href="/blog/8c60ed62/#管理响应缓冲" class="header_2">管理响应缓冲</a>&nbsp;<br><a href="/blog/8c60ed62/#实例" class="header_3">实例</a>&nbsp;<br><a href="/blog/8c60ed62/#验证flush-方法" class="header_3">验证flush()方法</a>&nbsp;<br><a href="/blog/8c60ed62/#验证clear-方法" class="header_3">验证clear()方法</a>&nbsp;<br><a href="/blog/8c60ed62/#验证clearBuffer-方法" class="header_3">验证clearBuffer()方法</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

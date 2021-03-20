@@ -6,7 +6,7 @@ categories:
   - Java IO流
   - 基础
 date: 2018-10-29 23:41:16
-updated: 2020-04-11 09:21:19
+updated: 2021-03-20 08:44:48
 abbrlink: 487a7f53
 ---
 <div id='my_toc'><a href="/blog/487a7f53/#返回文本文件最后一行java代码" class="header_2">返回文本文件最后一行java代码</a>&nbsp;<br><a href="/blog/487a7f53/#读取本文文件最后一行，并记下最后一行的位置" class="header_2">读取本文文件最后一行，并记下最后一行的位置</a>&nbsp;<br></div>

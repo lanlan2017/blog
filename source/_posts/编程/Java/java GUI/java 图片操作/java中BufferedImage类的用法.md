@@ -1,13 +1,13 @@
 ---
 title: java中BufferedImage类的用法
-categories:
+categories: 
   - 编程
   - Java
   - java GUI
   - java 图片操作
-abbrlink: d819de9c
 date: 2018-10-22 08:37:16
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: d819de9c
 ---
 <div id='my_toc'></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

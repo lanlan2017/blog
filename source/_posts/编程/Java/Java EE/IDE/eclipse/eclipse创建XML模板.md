@@ -1,14 +1,14 @@
 ---
 title: eclipse创建XML模板
-categories:
+categories: 
   - 编程
   - Java
   - Java EE
   - IDE
   - eclipse
-abbrlink: bb6759de
 date: 2019-05-14 01:06:56
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: bb6759de
 ---
 <div id='my_toc'><a href="/blog/bb6759de/#前言" class="header_1">前言</a>&nbsp;<br><a href="/blog/bb6759de/#创建XML模板步骤" class="header_1">创建XML模板步骤</a>&nbsp;<br><a href="/blog/bb6759de/#使用自己创建的XML模板" class="header_1">使用自己创建的XML模板</a>&nbsp;<br><a href="/blog/bb6759de/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

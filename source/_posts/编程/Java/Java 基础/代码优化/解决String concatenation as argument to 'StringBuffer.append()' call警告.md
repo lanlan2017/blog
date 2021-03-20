@@ -6,7 +6,7 @@ categories:
   - Java 基础
   - 代码优化
 date: 2019-10-03 21:19:47
-updated: 2021-03-20 07:56:51
+updated: 2021-03-20 07:57:37
 abbrlink: e14f1dac
 ---
 <div id='my_toc'><a href="/blog/e14f1dac/#解决-String-concatenation-as-argument-to-'StringBuffer-append-'-call-警告" class="header_1">解决 String concatenation as argument to 'StringBuffer.append()' call 警告</a>&nbsp;<br><a href="/blog/e14f1dac/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/e14f1dac/#分析原因" class="header_2">分析原因</a>&nbsp;<br><a href="/blog/e14f1dac/#解决方案" class="header_2">解决方案</a>&nbsp;<br><a href="/blog/e14f1dac/#1-全部使用append方法" class="header_3">1. 全部使用append方法</a>&nbsp;<br><a href="/blog/e14f1dac/#替换-号为-append" class="header_4">替换`+`号为`).append(`</a>&nbsp;<br><a href="/blog/e14f1dac/#使用IDE的查找替换功能进行替换" class="header_4">使用IDE的查找替换功能进行替换</a>&nbsp;<br><a href="/blog/e14f1dac/#写代码实现替换" class="header_4">写代码实现替换</a>&nbsp;<br><a href="/blog/e14f1dac/#2-忽略" class="header_3">2. 忽略</a>&nbsp;<br></div>

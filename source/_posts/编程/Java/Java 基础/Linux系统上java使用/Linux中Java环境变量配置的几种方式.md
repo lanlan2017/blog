@@ -6,7 +6,7 @@ categories:
   - Java 基础
   - Linux系统上java使用
 date: 2018-08-11 14:25:09
-updated: 2021-03-20 08:07:37
+updated: 2021-03-20 08:07:43
 abbrlink: 73224a52
 ---
 <div id='my_toc'><a href="/blog/73224a52/#永久修改，对所有用户有效" class="header_1">永久修改，对所有用户有效</a>&nbsp;<br><a href="/blog/73224a52/#永久修改，对单一用户有效" class="header_1">永久修改，对单一用户有效</a>&nbsp;<br><a href="/blog/73224a52/#只对当前bash/shell-生效" class="header_1">只对当前bash /shell 生效</a>&nbsp;<br></div>

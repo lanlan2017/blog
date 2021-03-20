@@ -6,7 +6,7 @@ categories:
   - Java 基础
   - 字符串处理
 date: 2019-04-03 22:05:32
-updated: 2021-03-20 07:57:49
+updated: 2021-03-20 07:58:07
 abbrlink: 9d84ecc2
 ---
 <div id='my_toc'><a href="/blog/9d84ecc2/#原理" class="header_2">原理</a>&nbsp;<br><a href="/blog/9d84ecc2/#ASCII码运算" class="header_3">ASCII码运算</a>&nbsp;<br><a href="/blog/9d84ecc2/#结论" class="header_3">结论</a>&nbsp;<br><a href="/blog/9d84ecc2/#代码" class="header_2">代码</a>&nbsp;<br></div>

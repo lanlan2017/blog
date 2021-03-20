@@ -6,7 +6,7 @@ categories:
   - Java IO流
   - 基础
 date: 2018-08-13 15:04:36
-updated: 2021-03-20 08:25:00
+updated: 2021-03-20 08:44:48
 abbrlink: df6c2340
 ---
 <div id='my_toc'><a href="/blog/df6c2340/#Closeable接口" class="header_1">Closeable接口</a>&nbsp;<br><a href="/blog/df6c2340/#Flushable接口" class="header_1">Flushable接口</a>&nbsp;<br><a href="/blog/df6c2340/#Appendable接口" class="header_1">Appendable接口</a>&nbsp;<br></div>

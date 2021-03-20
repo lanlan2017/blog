@@ -1,14 +1,14 @@
 ---
 title: JSP 脚本标识
-categories:
+categories: 
   - 编程
   - Java
   - Java EE
   - JSP
   - 基础语法
-abbrlink: 99c62cee
 date: 2018-12-20 01:09:14
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: 99c62cee
 ---
 <div id='my_toc'><a href="/blog/99c62cee/#脚本标识概述" class="header_2">脚本标识概述</a>&nbsp;<br><a href="/blog/99c62cee/#JSP声明" class="header_2">JSP声明</a>&nbsp;<br><a href="/blog/99c62cee/#语法" class="header_3">语法</a>&nbsp;<br><a href="/blog/99c62cee/#实例" class="header_3">实例</a>&nbsp;<br><a href="/blog/99c62cee/#JSP表达式" class="header_2">JSP表达式</a>&nbsp;<br><a href="/blog/99c62cee/#实例" class="header_3">实例</a>&nbsp;<br><a href="/blog/99c62cee/#代码片段" class="header_2">代码片段</a>&nbsp;<br><a href="/blog/99c62cee/#语法格式" class="header_3">语法格式</a>&nbsp;<br><a href="/blog/99c62cee/#代码片段与声明的区别" class="header_3">代码片段与声明的区别</a>&nbsp;<br><a href="/blog/99c62cee/#实例" class="header_3">实例</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

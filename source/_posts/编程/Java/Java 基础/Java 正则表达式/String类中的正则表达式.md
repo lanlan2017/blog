@@ -1,15 +1,15 @@
 ---
 title: String类中的正则表达式
-categories:
+categories: 
   - 编程
   - Java
   - Java 基础
   - Java 正则表达式
-abbrlink: 12fb64fe
 date: 2018-08-06 23:46:40
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 07:44:48
+abbrlink: 12fb64fe
 ---
-<div id='my_toc'></div>
+<div id='my_toc'><a href="/blog/12fb64fe/#本文内容已丢失" class="header_1">本文内容已丢失</a>&nbsp;<br><a href="/blog/12fb64fe/#replaceFirst-方法" class="header_2">replaceFirst()方法</a>&nbsp;<br><a href="/blog/12fb64fe/#实例" class="header_3">实例</a>&nbsp;<br><a href="/blog/12fb64fe/#replaceAll-方法" class="header_2">replaceAll()方法</a>&nbsp;<br><a href="/blog/12fb64fe/#实例" class="header_3">实例</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

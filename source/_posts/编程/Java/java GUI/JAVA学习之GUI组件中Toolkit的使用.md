@@ -1,12 +1,12 @@
 ---
 title: JAVA学习之GUI组件中Toolkit的使用
-categories:
+categories: 
   - 编程
   - Java
   - java GUI
-abbrlink: 514963fc
 date: 2018-09-27 14:44:24
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: 514963fc
 ---
 <div id='my_toc'></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

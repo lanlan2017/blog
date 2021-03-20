@@ -1,14 +1,14 @@
 ---
 title: JSP 内置对象简介
-categories:
+categories: 
   - 编程
   - Java
   - Java EE
   - JSP
   - 内置对象
-abbrlink: 4cc31c44
 date: 2018-12-08 21:46:24
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: 4cc31c44
 ---
 <div id='my_toc'><a href="/blog/4cc31c44/#JSP内置对象概述" class="header_1">JSP内置对象概述</a>&nbsp;<br><a href="/blog/4cc31c44/#JSP九大内置对象" class="header_2">JSP九大内置对象</a>&nbsp;<br><a href="/blog/4cc31c44/#Web程序的请求响应模式" class="header_1">Web程序的请求响应模式</a>&nbsp;<br><a href="/blog/4cc31c44/#表单的提交方式" class="header_1">表单的提交方式</a>&nbsp;<br><a href="/blog/4cc31c44/#get" class="header_2">get</a>&nbsp;<br><a href="/blog/4cc31c44/#post" class="header_2">post</a>&nbsp;<br><a href="/blog/4cc31c44/#实例" class="header_2">实例</a>&nbsp;<br><a href="/blog/4cc31c44/#测试get方法" class="header_3">测试get方法</a>&nbsp;<br><a href="/blog/4cc31c44/#测试post方法" class="header_3">测试post方法</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

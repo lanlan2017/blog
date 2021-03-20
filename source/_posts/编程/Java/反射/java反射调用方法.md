@@ -1,12 +1,12 @@
 ---
 title: java反射调用方法
-categories:
+categories: 
   - 编程
   - Java
   - 反射
-abbrlink: 40640d2
 date: 2019-06-16 13:53:20
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 09:22:56
+abbrlink: 40640d2
 ---
 <div id='my_toc'><a href="/blog/40640d2/#反射调用方法步骤" class="header_1">反射调用方法步骤</a>&nbsp;<br><a href="/blog/40640d2/#实例" class="header_1">实例</a>&nbsp;<br><a href="/blog/40640d2/#项目结构" class="header_2">项目结构</a>&nbsp;<br><a href="/blog/40640d2/#Tool-java" class="header_2">Tool.java</a>&nbsp;<br><a href="/blog/40640d2/#Test-java" class="header_2">Test.java</a>&nbsp;<br><a href="/blog/40640d2/#调用静态方法" class="header_2">调用静态方法</a>&nbsp;<br><a href="/blog/40640d2/#调用无参的静态方法" class="header_3">调用无参的静态方法</a>&nbsp;<br><a href="/blog/40640d2/#运行效果" class="header_4">运行效果</a>&nbsp;<br><a href="/blog/40640d2/#调用带参的静态方法" class="header_3">调用带参的静态方法</a>&nbsp;<br><a href="/blog/40640d2/#运行效果" class="header_4">运行效果</a>&nbsp;<br><a href="/blog/40640d2/#调用实例方法" class="header_2">调用实例方法</a>&nbsp;<br><a href="/blog/40640d2/#调用无参实例方法" class="header_3">调用无参实例方法</a>&nbsp;<br><a href="/blog/40640d2/#调用带参实例方法" class="header_3">调用带参实例方法</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

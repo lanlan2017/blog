@@ -1,13 +1,13 @@
 ---
 title: JSTL使用步骤
-categories:
+categories: 
   - 编程
   - Java
   - Java EE
   - JSTL
-abbrlink: 80d567ab
 date: 2019-04-22 12:32:02
-updated: 2019-12-17 05:18:52
+updated: 2020-04-11 09:21:19
+abbrlink: 80d567ab
 ---
 <div id='my_toc'><a href="/blog/80d567ab/#JSTL-库安装" class="header_2">JSTL 库安装</a>&nbsp;<br><a href="/blog/80d567ab/#下载JSTL库" class="header_3">下载JSTL库</a>&nbsp;<br><a href="/blog/80d567ab/#复制jar文件到项目中" class="header_3">复制jar文件到项目中</a>&nbsp;<br><a href="/blog/80d567ab/#复制tld文件到项目中" class="header_3">复制tld文件到项目中</a>&nbsp;<br><a href="/blog/80d567ab/#在JSP页面引入" class="header_3">在JSP页面引入</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

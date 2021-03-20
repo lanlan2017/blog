@@ -1,13 +1,13 @@
 ---
 title: Java正则表达式 删除一个或多个空行
-categories:
+categories: 
   - 编程
   - Java
   - Java 基础
   - Java 正则表达式
-abbrlink: 51e02fda
 date: 2018-08-07 15:56:18
-updated: 2019-12-17 05:18:52
+updated: 2021-03-20 07:44:27
+abbrlink: 51e02fda
 ---
 <div id='my_toc'><a href="/blog/51e02fda/#删除一个或多个空行" class="header_1">删除一个或多个空行</a>&nbsp;<br><a href="/blog/51e02fda/#正则表达式" class="header_2">正则表达式</a>&nbsp;<br><a href="/blog/51e02fda/#匹配空行正则2" class="header_2">匹配空行正则2</a>&nbsp;<br><a href="/blog/51e02fda/#删除所有空行Java代码" class="header_2">删除所有空行Java代码</a>&nbsp;<br><a href="/blog/51e02fda/#移除多余的连续空格，只留下一个空格。" class="header_1">移除多余的连续空格，只留下一个空格。</a>&nbsp;<br><a href="/blog/51e02fda/#在线正则图形化工具" class="header_1">在线正则图形化工具</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>

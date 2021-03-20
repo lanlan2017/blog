@@ -6,7 +6,7 @@ categories:
   - Java IO流
   - 基础
 date: 2018-10-30 18:36:12
-updated: 2021-03-20 08:31:37
+updated: 2021-03-20 08:44:48
 abbrlink: 4cd2c62c
 ---
 <div id='my_toc'><a href="/blog/4cd2c62c/#返回文本文件中最后一行的起始位置" class="header_1">返回文本文件中最后一行的起始位置</a>&nbsp;<br><a href="/blog/4cd2c62c/#重载方法1-使用File参数表示的文件" class="header_2">重载方法1 使用File参数表示的文件</a>&nbsp;<br><a href="/blog/4cd2c62c/#重载方法2-使用RandomAccessFile参数表示的文件" class="header_2">重载方法2 使用RandomAccessFile参数表示的文件</a>&nbsp;<br><a href="/blog/4cd2c62c/#获取文本文件中最后一行文本" class="header_1">获取文本文件中最后一行文本</a>&nbsp;<br><a href="/blog/4cd2c62c/#在文本文件最后一行追加文本" class="header_1">在文本文件最后一行追加文本</a>&nbsp;<br><a href="/blog/4cd2c62c/#重载方法1-使用File参数表示的文件" class="header_2">重载方法1 使用File参数表示的文件</a>&nbsp;<br><a href="/blog/4cd2c62c/#重载方法2-使用RandomAccessFile参数表示的文件" class="header_2">重载方法2 使用RandomAccessFile参数表示的文件</a>&nbsp;<br><a href="/blog/4cd2c62c/#在文本文件最后一行后插入另一行文本" class="header_1">在文本文件最后一行后插入另一行文本</a>&nbsp;<br><a href="/blog/4cd2c62c/#删除文本文件最后一行" class="header_1">删除文本文件最后一行</a>&nbsp;<br><a href="/blog/4cd2c62c/#重载方法1-使用File参数表示的文件" class="header_2">重载方法1 使用File参数表示的文件</a>&nbsp;<br><a href="/blog/4cd2c62c/#重载方法2-使用RandomAccessFile参数表示的文件" class="header_2">重载方法2 使用RandomAccessFile参数表示的文件</a>&nbsp;<br><a href="/blog/4cd2c62c/#更新文本文件最后一行" class="header_1">更新文本文件最后一行</a>&nbsp;<br><a href="/blog/4cd2c62c/#整个类的代码" class="header_1">整个类的代码</a>&nbsp;<br></div>
