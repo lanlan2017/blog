@@ -173,6 +173,7 @@ date: 2019-12-17 04:08:18
 - [正则表达式](/blog/categories/编程/JavaScript/正则表达式)
 
 ## [Linux](/blog/categories/编程/Linux)
+- [C语言](/blog/categories/编程/Linux/C语言)
 - [LinuxDeploy](/blog/categories/编程/Linux/LinuxDeploy)
 - [Termux](/blog/categories/编程/Linux/Termux)
 - [Tomcat](/blog/categories/编程/Linux/Tomcat)
