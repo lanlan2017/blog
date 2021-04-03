@@ -1,14 +1,14 @@
 ---
 title: Linux ls命令详解
-categories:
+categories: 
   - 编程
   - Linux
   - 通用
 abbrlink: 3283dcaa
 date: 2021-03-23 05:11:29
-updated: 2021-03-23 05:51:56
+updated: 2021-04-03 18:15:05
 ---
-<div id='my_toc'><a href="/blog/null/#ls命令含义" class="header_1">ls命令含义</a>&nbsp;<br><a href="/blog/null/#语法" class="header_1">语法</a>&nbsp;<br><a href="/blog/null/#参数" class="header_2">参数</a>&nbsp;<br><a href="/blog/null/#实例" class="header_1">实例</a>&nbsp;<br><a href="/blog/null/#ls--a" class="header_2">ls -a</a>&nbsp;<br><a href="/blog/null/#ls--A" class="header_2">ls -A</a>&nbsp;<br><a href="/blog/null/#ls--F" class="header_2">ls -F</a>&nbsp;<br><a href="/blog/null/#ls--l" class="header_2">ls -l</a>&nbsp;<br><a href="/blog/null/#ls--l各列含义" class="header_3">ls -l各列含义</a>&nbsp;<br><a href="/blog/null/#ls--lh" class="header_3">ls -lh</a>&nbsp;<br><a href="/blog/null/#ls--t" class="header_2">ls -t</a>&nbsp;<br><a href="/blog/null/#ls--R" class="header_2">ls -R</a>&nbsp;<br><a href="/blog/null/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/3283dcaa/#ls命令含义" class="header_1">ls命令含义</a>&nbsp;<br><a href="/blog/3283dcaa/#语法" class="header_1">语法</a>&nbsp;<br><a href="/blog/3283dcaa/#参数" class="header_2">参数</a>&nbsp;<br><a href="/blog/3283dcaa/#实例" class="header_1">实例</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-a" class="header_2">ls -a</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-A" class="header_2">ls -A</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-F" class="header_2">ls -F</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-l" class="header_2">ls -l</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-l各列含义" class="header_3">ls -l各列含义</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-lh" class="header_3">ls -lh</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-t" class="header_2">ls -t</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-R" class="header_2">ls -R</a>&nbsp;<br><a href="/blog/3283dcaa/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>

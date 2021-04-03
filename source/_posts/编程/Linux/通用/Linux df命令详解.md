@@ -1,14 +1,14 @@
 ---
 title: Linux df命令详解
-categories:
+categories: 
   - 编程
   - Linux
   - 通用
 abbrlink: a8f2d755
 date: 2021-03-23 06:00:43
-updated: 2021-03-23 10:23:16
+updated: 2021-03-24 00:30:25
 ---
-<div id='my_toc'><a href="/blog/null/#df命令" class="header_1">df命令</a>&nbsp;<br><a href="/blog/null/#语法" class="header_1">语法</a>&nbsp;<br><a href="/blog/null/#选项" class="header_2">选项</a>&nbsp;<br><a href="/blog/null/#实例" class="header_1">实例</a>&nbsp;<br><a href="/blog/null/#df" class="header_2">df</a>&nbsp;<br><a href="/blog/null/#df--a" class="header_2">df -a</a>&nbsp;<br><a href="/blog/null/#df--h" class="header_2">df -h</a>&nbsp;<br><a href="/blog/null/#df--H" class="header_2">df -H</a>&nbsp;<br><a href="/blog/null/#df--i" class="header_2">df -i</a>&nbsp;<br><a href="/blog/null/#df--k" class="header_2">df -k</a>&nbsp;<br><a href="/blog/null/#df--l" class="header_2">df -l</a>&nbsp;<br><a href="/blog/null/#df--m" class="header_2">df -m</a>&nbsp;<br><a href="/blog/null/#df--T" class="header_2">df -T</a>&nbsp;<br><a href="/blog/null/#df--t-要显示的文件系统" class="header_2">df -t 要显示的文件系统</a>&nbsp;<br><a href="/blog/null/#df--x-不显示的文件系统" class="header_2">df -x 不显示的文件系统</a>&nbsp;<br><a href="/blog/null/#显示一个目录的磁盘使用情况" class="header_2">显示一个目录的磁盘使用情况</a>&nbsp;<br><a href="/blog/null/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/a8f2d755/#df命令" class="header_1">df命令</a>&nbsp;<br><a href="/blog/a8f2d755/#语法" class="header_1">语法</a>&nbsp;<br><a href="/blog/a8f2d755/#选项" class="header_2">选项</a>&nbsp;<br><a href="/blog/a8f2d755/#实例" class="header_1">实例</a>&nbsp;<br><a href="/blog/a8f2d755/#df" class="header_2">df</a>&nbsp;<br><a href="/blog/a8f2d755/#df-a" class="header_2">df -a</a>&nbsp;<br><a href="/blog/a8f2d755/#df-h" class="header_2">df -h</a>&nbsp;<br><a href="/blog/a8f2d755/#df-H" class="header_2">df -H</a>&nbsp;<br><a href="/blog/a8f2d755/#df-i-以inode模式来显示磁盘使用情况" class="header_2">df -i 以inode模式来显示磁盘使用情况</a>&nbsp;<br><a href="/blog/a8f2d755/#df-k" class="header_2">df -k</a>&nbsp;<br><a href="/blog/a8f2d755/#df-l" class="header_2">df -l</a>&nbsp;<br><a href="/blog/a8f2d755/#df-m-以MB为单位显示文件系统的磁盘使用情况" class="header_2">df -m:以MB为单位显示文件系统的磁盘使用情况</a>&nbsp;<br><a href="/blog/a8f2d755/#df-T" class="header_2">df -T</a>&nbsp;<br><a href="/blog/a8f2d755/#df-t-文件系统类型-显示指定类型的文件系统的磁盘使用情况" class="header_2">df -t 文件系统类型:显示指定类型的文件系统的磁盘使用情况</a>&nbsp;<br><a href="/blog/a8f2d755/#df-x-文件系统类型" class="header_2">df -x 文件系统类型:</a>&nbsp;<br><a href="/blog/a8f2d755/#显示一个目录的磁盘使用情况" class="header_2">显示一个目录的磁盘使用情况</a>&nbsp;<br><a href="/blog/a8f2d755/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
