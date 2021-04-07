@@ -4,11 +4,11 @@ categories:
   - Hexo
   - next主题
   - Debug
-date: 2020-06-26 01:24:06
-updated: 2020-06-26 01:47:38
 abbrlink: 9a6c2fdf
+date: 2020-06-26 01:24:06
+updated: 2021-04-07 23:31:47
 ---
-<div id='my_toc'><a href="/blog/9a6c2fdf/#保存在raw-githubusercontent-com上的图片无法访问" class="header_1">保存在raw.githubusercontent.com上的图片无法访问</a>&nbsp;<br><a href="/blog/9a6c2fdf/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/9a6c2fdf/#解决方案" class="header_2">解决方案</a>&nbsp;<br><a href="/blog/9a6c2fdf/#找到raw-githubusercontent-com真正的IP地址" class="header_3">找到raw.githubusercontent.com真正的IP地址</a>&nbsp;<br><a href="/blog/9a6c2fdf/#修改hosts" class="header_3">修改hosts</a>&nbsp;<br><a href="/blog/9a6c2fdf/#刷新DNS" class="header_3">刷新DNS</a>&nbsp;<br><a href="/blog/9a6c2fdf/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/9a6c2fdf/#保存在raw-githubusercontent-com上的图片无法访问" class="header_1">保存在raw.githubusercontent.com上的图片无法访问</a>&nbsp;<br><a href="/blog/9a6c2fdf/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/9a6c2fdf/#解决方案" class="header_2">解决方案</a>&nbsp;<br><a href="/blog/9a6c2fdf/#找到raw-githubusercontent-com真正的IP地址" class="header_3">找到raw.githubusercontent.com真正的IP地址</a>&nbsp;<br><a href="/blog/9a6c2fdf/#site-ip138-com" class="header_4">site.ip138.com</a>&nbsp;<br><a href="/blog/9a6c2fdf/#https-www-ipaddress-com" class="header_4">https://www.ipaddress.com/</a>&nbsp;<br><a href="/blog/9a6c2fdf/#修改hosts" class="header_3">修改hosts</a>&nbsp;<br><a href="/blog/9a6c2fdf/#Win10电脑上修改" class="header_4">Win10电脑上修改</a>&nbsp;<br><a href="/blog/9a6c2fdf/#刷新DNS" class="header_5">刷新DNS</a>&nbsp;<br><a href="/blog/9a6c2fdf/#安卓手机上修改hosts" class="header_4">安卓手机上修改hosts</a>&nbsp;<br><a href="/blog/9a6c2fdf/#编辑hosts文件" class="header_5">编辑hosts文件</a>&nbsp;<br><a href="/blog/9a6c2fdf/#下载修改hosts的软件" class="header_4">下载修改hosts的软件</a>&nbsp;<br><a href="/blog/9a6c2fdf/#Hosts-Go添加hosts" class="header_5">Hosts Go添加hosts</a>&nbsp;<br><a href="/blog/9a6c2fdf/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
@@ -26,6 +26,7 @@ https://site.ip138.com/raw.githubusercontent.com/
 http://ip.tool.chinaz.com/ipbatch
 https://githubusercontent.com.ipaddress.com/raw.githubusercontent.com
 ```
+#### site.ip138.com
 例如,[https://site.ip138.com/raw.githubusercontent.com/](https://site.ip138.com/raw.githubusercontent.com/) 这个网站查询到如下IP:
 ```
 日本 东京 151.101.108.133
@@ -46,6 +47,22 @@ https://githubusercontent.com.ipaddress.com/raw.githubusercontent.com
 151.101.228.133 raw.githubusercontent.com
 151.101.128.133 raw.githubusercontent.com
 151.101.76.133 raw.githubusercontent.com
+```
+#### https://www.ipaddress.com/
+[https://githubusercontent.com.ipaddress.com/raw.githubusercontent.com](https://githubusercontent.com.ipaddress.com/raw.githubusercontent.com)
+查询到的地址为：
+> raw.githubusercontent.com resolves to the following 4 IPv4 addresses:
+> 185.199.108.133
+> 185.199.109.133
+> 185.199.110.133
+> 185.199.111.133
+
+在IP地址后吗添加raw.githubusercontent.com得到:
+```
+185.199.108.133 githubusercontent.com
+185.199.109.133 githubusercontent.com
+185.199.110.133 githubusercontent.com
+185.199.111.133 githubusercontent.com
 ```
 ### 修改hosts
 #### Win10电脑上修改
