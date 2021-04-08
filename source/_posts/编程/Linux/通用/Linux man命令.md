@@ -1,13 +1,19 @@
 ---
 title: Linux man命令
-categories:
+categories: 
   - 编程
   - Linux
   - 通用
 abbrlink: 6e64ba3d
 date: 2021-04-04 14:24:18
-updated: 2021-04-04 14:24:18
+updated: 2021-04-06 16:55:53
 ---
+<div id='my_toc'><a href="/blog/6e64ba3d/#man命令简介" class="header_1">man命令简介</a>&nbsp;<br><a href="/blog/6e64ba3d/#man命令分页器" class="header_2">man命令分页器</a>&nbsp;<br><a href="/blog/6e64ba3d/#man命令的几种用法" class="header_1">man命令的几种用法</a>&nbsp;<br><a href="/blog/6e64ba3d/#man-name" class="header_2">man name</a>&nbsp;<br><a href="/blog/6e64ba3d/#man-section-name" class="header_2">man section name</a>&nbsp;<br><a href="/blog/6e64ba3d/#man-k-regexp" class="header_2">man -k regexp</a>&nbsp;<br><a href="/blog/6e64ba3d/#手册页内容" class="header_2">手册页内容</a>&nbsp;<br></div>
+<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
+<!--more-->
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
 # man命令简介
 Linux最常用命令一般由两到三个字母构成，man取自manual（手册）的前三个字母。
 
