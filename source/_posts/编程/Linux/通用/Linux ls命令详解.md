@@ -6,9 +6,9 @@ categories:
   - 通用
 abbrlink: 3283dcaa
 date: 2021-03-23 05:11:29
-updated: 2021-04-03 18:15:05
+updated: 2021-04-13 23:31:08
 ---
-<div id='my_toc'><a href="/blog/3283dcaa/#ls命令含义" class="header_1">ls命令含义</a>&nbsp;<br><a href="/blog/3283dcaa/#语法" class="header_1">语法</a>&nbsp;<br><a href="/blog/3283dcaa/#参数" class="header_2">参数</a>&nbsp;<br><a href="/blog/3283dcaa/#实例" class="header_1">实例</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-a" class="header_2">ls -a</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-A" class="header_2">ls -A</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-F" class="header_2">ls -F</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-l" class="header_2">ls -l</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-l各列含义" class="header_3">ls -l各列含义</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-lh" class="header_3">ls -lh</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-t" class="header_2">ls -t</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-R" class="header_2">ls -R</a>&nbsp;<br><a href="/blog/3283dcaa/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
+<div id='my_toc'><a href="/blog/3283dcaa/#ls命令含义" class="header_1">ls命令含义</a>&nbsp;<br><a href="/blog/3283dcaa/#语法" class="header_1">语法</a>&nbsp;<br><a href="/blog/3283dcaa/#参数" class="header_2">参数</a>&nbsp;<br><a href="/blog/3283dcaa/#实例" class="header_1">实例</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-a" class="header_2">ls -a</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-A" class="header_2">ls -A</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-F" class="header_2">ls -F</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-l" class="header_2">ls -l</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-l各列含义" class="header_3">ls -l各列含义</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-lh" class="header_3">ls -lh</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-l-full-time显示完整时间-显示年月日" class="header_2">ls -l --full-time显示完整时间 显示年月日</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-t-按时间排序列出-时间越近越在前" class="header_2">ls -t 按时间排序列出 时间越近越在前</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-tr-按时间排序-时间越远越在前" class="header_2">ls -tr 按时间排序 时间越远越在前</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-R" class="header_2">ls -R</a>&nbsp;<br><a href="/blog/3283dcaa/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
 <style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
 <!--more-->
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
@@ -29,7 +29,7 @@ ls [-alrtAFR] [name...]
 |-F|在列出的文件名称后加一符号；例如可执行档则加 "*", 目录则加 "/"|
 |-l|除文件名称外，亦将文件型态、权限、拥有者、文件大小等资讯详细列出|
 |-r|将文件以相反次序显示(原定依英文字母次序)|
-|-t|将文件依建立时间之先后次序列出|
+|-t|将文件依建立时间之先后次序列出(时间越近越在前面)|
 |-R|若目录下有文件，则以下之文件亦皆依序列出|
 
 # 实例
@@ -112,12 +112,41 @@ drwxr-xr-x.   9 root root 4.0K 3月  19 21:12 source
 drwxr-xr-x.   3 root root 4.0K 3月  19 21:12 themes
 [root@localhost exam]# 
 ```
-## ls -t
+## ls -l --full-time显示完整时间 显示年月日
+
+
+## ls -t 按时间排序列出 时间越近越在前
 ```
 [root@localhost exam]# ls -t
 HexoS.bat  package-lock.json  hexos.sh  themes       FM.properties  HexoSTest.bat  scaffolds
 db.json    node_modules       source    _config.yml  HexoD.bat      package.json   StartWriting.bat
 [root@localhost exam]#
+```
+## ls -tr 按时间排序 时间越远越在前
+```
+[root@localhost 专项练习]# ls -lt --full-time
+总用量 36
+drwxr-xr-x. 5 root root 4096 2021-04-12 23:05:19.448995210 +0800 Linux
+drwxr-xr-x. 2 root root 4096 2021-04-03 18:10:01.027846496 +0800 操作系统
+drwxr-xr-x. 2 root root 4096 2021-04-03 18:10:01.027846496 +0800 计算机网络
+drwxr-xr-x. 2 root root 4096 2021-04-03 18:10:01.027846496 +0800 数据库
+drwxr-xr-x. 2 root root 4096 2021-04-03 18:10:01.027846496 +0800 智力题
+drwxr-xr-x. 2 root root 4096 2021-04-03 18:10:01.017846496 +0800 JavaScript
+drwxr-xr-x. 2 root root 4096 2021-04-03 18:10:01.017846496 +0800 加密和安全
+drwxr-xr-x. 2 root root 4096 2021-04-03 18:10:00.987846496 +0800 HTML CSS
+drwxr-xr-x. 5 root root 4096 2021-03-19 21:12:12.596962591 +0800 Java
+[root@localhost 专项练习]# ls -ltr --full-time
+总用量 36
+drwxr-xr-x. 5 root root 4096 2021-03-19 21:12:12.596962591 +0800 Java
+drwxr-xr-x. 2 root root 4096 2021-04-03 18:10:00.987846496 +0800 HTML CSS
+drwxr-xr-x. 2 root root 4096 2021-04-03 18:10:01.017846496 +0800 加密和安全
+drwxr-xr-x. 2 root root 4096 2021-04-03 18:10:01.017846496 +0800 JavaScript
+drwxr-xr-x. 2 root root 4096 2021-04-03 18:10:01.027846496 +0800 智力题
+drwxr-xr-x. 2 root root 4096 2021-04-03 18:10:01.027846496 +0800 数据库
+drwxr-xr-x. 2 root root 4096 2021-04-03 18:10:01.027846496 +0800 计算机网络
+drwxr-xr-x. 2 root root 4096 2021-04-03 18:10:01.027846496 +0800 操作系统
+drwxr-xr-x. 5 root root 4096 2021-04-12 23:05:19.448995210 +0800 Linux
+[root@localhost 专项练习]# 
 ```
 ## ls -R
 `ls Java`:
