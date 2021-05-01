@@ -1,9 +1,11 @@
 ---
 title: Linux tail命令
-categories: 
+categories:
   - 编程
   - Linux
   - 通用
+  - 文本文件及其处理命令
+  - 读取文本文件
 abbrlink: 1f720624
 date: 2021-03-24 06:39:45
 updated: 2021-03-28 15:33:45
@@ -85,7 +87,7 @@ tail -f /var/log/apache2/access.log | grep 192.168.42.12
 ```
 ps aux | sort -nk +3 | tail -5
 ```
-## 查看从第N行到第M行
+## head和tail结合使用：查看从第N行到第M行
 配合head命令，实现查看文件的第10到20行：
 ```
 head -20 itbilu.log | tail -10

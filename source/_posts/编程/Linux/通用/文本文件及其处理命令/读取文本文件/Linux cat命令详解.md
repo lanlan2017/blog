@@ -1,9 +1,11 @@
 ---
 title: Linux cat命令详解
-categories: 
+categories:
   - 编程
   - Linux
   - 通用
+  - 文本文件及其处理命令
+  - 读取文本文件
 abbrlink: af7f7587
 date: 2021-03-24 11:08:13
 updated: 2021-03-28 15:33:45
@@ -136,14 +138,36 @@ cat file1 file2
 ```
 
 # 其他应用
-## 使用cat命令创建文件
+## cat从标准输入读取内容
+### cat > filename
 ```
 cat >file4.txt
 ```
-此时可以在屏幕上输入文字，如果想结束输入请按下Ctrl键，然后按D键。
+此时可以从标准输入中，输入文字，如果想结束输入请按下Ctrl键，然后按D键。
+
 这种方法输入并不友好，可以不输入，直接按下Ctrl键，然后按D键，这样就创建一个空的文件。类似于:
 ```
 touch file4.txt
+```
+例如从键盘输入hello world!到文件中。然后按下Ctrl+D结束输入：
+```
+[root@localhost Linux_Test]# cat >cat_test.txt
+hello world![root@localhost Linux_Test]# ls
+cat_test.txt   less_test.txt  ls_sort.txt   more_test2.txt  more_test4.txt  sortFile.txt
+date_test.txt  ls_out.txt     man_less.txt  more_test3.txt  more_test.txt   vi_replaceAllTest.txt
+[root@localhost Linux_Test]# cat cat_test.txt 
+hello world![root@localhost Linux_Test]# 
+```
+### cat >> filename
+从标准输入中读取内容，追加到文件中。
+上面在文件中没有添加换行符，现在追加一个换行符到文件中：
+```
+hello world![root@localhost Linux_Test]# cat >>cat_test.txt 
+
+[root@localhost Linux_Test]# cat cat_test.txt 
+hello world!
+[root@localhost Linux_Test]# 
+
 ```
 ## 将cat命令与more或less命令一起使用
 如果具有大量内容的文件无法容纳在输出终端中，并且屏幕快速滚动，则可以通过cat命令使用越来越多的参数，如上所示。
