@@ -1,9 +1,10 @@
 ---
 title: Linux man命令
-categories: 
+categories:
   - 编程
   - Linux
   - 通用
+  - 帮助文档
 abbrlink: 6e64ba3d
 date: 2021-04-04 14:24:18
 updated: 2021-04-20 20:59:22
