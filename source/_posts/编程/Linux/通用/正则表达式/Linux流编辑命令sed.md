@@ -20,14 +20,18 @@ sed 会根据脚本命令来处理文本文件中的数据，这些命令要么�
 sed全名叫stream editor，流编辑器，用程序的方式来编辑文本，相当的hacker啊。sed基本上就是玩正则模式匹配，所以，玩sed的人，正则表达式一般都比较强。
 
 sed 默认读取整个文件并对其中的每一行进行修改。说白了就是一行一行的操作。
-## sed命令常用选项及含义
+
+sed 是一种在线编辑器，它一次处理一行内容。处理时，把当前处理的行存储在临时缓冲区中，称为“模式空间”（pattern space），接着用sed命令处理缓冲区中的内容，处理完成后，把缓冲区的内容送往屏幕。接着处理下一行，这样不断重复，直到文件末尾。文件内容并没有 改变，除非你使用重定向存储输出。Sed主要用来自动编辑一个或多个文件；简化对文件的反复操作；编写转换程序等。
+
+# sed命令常用选项及含义
 
 |选项|含义|
 |:---|:---|
-|-e|脚本命令，该选项会将其后跟的脚本命令添加到已有的命令中。|
-|-f|脚本命令文件，该选项会将其后文件中的脚本命令添加到已有的命令中。|
-|-n|默认情况下，sed 会在所有的脚本指定执行完毕后，会自动输出处理后的内容，而该选项会屏蔽启动输出，需使用 print 命令来完成输出。|
-|-i|此选项会直接修改源文件，要慎用。|
+|-e 脚本命令|该选项会将其后跟的脚本命令添加到已有的命令中。|
+|-f 脚本命令文件|，该选项会将其后文件中的脚本命令添加到已有的命令中。|
+|-n|使用安静silent模式。在一般sed的用法中，所有来自stdin的内容一般都会被列出到屏幕上。但如果加上-n参数后，则只有经过sed特殊处理的那一行(或者动作)才会被列出来|
+|-i|直接修改读取的文件内容，而不是由屏幕输出|
+|-r|让sed命令支持扩展的正则表达式(默认是基础正则表达式)|
 
 
 ## sed命令常见用法
@@ -37,6 +41,87 @@ sed –e '命令1' –e '命令2' –e '命令3' 文件名列表
 sed -f 命令文件 文件名列表
 ```
 成功使用 sed 命令的关键在于掌握各式各样的脚本命令及格式，它能帮你定制编辑文件的规则。
+
+## sed -i：直接修改文件内容
+sed 的`-i`选项可以直接修改文件内容，这功能非常有帮助！举例来说，如果你有一个 100 万行的文件，你要在第 100 行加某些文字，此时使用 vim 可能会疯掉！因为文件太大了！那怎办？就利用 sed 啊！透过 sed 直接修改/取代的功能，你甚至不需要使用 vim 去修订！
+### 删除空行
+```
+[root@localhost sed]# cat sed_append.txt 
+this is line a
+this is line b
+
+
+this is line c
+this is line d
+# helloworld_1
+# helloworld_2
+# helloworld_3
+[root@localhost sed]# sed '/^$/d' sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+# helloworld_1
+# helloworld_2
+# helloworld_3
+[root@localhost sed]# cat sed_append.txt 
+this is line a
+this is line b
+
+
+this is line c
+this is line d
+# helloworld_1
+# helloworld_2
+# helloworld_3
+[root@localhost sed]#
+```
+### 删除空行并且替换原文件
+```
+[root@localhost sed]# cat sed_append.txt 
+this is line a
+this is line b
+
+
+this is line c
+this is line d
+# helloworld_1
+# helloworld_2
+# helloworld_3
+[root@localhost sed]# sed -i '/^$/d' sed_append.txt 
+[root@localhost sed]# cat sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+# helloworld_1
+# helloworld_2
+# helloworld_3
+[root@localhost sed]#
+```
+删除＃号开头的行到最后一行之间的所有行：
+```
+[root@localhost sed]# cat sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+# helloworld_1
+# helloworld_2
+# helloworld_3
+[root@localhost sed]# sed '/^#/,$d' sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+[root@localhost sed]# sed -i '/^#/,$d' sed_append.txt 
+[root@localhost sed]# cat sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+[root@localhost sed]# 
+```
 # sed脚本命令
 ## sed脚本命令s：替换行中的部分内容
 此命令的基本格式为：
@@ -390,6 +475,47 @@ public class SedTest{
 }
 [root@localhost sed]# 
 ```
+### 删除空行
+```
+sed '/^$/d' a.txt       #删除所有空行
+```
+```
+[root@localhost sed]# cat sed_append.txt 
+this is line a
+this is line b
+
+
+this is line c
+this is line d
+[root@localhost sed]# sed '/^$/d' sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+[root@localhost sed]# 
+```
+删除`#`开头的行，到最后一行：
+```
+[root@localhost sed]# cat sed_append.txt 
+this is line a
+this is line b
+
+
+this is line c
+this is line d
+# helloworld_1
+# helloworld_2
+# helloworld_3
+[root@localhost sed]# sed '/^#/,$d' sed_append.txt 
+this is line a
+this is line b
+
+
+this is line c
+this is line d
+[root@localhost sed]# 
+```
+
 ## sed脚本命令a：在指定行后追加新行
 在第N行之后附加新的内容
 ```
@@ -574,8 +700,60 @@ this is line d
 [root@localhost sed]# 
 ```
 ## sed脚本命令p：打印某行
+> sed 默认会打印出被处理的输入内容，这些内容跟原始输入内容不一定完全一样，sed 的一些命令可以修改或删除输入内容，再把新的内容打印出来。
+> 打印的输出结果并不是只对应匹配特定模式的行。
+> 那些没有被处理的行，会原样打印。
+> 如果只想打印匹配特定模式的行，要用 -n 选项和 p 命令。
+
+注意：-n 选项并不表示打印匹配特定模式且被处理的行。
+例如，使用 -n 选项和 d 命令不会看到任何打印，并不会打印出被删除的行。
+
 `sed -n`∶使用安静(silent)模式。在一般 sed 的用法中，所有来自STDIN的资料一般都会被列出到萤幕上。但**如果加上 -n 参数后，则只有经过sed 特殊处理的那一行(或者动作)才会被列出来**。
-p命令表示搜索符号条件的行，并输出该行的内容，通常 p 会与参数 sed -n 一起运作。此命令的基本格式为：
+### sed '[address]p' 输出匹配的行
+p命令表示搜索符号条件的行，并输出该行的内容。
+<pre>
+[root@localhost sed]&#35; cat sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+&#35; helloworld_1
+&#35; helloworld_2
+&#35; helloworld_3
+[root@localhost sed]&#35; sed '/^&#35;/p' sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+&#35; helloworld_1
+<mark>&#35; helloworld_1</mark>
+&#35; helloworld_2
+<mark>&#35; helloworld_2</mark>
+&#35; helloworld_3
+<mark>&#35; helloworld_3</mark>
+[root@localhost sed]&#35;
+</pre>
+可以看到匹配的行输出了两次，第一次的输出是sed的输出，第2个输出则是脚本命令p的输出。
+如果想只输出匹配的行，其他的行不输出的话，则可以加上-n参数。：
+
+<pre>
+[root@localhost sed]&#35; cat sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+&#35; helloworld_1
+&#35; helloworld_2
+&#35; helloworld_3
+[root@localhost sed]&#35; sed -n '/^&#35;/p' sed_append.txt 
+&#35; helloworld_1
+&#35; helloworld_2
+&#35; helloworld_3
+[root@localhost sed]&#35; 
+</pre>
+
+
+通常 p 会与参数 sed -n 一起运作。此命令的基本格式为：
 ### sed -n '[address]p'
 ```
 sed -n '[address]p'
@@ -657,7 +835,7 @@ helloworld2
 ```
 
 ### sed -n选项p命令：只打印包含匹配模式的行
-可以看到，用 -n 选项和 p 命令配合使用，我们可以禁止输出其他行，只打印包含匹配文本模式的行。
+可以看到，用 -n 选项和 p 命令配合使用，可以只打印匹配的行。
 ```
 [root@localhost sed]# cat sed_append.txt 
 this is line a
@@ -701,6 +879,31 @@ sed 命令会查找包含小写字母b的行，然后执行两条命令。
 首先，脚本用 p 命令来打印出原始行；
 然后它用s命令替换文本，并用 p 标记打印出替换结果。
 这样可以输出当前要处理的文本，以及替换之后的文本，以便于对比替换的结果是否达到要求
+
+#### 多个脚本命令写在一行
+可以吧多个命令写在一行之中，命令之间用英文的分号`;`分隔开即可：
+```
+sed '[address]{命令1;命令2;...命令n}'
+```
+<pre>
+[root@localhost sed]&#35; cat sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+&#35; helloworld_1
+&#35; helloworld_2
+&#35; helloworld_3
+[root@localhost sed]&#35; sed -n '/^&#35;/,${p;s/helloworld/HELLOWORLD/pg}' sed_append.txt 
+&#35; helloworld_1
+&#35; HELLOWORLD_1
+&#35; helloworld_2
+&#35; HELLOWORLD_2
+&#35; helloworld_3
+&#35; HELLOWORLD_3
+[root@localhost sed]&#35; 
+</pre>
+
 
 ## sed脚本命令w file：输出模式空间中的内容到文件
 w命令用来将文本中指定行的内容写入文件中，此命令的基本格式如下：
@@ -1219,13 +1422,14 @@ sed 4.2.2                                                       September 2020  
  Manual page sed(1) line 210/246 (END) (press h for help or q to quit)
 
 ```
+
+
 # 参考资料
 [http://c.biancheng.net/view/4028.html](http://c.biancheng.net/view/4028.html)
 [http://c.biancheng.net/view/4056.html](http://c.biancheng.net/view/4056.html)
 [https://www.runoob.com/linux/linux-comm-sed.html](https://www.runoob.com/linux/linux-comm-sed.html)
 [https://developer.aliyun.com/article/320516](https://developer.aliyun.com/article/320516)
 [https://www.cnblogs.com/dong008259/archive/2011/12/07/2279897.html](https://www.cnblogs.com/dong008259/archive/2011/12/07/2279897.html)
-
 [https://coolshell.cn/articles/9104.html](https://coolshell.cn/articles/9104.html)
 [https://qianngchn.github.io/wiki/4.html](https://qianngchn.github.io/wiki/4.html)
 
@@ -1235,3 +1439,5 @@ sed 4.2.2                                                       September 2020  
 [https://learnku.com/server/wikis/36595](https://learnku.com/server/wikis/36595)
 [http://linux.51yip.com/search/sed](http://linux.51yip.com/search/sed)
 [https://zhuanlan.zhihu.com/p/130797132](https://zhuanlan.zhihu.com/p/130797132)
+## 手册
+[http://www.gnu.org/software/sed/manual/sed.html](http://www.gnu.org/software/sed/manual/sed.html)

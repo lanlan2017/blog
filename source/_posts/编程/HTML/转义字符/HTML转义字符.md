@@ -31,6 +31,8 @@ abbrlink: c14b29da
 |`©`|`&copy;`|`&#169;`|版权符号|
 |`×`|`&times;`|`&#215;`|乘号|
 |`÷`|`&divide;`|`&#247;`|除号|
+|<code>&#124;</code>或<code>&verbar;</code>|`&verbar`|`&#124;`|竖线|
+|<code>&brvbar;</code>或<code>&#166;</code>|`&brvbar;`|`&#166;`|断竖线|
 
 就这么多,后面遇到再更新.
 # 参考链接
@@ -38,3 +40,7 @@ abbrlink: c14b29da
 [http://www.cnblogs.com/xcsn/p/3559624.html](http://www.cnblogs.com/xcsn/p/3559624.html)
 [https://www.cnblogs.com/zhxhdean/archive/2011/11/17/2252975.html](https://www.cnblogs.com/zhxhdean/archive/2011/11/17/2252975.html)
 [https://tool.oschina.net/commons?type=2](https://tool.oschina.net/commons?type=2)
+
+> [https://en.wikipedia.org/wiki/Vertical_bar#Unicode_code_points](https://en.wikipedia.org/wiki/Vertical_bar#Unicode_code_points)
+> U+007C | VERTICAL LINE (HTML `&#124;` · `&verbar;`, `&vert;`, `&VerticalLine;`) (single vertical line)
+> U+00A6 ¦ BROKEN BAR (HTML `&#166;` · `&brvbar;`) (single broken line)
