@@ -35,6 +35,10 @@ abbrlink: c14b29da
 |<code>&brvbar;</code>或<code>&#166;</code>|`&brvbar;`|`&#166;`|断竖线|
 
 就这么多,后面遇到再更新.
+# Unicode编码转义
+找到一些在线的Unicode编码转换网站，例如：[https://www.sojson.com/unicode.html](https://www.sojson.com/unicode.html)
+把遇到的特殊字符，转换成Unicode编码即可，转换得到的Unicode同样可以直接放在HTML中显示。
+
 # 参考链接
 [http://www.fly63.com/article/detial/4916](http://www.fly63.com/article/detial/4916)
 [http://www.cnblogs.com/xcsn/p/3559624.html](http://www.cnblogs.com/xcsn/p/3559624.html)

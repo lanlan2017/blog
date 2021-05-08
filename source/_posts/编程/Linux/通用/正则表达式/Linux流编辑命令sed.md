@@ -147,6 +147,48 @@ replacement 指的是要替换的新内容。
 |`\n`|匹配第 n 个子串，该子串之前在 pattern 中用 \(\) 指定。|
 |`\`|转义（转义替换部分包含：&、\ 等）。|
 
+### 在行首添加内容
+```
+[root@localhost sed]# cat sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+# helloworld_1
+# helloworld_2
+# helloworld_3
+[root@localhost sed]# sed 's/^/#/g' sed_append.txt 
+#this is line a
+#this is line b
+#this is line c
+#this is line d
+## helloworld_1
+## helloworld_2
+## helloworld_3
+[root@localhost sed]# 
+```
+### 在行尾添加内容
+```
+[root@localhost sed]# cat sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+# helloworld_1
+# helloworld_2
+# helloworld_3
+[root@localhost sed]# sed 's/$/。/g' sed_append.txt 
+this is line a。
+this is line b。
+this is line c。
+this is line d。
+# helloworld_1。
+# helloworld_2。
+# helloworld_3。
+[root@localhost sed]# 
+```
+
+
 ### 替换所有行中第n次模式匹配的地方：sed 's/pattern/replacement/n'
 ```
 sed 's/pattern/replacement/n'
@@ -904,6 +946,43 @@ this is line d
 [root@localhost sed]&#35; 
 </pre>
 
+### 正则表达式词首词尾
+`\<`表示词首。 如：`\<abc`表示以abc为首的詞。
+`\>`表示词尾。 如：`abc\>`表示以abc結尾的詞。
+### 打印有hello为词首的单词的行
+<pre>
+[root@localhost sed]&#35; cat sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+&#35; helloworld_1
+&#35; helloworld_2
+&#35; helloworld_3
+[root@localhost sed]&#35; sed -n '/\&lt;hello/p' sed_append.txt 
+&#35; helloworld_1
+&#35; helloworld_2
+&#35; helloworld_3
+[root@localhost sed]&#35; 
+</pre>
+
+### 打印有line为词尾的单词的行
+<pre>
+[root@localhost sed]&#35; cat sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+&&#35;35; helloworld_1
+&&#35;35; helloworld_2
+&&#35;35; helloworld_3
+[root@localhost sed]&#35; sed -n '/line\&gt;/p' sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+[root@localhost sed]&#35; 
+</pre>
 
 ## sed脚本命令w file：输出模式空间中的内容到文件
 w命令用来将文本中指定行的内容写入文件中，此命令的基本格式如下：
