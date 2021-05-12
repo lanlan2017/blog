@@ -19,5 +19,56 @@ updated: 2021-05-07 18:35:04
 - Delete（D）：删除多行组中的一行。
 - Print（P）：打印多行组中的一行。
 
+# sed多行操作命令N
+N 命令会将下一行文本内容添加到缓冲区已有数据之后（之间用换行符分隔），从而使前后两个文本行同时位于缓冲区中，sed 命令会将这两行数据当成一行来处理。
+## 两行变一行
+下面这个例子演示的 N 命令的功能：
+```
+[root@localhost sed]# cat sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+hello
+world
+[root@localhost sed]# sed "/hello/{N;s/\n/ /}" sed_append.txt 
+this is line a
+this is line b
+this is line c
+this is line d
+hello world
+[root@localhost sed]# 
+```
+在这个例子中，sed 命令查找含有单词 hello 的那行文本。找到该行后，它会用 N 命令将下一行合并到那行，然后用替换命令 s 将换行符替换成空格。结果是，文本文件中的两行在 sed 的输出中成了一行。
+### 示例2
+```
+[root@localhost exam]# cat result1.txt 
+1单选(3分)
+下列哪个不是单字符正则表达式？
+A.
+. 
+B.
+ [i-k] 
+C.
+@
+D.
+$
+正确答案：D你错选为C
+[root@localhost exam]# sed -r 'N;s/([A-Z]\.)\n(.+)/\1 \2/g' result1.txt 
+1单选(3分)
+下列哪个不是单字符正则表达式？
+A. . 
+B.  [i-k] 
+C. @
+D. $
+正确答案：D你错选为C
+[root@localhost exam]# 
+```
+## sed多行删除命令D
+sed 不仅提供了单行删除命令（d），也提供了多行删除命令 D，其作用是只删除缓冲区中的第一行，也就是说，D 命令将缓冲区中第一个换行符（包括换行符）之前的内容删除掉。
+## 多行打印命令P
+同 d 和 D 之间的区别一样，P（大写）命令和单行打印命令 p（小写）不同，对于具有多行数据的缓冲区来说，它只会打印缓冲区中的第一行，也就是首个换行符之前的所有内容。
+
+未完待续
 # 参考资料
 [http://c.biancheng.net/view/4056.html](http://c.biancheng.net/view/4056.html)

@@ -246,6 +246,7 @@ public class SedTest{
 }
 [root@localhost sed]&#35; 
 </pre>
+
 ### 替换某行中全部模式匹配的地方：sed '行号s/pattern/replacement/g'
 把第3行中的所有`\t`全部替换为4个减号：
 ```
@@ -636,6 +637,7 @@ this is the newly inserted line 2' sed_append.txt |cat -n
 [root@localhost sed]# 
 ```
 ### 在第N行之前插入多行
+
 ```
 [root@localhost sed]# cat -n sed_append.txt 
      1    this is line a
@@ -652,7 +654,11 @@ this is the newly inserted line 2' sed_append.txt |cat -n
      6    this is line d
 [root@localhost sed]# 
 ```
+
 ## sed脚本命令c：替换整行
+```    
+[address]c\用于替换的新文本
+```
 ### 替换第2行的内容
 ```
 [root@localhost sed]# cat -n sed_append.txt 
@@ -667,12 +673,14 @@ this is the newly inserted line 2' sed_append.txt |cat -n
      4    this is line d
 [root@localhost sed]# 
 ```
+
 ## sed脚本命令y：字符集映射替换
 y 转换命令是唯一可以处理单个字符的 sed 脚本命令，其基本格式如下：
 ```
 sed '[address]y/inchars/outchars/'
 ```
 转换命令会对 inchars 和 outchars 值进行一对一的映射，即 inchars 中的第一个字符会被转换为 outchars 中的第一个字符，第二个字符会被转换成 outchars 中的第二个字符...这个映射过程会一直持续到处理完指定字符。如果 inchars 和 outchars 的长度不同，则 sed 会产生一条错误消息。
+
 ### 示例1
 例如按如下映射进行替换：
 
@@ -728,6 +736,7 @@ this is line d
 </pre>
 
 ### 大小写转换
+
 ```
 [root@localhost sed]# cat sed_append.txt 
 this is line a
@@ -741,6 +750,7 @@ this is line c
 this is line d
 [root@localhost sed]# 
 ```
+
 ## sed脚本命令p：打印某行
 > sed 默认会打印出被处理的输入内容，这些内容跟原始输入内容不一定完全一样，sed 的一些命令可以修改或删除输入内容，再把新的内容打印出来。
 > 打印的输出结果并不是只对应匹配特定模式的行。
@@ -753,6 +763,7 @@ this is line d
 `sed -n`∶使用安静(silent)模式。在一般 sed 的用法中，所有来自STDIN的资料一般都会被列出到萤幕上。但**如果加上 -n 参数后，则只有经过sed 特殊处理的那一行(或者动作)才会被列出来**。
 ### sed '[address]p' 输出匹配的行
 p命令表示搜索符号条件的行，并输出该行的内容。
+
 <pre>
 [root@localhost sed]&#35; cat sed_append.txt 
 this is line a
@@ -775,6 +786,7 @@ this is line d
 <mark>&#35; helloworld_3</mark>
 [root@localhost sed]&#35;
 </pre>
+
 可以看到匹配的行输出了两次，第一次的输出是sed的输出，第2个输出则是脚本命令p的输出。
 如果想只输出匹配的行，其他的行不输出的话，则可以加上-n参数。：
 
@@ -927,6 +939,7 @@ sed 命令会查找包含小写字母b的行，然后执行两条命令。
 ```
 sed '[address]{命令1;命令2;...命令n}'
 ```
+
 <pre>
 [root@localhost sed]&#35; cat sed_append.txt 
 this is line a
@@ -950,6 +963,7 @@ this is line d
 `\<`表示词首。 如：`\<abc`表示以abc为首的詞。
 `\>`表示词尾。 如：`abc\>`表示以abc結尾的詞。
 ### 打印有hello为词首的单词的行
+
 <pre>
 [root@localhost sed]&#35; cat sed_append.txt 
 this is line a
@@ -967,6 +981,7 @@ this is line d
 </pre>
 
 ### 打印有line为词尾的单词的行
+
 <pre>
 [root@localhost sed]&#35; cat sed_append.txt 
 this is line a

@@ -56,3 +56,4 @@ tar -J ... -> tar -Ipixz ...
 [https://zhuanlan.zhihu.com/p/32637435](https://zhuanlan.zhihu.com/p/32637435)
 [https://linux.cn/article-9193-1.html](https://linux.cn/article-9193-1.html)
 [https://linux.cn/article-3760-1.html](https://linux.cn/article-3760-1.html)
+[https://segmentfault.com/a/1190000038323985](https://segmentfault.com/a/1190000038323985)
