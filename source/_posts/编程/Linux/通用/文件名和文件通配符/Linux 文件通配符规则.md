@@ -1,10 +1,11 @@
 ---
 title: Linux 文件通配符规则
-categories: 
+categories:
   - 编程
   - Linux
   - 通用
   - 文件名和文件通配符
+abbrlink: 8261cbc6
 date: 2021-05-31 14:35:51
 updated: 2021-05-31 14:35:51
 ---

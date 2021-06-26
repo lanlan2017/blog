@@ -40,6 +40,17 @@ section是一个数字编号，1表示第一章。
 |3|库函数|
 |5|配置文件|
 
+```
+1、Standard commands （标准命令）
+2、System calls （系统调用）
+3、Library functions （库函数）
+4、Special devices （设备说明）
+5、File formats （文件格式）
+6、Games and toys （游戏和娱乐）
+7、Miscellaneous （杂项）
+8、Administrative Commands （管理员命令）
+```
+
 例如
 ```
 man 1 sheep #查看第一章的sleep命令
@@ -234,4 +245,8 @@ NAME
        mkdir [选项] 目录...
 
 ```
+
+# 参考资料
 [https://blog.csdn.net/shengjie87/article/details/106981351](https://blog.csdn.net/shengjie87/article/details/106981351)
+<https://blog.csdn.net/binboot/article/details/41978573>
+<https://www.topbyte.cn/2010/09/linux-man/>
