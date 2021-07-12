@@ -83,11 +83,15 @@ Identity added: id_rsa (xxxxxxx@xxxx.com)
 ```shell
 cat id_rsa.pub
 ```
-然后复制,设置到GitHub上.省略。
+然后复制,然后浏览器上进入GitHub网站。
+点击github网站右上方**头像**，然后选择**Setting**，在**Account settings**栏中选择**SSH and GPG keys**,然后点击右上方的**New SSH key**按钮。
+然后在**Title**输入框中输入公钥的名称。在**Key文本域**中输入上面的公钥（id_rsa.pub）的内容
 ## 测试链接是否成功
+进入一个之前的git本地仓库，输入如下命令测试连接：
 ```shell
 ssh -T git@github.com
 ```
+如果有如下输出，则表示公钥已经设置好，SSH连接正常。
 ```shell
 lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/blog9 (master)
 $ ssh -T git@github.com
@@ -100,7 +104,7 @@ git commit -m '测试SSH推送'
 git push origin master
 ```
 这个时候就可以直接推送到远程仓库了.不再需要输入用户名和密码.
-
+## SSH推送有问题
 如果这个时候还需要输入密码,这表示上面的步骤有问题.
 ### 你可能没有开启ssh-agent
 你可以先需要输入如下命令
