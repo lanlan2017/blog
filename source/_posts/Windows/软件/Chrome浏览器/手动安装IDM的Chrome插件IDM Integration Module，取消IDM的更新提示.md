@@ -3,7 +3,7 @@ title: 手动安装IDM的Chrome插件IDM Integration Module，取消IDM的更新
 categories:
   - Windows
   - 软件
-  - Win10设置
+  - Chrome浏览器
 abbrlink: 845de5e4
 date: 2021-07-12 17:08:09
 updated: 2021-07-12 17:08:09

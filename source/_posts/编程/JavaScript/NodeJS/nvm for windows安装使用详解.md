@@ -1,9 +1,9 @@
 ---
 title: nvm for windows安装使用详解
 categories:
-  - Windows
-  - 软件
-  - Win10设置
+  - 编程
+  - JavaScript
+  - NodeJS
 abbrlink: 1dec4fca
 date: 2021-07-10 20:22:27
 updated: 2021-07-10 20:22:27
