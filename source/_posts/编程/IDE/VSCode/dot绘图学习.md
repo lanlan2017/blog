@@ -1,3 +1,10 @@
+---
+categories:
+  - 编程
+  - IDE
+  - VSCode
+abbrlink: 5902eeee
+---
 
 # 使用vscode
 
@@ -5,6 +12,7 @@
 
 # dot语法
 ## 有向图
+
 ```
 digraph g {
     a->b;
@@ -12,6 +20,7 @@ digraph g {
     c->a;
 }
 ```
+
 如下图所示：
 
 ```graphviz
@@ -46,6 +55,7 @@ digraph demo {
 }
 #@enddot
 ```
+
 显示效果
 
 ```graphviz
@@ -76,11 +86,12 @@ digraph demo {
     {rank=same; father, mother}
     {rank=same; brother,sister,我}
 }
-
 #@enddot
 ```
+
 ## shape示例
 代码：
+
 ```
 digraph demo {
     bgcolor="floralwhite"
@@ -95,6 +106,7 @@ digraph demo {
     "diamond"[shape=diamond]
 }
 ```
+
 显示效果：
 
 ```graphviz
