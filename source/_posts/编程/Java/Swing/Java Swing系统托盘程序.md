@@ -138,25 +138,23 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class SystemTrayFrame extends JFrame
-{
+public class SystemTrayFrame extends JFrame {
     private static final long serialVersionUID = 6708808934167400534L;
     private JPanel contentPane;
 
     /**
      * Launch the application.
      */
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
+        // 启动窗体
         EventQueue.invokeLater(new Runnable() {
-            public void run()
-            {
-                try
-                {
+            public void run() {
+                try {
+                    // 创建窗体
                     SystemTrayFrame frame = new SystemTrayFrame();
+                    // 显示窗体
                     frame.setVisible(true);
-                } catch (Exception e)
-                {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -173,56 +171,58 @@ public class SystemTrayFrame extends JFrame
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(new BorderLayout(0, 0));
         setContentPane(contentPane);
+        // 初始化系统托盘
         initSystemTray();
     }
+
     /**
-     * 初始化系统托盘
+     * 初始化系统托盘，复用方法，把该方法复制其他Frame中，然后调用使用系统托盘。
      */
-    private void initSystemTray()
-    {
+    private void initSystemTray() {
         // 判断系统是否支持托盘图标
-        if (SystemTray.isSupported())
-        {
+        if (SystemTray.isSupported()) {
             // 获取托盘图标,图片请放在src目录下
             URL resource = this.getClass().getResource("/sun.png");
+            // 创建图标
             ImageIcon icon = new ImageIcon(resource);
             // 创建弹出式菜单
             PopupMenu pop = new PopupMenu();
-            MenuItem displayJFrame = new MenuItem("显示");
-            displayJFrame.addActionListener(new ActionListener() {
+            // 创建 显示菜单项
+            MenuItem displayJFrameItem = new MenuItem("显示");
+            // 给 显示窗体菜单项 添加事件处理程序
+            displayJFrameItem.addActionListener(new ActionListener() {
                 @Override
-                public void actionPerformed(ActionEvent e)
-                {
+                public void actionPerformed(ActionEvent e) {
                     setVisible(true);
                 }
             });
-            pop.add(displayJFrame);
-            // 创建菜单项
-            MenuItem exit = new MenuItem("退出");
-            // 给菜单项添加事件监听器，单击时退出系统
-            exit.addActionListener(new ActionListener() {
+            // 显示菜单项 添加到 弹出式菜单中
+            pop.add(displayJFrameItem);
+
+            // 创建 退出菜单项
+            MenuItem exitItem = new MenuItem("退出");
+            // 给 退出菜单项 添加事件监听器，单击时退出系统
+            exitItem.addActionListener(new ActionListener() {
                 @Override
-                public void actionPerformed(ActionEvent e)
-                {
+                public void actionPerformed(ActionEvent e) {
                     System.exit(0);
                 }
             });
-            pop.add(exit);
-            TrayIcon tray = new TrayIcon(icon.getImage(), "HelloWorld", pop);
+            // 添加 退出菜单项 到弹出框中
+            pop.add(exitItem);
 
+            // 创建托盘图标程序
+            TrayIcon tray = new TrayIcon(icon.getImage(), "HelloWorld", pop);
             // 获得系统托盘对象
             SystemTray systemTray = SystemTray.getSystemTray();
-            try
-            {
-                // 将托盘图片添加到系统托盘中
+            try {
+                // 将托盘图标添加到系统托盘中
                 systemTray.add(tray);
-            } catch (AWTException e1)
-            {
+            } catch (AWTException e1) {
                 e1.printStackTrace();
             }
         }
     }
-
 }
 ```
 ### 运行效果
@@ -235,6 +235,7 @@ public class SystemTrayFrame extends JFrame
 [https://blog.csdn.net/qq_36761831/article/details/81516535](https://blog.csdn.net/qq_36761831/article/details/81516535)
 [https://www.docs4dev.com/docs/zh/java/java8/tutorials/uiswing-misc-systemtray.html](https://www.docs4dev.com/docs/zh/java/java8/tutorials/uiswing-misc-systemtray.html)
 [https://blog.csdn.net/xietansheng/article/details/78389278](https://blog.csdn.net/xietansheng/article/details/78389278)
+
 <!-- 
 Blog/programming/Java/Swing/SwingSystemTrayProgram/3
 Blog/programming/Java/Swing/SwingSystemTrayProgram/4
