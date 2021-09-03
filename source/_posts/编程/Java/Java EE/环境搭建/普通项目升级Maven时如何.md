@@ -1,10 +1,11 @@
 ---
 title: 普通项目转Maven时，lib目录中的jar包如何安全的替换为Maven pom管理
-categories: 
+categories:
   - 编程
   - Java
   - Java EE
   - 环境搭建
+abbrlink: 34b76da1
 date: 2021-09-01 16:52:26
 updated: 2021-09-01 16:52:26
 ---
