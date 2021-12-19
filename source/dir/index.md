@@ -27,6 +27,8 @@ date: 2019-12-17 04:08:18
 
 ## [下载](/blog/categories/Windows/下载)
 
+## [硬件](/blog/categories/Windows/硬件)
+
 ## [软件](/blog/categories/Windows/软件)
 - [Chrome浏览器](/blog/categories/Windows/软件/Chrome浏览器)
 - [Office](/blog/categories/Windows/软件/Office)
@@ -56,6 +58,7 @@ date: 2019-12-17 04:08:18
 ## [免费邮箱](/blog/categories/其他/免费邮箱)
 
 ## [我的软件](/blog/categories/其他/我的软件)
+- [Commands](/blog/categories/其他/我的软件/Commands)
 - [截图文字识别](/blog/categories/其他/我的软件/截图文字识别)
 - [百度文字识别](/blog/categories/其他/我的软件/百度文字识别)
 - [腾讯云对象存储COS](/blog/categories/其他/我的软件/腾讯云对象存储COS)
@@ -67,6 +70,8 @@ date: 2019-12-17 04:08:18
 ## [排序](/blog/categories/其他/排序)
 
 ## [搜索](/blog/categories/其他/搜索)
+
+## [新建文件夹](/blog/categories/其他/新建文件夹)
 
 ## [正则表达式](/blog/categories/其他/正则表达式)
 - [实例](/blog/categories/其他/正则表达式/实例)
@@ -158,6 +163,7 @@ date: 2019-12-17 04:08:18
 - [Java 网络编程](/blog/categories/编程/Java/Java-网络编程)
 - [Java 集合](/blog/categories/编程/Java/Java-集合)
 - [JDBC](/blog/categories/编程/Java/JDBC)
+- [JVM](/blog/categories/编程/Java/JVM)
 - [Log4j教程](/blog/categories/编程/Java/Log4j教程)
     - [Debug](/blog/categories/编程/Java/Log4j教程/Debug)
     - [简介](/blog/categories/编程/Java/Log4j教程/简介)
@@ -172,7 +178,6 @@ date: 2019-12-17 04:08:18
 - [Date](/blog/categories/编程/JavaScript/Date)
 - [DOM](/blog/categories/编程/JavaScript/DOM)
     - [HTML DOM table对象](/blog/categories/编程/JavaScript/DOM/HTML-DOM-table对象)
-- [NodeJS](/blog/categories/编程/JavaScript/NodeJS)
 - [下载文件](/blog/categories/编程/JavaScript/下载文件)
 - [事件](/blog/categories/编程/JavaScript/事件)
 - [函数](/blog/categories/编程/JavaScript/函数)
@@ -216,6 +221,8 @@ date: 2019-12-17 04:08:18
 - [安装](/blog/categories/编程/MySQL/安装)
 
 ## [NodeJS](/blog/categories/编程/NodeJS)
+
+## [UML](/blog/categories/编程/UML)
 
 # [随堂笔记](/blog/categories/随堂笔记)
 

@@ -1,9 +1,12 @@
 ---
-categories:
+title: dot绘图学习
+categories: 
   - 编程
   - IDE
   - VSCode
 abbrlink: 5902eeee
+date: 2021-07-27 15:25:30
+updated: 2021-07-27 15:25:30
 ---
 
 # 使用vscode
