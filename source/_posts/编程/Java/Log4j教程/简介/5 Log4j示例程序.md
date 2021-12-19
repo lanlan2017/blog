@@ -9,12 +9,6 @@ date: 2020-08-03 05:07:11
 updated: 2021-03-20 09:38:13
 abbrlink: 37d9cc03
 ---
-<div id='my_toc'><a href="/blog/37d9cc03/#Log4j示例程序" class="header_1">Log4j示例程序</a>&nbsp;<br><a href="/blog/37d9cc03/#项目结构" class="header_2">项目结构</a>&nbsp;<br><a href="/blog/37d9cc03/#源代码" class="header_2">源代码</a>&nbsp;<br><a href="/blog/37d9cc03/#日志输出到文件" class="header_2">日志输出到文件</a>&nbsp;<br><a href="/blog/37d9cc03/#Log4j-properties" class="header_3">Log4j.properties</a>&nbsp;<br><a href="/blog/37d9cc03/#Log4jExample-java" class="header_3">Log4jExample.java</a>&nbsp;<br><a href="/blog/37d9cc03/#运行效果" class="header_3">运行效果</a>&nbsp;<br><a href="/blog/37d9cc03/#日志输出到控制台" class="header_2">日志输出到控制台</a>&nbsp;<br><a href="/blog/37d9cc03/#log4j-properties" class="header_3">log4j.properties</a>&nbsp;<br><a href="/blog/37d9cc03/#替换log4j配置文件-重新运行" class="header_3">替换log4j配置文件 重新运行</a>&nbsp;<br><a href="/blog/37d9cc03/#日志同时输出到文件和控制台" class="header_2">日志同时输出到文件和控制台</a>&nbsp;<br><a href="/blog/37d9cc03/#log4j-properties" class="header_3">log4j.properties</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Log4j示例程序
 我们已经学会了如何创建配置文件，本章讲述如何生成调试信息，并将其写入一个简单的文本文件。
 ## 项目结构

@@ -10,12 +10,6 @@ date: 2018-12-19 15:11:38
 updated: 2020-04-11 09:21:19
 abbrlink: 8c60ed62
 ---
-<div id='my_toc'><a href="/blog/8c60ed62/#out内置对象" class="header_1">out内置对象</a>&nbsp;<br><a href="/blog/8c60ed62/#向客户端输出数据" class="header_2">向客户端输出数据</a>&nbsp;<br><a href="/blog/8c60ed62/#管理响应缓冲" class="header_2">管理响应缓冲</a>&nbsp;<br><a href="/blog/8c60ed62/#实例" class="header_3">实例</a>&nbsp;<br><a href="/blog/8c60ed62/#验证flush-方法" class="header_3">验证flush()方法</a>&nbsp;<br><a href="/blog/8c60ed62/#验证clear-方法" class="header_3">验证clear()方法</a>&nbsp;<br><a href="/blog/8c60ed62/#验证clearBuffer-方法" class="header_3">验证clearBuffer()方法</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # out内置对象 #
 out对象用于在web浏览器内输出信息,并且管理应用服务器上的输出缓冲区。在使用out对象输出数据时,可以对数据缓冲区进行操作,及时清除缓冲区中的残余数据,为其他的输出让出缓冲空间。待数据输出完毕后,要及时关闭输出流。
 **缓冲区**: Buffer,所谓缓冲区就是内存的一块区域用来保存临时数据。

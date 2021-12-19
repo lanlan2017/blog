@@ -8,12 +8,6 @@ date: 2018-12-11 20:43:57
 updated: 2021-03-20 10:32:56
 abbrlink: 37dcd881
 ---
-<div id='my_toc'><a href="/blog/37dcd881/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/37dcd881/#缺点" class="header_2">缺点</a>&nbsp;<br><a href="/blog/37dcd881/#解决方案" class="header_2">解决方案</a>&nbsp;<br><a href="/blog/37dcd881/#eclipse中设置把Web项目发布到Tomcat-webapps中" class="header_2">eclipse中设置把Web项目发布到Tomcat webapps中</a>&nbsp;<br><a href="/blog/37dcd881/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 问题描述
 在Eclipse中，默认会把Web项目发布到Eclipse的工作空间下的：
 ```

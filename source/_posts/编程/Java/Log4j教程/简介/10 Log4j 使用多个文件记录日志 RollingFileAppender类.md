@@ -9,12 +9,6 @@ date: 2020-08-03 09:56:40
 updated: 2021-03-20 09:38:13
 abbrlink: cbcda66c
 ---
-<div id='my_toc'><a href="/blog/cbcda66c/#Log4j-使用多个文件记录日志-RollingFileAppender类" class="header_1">Log4j 使用多个文件记录日志 RollingFileAppender类</a>&nbsp;<br><a href="/blog/cbcda66c/#log4j-properties" class="header_2">log4j.properties</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Log4j 使用多个文件记录日志 RollingFileAppender类
 您可能因为某些原因，需要将日志写入多个文件，比如当文件大小达到一定阀值时。
 

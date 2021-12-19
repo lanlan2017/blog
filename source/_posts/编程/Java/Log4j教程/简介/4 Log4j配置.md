@@ -9,12 +9,6 @@ date: 2020-08-03 04:04:18
 updated: 2021-03-20 09:38:13
 abbrlink: 9c30cbde
 ---
-<div id='my_toc'><a href="/blog/9c30cbde/#log4j配置" class="header_1">log4j配置</a>&nbsp;<br><a href="/blog/9c30cbde/#Log4j-properties的语法" class="header_2">Log4j.properties的语法</a>&nbsp;<br><a href="/blog/9c30cbde/#Log4j-properties示例" class="header_2">Log4j.properties示例</a>&nbsp;<br><a href="/blog/9c30cbde/#变量替换" class="header_3">变量替换</a>&nbsp;<br><a href="/blog/9c30cbde/#级别" class="header_3">级别</a>&nbsp;<br><a href="/blog/9c30cbde/#Appender对象" class="header_2">Appender对象</a>&nbsp;<br><a href="/blog/9c30cbde/#Appender对象属性" class="header_3">Appender对象属性</a>&nbsp;<br><a href="/blog/9c30cbde/#将Appender添加到Logger对象" class="header_3">将Appender添加到Logger对象</a>&nbsp;<br><a href="/blog/9c30cbde/#在程序中为Logger对象添加Appender对象" class="header_3">在程序中为Logger对象添加Appender对象</a>&nbsp;<br><a href="/blog/9c30cbde/#所有可用的Appender" class="header_3">所有可用的Appender</a>&nbsp;<br><a href="/blog/9c30cbde/#Layout对象" class="header_2">Layout对象</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # log4j配置
 `Log4j`的配置包括在配置文件中:
 1. 指定`Level`、

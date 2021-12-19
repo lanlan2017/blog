@@ -9,12 +9,6 @@ date: 2019-11-26 00:48:27
 updated: 2021-03-20 10:16:47
 abbrlink: cc785ddc
 ---
-<div id='my_toc'><a href="/blog/cc785ddc/#Ubuntu-为shell脚本创建-destop快捷方式" class="header_1">Ubuntu 为shell脚本创建.destop快捷方式</a>&nbsp;<br><a href="/blog/cc785ddc/#HexoS-sh" class="header_2">HexoS.sh</a>&nbsp;<br><a href="/blog/cc785ddc/#启动博客-desktop" class="header_2">启动博客.desktop</a>&nbsp;<br><a href="/blog/cc785ddc/#-desktop-配置详解" class="header_2">.desktop 配置详解</a>&nbsp;<br><a href="/blog/cc785ddc/#Desktop-Entry-文件结构" class="header_2">Desktop Entry 文件结构</a>&nbsp;<br><a href="/blog/cc785ddc/#关键字详解" class="header_2">关键字详解</a>&nbsp;<br><a href="/blog/cc785ddc/#必选关键字" class="header_3">必选关键字</a>&nbsp;<br><a href="/blog/cc785ddc/#可选关键字" class="header_3">可选关键字</a>&nbsp;<br><a href="/blog/cc785ddc/#以"Type"类型是"Application"为前提的关键字" class="header_4">以"Type"类型是"Application"为前提的关键字</a>&nbsp;<br><a href="/blog/cc785ddc/#以"Type"类型是"Link"为前提的关键字" class="header_4">以"Type"类型是"Link"为前提的关键字</a>&nbsp;<br><a href="/blog/cc785ddc/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Ubuntu 为shell脚本创建.destop快捷方式
 ## HexoS.sh
 ```shell

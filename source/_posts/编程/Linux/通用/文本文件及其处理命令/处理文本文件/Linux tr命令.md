@@ -10,12 +10,6 @@ abbrlink: 3fd8156d
 date: 2021-04-26 21:08:28
 updated: 2021-04-26 21:08:28
 ---
-<div id='my_toc'></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Linux tr命令
 tr命令 可以对来自标准输入的字符进行替换、压缩和删除。它可以将一组字符变成另一组字符，经常用来编写优美的单行命令，作用很强大。
 tr 是 Linux 和 Unix 系统中的命令行实用程序，用于转换，删除和挤压标准输入中的字符，并将结果写入标准输出。

@@ -9,12 +9,6 @@ date: 2019-11-25 18:07:50
 updated: 2021-03-20 10:16:38
 abbrlink: 6266bb6b
 ---
-<div id='my_toc'><a href="/blog/6266bb6b/#Ubuntu-安装Java" class="header_1">Ubuntu 安装Java</a>&nbsp;<br><a href="/blog/6266bb6b/#安装Oracle-java8" class="header_1">安装Oracle java8</a>&nbsp;<br><a href="/blog/6266bb6b/#下载压缩包" class="header_2">下载压缩包</a>&nbsp;<br><a href="/blog/6266bb6b/#解压缩" class="header_2">解压缩</a>&nbsp;<br><a href="/blog/6266bb6b/#配置java到用户环境遍历" class="header_2">配置java到用户环境遍历</a>&nbsp;<br><a href="/blog/6266bb6b/#获取Java安装路径" class="header_3">获取Java安装路径</a>&nbsp;<br><a href="/blog/6266bb6b/#配置环境遍历" class="header_3">配置环境遍历</a>&nbsp;<br><a href="/blog/6266bb6b/#让配置生效" class="header_3">让配置生效</a>&nbsp;<br><a href="/blog/6266bb6b/#测试Java是否配置成功" class="header_3">测试Java是否配置成功</a>&nbsp;<br><a href="/blog/6266bb6b/#系统环境变量" class="header_3">系统环境变量</a>&nbsp;<br><a href="/blog/6266bb6b/#安装Oracle-java11" class="header_1">安装Oracle java11</a>&nbsp;<br><a href="/blog/6266bb6b/#下载-deb安装包" class="header_2">下载.deb安装包</a>&nbsp;<br><a href="/blog/6266bb6b/#点击安装" class="header_2">点击安装</a>&nbsp;<br><a href="/blog/6266bb6b/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Ubuntu 安装Java
 环境:VirtualBox+Ubuntu虚拟机
 # 安装Oracle java8

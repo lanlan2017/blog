@@ -8,12 +8,6 @@ abbrlink: 3283dcaa
 date: 2021-03-23 05:11:29
 updated: 2021-04-13 23:31:08
 ---
-<div id='my_toc'><a href="/blog/3283dcaa/#ls命令含义" class="header_1">ls命令含义</a>&nbsp;<br><a href="/blog/3283dcaa/#语法" class="header_1">语法</a>&nbsp;<br><a href="/blog/3283dcaa/#参数" class="header_2">参数</a>&nbsp;<br><a href="/blog/3283dcaa/#实例" class="header_1">实例</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-a" class="header_2">ls -a</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-A" class="header_2">ls -A</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-F" class="header_2">ls -F</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-l" class="header_2">ls -l</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-l各列含义" class="header_3">ls -l各列含义</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-lh" class="header_3">ls -lh</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-l-full-time显示完整时间-显示年月日" class="header_2">ls -l --full-time显示完整时间 显示年月日</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-t-按时间排序列出-时间越近越在前" class="header_2">ls -t 按时间排序列出 时间越近越在前</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-tr-按时间排序-时间越远越在前" class="header_2">ls -tr 按时间排序 时间越远越在前</a>&nbsp;<br><a href="/blog/3283dcaa/#ls-R" class="header_2">ls -R</a>&nbsp;<br><a href="/blog/3283dcaa/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # ls命令含义
 Linux ls（英文全拼：list files）命令用于显示指定工作目录下之内容（列出目前工作目录所含之文件及子目录)。
 # 语法

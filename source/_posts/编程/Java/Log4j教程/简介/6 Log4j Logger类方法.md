@@ -9,12 +9,6 @@ date: 2020-08-03 05:44:24
 updated: 2021-03-20 09:38:13
 abbrlink: 295e501e
 ---
-<div id='my_toc'><a href="/blog/295e501e/#Log4j-Logger类方法" class="header_1">Log4j Logger类方法</a>&nbsp;<br><a href="/blog/295e501e/#获取Logger类实例" class="header_2">获取Logger类实例</a>&nbsp;<br><a href="/blog/295e501e/#打印日志信息的方法" class="header_2">打印日志信息的方法</a>&nbsp;<br><a href="/blog/295e501e/#示例程序" class="header_2">示例程序</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Log4j Logger类方法
 ## 获取Logger类实例
 `Logger`类提供了很多方法用来处理日志，`Logger`类不允许初始化一个新的实例，但提供了两个静态方法用来获取`Logger`对象：

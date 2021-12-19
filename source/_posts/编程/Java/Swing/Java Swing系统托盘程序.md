@@ -8,12 +8,6 @@ date: 2020-09-15 10:11:36
 updated: 2020-09-16 12:17:42
 abbrlink: 57f9f8bc
 ---
-<div id='my_toc'><a href="/blog/57f9f8bc/#Java-Swing系统托盘程序" class="header_1">Java Swing系统托盘程序</a>&nbsp;<br><a href="/blog/57f9f8bc/#项目结构" class="header_2">项目结构</a>&nbsp;<br><a href="/blog/57f9f8bc/#托盘图标" class="header_2">托盘图标</a>&nbsp;<br><a href="/blog/57f9f8bc/#networking-png" class="header_3">networking.png</a>&nbsp;<br><a href="/blog/57f9f8bc/#sun-png" class="header_3">sun.png</a>&nbsp;<br><a href="/blog/57f9f8bc/#SystemTrayDemo-java" class="header_2">SystemTrayDemo.java</a>&nbsp;<br><a href="/blog/57f9f8bc/#运行效果" class="header_3">运行效果</a>&nbsp;<br><a href="/blog/57f9f8bc/#乱码解决" class="header_2">乱码解决</a>&nbsp;<br><a href="/blog/57f9f8bc/#1-设置项目的编码为GBK" class="header_3">1. 设置项目的编码为GBK</a>&nbsp;<br><a href="/blog/57f9f8bc/#2-添加运行参数-Dfile-encoding=GBK" class="header_3">2. 添加运行参数-Dfile.encoding=GBK</a>&nbsp;<br><a href="/blog/57f9f8bc/#SystemTrayFrame-java" class="header_2">SystemTrayFrame.java</a>&nbsp;<br><a href="/blog/57f9f8bc/#运行效果" class="header_3">运行效果</a>&nbsp;<br><a href="/blog/57f9f8bc/#参考资料" class="header_2">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Java Swing系统托盘程序
 
 ## 项目结构

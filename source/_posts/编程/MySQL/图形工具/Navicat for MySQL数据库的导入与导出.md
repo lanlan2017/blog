@@ -8,12 +8,6 @@ date: 2018-12-08 00:19:02
 updated: 2021-03-20 10:20:12
 abbrlink: 885d02c0
 ---
-<div id='my_toc'><a href="/blog/885d02c0/#导出数据库中的所有表" class="header_1">导出数据库中的所有表</a>&nbsp;<br><a href="/blog/885d02c0/#记下原来数据库的属性" class="header_2">记下原来数据库的属性</a>&nbsp;<br><a href="/blog/885d02c0/#导出原数据库中的全部" class="header_2">导出原数据库中的全部</a>&nbsp;<br><a href="/blog/885d02c0/#导入数据库" class="header_1">导入数据库</a>&nbsp;<br><a href="/blog/885d02c0/#参看文件中的信息" class="header_2">参看文件中的信息</a>&nbsp;<br><a href="/blog/885d02c0/#关键信息" class="header_3">关键信息</a>&nbsp;<br><a href="/blog/885d02c0/#新建同名数据库" class="header_2">新建同名数据库</a>&nbsp;<br><a href="/blog/885d02c0/#导入" class="header_2">导入</a>&nbsp;<br><a href="/blog/885d02c0/#Java程序说明" class="header_1">Java程序说明</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 导出数据库中的所有表
 ## 记下原来数据库的属性
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/mysql/tools/NavicatForMysql/shuxing.png)

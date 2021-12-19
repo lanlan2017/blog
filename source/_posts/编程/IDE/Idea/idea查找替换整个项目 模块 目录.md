@@ -8,12 +8,6 @@ abbrlink: b02ac37c
 date: 2021-04-03 14:47:47
 updated: 2021-04-03 15:05:54
 ---
-<div id='my_toc'><a href="/blog/null/#格式化其他模板设置错误" class="header_1">格式化其他模板设置错误</a>&nbsp;<br><a href="/blog/null/#idea搜索整个项目" class="header_1">idea搜索整个项目</a>&nbsp;<br><a href="/blog/null/#idea替换整个项目" class="header_1">idea替换整个项目</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 
 # 格式化其他模板设置错误
 我发现原来项目中我的日期格式化设置错误了

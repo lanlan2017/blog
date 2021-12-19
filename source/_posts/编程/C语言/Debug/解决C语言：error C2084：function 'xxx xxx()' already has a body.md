@@ -8,12 +8,6 @@ date: 2018-11-14 19:25:05
 updated: 2021-03-20 09:54:29
 abbrlink: 38f33943
 ---
-<div id='my_toc'><a href="/blog/38f33943/#分析原因" class="header_1">分析原因</a>&nbsp;<br><a href="/blog/38f33943/#解决方案" class="header_1">解决方案</a>&nbsp;<br><a href="/blog/38f33943/#总结" class="header_1">总结</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 分析原因
 这是因为头文件重复导入了，我在头文件`userBuyMenu.h`中导入了`#include "findMethod.h"`。
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/C/debug/alredyHasABody/alreadyhasabody.png)

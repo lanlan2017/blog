@@ -8,12 +8,6 @@ date: 2020-06-09 11:59:05
 updated: 2020-06-24 08:17:43
 abbrlink: ff1c9b2c
 ---
-<div id='my_toc'><a href="/blog/ff1c9b2c/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/ff1c9b2c/#npm-check" class="header_1">npm-check</a>&nbsp;<br><a href="/blog/ff1c9b2c/#npm-check安装" class="header_2">npm-check安装</a>&nbsp;<br><a href="/blog/ff1c9b2c/#查看项目依赖包更新-npm-check" class="header_2">查看项目依赖包更新 npm-check</a>&nbsp;<br><a href="/blog/ff1c9b2c/#选择更新" class="header_2">选择更新</a>&nbsp;<br><a href="/blog/ff1c9b2c/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 问题描述
 最近推送到GitHub后,无法自动部署.GitHub上的错误报告说是某个依赖版本过低.
 # npm-check

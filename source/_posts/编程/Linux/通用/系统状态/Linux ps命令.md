@@ -9,12 +9,6 @@ abbrlink: 56aee8cb
 date: 2021-04-21 17:08:30
 updated: 2021-04-21 23:33:39
 ---
-<div id='my_toc'><a href="/blog/56aee8cb/#ps命令" class="header_1">ps命令</a>&nbsp;<br><a href="/blog/56aee8cb/#功能：查阅进程状态" class="header_2">功能：查阅进程状态</a>&nbsp;<br><a href="/blog/56aee8cb/#ps列出的进程属性" class="header_2">ps列出的进程属性</a>&nbsp;<br><a href="/blog/56aee8cb/#ps选项" class="header_2">ps选项</a>&nbsp;<br><a href="/blog/56aee8cb/#无选项" class="header_3">无选项</a>&nbsp;<br><a href="/blog/56aee8cb/#ps-e：列出系统中所有的进程-进程范围" class="header_2">ps -e：列出系统中所有的进程(进程范围)</a>&nbsp;<br><a href="/blog/56aee8cb/#ps-f：以full格式列出每一个进程-控制列的数目" class="header_2">ps -f：以full格式列出每一个进程(控制列的数目)</a>&nbsp;<br><a href="/blog/56aee8cb/#ps-l选项：以long格式列出每一个进程-控制列的数目" class="header_2">ps -l选项：以long格式列出每一个进程(控制列的数目)</a>&nbsp;<br><a href="/blog/56aee8cb/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # ps命令
 ## 功能：查阅进程状态
 ps(process status)(实际上就是将内核中进程状态信息有选择地打印出来)

@@ -9,12 +9,6 @@ date: 2018-08-11 14:25:09
 updated: 2021-03-20 08:07:43
 abbrlink: 73224a52
 ---
-<div id='my_toc'><a href="/blog/73224a52/#永久修改，对所有用户有效" class="header_1">永久修改，对所有用户有效</a>&nbsp;<br><a href="/blog/73224a52/#永久修改，对单一用户有效" class="header_1">永久修改，对单一用户有效</a>&nbsp;<br><a href="/blog/73224a52/#只对当前bash/shell-生效" class="header_1">只对当前bash /shell 生效</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 永久修改，对所有用户有效
 ```shell
 $vi /etc/profile

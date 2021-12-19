@@ -8,12 +8,6 @@ date: 2019-01-31 18:29:25
 updated: 2020-04-11 09:15:21
 abbrlink: ce34466e
 ---
-<div id='my_toc'><a href="/blog/ce34466e/#使用Chrome浏览器打开指定html文件" class="header_2">使用Chrome浏览器打开指定html文件</a>&nbsp;<br><a href="/blog/ce34466e/#创建批处理脚本chrome-bat来打开html文件" class="header_2">创建批处理脚本chrome.bat来打开html文件</a>&nbsp;<br><a href="/blog/ce34466e/#chrome-bat配置到path环境变量中" class="header_2">chrome.bat配置到path环境变量中</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 ## 使用Chrome浏览器打开指定html文件 ##
 例如，我想使用chrome打开当前路径下的`index.html`文件,可以输入如下命令:
 ```cmd

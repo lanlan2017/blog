@@ -8,12 +8,6 @@ date: 2019-11-03 19:40:56
 updated: 2021-03-20 10:11:29
 abbrlink: b709eab2
 ---
-<div id='my_toc'><a href="/blog/b709eab2/#Termux-API有什么用" class="header_1">Termux API有什么用</a>&nbsp;<br><a href="/blog/b709eab2/#手机上安装Termux-API-APP" class="header_1">手机上安装Termux API APP</a>&nbsp;<br><a href="/blog/b709eab2/#Termux里面安装Termux-api软件包" class="header_1">Termux里面安装Termux-api软件包</a>&nbsp;<br><a href="/blog/b709eab2/#常用命令" class="header_1">常用命令</a>&nbsp;<br><a href="/blog/b709eab2/#获取电池信息" class="header_2">获取电池信息</a>&nbsp;<br><a href="/blog/b709eab2/#获取相机信息" class="header_2">获取相机信息</a>&nbsp;<br><a href="/blog/b709eab2/#获取与设置剪贴板" class="header_2">获取与设置剪贴板</a>&nbsp;<br><a href="/blog/b709eab2/#查看当前剪贴板内容" class="header_3">查看当前剪贴板内容</a>&nbsp;<br><a href="/blog/b709eab2/#设置新的剪贴板内容" class="header_3">设置新的剪贴板内容</a>&nbsp;<br><a href="/blog/b709eab2/#获取通讯录列表" class="header_2">获取通讯录列表</a>&nbsp;<br><a href="/blog/b709eab2/#查看短信内容列表" class="header_2">查看短信内容列表</a>&nbsp;<br><a href="/blog/b709eab2/#发送短信" class="header_2">发送短信</a>&nbsp;<br><a href="/blog/b709eab2/#拨打电话" class="header_2">拨打电话</a>&nbsp;<br><a href="/blog/b709eab2/#WiFi相关" class="header_2">WiFi相关</a>&nbsp;<br><a href="/blog/b709eab2/#termux-API小结" class="header_2">termux API小结</a>&nbsp;<br><a href="/blog/b709eab2/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Termux API有什么用
 Termux:API，用于访问手机硬件,实现更多的可玩性,可以实现如下等功能:
 - 访问电池信息

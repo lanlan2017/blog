@@ -8,12 +8,6 @@ date: 2019-05-23 18:49:38
 updated: 2020-04-11 09:15:21
 abbrlink: 9b2b8330
 ---
-<div id='my_toc'><a href="/blog/9b2b8330/#sfc/scannow命令说明" class="header_1">sfc /scannow命令说明</a>&nbsp;<br><a href="/blog/9b2b8330/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # sfc /scannow命令说明 #
 > `sfc`的全称是`SystemFileChecker`，指代系统文件检查程序用于扫描和检查是否存在已损坏或被取代的系统档案文件，并进行正确文件的修复替换
 ```cmd

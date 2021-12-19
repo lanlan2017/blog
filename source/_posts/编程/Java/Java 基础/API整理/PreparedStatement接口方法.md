@@ -9,12 +9,6 @@ date: 2019-05-21 23:50:19
 updated: 2021-03-20 08:03:24
 abbrlink: 87bdbf10
 ---
-<div id='my_toc'><a href="/blog/87bdbf10/#PreparedStatement接口方法2" class="header_1">PreparedStatement接口方法2</a>&nbsp;<br><a href="/blog/87bdbf10/#执行SQL语句的方法" class="header_2">执行SQL语句的方法</a>&nbsp;<br><a href="/blog/87bdbf10/#其他方法" class="header_2">其他方法</a>&nbsp;<br><a href="/blog/87bdbf10/#getXXX方法" class="header_2">getXXX方法</a>&nbsp;<br><a href="/blog/87bdbf10/#setXXX方法" class="header_2">setXXX方法</a>&nbsp;<br><a href="/blog/87bdbf10/#setObject方法" class="header_3">setObject方法</a>&nbsp;<br><a href="/blog/87bdbf10/#设置数组的方法" class="header_3">设置数组的方法</a>&nbsp;<br><a href="/blog/87bdbf10/#设置输入流的方法" class="header_3">设置输入流的方法</a>&nbsp;<br><a href="/blog/87bdbf10/#设置大数字对象的方法" class="header_3">设置大数字对象的方法</a>&nbsp;<br><a href="/blog/87bdbf10/#Set基本数据类型方法" class="header_3">Set基本数据类型方法</a>&nbsp;<br><a href="/blog/87bdbf10/#设定为Reader对象的方法" class="header_3">设定为Reader对象的方法</a>&nbsp;<br><a href="/blog/87bdbf10/#set时间方法" class="header_3">set时间方法</a>&nbsp;<br><a href="/blog/87bdbf10/#setString方法" class="header_3">setString方法</a>&nbsp;<br><a href="/blog/87bdbf10/#setNull方法" class="header_3">setNull方法</a>&nbsp;<br><a href="/blog/87bdbf10/#其他set方法" class="header_3">其他set方法</a>&nbsp;<br><a href="/blog/87bdbf10/#从接口-java-sql-Statement-继承的方法" class="header_2">从接口 java.sql.Statement 继承的方法 </a>&nbsp;<br><a href="/blog/87bdbf10/#从接口-java-sql-Wrapper-继承的方法" class="header_2">从接口 java.sql.Wrapper 继承的方法 </a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # PreparedStatement接口方法2
 接口`PreparedStatement`位于`java.sql`包
 所有超级接口： 

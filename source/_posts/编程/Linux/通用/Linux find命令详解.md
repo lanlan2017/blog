@@ -8,12 +8,6 @@ abbrlink: 8c3bbfbb
 date: 2021-04-13 23:49:09
 updated: 2021-04-14 21:07:56
 ---
-<div id='my_toc'><a href="/blog/8c3bbfbb/#不递归查找-find-maxdepth-1" class="header_1">不递归查找 find -maxdepth 1</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 不递归查找 find -maxdepth 1
 例如只查找当前目录下的文件：
 （比StartWriting.bat新，比HexoS.bat旧的文件）

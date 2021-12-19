@@ -8,12 +8,6 @@ date: 2021-03-17 09:36:50
 updated: 2021-03-17 11:20:44
 abbrlink: e5ce3c15
 ---
-<div id='my_toc'><a href="/blog/e5ce3c15/#下载java" class="header_1">下载java</a>&nbsp;<br><a href="/blog/e5ce3c15/#下载Tomcat" class="header_1">下载Tomcat</a>&nbsp;<br><a href="/blog/e5ce3c15/#使用Xftp上传到手机中" class="header_1">使用Xftp上传到手机中</a>&nbsp;<br><a href="/blog/e5ce3c15/#Xftp如何连接到手机上的linux" class="header_2">Xftp如何连接到手机上的linux</a>&nbsp;<br><a href="/blog/e5ce3c15/#解压缩" class="header_1">解压缩</a>&nbsp;<br><a href="/blog/e5ce3c15/#解压java的压缩包" class="header_2">解压java的压缩包</a>&nbsp;<br><a href="/blog/e5ce3c15/#解压Tomcat的压缩包" class="header_2">解压Tomcat的压缩包</a>&nbsp;<br><a href="/blog/e5ce3c15/#配置环境" class="header_1">配置环境</a>&nbsp;<br><a href="/blog/e5ce3c15/#配置java环境" class="header_2">配置java环境</a>&nbsp;<br><a href="/blog/e5ce3c15/#获取JDK绝对路径" class="header_3">获取JDK绝对路径</a>&nbsp;<br><a href="/blog/e5ce3c15/#在/etc/profile文件中配置Java环境变量" class="header_3">在/etc/profile文件中配置Java环境变量</a>&nbsp;<br><a href="/blog/e5ce3c15/#java环境变量模板" class="header_4">java环境变量模板</a>&nbsp;<br><a href="/blog/e5ce3c15/#设置java环境变量" class="header_4">设置java环境变量</a>&nbsp;<br><a href="/blog/e5ce3c15/#使配置生效" class="header_4">使配置生效</a>&nbsp;<br><a href="/blog/e5ce3c15/#验证java是否配置成功" class="header_3">验证java是否配置成功</a>&nbsp;<br><a href="/blog/e5ce3c15/#配置Tomcat" class="header_2">配置Tomcat</a>&nbsp;<br><a href="/blog/e5ce3c15/#创建Tomcat安装目录的软链接" class="header_3">创建Tomcat安装目录的软链接</a>&nbsp;<br><a href="/blog/e5ce3c15/#启动Tomcat" class="header_3">启动Tomcat</a>&nbsp;<br><a href="/blog/e5ce3c15/#在电脑上的浏览器访问Tomcat" class="header_3">在电脑上的浏览器访问Tomcat</a>&nbsp;<br><a href="/blog/e5ce3c15/#确保手机和电脑在同一网络之下" class="header_4">确保手机和电脑在同一网络之下</a>&nbsp;<br><a href="/blog/e5ce3c15/#关闭Tomcat" class="header_3">关闭Tomcat</a>&nbsp;<br><a href="/blog/e5ce3c15/#无法访问Tomcat的Manager-App和Host-Manager页面" class="header_3">无法访问Tomcat的Manager App和Host Manager页面</a>&nbsp;<br><a href="/blog/e5ce3c15/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 下载java
 上面安装的linux系统是aarch64架构的，所以需要下载aarch64对应的版本：
 

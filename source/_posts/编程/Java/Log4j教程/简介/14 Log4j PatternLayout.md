@@ -9,12 +9,6 @@ date: 2020-08-06 01:38:36
 updated: 2021-03-20 09:38:13
 abbrlink: 5c0e8258
 ---
-<div id='my_toc'><a href="/blog/5c0e8258/#Log4j-PatternLayout" class="header_1">Log4j PatternLayout</a>&nbsp;<br><a href="/blog/5c0e8258/#模式转换字符" class="header_2">模式转换字符</a>&nbsp;<br><a href="/blog/5c0e8258/#格式修饰符" class="header_2">格式修饰符</a>&nbsp;<br><a href="/blog/5c0e8258/#PatternLayout示例" class="header_2">PatternLayout示例</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Log4j PatternLayout
 如果您希望基于某种模式生成特定格式的日志信息，可使用`org.apache.log4j.PatternLayout`格式化您的日志信息。
 

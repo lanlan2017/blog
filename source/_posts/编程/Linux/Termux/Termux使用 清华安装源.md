@@ -8,12 +8,6 @@ date: 2019-11-30 17:48:40
 updated: 2021-03-20 10:11:38
 abbrlink: 100bdc9a
 ---
-<div id='my_toc'><a href="/blog/100bdc9a/#更换国内源" class="header_1">更换国内源</a>&nbsp;<br><a href="/blog/100bdc9a/#官方方法" class="header_2">官方方法</a>&nbsp;<br><a href="/blog/100bdc9a/#直接编辑源文件" class="header_2">直接编辑源文件</a>&nbsp;<br><a href="/blog/100bdc9a/#修改效果" class="header_2">修改效果</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 更换国内源
 更换`Termux`清华大学源,加快软件包下载速度. 
 ## 官方方法

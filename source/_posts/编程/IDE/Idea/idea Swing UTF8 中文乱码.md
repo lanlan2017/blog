@@ -8,12 +8,6 @@ date: 2020-01-02 11:55:04
 updated: 2020-04-11 09:21:19
 abbrlink: eb997f87
 ---
-<div id='my_toc'><a href="/blog/eb997f87/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/eb997f87/#解决方案-修改主类的编码为utf-8" class="header_1">解决方案 修改主类的编码为utf-8</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 问题描述
 今天将一个Swing项目,迁移到Idea中,但是很奇怪,运行后,标签中和按钮中的中文都乱码了,之前在Eclipse中用的编码是gbk,idea中的我改成了UTF-8
 

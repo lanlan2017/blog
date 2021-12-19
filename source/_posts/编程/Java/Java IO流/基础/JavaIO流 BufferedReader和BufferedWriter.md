@@ -9,12 +9,6 @@ date: 2018-08-10 15:00:32
 updated: 2021-03-20 08:44:48
 abbrlink: 3f2a064c
 ---
-<div id='my_toc'><a href="/blog/3f2a064c/#部分内容已经丢失" class="header_1">部分内容已经丢失</a>&nbsp;<br><a href="/blog/3f2a064c/#乱码问题" class="header_2">乱码问题</a>&nbsp;<br><a href="/blog/3f2a064c/#BufferedWriter" class="header_1">BufferedWriter</a>&nbsp;<br><a href="/blog/3f2a064c/#继承关系" class="header_2">继承关系</a>&nbsp;<br><a href="/blog/3f2a064c/#构造函数：" class="header_2">构造函数：</a>&nbsp;<br><a href="/blog/3f2a064c/#成员方法" class="header_2">成员方法</a>&nbsp;<br><a href="/blog/3f2a064c/#写文件实例" class="header_2">写文件实例</a>&nbsp;<br><a href="/blog/3f2a064c/#应用：复制文本文件" class="header_1">应用：复制文本文件</a>&nbsp;<br><a href="/blog/3f2a064c/#逐个字符复制文件" class="header_2">逐个字符复制文件</a>&nbsp;<br><a href="/blog/3f2a064c/#逐个字符数组复制文件" class="header_2">逐个字符数组复制文件</a>&nbsp;<br><a href="/blog/3f2a064c/#按行复制文件" class="header_2">按行复制文件</a>&nbsp;<br><a href="/blog/3f2a064c/#测试：" class="header_2">测试：</a>&nbsp;<br><a href="/blog/3f2a064c/#bug-按行复制的时候多写换行符" class="header_2">bug:按行复制的时候多写换行符</a>&nbsp;<br><a href="/blog/3f2a064c/#bug-乱码问题" class="header_2">bug:乱码问题</a>&nbsp;<br><a href="/blog/3f2a064c/#实例：gbk编码的文件复制到utf8编码的文件中：" class="header_3">实例：gbk编码的文件复制到utf8编码的文件中：</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 部分内容已经丢失
 可以看到包装`FileReader`的`BufferedReader`在读取文件时候如果文件的编码和项目的编码不一样的时候，会出现乱。
 

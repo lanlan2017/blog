@@ -8,12 +8,6 @@ date: 2020-01-08 11:38:20
 updated: 2020-06-25 09:02:32
 abbrlink: b862f51d
 ---
-<div id='my_toc'><a href="/blog/b862f51d/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/b862f51d/#快捷键" class="header_2">快捷键</a>&nbsp;<br><a href="/blog/b862f51d/#鼠标" class="header_2">鼠标</a>&nbsp;<br><a href="/blog/b862f51d/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 问题描述
 在win10的文件管理器(Windows资源管理器)中经常需要回到上级目录,有的系统会在目录列表中提供`..`目录,让用户快速回到上级目录,但是遗憾的是Windows资源管理器中没有这种功能.
 ## 快捷键

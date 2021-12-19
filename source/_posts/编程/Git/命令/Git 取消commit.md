@@ -8,12 +8,6 @@ date: 2019-11-28 16:08:50
 updated: 2021-03-20 10:03:11
 abbrlink: ae0d2128
 ---
-<div id='my_toc'><a href="/blog/ae0d2128/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/ae0d2128/#回退到上个版本" class="header_1">回退到上个版本</a>&nbsp;<br><a href="/blog/ae0d2128/#回退到执行版本" class="header_1">回退到执行版本</a>&nbsp;<br><a href="/blog/ae0d2128/#自动生成" class="header_1">自动生成</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 问题描述
 你可能在执行git add .和git commit -m 'xxx'之后后悔了,如何回退到上一个版本呢。
 

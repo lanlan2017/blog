@@ -7,12 +7,6 @@ date: 2019-12-25 09:26:01
 updated: 2020-01-03 12:45:16
 abbrlink: b6e31e08
 ---
-<div id='my_toc'><a href="/blog/b6e31e08/#需要的工具" class="header_1">需要的工具</a>&nbsp;<br><a href="/blog/b6e31e08/#直接在github上搜索" class="header_1">直接在github上搜索</a>&nbsp;<br><a href="/blog/b6e31e08/#使用谷歌搜索github上的书籍" class="header_1">使用谷歌搜索github上的书籍</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 需要的工具
 - 翻墙
 - 谷歌搜索

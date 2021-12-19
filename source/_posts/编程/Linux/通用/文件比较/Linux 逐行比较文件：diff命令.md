@@ -9,12 +9,6 @@ abbrlink: fe546836
 date: 2021-05-19 13:17:06
 updated: 2021-05-20 16:20:11
 ---
-<div id='my_toc'><a href="/blog/fe546836/#Linux-求出两个文件的差别：diff命令介绍" class="header_1">Linux 求出两个文件的差别：diff命令介绍</a>&nbsp;<br><a href="/blog/fe546836/#用法" class="header_2">用法</a>&nbsp;<br><a href="/blog/fe546836/#功能" class="header_2">功能</a>&nbsp;<br><a href="/blog/fe546836/#输出格式" class="header_2">输出格式</a>&nbsp;<br><a href="/blog/fe546836/#normal格式" class="header_2">normal格式</a>&nbsp;<br><a href="/blog/fe546836/#normal格式文件转化指令" class="header_3">normal格式文件转化指令</a>&nbsp;<br><a href="/blog/fe546836/#更换指令c" class="header_4">更换指令c</a>&nbsp;<br><a href="/blog/fe546836/#删除指令d" class="header_4">删除指令d</a>&nbsp;<br><a href="/blog/fe546836/#增加指令a" class="header_4">增加指令a</a>&nbsp;<br><a href="/blog/fe546836/#unified格式" class="header_2">unified格式</a>&nbsp;<br><a href="/blog/fe546836/#diff-标准输出" class="header_1">diff 标准输出</a>&nbsp;<br><a href="/blog/fe546836/#diff命令输出信息" class="header_2">diff命令输出信息</a>&nbsp;<br><a href="/blog/fe546836/#diff-a-txt-b-txt" class="header_2">diff a.txt b.txt</a>&nbsp;<br><a href="/blog/fe546836/#diff-b-txt-a-txt" class="header_2">diff b.txt a.txt</a>&nbsp;<br><a href="/blog/fe546836/#diff-c：上下文格式" class="header_1">diff -c：上下文格式</a>&nbsp;<br><a href="/blog/fe546836/#diff-c输出信息" class="header_2">diff -c输出信息</a>&nbsp;<br><a href="/blog/fe546836/#行前有感叹号-表示-该行-需要修改" class="header_3">行前有感叹号 表示 该行 需要修改</a>&nbsp;<br><a href="/blog/fe546836/#行前有减号-表示改行需要删除" class="header_3">行前有减号 表示改行需要删除</a>&nbsp;<br><a href="/blog/fe546836/#行前有加号表示需要添加改行" class="header_3">行前有加号表示需要添加改行</a>&nbsp;<br><a href="/blog/fe546836/#diff-u：统一格式输出" class="header_1">diff -u：统一格式输出</a>&nbsp;<br><a href="/blog/fe546836/#diff命令手册" class="header_1">diff命令手册</a>&nbsp;<br><a href="/blog/fe546836/#man-diif" class="header_2">man diif</a>&nbsp;<br><a href="/blog/fe546836/#tldr-diif" class="header_2">tldr diif</a>&nbsp;<br><a href="/blog/fe546836/#cheat-diff" class="header_2">cheat diff</a>&nbsp;<br><a href="/blog/fe546836/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Linux 求出两个文件的差别：diff命令介绍
 Linux diff命令用于比较文件的差异。
 

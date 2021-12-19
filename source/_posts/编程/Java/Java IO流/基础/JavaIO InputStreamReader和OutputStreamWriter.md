@@ -9,12 +9,6 @@ date: 2018-08-09 19:25:05
 updated: 2021-03-20 08:44:48
 abbrlink: a5e554af
 ---
-<div id='my_toc'></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 --------读字符：-------------------
 I am groot
 I am groot!

@@ -9,12 +9,6 @@ date: 2019-12-22 11:20:19
 updated: 2020-04-11 09:15:21
 abbrlink: bb8611bd
 ---
-<div id='my_toc'><a href="/blog/bb8611bd/#cmd-choice命令" class="header_1">cmd choice命令</a>&nbsp;<br><a href="/blog/bb8611bd/#帮助文档" class="header_2">帮助文档</a>&nbsp;<br><a href="/blog/bb8611bd/#choice命令的-选项" class="header_2">choice命令的 选项</a>&nbsp;<br><a href="/blog/bb8611bd/#隐藏choice命令的-输出" class="header_2">隐藏choice命令的 输出</a>&nbsp;<br><a href="/blog/bb8611bd/#choice命令的-提示信息" class="header_2">choice命令的 提示信息</a>&nbsp;<br><a href="/blog/bb8611bd/#choice命令的-选项-区分大小写" class="header_2">choice命令的 选项 区分大小写</a>&nbsp;<br><a href="/blog/bb8611bd/#choice命令的-返回值" class="header_2">choice命令的 返回值</a>&nbsp;<br><a href="/blog/bb8611bd/#控制语句" class="header_3">控制语句</a>&nbsp;<br><a href="/blog/bb8611bd/#延时" class="header_2">延时</a>&nbsp;<br><a href="/blog/bb8611bd/#多选项延时" class="header_3">多选项延时</a>&nbsp;<br><a href="/blog/bb8611bd/#程序-多选项延时分支" class="header_4">程序 多选项延时分支</a>&nbsp;<br><a href="/blog/bb8611bd/#默认延时" class="header_3">默认延时</a>&nbsp;<br><a href="/blog/bb8611bd/#程序-两个选项的延时控制" class="header_4">程序 两个选项的延时控制</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # cmd choice命令
 ## 帮助文档
 ```java

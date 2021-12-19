@@ -7,12 +7,6 @@ date: 2020-10-11 06:44:16
 updated: 2020-10-13 11:38:29
 abbrlink: 102bf6f5
 ---
-<div id='my_toc'><a href="/blog/102bf6f5/#使用nvm切换多个nodejs版本" class="header_1">使用nvm切换多个nodejs版本</a>&nbsp;<br><a href="/blog/102bf6f5/#删除本机上正在使用的nodejs" class="header_2">删除本机上正在使用的nodejs</a>&nbsp;<br><a href="/blog/102bf6f5/#下载nvm-nvm-windows" class="header_2">下载nvm nvm-windows</a>&nbsp;<br><a href="/blog/102bf6f5/#使用淘宝源" class="header_2">使用淘宝源</a>&nbsp;<br><a href="/blog/102bf6f5/#查看可安装的版本" class="header_2">查看可安装的版本</a>&nbsp;<br><a href="/blog/102bf6f5/#安装指定版本的nodejs" class="header_2">安装指定版本的nodejs</a>&nbsp;<br><a href="/blog/102bf6f5/#使用指定版本的nodejs" class="header_2">使用指定版本的nodejs</a>&nbsp;<br><a href="/blog/102bf6f5/#查看已安装的nodejs版本" class="header_2">查看已安装的nodejs版本</a>&nbsp;<br><a href="/blog/102bf6f5/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 使用nvm切换多个nodejs版本
 ## 删除本机上正在使用的nodejs
 将之前安装的nodejs从本机中删除掉.

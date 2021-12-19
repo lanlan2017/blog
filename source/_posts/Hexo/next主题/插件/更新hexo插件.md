@@ -8,12 +8,6 @@ date: 2021-03-19 08:21:34
 updated: 2021-03-19 10:44:21
 abbrlink: 542e0f6d
 ---
-<div id='my_toc'><a href="/blog/542e0f6d/#检查更新" class="header_1">检查更新</a>&nbsp;<br><a href="/blog/542e0f6d/#修改package-json" class="header_1">修改package.json</a>&nbsp;<br><a href="/blog/542e0f6d/#安装更新" class="header_1">安装更新</a>&nbsp;<br><a href="/blog/542e0f6d/#从Git版本库中删除已经添加的文件package-lock-json" class="header_1">从Git版本库中删除已经添加的文件package-lock.json</a>&nbsp;<br><a href="/blog/542e0f6d/#在-gitignore添加该文件" class="header_2">在.gitignore添加该文件</a>&nbsp;<br><a href="/blog/542e0f6d/#使用git-rm---cached命令删除已经添加过的文件" class="header_2">使用git rm --cached命令删除已经添加过的文件</a>&nbsp;<br><a href="/blog/542e0f6d/#git-rm--n---cached" class="header_3">git rm -n --cached</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 检查更新
 ```shell
 npm outdated

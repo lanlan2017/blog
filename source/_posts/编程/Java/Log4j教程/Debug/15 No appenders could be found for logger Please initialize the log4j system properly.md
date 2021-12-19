@@ -9,12 +9,6 @@ date: 2020-08-06 11:57:02
 updated: 2020-09-03 01:18:26
 abbrlink: 2efc4260
 ---
-<div id='my_toc'><a href="/blog/2efc4260/#Log4j-Debug记录" class="header_1">Log4j Debug记录</a>&nbsp;<br><a href="/blog/2efc4260/#log4j-WARN-No-appenders-could-be-found-for-logger" class="header_2">log4j:WARN No appenders could be found for logger</a>&nbsp;<br><a href="/blog/2efc4260/#错误提示信息" class="header_3">错误提示信息</a>&nbsp;<br><a href="/blog/2efc4260/#配置文件内容" class="header_3">配置文件内容</a>&nbsp;<br><a href="/blog/2efc4260/#解决方案" class="header_3">解决方案</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Log4j Debug记录
 ## log4j:WARN No appenders could be found for logger
 ### 错误提示信息

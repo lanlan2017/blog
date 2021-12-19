@@ -8,12 +8,6 @@ abbrlink: 10d66fa9
 date: 2021-04-20 22:17:41
 updated: 2021-04-20 23:07:47
 ---
-<div id='my_toc'><a href="/blog/10d66fa9/#passwd更换口令" class="header_1">passwd更换口令</a>&nbsp;<br><a href="/blog/10d66fa9/#普通用户" class="header_2">普通用户</a>&nbsp;<br><a href="/blog/10d66fa9/#超级用户root" class="header_2">超级用户root</a>&nbsp;<br><a href="/blog/10d66fa9/#修改root的口令后不要急于退出当前终端" class="header_2">修改root的口令后不要急于退出当前终端</a>&nbsp;<br><a href="/blog/10d66fa9/#口令的设置与验证" class="header_2">口令的设置与验证</a>&nbsp;<br><a href="/blog/10d66fa9/#口令信息的保存" class="header_3">口令信息的保存</a>&nbsp;<br><a href="/blog/10d66fa9/#口令的验证过程" class="header_3">口令的验证过程</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # passwd更换口令
 ## 普通用户
 使用 passwd 命令更改自己 的口令，在更改之前，系统会先验证原来的口令，通过口令之后才能修改口令。

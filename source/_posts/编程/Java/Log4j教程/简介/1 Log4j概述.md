@@ -9,12 +9,6 @@ date: 2020-08-03 03:30:02
 updated: 2021-03-20 09:38:13
 abbrlink: f69dab82
 ---
-<div id='my_toc'><a href="/blog/f69dab82/#Log4j概述" class="header_1">Log4j概述</a>&nbsp;<br><a href="/blog/f69dab82/#Log4j组成部分" class="header_2">Log4j组成部分</a>&nbsp;<br><a href="/blog/f69dab82/#Log4j的历史" class="header_2">Log4j的历史</a>&nbsp;<br><a href="/blog/f69dab82/#Log4j的功能" class="header_2">Log4j的功能</a>&nbsp;<br><a href="/blog/f69dab82/#记录日志的优缺点" class="header_2">记录日志的优缺点</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Log4j概述
 `Log4j`是一个使用`Java`语言编写的，可靠、快速、灵活的日志框架（`API`），使用`Apache Software License`授权。
 

@@ -9,12 +9,6 @@ date: 2019-04-27 22:28:28
 updated: 2020-04-11 09:21:19
 abbrlink: 4d0864a5
 ---
-<div id='my_toc'><a href="/blog/4d0864a5/#注解格式化" class="header_2">注解格式化</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 ## 注解格式化 ##
 第一个按钮选择最后一个,
 ```

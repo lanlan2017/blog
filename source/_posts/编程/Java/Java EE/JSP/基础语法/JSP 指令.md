@@ -10,12 +10,6 @@ date: 2018-12-20 23:51:51
 updated: 2020-04-11 09:21:19
 abbrlink: 7b20b86
 ---
-<div id='my_toc'><a href="/blog/7b20b86/#page指令" class="header_1">page指令</a>&nbsp;<br><a href="/blog/7b20b86/#language属性" class="header_2">language属性</a>&nbsp;<br><a href="/blog/7b20b86/#extends属性" class="header_2">extends属性</a>&nbsp;<br><a href="/blog/7b20b86/#import属性" class="header_2">import属性</a>&nbsp;<br><a href="/blog/7b20b86/#pageEccoding属性" class="header_2">pageEccoding属性</a>&nbsp;<br><a href="/blog/7b20b86/#contentType属性" class="header_2">contentType属性</a>&nbsp;<br><a href="/blog/7b20b86/#session属性" class="header_2">session属性</a>&nbsp;<br><a href="/blog/7b20b86/#buffer属性" class="header_2">buffer属性</a>&nbsp;<br><a href="/blog/7b20b86/#autoFlush属性" class="header_2">autoFlush属性</a>&nbsp;<br><a href="/blog/7b20b86/#isErrorPage属性" class="header_2">isErrorPage属性</a>&nbsp;<br><a href="/blog/7b20b86/#errorPage属性" class="header_2">errorPage属性</a>&nbsp;<br><a href="/blog/7b20b86/#inc|ude指令" class="header_1">inc|ude指令</a>&nbsp;<br><a href="/blog/7b20b86/#实例" class="header_2">实例</a>&nbsp;<br><a href="/blog/7b20b86/#taglib指令" class="header_1">taglib指令</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # page指令 #
 page是JSP页面最常用的指令,用于定义整个JSP页面的相关属性,这些属性在JSP被服务器解析成 Servlet时会转换为相应的Java程序代码。page指令的语法格式如下:
 ```jsp

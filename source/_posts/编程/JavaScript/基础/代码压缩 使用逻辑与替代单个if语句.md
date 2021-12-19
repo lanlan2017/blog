@@ -8,12 +8,6 @@ date: 2018-11-22 22:32:15
 updated: 2021-03-20 10:25:12
 abbrlink: 4fd080c1
 ---
-<div id='my_toc'><a href="/blog/4fd080c1/#发现过程" class="header_1">发现过程</a>&nbsp;<br><a href="/blog/4fd080c1/#原理" class="header_1">原理</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 发现过程
 我的博客中使用了hexo-neat插件来压缩代码，我之前天真认为，压缩代码应该就是把html标签直接的中的空白(空白符，空白行)删除掉而已。但是，我今天发现用来播放音频的javascript代码有点奇怪，奇怪在和我之前写的不一样，经过压缩后，代码变精简了。
 压缩之前的js代码为：

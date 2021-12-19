@@ -9,12 +9,6 @@ date: 2019-02-10 18:15:08
 updated: 2021-03-20 08:13:52
 abbrlink: a9f85f8d
 ---
-<div id='my_toc'><a href="/blog/a9f85f8d/#文档注释的格式化" class="header_1">文档注释的格式化</a>&nbsp;<br><a href="/blog/a9f85f8d/#文档注释的三部分" class="header_1">文档注释的三部分</a>&nbsp;<br><a href="/blog/a9f85f8d/#第一部分-简述" class="header_2">第一部分 简述</a>&nbsp;<br><a href="/blog/a9f85f8d/#第二部分-详细说明" class="header_2">第二部分 详细说明</a>&nbsp;<br><a href="/blog/a9f85f8d/#第三部分-特殊说明" class="header_2">第三部分 特殊说明</a>&nbsp;<br><a href="/blog/a9f85f8d/#javadoc-标记" class="header_1">javadoc  标记</a>&nbsp;<br><a href="/blog/a9f85f8d/#-see-的使用" class="header_2">@see  的使用</a>&nbsp;<br><a href="/blog/a9f85f8d/#-see-类名" class="header_3">@see 类名</a>&nbsp;<br><a href="/blog/a9f85f8d/#-see-方法名或者属性名" class="header_2">@see 方法名或者属性名</a>&nbsp;<br><a href="/blog/a9f85f8d/#-see-类名#方法名或属性名" class="header_2">@see 类名#方法名或属性名</a>&nbsp;<br><a href="/blog/a9f85f8d/#使用-author、-version-说明类" class="header_2">使用 @author、@version  说明类</a>&nbsp;<br><a href="/blog/a9f85f8d/#使用-param-、-return-和-exception-说明方法" class="header_2">使用 @param 、@return  和 @exception  说明方法</a>&nbsp;<br><a href="/blog/a9f85f8d/#javadoc-命令" class="header_1">javadoc  命令</a>&nbsp;<br><a href="/blog/a9f85f8d/#-public-、-protected-、-package、-private-四个选项" class="header_2">-public 、-protected 、-package、-private  四个选项</a>&nbsp;<br><a href="/blog/a9f85f8d/#-d-选项" class="header_2">-d  选项</a>&nbsp;<br><a href="/blog/a9f85f8d/#-splitindex" class="header_2">-splitindex</a>&nbsp;<br><a href="/blog/a9f85f8d/#-windowtitle" class="header_2">-windowtitle</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 文档注释可以用于对`类`、 `属性`、`方法`等进行说明。 写文档注释时除了需要使用 `/** .... */ ` 限定之外，还需要注意注释内部的一些细节问题。
 # 文档注释的格式化
 javadoc生成的文档是HTML格式的，而这些HTML格式的标识符并不是javadoc添加的，而是我们在写注释的时候写上去的。比如，需要换行时，不是敲入一个回车符，而是写入`<br>` ，如果要分段，就应该在段前写入`<p>`。

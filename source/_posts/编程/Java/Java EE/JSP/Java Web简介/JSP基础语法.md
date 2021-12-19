@@ -10,14 +10,6 @@ date: 2018-12-03 19:28:31
 updated: 2020-04-11 09:21:19
 abbrlink: ceef3131
 ---
-<div id='my_toc'><a href="/blog/ceef3131/#JSP注释" class="header_2">JSP注释</a>&nbsp;<br><a href="/blog/ceef3131/#实例" class="header_3">实例</a>&nbsp;<br><a href="/blog/ceef3131/#英文" class="header_3">英文</a>&nbsp;<br><a href="/blog/ceef3131/#JSP页面生命周期" class="header_1">JSP页面生命周期</a>&nbsp;<br><a href="/blog/ceef3131/#JSP编译" class="header_2">JSP编译</a>&nbsp;<br><a href="/blog/ceef3131/#JSP初始化" class="header_2">JSP初始化</a>&nbsp;<br><a href="/blog/ceef3131/#JSP执行" class="header_2">JSP执行</a>&nbsp;<br><a href="/blog/ceef3131/#JSP清理" class="header_2">JSP清理</a>&nbsp;<br><a href="/blog/ceef3131/#实例" class="header_2">实例</a>&nbsp;<br><a href="/blog/ceef3131/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
-----
-
 ## JSP注释 ##
 JSP页面中共有三种注释
 - HTML注释`<!--html注释-->`，HTML注释在客户端(浏览器)是可以看到的。

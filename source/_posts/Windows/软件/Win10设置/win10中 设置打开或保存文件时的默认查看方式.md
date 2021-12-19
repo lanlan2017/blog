@@ -8,12 +8,6 @@ date: 2019-08-28 12:20:01
 updated: 2020-06-25 09:02:32
 abbrlink: fda3d857
 ---
-<div id='my_toc'><a href="/blog/fda3d857/#win10中设置打开或保存文件时的默认查看方式" class="header_1">win10中设置打开或保存文件时的默认查看方式</a>&nbsp;<br><a href="/blog/fda3d857/#分析" class="header_1">分析</a>&nbsp;<br><a href="/blog/fda3d857/#Win10-设置资源管理器中的默认查看方式" class="header_1">Win10 设置资源管理器中的默认查看方式</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # win10中设置打开或保存文件时的默认查看方式 #
 最近我在编辑器中`保存文件到本地`或者`打开本地文件`时,弹出的资源管理器中的查看方式突然变成的`大图标`:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/windows/explorer/MoRenChaKanFangShi/0.png)

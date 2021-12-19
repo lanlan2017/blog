@@ -2,7 +2,6 @@
 title: nvm for windows安装使用详解
 categories:
   - 编程
-  - JavaScript
   - NodeJS
 abbrlink: 1dec4fca
 date: 2021-07-10 20:22:27
@@ -19,7 +18,10 @@ https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip
 nodejs注意要安装到C盘,如果安装到其他盘，可能会造成无法切换nodejs版本。
 ![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Windows/Software/Win10Settings/NVMForWindowsInstallationUseDetails/1.png)
 
+当然，选择其他盘也是可以的，只不过切换nodejs版本是需要提供管理员权限，也就是执行切换命令的cmd，要以管理员权限打开。
+
 # 修改setting.txt 添加下载node和npm的淘宝镜像
+
 安装完后打开setting.txt添加以下内容，切换node和npm的下载镜像：
 ```
 node_mirror: https://npm.taobao.org/mirrors/node/

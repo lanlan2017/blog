@@ -10,12 +10,6 @@ abbrlink: 1f720624
 date: 2021-03-24 06:39:45
 updated: 2021-03-28 15:33:45
 ---
-<div id='my_toc'><a href="/blog/1f720624/#tail命令" class="header_1">tail命令</a>&nbsp;<br><a href="/blog/1f720624/#命令格式" class="header_1">命令格式</a>&nbsp;<br><a href="/blog/1f720624/#参数" class="header_2">参数</a>&nbsp;<br><a href="/blog/1f720624/#实例" class="header_1">实例</a>&nbsp;<br><a href="/blog/1f720624/#tail-file：显示文件的最后10行" class="header_2">tail file：显示文件的最后10行</a>&nbsp;<br><a href="/blog/1f720624/#tail-f-file：追踪显示-查看实时日志" class="header_2">tail -f file：追踪显示 查看实时日志</a>&nbsp;<br><a href="/blog/1f720624/#tail-n-N-file：从第N行显示到文件末尾" class="header_2">tail -n +N file：从第N行显示到文件末尾</a>&nbsp;<br><a href="/blog/1f720624/#tail-c-N-file：显示文件最后的N个字节" class="header_2">tail -c N file：显示文件最后的N个字节</a>&nbsp;<br><a href="/blog/1f720624/#tail结合其他命令使用" class="header_1">tail结合其他命令使用</a>&nbsp;<br><a href="/blog/1f720624/#查看从第N行到第M行" class="header_2">查看从第N行到第M行</a>&nbsp;<br><a href="/blog/1f720624/#实时日志查看与grep过滤关键字" class="header_2">实时日志查看与grep过滤关键字</a>&nbsp;<br><a href="/blog/1f720624/#同时显示多个文件" class="header_2">同时显示多个文件</a>&nbsp;<br><a href="/blog/1f720624/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # tail命令
 tail 命令可用于查看文件的内容，**有一个常用的参数 -f 常用于查阅正在改变的日志文件。**
 

@@ -8,12 +8,6 @@ date: 2020-01-07 03:18:36
 updated: 2020-06-25 09:03:12
 abbrlink: bc05cd70
 ---
-<div id='my_toc'><a href="/blog/bc05cd70/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/bc05cd70/#谷歌浏览器-设置允许弹窗的网站" class="header_1">谷歌浏览器 设置允许弹窗的网站</a>&nbsp;<br><a href="/blog/bc05cd70/#在-设置中-进入-弹出式窗口和重定向" class="header_2">在 设置中 进入 弹出式窗口和重定向</a>&nbsp;<br><a href="/blog/bc05cd70/#添加-允许弹窗的网站的-域名" class="header_2">添加 允许弹窗的网站的 域名</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 问题描述
 - JDK9之后[Java DOC](https://docs.oracle.com/en/java/javase/11/docs/api/index.html)支持搜索功能
 - 在其他浏览器中点击搜索结果可以弹出新标签页.

@@ -8,12 +8,6 @@ date: 2019-10-23 15:59:21
 updated: 2020-06-28 08:33:04
 abbrlink: 17349c5f
 ---
-<div id='my_toc'><a href="/blog/17349c5f/#最新版MySQL数据库驱动的问题" class="header_1">最新版MySQL数据库驱动的问题</a>&nbsp;<br><a href="/blog/17349c5f/#问题1-驱动名称不对" class="header_2">问题1 驱动名称不对</a>&nbsp;<br><a href="/blog/17349c5f/#解决方案" class="header_3">解决方案</a>&nbsp;<br><a href="/blog/17349c5f/#问题2-没有指定时区" class="header_2">问题2 没有指定时区</a>&nbsp;<br><a href="/blog/17349c5f/#解决方案" class="header_3">解决方案</a>&nbsp;<br><a href="/blog/17349c5f/#问题3-查询字符串分隔符没有使用转义字符" class="header_2">问题3 查询字符串分隔符没有使用转义字符</a>&nbsp;<br><a href="/blog/17349c5f/#不需要转义的情况" class="header_3">不需要转义的情况</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 最新版MySQL数据库驱动的问题
 ## 问题1 驱动名称不对
 ```cmd

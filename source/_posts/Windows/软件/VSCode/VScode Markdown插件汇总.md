@@ -8,12 +8,6 @@ date: 2019-12-01 00:35:59
 updated: 2020-06-25 09:02:52
 abbrlink: 913bbb38
 ---
-<div id='my_toc'><a href="/blog/913bbb38/#VScode-Markdown插件汇总" class="header_1">VScode Markdown插件汇总</a>&nbsp;<br><a href="/blog/913bbb38/#Markdown-Shortcuts" class="header_2">Markdown Shortcuts</a>&nbsp;<br><a href="/blog/913bbb38/#鼠标右键方式" class="header_3">鼠标右键方式</a>&nbsp;<br><a href="/blog/913bbb38/#命令方式" class="header_3">命令方式</a>&nbsp;<br><a href="/blog/913bbb38/#Markdown-All-in-One" class="header_2">Markdown All in One</a>&nbsp;<br><a href="/blog/913bbb38/#Markdown-Todo" class="header_2">Markdown Todo</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # VScode Markdown插件汇总
 
 ## Markdown Shortcuts

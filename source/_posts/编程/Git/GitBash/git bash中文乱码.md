@@ -8,12 +8,6 @@ date: 2019-11-13 16:05:01
 updated: 2021-03-20 10:08:32
 abbrlink: ad35763b
 ---
-<div id='my_toc'><a href="/blog/ad35763b/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/ad35763b/#解决方案" class="header_1">解决方案</a>&nbsp;<br><a href="/blog/ad35763b/#成功效果" class="header_1">成功效果</a>&nbsp;<br><a href="/blog/ad35763b/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 问题描述
 使用`git add`添加要提交的文件的时候，如果文件名是中文，会显示形如`274\232\350\256\256\346\200\273\347\273\223`的乱码。 
 ```shell

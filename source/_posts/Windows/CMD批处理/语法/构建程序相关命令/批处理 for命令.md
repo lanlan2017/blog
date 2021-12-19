@@ -9,12 +9,6 @@ date: 2019-02-01 21:57:48
 updated: 2020-04-11 09:15:21
 abbrlink: c4029a06
 ---
-<div id='my_toc'><a href="/blog/c4029a06/#命令格式" class="header_2">命令格式</a>&nbsp;<br><a href="/blog/c4029a06/#无参数" class="header_3">无参数</a>&nbsp;<br><a href="/blog/c4029a06/#实例" class="header_4">实例</a>&nbsp;<br><a href="/blog/c4029a06/#参数/d" class="header_3">参数 /d</a>&nbsp;<br><a href="/blog/c4029a06/#实例" class="header_4">实例</a>&nbsp;<br><a href="/blog/c4029a06/#参数/R" class="header_3">参数 /R</a>&nbsp;<br><a href="/blog/c4029a06/#实例" class="header_4">实例</a>&nbsp;<br><a href="/blog/c4029a06/#参数/L" class="header_3">参数 /L</a>&nbsp;<br><a href="/blog/c4029a06/#参数/F" class="header_3">参数 /F</a>&nbsp;<br><a href="/blog/c4029a06/#文件解析过程" class="header_4">文件解析过程</a>&nbsp;<br><a href="/blog/c4029a06/#格式" class="header_4">格式</a>&nbsp;<br><a href="/blog/c4029a06/#实例" class="header_4">实例</a>&nbsp;<br><a href="/blog/c4029a06/#参考资料" class="header_2">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 ## 命令格式 ##
 ```cmd
 for [参数] %%变量名 in (相关文件或命令) do 执行的命令

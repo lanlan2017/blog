@@ -8,12 +8,6 @@ date: 2020-02-12 01:53:57
 updated: 2020-04-11 09:21:19
 abbrlink: f539cba6
 ---
-<div id='my_toc'><a href="/blog/f539cba6/#插件地址" class="header_1">插件地址</a>&nbsp;<br><a href="/blog/f539cba6/#安装" class="header_1">安装</a>&nbsp;<br><a href="/blog/f539cba6/#如何使用翻译替换功能" class="header_1">如何使用翻译替换功能</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 插件地址
 [https://marketplace.visualstudio.com/items?itemName=hancel.google-translate](https://marketplace.visualstudio.com/items?itemName=hancel.google-translate)
 # 安装

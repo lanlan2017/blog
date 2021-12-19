@@ -9,12 +9,6 @@ date: 2020-09-01 11:58:17
 updated: 2021-03-18 02:43:27
 abbrlink: a0de93a7
 ---
-<div id='my_toc'><a href="/blog/a0de93a7/#错误提示" class="header_1">错误提示</a>&nbsp;<br><a href="/blog/a0de93a7/#分析" class="header_1">分析</a>&nbsp;<br><a href="/blog/a0de93a7/#EmployeeMapper-xml" class="header_2">EmployeeMapper.xml</a>&nbsp;<br><a href="/blog/a0de93a7/#EmployeeMapper-java" class="header_2">EmployeeMapper.java</a>&nbsp;<br><a href="/blog/a0de93a7/#解决方案" class="header_1">解决方案</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 错误提示
 <pre>
 Exception in thread "main" org.apache.ibatis.binding.BindingException: <mark>Invalid bound statement (not found): mapper.EmployeeMapper.selectEmployeeLikeName</mark>

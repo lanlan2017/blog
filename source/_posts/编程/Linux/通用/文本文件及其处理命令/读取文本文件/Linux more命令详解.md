@@ -10,12 +10,6 @@ abbrlink: 65cb3430
 date: 2021-03-24 11:10:08
 updated: 2021-04-03 18:15:30
 ---
-<div id='my_toc'><a href="/blog/65cb3430/#more命令" class="header_1">more命令</a>&nbsp;<br><a href="/blog/65cb3430/#more内置快捷键" class="header_2">more内置快捷键</a>&nbsp;<br><a href="/blog/65cb3430/#格式" class="header_2">格式</a>&nbsp;<br><a href="/blog/65cb3430/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # more命令
 more命令是一个基于vi编辑器文本过滤器，它以全屏幕的方式按页显示文本文件的内容，支持vi中的关键字定位操作。
 ## more内置快捷键

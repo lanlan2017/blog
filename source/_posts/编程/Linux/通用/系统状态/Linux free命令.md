@@ -9,12 +9,6 @@ abbrlink: 6b5379d9
 date: 2021-04-21 19:23:59
 updated: 2021-04-21 23:33:39
 ---
-<div id='my_toc'><a href="/blog/6b5379d9/#free命令：了解内存使用情况" class="header_1">free命令：了解内存使用情况</a>&nbsp;<br><a href="/blog/6b5379d9/#free-h" class="header_2">free -h</a>&nbsp;<br><a href="/blog/6b5379d9/#free命令输出列的含义" class="header_2">free命令输出列的含义</a>&nbsp;<br><a href="/blog/6b5379d9/#free命令手册" class="header_2">free命令手册</a>&nbsp;<br><a href="/blog/6b5379d9/#free选项" class="header_2">free选项</a>&nbsp;<br><a href="/blog/6b5379d9/#free-b以Byte为单位显示内存使用情况" class="header_2">free -b以Byte为单位显示内存使用情况</a>&nbsp;<br><a href="/blog/6b5379d9/#free-k以KB为单位显示内存使用情况" class="header_2">free -k以KB为单位显示内存使用情况</a>&nbsp;<br><a href="/blog/6b5379d9/#free-m以MB为单位显示内存使用情况" class="header_2">free -m以MB为单位显示内存使用情况</a>&nbsp;<br><a href="/blog/6b5379d9/#free-g以GB为单位显示内存使用情况" class="header_2">free -g以GB为单位显示内存使用情况</a>&nbsp;<br><a href="/blog/6b5379d9/#free-h以人类友好方式显示内存使用情况" class="header_2">free -h以人类友好方式显示内存使用情况</a>&nbsp;<br><a href="/blog/6b5379d9/#free-w" class="header_2">free -w</a>&nbsp;<br><a href="/blog/6b5379d9/#free-t以总和的形式查询内存的使用信息" class="header_2">free -t以总和的形式查询内存的使用信息</a>&nbsp;<br><a href="/blog/6b5379d9/#free-s-秒数：周期性的查询内存使用信息" class="header_2">free -s 秒数：周期性的查询内存使用信息</a>&nbsp;<br><a href="/blog/6b5379d9/#free-s-间隔秒数-c-执行次数：周期性执行free并统计次数" class="header_3">free -s 间隔秒数 -c 执行次数：周期性执行free并统计次数</a>&nbsp;<br><a href="/blog/6b5379d9/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # free命令：了解内存使用情况
 ```
 [root@localhost ~]# free

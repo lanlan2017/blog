@@ -8,12 +8,6 @@ date: 2019-12-08 22:49:12
 updated: 2020-04-11 09:21:19
 abbrlink: 4e1204e0
 ---
-<div id='my_toc'><a href="/blog/4e1204e0/#commit后还没有push" class="header_1">commit后还没有push</a>&nbsp;<br><a href="/blog/4e1204e0/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # commit后还没有push
 输入如下命令:
 ```shell

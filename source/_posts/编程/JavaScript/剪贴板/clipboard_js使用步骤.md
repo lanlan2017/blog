@@ -8,12 +8,6 @@ date: 2019-02-13 00:16:32
 updated: 2021-03-20 10:25:27
 abbrlink: c78d87f4
 ---
-<div id='my_toc'><a href="/blog/c78d87f4/#使用步骤" class="header_1">使用步骤</a>&nbsp;<br><a href="/blog/c78d87f4/#属性说明" class="header_1">属性说明</a>&nbsp;<br><a href="/blog/c78d87f4/#使用实例" class="header_1">使用实例</a>&nbsp;<br><a href="/blog/c78d87f4/#使用HTML-DOM选择器实例化" class="header_2">使用HTML DOM选择器实例化</a>&nbsp;<br><a href="/blog/c78d87f4/#使用HTML元素实例化" class="header_2">使用HTML元素实例化</a>&nbsp;<br><a href="/blog/c78d87f4/#使用html元素列表实例化" class="header_2">使用html元素列表实例化</a>&nbsp;<br><a href="/blog/c78d87f4/#复制静态文本" class="header_1">复制静态文本</a>&nbsp;<br><a href="/blog/c78d87f4/#复制其他元素的内容" class="header_1">复制其他元素的内容</a>&nbsp;<br><a href="/blog/c78d87f4/#复制一个内容" class="header_2">复制一个内容</a>&nbsp;<br><a href="/blog/c78d87f4/#复制多个内容的情况" class="header_2">复制多个内容的情况</a>&nbsp;<br><a href="/blog/c78d87f4/#剪切方式" class="header_1">剪切方式</a>&nbsp;<br><a href="/blog/c78d87f4/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 使用步骤
 使用`clipboard.js`来可分为以下三个步骤：
 - 定义相关的html标签

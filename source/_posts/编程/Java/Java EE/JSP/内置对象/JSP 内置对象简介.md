@@ -10,12 +10,6 @@ date: 2018-12-08 21:46:24
 updated: 2020-04-11 09:21:19
 abbrlink: 4cc31c44
 ---
-<div id='my_toc'><a href="/blog/4cc31c44/#JSP内置对象概述" class="header_1">JSP内置对象概述</a>&nbsp;<br><a href="/blog/4cc31c44/#JSP九大内置对象" class="header_2">JSP九大内置对象</a>&nbsp;<br><a href="/blog/4cc31c44/#Web程序的请求响应模式" class="header_1">Web程序的请求响应模式</a>&nbsp;<br><a href="/blog/4cc31c44/#表单的提交方式" class="header_1">表单的提交方式</a>&nbsp;<br><a href="/blog/4cc31c44/#get" class="header_2">get</a>&nbsp;<br><a href="/blog/4cc31c44/#post" class="header_2">post</a>&nbsp;<br><a href="/blog/4cc31c44/#实例" class="header_2">实例</a>&nbsp;<br><a href="/blog/4cc31c44/#测试get方法" class="header_3">测试get方法</a>&nbsp;<br><a href="/blog/4cc31c44/#测试post方法" class="header_3">测试post方法</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # JSP内置对象概述 #
 由于JSP使用Java作为脚本语言,所以JSP将具有强大的对象处理能力,并且可以动态创建web页面内容。**但Java语法在使用一个对象前,需要先实例化这个对象**,这其实是一件比较繁琐的事情。JSP为了简化开发,提供了一些内置对象,用来实现很多JSP应用。在使用JSP内置对象时,不需要先定义这些对象,直接使用即可。
 ## JSP九大内置对象 ##

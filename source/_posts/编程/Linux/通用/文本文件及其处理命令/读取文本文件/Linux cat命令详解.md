@@ -10,12 +10,6 @@ abbrlink: af7f7587
 date: 2021-03-24 11:08:13
 updated: 2021-03-28 15:33:45
 ---
-<div id='my_toc'><a href="/blog/af7f7587/#cat命令" class="header_1">cat命令</a>&nbsp;<br><a href="/blog/af7f7587/#语法格式" class="header_2">语法格式</a>&nbsp;<br><a href="/blog/af7f7587/#参数" class="header_2">参数</a>&nbsp;<br><a href="/blog/af7f7587/#示例" class="header_1">示例</a>&nbsp;<br><a href="/blog/af7f7587/#cat-n：显示行号" class="header_2">cat -n：显示行号</a>&nbsp;<br><a href="/blog/af7f7587/#cat-b：显示行号空白行不编号" class="header_2">cat -b：显示行号空白行不编号</a>&nbsp;<br><a href="/blog/af7f7587/#cat-s：替换多个空白行为一个空白行" class="header_2">cat -s：替换多个空白行为一个空白行</a>&nbsp;<br><a href="/blog/af7f7587/#cat-v：" class="header_2">cat -v：</a>&nbsp;<br><a href="/blog/af7f7587/#cat-E：显示结束符" class="header_2">cat -E：显示结束符</a>&nbsp;<br><a href="/blog/af7f7587/#cat-T：显示tab键" class="header_2">cat -T：显示tab键</a>&nbsp;<br><a href="/blog/af7f7587/#cat-A：显示tab键，显示换行符" class="header_2">cat -A：显示tab键，显示换行符</a>&nbsp;<br><a href="/blog/af7f7587/#同时查看多个文件" class="header_2">同时查看多个文件</a>&nbsp;<br><a href="/blog/af7f7587/#其他应用" class="header_1">其他应用</a>&nbsp;<br><a href="/blog/af7f7587/#使用cat命令创建文件" class="header_2">使用cat命令创建文件</a>&nbsp;<br><a href="/blog/af7f7587/#将cat命令与more或less命令一起使用" class="header_2">将cat命令与more或less命令一起使用</a>&nbsp;<br><a href="/blog/af7f7587/#输出一个文件的内容到另一个文件的末尾" class="header_2">输出一个文件的内容到另一个文件的末尾</a>&nbsp;<br><a href="/blog/af7f7587/#合并文件" class="header_2">合并文件</a>&nbsp;<br><a href="/blog/af7f7587/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 
 # cat命令
 cat（英文全拼：concatenate）命令用于连接文件并打印到标准输出设备上。

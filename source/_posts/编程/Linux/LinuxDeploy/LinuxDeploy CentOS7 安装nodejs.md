@@ -8,12 +8,6 @@ date: 2021-03-18 01:17:20
 updated: 2021-03-18 12:47:19
 abbrlink: b9668ed5
 ---
-<div id='my_toc'><a href="/blog/b9668ed5/#使用EPEL安装-yum安装方式" class="header_1">使用EPEL安装 (yum安装方式)</a>&nbsp;<br><a href="/blog/b9668ed5/#nodejs-CentOS安装介绍" class="header_2">nodejs CentOS安装介绍</a>&nbsp;<br><a href="/blog/b9668ed5/#安装方法" class="header_2">安装方法</a>&nbsp;<br><a href="/blog/b9668ed5/#通过nvm安装" class="header_1">通过nvm安装</a>&nbsp;<br><a href="/blog/b9668ed5/#安装NVM" class="header_2">安装NVM</a>&nbsp;<br><a href="/blog/b9668ed5/#解决curl无法链接到raw-githubusercontent-com的问题" class="header_2">解决curl无法链接到raw.githubusercontent.com的问题</a>&nbsp;<br><a href="/blog/b9668ed5/#解决方案1" class="header_3">解决方案1</a>&nbsp;<br><a href="/blog/b9668ed5/#下载nvm-sh源码压缩包" class="header_4">下载nvm-sh源码压缩包</a>&nbsp;<br><a href="/blog/b9668ed5/#通过Xshell上传到系统中并解压" class="header_4">通过Xshell上传到系统中并解压</a>&nbsp;<br><a href="/blog/b9668ed5/#运行nvm解压后目录里面的install-sh脚本" class="header_4">运行nvm解压后目录里面的install.sh脚本</a>&nbsp;<br><a href="/blog/b9668ed5/#解决方案2" class="header_3">解决方案2</a>&nbsp;<br><a href="/blog/b9668ed5/#验证nvm命令" class="header_2">验证nvm命令</a>&nbsp;<br><a href="/blog/b9668ed5/#nvm-安装指定版本的nodejs" class="header_2">nvm 安装指定版本的nodejs</a>&nbsp;<br><a href="/blog/b9668ed5/#安装最新稳定版的nodejs" class="header_2">安装最新稳定版的nodejs</a>&nbsp;<br><a href="/blog/b9668ed5/#nvm-切换Node-js版本" class="header_2">nvm 切换Node.js版本</a>&nbsp;<br><a href="/blog/b9668ed5/#查看当前机器已安装node版本号" class="header_2">查看当前机器已安装node版本号</a>&nbsp;<br><a href="/blog/b9668ed5/#设置默认的node版本" class="header_2">设置默认的node版本</a>&nbsp;<br><a href="/blog/b9668ed5/#升级npm" class="header_2">升级npm</a>&nbsp;<br><a href="/blog/b9668ed5/#nodejs配置" class="header_1">nodejs配置</a>&nbsp;<br><a href="/blog/b9668ed5/#使用淘宝镜像" class="header_2">使用淘宝镜像</a>&nbsp;<br><a href="/blog/b9668ed5/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 使用EPEL安装 (yum安装方式)
 ## nodejs CentOS安装介绍
 进入Github上的仓库:[https://github.com/nodesource/distributions](https://github.com/nodesource/distributions)

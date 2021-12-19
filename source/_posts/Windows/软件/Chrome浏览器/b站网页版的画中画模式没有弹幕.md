@@ -8,12 +8,6 @@ abbrlink: 7f36a8b9
 date: 2020-08-05 03:04:10
 updated: 2020-08-05 03:26:11
 ---
-<div id='my_toc'><a href="/blog/null/#b站网页版的画中画模式没有弹幕" class="header_1">b站网页版的画中画模式没有弹幕</a>&nbsp;<br><a href="/blog/null/#一边看视频一边看评论" class="header_1">一边看视频一边看评论</a>&nbsp;<br><a href="/blog/null/#一边看视频一边做其他事情" class="header_1">一边看视频一边做其他事情</a>&nbsp;<br><a href="/blog/null/#使用插件" class="header_2">使用插件</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # b站网页版的画中画模式没有弹幕
 到今天为止,画中画模式确实没有弹幕.
 # 一边看视频一边看评论

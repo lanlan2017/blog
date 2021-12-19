@@ -8,12 +8,6 @@ date: 2021-03-16 03:29:46
 updated: 2021-03-17 11:20:44
 abbrlink: 21008dc5
 ---
-<div id='my_toc'><a href="/blog/21008dc5/#安装" class="header_1">安装</a>&nbsp;<br><a href="/blog/21008dc5/#查看安装成功" class="header_1">查看安装成功</a>&nbsp;<br><a href="/blog/21008dc5/#配置基本信息" class="header_1">配置基本信息</a>&nbsp;<br><a href="/blog/21008dc5/#参考链接" class="header_1">参考链接</a>&nbsp;<br><a href="/blog/21008dc5/#安装nano" class="header_1">安装nano</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 安装
 ```shell
 yum install git

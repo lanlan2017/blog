@@ -8,12 +8,6 @@ abbrlink: 58d9ef0d
 date: 2021-04-03 22:15:32
 updated: 2021-04-03 23:14:48
 ---
-<div id='my_toc'><a href="/blog/58d9ef0d/#GCC简介" class="header_1">GCC简介</a>&nbsp;<br><a href="/blog/58d9ef0d/#演示代码" class="header_1">演示代码</a>&nbsp;<br><a href="/blog/58d9ef0d/#生成可执行程序" class="header_1">生成可执行程序</a>&nbsp;<br><a href="/blog/58d9ef0d/#gcc-源文件" class="header_2">gcc 源文件</a>&nbsp;<br><a href="/blog/58d9ef0d/#Linux不以后缀来区分可执行文件" class="header_3">Linux不以后缀来区分可执行文件</a>&nbsp;<br><a href="/blog/58d9ef0d/#gcc-源文件-o-可执行文件" class="header_2">gcc 源文件 -o 可执行文件</a>&nbsp;<br><a href="/blog/58d9ef0d/#在当前目录下输出可执行文件" class="header_3">在当前目录下输出可执行文件</a>&nbsp;<br><a href="/blog/58d9ef0d/#输出可执行文件到其他目录" class="header_3">输出可执行文件到其他目录</a>&nbsp;<br><a href="/blog/58d9ef0d/#运行可执行程序" class="header_1">运行可执行程序</a>&nbsp;<br><a href="/blog/58d9ef0d/#执行当前目录下的可执行程序" class="header_2">执行当前目录下的可执行程序</a>&nbsp;<br><a href="/blog/58d9ef0d/#执行其他目录下的可执行程序" class="header_2">执行其他目录下的可执行程序</a>&nbsp;<br><a href="/blog/58d9ef0d/#添加可执行全选" class="header_2">添加可执行全选</a>&nbsp;<br><a href="/blog/58d9ef0d/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # GCC简介
 GCC 仅仅是一个编译器，没有界面，必须在命令行模式下使用。通过gcc命令就可以将源文件编译成可执行文件。
 

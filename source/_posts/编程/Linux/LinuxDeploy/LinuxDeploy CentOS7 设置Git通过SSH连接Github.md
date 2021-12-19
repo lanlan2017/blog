@@ -8,12 +8,6 @@ date: 2021-03-17 11:31:54
 updated: 2021-03-18 12:14:15
 abbrlink: a210aa10
 ---
-<div id='my_toc'><a href="/blog/a210aa10/#LinuxDeploy-CentOS7-设置Git通过SSH连接Github" class="header_1">LinuxDeploy CentOS7 设置Git通过SSH连接Github</a>&nbsp;<br><a href="/blog/a210aa10/#前言" class="header_2">前言</a>&nbsp;<br><a href="/blog/a210aa10/#生成秘钥" class="header_2">生成秘钥</a>&nbsp;<br><a href="/blog/a210aa10/#查看公钥" class="header_2">查看公钥</a>&nbsp;<br><a href="/blog/a210aa10/#进入github网站-填写公钥" class="header_2">进入github网站 填写公钥</a>&nbsp;<br><a href="/blog/a210aa10/#测试是否能够连接" class="header_2">测试是否能够连接</a>&nbsp;<br><a href="/blog/a210aa10/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # LinuxDeploy CentOS7 设置Git通过SSH连接Github
 ## 前言
 [先安装好Git，并且配置好邮箱和用户名](https://lanlan2017.github.io/blog/21008dc5/)

@@ -8,12 +8,6 @@ date: 2021-03-18 07:38:31
 updated: 2021-03-19 02:11:59
 abbrlink: 3a2566e4
 ---
-<div id='my_toc'><a href="/blog/3a2566e4/#LinuxDeploy-CentOS7升级Git版本" class="header_1">LinuxDeploy CentOS7升级Git版本</a>&nbsp;<br><a href="/blog/3a2566e4/#使用EPEL库" class="header_2">使用EPEL库</a>&nbsp;<br><a href="/blog/3a2566e4/#IUS-Community-库" class="header_2">IUS Community 库</a>&nbsp;<br><a href="/blog/3a2566e4/#卸载旧版的git" class="header_2">卸载旧版的git</a>&nbsp;<br><a href="/blog/3a2566e4/#安装新版的git" class="header_2">安装新版的git</a>&nbsp;<br><a href="/blog/3a2566e4/#如何卸载EPEL库" class="header_1">如何卸载EPEL库</a>&nbsp;<br><a href="/blog/3a2566e4/#如何卸载IUS库" class="header_1">如何卸载IUS库</a>&nbsp;<br><a href="/blog/3a2566e4/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # LinuxDeploy CentOS7升级Git版本
 **注意！本文并没能升级成功，IUS老是报错404,所以本文对你可能没有帮助，我留着这篇文章只是做个记录而已。**
 ## 使用EPEL库

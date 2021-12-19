@@ -8,12 +8,6 @@ abbrlink: 809fc7c6
 date: 2021-03-24 05:54:45
 updated: 2021-04-03 23:58:13
 ---
-<div id='my_toc'><a href="/blog/809fc7c6/#C语言代码" class="header_1">C语言代码</a>&nbsp;<br><a href="/blog/809fc7c6/#编译" class="header_1">编译</a>&nbsp;<br><a href="/blog/809fc7c6/#运行" class="header_1">运行</a>&nbsp;<br><a href="/blog/809fc7c6/#错误码" class="header_1">错误码</a>&nbsp;<br><a href="/blog/809fc7c6/#shell中查看上一个命令的返回值（错误码）" class="header_1">shell中查看上一个命令的返回值（错误码）</a>&nbsp;<br><a href="/blog/809fc7c6/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # C语言代码
 ```
 vim strerror.c

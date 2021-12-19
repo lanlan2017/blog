@@ -8,12 +8,6 @@ date: 2019-02-13 00:17:45
 updated: 2021-03-20 10:26:20
 abbrlink: cd878b94
 ---
-<div id='my_toc'><a href="/blog/cd878b94/#语法" class="header_1">语法</a>&nbsp;<br><a href="/blog/cd878b94/#String对象中的正则表达式" class="header_1">String对象中的正则表达式</a>&nbsp;<br><a href="/blog/cd878b94/#match方法" class="header_2">match方法</a>&nbsp;<br><a href="/blog/cd878b94/#实例" class="header_2">实例</a>&nbsp;<br><a href="/blog/cd878b94/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 语法
 ```javascript
 var patt=new RegExp(pattern,modifiers);

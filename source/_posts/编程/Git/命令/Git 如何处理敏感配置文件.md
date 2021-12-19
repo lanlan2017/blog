@@ -8,12 +8,6 @@ date: 2020-06-24 04:41:17
 updated: 2020-06-24 05:24:22
 abbrlink: 548b8a6
 ---
-<div id='my_toc'><a href="/blog/548b8a6/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/548b8a6/#解决方案" class="header_1">解决方案</a>&nbsp;<br><a href="/blog/548b8a6/#先只提交key" class="header_2">先只提交key</a>&nbsp;<br><a href="/blog/548b8a6/#填写value" class="header_2">填写value</a>&nbsp;<br><a href="/blog/548b8a6/#忽略修改" class="header_2">忽略修改</a>&nbsp;<br><a href="/blog/548b8a6/#添加到-gitignore" class="header_2">添加到.gitignore</a>&nbsp;<br><a href="/blog/548b8a6/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 问题描述
 配置文件中保存有软件的APP_ID和秘钥,为了别人能使用这个文件,我把它加入了版本库中,当然里面只有key,没有秘钥:
 ```

@@ -8,12 +8,6 @@ date: 2019-03-11 21:02:57
 updated: 2020-06-24 08:17:43
 abbrlink: 4181f9ed
 ---
-<div id='my_toc'><a href="/blog/4181f9ed/#选择图标" class="header_2">选择图标</a>&nbsp;<br><a href="/blog/4181f9ed/#NexT主题中使用" class="header_2">NexT主题中使用</a>&nbsp;<br><a href="/blog/4181f9ed/#实例" class="header_2">实例</a>&nbsp;<br><a href="/blog/4181f9ed/#向上箭头图标" class="header_3">向上箭头图标</a>&nbsp;<br><a href="/blog/4181f9ed/#github图标" class="header_3">github图标</a>&nbsp;<br><a href="/blog/4181f9ed/#设置图标颜色" class="header_2">设置图标颜色</a>&nbsp;<br><a href="/blog/4181f9ed/#参考资料" class="header_2">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 ## 选择图标 ##
 到[http://www.fontawesome.com.cn/faicons/](http://www.fontawesome.com.cn/faicons/)这个地方搜索一个你喜欢的图标.
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/hexoSettings/FrontAwesome/find.png)

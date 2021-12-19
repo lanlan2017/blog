@@ -8,7 +8,6 @@ abbrlink: 63dfbbef
 date: 2021-08-29 21:05:55
 updated: 2021-08-29 21:05:55
 ---
-
 #  创建Mybatis Generator配置文件
 ![image-20210829211230965](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210829211231.png)
 ![image-20210829211255484](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210829211255.png)

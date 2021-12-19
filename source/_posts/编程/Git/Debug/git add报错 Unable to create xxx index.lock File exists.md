@@ -8,12 +8,6 @@ abbrlink: e92f1b79
 date: 2021-03-29 12:08:59
 updated: 2021-03-29 12:12:44
 ---
-<div id='my_toc'><a href="/blog/null/#git-add报错：fatal-Unable-to-create-'E/Blog/blogRoot/-git/index-lock'-File-exists" class="header_1">git add报错：fatal: Unable to create 'E:/Blog/blogRoot/.git/index.lock': File exists.</a>&nbsp;<br><a href="/blog/null/#解决方案：删除-git/index-lock文件" class="header_1">解决方案：删除.git/index.lock文件</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # git add报错：fatal: Unable to create 'E:/Blog/blogRoot/.git/index.lock': File exists.
 ```
 lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/blogRoot (src)

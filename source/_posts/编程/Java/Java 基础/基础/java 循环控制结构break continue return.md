@@ -9,12 +9,6 @@ date: 2019-01-16 20:13:29
 updated: 2021-03-20 08:13:52
 abbrlink: 3ac4e85f
 ---
-<div id='my_toc'><a href="/blog/3ac4e85f/#前言" class="header_1">前言</a>&nbsp;<br><a href="/blog/3ac4e85f/#使用-break结束循环" class="header_1">使用 break结束循环</a>&nbsp;<br><a href="/blog/3ac4e85f/#结束本层循环" class="header_2">结束本层循环</a>&nbsp;<br><a href="/blog/3ac4e85f/#break-标签-结束标签指定的外层循环" class="header_2">break 标签 结束标签指定的外层循环</a>&nbsp;<br><a href="/blog/3ac4e85f/#使用-continue忽略本次循环剩下语句" class="header_1">使用 continue忽略本次循环剩下语句</a>&nbsp;<br><a href="/blog/3ac4e85f/#continue不要放在循环体最后面" class="header_2">continue不要放在循环体最后面</a>&nbsp;<br><a href="/blog/3ac4e85f/#continue标签-结束本次外层循环" class="header_2">continue标签 结束本次外层循环</a>&nbsp;<br><a href="/blog/3ac4e85f/#使用-return结束方法" class="header_1">使用 return结束方法</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 前言
 Java语言没有提供goto语句来控制程序的跳转,这种做法提高了程序流程控制的可读性,但降低了程序流程控制的灵活性。为了弥补这种不足,Java提供了break和 continue来控制循环结构。除此之外, return可以结束整个方法,当然也就结束了一次循环
 # 使用 break结束循环

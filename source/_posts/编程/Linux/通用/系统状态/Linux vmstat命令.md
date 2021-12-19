@@ -9,12 +9,6 @@ abbrlink: 4c9a9125
 date: 2021-04-21 19:58:37
 updated: 2021-04-21 23:33:39
 ---
-<div id='my_toc'><a href="/blog/4c9a9125/#vmstat命令：了解系统负载" class="header_1">vmstat命令：了解系统负载</a>&nbsp;<br><a href="/blog/4c9a9125/#vmstat-help" class="header_2">vmstat --help</a>&nbsp;<br><a href="/blog/4c9a9125/#vmstat输出字段说明" class="header_2">vmstat输出字段说明</a>&nbsp;<br><a href="/blog/4c9a9125/#Procs（进程）" class="header_3">Procs（进程）</a>&nbsp;<br><a href="/blog/4c9a9125/#Memory（内存）" class="header_3">Memory（内存）</a>&nbsp;<br><a href="/blog/4c9a9125/#swap" class="header_3">swap</a>&nbsp;<br><a href="/blog/4c9a9125/#io" class="header_3">io</a>&nbsp;<br><a href="/blog/4c9a9125/#system" class="header_3">system</a>&nbsp;<br><a href="/blog/4c9a9125/#cpu（以百分比表示）" class="header_3">cpu（以百分比表示）</a>&nbsp;<br><a href="/blog/4c9a9125/#vmstat-a：显示活跃和非活跃内存" class="header_2">vmstat -a：显示活跃和非活跃内存</a>&nbsp;<br><a href="/blog/4c9a9125/#vmstat-d：查看磁盘的读-写" class="header_2">vmstat -d：查看磁盘的读/写</a>&nbsp;<br><a href="/blog/4c9a9125/#vmstat-f：查看系统已经fork了多少次" class="header_2">vmstat -f：查看系统已经fork了多少次</a>&nbsp;<br><a href="/blog/4c9a9125/#vmstat-s：查看内存使用的详细信息" class="header_2">vmstat -s：查看内存使用的详细信息</a>&nbsp;<br><a href="/blog/4c9a9125/#vmstat-m：获取" class="header_2">vmstat -m：获取</a>&nbsp;<br><a href="/blog/4c9a9125/#slab" class="header_3">slab</a>&nbsp;<br><a href="/blog/4c9a9125/#vmstat-w宽版输出" class="header_2">vmstat -w宽版输出</a>&nbsp;<br><a href="/blog/4c9a9125/#vmstat-t显示时间" class="header_2">vmstat -t显示时间</a>&nbsp;<br><a href="/blog/4c9a9125/#vmstat-wt宽版输出并显示时间" class="header_3">vmstat -wt宽版输出并显示时间</a>&nbsp;<br><a href="/blog/4c9a9125/#vmstat-秒数" class="header_2">vmstat 秒数</a>&nbsp;<br><a href="/blog/4c9a9125/#vmstat-间隔秒数-采集次数" class="header_2">vmstat 间隔秒数 采集次数</a>&nbsp;<br><a href="/blog/4c9a9125/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # vmstat命令：了解系统负载
 vmstat是Virtual Meomory Statistics（虚拟内存统计）的缩写，可对操作系统的虚拟内存、进程、CPU活动进行监控。他是对系统的整体情况进行统计，不足之处是无法对某个进程进行深入分析。vmstat 工具提供了一种低开销的系统性能观察方式。因为 vmstat 本身就是低开销工具，在非常高负荷的服务器上，你需要查看并监控系统的健康情况,在控制窗口还是能够使用vmstat 输出结果。在学习vmstat命令前，我们先了解一下Linux系统中关于物理内存和虚拟内存相关信息。
 

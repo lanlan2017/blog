@@ -8,12 +8,6 @@ date: 2019-12-25 01:17:03
 updated: 2021-03-20 10:32:49
 abbrlink: ce242185
 ---
-<div id='my_toc'><a href="/blog/ce242185/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/ce242185/#使用VSCode代码比较步骤" class="header_1">使用VSCode代码比较步骤</a>&nbsp;<br><a href="/blog/ce242185/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 问题描述
 今天看书的时候,书上讲一段代码改成另一段代码,但是由于注释也改了,代码又比较多,肉眼难以看出来到底修改了哪个地方.
 想起来VScode有代码比较的功能,可以帮助我看出到底就该了哪里.

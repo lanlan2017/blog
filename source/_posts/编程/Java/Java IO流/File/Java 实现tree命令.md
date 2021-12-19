@@ -9,12 +9,6 @@ date: 2019-04-30 20:00:58
 updated: 2021-03-20 09:20:52
 abbrlink: bf650217
 ---
-<div id='my_toc'><a href="/blog/bf650217/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/bf650217/#文件名称过滤器" class="header_1">文件名称过滤器</a>&nbsp;<br><a href="/blog/bf650217/#默认文件" class="header_2">默认文件</a>&nbsp;<br><a href="/blog/bf650217/#Maven-Java-Web项目文件名称过滤器" class="header_2">Maven Java Web项目文件名称过滤器</a>&nbsp;<br><a href="/blog/bf650217/#打印目录树主类-MyTree-java" class="header_1">打印目录树主类 MyTree.java</a>&nbsp;<br><a href="/blog/bf650217/#MyTree程序参数说明" class="header_1">MyTree程序参数说明</a>&nbsp;<br><a href="/blog/bf650217/#不带参数" class="header_2">不带参数</a>&nbsp;<br><a href="/blog/bf650217/#带一个参数" class="header_2">带一个参数</a>&nbsp;<br><a href="/blog/bf650217/#运行结果" class="header_1">运行结果</a>&nbsp;<br><a href="/blog/bf650217/#只打印目录" class="header_2">只打印目录</a>&nbsp;<br><a href="/blog/bf650217/#打印目录和文件" class="header_2">打印目录和文件</a>&nbsp;<br><a href="/blog/bf650217/#显示Maven-Java-Web项目结构" class="header_2">显示Maven Java Web项目结构</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 问题描述
 最近先现实项目的目录结构,查了一下`cmd`之后由`tree`命令,但是项目中有些目录和文件(如`.class`文件)是项目自动生成的,并不全部显示出来,我这想显示该项目必须要有的目录和文件即可,对于`IDE`等工具生成的目录忽略掉。这样使用`cmd`提供的`tree`命令无法满足我的要求,我有必要自己实现一个`tree`命令。下来是我用`java`实现的一个满足我特定要求的`tree`命令。
 # 文件名称过滤器

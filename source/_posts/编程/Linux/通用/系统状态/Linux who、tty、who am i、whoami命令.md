@@ -9,12 +9,6 @@ abbrlink: 1b16e212
 date: 2021-04-21 13:53:09
 updated: 2021-04-21 23:33:39
 ---
-<div id='my_toc'><a href="/blog/1b16e212/#who命令" class="header_1">who命令</a>&nbsp;<br><a href="/blog/1b16e212/#who命令的输出分析" class="header_2">who命令的输出分析</a>&nbsp;<br><a href="/blog/1b16e212/#什么是设备文件" class="header_3">什么是设备文件</a>&nbsp;<br><a href="/blog/1b16e212/#tty命令" class="header_1">tty命令</a>&nbsp;<br><a href="/blog/1b16e212/#who-am-i命令" class="header_1">who am i命令</a>&nbsp;<br><a href="/blog/1b16e212/#whoami命令" class="header_1">whoami命令</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 
 who ：确定谁在系统中
 uptime ：了解系统启动时间和忙碌程度

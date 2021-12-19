@@ -8,12 +8,6 @@ date: 2019-11-23 23:05:36
 updated: 2021-03-20 10:20:32
 abbrlink: 50cd694e
 ---
-<div id='my_toc'><a href="/blog/50cd694e/#大学数据库模式" class="header_1">大学数据库模式</a>&nbsp;<br><a href="/blog/50cd694e/#逆向数据库到模型" class="header_1">逆向数据库到模型</a>&nbsp;<br><a href="/blog/50cd694e/#切换E-R图-表示方式" class="header_1">切换E-R图 表示方式</a>&nbsp;<br><a href="/blog/50cd694e/#UML格式的E-R图如下所示" class="header_2">UML格式的E-R图如下所示</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 大学数据库模式
 下面以数据库系统概念第6版的[大学数据库模式](https://www.db-book.com/db6/lab-dir/sample_tables-dir/index.html)作为示例
 创建一个数据库名为:

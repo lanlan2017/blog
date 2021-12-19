@@ -8,12 +8,6 @@ abbrlink: 82e2c9af
 date: 2021-04-03 22:37:27
 updated: 2021-04-03 23:14:48
 ---
-<div id='my_toc'><a href="/blog/82e2c9af/#终端转义序列" class="header_1">终端转义序列</a>&nbsp;<br><a href="/blog/82e2c9af/#转义字符" class="header_2">转义字符</a>&nbsp;<br><a href="/blog/82e2c9af/#主机发往终端方向数据中的转义序列的功能" class="header_2">主机发往终端方向数据中的转义序列的功能</a>&nbsp;<br><a href="/blog/82e2c9af/#举例" class="header_2">举例</a>&nbsp;<br><a href="/blog/82e2c9af/#C语言示例" class="header_1">C语言示例</a>&nbsp;<br><a href="/blog/82e2c9af/#C语言输出红色字体" class="header_2">C语言输出红色字体</a>&nbsp;<br><a href="/blog/82e2c9af/#设置前景色背景色" class="header_2">设置前景色背景色</a>&nbsp;<br><a href="/blog/82e2c9af/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 终端转义序列
 ## 转义字符
 ```

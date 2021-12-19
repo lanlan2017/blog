@@ -9,12 +9,6 @@ date: 2019-06-09 17:26:12
 updated: 2020-04-11 09:21:19
 abbrlink: 5aecc643
 ---
-<div id='my_toc'><a href="/blog/5aecc643/#Type-interface-mapper-UserMapper-is-not-known-to-the-MapperRegistry" class="header_1">Type interface mapper.UserMapper is not known to the MapperRegistry.</a>&nbsp;<br><a href="/blog/5aecc643/#分1-没有引入Mapper-xml" class="header_2">分1:没有引入Mapper.xml</a>&nbsp;<br><a href="/blog/5aecc643/#解决" class="header_3">解决</a>&nbsp;<br><a href="/blog/5aecc643/#分析2-没有引入Mapper接口路径" class="header_2">分析2:没有引入Mapper接口路径</a>&nbsp;<br><a href="/blog/5aecc643/#解决" class="header_3">解决</a>&nbsp;<br><a href="/blog/5aecc643/#总结" class="header_2">总结</a>&nbsp;<br><a href="/blog/5aecc643/#Table-'mybatis-tb_calzz'-doesn't-exist" class="header_1">Table 'mybatis.tb_calzz' doesn't exist</a>&nbsp;<br><a href="/blog/5aecc643/#错误提示" class="header_2">错误提示</a>&nbsp;<br><a href="/blog/5aecc643/#分析" class="header_2">分析</a>&nbsp;<br><a href="/blog/5aecc643/#Error-querying-database-Query-was-empty" class="header_1">Error querying database. ...Query was empty</a>&nbsp;<br><a href="/blog/5aecc643/#原因" class="header_2">原因</a>&nbsp;<br><a href="/blog/5aecc643/#解决" class="header_2">解决</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Type interface mapper.UserMapper is not known to the MapperRegistry. #
 ```cmd
 org.apache.ibatis.binding.BindingException: Type interface mapper.UserMapper is not known to the MapperRegistry.

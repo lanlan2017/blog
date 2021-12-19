@@ -10,12 +10,6 @@ date: 2018-12-19 15:11:39
 updated: 2020-04-11 09:21:19
 abbrlink: 240051d
 ---
-<div id='my_toc'><a href="/blog/240051d/#session内置对象简介" class="header_2">session内置对象简介</a>&nbsp;<br><a href="/blog/240051d/#session对象" class="header_2">session对象</a>&nbsp;<br><a href="/blog/240051d/#session对象常用方法" class="header_2">session对象常用方法</a>&nbsp;<br><a href="/blog/240051d/#属性方法" class="header_3">属性方法</a>&nbsp;<br><a href="/blog/240051d/#实例" class="header_4">实例</a>&nbsp;<br><a href="/blog/240051d/#session有效时间方法" class="header_3">session有效时间方法</a>&nbsp;<br><a href="/blog/240051d/#设置session生存时间实例" class="header_4">设置session生存时间实例</a>&nbsp;<br><a href="/blog/240051d/#实例" class="header_3">实例</a>&nbsp;<br><a href="/blog/240051d/#session生命周期" class="header_2">session生命周期</a>&nbsp;<br><a href="/blog/240051d/#创建" class="header_3">创建</a>&nbsp;<br><a href="/blog/240051d/#活动" class="header_3">活动</a>&nbsp;<br><a href="/blog/240051d/#验证说法1" class="header_4">验证说法1</a>&nbsp;<br><a href="/blog/240051d/#验证说法2" class="header_4">验证说法2</a>&nbsp;<br><a href="/blog/240051d/#我的观察结果" class="header_4">我的观察结果</a>&nbsp;<br><a href="/blog/240051d/#tomcat中查看一个项目的所有session" class="header_3">tomcat中查看一个项目的所有session</a>&nbsp;<br><a href="/blog/240051d/#销毁" class="header_2">销毁</a>&nbsp;<br><a href="/blog/240051d/#使用invalidate方法直接销毁" class="header_3">使用invalidate方法直接销毁</a>&nbsp;<br><a href="/blog/240051d/#超时销毁" class="header_3">超时销毁</a>&nbsp;<br><a href="/blog/240051d/#参考链接" class="header_2">参考链接</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 ## session内置对象简介 ##
 session是较常用的内置对象之一,与 request对象相比其作用范围更大。
 session在网络中被称为会话。由于HTTP协议是一种**无状态协议,也就是当一个客户向服务器发出请求,服务器接收请求,并返回响应后,该连接就结束了,而服务器并不保存相关的信息**。为了弥补这一缺点,HTTP协议提供了session。通过session可以在应用程序的Web页面间进行跳转时,保存用户的状态,使整个用户会话一直存在下去,**直到关闭浏览器**。但是,如果在一个会话中,客户端长时间不向服务器发出请求, session对象就会自动消失。这个时间取决于服务器,例如, Tomcat服务器默认为30分钟。不过这个时间可以通过编写程序进行修改。

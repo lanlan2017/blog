@@ -9,12 +9,6 @@ abbrlink: 4c6cbbb6
 date: 2021-04-21 14:27:00
 updated: 2021-04-21 23:33:39
 ---
-<div id='my_toc'><a href="/blog/4c6cbbb6/#top命令：列出资源占用排名靠前的进程" class="header_1">top命令：列出资源占用排名靠前的进程</a>&nbsp;<br><a href="/blog/4c6cbbb6/#top命令示例" class="header_2">top命令示例</a>&nbsp;<br><a href="/blog/4c6cbbb6/#top命令第1行：系统正常运行时间" class="header_2">top命令第1行：系统正常运行时间</a>&nbsp;<br><a href="/blog/4c6cbbb6/#top命令第2行：系统进程状态" class="header_2">top命令第2行：系统进程状态</a>&nbsp;<br><a href="/blog/4c6cbbb6/#top命令第3行：CPU的状态" class="header_2">top命令第3行：CPU的状态</a>&nbsp;<br><a href="/blog/4c6cbbb6/#top命令第4行：内存状态" class="header_2">top命令第4行：内存状态</a>&nbsp;<br><a href="/blog/4c6cbbb6/#top命令第5行：Swap交换分区相关信息-交换空间使用情况" class="header_2">top命令第5行：Swap交换分区相关信息 交换空间使用情况</a>&nbsp;<br><a href="/blog/4c6cbbb6/#top命令第6行：空行" class="header_2">top命令第6行：空行</a>&nbsp;<br><a href="/blog/4c6cbbb6/#top命令第7行之后：最后输出的表格" class="header_2">top命令第7行之后：最后输出的表格</a>&nbsp;<br><a href="/blog/4c6cbbb6/#top命令交互操作指令" class="header_2">top命令交互操作指令</a>&nbsp;<br><a href="/blog/4c6cbbb6/#只查看top的内存部分信息" class="header_2">只查看top的内存部分信息</a>&nbsp;<br><a href="/blog/4c6cbbb6/#free" class="header_3">free</a>&nbsp;<br><a href="/blog/4c6cbbb6/#uptime" class="header_3">uptime</a>&nbsp;<br><a href="/blog/4c6cbbb6/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # top命令：列出资源占用排名靠前的进程
 top命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于Windows的任务管理器。top是一个动态显示过程,即可以通过用户按键来不断刷新当前状态.如果在前台执行该命令,它将独占前台,直到用户终止该程序为止.比较准确的说,top命令提供了实时的对系统处理器的状态监视.它将显示系统中CPU最“敏感”的任务列表.该命令可以按CPU使用.内存使用和执行时间对任务进行排序；而且该命令的很多特性都可以通过交互式命令或者在个人定制文件中进行设定。
 常在linux系统下玩，这是必须掌握的命令之一；

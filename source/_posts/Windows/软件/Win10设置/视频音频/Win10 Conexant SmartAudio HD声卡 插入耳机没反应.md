@@ -9,12 +9,6 @@ date: 2020-07-06 04:24:48
 updated: 2020-07-06 05:07:28
 abbrlink: 274cd760
 ---
-<div id='my_toc'><a href="/blog/274cd760/#Win10-Conexant-SmartAudio-HD声卡-插入耳机没反应" class="header_1">Win10 Conexant SmartAudio HD声卡 插入耳机没反应</a>&nbsp;<br><a href="/blog/274cd760/#打开SmartAudio" class="header_2">打开SmartAudio</a>&nbsp;<br><a href="/blog/274cd760/#SmartAudio设置" class="header_2">SmartAudio设置</a>&nbsp;<br><a href="/blog/274cd760/#音频导向器设置" class="header_3">音频导向器设置</a>&nbsp;<br><a href="/blog/274cd760/#插口配置" class="header_3">插口配置</a>&nbsp;<br><a href="/blog/274cd760/#音量混合器" class="header_3">音量混合器</a>&nbsp;<br><a href="/blog/274cd760/#后续使用" class="header_2">后续使用</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Win10 Conexant SmartAudio HD声卡 插入耳机没反应
 ## 打开SmartAudio
 按下快捷键`Win+X`,然后按下快捷`S`,打开小娜的**搜索框**,输入控制面板,进入**控制面板**,点击**硬件和声音**,点击**SmartAudio**:

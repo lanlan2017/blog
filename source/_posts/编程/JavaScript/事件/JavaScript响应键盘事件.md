@@ -8,12 +8,6 @@ abbrlink: 5b7f1159
 date: 2021-03-31 11:52:45
 updated: 2021-04-03 15:42:52
 ---
-<div id='my_toc'><a href="/blog/5b7f1159/#JavaScript响应键盘事件" class="header_1">JavaScript响应键盘事件</a>&nbsp;<br><a href="/blog/5b7f1159/#监听键盘弹起事件" class="header_2">监听键盘弹起事件</a>&nbsp;<br><a href="/blog/5b7f1159/#打印keyCode" class="header_2">打印keyCode</a>&nbsp;<br><a href="/blog/5b7f1159/#使用组合键" class="header_2">使用组合键</a>&nbsp;<br><a href="/blog/5b7f1159/#响应组合键" class="header_2">响应组合键</a>&nbsp;<br><a href="/blog/5b7f1159/#JS按键和keyCode的对应关系" class="header_2">JS按键和keyCode的对应关系</a>&nbsp;<br><a href="/blog/5b7f1159/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # JavaScript响应键盘事件
 ## 监听键盘弹起事件
 ```html

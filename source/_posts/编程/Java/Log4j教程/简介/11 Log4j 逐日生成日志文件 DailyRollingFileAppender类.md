@@ -9,12 +9,6 @@ date: 2020-08-03 11:20:11
 updated: 2021-03-20 09:38:13
 abbrlink: 7cb1400
 ---
-<div id='my_toc'><a href="/blog/7cb1400/#逐日生成日志文件" class="header_1">逐日生成日志文件</a>&nbsp;<br><a href="/blog/7cb1400/#log4j-properties" class="header_2">log4j.properties</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 逐日生成日志文件
 您也许需要逐日生成日志文件，以此更加整洁的记录日志信息。
 

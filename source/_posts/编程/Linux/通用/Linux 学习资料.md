@@ -8,12 +8,6 @@ abbrlink: 71914ed4
 date: 2021-04-03 21:14:06
 updated: 2021-04-04 00:42:19
 ---
-<div id='my_toc'><a href="/blog/71914ed4/#学习网站" class="header_1">学习网站</a>&nbsp;<br><a href="/blog/71914ed4/#技术手册" class="header_1">技术手册</a>&nbsp;<br><a href="/blog/71914ed4/#Linux资讯" class="header_1">Linux资讯</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 学习网站
 
 |网站名称|URL|

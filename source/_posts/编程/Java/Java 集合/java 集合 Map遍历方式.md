@@ -8,12 +8,6 @@ date: 2018-12-14 21:43:36
 updated: 2021-03-20 09:26:50
 abbrlink: ef2dac38
 ---
-<div id='my_toc'><a href="/blog/ef2dac38/#方式1-通过keysSet遍历Map" class="header_1">方式1 通过keysSet遍历Map</a>&nbsp;<br><a href="/blog/ef2dac38/#实例" class="header_2">实例</a>&nbsp;<br><a href="/blog/ef2dac38/#方式2-通过Map-Entry对象遍历Map" class="header_1">方式2 通过Map.Entry对象遍历Map</a>&nbsp;<br><a href="/blog/ef2dac38/#实例" class="header_2">实例</a>&nbsp;<br><a href="/blog/ef2dac38/#直接遍历所有的值" class="header_1">直接遍历所有的值</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 方式1 通过keysSet遍历Map
 - 先通过keySet方法先生成键key的Set集合，
 - 然后再根据Set集合的迭代器从set集合里取出键key 

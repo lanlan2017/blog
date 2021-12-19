@@ -9,12 +9,6 @@ date: 2018-08-06 18:24:40
 updated: 2021-03-20 07:35:41
 abbrlink: aa025735
 ---
-<div id='my_toc'><a href="/blog/aa025735/#文件内容丢失" class="header_1">文件内容丢失</a>&nbsp;<br><a href="/blog/aa025735/#对IP地址进行排序" class="header_1">对IP地址进行排序</a>&nbsp;<br><a href="/blog/aa025735/#小结" class="header_3">小结</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 文件内容丢失
 来解释一下这个`(.)\\1+`正则表达还是的意思，
 - `(.)`:捕获一个任意字符

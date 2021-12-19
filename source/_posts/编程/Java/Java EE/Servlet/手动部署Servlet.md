@@ -9,12 +9,6 @@ date: 2019-04-19 14:31:25
 updated: 2020-04-11 09:21:19
 abbrlink: 4a8ee7ac
 ---
-<div id='my_toc'><a href="/blog/4a8ee7ac/#手动部署Servlet" class="header_1">手动部署Servlet</a>&nbsp;<br><a href="/blog/4a8ee7ac/#创建项目结构" class="header_2">创建项目结构</a>&nbsp;<br><a href="/blog/4a8ee7ac/#java-web应用部署路径" class="header_3">java web应用部署路径</a>&nbsp;<br><a href="/blog/4a8ee7ac/#创建项目目录" class="header_3">创建项目目录</a>&nbsp;<br><a href="/blog/4a8ee7ac/#项目目录下创建WEB-INF目录" class="header_3">项目目录下创建WEB-INF目录</a>&nbsp;<br><a href="/blog/4a8ee7ac/#WEB-INF下创建lib目录" class="header_4">WEB-INF下创建lib目录</a>&nbsp;<br><a href="/blog/4a8ee7ac/#WEB-INF下创建classes目录" class="header_4">WEB-INF下创建classes目录</a>&nbsp;<br><a href="/blog/4a8ee7ac/#编写Servlet" class="header_2">编写Servlet</a>&nbsp;<br><a href="/blog/4a8ee7ac/#编译Servlet" class="header_2">编译Servlet</a>&nbsp;<br><a href="/blog/4a8ee7ac/#配置编译环境" class="header_3">配置编译环境</a>&nbsp;<br><a href="/blog/4a8ee7ac/#使用javac命令编译" class="header_3">使用javac命令编译</a>&nbsp;<br><a href="/blog/4a8ee7ac/#部署Servlet" class="header_2">部署Servlet</a>&nbsp;<br><a href="/blog/4a8ee7ac/#创建包目录" class="header_3">创建包目录</a>&nbsp;<br><a href="/blog/4a8ee7ac/#粘贴字节码文件到包目录中" class="header_3">粘贴字节码文件到包目录中</a>&nbsp;<br><a href="/blog/4a8ee7ac/#访问Servlet" class="header_2">访问Servlet</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 手动部署Servlet #
 ## 创建项目结构 ##
 ### java web应用部署路径 ###

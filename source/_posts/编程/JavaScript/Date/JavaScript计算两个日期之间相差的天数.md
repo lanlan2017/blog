@@ -8,12 +8,6 @@ date: 2018-11-24 14:03:53
 updated: 2021-03-20 10:27:53
 abbrlink: b57484e
 ---
-<div id='my_toc'><a href="/blog/b57484e/#算法描述" class="header_1">算法描述</a>&nbsp;<br><a href="/blog/b57484e/#方法" class="header_1">方法</a>&nbsp;<br><a href="/blog/b57484e/#js求两个日期之间相隔天数的方法-字符串参数" class="header_2">js求两个日期之间相隔天数的方法 字符串参数</a>&nbsp;<br><a href="/blog/b57484e/#js获取当日的格式化时间" class="header_2">js获取当日的格式化时间</a>&nbsp;<br><a href="/blog/b57484e/#实例" class="header_1">实例</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 算法描述
 求出两个日期之间相差的毫秒数,然后除以一天的毫秒数即得到两个日期之间相差的天数。
 # 方法

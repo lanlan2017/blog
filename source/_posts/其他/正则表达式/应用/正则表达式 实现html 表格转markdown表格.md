@@ -8,12 +8,6 @@ abbrlink: 211bb72a
 date: 2018-12-17 01:40:14
 updated: 2019-12-17 05:18:53
 ---
-<div id='my_toc'><a href="/blog/211bb72a/#抓取文章信息" class="header_2">抓取文章信息</a>&nbsp;<br><a href="/blog/211bb72a/#匹配正则" class="header_3">匹配正则</a>&nbsp;<br><a href="/blog/211bb72a/#精简表格正则##" class="header_2">精简表格正则##</a>&nbsp;<br><a href="/blog/211bb72a/#删除内嵌样式" class="header_3">删除内嵌样式</a>&nbsp;<br><a href="/blog/211bb72a/#匹配正则" class="header_4">匹配正则</a>&nbsp;<br><a href="/blog/211bb72a/#替换正则" class="header_4">替换正则</a>&nbsp;<br><a href="/blog/211bb72a/#生成分割符" class="header_3">生成分割符</a>&nbsp;<br><a href="/blog/211bb72a/#替换结果" class="header_4">替换结果</a>&nbsp;<br><a href="/blog/211bb72a/#按行分割" class="header_3">按行分割</a>&nbsp;<br><a href="/blog/211bb72a/#删除其他html多余标签行" class="header_3">删除其他html多余标签行</a>&nbsp;<br><a href="/blog/211bb72a/#生成对齐方式" class="header_3">生成对齐方式</a>&nbsp;<br><a href="/blog/211bb72a/#java代码" class="header_4">java代码</a>&nbsp;<br><a href="/blog/211bb72a/#替换结果" class="header_4">替换结果</a>&nbsp;<br><a href="/blog/211bb72a/#html-table转Markdown-Java方法" class="header_2">html table转Markdown Java方法</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 ## 抓取文章信息 ##
 ### 匹配正则 ###
 ```

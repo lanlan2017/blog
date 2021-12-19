@@ -9,12 +9,6 @@ date: 2020-08-03 06:52:28
 updated: 2021-03-20 09:38:13
 abbrlink: 6356f492
 ---
-<div id='my_toc'><a href="/blog/6356f492/#Log4j-日志格式-Layout类" class="header_1">Log4j 日志格式 Layout类</a>&nbsp;<br><a href="/blog/6356f492/#Layout类型" class="header_2">Layout类型</a>&nbsp;<br><a href="/blog/6356f492/#Layout方法" class="header_2">Layout方法</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Log4j 日志格式 Layout类
 `Apache Log4j`提供了多个`Layout`对象，每个根据布局的不同都可格式化日志数据。还可以创建一个`Layout`对象，以应用特有的方式格式化日志。
 

@@ -9,12 +9,6 @@ abbrlink: 8923c382
 date: 2021-04-20 21:10:13
 updated: 2021-04-20 23:07:47
 ---
-<div id='my_toc'><a href="/blog/8923c382/#ntpdate" class="header_1">ntpdate</a>&nbsp;<br><a href="/blog/8923c382/#NTP协议" class="header_2">NTP协议</a>&nbsp;<br><a href="/blog/8923c382/#NTP是什么" class="header_3">NTP是什么</a>&nbsp;<br><a href="/blog/8923c382/#NTP实现什么目的" class="header_3">NTP实现什么目的</a>&nbsp;<br><a href="/blog/8923c382/#NTP服务器列表" class="header_3">NTP服务器列表</a>&nbsp;<br><a href="/blog/8923c382/#1、阿里云授时服务器" class="header_4">1、阿里云授时服务器</a>&nbsp;<br><a href="/blog/8923c382/#2、国内大学授时服务器" class="header_4">2、国内大学授时服务器</a>&nbsp;<br><a href="/blog/8923c382/#3、国外授时服务器" class="header_4">3、国外授时服务器</a>&nbsp;<br><a href="/blog/8923c382/#查询时间ntpdate-q-NTP服务器" class="header_2">查询时间ntpdate -q NTP服务器</a>&nbsp;<br><a href="/blog/8923c382/#设置时间ntpdate-NTP服务器" class="header_2">设置时间ntpdate NTP服务器</a>&nbsp;<br><a href="/blog/8923c382/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # ntpdate
 ## NTP协议
 ### NTP是什么

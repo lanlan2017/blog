@@ -8,12 +8,6 @@ date: 2019-11-13 16:22:20
 updated: 2021-03-20 10:08:38
 abbrlink: 8d23490d
 ---
-<div id='my_toc'><a href="/blog/8d23490d/#Git-SSH配置过程" class="header_1">Git SSH配置过程</a>&nbsp;<br><a href="/blog/8d23490d/#配置邮箱和用户名" class="header_2">配置邮箱和用户名</a>&nbsp;<br><a href="/blog/8d23490d/#配置邮箱" class="header_3">配置邮箱</a>&nbsp;<br><a href="/blog/8d23490d/#配置用户名" class="header_3">配置用户名</a>&nbsp;<br><a href="/blog/8d23490d/#查看效果" class="header_3">查看效果</a>&nbsp;<br><a href="/blog/8d23490d/#生成密钥对" class="header_2">生成密钥对</a>&nbsp;<br><a href="/blog/8d23490d/#生成默认长度的密钥对" class="header_3">生成默认长度的密钥对</a>&nbsp;<br><a href="/blog/8d23490d/#生成指定长度的密钥对" class="header_3">生成指定长度的密钥对</a>&nbsp;<br><a href="/blog/8d23490d/#添加key到SSH" class="header_2">添加key到SSH </a>&nbsp;<br><a href="/blog/8d23490d/#解决-Could-not-open-a-connection-to-your-authentication-agent" class="header_3">解决 Could not open a connection to your authentication agent</a>&nbsp;<br><a href="/blog/8d23490d/#添加成功效果" class="header_3">添加成功效果</a>&nbsp;<br><a href="/blog/8d23490d/#将公钥添加到Github上" class="header_2">将公钥添加到Github上</a>&nbsp;<br><a href="/blog/8d23490d/#测试链接是否成功" class="header_2">测试链接是否成功</a>&nbsp;<br><a href="/blog/8d23490d/#使用SSH推送远程仓库" class="header_2">使用SSH推送远程仓库</a>&nbsp;<br><a href="/blog/8d23490d/#你可能没有开启ssh-agent" class="header_3">你可能没有开启ssh-agent</a>&nbsp;<br><a href="/blog/8d23490d/#你可能的远程仓库地址时HTTPS的不是SSH地址" class="header_3">你可能的远程仓库地址时HTTPS的不是SSH地址</a>&nbsp;<br><a href="/blog/8d23490d/#查看远程仓库地址" class="header_4">查看远程仓库地址</a>&nbsp;<br><a href="/blog/8d23490d/#删除远程仓库地址" class="header_4">删除远程仓库地址</a>&nbsp;<br><a href="/blog/8d23490d/#重新添加SSH地址" class="header_4">重新添加SSH地址</a>&nbsp;<br><a href="/blog/8d23490d/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Git SSH配置过程
 ## 配置邮箱和用户名
 ### 配置邮箱

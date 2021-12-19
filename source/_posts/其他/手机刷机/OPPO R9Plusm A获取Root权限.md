@@ -1,11 +1,11 @@
 ---
 title: OPPO R9Plusm A获取Root权限
-categories:
+categories: 
   - 其他
   - 手机刷机
 abbrlink: 95547b91
 date: 2021-03-07 11:51:19
-updated: 2021-03-07 11:51:19
+updated: 2021-03-08 18:30:38
 ---
 # 回退到旧的系统版本
 ## 下载旧版本的系统ROM包

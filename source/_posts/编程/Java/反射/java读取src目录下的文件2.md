@@ -8,12 +8,6 @@ abbrlink: 4de14eef
 date: 2021-03-29 07:56:21
 updated: 2021-03-29 09:44:37
 ---
-<div id='my_toc'><a href="/blog/null/#项目结构" class="header_1">项目结构</a>&nbsp;<br><a href="/blog/null/#Test-java读取toMdTable-html文件内容" class="header_1">Test.java读取toMdTable.html文件内容</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 项目结构
 ```
 E:\dev2\idea_workspace\MyJavaTools\Commands

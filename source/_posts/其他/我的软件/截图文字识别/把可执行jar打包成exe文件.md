@@ -8,12 +8,6 @@ abbrlink: d7d49994
 date: 2018-10-10 19:39:02
 updated: 2019-12-17 05:18:53
 ---
-<div id='my_toc'><a href="/blog/d7d49994/#前言" class="header_2">前言</a>&nbsp;<br><a href="/blog/d7d49994/#使用eclipse把java项目打包为可执行jar包" class="header_2">使用eclipse把java项目打包为可执行jar包</a>&nbsp;<br><a href="/blog/d7d49994/#下载安装破解exe4j" class="header_2">下载安装破解exe4j</a>&nbsp;<br><a href="/blog/d7d49994/#下载exe4j" class="header_3">下载exe4j</a>&nbsp;<br><a href="/blog/d7d49994/#解压压缩包" class="header_3">解压压缩包</a>&nbsp;<br><a href="/blog/d7d49994/#安装" class="header_3">安装</a>&nbsp;<br><a href="/blog/d7d49994/#破解" class="header_3">破解</a>&nbsp;<br><a href="/blog/d7d49994/#打包jar为exe" class="header_2">打包jar为exe</a>&nbsp;<br><a href="/blog/d7d49994/#Project-type" class="header_3">Project type</a>&nbsp;<br><a href="/blog/d7d49994/#Application-info" class="header_3">Application info</a>&nbsp;<br><a href="/blog/d7d49994/#Executable-info" class="header_3">Executable info</a>&nbsp;<br><a href="/blog/d7d49994/#Redirection" class="header_4">Redirection</a>&nbsp;<br><a href="/blog/d7d49994/#32-bit-or-64-bit" class="header_4">32-bit or 64-bit</a>&nbsp;<br><a href="/blog/d7d49994/#Java-invocation" class="header_3">Java invocation</a>&nbsp;<br><a href="/blog/d7d49994/#JRE" class="header_3">JRE</a>&nbsp;<br><a href="/blog/d7d49994/#运行生成的exe" class="header_2">运行生成的exe</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 ## 前言 ##
 上次的程序我通过使用,我通过`javaw -jar xxx.jar`来启动一个程序，在任务管理器中显示如下：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/javaw_process.png)

@@ -9,12 +9,6 @@ date: 2020-08-05 03:14:46
 updated: 2021-03-20 09:38:13
 abbrlink: 17eaff0a
 ---
-<div id='my_toc'><a href="/blog/17eaff0a/#Log4j-使用数据库记录日志" class="header_1">Log4j 使用数据库记录日志</a>&nbsp;<br><a href="/blog/17eaff0a/#JDBCAppender-配置" class="header_2">JDBCAppender 配置</a>&nbsp;<br><a href="/blog/17eaff0a/#日志表的配置" class="header_2">日志表的配置</a>&nbsp;<br><a href="/blog/17eaff0a/#示例配置文件" class="header_2">示例配置文件</a>&nbsp;<br><a href="/blog/17eaff0a/#使用XML配置文件" class="header_3">使用XML配置文件</a>&nbsp;<br><a href="/blog/17eaff0a/#log4j-xml把SQL写到layout的ConversionPattern属性" class="header_4">log4j.xml把SQL写到layout的ConversionPattern属性</a>&nbsp;<br><a href="/blog/17eaff0a/#log4j-properties把SQL写在-appender的sql属性" class="header_4">log4j.properties把SQL写在 appender的sql属性</a>&nbsp;<br><a href="/blog/17eaff0a/#示例程序" class="header_2">示例程序</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Log4j 使用数据库记录日志
 `Log4j API`提供了`org.apache.log4j.jdbc.JDBCAppender`对象，该对象可将日志信息记录到特定的数据库之中。
 ## JDBCAppender 配置

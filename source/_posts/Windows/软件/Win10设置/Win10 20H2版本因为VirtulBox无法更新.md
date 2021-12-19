@@ -8,12 +8,6 @@ abbrlink: ab19e083
 date: 2021-04-04 16:51:57
 updated: 2021-04-08 00:26:28
 ---
-<div id='my_toc'><a href="/blog/ab19e083/#无法更新的提示信息" class="header_1">无法更新的提示信息</a>&nbsp;<br><a href="/blog/ab19e083/#卸载VirtualBox" class="header_1">卸载VirtualBox</a>&nbsp;<br><a href="/blog/ab19e083/#备份" class="header_2">备份</a>&nbsp;<br><a href="/blog/ab19e083/#卸载VirtualBox" class="header_2">卸载VirtualBox</a>&nbsp;<br><a href="/blog/ab19e083/#重装VirtualBox" class="header_2">重装VirtualBox</a>&nbsp;<br><a href="/blog/ab19e083/#导入虚拟机" class="header_3">导入虚拟机</a>&nbsp;<br><a href="/blog/ab19e083/#删除C盘上-VirtualBox文件，目录" class="header_2">删除C盘上 VirtualBox文件，目录</a>&nbsp;<br><a href="/blog/ab19e083/#卸载模拟器" class="header_1">卸载模拟器</a>&nbsp;<br><a href="/blog/ab19e083/#备份" class="header_2">备份</a>&nbsp;<br><a href="/blog/ab19e083/#重装模拟器" class="header_2">重装模拟器</a>&nbsp;<br><a href="/blog/ab19e083/#安装之前导入的app" class="header_3">安装之前导入的app</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 <!-- Blog/Windows/Software/WIN10Settings/BecauseTheVirtualBoxWin10_20H2VersionCannotBeUpdated/ -->
 # 无法更新的提示信息
 ![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/WIN10Settings/BecauseTheVirtualBoxWin10_20H2VersionCannotBeUpdated/1.png)

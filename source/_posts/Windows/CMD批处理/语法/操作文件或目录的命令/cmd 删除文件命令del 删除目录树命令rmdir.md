@@ -9,12 +9,6 @@ date: 2019-01-31 17:32:41
 updated: 2020-04-11 09:15:21
 abbrlink: 5d4c4249
 ---
-<div id='my_toc'><a href="/blog/5d4c4249/#删除文件-del或erase命令" class="header_2">删除文件 del或erase命令</a>&nbsp;<br><a href="/blog/5d4c4249/#删除-当前目录-下某个文件" class="header_3">删除 当前目录 下某个文件</a>&nbsp;<br><a href="/blog/5d4c4249/#删除-当前目录-下某个后缀的所有文件" class="header_3">删除 当前目录 下某个后缀的所有文件</a>&nbsp;<br><a href="/blog/5d4c4249/#删除-当前目录树-下某个后缀的所有文件" class="header_3">删除 当前目录树 下某个后缀的所有文件</a>&nbsp;<br><a href="/blog/5d4c4249/#测试" class="header_4">测试</a>&nbsp;<br><a href="/blog/5d4c4249/#删除目录-rmdir或rd命令" class="header_2">删除目录 rmdir或rd命令</a>&nbsp;<br><a href="/blog/5d4c4249/#删除空目录" class="header_3">删除空目录</a>&nbsp;<br><a href="/blog/5d4c4249/#删除非空目录" class="header_3">删除非空目录</a>&nbsp;<br><a href="/blog/5d4c4249/#直接删除非空目录" class="header_3">直接删除非空目录</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 ## 删除文件 del或erase命令 ##
 del命令用于删除一个或多个文件，帮助文档如下所示：
 ```cmd

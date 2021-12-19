@@ -8,12 +8,6 @@ date: 2021-03-18 11:12:56
 updated: 2021-03-19 02:13:34
 abbrlink: 94a9be61
 ---
-<div id='my_toc'><a href="/blog/94a9be61/#下载git源码压缩包" class="header_1">下载git源码压缩包</a>&nbsp;<br><a href="/blog/94a9be61/#从Git官网上下载" class="header_2">从Git官网上下载</a>&nbsp;<br><a href="/blog/94a9be61/#从GitHub上下载" class="header_2">从GitHub上下载</a>&nbsp;<br><a href="/blog/94a9be61/#使用Xftp上传到centos上" class="header_2">使用Xftp上传到centos上</a>&nbsp;<br><a href="/blog/94a9be61/#解压Git源码包" class="header_1">解压Git源码包</a>&nbsp;<br><a href="/blog/94a9be61/#安装Git在CentOS对应的依赖" class="header_1">安装Git在CentOS对应的依赖</a>&nbsp;<br><a href="/blog/94a9be61/#移除旧版git" class="header_1">移除旧版git</a>&nbsp;<br><a href="/blog/94a9be61/#编译安装" class="header_1">编译安装</a>&nbsp;<br><a href="/blog/94a9be61/#设置git的环境变量" class="header_1">设置git的环境变量</a>&nbsp;<br><a href="/blog/94a9be61/#测试安装是否成功" class="header_1">测试安装是否成功</a>&nbsp;<br><a href="/blog/94a9be61/#设置Git自动补全" class="header_1">设置Git自动补全</a>&nbsp;<br><a href="/blog/94a9be61/#获取git-completion-bash文件的绝对路径" class="header_2">获取git-completion.bash文件的绝对路径</a>&nbsp;<br><a href="/blog/94a9be61/#设置环境变量" class="header_2">设置环境变量</a>&nbsp;<br><a href="/blog/94a9be61/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 下载git源码压缩包
 ## 从Git官网上下载
 进入git下载网站：[https://git-scm.com/download/linux](https://git-scm.com/download/linux)

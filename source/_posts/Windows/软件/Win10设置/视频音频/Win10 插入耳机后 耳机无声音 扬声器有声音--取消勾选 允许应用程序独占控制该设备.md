@@ -9,12 +9,6 @@ abbrlink: a6d17185
 date: 2020-06-26 00:23:32
 updated: 2020-06-26 02:51:15
 ---
-<div id='my_toc'><a href="/blog/a6d17185/#Win10-插入耳机后-耳机无声音-扬声器有声音" class="header_1">Win10 插入耳机后 耳机无声音 扬声器有声音</a>&nbsp;<br><a href="/blog/a6d17185/#打开声音设置" class="header_2">打开声音设置</a>&nbsp;<br><a href="/blog/a6d17185/#声音控制面板" class="header_2">声音控制面板</a>&nbsp;<br><a href="/blog/a6d17185/#取消勾选-允许应用程序独占控制该设备" class="header_2">取消勾选 允许应用程序独占控制该设备</a>&nbsp;<br><a href="/blog/a6d17185/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Win10 插入耳机后 耳机无声音 扬声器有声音
 最近Win10更新后,我插入耳机一直没有效果,耳机没有声音,电脑还是使用扬声器播放,就好像没插入耳机一样.
 但是我之前使用的时候插入耳机线,耳机是有声音的,这就很奇怪。

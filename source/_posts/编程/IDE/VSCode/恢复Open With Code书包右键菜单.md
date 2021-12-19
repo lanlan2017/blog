@@ -8,12 +8,6 @@ date: 2020-02-12 07:20:05
 updated: 2020-04-11 09:21:19
 abbrlink: 4869d326
 ---
-<div id='my_toc'><a href="/blog/4869d326/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/4869d326/#手动设置" class="header_1">手动设置</a>&nbsp;<br><a href="/blog/4869d326/#打开注册表编辑器" class="header_2">打开注册表编辑器</a>&nbsp;<br><a href="/blog/4869d326/#进入shell目录" class="header_2">进入shell目录</a>&nbsp;<br><a href="/blog/4869d326/#新建项Open-With-Code" class="header_2">新建项Open With Code</a>&nbsp;<br><a href="/blog/4869d326/#设置图标" class="header_2">设置图标</a>&nbsp;<br><a href="/blog/4869d326/#在安装目录下查找图标" class="header_3">在安装目录下查找图标</a>&nbsp;<br><a href="/blog/4869d326/#转换图标为-ico格式" class="header_3">转换图标为.ico格式</a>&nbsp;<br><a href="/blog/4869d326/#在注册表中设置图标" class="header_3">在注册表中设置图标</a>&nbsp;<br><a href="/blog/4869d326/#设置鼠标右键菜单对应的命令" class="header_2">设置鼠标右键菜单对应的命令</a>&nbsp;<br><a href="/blog/4869d326/#方法2" class="header_1">方法2</a>&nbsp;<br><a href="/blog/4869d326/#替换VSCode的安装路径" class="header_2">替换VSCode的安装路径</a>&nbsp;<br><a href="/blog/4869d326/#替换图标" class="header_2">替换图标</a>&nbsp;<br><a href="/blog/4869d326/#点击运行" class="header_2">点击运行</a>&nbsp;<br><a href="/blog/4869d326/#方法3-更新VSCode" class="header_1">方法3 更新VSCode</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 问题描述
 安装VScode的时候会在鼠标右键设置一个Open With Code菜单,这样可以在目录的空白处直接右键打开该目录,但是我的被360删除掉了。现在来介绍怎么恢复.
 # 手动设置

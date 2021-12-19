@@ -9,12 +9,6 @@ abbrlink: 69afcd3b
 date: 2021-04-20 21:40:54
 updated: 2021-04-20 23:07:47
 ---
-<div id='my_toc'><a href="/blog/69afcd3b/#cal打印当前月的日历" class="header_2">cal打印当前月的日历</a>&nbsp;<br><a href="/blog/69afcd3b/#cal-year打印指定年的日历" class="header_2">cal year打印指定年的日历</a>&nbsp;<br><a href="/blog/69afcd3b/#cal-month-year打印指定年月的日历" class="header_2">cal month year打印指定年月的日历</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 
 ## cal打印当前月的日历
 直接输入cal命令会打印当前月的日历，

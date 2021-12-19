@@ -10,12 +10,6 @@ date: 2019-06-14 10:07:26
 updated: 2020-04-11 09:21:19
 abbrlink: 7198198c
 ---
-<div id='my_toc'><a href="/blog/7198198c/#eclipse暗色主题下SQL文件的配色" class="header_1">eclipse暗色主题下SQL文件的配色</a>&nbsp;<br><a href="/blog/7198198c/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/7198198c/#修改eclipse-sql文件代码配色" class="header_2">修改eclipse sql文件代码配色</a>&nbsp;<br><a href="/blog/7198198c/#eclipse其他代码配色" class="header_2">eclipse其他代码配色</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # eclipse暗色主题下SQL文件的配色 #
 ## 问题描述 ##
 `eclipse`的暗色主题下的`SQL`配色有问题,**代码颜色和背景色对比不明显**,看起来费神.如下图所示:

@@ -8,12 +8,6 @@ date: 2019-05-30 18:31:18
 updated: 2021-03-20 09:28:56
 abbrlink: e303557d
 ---
-<div id='my_toc'><a href="/blog/e303557d/#Java网络编程-TCP编程-发送接收对象-对象序列化反序列化" class="header_1">Java网络编程 TCP编程 发送接收对象 对象序列化反序列化</a>&nbsp;<br><a href="/blog/e303557d/#对象序列化" class="header_2">对象序列化</a>&nbsp;<br><a href="/blog/e303557d/#对象反序列化" class="header_2">对象反序列化</a>&nbsp;<br><a href="/blog/e303557d/#实例" class="header_2">实例</a>&nbsp;<br><a href="/blog/e303557d/#通信流程" class="header_3">通信流程</a>&nbsp;<br><a href="/blog/e303557d/#服务端主线程" class="header_3">服务端主线程</a>&nbsp;<br><a href="/blog/e303557d/#服务端响应线程" class="header_3">服务端响应线程</a>&nbsp;<br><a href="/blog/e303557d/#客户端线程" class="header_3">客户端线程</a>&nbsp;<br><a href="/blog/e303557d/#运行效果" class="header_3">运行效果</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Java网络编程 TCP编程 发送接收对象 对象序列化反序列化
 
 ## 对象序列化

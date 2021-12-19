@@ -8,12 +8,6 @@ date: 2018-12-07 00:23:50
 updated: 2020-06-24 08:17:43
 abbrlink: 5d465f14
 ---
-<div id='my_toc'><a href="/blog/5d465f14/#使用bat批处理的好处：省时间" class="header_2">使用bat批处理的好处：省时间</a>&nbsp;<br><a href="/blog/5d465f14/#bat脚本启动hexo本地服务器" class="header_2">bat脚本启动hexo本地服务器</a>&nbsp;<br><a href="/blog/5d465f14/#指令说明" class="header_3">指令说明</a>&nbsp;<br><a href="/blog/5d465f14/#如何使用" class="header_3">如何使用</a>&nbsp;<br><a href="/blog/5d465f14/#bat脚本部署hexo博客" class="header_2">bat脚本部署hexo博客</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 ## 使用bat批处理的好处：省时间 ##
 windows中`.bat`文件可以直接点击运行，我们可以把`多个命令`写在里面，运行这个`.bat`文件时就会运行了文件中的所有命令。这样我们运行一次，就等于运行了好多条指令,这会我们省下宝贵的时间。
 ## bat脚本启动hexo本地服务器 ##

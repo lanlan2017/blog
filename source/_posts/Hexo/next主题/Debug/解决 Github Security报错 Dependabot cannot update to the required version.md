@@ -8,12 +8,6 @@ date: 2020-06-25 01:33:18
 updated: 2020-06-25 02:06:15
 abbrlink: c9d9ee7
 ---
-<div id='my_toc'><a href="/blog/c9d9ee7/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/c9d9ee7/#分析" class="header_1">分析</a>&nbsp;<br><a href="/blog/c9d9ee7/#解决方案" class="header_1">解决方案</a>&nbsp;<br><a href="/blog/c9d9ee7/#具体做法" class="header_2">具体做法</a>&nbsp;<br><a href="/blog/c9d9ee7/#删除node_modules目录和package-lock-json文件" class="header_3">删除node_modules目录和package-lock.json文件</a>&nbsp;<br><a href="/blog/c9d9ee7/#重新安装package-json中的插件" class="header_3">重新安装package.json中的插件</a>&nbsp;<br><a href="/blog/c9d9ee7/#推送到Github" class="header_1">推送到Github</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 问题描述
 <pre>
 Dependabot cannot update to the required version

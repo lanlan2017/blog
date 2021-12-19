@@ -8,12 +8,6 @@ abbrlink: 687154e5
 date: 2021-04-06 16:27:46
 updated: 2021-04-06 17:06:03
 ---
-<div id='my_toc'><a href="/blog/687154e5/#前言" class="header_1">前言</a>&nbsp;<br><a href="/blog/687154e5/#使用符号链接" class="header_1">使用符号链接</a>&nbsp;<br><a href="/blog/687154e5/#剪切extensions目录到其他盘符中" class="header_2">剪切extensions目录到其他盘符中</a>&nbsp;<br><a href="/blog/687154e5/#在-vscode下创建符号链接extensions" class="header_2">在.vscode下创建符号链接extensions</a>&nbsp;<br><a href="/blog/687154e5/#mklink命令详解" class="header_2">mklink命令详解</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 前言
 VScode默认安装在C盘之中：
 "C:\Users\用户名\AppData\Local\Programs\Microsoft VS Code")中,

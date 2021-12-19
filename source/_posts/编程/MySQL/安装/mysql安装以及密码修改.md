@@ -8,12 +8,6 @@ date: 2018-12-14 01:58:11
 updated: 2021-03-20 10:21:09
 abbrlink: e124ac2c
 ---
-<div id='my_toc'><a href="/blog/e124ac2c/#安装" class="header_1">安装</a>&nbsp;<br><a href="/blog/e124ac2c/#安装mysql服务" class="header_1">安装mysql服务</a>&nbsp;<br><a href="/blog/e124ac2c/#启动mysql服务" class="header_1">启动mysql服务</a>&nbsp;<br><a href="/blog/e124ac2c/#使用mysql" class="header_1">使用mysql</a>&nbsp;<br><a href="/blog/e124ac2c/#验证" class="header_2">验证</a>&nbsp;<br><a href="/blog/e124ac2c/#mysql用户登录" class="header_1">mysql用户登录</a>&nbsp;<br><a href="/blog/e124ac2c/#修改root用户密码" class="header_1">修改root用户密码</a>&nbsp;<br><a href="/blog/e124ac2c/#情况1-记得原来root用户的密码" class="header_2">情况1 记得原来root用户的密码</a>&nbsp;<br><a href="/blog/e124ac2c/#登录root用户" class="header_3">登录root用户</a>&nbsp;<br><a href="/blog/e124ac2c/#修改密码" class="header_3">修改密码</a>&nbsp;<br><a href="/blog/e124ac2c/#重启服务使新密码生效" class="header_3">重启服务使新密码生效</a>&nbsp;<br><a href="/blog/e124ac2c/#情况2-记不得root用户密码" class="header_2">情况2 记不得root用户密码</a>&nbsp;<br><a href="/blog/e124ac2c/#修改my-in登录时跳过密码检查" class="header_3">修改my.in登录时跳过密码检查</a>&nbsp;<br><a href="/blog/e124ac2c/#重启mysql服务" class="header_3">重启mysql服务</a>&nbsp;<br><a href="/blog/e124ac2c/#直接登录mysql修改密码" class="header_3">直接登录mysql修改密码</a>&nbsp;<br><a href="/blog/e124ac2c/#其他知识" class="header_1">其他知识</a>&nbsp;<br><a href="/blog/e124ac2c/#关闭mysql服务" class="header_2">关闭mysql服务</a>&nbsp;<br><a href="/blog/e124ac2c/#debug" class="header_1">debug</a>&nbsp;<br><a href="/blog/e124ac2c/#The-service-already-exists" class="header_2">The service already exists</a>&nbsp;<br><a href="/blog/e124ac2c/#解决方案-###​" class="header_2">解决方案 ###​</a>&nbsp;<br><a href="/blog/e124ac2c/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 安装
 解压安装包即可安装
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/mysql/install/install.png)

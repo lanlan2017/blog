@@ -9,12 +9,6 @@ date: 2018-08-11 15:28:20
 updated: 2021-03-20 08:05:26
 abbrlink: 6249459e
 ---
-<div id='my_toc'><a href="/blog/6249459e/#前言：" class="header_1">前言：</a>&nbsp;<br><a href="/blog/6249459e/#一、环境变量文件介绍" class="header_1">一、环境变量文件介绍  </a>&nbsp;<br><a href="/blog/6249459e/#二、Linux的变量种类" class="header_1">二、Linux的变量种类</a>&nbsp;<br><a href="/blog/6249459e/#三、Linux-环境变量文件" class="header_1">三、Linux 环境变量文件</a>&nbsp;<br><a href="/blog/6249459e/#系统级：" class="header_2">系统级：</a>&nbsp;<br><a href="/blog/6249459e/#/etc/environment" class="header_3">/etc/environment</a>&nbsp;<br><a href="/blog/6249459e/#/etc/profile" class="header_3">/etc/profile</a>&nbsp;<br><a href="/blog/6249459e/#/etc/bashrc" class="header_2">/etc/bashrc</a>&nbsp;<br><a href="/blog/6249459e/#用户级：" class="header_1">用户级：</a>&nbsp;<br><a href="/blog/6249459e/#-~/-profile" class="header_2">`~/.profile`</a>&nbsp;<br><a href="/blog/6249459e/#~/-bashrc" class="header_2">~/.bashrc</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 Linux 常用环境变量及作用和环境变量文件的详细介绍及其加载执行顺序
 原文：
 

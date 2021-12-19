@@ -8,12 +8,6 @@ date: 2019-02-13 00:23:30
 updated: 2021-03-20 10:34:48
 abbrlink: 9f0a034b
 ---
-<div id='my_toc'><a href="/blog/9f0a034b/#CSS设置下划线与文字间距距离-CSS文字下划线距离设置" class="header_1">CSS设置下划线与文字间距距离(CSS文字下划线距离设置)</a>&nbsp;<br><a href="/blog/9f0a034b/#使用CSS单词介绍" class="header_2">使用CSS单词介绍</a>&nbsp;<br><a href="/blog/9f0a034b/#读音" class="header_2">读音</a>&nbsp;<br><a href="/blog/9f0a034b/#实现过程" class="header_1">实现过程</a>&nbsp;<br><a href="/blog/9f0a034b/#CSS底部边框实现下划线效果" class="header_1">CSS底部边框实现下划线效果</a>&nbsp;<br><a href="/blog/9f0a034b/#完整代码" class="header_2">完整代码</a>&nbsp;<br><a href="/blog/9f0a034b/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # CSS设置下划线与文字间距距离(CSS文字下划线距离设置)
 ##  使用CSS单词介绍
 - padding-bottom——设置内容与对象下边框的距离

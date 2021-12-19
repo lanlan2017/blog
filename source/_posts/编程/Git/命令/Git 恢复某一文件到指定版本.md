@@ -8,12 +8,6 @@ date: 2019-12-23 09:52:43
 updated: 2021-03-20 07:11:45
 abbrlink: 1d8980fe
 ---
-<div id='my_toc'><a href="/blog/1d8980fe/#问题描述" class="header_1">问题描述</a>&nbsp;<br><a href="/blog/1d8980fe/#查看某个文件的commit记录" class="header_2">查看某个文件的commit记录</a>&nbsp;<br><a href="/blog/1d8980fe/#比较两个版本之间文件的不同" class="header_2">比较两个版本之间文件的不同</a>&nbsp;<br><a href="/blog/1d8980fe/#取出指定版本的文件" class="header_2">取出指定版本的文件</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 问题描述
 今天我查看之前的写的文章的时候我发现`'批处理 for命令.md'`**这批文章中的大部分内容都丢失**了,应该是我写的文件处理程序出bug造成的,不过幸好有版本控制,只要将该文件恢复到`文件处理程序`操作之前的状态即可.
 ## 查看某个文件的commit记录

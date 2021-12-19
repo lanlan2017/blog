@@ -8,12 +8,6 @@ date: 2018-11-26 18:53:21
 updated: 2021-03-20 09:27:04
 abbrlink: fdae6905
 ---
-<div id='my_toc'><a href="/blog/fdae6905/#前言" class="header_1">前言</a>&nbsp;<br><a href="/blog/fdae6905/#基本使用步骤" class="header_1">基本使用步骤</a>&nbsp;<br><a href="/blog/fdae6905/#创建xxx-properties文件" class="header_2">创建xxx.properties文件</a>&nbsp;<br><a href="/blog/fdae6905/#实例化properties类" class="header_2">实例化properties类</a>&nbsp;<br><a href="/blog/fdae6905/#加载配置文件" class="header_2">加载配置文件</a>&nbsp;<br><a href="/blog/fdae6905/#读取键值对" class="header_2">读取键值对</a>&nbsp;<br><a href="/blog/fdae6905/#设置键值对" class="header_2">设置键值对</a>&nbsp;<br><a href="/blog/fdae6905/#获取所有键" class="header_2">获取所有键</a>&nbsp;<br><a href="/blog/fdae6905/#写入输出流的方法" class="header_2">写入输出流的方法</a>&nbsp;<br><a href="/blog/fdae6905/#写配置文件" class="header_2">写配置文件</a>&nbsp;<br><a href="/blog/fdae6905/#实例" class="header_1">实例</a>&nbsp;<br><a href="/blog/fdae6905/#读取一个配置" class="header_2">读取一个配置</a>&nbsp;<br><a href="/blog/fdae6905/#遍历配置文件" class="header_2">遍历配置文件</a>&nbsp;<br><a href="/blog/fdae6905/#SpecialWords-properties文件" class="header_3">SpecialWords.properties文件</a>&nbsp;<br><a href="/blog/fdae6905/#PropertyTools-java文件" class="header_3">PropertyTools.java文件</a>&nbsp;<br><a href="/blog/fdae6905/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 前言
 Properties 继承于 Hashtable.表示一个持久的属性集.属性列表中每个键及其对应值都是一个字符串。Properties 类被许多Java类使用。例如，在获取环境变量时它就作为System.getProperties()方法的返回值。
 # 基本使用步骤

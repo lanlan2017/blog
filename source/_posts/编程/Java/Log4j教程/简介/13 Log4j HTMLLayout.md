@@ -9,12 +9,6 @@ date: 2020-08-06 01:04:20
 updated: 2021-03-20 09:38:13
 abbrlink: 6cc119f
 ---
-<div id='my_toc'><a href="/blog/6cc119f/#Log4j-HTMLLayout" class="header_1">Log4j HTMLLayout</a>&nbsp;<br><a href="/blog/6cc119f/#HTMLLayout方法" class="header_2">HTMLLayout方法</a>&nbsp;<br><a href="/blog/6cc119f/#HTMLLayout示例" class="header_2">HTMLLayout示例</a>&nbsp;<br><a href="/blog/6cc119f/#Log4jExample-java" class="header_2">Log4jExample.java</a>&nbsp;<br><a href="/blog/6cc119f/#运行结果" class="header_2">运行结果</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Log4j HTMLLayout
 如果您希望以`HTML`格式输出日志文件，可使用`org.apache.log4j.HTMLLayout`格式化日志信息。
 

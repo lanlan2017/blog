@@ -9,12 +9,6 @@ abbrlink: 72162c39
 date: 2018-10-14 22:51:59
 updated: 2019-12-17 05:18:53
 ---
-<div id='my_toc'></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 有下面这样一段HTML代码：
 ```html
     <span style="cursor:auto">

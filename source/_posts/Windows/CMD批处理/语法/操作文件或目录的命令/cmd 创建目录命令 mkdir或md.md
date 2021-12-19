@@ -9,12 +9,6 @@ date: 2019-01-31 18:48:22
 updated: 2020-04-11 09:15:21
 abbrlink: 47a3a21b
 ---
-<div id='my_toc'><a href="/blog/47a3a21b/#cmd-创建目录命令" class="header_2">cmd 创建目录命令</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 ## cmd 创建目录命令 ##
 mkdir命令可以用来创建目录,命令格式如下:
 ```cmd

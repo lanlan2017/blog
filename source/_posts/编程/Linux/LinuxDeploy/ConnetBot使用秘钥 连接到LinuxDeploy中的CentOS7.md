@@ -8,12 +8,6 @@ date: 2021-03-19 10:16:21
 updated: 2021-03-19 10:44:21
 abbrlink: '8177e030'
 ---
-<div id='my_toc'><a href="/blog/8177e030/#下载安装ConnectBot-app" class="header_1">下载安装ConnectBot app</a>&nbsp;<br><a href="/blog/8177e030/#ConnectBot中生成秘钥" class="header_1">ConnectBot中生成秘钥</a>&nbsp;<br><a href="/blog/8177e030/#复制ConnectBot生成的公钥" class="header_1">复制ConnectBot生成的公钥</a>&nbsp;<br><a href="/blog/8177e030/#添加主机" class="header_1">添加主机</a>&nbsp;<br><a href="/blog/8177e030/#添加公钥到/root/-ssh/authorized_keys文件中" class="header_1">添加公钥到/root/.ssh/authorized_keys文件中</a>&nbsp;<br><a href="/blog/8177e030/#ConnectBot连接服务器" class="header_1">ConnectBot连接服务器</a>&nbsp;<br><a href="/blog/8177e030/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 下载安装ConnectBot app
 GooglePlay Store:[https://play.google.com/store/apps/details?id=org.connectbot&hl=zh&gl=US](https://play.google.com/store/apps/details?id=org.connectbot&hl=zh&gl=US)
 

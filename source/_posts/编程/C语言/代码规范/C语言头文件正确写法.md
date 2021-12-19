@@ -8,12 +8,6 @@ date: 2018-11-20 18:52:35
 updated: 2021-03-20 09:52:41
 abbrlink: 96819592
 ---
-<div id='my_toc'><a href="/blog/96819592/#一般写法" class="header_1">一般写法</a>&nbsp;<br><a href="/blog/96819592/#自动生成" class="header_1">自动生成</a>&nbsp;<br><a href="/blog/96819592/#源码" class="header_2">源码</a>&nbsp;<br><a href="/blog/96819592/#C语言头文件生成工具" class="header_2">C语言头文件生成工具</a>&nbsp;<br><a href="/blog/96819592/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 一般写法
 例如这样有一根file.h头文件，一般写法如下
 ```c

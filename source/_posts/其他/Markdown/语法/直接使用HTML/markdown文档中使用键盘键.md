@@ -9,12 +9,6 @@ date: 2018-10-26 11:23:58
 updated: 2019-12-17 05:18:53
 abbrlink: 6507a83c
 ---
-<div id='my_toc'><a href="/blog/6507a83c/#键盘键" class="header_2">键盘键</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 ## 键盘键 ##
 markdown中可以插入html标签来实现更加丰富的显示效果。例如`<kbd>`标签来插入键盘按键：<kbd>Ctrl</kbd>+<kbd>H</kbd>
 

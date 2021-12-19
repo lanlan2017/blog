@@ -9,12 +9,6 @@ date: 2018-08-10 14:57:46
 updated: 2021-03-20 08:44:48
 abbrlink: f1ceb471
 ---
-<div id='my_toc'><a href="/blog/f1ceb471/#FileWriter类" class="header_1">FileWriter类</a>&nbsp;<br><a href="/blog/f1ceb471/#继承关系" class="header_2">继承关系</a>&nbsp;<br><a href="/blog/f1ceb471/#构造方法：" class="header_2">构造方法：</a>&nbsp;<br><a href="/blog/f1ceb471/#读操作方法" class="header_2">读操作方法</a>&nbsp;<br><a href="/blog/f1ceb471/#FileWriter类和OutputStreamWriter类的区别" class="header_2">FileWriter类和OutputStreamWriter类的区别</a>&nbsp;<br><a href="/blog/f1ceb471/#读写实例-复制文件" class="header_1">读写实例:复制文件</a>&nbsp;<br><a href="/blog/f1ceb471/#使用FileReader和FileWriter复制文件" class="header_2">使用FileReader和FileWriter复制文件</a>&nbsp;<br><a href="/blog/f1ceb471/#编码问题" class="header_2">编码问题</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # FileWriter类
 `FileWriter`类可以把字符直接写入流中,`FileWriter`继承与`OutputStreamWriter`,它的所有方法也都继承于`OutputStreamWriter`。
 ## 继承关系

@@ -9,12 +9,6 @@ date: 2019-09-30 22:59:36
 updated: 2021-03-20 08:03:48
 abbrlink: e5bb3a41
 ---
-<div id='my_toc'><a href="/blog/e5bb3a41/#ProcessBuilder-API整理" class="header_1">ProcessBuilder API整理</a>&nbsp;<br><a href="/blog/e5bb3a41/#内部类" class="header_2">内部类</a>&nbsp;<br><a href="/blog/e5bb3a41/#构造器" class="header_2">构造器</a>&nbsp;<br><a href="/blog/e5bb3a41/#方法" class="header_2">方法</a>&nbsp;<br><a href="/blog/e5bb3a41/#取出或设置程序和参数的方法" class="header_3">取出或设置程序和参数的方法</a>&nbsp;<br><a href="/blog/e5bb3a41/#取出或设置工作目录的方法" class="header_3">取出或设置工作目录的方法</a>&nbsp;<br><a href="/blog/e5bb3a41/#设置标准IO的方法" class="header_3">设置标准IO的方法</a>&nbsp;<br><a href="/blog/e5bb3a41/#取出标准IO的方法" class="header_3">取出标准IO的方法</a>&nbsp;<br><a href="/blog/e5bb3a41/#合并标准输出相关的方法" class="header_3">合并标准输出相关的方法</a>&nbsp;<br><a href="/blog/e5bb3a41/#其他方法" class="header_3">其他方法</a>&nbsp;<br><a href="/blog/e5bb3a41/#启动进程方法" class="header_3">启动进程方法</a>&nbsp;<br><a href="/blog/e5bb3a41/#Process类API整理" class="header_1">Process类API整理</a>&nbsp;<br><a href="/blog/e5bb3a41/#杀死子进程" class="header_2">杀死子进程</a>&nbsp;<br><a href="/blog/e5bb3a41/#获取子进程的IO" class="header_2">获取子进程的IO</a>&nbsp;<br><a href="/blog/e5bb3a41/#其他方法" class="header_2">其他方法</a>&nbsp;<br><a href="/blog/e5bb3a41/#等待子进程" class="header_2">等待子进程</a>&nbsp;<br><a href="/blog/e5bb3a41/#实例" class="header_1">实例</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # ProcessBuilder API整理
 ## 内部类
 |方法|描述|

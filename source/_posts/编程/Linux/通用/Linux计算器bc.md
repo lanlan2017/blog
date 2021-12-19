@@ -8,12 +8,6 @@ abbrlink: a04d41de
 date: 2021-04-20 21:47:55
 updated: 2021-04-20 23:07:47
 ---
-<div id='my_toc'><a href="/blog/a04d41de/#Linux计算器bc" class="header_1">Linux计算器bc</a>&nbsp;<br><a href="/blog/a04d41de/#精度" class="header_2">精度</a>&nbsp;<br><a href="/blog/a04d41de/#命令设置缺省精度" class="header_3">命令设置缺省精度</a>&nbsp;<br><a href="/blog/a04d41de/#整数计算" class="header_4">整数计算</a>&nbsp;<br><a href="/blog/a04d41de/#小数计算" class="header_4">小数计算</a>&nbsp;<br><a href="/blog/a04d41de/#可以通过设置scale自行决定精度（小数点位数）" class="header_3">可以通过设置scale自行决定精度（小数点位数）</a>&nbsp;<br><a href="/blog/a04d41de/#设置bc计算器精确到小数点后10000位" class="header_4">设置bc计算器精确到小数点后10000位</a>&nbsp;<br><a href="/blog/a04d41de/#设置bc计算器精确到小数点后30位" class="header_4">设置bc计算器精确到小数点后30位</a>&nbsp;<br><a href="/blog/a04d41de/#bc编程" class="header_2">bc编程</a>&nbsp;<br><a href="/blog/a04d41de/#使用变量" class="header_3">使用变量</a>&nbsp;<br><a href="/blog/a04d41de/#查看变量" class="header_4">查看变量</a>&nbsp;<br><a href="/blog/a04d41de/#使用变量进行计算" class="header_4">使用变量进行计算</a>&nbsp;<br><a href="/blog/a04d41de/#使用循环" class="header_3">使用循环</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # Linux计算器bc
 功能强大
 - 基本计算器功能

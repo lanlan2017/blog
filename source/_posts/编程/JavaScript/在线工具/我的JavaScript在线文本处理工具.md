@@ -8,12 +8,6 @@ date: 2018-12-14 20:51:47
 updated: 2021-03-20 10:25:47
 abbrlink: 86af8ea
 ---
-<div id='my_toc'><a href="/blog/86af8ea/#源码" class="header_1">源码</a>&nbsp;<br><a href="/blog/86af8ea/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 源码
 ```html
 <textarea rows="5" id="output" style="width:99%;margin-right:auto"></textarea>

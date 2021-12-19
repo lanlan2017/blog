@@ -8,12 +8,6 @@ date: 2018-11-06 14:35:04
 updated: 2020-06-24 08:17:42
 abbrlink: 39481c48
 ---
-<div id='my_toc'><a href="/blog/39481c48/#问题描述" class="header_2">问题描述</a>&nbsp;<br><a href="/blog/39481c48/#解决方案" class="header_2">解决方案</a>&nbsp;<br><a href="/blog/39481c48/#登录coding-清空仓库" class="header_3">登录coding 清空仓库</a>&nbsp;<br><a href="/blog/39481c48/#重新部署" class="header_3">重新部署</a>&nbsp;<br><a href="/blog/39481c48/#重新开启pages服务" class="header_3">重新开启pages服务</a>&nbsp;<br><a href="/blog/39481c48/#重新绑定域名" class="header_3">重新绑定域名</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 ## 问题描述 ##
 今天部署到coding的时候，我又无法部署了，说我超出了容量(512M),我不可能写了那么多东西,我很奇怪。
 ```

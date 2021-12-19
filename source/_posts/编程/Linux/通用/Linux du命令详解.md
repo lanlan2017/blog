@@ -8,12 +8,6 @@ abbrlink: a13f1d41
 date: 2021-03-23 10:28:31
 updated: 2021-04-03 18:15:19
 ---
-<div id='my_toc'><a href="/blog/a13f1d41/#du命令" class="header_1">du命令</a>&nbsp;<br><a href="/blog/a13f1d41/#常用参数" class="header_1">常用参数</a>&nbsp;<br><a href="/blog/a13f1d41/#文档" class="header_1">文档</a>&nbsp;<br><a href="/blog/a13f1d41/#示例" class="header_1">示例</a>&nbsp;<br><a href="/blog/a13f1d41/#du-hs-目录：获取目录的总大小" class="header_2">du -hs 目录：获取目录的总大小</a>&nbsp;<br><a href="/blog/a13f1d41/#参数说明" class="header_3">参数说明</a>&nbsp;<br><a href="/blog/a13f1d41/#du-h：获取每个目录的大小" class="header_2">du -h：获取每个目录的大小</a>&nbsp;<br><a href="/blog/a13f1d41/#du-hs-目录-*：获取每个目录的摘要" class="header_2">du -hs 目录/*：获取每个目录的摘要</a>&nbsp;<br><a href="/blog/a13f1d41/#du-hS：获取每个目录的不含子目录的大小" class="header_2">du -hS：获取每个目录的不含子目录的大小</a>&nbsp;<br><a href="/blog/a13f1d41/#du-h-max-depth=1：仅获取一级子目录的大小" class="header_2">du -h --max-depth=1：仅获取一级子目录的大小</a>&nbsp;<br><a href="/blog/a13f1d41/#du-hsc：统计" class="header_2">du -hsc：统计</a>&nbsp;<br><a href="/blog/a13f1d41/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # du命令
 du命令的英文全称是“Disk Usage”，即用于查看磁盘占用空间的意思。但是与df命令不同的是,**du命令是对文件和目录磁盘使用的空间的查看**，而不是某个分区。
 

@@ -8,12 +8,6 @@ date: 2021-03-15 02:42:04
 updated: 2021-03-17 11:20:44
 abbrlink: ecdc8418
 ---
-<div id='my_toc'><a href="/blog/ecdc8418/#简介" class="header_1">简介</a>&nbsp;<br><a href="/blog/ecdc8418/#本文用到的软硬件" class="header_1">本文用到的软硬件</a>&nbsp;<br><a href="/blog/ecdc8418/#root手机" class="header_1">root手机</a>&nbsp;<br><a href="/blog/ecdc8418/#安装App" class="header_1">安装App</a>&nbsp;<br><a href="/blog/ecdc8418/#下载安装-BusyBox-LinuxDeploy" class="header_2">下载安装 BusyBox LinuxDeploy</a>&nbsp;<br><a href="/blog/ecdc8418/#BusyBox使用介绍" class="header_2">BusyBox使用介绍</a>&nbsp;<br><a href="/blog/ecdc8418/#LinuxDeploy操作详解" class="header_2">LinuxDeploy操作详解</a>&nbsp;<br><a href="/blog/ecdc8418/#修改配置文件名" class="header_3">修改配置文件名</a>&nbsp;<br><a href="/blog/ecdc8418/#环境设置" class="header_3">环境设置</a>&nbsp;<br><a href="/blog/ecdc8418/#勾选-屏幕常亮、锁定WiFi、开启CPU唤醒这三项。" class="header_4">勾选 屏幕常亮、锁定WiFi、开启CPU唤醒这三项。</a>&nbsp;<br><a href="/blog/ecdc8418/#勾选-时间戳、显示图标、联网更新" class="header_4">勾选 时间戳、显示图标、联网更新</a>&nbsp;<br><a href="/blog/ecdc8418/#设置PATH变量为/system/xbin" class="header_4">设置PATH变量为/system/xbin</a>&nbsp;<br><a href="/blog/ecdc8418/#三点按钮介绍" class="header_3">三点按钮介绍</a>&nbsp;<br><a href="/blog/ecdc8418/#安装按钮" class="header_4">安装按钮</a>&nbsp;<br><a href="/blog/ecdc8418/#配置按钮" class="header_4">配置按钮</a>&nbsp;<br><a href="/blog/ecdc8418/#查看当前手机架构" class="header_3">查看当前手机架构</a>&nbsp;<br><a href="/blog/ecdc8418/#设置操作系统属性" class="header_3">设置操作系统属性</a>&nbsp;<br><a href="/blog/ecdc8418/#启动Linux" class="header_3">启动Linux</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # 简介
 本文介绍，如何在安卓手机上安装centos,并设置共享文件夹。
 # 本文用到的软硬件

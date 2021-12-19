@@ -1,11 +1,11 @@
 ---
 title: 华为荣耀畅玩4X移动版 线刷 带谷歌服务的ROM 获取Root权限
-categories:
+categories: 
   - 其他
   - 手机刷机
 abbrlink: a0a42cc6
 date: 2020-09-24 01:57:49
-updated: 2020-09-24 01:57:49
+updated: 2021-03-08 19:30:41
 ---
 # 华为荣耀畅玩4X移动版 线刷 带谷歌服务的ROM 获取Root权限
 ## 手机基本信息

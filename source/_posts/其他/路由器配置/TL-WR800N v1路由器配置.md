@@ -7,12 +7,6 @@ date: 2019-11-01 14:39:51
 updated: 2020-01-12 09:28:17
 abbrlink: f8d0ff32
 ---
-<div id='my_toc'><a href="/blog/f8d0ff32/#TL-WR800N-v1路由器配置" class="header_1">TL-WR800N v1路由器配置 </a>&nbsp;<br><a href="/blog/f8d0ff32/#固定电脑IP地址" class="header_2">固定电脑IP地址</a>&nbsp;<br><a href="/blog/f8d0ff32/#连接路由器的WiFi" class="header_2">连接路由器的WiFi</a>&nbsp;<br><a href="/blog/f8d0ff32/#进入路由器后台" class="header_2">进入路由器后台</a>&nbsp;<br><a href="/blog/f8d0ff32/#AP模式" class="header_2">AP模式</a>&nbsp;<br><a href="/blog/f8d0ff32/#中继模式" class="header_2">中继模式</a>&nbsp;<br><a href="/blog/f8d0ff32/#取消固定电脑IP地址" class="header_2">取消固定电脑IP地址</a>&nbsp;<br><a href="/blog/f8d0ff32/#参考链接" class="header_1">参考链接</a>&nbsp;<br></div>
-<style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style>
-<!--more-->
-<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
-
-<!--end-->
 # TL-WR800N v1路由器配置 
 ## 固定电脑IP地址
 **网络和internet设置**,**更改适配器选项**,然后在`WLAN`上右键,选择**属性(R)**,然后点击**internet协议版本4(TCP/IPv4)**选项,然后按下**属性(R)**按钮,在弹出的窗口上选择**使用下面的IP地址(S)**,
