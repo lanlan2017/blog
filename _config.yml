@@ -3,27 +3,38 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 蓝蓝博客
-subtitle:
-description: 先看视频再看书
-keywords: 程序员,java,读书,数据库,Linux,SQL,MySQL,批处理
+title: 蓝蓝的博客
+subtitle: ''
+description: ''
+keywords:
 author: 蓝蓝
-language: zh-CN
-timezone:
+language:
+  - zh-CN
+  - en
+timezone: ''
 
 # URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+# url: http://example.com
+# 自定义设置
 url: https://lanlan2017.github.io/blog/
+# 自定义子站点
 root: /blog/
 # permalink: :year/:month/:day/:title/
-permalink: /:abbrlink/ #blog可以修改为其他信息,blog
+# hexo-abbrlink插件要求的链接样式
+## npm install hexo-addlink --save
+permalink: /:abbrlink/
 permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
 public_dir: public
 tag_dir: tags
 archive_dir: archives
+# archive_dir: /
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
@@ -33,7 +44,10 @@ skip_render:
 new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
@@ -43,21 +57,34 @@ highlight:
   enable: true
   line_number: true
   auto_detect: false
-  tab_replace:
-  
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
+  # 使用存档页面作为主页设置2
+  # path: archives
   per_page: 10
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
 tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -65,11 +92,19 @@ tag_map:
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
 per_page: 10
 pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
@@ -78,44 +113,53 @@ pagination_dir: page
 theme: next
 
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
+## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
   repo: git@github.com:lanlan2017/blog.git
   # repo: https://gh_token@github.com/lanlan2017/blog.git
   # branch: master #published
   branch: gh-pages #published
-  # message: [message]
 
-# 第三方插件 #################################################################################################################################
-# 本地搜索
-## https://github.com/wzpan/hexo-generator-search
+# Local Search
+## Install hexo-generator-searchdb by executing the following command in site root dir: 
+## npm install hexo-generator-searchdb
 search:
   path: search.xml
   field: post
+  content: true
   format: html
-  limit: 10000
-# 永久链接
+
+# 永久链接hexo-abbrlink插件算法配置
 ## https://github.com/rozbo/hexo-abbrlink
+## abbrlink config
 abbrlink:
-  alg: crc32  # 算法：crc16(default) and crc32
-  rep: hex    # 进制：dec(default) and hex
-# 自动目录分类
-# Generate categories from directory-tree
-# Dependencies: https://github.com/xu-song/hexo-auto-category
-# depth: the max_depth of directory-tree you want to generate, should > 0
-auto_category:
- enable: true
- depth: 
+  alg: crc32      #support crc16(default) and crc32
+  rep: hex        #support dec(default) and hex
+  drafts: false   #(true)Process draft,(false)Do not process draft. false(default) 
+  # Generate categories from directory-tree
+  # depth: the max_depth of directory-tree you want to generate, should > 0
+  auto_category:
+    enable: true  #true(default)
+    depth:        #3(default)
+    over_write: false 
+  auto_title: false #enable auto title, it can auto fill the title by path
+  auto_date: false #enable auto date, it can auto fill the date by time today
+  force: false #enable force mode,in this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had abbrlink.
 
-# 后台
-# hexo-admin authentification
-# admin:
-#   username: blue
-#   # password_hash: $2a$10$IPiWiNWFjPpB3jeLis42s.Dwl.gQlJP6sht/XRCp8oggHHSB2m4LO
-#   password_hash: $2a$10$cT32ALzobbP.lP1WuxiigeDU3WSoF/JYU0es61gHYxxYX.0i9/o4O
-#   secret: my super secret phrase
 
-# # hexo-graphviz 
-# graphviz:
-#   enable: true
+# 字数统计插件
+## npm install hexo-word-counter
+symbols_count_time:
+  #在Post Meta部分中的帖子单词的数量
+  symbols: true
+  #在Post Meta部分中显示帖子的估计读取时间。
+  time: true
+  #在页脚中显示所有帖子单词的数量。
+  total_symbols: true
+  #在页脚中读完所有帖子的需要的估计时间。
+  total_time: true
+  #awl表示一个的单词的平均字符数
+  awl: 4
+  #wpm是指人每分钟的平均能阅读的单词数。
+  wpm: 275
