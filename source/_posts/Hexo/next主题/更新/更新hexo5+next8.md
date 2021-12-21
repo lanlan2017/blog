@@ -1286,3 +1286,87 @@ INFO  Deploy done: git
 为了省事，直接冲旧站点blog/中复制.git目录，粘贴到blog_new/目录中。
 
 然后就可以像原来的站点那样使用git了。
+## 创建自定义的dir目录
+### 创建dir页面
+```
+hexo new page dir
+```
+运行效果：
+```
+18190@DESKTOP-SH3MQPI MINGW64 /g/Blog/blog_new (master)
+$ hexo new page dir
+INFO  Validating config
+INFO  ==================================
+  ███╗   ██╗███████╗██╗  ██╗████████╗
+  ████╗  ██║██╔════╝╚██╗██╔╝╚══██╔══╝
+  ██╔██╗ ██║█████╗   ╚███╔╝    ██║
+  ██║╚██╗██║██╔══╝   ██╔██╗    ██║
+  ██║ ╚████║███████╗██╔╝ ██╗   ██║
+  ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝   ╚═╝
+========================================
+NexT version 8.8.2
+Documentation: https://theme-next.js.org
+========================================
+INFO  Created: G:\Blog\blog_new\source\dir\index.md
+
+18190@DESKTOP-SH3MQPI MINGW64 /g/Blog/blog_new (master)
+```
+### 编写dir页面
+编写`G:\Blog\blog_new\source\dir\index.md`文件
+### 在menu中添加dir页面和图标
+```yml G:\Blog\blog_new\_config.next.yml
+menu:
+  home: / || fa fa-home
+  #about: /about/ || fa fa-user
+  dir: /dir/ || fa fa-sitemap
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
+  tags: /tags/ || fa fa-tags
+  #schedule: /schedule/ || fa fa-calendar
+  #sitemap: /sitemap.xml || fa fa-sitemap
+  # commonweal: /404/ || fa fa-heartbeat
+```
+### 给dir页面提供翻译
+https://theme-next.js.org/docs/theme-settings/internationalization.html#Override-Default-Translations
+#### 创建文件source/_data/languages.yml
+在`source/`目录下创建_`data/`目录，并在_`data/`目录中创建`languages.yml`文件：
+
+```
+18190@DESKTOP-SH3MQPI MINGW64 /g/Blog/blog_new (master)
+$ ls
+_config.next.yml  db.json        HexoD.bat  HexoSTest.bat  package.json       public/     source/           themes/
+_config.yml       FM.properties  HexoS.bat  node_modules/  package-lock.json  scaffolds/  StartWriting.bat
+
+18190@DESKTOP-SH3MQPI MINGW64 /g/Blog/blog_new (master)
+$ mkdir source/_data
+
+18190@DESKTOP-SH3MQPI MINGW64 /g/Blog/blog_new (master)
+$ ls source/
+_data/  _posts/  categories/  dir/  images/  tags/
+
+18190@DESKTOP-SH3MQPI MINGW64 /g/Blog/blog_new (master)
+$ cd source/_data/
+
+18190@DESKTOP-SH3MQPI MINGW64 /g/Blog/blog_new/source/_data (master)
+$ touch languages.yml
+
+18190@DESKTOP-SH3MQPI MINGW64 /g/Blog/blog_new/source/_data (master)
+$ ls
+languages.yml
+
+18190@DESKTOP-SH3MQPI MINGW64 /g/Blog/blog_new/source/_data (master)
+```
+#### 编辑languages.yml
+```yml G:\Blog\blog_new\source\_data\languages.yml
+# language
+zh-CN:
+  menu:
+    dir: 目录
+en:
+  menu:
+    dir: directories #directory #
+```
+### 查看效果
+输入hexo s,效果如下图：
+
+![image-20211221155312596](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20211221155313.png)
