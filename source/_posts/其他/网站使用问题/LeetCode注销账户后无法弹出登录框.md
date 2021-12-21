@@ -1,11 +1,11 @@
 ---
 title: LeetCode注销账户后无法弹出登录框
-categories:
+categories: 
   - 其他
-  - 新建文件夹
+  - 网站使用问题
 abbrlink: 8a4bfbf
 date: 2021-09-07 09:43:57
-updated: 2021-09-07 09:43:57
+updated: 2021-12-21 16:35:57
 ---
 # 问题描述 注销LeetCode后进入LeetCode网站时不弹出登录框
 我之前有使用QQ登录LeetCode，等我绑定邮箱的时候，才发现原来我之前有账户。
