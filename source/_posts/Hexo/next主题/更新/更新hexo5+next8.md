@@ -1211,6 +1211,29 @@ https://theme-next.js.org/docs/third-party-services/chat-services.html
 
 ## 外部库
 https://theme-next.js.org/docs/third-party-services/external-libraries.html
+# 高级设置
+## 自定义文件
+https://theme-next.js.org/docs/advanced-settings/custom-files.html
+
+### 自定义CSS
+#### 自定义代码块字体大小
+NexT默认的代码块字体大小为`1em;`。当代码块中的代码比较长时，代码块无法全部显示这样代码，当我们阅读的时候就需要频繁拖动底部的滚动条。为了方便阅读，我们可以把代码块中的字体大小调小到`0.875em;`。
+在`source/_data`目录下创建`styles.styl`文件
+```
+18190@DESKTOP-SH3MQPI MINGW64 /g/Blog/blog_new/source/_data (master)
+$ ls
+languages.yml  styles.styl
+
+18190@DESKTOP-SH3MQPI MINGW64 /g/Blog/blog_new/source/_data (master)
+```
+然后在里面styles.styl文件中写上你的css代码即可。
+例如设置代码块的字体大小：
+```css G:\Blog\gongzuo_new\source\_data\styles.styl
+// 代码块的字体大小
+figure.highlight, pre span{
+    font-size: 0.875em;
+}
+```
 
 # 部署
 ## 部署到github pages
