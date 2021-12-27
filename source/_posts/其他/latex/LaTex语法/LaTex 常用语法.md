@@ -91,7 +91,7 @@ $\infty$
 <script>
     function sst(text) {
         var audio = document.createElement("audio");
-        audio.src = "http://fanyi.baidu.com/gettts?lan=en&text=" + text + "&spd=5&source=web";
+        audio.src = "https://fanyi.baidu.com/gettts?lan=en&text=" + text + "&spd=5&source=web";
         document.body.appendChild(audio);
         audio.loop = false;
         audio.play();
@@ -119,7 +119,7 @@ $a_1,a_2,\cdots,a_n$
 $a_1,a_2,\dots,a_n$
 $a_1,a_2,\cdots,a_n$
 
-\cdots和\dots是完全等效的，它们既能用在公式中，也用在文本里作为**省略号**。
+`\cdots`和`\dots`是完全等效的，它们既能用在公式中，也用在文本里作为**省略号**。
 除此之外，在矩阵中可能会用到竖排的$\vdots$(\vdots)和斜排的$\ddots$(\ddots)
 
 ## 关系符 ##
@@ -234,7 +234,7 @@ $\vec{x_0} \quad \vec{x}_0$
 $\hat{\mathbf{e}_x} \quad
 \hat{\mathbf{e}}_x$
 
-LATEX也能为多个字符加重音，包括直接画线的\overline和\underline命令（可叠加使用）、宽重音符号\widehat、表示向量的箭头\overrightarrow等。后两者详见表4.9和4.11等。
+LATEX也能为多个字符加重音，包括直接画线的`\overline`和`\underline`命令（可叠加使用）、宽重音符号`\widehat`、表示向量的箭头`\overrightarrow`等。后两者详见表4.9和4.11等。
 ```
 $0.\overline{3} =
 \underline{\underline{1/3}}$
@@ -261,25 +261,29 @@ _\text{meaning of life} = 42$
 
 # 多行公式 #
 ## 长公式折行 ##
-通常来讲应当避免写出超过一行而需要折行的长公式。如果一定要折行的话，优先在等号之前折行，其次在加号、减号之前，再次在乘号、除号之前。其它位置应当避免折行。
+通常来讲应当避免写出超过一行而需要折行的长公式。如果一定要折行的话，**优先在等号之前折行，其次在加号、减号之前，再次在乘号、除号之前。其它位置应当避免折行**。
 amsmath宏包的multline环境提供了书写折行长公式的方便环境。它允许用`\\\\`(markdown中显示:\\\\)折行，**将公式编号放在最后一行**。多行公式的**首行左对齐**，**末行右对齐**，**其余行居中**。
 因为markdown中`\`是转义符，所以`\\`才表示一个\\,所以这里要写四个`\`(`\\\\`)
 ```
 $$
-\begin{multline}a + b + c + d + e + f+ g + h + i \\
-= j + k + l + m + n\\
-= o + p + q + r + s\\= t + u + v + x + z\end{multline}
+\begin{multline}a + b + c + d + e + f+ g + h + i \\\\
+= j + k + l + m + n\\\\
+= o + p + q + r + s\\\\
+= t + u + v + x + z\end{multline}
 $$
 ```
 
 $$
-\begin{multline}a + b + c + d + e + f+ g + h + i \\
-= j + k + l + m + n\\
-= o + p + q + r + s\\= t + u + v + x + z\end{multline}
+\begin{multline}a + b + c + d + e + f+ g + h + i \\\\
+= j + k + l + m + n\\\\
+= o + p + q + r + s\\\\
+= t + u + v + x + z\end{multline}
 $$
 
-与表格不同的是，公式的最后一行不写`\\`，如果写了，反倒会产生一个多余的空行。类似equation\*，multline\*环境排版不带编号的折行长公式。
+与表格不同的是，公式的最后一行不写`\\`，如果写了，反倒会产生一个多余的空行。类似`equation\*`，`multline\*`环境排版不带编号的折行长公式。
 
+**需要注意的是，只是在Hexo的默认Markdown渲染器中才需要使用四个反斜杠**
+**为了通用，本文下面的演示代码都使用两个反斜杠**
 ## 多行公式 ##
 更多的情况是，我们需要罗列一系列公式，并令其按照等号对齐。读者可能阅读过其它手册或者资料，知道LATEX提供了eqnarray环境。它按照等号左边——等号——等号右边呈三列对齐，但等号周围的空隙过大，加上公式编号等一些bug，目前已不推荐使用
 
@@ -294,7 +298,7 @@ $$
 ```
 $$
 \begin{align}
-a & = b + c \\
+a & = b + c \\\\
 & = d + e
 \end{align}
 $$
@@ -312,9 +316,9 @@ $$
 ```
 $$
 \begin{align}
-a ={} & b + c \\
-={} & d + e + f + g + h + i+ j + k + l \notag \\
-& + m + n + o \\
+a ={} & b + c \\\\
+={} & d + e + f + g + h + i+ j + k + l \notag \\\\
+& + m + n + o \\\\
 ={} & p + q + r + s
 \end{align}
 $$
@@ -330,7 +334,7 @@ $$
 ```
 $$
 \begin{align}
-a &=1  &  b &=2   & c &=3   \\
+a &=1  &  b &=2   & c &=3   \\\\
 d &=-1 &  e &=-2  & f &=-5
 \end{align}
 $$
@@ -348,17 +352,17 @@ $$
 ```
 $$
 \begin{gather}
-a = b + c \\
-d = e + f + g \\
-h + i = j + k \notag \\
+a = b + c \\\\
+d = e + f + g \\\\
+h + i = j + k \notag \\\\
 l + m = n
 \end{gather}
 $$
 
-align和gather有对应的不带编号的版本align\*和gather\*。
+align和gather有对应的不带编号的版本`align\*`和`gather\*`。
 
 ### 公用编号的多行公式 ###
-另一个常见的需求是将多个公式组在一起公用一个编号，编号位于公式的居中位置。为此，amsmath宏包提供了诸如aligned、gathered等环境，与equation环境套用。以-ed结尾的环境用法与前一节不以-ed结尾的环境用法一一对应。我们仅以aligned举例：
+另一个常见的需求是将多个公式组在一起公用一个编号，编号位于公式的居中位置。为此，amsmath宏包提供了诸如aligned、gathered等环境，与equation环境套用。以-ed结尾的环境用法与前一节不以`-ed`结尾的环境用法一一对应。我们仅以aligned举例：
 ```
 $$
 \begin{equation}
@@ -374,9 +378,9 @@ $$
 $$
 \begin{equation}
 \begin{aligned}
-a &= b + c \\
-d &= e + f + g \\
-h + i &= j + k \\
+a &= b + c \\\\
+d &= e + f + g \\\\
+h + i &= j + k \\\\
 l + m &= n
 \end{aligned}
 \end{equation}
@@ -402,10 +406,10 @@ $$
 \int_a^b f(x)\,\mathrm{d}x
 $$
 
-另一个用途是生成多重积分号。如果我们直接连写两个\int，之间的间距将会过宽，此时可以使用负间距\\!修正之。不过amsmath提供了更方便的多重积分号，如**二重积分`\iint`**、**三重积分`\iiint`**等。
+另一个用途是生成多重积分号。如果我们直接连写两个\int，之间的间距将会过宽，此时可以使用负间距`\\!`修正之。不过amsmath提供了更方便的多重积分号，如**二重积分`\iint`**、**三重积分`\iiint`**等。
 
 # 数组和矩阵 #
-为了排版二维数组，LATEX提供了array环境，用法与tabular环境极为类似，也需要定义列格式，并用\\换行。数组可作为一个公式块，在外套用\left、\right等定界符:
+为了排版二维数组，LATEX提供了array环境，用法与tabular环境极为类似，也需要定义列格式，并用`\\`换行。数组可作为一个公式块，在外套用`\left`、`\right`等定界符:
 ```
 $$
 \mathbf{X} = \left(
@@ -422,10 +426,10 @@ $$
 $$
 \mathbf{X} = \left(
 \begin{array}{cccc}
-x_{11} & x_{12} & \ldots & x_{1n}\\
-x_{21} & x_{22} & \ldots & x_{2n}\\
-\vdots & \vdots & \ddots & \vdots\\
-x_{n1} & x_{n2} & \ldots & x_{nn}\\
+x_{11} & x_{12} & \ldots & x_{1n}\\\\
+x_{21} & x_{22} & \ldots & x_{2n}\\\\
+\vdots & \vdots & \ddots & \vdots\\\\
+x_{n1} & x_{n2} & \ldots & x_{nn}\\\\
 \end{array}
 \right)
 $$
@@ -441,11 +445,12 @@ x & \text{if } x > 0.
 \end{array} \right. 
 $$
 ```
+
 $$
-|x| = \left\{
+|x| = \left \\{
 \begin{array}{rl}
--x & \text{if } x < 0,\\
-0 & \text{if } x = 0,\\
+-x & \text{if } x < 0,\\\\
+0 & \text{if } x = 0,\\\\
 x & \text{if } x > 0.
 \end{array} \right. 
 $$
@@ -463,12 +468,12 @@ x & \text{if } x > 0.
 ```
 $$ |x| =
 \begin{cases}
--x & \text{if } x < 0,\\
-0 & \text{if } x = 0,\\
+-x & \text{if } x < 0,\\\\
+0 & \text{if } x = 0,\\\\
 x & \text{if } x > 0.
 \end{cases} $$
 
-我们当然也可以用array环境排版各种矩阵。amsmath宏包还直接提供了多种排版矩阵的环境，包括不带定界符的matrix，以及带各种定界符的矩阵pmatrix（(）、bmatrix（[）、Bmatrix（{）、vmatrix（）、Vmatrix（）。使用这些环境时，无需给定列格式5：
+我们当然也可以用array环境排版各种矩阵。amsmath宏包还直接提供了多种排版矩阵的环境，包括不带定界符的matrix，以及带各种定界符的矩阵pmatrix（`(`）、bmatrix（`[`）、Bmatrix（`{`）、vmatrix（`|`）、Vmatrix（`||`）。使用这些环境时，无需给定列格式5：
 
 ```
 $$
@@ -488,14 +493,60 @@ $$
 1 & 2 \\\\ 3 & 4
 \end{matrix} \qquad
 \begin{bmatrix}
-x_{11} & x_{12} & \ldots & x_{1n}\\
-x_{21} & x_{22} & \ldots & x_{2n}\\
-\vdots & \vdots & \ddots & \vdots\\
-x_{n1} & x_{n2} & \ldots & x_{nn}\\
+x_{11} & x_{12} & \ldots & x_{1n}\\\\
+x_{21} & x_{22} & \ldots & x_{2n}\\\\
+\vdots & \vdots & \ddots & \vdots\\\\
+x_{n1} & x_{n2} & \ldots & x_{nn}\\\\
 \end{bmatrix}
 $$
 
-在矩阵中的元素里排版分式时，一来要用到\dfrac等命令，二来行与行之间有可能紧贴着，这时要用到3.6.6小节的方法来调节间距：
+```
+$$
+\begin{pmatrix}
+1 & 2 \\ 3 & 4
+\end{pmatrix}
+\qquad
+\begin{bmatrix}
+1 & 2 \\ 3 & 4
+\end{bmatrix}
+\qquad
+\begin{Bmatrix}
+1 & 2 \\ 3 & 4
+\end{Bmatrix}
+\qquad
+\begin{vmatrix}
+1 & 2 \\ 3 & 4
+\end{vmatrix}
+\qquad
+\begin{Vmatrix}
+1 & 2 \\ 3 & 4
+\end{Vmatrix}
+$$
+```
+显示效果：
+$$
+\begin{pmatrix}
+1 & 2 \\\\ 3 & 4
+\end{pmatrix}
+\qquad
+\begin{bmatrix}
+1 & 2 \\\\ 3 & 4
+\end{bmatrix}
+\qquad
+\begin{Bmatrix}
+1 & 2 \\\\ 3 & 4
+\end{Bmatrix}
+\qquad
+\begin{vmatrix}
+1 & 2 \\\\ 3 & 4
+\end{vmatrix}
+\qquad
+\begin{Vmatrix}
+1 & 2 \\\\ 3 & 4
+\end{Vmatrix}
+$$
+
+在矩阵中的元素里排版分式时，一来要用到`\dfrac`等命令，二来行与行之间有可能紧贴着，这时要用到3.6.6小节的方法来调节间距：
 ```
 $$
 \mathbf{H}=
@@ -514,7 +565,7 @@ $$
 \begin{bmatrix}
 \dfrac{\partial^2 f}{\partial x^2} &
 \dfrac{\partial^2 f}
-{\partial x \partial y} \\
+{\partial x \partial y} \\\\
 \dfrac{\partial^2 f}
 {\partial x \partial y} &
 \dfrac{\partial^2 f}{\partial y^2}
@@ -570,10 +621,10 @@ $$
 
 |文本/数学模式通用符号|命令|
 |:-|:-|
-|$\{$|\{|
-|$\}$|\}|
-|$\$$|\$|
-|$\%$|\%|
+|$\\{$|\{|
+|$\\}$|\}|
+|$\\$$|\$|
+|$\\%$|\%|
 |$\dag$|\dag|
 |$\S$|\S|
 |$\copyright$|\copyright|
@@ -686,13 +737,20 @@ latex希腊字母符号代码就是`斜杠+其英文名称`，如`$\alpha$`:$\al
 ## 巨算符 ##
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/jusuanfu.png)
 ## 箭头 ##
+https://learnku.com/articles/46821
 除了作为上下标之外，箭头还用于表示过程。amsmath的`\xleftarrow`和`\xrightarrow`命令可以为箭头增加上下标：
 ```
 $$ a\xleftarrow{x+y+z} b $$
-$$c\xrightarrow[x<y]{a*b*c}d $$
+$$ c\xrightarrow[x<y]{a*b*c}d $$
 ```
-$$ a\xleftarrow{x+y+z} b$$
-$$c\xrightarrow[x<y]{a*b*c}d $$
+显示效果:
+$$
+a\xleftarrow{x+y+z} b
+$$
+和
+$$
+c \xrightarrow [x<y]{a\*b\*c} d
+$$
 
 ### 箭头详细表 图片
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/jiantou.png)
@@ -706,8 +764,6 @@ $$c\xrightarrow[x<y]{a*b*c}d $$
 |$\leftrightarrow$|\leftrightarrow|$\longleftrightarrow$|\longleftrightarrow|
 |$\Leftarrow$|\Leftarrow|$\Longleftarrow$|\Longleftarrow|
 |$\Rightarrow$|\Rightarrow|$\Longrightarrow$|\Longrightarrow|
-
-<!-- ||||| -->
 
 
 # 括号和定界符 #
@@ -741,5 +797,3 @@ $$
 # 参考链接 #
 参考文献: [http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf](http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf)
 参考链接: [https://blog.csdn.net/thither_shore/article/details/52260742](https://blog.csdn.net/thither_shore/article/details/52260742)
-
-
