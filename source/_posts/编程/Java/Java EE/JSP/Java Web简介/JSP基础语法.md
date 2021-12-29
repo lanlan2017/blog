@@ -56,7 +56,7 @@ JSP页面中共有三种注释
 |:--|:--|
 |<a href="https://fanyi.baidu.com/?#en/zh/annotation">annotation</a>|<img src="/images/play.png" onclick="paly_audioID20181207012922();" class="shake-little" style="border: 0px;" title="点击播放">|
 
-<audio src="http://fanyi.baidu.com/gettts?lan=en&text=annotation&spd=3&source=web" id="audioID20181207012922"></audio>
+<audio src="https://fanyi.baidu.com/gettts?lan=en&text=annotation&spd=3&source=web" id="audioID20181207012922"></audio>
 <script>
     function paly_audioID20181207012922() {var id = document.getElementById("audioID20181207012922");if (id != null) {id.play();}}
 </script>

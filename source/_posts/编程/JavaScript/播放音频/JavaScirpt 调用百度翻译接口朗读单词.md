@@ -10,14 +10,14 @@ abbrlink: 9c369915
 ---
 # 百度翻译音频的下载链接格式
 ```
-http://fanyi.baidu.com/gettts?lan=en&text=单词&spd=5&source=web
+https://fanyi.baidu.com/gettts?lan=en&text=单词&spd=5&source=web
 ```
 其中spd表示速度,数值越大朗读越快.
 # 示例
 ```html
 点击播放(omega):<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWS3')"></i>
 
-<audio src="http://fanyi.baidu.com/gettts?lan=en&text=omega&spd=5&source=web" id="audioID5JswJWS3"></audio>
+<audio src="https://fanyi.baidu.com/gettts?lan=en&text=omega&spd=5&source=web" id="audioID5JswJWS3"></audio>
 <script>
   function play(id){
     if(id!=null){
@@ -28,7 +28,7 @@ http://fanyi.baidu.com/gettts?lan=en&text=单词&spd=5&source=web
 ```
 点击播放(omega):<i class="fa fa-play" aria-hidden="true" onclick="play('audioID5JswJWS3')"></i>
 
-<audio src="http://fanyi.baidu.com/gettts?lan=en&text=omega&spd=5&source=web" id="audioID5JswJWS3"></audio>
+<audio src="https://fanyi.baidu.com/gettts?lan=en&text=omega&spd=5&source=web" id="audioID5JswJWS3"></audio>
 <script>
   function play(id){
     if(id!=null){
@@ -44,8 +44,8 @@ function sst(text) {
     // 创建<audio></audio>元素
     var audio = document.createElement("audio");
     // 设置音频地址
-    audio.src = "http://fanyi.baidu.com/gettts?lan=en&text=" + text + "&spd=5&source=web";
-    // audio.src = "http://fanyi.baidu.com/gettts?lan=en&text=omega&spd=5&source=web";
+    audio.src = "https://fanyi.baidu.com/gettts?lan=en&text=" + text + "&spd=5&source=web";
+    // audio.src = "https://fanyi.baidu.com/gettts?lan=en&text=omega&spd=5&source=web";
     // 添加到body元素中
     document.body.appendChild(audio);
     console.log(audio.src);
@@ -68,8 +68,8 @@ function sst(text) {
         // 创建<audio></audio>元素
         var audio = document.createElement("audio");
         // 设置音频地址
-        audio.src = "http://fanyi.baidu.com/gettts?lan=en&text=" + text + "&spd=5&source=web";
-        // audio.src = "http://fanyi.baidu.com/gettts?lan=en&text=omega&spd=5&source=web";
+        audio.src = "https://fanyi.baidu.com/gettts?lan=en&text=" + text + "&spd=5&source=web";
+        // audio.src = "https://fanyi.baidu.com/gettts?lan=en&text=omega&spd=5&source=web";
         // 添加到body元素中
         document.body.appendChild(audio);
         // console.log(audio.src);
@@ -90,7 +90,7 @@ function sst(text) {
 <script>
     function sst(text) {
         var audio = document.createElement("audio");
-        audio.src = "http://fanyi.baidu.com/gettts?lan=en&text=" + text + "&spd=5&source=web";
+        audio.src = "https://fanyi.baidu.com/gettts?lan=en&text=" + text + "&spd=5&source=web";
         document.body.appendChild(audio);
         audio.loop = false;
         audio.play();

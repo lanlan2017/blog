@@ -120,11 +120,11 @@ javadoc -d C:\Users\lan\Desktop\TestJavaDoc Test.java JavadocTagTest.java
 
 
 
-<audio src="http://fanyi.baidu.com/gettts?lan=en&text=author&spd=3&source=web" id="audioID20190131222552"></audio>
+<audio src="https://fanyi.baidu.com/gettts?lan=en&text=author&spd=3&source=web" id="audioID20190131222552"></audio>
 <script>
     function paly_audioID20190131222552() {var id = document.getElementById("audioID20190131222552");if (id != null) {id.play();}}
 </script>
-<audio src="http://fanyi.baidu.com/gettts?lan=en&text=deprecated&spd=3&source=web" id="audioID20190131222419"></audio>
+<audio src="https://fanyi.baidu.com/gettts?lan=en&text=deprecated&spd=3&source=web" id="audioID20190131222419"></audio>
 <script>
     function paly_audioID20190131222419() {var id = document.getElementById("audioID20190131222419");if (id != null) {id.play();}}
 </script>

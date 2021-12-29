@@ -20,15 +20,15 @@ abbrlink: 9f0a034b
 |<a href="https://fanyi.baidu.com/?#en/zh/border">border</a>|<img src="/images/play.png" onclick="paly_audioID20181206120033();" class="shake-little" style="border: 0px;" title="点击播放">|
 |<a href="https://fanyi.baidu.com/?#en/zh/bottom">bottom</a>|<img src="/images/play.png" onclick="paly_audioID20181206120114();" class="shake-little" style="border: 0px;" title="点击播放">|
 
-<audio src="http://fanyi.baidu.com/gettts?lan=en&text=bottom&spd=3&source=web" id="audioID20181206120114"></audio>
+<audio src="https://fanyi.baidu.com/gettts?lan=en&text=bottom&spd=3&source=web" id="audioID20181206120114"></audio>
 <script>
     function paly_audioID20181206120114() {var id = document.getElementById("audioID20181206120114");if (id != null) {id.play();}}
 </script>
-<audio src="http://fanyi.baidu.com/gettts?lan=en&text=border&spd=3&source=web" id="audioID20181206120033"></audio>
+<audio src="https://fanyi.baidu.com/gettts?lan=en&text=border&spd=3&source=web" id="audioID20181206120033"></audio>
 <script>
     function paly_audioID20181206120033() {var id = document.getElementById("audioID20181206120033");if (id != null) {id.play();}}
 </script>
-<audio src="http://fanyi.baidu.com/gettts?lan=en&text=padding&spd=3&source=web" id="audioID20181206120004"></audio>
+<audio src="https://fanyi.baidu.com/gettts?lan=en&text=padding&spd=3&source=web" id="audioID20181206120004"></audio>
 <script>
     function paly_audioID20181206120004() {var id = document.getElementById("audioID20181206120004");if (id != null) {id.play();}}
 </script>

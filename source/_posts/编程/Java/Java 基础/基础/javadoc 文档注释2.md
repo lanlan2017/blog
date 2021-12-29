@@ -133,7 +133,7 @@ javadoc  标记有如下一些:
 |:--|:--|
 |<a href="https://fanyi.baidu.com/?#en/zh/param">param</a>|<img src="/images/play.png" onclick="paly_audioID5Jsw7CXj();" class="shake-little" style="border: 0px;" title="点击播放">|
 
-<audio src="http://fanyi.baidu.com/gettts?lan=en&text=param&spd=5&source=web" id="audioID5Jsw7CXj"></audio>
+<audio src="https://fanyi.baidu.com/gettts?lan=en&text=param&spd=5&source=web" id="audioID5Jsw7CXj"></audio>
 <script>
     function paly_audioID5Jsw7CXj() {var id = document.getElementById("audioID5Jsw7CXj");if (id != null) {id.play();}}
 </script>
