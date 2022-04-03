@@ -9,9 +9,15 @@ date: 2021-12-19 16:41:54
 updated: 2021-12-19 16:41:54
 ---
 # 更新hexo5+next8
+更新的hexo5与我原来的旧版的next主题不兼容，所以无法直接在原站点(blog)进行更新。因此，我的做法是直接创建一个新站点(blog_new)，然后把原站点(blog)上的文章复制到新站点(blog_new)上。
+<!-- more -->
+
 ## 更新nodejs
+
 ### 使用nvm
+
 #### 安装nvm
+略....
 使用nvm管理nodejs，使用nvm切换node版本
 
 ## 更新hexo-cli
@@ -42,7 +48,6 @@ tz: 2021a
 unicode: 13.0
 ```
 ## hexo init新站点
-更新的hexo5与原来的next主题不兼容，所以无法直接在原站点(blog)进行更新。因此，我的做法是直接创建一个新站点(blog_new)，然后把原站点(blog)上的文章复制到新站点(blog_new)上。
 ```
 18190@DESKTOP-SH3MQPI MINGW64 /g/Blog
 $ hexo init blog_new

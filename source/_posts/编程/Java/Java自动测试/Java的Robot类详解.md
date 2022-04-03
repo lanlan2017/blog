@@ -12,7 +12,7 @@ updated: 2022-03-26 15:17:05
 Java中Robot类位于java.awt.Robot，该类用于为测试自动化，自运行演示程序和其他需要控制鼠标和键盘的应用程序,生成本机系统输入事件.
 
 Robot可以模拟鼠标和键盘的输入，相当于Java版的按键精灵。
-
+<!-- more -->
 ## 1.创建实例
 ```java
 Robot robot = new Robot();
@@ -92,6 +92,7 @@ robot.setAutoDelay(int ms);
 ```
 
 ## 示例
+
 ### 示例：截取指定矩形区域的图像，并保存到指定的路径
 ```java
 public static void main(String[] args) throws AWTException, IOException {
