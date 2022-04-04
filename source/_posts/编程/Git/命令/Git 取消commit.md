@@ -1,12 +1,11 @@
 ---
 title: Git 取消commit
 categories: 
-  - 编程
   - Git
   - 命令
-date: 2019-11-28 16:08:50
-updated: 2021-03-20 10:03:11
 abbrlink: ae0d2128
+date: 2019-11-28 16:08:50
+updated: 2022-04-04 00:51:45
 ---
 # 问题描述
 你可能在执行git add .和git commit -m 'xxx'之后后悔了,如何回退到上一个版本呢。

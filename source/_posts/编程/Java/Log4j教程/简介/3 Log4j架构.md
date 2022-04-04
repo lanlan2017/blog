@@ -1,13 +1,12 @@
 ---
 title: 3 Log4j架构
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - 简介
-date: 2020-08-03 03:47:33
-updated: 2021-03-20 09:38:13
 abbrlink: 39ac74b8
+date: 2020-08-03 03:47:33
+updated: 2022-04-04 00:51:44
 ---
 # log4j架构
 ## Log4j采用分层架构

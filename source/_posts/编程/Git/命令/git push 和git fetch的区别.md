@@ -1,12 +1,11 @@
 ---
 title: git push 和git fetch的区别
 categories: 
-  - 编程
   - Git
   - 命令
-date: 2019-12-03 19:40:41
-updated: 2020-04-11 09:21:19
 abbrlink: bd41df27
+date: 2019-12-03 19:40:41
+updated: 2022-04-04 00:51:45
 ---
 # git push和git fetch的区别
 - git fetch只下载不合并,然后需要手动合并.

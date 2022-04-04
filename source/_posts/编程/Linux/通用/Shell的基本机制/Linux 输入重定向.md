@@ -1,13 +1,12 @@
 ---
 title: Linux 输入重定向
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - Shell的基本机制
 abbrlink: 265ffeb5
 date: 2021-06-26 17:02:11
-updated: 2021-06-26 17:02:11
+updated: 2022-04-04 00:51:45
 ---
 # 输入重定向（从数据文件中获取stdin）
 ```sh

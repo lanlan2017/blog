@@ -1,13 +1,12 @@
 ---
 title: Java Web项目常用Maven依赖
 categories: 
-  - 编程
   - Java
   - Java EE
   - 环境搭建
-date: 2019-04-29 20:25:38
-updated: 2020-04-11 09:21:19
 abbrlink: c20afdb9
+date: 2019-04-29 20:25:38
+updated: 2022-04-04 00:51:44
 ---
 # Java Web项目常用Maven依赖 #
 ## Spring MVC Maven依赖 ##

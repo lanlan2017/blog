@@ -1,14 +1,13 @@
 ---
 title: Linux wc命令
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文本文件及其处理命令
   - 处理文本文件
 abbrlink: 3bb57d1c
 date: 2021-04-24 13:30:27
-updated: 2021-04-24 13:30:27
+updated: 2022-04-04 00:51:45
 ---
 # Linux wc命令
 功能

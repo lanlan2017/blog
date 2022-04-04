@@ -1,12 +1,11 @@
 ---
 title: idea 在工具栏添加Setting等图标
-categories:
-  - 编程
+categories: 
   - IDE
   - Idea
 abbrlink: 73fe9da8
 date: 2021-08-26 10:55:50
-updated: 2021-08-26 10:55:50
+updated: 2022-04-04 00:51:45
 ---
 # 工具栏上的setting按钮消失
 今天更新idea之后，工具栏上的setting和Project Structure等常用功能都消失了。

@@ -1,12 +1,11 @@
 ---
 title: eclipse 向下复制一行快捷键 Ctrl+Alt+Down 造成屏幕显示颠倒的问题
 categories: 
-  - 编程
   - IDE
   - eclipse
-date: 2021-07-28 20:17:09
-updated: 2021-07-28 20:24:59
 abbrlink: 2af6fa22
+date: 2021-07-28 20:17:09
+updated: 2022-04-04 00:51:45
 ---
 # 问题描述
 eclipse中，向下复制一行的快捷键为Ctrl+Alt+Down快捷键,但是按下这个快捷键会造成屏幕的显示方向上下颠倒。

@@ -1,12 +1,11 @@
 ---
 title: Git 修改git commit的描述信息
 categories: 
-  - 编程
   - Git
   - 命令
-date: 2019-12-08 22:49:12
-updated: 2020-04-11 09:21:19
 abbrlink: 4e1204e0
+date: 2019-12-08 22:49:12
+updated: 2022-04-04 00:51:45
 ---
 # commit后还没有push
 输入如下命令:

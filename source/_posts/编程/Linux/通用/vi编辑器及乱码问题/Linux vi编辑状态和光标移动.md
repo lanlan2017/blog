@@ -1,13 +1,12 @@
 ---
 title: Linux vi编辑状态和光标移动
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - vi编辑器及乱码问题
 abbrlink: f09fb131
 date: 2021-05-20 16:49:27
-updated: 2021-05-20 16:49:27
+updated: 2022-04-04 00:51:45
 ---
 # vi用户的偏好设置
 

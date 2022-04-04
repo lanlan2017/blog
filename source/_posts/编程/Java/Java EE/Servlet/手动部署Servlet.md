@@ -1,13 +1,12 @@
 ---
 title: 手动部署Servlet
 categories: 
-  - 编程
   - Java
   - Java EE
   - Servlet
-date: 2019-04-19 14:31:25
-updated: 2020-04-11 09:21:19
 abbrlink: 4a8ee7ac
+date: 2019-04-19 14:31:25
+updated: 2022-04-04 00:51:44
 ---
 # 手动部署Servlet #
 ## 创建项目结构 ##

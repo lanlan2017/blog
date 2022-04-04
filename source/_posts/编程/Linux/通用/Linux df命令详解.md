@@ -1,12 +1,11 @@
 ---
 title: Linux df命令详解
 categories: 
-  - 编程
   - Linux
   - 通用
 abbrlink: a8f2d755
 date: 2021-03-23 06:00:43
-updated: 2021-03-24 00:30:25
+updated: 2022-04-04 00:51:45
 ---
 # df命令
 Linux df（英文全拼：disk free） 命令用于显示目前在 Linux 系统上的文件系统磁盘使用情况统计。

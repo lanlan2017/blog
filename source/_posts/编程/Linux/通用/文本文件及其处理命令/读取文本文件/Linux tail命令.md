@@ -1,14 +1,13 @@
 ---
 title: Linux tail命令
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文本文件及其处理命令
   - 读取文本文件
 abbrlink: 1f720624
 date: 2021-03-24 06:39:45
-updated: 2021-03-28 15:33:45
+updated: 2022-04-04 00:51:45
 ---
 # tail命令
 tail 命令可用于查看文件的内容，**有一个常用的参数 -f 常用于查阅正在改变的日志文件。**

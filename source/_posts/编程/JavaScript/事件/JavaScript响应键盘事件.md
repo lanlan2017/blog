@@ -1,12 +1,11 @@
 ---
 title: JavaScript响应键盘事件
 categories: 
-  - 编程
   - JavaScript
   - 事件
 abbrlink: 5b7f1159
 date: 2021-03-31 11:52:45
-updated: 2021-04-03 15:42:52
+updated: 2022-04-04 00:51:45
 ---
 # JavaScript响应键盘事件
 ## 监听键盘弹起事件

@@ -1,13 +1,12 @@
 ---
 title: 解决JSP中include指令导入的tag HTML文件出现乱码问题
 categories: 
-  - 编程
   - Java
   - Java EE
   - 标签文件
-date: 2019-04-12 15:16:17
-updated: 2020-04-11 09:21:19
 abbrlink: ae393936
+date: 2019-04-12 15:16:17
+updated: 2022-04-04 00:51:44
 ---
 ## 问题描述 ##
 在JSP页面中导入了自定义的标签文件出现乱码,这里涉及到四个文件分别是:

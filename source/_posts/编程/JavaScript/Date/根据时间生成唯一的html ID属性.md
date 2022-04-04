@@ -1,12 +1,11 @@
 ---
 title: 根据时间生成唯一的html ID属性
 categories: 
-  - 编程
   - JavaScript
   - Date
-date: 2018-12-08 00:16:53
-updated: 2021-03-20 10:27:04
 abbrlink: e23c09a2
+date: 2018-12-08 00:16:53
+updated: 2022-04-04 00:51:45
 ---
 # 根据时间生成唯一的html ID属性
 ```html

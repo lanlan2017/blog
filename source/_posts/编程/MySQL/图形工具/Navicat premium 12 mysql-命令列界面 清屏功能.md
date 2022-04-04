@@ -1,12 +1,11 @@
 ---
 title: Navicat premium 12 mysql-命令列界面 清屏功能
 categories: 
-  - 编程
   - MySQL
   - 图形工具
-date: 2019-10-25 16:28:41
-updated: 2021-03-20 10:20:21
 abbrlink: e1bb0d5c
+date: 2019-10-25 16:28:41
+updated: 2022-04-04 00:51:45
 ---
 # Navicat premium 12 mysql-命令列界面 清屏功能
 点击菜单栏上的`查看`,然后点击`清除`即可.

@@ -1,13 +1,12 @@
 ---
 title: eclipse 创建mybatis-config.xml 创建mapper.xml文件
 categories: 
-  - 编程
   - Java
   - Java EE
   - 环境搭建
-date: 2019-06-07 15:34:05
-updated: 2020-04-11 09:21:19
 abbrlink: 44aa2f70
+date: 2019-06-07 15:34:05
+updated: 2022-04-04 00:51:44
 ---
 # eclipse 创建mybatis-config.xml 创建mapper.xml文件 #
 ## 下载mybatis的jar包 ##

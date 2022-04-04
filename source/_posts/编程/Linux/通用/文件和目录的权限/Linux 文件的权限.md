@@ -1,13 +1,12 @@
 ---
 title: Linux 文件的权限
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件和目录的权限
 abbrlink: 34b03a11
 date: 2021-06-23 15:25:38
-updated: 2021-06-23 15:25:38
+updated: 2022-04-04 00:51:45
 ---
 # 文件的权限
 用于控制**进程**对系统中**文件和目录**的访问

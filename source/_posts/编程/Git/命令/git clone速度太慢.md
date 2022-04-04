@@ -1,12 +1,11 @@
 ---
 title: git clone速度太慢
 categories: 
-  - 编程
   - Git
   - 命令
-date: 2019-08-12 12:55:50
-updated: 2021-03-20 10:03:29
 abbrlink: 1f883a6b
+date: 2019-08-12 12:55:50
+updated: 2022-04-04 00:51:45
 ---
 # 原文链接
 [https://blog.csdn.net/shahuhu000/article/details/83965642#commentBox](https://blog.csdn.net/shahuhu000/article/details/83965642#commentBox)

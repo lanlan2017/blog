@@ -1,12 +1,11 @@
 ---
 title: HTML table 对齐 align属性
 categories: 
-  - 编程
   - HTML
   - 表格
-date: 2019-03-28 14:47:35
-updated: 2021-03-20 10:34:11
 abbrlink: aa51abd2
+date: 2019-03-28 14:47:35
+updated: 2022-04-04 00:51:45
 ---
 # HTML 表格对齐方式
 `align `属性规定表格相对于周围元素的对齐方式。这个东西有时候会忘掉.还是记录一下,以便下次查找.

@@ -1,15 +1,15 @@
 ---
 title: 正则表达式 实现html 表格转markdown表格
-categories:
+categories: 
   - 其他
   - 正则表达式
   - 应用
 abbrlink: 211bb72a
 date: 2018-12-17 01:40:14
-updated: 2019-12-17 05:18:53
+updated: 2022-04-04 00:51:45
 ---
-## 抓取文章信息 ##
-### 匹配正则 ###
+## 抓取文章信息
+### 匹配正则
 ```
 .+<div class="post-body".*?>(.+?)<\/div>.+
 ```
@@ -23,12 +23,12 @@ $1
 <table><thead><tr><th style="text-align:left">序号</th><th style="text-align:left">方法</th><th style="text-align:left">描述</th></tr></thead><tbody><tr><td style="text-align:left">1</td><td style="text-align:left">String getCharacterEncoding()</td><td style="text-align:left">返回响应用的是何种字符编码</td></tr><tr><td style="text-align:left">2</td><td style="text-align:left">void setContentType(String type)</td><td style="text-align:left">设置响应的MIME类型</td></tr><tr><td style="text-align:left">3</td><td style="text-align:left">PrintWriter getwriter()</td><td style="text-align:left">返回可以向客户端输出字符的一个输出流对象(注意比较PrintWriter与内置out对象的区别)</td></tr></tbody></table>
 ```
 转markdown的时候样式是不需要的，先删除样式：
-### 删除内嵌样式 ###
-#### 匹配正则 ####
+### 删除内嵌样式
+#### 匹配正则
 ```
 (<t[h|d]) style=.*?(>)
 ```
-#### 替换正则 ####
+#### 替换正则
 ```
 $1$2
 ```
@@ -36,7 +36,7 @@ $1$2
 ```
 <table><thead><tr><th>序号</th><th>方法</th><th>描述</th></tr></thead><tbody><tr><td>1</td><td>String getCharacterEncoding()</td><td>返回响应用的是何种字符编码</td></tr><tr><td>2</td><td>void setContentType(String type)</td><td>设置响应的MIME类型</td></tr><tr><td>3</td><td>PrintWriter getwriter()</td><td>返回可以向客户端输出字符的一个输出流对象(注意比较PrintWriter与内置out对象的区别)</td></tr></tbody></table>
 ```
-### 生成分割符 ###
+### 生成分割符
 
 **匹配正则:**
 ```
@@ -46,11 +46,11 @@ $1$2
 ```
 |
 ```
-#### 替换结果 ####
+#### 替换结果
 ```
 <table><thead><tr>|序号|方法|描述|</tr></thead><tbody><tr>|1|String getCharacterEncoding()|返回响应用的是何种字符编码|</tr><tr>|2|void setContentType(String type)|设置响应的MIME类型|</tr><tr>|3|PrintWriter getwriter()|返回可以向客户端输出字符的一个输出流对象(注意比较PrintWriter与内置out对象的区别)|</tr></tbody></table>
 ```
-### 按行分割 ###
+### 按行分割
 **匹配正则:**`<tr>(.+?)</tr>`
 **替换正则:**`$1\n`
 **替换结果:**
@@ -62,7 +62,7 @@ $1$2
 </tbody></table>
 ```
 
-### 删除其他html多余标签行 ###
+### 删除其他html多余标签行
 **匹配正则:**
 ```
 <\/?(?:table|thead|tbody)>
@@ -77,7 +77,7 @@ $1$2
 
 ```
 
-### 生成对齐方式 ###
+### 生成对齐方式
 剩下的就交给java来解决吧。一行一行的遍历这个字符串，**在第二行的时候，把里面的文本替换成对齐方式即可**。
 **匹配正则** 
 ```
@@ -88,7 +88,7 @@ $1$2
 ```
 :--|
 ```
-#### java代码 ####
+#### java代码
 要想单纯的替换第二行，首先要知道现在匹配的是第几次，这里我通过使用计数器来实现。
 匹配到第二次的时候，我先获取匹配的文本，然后对修改该文生成一个新的文本(对齐方式)。
 接下来就是要使用新的文本替换字符串中旧的文本了，这里使用`Matcher.appendReplacement(StringBuffer sb, String replacement)`这个方法，这个方法可以在匹配过程中动态的替换，但是与其他替换方法不同，其他替换方法会把替换的结果直接返回，但appendReplacement方法替换后的结果会放在sb参数中。还有就是appendReplacement方法只会把扫描过的文本放到sb中，没有扫描的文本它不管，使用`Matcher.appendTail(StringBuffer sb)`可以把没有扫描过的文本追加到sb中。这样才真正做到动态的替换。
@@ -116,7 +116,7 @@ while (alignMatcher.find())
 }
 
 ```
-#### 替换结果 ####
+#### 替换结果
 ```
 |序号|方法|描述|
 |:--|:--|:--|
@@ -132,7 +132,7 @@ while (alignMatcher.find())
 |2|void setContentType(String type)|设置响应的MIME类型|
 |3|PrintWriter getwriter()|返回可以向客户端输出字符的一个输出流对象(注意比较PrintWriter与内置out对象的区别)|
 
-## html table转Markdown Java方法 ##
+## html table转Markdown Java方法
 ```java
 public static String table2Markdown(String htmlTable)
 {

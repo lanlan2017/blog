@@ -1,13 +1,12 @@
 ---
 title: 使用MyBatis是出现的Bug
 categories: 
-  - 编程
   - Java
   - Java EE
   - DeBug
-date: 2019-06-09 17:26:12
-updated: 2020-04-11 09:21:19
 abbrlink: 5aecc643
+date: 2019-06-09 17:26:12
+updated: 2022-04-04 00:51:44
 ---
 # Type interface mapper.UserMapper is not known to the MapperRegistry. #
 ```cmd

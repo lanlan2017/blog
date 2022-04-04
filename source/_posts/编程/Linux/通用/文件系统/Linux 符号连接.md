@@ -1,13 +1,12 @@
 ---
 title: Linux 符号连接
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件系统
 abbrlink: 72e4a8f6
 date: 2021-06-20 17:07:09
-updated: 2021-06-20 17:07:09
+updated: 2022-04-04 00:51:45
 ---
 # 符号连接
 ## 符号连接也叫软连接

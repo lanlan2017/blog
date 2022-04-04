@@ -1,12 +1,12 @@
 ---
 title: b站网页版的画中画模式没有弹幕
-categories:
+categories: 
   - Windows
   - 软件
   - Chrome浏览器
 abbrlink: 7f36a8b9
 date: 2020-08-05 03:04:10
-updated: 2020-08-05 03:26:11
+updated: 2022-04-04 00:51:44
 ---
 # b站网页版的画中画模式没有弹幕
 到今天为止,画中画模式确实没有弹幕.

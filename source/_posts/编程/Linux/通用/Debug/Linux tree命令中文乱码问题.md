@@ -1,13 +1,12 @@
 ---
 title: Linux tree命令中文乱码问题
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - Debug
 abbrlink: a192b88d
 date: 2021-06-02 17:46:51
-updated: 2021-06-02 17:46:51
+updated: 2022-04-04 00:51:45
 ---
 # tree命令中文乱码问题
 tree打印目录树时，遇到中文的目录或文件名时，打印的是`\数字`：

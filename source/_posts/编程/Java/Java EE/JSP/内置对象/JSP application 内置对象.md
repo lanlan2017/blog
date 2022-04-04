@@ -1,14 +1,13 @@
 ---
 title: JSP application 内置对象
 categories: 
-  - 编程
   - Java
   - Java EE
   - JSP
   - 内置对象
-date: 2018-12-19 15:11:38
-updated: 2020-04-11 09:21:19
 abbrlink: bc7737a8
+date: 2018-12-19 15:11:38
+updated: 2022-04-04 00:51:44
 ---
 # application内置对象 #
 application对象用于保存所有应用程序中的公有数据。**它在服务器启动时自动创建,在服务器停止时销毁**。所有用户都可以共享该 application对象。与 session对象相比, application对象的生命周期更长,类似于系统的“全局变量”。

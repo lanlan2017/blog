@@ -5,14 +5,14 @@ categories:
   - Markdown
   - 语法
   - 直接使用HTML
-date: 2019-11-08 21:30:04
-updated: 2019-12-17 05:18:53
 abbrlink: ce247608
+date: 2019-11-08 21:30:04
+updated: 2022-04-04 15:13:22
 ---
-# HTML 5 `<details> `标签
+# HTML 5 details标签
 定义和用法
 `<details> `标签用于描述文档或文档某个部分的细节。
-## `<summary> `子标签
+## summary子标签
 <summary> 标签可以为 details 定义标题。标题是可见的，**用户点击标题时，会显示出 details**。
 
 # markdown中可以写HTML

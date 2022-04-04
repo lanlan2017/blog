@@ -1,12 +1,11 @@
 ---
 title: LinuxDelpoy CentOS7更换阿里源
 categories: 
-  - 编程
   - Linux
   - LinuxDeploy
-date: 2021-03-16 02:19:57
-updated: 2021-03-17 11:20:44
 abbrlink: 3c20575c
+date: 2021-03-16 02:19:57
+updated: 2022-04-04 00:51:45
 ---
 # 安装wget
 ```shell

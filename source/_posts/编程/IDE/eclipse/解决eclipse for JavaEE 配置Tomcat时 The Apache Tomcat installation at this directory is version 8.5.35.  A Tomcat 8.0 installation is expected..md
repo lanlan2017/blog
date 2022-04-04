@@ -1,12 +1,11 @@
 ---
 title: 解决eclipse for JavaEE 配置Tomcat时 The Apache Tomcat installation at this directory is version 8.5.35.  A Tomcat 8.0 installation is expected.
 categories: 
-  - 编程
   - IDE
   - eclipse
-date: 2018-12-02 00:24:04
-updated: 2021-03-20 10:32:58
 abbrlink: b2fd10c5
+date: 2018-12-02 00:24:04
+updated: 2022-04-04 00:51:45
 ---
 # 问题描述
 今天`eclipse for JavaEE`中配置`Tomcat`时遇到下面问题:

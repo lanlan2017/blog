@@ -1,12 +1,11 @@
 ---
 title: JS 添加DOM元素 删除DOM元素 复制文本到剪贴板
 categories: 
-  - 编程
   - JavaScript
   - DOM
-date: 2019-11-28 15:26:51
-updated: 2021-03-20 10:28:48
 abbrlink: aee7c65a
+date: 2019-11-28 15:26:51
+updated: 2022-04-04 00:51:45
 ---
 # JS 添加DOM元素 删除DOM元素
 ## 创建一个DOM对象

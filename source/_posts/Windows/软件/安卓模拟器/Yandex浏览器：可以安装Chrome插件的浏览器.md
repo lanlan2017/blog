@@ -6,7 +6,7 @@ categories:
   - 安卓模拟器
 abbrlink: 4f53799c
 date: 2021-04-08 21:24:17
-updated: 2021-04-08 22:26:54
+updated: 2022-04-04 00:51:44
 ---
 # 如何在手机浏览器上使用Chrome浏览器插件
 电脑上的Chrome浏览器有很多实用的浏览器插件，但是Android手机上的Chrome浏览器是不能安装插件的。

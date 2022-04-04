@@ -4,10 +4,10 @@ categories:
   - Hexo
   - next主题
   - 搭建
-date: 2018-08-26 23:59:13
-updated: 2020-06-24 08:17:43
-comments: false
 abbrlink: 57ee7c1d
+date: 2018-08-26 23:59:13
+updated: 2022-04-04 15:56:38
+comments: false
 ---
 # 基本配置
 ## Hexo安装

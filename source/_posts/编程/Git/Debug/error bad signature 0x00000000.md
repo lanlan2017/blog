@@ -1,12 +1,11 @@
 ---
 title: error bad signature 0x00000000
 categories: 
-  - 编程
   - Git
   - Debug
-date: 2020-01-06 01:27:43
-updated: 2020-04-11 09:21:19
 abbrlink: 374f3750
+date: 2020-01-06 01:27:43
+updated: 2022-04-04 00:51:45
 ---
 # error: bad signature 0x00000000
 ## 问题描述

@@ -1,13 +1,13 @@
 ---
 title: 正则实例：多行html代码合并为一行
-categories:
+categories: 
   - 其他
   - 正则表达式
   - 实例
   - 匹配HTML标签
 abbrlink: 72162c39
 date: 2018-10-14 22:51:59
-updated: 2019-12-17 05:18:53
+updated: 2022-04-04 00:51:45
 ---
 有下面这样一段HTML代码：
 ```html

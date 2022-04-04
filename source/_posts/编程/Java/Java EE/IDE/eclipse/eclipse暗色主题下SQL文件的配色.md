@@ -1,14 +1,13 @@
 ---
 title: eclipse暗色主题下SQL文件的配色
 categories: 
-  - 编程
   - Java
   - Java EE
   - IDE
   - eclipse
-date: 2019-06-14 10:07:26
-updated: 2020-04-11 09:21:19
 abbrlink: 7198198c
+date: 2019-06-14 10:07:26
+updated: 2022-04-04 00:51:44
 ---
 # eclipse暗色主题下SQL文件的配色 #
 ## 问题描述 ##

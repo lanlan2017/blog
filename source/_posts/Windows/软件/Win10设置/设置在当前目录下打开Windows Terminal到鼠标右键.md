@@ -4,9 +4,9 @@ categories:
   - Windows
   - 软件
   - Win10设置
-date: 2019-12-18 01:08:09
-updated: 2020-06-25 09:03:21
 abbrlink: ed5250a2
+date: 2019-12-18 01:08:09
+updated: 2022-04-04 00:51:44
 ---
 # 安装
 到**Microsoft Store**中下载安装即可.

@@ -1,14 +1,13 @@
 ---
 title: eclipse中如何创建log4j文件
 categories: 
-  - 编程
   - Java
   - Java EE
   - IDE
   - eclipse
-date: 2019-06-12 22:26:13
-updated: 2020-04-11 09:21:19
 abbrlink: 2f2a13a0
+date: 2019-06-12 22:26:13
+updated: 2022-04-04 00:51:44
 ---
 # eclipse中如何创建log4j文件 #
 在项目`src`目录上右键,然后依次选择`new`,`other`...,`XML`,`XML File`,然后点击`next`,

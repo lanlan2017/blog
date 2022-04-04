@@ -1,12 +1,11 @@
 ---
 title: LinuxDeploy CentOS7 设置Git通过SSH连接Github
 categories: 
-  - 编程
   - Linux
   - LinuxDeploy
-date: 2021-03-17 11:31:54
-updated: 2021-03-18 12:14:15
 abbrlink: a210aa10
+date: 2021-03-17 11:31:54
+updated: 2022-04-04 00:51:45
 ---
 # LinuxDeploy CentOS7 设置Git通过SSH连接Github
 ## 前言

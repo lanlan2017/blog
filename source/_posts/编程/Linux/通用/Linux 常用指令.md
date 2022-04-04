@@ -1,12 +1,11 @@
 ---
 title: Linux 常用指令
 categories: 
-  - 编程
   - Linux
   - 通用
-date: 2018-11-11 16:35:46
-updated: 2021-03-20 10:13:49
 abbrlink: e44da
+date: 2018-11-11 16:35:46
+updated: 2022-04-04 00:51:45
 ---
 # 前言
 我这里是在git-bash中运行的，因为懒得打开虚拟机了，在Linux终端上运行效果也一样。

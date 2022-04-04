@@ -1,12 +1,11 @@
 ---
 title: CSS文件加载：@import和link的区别
 categories: 
-  - 编程
   - CSS
   - 概述
-date: 2019-05-01 10:29:08
-updated: 2021-03-20 10:42:00
 abbrlink: 9b90d554
+date: 2019-05-01 10:29:08
+updated: 2022-04-04 00:51:44
 ---
 # css文件加载：@import和link的区别
 **本质上，这两种方式都是为了加载`CSS`文件**，但还是存在着细微的差别。

@@ -1,13 +1,12 @@
 ---
 title: A query was run and no Result Maps were found for the Mapped Statement
 categories: 
-  - 编程
   - Java
   - Mybatis
   - Debug
-date: 2020-08-25 01:12:01
-updated: 2021-03-18 02:43:30
 abbrlink: 50f38d8e
+date: 2020-08-25 01:12:01
+updated: 2022-04-04 00:51:44
 ---
 # 错误提示
 

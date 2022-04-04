@@ -4,9 +4,9 @@ categories:
   - Windows
   - 软件
   - Chrome浏览器
-date: 2020-01-07 03:18:36
-updated: 2020-06-25 09:03:12
 abbrlink: bc05cd70
+date: 2020-01-07 03:18:36
+updated: 2022-04-04 00:51:44
 ---
 # 问题描述
 - JDK9之后[Java DOC](https://docs.oracle.com/en/java/javase/11/docs/api/index.html)支持搜索功能

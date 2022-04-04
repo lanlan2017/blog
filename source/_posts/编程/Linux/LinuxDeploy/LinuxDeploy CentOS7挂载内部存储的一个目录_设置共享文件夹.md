@@ -1,12 +1,11 @@
 ---
 title: LinuxDeploy CentOS7挂载内部存储的一个目录_设置共享文件夹
 categories: 
-  - 编程
   - Linux
   - LinuxDeploy
 abbrlink: ff69adec
 date: 2021-04-03 23:18:21
-updated: 2021-04-04 14:02:57
+updated: 2022-04-04 00:51:45
 ---
 # 成功安装CentOS后再设置挂载点
 先安装好CentOS，然后启动CentOS，通过SSH客户端连接到CentOS中，然后创建挂载点。

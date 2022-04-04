@@ -4,9 +4,9 @@ categories:
   - Hexo
   - next主题
   - SEO
-date: 2019-12-01 12:12:27
-updated: 2020-06-24 08:17:43
 abbrlink: 242f5d55
+date: 2019-12-01 12:12:27
+updated: 2022-04-04 15:56:38
 ---
 # 前言
 本文基于Hexo+NexT7.

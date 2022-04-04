@@ -1,12 +1,11 @@
 ---
 title: MyBatis Generator 超详细配置
-categories:
-  - 编程
+categories: 
   - IDE
   - eclipse
 abbrlink: 63dfbbef
 date: 2021-08-29 21:05:55
-updated: 2021-08-29 21:05:55
+updated: 2022-04-04 00:51:45
 ---
 #  创建Mybatis Generator配置文件
 ![image-20210829211230965](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210829211231.png)

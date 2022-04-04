@@ -1,12 +1,11 @@
 ---
 title: LinuxDeploy 安装CentOS7
 categories: 
-  - 编程
   - Linux
   - LinuxDeploy
-date: 2021-03-15 02:42:04
-updated: 2021-03-17 11:20:44
 abbrlink: ecdc8418
+date: 2021-03-15 02:42:04
+updated: 2022-04-04 00:51:45
 ---
 # 简介
 本文介绍，如何在安卓手机上安装centos,并设置共享文件夹。

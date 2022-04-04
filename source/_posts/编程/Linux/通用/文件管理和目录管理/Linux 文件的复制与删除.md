@@ -1,13 +1,12 @@
 ---
 title: Linux 文件的复制与删除
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件管理和目录管理
 abbrlink: d794a6a2
 date: 2021-06-02 16:15:15
-updated: 2021-06-02 16:15:15
+updated: 2022-04-04 00:51:45
 ---
 # cp: 拷贝文件
 ## 格式1：cp file1 file2

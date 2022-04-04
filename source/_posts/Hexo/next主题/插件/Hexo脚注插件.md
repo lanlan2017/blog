@@ -1,12 +1,12 @@
 ---
 title: Hexo脚注插件
-categories:
+categories: 
   - Hexo
   - next主题
   - 插件
 abbrlink: 65d90bd2
 date: 2021-09-14 10:50:36
-updated: 2021-09-14 10:50:36
+updated: 2022-04-04 15:56:38
 ---
 # 插件的安装和使用
 MMD 的脚注语法得到广泛的传播和认可，大部分的 Markdown 编辑器现在都采用了该语法来渲染脚注。可是 Hexo 的默认渲染器是不支持脚注语法的，所以我写了这个简单的 Reference 插件GitHub stars来实现脚注的渲染。该插件已收录于 Hexo 官方插件页。插件的安装和使用非常的简单，只需要进入博客目录，然后安装：

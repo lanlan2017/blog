@@ -1,13 +1,12 @@
 ---
 title: Linux tldr命令
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 帮助文档
 abbrlink: 42d91331
 date: 2021-05-08 22:22:58
-updated: 2021-05-08 22:22:58
+updated: 2022-04-04 00:51:45
 ---
 # tldr命令介绍
 该命令可以显示一些命令的常见用法

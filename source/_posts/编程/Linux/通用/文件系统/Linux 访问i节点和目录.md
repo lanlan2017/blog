@@ -1,13 +1,12 @@
 ---
 title: Linux 访问i节点和目录
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件系统
-abbrlink: '406107e0'
+abbrlink: 406107e0
 date: 2021-06-20 18:33:25
-updated: 2021-06-20 18:33:25
+updated: 2022-04-04 00:51:45
 ---
 # 统调用stat/fstat：从i节点获得文件的状态信息
 从i节点获得文件的状态信息

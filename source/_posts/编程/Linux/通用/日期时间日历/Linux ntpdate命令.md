@@ -1,13 +1,12 @@
 ---
 title: Linux ntpdate命令
 categories: 
-  - 编程
   - Linux
   - 通用
   - 日期时间日历
 abbrlink: 8923c382
 date: 2021-04-20 21:10:13
-updated: 2021-04-20 23:07:47
+updated: 2022-04-04 00:51:45
 ---
 # ntpdate
 ## NTP协议

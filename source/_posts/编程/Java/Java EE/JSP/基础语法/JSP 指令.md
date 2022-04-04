@@ -1,14 +1,13 @@
 ---
 title: JSP 指令
 categories: 
-  - 编程
   - Java
   - Java EE
   - JSP
   - 基础语法
-date: 2018-12-20 23:51:51
-updated: 2020-04-11 09:21:19
 abbrlink: 7b20b86
+date: 2018-12-20 23:51:51
+updated: 2022-04-04 00:51:44
 ---
 # page指令 #
 page是JSP页面最常用的指令,用于定义整个JSP页面的相关属性,这些属性在JSP被服务器解析成 Servlet时会转换为相应的Java程序代码。page指令的语法格式如下:

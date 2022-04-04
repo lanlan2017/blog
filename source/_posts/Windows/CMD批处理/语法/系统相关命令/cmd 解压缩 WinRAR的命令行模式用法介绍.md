@@ -5,16 +5,16 @@ categories:
   - CMD批处理
   - 语法
   - 系统相关命令
-date: 2019-11-22 11:16:59
-updated: 2020-04-11 09:15:21
 abbrlink: a51d0e
+date: 2019-11-22 11:16:59
+updated: 2022-04-04 00:51:44
 ---
-# cmd 解压缩WinRAR的命令行模式用法介绍 #
-## 下载安装WinRAR ##
+# cmd 解压缩WinRAR的命令行模式用法介绍
+## 下载安装WinRAR
 `WinRAR.exe`安装完后,从**安装目录**将主程序`winRAR.exe`拷贝出来即可,该程序是独立可运行的
 
 `WinRaR`的命令行模式程序在安装目录下的`rar.exe` (打包压缩程序),`unrar.exe`(解压缩程序)
-## unrar.exe帮助文档 ##
+## unrar.exe帮助文档
 ```cmd
 F:\Program Files\WinRAR>unrar.exe /?
 
@@ -82,5 +82,5 @@ UNRAR 5.71 x64 免费软件      版权所有 (C) 1993-2019 Alexander Roshal
   y             对所有问题回答是
 ```
 **先这样,有空再研究**
-# 参考资料 #
+# 参考资料
 [https://www.cnblogs.com/fetty/p/4769279.html](https://www.cnblogs.com/fetty/p/4769279.html)

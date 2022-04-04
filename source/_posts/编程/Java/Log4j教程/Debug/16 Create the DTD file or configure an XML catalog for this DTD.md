@@ -1,13 +1,12 @@
 ---
 title: 16 Create the DTD file or configure an XML catalog for this DTD
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - Debug
-date: 2020-09-02 11:57:06
-updated: 2020-09-03 01:18:51
 abbrlink: e06a014f
+date: 2020-09-02 11:57:06
+updated: 2022-04-04 00:51:44
 ---
 # 解决eclipse <!DOCTYPE log4j:configuration SYSTEM"log4j.dtd">代码报错
 ## 问题描述

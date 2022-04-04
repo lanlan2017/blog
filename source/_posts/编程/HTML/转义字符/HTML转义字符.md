@@ -1,12 +1,11 @@
 ---
 title: HTML转义字符
 categories: 
-  - 编程
   - HTML
   - 转义字符
-date: 2019-03-28 12:54:08
-updated: 2021-03-20 10:35:40
 abbrlink: c14b29da
+date: 2019-03-28 12:54:08
+updated: 2022-04-04 00:51:45
 ---
 # 下面列举了让我出现问题的HTML转义符
 

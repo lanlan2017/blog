@@ -1,14 +1,13 @@
 ---
 title: JSP request 内置对象
 categories: 
-  - 编程
   - Java
   - Java EE
   - JSP
   - 内置对象
-date: 2018-12-13 12:31:03
-updated: 2020-04-11 09:21:19
 abbrlink: d5e5b83f
+date: 2018-12-13 12:31:03
+updated: 2022-04-04 00:51:44
 ---
 # JSP request内置对象 #
 - request内置对象是 `HttpServletRequest` 类的实例。

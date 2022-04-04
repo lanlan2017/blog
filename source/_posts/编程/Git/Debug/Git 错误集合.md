@@ -1,12 +1,11 @@
 ---
 title: Git 错误集合
 categories: 
-  - 编程
   - Git
   - Debug
-date: 2019-04-30 23:53:43
-updated: 2021-03-20 10:07:34
 abbrlink: 7e675acc
+date: 2019-04-30 23:53:43
+updated: 2022-04-04 00:51:45
 ---
 # git error:bad signature
 **解决方案:**删除`index`文件再重新生成

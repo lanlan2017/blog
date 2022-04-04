@@ -1,12 +1,11 @@
 ---
 title: mysql安装以及密码修改
 categories: 
-  - 编程
   - MySQL
   - 安装
-date: 2018-12-14 01:58:11
-updated: 2021-03-20 10:21:09
 abbrlink: e124ac2c
+date: 2018-12-14 01:58:11
+updated: 2022-04-04 00:51:44
 ---
 # 安装
 解压安装包即可安装

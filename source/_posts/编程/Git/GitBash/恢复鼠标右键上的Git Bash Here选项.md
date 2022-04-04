@@ -1,12 +1,11 @@
 ---
 title: 恢复鼠标右键上的Git Bash Here选项
 categories: 
-  - 编程
   - Git
   - GitBash
-date: 2019-12-06 15:02:25
-updated: 2021-03-20 10:07:47
 abbrlink: 6aa7c987
+date: 2019-12-06 15:02:25
+updated: 2022-04-04 00:51:45
 ---
 # 问题描述
 新安装的Git-bash会在鼠标右键上注册一个git-bash here的选项.

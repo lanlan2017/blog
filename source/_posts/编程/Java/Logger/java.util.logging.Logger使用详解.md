@@ -1,12 +1,11 @@
 ---
 title: java.util.logging.Logger使用详解
-categories:
-  - 编程
+categories: 
   - Java
   - Logger
 abbrlink: ecd04e1e
 date: 2022-03-26 17:17:02
-updated: 2022-03-26 17:17:02
+updated: 2022-04-04 00:51:44
 ---
 # java.util.logging.Logger使用详解
 # 创建Logger对象

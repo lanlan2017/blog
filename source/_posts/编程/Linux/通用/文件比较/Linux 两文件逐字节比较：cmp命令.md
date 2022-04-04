@@ -1,13 +1,12 @@
 ---
 title: Linux 两文件逐字节比较：cmp命令
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件比较
 abbrlink: 99e4a22d
 date: 2021-05-15 22:36:07
-updated: 2021-05-15 22:36:07
+updated: 2022-04-04 00:51:45
 ---
 # cmp命令
 ## 用法

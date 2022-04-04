@@ -1,14 +1,13 @@
 ---
 title: Linux more命令详解
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文本文件及其处理命令
   - 读取文本文件
 abbrlink: 65cb3430
 date: 2021-03-24 11:10:08
-updated: 2021-04-03 18:15:30
+updated: 2022-04-04 00:51:45
 ---
 # more命令
 more命令是一个基于vi编辑器文本过滤器，它以全屏幕的方式按页显示文本文件的内容，支持vi中的关键字定位操作。

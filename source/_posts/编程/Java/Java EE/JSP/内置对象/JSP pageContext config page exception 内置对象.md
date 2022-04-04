@@ -1,14 +1,13 @@
 ---
 title: JSP pageContext config page exception 内置对象
 categories: 
-  - 编程
   - Java
   - Java EE
   - JSP
   - 内置对象
-date: 2018-12-19 15:14:31
-updated: 2020-04-11 09:21:19
 abbrlink: ee24a152
+date: 2018-12-19 15:14:31
+updated: 2022-04-04 00:51:44
 ---
 # pageContext内置对象 #
 获取页面上下文的 pageContext对象是一个比较特殊的对象,通过它可以获取JSP页面的 request、response、 session、 application、 exception等对象。 pageContext对象的创建和初始化都是由容器来完成的,JP页面中可以直接使用 pageContext对象。 page Context对象的常用方法如下表所示。

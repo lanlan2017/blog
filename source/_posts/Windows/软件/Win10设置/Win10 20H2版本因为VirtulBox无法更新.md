@@ -6,10 +6,11 @@ categories:
   - Win10设置
 abbrlink: ab19e083
 date: 2021-04-04 16:51:57
-updated: 2021-04-08 00:26:28
+updated: 2022-04-04 00:51:44
 ---
-<!-- Blog/Windows/Software/WIN10Settings/BecauseTheVirtualBoxWin10_20H2VersionCannotBeUpdated/ -->
 # 无法更新的提示信息
+
+<!-- Blog/Windows/Software/WIN10Settings/BecauseTheVirtualBoxWin10_20H2VersionCannotBeUpdated/ -->
 ![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/WIN10Settings/BecauseTheVirtualBoxWin10_20H2VersionCannotBeUpdated/1.png)
 可以看到这里提示Win10与VirtualBox冲突无法安装，我这里有两个VirtualBox：
 - VirtualBox，这个是我安装虚拟机的VirtualBox

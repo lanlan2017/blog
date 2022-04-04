@@ -1,13 +1,12 @@
 ---
 title: Ubuntu 为shell脚本创建.destop快捷方式
 categories: 
-  - 编程
   - Linux
   - VirtualBox
   - Ubuntu
-date: 2019-11-26 00:48:27
-updated: 2021-03-20 10:16:47
 abbrlink: cc785ddc
+date: 2019-11-26 00:48:27
+updated: 2022-04-04 00:51:45
 ---
 # Ubuntu 为shell脚本创建.destop快捷方式
 ## HexoS.sh

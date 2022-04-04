@@ -1,14 +1,13 @@
 ---
 title: Linux less命令
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文本文件及其处理命令
   - 读取文本文件
 abbrlink: a0a57f0
 date: 2021-04-23 14:00:40
-updated: 2021-04-23 14:00:40
+updated: 2022-04-04 00:51:45
 ---
 # Linux系统中的命令less
 

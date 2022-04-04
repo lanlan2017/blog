@@ -1,13 +1,12 @@
 ---
 title: 13 Log4j HTMLLayout
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - 简介
-date: 2020-08-06 01:04:20
-updated: 2021-03-20 09:38:13
 abbrlink: 6cc119f
+date: 2020-08-06 01:04:20
+updated: 2022-04-04 00:51:44
 ---
 # Log4j HTMLLayout
 如果您希望以`HTML`格式输出日志文件，可使用`org.apache.log4j.HTMLLayout`格式化日志信息。

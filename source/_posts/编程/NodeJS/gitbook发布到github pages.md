@@ -1,11 +1,10 @@
 ---
 title: gitbook发布到github pages
 categories: 
-  - 编程
   - NodeJS
-date: 2020-10-12 10:36:57
-updated: 2020-10-13 06:14:58
 abbrlink: c3c2965c
+date: 2020-10-12 10:36:57
+updated: 2022-04-04 00:51:45
 ---
 # gitbook发布到github pages
 ## 初始化git

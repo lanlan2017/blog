@@ -1,14 +1,13 @@
 ---
 title: Linux中有哪些文本文件
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文本文件及其处理命令
   - 读取文本文件
 abbrlink: bfddd61e
 date: 2021-04-22 14:54:05
-updated: 2021-04-22 14:54:05
+updated: 2022-04-04 00:51:45
 ---
 # Linux中的文本信息（1）
 ## 文本文件

@@ -1,13 +1,12 @@
 ---
 title: Linux 目录管理
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件管理和目录管理
 abbrlink: 8cd20aa2
 date: 2021-06-03 17:41:46
-updated: 2021-06-07 16:20:53
+updated: 2022-04-04 00:51:45
 ---
 # 路径名
 ## 文件.与..

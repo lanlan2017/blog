@@ -1,14 +1,13 @@
 ---
 title: Linux cat命令查看GBK编码的文件
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文本文件及其处理命令
   - 读取文本文件
 abbrlink: 324d9ef7
 date: 2021-03-18 05:00:27
-updated: 2021-03-18 05:07:02
+updated: 2022-04-04 00:51:45
 ---
 # cat命令查看GBK编码的文件
 ## 问题描述

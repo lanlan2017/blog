@@ -1,13 +1,12 @@
 ---
 title: Linux 打包与压缩
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件管理和目录管理
 abbrlink: 96be915a
 date: 2021-06-15 22:29:29
-updated: 2021-06-15 22:29:29
+updated: 2022-04-04 00:51:45
 ---
 # tar:文件归档
 ## 功能

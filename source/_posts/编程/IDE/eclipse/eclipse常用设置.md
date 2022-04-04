@@ -1,12 +1,11 @@
 ---
 title: eclipse常用设置
 categories: 
-  - 编程
   - IDE
   - eclipse
-date: 2018-12-11 20:43:57
-updated: 2020-06-23 01:01:06
 abbrlink: 2b8e86b
+date: 2018-12-11 20:43:57
+updated: 2022-04-04 00:51:45
 ---
 # eclipse for JavaEE下载
 ## 下载URL

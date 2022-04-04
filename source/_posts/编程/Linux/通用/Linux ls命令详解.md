@@ -1,12 +1,11 @@
 ---
 title: Linux ls命令详解
 categories: 
-  - 编程
   - Linux
   - 通用
 abbrlink: 3283dcaa
 date: 2021-03-23 05:11:29
-updated: 2021-04-13 23:31:08
+updated: 2022-04-04 00:51:45
 ---
 # ls命令含义
 Linux ls（英文全拼：list files）命令用于显示指定工作目录下之内容（列出目前工作目录所含之文件及子目录)。

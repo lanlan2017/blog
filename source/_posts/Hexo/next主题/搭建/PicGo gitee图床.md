@@ -1,12 +1,12 @@
 ---
 title: PicGo gitee图床
-categories:
+categories: 
   - Hexo
   - next主题
   - 搭建
 abbrlink: 380c40ce
 date: 2021-05-20 17:31:42
-updated: 2021-05-20 17:31:42
+updated: 2022-04-04 15:56:38
 ---
 Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite
 # 前言

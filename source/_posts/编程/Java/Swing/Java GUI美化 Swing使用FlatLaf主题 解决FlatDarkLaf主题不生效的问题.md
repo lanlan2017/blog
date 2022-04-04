@@ -1,12 +1,11 @@
 ---
-title: Swing使用FlatLaf主题详解 解决FlatDarkLaf暗色主题不生效的问题
+title: Java GUI美化 Swing使用FlatLaf主题 解决FlatDarkLaf主题不生效的问题
 categories: 
-  - 编程
   - Java
   - Swing
 abbrlink: 13a6846b
 date: 2021-08-23 22:48:56
-updated: 2021-08-23 22:48:56
+updated: 2022-04-04 00:51:44
 ---
 # 常见设置Java Swing LookAndFeel方式
 一般使用UIManager.setLookAndFeel()方法来设置外观，如下所示：

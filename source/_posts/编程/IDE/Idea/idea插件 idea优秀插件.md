@@ -1,12 +1,11 @@
 ---
 title: idea插件 idea优秀插件
-categories:
-  - 编程
+categories: 
   - IDE
   - Idea
 abbrlink: faad4ce8
 date: 2021-08-26 11:19:38
-updated: 2021-08-26 11:20:00
+updated: 2022-04-04 00:51:45
 ---
 # Key promoter X
 很多人不愿意切换 IDE 就是因为快捷键的习惯问题。刚好这个插件可以提醒快捷键，有代入感，提醒的多了你就会了。对于新手建议安装熟悉一下快捷键。

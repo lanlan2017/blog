@@ -1,12 +1,11 @@
 ---
 title: java打印表格 将ResultSet中的数据打印成表格
 categories: 
-  - 编程
   - Java
   - 自定义工具类
-date: 2019-10-23 22:19:13
-updated: 2021-03-20 09:38:56
 abbrlink: d58ef648
+date: 2019-10-23 22:19:13
+updated: 2022-04-04 00:51:44
 ---
 # java打印表格 将ResultSet中的数据打印成表格
 ## 问题描述

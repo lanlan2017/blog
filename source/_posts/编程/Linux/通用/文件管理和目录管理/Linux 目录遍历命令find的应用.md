@@ -1,13 +1,12 @@
 ---
 title: Linux 目录遍历命令find的应用
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件管理和目录管理
 abbrlink: a84f434c
 date: 2021-06-08 01:52:55
-updated: 2021-06-08 01:52:55
+updated: 2022-04-04 00:51:45
 ---
 # Linux 目录遍历命令find的应用
 ## 查找当前目录下的所有目录

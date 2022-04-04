@@ -1,13 +1,12 @@
 ---
 title: Linux cheat命令
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 帮助文档
 abbrlink: f8ced58d
 date: 2021-05-08 23:14:49
-updated: 2021-05-08 23:14:49
+updated: 2022-04-04 00:51:45
 ---
 # cheat介绍
 [https://github.com/cheat/cheat](https://github.com/cheat/cheat)

@@ -1,12 +1,11 @@
 ---
 title: eclipse for JavaEE 安装JavaFX插件
 categories: 
-  - 编程
   - IDE
   - eclipse
+abbrlink: 5285183
 date: 2019-01-03 19:17:47
-updated: 2021-03-20 10:32:57
-abbrlink: '5285183'
+updated: 2022-04-04 00:51:45
 ---
 # 安装JavaFX插件e(fx)clipse
 依次点击`Help`--`Eclipse Marketplace...`进入eclipse应用市场，

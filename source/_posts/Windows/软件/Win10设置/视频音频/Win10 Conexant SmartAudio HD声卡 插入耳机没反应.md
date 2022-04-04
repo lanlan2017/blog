@@ -5,9 +5,9 @@ categories:
   - 软件
   - Win10设置
   - 视频音频
-date: 2020-07-06 04:24:48
-updated: 2020-07-06 05:07:28
 abbrlink: 274cd760
+date: 2020-07-06 04:24:48
+updated: 2022-04-04 00:51:44
 ---
 # Win10 Conexant SmartAudio HD声卡 插入耳机没反应
 ## 打开SmartAudio

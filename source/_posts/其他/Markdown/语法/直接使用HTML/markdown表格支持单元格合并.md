@@ -5,11 +5,11 @@ categories:
   - Markdown
   - 语法
   - 直接使用HTML
-date: 2018-08-15 23:11:20
-updated: 2019-12-17 05:18:53
 abbrlink: 9d21d6ad
+date: 2018-08-15 23:11:20
+updated: 2022-04-04 15:13:22
 ---
-## 问题描述 ##
+## 问题描述
 MarkDown语法并不支持表格单元格合并，不过可以插入html表格标签来实现。
 ```
 <table>
@@ -56,7 +56,7 @@ MarkDown语法并不支持表格单元格合并，不过可以插入html表格�
 </table>
 
 ```
-## 效果 ##
+## 效果
 <table>
     <tr>
         <th>序号

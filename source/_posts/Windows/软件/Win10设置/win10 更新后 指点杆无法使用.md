@@ -1,12 +1,12 @@
 ---
 title: win10 更新后 指点杆无法使用
-categories:
+categories: 
   - Windows
   - 软件
   - Win10设置
 abbrlink: 4ca2ad13
 date: 2021-07-21 09:24:05
-updated: 2021-07-21 09:44:33
+updated: 2022-04-04 00:51:44
 ---
 # 原因
 

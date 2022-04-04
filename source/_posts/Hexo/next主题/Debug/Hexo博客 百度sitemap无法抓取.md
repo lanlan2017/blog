@@ -4,9 +4,9 @@ categories:
   - Hexo
   - next主题
   - Debug
-date: 2018-10-28 10:34:03
-updated: 2020-06-24 08:17:43
 abbrlink: ebaabcd4
+date: 2018-10-28 10:34:03
+updated: 2022-04-04 15:56:38
 ---
 ## 安装插件 ##
 在站点目录下，打开git-bash,输入下面的命令安装插件。

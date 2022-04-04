@@ -1,12 +1,11 @@
 ---
 title: JDBC 简介
 categories: 
-  - 编程
   - Java
   - JDBC
-date: 2018-12-05 00:25:23
-updated: 2021-03-20 09:24:39
 abbrlink: aa45691f
+date: 2018-12-05 00:25:23
+updated: 2022-04-04 00:51:44
 ---
 # JDBC 简介
 JDBC全称为 `Java Data Base Connectivity` (java数据库连接)。JDBC是一种用于执行SQL语句的Java API，可以为多种关系数据库提供统一访问。

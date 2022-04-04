@@ -1,14 +1,13 @@
 ---
 title: eclipse启动慢
 categories: 
-  - 编程
   - Java
   - Java EE
   - IDE
   - eclipse
-date: 2019-05-19 15:51:37
-updated: 2020-04-11 09:21:19
 abbrlink: af6b423c
+date: 2019-05-19 15:51:37
+updated: 2022-04-04 00:51:44
 ---
 # eclipse自身设置的原因 #
 ## 指定JRE路径 ##

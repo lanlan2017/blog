@@ -1,13 +1,12 @@
 ---
 title: Linux 设定文件和目录的权限
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件和目录的权限
 abbrlink: 975cf8c
 date: 2021-06-24 13:32:33
-updated: 2021-06-24 13:32:33
+updated: 2022-04-04 00:51:45
 ---
 # 演示：文件的读写权限
 ```

@@ -1,13 +1,12 @@
 ---
 title: 4 Log4j配置
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - 简介
-date: 2020-08-03 04:04:18
-updated: 2021-03-20 09:38:13
 abbrlink: 9c30cbde
+date: 2020-08-03 04:04:18
+updated: 2022-04-04 00:51:44
 ---
 # log4j配置
 `Log4j`的配置包括在配置文件中:

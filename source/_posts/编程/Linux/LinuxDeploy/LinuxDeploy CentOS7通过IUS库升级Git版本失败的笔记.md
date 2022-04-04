@@ -1,12 +1,11 @@
 ---
 title: LinuxDeploy CentOS7通过IUS库升级Git版本失败的笔记
 categories: 
-  - 编程
   - Linux
   - LinuxDeploy
-date: 2021-03-18 07:38:31
-updated: 2021-03-19 02:11:59
 abbrlink: 3a2566e4
+date: 2021-03-18 07:38:31
+updated: 2022-04-04 00:51:45
 ---
 # LinuxDeploy CentOS7升级Git版本
 **注意！本文并没能升级成功，IUS老是报错404,所以本文对你可能没有帮助，我留着这篇文章只是做个记录而已。**

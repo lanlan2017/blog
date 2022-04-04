@@ -1,13 +1,12 @@
 ---
 title: Linux vim取消搜索高亮
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - vi编辑器及乱码问题
 abbrlink: b066b617
 date: 2021-06-02 16:29:47
-updated: 2021-06-02 16:29:47
+updated: 2022-04-04 00:51:45
 ---
 <!-- Blog/Programmin/Linux/General/VIEditorAndGarbledIssues/CancelSearchHighlight -->
 # 问题：vim搜索的关键字不会自动取消高亮显示

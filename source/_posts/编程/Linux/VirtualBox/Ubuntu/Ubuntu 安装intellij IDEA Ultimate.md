@@ -1,13 +1,12 @@
 ---
 title: Ubuntu 安装intellij IDEA Ultimate
 categories: 
-  - 编程
   - Linux
   - VirtualBox
   - Ubuntu
-date: 2019-11-25 17:52:23
-updated: 2021-03-20 10:16:31
 abbrlink: fa17fccd
+date: 2019-11-25 17:52:23
+updated: 2022-04-04 00:51:45
 ---
 # Ubuntu安装intellij IDEA Ultimate
 ## 下载压缩包(.tar.gz)

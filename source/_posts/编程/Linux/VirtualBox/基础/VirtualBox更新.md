@@ -1,13 +1,12 @@
 ---
 title: VirtualBox更新
 categories: 
-  - 编程
   - Linux
   - VirtualBox
   - 基础
 abbrlink: 47fd80ca
 date: 2021-04-04 17:42:56
-updated: 2021-04-06 16:55:53
+updated: 2022-04-04 00:51:45
 ---
 # 下载更新
 ## VirtualBox软件内下载更新

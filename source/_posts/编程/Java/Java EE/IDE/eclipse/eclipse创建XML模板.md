@@ -1,14 +1,13 @@
 ---
 title: eclipse创建XML模板
 categories: 
-  - 编程
   - Java
   - Java EE
   - IDE
   - eclipse
-date: 2019-05-14 01:06:56
-updated: 2020-04-11 09:21:19
 abbrlink: bb6759de
+date: 2019-05-14 01:06:56
+updated: 2022-04-04 00:51:44
 ---
 # 前言 #
 web.xml之中好多xml标签都差不多,每次都要抄写一遍就很烦,把这些代码做成XML模板,这样eclipse就会自动提示.

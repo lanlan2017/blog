@@ -1,13 +1,12 @@
 ---
 title: Linux ps命令
 categories: 
-  - 编程
   - Linux
   - 通用
   - 系统状态
 abbrlink: 56aee8cb
 date: 2021-04-21 17:08:30
-updated: 2021-04-21 23:33:39
+updated: 2022-04-04 00:51:45
 ---
 # ps命令
 ## 功能：查阅进程状态

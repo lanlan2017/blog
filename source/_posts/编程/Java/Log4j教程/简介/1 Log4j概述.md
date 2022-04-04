@@ -1,13 +1,12 @@
 ---
 title: 1 Log4j概述
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - 简介
-date: 2020-08-03 03:30:02
-updated: 2021-03-20 09:38:13
 abbrlink: f69dab82
+date: 2020-08-03 03:30:02
+updated: 2022-04-04 00:51:44
 ---
 # Log4j概述
 `Log4j`是一个使用`Java`语言编写的，可靠、快速、灵活的日志框架（`API`），使用`Apache Software License`授权。

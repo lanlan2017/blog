@@ -1,12 +1,11 @@
 ---
 title: JavaScript innerText与innerHtml与value的区别
 categories: 
-  - 编程
   - JavaScript
   - DOM
-date: 2019-02-13 00:12:44
-updated: 2021-03-20 10:28:37
 abbrlink: 37c4f730
+date: 2019-02-13 00:12:44
+updated: 2022-04-04 00:51:45
 ---
 # JavaScript innerText与innerHtml与value的区别
 - `innerHtml`是标签内的文本,`输入输出到该DOM内部纯HTML代码`，也就是说使用innerHTML,可以在标签里面添加html代码  也就是设置一个元素里面的HTML代码;

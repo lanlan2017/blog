@@ -1,13 +1,12 @@
 ---
 title: 2 Log4j安装
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - 简介
-date: 2020-08-03 03:36:48
-updated: 2021-03-20 09:38:13
 abbrlink: 27bc8c92
+date: 2020-08-03 03:36:48
+updated: 2022-04-04 00:51:44
 ---
 # 使用下载好的lib
 下载`lib`,然后添加到`build path`.

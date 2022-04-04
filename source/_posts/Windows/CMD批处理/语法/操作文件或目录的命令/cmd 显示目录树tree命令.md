@@ -5,12 +5,12 @@ categories:
   - CMD批处理
   - 语法
   - 操作文件或目录的命令
-date: 2019-04-26 21:18:26
-updated: 2020-04-11 09:15:21
 abbrlink: 979e79b0
+date: 2019-04-26 21:18:26
+updated: 2022-04-04 00:51:44
 ---
-# 显示目录树命令 tree #
-## 帮助文档 ##
+# 显示目录树命令 tree
+## 帮助文档
 ```cmd
 E:\workspace>tree /?
 以图形显示驱动器或路径的文件夹结构。
@@ -18,7 +18,7 @@ TREE [drive:][path] [/F] [/A]
    /F   显示每个文件夹中文件的名称。
    /A   使用 ASCII 字符，而不使用扩展字符。
 ```
-## 只显示目录不显示文件 不带参数 ##
+## 只显示目录不显示文件 不带参数
 ```cmd
 tree MarkdownTools
 ```
@@ -48,7 +48,7 @@ E:\WORKSPACE\MARKDOWNTOOLS
         └─table
 
 ```
-## 显示文件 参数/f ##
+## 显示文件 参数/f
 显示一个项目的目录树:
 ```cmd
 tree /f MarkdownTools
@@ -94,7 +94,7 @@ E:\WORKSPACE\MARKDOWNTOOLS
                 MDTable.java
 
 ```
-## 参数/a ##
+## 参数/a
 `/a`参数会,使用`ASCII`字符来显示目录树
 ```cmd
 tree /f /a MarkdownTools
@@ -168,9 +168,9 @@ E:\WORKSPACE\MARKDOWNTOOLS
                 MDTable.java
 
 ```
-## 不要使用/a参数好 ##
+## 不要使用/a参数好
 对于同一个命令,`tree /f MarkdownTools`命令占了**37行**,`tree /f /a MarkdownTools`命令占了**65行**,所以,还是不要使用`/a`参数好,因为这样能剩下好多行.
-## 把目录树写入剪贴板 ##
+## 把目录树写入剪贴板
 使用上述命令加上,管道符即可,也就是如下形式:
 ```cmd
 tree /f /a MarkdownTools|clip

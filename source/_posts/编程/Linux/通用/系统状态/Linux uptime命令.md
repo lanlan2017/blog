@@ -1,13 +1,12 @@
 ---
 title: Linux uptime命令
 categories: 
-  - 编程
   - Linux
   - 通用
   - 系统状态
 abbrlink: 7733f673
 date: 2021-04-21 14:25:39
-updated: 2021-04-21 23:33:39
+updated: 2022-04-04 00:51:45
 ---
 # uptime命令
 uptime：已开机时间(年龄)

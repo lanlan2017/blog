@@ -1,12 +1,11 @@
 ---
 title: Navicat代码提示
 categories: 
-  - 编程
   - MySQL
   - 图形工具
 abbrlink: 89c43c9a
 date: 2021-08-22 16:05:40
-updated: 2021-08-22 16:05:40
+updated: 2022-04-04 00:51:45
 ---
 # Navicat执行sql命令
 

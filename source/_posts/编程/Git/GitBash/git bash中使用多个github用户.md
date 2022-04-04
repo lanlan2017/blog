@@ -1,12 +1,11 @@
 ---
 title: git bash中使用多个github用户
 categories: 
-  - 编程
   - Git
   - GitBash
-date: 2018-11-20 20:19:24
-updated: 2021-03-20 10:08:13
 abbrlink: 4190ffbf
+date: 2018-11-20 20:19:24
+updated: 2022-04-04 00:51:45
 ---
 # 问题描述
 我在github注册了两个账号，想在在git-bash上同时使用这两个github账号。前提是现在github上注册好账号了。

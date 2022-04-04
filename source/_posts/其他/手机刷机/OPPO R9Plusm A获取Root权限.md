@@ -5,14 +5,16 @@ categories:
   - 手机刷机
 abbrlink: 95547b91
 date: 2021-03-07 11:51:19
-updated: 2021-03-08 18:30:38
+updated: 2022-04-04 16:02:45
 ---
 # 回退到旧的系统版本
+
 ## 下载旧版本的系统ROM包
 进入官网[ColorOS官网](https://www.coloros.com/rom),然后点击右上方的[下载](https://www.coloros.com/rom)菜单。
 然后选择手机对应的系列，R系列，然后找到手机对应的型号，[OPPO R9Plus（全网通）](https://www.coloros.com/rom/firmware?id=121)
 最后在**历史版本**中选择一个低版本的的,如：
 [版本号：正式版-160405](https://fsopen.coloros.com/3/oppowww/androidrom/r9plus/R9PlusmA_11_A.10_OTA_010_all_201604051824.zip),然后点击右侧的立即下载，即可下载该ROM.
+
 ## 将ROM复制到手机内部存储根目录
 ## 回退系统版本
 关机

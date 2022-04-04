@@ -1,13 +1,12 @@
 ---
 title: Linux 目录的权限
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件和目录的权限
 abbrlink: d920ee40
 date: 2021-06-23 15:53:42
-updated: 2021-06-23 15:53:42
+updated: 2022-04-04 00:51:45
 ---
 # 目录的读写权限
 ## 读权限

@@ -4,9 +4,9 @@ categories:
   - Hexo
   - next主题
   - 插件
-date: 2019-02-15 21:49:16
-updated: 2020-06-25 09:00:59
 abbrlink: 7162b91b
+date: 2019-02-15 21:49:16
+updated: 2022-04-04 15:56:38
 ---
 已经有了有大佬开发了置顶插件了，安装插件，然后在front-matter中配置一下就好了
 ## 卸载hexo-generator-index插件 ##

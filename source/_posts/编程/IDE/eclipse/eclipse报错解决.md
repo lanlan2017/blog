@@ -1,12 +1,11 @@
 ---
 title: eclipse报错解决
 categories: 
-  - 编程
   - IDE
   - eclipse
-date: 2020-06-23 12:38:43
-updated: 2020-06-23 01:01:06
 abbrlink: cec44542
+date: 2020-06-23 12:38:43
+updated: 2022-04-04 00:51:45
 ---
 # 错误信息 Multiple annotations found at this line:
 springmvc配置文件报错如下:

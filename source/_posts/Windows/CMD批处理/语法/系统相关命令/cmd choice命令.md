@@ -5,9 +5,9 @@ categories:
   - CMD批处理
   - 语法
   - 系统相关命令
-date: 2019-12-22 11:20:19
-updated: 2020-04-11 09:15:21
 abbrlink: bb8611bd
+date: 2019-12-22 11:20:19
+updated: 2022-04-04 00:51:44
 ---
 # cmd choice命令
 ## 帮助文档

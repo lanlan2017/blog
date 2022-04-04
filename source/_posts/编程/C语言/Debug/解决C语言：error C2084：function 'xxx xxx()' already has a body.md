@@ -1,12 +1,11 @@
 ---
 title: 解决C语言：error C2084：function 'xxx xxx()' already has a body
 categories: 
-  - 编程
   - C语言
   - Debug
-date: 2018-11-14 19:25:05
-updated: 2021-03-20 09:54:29
 abbrlink: 38f33943
+date: 2018-11-14 19:25:05
+updated: 2022-04-04 15:13:01
 ---
 # 分析原因
 这是因为头文件重复导入了，我在头文件`userBuyMenu.h`中导入了`#include "findMethod.h"`。

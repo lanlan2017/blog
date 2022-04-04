@@ -1,12 +1,11 @@
 ---
-title: idea导出可执行jar包是，没有导出依赖的jar
-categories:
-  - 编程
+title: idea导出可执行jar包是，没有导出依赖的第三方jar包
+categories: 
   - IDE
   - Idea
 abbrlink: 2ee17d2f
 date: 2021-08-23 22:27:00
-updated: 2021-08-23 22:27:00
+updated: 2022-04-04 00:51:45
 ---
 # 问题描述
 我的项目中使用了第三方的jar包，在idea中运行正常，但是导出的可执行jar包运行不正常，经过我的查找，发现是因为，导出可执行jar的时候，没有把第三方的jar中内内容解压到可执行jar中。

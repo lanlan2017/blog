@@ -5,11 +5,11 @@ categories:
   - Markdown
   - 语法
   - 直接使用HTML
-date: 2018-10-26 11:23:58
-updated: 2019-12-17 05:18:53
 abbrlink: 6507a83c
+date: 2018-10-26 11:23:58
+updated: 2022-04-04 15:13:22
 ---
-## 键盘键 ##
+# 键盘键
 markdown中可以插入html标签来实现更加丰富的显示效果。例如`<kbd>`标签来插入键盘按键：<kbd>Ctrl</kbd>+<kbd>H</kbd>
 
 > **定义和用法**

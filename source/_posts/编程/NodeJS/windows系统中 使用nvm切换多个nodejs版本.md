@@ -1,11 +1,10 @@
 ---
 title: windows系统中 使用nvm切换多个nodejs版本
 categories: 
-  - 编程
   - NodeJS
-date: 2020-10-11 06:44:16
-updated: 2020-10-13 11:38:29
 abbrlink: 102bf6f5
+date: 2020-10-11 06:44:16
+updated: 2022-04-04 00:51:45
 ---
 # 使用nvm切换多个nodejs版本
 ## 删除本机上正在使用的nodejs

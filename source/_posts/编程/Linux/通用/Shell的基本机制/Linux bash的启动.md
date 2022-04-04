@@ -1,13 +1,12 @@
 ---
 title: Linux bash的启动
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - Shell的基本机制
 abbrlink: 2b671225
 date: 2021-06-26 14:39:59
-updated: 2021-06-26 14:39:59
+updated: 2022-04-04 00:51:45
 ---
 ## 启动交互式bash 
 ## 三种启动方法

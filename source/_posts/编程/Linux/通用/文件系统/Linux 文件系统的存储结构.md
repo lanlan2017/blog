@@ -1,14 +1,13 @@
 ---
 title: Linux 文件系统的存储结构
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件系统
-mathjax: true
 abbrlink: cb70a761
 date: 2021-06-20 14:51:43
-updated: 2021-06-20 14:51:43
+updated: 2022-04-04 00:51:45
+mathjax: true
 ---
 # 文件系统的结构
 把整个逻辑设备以块(扇区) 为单位为划分，编号为0，1，2，...。

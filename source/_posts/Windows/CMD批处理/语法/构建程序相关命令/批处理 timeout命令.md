@@ -5,12 +5,12 @@ categories:
   - CMD批处理
   - 语法
   - 构建程序相关命令
-date: 2019-09-11 11:20:03
-updated: 2020-04-11 09:15:21
 abbrlink: 6a7ac4ce
+date: 2019-09-11 11:20:03
+updated: 2022-04-04 00:51:44
 ---
-# timeout命令 #
-## 帮助文档 ##
+# timeout命令
+## 帮助文档
 ```cmd
 timeout [/t] timeout [/nobreak] 
 
@@ -31,13 +31,13 @@ timeout [/t] timeout [/nobreak]
     timeout /t 300 /nobreak
     timeout /t -1
 ```
-## 应用 ##
+## 应用
 这个命令可以使用`&&`连接符与其他命令串联到一起,从而实现定时执行后面命令的功能。
-### 30秒后休眠电脑 ###
+### 30秒后休眠电脑
 ```cmd
 timeout /t 30 /nobreak && shutdown -h
 ```
-### 定时休眠批处理程序 ###
+### 定时休眠批处理程序
 下面根据用户输入的秒数来休眠电脑:
 ```bat
 @echo off

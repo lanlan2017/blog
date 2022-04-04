@@ -1,12 +1,11 @@
 ---
 title: Linux stty命令
 categories: 
-  - 编程
   - Linux
   - 通用
 abbrlink: c9a18df0
 date: 2021-04-03 21:06:43
-updated: 2021-04-03 23:14:48
+updated: 2022-04-04 00:51:45
 ---
 # stty命令示例
 ## stty size

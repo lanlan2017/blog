@@ -1,12 +1,12 @@
 ---
 title: CommandsUI程序开发过程中遇到的问题以及解决方案
-categories:
+categories: 
   - 其他
   - 我的软件
   - Commands
 abbrlink: 8917b2ab
 date: 2021-08-27 18:38:53
-updated: 2021-08-27 18:38:53
+updated: 2022-04-04 15:13:22
 ---
 # 需求1：切换到其他程序之后，改变窗体的透明度
 ## 问题

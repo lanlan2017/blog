@@ -1,13 +1,12 @@
 ---
 title: Linux 目录遍历的命令
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件管理和目录管理
 abbrlink: 691c316
 date: 2021-06-07 16:44:13
-updated: 2021-06-07 16:44:13
+updated: 2022-04-04 00:51:45
 ---
 # find:遍历目录树
 ## 功能

@@ -1,14 +1,13 @@
 ---
-title: Linux文本文件读取命令 more、less命令
-categories:
-  - 编程
+title: Linux文本文件读取命令
+categories: 
   - Linux
   - 通用
   - 文本文件及其处理命令
   - 读取文本文件
 abbrlink: 9f27513a
 date: 2021-04-22 14:43:39
-updated: 2021-04-22 14:43:39
+updated: 2022-04-04 00:51:45
 ---
 # 逐屏显示文件的more和less命令
 当一个文件内容比较长的的时候，屏幕显示不完全，则通常会使用到more和less命令。

@@ -1,12 +1,11 @@
 ---
 title: idea Swing UTF8 中文乱码
 categories: 
-  - 编程
   - IDE
   - Idea
-date: 2020-01-02 11:55:04
-updated: 2020-04-11 09:21:19
 abbrlink: eb997f87
+date: 2020-01-02 11:55:04
+updated: 2022-04-04 00:51:45
 ---
 # 问题描述
 今天将一个Swing项目,迁移到Idea中,但是很奇怪,运行后,标签中和按钮中的中文都乱码了,之前在Eclipse中用的编码是gbk,idea中的我改成了UTF-8

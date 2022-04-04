@@ -1,12 +1,11 @@
 ---
 title: LinuxDeploy CentOS7编译安装最新的Git
 categories: 
-  - 编程
   - Linux
   - LinuxDeploy
-date: 2021-03-18 11:12:56
-updated: 2021-03-19 02:13:34
 abbrlink: 94a9be61
+date: 2021-03-18 11:12:56
+updated: 2022-04-04 00:51:45
 ---
 # 下载git源码压缩包
 ## 从Git官网上下载

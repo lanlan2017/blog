@@ -1,13 +1,12 @@
 ---
 title: Ubuntu 安装VScode
 categories: 
-  - 编程
   - Linux
   - VirtualBox
   - Ubuntu
+abbrlink: 65863024
 date: 2019-11-25 15:38:46
-updated: 2021-03-20 10:16:42
-abbrlink: '65863024'
+updated: 2022-04-04 00:51:45
 ---
 # Ubuntu 安装Vscode
 ## 下载.deb文件

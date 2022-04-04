@@ -5,9 +5,9 @@ categories:
   - CMD批处理
   - 语法
   - 系统相关命令
-date: 2019-12-22 10:50:21
-updated: 2020-04-11 09:15:21
 abbrlink: 413c8d35
+date: 2019-12-22 10:50:21
+updated: 2022-04-04 00:51:44
 ---
 # taskill命令帮助文档
 ```cmd

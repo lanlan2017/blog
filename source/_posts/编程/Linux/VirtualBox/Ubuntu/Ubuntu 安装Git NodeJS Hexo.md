@@ -1,13 +1,12 @@
 ---
 title: Ubuntu 安装Git NodeJS Hexo
 categories: 
-  - 编程
   - Linux
   - VirtualBox
   - Ubuntu
-date: 2019-11-25 19:55:24
-updated: 2021-03-20 10:16:24
 abbrlink: 92f73acb
+date: 2019-11-25 19:55:24
+updated: 2022-04-04 00:51:45
 ---
 # Ubuntu 安装 git
 ```shell

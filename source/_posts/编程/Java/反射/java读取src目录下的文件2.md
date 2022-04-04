@@ -1,12 +1,11 @@
 ---
 title: java读取src目录下的文件2
-categories:
-  - 编程
+categories: 
   - Java
   - 反射
 abbrlink: 4de14eef
 date: 2021-03-29 07:56:21
-updated: 2021-03-29 09:44:37
+updated: 2022-04-04 00:51:44
 ---
 # 项目结构
 ```

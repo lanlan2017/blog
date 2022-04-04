@@ -1,13 +1,12 @@
 ---
 title: Ubuntu 18.04修改默认源为国内源
 categories: 
-  - 编程
   - Linux
   - VirtualBox
   - Ubuntu
-date: 2019-11-25 17:44:39
-updated: 2021-03-20 10:16:12
 abbrlink: 4fc37c0d
+date: 2019-11-25 17:44:39
+updated: 2022-04-04 00:51:45
 ---
 # Ubuntu 18.04修改默认源为国内源
 修改阿里源为Ubuntu 18.04默认的源

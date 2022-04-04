@@ -1,14 +1,14 @@
 ---
 title: 正则表达式 实现html 超链接 图片转markdown
-categories:
+categories: 
   - 其他
   - 正则表达式
   - 应用
 abbrlink: f279d8a6
 date: 2018-12-17 01:40:26
-updated: 2019-12-17 05:18:53
+updated: 2022-04-04 00:51:45
 ---
-## html超链接 a 转markdown ##
+## html超链接 a 转markdown
 超链接如下所示
 ```
 <a href="https://www.jb51.net/article/107218.htm" target="_blank" rel="noopener">response.setHeader各种用法详解</a>
@@ -23,7 +23,7 @@ updated: 2019-12-17 05:18:53
 **匹配正则：**`<a href="(.+?)".*?>(.+?)<\/a>`
 **替换正则:**`[$2]($1)`
 
-## html图片 img 转markdown ##
+## html图片 img 转markdown
 ```html
 <img src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/chongdingxiang_zhuanfa/login.png" alt="显示文本">
 ```
@@ -35,7 +35,7 @@ updated: 2019-12-17 05:18:53
 **匹配正则:**`<img\s*src="(.+?)"\s*alt="(.*?)">`
 **替换正则:**`![$2]($1)`
 
-## 代码段 code 转markdown ##
+## 代码段 code 转markdown
 代码段如下所示:
 ```html
 <code>request.getRequestDispatcher(&quot;转发的页面&quot;).forward(request,response);</code>
@@ -46,15 +46,15 @@ updated: 2019-12-17 05:18:53
 `
 ```
 
-### 逆转义 ###
+### 逆转义
 代码段中会把双引号等特殊字符转义，所以还需要逆转义才能得到真正的markdown代码段：
 
 
 
-## html加粗 转 markdown ##
+## html加粗 转 markdown
 **匹配正则:**`<\/?strong>`
 **替换正则:**`**`
 
-## html 标题转markdown ##
+## html 标题转markdown
 **匹配正则:**`<h2 id=.+?><a href=.+?></a>(.+?)</h2>`
 **替换正则:**`## $1 ##\n`

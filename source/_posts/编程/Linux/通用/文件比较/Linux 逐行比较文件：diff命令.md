@@ -1,13 +1,12 @@
 ---
 title: Linux 逐行比较文件：diff命令
 categories: 
-  - 编程
   - Linux
   - 通用
   - 文件比较
 abbrlink: fe546836
 date: 2021-05-19 13:17:06
-updated: 2021-05-20 16:20:11
+updated: 2022-04-04 00:51:45
 ---
 # Linux 求出两个文件的差别：diff命令介绍
 Linux diff命令用于比较文件的差异。

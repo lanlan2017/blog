@@ -1,12 +1,11 @@
 ---
 title: LinuxDeploy CentOS7 搭建Hexo博客
 categories: 
-  - 编程
   - Linux
   - LinuxDeploy
-date: 2021-03-18 03:02:03
-updated: 2021-03-18 02:13:58
 abbrlink: 4562533d
+date: 2021-03-18 03:02:03
+updated: 2022-04-04 00:51:45
 ---
 # 前言
 安装hexo之前，需要先安装好nodejs,如果还没安装好nodejs，请先安装好nodejs

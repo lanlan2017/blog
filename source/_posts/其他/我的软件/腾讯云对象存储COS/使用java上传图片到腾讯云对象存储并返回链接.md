@@ -1,29 +1,35 @@
 ---
 title: 使用java上传图片到腾讯云对象存储并返回链接
-categories:
+categories: 
   - 其他
   - 我的软件
   - 腾讯云对象存储COS
 abbrlink: 5a1e201b
 date: 2018-10-10 22:03:14
-updated: 2019-12-17 05:18:53
+updated: 2022-04-04 15:13:22
 ---
+# 使用java上传图片到腾讯云对象存储并返回链接
 不需要签名的公共链接：
 ```
 ![](http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDQikX6SPUAcqqcAxaT8ZmjPpyrUqwuKei%26q-sign-time%3D1540294349%3B1540294649%26q-key-time%3D1540294349%3B1540294649%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D1e368fb926c8858b9ed65b923a9030bb54234129)
 ```
+
 显示效果：
 ![](http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDQikX6SPUAcqqcAxaT8ZmjPpyrUqwuKei%26q-sign-time%3D1540294349%3B1540294649%26q-key-time%3D1540294349%3B1540294649%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D1e368fb926c8858b9ed65b923a9030bb54234129)
+
 去掉签名的链接：
 ```
 ![](http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg
 ```
+
 显示效果：
 ![](http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg)
+
 https的图片链接：
 ```
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg)
 ```
+
 显示效果：
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg)
 使用https的其他图片

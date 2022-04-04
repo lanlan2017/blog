@@ -1,13 +1,12 @@
 ---
 title: Linux 文件系统的创建与安装
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件系统
 abbrlink: 58bbb0ab
 date: 2021-06-20 14:34:35
-updated: 2021-06-20 14:34:35
+updated: 2022-04-04 00:51:45
 ---
 # 根文件系统与子文件系统
 ## 根文件系统(root filesystem)

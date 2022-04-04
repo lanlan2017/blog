@@ -1,13 +1,13 @@
 ---
 title: Xshell通过用户名和密码连接远程Linux服务器
-categories:
+categories: 
   - Windows
   - 软件
   - Win10设置
   - 远程控制
 abbrlink: fd12fec7
 date: 2021-07-08 00:57:26
-updated: 2021-07-08 00:57:26
+updated: 2022-04-04 00:51:44
 ---
 # Xshell通过用户名和密码连接远程Linux服务器
 具体操作步骤如下图所示：

@@ -1,12 +1,11 @@
 ---
 title: grep命令
 categories: 
-  - 编程
   - Linux
   - 通用
 abbrlink: 471198f0
 date: 2019-11-03 15:40:40
-updated: 2021-03-20 22:14:44
+updated: 2022-04-04 00:51:45
 ---
 # grep命令
 ```shell

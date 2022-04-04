@@ -1,12 +1,11 @@
 ---
 title: Java Swing系统托盘程序
 categories: 
-  - 编程
   - Java
   - Swing
-date: 2020-09-15 10:11:36
-updated: 2020-09-16 12:17:42
 abbrlink: 57f9f8bc
+date: 2020-09-15 10:11:36
+updated: 2022-04-04 00:51:44
 ---
 # Java Swing系统托盘程序
 

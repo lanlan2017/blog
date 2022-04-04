@@ -1,12 +1,11 @@
 ---
 title: Navicat premium导出E-R图
 categories: 
-  - 编程
   - MySQL
   - 图形工具
-date: 2019-11-23 23:05:36
-updated: 2021-03-20 10:20:32
 abbrlink: 50cd694e
+date: 2019-11-23 23:05:36
+updated: 2022-04-04 00:51:45
 ---
 # 大学数据库模式
 下面以数据库系统概念第6版的[大学数据库模式](https://www.db-book.com/db6/lab-dir/sample_tables-dir/index.html)作为示例

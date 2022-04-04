@@ -1,14 +1,13 @@
 ---
 title: JSP response 内置对象
 categories: 
-  - 编程
   - Java
   - Java EE
   - JSP
   - 内置对象
-date: 2018-12-19 15:11:39
-updated: 2020-04-11 09:21:19
 abbrlink: ddf72c82
+date: 2018-12-19 15:11:39
+updated: 2022-04-04 00:51:44
 ---
 ## response内置对象简介 ##
 

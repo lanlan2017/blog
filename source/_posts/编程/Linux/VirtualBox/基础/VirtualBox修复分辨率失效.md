@@ -1,13 +1,12 @@
 ---
 title: VirtualBox修复分辨率失效
 categories: 
-  - 编程
   - Linux
   - VirtualBox
   - 基础
-date: 2019-11-24 23:19:58
-updated: 2020-04-11 09:21:19
 abbrlink: 88ff8084
+date: 2019-11-24 23:19:58
+updated: 2022-04-04 00:51:45
 ---
 # 问题描述
 今天在VirtualBox上安装了Ubuntu,默认的分辨率比较小,所以我Ubuntu上调整好分辨率后,显示虚拟机显示区域变大了。

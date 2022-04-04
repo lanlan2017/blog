@@ -1,12 +1,11 @@
 ---
 title: 旧版本的navicat无法连接mysql8.0
 categories: 
-  - 编程
   - MySQL
   - 图形工具
-date: 2019-10-18 17:01:51
-updated: 2021-03-20 10:18:58
 abbrlink: 4f42ffba
+date: 2019-10-18 17:01:51
+updated: 2022-04-04 00:51:45
 ---
 # 旧版本的navicat无法连接mysql8.0
 ## 问题描述

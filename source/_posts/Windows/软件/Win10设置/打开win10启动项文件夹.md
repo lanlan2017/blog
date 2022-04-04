@@ -1,12 +1,12 @@
 ---
 title: 打开win10启动项文件夹
-categories:
+categories: 
   - Windows
   - 软件
   - Win10设置
 abbrlink: 62f05e9a
 date: 2021-07-16 09:12:19
-updated: 2021-07-16 09:12:19
+updated: 2022-04-04 00:51:44
 ---
 # 查找路径打开
 ```

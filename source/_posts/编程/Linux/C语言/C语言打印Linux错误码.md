@@ -1,12 +1,11 @@
 ---
 title: C语言打印Linux错误码
 categories: 
-  - 编程
   - Linux
   - C语言
 abbrlink: 809fc7c6
 date: 2021-03-24 05:54:45
-updated: 2021-04-03 23:58:13
+updated: 2022-04-04 00:51:45
 ---
 # C语言代码
 ```

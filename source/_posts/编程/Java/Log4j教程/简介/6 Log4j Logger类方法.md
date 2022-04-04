@@ -1,13 +1,12 @@
 ---
 title: 6 Log4j Logger类方法
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - 简介
-date: 2020-08-03 05:44:24
-updated: 2021-03-20 09:38:13
 abbrlink: 295e501e
+date: 2020-08-03 05:44:24
+updated: 2022-04-04 00:51:44
 ---
 # Log4j Logger类方法
 ## 获取Logger类实例

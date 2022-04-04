@@ -1,13 +1,12 @@
 ---
 title: 15 No appenders could be found for logger Please initialize the log4j system properly
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - Debug
-date: 2020-08-06 11:57:02
-updated: 2020-09-03 01:18:26
 abbrlink: 2efc4260
+date: 2020-08-06 11:57:02
+updated: 2022-04-04 00:51:44
 ---
 # Log4j Debug记录
 ## log4j:WARN No appenders could be found for logger

@@ -1,12 +1,11 @@
 ---
 title: 恢复Open With Code书包右键菜单
 categories: 
-  - 编程
   - IDE
   - VSCode
-date: 2020-02-12 07:20:05
-updated: 2020-04-11 09:21:19
 abbrlink: 4869d326
+date: 2020-02-12 07:20:05
+updated: 2022-04-04 00:51:45
 ---
 # 问题描述
 安装VScode的时候会在鼠标右键设置一个Open With Code菜单,这样可以在目录的空白处直接右键打开该目录,但是我的被360删除掉了。现在来介绍怎么恢复.

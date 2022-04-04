@@ -4,9 +4,9 @@ categories:
   - Hexo
   - next主题
   - Debug
-date: 2018-10-30 23:47:02
-updated: 2020-06-24 08:17:42
 abbrlink: 2740f49f
+date: 2018-10-30 23:47:02
+updated: 2022-04-04 15:56:38
 ---
 # 解决方案 #
 ## 修改package.json安装最新的hexo-baidu-url-submit插件 ##

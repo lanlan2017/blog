@@ -4,9 +4,9 @@ categories:
   - Hexo
   - next主题
   - 插件
-date: 2020-06-24 08:21:48
-updated: 2020-06-25 09:00:59
 abbrlink: de4f7be8
+date: 2020-06-24 08:21:48
+updated: 2022-04-04 15:56:38
 ---
 # 注册LeanCloud
 LeanCloud分为**国内**和**国际版**的。
@@ -122,11 +122,6 @@ https://github.com/zhaojun1998/Valine-Admin
 进入评论系统后就可以查看评论或者删除评论了:
 ![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/24.png)
 
-<!-- 
-Blog/Hexo/Next/Plugin/ValineCommentSystem/24
-Blog/Hexo/Next/Plugin/ValineCommentSystem/24
-Blog/Hexo/Next/Plugin/ValineCommentSystem/24
--->
 # 参考资料
 [使用Leancloud+valine打造Hexo-NexT评论系统](https://juejin.im/post/5d790e706fb9a06af8250665)
 [https://github.com/zhaojun1998/Valine-Admin](https://github.com/zhaojun1998/Valine-Admin)

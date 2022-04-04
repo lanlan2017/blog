@@ -1,13 +1,12 @@
 ---
 title: Linux 环境变量
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 替换、元字符和转义
 abbrlink: 57af82ca
 date: 2021-06-27 17:00:45
-updated: 2021-06-27 17:00:45
+updated: 2022-04-04 00:51:45
 ---
 # 环境变量和局部变量
 ## 默认类型

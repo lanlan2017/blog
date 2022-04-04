@@ -1,11 +1,10 @@
 ---
 title: gitbook serve命令找不到fontsettings.js
 categories: 
-  - 编程
   - NodeJS
-date: 2020-10-13 12:35:31
-updated: 2020-10-13 12:43:15
 abbrlink: 2e333fd8
+date: 2020-10-13 12:35:31
+updated: 2022-04-04 00:51:45
 ---
 # gitbook serve命令找不到fontsettings.js
 ## 问题描述
@@ -28,9 +27,11 @@ info: found 0 asset files
 
 Error: ENOENT: no such file or directory, stat 'E:\Blog\MyGitBook\_book\gitbook\gitbook-plugin-fontsettings\fontsettings.js'
 ```
+
 这个原来是一个Bug（Vesion：3.2.3）
 ## 解决方案
 懒得写,见参考资料
+
 # 参考资料
 [https://blog.csdn.net/prufeng/article/details/83301895](https://blog.csdn.net/prufeng/article/details/83301895)
 [https://segmentfault.com/q/1010000009569245](https://segmentfault.com/q/1010000009569245)

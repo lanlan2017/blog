@@ -1,12 +1,11 @@
 ---
 title: JavaScript生成Txt文件并下载
 categories: 
-  - 编程
   - JavaScript
   - 下载文件
-date: 2019-12-08 22:39:01
-updated: 2020-04-11 09:21:19
 abbrlink: 4c49ec32
+date: 2019-12-08 22:39:01
+updated: 2022-04-04 00:51:45
 ---
 # JS代码
 ```javascript

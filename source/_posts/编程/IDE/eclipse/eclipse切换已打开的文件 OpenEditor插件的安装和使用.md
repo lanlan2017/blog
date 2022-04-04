@@ -1,12 +1,11 @@
 ---
 title: eclipse切换已打开的文件 OpenEditor插件的安装和使用
-categories:
-  - 编程
+categories: 
   - IDE
   - eclipse
 abbrlink: 158fae9d
 date: 2021-08-22 10:10:39
-updated: 2021-08-22 10:10:39
+updated: 2022-04-04 00:51:45
 ---
 # 显示折叠的编辑器列表
 一个项目中有许多文件，当你在eclipse中打开多个文件之后，编辑区只会显示几个文件，其他的文件则会折叠起来。

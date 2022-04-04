@@ -1,11 +1,10 @@
 ---
 title: nvm for windows安装使用详解
-categories:
-  - 编程
+categories: 
   - NodeJS
 abbrlink: 1dec4fca
 date: 2021-07-10 20:22:27
-updated: 2021-07-10 20:22:27
+updated: 2022-04-04 00:51:45
 ---
 # 下载nvm for windows
 进入如下地址下载：

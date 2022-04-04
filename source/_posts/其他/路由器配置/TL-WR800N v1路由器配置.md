@@ -3,9 +3,9 @@ title: TL-WR800N v1路由器配置
 categories: 
   - 其他
   - 路由器配置
-date: 2019-11-01 14:39:51
-updated: 2020-01-12 09:28:17
 abbrlink: f8d0ff32
+date: 2019-11-01 14:39:51
+updated: 2022-04-04 15:13:22
 ---
 # TL-WR800N v1路由器配置 
 ## 固定电脑IP地址

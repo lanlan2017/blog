@@ -1,12 +1,11 @@
 ---
 title: Linux 执行多个命令
 categories: 
-  - 编程
   - Linux
   - 通用
-date: 2019-11-01 10:24:47
-updated: 2021-03-20 10:14:06
 abbrlink: 1598bd9
+date: 2019-11-01 10:24:47
+updated: 2022-04-04 00:51:45
 ---
 # Linux执行多个命令
 ## 全部执行

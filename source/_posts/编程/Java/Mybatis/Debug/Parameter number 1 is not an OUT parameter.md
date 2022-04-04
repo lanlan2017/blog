@@ -1,13 +1,12 @@
 ---
 title: Parameter number 1 is not an OUT parameter
 categories: 
-  - 编程
   - Java
   - Mybatis
   - Debug
-date: 2020-09-02 11:57:29
-updated: 2021-03-18 02:43:27
 abbrlink: c5a0d373
+date: 2020-09-02 11:57:29
+updated: 2022-04-04 00:51:44
 ---
 # 错误提示
 今天复习的时候,运行以前的测试项目出现了如下错误:

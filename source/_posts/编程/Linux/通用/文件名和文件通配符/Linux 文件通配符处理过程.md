@@ -1,13 +1,12 @@
 ---
 title: Linux 文件通配符处理过程
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件名和文件通配符
 abbrlink: 36f9715c
 date: 2021-05-31 14:48:40
-updated: 2021-05-31 14:48:40
+updated: 2022-04-04 00:51:45
 ---
 # shell与kernel
 ## shell

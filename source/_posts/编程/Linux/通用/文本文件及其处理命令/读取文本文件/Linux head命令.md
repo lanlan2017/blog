@@ -1,14 +1,13 @@
 ---
 title: Linux head命令
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文本文件及其处理命令
   - 读取文本文件
 abbrlink: 9f06639c
 date: 2021-04-24 11:43:48
-updated: 2021-04-24 11:43:48
+updated: 2022-04-04 00:51:45
 ---
 # Linux查看文件头命令：head
 ## head --help

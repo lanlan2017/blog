@@ -1,12 +1,11 @@
 ---
 title: VSCode 运行Java
 categories: 
-  - 编程
   - IDE
   - VSCode
-date: 2019-07-06 22:11:24
-updated: 2021-03-20 10:32:52
 abbrlink: c8a8df16
+date: 2019-07-06 22:11:24
+updated: 2022-04-04 00:51:45
 ---
 # VSCode 运行Java
 ## 安装插件

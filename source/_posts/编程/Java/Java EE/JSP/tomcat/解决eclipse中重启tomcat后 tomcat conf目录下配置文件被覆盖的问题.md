@@ -1,14 +1,13 @@
 ---
 title: 解决eclipse中重启tomcat后 tomcat conf目录下配置文件被覆盖的问题
 categories: 
-  - 编程
   - Java
   - Java EE
   - JSP
   - tomcat
-date: 2018-12-11 23:57:25
-updated: 2020-04-11 09:21:19
 abbrlink: 2f563857
+date: 2018-12-11 23:57:25
+updated: 2022-04-04 00:51:44
 ---
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">&nbsp;<input type="button" value="复制链接" onclick="copyPageURL();">
 <script>

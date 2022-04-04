@@ -1,13 +1,12 @@
 ---
 title: Linux cal命令打印日历
 categories: 
-  - 编程
   - Linux
   - 通用
   - 日期时间日历
 abbrlink: 69afcd3b
 date: 2021-04-20 21:40:54
-updated: 2021-04-20 23:07:47
+updated: 2022-04-04 00:51:45
 ---
 
 ## cal打印当前月的日历

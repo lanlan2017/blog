@@ -1,12 +1,11 @@
 ---
 title: CentOS安装C语言帮助手册
-categories:
-  - 编程
+categories: 
   - Linux
   - C语言
-abbrlink: '19662e41'
+abbrlink: 19662e41
 date: 2021-06-23 13:53:12
-updated: 2021-06-23 13:53:12
+updated: 2022-04-04 00:51:45
 ---
 # CentOS安装C语言帮助手册
 CentOS系统有可能默认没有安装C语言帮助手册，man一个函数时会找不到帮助文件，用下面的命令安装：

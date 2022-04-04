@@ -1,13 +1,12 @@
 ---
 title: JSTL使用步骤
 categories: 
-  - 编程
   - Java
   - Java EE
   - JSTL
-date: 2019-04-22 12:32:02
-updated: 2020-04-11 09:21:19
 abbrlink: 80d567ab
+date: 2019-04-22 12:32:02
+updated: 2022-04-04 00:51:44
 ---
 ## JSTL 库安装 ##
 Apache Tomcat安装JSTL 库步骤如下：

@@ -1,14 +1,13 @@
 ---
 title: eclipse安装Mybatis插件
 categories: 
-  - 编程
   - Java
   - Java EE
   - IDE
   - eclipse
-date: 2019-06-02 21:03:06
-updated: 2020-04-11 09:21:19
 abbrlink: c9f81303
+date: 2019-06-02 21:03:06
+updated: 2022-04-04 00:51:44
 ---
 # 打开eclipse marketplace #
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Mybatis/3.png)

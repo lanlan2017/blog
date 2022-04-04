@@ -1,13 +1,12 @@
 ---
-title: Linux 显示乱码问题
+title: Linux vi显示乱码问题
 categories: 
-  - 编程
   - Linux
   - 通用
   - vi编辑器及乱码问题
 abbrlink: 4116ba94
 date: 2021-05-30 21:01:41
-updated: 2021-05-30 21:01:41
+updated: 2022-04-04 00:51:45
 ---
 # 屏幕显示乱码问题
 ## 现象

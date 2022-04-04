@@ -6,13 +6,13 @@ categories:
   - VSCode
 abbrlink: 687154e5
 date: 2021-04-06 16:27:46
-updated: 2021-04-06 17:06:03
+updated: 2022-04-04 00:51:44
 ---
 # 前言
 VScode默认安装在C盘之中：
 "C:\Users\用户名\AppData\Local\Programs\Microsoft VS Code")中,
 VScode的插件也默认安装在C盘之中：
-C:\Users\用户名\.vscode\extensions
+`C:\Users\用户名\.vscode\extensions`
 但是最近我的C盘满了，所以我打算把插件的安装路径改到其他的盘符中。
 # 使用符号链接
 ## 剪切extensions目录到其他盘符中

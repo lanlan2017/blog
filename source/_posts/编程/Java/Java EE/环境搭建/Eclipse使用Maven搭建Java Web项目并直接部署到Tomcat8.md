@@ -1,13 +1,12 @@
 ---
 title: Eclipse使用Maven搭建Java Web项目并直接部署到Tomcat8
 categories: 
-  - 编程
   - Java
   - Java EE
   - 环境搭建
-date: 2019-04-26 17:42:04
-updated: 2020-04-11 09:21:19
 abbrlink: 9b044702
+date: 2019-04-26 17:42:04
+updated: 2022-04-04 00:51:44
 ---
 # 使用的软件版本 #
 - `eclipse for Java EE 2019`

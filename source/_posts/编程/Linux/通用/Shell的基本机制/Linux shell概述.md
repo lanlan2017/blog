@@ -1,13 +1,12 @@
 ---
 title: Linux shell概述
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - Shell的基本机制
 abbrlink: d37dc0ec
 date: 2021-06-26 14:22:30
-updated: 2021-06-26 14:22:30
+updated: 2022-04-04 00:51:45
 ---
 # Linux shell概述
 ## Unix的shell

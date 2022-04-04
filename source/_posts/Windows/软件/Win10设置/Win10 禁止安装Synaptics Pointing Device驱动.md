@@ -4,9 +4,9 @@ categories:
   - Windows
   - 软件
   - Win10设置
-date: 2021-07-24 18:50:16
-updated: 2021-07-24 18:50:16
 abbrlink: 2018f329
+date: 2021-07-24 18:50:16
+updated: 2022-04-04 00:51:44
 ---
 # 前言
 在上篇文章:[win10 更新后 指点杆无法使用](/blog/4ca2ad13/)中，我介绍了win10更新后ThinkPad的指点杆无法使用，可以通过卸载Synaptics Pointing Device来恢复指点杆的功能。

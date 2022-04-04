@@ -1,12 +1,12 @@
 ---
 title: 更新hexo5+next8
-categories:
+categories: 
   - Hexo
   - next主题
   - 更新
 abbrlink: 63f5df0e
 date: 2021-12-19 16:41:54
-updated: 2021-12-19 16:41:54
+updated: 2022-04-04 00:51:44
 ---
 # 更新hexo5+next8
 更新的hexo5与我原来的旧版的next主题不兼容，所以无法直接在原站点(blog)进行更新。因此，我的做法是直接创建一个新站点(blog_new)，然后把原站点(blog)上的文章复制到新站点(blog_new)上。

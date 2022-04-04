@@ -1,13 +1,12 @@
 ---
 title: Linux 批量处理文件
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件管理和目录管理
 abbrlink: 8c94a702
 date: 2021-06-15 17:07:33
-updated: 2021-06-15 17:07:33
+updated: 2022-04-04 00:51:45
 ---
 # 问题
 遍历当前目录`.`的所有后缀为.c文件，查找文件中带有--help的内容：

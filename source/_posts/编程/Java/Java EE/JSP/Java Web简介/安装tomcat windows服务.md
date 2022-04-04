@@ -1,14 +1,13 @@
 ---
 title: 安装tomcat windows服务
 categories: 
-  - 编程
   - Java
   - Java EE
   - JSP
   - Java Web简介
-date: 2018-12-08 21:46:18
-updated: 2020-04-11 09:21:19
 abbrlink: 6d6d5543
+date: 2018-12-08 21:46:18
+updated: 2022-04-04 00:51:44
 ---
 <input type="button" onclick="open_closeTOC()" id="showcloseButton">
 <script>

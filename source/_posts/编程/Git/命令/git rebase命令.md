@@ -1,12 +1,11 @@
 ---
 title: git rebase命令
 categories: 
-  - 编程
   - Git
   - 命令
-date: 2019-12-09 12:15:47
-updated: 2021-03-20 10:05:16
 abbrlink: edcdf022
+date: 2019-12-09 12:15:47
+updated: 2022-04-04 00:51:45
 ---
 # git rebase的作用
 当你完成比较复杂的一个任务的时候,你可能提交了多次commit,经过一系列的commit后,你最终完成了任务,然后你想推送到远程仓库中.

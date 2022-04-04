@@ -1,12 +1,11 @@
 ---
 title: Tomcat无法进入Manager App和Host Manager页面
-categories:
-  - 编程
+categories: 
   - Linux
   - Tomcat
 abbrlink: 5d0a8795
 date: 2021-03-12 09:55:01
-updated: 2021-03-12 10:29:43
+updated: 2022-04-04 00:51:45
 ---
 # Tomcat无法进入Manager App和Host Manager页面
 ## 解决无法进入Manager App页面

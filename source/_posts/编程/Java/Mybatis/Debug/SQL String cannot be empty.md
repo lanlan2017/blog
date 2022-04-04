@@ -1,13 +1,12 @@
 ---
 title: SQL String cannot be empty
 categories: 
-  - 编程
   - Java
   - Mybatis
   - Debug
-date: 2020-08-27 06:01:25
-updated: 2021-03-18 02:43:27
 abbrlink: d4015775
+date: 2020-08-27 06:01:25
+updated: 2022-04-04 00:51:44
 ---
 # 错误提示
 <pre>

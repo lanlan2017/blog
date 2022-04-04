@@ -1,13 +1,12 @@
 ---
 title: 10 Log4j 使用多个文件记录日志 RollingFileAppender类
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - 简介
-date: 2020-08-03 09:56:40
-updated: 2021-03-20 09:38:13
 abbrlink: cbcda66c
+date: 2020-08-03 09:56:40
+updated: 2022-04-04 00:51:44
 ---
 # Log4j 使用多个文件记录日志 RollingFileAppender类
 您可能因为某些原因，需要将日志写入多个文件，比如当文件大小达到一定阀值时。

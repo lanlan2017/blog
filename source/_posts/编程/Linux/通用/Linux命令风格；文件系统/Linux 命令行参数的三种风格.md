@@ -1,13 +1,12 @@
 ---
 title: Linux 命令行参数的三种风格
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - Linux命令风格；文件系统
 abbrlink: ca8995d9
 date: 2021-06-18 22:42:51
-updated: 2021-06-18 22:42:51
+updated: 2022-04-04 00:51:45
 ---
 # 命令行参数的三种风格
 ## 类似dd命令的风格

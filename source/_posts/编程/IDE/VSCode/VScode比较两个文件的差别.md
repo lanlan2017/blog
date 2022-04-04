@@ -1,12 +1,11 @@
 ---
 title: VScode比较两个文件的差别
 categories: 
-  - 编程
   - IDE
   - VSCode
-date: 2020-06-23 01:00:32
-updated: 2020-06-24 08:13:11
 abbrlink: 7efc26e
+date: 2020-06-23 01:00:32
+updated: 2022-04-04 00:51:45
 ---
 # VSCode比较两个文件的差别
 ## 打开资源管理器

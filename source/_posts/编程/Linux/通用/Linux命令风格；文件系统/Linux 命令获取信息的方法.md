@@ -1,13 +1,12 @@
 ---
 title: Linux 命令获取信息的方法
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - Linux命令风格；文件系统
 abbrlink: 7847abee
 date: 2021-06-18 21:43:40
-updated: 2021-06-18 21:43:40
+updated: 2022-04-04 00:51:45
 ---
 # Linux系统命令和用户程序(ap)运行时获取信息的方式
 ## Linux系统命令和用户程序(ap)

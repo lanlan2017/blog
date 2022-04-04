@@ -1,12 +1,11 @@
 ---
 title: ConnetBot使用秘钥 连接到LinuxDeploy中的CentOS7
 categories: 
-  - 编程
   - Linux
   - LinuxDeploy
+abbrlink: 8177e030
 date: 2021-03-19 10:16:21
-updated: 2021-03-19 10:44:21
-abbrlink: '8177e030'
+updated: 2022-04-04 00:51:45
 ---
 # 下载安装ConnectBot app
 GooglePlay Store:[https://play.google.com/store/apps/details?id=org.connectbot&hl=zh&gl=US](https://play.google.com/store/apps/details?id=org.connectbot&hl=zh&gl=US)

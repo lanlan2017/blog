@@ -1,12 +1,11 @@
 ---
 title: LinuxDeploy CentOS7 安装nodejs
 categories: 
-  - 编程
   - Linux
   - LinuxDeploy
-date: 2021-03-18 01:17:20
-updated: 2021-03-18 12:47:19
 abbrlink: b9668ed5
+date: 2021-03-18 01:17:20
+updated: 2022-04-04 00:51:45
 ---
 # 使用EPEL安装 (yum安装方式)
 ## nodejs CentOS安装介绍

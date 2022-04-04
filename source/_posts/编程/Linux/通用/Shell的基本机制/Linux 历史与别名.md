@@ -1,13 +1,12 @@
 ---
 title: Linux 历史与别名
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - Shell的基本机制
 abbrlink: 712fbae5
 date: 2021-06-26 15:56:39
-updated: 2021-06-26 15:56:39
+updated: 2022-04-04 00:51:45
 ---
 # 历史表
 历史，就是我们在Linux中曾经输入过的命令，bash会把这些命令保存下来，做成一张历史表。

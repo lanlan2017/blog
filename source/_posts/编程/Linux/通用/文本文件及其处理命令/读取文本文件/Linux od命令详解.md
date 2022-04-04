@@ -1,14 +1,13 @@
 ---
 title: Linux od命令详解
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文本文件及其处理命令
   - 读取文本文件
 abbrlink: 879659f3
 date: 2021-04-24 10:53:19
-updated: 2021-04-24 10:53:19
+updated: 2022-04-04 00:51:45
 ---
 # Linux字节打印命令od
 od octal dump 逐字节打印（ c, t c, t x1 t d1, t u1 选项）

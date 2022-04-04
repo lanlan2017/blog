@@ -1,13 +1,12 @@
 ---
 title: Linux SUID权限
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件和目录的权限
 abbrlink: 1944ab05
 date: 2021-06-24 13:34:32
-updated: 2021-06-24 13:34:32
+updated: 2022-04-04 00:51:45
 ---
 # 三级权限存在的问题
 ## 问题

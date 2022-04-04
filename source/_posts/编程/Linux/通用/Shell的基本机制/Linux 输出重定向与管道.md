@@ -1,13 +1,12 @@
 ---
 title: Linux 输出重定向与管道
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - Shell的基本机制
 abbrlink: f6ac4b15
 date: 2021-06-26 21:49:08
-updated: 2021-06-26 21:49:08
+updated: 2022-04-04 00:51:45
 ---
 # Linux 输出重定向与管道
 程序的标准输入/输出

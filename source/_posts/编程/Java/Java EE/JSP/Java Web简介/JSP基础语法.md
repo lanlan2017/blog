@@ -1,14 +1,13 @@
 ---
 title: JSP基础语法
 categories: 
-  - 编程
   - Java
   - Java EE
   - JSP
   - Java Web简介
-date: 2018-12-03 19:28:31
-updated: 2020-04-11 09:21:19
 abbrlink: ceef3131
+date: 2018-12-03 19:28:31
+updated: 2022-04-04 00:51:44
 ---
 ## JSP注释 ##
 JSP页面中共有三种注释

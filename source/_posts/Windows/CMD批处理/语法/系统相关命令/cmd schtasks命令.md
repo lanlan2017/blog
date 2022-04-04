@@ -5,11 +5,11 @@ categories:
   - CMD批处理
   - 语法
   - 系统相关命令
-date: 2019-09-25 00:35:36
-updated: 2020-04-11 09:15:21
 abbrlink: b1b65659
+date: 2019-09-25 00:35:36
+updated: 2022-04-04 00:51:44
 ---
-# schtask命令文档 #
+# schtask命令文档
 ```cmd
 schtasks /parameter [arguments] 
 
@@ -45,8 +45,8 @@ examples:
     schtasks /showsid /?
 
 ```
-## 创建新任务计划 ##
-### schtasks /create文档 ###
+## 创建新任务计划
+### schtasks /create文档
 ```cmd
 
 schtasks /create [/s system [/u username [/p [password]]]]
@@ -242,14 +242,14 @@ schtasks /create [/s system [/u username [/p [password]]]]
            \"c:\log data\today.xml\"" ... 
 
 ```
-## 定时关机 ##
-### 先用计算器测试 ###
+## 定时关机
+### 先用计算器测试
 **在00:53时启动计算器**
 ```cmd
 schtasks /create /tn shutdown_test /st 00:53 /sc once /tr "c:\windows\system32\calc.exe"
 ```
-## 查询任务计划 ##
-### 语法 ###
+## 查询任务计划
+### 语法
 ```cmd
 
 schtasks /query [/s system [/u username [/p [password]]]]
@@ -311,7 +311,7 @@ C:\Users\lan>SCHTASKS /Query /TN shutdown_test
 ======================================== ====================== ===============
 shutdown_test                            N/A                    就绪
 ```
-## 删除任务计划 ##
+## 删除任务计划
 ```cmd
 
 schtasks /delete [/s system [/u username [/p [password]]]]
@@ -346,7 +346,7 @@ schtasks /delete [/s system [/u username [/p [password]]]]
     schtasks /delete /s system /u user /p password /tn "\备份\启动备份" /f
 
 ```
-### 删除上面创建的任务 ###
+### 删除上面创建的任务
 ```cmd
 schtasks /delete /tn  taskname shutdown_test
 ```

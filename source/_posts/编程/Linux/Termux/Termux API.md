@@ -1,12 +1,11 @@
 ---
 title: Termux API
 categories: 
-  - 编程
   - Linux
   - Termux
-date: 2019-11-03 19:40:56
-updated: 2021-03-20 10:11:29
 abbrlink: b709eab2
+date: 2019-11-03 19:40:56
+updated: 2022-04-04 00:51:45
 ---
 # Termux API有什么用
 Termux:API，用于访问手机硬件,实现更多的可玩性,可以实现如下等功能:

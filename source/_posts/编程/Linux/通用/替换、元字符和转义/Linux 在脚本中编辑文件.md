@@ -1,13 +1,12 @@
 ---
 title: Linux 在脚本中编辑文件
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 替换、元字符和转义
 abbrlink: 99a1f664
 date: 2021-06-27 16:52:34
-updated: 2021-06-27 16:52:34
+updated: 2022-04-04 00:51:45
 ---
 # read:读用户的输入
 内部命令read：变量取值的另外一种方法

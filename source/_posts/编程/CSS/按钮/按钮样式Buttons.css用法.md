@@ -1,12 +1,11 @@
 ---
 title: 按钮样式Buttons.css用法
 categories: 
-  - 编程
   - CSS
   - 按钮
-date: 2019-11-13 20:57:05
-updated: 2021-03-20 10:41:23
 abbrlink: a0156a29
+date: 2019-11-13 20:57:05
+updated: 2022-04-04 00:51:44
 ---
 # 首先引入样式和js
 使用下拉列表需要使用JS

@@ -1,12 +1,11 @@
 ---
 title: JVM内存配置参数
-categories:
-  - 编程
+categories: 
   - Java
   - JVM
 abbrlink: dd00c2d7
 date: 2021-09-24 10:26:32
-updated: 2021-09-24 10:26:32
+updated: 2022-04-04 00:51:44
 ---
 # JVM内存配置参数
 

@@ -1,12 +1,11 @@
 ---
 title: eclipse常用操作
 categories: 
-  - 编程
   - IDE
   - eclipse
-date: 2020-06-23 12:33:59
-updated: 2020-06-23 01:01:06
 abbrlink: 653d052e
+date: 2020-06-23 12:33:59
+updated: 2022-04-04 00:51:45
 ---
 # eclipse快速导入包 快速移除无用包
 使用`shift+ctrl+o`快捷键

@@ -1,13 +1,12 @@
 ---
 title: Linux 权限相关命令
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件和目录的权限
 abbrlink: 4e33e580
 date: 2021-06-23 16:35:34
-updated: 2021-06-23 16:35:34
+updated: 2022-04-04 00:51:45
 ---
 # 确定文件的权限
 ## 使用ls命令

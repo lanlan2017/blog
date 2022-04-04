@@ -4,9 +4,9 @@ categories:
   - Hexo
   - next主题
   - 自动部署
-date: 2019-11-05 10:29:38
-updated: 2020-06-24 08:17:43
 abbrlink: 13f63c39
+date: 2019-11-05 10:29:38
+updated: 2022-04-04 00:51:44
 ---
 # 获取Token
 登陆Github,然后获取token,网上教程一堆。省略

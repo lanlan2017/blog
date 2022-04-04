@@ -1,12 +1,11 @@
 ---
 title: LinuxDeploy CentOS7 安装java tomcat
 categories: 
-  - 编程
   - Linux
   - LinuxDeploy
-date: 2021-03-17 09:36:50
-updated: 2021-03-17 11:20:44
 abbrlink: e5ce3c15
+date: 2021-03-17 09:36:50
+updated: 2022-04-04 00:51:45
 ---
 # 下载java
 上面安装的linux系统是aarch64架构的，所以需要下载aarch64对应的版本：

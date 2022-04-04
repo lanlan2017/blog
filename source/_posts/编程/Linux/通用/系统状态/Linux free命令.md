@@ -1,13 +1,12 @@
 ---
 title: Linux free命令
 categories: 
-  - 编程
   - Linux
   - 通用
   - 系统状态
 abbrlink: 6b5379d9
 date: 2021-04-21 19:23:59
-updated: 2021-04-21 23:33:39
+updated: 2022-04-04 00:51:45
 ---
 # free命令：了解内存使用情况
 ```

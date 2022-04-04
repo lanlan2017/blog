@@ -1,12 +1,11 @@
 ---
 title: termux 搭建hexo博客教程
 categories: 
-  - 编程
   - Linux
   - Termux
-date: 2019-10-31 15:08:27
-updated: 2021-03-20 10:10:59
 abbrlink: 4a95e633
+date: 2019-10-31 15:08:27
+updated: 2022-04-04 00:51:45
 ---
 # 系统要求
 > [System requirements:](https://wiki.termux.com/wiki/Main_Page)

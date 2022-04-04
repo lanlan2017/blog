@@ -1,13 +1,12 @@
 ---
 title: 9 Log4j 使用文件记录日志 FileAppender类
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - 简介
-date: 2020-08-03 07:03:03
-updated: 2021-03-20 09:38:13
 abbrlink: 6296507b
+date: 2020-08-03 07:03:03
+updated: 2022-04-04 00:51:44
 ---
 # Log4j 使用文件记录日志 FileAppender类
 使用`org.apache.log4j.FileAppender`将日志记录到文件。

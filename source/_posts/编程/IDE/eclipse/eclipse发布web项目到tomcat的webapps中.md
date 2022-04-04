@@ -1,12 +1,11 @@
 ---
 title: eclipse发布web项目到tomcat的webapps中
 categories: 
-  - 编程
   - IDE
   - eclipse
-date: 2018-12-11 20:43:57
-updated: 2021-03-20 10:32:56
 abbrlink: 37dcd881
+date: 2018-12-11 20:43:57
+updated: 2022-04-04 00:51:45
 ---
 # 问题描述
 在Eclipse中，默认会把Web项目发布到Eclipse的工作空间下的：

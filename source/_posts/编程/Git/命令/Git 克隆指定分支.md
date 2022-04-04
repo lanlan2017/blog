@@ -1,12 +1,11 @@
 ---
 title: Git 克隆指定分支
 categories: 
-  - 编程
   - Git
   - 命令
-date: 2019-12-01 15:37:28
-updated: 2020-04-11 09:21:19
 abbrlink: 7aaab990
+date: 2019-12-01 15:37:28
+updated: 2022-04-04 00:51:45
 ---
 # 命令格式
 ```shell

@@ -1,12 +1,11 @@
 ---
 title: JavaScript 控制html5 audio的播放 暂停 重播
 categories: 
-  - 编程
   - JavaScript
   - 播放音频
-date: 2019-04-27 11:27:54
-updated: 2021-03-20 10:24:30
 abbrlink: ff5ef3ed
+date: 2019-04-27 11:27:54
+updated: 2022-04-04 00:51:45
 ---
 # 实例代码
 ```html

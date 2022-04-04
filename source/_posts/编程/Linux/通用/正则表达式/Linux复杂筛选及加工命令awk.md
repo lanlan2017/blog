@@ -1,13 +1,12 @@
 ---
 title: Linux复杂筛选及加工命令awk
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 正则表达式
 abbrlink: 21ec0bd3
 date: 2021-05-03 15:40:15
-updated: 2021-05-03 15:40:15
+updated: 2022-04-04 00:51:45
 ---
 # Linux复杂筛选及加工命令awk
 ## awk：逐行扫描进行文本处理的一门语言

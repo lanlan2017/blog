@@ -1,12 +1,11 @@
 ---
 title: JavaScirpt 解决 正则表达式匹配HTML标签 的错误问题
 categories: 
-  - 编程
   - JavaScript
   - 正则表达式
-date: 2019-12-02 22:40:18
-updated: 2020-04-11 09:21:19
 abbrlink: 2b78c799
+date: 2019-12-02 22:40:18
+updated: 2022-04-04 00:51:45
 ---
 # 问题描述
 JS中当在正则表达式中写HTML标签时,浏览器可能会错误的将正则表达式中的HTML标签当成HTML标签解析,而不是正则表达式,例如,对于如下JS代码:

@@ -1,12 +1,12 @@
 ---
 title: win10环境变量以列表显示
-categories:
+categories: 
   - Windows
   - 软件
   - Win10设置
 abbrlink: cfefe5ea
 date: 2021-07-29 12:19:35
-updated: 2021-07-29 12:19:35
+updated: 2022-04-04 00:51:44
 ---
 # 问题描述
 今天我调整了Path环境变量的顺序，当我想再次编辑Path环境变量的时候，显示的不是列表，而是一个文本框：

@@ -1,14 +1,13 @@
 ---
 title: SpringMVC配置文件声明报错
 categories: 
-  - 编程
   - Java
   - Java EE
   - 解决方案
   - Spring MVC
-date: 2019-05-14 21:32:11
-updated: 2020-04-11 09:21:19
 abbrlink: fb0eb9bb
+date: 2019-05-14 21:32:11
+updated: 2022-04-04 00:51:44
 ---
 # 问题描述 #
 在导入项目的时候,`springmvc`的配置文件声明,也就是第一行的`beans`标签,经常报错.

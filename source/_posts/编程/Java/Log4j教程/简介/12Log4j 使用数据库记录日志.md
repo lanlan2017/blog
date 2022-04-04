@@ -1,13 +1,12 @@
 ---
 title: 12Log4j 使用数据库记录日志
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - 简介
-date: 2020-08-05 03:14:46
-updated: 2021-03-20 09:38:13
 abbrlink: 17eaff0a
+date: 2020-08-05 03:14:46
+updated: 2022-04-04 00:51:44
 ---
 # Log4j 使用数据库记录日志
 `Log4j API`提供了`org.apache.log4j.jdbc.JDBCAppender`对象，该对象可将日志信息记录到特定的数据库之中。

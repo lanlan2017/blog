@@ -1,12 +1,11 @@
 ---
 title: clipboard_js使用步骤
 categories: 
-  - 编程
   - JavaScript
   - 剪贴板
-date: 2019-02-13 00:16:32
-updated: 2021-03-20 10:25:27
 abbrlink: c78d87f4
+date: 2019-02-13 00:16:32
+updated: 2022-04-04 00:51:45
 ---
 # 使用步骤
 使用`clipboard.js`来可分为以下三个步骤：

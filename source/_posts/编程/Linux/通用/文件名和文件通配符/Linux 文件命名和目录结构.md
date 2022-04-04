@@ -1,13 +1,12 @@
 ---
 title: Linux 文件命名和目录结构
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件名和文件通配符
 abbrlink: 80acc920
 date: 2021-05-31 13:53:53
-updated: 2021-05-31 13:53:53
+updated: 2022-04-04 00:51:45
 ---
 # 文件和目录的命名规则
 ## 名字长度

@@ -1,13 +1,12 @@
 ---
 title: 14 Log4j PatternLayout
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - 简介
-date: 2020-08-06 01:38:36
-updated: 2021-03-20 09:38:13
 abbrlink: 5c0e8258
+date: 2020-08-06 01:38:36
+updated: 2022-04-04 00:51:44
 ---
 # Log4j PatternLayout
 如果您希望基于某种模式生成特定格式的日志信息，可使用`org.apache.log4j.PatternLayout`格式化您的日志信息。

@@ -1,12 +1,11 @@
 ---
 title: Linux 输出重定向到剪贴板
 categories: 
-  - 编程
   - Linux
   - 通用
-date: 2019-11-27 00:18:09
-updated: 2021-03-20 10:14:01
 abbrlink: 9ed0e635
+date: 2019-11-27 00:18:09
+updated: 2022-04-04 00:51:45
 ---
 # xsel
 ## 安装xsel

@@ -5,17 +5,17 @@ categories:
   - CMD批处理
   - 语法
   - 构建程序相关命令
-date: 2019-02-03 18:14:35
-updated: 2020-04-11 09:15:21
 abbrlink: e6156b85
+date: 2019-02-03 18:14:35
+updated: 2022-04-04 00:51:44
 ---
-## 问题描述 ##
+# 问题描述
 我想点击运行一个批处理文件(install.bat)，然后把该文件所在的目录配置到path系统环境变量中。
 这种功能我用在软件安装程序中,为自己的软件自动搭建好需要的环境。
-## 遇到的问题 ##
+# 遇到的问题
 追加一个路径到永久的path系统环境变量中，可以通过`setx /m "path" "%newpath%;%path%"`命令来实现，但是我可能运行多次`intall.bat`，这样就会造成intall.bat会`写入多个相同的路径到path环境变量中`。要解决这个问题，就需要在追加新路径到path环境变量之前，先检查path环境变量中是否已经存在了该路径，如果有了该路径，那我就不需要再添加。如果没有我再添加。不能一直无脑的添加。
-## 实现1 使用find命令 ##
-### 获取当前文件所在的目录 ###
+# 实现1 使用find命令
+## 获取当前文件所在的目录
 批处理中`%0`变量表示当前的批处理文件，`%~dp0`则表示当前文件的绝对路径.
 ```bat
 ::获取当前文件所在的目录的绝对路径
@@ -24,7 +24,7 @@ set "thispath=%~dp0"
 set "thispath=%thispath:~0,-1%"
 echo 当前文件所在目录路径:%thispath%
 ```
-### 在path环境变量中查找当前目录路径 ###
+## 在path环境变量中查找当前目录路径
 这里使用find命令来实现查找，但是find命令好像只能在文件中查找字符串，不能再字符串中查找子串，所以我们要先把path环境变量先写到一个临时文件中，然后再在临时文件中查找。
 ```bat
 ::读取path环境变量到自定义变量中
@@ -34,7 +34,7 @@ echo %mypath% > temp.txt
 ::在临时文件中查找有没有当前路径
 find "%thispath%" temp.txt
 ```
-### 根据查找结果处理 ###
+## 根据查找结果处理
 批处理命令都有程序返回码`errorlevel`，对于find命令，如果在文件中查找到则返回`0`，如果没有找到则返回`1`，返回的结果就保存在程序返回码`errorlevel`中。所以我们可以根据程序返回码来做响应的条件处理:
 ```bat
 if %errorlevel% == 0 (
@@ -48,7 +48,7 @@ if %errorlevel% == 0 (
 )    
 ```
 设置好环境变量后，删除临时文件即可,完整的代码如下:
-### 添加当前目录路径到path系统环境变量中 不重复添加 ###
+## 添加当前目录路径到path系统环境变量中 不重复添加
 install.bat:
 ```bat
 @echo off
@@ -78,8 +78,8 @@ del temp.txt
 pause
 ```
 还有要注意的是`setx /m "path" "%thispath%;%path%"`命令需要管理员权限,所以要以管理员身份运行该批处理脚本。
-## 实现2 使用for命令 ##
-### 批处理 for命令 增加 一个系统path环境变量 ###
+# 实现2 使用for命令
+## 批处理 for命令 增加 一个系统path环境变量
 ```bat
 @echo off
 setlocal enabledelayedexpansion 
@@ -114,8 +114,8 @@ echo path环境变量中已经有了该环境变量,无须重复添加.
 :end
 pause
 ```
-## 拓展 ##
-### 批处理 for命令 遍历 系统path环境变量 ###
+# 拓展
+## 批处理 for命令 遍历 系统path环境变量
 ```bat
 @echo off
 setlocal enabledelayedexpansion 
@@ -155,7 +155,7 @@ F:\texlive\2018\texlive\2018\bin\win32
 D:\GitHub\MD
 请按任意键继续. . .
 ```
-### 批处理 for命令 查找 一个系统path环境变量 ###
+## 批处理 for命令 查找 一个系统path环境变量
 ```bats
 @echo off
 setlocal enabledelayedexpansion 
@@ -186,7 +186,7 @@ GW\bin;D:\dev\apache-tomcat-8.5.35\bin;D:\dev\java\my\runable\openwith;D:\GitHub
 请按任意键继续. . .
 ```
 
-### 批处理 for命令 删除 一个系统path环境变量 ###
+## 批处理 for命令 删除 一个系统path环境变量
 ```bat
 @echo off
 setlocal enabledelayedexpansion 
@@ -214,5 +214,5 @@ setx /m "path" "%mypath%"
 echo 修改完毕...
 pause
 ```
-## 参考资料 ##
+# 参考资料
 [Bat 处理字符串分割 （split功能）](http://blog.51cto.com/langlichong/1851961)

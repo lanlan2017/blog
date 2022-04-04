@@ -1,14 +1,13 @@
 ---
 title: Linux cat命令详解
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文本文件及其处理命令
   - 读取文本文件
 abbrlink: af7f7587
 date: 2021-03-24 11:08:13
-updated: 2021-03-28 15:33:45
+updated: 2022-04-04 00:51:45
 ---
 
 # cat命令

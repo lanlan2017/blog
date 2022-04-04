@@ -5,11 +5,11 @@ categories:
   - CMD批处理
   - 语法
   - 构建程序相关命令
-date: 2019-02-01 21:57:48
-updated: 2020-04-11 09:15:21
 abbrlink: c4029a06
+date: 2019-02-01 21:57:48
+updated: 2022-04-04 00:51:44
 ---
-## 命令格式 ##
+# 命令格式
 ```cmd
 for [参数] %%变量名 in (相关文件或命令) do 执行的命令
 ```
@@ -19,7 +19,7 @@ for [参数] %%变量名 in (相关文件或命令) do 执行的命令
 - 变量名称是区分大小写的，所以 `%i` 不同于 `%I`.
 
 for命令可以带参数或不带参数，带参数时支持以下参数:`/d`,`/l`,`/r`,`/f`.
-### 无参数 ###
+## 无参数
 ```cmd
 for %variable in (set) do command [command-parameters]
 ```
@@ -28,7 +28,7 @@ for %variable in (set) do command [command-parameters]
 - `command`:指定对每个文件执行的命令。
 - `command-parameters`:为特定命令指定参数或命令行开关。
 
-#### 实例 ####
+### 实例
 显示当前目录下与`t*.*`相匹配的文件(只显示文件名，不显示路径)
 ```cmd
 for %%i in (t*.*) do echo %%i 
@@ -37,12 +37,12 @@ for %%i in (t*.*) do echo %%i
 ```cmd
 for %%i in (d:\mydocuments\*.doc) do @echo %%i 
 ```
-### 参数 /d ###
+## 参数 /d
 ```cmd
 for /d %variable in (set) do command [command-parameters]
 ```
 这个参数主要用于目录搜索,不会搜索文件,`/d` 参数只能指定目录下的目录名字,不会显示该目录的子目录下的目录。也就是只会搜索指定目录下的目录，不会搜索再下一级的目录。
-#### 实例 ####
+### 实例
 显示c盘根目录下的所有目录
 ```bat
 @echo off
@@ -75,7 +75,7 @@ D:\学习9\书籍\批处理>for_d2.bat
 4444
 测试目录
 ```
-### 参数 /R ###
+## 参数 /R
 ```bat
 for /r [[drive:]path] %variable in (set) do command [command-parameters]
 ```
@@ -85,7 +85,7 @@ for /r [[drive:]path] %variable in (set) do command [command-parameters]
     - 如果set中为具体文件名，不含通配符，则枚举该目录树(并在后面加上具体的文件名)，而不管set中的指定文件是否存在。
 
 
-#### 实例 ####
+### 实例
 遍历`D:\dev\workspace\LatexTools`目录树,列出目录树上的所有的`java`文件
 for_r1.bat:
 ```cmd
@@ -115,7 +115,7 @@ D:\dev\workspace\LatexTools\bin\latex\symbols\index.html
 D:\dev\workspace\LatexTools\src\index.html
 D:\dev\workspace\LatexTools\src\latex\symbols\index.html
 ```
-### 参数 /L ###
+## 参数 /L
 格式：
 ```bat
 for /l %variable in (start,step,end) do command [command-parameters]
@@ -131,12 +131,12 @@ for /l %variable in (start,step,end) do command [command-parameters]
 - `for /l %%i in (1,1,5) do md %%i` --建立名称为`1,2,3,4,5`的5个文件夹
 - `for /l %%i in (1,1,5) do rd /q %%i` --删除从1~5共5个文件夹
 
-### 参数 /F ###
+## 参数 /F
 使用文件解析来处理`命令输出`、`字符串`及`文件内容`。使用迭代变量(%%i,%%j,...)定义要检査的内容或字符串,并使用各种 `options`选项进一步修改解析方式。使用 options`令牌选项`(tokens)指定哪些令牌应该作为迭代变量.
 请注意:在没有使用令牌选项时,/F将只检查第一个令牌.
-#### 文件解析过程 ####
+### 文件解析过程
 文件解析过程包括读取`命令输出`、`字符串`或`文件内容`,将其`分成独立的文本行`以及**再将每行`解析成`零个或更多个`令牌`**。然后通过为令牌对应的迭代变量设置值,调用for循环。
-#### 格式 ####
+### 格式
 ```
 for /f ["options"] %variable in (file-set) do command [command-parameters]
 for /f ["options"] %variable in ("string") do command [command-parameters]
@@ -160,7 +160,7 @@ for /f ["options"] %variable in ('command') do command [command-parameters]
         - 后引号(反引号)表示命令执行,即:**\`command\`**
 
 
-#### 实例 ####
+### 实例
 ```bat
 @echo off
 rem 首先建立临时文件 test.txt
@@ -204,6 +204,6 @@ lan                      WDAGUtilityAccount
 命令成功完成。
 请按任意键继续. . .
 ```
-## 参考资料 ##
+# 参考资料
 [http://www.hechaku.com/arcitle/201810398.html](http://www.hechaku.com/arcitle/201810398.html)
 [http://www.hechaku.com/arcitle/201810344.html](http://www.hechaku.com/arcitle/201810344.html)

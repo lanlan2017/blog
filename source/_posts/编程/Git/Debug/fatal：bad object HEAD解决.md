@@ -1,12 +1,11 @@
 ---
 title: fatal：bad object HEAD解决
-categories:
-  - 编程
+categories: 
   - Git
   - Debug
 abbrlink: a3c100ea
 date: 2021-08-26 09:29:40
-updated: 2021-08-26 09:29:40
+updated: 2022-04-04 00:51:45
 ---
 # 问题描述
 今天我打开电脑，执行git status命令的时候报错如下：

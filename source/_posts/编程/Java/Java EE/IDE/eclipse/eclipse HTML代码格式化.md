@@ -1,14 +1,13 @@
 ---
 title: eclipse HTML代码格式化
 categories: 
-  - 编程
   - Java
   - Java EE
   - IDE
   - eclipse
-date: 2019-05-29 16:12:41
-updated: 2020-04-11 09:21:19
 abbrlink: 503e570d
+date: 2019-05-29 16:12:41
+updated: 2022-04-04 00:51:44
 ---
 # eclipse HTML代码格式化 #
 如下图所示:

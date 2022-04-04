@@ -1,12 +1,11 @@
 ---
 title: Termux 电脑上登录
-categories:
-  - 编程
+categories: 
   - Linux
   - Termux
 abbrlink: c3146b3e
 date: 2019-11-01 11:37:04
-updated: 2019-12-17 05:18:52
+updated: 2022-04-04 00:51:45
 ---
 # 下载安装Xshell免费版
 ## 进入中文官网

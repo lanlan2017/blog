@@ -1,13 +1,12 @@
 ---
 title: Ubuntu 安装Java
 categories: 
-  - 编程
   - Linux
   - VirtualBox
   - Ubuntu
-date: 2019-11-25 18:07:50
-updated: 2021-03-20 10:16:38
 abbrlink: 6266bb6b
+date: 2019-11-25 18:07:50
+updated: 2022-04-04 00:51:45
 ---
 # Ubuntu 安装Java
 环境:VirtualBox+Ubuntu虚拟机

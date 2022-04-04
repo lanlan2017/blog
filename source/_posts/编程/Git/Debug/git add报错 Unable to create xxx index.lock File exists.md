@@ -1,12 +1,11 @@
 ---
 title: git add报错 Unable to create xxx index.lock File exists
-categories:
-  - 编程
+categories: 
   - Git
   - Debug
 abbrlink: e92f1b79
 date: 2021-03-29 12:08:59
-updated: 2021-03-29 12:12:44
+updated: 2022-04-04 00:51:45
 ---
 # git add报错：fatal: Unable to create 'E:/Blog/blogRoot/.git/index.lock': File exists.
 ```

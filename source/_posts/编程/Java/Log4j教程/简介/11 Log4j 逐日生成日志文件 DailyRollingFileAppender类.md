@@ -1,13 +1,12 @@
 ---
 title: 11 Log4j 逐日生成日志文件 DailyRollingFileAppender类
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - 简介
-date: 2020-08-03 11:20:11
-updated: 2021-03-20 09:38:13
 abbrlink: 7cb1400
+date: 2020-08-03 11:20:11
+updated: 2022-04-04 00:51:44
 ---
 # 逐日生成日志文件
 您也许需要逐日生成日志文件，以此更加整洁的记录日志信息。

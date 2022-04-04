@@ -1,12 +1,11 @@
 ---
 title: java中Sources目录Resources目录的区别
 categories: 
-  - 编程
   - IDE
   - Idea
-date: 2019-12-22 12:58:12
-updated: 2020-04-11 09:21:19
 abbrlink: 7ac11fb
+date: 2019-12-22 12:58:12
+updated: 2022-04-04 00:51:45
 ---
 # 什么是Sources目录
 Sources目录**用来存放java文件**.java项目中最常见的Sources目录就是src目录,当打包成jar时,Sources目录下的.java文件会被编译成.class文件.

@@ -1,14 +1,13 @@
 ---
 title: eclipse导入SpringMVC项目报错
 categories: 
-  - 编程
   - Java
   - Java EE
   - IDE
   - eclipse
-date: 2019-05-14 22:21:07
-updated: 2020-04-11 09:21:19
 abbrlink: ced29b25
+date: 2019-05-14 22:21:07
+updated: 2022-04-04 00:51:44
 ---
 # 问题描述 #
 最近在看《Spring MVC+Mybatis企业项目实战(第2版)》这本书,但是,随书源码导入eclipse的时候总是会报错.下面来介绍怎么解决eclipse导入Spring MVC项目报错的问题。

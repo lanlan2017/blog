@@ -4,9 +4,9 @@ categories:
   - Hexo
   - next主题
   - 插件
-date: 2021-03-19 08:21:34
-updated: 2021-03-19 10:44:21
 abbrlink: 542e0f6d
+date: 2021-03-19 08:21:34
+updated: 2022-04-04 16:54:44
 ---
 # 检查更新
 ```shell

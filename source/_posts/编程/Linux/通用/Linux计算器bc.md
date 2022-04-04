@@ -1,12 +1,11 @@
 ---
 title: Linux计算器bc
 categories: 
-  - 编程
   - Linux
   - 通用
 abbrlink: a04d41de
 date: 2021-04-20 21:47:55
-updated: 2021-04-20 23:07:47
+updated: 2022-04-04 00:51:45
 ---
 # Linux计算器bc
 功能强大

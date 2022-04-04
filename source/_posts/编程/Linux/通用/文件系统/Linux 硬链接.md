@@ -1,13 +1,12 @@
 ---
 title: Linux 硬链接
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件系统
 abbrlink: 753ee3c2
 date: 2021-06-20 16:31:30
-updated: 2021-06-20 16:31:30
+updated: 2022-04-04 00:51:45
 ---
 # 硬连接
 - 目录表由目录项构成，目录项是一个“`文件名-i节点号`”对

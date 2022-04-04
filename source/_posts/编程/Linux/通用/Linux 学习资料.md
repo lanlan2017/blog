@@ -1,12 +1,11 @@
 ---
 title: Linux 学习资料
 categories: 
-  - 编程
   - Linux
   - 通用
 abbrlink: 71914ed4
 date: 2021-04-03 21:14:06
-updated: 2021-04-04 00:42:19
+updated: 2022-04-04 00:51:45
 ---
 # 学习网站
 

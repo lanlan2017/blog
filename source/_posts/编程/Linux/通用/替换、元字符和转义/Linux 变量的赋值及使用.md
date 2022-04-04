@@ -1,13 +1,12 @@
 ---
 title: Linux 变量的赋值及使用
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 替换、元字符和转义
 abbrlink: 70ed3de5
 date: 2021-06-27 14:56:00
-updated: 2021-06-27 14:56:00
+updated: 2022-04-04 00:51:45
 ---
 # bash变量
 ## 存储的内容

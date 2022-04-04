@@ -1,12 +1,11 @@
 ---
 title: Linux find命令详解
 categories: 
-  - 编程
   - Linux
   - 通用
 abbrlink: 8c3bbfbb
 date: 2021-04-13 23:49:09
-updated: 2021-04-14 21:07:56
+updated: 2022-04-04 00:51:45
 ---
 # 不递归查找 find -maxdepth 1
 例如只查找当前目录下的文件：

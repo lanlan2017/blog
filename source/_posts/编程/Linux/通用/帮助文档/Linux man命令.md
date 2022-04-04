@@ -1,13 +1,12 @@
 ---
 title: Linux man命令
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 帮助文档
 abbrlink: 6e64ba3d
 date: 2021-04-04 14:24:18
-updated: 2021-04-20 20:59:22
+updated: 2022-04-04 00:51:45
 ---
 # man命令简介
 Linux最常用命令一般由两到三个字母构成，man取自manual（手册）的前三个字母。

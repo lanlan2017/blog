@@ -1,12 +1,11 @@
 ---
 title: eclipse导入的动态JavaWeb项目前面后红叉号
-categories:
-  - 编程
+categories: 
   - IDE
   - eclipse
-abbrlink: '95562e14'
+abbrlink: 95562e14
 date: 2021-08-12 22:51:34
-updated: 2021-08-12 22:51:34
+updated: 2022-04-04 00:51:45
 ---
 # 问题1：Buildpath不对
 JRE和Tomcat的不对

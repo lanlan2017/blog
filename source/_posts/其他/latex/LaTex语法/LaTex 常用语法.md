@@ -4,58 +4,65 @@ categories:
   - 其他
   - latex
   - LaTex语法
-date: 2018-08-30 18:46:38
-updated: 2019-12-17 05:18:52
 abbrlink: 83c2e83a
+date: 2018-08-30 18:46:38
+updated: 2022-04-04 15:13:22
 mathjax: true
 ---
-# 公式显示位置 #
-## 行内公式 ##
+# 公式显示位置
+## 行内公式
 在公式两边各自加上一个美元符号即使行内公式
 ```
 这是文本$a^2+b^2=c^2$这是文本
 ```
+
 显示效果：
 这是文本$a^2+b^2=c^2$这是文本
-## 行间公式 ##
+## 行间公式
 在公式两边各自加上两个美元符号即使行将公式：
 ```
 这是文本$$a^2+b^2=c^2$$这是文本
 ```
+
 显示效果:
 这是文本$$a^2+b^2=c^2$$这是文本
 
-# 数学符号 #
-## 上下标 ##
+# 数学符号
+## 上下标
 在LaTex中用`^`和`_`表明上下标。注意如果上下标只对其后面的一个字符起作用，如果上下标的内容超过一个字符，则需要用花括号`{}`包裹，否则上下标只对后面的一个符号起作用
+
 ```
 $$p^3_{ij}\qquad\sum_{K=1}^3ka^x+y\qquad\neq a^{x+y}$$
 ```
+
 显示效果:
 $$p^3_{ij}\qquad\sum_{K=1}^3ka^x+y\qquad\neq a^{x+y}$$
 
-## 导数符号 ##
+## 导数符号
 导数符号`'`是一个特殊的上标，可以适当连用表示多阶导数，也可以在其后连用上标：
 ```
 $f(x)=x^2 \quad f'(x)=2x \quad f''^{2}=4$
 ```
+
 显示效果:
 $f(x)=x^2 \quad f'(x)=2x \quad f''^{2}=4$
-### 偏导 条件偏导 ###
+### 偏导 条件偏导
 偏导符号$\partial$
 ```
 $\left.\frac{\partial f(x,y)}{\partial x}\right|_{x=0}$
 ```
+
 $\left.\frac{\partial f(x,y)}{\partial x}\right|_{x=0}$
-## 分式 ##
+## 分式
 
 如果是简单的根式，可以写成斜分式的形式,如`3/8`:,在latex中分式一般使用`\frac{分子}{分母}`来书写。不过这种分式的大小在行间公式是正常显示大小，而在行内被极度压缩了。amsmath提供了方便的命令`\dfrac{分子}{分母}`和`\tfrac{分子}{分母}`,令用户能够在行内使用正常大小的行内公式。
 显示效果:
 ```
 斜分式: $3/8 \qquad $,压缩分式：$\frac{3}{8}\qquad$ ,显示正常大小：$\dfrac{3}{8}$
 ```
+
 斜分式: $3/8 \qquad $,压缩分式：$\frac{3}{8}\qquad$ ,显示正常大小：$\dfrac{3}{8}$
-## 根式 ##
+## 根式
 一般的根式使用`\sqrt{…}`表示，表示n此方根式写成`\sqrt[n]{…}`:
 ```
 $\sqrt{x} \Leftrightarrow x^{1/2}
@@ -63,11 +70,13 @@ $\sqrt{x} \Leftrightarrow x^{1/2}
 \quad \sqrt{x^{2}+\sqrt{y}}$
 $
 ```
+
 显示效果:
 $\sqrt{x} \Leftrightarrow x^{1/2}
 \quad \sqrt[3]{2}
 \quad \sqrt{x^{2}+\sqrt{y}}
 $
+
 特殊的分式形式，如二项式结构，由amsmath宏包的\binom命令生成：
 ```
 Pascal's rule is
@@ -75,12 +84,13 @@ $$
 \binom{n}{k}=\binom{n-1}{k}+\binom{n-1}{k-1}
 $$
 ```
+
 Pascal's rule is
 $$
 \binom{n}{k}=\binom{n-1}{k}+\binom{n-1}{k-1}
 $$
 
-## 无穷大符号 ##
+## 无穷大符号
 ```
 $\infty$
 ```
@@ -101,7 +111,7 @@ $\infty$
     }
 </script>
 
-## 省略号 ##
+## 省略号
 
 |名称|符号|效果|
 |:---|:---|:---|
@@ -122,7 +132,7 @@ $a_1,a_2,\cdots,a_n$
 `\cdots`和`\dots`是完全等效的，它们既能用在公式中，也用在文本里作为**省略号**。
 除此之外，在矩阵中可能会用到竖排的$\vdots$(\vdots)和斜排的$\ddots$(\ddots)
 
-## 关系符 ##
+## 关系符
 
 LaTex常见的关系符号除了可以直接输入的=,>,<，其他符号用命令输入，常用的有不等于: $\ne$ (\ne),大于等于号: $\ge$ (\ge)和小于等于号:$\le$  (\le),约等于号: $\approx$ (\approx),等价 $\equiv$ (\equiv),正比: $\propto$ (\propto),相似: $\sim$ (\sim)等等。
 LaTex还提供了自定义二元关系符的命令`\stackrel`,用于将一个符号叠加在原有的二元关系符之上：
@@ -135,7 +145,7 @@ $$
 f_n(x) \stackrel{*}{\approx} 1
 $$
 
-## 巨算子 ##
+## 巨算子
 
 积分号,求和号等符号称为**[巨算子](http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf#54)**。
 
@@ -152,6 +162,7 @@ $$
 \prod_\epsilon 
 $$
 ```
+
 $$
 \sum_{i=1}^n \quad
 \int_0^{\frac{\pi}{2}} \quad
@@ -167,50 +178,60 @@ $$
 \prod\nolimits_\epsilon 
 $$
 ```
+
 $$
 \sum\nolimits_{i=1}^n \quad
 \int\limits_0^{\frac{\pi}{2}} \quad
 \prod\nolimits_\epsilon 
 $$
 
-## 极限符号 ##
-### 行间公式极限 ###
+## 极限符号
+### 行间公式极限
 行间公式下标默认放在符号的下方，所以直接再极限符号`\lim`下方写上符号极限范围即可：
 ```
 $${\lim_{x \to +\infty}}$$
 ```
+
 $${\lim_{x \to +\infty}}$$
+
 ```
 $${\lim_{x \to -\infty}}$$
 ```
+
 $${\lim_{x \to -\infty}}$$
+
 ```
 $${\lim_{x \to 0}}$$
 ```
+
 $${\lim_{x \to 0}}$$
+
 ```
 $${\lim_{x \to 0^+}}$$
 ```
+
 $${\lim_{x \to 0^+}}$$
+
 ```
 $${ \lim_{x \to 0} \frac{3x^2 +7x^3}{x^2 +5x^4} = 3}$$
 ```
+
 $${ \lim_{x \to 0} \frac{3x^2 +7x^3}{x^2 +5x^4} = 3}$$
-### 行间极限 ###
+### 行间极限
 行间的下标默认放在右下角，可以使用`\limits_{下标}`把下标放到符号下方即可。实例如下所示：
 ```
 ${\lim \limits_{x \to -\infty}}$
 ```
 行间极限符号:${\lim \limits_{x \to -\infty}}$
-# 集合相关符号 #
-## 元素与集合的关系 ##
+# 集合相关符号
+## 元素与集合的关系
 
 |名称|符号|效果|
 |:---|:---|:---|
 |属于|\in|$\in$|
 |不属于|\notin|$\notin$|
 
-## 集合与集合相关的关系 ##
+## 集合与集合相关的关系
 
 |名称|符号|效果|
 |:---|:---|:---|
@@ -221,7 +242,7 @@ ${\lim \limits_{x \to -\infty}}$
 |并集|\bigcup和\cup|$\bigcup$和$\cup$|
 
 
-# 数学重音和上下括号 #
+# 数学重音和上下括号
 数学符号可以像文字一样**加重音**，比如对时间求导的符号$\dot{r}$(\dot{r})、$ddot{r}$(ddot{r})、表示向量的箭头$vec{r}$(vec{r})、表示欧式空间单位向量的$\hat{\mathbf{e}}$(\hat{\mathbf{e}})等，详见表[4.9](http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf#e1)。使用时要注意重音符号的作用区域，**一般应当对某个符号而不是不符号加下表使用重音：**
 ```
 $\bar{x_0} \quad \bar{x}_0$\\[5pt]
@@ -229,6 +250,7 @@ $\vec{x_0} \quad \vec{x}_0$\\[5pt]
 $\hat{\mathbf{e}_x} \quad
 \hat{\mathbf{e}}_x$
 ```
+
 $\bar{x_0} \quad \bar{x}_0$
 $\vec{x_0} \quad \vec{x}_0$
 $\hat{\mathbf{e}_x} \quad
@@ -259,8 +281,8 @@ $\underbrace{\overbrace{a+b+c}^6
 \cdot \overbrace{d+e+f}^7}
 _\text{meaning of life} = 42$
 
-# 多行公式 #
-## 长公式折行 ##
+# 多行公式
+## 长公式折行
 通常来讲应当避免写出超过一行而需要折行的长公式。如果一定要折行的话，**优先在等号之前折行，其次在加号、减号之前，再次在乘号、除号之前。其它位置应当避免折行**。
 amsmath宏包的multline环境提供了书写折行长公式的方便环境。它允许用`\\\\`(markdown中显示:\\\\)折行，**将公式编号放在最后一行**。多行公式的**首行左对齐**，**末行右对齐**，**其余行居中**。
 因为markdown中`\`是转义符，所以`\\`才表示一个\\,所以这里要写四个`\`(`\\\\`)
@@ -284,7 +306,7 @@ $$
 
 **需要注意的是，只是在Hexo的默认Markdown渲染器中才需要使用四个反斜杠**
 **为了通用，本文下面的演示代码都使用两个反斜杠**
-## 多行公式 ##
+## 多行公式
 更多的情况是，我们需要罗列一系列公式，并令其按照等号对齐。读者可能阅读过其它手册或者资料，知道LATEX提供了eqnarray环境。它按照等号左边——等号——等号右边呈三列对齐，但等号周围的空隙过大，加上公式编号等一些bug，目前已不推荐使用
 
 **目前最常用的是align环境，它将公式用&隔为两部分并对齐。分隔符通常放在等号左边：**
@@ -361,7 +383,7 @@ $$
 
 align和gather有对应的不带编号的版本`align\*`和`gather\*`。
 
-### 公用编号的多行公式 ###
+### 公用编号的多行公式
 另一个常见的需求是将多个公式组在一起公用一个编号，编号位于公式的居中位置。为此，amsmath宏包提供了诸如aligned、gathered等环境，与equation环境套用。以-ed结尾的环境用法与前一节不以`-ed`结尾的环境用法一一对应。我们仅以aligned举例：
 ```
 $$
@@ -387,7 +409,7 @@ l + m &= n
 $$
 
 split环境和aligned环境用法类似，也用于和equation环境套用，区别是split只能将每行的一个公式分两栏，aligned允许每行多个公式多栏。
-## 公式中的间距 ##
+## 公式中的间距
 
 前文提到过，绝大部分时候，数学公式中各元素的间距是根据符号类型自动生成的，需要我们手动调整的情况极少。我们已经认识了两个生成间距的命令`\quad`和`\qquad`。在公式中我们还可能用到的间距包括`\,`、`\:`、`\;`以及负间距`\!`，其中`\quad`、`\qquad`和`\,`在文本和数学环境中可用，后三个命令只用于数学环境。文本中的`\␣`也能使用在数学公式中。
 此处应该有图片，但是我的图片好像用不了了
@@ -408,7 +430,7 @@ $$
 
 另一个用途是生成多重积分号。如果我们直接连写两个\int，之间的间距将会过宽，此时可以使用负间距`\\!`修正之。不过amsmath提供了更方便的多重积分号，如**二重积分`\iint`**、**三重积分`\iiint`**等。
 
-# 数组和矩阵 #
+# 数组和矩阵
 为了排版二维数组，LATEX提供了array环境，用法与tabular环境极为类似，也需要定义列格式，并用`\\`换行。数组可作为一个公式块，在外套用`\left`、`\right`等定界符:
 ```
 $$
@@ -456,7 +478,7 @@ x & \text{if } x > 0.
 $$
 
 我不知道这里为什么显示不正常，可以能不支持把，下面的例子同样也可额完成，衣柜对于分段函数可以写下面的这种形式。
-# 分段函数 #
+# 分段函数
 不过上述例子可以用amsmath提供的cases环境更轻松地完成：
 ```
 $$ |x| =
@@ -573,8 +595,8 @@ $$
 $$
 
 
-# 数学符号的字体控制 #
-## 数学字母字体 ##
+# 数学符号的字体控制
+## 数学字母字体
 LATEX允许一部分数学符号切换字体，主要是拉丁字母、数字等等。表4.2给出了切换字体的命令。某一些命令需要字体宏包的支持。
 ```
 $\mathcal{R} \quad \mathfrak{R}
@@ -590,7 +612,7 @@ $$\mathcal{L}
 = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}$$
 $\mathfrak{su}(2)$ and
 $\mathfrak{so}(3)$ Lie algebr
-## 数学符号的尺寸 ##
+## 数学符号的尺寸
 数学符号按照符号排版的位置规定尺寸，从大到小包括行间公式尺寸、行内公式尺寸、上下标尺寸、次级上下标尺寸。除了字号有别之外，行间和行内公式尺寸下的巨算符也使用不一样的大小。LATEX为每个数学尺寸指定了一个切换的命令，见4.3。
 例如行间公式的分式内，分子分母使用行内公式尺寸，巨算符采用行内尺寸的形式。对比一下分子分母使用\displaystyle命令与否的区别：
 这里有一个表格
@@ -614,10 +636,10 @@ P = \frac
 \right]^{1/2} }
 $$
 
-# 符号表 #
+# 符号表
 后面把这些符号表粘贴进来就行了，后面的那些不需要再看了，保留官方文档的连接，现在只要留个印象。
 
-## 文本/数学模式通用符号 ##
+## 文本/数学模式通用符号
 
 |文本/数学模式通用符号|命令|
 |:-|:-|
@@ -634,7 +656,7 @@ $$
 |$\pounds$|\pounds|
 
 
-## 二元关系符 ##
+## 二元关系符
 
 有的二元关系符都可以加\not前缀得到相反意义的关系符，例如\not=就得到不等号（同\ne）。
 
@@ -655,7 +677,7 @@ $$
 |$\smile$|\smile|$\frown$|\frown|$\asymp$|\asymp|
 |$:$|:|$\notin$|\notin|$\ne$|\neq or \ne|
 
-## 二元运算符 ##
+## 二元运算符
 LaTex中的算符大多数是二元算符，除了直接用键盘可以输入的+，-，*，/外，其他符号用命令输入，常用的符号有乘号：$\times$(\times),除号: $\div$ (\div),点乘: $\cdot$ (\cdot),加减号 $\pm$ (\pm) 或者 $\mp$ (\mp)等等。更多符号命令可参考表4.7以及表4.17 
 ### 图片内容
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/eryuanyunsuan.png)
@@ -698,12 +720,12 @@ LaTex中的算符大多数是二元算符，除了直接用键盘可以输入的
 |\ddagger|$\ddagger$|不懂叫啥|
 |\wr|$\wr$|不懂叫啥|
 
-## 希腊字母 ##
+## 希腊字母
 latex希腊字母符号代码就是`斜杠+其英文名称`，如`$\alpha$`:$\alpha$,`$\beta$`:$\beta$...等。
 大写的latex希腊字母就是`斜杠+首字母大写的英文名称`，如`$\Gamma$`:$\Gamma$,`$\Delta$`:$\Delta$...。
 \Alpha，\Beta等希腊字母符号不存在，因为它们和拉丁字母A,B等一模一样；小写字母里也不存在\omicron，可以直接用字母`o`代替，省的打那么长的代码。
 
-### 希腊字母顺序表 ###
+### 希腊字母顺序表
 |序号|大写|小写|英文|读音|
 |:--|:--|:--|:--|:--|
 |1|$A$|$\alpha$|alpha|<i class="fa fa-play" onclick="sst('alpha')"></i> |
@@ -731,12 +753,12 @@ latex希腊字母符号代码就是`斜杠+其英文名称`，如`$\alpha$`:$\al
 |23|$\Psi$|$\psi$|psi|<i class="fa fa-play" onclick="sst('psi')"></i> |
 |24|$\Omega$|$\omega$|omega|<i class="fa fa-play" onclick="sst('omega')"></i> |
 
-#### 参考资料 ####
+#### 参考资料
 [https://baike.baidu.com/item/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/4428067?fr=aladdin#2_1](https://baike.baidu.com/item/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/4428067?fr=aladdin#2_1)
 
-## 巨算符 ##
+## 巨算符
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/jusuanfu.png)
-## 箭头 ##
+## 箭头
 https://learnku.com/articles/46821
 除了作为上下标之外，箭头还用于表示过程。amsmath的`\xleftarrow`和`\xrightarrow`命令可以为箭头增加上下标：
 ```
@@ -766,7 +788,7 @@ $$
 |$\Rightarrow$|\Rightarrow|$\Longrightarrow$|\Longrightarrow|
 
 
-# 括号和定界符 #
+# 括号和定界符
 
 LATEX提供了多种括号和定界符表示公式块的边界。除小括号( )、中括号[ ]之外，其余都是LATEX命令，包括大括号\{ \}。表4.12和4.13给出了更多的括号/定界符命令。
 ```
@@ -788,12 +810,12 @@ $$
 \right|_{t=0}
 $$
 
-## 作为重音的箭头符号 ##
+## 作为重音的箭头符号
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/dingbujiantou.png)
-## 定界符 ##
+## 定界符
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/dingjief.png)
-## 公式中的间距 ##
+## 公式中的间距
 ![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/latex/math/JianJu.png)
-# 参考链接 #
+# 参考链接
 参考文献: [http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf](http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf)
 参考链接: [https://blog.csdn.net/thither_shore/article/details/52260742](https://blog.csdn.net/thither_shore/article/details/52260742)

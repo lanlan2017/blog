@@ -1,12 +1,12 @@
 ---
 title: regexper安装在本地
-categories:
+categories: 
   - 其他
   - 正则表达式
   - 工具
 abbrlink: 54be6c80
 date: 2018-11-29 21:11:17
-updated: 2019-12-17 05:18:53
+updated: 2022-04-04 00:51:45
 ---
 # regexper在线地址
 regexper可以将正则表达式转成直观的图形

@@ -1,12 +1,11 @@
 ---
 title: 我的JavaScript在线文本处理工具
 categories: 
-  - 编程
   - JavaScript
   - 在线工具
-date: 2018-12-14 20:51:47
-updated: 2021-03-20 10:25:47
 abbrlink: 86af8ea
+date: 2018-12-14 20:51:47
+updated: 2022-04-04 00:51:45
 ---
 # 源码
 ```html

@@ -1,12 +1,11 @@
 ---
 title: 获取ResultSet结果集记录条数
 categories: 
-  - 编程
   - Java
   - JDBC
-date: 2018-12-05 00:18:01
-updated: 2021-03-20 09:24:14
 abbrlink: 127223bf
+date: 2018-12-05 00:18:01
+updated: 2022-04-04 00:51:44
 ---
 # 获取ResultSet结果集记录条数
 ResultSet表示数据库结果集的数据表，通常通过执行查询数据库的语句生成。 

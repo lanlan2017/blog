@@ -1,13 +1,12 @@
 ---
 title: HTML DOM table对象 HTMLTableElement
-categories:
-  - 编程
+categories: 
   - JavaScript
   - DOM
   - HTML DOM table对象
 abbrlink: d91920ba
 date: 2021-08-11 16:47:39
-updated: 2021-08-11 16:47:39
+updated: 2022-04-04 00:51:45
 ---
 # HTMLTableElement
 [https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLTableElement](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLTableElement)

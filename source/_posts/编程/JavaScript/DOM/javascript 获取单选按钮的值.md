@@ -1,12 +1,11 @@
 ---
 title: javascript 获取单选按钮的值
 categories: 
-  - 编程
   - JavaScript
   - DOM
-date: 2019-03-18 16:14:30
-updated: 2021-03-20 10:28:19
 abbrlink: 4f225713
+date: 2019-03-18 16:14:30
+updated: 2022-04-04 00:51:45
 ---
 # 测试代码
 ```html

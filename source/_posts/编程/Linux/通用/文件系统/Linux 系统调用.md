@@ -1,13 +1,12 @@
 ---
 title: Linux 系统调用
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件系统
 abbrlink: a1e4649b
 date: 2021-06-20 18:12:46
-updated: 2021-06-20 18:12:46
+updated: 2022-04-04 00:51:45
 ---
 # 系统调用(System call)
 - 系统调用以C语言函数调用的方式提供

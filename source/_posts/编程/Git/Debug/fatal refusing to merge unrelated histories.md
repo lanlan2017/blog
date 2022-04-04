@@ -1,12 +1,11 @@
 ---
 title: fatal refusing to merge unrelated histories
 categories: 
-  - 编程
   - Git
   - Debug
-date: 2019-12-08 22:44:49
-updated: 2021-03-20 10:07:02
 abbrlink: 331932fd
+date: 2019-12-08 22:44:49
+updated: 2022-04-04 00:51:45
 ---
 # fatal: refusing to merge unrelated histories
 今天拉取远程分支时报错如下:

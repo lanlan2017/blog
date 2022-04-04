@@ -1,12 +1,11 @@
 ---
 title: JavaScript 正则表达式
 categories: 
-  - 编程
   - JavaScript
   - 正则表达式
-date: 2019-02-13 00:17:45
-updated: 2021-03-20 10:26:20
 abbrlink: cd878b94
+date: 2019-02-13 00:17:45
+updated: 2022-04-04 00:51:45
 ---
 # 语法
 ```javascript

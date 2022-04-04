@@ -1,12 +1,11 @@
 ---
 title: 最新版MySQL数据库驱动的问题
 categories: 
-  - 编程
   - MySQL
   - debug
-date: 2019-10-23 15:59:21
-updated: 2020-06-28 08:33:04
 abbrlink: 17349c5f
+date: 2019-10-23 15:59:21
+updated: 2022-04-04 00:51:44
 ---
 # 最新版MySQL数据库驱动的问题
 ## 问题1 驱动名称不对

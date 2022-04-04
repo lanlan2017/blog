@@ -1,12 +1,11 @@
 ---
 title: eclipse提取变量快捷键alt+shift+L与冲突的问题
-categories:
-  - 编程
+categories: 
   - IDE
   - eclipse
 abbrlink: 956009f0
 date: 2021-08-23 19:53:00
-updated: 2021-08-23 19:53:00
+updated: 2022-04-04 00:51:45
 ---
 # 操作注册表，添加内容
 ## 备份注册表

@@ -1,12 +1,11 @@
 ---
 title: hexo博客中 使用javascirpt和jqurey播放audio
 categories: 
-  - 编程
   - HTML
   - 音视频
-date: 2019-02-13 00:24:14
-updated: 2021-03-20 10:35:28
 abbrlink: 4f1b06ea
+date: 2019-02-13 00:24:14
+updated: 2022-04-04 00:51:45
 ---
 # 前言
 markdown中可以插入html标签，所以可以插入audio标签来播放音频。

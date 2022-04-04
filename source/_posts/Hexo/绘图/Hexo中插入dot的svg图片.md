@@ -1,11 +1,11 @@
 ---
 title: Hexo中插入dot的svg图片
-categories:
+categories: 
   - Hexo
   - 绘图
 abbrlink: b7ae7ac5
 date: 2021-07-27 15:02:29
-updated: 2021-07-27 19:40:57
+updated: 2022-04-04 00:51:44
 ---
 
 # 问题描述

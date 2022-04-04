@@ -1,12 +1,11 @@
 ---
 title: idea Shift+Alt+I快捷键是弹出TouchPad Driver Diagnostics的问题
 categories: 
-  - 编程
   - IDE
   - Idea
-date: 2019-10-03 12:06:07
-updated: 2021-03-20 10:32:55
 abbrlink: cbf0ce22
+date: 2019-10-03 12:06:07
+updated: 2022-04-04 00:51:45
 ---
 # idea Shift+Alt+I快捷键是弹出TouchPad Driver Diagnostics的问题
 ## 原因

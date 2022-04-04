@@ -5,18 +5,20 @@ categories:
   - Markdown
   - 语法
   - 直接使用HTML
-date: 2019-12-06 10:33:33
-updated: 2019-12-17 05:18:53
 abbrlink: 695eb842
+date: 2019-12-06 10:33:33
+updated: 2022-04-04 15:13:22
 ---
 # HTML下载链接格式
 ```html
 <a href="资源路径" download="资源的名称">资源说明</a>
 ```
+
 例如:
 ```html
 <a href="https://lanlan2017.github.io/download/PhraseEdit.txt" download="PhraseEdit.txt">点击下载搜狗输入法自定义短语配置文件:PhraseEdit.txt</a>
 ```
+
 <a href="https://lanlan2017.github.io/download/PhraseEdit.txt" download="PhraseEdit.txt">点击下载搜狗输入法自定义短语配置文件:PhraseEdit.txt</a>
 
 # 下载其他站点的资源

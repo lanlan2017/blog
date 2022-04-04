@@ -1,12 +1,11 @@
 ---
 title: Navicat激活
 categories: 
-  - 编程
   - MySQL
   - 图形工具
-date: 2019-11-23 15:47:40
-updated: 2021-03-20 10:19:52
 abbrlink: 30dba46d
+date: 2019-11-23 15:47:40
+updated: 2022-04-04 00:51:45
 ---
 # 下载需要的破解程序
 

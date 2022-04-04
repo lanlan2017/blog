@@ -1,12 +1,11 @@
 ---
 title: 更新git版本
 categories: 
-  - 编程
   - Git
   - GitBash
 abbrlink: 8ba9a94e
 date: 2021-12-19 11:54:52
-updated: 2021-12-19 11:54:52
+updated: 2022-04-04 00:51:45
 ---
 # 下载git-for-windows.exe覆盖安装
 https://git-scm.com/download

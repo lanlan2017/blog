@@ -1,15 +1,16 @@
 ---
 title: Typora+PicGo+Gitee自动上传图片
-categories:
+categories: 
   - Windows
   - 软件
   - Win10设置
-abbrlink: '18408281'
+abbrlink: 18408281
 date: 2021-07-14 11:39:18
-updated: 2021-07-14 11:39:18
+updated: 2022-04-04 00:51:44
 ---
-<!-- Blog/Software/Win10Setting/Typora+Picgo+GiteeAutomaticUploadPictures/ -->
 # 在Gitee网站上创建仓库 创建私人令牌
+
+<!-- Blog/Software/Win10Setting/Typora+Picgo+GiteeAutomaticUploadPictures/ -->
 **省略**
 # 下载Typora PicGo
 https://typora.io/#windows

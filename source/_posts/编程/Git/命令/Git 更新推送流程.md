@@ -1,12 +1,11 @@
 ---
 title: Git 更新推送流程
 categories: 
-  - 编程
   - Git
   - 命令
-date: 2019-10-31 20:20:41
-updated: 2020-04-11 09:21:19
 abbrlink: 6a91baf
+date: 2019-10-31 20:20:41
+updated: 2022-04-04 00:51:45
 ---
 # 进入项目地址
 ```shell

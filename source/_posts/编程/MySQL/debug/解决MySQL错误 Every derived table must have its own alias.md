@@ -1,12 +1,11 @@
 ---
 title: 解决MySQL错误 Every derived table must have its own alias
 categories: 
-  - 编程
   - MySQL
   - debug
-date: 2019-10-18 13:51:08
-updated: 2021-03-20 10:18:11
 abbrlink: 85e5e68e
+date: 2019-10-18 13:51:08
+updated: 2022-04-04 00:51:44
 ---
 # 问题描述
 今天使用如下的子查询时:

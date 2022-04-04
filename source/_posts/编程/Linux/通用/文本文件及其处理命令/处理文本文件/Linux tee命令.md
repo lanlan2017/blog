@@ -1,14 +1,13 @@
 ---
 title: Linux tee命令
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文本文件及其处理命令
   - 处理文本文件
 abbrlink: e84a1417
 date: 2021-04-24 12:57:15
-updated: 2021-04-24 12:57:15
+updated: 2022-04-04 00:51:45
 ---
 # tee命令功能
 将从标准输入 stdin 得到的数据抄送到标准输出 stdout 显示 ，同时存入磁盘文件中

@@ -1,13 +1,12 @@
 ---
 title: Linux 行筛选grep命令
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 正则表达式
 abbrlink: 719da334
 date: 2021-05-02 21:35:42
-updated: 2021-05-02 21:35:42
+updated: 2022-04-04 00:51:45
 ---
 # grep/egrep/fgrep:在文件中查找字符串（筛选）
 ## grep在文件中查找字符串

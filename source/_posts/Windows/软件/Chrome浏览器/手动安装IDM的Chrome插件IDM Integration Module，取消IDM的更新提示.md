@@ -1,12 +1,12 @@
 ---
 title: 手动安装IDM的Chrome插件IDM Integration Module，取消IDM的更新提示
-categories:
+categories: 
   - Windows
   - 软件
   - Chrome浏览器
 abbrlink: 845de5e4
 date: 2021-07-12 17:08:09
-updated: 2021-07-12 17:08:09
+updated: 2022-04-04 00:51:44
 ---
 # Chrome手动安装IDM插件IDM Integration Module
 ## 输入IDM在Chrome商店的网址进行安装

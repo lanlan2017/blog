@@ -1,13 +1,12 @@
 ---
 title: Invalid bound statement (not found) mapper.EmployeeMapper.selectEmployeeLikeName
 categories: 
-  - 编程
   - Java
   - Mybatis
   - Debug
-date: 2020-09-01 11:58:17
-updated: 2021-03-18 02:43:27
 abbrlink: a0de93a7
+date: 2020-09-01 11:58:17
+updated: 2022-04-04 00:51:44
 ---
 # 错误提示
 <pre>

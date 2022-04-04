@@ -1,13 +1,12 @@
 ---
-title: Linux 查找、编辑及存盘
-categories:
-  - 编程
+title: Linux vi查找、编辑及存盘
+categories: 
   - Linux
   - 通用
   - vi编辑器及乱码问题
 abbrlink: 799bb2d6
 date: 2021-05-28 15:34:24
-updated: 2021-05-28 15:34:24
+updated: 2022-04-04 00:51:45
 ---
 # Linux 查找、编辑及存盘
 ## 删除命令

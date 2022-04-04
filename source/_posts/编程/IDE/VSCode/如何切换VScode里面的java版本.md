@@ -1,12 +1,11 @@
 ---
 title: 如何切换VScode里面的java版本
 categories: 
-  - 编程
   - IDE
   - VSCode
-date: 2019-10-06 21:46:08
-updated: 2021-03-20 10:32:53
 abbrlink: 6221fd78
+date: 2019-10-06 21:46:08
+updated: 2022-04-04 00:51:45
 ---
 # 如何切换VScode里面的java版本
 最近用`VScode`打开新版本的`java`代码,发现无法通过编译,这肯定是因为我用的旧版本的`java`。

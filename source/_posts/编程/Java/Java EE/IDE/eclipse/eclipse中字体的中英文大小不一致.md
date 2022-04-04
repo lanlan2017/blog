@@ -1,14 +1,13 @@
 ---
 title: eclipse中字体的中英文大小不一致
 categories: 
-  - 编程
   - Java
   - Java EE
   - IDE
   - eclipse
-date: 2019-06-19 01:19:37
-updated: 2020-04-11 09:21:19
 abbrlink: 511c4c42
+date: 2019-06-19 01:19:37
+updated: 2022-04-04 00:51:44
 ---
 # eclipse中字体的中英文大小不一致 #
 ## 分析原因 ##

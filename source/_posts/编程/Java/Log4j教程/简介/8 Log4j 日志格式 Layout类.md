@@ -1,13 +1,12 @@
 ---
 title: 8 Log4j 日志格式 Layout类
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - 简介
-date: 2020-08-03 06:52:28
-updated: 2021-03-20 09:38:13
 abbrlink: 6356f492
+date: 2020-08-03 06:52:28
+updated: 2022-04-04 00:51:44
 ---
 # Log4j 日志格式 Layout类
 `Apache Log4j`提供了多个`Layout`对象，每个根据布局的不同都可格式化日志数据。还可以创建一个`Layout`对象，以应用特有的方式格式化日志。

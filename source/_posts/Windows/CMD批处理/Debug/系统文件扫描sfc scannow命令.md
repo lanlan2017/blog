@@ -4,11 +4,11 @@ categories:
   - Windows
   - CMD批处理
   - Debug
-date: 2019-05-23 18:49:38
-updated: 2020-04-11 09:15:21
 abbrlink: 9b2b8330
+date: 2019-05-23 18:49:38
+updated: 2022-04-04 00:51:44
 ---
-# sfc /scannow命令说明 #
+# sfc /scannow命令说明
 > `sfc`的全称是`SystemFileChecker`，指代系统文件检查程序用于扫描和检查是否存在已损坏或被取代的系统档案文件，并进行正确文件的修复替换
 ```cmd
 C:\Windows\system32>sfc /scannow
@@ -21,5 +21,5 @@ Windows 资源保护找到了损坏文件并成功修复了它们。
 /OFFLOGFILE 标记提供的日志文件中有详细信息。
 C:\Windows\system32>
 ```
-# 参考资料 #
+# 参考资料
 [https://blog.csdn.net/zhangyihui2016/article/details/47376093](https://blog.csdn.net/zhangyihui2016/article/details/47376093)

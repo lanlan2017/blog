@@ -1,12 +1,11 @@
 ---
 title: LinuxDeploy CentOS7安装Git
 categories: 
-  - 编程
   - Linux
   - LinuxDeploy
-date: 2021-03-16 03:29:46
-updated: 2021-03-17 11:20:44
 abbrlink: 21008dc5
+date: 2021-03-16 03:29:46
+updated: 2022-04-04 00:51:45
 ---
 # 安装
 ```shell

@@ -1,12 +1,11 @@
 ---
 title: Linux passwd命令
 categories: 
-  - 编程
   - Linux
   - 通用
 abbrlink: 10d66fa9
 date: 2021-04-20 22:17:41
-updated: 2021-04-20 23:07:47
+updated: 2022-04-04 00:51:45
 ---
 # passwd更换口令
 ## 普通用户

@@ -1,13 +1,12 @@
 ---
 title: 基本正则表达式BRE和扩展正则表达式ERE
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 正则表达式
 abbrlink: 561eb334
 date: 2021-05-08 17:51:37
-updated: 2021-05-08 17:51:37
+updated: 2022-04-04 00:51:45
 ---
 # 基本正则表达式 BRE元字符表
 

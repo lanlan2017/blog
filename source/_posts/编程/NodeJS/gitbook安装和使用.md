@@ -1,11 +1,10 @@
 ---
 title: gitbook安装和使用
 categories: 
-  - 编程
   - NodeJS
-date: 2020-10-11 08:16:58
-updated: 2020-10-13 02:42:24
 abbrlink: a7b54d2e
+date: 2020-10-11 08:16:58
+updated: 2022-04-04 00:51:45
 ---
 # gitbook安装和使用
 ## 安装低于v10.21.0版本的node.js
@@ -17,6 +16,7 @@ abbrlink: a7b54d2e
 ```bash
 npm install gitbook-cli -g
 ```
+
 运行效果:
 ```
 E:\Blog\MyGitBook>node -v
@@ -27,10 +27,12 @@ E:\Program Files\nodejs\npm_global\gitbook -> E:\Program Files\nodejs\npm_global
 + gitbook-cli@2.3.2
 updated 3 packages in 15.526s
 ```
+
 此时并没有安装完毕,输入如下命令继续安装:
 ```bash
 gitbook -V
 ```
+
 运行效果:
 ```
 E:\Blog\MyGitBook>gitbook -V
@@ -45,10 +47,12 @@ commander@2.9.0, cross-spawn-async@2.2.5, web-resource-inliner@2.0.0)
 └── nunjucks@2.5.2 (asap@2.0.6, yargs@3.32.0, chokidar@1.7.0)
 GitBook version: 3.2.3
 ```
+
 ## 初始化
 ```bash
 gitbook init
 ```
+
 运行效果:
 ```
 E:\Blog\MyGitBook>gitbook init
@@ -57,6 +61,7 @@ info: create README.md
 info: create SUMMARY.md
 info: initialization is finished
 ```
+
 这将会生成两个文件:README.md和SUMMARY.md：
 ```
 E:\Blog\MyGitBook>mytree f
@@ -64,6 +69,7 @@ E:\Blog\MyGitBook
 ├─README.md
 └─SUMMARY.md
 ```
+
 其中,README.md中存放的时候书的简介,SUMMARY.md文件中存放的是书的目录.
 ## 编写目录
 ```md README.md
@@ -71,6 +77,7 @@ E:\Blog\MyGitBook
 
 这是我的第一本GitBook
 ```
+
 ## 编写目录
 ```md SUMMARY.md
 &#35; Summary
@@ -89,10 +96,12 @@ E:\Blog\MyGitBook
   - [2.3 kkkk](Chapter2/kkkk.md)
 
 ```
+
 ## 再次初始化
 ```bash
 gitbook init
 ```
+
 运行效果:
 ```
 E:\Blog\MyGitBook>gitbook init
@@ -106,6 +115,7 @@ info: create Chapter2/kkkk.md
 info: create SUMMARY.md
 info: initialization is finished
 ```
+
 此时的项目结构如下:
 ```
 E:\Blog\MyGitBook>mytree f
@@ -129,6 +139,7 @@ E:\Blog\MyGitBook
 ├─README.md
 └─SUMMARY.md
 ```
+
 继续在上面生成的新文件中编写一些内容
 ## 启动本地服务器
 ```bash
@@ -155,6 +166,7 @@ info: >> generation finished with success in 1.7s !
 Starting server ...
 Serving book on http://localhost:4000
 ```
+
 ## 打包文档
 ## 生成电子书
 ## 配置文件book.json

@@ -1,13 +1,12 @@
 ---
 title: Linux yum安装剪贴板xclip命令提示”没有可用软件包”
 categories: 
-  - 编程
   - Linux
   - 通用
   - 文本文件及其处理命令
 abbrlink: c4a3bc5b
 date: 2021-04-23 14:26:12
-updated: 2021-04-23 15:43:17
+updated: 2022-04-04 00:51:45
 ---
 # 安装软件包
 

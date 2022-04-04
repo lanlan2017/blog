@@ -1,12 +1,11 @@
 ---
 title: Navicat for MySQL数据库的导入与导出
 categories: 
-  - 编程
   - MySQL
   - 图形工具
-date: 2018-12-08 00:19:02
-updated: 2021-03-20 10:20:12
 abbrlink: 885d02c0
+date: 2018-12-08 00:19:02
+updated: 2022-04-04 00:51:45
 ---
 # 导出数据库中的所有表
 ## 记下原来数据库的属性

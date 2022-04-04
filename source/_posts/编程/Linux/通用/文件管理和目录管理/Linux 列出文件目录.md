@@ -1,13 +1,12 @@
 ---
 title: Linux 列出文件目录
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件管理和目录管理
 abbrlink: 4bfefcf7
 date: 2021-05-31 19:11:30
-updated: 2021-05-31 19:11:30
+updated: 2022-04-04 00:51:45
 ---
 # ls:文件名列表
 ## 基本功能

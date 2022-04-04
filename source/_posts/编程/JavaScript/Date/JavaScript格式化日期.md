@@ -1,12 +1,11 @@
 ---
 title: JavaScript格式化日期
-categories:
-  - 编程
+categories: 
   - JavaScript
   - Date
 abbrlink: cff504bd
 date: 2021-03-21 10:59:52
-updated: 2021-03-21 10:59:52
+updated: 2022-04-04 00:51:45
 ---
 # JavaScript格式化日期
 ```javascript

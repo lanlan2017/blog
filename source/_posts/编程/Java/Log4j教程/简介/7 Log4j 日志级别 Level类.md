@@ -1,13 +1,12 @@
 ---
 title: 7 Log4j 日志级别 Level类
 categories: 
-  - 编程
   - Java
   - Log4j教程
   - 简介
-date: 2020-08-03 06:03:06
-updated: 2021-03-20 09:38:13
 abbrlink: 9f922eef
+date: 2020-08-03 06:03:06
+updated: 2022-04-04 00:51:44
 ---
 # Log4j 日志级别Level类
 `org.apache.Log4j.Level`类定义了日志级别，您可通过继承`Level`类定制自己的级别。

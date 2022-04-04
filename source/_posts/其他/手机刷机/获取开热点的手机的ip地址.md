@@ -1,11 +1,11 @@
 ---
 title: 获取开热点的手机的ip地址
-categories:
+categories: 
   - 其他
   - 手机刷机
 abbrlink: 7c085add
 date: 2021-11-03 11:34:06
-updated: 2021-11-03 11:34:06
+updated: 2022-04-04 15:13:22
 ---
 # Android8.0之前开启热点的手机的iP地址
 我的手机是Android8，当这个手机开启热点时，它的IP固定为：

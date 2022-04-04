@@ -1,14 +1,13 @@
 ---
 title: eclipse创建Spring MVC配置文件
 categories: 
-  - 编程
   - Java
   - Java EE
   - IDE
   - eclipse
-date: 2019-05-13 22:21:13
-updated: 2020-04-11 09:21:19
 abbrlink: 874828d8
+date: 2019-05-13 22:21:13
+updated: 2022-04-04 00:51:44
 ---
 # Spring MVC配置文件模版 #
 Spring MVC配置文件模板如下所示:

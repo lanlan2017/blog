@@ -1,12 +1,11 @@
 ---
 title: termux 安装linux
 categories: 
-  - 编程
   - Linux
   - Termux
-date: 2019-10-31 15:08:27
-updated: 2020-04-11 09:21:19
 abbrlink: 45517ea0
+date: 2019-10-31 15:08:27
+updated: 2022-04-04 00:51:45
 ---
 # 首先先下载Termux
 

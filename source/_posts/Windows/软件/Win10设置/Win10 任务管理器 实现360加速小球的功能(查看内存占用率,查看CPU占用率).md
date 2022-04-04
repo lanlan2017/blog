@@ -4,9 +4,9 @@ categories:
   - Windows
   - 软件
   - Win10设置
-date: 2020-02-26 04:58:53
-updated: 2020-06-25 09:02:32
 abbrlink: f5e533e0
+date: 2020-02-26 04:58:53
+updated: 2022-04-04 00:51:44
 ---
 # win10 使用任务管理器来 显示CPU占用 内存占用弹窗
 ## 前言

@@ -1,13 +1,12 @@
 ---
 title: Linux who、tty、who am i、whoami命令
 categories: 
-  - 编程
   - Linux
   - 通用
   - 系统状态
 abbrlink: 1b16e212
 date: 2021-04-21 13:53:09
-updated: 2021-04-21 23:33:39
+updated: 2022-04-04 00:51:45
 ---
 
 who ：确定谁在系统中

@@ -1,12 +1,11 @@
 ---
 title: JS动态加载JS文件
 categories: 
-  - 编程
   - JavaScript
   - DOM
-date: 2019-12-10 11:19:12
-updated: 2020-04-11 09:21:19
 abbrlink: 61c2129d
+date: 2019-12-10 11:19:12
+updated: 2022-04-04 00:51:45
 ---
 # 直接document.write
 ```html

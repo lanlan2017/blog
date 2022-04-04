@@ -1,12 +1,11 @@
 ---
 title: idea快捷键
 categories: 
-  - 编程
   - IDE
   - Idea
-date: 2019-08-08 14:41:36
-updated: 2021-03-20 10:32:54
 abbrlink: 385c30d
+date: 2019-08-08 14:41:36
+updated: 2022-04-04 00:51:45
 ---
 # idea快捷键
 ## idea向上/向下插入空行

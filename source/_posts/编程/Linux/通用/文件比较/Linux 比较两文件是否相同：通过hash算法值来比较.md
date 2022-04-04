@@ -1,14 +1,13 @@
 ---
 title: Linux 比较两文件是否相同：通过hash算法值来比较
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文件比较
-mathjax: true
 abbrlink: d23c9652
 date: 2021-05-15 23:54:38
-updated: 2021-05-15 23:57:07
+updated: 2022-04-04 00:51:45
+mathjax: true
 ---
 # md5sum/sha1sum:文件内容比较
 - 使用MD5算法（散列函数）根据文件内容生成16字节hash值，比较hash值是否相

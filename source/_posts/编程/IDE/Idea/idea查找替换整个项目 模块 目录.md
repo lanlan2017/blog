@@ -1,12 +1,11 @@
 ---
 title: idea查找替换整个项目 模块 目录
-categories:
-  - 编程
+categories: 
   - IDE
   - Idea
 abbrlink: b02ac37c
 date: 2021-04-03 14:47:47
-updated: 2021-04-03 15:05:54
+updated: 2022-04-04 00:51:45
 ---
 
 # 格式化其他模板设置错误

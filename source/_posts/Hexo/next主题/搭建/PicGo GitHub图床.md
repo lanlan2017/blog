@@ -1,12 +1,12 @@
 ---
-title: PigGo GitHub图床
+title: PicGo GitHub图床
 categories: 
   - Hexo
   - next主题
   - 搭建
-date: 2019-11-22 12:59:46
-updated: 2020-06-24 08:17:43
 abbrlink: b19c6a80
+date: 2019-11-22 12:59:46
+updated: 2022-04-04 15:56:38
 ---
 # 生成token #
 省略...

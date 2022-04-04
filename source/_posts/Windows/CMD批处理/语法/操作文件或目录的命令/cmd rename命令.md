@@ -5,11 +5,11 @@ categories:
   - CMD批处理
   - 语法
   - 操作文件或目录的命令
-date: 2019-11-22 11:07:10
-updated: 2020-04-11 09:15:21
 abbrlink: a63f263d
+date: 2019-11-22 11:07:10
+updated: 2022-04-04 00:51:44
 ---
-# 帮助文档 #
+# 帮助文档
 ```cmd
 G:\Desktop\测试\转换>rename /?
 重命名文件。
@@ -19,7 +19,7 @@ ren [drive:][path]filename1 filename2.
 
 请注意，你不能为目标文件指定新的驱动器或路径。
 ```
-# 实例 #
+# 实例
 查看当前目录下的所有文件:
 ```cmd
 G:\Desktop\测试\转换>dir

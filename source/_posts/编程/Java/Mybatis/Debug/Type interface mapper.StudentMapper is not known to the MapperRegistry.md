@@ -1,13 +1,12 @@
 ---
 title: Type interface mapper.StudentMapper is not known to the MapperRegistry
 categories: 
-  - 编程
   - Java
   - Mybatis
   - Debug
-date: 2020-08-25 02:09:13
-updated: 2021-03-18 02:43:27
 abbrlink: 2b1c3f5b
+date: 2020-08-25 02:09:13
+updated: 2022-04-04 00:51:44
 ---
 # 错误提示
 

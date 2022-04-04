@@ -1,12 +1,11 @@
 ---
 title: eclipse如何移动一个方法到另一个方法后面
-categories:
-  - 编程
+categories: 
   - IDE
   - eclipse
 abbrlink: efb8bd0
 date: 2021-07-13 14:50:26
-updated: 2021-07-13 14:50:26
+updated: 2022-04-04 00:51:45
 ---
 # 两个一前一后被被调用的方法 也应该一前一后的写在一起。
 设想一下如下的情况：

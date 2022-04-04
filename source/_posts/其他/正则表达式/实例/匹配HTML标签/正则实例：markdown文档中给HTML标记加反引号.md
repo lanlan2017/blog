@@ -1,13 +1,13 @@
 ---
 title: 正则实例：markdown文档中给HTML标记加反引号
-categories:
+categories: 
   - 其他
   - 正则表达式
   - 实例
   - 匹配HTML标签
 abbrlink: de8eb4f9
 date: 2018-09-27 22:00:53
-updated: 2019-12-17 05:18:53
+updated: 2022-04-04 00:51:45
 ---
 写到HTML这章的时候，在Markdown中添加了好多html标记，这样会引起文章渲染乱码。所以需要都让对一些HTML标记进行"转义"。我这里的做法是，使用反引号把HTML标记包裹起来。如下所示:
 ```

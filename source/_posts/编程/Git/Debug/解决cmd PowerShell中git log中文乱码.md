@@ -1,12 +1,11 @@
 ---
 title: 解决cmd PowerShell中git log中文乱码
 categories: 
-  - 编程
   - Git
   - Debug
-date: 2019-12-18 02:32:38
-updated: 2020-04-11 09:21:19
 abbrlink: 4f38856c
+date: 2019-12-18 02:32:38
+updated: 2022-04-04 00:51:45
 ---
 # 解决cmd下git log中文乱码
 ## 问题描述

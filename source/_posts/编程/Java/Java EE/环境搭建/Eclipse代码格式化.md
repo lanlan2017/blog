@@ -1,13 +1,12 @@
 ---
 title: Eclipse代码格式化
 categories: 
-  - 编程
   - Java
   - Java EE
   - 环境搭建
-date: 2019-04-27 22:28:28
-updated: 2020-04-11 09:21:19
 abbrlink: 4d0864a5
+date: 2019-04-27 22:28:28
+updated: 2022-04-04 00:51:44
 ---
 ## 注解格式化 ##
 第一个按钮选择最后一个,

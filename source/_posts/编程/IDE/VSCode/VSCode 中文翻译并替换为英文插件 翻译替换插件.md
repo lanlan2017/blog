@@ -1,12 +1,11 @@
 ---
 title: VSCode 中文翻译并替换为英文插件 翻译替换插件
 categories: 
-  - 编程
   - IDE
   - VSCode
-date: 2020-02-12 01:53:57
-updated: 2020-04-11 09:21:19
 abbrlink: f539cba6
+date: 2020-02-12 01:53:57
+updated: 2022-04-04 00:51:45
 ---
 # 插件地址
 [https://marketplace.visualstudio.com/items?itemName=hancel.google-translate](https://marketplace.visualstudio.com/items?itemName=hancel.google-translate)

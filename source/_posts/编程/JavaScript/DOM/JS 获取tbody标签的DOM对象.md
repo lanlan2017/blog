@@ -1,12 +1,11 @@
 ---
 title: JS 获取tbody标签的DOM对象
 categories: 
-  - 编程
   - JavaScript
   - DOM
-date: 2019-12-12 14:24:44
-updated: 2020-04-11 09:21:19
 abbrlink: 70388ccf
+date: 2019-12-12 14:24:44
+updated: 2022-04-04 00:51:45
 ---
 # 使用tBodies方法
 ```html

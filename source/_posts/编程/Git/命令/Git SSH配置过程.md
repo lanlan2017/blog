@@ -1,12 +1,11 @@
 ---
 title: Git SSH配置过程
 categories: 
-  - 编程
   - Git
   - 命令
-date: 2019-11-13 16:22:20
-updated: 2021-03-20 10:08:38
 abbrlink: 8d23490d
+date: 2019-11-13 16:22:20
+updated: 2022-04-04 00:51:45
 ---
 # Git SSH配置过程
 ## 配置邮箱和用户名

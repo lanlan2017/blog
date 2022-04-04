@@ -1,14 +1,13 @@
 ---
 title: SpringMVC配置文件报错：
 categories: 
-  - 编程
   - Java
   - Java EE
   - 解决方案
   - Spring MVC
-date: 2019-05-01 17:11:48
-updated: 2020-04-11 09:21:19
 abbrlink: a61ce5bb
+date: 2019-05-01 17:11:48
+updated: 2022-04-04 00:51:44
 ---
 ## 问题描述 ##
 今天Eclipse中Spring MVC的配置文件报错如下:

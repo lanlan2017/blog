@@ -1,14 +1,13 @@
 ---
 title: Linux sort命令
-categories:
-  - 编程
+categories: 
   - Linux
   - 通用
   - 文本文件及其处理命令
   - 处理文本文件
 abbrlink: 408c391b
 date: 2021-04-24 19:30:50
-updated: 2021-04-24 19:30:50
+updated: 2022-04-04 00:51:45
 ---
 # Linux sort命令：对文本文件的行排序
 sort 是 Linux 的排序命令，而且可以依据不同的数据类型来进行排序。sort 将文件的每一行作为一个单位，相互比较。比较原则是**从首字符向后，依次按 ASCII 码值进行比较**，最后将它们按**升序**输出。
