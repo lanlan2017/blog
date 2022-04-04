@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="Pattern类Pattern在java.util.regex包中，是正则表达式的编译表示形式，此类的实例是不可变的，可供多个并发线程安全使用。 组和捕获捕获组可以通过从左到右计算**其开括号(**来编号。 在表达式 ((A)(B(C))) 中，存在四个组：     编号 捕获组    1 ABC   2 A   3 BC   4 C   组零始终代表整个表达式。  Pattern.compile">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java正则表达式Pattern类">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/4ea1809c/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="Pattern类Pattern在java.util.regex包中，是正则表达式的编译表示形式，此类的实例是不可变的，可供多个并发线程安全使用。 组和捕获捕获组可以通过从左到右计算**其开括号(**来编号。 在表达式 ((A)(B(C))) 中，存在四个组：     编号 捕获组    1 ABC   2 A   3 BC   4 C   组零始终代表整个表达式。  Pattern.compile">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-01-11T14:02:27.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:51:44.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/4ea1809c/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/4ea1809c/","path":"/4ea1809c/","title":"Java正则表达式Pattern类"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Java正则表达式Pattern类 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pattern%E7%B1%BB"><span class="nav-text">Pattern类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E5%92%8C%E6%8D%95%E8%8E%B7"><span class="nav-text">组和捕获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pattern-compile%E6%96%B9%E6%B3%95-%E5%88%9B%E5%BB%BAPattern%E5%AF%B9%E8%B1%A1"><span class="nav-text">Pattern.compile方法 创建Pattern对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pattern-compile-String-regex"><span class="nav-text">Pattern.compile(String regex)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pattern-compile-String-regex-int-flags"><span class="nav-text">Pattern.compile(String regex, int flags)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%B9%E9%85%8D%E6%A0%87%E5%BF%97flags"><span class="nav-text">匹配标志flags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%A0%87%E5%BF%97%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">嵌入式标志表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99%E7%9A%84Pattern-Pattern-CASE-INSENSITIVE"><span class="nav-text">不区分大小写的Pattern Pattern.CASE_INSENSITIVE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8%E5%A4%9A%E8%A1%8C%E6%A8%A1%E5%BC%8FPattern-Pattern-MULTILINE"><span class="nav-text">启用多行模式Pattern Pattern.MULTILINE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%B8%A6%E6%9C%89%E5%A4%9A%E4%B8%AA%E6%A0%87%E5%BF%97%E7%9A%84%E6%A8%A1%E5%BC%8F"><span class="nav-text">编译带有多个标志的模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flags%E6%96%B9%E6%B3%95-%E8%BF%94%E5%9B%9E%E5%8C%B9%E9%85%8D%E6%A0%87%E5%BF%97"><span class="nav-text">flags方法 返回匹配标志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#matcher%E6%96%B9%E6%B3%95-%E5%88%9B%E5%BB%BAMatcher%E7%B1%BB"><span class="nav-text">matcher方法 创建Matcher类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pattern%E6%96%B9%E6%B3%95toString%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">pattern方法toString方法返回正则表达式字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#quote-str-%E7%94%9F%E4%BA%A7%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="nav-text">quote(str)生产正则表达式字面量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#matches-%E7%9B%B4%E6%8E%A5%E5%8C%B9%E9%85%8D%E6%95%B4%E4%B8%AA%E5%AD%97%E7%AC%A6%E5%BA%8F%E5%88%97"><span class="nav-text">matches 直接匹配整个字符序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#split-%E5%88%86%E5%89%B2%E5%AD%97%E7%AC%A6%E5%BA%8F%E5%88%97"><span class="nav-text">split 分割字符序列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#split-CharSequence-int"><span class="nav-text">split(CharSequence, int)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#split-CharSequence"><span class="nav-text">split(CharSequence)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#split%E5%B0%8F%E7%BB%93"><span class="nav-text">split小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java8%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-text">java8新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java11%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-text">java11新特性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4ea1809c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Java正则表达式Pattern类 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java正则表达式Pattern类
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-01-11 22:02:27" itemprop="dateCreated datePublished" datetime="2019-01-11T22:02:27+08:00">2019-01-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/Java-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">Java 正则表达式</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/4ea1809c/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/4ea1809c/" data-xid="/blog/4ea1809c/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Pattern类"><a href="#Pattern类" class="headerlink" title="Pattern类"></a>Pattern类</h1><p>Pattern在java.util.regex包中，是正则表达式的编译表示形式，此类的实例是不可变的，<strong>可供多个并发线程安全使用</strong>。</p>
+<h2 id="组和捕获"><a href="#组和捕获" class="headerlink" title="组和捕获"></a>组和捕获</h2><p>捕获组可以通过从左到右计算**其开括号<code>(</code>**来编号。</p>
+<p>在表达式 ((A)(B(C))) 中，存在四个组： </p>
+<table>
+<thead>
+<tr>
+<th align="left">编号</th>
+<th align="left">捕获组</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">ABC</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">A</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">BC</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">C</td>
+</tr>
+</tbody></table>
+<p>组零始终代表整个表达式。 </p>
+<h2 id="Pattern-compile方法-创建Pattern对象"><a href="#Pattern-compile方法-创建Pattern对象" class="headerlink" title="Pattern.compile方法 创建Pattern对象"></a>Pattern.compile方法 创建Pattern对象</h2><p>Pattern类构造器是私有的，不能通过new创建Pattern对象。Pattern调用静态方法compile返回Pattern实例。</p>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>static Pattern compile(String regex)</code></td>
+<td align="left">将给定的正则表达式编译为模式。</td>
+</tr>
+<tr>
+<td align="left"><code>static Pattern compile(String regex, int flags)</code></td>
+<td align="left">将给定的正则表达式编译为带有给定标志的模式。</td>
+</tr>
+</tbody></table>
+<h3 id="Pattern-compile-String-regex"><a href="#Pattern-compile-String-regex" class="headerlink" title="Pattern.compile(String regex)"></a>Pattern.compile(String regex)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建模板</span></span><br><span class="line">String regex = <span class="string">&quot;[a-z]&quot;</span>;</span><br><span class="line"><span class="comment">// 创建模式</span></span><br><span class="line">Pattern p=Pattern.compile(regex);</span><br></pre></td></tr></table></figure>
+<h3 id="Pattern-compile-String-regex-int-flags"><a href="#Pattern-compile-String-regex-int-flags" class="headerlink" title="Pattern.compile(String regex, int flags)"></a>Pattern.compile(String regex, int flags)</h3><h3 id="匹配标志flags"><a href="#匹配标志flags" class="headerlink" title="匹配标志flags"></a>匹配标志flags</h3><p>第二个compile方法的flags可以传入如下值</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Pattern.CANON_EQ</code></td>
+<td align="left">Enables canonical equivalence.</td>
+</tr>
+<tr>
+<td align="left"><code>Pattern.CASE_INSENSITIVE</code></td>
+<td align="left">Enables case-insensitive matching.</td>
+</tr>
+<tr>
+<td align="left"><code>Pattern.COMMENTS</code></td>
+<td align="left">Permits whitespace and comments in pattern.</td>
+</tr>
+<tr>
+<td align="left"><code>Pattern.DOTALL</code></td>
+<td align="left">Enables dotall mode.</td>
+</tr>
+<tr>
+<td align="left"><code>Pattern.LITERAL</code></td>
+<td align="left">Enables literal parsing of the pattern.</td>
+</tr>
+<tr>
+<td align="left"><code>Pattern.MULTILINE</code></td>
+<td align="left">Enables multiline mode.</td>
+</tr>
+<tr>
+<td align="left"><code>Pattern.UNICODE_CASE</code></td>
+<td align="left">Enables Unicode-aware case folding.</td>
+</tr>
+<tr>
+<td align="left"><code>Pattern.UNICODE_CHARACTER_CLASS</code></td>
+<td align="left">Enables the Unicode version of Predefined character classes and POSIX character classes.</td>
+</tr>
+<tr>
+<td align="left"><code>Pattern.UNIX_LINES</code></td>
+<td align="left">Enables Unix lines mode.</td>
+</tr>
+</tbody></table>
+<h3 id="嵌入式标志表达式"><a href="#嵌入式标志表达式" class="headerlink" title="嵌入式标志表达式"></a>嵌入式标志表达式</h3><p>嵌入式标志表达式是 compile 的双参数版本的替代，并且在正则表达式本身中指定。<br>与 Pattern 的可公开访问的字段对应的嵌入式标志表达式如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th align="left">常量</th>
+<th align="left">等效嵌入式标志表达式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Pattern.CANON_EQ</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">Pattern.CASE_INSENSITIVE</td>
+<td align="left">(?i)</td>
+</tr>
+<tr>
+<td align="left">Pattern.COMMENTS</td>
+<td align="left">(?x)</td>
+</tr>
+<tr>
+<td align="left">Pattern.MULTILINE</td>
+<td align="left">(?m)</td>
+</tr>
+<tr>
+<td align="left">Pattern.DOTALL</td>
+<td align="left">(?s)</td>
+</tr>
+<tr>
+<td align="left">Pattern.LITERAL</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">Pattern.UNICODE_CASE</td>
+<td align="left">(?u)</td>
+</tr>
+<tr>
+<td align="left">Pattern.UNIX_LINES</td>
+<td align="left">(?d)</td>
+</tr>
+</tbody></table>
+<h3 id="不区分大小写的Pattern-Pattern-CASE-INSENSITIVE"><a href="#不区分大小写的Pattern-Pattern-CASE-INSENSITIVE" class="headerlink" title="不区分大小写的Pattern Pattern.CASE_INSENSITIVE"></a>不区分大小写的Pattern Pattern.CASE_INSENSITIVE</h3><p>可以在compile方法中传入Pattern.CASE_INSENSITIVE来创建不区分大小写的模板</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建模板，不区分大小写</span></span><br><span class="line">Pattern p2=Pattern.compile(regex,Pattern.CASE_INSENSITIVE);</span><br></pre></td></tr></table></figure>
+<p>也可以通过嵌入式标志表达式<code>(?i)</code>启用不区分大小写的匹配。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String upCase = <span class="string">&quot;HELLOWORLD&quot;</span>;</span><br><span class="line"><span class="comment">// 方式1，创建模板，不区分大小写</span></span><br><span class="line">Pattern p2 = Pattern.compile(<span class="string">&quot;[a-z]+&quot;</span>, Pattern.CASE_INSENSITIVE);</span><br><span class="line">System.out.println(p2.matcher(upCase).matches());<span class="comment">//true</span></span><br><span class="line"><span class="comment">// 方式2，使用嵌入式标志表达式(?i)</span></span><br><span class="line">System.out.println(Pattern.matches(<span class="string">&quot;(?i)[a-z]+&quot;</span>, upCase));<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="启用多行模式Pattern-Pattern-MULTILINE"><a href="#启用多行模式Pattern-Pattern-MULTILINE" class="headerlink" title="启用多行模式Pattern Pattern.MULTILINE"></a>启用多行模式Pattern Pattern.MULTILINE</h3><p>默认情况下，表达式<code>^</code>和<code>$</code><strong>仅在整个输入序列的开头和结尾匹配</strong>。<br>在多行模式下，表达式<code>^</code>和<code>$</code>分别在<strong>行终止符</strong>或<strong>输入序列的结尾之后或之前</strong>匹配。</p>
+<p>也可以通过嵌入式标志表达式<code>(?m)</code>启用多行模式。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建模板，不区分大小写</span></span><br><span class="line">Pattern p3=Pattern.compile(regex,Pattern.CASE_INSENSITIVE);</span><br></pre></td></tr></table></figure>
+<h3 id="编译带有多个标志的模式"><a href="#编译带有多个标志的模式" class="headerlink" title="编译带有多个标志的模式"></a>编译带有多个标志的模式</h3><p>要编译带有多个标志的模式，请使用按位或运算符 “|” 分隔要包含的标志。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pattern = Pattern.compile(<span class="string">&quot;[az]$&quot;</span>, Pattern.MULTILINE | Pattern.UNIX_LINES);</span><br></pre></td></tr></table></figure>
+<p>也可以先把多个模式保存在int变量中，然后在compile方法中传入该int变量：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="keyword">int</span> flags = Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE;</span><br><span class="line">Pattern pattern = Pattern.compile(<span class="string">&quot;aa&quot;</span>, flags);</span><br></pre></td></tr></table></figure>
+
+<h2 id="flags方法-返回匹配标志"><a href="#flags方法-返回匹配标志" class="headerlink" title="flags方法 返回匹配标志"></a>flags方法 返回匹配标志</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>int flags()</code></td>
+<td align="left">Returns this pattern’s match flags.</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建模板，启用多行模式</span></span><br><span class="line">Pattern p3 = Pattern.compile(<span class="string">&quot;^\\w+$&quot;</span>, Pattern.MULTILINE);</span><br><span class="line"><span class="keyword">if</span> (p3.flags() == Pattern.MULTILINE) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;多行模式&quot;</span>);<span class="comment">//true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="matcher方法-创建Matcher类"><a href="#matcher方法-创建Matcher类" class="headerlink" title="matcher方法 创建Matcher类"></a>matcher方法 创建Matcher类</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Matcher matcher(CharSequence input)</code></td>
+<td align="left">Creates a matcher that will match the given input against this pattern.</td>
+</tr>
+</tbody></table>
+<p>此方法返回一个Matcher对象。Matcher类的构造方法也是私有的,不能随意创建,只能通过Pattern.matcher(CharSequence input)方法得到该类的实例。<br>Pattern类只能做一些简单的匹配操作,要想得到更强更便捷的正则匹配操作,那就需要将Pattern与Matcher一起合作.Matcher类提供了对正则表达式的分组支持,以及对正则表达式的多次匹配支持。</p>
+<h2 id="pattern方法toString方法返回正则表达式字符串"><a href="#pattern方法toString方法返回正则表达式字符串" class="headerlink" title="pattern方法toString方法返回正则表达式字符串"></a>pattern方法toString方法返回正则表达式字符串</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>String toString()</code></td>
+<td align="left">Returns the string representation of this pattern.</td>
+</tr>
+<tr>
+<td align="left"><code>String pattern()</code></td>
+<td align="left">Returns the regular expression from which this pattern was compiled.</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Pattern p3 = Pattern.compile(<span class="string">&quot;^\\w+$&quot;</span>, Pattern.MULTILINE);</span><br><span class="line">System.out.println(p3.toString());<span class="comment">//^\w+$</span></span><br><span class="line">System.out.println(p3.pattern());<span class="comment">//^\w+$</span></span><br></pre></td></tr></table></figure>
+<p>这两个方法的返回值都是一样的，查看源码可以看到这两个方法的代码也是一样的</p>
+<figure class="highlight java"><figcaption><span>java.util.regex.Pattern</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ......</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">pattern</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> pattern;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ......</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> pattern;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ......</span></span><br></pre></td></tr></table></figure>
+<h2 id="quote-str-生产正则表达式字面量"><a href="#quote-str-生产正则表达式字面量" class="headerlink" title="quote(str)生产正则表达式字面量"></a>quote(str)生产正则表达式字面量</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>static String quote(String s)</code></td>
+<td align="left">Returns a literal pattern String for the specified String.</td>
+</tr>
+</tbody></table>
+<p>返回指定 String 的文字模式 String。此方法生成 String，可用于创建与 String s 匹配的 Pattern，就像它是文字模式一样。输入序列中的元字符或转义序列将没有特殊含义。</p>
+<blockquote>
+<p>Java中Pattern类的quote方法将任何字符串（包括正则表达式）都转换成字符串常量，不具有任何匹配功能。</p>
+</blockquote>
+<blockquote>
+<p>Returns a literal pattern String for the specified String.<br>This method produces a String that can be used to create a Pattern that would match the string s as if it were a literal pattern.<br>Metacharacters or escape sequences in the input sequence will be given no special meaning.(使给定的正则表达式没有任何的特殊意义)<br>Parameters:<br>s - The string to be literalized<br>Returns:<br>A literal string replacement</p>
+</blockquote>
+<p>参考资料：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/theRhyme/p/10310709.html">https://www.cnblogs.com/theRhyme/p/10310709.html</a><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/15409296/what-is-the-use-of-pattern-quote-method">https://stackoverflow.com/questions/15409296/what-is-the-use-of-pattern-quote-method</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/yin380697242/article/details/52050023">https://blog.csdn.net/yin380697242/article/details/52050023</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">&quot;.*&quot;</span>;</span><br><span class="line"><span class="comment">//获取该字符串对应的字面量</span></span><br><span class="line">String literalStr=Pattern.quote(str);</span><br><span class="line"><span class="comment">//输出字面量</span></span><br><span class="line">System.out.println(<span class="string">&quot;literalStr = &quot;</span> + literalStr);</span><br><span class="line"><span class="comment">//使用正则表达式  进行匹配</span></span><br><span class="line">System.out.println(Pattern.matches(str, <span class="string">&quot;HelloWorld&quot;</span>));</span><br><span class="line"><span class="comment">//使用 正则表达式的字面量 进行匹配</span></span><br><span class="line">System.out.println(Pattern.matches(literalStr, <span class="string">&quot;HelloWorld&quot;</span>));</span><br><span class="line"><span class="comment">//字面量匹配原来的字符串</span></span><br><span class="line">System.out.println(Pattern.matches(literalStr, str));</span><br></pre></td></tr></table></figure>
+<h2 id="matches-直接匹配整个字符序列"><a href="#matches-直接匹配整个字符序列" class="headerlink" title="matches 直接匹配整个字符序列"></a>matches 直接匹配整个字符序列</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>static boolean matches(String regex, CharSequence input)</code></td>
+<td align="left">Compiles the given regular expression and attempts to match the given input against it.</td>
+</tr>
+</tbody></table>
+<p>此方法是一个静态方法,用于快速匹配字符串,该方法适合用于只匹配一次,且匹配全部字符串的情况.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pattern.matcher(String regex,CharSequence input)</span><br></pre></td></tr></table></figure>
+<p>它与下面这段代码等价：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pattern.compile(regex).matcher(input).matches()</span><br></pre></td></tr></table></figure>
+<p>示例代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str=<span class="string">&quot;hello&quot;</span>;</span><br><span class="line">System.out.println(Pattern.matches(<span class="string">&quot;^hello$&quot;</span>, str));<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="split-分割字符序列"><a href="#split-分割字符序列" class="headerlink" title="split 分割字符序列"></a>split 分割字符序列</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>String[] split(CharSequence input, int limit)</code></td>
+<td align="left">Splits the given input sequence around matches of this pattern.</td>
+</tr>
+<tr>
+<td align="left"><code>String[] split(CharSequence input)</code></td>
+<td align="left">Splits the given input sequence around matches of this pattern.</td>
+</tr>
+<tr>
+<td align="left"><code>Stream&lt;String&gt; splitAsStream(CharSequence input)</code></td>
+<td align="left">Creates a stream from the given input sequence around matches of this pattern.</td>
+</tr>
+</tbody></table>
+<p><code>split</code>方法是一个很好的工具，用于收集位于匹配模式两侧的文本。</p>
+<h3 id="split-CharSequence-int"><a href="#split-CharSequence-int" class="headerlink" title="split(CharSequence, int)"></a>split(CharSequence, int)</h3><p>参考资料：<a target="_blank" rel="noopener" href="http://www.51gjie.com/java/772.html">http://www.51gjie.com/java/772.html</a><br>方法split(CharSequence input, int limit)中的limit表示要分割成多少段，</p>
+<ul>
+<li><p>如果limit&gt;0，则分割成limit-1段。</p>
+<ul>
+<li>如果limit-1大于可以最终可以分割的段数，则分割到不能分割就停止。</li>
+</ul>
+</li>
+<li><p>如果limit&lt;=0，则尽可能的分割，直到无法分割为止。</p>
+</li>
+<li><p>input 要拆分的字符序列</p>
+</li>
+<li><p>limit 结果阈值</p>
+</li>
+<li><p>return 根据围绕此模式的匹配来拆分输入后所计算的字符串数组</p>
+</li>
+</ul>
+<p>limit参数控制应用模式的次数，从而影响结果数组的长度。</p>
+<ol>
+<li>如果 limit &gt;0，那么模式至多应用 limit- 1 次，数组的长度不大于limit，并且数组的最后条目将包含除最后的匹配定界符之外的所有输入。</li>
+<li>如果 limit &lt;=0，那么将应用模式的次数不受限制，并且数组可以为任意长度。</li>
+<li>如果 limit ==0，那么应用模式的次数不受限制，数组可以为任意长度，并且将丢弃尾部空字符串。</li>
+</ol>
+<p>此方法返回的数组包含输入序列的子字符串，由匹配此模式的另一子序列或输入序列的结尾终止。数组中子字符串的顺序与其在输入中出现的顺序相同。<br>如果此模式与输入的任何子序列都不匹配，那么得到的数组仅包含一个元素，即字符串形式的输入序列。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">testSplit2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String str=<span class="string">&quot; 1_Hello 2_World 3_Welcome 4_To 5_Learn 6_Java &quot;</span>;</span><br><span class="line">    Pattern p=Pattern.compile(<span class="string">&quot; &quot;</span>);</span><br><span class="line">    <span class="comment">// 分割成1段，等于不分割</span></span><br><span class="line">    testSplitLimit(str, p,<span class="number">1</span>);</span><br><span class="line">    <span class="comment">// 分割成3段，切两刀</span></span><br><span class="line">    testSplitLimit(str, p,<span class="number">3</span>);</span><br><span class="line">    <span class="comment">// 分成10段，实际上无法分割成10段</span></span><br><span class="line">    testSplitLimit(str, p,<span class="number">10</span>);</span><br><span class="line">    <span class="comment">// 分割成-10段，表示全部分割，保留最后的空字符串</span></span><br><span class="line">    testSplitLimit(str, p,-<span class="number">10</span>);</span><br><span class="line">    <span class="comment">// 分割成0段，表示全部分割，并且不保留最后的空字符串。</span></span><br><span class="line">    testSplitLimit(str, p,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">testSplitLimit</span><span class="params">(String str, Pattern p, <span class="keyword">int</span> limit)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 分割成limit段，或者说应用模式limit-1次</span></span><br><span class="line">    String[] strs= p.split(str, limit);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs.length; i++) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;strs[&quot;</span>+i+<span class="string">&quot;]=&quot;</span> + strs[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">&quot;====================&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">strs[0]= 1_Hello 2_World 3_Welcome 4_To 5_Learn 6_Java </span><br><span class="line">====================</span><br><span class="line">strs[0]=</span><br><span class="line">strs[1]=1_Hello</span><br><span class="line">strs[2]=2_World 3_Welcome 4_To 5_Learn 6_Java </span><br><span class="line">====================</span><br><span class="line">strs[0]=</span><br><span class="line">strs[1]=1_Hello</span><br><span class="line">strs[2]=2_World</span><br><span class="line">strs[3]=3_Welcome</span><br><span class="line">strs[4]=4_To</span><br><span class="line">strs[5]=5_Learn</span><br><span class="line">strs[6]=6_Java</span><br><span class="line">strs[7]=</span><br><span class="line">====================</span><br><span class="line">strs[0]=</span><br><span class="line">strs[1]=1_Hello</span><br><span class="line">strs[2]=2_World</span><br><span class="line">strs[3]=3_Welcome</span><br><span class="line">strs[4]=4_To</span><br><span class="line">strs[5]=5_Learn</span><br><span class="line">strs[6]=6_Java</span><br><span class="line">strs[7]=</span><br><span class="line">====================</span><br><span class="line">strs[0]=</span><br><span class="line">strs[1]=1_Hello</span><br><span class="line">strs[2]=2_World</span><br><span class="line">strs[3]=3_Welcome</span><br><span class="line">strs[4]=4_To</span><br><span class="line">strs[5]=5_Learn</span><br><span class="line">strs[6]=6_Java</span><br><span class="line">====================</span><br></pre></td></tr></table></figure>
+<h3 id="split-CharSequence"><a href="#split-CharSequence" class="headerlink" title="split(CharSequence)"></a>split(CharSequence)</h3><p>等于上面的split(CharSequence, 0)，因此，得到的数组中不包括尾部空字符串。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String str=<span class="string">&quot;_Welcome_To_Learn_Java_&quot;</span>;</span><br><span class="line">Pattern p=Pattern.compile(<span class="string">&quot;_&quot;</span>);</span><br><span class="line">String[] strs=p.split(str);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strs.length; i++) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;strs[&quot;</span>+i+<span class="string">&quot;]=&quot;</span> + strs[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">strs[0]=</span><br><span class="line">strs[1]=Welcome</span><br><span class="line">strs[2]=To</span><br><span class="line">strs[3]=Learn</span><br><span class="line">strs[4]=Java</span><br></pre></td></tr></table></figure>
+<h4 id="split小结"><a href="#split小结" class="headerlink" title="split小结"></a>split小结</h4><ul>
+<li>如果分隔符(模式)在字符串的头部和尾部都出现，分割得到的数组的第一个和最后一个元素为空字符串。<ul>
+<li>如果是split(str)方法的话，不会把最后一个空字符串保存到数组中，但第一个空字符会保留。</li>
+</ul>
+</li>
+</ul>
+<h2 id="java8新特性"><a href="#java8新特性" class="headerlink" title="java8新特性"></a>java8新特性</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Predicate&lt;String&gt; asPredicate()</code></td>
+<td align="left">Creates a predicate that tests if this pattern is found in a given input string.</td>
+</tr>
+<tr>
+<td align="left"><code>Stream&lt;String&gt; splitAsStream(CharSequence input)</code></td>
+<td align="left">Creates a stream from the given input sequence around matches of this pattern.</td>
+</tr>
+</tbody></table>
+<h2 id="java11新特性"><a href="#java11新特性" class="headerlink" title="java11新特性"></a>java11新特性</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Predicate&lt;String&gt; asMatchPredicate()</code></td>
+<td align="left">Creates a predicate that tests if this pattern matches a given input string.</td>
+</tr>
+</tbody></table>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://pingfangx.github.io/java-tutorials/essential/regex/pattern.html">https://pingfangx.github.io/java-tutorials/essential/regex/pattern.html</a><br><a target="_blank" rel="noopener" href="http://www.51gjie.com/java/758.html">http://www.51gjie.com/java/758.html</a><br><a target="_blank" rel="noopener" href="http://www.51gjie.com/java/772.html">http://www.51gjie.com/java/772.html</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/4ea1809c/" title="Java正则表达式Pattern类">https://lanlan2017.github.io/blog/4ea1809c/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/e95301e8/" rel="prev" title="使用批处理脚本 在特定目录中启动Git-Bash窗口">
+                  <i class="fa fa-chevron-left"></i> 使用批处理脚本 在特定目录中启动Git-Bash窗口
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/14ce793e/" rel="next" title="Java String对象">
+                  Java String对象 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/4ea1809c/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/4ea1809c/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

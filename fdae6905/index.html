@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="前言Properties 继承于 Hashtable.表示一个持久的属性集.属性列表中每个键及其对应值都是一个字符串。Properties 类被许多Java类使用。例如，在获取环境变量时它就作为System.getProperties()方法的返回值。 基本使用步骤创建xxx.properties文件先在创建一个名为xxx.properties的文件，然后在里面写入键值对的信息。  键和值用等号隔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Properties 操作配置文件">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/fdae6905/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="前言Properties 继承于 Hashtable.表示一个持久的属性集.属性列表中每个键及其对应值都是一个字符串。Properties 类被许多Java类使用。例如，在获取环境变量时它就作为System.getProperties()方法的返回值。 基本使用步骤创建xxx.properties文件先在创建一个名为xxx.properties的文件，然后在里面写入键值对的信息。  键和值用等号隔">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-11-26T10:53:21.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:51:44.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/fdae6905/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/fdae6905/","path":"/fdae6905/","title":"Java Properties 操作配置文件"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Java Properties 操作配置文件 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4"><span class="nav-text">基本使用步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAxxx-properties%E6%96%87%E4%BB%B6"><span class="nav-text">创建xxx.properties文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B%E5%8C%96properties%E7%B1%BB"><span class="nav-text">实例化properties类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">加载配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E9%94%AE%E5%80%BC%E5%AF%B9"><span class="nav-text">读取键值对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E9%94%AE%E5%80%BC%E5%AF%B9"><span class="nav-text">设置键值对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E9%94%AE"><span class="nav-text">获取所有键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">写入输出流的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">写配置文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E9%85%8D%E7%BD%AE"><span class="nav-text">读取一个配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%8D%E5%8E%86%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">遍历配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SpecialWords-properties%E6%96%87%E4%BB%B6"><span class="nav-text">SpecialWords.properties文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PropertyTools-java%E6%96%87%E4%BB%B6"><span class="nav-text">PropertyTools.java文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-text">参考链接</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/fdae6905/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Java Properties 操作配置文件 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java Properties 操作配置文件
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-11-26 18:53:21" itemprop="dateCreated datePublished" datetime="2018-11-26T18:53:21+08:00">2018-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E9%9B%86%E5%90%88/" itemprop="url" rel="index"><span itemprop="name">Java 集合</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/fdae6905/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/fdae6905/" data-xid="/blog/fdae6905/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Properties 继承于 Hashtable.表示一个持久的属性集.属性列表中每个键及其对应值都是一个字符串。Properties 类被许多Java类使用。例如，在获取环境变量时它就作为System.getProperties()方法的返回值。</p>
+<h1 id="基本使用步骤"><a href="#基本使用步骤" class="headerlink" title="基本使用步骤"></a>基本使用步骤</h1><h2 id="创建xxx-properties文件"><a href="#创建xxx-properties文件" class="headerlink" title="创建xxx.properties文件"></a>创建xxx.properties文件</h2><p>先在创建一个名为xxx.properties的文件，然后在里面写入键值对的信息。</p>
+<ul>
+<li>键和值用等号隔开，等号左边的是键，等号右边的是值。</li>
+<li>井号后面是注释。</li>
+</ul>
+<p>如下所示:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 部署网站的地址</span><br><span class="line">site = https://www.lansheng.net.cn/</span><br></pre></td></tr></table></figure>
+
+<h2 id="实例化properties类"><a href="#实例化properties类" class="headerlink" title="实例化properties类"></a>实例化properties类</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Properties()</code></td>
+<td align="left">创建一个无默认值的空属性列表。</td>
+</tr>
+<tr>
+<td align="left"><code>Properties(Properties defaults)</code></td>
+<td align="left">创建一个带有指定默认值的空属性列表。</td>
+</tr>
+</tbody></table>
+<h2 id="加载配置文件"><a href="#加载配置文件" class="headerlink" title="加载配置文件"></a>加载配置文件</h2><p>利用Properties中的load()方法加载配置文件,查看api可以看到有两个load()方法，如下表所示:</p>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>void load(InputStream inStream)</code></td>
+<td align="left">从输入流中读取属性列表（键和元素对）。</td>
+</tr>
+<tr>
+<td align="left"><code>void load(Reader reader)</code></td>
+<td align="left">按简单的面向行的格式从输入字符流中读取属性列表（键和元素对）。</td>
+</tr>
+<tr>
+<td align="left"><code>void loadFromXML(InputStream in)</code></td>
+<td align="left">将指定输入流中由 XML 文档所表示的所有属性加载到此属性表中。</td>
+</tr>
+</tbody></table>
+<p>load()方法可以从<code>.properties</code>文件对应的文件输入流中，加载到Properties类对象中。</p>
+<p>加载好了之后，文件中的键值对就已经保存在Properties类对象中了,可以对该对象中的信息进行读写。</p>
+<h2 id="读取键值对"><a href="#读取键值对" class="headerlink" title="读取键值对"></a>读取键值对</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>String getProperty(String key)</code></td>
+<td align="left">用指定的键在此属性列表中搜索属性。</td>
+</tr>
+<tr>
+<td align="left"><code>String getProperty(String key, String defaultValue)</code></td>
+<td align="left">用指定的键在属性列表中搜索属性。</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>String getProperty(String key)</code>用指定的键在此属性列表中搜索属性。<ul>
+<li>如果在此属性列表中未找到该键，则接着递归检查默认属性列表及其默认值。</li>
+<li>如果未找到属性，则此方法返回 null。 </li>
+<li>参数：key - 属性键。 </li>
+<li>返回：属性列表中具有指定键值的值。</li>
+</ul>
+</li>
+<li><code>String getProperty(String key, String defaultValue)</code>用指定的键在属性列表中搜索属性。<ul>
+<li>如果在属性列表中未找到该键，则接着递归检查默认属性列表及其默认值。</li>
+<li> 如果未找到属性，则此方法返回默认值变量<code>defaultValue</code>。</li>
+<li> 参数：key - 哈希表键。defaultValue - 默认值。 </li>
+<li> 返回：属性列表中具有指定键值的值。 </li>
+</ul>
+</li>
+</ul>
+<h2 id="设置键值对"><a href="#设置键值对" class="headerlink" title="设置键值对"></a>设置键值对</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Object setProperty(String key, String value)</code></td>
+<td align="left">调用 Hashtable 的方法 put。</td>
+</tr>
+</tbody></table>
+<p>调用 Hashtable 的方法 put。使用 getProperty 方法提供并行性。强制要求为属性的<code>键和值使用字符串</code>。返回值是 Hashtable 调用 put 的结果。 </p>
+<ul>
+<li>参数：<ul>
+<li>key - 要置于属性列表中的键。</li>
+<li>value - 对应于 key 的值。 </li>
+</ul>
+</li>
+<li>返回：属性列表中指定键的<code>旧值</code>，如果没有值，则为 null。<h2 id="获取所有键"><a href="#获取所有键" class="headerlink" title="获取所有键"></a>获取所有键</h2></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Set&lt;String&gt; stringPropertyNames()</code></td>
+<td align="left">返回此属性列表中的<code>键集</code>，其中该键及其对应值是字符串，如果在主属性列表中未找到同名的键，则还包括默认属性列表中不同的键。</td>
+</tr>
+<tr>
+<td align="left"><code>Enumeration&lt;?&gt; propertyNames()</code></td>
+<td align="left">返回属性列表中所有<code>键的枚举</code>，如果在主属性列表中未找到同名的键，则包括默认属性列表中不同的键。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><code>stringPropertyNames()</code>方法返回此属性列表中的键集，其中该键及其对应值是字符串，如果在主属性列表中未找到同名的键，则还包括默认属性列表中不同的键。其键或值不是 String 类型的属性被忽略。 返回的 set 不受 Properties 对象支持。对此 Properties 的改变不能在该 set 中反映出来，反之亦然。就是说，你用setter方法改变了Property对象中的键值对后，键集中的键不会跟着改变，要想再次正确的遍历，你就要再调用一次stringPropertyNames()来获取更新后的键集。<br>返回：此属性列表中的<code>键集</code>，其中该键及其对应值是字符串，包括默认属性列表中的键。</p>
+</blockquote>
+<h2 id="写入输出流的方法"><a href="#写入输出流的方法" class="headerlink" title="写入输出流的方法"></a>写入输出流的方法</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>void list(PrintStream out)</code></td>
+<td align="left">将属性列表输出到指定的输出流。</td>
+</tr>
+<tr>
+<td align="left"><code>void list(PrintWriter out)</code></td>
+<td align="left">将属性列表输出到指定的输出流。</td>
+</tr>
+</tbody></table>
+<h2 id="写配置文件"><a href="#写配置文件" class="headerlink" title="写配置文件"></a>写配置文件</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>void store(OutputStream out, String comments)</code></td>
+<td align="left">以适合使用 load(InputStream) 方法加载到 Properties 表中的格式，将此 Properties 表中的属性列表（键和元素对）写入输出流。</td>
+</tr>
+<tr>
+<td align="left"><code>void store(Writer writer, String comments)</code></td>
+<td align="left">以适合使用 load(Reader) 方法的格式，将此 Properties 表中的属性列表（键和元素对）写入输出字符。</td>
+</tr>
+<tr>
+<td align="left"><code>void storeToXML(OutputStream os, String comment)</code></td>
+<td align="left">发出一个表示此表中包含的所有属性的 XML 文档。</td>
+</tr>
+<tr>
+<td align="left"><code>void storeToXML(OutputStream os, String comment, String encoding)</code></td>
+<td align="left">使用指定的编码发出一个表示此表中包含的所有属性的 XML 文档。</td>
+</tr>
+<tr>
+<td align="left">store()方法第一个参数表示输出流对象，第二个参数表示注释信息:</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<ul>
+<li>如果comments不为空，保存后的属性文件第一行会是#comments,表示注释信息；</li>
+<li>如果为空则没有注释信息,注释信息后面是属性文件的当前保存时间信息。</li>
+</ul>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><h2 id="读取一个配置"><a href="#读取一个配置" class="headerlink" title="读取一个配置"></a>读取一个配置</h2><p>我这里有一个配置文件<code>E:\Blog\blog5Copy\FM.properties</code>,内容如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 部署网站的地址</span><br><span class="line">site = https://www.lansheng.net.cn/</span><br></pre></td></tr></table></figure>
+<p>读入配置文件中site的值，如下所示:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> properties.test;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SiteProperties</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> filePath xxx.properties配置文件的路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 配置文件中的site配置项，也就是网站的地址信息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getSite</span><span class="params">(String filePath)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//1 实例化</span></span><br><span class="line">        Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">        String site = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> (InputStream inputStream = <span class="keyword">new</span> FileInputStream(filePath);)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 2加载配置文件到Properties对象中</span></span><br><span class="line">            properties.load(inputStream);</span><br><span class="line">            <span class="comment">// 3读取配置文件中的站点信息</span></span><br><span class="line">            site = properties.getProperty(<span class="string">&quot;site&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> site;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>测试:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    String filePath = <span class="string">&quot;E:\\Blog\\blog5Copy\\FM.properties&quot;</span>;</span><br><span class="line">    System.out.print(<span class="string">&quot;网站地址:&quot;</span>+SiteProperties.getSite(filePath));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">网站地址:https://www.lansheng.net.cn/</span><br></pre></td></tr></table></figure>
+<p>嗯，这里就读取成功了，目前暂时只需要读取功能，后面有需求了。再更新吧。</p>
+<h2 id="遍历配置文件"><a href="#遍历配置文件" class="headerlink" title="遍历配置文件"></a>遍历配置文件</h2><h3 id="SpecialWords-properties文件"><a href="#SpecialWords-properties文件" class="headerlink" title="SpecialWords.properties文件"></a>SpecialWords.properties文件</h3><p>文件路径:<code>Tools/src/property/reader/SpecialWords.properties</code>,该文件位于Tools项目的<code>property.reader</code>包下.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">id=ID</span><br><span class="line">MIME=M I M E</span><br><span class="line">url=URL</span><br><span class="line">GET=get</span><br><span class="line">CRUD=C R U D</span><br><span class="line">JavaEE=Java E E</span><br><span class="line">SpringMVC=Spring MVC</span><br></pre></td></tr></table></figure>
+<h3 id="PropertyTools-java文件"><a href="#PropertyTools-java文件" class="headerlink" title="PropertyTools.java文件"></a>PropertyTools.java文件</h3><p>文件路径:<code>Tools/src/property/reader/PropertyTools.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> property.reader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"><span class="keyword">import</span> res.reader.ResourceFileReader;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PropertyTools</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 1 实例化</span></span><br><span class="line">        Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">        <span class="comment">// 获取当前包下的配置文件路径</span></span><br><span class="line">        <span class="comment">// 注意这个路径的根目录是以src目录为根目录.</span></span><br><span class="line">        <span class="comment">// /Tools/src/property/reader/SpecialWords.properties对应的路径为:</span></span><br><span class="line">        <span class="comment">// /property/reader/SpecialWords.properties,/Tools/src不需要写出来</span></span><br><span class="line">        <span class="comment">// 2.获取配置文件的输入流</span></span><br><span class="line">            InputStream in = ResourceFileReader.class.getResourceAsStream(</span><br><span class="line">                <span class="string">&quot;/property/reader/SpecialWords.properties&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 3.加载配置文件</span></span><br><span class="line">            properties.load(in);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 4.获取所有key的Set集合</span></span><br><span class="line">        Set&lt;String&gt; keys = properties.stringPropertyNames();</span><br><span class="line">        String key;</span><br><span class="line">        String value;</span><br><span class="line">        <span class="comment">// 5.遍历所有的key</span></span><br><span class="line">        <span class="keyword">for</span> (Iterator&lt;String&gt; iterator = keys.iterator(); iterator.hasNext();)</span><br><span class="line">        &#123;</span><br><span class="line">            key = (String) iterator.next();</span><br><span class="line">            <span class="comment">// 取出对应key的value值</span></span><br><span class="line">            value = properties.getProperty(key);</span><br><span class="line">            System.out.println(<span class="string">&quot;key=&quot;</span> + key + <span class="string">&quot;,value=&quot;</span> + value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">key=GET,value=get</span><br><span class="line">key=MIME,value=M I M E</span><br><span class="line">key=CRUD,value=C R U D</span><br><span class="line">key=JavaEE,value=Java E E</span><br><span class="line">key=url,value=URL</span><br><span class="line">key=SpringMVC,value=Spring MVC</span><br><span class="line">key=id,value=ID</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html#method.summary">https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html#method.summary</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xudong-bupt/p/3758136.html">https://www.cnblogs.com/xudong-bupt/p/3758136.html</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/wangdajiao/article/details/54315237">https://blog.csdn.net/wangdajiao/article/details/54315237</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/i745763006/article/details/72475623">https://blog.csdn.net/i745763006/article/details/72475623</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Senton/article/details/4083127">Java读取Properties文件的六种方法</a><br><a target="_blank" rel="noopener" href="http://www.runoob.com/java/java-properties-class.html">Java Properties 类</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/fdae6905/" title="Java Properties 操作配置文件">https://lanlan2017.github.io/blog/fdae6905/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/b57484e/" rel="prev" title="JavaScript计算两个日期之间相差的天数">
+                  <i class="fa fa-chevron-left"></i> JavaScript计算两个日期之间相差的天数
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/b74fe8bf/" rel="next" title="HTML 表单">
+                  HTML 表单 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/fdae6905/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/fdae6905/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

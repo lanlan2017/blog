@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="需求 加入保存保存快捷键ctrl+s 修改代码，支持多次保存  实现加入保存快捷键在ScreenShotWindow.java中加入快捷键变量声明：第1步： 12&#x2F;&#x2F; 定义保存快捷键public static final int SaveImage_HOT_KEY &#x3D; 4; 第2步：注册快捷键： 123&#x2F;&#x2F;添加保存快捷键JIntellitype.getInstance().registerHotK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="截图文字识别软件升级">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/d2e9fa85/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="需求 加入保存保存快捷键ctrl+s 修改代码，支持多次保存  实现加入保存快捷键在ScreenShotWindow.java中加入快捷键变量声明：第1步： 12&#x2F;&#x2F; 定义保存快捷键public static final int SaveImage_HOT_KEY &#x3D; 4; 第2步：注册快捷键： 123&#x2F;&#x2F;添加保存快捷键JIntellitype.getInstance().registerHotK">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-10-02T04:29:28.000Z">
+<meta property="article:modified_time" content="2022-04-04T07:13:22.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/d2e9fa85/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/d2e9fa85/","path":"/d2e9fa85/","title":"截图文字识别软件升级"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>截图文字识别软件升级 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9C%80%E6%B1%82"><span class="nav-text">需求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E5%85%A5%E4%BF%9D%E5%AD%98%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">加入保存快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E5%A4%9A%E6%AC%A1%E4%BF%9D%E5%AD%98%E4%BF%9D%E5%AD%98%E5%90%8E%E4%B8%8D%E9%80%80%E5%87%BA"><span class="nav-text">支持多次保存保存后不退出</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98"><span class="nav-text">出现问题</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d2e9fa85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="截图文字识别软件升级 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          截图文字识别软件升级
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-10-02 12:29:28" itemprop="dateCreated datePublished" datetime="2018-10-02T12:29:28+08:00">2018-10-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">我的软件</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/%E6%88%AA%E5%9B%BE%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" itemprop="url" rel="index"><span itemprop="name">截图文字识别</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/d2e9fa85/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/d2e9fa85/" data-xid="/blog/d2e9fa85/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><ul>
+<li>加入保存保存快捷键<code>ctrl+s</code></li>
+<li>修改代码，支持多次保存</li>
+</ul>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="加入保存快捷键"><a href="#加入保存快捷键" class="headerlink" title="加入保存快捷键"></a>加入保存快捷键</h2><p>在ScreenShotWindow.java中加入快捷键变量声明：<br>第1步：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义保存快捷键</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SaveImage_HOT_KEY = <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
+<p>第2步：<br>注册快捷键：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加保存快捷键</span></span><br><span class="line">JIntellitype.getInstance().registerHotKey(SaveImage_HOT_KEY,</span><br><span class="line">        JIntellitype.MOD_CONTROL, (<span class="keyword">int</span>) <span class="string">&#x27;S&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>第3步：编写事件监听逻辑：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第3步：添加热键监听器JIntellitype</span></span><br><span class="line">        JIntellitype.getInstance().addHotKeyListener(<span class="keyword">new</span> HotkeyListener()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onHotKey</span><span class="params">(<span class="keyword">int</span> markCode)</span></span></span><br><span class="line"><span class="function">            </span>&#123;</span><br><span class="line">                <span class="keyword">switch</span> (markCode)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 按下alt+w快捷键表示再次截屏</span></span><br><span class="line">                    <span class="keyword">case</span> SCREENSHOT_HOT_KEY :</span><br><span class="line">                        <span class="comment">// showMessage();</span></span><br><span class="line"><span class="comment">//                        ScreenShotOCR.visiable();</span></span><br><span class="line">                        <span class="comment">//如果当前窗口可见的话</span></span><br><span class="line">                        <span class="comment">//再次截屏时,隐藏工具窗口</span></span><br><span class="line">                        <span class="keyword">if</span>(tools!=<span class="keyword">null</span>)</span><br><span class="line">                        &#123;</span><br><span class="line">                            tools.setVisible(<span class="keyword">false</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="comment">//重新截屏</span></span><br><span class="line">                        <span class="keyword">try</span></span><br><span class="line">                        &#123;</span><br><span class="line">                            createScreenCapture();</span><br><span class="line">                        &#125; <span class="keyword">catch</span> (AWTException e)</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                        </span><br><span class="line">                        <span class="comment">//显示窗口</span></span><br><span class="line">                        ScreenShotOCR.visiable();</span><br><span class="line"><span class="comment">//                        //让窗口置顶</span></span><br><span class="line"><span class="comment">//                        这个应该在开始的时候就设置</span></span><br><span class="line"><span class="comment">//                        ScreenShotOCR.ssw.setAlwaysOnTop(true);</span></span><br><span class="line"><span class="comment">//                        tools.setAlwaysOnTop(true);</span></span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="comment">// alt+q快捷键表示退出程序</span></span><br><span class="line">                    <span class="keyword">case</span> EXIT_KEY_MARK :</span><br><span class="line">                        System.exit(<span class="number">0</span>);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> EXIT_SCREENSHOT_HOT_KEY:</span><br><span class="line">                        <span class="comment">//让窗口不显示</span></span><br><span class="line">                        ScreenShotWindow.<span class="keyword">this</span>.setVisible(<span class="keyword">false</span>);<span class="comment">//不显示窗口</span></span><br><span class="line">                        tools.setLocation(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> SaveImage_HOT_KEY:</span><br><span class="line">                        <span class="comment">//让窗口不显示</span></span><br><span class="line">                        ScreenShotWindow.<span class="keyword">this</span>.setVisible(<span class="keyword">false</span>);<span class="comment">//不显示窗口</span></span><br><span class="line">                        tools.setLocation(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">                        <span class="keyword">try</span></span><br><span class="line">                        &#123;</span><br><span class="line">                            saveImage();</span><br><span class="line">                        &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>关键代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> SaveImage_HOT_KEY:</span><br><span class="line">    <span class="comment">//让窗口不显示</span></span><br><span class="line">    ScreenShotWindow.<span class="keyword">this</span>.setVisible(<span class="keyword">false</span>);<span class="comment">//不显示窗口</span></span><br><span class="line">    tools.setLocation(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        saveImage();<span class="comment">//按下ctrl+s时调用保存图片函数</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<p>这样就注册了保存快捷键了。接下来修改保存函数。</p>
+<h2 id="支持多次保存保存后不退出"><a href="#支持多次保存保存后不退出" class="headerlink" title="支持多次保存保存后不退出"></a>支持多次保存保存后不退出</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 保存图像到文件</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">saveImage</span><span class="params">()</span> <span class="keyword">throws</span> IOException</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    JFileChooser jfc = <span class="keyword">new</span> JFileChooser();</span><br><span class="line">    jfc.setDialogTitle(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 文件过滤器，用户过滤可选择文件</span></span><br><span class="line">    FileNameExtensionFilter filter = <span class="keyword">new</span> FileNameExtensionFilter(<span class="string">&quot;PNG&quot;</span>,</span><br><span class="line">            <span class="string">&quot;png&quot;</span>);</span><br><span class="line">    jfc.setFileFilter(filter);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化一个默认文件（此文件会生成到桌面上）</span></span><br><span class="line">    SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd HH-mm-ss&quot;</span>);</span><br><span class="line">    String fileName = sdf.format(<span class="keyword">new</span> Date());</span><br><span class="line">    File filePath = FileSystemView.getFileSystemView().getHomeDirectory();</span><br><span class="line">    File defaultFile = <span class="keyword">new</span> File(</span><br><span class="line">            filePath + File.separator + fileName + <span class="string">&quot;.png&quot;</span>);</span><br><span class="line">    jfc.setSelectedFile(defaultFile);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> flag = jfc.showSaveDialog(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">if</span> (flag == JFileChooser.APPROVE_OPTION)</span><br><span class="line">    &#123;</span><br><span class="line">        File file = jfc.getSelectedFile();</span><br><span class="line">        String path = file.getPath();</span><br><span class="line">        <span class="comment">// 检查文件后缀，放置用户忘记输入后缀或者输入不正确的后缀</span></span><br><span class="line">        <span class="keyword">if</span> (!(path.endsWith(<span class="string">&quot;.png&quot;</span>) || path.endsWith(<span class="string">&quot;.PNG&quot;</span>)))</span><br><span class="line">        &#123;</span><br><span class="line">            path += <span class="string">&quot;.png&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 写入文件</span></span><br><span class="line">        ImageIO.write(saveImage, <span class="string">&quot;png&quot;</span>, <span class="keyword">new</span> File(path));</span><br><span class="line">        <span class="comment">//不退出</span></span><br><span class="line">        <span class="comment">//System.exit(0);</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原先的代码中截图后就退出了，关键代码：<code>System.exit(0);</code>把这一段话注释掉即可。</p>
+<h1 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h1><p>无法使用ctrl+s快捷键，因为JIntellitype注册的是<strong>全局快捷键</strong>，在其他软件中按下<code>ctrl+s</code>进行保存文档的时候，系统会误认为是调用了保存图片。这样是不对的。这里解决方法是吧保存图片快捷键改成<code>ctrl+alt+s</code>。局部快捷键怎么设置为还不知道。先别管他，能用就行了，我先去学点其他东西。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/d2e9fa85/" title="截图文字识别软件升级">https://lanlan2017.github.io/blog/d2e9fa85/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/de8eb4f9/" rel="prev" title="正则实例：markdown文档中给HTML标记加反引号">
+                  <i class="fa fa-chevron-left"></i> 正则实例：markdown文档中给HTML标记加反引号
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/217f0f86/" rel="next" title="如何修改java程序的进程名">
+                  如何修改java程序的进程名 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/d2e9fa85/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/d2e9fa85/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

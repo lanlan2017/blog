@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="log4j配置Log4j的配置包括在配置文件中:  指定Level、 定义Appender、 指明Layout。  Log4j.properties文件是Log4j的配置文件，属性以键值对的形式定义。默认情况下，LogManager会在CLASSPATH中寻找Log4j.properties文件。  根日志的级别定义为DEBUG，并将名为XXX的appender添加其上。 将名为XXX的appen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4 Log4j配置">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/9c30cbde/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="log4j配置Log4j的配置包括在配置文件中:  指定Level、 定义Appender、 指明Layout。  Log4j.properties文件是Log4j的配置文件，属性以键值对的形式定义。默认情况下，LogManager会在CLASSPATH中寻找Log4j.properties文件。  根日志的级别定义为DEBUG，并将名为XXX的appender添加其上。 将名为XXX的appen">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-02T20:04:18.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:51:44.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/9c30cbde/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/9c30cbde/","path":"/9c30cbde/","title":"4 Log4j配置"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>4 Log4j配置 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#log4j%E9%85%8D%E7%BD%AE"><span class="nav-text">log4j配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Log4j-properties%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="nav-text">Log4j.properties的语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Log4j-properties%E7%A4%BA%E4%BE%8B"><span class="nav-text">Log4j.properties示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E6%9B%BF%E6%8D%A2"><span class="nav-text">变量替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%A7%E5%88%AB"><span class="nav-text">级别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Appender%E5%AF%B9%E8%B1%A1"><span class="nav-text">Appender对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Appender%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="nav-text">Appender对象属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86Appender%E6%B7%BB%E5%8A%A0%E5%88%B0Logger%E5%AF%B9%E8%B1%A1"><span class="nav-text">将Appender添加到Logger对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%B8%BALogger%E5%AF%B9%E8%B1%A1%E6%B7%BB%E5%8A%A0Appender%E5%AF%B9%E8%B1%A1"><span class="nav-text">在程序中为Logger对象添加Appender对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%80%E6%9C%89%E5%8F%AF%E7%94%A8%E7%9A%84Appender"><span class="nav-text">所有可用的Appender</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Layout%E5%AF%B9%E8%B1%A1"><span class="nav-text">Layout对象</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9c30cbde/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="4 Log4j配置 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          4 Log4j配置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-03 04:04:18" itemprop="dateCreated datePublished" datetime="2020-08-03T04:04:18+08:00">2020-08-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">简介</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/9c30cbde/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/9c30cbde/" data-xid="/blog/9c30cbde/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="log4j配置"><a href="#log4j配置" class="headerlink" title="log4j配置"></a>log4j配置</h1><p><code>Log4j</code>的配置包括在配置文件中:</p>
+<ol>
+<li>指定<code>Level</code>、</li>
+<li>定义<code>Appender</code>、</li>
+<li>指明<code>Layout</code>。</li>
+</ol>
+<p><code>Log4j.properties</code>文件是<code>Log4j</code>的配置文件，属性以<strong>键值对</strong>的形式定义。默认情况下，<code>LogManager</code>会在<code>CLASSPATH</code>中寻找<code>Log4j.properties</code>文件。</p>
+<ul>
+<li>根日志的级别定义为<code>DEBUG</code>，并将名为<code>XXX</code>的<code>appender</code>添加其上。</li>
+<li>将名为<code>XXX</code>的<code>appender</code>设置为合法的<code>appender</code>。</li>
+<li>设置<code>XXX</code>这个<code>appender</code>的<code>layout</code>。</li>
+</ul>
+<h2 id="Log4j-properties的语法"><a href="#Log4j-properties的语法" class="headerlink" title="Log4j.properties的语法"></a>Log4j.properties的语法</h2><p>为<code>appender XXXXX</code>定义的<code>Log4j.properties</code>的语法如下：</p>
+<pre>
+&#35; Define the root logger with appender XXX
+log4j.rootLogger = DEBUG, <mark>XXX</mark>
+
+&#35; Set the appender named XXX to be a File appender
+<strong>log4j.appender.<mark>XXX</mark></strong>=org.apache.log4j.FileAppender
+
+&#35; Define the layout for XXX appender
+<strong>log4j.appender.<mark>XXX</mark>.layout</strong>=org.apache.log4j.PatternLayout
+<strong>log4j.appender.<mark>XXX</mark>.layout.conversionPattern</strong>=%m%n
+</pre>
+
+<h2 id="Log4j-properties示例"><a href="#Log4j-properties示例" class="headerlink" title="Log4j.properties示例"></a>Log4j.properties示例</h2><p>使用上述语法，我们在<code>Log4j.properties</code>定义如下属性：</p>
+<ul>
+<li>定义根日志级别为<code>DEBUG</code>，并将名为<code>FILE</code>的<code>appender</code>添加在其上。</li>
+<li><code>appender FILE</code>定义为<code>org.apache.log4j.FileAppender</code>，它将日志写入<code>log</code>目录下一个名为<code>log.out</code>的文件中。</li>
+<li><code>layout</code>被定义为<code>%m%n</code>，其中<code>%m</code>表示日志信息,<code>%n</code>表示换行符,则<code>%m%n</code>表示打印出日志信息并在末尾加入换行。</li>
+</ul>
+<figure class="highlight properties"><figcaption><span>Log4j.properties</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&amp;#35;</span> <span class="string">定义变量,该变量表示日志文件所在的目录</span></span><br><span class="line"><span class="attr">log</span> = <span class="string">E:/workspacne_JDK8Tomcat8.5/Log4jDemo</span></span><br><span class="line"><span class="meta">&amp;#35;</span> <span class="string">Define the root logger with appender file</span></span><br><span class="line"><span class="meta">log4j.rootLogger</span> = <span class="string">DEBUG, FILE</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&amp;#35;</span> <span class="string">Define the file appender</span></span><br><span class="line"><span class="meta">log4j.appender.FILE</span>=<span class="string">org.apache.log4j.FileAppender</span></span><br><span class="line"><span class="meta">log4j.appender.FILE.File</span>=<span class="string">$&#123;log&#125;/log.out</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&amp;#35;</span> <span class="string">Define the layout for file appender</span></span><br><span class="line"><span class="meta">log4j.appender.FILE.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="meta">log4j.appender.FILE.layout.conversionPattern</span>=<span class="string">%m%n</span></span><br></pre></td></tr></table></figure>
+<h3 id="变量替换"><a href="#变量替换" class="headerlink" title="变量替换"></a>变量替换</h3><p>值得注意的是，<code>Log4j</code>支持<code>Unix</code>风格的变量替换，比如<code>$&#123;variableName&#125;</code>。</p>
+<h3 id="级别"><a href="#级别" class="headerlink" title="级别"></a>级别</h3><p>所有可能的选项如下：</p>
+<ul>
+<li><code>TRACE</code>、</li>
+<li><code>DEBUG</code>、</li>
+<li><code>INFO</code>、</li>
+<li><code>WARN</code>、</li>
+<li><code>ERROR</code>、</li>
+<li><code>FATAL</code>、</li>
+<li><code>ALL</code>。</li>
+</ul>
+<p>这些级别会在本教程的后续部分讲解。</p>
+<h2 id="Appender对象"><a href="#Appender对象" class="headerlink" title="Appender对象"></a>Appender对象</h2><p><strong><code>Apache Log4j</code>提供的<code>Appender</code>对象主要负责将日志信息打印至不同目的地</strong>，比如控制台、文件、网络套接字、<code>NT</code>事件日志等。</p>
+<h3 id="Appender对象属性"><a href="#Appender对象属性" class="headerlink" title="Appender对象属性"></a>Appender对象属性</h3><p>每个<code>Appender</code>对象都有不同的属性，这些属性决定了该对象的行为。</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>layout</code></td>
+<td align="left"><code>Appender</code>使用<code>Layout</code>对象和与之关联的模式来格式化日志信息。</td>
+</tr>
+<tr>
+<td align="left"><code>target</code></td>
+<td align="left">目的地可以是控制台、文件，或依赖于<code>appender</code>的对象。</td>
+</tr>
+<tr>
+<td align="left"><code>level</code></td>
+<td align="left">级别用来控制过滤日志信息。</td>
+</tr>
+<tr>
+<td align="left"><code>threshold</code></td>
+<td align="left"><code>Appender</code>可脱离于日志级别定义一个阀值级别，<code>Appender</code>对象会忽略所有级别低于阀值级别的日志。</td>
+</tr>
+<tr>
+<td align="left"><code>filter</code></td>
+<td align="left"><code>Filter</code>对象可在级别基础之上分析日志信息，来决定<code>Appender</code>对象是否处理或忽略一条日志记录。</td>
+</tr>
+</tbody></table>
+<h3 id="将Appender添加到Logger对象"><a href="#将Appender添加到Logger对象" class="headerlink" title="将Appender添加到Logger对象"></a>将Appender添加到Logger对象</h3><p>通过在配置文件中使用如下方法，将<code>Appender</code>对象添加至<code>Logger</code>对象：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">log4j.logger.[logger-name]</span>=<span class="string">level, appender1,appender2...appendern</span></span><br></pre></td></tr></table></figure>
+<p>也可以在<code>XML</code>中定义同样的配置：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;com.apress.logging.Log4j&quot;</span> <span class="attr">additivity</span>=<span class="string">&quot;false&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;appender1&quot;</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;appender2&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="在程序中为Logger对象添加Appender对象"><a href="#在程序中为Logger对象添加Appender对象" class="headerlink" title="在程序中为Logger对象添加Appender对象"></a>在程序中为Logger对象添加Appender对象</h3><p>如果想在程序中添加<code>Appender</code>对象，可使用如下方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addAppender</span><span class="params">(Appender appender)</span></span>;</span><br></pre></td></tr></table></figure>
+<p><code>addAppender()</code>方法为<code>Logger</code>对象增加一个<code>Appender</code>。如示例配置展示的那样，可以通过逗号分隔的列表，为<code>logger</code>添加多个<code>Appender</code>，将日志信息打印到不同的目的地。</p>
+<h3 id="所有可用的Appender"><a href="#所有可用的Appender" class="headerlink" title="所有可用的Appender"></a>所有可用的Appender</h3><p>在上面的例子中，我们只用到了<code>FileAppender</code>，所有可用的<code>appender</code>包括：</p>
+<ul>
+<li><code>AppenderSkeleton</code>、</li>
+<li><code>AsyncAppender</code>、</li>
+<li><code>ConsoleAppender</code>、</li>
+<li><code>DailyRollingFileAppender</code>、</li>
+<li><code>ExternallyRolledFileAppender</code>、</li>
+<li><code>FileAppender</code>、</li>
+<li><code>JDBCAppender</code>、</li>
+<li><code>JMSAppender</code>、</li>
+<li><code>LF5Appender</code>、</li>
+<li><code>NTEventLogAppender</code>、</li>
+<li><code>NullAppender</code>、</li>
+<li><code>RollingFileAppender</code>、</li>
+<li><code>SMTPAppender</code>、</li>
+<li><code>SocketAppender</code>、</li>
+<li><code>SocketHubAppender</code>、</li>
+<li><code>SyslogAppender</code>、</li>
+<li><code>TelnetAppender</code>、</li>
+<li><code>WriterAppender</code>。</li>
+</ul>
+<p>我们将在<a href="https://lanlan2017.github.io/blog/6296507b/">使用文件记录日志</a>一章讲解<code>FileAppender</code>，在<a href="https://lanlan2017.github.io/blog/17eaff0a/">使用数据库记录日志</a>一章讲解<code>JDBCAppender</code>。</p>
+<h2 id="Layout对象"><a href="#Layout对象" class="headerlink" title="Layout对象"></a>Layout对象</h2><p>我们已经在<code>appender</code>中使用了<code>PatternLayout</code>，<code>layout</code>对象的所有选项包括：</p>
+<ul>
+<li><code>DateLayout</code>、</li>
+<li><code>HTMLLayout</code>、</li>
+<li><code>PatternLayout</code>、</li>
+<li><code>SimpleLayout</code>、</li>
+<li><code>XMLLayout</code>。</li>
+</ul>
+<p>使用<code>HTMLLayout</code>和<code>XMLLayout</code>，可以生成<code>HTML</code>和<code>XML</code>格式的日志。</p>
+<p>日志格式化<br>您将在<strong>日志格式</strong>一章学习如何格式化日志信息。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/9c30cbde/" title="4 Log4j配置">https://lanlan2017.github.io/blog/9c30cbde/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/39ac74b8/" rel="prev" title="3 Log4j架构">
+                  <i class="fa fa-chevron-left"></i> 3 Log4j架构
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/37d9cc03/" rel="next" title="5 Log4j示例程序">
+                  5 Log4j示例程序 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/9c30cbde/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/9c30cbde/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

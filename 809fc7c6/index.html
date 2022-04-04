@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="C语言代码1vim strerror.c 输入如下c语言代码： 123456789101112131415&#x2F;************关于本文档*********************************************filename: strerror.c*purpose: 列出了系统定义的所有错误代码及描述*&#x2F;#include &lt;string.h&gt; &#x2F;* for st">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言打印Linux错误码">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/809fc7c6/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="C语言代码1vim strerror.c 输入如下c语言代码： 123456789101112131415&#x2F;************关于本文档*********************************************filename: strerror.c*purpose: 列出了系统定义的所有错误代码及描述*&#x2F;#include &lt;string.h&gt; &#x2F;* for st">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-23T21:54:45.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:51:45.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/809fc7c6/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/809fc7c6/","path":"/809fc7c6/","title":"C语言打印Linux错误码"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>C语言打印Linux错误码 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80%E4%BB%A3%E7%A0%81"><span class="nav-text">C语言代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91"><span class="nav-text">编译</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C"><span class="nav-text">运行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E7%A0%81"><span class="nav-text">错误码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#shell%E4%B8%AD%E6%9F%A5%E7%9C%8B%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%91%BD%E4%BB%A4%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC%EF%BC%88%E9%94%99%E8%AF%AF%E7%A0%81%EF%BC%89"><span class="nav-text">shell中查看上一个命令的返回值（错误码）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/809fc7c6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="C语言打印Linux错误码 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C语言打印Linux错误码
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-24 05:54:45" itemprop="dateCreated datePublished" datetime="2021-03-24T05:54:45+08:00">2021-03-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/C%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">C语言</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/809fc7c6/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/809fc7c6/" data-xid="/blog/809fc7c6/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="C语言代码"><a href="#C语言代码" class="headerlink" title="C语言代码"></a>C语言代码</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim strerror.c</span><br></pre></td></tr></table></figure>
+<p>输入如下c语言代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/************关于本文档********************************************</span></span><br><span class="line"><span class="comment">*filename: strerror.c</span></span><br><span class="line"><span class="comment">*purpose: 列出了系统定义的所有错误代码及描述</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span> <span class="comment">/* for strerror */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> ** argv)</span>        </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">256</span>; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;errno.%02d is: %s\n&quot;</span>, i, strerror(i));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -Wall strerror.c</span><br></pre></td></tr></table></figure>
+<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost C_Test]# ls</span><br><span class="line">a.out  strerror.c</span><br><span class="line">[root@localhost C_Test]# ./a.out </span><br></pre></td></tr></table></figure>
+<h1 id="错误码"><a href="#错误码" class="headerlink" title="错误码"></a>错误码</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><span class="line">errno.00 is: Success</span><br><span class="line">errno.01 is: Operation not permitted</span><br><span class="line">errno.02 is: No such file or directory</span><br><span class="line">errno.03 is: No such process</span><br><span class="line">errno.04 is: Interrupted system call</span><br><span class="line">errno.05 is: Input/output error</span><br><span class="line">errno.06 is: No such device or address</span><br><span class="line">errno.07 is: Argument list too long</span><br><span class="line">errno.08 is: Exec format error</span><br><span class="line">errno.09 is: Bad file descriptor</span><br><span class="line">errno.10 is: No child processes</span><br><span class="line">errno.11 is: Resource temporarily unavailable</span><br><span class="line">errno.12 is: Cannot allocate memory</span><br><span class="line">errno.13 is: Permission denied</span><br><span class="line">errno.14 is: Bad address</span><br><span class="line">errno.15 is: Block device required</span><br><span class="line">errno.16 is: Device or resource busy</span><br><span class="line">errno.17 is: File exists</span><br><span class="line">errno.18 is: Invalid cross-device link</span><br><span class="line">errno.19 is: No such device</span><br><span class="line">errno.20 is: Not a directory</span><br><span class="line">errno.21 is: Is a directory</span><br><span class="line">errno.22 is: Invalid argument</span><br><span class="line">errno.23 is: Too many open files in system</span><br><span class="line">errno.24 is: Too many open files</span><br><span class="line">errno.25 is: Inappropriate ioctl for device</span><br><span class="line">errno.26 is: Text file busy</span><br><span class="line">errno.27 is: File too large</span><br><span class="line">errno.28 is: No space left on device</span><br><span class="line">errno.29 is: Illegal seek</span><br><span class="line">errno.30 is: Read-only file system</span><br><span class="line">errno.31 is: Too many links</span><br><span class="line">errno.32 is: Broken pipe</span><br><span class="line">errno.33 is: Numerical argument out of domain</span><br><span class="line">errno.34 is: Numerical result out of range</span><br><span class="line">errno.35 is: Resource deadlock avoided</span><br><span class="line">errno.36 is: File name too long</span><br><span class="line">errno.37 is: No locks available</span><br><span class="line">errno.38 is: Function not implemented</span><br><span class="line">errno.39 is: Directory not empty</span><br><span class="line">errno.40 is: Too many levels of symbolic links</span><br><span class="line">errno.41 is: Unknown error 41</span><br><span class="line">errno.42 is: No message of desired type</span><br><span class="line">errno.43 is: Identifier removed</span><br><span class="line">errno.44 is: Channel number out of range</span><br><span class="line">errno.45 is: Level 2 not synchronized</span><br><span class="line">errno.46 is: Level 3 halted</span><br><span class="line">errno.47 is: Level 3 reset</span><br><span class="line">errno.48 is: Link number out of range</span><br><span class="line">errno.49 is: Protocol driver not attached</span><br><span class="line">errno.50 is: No CSI structure available</span><br><span class="line">errno.51 is: Level 2 halted</span><br><span class="line">errno.52 is: Invalid exchange</span><br><span class="line">errno.53 is: Invalid request descriptor</span><br><span class="line">errno.54 is: Exchange full</span><br><span class="line">errno.55 is: No anode</span><br><span class="line">errno.56 is: Invalid request code</span><br><span class="line">errno.57 is: Invalid slot</span><br><span class="line">errno.58 is: Unknown error 58</span><br><span class="line">errno.59 is: Bad font file format</span><br><span class="line">errno.60 is: Device not a stream</span><br><span class="line">errno.61 is: No data available</span><br><span class="line">errno.62 is: Timer expired</span><br><span class="line">errno.63 is: Out of streams resources</span><br><span class="line">errno.64 is: Machine is not on the network</span><br><span class="line">errno.65 is: Package not installed</span><br><span class="line">errno.66 is: Object is remote</span><br><span class="line">errno.67 is: Link has been severed</span><br><span class="line">errno.68 is: Advertise error</span><br><span class="line">errno.69 is: Srmount error</span><br><span class="line">errno.70 is: Communication error on send</span><br><span class="line">errno.71 is: Protocol error</span><br><span class="line">errno.72 is: Multihop attempted</span><br><span class="line">errno.73 is: RFS specific error</span><br><span class="line">errno.74 is: Bad message</span><br><span class="line">errno.75 is: Value too large for defined data type</span><br><span class="line">errno.76 is: Name not unique on network</span><br><span class="line">errno.77 is: File descriptor in bad state</span><br><span class="line">errno.78 is: Remote address changed</span><br><span class="line">errno.79 is: Can not access a needed shared library</span><br><span class="line">errno.80 is: Accessing a corrupted shared library</span><br><span class="line">errno.81 is: .lib section in a.out corrupted</span><br><span class="line">errno.82 is: Attempting to link in too many shared libraries</span><br><span class="line">errno.83 is: Cannot exec a shared library directly</span><br><span class="line">errno.84 is: Invalid or incomplete multibyte or wide character</span><br><span class="line">errno.85 is: Interrupted system call should be restarted</span><br><span class="line">errno.86 is: Streams pipe error</span><br><span class="line">errno.87 is: Too many users</span><br><span class="line">errno.88 is: Socket operation on non-socket</span><br><span class="line">errno.89 is: Destination address required</span><br><span class="line">errno.90 is: Message too long</span><br><span class="line">errno.91 is: Protocol wrong type for socket</span><br><span class="line">errno.92 is: Protocol not available</span><br><span class="line">errno.93 is: Protocol not supported</span><br><span class="line">errno.94 is: Socket type not supported</span><br><span class="line">errno.95 is: Operation not supported</span><br><span class="line">errno.96 is: Protocol family not supported</span><br><span class="line">errno.97 is: Address family not supported by protocol</span><br><span class="line">errno.98 is: Address already in use</span><br><span class="line">errno.99 is: Cannot assign requested address</span><br><span class="line">errno.100 is: Network is down</span><br><span class="line">errno.101 is: Network is unreachable</span><br><span class="line">errno.102 is: Network dropped connection on reset</span><br><span class="line">errno.103 is: Software caused connection abort</span><br><span class="line">errno.104 is: Connection reset by peer</span><br><span class="line">errno.105 is: No buffer space available</span><br><span class="line">errno.106 is: Transport endpoint is already connected</span><br><span class="line">errno.107 is: Transport endpoint is not connected</span><br><span class="line">errno.108 is: Cannot send after transport endpoint shutdown</span><br><span class="line">errno.109 is: Too many references: cannot splice</span><br><span class="line">errno.110 is: Connection timed out</span><br><span class="line">errno.111 is: Connection refused</span><br><span class="line">errno.112 is: Host is down</span><br><span class="line">errno.113 is: No route to host</span><br><span class="line">errno.114 is: Operation already in progress</span><br><span class="line">errno.115 is: Operation now in progress</span><br><span class="line">errno.116 is: Stale file handle</span><br><span class="line">errno.117 is: Structure needs cleaning</span><br><span class="line">errno.118 is: Not a XENIX named type file</span><br><span class="line">errno.119 is: No XENIX semaphores available</span><br><span class="line">errno.120 is: Is a named type file</span><br><span class="line">errno.121 is: Remote I/O error</span><br><span class="line">errno.122 is: Disk quota exceeded</span><br><span class="line">errno.123 is: No medium found</span><br><span class="line">errno.124 is: Wrong medium type</span><br><span class="line">errno.125 is: Operation canceled</span><br><span class="line">errno.126 is: Required key not available</span><br><span class="line">errno.127 is: Key has expired</span><br><span class="line">errno.128 is: Key has been revoked</span><br><span class="line">errno.129 is: Key was rejected by service</span><br><span class="line">errno.130 is: Owner died</span><br><span class="line">errno.131 is: State not recoverable</span><br><span class="line">errno.132 is: Operation not possible due to RF-kill</span><br><span class="line">errno.133 is: Memory page has hardware error</span><br><span class="line">errno.134 is: Unknown error 134</span><br><span class="line">errno.135 is: Unknown error 135</span><br><span class="line">errno.136 is: Unknown error 136</span><br><span class="line">......剩下的全都是Unknown</span><br><span class="line">errno.253 is: Unknown error 253</span><br><span class="line">errno.254 is: Unknown error 254</span><br><span class="line">errno.255 is: Unknown error 255</span><br></pre></td></tr></table></figure>
+<h1 id="shell中查看上一个命令的返回值（错误码）"><a href="#shell中查看上一个命令的返回值（错误码）" class="headerlink" title="shell中查看上一个命令的返回值（错误码）"></a>shell中查看上一个命令的返回值（错误码）</h1><p>在控制台下，有一个特殊的环境变量<code>$?</code>，保存着前一个程序的返回值，我们可以试试：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost C_Test]# ls</span><br><span class="line">a.out  strerror.c</span><br><span class="line">[root@localhost C_Test]# echo $?</span><br><span class="line">0</span><br><span class="line">[root@localhost C_Test]#</span><br></pre></td></tr></table></figure>
+<p>可以看到ls命令的返回值是0，这表示ls命令运行成功。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="http://www.cppblog.com/aaxron/archive/2012/01/06/163702.html">http://www.cppblog.com/aaxron/archive/2012/01/06/163702.html</a><br><a target="_blank" rel="noopener" href="https://www.bbsmax.com/A/WpdKYW7AJV/">https://www.bbsmax.com/A/WpdKYW7AJV/</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/61767857">https://zhuanlan.zhihu.com/p/61767857</a><br>Linux错误代码及其含义：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013457167/article/details/79196306">https://blog.csdn.net/u013457167/article/details/79196306</a><br>附录：Linux错误码(errno)列表：<a target="_blank" rel="noopener" href="https://wiki.swoole.com/wiki/page/p-errno.html">https://wiki.swoole.com/wiki/page/p-errno.html</a><br><a target="_blank" rel="noopener" href="http://blog.chinaunix.net/uid-10347480-id-3263127.html">http://blog.chinaunix.net/uid-10347480-id-3263127.html</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/809fc7c6/" title="C语言打印Linux错误码">https://lanlan2017.github.io/blog/809fc7c6/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/a13f1d41/" rel="prev" title="Linux du命令详解">
+                  <i class="fa fa-chevron-left"></i> Linux du命令详解
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/1f720624/" rel="next" title="Linux tail命令">
+                  Linux tail命令 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/809fc7c6/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/809fc7c6/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

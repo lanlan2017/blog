@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="Linux字节打印命令odod octal dump 逐字节打印（ c, t c, t x1 t d1, t u1 选项） od –help1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux od命令详解">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/879659f3/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="Linux字节打印命令odod octal dump 逐字节打印（ c, t c, t x1 t d1, t u1 选项） od –help1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-24T02:53:19.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:51:45.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/879659f3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/879659f3/","path":"/879659f3/","title":"Linux od命令详解"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Linux od命令详解 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E5%AD%97%E8%8A%82%E6%89%93%E5%8D%B0%E5%91%BD%E4%BB%A4od"><span class="nav-text">Linux字节打印命令od</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#od-%E2%80%93help"><span class="nav-text">od –help</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#od%EF%BC%9A%E5%85%AB%E8%BF%9B%E5%88%B6%E6%89%93%E5%8D%B0"><span class="nav-text">od：八进制打印</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#od-c%EF%BC%9A%E6%8C%89%E5%AD%97%E7%AC%A6%E6%89%93%E5%8D%B0"><span class="nav-text">od -c：按字符打印</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#od-t-x%EF%BC%9A%E5%8D%95%E5%AD%97%E8%8A%82%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%89%93%E5%8D%B0"><span class="nav-text">od -t x：单字节十六进制打印</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#od-t-x1%EF%BC%9A%E5%8D%95%E5%AD%97%E8%8A%82%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%89%93%E5%8D%B0"><span class="nav-text">od -t x1：单字节十六进制打印</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#od-t-x2%E6%88%96%E8%80%85od-x%EF%BC%9A%E5%8F%8C%E5%AD%97%E8%8A%82%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E6%89%93%E5%8D%B0"><span class="nav-text">od -t x2或者od -x：双字节十六进制打印</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#od-t-d-%E5%B0%BA%E5%AF%B8-%EF%BC%9A%E6%9C%89%E7%AC%A6%E5%8F%B7%E5%8D%81%E8%BF%9B%E5%88%B6%E6%95%B0"><span class="nav-text">od -t d[尺寸]：有符号十进制数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#od-t-d1"><span class="nav-text">od -t d1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#od-t-u-%E5%B0%BA%E5%AF%B8-%EF%BC%9A%E6%97%A0%E7%AC%A6%E5%8F%B7%E5%8D%81%E8%BF%9B%E5%88%B6%E6%95%B4%E6%95%B0%E6%89%93%E5%8D%B0"><span class="nav-text">od -t u[尺寸]：无符号十进制整数打印</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echo-%E5%AD%97%E7%AC%A6-od-t-x1%EF%BC%9A%E4%BD%BF%E7%94%A8od%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8B%E5%AD%97%E7%AC%A6%E7%9A%84ASCII%E7%BC%96%E7%A0%81"><span class="nav-text">echo 字符|od t x1：使用od命令查看字符的ASCII编码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#echo-a-od-t-o1%EF%BC%9A%E6%98%BE%E7%A4%BA%E5%AD%97%E7%AC%A6a%E7%9A%84%E5%85%AB%E8%BF%9B%E5%88%B6ASCII%E7%BC%96%E7%A0%81"><span class="nav-text">echo a|od -t o1：显示字符a的八进制ASCII编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#echo-a-od-t-d1%EF%BC%9A%E6%98%BE%E7%A4%BA%E5%AD%97%E7%AC%A6a%E7%9A%84%E5%8D%81%E8%BF%9B%E5%88%B6ASCII%E7%BC%96%E7%A0%81"><span class="nav-text">echo a|od -t d1：显示字符a的十进制ASCII编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#echo-a-od-t-x1%EF%BC%9A%E6%98%BE%E7%A4%BA%E5%AD%97%E7%AC%A6a%E7%9A%84%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6ASCII%E7%BC%96%E7%A0%81"><span class="nav-text">echo a|od -t x1：显示字符a的十六进制ASCII编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#od%E7%BB%93%E5%90%88more%E3%80%81less%E4%BD%BF%E7%94%A8"><span class="nav-text">od结合more、less使用</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/879659f3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Linux od命令详解 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux od命令详解
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-04-24 10:53:19" itemprop="dateCreated datePublished" datetime="2021-04-24T10:53:19+08:00">2021-04-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%8F%8A%E5%85%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">文本文件及其处理命令</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%8F%8A%E5%85%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/%E8%AF%BB%E5%8F%96%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">读取文本文件</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/879659f3/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/879659f3/" data-xid="/blog/879659f3/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Linux字节打印命令od"><a href="#Linux字节打印命令od" class="headerlink" title="Linux字节打印命令od"></a>Linux字节打印命令od</h1><p>od octal dump 逐字节打印（ c, t c, t x1 t d1, t u1 选项）</p>
+<h2 id="od-–help"><a href="#od-–help" class="headerlink" title="od –help"></a>od –help</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# od --help</span><br><span class="line">用法：od [选项]... [文件]...</span><br><span class="line">　或：od [-abcdfilosx]... [文件] [[+]偏移量[.][b]]</span><br><span class="line">　或：od --traditional [选项]... [文件] [[+]偏移量[.][b] [+][标签][.][b]]</span><br><span class="line"></span><br><span class="line">将指定文件以八进制形式(默认)转储到标准输出。如果指定了多于一个的文件</span><br><span class="line">参数，程序会自动将输入的内容整合为列表并以同样的形式输出。</span><br><span class="line">如果没有指定文件，或指定文件为&quot;-&quot;，程序从标准输入读取数据。</span><br><span class="line"></span><br><span class="line">If first and second call formats both apply, the second format is assumed</span><br><span class="line">if the last operand begins with + or (if there are 2 operands) a digit.</span><br><span class="line">An OFFSET operand means -j OFFSET.  LABEL is the pseudo-address</span><br><span class="line">at first byte printed, incremented when dump is progressing.</span><br><span class="line">For OFFSET and LABEL, a 0x or 0X prefix indicates hexadecimal;</span><br><span class="line">suffixes may be . for octal and b for multiply by 512.</span><br><span class="line"></span><br><span class="line">Mandatory arguments to long options are mandatory for short options too.</span><br><span class="line">  -A, --address-radix=RADIX   output format for file offsets; RADIX is one</span><br><span class="line">                                of [doxn], for Decimal, Octal, Hex or None</span><br><span class="line">  -j, --skip-bytes=BYTES      skip BYTES input bytes first</span><br><span class="line">  -N, --read-bytes=BYTES      limit dump to BYTES input bytes</span><br><span class="line">  -S BYTES, --strings[=BYTES]  output strings of at least BYTES graphic chars;</span><br><span class="line">                                3 is implied when BYTES is not specified</span><br><span class="line">  -t, --format=TYPE           select output format or formats</span><br><span class="line">  -v, --output-duplicates     do not use * to mark line suppression</span><br><span class="line">  -w[BYTES], --width[=BYTES]  output BYTES bytes per output line;</span><br><span class="line">                                32 is implied when BYTES is not specified</span><br><span class="line">      --traditional           accept arguments in third form above</span><br><span class="line">      --help        显示此帮助信息并退出</span><br><span class="line">      --version        显示版本信息并退出</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Traditional format specifications may be intermixed; they accumulate:</span><br><span class="line">  -a   same as -t a,  select named characters, ignoring high-order bit</span><br><span class="line">  -b   same as -t o1, select octal bytes</span><br><span class="line">  -c   same as -t c,  select printable characters or backslash escapes</span><br><span class="line">  -d   same as -t u2, select unsigned decimal 2-byte units</span><br><span class="line">  -f    即 -t fF，指定浮点数对照输出格式</span><br><span class="line">  -i    即 -t dl，指定十进制整数对照输出格式</span><br><span class="line">  -l    即 -t dL，指定十进制长整数对照输出格式</span><br><span class="line">  -o    即 -t o2，指定双字节单位八进制数的对照输出格式</span><br><span class="line">  -s    即 -t d2，指定双字节单位十进制数的对照输出格式</span><br><span class="line">  -x    即 -t x2，指定双字节单位十六进制数的对照输出格式</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">TYPE is made up of one or more of these specifications:</span><br><span class="line">  a          named character, ignoring high-order bit</span><br><span class="line">  c          printable character or backslash escape</span><br><span class="line">  d[尺寸]    有符号十进制数，每个整形数占指定尺寸的字节</span><br><span class="line">  f[尺寸]    浮点数，每个整形数占指定尺寸的字节</span><br><span class="line">  o[尺寸]    八进制数，每个整形数占指定尺寸的字节</span><br><span class="line">  u[尺寸]    无符号十进制数，每个整形数占指定尺寸的字节</span><br><span class="line">  x[尺寸]    十六进制数，每个整形数占指定尺寸的字节</span><br><span class="line"></span><br><span class="line">SIZE is a number.  For TYPE in [doux], SIZE may also be C for</span><br><span class="line">sizeof(char), S for sizeof(short), I for sizeof(int) or L for</span><br><span class="line">sizeof(long).  If TYPE is f, SIZE may also be F for sizeof(float), D</span><br><span class="line">for sizeof(double) or L for sizeof(long double).</span><br><span class="line"></span><br><span class="line">Adding a z suffix to any type displays printable characters at the end of</span><br><span class="line">each output line.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">BYTES is hex with 0x or 0X prefix, and may have a multiplier suffix:</span><br><span class="line">  b    512</span><br><span class="line">  KB   1000</span><br><span class="line">  K    1024</span><br><span class="line">  MB   1000*1000</span><br><span class="line">  M    1024*1024</span><br><span class="line">and so on for G, T, P, E, Z, Y.</span><br><span class="line"></span><br><span class="line">GNU coreutils online help: &lt;http://www.gnu.org/software/coreutils/&gt;</span><br><span class="line">请向&lt;http://translationproject.org/team/zh_CN.html&gt; 报告od 的翻译错误</span><br><span class="line">要获取完整文档，请运行：info coreutils &#x27;od invocation&#x27;</span><br><span class="line">[root@localhost Linux_Test]# </span><br></pre></td></tr></table></figure>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><h2 id="od：八进制打印"><a href="#od：八进制打印" class="headerlink" title="od：八进制打印"></a>od：八进制打印</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# od date_test.txt </span><br><span class="line">0000000 030062 030062 030055 026461 032062 030040 035064 032460</span><br><span class="line">0000020 030072 005066 030062 030462 032057 031057 005065</span><br><span class="line">0000036</span><br><span class="line">[root@localhost Linux_Test]# cat date_test.txt </span><br><span class="line">2020-01-24 04:05:06</span><br><span class="line">2021/4/25</span><br><span class="line">[root@localhost Linux_Test]# </span><br></pre></td></tr></table></figure>
+<h2 id="od-c：按字符打印"><a href="#od-c：按字符打印" class="headerlink" title="od -c：按字符打印"></a>od -c：按字符打印</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# od -c date_test.txt </span><br><span class="line">0000000   2   0   2   0   -   0   1   -   2   4       0   4   :   0   5</span><br><span class="line">0000020   :   0   6  \n   2   0   2   1   /   4   /   2   5  \n</span><br><span class="line">0000036</span><br><span class="line">[root@localhost Linux_Test]# </span><br></pre></td></tr></table></figure>
+<h2 id="od-t-x：单字节十六进制打印"><a href="#od-t-x：单字节十六进制打印" class="headerlink" title="od -t x：单字节十六进制打印"></a>od -t x：单字节十六进制打印</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# od -x date_test.txt </span><br><span class="line">0000000 3032 3032 302d 2d31 3432 3020 3a34 3530</span><br><span class="line">0000020 303a 0a36 3032 3132 342f 322f 0a35</span><br><span class="line">0000036</span><br><span class="line">[root@localhost Linux_Test]#</span><br></pre></td></tr></table></figure>
+<h3 id="od-t-x1：单字节十六进制打印"><a href="#od-t-x1：单字节十六进制打印" class="headerlink" title="od -t x1：单字节十六进制打印"></a>od -t x1：单字节十六进制打印</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# od -t x1 date_test.txt </span><br><span class="line">0000000 32 30 32 30 2d 30 31 2d 32 34 20 30 34 3a 30 35</span><br><span class="line">0000020 3a 30 36 0a 32 30 32 31 2f 34 2f 32 35 0a</span><br><span class="line">0000036</span><br><span class="line">[root@localhost Linux_Test]#</span><br></pre></td></tr></table></figure>
+<h3 id="od-t-x2或者od-x：双字节十六进制打印"><a href="#od-t-x2或者od-x：双字节十六进制打印" class="headerlink" title="od -t x2或者od -x：双字节十六进制打印"></a>od -t x2或者od -x：双字节十六进制打印</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# od -x date_test.txt </span><br><span class="line">0000000 3032 3032 302d 2d31 3432 3020 3a34 3530</span><br><span class="line">0000020 303a 0a36 3032 3132 342f 322f 0a35</span><br><span class="line">0000036</span><br><span class="line">[root@localhost Linux_Test]#</span><br></pre></td></tr></table></figure>
+<h2 id="od-t-d-尺寸-：有符号十进制数"><a href="#od-t-d-尺寸-：有符号十进制数" class="headerlink" title="od -t d[尺寸]：有符号十进制数"></a>od -t d[尺寸]：有符号十进制数</h2><p>这里的尺寸是一个整型数，每个整型数占指定尺寸的字节。</p>
+<h3 id="od-t-d1"><a href="#od-t-d1" class="headerlink" title="od -t d1"></a>od -t d1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# od -t d1 date_test.txt |less</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0000000   50   48   50   48   45   48   49   45   50   52   32   48   52   58   48   53</span><br><span class="line">0000020   58   48   54   10   50   48   50   49   47   52   47   50   53   10</span><br><span class="line">0000036</span><br><span class="line">(END)</span><br></pre></td></tr></table></figure>
+<h2 id="od-t-u-尺寸-：无符号十进制整数打印"><a href="#od-t-u-尺寸-：无符号十进制整数打印" class="headerlink" title="od -t u[尺寸]：无符号十进制整数打印"></a>od -t u[尺寸]：无符号十进制整数打印</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# od -t u1 date_test.txt |less</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0000000  50  48  50  48  45  48  49  45  50  52  32  48  52  58  48  53</span><br><span class="line">0000020  58  48  54  10  50  48  50  49  47  52  47  50  53  10</span><br><span class="line">0000036</span><br><span class="line">(END)</span><br></pre></td></tr></table></figure>
+<h2 id="echo-字符-od-t-x1：使用od命令查看字符的ASCII编码"><a href="#echo-字符-od-t-x1：使用od命令查看字符的ASCII编码" class="headerlink" title="echo 字符|od t x1：使用od命令查看字符的ASCII编码"></a>echo 字符|od t x1：使用od命令查看字符的ASCII编码</h2><h3 id="echo-a-od-t-o1：显示字符a的八进制ASCII编码"><a href="#echo-a-od-t-o1：显示字符a的八进制ASCII编码" class="headerlink" title="echo a|od -t o1：显示字符a的八进制ASCII编码"></a>echo a|od -t o1：显示字符a的八进制ASCII编码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# echo a|od -t o1</span><br><span class="line">0000000 141 012</span><br><span class="line">0000002</span><br></pre></td></tr></table></figure>
+<p>注意，第一个数141才是字符a的八进制ASCII编码，后面的012是换行符的ASCII编码。</p>
+<h3 id="echo-a-od-t-d1：显示字符a的十进制ASCII编码"><a href="#echo-a-od-t-d1：显示字符a的十进制ASCII编码" class="headerlink" title="echo a|od -t d1：显示字符a的十进制ASCII编码"></a>echo a|od -t d1：显示字符a的十进制ASCII编码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# echo a|od -t d1</span><br><span class="line">0000000   97   10</span><br><span class="line">0000002</span><br></pre></td></tr></table></figure>
+<h3 id="echo-a-od-t-x1：显示字符a的十六进制ASCII编码"><a href="#echo-a-od-t-x1：显示字符a的十六进制ASCII编码" class="headerlink" title="echo a|od -t x1：显示字符a的十六进制ASCII编码"></a>echo a|od -t x1：显示字符a的十六进制ASCII编码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# echo a|od -t x1</span><br><span class="line">0000000 61 0a</span><br><span class="line">0000002</span><br><span class="line">[root@localhost Linux_Test]# </span><br></pre></td></tr></table></figure>
+
+<h2 id="od结合more、less使用"><a href="#od结合more、less使用" class="headerlink" title="od结合more、less使用"></a>od结合more、less使用</h2>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/879659f3/" title="Linux od命令详解">https://lanlan2017.github.io/blog/879659f3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/c4a3bc5b/" rel="prev" title="Linux yum安装剪贴板xclip命令提示”没有可用软件包”">
+                  <i class="fa fa-chevron-left"></i> Linux yum安装剪贴板xclip命令提示”没有可用软件包”
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/9f06639c/" rel="next" title="Linux head命令">
+                  Linux head命令 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/879659f3/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/879659f3/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

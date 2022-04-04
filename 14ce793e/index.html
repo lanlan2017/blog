@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="我们经常使用 String 类来定义一个字符串。字符串是常量，它们的值在创建之后不能更改。字符串缓冲区支持可变的字符串。 父类1java.lang.Object 实现的接口1Serializable, CharSequence, Comparable&lt;String&gt; 字段:使用该字段可以对String进行排序1static Comparator&lt;String&gt; CASE_I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java String对象">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/14ce793e/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="我们经常使用 String 类来定义一个字符串。字符串是常量，它们的值在创建之后不能更改。字符串缓冲区支持可变的字符串。 父类1java.lang.Object 实现的接口1Serializable, CharSequence, Comparable&lt;String&gt; 字段:使用该字段可以对String进行排序1static Comparator&lt;String&gt; CASE_I">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-01-12T12:49:25.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:51:44.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/14ce793e/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/14ce793e/","path":"/14ce793e/","title":"Java String对象"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Java String对象 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%88%B6%E7%B1%BB"><span class="nav-text">父类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%8E%A5%E5%8F%A3"><span class="nav-text">实现的接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E6%AE%B5-%E4%BD%BF%E7%94%A8%E8%AF%A5%E5%AD%97%E6%AE%B5%E5%8F%AF%E4%BB%A5%E5%AF%B9String%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F"><span class="nav-text">字段:使用该字段可以对String进行排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E4%B8%BA%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84"><span class="nav-text">String字符串转为字节数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2"><span class="nav-text">大小写转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D"><span class="nav-text">正则匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%88%86%E5%89%B2"><span class="nav-text">正则表达式分割</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/14ce793e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Java String对象 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java String对象
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-01-12 20:49:25" itemprop="dateCreated datePublished" datetime="2019-01-12T20:49:25+08:00">2019-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/API%E6%95%B4%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">API整理</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/14ce793e/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/14ce793e/" data-xid="/blog/14ce793e/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>我们经常使用 String 类来定义一个字符串。字符串是<code>常量</code>，它们的值在创建之后不能更改。字符串缓冲区支持可变的字符串。</p>
+<h2 id="父类"><a href="#父类" class="headerlink" title="父类"></a>父类</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object</span><br></pre></td></tr></table></figure>
+<h2 id="实现的接口"><a href="#实现的接口" class="headerlink" title="实现的接口"></a>实现的接口</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serializable, CharSequence, Comparable&lt;String&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="字段-使用该字段可以对String进行排序"><a href="#字段-使用该字段可以对String进行排序" class="headerlink" title="字段:使用该字段可以对String进行排序"></a>字段:使用该字段可以对String进行排序</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static Comparator&lt;String&gt; CASE_INSENSITIVE_ORDER一个对 String 对象进行排序的 Comparator，作用与 compareToIgnoreCase 相同 </span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    String[] rawStrings =&#123;<span class="string">&quot;B&quot;</span>, <span class="string">&quot;com.lan&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;A&quot;</span>, <span class="string">&quot;a&quot;</span>, <span class="string">&quot;c&quot;</span>, <span class="string">&quot;C&quot;</span>&#125;;</span><br><span class="line">    System.out.println(Arrays.toString(rawStrings));</span><br><span class="line">    <span class="comment">// 使用String.CASE_INSENSITIVE_ORDER进行排序</span></span><br><span class="line">    Arrays.sort(rawStrings, String.CASE_INSENSITIVE_ORDER);</span><br><span class="line">    System.out.println(Arrays.toString(rawStrings));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[B, com.lan, b, A, a, c, C][A, a, B, b, c, C, com.lan]</span><br></pre></td></tr></table></figure>
+<p>现在只知道可以进行排序，具体后面再研究，先接着写下去。好像可以参考的博客：<a target="_blank" rel="noopener" href="http://blog.51cto.com/lavasoft/68380">http://blog.51cto.com/lavasoft/68380</a><br><strong>4.构造方法：</strong><br><strong>(1)默认构造方法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String()初始化一个新创建的 String 对象，使其表示一个空字符序列。 </span><br></pre></td></tr></table></figure>
+<p><strong>(2)使用整个byte数组创建String对象且使用默认字符集：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String(byte[] bytes)通过使用平台的默认字符集解码指定的 byte 数组，构造一个新的 String。String(byte[] bytes, int offset, int length)通过使用平台的默认字符集解码指定的 byte 子数组，构造一个新的 String。</span><br></pre></td></tr></table></figure>
+<p><strong>(3)使用整个byte数组创建String对象且指定字符集</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String(byte[] bytes, String charsetName)通过使用指定的 charset 解码指定的 byte 数组，构造一个新的 String。String(byte[] bytes, Charset charset)通过使用指定的 charset 解码指定的 byte 数组，构造一个新的 String。 </span><br></pre></td></tr></table></figure>
+<p><strong>(4)使用byte数组的一部分创建String对象且指定字符集，指定在byte数组中的起始下标和长度:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String(byte[] bytes, int offset, int length, Charset charset)通过使用指定的 charset 解码指定的 byte 子数组，构造一个新的 String。String(byte[] bytes, int offset, int length, String charsetName)通过使用指定的字符集解码指定的 byte 子数组，构造一个新的 String。 </span><br></pre></td></tr></table></figure>
+<p><strong>(5)使用字符数组(char[])创建String对象：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String(char[] value)分配一个新的 String，使其表示字符数组参数中当前包含的字符序列。String(char[] value, int offset, int count)分配一个新的 String，它包含取自字符数组参数一个子数组的字符。 </span><br></pre></td></tr></table></figure>
+<p><strong>(6)使用Unicode代码点数组创建String对象：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String(int[] codePoints, int offset, int count)分配一个新的 String，它包含 Unicode 代码点数组参数一个子数组的字符。 </span><br></pre></td></tr></table></figure>
+<p><strong>(7)使用变长字符串StringBuffer,StringBuilder做为参数创建String对象：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String(StringBuffer buffer)分配一个新的字符串，它包含字符串缓冲区参数中当前包含的字符序列。String(StringBuilder builder)分配一个新的字符串，它包含字符串生成器参数中当前包含的字符序列。 </span><br></pre></td></tr></table></figure>
+<p><strong>(8)使用String对象作为参数创建String对象,相当于创建一个旧的String对象的副本</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String(String original)初始化一个新创建的 String 对象，使其表示一个与参数相同的字符序列；换句话说，新创建的字符串是该参数字符串的副本。 </span><br></pre></td></tr></table></figure>
+<p><strong>5. 方法</strong><br><strong>(1)字符串的长度，判断字符串是否为空字符串。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">boolean isEmpty()当且仅当 length() 为 0 时返回 true。int length()返回此字符串的长度。 </span><br></pre></td></tr></table></figure>
+<p><strong>(2)判断该字符串中是否包含指定的字符串，获取字符</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">boolean contains(CharSequence s)当且仅当此字符串包含指定的 char 值序列时，返回 true。</span><br></pre></td></tr></table></figure>
+<p><strong>(3)返回指定索引处的字符值：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">char charAt(int index)返回指定索引处的 char 值。</span><br></pre></td></tr></table></figure>
+<p><strong>(4)字符串连接：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String concat(String str)将指定字符串连接到此字符串的结尾。 </span><br></pre></td></tr></table></figure>
+<p><strong>(5)从前向后扫描，返回字符或者字符串参数在该字符串中第一次出现的索引：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int indexOf(int ch)返回指定字符在此字符串中第一次出现处的索引。int indexOf(String str)返回指定子字符串在此字符串中第一次出现处的索引。int indexOf(int ch, int fromIndex)返回在此字符串中第一次出现指定字符处的索引，从指定的索引开始搜索。int indexOf(String str, int fromIndex)返回指定子字符串在此字符串中第一次出现处的索引，从指定的索引开始。 </span><br></pre></td></tr></table></figure>
+<p><strong>(6)从后向前扫描，返回字符或字符串参数在该字符串中第一次出现的索引：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int lastIndexOf(int ch)返回指定字符在此字符串中最后一次出现处的索引。int lastIndexOf(String str)返回指定子字符串在此字符串中最右边出现处的索引。int lastIndexOf(int ch, int fromIndex)返回指定字符在此字符串中最后一次出现处的索引，从指定的索引处开始进行反向搜索。int lastIndexOf(String str, int fromIndex)返回指定子字符串在此字符串中最后一次出现处的索引，从指定的索引开始反向搜索。 </span><br></pre></td></tr></table></figure>
+<p><strong>(7)获取该字符串的一部分子字符串：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tring substring(int beginIndex)返回一个新的字符串，它是此字符串的一个子字符串。String substring(int beginIndex, int endIndex)返回一个新字符串，它是此字符串的一个子字符串。</span><br></pre></td></tr></table></figure>
+<p><strong>这个方法经常与上面两个方法String.lastIndexOf()和String.indexOf()方法一起使用，使用这两个方法查找分割的位置，然后再使用String.subString()方法进行分割。</strong><br><strong>(8)获取该字符串的一部分，以字符序列返回：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CharSequence subSequence(int beginIndex, int endIndex)返回一个新的字符序列，它是此序列的一个子序列。 </span><br></pre></td></tr></table></figure>
+<p><strong>(9)重写Object的方法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">boolean equals(Object anObject)将此字符串与指定的对象比较。int hashCode()返回此字符串的哈希码。String toString()返回此对象本身（它已经是一个字符串！）。</span><br></pre></td></tr></table></figure>
+<p><strong>(10)实现comparable接口的比较方法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int compareTo(String anotherString)按字典顺序比较两个字符串。 </span><br></pre></td></tr></table></figure>
+<p><strong>(11)不按大小写的比较方法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int compareToIgnoreCase(String str)按字典顺序比较两个字符串，不考虑大小写。boolean equalsIgnoreCase(String anotherString)将此 String 与另一个 String 比较，不考虑大小写。 </span><br></pre></td></tr></table></figure>
+<p><strong>(12)基本类型：int,long,float,double,char,char数组，Object(对象)转换成String的方法:String.valueOf(xxx)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static String valueOf(int i)返回 int 参数的字符串表示形式。static String valueOf(long l)返回 long 参数的字符串表示形式。static String valueOf(float f)返回 float 参数的字符串表示形式。static String valueOf(double d)返回 double 参数的字符串表示形式。static String valueOf(boolean b)返回 boolean 参数的字符串表示形式。static String valueOf(char c)返回 char 参数的字符串表示形式。static String valueOf(char[] data)返回 char 数组参数的字符串表示形式。static String valueOf(char[] data, int offset, int count)返回 char 数组参数的特定子数组的字符串表示形式。static String valueOf(Object obj)返回 Object 参数的字符串表示形式。 </span><br></pre></td></tr></table></figure>
+<h2 id="String字符串转为字节数组"><a href="#String字符串转为字节数组" class="headerlink" title="String字符串转为字节数组"></a>String字符串转为字节数组</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">byte[] getBytes()</td>
+<td align="left">使用平台的默认字符集将此 String 编码为 byte 序列，并将结果存储到一个新的 byte 数组中。</td>
+</tr>
+<tr>
+<td align="left">byte[] getBytes(Charset charset)</td>
+<td align="left">使用给定的 charset 将此 String 编码到 byte 序列，并将结果存储到新的 byte 数组。</td>
+</tr>
+<tr>
+<td align="left">byte[] getBytes(String charsetName)</td>
+<td align="left">使用指定的字符集将此 String 编码为 byte 序列，并将结果存储到一个新的 byte 数组中。</td>
+</tr>
+</tbody></table>
+<h2 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String toLowerCase() 使用默认语言环境的规则将此 String 中的所有字符都转换为小写。</td>
+<td></td>
+</tr>
+<tr>
+<td>String toLowerCase(Locale locale)</td>
+<td>使用给定 Locale 的规则将此 String 中的所有字符都转换为小写。</td>
+</tr>
+<tr>
+<td>String toUpperCase()</td>
+<td>使用默认语言环境的规则将此 String 中的所有字符都转换为大写。</td>
+</tr>
+<tr>
+<td>String toUpperCase(Locale locale)</td>
+<td>使用给定 Locale 的规则将此 String 中的所有字符都转换为大写。</td>
+</tr>
+</tbody></table>
+<h3 id="正则匹配"><a href="#正则匹配" class="headerlink" title="正则匹配"></a>正则匹配</h3><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">boolean matches(String regex)</td>
+<td align="left">判断该字符串是否匹配给定的正则表达式</td>
+</tr>
+</tbody></table>
+<h3 id="正则表达式分割"><a href="#正则表达式分割" class="headerlink" title="正则表达式分割"></a>正则表达式分割</h3><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">String[] split(String regex)</td>
+<td align="left">根据给定正则表达式的匹配拆分此字符串。</td>
+</tr>
+<tr>
+<td align="left">String[] split(String regex, int limit)</td>
+<td align="left">根据匹配给定的正则表达式来拆分此字符串。</td>
+</tr>
+</tbody></table>
+<p><strong>注意，获取的数组中不包含作为分割符的字符(或字符串)</strong><br><strong>(17)判断字符串的前缀后缀：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">boolean startsWith(String prefix)测试此字符串是否以指定的前缀开始。boolean startsWith(String prefix, int toffset)测试此字符串从指定索引开始的子字符串是否以指定前缀开始。boolean endsWith(String suffix)测试此字符串是否以指定的后缀结束。 </span><br></pre></td></tr></table></figure>
+<p><strong>(18)该字符串与指定的字符序列或者StringBuffer比较</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">boolean contentEquals(CharSequence cs)将此字符串与指定的 CharSequence 比较。boolean contentEquals(StringBuffer sb)将此字符串与指定的 StringBuffer 比较。 </span><br></pre></td></tr></table></figure>
+<p><strong>(19)把字符数组转换成String</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">static String copyValueOf(char[] data)</span><br><span class="line">返回指定数组中表示该字符序列的 String。</span><br><span class="line">static String copyValueOf(char[] data, int offset, int count)</span><br><span class="line">返回指定数组中表示该字符序列的 String。 </span><br></pre></td></tr></table></figure>
+<p><strong>(20)把该字符串中的字符拷贝到指定的字符数组中去：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)</span><br><span class="line">将字符从此字符串复制到目标字符数组。</span><br></pre></td></tr></table></figure>
+<p><strong>(21)把该字符串转换成字符数组：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">char[] toCharArray()将此字符串转换为一个新的字符数组。</span><br></pre></td></tr></table></figure>
+<p><strong>(22)使用新字符替换字符串中的旧字符：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> String replace(char oldChar, char newChar)</span><br><span class="line">返回一个新的字符串，它是通过用 newChar 替换此字符串中出现的所有 oldChar 得到的。</span><br><span class="line">String replace(CharSequence target, CharSequence replacement)</span><br><span class="line">使用指定的字面值替换序列替换此字符串所有匹配字面值目标序列的子字符串。 </span><br></pre></td></tr></table></figure>
+<p><strong>(23)使用新子字符串替换该字符串中匹配正则表达式的那些旧子字符串：一个全部替换，一个只替换第一个：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> String replaceAll(String regex, String replacement)</span><br><span class="line">使用给定的 replacement 替换此字符串所有匹配给定的正则表达式的子字符串。</span><br><span class="line">String replaceFirst(String regex, String replacement)</span><br><span class="line">使用给定的 replacement 替换此字符串匹配给定的正则表达式的第一个子字符串。</span><br></pre></td></tr></table></figure>
+<p>**(24)把该字符串规范化表示，去掉该字符串的前后空白符： **</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> String intern()</span><br><span class="line">返回字符串对象的规范化表示形式。</span><br><span class="line">String trim()</span><br><span class="line">返回字符串的副本，忽略前导空白和尾部空白。 </span><br></pre></td></tr></table></figure>
+<p>** (25)Unicode代码点相关：**</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> int codePointAt(int index)</span><br><span class="line">返回指定索引处的字符（Unicode 代码点）。</span><br><span class="line">int codePointBefore(int index)</span><br><span class="line">返回指定索引之前的字符（Unicode 代码点）。</span><br><span class="line">int codePointCount(int beginIndex, int endIndex)</span><br><span class="line">返回此 String 的指定文本范围中的 Unicode 代码点数。</span><br><span class="line">int offsetByCodePoints(int index, int codePointOffset)</span><br><span class="line">返回此 String 中从给定的 index 处偏移 codePointOffset 个代码点的索引。 </span><br></pre></td></tr></table></figure>
+<p><strong>(26)格式化字符串：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">static String format(Locale l, String format, Object... args)</span><br><span class="line">使用指定的语言环境、格式字符串和参数返回一个格式化字符串。</span><br><span class="line">static String format(String format, Object... args)</span><br><span class="line">使用指定的格式字符串和参数返回一个格式化字符串。</span><br></pre></td></tr></table></figure>
+<p><strong>(27)判断该字符串的子字符串是否相等：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> boolean regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int len)</span><br><span class="line">测试两个字符串区域是否相等。</span><br><span class="line">boolean regionMatches(int toffset, String other, int ooffset, int len)</span><br><span class="line">测试两个字符串区域是否相等。 </span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/14ce793e/" title="Java String对象">https://lanlan2017.github.io/blog/14ce793e/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/4ea1809c/" rel="prev" title="Java正则表达式Pattern类">
+                  <i class="fa fa-chevron-left"></i> Java正则表达式Pattern类
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/4badee62/" rel="next" title="Java 基本数据类型">
+                  Java 基本数据类型 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/14ce793e/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/14ce793e/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

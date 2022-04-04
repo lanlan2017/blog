@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="cmp命令用法1cmp file1 file2 功能 逐字节比较两个文件是否完全相同 两个文件完全相同时，不给出任何提示 两个文件不同时，打印出第一个不同之处 在Windows中有类似的命令COMP  cmp命令用来比较两个文件是否有差异。  当相互比较的两个文件完全一样时，则该指令不会显示任何信息。 若发现有差异，预设会标示出第一个不通之处的字符和列数编号。 若不指定任何文件名称或是所给予的文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 两文件逐字节比较：cmp命令">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/99e4a22d/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="cmp命令用法1cmp file1 file2 功能 逐字节比较两个文件是否完全相同 两个文件完全相同时，不给出任何提示 两个文件不同时，打印出第一个不同之处 在Windows中有类似的命令COMP  cmp命令用来比较两个文件是否有差异。  当相互比较的两个文件完全一样时，则该指令不会显示任何信息。 若发现有差异，预设会标示出第一个不通之处的字符和列数编号。 若不指定任何文件名称或是所给予的文件">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-15T14:36:07.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:51:45.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/99e4a22d/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/99e4a22d/","path":"/99e4a22d/","title":"Linux 两文件逐字节比较：cmp命令"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Linux 两文件逐字节比较：cmp命令 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#cmp%E5%91%BD%E4%BB%A4"><span class="nav-text">cmp命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%B3%95"><span class="nav-text">用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD"><span class="nav-text">功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cmp%E5%91%BD%E4%BB%A4%E7%A4%BA%E4%BE%8B"><span class="nav-text">cmp命令示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%96%87%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B7%AE%E5%BC%82%E7%9A%84%E5%AD%97%E8%8A%82%E5%92%8C%E8%A1%8C%E5%8F%B7"><span class="nav-text">查找两个文件之间的第一个差异的字节和行号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmp-b%EF%BC%9A%E6%98%BE%E7%A4%BA%E5%B7%AE%E5%BC%82%E5%A4%84%E7%9A%84%E5%8D%81%E8%BF%9B%E5%88%B6%E5%AD%97%E7%A0%81%E5%92%8C%E5%AF%B9%E5%BA%94%E5%AD%97%E7%AC%A6"><span class="nav-text">cmp -b：显示差异处的十进制字码和对应字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmp-l%EF%BC%9A%E6%98%BE%E7%A4%BA%E5%87%BA%E6%89%80%E6%9C%89%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E5%AD%97%E8%8A%82"><span class="nav-text">cmp -l：显示出所有不一样的字节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cmp-l%E8%BE%93%E5%87%BA%E8%AF%A6%E8%A7%A3"><span class="nav-text">cmp -l输出详解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmp-s%EF%BC%9A%E5%8F%AA%E6%AF%94%E8%BE%83%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%B6%88%E6%81%AF%EF%BC%8C%E4%BB%A5%E5%91%BD%E4%BB%A4%E8%BF%94%E5%9B%9E%E5%80%BC%E8%A1%A8%E7%A4%BA"><span class="nav-text">cmp -s：只比较不显示消息，以命令返回值表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cmp-s%E7%94%A8%E5%9C%A8shell%E7%BC%96%E7%A8%8B%E4%B8%AD"><span class="nav-text">cmp -s用在shell编程中</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#windows%E7%9A%84comp%E5%91%BD%E4%BB%A4%E7%A4%BA%E4%BE%8B"><span class="nav-text">windows的comp命令示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cmp%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C"><span class="nav-text">cmp参考手册</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tldr-cmp"><span class="nav-text">tldr cmp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmp-%E2%80%93help"><span class="nav-text">cmp –help</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#man-cmp"><span class="nav-text">man cmp</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/99e4a22d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Linux 两文件逐字节比较：cmp命令 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux 两文件逐字节比较：cmp命令
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-05-15 22:36:07" itemprop="dateCreated datePublished" datetime="2021-05-15T22:36:07+08:00">2021-05-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%96%87%E4%BB%B6%E6%AF%94%E8%BE%83/" itemprop="url" rel="index"><span itemprop="name">文件比较</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/99e4a22d/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/99e4a22d/" data-xid="/blog/99e4a22d/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="cmp命令"><a href="#cmp命令" class="headerlink" title="cmp命令"></a>cmp命令</h1><h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmp file1 file2</span><br></pre></td></tr></table></figure>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>逐字节比较两个文件是否完全相同</li>
+<li>两个文件完全相同时，不给出任何提示</li>
+<li>两个文件不同时，打印出第一个不同之处</li>
+<li>在Windows中有类似的命令COMP</li>
+</ul>
+<p>cmp命令用来比较两个文件是否有差异。</p>
+<ul>
+<li>当相互比较的两个文件完全一样时，则该指令不会显示任何信息。</li>
+<li>若发现有差异，预设会标示出第一个不通之处的字符和列数编号。</li>
+<li>若不指定任何文件名称或是所给予的文件名为“-”，则cmp指令会从标准输入设备读取数据。</li>
+</ul>
+<h1 id="cmp命令示例"><a href="#cmp命令示例" class="headerlink" title="cmp命令示例"></a>cmp命令示例</h1><h2 id="查找两个文件之间的第一个差异的字节和行号"><a href="#查找两个文件之间的第一个差异的字节和行号" class="headerlink" title="查找两个文件之间的第一个差异的字节和行号"></a>查找两个文件之间的第一个差异的字节和行号</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost cmp]# cat -n a.txt </span><br><span class="line">     1    this is line a</span><br><span class="line">     2    this is line b</span><br><span class="line">     3    helloworld!</span><br><span class="line">     4    this is line d</span><br><span class="line">[root@localhost cmp]# cat -n b.txt </span><br><span class="line">     1    this is line a</span><br><span class="line">     2    this is line b</span><br><span class="line">     3    this is line c</span><br><span class="line">     4    this is line d</span><br><span class="line">[root@localhost cmp]# cmp a.txt b.txt </span><br><span class="line">a.txt b.txt 不同：第 31 字节，第 3 行</span><br><span class="line">[root@localhost cmp]# </span><br></pre></td></tr></table></figure>
+<h2 id="cmp-b：显示差异处的十进制字码和对应字符"><a href="#cmp-b：显示差异处的十进制字码和对应字符" class="headerlink" title="cmp -b：显示差异处的十进制字码和对应字符"></a>cmp -b：显示差异处的十进制字码和对应字符</h2><pre>
+[root@localhostf cmp]&#35; cat -n a.txt 
+     1    this is line a
+     2    this is line b
+     3    <mark>h</mark>elloworld!
+     4    this is line d
+[root@localhost cmp]&#35; cat -n b.txt 
+     1    this is line a
+     2    this is line b
+     3    <mark>t</mark>his is line c
+     4    this is line d
+[root@localhost cmp]&#35; cmp -b a.txt b.txt 
+a.txt b.txt 不同：第 3 行，第 31 字节为 150 <mark>h</mark> 164 <mark>t</mark>
+[root@localhost cmp]&#35; 
+</pre>
+
+<h2 id="cmp-l：显示出所有不一样的字节"><a href="#cmp-l：显示出所有不一样的字节" class="headerlink" title="cmp -l：显示出所有不一样的字节"></a>cmp -l：显示出所有不一样的字节</h2><pre>
+[root@localhost cmp]&#35; cat -n a.txt 
+     1    this is line a
+     2    this is line b
+     3    helloworld!
+     4    this is line d
+[root@localhost cmp]&#35; cat -n b.txt 
+     1    this is line a
+     2    this is line b
+     3    this is line c
+     4    this is line d
+[root@localhost cmp]&#35; cmp -l a.txt b.txt 
+31 150 164
+32 145 150
+33 154 151
+34 154 163
+35 157  40
+36 167 151
+37 157 163
+38 162  40
+40 144 151
+41  41 156
+42  12 145
+43 164  40
+44 150 143
+45 151  12
+46 163 164
+47  40 150
+51 154 151
+52 151 163
+53 156  40
+54 145 154
+55  40 151
+56 144 156
+57  12 145
+cmp：a.txt 已结束
+</pre>
+
+<h3 id="cmp-l输出详解"><a href="#cmp-l输出详解" class="headerlink" title="cmp -l输出详解"></a>cmp -l输出详解</h3><p>cmp -l的输出有3列，</p>
+<ul>
+<li>第1列表示两个文件开始不同的字节序号，也就是具体从第几个字节开始不同。</li>
+<li>第2列表示文件a.txt当前的字节</li>
+<li>第3行表示文件b.txt当前的字节</li>
+</ul>
+<p>当然光看字节，我们难以理解，可以加上<code>-b</code>选项同时显示对应的字符：</p>
+<pre>
+[root@localhost cmp]&#35; cmp -bl a.txt b.txt 
+31 150 h    164 t
+32 145 e    150 h
+33 154 l    151 i
+34 154 l    163 s
+35 157 o     40  
+36 167 w    151 i
+37 157 o    163 s
+38 162 r     40  
+40 144 d    151 i
+41  41 !    156 n
+42  12 ^J   145 e
+43 164 t     40  
+44 150 h    143 c
+45 151 i     12 ^J
+46 163 s    164 t
+47  40      150 h
+51 154 l    151 i
+52 151 i    163 s
+53 156 n     40  
+54 145 e    154 l
+55  40      151 i
+56 144 d    156 n
+57  12 ^J   145 e
+cmp：a.txt 已结束
+[root@localhost cmp]&#35; 
+</pre>
+
+<p>可以看到a.txt和b.txt这两个文件从第31个字节处开始不同：</p>
+<ul>
+<li>a.txt的第31个字节是150，对应的是字符h。</li>
+<li>b.txt的第31个字节是164，对应的是字符t。</li>
+</ul>
+<h2 id="cmp-s：只比较不显示消息，以命令返回值表示"><a href="#cmp-s：只比较不显示消息，以命令返回值表示" class="headerlink" title="cmp -s：只比较不显示消息，以命令返回值表示"></a>cmp -s：只比较不显示消息，以命令返回值表示</h2><p>这样，如果文件相同，则给出值 0，如果不同，则给出值 1，或者如果发生错误，则给出值 2。该命令形式通常用在 shell 步骤中。例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if cmp  -s prog.c.bak prog.c</span><br><span class="line">then</span><br><span class="line">    echo 没有改变</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p>如果两个文件相同，则该部分的shell步骤显示 没有改变</p>
+<h3 id="cmp-s用在shell编程中"><a href="#cmp-s用在shell编程中" class="headerlink" title="cmp -s用在shell编程中"></a>cmp -s用在shell编程中</h3><p>测试文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost cmp]# ls</span><br><span class="line">a.txt  b.txt  c.txt  isSame.sh</span><br><span class="line">[root@localhost cmp]# cat -n a.txt </span><br><span class="line">     1    this is line a</span><br><span class="line">     2    this is line b</span><br><span class="line">     3    helloworld!</span><br><span class="line">     4    this is line d</span><br><span class="line">[root@localhost cmp]# cat -n b.txt </span><br><span class="line">     1    this is line a</span><br><span class="line">     2    this is line b</span><br><span class="line">     3    this is line c</span><br><span class="line">     4    this is line d</span><br><span class="line">[root@localhost cmp]# cat -n c.txt </span><br><span class="line">     1    this is line a</span><br><span class="line">     2    this is line b</span><br><span class="line">     3    helloworld!</span><br><span class="line">     4    this is line d</span><br><span class="line">[root@localhost cmp]#</span><br></pre></td></tr></table></figure>
+<p>shell程序：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost cmp]# cat isSame.sh </span><br><span class="line">if cmp -s a.txt b.txt</span><br><span class="line">then</span><br><span class="line">    echo a.txt与b.txt相同</span><br><span class="line">else</span><br><span class="line">    echo a.txt与b.txt不同</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if cmp -s a.txt c.txt</span><br><span class="line">then</span><br><span class="line">        echo a.txt与c.txt相同</span><br><span class="line">else</span><br><span class="line">        echo a.txt与c.txt不同</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">[root@localhost cmp]#</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost cmp]# ./isSame.sh </span><br><span class="line">a.txt与b.txt不同</span><br><span class="line">a.txt与c.txt相同</span><br><span class="line">[root@localhost cmp]# </span><br></pre></td></tr></table></figure>
+
+
+<h1 id="windows的comp命令示例"><a href="#windows的comp命令示例" class="headerlink" title="windows的comp命令示例"></a>windows的comp命令示例</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">G:\Desktop\test\CMD&gt;dir</span><br><span class="line"> 驱动器 G 中的卷是 原来的C盘</span><br><span class="line"> 卷的序列号是 0C02-061D</span><br><span class="line"></span><br><span class="line"> G:\Desktop\test\CMD 的目录</span><br><span class="line"></span><br><span class="line">2021/05/15  22:50    &lt;DIR&gt;          .</span><br><span class="line">2021/05/15  22:50    &lt;DIR&gt;          ..</span><br><span class="line">2021/05/15  22:50                57 a.txt</span><br><span class="line">2021/05/15  22:50                60 b.txt</span><br><span class="line">               2 个文件            117 字节</span><br><span class="line">               2 个目录 102,362,640,384 可用字节</span><br><span class="line"></span><br><span class="line">G:\Desktop\test\CMD&gt;comp a.txt b.txt</span><br><span class="line">比较 a.txt 和 b.txt...</span><br><span class="line">文件的大小不同。</span><br><span class="line"></span><br><span class="line">是否要比较更多文件 (Y/N)? y</span><br><span class="line">第一个比较文件的名称:b.txt</span><br><span class="line">第二个比较文件的名称:a.txt</span><br><span class="line">选项:</span><br><span class="line">比较 b.txt 和 a.txt...</span><br><span class="line">文件的大小不同。</span><br><span class="line"></span><br><span class="line">是否要比较更多文件 (Y/N)? N</span><br><span class="line"></span><br><span class="line">G:\Desktop\test\CMD&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="cmp参考手册"><a href="#cmp参考手册" class="headerlink" title="cmp参考手册"></a>cmp参考手册</h1><h2 id="tldr-cmp"><a href="#tldr-cmp" class="headerlink" title="tldr cmp"></a>tldr cmp</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost cmp]# tldr cmp</span><br><span class="line"></span><br><span class="line">  cmp</span><br><span class="line"></span><br><span class="line">  Compare two files byte by byte.</span><br><span class="line">  More information: https://www.gnu.org/software/diffutils/manual/html_node/Invoking-cmp.html.</span><br><span class="line"></span><br><span class="line">  - Find the byte and line number of the first difference between two files:</span><br><span class="line">    cmp path/to/file1 path/to/file2</span><br><span class="line"></span><br><span class="line">  - Find the byte number and differing bytes of every difference:</span><br><span class="line">    cmp -l path/to/file1 path/to/file2</span><br><span class="line"></span><br><span class="line">[root@localhost cmp]# </span><br></pre></td></tr></table></figure>
+<h2 id="cmp-–help"><a href="#cmp-–help" class="headerlink" title="cmp –help"></a>cmp –help</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost cmp]# cmp --help</span><br><span class="line">用法: cmp [选项]... 文件1 [文件2 [SKIP1 [SKIP2]]]</span><br><span class="line">逐字节比较两个文件。</span><br><span class="line"></span><br><span class="line">The optional SKIP1 and SKIP2 specify the number of bytes to skip</span><br><span class="line">at the beginning of each file (zero by default).</span><br><span class="line"></span><br><span class="line">Mandatory arguments to long options are mandatory for short options too.</span><br><span class="line">  -b, --print-bytes          print differing bytes</span><br><span class="line">  -i, --ignore-initial=SKIP         skip first SKIP bytes of both inputs</span><br><span class="line">  -i, --ignore-initial=SKIP1:SKIP2  skip first SKIP1 bytes of FILE1 and</span><br><span class="line">                                      first SKIP2 bytes of FILE2</span><br><span class="line">  -l, --verbose              output byte numbers and differing byte values</span><br><span class="line">  -n, --bytes=LIMIT          compare at most LIMIT bytes</span><br><span class="line">  -s, --quiet, --silent      suppress all normal output</span><br><span class="line">      --help                 display this help and exit</span><br><span class="line">  -v, --version              output version information and exit</span><br><span class="line"></span><br><span class="line">SKIP 值可以加上以下的单位：</span><br><span class="line">kB=1000、K=1024、MB=1000000、M=1048576、GB=1000000000、G=1073741824，</span><br><span class="line">还有 T、P、E、Z、Y 如此类推。</span><br><span class="line"></span><br><span class="line">If a FILE is &#x27;-&#x27; or missing, read standard input.</span><br><span class="line">如果输入相同，则退出状态为 0；1 表示输入不同；2 表示有错误产生。</span><br><span class="line"></span><br><span class="line">Report bugs to: bug-diffutils@gnu.org</span><br><span class="line">GNU diffutils home page: &lt;http://www.gnu.org/software/diffutils/&gt;</span><br><span class="line">General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</span><br><span class="line">[root@localhost cmp]# </span><br></pre></td></tr></table></figure>
+<h2 id="man-cmp"><a href="#man-cmp" class="headerlink" title="man cmp"></a>man cmp</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">CMP(1)                                                                User Commands                                                               CMP(1)</span><br><span class="line"></span><br><span class="line">NAME</span><br><span class="line">       cmp - compare two files byte by byte</span><br><span class="line"></span><br><span class="line">SYNOPSIS</span><br><span class="line">       cmp [OPTION]... FILE1 [FILE2 [SKIP1 [SKIP2]]]</span><br><span class="line"></span><br><span class="line">DESCRIPTION</span><br><span class="line">       Compare two files byte by byte.</span><br><span class="line"></span><br><span class="line">       The optional SKIP1 and SKIP2 specify the number of bytes to skip at the beginning of each file (zero by default).</span><br><span class="line"></span><br><span class="line">       Mandatory arguments to long options are mandatory for short options too.</span><br><span class="line"></span><br><span class="line">       -b, --print-bytes</span><br><span class="line">              print differing bytes</span><br><span class="line"></span><br><span class="line">       -i, --ignore-initial=SKIP</span><br><span class="line">              skip first SKIP bytes of both inputs</span><br><span class="line"></span><br><span class="line">       -i, --ignore-initial=SKIP1:SKIP2</span><br><span class="line">              skip first SKIP1 bytes of FILE1 and first SKIP2 bytes of FILE2</span><br><span class="line"></span><br><span class="line">       -l, --verbose</span><br><span class="line">              output byte numbers and differing byte values</span><br><span class="line"></span><br><span class="line">       -n, --bytes=LIMIT</span><br><span class="line">              compare at most LIMIT bytes</span><br><span class="line"></span><br><span class="line">       -s, --quiet, --silent</span><br><span class="line">              suppress all normal output</span><br><span class="line"></span><br><span class="line">       --help display this help and exit</span><br><span class="line"></span><br><span class="line">       -v, --version</span><br><span class="line">              output version information and exit</span><br><span class="line"></span><br><span class="line">       SKIP  values  may  be  followed  by  the  following  multiplicative  suffixes:  kB  1000,  K 1024, MB 1,000,000, M 1,048,576, GB 1,000,000,000, G</span><br><span class="line">       1,073,741,824, and so on for T, P, E, Z, Y.</span><br><span class="line"></span><br><span class="line">       If a FILE is &#x27;-&#x27; or missing, read standard input.  Exit status is 0 if inputs are the same, 1 if different, 2 if trouble.</span><br><span class="line"></span><br><span class="line">AUTHOR</span><br><span class="line">       Written by Torbjorn Granlund and David MacKenzie.</span><br><span class="line"></span><br><span class="line">REPORTING BUGS</span><br><span class="line">       Report bugs to: bug-diffutils@gnu.org</span><br><span class="line">       GNU diffutils home page: &lt;http://www.gnu.org/software/diffutils/&gt;</span><br><span class="line">       General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</span><br><span class="line"></span><br><span class="line">COPYRIGHT</span><br><span class="line">       Copyright © 2013 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;.</span><br><span class="line">       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.</span><br><span class="line"></span><br><span class="line">SEE ALSO</span><br><span class="line">       diff(1), diff3(1), sdiff(1)</span><br><span class="line"></span><br><span class="line">       The full documentation for cmp is maintained as a Texinfo manual.  If the info and cmp programs are properly installed at your site, the command</span><br><span class="line"></span><br><span class="line">              info cmp</span><br><span class="line"></span><br><span class="line">       should give you access to the complete manual.</span><br><span class="line"></span><br><span class="line">diffutils 3.3                                                          August 2019                                                                CMP(1)</span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="http://www.linuxso.com/command/cmp.html">http://www.linuxso.com/command/cmp.html</a><br><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-cmp.html">https://www.runoob.com/linux/linux-comm-cmp.html</a><br><a target="_blank" rel="noopener" href="https://man.linuxde.net/cmp">https://man.linuxde.net/cmp</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/99e4a22d/" title="Linux 两文件逐字节比较：cmp命令">https://lanlan2017.github.io/blog/99e4a22d/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/d5380d8b/" rel="prev" title="电脑充电器乖贝虎说明书">
+                  <i class="fa fa-chevron-left"></i> 电脑充电器乖贝虎说明书
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/d23c9652/" rel="next" title="Linux 比较两文件是否相同：通过hash算法值来比较">
+                  Linux 比较两文件是否相同：通过hash算法值来比较 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/99e4a22d/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/99e4a22d/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

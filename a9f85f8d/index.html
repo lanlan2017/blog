@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="文档注释可以用于对类、 属性、方法等进行说明。 写文档注释时除了需要使用 &#x2F;** .... *&#x2F;  限定之外，还需要注意注释内部的一些细节问题。 文档注释的格式化javadoc生成的文档是HTML格式的，而这些HTML格式的标识符并不是javadoc添加的，而是我们在写注释的时候写上去的。比如，需要换行时，不是敲入一个回车符，而是写入&lt;br&gt; ，如果要分段，就应该在段前写入&lt;p&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javadoc 文档注释2">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/a9f85f8d/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="文档注释可以用于对类、 属性、方法等进行说明。 写文档注释时除了需要使用 &#x2F;** .... *&#x2F;  限定之外，还需要注意注释内部的一些细节问题。 文档注释的格式化javadoc生成的文档是HTML格式的，而这些HTML格式的标识符并不是javadoc添加的，而是我们在写注释的时候写上去的。比如，需要换行时，不是敲入一个回车符，而是写入&lt;br&gt; ，如果要分段，就应该在段前写入&lt;p&amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/JianShu.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/2.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/3.png">
+<meta property="og:image" content="https://lanlan2017.github.io/images/play.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/4.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/5.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/6.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/7.png">
+<meta property="article:published_time" content="2019-02-10T10:15:08.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:51:44.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/JianShu.png">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/a9f85f8d/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/a9f85f8d/","path":"/a9f85f8d/","title":"javadoc 文档注释2"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>javadoc 文档注释2 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E6%B3%A8%E9%87%8A%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-text">文档注释的格式化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E6%B3%A8%E9%87%8A%E7%9A%84%E4%B8%89%E9%83%A8%E5%88%86"><span class="nav-text">文档注释的三部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E7%AE%80%E8%BF%B0"><span class="nav-text">第一部分 简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E"><span class="nav-text">第二部分 详细说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E7%89%B9%E6%AE%8A%E8%AF%B4%E6%98%8E"><span class="nav-text">第三部分 特殊说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javadoc-%E6%A0%87%E8%AE%B0"><span class="nav-text">javadoc  标记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#see-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">@see  的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#see-%E7%B1%BB%E5%90%8D"><span class="nav-text">@see 类名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#see-%E6%96%B9%E6%B3%95%E5%90%8D%E6%88%96%E8%80%85%E5%B1%9E%E6%80%A7%E5%90%8D"><span class="nav-text">@see 方法名或者属性名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#see-%E7%B1%BB%E5%90%8D-%E6%96%B9%E6%B3%95%E5%90%8D%E6%88%96%E5%B1%9E%E6%80%A7%E5%90%8D"><span class="nav-text">@see 类名#方法名或属性名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-author%E3%80%81-version-%E8%AF%B4%E6%98%8E%E7%B1%BB"><span class="nav-text">使用 @author、@version  说明类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-param-%E3%80%81-return-%E5%92%8C-exception-%E8%AF%B4%E6%98%8E%E6%96%B9%E6%B3%95"><span class="nav-text">使用 @param 、@return  和 @exception  说明方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javadoc-%E5%91%BD%E4%BB%A4"><span class="nav-text">javadoc  命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#public-%E3%80%81-protected-%E3%80%81-package%E3%80%81-private-%E5%9B%9B%E4%B8%AA%E9%80%89%E9%A1%B9"><span class="nav-text">-public 、-protected 、-package、-private  四个选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#d-%E9%80%89%E9%A1%B9"><span class="nav-text">-d  选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#splitindex"><span class="nav-text">-splitindex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windowtitle"><span class="nav-text">-windowtitle</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/a9f85f8d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="javadoc 文档注释2 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          javadoc 文档注释2
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-02-10 18:15:08" itemprop="dateCreated datePublished" datetime="2019-02-10T18:15:08+08:00">2019-02-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/a9f85f8d/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/a9f85f8d/" data-xid="/blog/a9f85f8d/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>9.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>9 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>文档注释可以用于对<code>类</code>、 <code>属性</code>、<code>方法</code>等进行说明。 写文档注释时除了需要使用 <code>/** .... */ </code> 限定之外，还需要注意注释内部的一些细节问题。</p>
+<h1 id="文档注释的格式化"><a href="#文档注释的格式化" class="headerlink" title="文档注释的格式化"></a>文档注释的格式化</h1><p>javadoc生成的文档是HTML格式的，而这些HTML格式的标识符并不是javadoc添加的，而是我们在写注释的时候写上去的。比如，需要换行时，不是敲入一个回车符，而是写入<code>&lt;br&gt;</code> ，如果要分段，就应该在段前写入<code>&lt;p&gt;</code>。<br>文档注释的正文并不是直接复制到输出文件  ( 文档的 HTML 文件)，而是读取每一行后，删掉前导的  <code>*</code>  号及<code>*</code>号以前的空格，再输入到文档的。如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">* This is first line. &lt;br&gt; </span></span><br><span class="line"><span class="comment">***** This is second line. &lt;br&gt; </span></span><br><span class="line"><span class="comment">This is third line. </span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>编译输出后的  HTML 源码则是:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">This is first line. <span class="tag">&lt;<span class="name">br</span>&gt;</span> </span><br><span class="line">This is second line. <span class="tag">&lt;<span class="name">br</span>&gt;</span> </span><br><span class="line">This is third line. </span><br></pre></td></tr></table></figure>
+<p>前导的<code>*</code>号允许连续使用多个，其效果和使用一个<code>*</code>号一样， 但多个<code>*</code>号前不能有其它字符分隔，否则分隔符及后面的<code>*</code>号都将作为文档的内容。<code>*</code>号在这里是作为左边界使用，如上例的第一行和第二行；如果没有前导的<code>*</code>号，则边界从第一个有效字符开始，而不包括前面的空格，如上例第三行。<br>还有一点需要说明， 文档注释只说明紧接其后的类、 属性或者方法。如下例:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** comment for class */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123; </span><br><span class="line"><span class="comment">/** comment for a attribute */</span></span><br><span class="line">    <span class="keyword">int</span> number; </span><br><span class="line"><span class="comment">/** comment for a method */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123; ...... &#125; </span><br><span class="line">    ...... </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>上例中的三处注释就是分别对<code>类</code>、 <code>属性</code>和<code>方法</code>的文档注释。 它们生成的文档分别是说明紧接其后的类、属性、方法的。“<code>紧接</code>”二字尤其重要，如果忽略了这一点，就很可能造成生成的文档错误。如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.*; </span><br><span class="line"><span class="comment">/** commnet for class */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123; ...... &#125; </span><br><span class="line"><span class="comment">//  此例为正确的例子</span></span><br></pre></td></tr></table></figure>
+<p>这个文档注释将生成正确的文档。 但只需要改变其中两行的位置， 变成下例，就会出错：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** commnet for class */</span></span><br><span class="line"><span class="keyword">import</span> java.lang.*; </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123; ...... &#125; </span><br><span class="line"><span class="comment">//  此例为错误的例子</span></span><br></pre></td></tr></table></figure>
+<p>调换了位置后，<code>/** commnet for class */</code>后紧接的就是不  <code>class Test</code>  了，而是一个  <code>import</code>  语句。由于文档注释只能说明类、属性和方法.不能说明import语句，所以这个文档注释就被当作<code>错误的说明</code>而忽略掉了。</p>
+<h1 id="文档注释的三部分"><a href="#文档注释的三部分" class="headerlink" title="文档注释的三部分"></a>文档注释的三部分</h1><p>根据在文档中显示的效果，文档注释分为三部分。下面是String类的charAt()方法的文档注释和源码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Returns the &#123;<span class="doctag">@code</span> char&#125; value at the</span></span><br><span class="line"><span class="comment"> * specified index. An index ranges from &#123;<span class="doctag">@code</span> 0&#125; to</span></span><br><span class="line"><span class="comment"> * &#123;<span class="doctag">@code</span> length() - 1&#125;. The first &#123;<span class="doctag">@code</span> char&#125; value of the sequence</span></span><br><span class="line"><span class="comment"> * is at index &#123;<span class="doctag">@code</span> 0&#125;, the next at index &#123;<span class="doctag">@code</span> 1&#125;,</span></span><br><span class="line"><span class="comment"> * and so on, as for array indexing.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;If the &#123;<span class="doctag">@code</span> char&#125; value specified by the index is a</span></span><br><span class="line"><span class="comment"> * &lt;a href=&quot;Character.html#unicode&quot;&gt;surrogate&lt;/a&gt;, the surrogate</span></span><br><span class="line"><span class="comment"> * value is returned.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>      index   the index of the &#123;<span class="doctag">@code</span> char&#125; value.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span>     the &#123;<span class="doctag">@code</span> char&#125; value at the specified index of this string.</span></span><br><span class="line"><span class="comment"> *             The first &#123;<span class="doctag">@code</span> char&#125; value is at index &#123;<span class="doctag">@code</span> 0&#125;.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@exception</span>  IndexOutOfBoundsException  if the &#123;<span class="doctag">@code</span> index&#125;</span></span><br><span class="line"><span class="comment"> *             argument is negative or not less than the length of this</span></span><br><span class="line"><span class="comment"> *             string.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">char</span> <span class="title">charAt</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ((index &lt; <span class="number">0</span>) || (index &gt;= value.length)) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> StringIndexOutOfBoundsException(index);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> value[index];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第一部分-简述"><a href="#第一部分-简述" class="headerlink" title="第一部分 简述"></a>第一部分 简述</h2><p>第一部分是<strong>简述</strong>。 文档中，对于属性和方法都是先有一个列表， 然后才在后面一个一个的详细的说明。 <strong>列表中属性名或者方法名后面那段说明就是简述</strong>。 如下图中被红框框选的部分：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/JianShu.png"><br>简述部分写在一段文档注释的最前面，第一个<code>点号(.)</code>  之前 ( 包括点号 )。<br>换句话说，就是用第一个点号之前是简述,之后是第二部分和第三部分。如上例中的 “<code>Returns the &#123;@code char&#125; value at the specified index.</code>”。</p>
+<h2 id="第二部分-详细说明"><a href="#第二部分-详细说明" class="headerlink" title="第二部分 详细说明"></a>第二部分 详细说明</h2><p>第二部分是详细说明部分。 该部分对属性或者方法进行详细的说明， 在格式上没有什么特殊的要求，可以包含若干个点号。它在文档中的位置如下图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/2.png"><br>这部分文档在上例中相应的代码是:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Returns the &#123;<span class="doctag">@code</span> char&#125; value at the</span></span><br><span class="line"><span class="comment"> * specified index. An index ranges from &#123;<span class="doctag">@code</span> 0&#125; to</span></span><br><span class="line"><span class="comment"> * &#123;<span class="doctag">@code</span> length() - 1&#125;. The first &#123;<span class="doctag">@code</span> char&#125; value of the sequence</span></span><br><span class="line"><span class="comment"> * is at index &#123;<span class="doctag">@code</span> 0&#125;, the next at index &#123;<span class="doctag">@code</span> 1&#125;,</span></span><br><span class="line"><span class="comment"> * and so on, as for array indexing.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;If the &#123;<span class="doctag">@code</span> char&#125; value specified by the index is a</span></span><br><span class="line"><span class="comment"> * &lt;a href=&quot;Character.html#unicode&quot;&gt;surrogate&lt;/a&gt;, the surrogate</span></span><br><span class="line"><span class="comment"> * value is returned.</span></span><br><span class="line"><span class="comment"> *</span></span><br></pre></td></tr></table></figure>
+<p>可以发现简述也在第二部分中。所以不要在详细说明部分中再写一次简述。</p>
+<h2 id="第三部分-特殊说明"><a href="#第三部分-特殊说明" class="headerlink" title="第三部分 特殊说明"></a>第三部分 特殊说明</h2><p>第三部分是<code>特殊说明部分</code>。 这部分包括版本说明、 <code>参数说明</code>、<code>返回值说明</code>等。它在文档中的位置：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/3.png"><br>第三部分在上例中相应的代码是:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* <span class="meta">@param</span>      index   the index of the &#123;<span class="meta">@code</span> <span class="keyword">char</span>&#125; value.</span><br><span class="line">* <span class="meta">@return</span>     the &#123;<span class="meta">@code</span> <span class="keyword">char</span>&#125; value at the specified index of <span class="keyword">this</span> string.</span><br><span class="line">*             The first &#123;<span class="meta">@code</span> <span class="keyword">char</span>&#125; value is at index &#123;<span class="meta">@code</span> <span class="number">0</span>&#125;.</span><br><span class="line">* <span class="meta">@exception</span>  IndexOutOfBoundsException  <span class="keyword">if</span> the &#123;<span class="meta">@code</span> index&#125;</span><br><span class="line">*             argument is negative or not less than the length of <span class="keyword">this</span></span><br><span class="line">*             string.</span><br></pre></td></tr></table></figure>
+<h1 id="javadoc-标记"><a href="#javadoc-标记" class="headerlink" title="javadoc  标记"></a>javadoc  标记</h1><p>javadoc  标记是插入文档注释中的特殊标记， 它们用于标识代码中的特殊引用。javadoc 标记由“<code>@</code>”及其后所跟的标记类型和专用注释引用组成。虽然 @ 和 标记类型之间有时可以用空格符分隔， 但是建议将它们紧挨着写，以减少出错机会。<br>javadoc  标记有如下一些:</p>
+<table>
+<thead>
+<tr>
+<th align="left">标记</th>
+<th align="left">用于</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>@author</code></td>
+<td align="left">对类的说明</td>
+<td align="left">标明开发该类模块的作者</td>
+</tr>
+<tr>
+<td align="left"><code>@version</code></td>
+<td align="left">对类的说明</td>
+<td align="left">标明该类模块的版本</td>
+</tr>
+<tr>
+<td align="left"><code>@see</code></td>
+<td align="left">对类、属性、方法的说明</td>
+<td align="left">参考转向，也就是相关主题</td>
+</tr>
+<tr>
+<td align="left"><code>@param</code></td>
+<td align="left">对方法的说明</td>
+<td align="left">对方法中某参数的说明</td>
+</tr>
+<tr>
+<td align="left"><code>@return</code></td>
+<td align="left">对方法的说明</td>
+<td align="left">对方法返回值的说明</td>
+</tr>
+<tr>
+<td align="left"><code>@exception</code></td>
+<td align="left">对方法的说明</td>
+<td align="left">对方法可能抛出的异常进行说明</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">单词</th>
+<th align="left">读音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://fanyi.baidu.com/?#en/zh/param">param</a></td>
+<td align="left"><img data-src="/images/play.png" onclick="paly_audioID5Jsw7CXj();" class="shake-little" style="border: 0px;" title="点击播放"></td>
+</tr>
+</tbody></table>
+<p><audio src="https://fanyi.baidu.com/gettts?lan=en&text=param&spd=5&source=web" id="audioID5Jsw7CXj"></audio></p>
+<script>
+    function paly_audioID5Jsw7CXj() {var id = document.getElementById("audioID5Jsw7CXj");if (id != null) {id.play();}}
+</script>
+
+<p>下面详细说明各标记。</p>
+<h2 id="see-的使用"><a href="#see-的使用" class="headerlink" title="@see  的使用"></a>@see  的使用</h2><p>@see 的用法有三种：</p>
+<ul>
+<li><code>@see 类名</code></li>
+<li><code>@see #方法名或属性名</code></li>
+<li><code>@see 类名#方法名或属性名</code></li>
+</ul>
+<h3 id="see-类名"><a href="#see-类名" class="headerlink" title="@see 类名"></a>@see 类名</h3><p><code>@see 类名</code>，可以根据需要只写出类名  ( 如<code>@see String</code>)  或者写出类全名  ( 如<code>@see java.lang.String</code>) 。那么什么时候只需要写出类名，什么时候需要写出类全名<br>呢？<br>如果 java  源文件中的  import  语句包含了的类， 可以只写出类名， 如果没有包含，则需要写出类全名。 <code>java.lang</code>也已经默认被包含了。所以java.lang包中的类可以直接写<code>@see 类名</code>就行了,而不用写<code>@see java.lang.类名</code>。<br>可以简单的用javac编译来判断是写<code>@see 类名</code>还是<code>@see 类全名</code>,源程序中javac能找到的类，javadoc也一定能找到,此时就可以简写为<code>@see 类名</code>；javac找不到的类，javadoc也找不到，此时就只能写<code>@see 类全名</code>了。</p>
+<h2 id="see-方法名或者属性名"><a href="#see-方法名或者属性名" class="headerlink" title="@see 方法名或者属性名"></a>@see 方法名或者属性名</h2><p>方法名或者属性名， 如果是属性名， 则只需要写出属性名即可； 如果是方法名，则需要写出方法名以及参数类型，没有参数的方法，需要写出一对括号。如:</p>
+<table>
+<thead>
+<tr>
+<th align="left">成员类型</th>
+<th align="left">成员名称及参数</th>
+<th align="left">@see 句法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">属性</td>
+<td align="left">number</td>
+<td align="left">@see #number</td>
+</tr>
+<tr>
+<td align="left">属性</td>
+<td align="left">count</td>
+<td align="left">@see #count</td>
+</tr>
+<tr>
+<td align="left">方法</td>
+<td align="left">count()</td>
+<td align="left">@see #count()</td>
+</tr>
+<tr>
+<td align="left">方法</td>
+<td align="left">show(boolean b)</td>
+<td align="left">@see #show(boolean)</td>
+</tr>
+<tr>
+<td align="left">方法</td>
+<td align="left">sort(String[] array)</td>
+<td align="left">@see #sort(String[])</td>
+</tr>
+</tbody></table>
+<p>有时也可以偷懒：假如上例中，没有 count  这一属性，那么参考方法  count() 就可以简写成  @see count 。不过，为了安全起见，还是写全  @see count()  比较好。</p>
+<h2 id="see-类名-方法名或属性名"><a href="#see-类名-方法名或属性名" class="headerlink" title="@see 类名#方法名或属性名"></a>@see 类名#方法名或属性名</h2><p>第二个句法<code>@see #方法名或属性名</code>中没有指出类名， 则默认为当前类。 所以它定义的参考， 都转向本类中的属性或者方法。 而第三个句法<code>@see 类名#方法名或属性名</code>中指出了类名， 则还可以转向其它类的属<br>性或者方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> String </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> java.lang.StringBuffer </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> #str </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> #str() </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> #sort(String[]) </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> Object#toString() </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestJavaDoc</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 字符串成员变量.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> String str;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    *一个方法.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">str</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    *排序方法.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>生成的文档的相关部分如下图：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/4.png"><br>String  和 StringBuffer  都是在 java.lang  包中，由于这个包是默认导入了的，所以这两个类可以直接写类名，也可以写类全名。 str 、str()  为同名属性和方法，所以方法名需要用<code>()</code>区分。sort 是带参数的方法，所以在<code>()</code>中指明了参数类型<code>String[]</code>。 toString()虽然在本类中也有( 从 Object  继承的)，但我们是想参考Object类的toString()  方法，所以使用了 <code>Object#toString()</code> 。<br>奇怪的是，为什么其中只有  <code>str</code> 、<code>str()</code>  和 <code>sort(String[])</code>  变成了链接,而String,StringBuffer,Object.toString()都没有变成链接呢?<br>那是因为编译时没有把  java.lang  包或者<code>Stirng</code> 、<code>StringBuffer</code> 、<code>Object</code><br>三个类的源文件一起加入编译， 所以，生成的文档没有关于那三个类的信息， 也就不可以建立链接了。<br>上例中如果去把类中的  str  属性去掉，那么生成的文档又会有什么变化呢？<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/5.png"><br>你会发现， 原来是 str,  str() ，而现在变成了  str(),  str() ，因为 str  属性已经没有了，所以  <code>@ #str</code>  也表示方法  str() 。<br>这两个标记分别用于指明类的作者和版本。 缺省情况下  javadoc  将其忽略，</p>
+<h2 id="使用-author、-version-说明类"><a href="#使用-author、-version-说明类" class="headerlink" title="使用 @author、@version  说明类"></a>使用 @author、@version  说明类</h2><p>但命令行开关  <code>-author</code>  和 <code>-version</code>  可以修改这个功能，使其包含的信息被输出。这两个标记的句法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@author</span> 作者名</span><br><span class="line"><span class="meta">@version</span>  版本号</span><br></pre></td></tr></table></figure>
+<p>其中，@author 可以多次使用， 以指明多个作者， 生成的文档中每个作者之间使用逗号  (,)  隔开。@version  也可以使用多次，如下例：</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/** </span><br><span class="line"> * @author Blue </span><br><span class="line"> * @author Green </span><br><span class="line"> * @version Version <span class="number">1</span>.<span class="number">00</span> </span><br><span class="line"> * @version Version <span class="number">2</span>.<span class="number">00</span> </span><br><span class="line"> */</span><br><span class="line">public class TestJavaDocAuthorVerSion &#123; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/6.png"><br>从图上看，作者列表是以逗号分隔的， 如果我想分行显示怎么办？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@author</span> Blue&lt;br&gt;Green </span><br><span class="line"><span class="meta">@version</span> Version <span class="number">1.00</span>&lt;br&gt;Version <span class="number">2.00</span></span><br></pre></td></tr></table></figure>
+<p>效果如图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/java%20JiChu/javadoc/7.png"></p>
+<h2 id="使用-param-、-return-和-exception-说明方法"><a href="#使用-param-、-return-和-exception-说明方法" class="headerlink" title="使用 @param 、@return  和 @exception  说明方法"></a>使用 @param 、@return  和 @exception  说明方法</h2><p>这三个标记都是只用于方法的。 @param  描述方法的参数， @return  描述方法的返回值， @exception  描述方法可能抛出的异常。它们的句法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@param</span>  参数名 参数说明</span><br><span class="line"><span class="meta">@return</span>  返回值说明</span><br><span class="line"><span class="meta">@exception</span>  异常类名 说明</span><br></pre></td></tr></table></figure>
+<ul>
+<li>每一个 @param 只能描述方法的一个参数，所以，如果方法需要多个参数，就需要多次使用  @param 来描述。</li>
+<li>一个方法中只能用一个  @return ，如果文档说明中列了多个  @return ，则javadoc  编译时会发出警告，且只有第一个  @return  在生成的文档中有效。</li>
+<li>方法可能抛出的异常应当用  @exception  描述。由于一个方法可能抛出多个异常，所以可以有多个  @exception 。每个 @exception  后面应有简述的异常类名，说明中应指出抛出异常的原因。 需要注意的是， 异常类名应该根据源文件的<br>import  语句确定是写出类名还是类全名。 </li>
+</ul>
+<p>示例如下：</p>
+<h1 id="javadoc-命令"><a href="#javadoc-命令" class="headerlink" title="javadoc  命令"></a>javadoc  命令</h1><p>运行<code>javadoc -help </code>可以看到  javadoc  的用法：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">用法: javadoc [options] [packagenames] [sourcefiles] [@files]</span><br><span class="line">  -overview &lt;file&gt;                 从 HTML 文件读取概览文档</span><br><span class="line">  -public                          仅显示 public 类和成员</span><br><span class="line">  -protected                       显示 protected/public 类和成员 (默认值)</span><br><span class="line">  -package                         显示 package/protected/public 类和成员</span><br><span class="line">  -private                         显示所有类和成员</span><br><span class="line">  -<span class="built_in">help</span>                            显示命令行选项并退出</span><br><span class="line">  -doclet &lt;class&gt;                  通过替代 doclet 生成输出</span><br><span class="line">  -docletpath &lt;<span class="built_in">path</span>&gt;               指定查找 doclet 类文件的位置</span><br><span class="line">  -sourcepath &lt;pathlist&gt;           指定查找源文件的位置</span><br><span class="line">  -classpath &lt;pathlist&gt;            指定查找用户类文件的位置</span><br><span class="line">  -cp &lt;pathlist&gt;                   指定查找用户类文件的位置</span><br><span class="line">  -exclude &lt;pkglist&gt;               指定要排除的程序包列表</span><br><span class="line">  -subpackages &lt;subpkglist&gt;        指定要递归加载的子程序包</span><br><span class="line">  -breakiterator                   计算带有 BreakIterator 的第一个语句</span><br><span class="line">  -bootclasspath &lt;pathlist&gt;        覆盖由引导类加载器所加载的</span><br><span class="line">                                   类文件的位置</span><br><span class="line">  -source &lt;release&gt;                提供与指定发行版的源兼容性</span><br><span class="line">  -extdirs &lt;dirlist&gt;               覆盖所安装扩展的位置</span><br><span class="line">  -verbose                         输出有关 Javadoc 正在执行的操作的信息</span><br><span class="line">  -locale &lt;name&gt;                   要使用的区域设置, 例如 en_US 或 en_US_WIN</span><br><span class="line">  -encoding &lt;name&gt;                 源文件编码名称</span><br><span class="line">  -quiet                           不显示状态消息</span><br><span class="line">  -J&lt;flag&gt;                         直接将 &lt;flag&gt; 传递到运行时系统</span><br><span class="line">  -X                               输出非标准选项的提要</span><br><span class="line">通过标准 doclet 提供:</span><br><span class="line">  -d &lt;directory&gt;                   输出文件的目标目录</span><br><span class="line">  -use                             创建类和程序包用法页面</span><br><span class="line">  -version                         包含 @version 段</span><br><span class="line">  -author                          包含 @author 段</span><br><span class="line">  -docfilessubdirs                 递归复制文档文件子目录</span><br><span class="line">  -splitindex                      将索引分为每个字母对应一个文件</span><br><span class="line">  -windowtitle &lt;text&gt;              文档的浏览器窗口标题</span><br><span class="line">  -doctitle &lt;html-code&gt;            包含概览页面的标题</span><br><span class="line">  -header &lt;html-code&gt;              包含每个页面的页眉文本</span><br><span class="line">  -footer &lt;html-code&gt;              包含每个页面的页脚文本</span><br><span class="line">  -top    &lt;html-code&gt;              包含每个页面的顶部文本</span><br><span class="line">  -bottom &lt;html-code&gt;              包含每个页面的底部文本</span><br><span class="line">  -link &lt;url&gt;                      创建指向位于 &lt;url&gt; 的 javadoc 输出的链接</span><br><span class="line">  -linkoffline &lt;url&gt; &lt;url2&gt;        利用位于 &lt;url2&gt; 的程序包列表链接至位于 &lt;url&gt; 的文档</span><br><span class="line">  -excludedocfilessubdir &lt;name1&gt;:.. 排除具有给定名称的所有文档文件子目录。</span><br><span class="line">  -group &lt;name&gt; &lt;p1&gt;:&lt;p2&gt;..        在概览页面中, 将指定的程序包分组</span><br><span class="line">  -nocomment                       不生成说明和标记, 只生成声明。</span><br><span class="line">  -nodeprecated                    不包含 @deprecated 信息</span><br><span class="line">  -noqualifier &lt;name1&gt;:&lt;name2&gt;:... 输出中不包括指定限定符的列表。</span><br><span class="line">  -nosince                         不包含 @since 信息</span><br><span class="line">  -notimestamp                     不包含隐藏时间戳</span><br><span class="line">  -nodeprecatedlist                不生成已过时的列表</span><br><span class="line">  -notree                          不生成类分层结构</span><br><span class="line">  -noindex                         不生成索引</span><br><span class="line">  -nohelp                          不生成帮助链接</span><br><span class="line">  -nonavbar                        不生成导航栏</span><br><span class="line">  -serialwarn                      生成有关 @serial 标记的警告</span><br><span class="line">  -tag &lt;name&gt;:&lt;locations&gt;:&lt;header&gt; 指定单个参数定制标记</span><br><span class="line">  -taglet                          要注册的 Taglet 的全限定名称</span><br><span class="line">  -tagletpath                      Taglet 的路径</span><br><span class="line">  -charset &lt;charset&gt;               用于跨平台查看生成的文档的字符集。</span><br><span class="line">  -helpfile &lt;file&gt;                 包含帮助链接所链接到的文件</span><br><span class="line">  -linksource                      以 HTML 格式生成源文件</span><br><span class="line">  -sourcetab &lt;tab length&gt;          指定源中每个制表符占据的空格数</span><br><span class="line">  -keywords                        使程序包, 类和成员信息附带 HTML 元标记</span><br><span class="line">  -stylesheetfile &lt;<span class="built_in">path</span>&gt;           用于更改生成文档的样式的文件</span><br><span class="line">  -docencoding &lt;name&gt;              指定输出的字符编码</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这里列举常用参数如下：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-public  仅显示 public  类和成员</span><br><span class="line">-protected  显示 protected/public  类和成员  ( 缺省) </span><br><span class="line">-package  显示 package/protected/public  类和成员</span><br><span class="line">-private  显示所有类和成员</span><br><span class="line">-d &lt;directory&gt;  输出文件的目标目录</span><br><span class="line">-version  包含 @version  段</span><br><span class="line">-author  包含 @author  段</span><br><span class="line">-splitindex  将索引分为每个字母对应一个文件</span><br><span class="line">-windowtitle &lt;text&gt;  文档的浏览器窗口标题</span><br></pre></td></tr></table></figure>
+<h2 id="public-、-protected-、-package、-private-四个选项"><a href="#public-、-protected-、-package、-private-四个选项" class="headerlink" title="-public 、-protected 、-package、-private  四个选项"></a>-public 、-protected 、-package、-private  四个选项</h2><p>-public 、-protected 、-package、-private  四个选项，只需要任选其一即可。它们指定的显示类成员的程度。 它们显示的成员多少是一个包含的关系， 如下表：</p>
+<hr><table border="1"><tr><td>private ( 显示所有类和成员 )<table border="1"><tr><td>-package ( 显示 package/protected/public 类和成员 )<table border="1"><tr><td>-protected ( 显示 protected/public 类和成员 )<table border="1"><tr><td> -public ( 仅显示 public 类和成员 )</td></tr></table></td></tr></table></td></tr></table></td></tr>
+</table><hr>
+
+<h2 id="d-选项"><a href="#d-选项" class="headerlink" title="-d  选项"></a>-d  选项</h2><p>-d  选项允许你定义输出目录。如果不用  -d  定义输出目录，生成的文档文件会放在当前目录下。 -d  选项的用法是</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-d  目录名</span><br></pre></td></tr></table></figure>
+<p>目录名为必填项， 也就是说， 如果你使用了  -d  参数，就一定要为它指定一个目录。这个目录必须已经存在了，如果还不存在，请在运行  javadoc  之前创建该目录。<br><code>-version</code>  和 <code>-author</code>  用于控制生成文档时是否生成  @version  和@author 指定的内容。不加这两个参数的情况下(默认情况)， 生成的文档中不包含版本和作者信息。</p>
+<h2 id="splitindex"><a href="#splitindex" class="headerlink" title="-splitindex"></a>-splitindex</h2><p><code>-splitindex</code>  选项将索引分为每个字母对应一个文件。 默认情况下，索引文件只有一个， 且该文件中包含所有索引内容。 当然生成文档内容不多的时候， 这样做非常合适，但是， 如果文档内容非常多的时候，这个索引文件将包含非常多的内容，显得过于庞大。使用  -splitindex  会把索引文件按各索引项的第一个字母进行分类，每个字母对应一个文件。 这样，就减轻了一个索引文件的负担。</p>
+<h2 id="windowtitle"><a href="#windowtitle" class="headerlink" title="-windowtitle"></a>-windowtitle</h2><p><code>-windowtitle</code>  选项为文档指定一个标题， 该标题会显示在窗口的标题栏上。如果不指定该标题，而默认的文档标题为“生成的文档（无标题）”。该选项的<br>用法是：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-windowtitle  标题</span><br></pre></td></tr></table></figure>
+<p>标题是一串没有包含空格的文本， 因为空格符是用于分隔各参数的， 所以不能包含空格。 同 -d  类似，如果指定了  -windowtitle  选项，则必须指定标题文本。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/a9f85f8d/" title="javadoc 文档注释2">https://lanlan2017.github.io/blog/a9f85f8d/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/5b0d225d/" rel="prev" title="批处理 变量扩展">
+                  <i class="fa fa-chevron-left"></i> 批处理 变量扩展
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/f81acfd4/" rel="next" title="正则表达式语法">
+                  正则表达式语法 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/a9f85f8d/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/a9f85f8d/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

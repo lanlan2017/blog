@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="bash变量存储的内容 字符串(对于数字串来说，不是二进制形式) 在执行过程中其内容可以被修改  变量名 第一个字符必须为字母 其余字符可以是字母，数字，下划线  变量的赋值和引用赋值与引用12addr&#x3D;20.1.1.254ftp $addr 注意：赋值作为单独一条命令，等号两侧不许多余空格引用addr变量的方法:$addr或$&amp;#123;addr&amp;#125; 12echo $&amp;#123;addr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 变量的赋值及使用">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/70ed3de5/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="bash变量存储的内容 字符串(对于数字串来说，不是二进制形式) 在执行过程中其内容可以被修改  变量名 第一个字符必须为字母 其余字符可以是字母，数字，下划线  变量的赋值和引用赋值与引用12addr&#x3D;20.1.1.254ftp $addr 注意：赋值作为单独一条命令，等号两侧不许多余空格引用addr变量的方法:$addr或$&amp;#123;addr&amp;#125; 12echo $&amp;#123;addr">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/ReplacementMetadatureAndEscape/AssignmentAndUseOfLinuxVariables/1.png">
+<meta property="article:published_time" content="2021-06-27T06:56:00.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:51:45.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/ReplacementMetadatureAndEscape/AssignmentAndUseOfLinuxVariables/1.png">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/70ed3de5/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/70ed3de5/","path":"/70ed3de5/","title":"Linux 变量的赋值及使用"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Linux 变量的赋值及使用 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bash%E5%8F%98%E9%87%8F"><span class="nav-text">bash变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-text">存储的内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%90%8D"><span class="nav-text">变量名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E8%B5%8B%E5%80%BC%E5%92%8C%E5%BC%95%E7%94%A8"><span class="nav-text">变量的赋值和引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E4%B8%8E%E5%BC%95%E7%94%A8"><span class="nav-text">赋值与引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E6%97%B6%EF%BC%8C%E7%AD%89%E5%8F%B7%E5%8F%B3%E4%BE%A7%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E5%90%AB%E6%9C%89%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="nav-text">赋值时，等号右侧字符串中含有特殊字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%BC%95%E7%94%A8"><span class="nav-text">变量的引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell%E5%86%85%E9%83%A8%E5%BC%80%E5%85%B3"><span class="nav-text">shell内部开关</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4echo"><span class="nav-text">命令echo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95%E4%B8%8E%E5%8A%9F%E8%83%BD"><span class="nav-text">语法与功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E6%89%93%E5%8D%B0%E5%AD%97%E7%AC%A6-%E8%BD%AC%E4%B9%89-%EF%BC%9A"><span class="nav-text">不可打印字符(转义)：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4printf"><span class="nav-text">命令printf</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/70ed3de5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Linux 变量的赋值及使用 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux 变量的赋值及使用
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-27 14:56:00" itemprop="dateCreated datePublished" datetime="2021-06-27T14:56:00+08:00">2021-06-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%9B%BF%E6%8D%A2%E3%80%81%E5%85%83%E5%AD%97%E7%AC%A6%E5%92%8C%E8%BD%AC%E4%B9%89/" itemprop="url" rel="index"><span itemprop="name">替换、元字符和转义</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/70ed3de5/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/70ed3de5/" data-xid="/blog/70ed3de5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="bash变量"><a href="#bash变量" class="headerlink" title="bash变量"></a>bash变量</h1><h2 id="存储的内容"><a href="#存储的内容" class="headerlink" title="存储的内容"></a>存储的内容</h2><ul>
+<li>字符串(对于数字串来说，不是二进制形式)</li>
+<li>在执行过程中其内容可以被修改</li>
+</ul>
+<h2 id="变量名"><a href="#变量名" class="headerlink" title="变量名"></a>变量名</h2><ul>
+<li>第一个字符必须为字母</li>
+<li>其余字符可以是字母，数字，下划线</li>
+</ul>
+<h2 id="变量的赋值和引用"><a href="#变量的赋值和引用" class="headerlink" title="变量的赋值和引用"></a>变量的赋值和引用</h2><h2 id="赋值与引用"><a href="#赋值与引用" class="headerlink" title="赋值与引用"></a>赋值与引用</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">addr=20.1.1.254</span><br><span class="line">ftp <span class="variable">$addr</span></span><br></pre></td></tr></table></figure>
+<p>注意：<br>赋值作为单独一条命令，等号两侧不许多余空格<br>引用addr变量的方法:<code>$addr</code>或<code>$&#123;addr&#125;</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;addr&#125;</span>A</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$addrA</span></span><br></pre></td></tr></table></figure>
+<p>命令行中含有$符的变量引用，shell会先完成变量替换。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 替换、元字符和转义]# addr=20.1.1.254</span><br><span class="line">[root@localhost 替换、元字符和转义]# echo $&#123;addr&#125;A</span><br><span class="line">20.1.1.254A</span><br><span class="line">[root@localhost 替换、元字符和转义]# echo $addrA</span><br><span class="line"></span><br><span class="line">[root@localhost 替换、元字符和转义]# </span><br></pre></td></tr></table></figure>
+
+<h2 id="赋值时，等号右侧字符串中含有特殊字符"><a href="#赋值时，等号右侧字符串中含有特殊字符" class="headerlink" title="赋值时，等号右侧字符串中含有特殊字符"></a>赋值时，等号右侧字符串中含有特殊字符</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unit=<span class="string">&quot;Beiyou University&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$unit</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 替换、元字符和转义]# unit=&quot;Beiyou University&quot;</span><br><span class="line">[root@localhost 替换、元字符和转义]# echo $unit</span><br><span class="line">Beiyou University</span><br><span class="line">[root@localhost 替换、元字符和转义]# </span><br></pre></td></tr></table></figure>
+<h2 id="变量的引用"><a href="#变量的引用" class="headerlink" title="变量的引用"></a>变量的引用</h2><p><strong>如果引用未定义变量，则变量值为空字符串</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> Connect to <span class="variable">$proto</span> Network</span><br><span class="line">proto=TCP/IP</span><br><span class="line"><span class="built_in">echo</span> Connect to <span class="variable">$proto</span> Network</span><br></pre></td></tr></table></figure>
+<p>上面的第一行引用了proto变量，不过该变量没有定义过，此时将替换为空字符串，<br>第3行的也引用了proto变量，不过由于该变量在第2行已经定义过了，将会替换为该变量的值。<br>运行效果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 替换、元字符和转义]# cat variable.sh </span><br><span class="line">echo Connect to $proto Network</span><br><span class="line">proto=TCP/IP</span><br><span class="line">echo Connect to $proto Network</span><br><span class="line">[root@localhost 替换、元字符和转义]# bash variable.sh </span><br><span class="line">Connect to Network</span><br><span class="line">Connect to TCP/IP Network</span><br><span class="line">[root@localhost 替换、元字符和转义]# </span><br></pre></td></tr></table></figure>
+
+<h2 id="shell内部开关"><a href="#shell内部开关" class="headerlink" title="shell内部开关"></a>shell内部开关</h2><ul>
+<li><code>set -u</code>：当引用一个未定义的变量时，产生一个错误</li>
+<li><code>set +u</code>：当引用一个未定义的变量时，认为是一个<strong>空串</strong>（默认情形）</li>
+<li><code>set -x</code>：执行命令前打印出shell替换后的命令及参数，为区别于正常的shell输出，前面冠以+号</li>
+<li><code>set +x</code>：取消上述设置</li>
+</ul>
+<p>在上面的代码前面加上<code>set -u</code></p>
+<figure class="highlight sh"><figcaption><span>varSet+U.sh</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> -u</span><br><span class="line"><span class="built_in">echo</span> Connect to <span class="variable">$proto</span> Network</span><br><span class="line">proto=TCP/IP</span><br><span class="line"><span class="built_in">echo</span> Connect to <span class="variable">$proto</span> Network</span><br></pre></td></tr></table></figure>
+<p>得到<code>varSet+U.sh</code>，然后运行该脚本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 替换、元字符和转义]# bash varSet+U.sh </span><br><span class="line">varSet+U.sh:行2: proto: 为绑定变量</span><br><span class="line">[root@localhost 替换、元字符和转义]# </span><br></pre></td></tr></table></figure>
+<h1 id="命令echo"><a href="#命令echo" class="headerlink" title="命令echo"></a>命令echo</h1><h2 id="语法与功能"><a href="#语法与功能" class="headerlink" title="语法与功能"></a>语法与功能</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo arg1 arg2 arg3 ...</span><br></pre></td></tr></table></figure>
+<p>打印各命令行参数，每两个参数之间用一空格分开，最后打印换行符</p>
+<h2 id="不可打印字符-转义-："><a href="#不可打印字符-转义-：" class="headerlink" title="不可打印字符(转义)："></a>不可打印字符(转义)：</h2><p>Linux需加选项-e，(不同UNIX间兼容性差)<br>echo支持C语言字符串常数描述格式的转义和\c</p>
+<table>
+<thead>
+<tr>
+<th align="left">转义字符</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>\c</code></td>
+<td align="left">打印完毕，不换行</td>
+</tr>
+<tr>
+<td align="left"><code>\b</code></td>
+<td align="left">退格</td>
+</tr>
+<tr>
+<td align="left"><code>\n</code></td>
+<td align="left">换行</td>
+</tr>
+<tr>
+<td align="left"><code>\r</code></td>
+<td align="left">回车</td>
+</tr>
+<tr>
+<td align="left"><code>\t</code></td>
+<td align="left">水平制表</td>
+</tr>
+<tr>
+<td align="left"><code>\\</code></td>
+<td align="left">反斜线</td>
+</tr>
+<tr>
+<td align="left"><code>\nnn</code></td>
+<td align="left">八进制描述的字符ASCII码</td>
+</tr>
+</tbody></table>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>举例</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> Beijing   China</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Beijing    China&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&#x27;\065&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\\r<span class="variable">$cnt</span> \\c&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# echo Beijing   China</span><br><span class="line">Beijing China</span><br><span class="line">[root@localhost ~]# echo &quot;Beijing    China&quot;</span><br><span class="line">Beijing    China</span><br><span class="line">[root@localhost ~]# echo -e &#x27;\065&#x27;</span><br><span class="line">5</span><br><span class="line">[root@localhost ~]# echo -e &quot;\\r$cnt \\c&quot;</span><br><span class="line"> [root@localhost ~]# </span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
+<h1 id="命令printf"><a href="#命令printf" class="headerlink" title="命令printf"></a>命令printf</h1><p>命令printf，用法与C函数printf类似,例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf &#x27;\033[01;33mConnect to %s Network\n&#x27; $proto</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/ReplacementMetadatureAndEscape/AssignmentAndUseOfLinuxVariables/1.png" alt="图片"></p>
+<!-- Blog/Programming/Linux/General/ReplacementMetadatureAndEscape/AssignmentAndUseOfLinuxVariables -->
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/70ed3de5/" title="Linux 变量的赋值及使用">https://lanlan2017.github.io/blog/70ed3de5/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/f6ac4b15/" rel="prev" title="Linux 输出重定向与管道">
+                  <i class="fa fa-chevron-left"></i> Linux 输出重定向与管道
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/99a1f664/" rel="next" title="Linux 在脚本中编辑文件">
+                  Linux 在脚本中编辑文件 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/70ed3de5/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/70ed3de5/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="ls:文件名列表基本功能在同一命令行中可以指定0~n个实参  不给出实参时，列出当前目录下所有文件和目录 实参为文件时，列出文件项 实参为目录时，列出目录下的所有文件项  ls命令有几十个选项 控制列表格式，有选择的为每个项目列出某些属性  选项-F (Flag) 若列出的是目录，就在名字后面缀以斜线&#x2F; 若列出的是可执行文件，就在名字后面缀以星号* 若列出的是符号连接文件，就在名字后面缀以符号@">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 列出文件目录">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/4bfefcf7/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="ls:文件名列表基本功能在同一命令行中可以指定0~n个实参  不给出实参时，列出当前目录下所有文件和目录 实参为文件时，列出文件项 实参为目录时，列出目录下的所有文件项  ls命令有几十个选项 控制列表格式，有选择的为每个项目列出某些属性  选项-F (Flag) 若列出的是目录，就在名字后面缀以斜线&#x2F; 若列出的是可执行文件，就在名字后面缀以星号* 若列出的是符号连接文件，就在名字后面缀以符号@">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-31T11:11:30.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:51:45.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/4bfefcf7/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/4bfefcf7/","path":"/4bfefcf7/","title":"Linux 列出文件目录"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Linux 列出文件目录 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ls-%E6%96%87%E4%BB%B6%E5%90%8D%E5%88%97%E8%A1%A8"><span class="nav-text">ls:文件名列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-text">基本功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls%E5%91%BD%E4%BB%A4%E6%9C%89%E5%87%A0%E5%8D%81%E4%B8%AA%E9%80%89%E9%A1%B9"><span class="nav-text">ls命令有几十个选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E9%A1%B9-F-Flag"><span class="nav-text">选项-F (Flag)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls%E9%80%89%E9%A1%B9-l-%E9%95%BF%E6%A0%BC%E5%BC%8F%E5%88%97%E8%A1%A8"><span class="nav-text">ls选项-l: 长格式列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC1%E5%88%97%EF%BC%9A%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7"><span class="nav-text">第1列：文件属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC1%E5%AD%97%E7%AC%A6%E4%B8%BA%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="nav-text">第1字符为文件类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="nav-text">文件的访问权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC2%E5%88%97%EF%BC%9A%E6%96%87%E4%BB%B6link%E6%95%B0"><span class="nav-text">第2列：文件link数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC3%E5%88%97%EF%BC%8C%E7%AC%AC4%E5%88%97%EF%BC%9A"><span class="nav-text">第3列，第4列：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC5%E5%88%97"><span class="nav-text">第5列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC6%E5%88%97%EF%BC%9A"><span class="nav-text">第6列：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC7%E5%88%97%EF%BC%9A%E6%96%87%E4%BB%B6%E5%90%8D"><span class="nav-text">第7列：文件名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E9%A1%B9-h"><span class="nav-text">选项-h</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E9%A1%B9-d"><span class="nav-text">选项-d</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ls%E4%B8%8Els-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">ls与ls *的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls-l-etc%E4%B8%8Els-ld-etc%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">ls -l &#x2F;etc与ls -ld &#x2F;etc的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E9%A1%B9-a"><span class="nav-text">选项-a</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E9%A1%B9-A"><span class="nav-text">选项-A</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E9%A1%B9-s"><span class="nav-text">选项-s</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E9%A1%B9-i"><span class="nav-text">选项-i</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4bfefcf7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Linux 列出文件目录 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux 列出文件目录
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-05-31 19:11:30" itemprop="dateCreated datePublished" datetime="2021-05-31T19:11:30+08:00">2021-05-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">文件管理和目录管理</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/4bfefcf7/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/4bfefcf7/" data-xid="/blog/4bfefcf7/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="ls-文件名列表"><a href="#ls-文件名列表" class="headerlink" title="ls:文件名列表"></a>ls:文件名列表</h1><h2 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h2><p>在同一命令行中可以指定0~n个实参</p>
+<ul>
+<li>不给出实参时，列出当前目录下所有文件和目录</li>
+<li>实参为文件时，列出文件项</li>
+<li>实参为目录时，列出目录下的所有文件项</li>
+</ul>
+<h2 id="ls命令有几十个选项"><a href="#ls命令有几十个选项" class="headerlink" title="ls命令有几十个选项"></a>ls命令有几十个选项</h2><ul>
+<li>控制列表格式，有选择的为每个项目列出某些属性</li>
+</ul>
+<h2 id="选项-F-Flag"><a href="#选项-F-Flag" class="headerlink" title="选项-F (Flag)"></a>选项-F (Flag)</h2><ul>
+<li>若列出的是目录，就在名字后面缀以斜线<code>/</code></li>
+<li>若列出的是可执行文件，就在名字后面缀以星号<code>*</code></li>
+<li>若列出的是符号连接文件，就在名字后面缀以符号<code>@</code></li>
+<li>若列出的是普通文件，则名字面后无任何标记</li>
+</ul>
+<p>现在的终端可以根据颜色还区分文件与目录，在一些很简单的没有颜色的嵌入式终端中<code>ls -F</code>比较有用。</p>
+<h2 id="ls选项-l-长格式列表"><a href="#ls选项-l-长格式列表" class="headerlink" title="ls选项-l: 长格式列表"></a>ls选项-l: 长格式列表</h2><p>例：ls -l arg<br>-rwxr-x–x l liang stud 519 Jul 5 15:02  arg</p>
+<h3 id="第1列：文件属性"><a href="#第1列：文件属性" class="headerlink" title="第1列：文件属性"></a>第1列：文件属性</h3><h4 id="第1字符为文件类型"><a href="#第1字符为文件类型" class="headerlink" title="第1字符为文件类型"></a>第1字符为文件类型</h4><table>
+<thead>
+<tr>
+<th align="left">第1个字符</th>
+<th align="left">文件类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-</code></td>
+<td align="left">普通文件</td>
+</tr>
+<tr>
+<td align="left"><code>b</code></td>
+<td align="left">块设备文件(Block)</td>
+</tr>
+<tr>
+<td align="left"><code>d</code></td>
+<td align="left">目录文件(Dir)</td>
+</tr>
+<tr>
+<td align="left"><code>c</code></td>
+<td align="left">字符设备文件(Char)</td>
+</tr>
+<tr>
+<td align="left"><code>l</code></td>
+<td align="left">符号连接文件(Link)</td>
+</tr>
+<tr>
+<td align="left"><code>p</code></td>
+<td align="left">命名管道文件(Pipe)</td>
+</tr>
+</tbody></table>
+<h3 id="文件的访问权限"><a href="#文件的访问权限" class="headerlink" title="文件的访问权限"></a>文件的访问权限</h3><p>(r读权限，w写权限，x可执行权限)</p>
+<table>
+<thead>
+<tr>
+<th align="left">ls -l第1列</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">2-4字符:</td>
+<td align="left"><strong>文件所有者</strong>对文件的访问权限</td>
+</tr>
+<tr>
+<td align="left">5-7字符:</td>
+<td align="left"><strong>同组用户</strong>对文件的访问权限</td>
+</tr>
+<tr>
+<td align="left">8-10字符:</td>
+<td align="left"><strong>其它用户</strong>对文件的访问权限</td>
+</tr>
+</tbody></table>
+<h3 id="第2列：文件link数"><a href="#第2列：文件link数" class="headerlink" title="第2列：文件link数"></a>第2列：文件link数</h3><p>涉及到此文件的目录项数</p>
+<h3 id="第3列，第4列："><a href="#第3列，第4列：" class="headerlink" title="第3列，第4列："></a>第3列，第4列：</h3><p>文件主的名字和组名</p>
+<h3 id="第5列"><a href="#第5列" class="headerlink" title="第5列"></a>第5列</h3><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">普通磁盘文件：</td>
+<td align="left">列出文件大小(字节数)</td>
+</tr>
+<tr>
+<td align="left">目录：</td>
+<td align="left">列出目录表大小，不是目录下文件长度和</td>
+</tr>
+<tr>
+<td align="left">符号连接文件：</td>
+<td align="left">列出符号连接文件自身的长度</td>
+</tr>
+<tr>
+<td align="left">字符设备和块设备文件：</td>
+<td align="left">列出主设备号和次设备号</td>
+</tr>
+<tr>
+<td align="left">管道文件：</td>
+<td align="left">列出管道内的数据长度</td>
+</tr>
+</tbody></table>
+<h3 id="第6列："><a href="#第6列：" class="headerlink" title="第6列："></a>第6列：</h3><p>文件最后一次被修改的日期和时间</p>
+<h3 id="第7列：文件名"><a href="#第7列：文件名" class="headerlink" title="第7列：文件名"></a>第7列：文件名</h3><p>对于符号连接文件，附带列出符号连接文件的内容</p>
+<h2 id="选项-h"><a href="#选项-h" class="headerlink" title="选项-h"></a>选项-h</h2><p>（human-readable），许多其他命令中也有类似选项<br>以便于人阅读的方式打印数值 (例如：1K 234M 2G)</p>
+<h2 id="选项-d"><a href="#选项-d" class="headerlink" title="选项-d"></a>选项-d</h2><p>(directory)当ls的参数是目录时，不象默认的情况那样列出目录下的文件，而是<strong>列出目录自身的信息</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# ls -d</span><br><span class="line">.</span><br><span class="line">[root@localhost Linux_Test]# ls -ld</span><br><span class="line">drwxr-xr-x. 18 root root 4096 5月  31 21:06 .</span><br><span class="line">[root@localhost Linux_Test]# </span><br></pre></td></tr></table></figure>
+
+<h3 id="ls与ls-的区别"><a href="#ls与ls-的区别" class="headerlink" title="ls与ls *的区别"></a>ls与ls *的区别</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vi]# ls</span><br><span class="line">encode  helloworld.c  helloworld.out  out.txt  test.txt</span><br><span class="line">[root@localhost vi]# ls *</span><br><span class="line">helloworld.c  helloworld.out  out.txt  test.txt</span><br><span class="line"></span><br><span class="line">encode:</span><br><span class="line">helloworld.c  mini.txt</span><br><span class="line">[root@localhost vi]# </span><br></pre></td></tr></table></figure>
+
+<h3 id="ls-l-etc与ls-ld-etc的区别"><a href="#ls-l-etc与ls-ld-etc的区别" class="headerlink" title="ls -l /etc与ls -ld /etc的区别"></a>ls -l /etc与ls -ld /etc的区别</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vi]# ls -l /etc</span><br><span class="line">总用量 1332</span><br><span class="line">-rw-r--r--.  1 root root     12 11月 17 2020 adjtime</span><br><span class="line">-rw-r--r--.  1 root root   1529 4月   1 2020 aliases</span><br><span class="line">drwxr-xr-x.  2 root root   4096 4月  20 17:53 alternatives</span><br><span class="line">......</span><br><span class="line">drwxr-xr-x.  6 root root   4096 3月  16 03:03 yum</span><br><span class="line">-rw-r--r--.  1 root root    970 10月  2 2020 yum.conf</span><br><span class="line">drwxr-xr-x.  2 root root   4096 4月  23 15:07 yum.repos.d</span><br><span class="line">[root@localhost vi]# ls -ld /etc</span><br><span class="line">drwxr-xr-x. 73 root root 4096 5月  31 21:04 /etc</span><br><span class="line">[root@localhost vi]# </span><br></pre></td></tr></table></figure>
+<h2 id="选项-a"><a href="#选项-a" class="headerlink" title="选项-a"></a>选项-a</h2><p>(all)<br>列出文件名首字符为圆点的文件(默认情况下这些文件不列出，经常会用来保存用户的偏好设置信息或保存某些软件的状态信息)。</p>
+<h2 id="选项-A"><a href="#选项-A" class="headerlink" title="选项-A"></a>选项-A</h2><p>(功能与-a相同，除了不列出. 和..)<br>例如：</p>
+<p>ls<br>ls -a<br>ls –ad</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vi]# ls </span><br><span class="line">encode  helloworld.c  helloworld.out  out.txt  test.txt</span><br><span class="line">[root@localhost vi]# ls -a</span><br><span class="line">.  ..  encode  helloworld.c  .helloworld.c.swp  helloworld.out  out.txt  test.txt</span><br><span class="line">[root@localhost vi]# ls -A</span><br><span class="line">encode  helloworld.c  .helloworld.c.swp  helloworld.out  out.txt  test.txt</span><br><span class="line">[root@localhost vi]# </span><br></pre></td></tr></table></figure>
+<h2 id="选项-s"><a href="#选项-s" class="headerlink" title="选项-s"></a>选项-s</h2><p>(size)列出文件占用的磁盘空间</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vi]# ls -s</span><br><span class="line">总用量 32</span><br><span class="line"> 4 encode   4 helloworld.c  16 helloworld.out   4 out.txt   4 test.txt</span><br><span class="line">[root@localhost vi]# ls -sh</span><br><span class="line">总用量 32K</span><br><span class="line">4.0K encode  4.0K helloworld.c   16K helloworld.out  4.0K out.txt  4.0K test.txt</span><br><span class="line">[root@localhost vi]#</span><br></pre></td></tr></table></figure>
+<h2 id="选项-i"><a href="#选项-i" class="headerlink" title="选项-i"></a>选项-i</h2><p>(i-node)列出文件的i节点号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vi]# ls -i</span><br><span class="line">532546 encode  524412 helloworld.c  524416 helloworld.out  524430 out.txt  524431 test.txt</span><br><span class="line">[root@localhost vi]# </span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/4bfefcf7/" title="Linux 列出文件目录">https://lanlan2017.github.io/blog/4bfefcf7/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/36f9715c/" rel="prev" title="Linux 文件通配符处理过程">
+                  <i class="fa fa-chevron-left"></i> Linux 文件通配符处理过程
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/d794a6a2/" rel="next" title="Linux 文件的复制与删除">
+                  Linux 文件的复制与删除 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/4bfefcf7/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/4bfefcf7/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

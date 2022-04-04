@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="下载java上面安装的linux系统是aarch64架构的，所以需要下载aarch64对应的版本： jdk8官方下载地址:https:&#x2F;&#x2F;www.oracle.com&#x2F;java&#x2F;technologies&#x2F;javase&#x2F;javase-jdk8-downloads.html 获得安装包：jdk-8u281-linux-aarch64.tar.gz 下载TomcatTomcat8下载路径：https:&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LinuxDeploy CentOS7 安装java tomcat">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/e5ce3c15/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="下载java上面安装的linux系统是aarch64架构的，所以需要下载aarch64对应的版本： jdk8官方下载地址:https:&#x2F;&#x2F;www.oracle.com&#x2F;java&#x2F;technologies&#x2F;javase&#x2F;javase-jdk8-downloads.html 获得安装包：jdk-8u281-linux-aarch64.tar.gz 下载TomcatTomcat8下载路径：https:&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-17T01:36:50.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:51:45.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/e5ce3c15/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/e5ce3c15/","path":"/e5ce3c15/","title":"LinuxDeploy CentOS7 安装java tomcat"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>LinuxDeploy CentOS7 安装java tomcat | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDjava"><span class="nav-text">下载java</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDTomcat"><span class="nav-text">下载Tomcat</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Xftp%E4%B8%8A%E4%BC%A0%E5%88%B0%E6%89%8B%E6%9C%BA%E4%B8%AD"><span class="nav-text">使用Xftp上传到手机中</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Xftp%E5%A6%82%E4%BD%95%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%89%8B%E6%9C%BA%E4%B8%8A%E7%9A%84linux"><span class="nav-text">Xftp如何连接到手机上的linux</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8B%E7%BC%A9"><span class="nav-text">解压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8Bjava%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%8C%85"><span class="nav-text">解压java的压缩包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8BTomcat%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%8C%85"><span class="nav-text">解压Tomcat的压缩包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83"><span class="nav-text">配置环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEjava%E7%8E%AF%E5%A2%83"><span class="nav-text">配置java环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96JDK%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="nav-text">获取JDK绝对路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-etc-profile%E6%96%87%E4%BB%B6%E4%B8%AD%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-text">在&#x2F;etc&#x2F;profile文件中配置Java环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E6%A8%A1%E6%9D%BF"><span class="nav-text">java环境变量模板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEjava%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-text">设置java环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E9%85%8D%E7%BD%AE%E7%94%9F%E6%95%88"><span class="nav-text">使配置生效</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81java%E6%98%AF%E5%90%A6%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F"><span class="nav-text">验证java是否配置成功</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AETomcat"><span class="nav-text">配置Tomcat</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BATomcat%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95%E7%9A%84%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="nav-text">创建Tomcat安装目录的软链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8Tomcat"><span class="nav-text">启动Tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E7%94%B5%E8%84%91%E4%B8%8A%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AETomcat"><span class="nav-text">在电脑上的浏览器访问Tomcat</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AE%E4%BF%9D%E6%89%8B%E6%9C%BA%E5%92%8C%E7%94%B5%E8%84%91%E5%9C%A8%E5%90%8C%E4%B8%80%E7%BD%91%E7%BB%9C%E4%B9%8B%E4%B8%8B"><span class="nav-text">确保手机和电脑在同一网络之下</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%97%ADTomcat"><span class="nav-text">关闭Tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AETomcat%E7%9A%84Manager-App%E5%92%8CHost-Manager%E9%A1%B5%E9%9D%A2"><span class="nav-text">无法访问Tomcat的Manager App和Host Manager页面</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e5ce3c15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="LinuxDeploy CentOS7 安装java tomcat | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LinuxDeploy CentOS7 安装java tomcat
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-17 09:36:50" itemprop="dateCreated datePublished" datetime="2021-03-17T09:36:50+08:00">2021-03-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/LinuxDeploy/" itemprop="url" rel="index"><span itemprop="name">LinuxDeploy</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/e5ce3c15/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/e5ce3c15/" data-xid="/blog/e5ce3c15/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="下载java"><a href="#下载java" class="headerlink" title="下载java"></a>下载java</h1><p>上面安装的linux系统是aarch64架构的，所以需要下载aarch64对应的版本：</p>
+<p>jdk8官方下载地址:<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html</a></p>
+<p>获得安装包：<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html#license-lightbox">jdk-8u281-linux-aarch64.tar.gz</a></p>
+<h1 id="下载Tomcat"><a href="#下载Tomcat" class="headerlink" title="下载Tomcat"></a>下载Tomcat</h1><p>Tomcat8下载路径：<a target="_blank" rel="noopener" href="https://tomcat.apache.org/download-80.cgi">https://tomcat.apache.org/download-80.cgi</a><br>下载<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.64/bin/apache-tomcat-8.5.64.tar.gz">tar.gz</a>版本的Tomcat</p>
+<h1 id="使用Xftp上传到手机中"><a href="#使用Xftp上传到手机中" class="headerlink" title="使用Xftp上传到手机中"></a>使用Xftp上传到手机中</h1><h2 id="Xftp如何连接到手机上的linux"><a href="#Xftp如何连接到手机上的linux" class="headerlink" title="Xftp如何连接到手机上的linux"></a>Xftp如何连接到手机上的linux</h2><p>启动centos,打开Xshell，连接到手机。然后点击上面<strong>窗口</strong>菜单，选择<strong>传输新建文件</strong>菜单项。即可打开Xftp.</p>
+<p>Xftp有两个分栏，左边的是电脑的目录树，右边是手机上的linux的目录树，进入linux的<code>/opt</code>目录。然后把电脑上下载好的java和tomcat的压缩包拖动到Xftp上的右边的Linux分栏中。这样就可以上传文件到Linux中了。等待上传完毕即可。</p>
+<h1 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h1><h2 id="解压java的压缩包"><a href="#解压java的压缩包" class="headerlink" title="解压java的压缩包"></a>解压java的压缩包</h2><p>切换到Xshell中，进入刚才上传文件的目录(/opt目录)，创建一个名为java的目录，然后把java压缩包解压到这个/opt/java目录中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cd /opt</span><br><span class="line">[root@localhost opt]# ls</span><br><span class="line">apache-tomcat-8.5.63.tar.gz  jdk-8u281-linux-aarch64.tar.gz</span><br><span class="line">[root@localhost opt]# tar -zxvf jdk-8u281-linux-aarch64.tar.gz -C java</span><br><span class="line">tar: java：无法 open: 没有那个文件或目录</span><br><span class="line">tar: Error is not recoverable: exiting now</span><br><span class="line">[root@localhost opt]# mkdir java</span><br><span class="line">[root@localhost opt]# tar -zxvf jdk-8u281-linux-aarch64.tar.gz -C java</span><br></pre></td></tr></table></figure>
+<h2 id="解压Tomcat的压缩包"><a href="#解压Tomcat的压缩包" class="headerlink" title="解压Tomcat的压缩包"></a>解压Tomcat的压缩包</h2><p>创建tomcat目录，然后将tomcat的压缩包解压到这个/opt/tomcat目录中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost opt]# ls</span><br><span class="line">apache-tomcat-8.5.63.tar.gz  java  jdk-8u281-linux-aarch64.tar.gz</span><br><span class="line">[root@localhost opt]# mkdir tomcat</span><br><span class="line">[root@localhost opt]# tar -zxvf apache-tomcat-8.5.63.tar.gz -C tomcat/</span><br><span class="line">apache-tomcat-8.5.63/conf/</span><br><span class="line">apache-tomcat-8.5.63/conf/catalina.policy</span><br><span class="line">......</span><br><span class="line">apache-tomcat-8.5.63/bin/tool-wrapper.sh</span><br><span class="line">apache-tomcat-8.5.63/bin/version.sh</span><br><span class="line">[root@localhost opt]# ls</span><br><span class="line">apache-tomcat-8.5.63.tar.gz  java  jdk-8u281-linux-aarch64.tar.gz  tomcat</span><br><span class="line">[root@localhost opt]# cd tomcat/</span><br><span class="line">[root@localhost tomcat]# ls</span><br><span class="line">apache-tomcat-8.5.63</span><br></pre></td></tr></table></figure>
+<h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><h2 id="配置java环境"><a href="#配置java环境" class="headerlink" title="配置java环境"></a>配置java环境</h2><h3 id="获取JDK绝对路径"><a href="#获取JDK绝对路径" class="headerlink" title="获取JDK绝对路径"></a>获取JDK绝对路径</h3><p>进入jdk根目录，获取jdk根目录的绝对路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost opt]# ls</span><br><span class="line">apache-tomcat-8.5.63.tar.gz  java  jdk-8u281-linux-aarch64.tar.gz  tomcat</span><br><span class="line">[root@localhost opt]# cd java</span><br><span class="line">[root@localhost java]# ls</span><br><span class="line">jdk1.8.0_281</span><br><span class="line">[root@localhost java]# cd jdk1.8.0_281/</span><br><span class="line">[root@localhost jdk1.8.0_281]# ls</span><br><span class="line">bin  COPYRIGHT  include  jre  legal  lib  LICENSE  man  README.html  release  src.zip  THIRDPARTYLICENSEREADME.txt</span><br><span class="line">[root@localhost jdk1.8.0_281]# pwd</span><br><span class="line">/opt/java/jdk1.8.0_281</span><br></pre></td></tr></table></figure>
+<h3 id="在-etc-profile文件中配置Java环境变量"><a href="#在-etc-profile文件中配置Java环境变量" class="headerlink" title="在/etc/profile文件中配置Java环境变量"></a>在/etc/profile文件中配置Java环境变量</h3><h4 id="java环境变量模板"><a href="#java环境变量模板" class="headerlink" title="java环境变量模板"></a>java环境变量模板</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># java 环境变量</span><br><span class="line"># JAVA_HOME路径根据你实际安装的路径填写</span><br><span class="line">export JAVA_HOME=JDK目录的绝对地址</span><br><span class="line"># 下面剩下的配置不需要更改</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:JAVA_HOME/lib:JRE_HOME/lib:$&#123;CLASSPATH&#125;</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+<p>上一步得到的jdk的绝对路径为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/java/jdk1.8.0_281</span><br></pre></td></tr></table></figure>
+<p>所以我的配置为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># java 环境变量</span><br><span class="line"># JAVA_HOME路径根据你实际安装的路径填写</span><br><span class="line">export JAVA_HOME=/opt/java/jdk1.8.0_281</span><br><span class="line"># 下面剩下的配置不需要更改</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:JAVA_HOME/lib:JRE_HOME/lib:$&#123;CLASSPATH&#125;</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+<h4 id="设置java环境变量"><a href="#设置java环境变量" class="headerlink" title="设置java环境变量"></a>设置java环境变量</h4><p>打开/etc/profile文件，在文件末尾填写上面的配置即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost jdk1.8.0_281]# vim /etc/profile</span><br><span class="line">[root@localhost ~]# cat /etc/profile</span><br><span class="line"># /etc/profile</span><br><span class="line"></span><br><span class="line"># System wide environment and startup programs, for login setup</span><br><span class="line"># Functions and aliases go in /etc/bashrc</span><br><span class="line">......</span><br><span class="line">unset i</span><br><span class="line">unset -f pathmunge</span><br><span class="line"></span><br><span class="line"># java 环境变量</span><br><span class="line"># JAVA_HOME路径根据你实际安装的路径填写</span><br><span class="line">export JAVA_HOME=/opt/java/jdk1.8.0_281</span><br><span class="line"># 下面剩下的配置不需要更改</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:JAVA_HOME/lib:JRE_HOME/lib:$&#123;CLASSPATH&#125;</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
+<h4 id="使配置生效"><a href="#使配置生效" class="headerlink" title="使配置生效"></a>使配置生效</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+<h3 id="验证java是否配置成功"><a href="#验证java是否配置成功" class="headerlink" title="验证java是否配置成功"></a>验证java是否配置成功</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# java -version</span><br><span class="line">java version &quot;1.8.0_281&quot;</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_281-b09)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.281-b09, mixed mode)</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
+<h2 id="配置Tomcat"><a href="#配置Tomcat" class="headerlink" title="配置Tomcat"></a>配置Tomcat</h2><h3 id="创建Tomcat安装目录的软链接"><a href="#创建Tomcat安装目录的软链接" class="headerlink" title="创建Tomcat安装目录的软链接"></a>创建Tomcat安装目录的软链接</h3><p>由于上面解压出来的Tomcat安装目录的名称太长了，为了后面启动或者关闭tomcat的时候输入命令方便一点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost opt]# ls</span><br><span class="line">apache-tomcat-8.5.63.tar.gz  java  jdk-8u281-linux-aarch64.tar.gz  tomcat</span><br><span class="line">[root@localhost opt]# cd tomcat/</span><br><span class="line">[root@localhost tomcat]# ls</span><br><span class="line">apache-tomcat-8.5.63</span><br><span class="line">[root@localhost tomcat]# cd apache-tomcat-8.5.63/</span><br><span class="line">[root@localhost apache-tomcat-8.5.63]# ls</span><br><span class="line">bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  work</span><br><span class="line">[root@localhost apache-tomcat-8.5.63]# pwd</span><br><span class="line">/opt/tomcat/apache-tomcat-8.5.63</span><br><span class="line">[root@localhost apache-tomcat-8.5.63]# ln -s /opt/tomcat/apache-tomcat-8.5.63 /opt/tomcat85</span><br><span class="line">[root@localhost apache-tomcat-8.5.63]# cd /opt</span><br><span class="line">[root@localhost opt]# ls</span><br><span class="line">apache-tomcat-8.5.63.tar.gz  java  jdk-8u281-linux-aarch64.tar.gz  tomcat  tomcat85</span><br></pre></td></tr></table></figure>
+<p>现在使用tomcat85这个软链接就可以替代“/tomcat/apache-tomcat-8.5.63”。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost opt]# cd tomcat85</span><br><span class="line">[root@localhost tomcat85]# ls</span><br><span class="line">bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  work</span><br></pre></td></tr></table></figure>
+<h3 id="启动Tomcat"><a href="#启动Tomcat" class="headerlink" title="启动Tomcat"></a>启动Tomcat</h3><p>/opt/tomcat85/startup.sh</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost opt]# /opt/tomcat85/bin/startup.sh </span><br><span class="line">Using CATALINA_BASE:   /opt/tomcat85</span><br><span class="line">Using CATALINA_HOME:   /opt/tomcat85</span><br><span class="line">Using CATALINA_TMPDIR: /opt/tomcat85/temp</span><br><span class="line">Using JRE_HOME:        /opt/java/jdk1.8.0_281/jre</span><br><span class="line">Using CLASSPATH:       /opt/tomcat85/bin/bootstrap.jar:/opt/tomcat85/bin/tomcat-juli.jar</span><br><span class="line">Using CATALINA_OPTS:   </span><br><span class="line">Tomcat started.</span><br><span class="line">[root@localhost opt]# </span><br></pre></td></tr></table></figure>
+<h3 id="在电脑上的浏览器访问Tomcat"><a href="#在电脑上的浏览器访问Tomcat" class="headerlink" title="在电脑上的浏览器访问Tomcat"></a>在电脑上的浏览器访问Tomcat</h3><h4 id="确保手机和电脑在同一网络之下"><a href="#确保手机和电脑在同一网络之下" class="headerlink" title="确保手机和电脑在同一网络之下"></a>确保手机和电脑在同一网络之下</h4><p>使得电脑和手机在同一个网络之下，有如下几种：<br>(1) 电脑和手机连接同一个WIFI,并且该wifi没有设置防火墙。<br>(2) 手机开热点，电脑连接到手机的热点上。<br>(3) 电脑开热点，手机连接到电脑的热点上。<br>有的WIFI可能有防火墙，使得同一个WIFI下的电脑和手机不能相互访问。如果发现老是连不上，可以试着通过热点的方式进行连接。</p>
+<p>Tomcat默认运行在8080端口，确保电脑和手机在同一个网络之下，然后在浏览器的地址栏中输入手机的<code>IP地址:8080</code>即可访问Tomcat.<br>LinuxDeploy上方的那四位数字就是IP地址。<br>此时我的IP地址为192.168.1.6，所以打开<a target="_blank" rel="noopener" href="http://192.168.1.6:8080/">http://192.168.1.6:8080/</a>即可访问Tomcat</p>
+<h3 id="关闭Tomcat"><a href="#关闭Tomcat" class="headerlink" title="关闭Tomcat"></a>关闭Tomcat</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost opt]# /opt/tomcat85/bin/startup.sh </span><br><span class="line">Using CATALINA_BASE:   /opt/tomcat85</span><br><span class="line">Using CATALINA_HOME:   /opt/tomcat85</span><br><span class="line">Using CATALINA_TMPDIR: /opt/tomcat85/temp</span><br><span class="line">Using JRE_HOME:        /opt/java/jdk1.8.0_281/jre</span><br><span class="line">Using CLASSPATH:       /opt/tomcat85/bin/bootstrap.jar:/opt/tomcat85/bin/tomcat-juli.jar</span><br><span class="line">Using CATALINA_OPTS:   </span><br><span class="line">Tomcat started.</span><br><span class="line">[root@localhost opt]# /opt/tomcat85/bin/shutdown.sh </span><br><span class="line">Using CATALINA_BASE:   /opt/tomcat85</span><br><span class="line">Using CATALINA_HOME:   /opt/tomcat85</span><br><span class="line">Using CATALINA_TMPDIR: /opt/tomcat85/temp</span><br><span class="line">Using JRE_HOME:        /opt/java/jdk1.8.0_281/jre</span><br><span class="line">Using CLASSPATH:       /opt/tomcat85/bin/bootstrap.jar:/opt/tomcat85/bin/tomcat-juli.jar</span><br><span class="line">Using CATALINA_OPTS:   </span><br><span class="line">[root@localhost opt]# </span><br></pre></td></tr></table></figure>
+<h3 id="无法访问Tomcat的Manager-App和Host-Manager页面"><a href="#无法访问Tomcat的Manager-App和Host-Manager页面" class="headerlink" title="无法访问Tomcat的Manager App和Host Manager页面"></a>无法访问Tomcat的Manager App和Host Manager页面</h3><p>解决办法：设置角色，设置Tomcat用户名和密码。<br>见：<a href="https://lanlan2017.github.io/blog/5d0a8795/">https://lanlan2017.github.io/blog/5d0a8795/</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yjl15517377095/article/details/102060442">https://blog.csdn.net/yjl15517377095/article/details/102060442</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/e5ce3c15/" title="LinuxDeploy CentOS7 安装java tomcat">https://lanlan2017.github.io/blog/e5ce3c15/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/ffecb566/" rel="prev" title="github.io无法访问">
+                  <i class="fa fa-chevron-left"></i> github.io无法访问
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/a210aa10/" rel="next" title="LinuxDeploy CentOS7 设置Git通过SSH连接Github">
+                  LinuxDeploy CentOS7 设置Git通过SSH连接Github <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/e5ce3c15/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/e5ce3c15/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

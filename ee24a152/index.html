@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="pageContext内置对象获取页面上下文的 pageContext对象是一个比较特殊的对象,通过它可以获取JSP页面的 request、response、 session、 application、 exception等对象。 pageContext对象的创建和初始化都是由容器来完成的,JP页面中可以直接使用 pageContext对象。 page Context对象的常用方法如下表所示。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP pageContext config page exception 内置对象">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/ee24a152/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="pageContext内置对象获取页面上下文的 pageContext对象是一个比较特殊的对象,通过它可以获取JSP页面的 request、response、 session、 application、 exception等对象。 pageContext对象的创建和初始化都是由容器来完成的,JP页面中可以直接使用 pageContext对象。 page Context对象的常用方法如下表所示。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/pageContext/show.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/pageContext/include.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/pageContext/forward.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/page/sevlert.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/page/java_class.png">
+<meta property="og:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/exception/exception_test.png">
+<meta property="article:published_time" content="2018-12-19T07:14:31.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:51:44.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/pageContext/show.png">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/ee24a152/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/ee24a152/","path":"/ee24a152/","title":"JSP pageContext config page exception 内置对象"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JSP pageContext config page exception 内置对象 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pageContext%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1"><span class="nav-text">pageContext内置对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%85%B6%E4%BB%96%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">获取其他对象的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%B1%9E%E6%80%A7%E6%96%B9%E6%B3%95"><span class="nav-text">设置属性方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#page%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1"><span class="nav-text">page内置对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-1"><span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Config%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1"><span class="nav-text">Config内置对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-1"><span class="nav-text">常用方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Exception%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1"><span class="nav-text">Exception内置对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#exception%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">exception对象的常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="nav-text">实例</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/ee24a152/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="JSP pageContext config page exception 内置对象 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JSP pageContext config page exception 内置对象
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-12-19 15:14:31" itemprop="dateCreated datePublished" datetime="2018-12-19T15:14:31+08:00">2018-12-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/JSP/" itemprop="url" rel="index"><span itemprop="name">JSP</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/JSP/%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="index"><span itemprop="name">内置对象</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/ee24a152/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/ee24a152/" data-xid="/blog/ee24a152/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="pageContext内置对象"><a href="#pageContext内置对象" class="headerlink" title="pageContext内置对象"></a>pageContext内置对象</h1><p>获取页面上下文的 pageContext对象是一个比较特殊的对象,通过它可以获取JSP页面的 request、response、 session、 application、 exception等对象。 pageContext对象的创建和初始化都是由容器来完成的,JP页面中可以直接使用 pageContext对象。 page Context对象的常用方法如下表所示。</p>
+<ul>
+<li>pageContext对象提供了对JSP页面内所有的对象及名字空间的访问</li>
+<li>pageContext对象可以访问到本页所在的 session,也可以读取本页面所在的application的某一属性值</li>
+<li>pageContext对象相当于页面中所有功能的集大成者</li>
+<li>pageContext对象的本类名也叫 pageContext</li>
+</ul>
+<h2 id="获取其他对象的方法"><a href="#获取其他对象的方法" class="headerlink" title="获取其他对象的方法"></a>获取其他对象的方法</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">JspWriter getOut()</td>
+<td align="left">返回当前客户端响应被使用的JspWriter流(out内置对象)</td>
+</tr>
+<tr>
+<td align="left">ServletRequest getRequest()</td>
+<td align="left">返回当前页的ServletReques对象 (request内置对象)</td>
+</tr>
+<tr>
+<td align="left">ServletResponse getResponse()</td>
+<td align="left">返回当前页的ServletResponse对象(response内置对象)</td>
+</tr>
+<tr>
+<td align="left">Http Session getsession()</td>
+<td align="left">返回当前页中的Httpsession对象(session内置对象)</td>
+</tr>
+<tr>
+<td align="left">Object getPage()</td>
+<td align="left">返回当前页的Object对象(page内置对象)</td>
+</tr>
+</tbody></table>
+<h2 id="设置属性方法"><a href="#设置属性方法" class="headerlink" title="设置属性方法"></a>设置属性方法</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">void setAttribute(String name, Object attribute)</td>
+<td align="left">设置属性</td>
+</tr>
+<tr>
+<td align="left">Object getAttribute(String name, int scope)</td>
+<td align="left">在指定范围内取属性的值</td>
+</tr>
+<tr>
+<td align="left">nt getAttributeScope(String name)</td>
+<td align="left">返回某属性的作用范围</td>
+</tr>
+<tr>
+<td align="left">void forward(String relativeUrlPath)</td>
+<td align="left">把页面转发到另一个页面</td>
+</tr>
+<tr>
+<td align="left">void include( String relativeUrlPath)</td>
+<td align="left">在当前位置包含另一文件</td>
+</tr>
+</tbody></table>
+<p>pageContext对象在实际JSP开发过程中很少使用,因为 request和 response等对象均为内置对象,如果通过 pageContext来调用这些对象比较麻烦,都可以直接调用其相关方法实现具体的功能。</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;pageContext内置对象&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        out.println(<span class="string">&quot;&lt;hr&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;取出的是 out 内置对象：&quot;</span>+(out==pageContext.getOut())+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;取出的是 request 内置对象：&quot;</span>+(request==pageContext.getRequest())+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;取出的是 response 内置对象：&quot;</span>+(response==pageContext.getResponse())+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;取出的是 session 内置对象：&quot;</span>+(session==pageContext.getSession())+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;取出的是 page 内置对象：&quot;</span>+(page==pageContext.getPage())+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;hr&gt;&quot;</span>);</span><br><span class="line">        HttpSession session2 = pageContext.getSession();</span><br><span class="line">        out.println(<span class="string">&quot;session 中的user=&quot;</span>+session2.getAttribute(<span class="string">&quot;user&quot;</span>)+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        Object page2=pageContext.getPage();</span><br><span class="line">        out.println(<span class="string">&quot;page toString():&quot;</span>+page2.toString()+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        <span class="comment">//跳转到session.jsp页面</span></span><br><span class="line"><span class="comment">//         pageContext.forward(&quot;session.jsp&quot;);</span></span><br><span class="line">        <span class="comment">//包含login.jsp页面中的内容</span></span><br><span class="line"><span class="comment">//         pageContext.include(&quot;login.jsp&quot;);</span></span><br><span class="line">    %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/pageContext/show.png"><br>可以看到这里<code>pageContext.getOut()</code>方法取出的对象就是out内置对象，剩下的几个获取方法也类似。<br>pageContext.include(“login.jsp”);方法会把login.jsp页面显示的放到当前页面中，取消前面的注释可以看到效果：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/pageContext/include.png"><br>pageContext.forward(“session.jsp”);方法，会直接跳转到session.jsp页面。显示的内容是session.jsp中的内容。不过<code>浏览器中地址栏中的地址不会发生改变</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/pageContext/forward.png"></p>
+<h1 id="page内置对象"><a href="#page内置对象" class="headerlink" title="page内置对象"></a>page内置对象</h1><p>page对象就是指向当前JSP页面本身,有点像类中的this指针,它是 java.lang. Object类的实例。<br>page对象代表JSP本身,只有在JSP页面内才是合法的。page对象本质上是包含当前 Servlet接口用的变量,可以看作是this关键字的别名。</p>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">class getclass()</td>
+<td align="left">返回此 Object的类</td>
+</tr>
+<tr>
+<td align="left">int hashCode()</td>
+<td align="left">返回此 Object的hash码</td>
+</tr>
+<tr>
+<td align="left">boolean equals(Object obj)</td>
+<td align="left">判断此 Object是否与指定的 Object对象相等</td>
+</tr>
+<tr>
+<td align="left">void copy(Object obj)</td>
+<td align="left">把此 Object拷贝到指定的Object埘象中</td>
+</tr>
+<tr>
+<td align="left">Object clone()</td>
+<td align="left">克隆此 Objec对象</td>
+</tr>
+<tr>
+<td align="left">String toString()</td>
+<td align="left">把此 Object对象转换成 String类的对象</td>
+</tr>
+<tr>
+<td align="left">void notify()</td>
+<td align="left">唤醒一个等待的线程</td>
+</tr>
+<tr>
+<td align="left">void notifyAll()</td>
+<td align="left">唤醒所有等待的线程</td>
+</tr>
+<tr>
+<td align="left">void wait(int timeout)</td>
+<td align="left">使一个线程处于等待直到 timeout结束或被唤醒</td>
+</tr>
+<tr>
+<td align="left">void wait()</td>
+<td align="left">使一个线程处于等待直到被唤醒</td>
+</tr>
+</tbody></table>
+<h2 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h2><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        out.println(<span class="string">&quot;当前page页面的字符串描述：&quot;</span> + page.toString());</span><br><span class="line">    %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当前page页面的字符串描述：org.apache.jsp.page_jsp@3d351d0b </span><br></pre></td></tr></table></figure>
+<p>可以查看tomcat中的work目录中找到项目对应的目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\dev\apache-tomcat-8.5.35\work\Catalina\localhost\HelloWorld</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/page/sevlert.png"><br>这个目录下面的都是jsp页面编译成的java类和字节码文件：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/page/java_class.png"><br>其中page.jsp页面编译成的类为<code>page_jsp.java</code></p>
+<h1 id="Config内置对象"><a href="#Config内置对象" class="headerlink" title="Config内置对象"></a>Config内置对象</h1><p>config内置对象用来读取web.xml配置信息。<br>config对象主要用于取得服务器的配置信息。通过 pageContext对象的 getServletConfig()法可以获取一个 config对象。当一个 Servlet初始化时,容器把某些信息通过 config对象传递给这个 Servlet。开发者可以在 web.xml文件中为应用程序环境中的 Servlet程序和JSP页面提供初始化参数。 config对象的常用方法如下表所示。<br>config对象用于在一个Servlet初始化时,接收JSP擎向传递的信息,此信息包括Servlet初始化时所要用到的参数(通过属性名/属性值对构成)以及服务器的有关信息(通传递一个 Servletcontext对象)</p>
+<h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ServletContext getservletcontext()</td>
+<td align="left">返回含有服务器相关信息的 Servletcontext对象</td>
+</tr>
+<tr>
+<td align="left">String getinitParameter(String name)</td>
+<td align="left">返回初始化参数的值</td>
+</tr>
+<tr>
+<td align="left">Enumeration getinitParameterNames()</td>
+<td align="left">返回 Servlet初始化所需所有参数的枚举</td>
+</tr>
+</tbody></table>
+<p>后面再更新</p>
+<h1 id="Exception内置对象"><a href="#Exception内置对象" class="headerlink" title="Exception内置对象"></a>Exception内置对象</h1><p>exception内置对象是java.lang.Throwable接口的一个实例，用来处理JSP文件执行时发生的所有错误和异常,只有在page指令中设置为 isErrorPage属性值为true的页面中才可以被使用,在一般的JSP页面中使用该对象将无法编译JSP文件。 exception对象几乎定义了所有异常情况,在Java程序中,可以使用try…catch关键字来处理异常情况,如果在JSP页面中出现没有捕捉到的异常,就会生成 exception对象,并把 exception对象传送到在page指令中设定的错误页面中,然后在错误页面中处理相应的 exception对象。</p>
+<h2 id="exception对象的常用方法"><a href="#exception对象的常用方法" class="headerlink" title="exception对象的常用方法"></a>exception对象的常用方法</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">String getMessage()</td>
+<td align="left">返回描述异常的消息</td>
+</tr>
+<tr>
+<td align="left">String toString()</td>
+<td align="left">返回关于异常的简短描述消息</td>
+</tr>
+<tr>
+<td align="left">void printStackTrace()</td>
+<td align="left">显示异常及其栈轨迹</td>
+</tr>
+<tr>
+<td align="left">Throwable fillInStackTrace()</td>
+<td align="left">重写异常的执行栈轨迹</td>
+</tr>
+</tbody></table>
+<h3 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h3><p>创建生成异常的页面：<code>exception_test.jsp</code>，指定异常处理页面为<code>exception.jsp</code>，如下所示：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;!--     指定异常处理页面为exception.jsp --&gt;</span><br><span class="line">&lt;%@ page errorPage=<span class="string">&quot;exception.jsp&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;生成异常&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">100</span> / <span class="number">0</span>;<span class="comment">//抛出算术异常，除数不能为零</span></span><br><span class="line">    %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>创建异常处理页面<code>exception.jsp</code>，并设置该页面为异常处理页面：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;!-- 定义当前页面为异常处理页面 --&gt;</span><br><span class="line">&lt;%@ page isErrorPage=<span class="string">&quot;true&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    异常信息为:&lt;%=exception.getMessage()%&gt;&lt;br&gt; </span><br><span class="line">    异常字符串描述为:&lt;%=exception.toString()%&gt;&lt;br&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>浏览器访问exception_test.jsp,该页面出现了异常，会自动跳转到异常处理页面：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/exception/exception_test.png"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/ee24a152/" title="JSP pageContext config page exception 内置对象">https://lanlan2017.github.io/blog/ee24a152/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/ddf72c82/" rel="prev" title="JSP response 内置对象">
+                  <i class="fa fa-chevron-left"></i> JSP response 内置对象
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/99c62cee/" rel="next" title="JSP 脚本标识">
+                  JSP 脚本标识 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/ee24a152/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/ee24a152/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

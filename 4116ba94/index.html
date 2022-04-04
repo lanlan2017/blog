@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="屏幕显示乱码问题现象1cat &#x2F;bin&#x2F;bash 或 1head -n 1 &#x2F;bin&#x2F;bash 导致屏幕乱码，键盘输入也只能看到画表用的框框符 原因&#x2F;bin&#x2F;bash文件不是文本文件，这些二进制内容逐字节送到终端，凑巧一个序列被终端理解为一个转义序列，执行动作：修改了终端字符集 字符集ASCII字符集（7比特128种符号）选择其他字符集，相同码值代表了那个字符集之中的某个符号 解决方法断开连接，重">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux vi显示乱码问题">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/4116ba94/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="屏幕显示乱码问题现象1cat &#x2F;bin&#x2F;bash 或 1head -n 1 &#x2F;bin&#x2F;bash 导致屏幕乱码，键盘输入也只能看到画表用的框框符 原因&#x2F;bin&#x2F;bash文件不是文本文件，这些二进制内容逐字节送到终端，凑巧一个序列被终端理解为一个转义序列，执行动作：修改了终端字符集 字符集ASCII字符集（7比特128种符号）选择其他字符集，相同码值代表了那个字符集之中的某个符号 解决方法断开连接，重">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/DisplayGarbledProblem/1.png">
+<meta property="og:image" content="https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/DisplayGarbledProblem/2.png">
+<meta property="article:published_time" content="2021-05-30T13:01:41.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:51:45.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/DisplayGarbledProblem/1.png">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/4116ba94/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/4116ba94/","path":"/4116ba94/","title":"Linux vi显示乱码问题"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Linux vi显示乱码问题 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B1%8F%E5%B9%95%E6%98%BE%E7%A4%BA%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98"><span class="nav-text">屏幕显示乱码问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%B0%E8%B1%A1"><span class="nav-text">现象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0"><span class="nav-text">原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-text">字符集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-text">解决方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E9%97%AE%E9%A2%98"><span class="nav-text">文本文件格式问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%B0%E8%B1%A1-1"><span class="nav-text">现象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0-1"><span class="nav-text">原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95-1"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="nav-text">文本文件格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="nav-text">Windows文本文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#linux%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="nav-text">linux文本文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="nav-text">相关命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dos2unix%E5%92%8Cfromdos%E5%91%BD%E4%BB%A4"><span class="nav-text">dos2unix和fromdos命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#file"><span class="nav-text">file</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%92%8CLinux%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="nav-text">Windows文本文件和Linux文本文件相互转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%94%A8%E8%AE%B0%E4%BA%8B%E6%9C%AC%E5%88%9B%E5%BB%BA%E7%9A%84helloworld-c%E6%96%87%E4%BB%B6"><span class="nav-text">Windows系统中用记事本创建的helloworld.c文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux%E4%B8%AD%E6%89%93%E5%BC%80Windows%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="nav-text">Linux中打开Windows文本文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux%E4%B8%AD%E5%90%A7Windows%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E6%88%90Linux%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="nav-text">Linux中吧Windows文本文件转换成Linux文本文件</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98"><span class="nav-text">中文编码问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0-2"><span class="nav-text">原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8B%B1%E6%96%87%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-text">英文字符集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81GBK"><span class="nav-text">中文字符编码GBK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81UTF8"><span class="nav-text">中文字符编码UTF8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE"><span class="nav-text">检查系统设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4iconv%EF%BC%9A%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="nav-text">命令iconv：中文字符编码的转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#from-GBK-to-UTF8"><span class="nav-text">from GBK to UTF8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#from-UTF8-to-GBK"><span class="nav-text">from UTF8 to GBK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="nav-text">示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE%EF%BC%9A%E9%85%8D%E8%89%B2%E5%92%8C%E4%B8%AD%E6%96%87%E7%BC%96%E7%A0%81"><span class="nav-text">终端配置：配色和中文编码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98-1"><span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E7%BB%88%E7%AB%AF%E4%BB%BF%E7%9C%9F%E8%BD%AF%E4%BB%B6%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-text">调整终端仿真软件的配置</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4116ba94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Linux vi显示乱码问题 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux vi显示乱码问题
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-05-30 21:01:41" itemprop="dateCreated datePublished" datetime="2021-05-30T21:01:41+08:00">2021-05-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/vi%E7%BC%96%E8%BE%91%E5%99%A8%E5%8F%8A%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">vi编辑器及乱码问题</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/4116ba94/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/4116ba94/" data-xid="/blog/4116ba94/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="屏幕显示乱码问题"><a href="#屏幕显示乱码问题" class="headerlink" title="屏幕显示乱码问题"></a>屏幕显示乱码问题</h1><h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /bin/bash</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head -n 1 /bin/bash</span><br></pre></td></tr></table></figure>
+<p>导致屏幕乱码，键盘输入也只能看到画表用的框框符</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>/bin/bash文件不是文本文件，这些二进制内容逐字节送到终端，凑巧一个序列被终端理解为一个转义序列，执行动作：修改了终端字符集</p>
+<h2 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h2><p>ASCII字符集（7比特128种符号）<br>选择其他字符集，相同码值代表了那个字符集之中的某个符号</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>断开连接，重新登录<br>注意不要把非文本信息在终端输出</p>
+<h1 id="文本文件格式问题"><a href="#文本文件格式问题" class="headerlink" title="文本文件格式问题"></a>文本文件格式问题</h1><h2 id="现象-1"><a href="#现象-1" class="headerlink" title="现象"></a>现象</h2><p>Linux下的文本文件在Windows用notepad打开，所有内容粘在一行内</p>
+<h2 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h2><p>Linux和Windows的文本文件的存储格式不同</p>
+<h2 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h2><p>在Linux完成格式转换后再用Windows处理（首选此方案）<br>用Windows中可容忍Linux文本文件格式的其他编辑器</p>
+<h2 id="文本文件格式"><a href="#文本文件格式" class="headerlink" title="文本文件格式"></a>文本文件格式</h2><p>Windows和Linux文本文件行的行尾不同</p>
+<ul>
+<li>Linux：行尾处仅存换行字符</li>
+<li>Windows：行尾处存回车和换行两个字符</li>
+</ul>
+<p>例:文件mini.txt，第一行为ab，第二行为xyz<br>Windows中，文件的大小为9字节</p>
+<pre>
+61 62 <mark>0d 0a</mark> 78 79 7a <mark>0d 0a</mark>
+</pre>
+
+<p>在Linux中，文件的大小为7字节</p>
+<pre>
+61 62 <mark>0a</mark> 78 79 7a <mark>0a</mark>
+</pre>
+
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="Windows文本文件"><a href="#Windows文本文件" class="headerlink" title="Windows文本文件"></a>Windows文本文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ ls</span><br><span class="line">helloworld.c  mini_windows.txt</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ file mini_windows.txt</span><br><span class="line">mini_windows.txt: ASCII text, with CRLF line terminators</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ cat mini_windows.txt</span><br><span class="line">ab</span><br><span class="line">xyz</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ od -t x1 mini_windows.txt</span><br><span class="line">0000000 61 62 0d 0a 78 79 7a</span><br><span class="line">0000007</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+<h4 id="linux文本文件"><a href="#linux文本文件" class="headerlink" title="linux文本文件"></a>linux文本文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost encode]# file mini.txt </span><br><span class="line">mini.txt: ASCII text</span><br><span class="line">[root@localhost encode]# cat mini.txt </span><br><span class="line">ab</span><br><span class="line">xyz</span><br><span class="line">[root@localhost encode]# od -t x1 mini.txt </span><br><span class="line">0000000 61 62 0a 78 79 7a 0a</span><br><span class="line">0000007</span><br><span class="line">[root@localhost encode]# </span><br></pre></td></tr></table></figure>
+
+<h2 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h2><p>（两种格式间转换）<br>dos2unix/unix2dos, todos/fromdos<br>（查看文件的数据类型，供参考）</p>
+<h3 id="dos2unix和fromdos命令"><a href="#dos2unix和fromdos命令" class="headerlink" title="dos2unix和fromdos命令"></a>dos2unix和fromdos命令</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.linuxidc.com/Linux/2014-01/95144.htm">https://www.linuxidc.com/Linux/2014-01/95144.htm</a><br>两个命令的用法相同,不同的是两个命令使用的环境不一样.<br>dos2unix在CentOS系列的系统中使用，fromdos则在Ubuntu系列的系统中使用。<br>用法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dos2unix filename</span><br><span class="line">fromdos filename</span><br></pre></td></tr></table></figure>
+<p>意思是：转换文件格式，将windos系统的文件转换成linux系统可以使用的文件格式，否则文件在linux系统中可能会出现错误，如：文件中显示^m 这样的错误字符。<br>导致这样的错误出现的原因是，windos环境中的换行符是<code>\r\n</code>,而linux系统中的换行符直接<code>\n</code>就行了。</p>
+</blockquote>
+<h3 id="file"><a href="#file" class="headerlink" title="file"></a>file</h3><p>如果没有file命令则需要先安装file命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vi]# file helloworld.c </span><br><span class="line">-bash: file: 未找到命令</span><br><span class="line">[root@localhost vi]# yum list file</span><br><span class="line">已加载插件：fastestmirror</span><br><span class="line">Repodata is over 2 weeks old. Install yum-cron? Or run: yum makecache fast</span><br><span class="line">Determining fastest mirrors</span><br><span class="line"> * epel: mirrors.ustc.edu.cn</span><br><span class="line">可安装的软件包</span><br><span class="line">file.aarch64                                                                     5.11-37.el7                                                                     base</span><br><span class="line">[root@localhost vi]# yum install file</span><br></pre></td></tr></table></figure>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vi]# file helloworld.c </span><br><span class="line">helloworld.c: C source, ASCII text</span><br><span class="line">[root@localhost vi]# </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/blog/source/_posts/编程/Linux/通用/vi编辑器及乱码问题 (master)</span><br><span class="line">$ file &#x27;Linux 显示乱码问题.md&#x27;</span><br><span class="line">Linux 显示乱码问题.md: UTF-8 Unicode text</span><br></pre></td></tr></table></figure>
+<h3 id="Windows文本文件和Linux文本文件相互转换"><a href="#Windows文本文件和Linux文本文件相互转换" class="headerlink" title="Windows文本文件和Linux文本文件相互转换"></a>Windows文本文件和Linux文本文件相互转换</h3><h4 id="Windows系统中用记事本创建的helloworld-c文件"><a href="#Windows系统中用记事本创建的helloworld-c文件" class="headerlink" title="Windows系统中用记事本创建的helloworld.c文件"></a>Windows系统中用记事本创建的helloworld.c文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ cat helloworld.c</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">        printf(&quot;%s\n&quot;,&quot;Hello&quot;);</span><br><span class="line">        printf(&quot;%s\n&quot;,&quot;World&quot;);</span><br><span class="line">        printf(&quot;%s\n&quot;,&quot;Welcome to Linux&quot;);</span><br><span class="line">&#125;</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ file helloworld.c</span><br><span class="line">helloworld.c: C source, ASCII text, with CRLF line terminators</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>可以看到helloworld.c文件使用的是CRLF，也就是<strong>回车换行符</strong><code>\r\n</code>。</p>
+<h4 id="Linux中打开Windows文本文件"><a href="#Linux中打开Windows文本文件" class="headerlink" title="Linux中打开Windows文本文件"></a>Linux中打开Windows文本文件</h4><p>将该文件上传到CentOS中，再次执行file命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost encode]# file helloworld.c </span><br><span class="line">helloworld.c: C source, ASCII text, with CRLF line terminators</span><br><span class="line">[root@localhost encode]# </span><br></pre></td></tr></table></figure>
+<p>使用vi打开该文件：<br><img data-src="https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/DisplayGarbledProblem/1.png" alt="图片"></p>
+<h4 id="Linux中吧Windows文本文件转换成Linux文本文件"><a href="#Linux中吧Windows文本文件转换成Linux文本文件" class="headerlink" title="Linux中吧Windows文本文件转换成Linux文本文件"></a>Linux中吧Windows文本文件转换成Linux文本文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost encode]# dos2unix helloworld.c </span><br><span class="line">dos2unix: converting file helloworld.c to Unix format ...</span><br><span class="line">[root@localhost encode]# file helloworld.c </span><br><span class="line">helloworld.c: C source, ASCII text</span><br><span class="line">[root@localhost encode]# </span><br></pre></td></tr></table></figure>
+<p>然后在使用vi打开该文件:<br><img data-src="https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/DisplayGarbledProblem/2.png" alt="图片"></p>
+<h1 id="中文编码问题"><a href="#中文编码问题" class="headerlink" title="中文编码问题"></a>中文编码问题</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>从Windows迁来的文件，只有在显示中文字符时是乱码。Linux本生的中文信息正常显示。</p>
+<h2 id="原因-2"><a href="#原因-2" class="headerlink" title="原因"></a>原因</h2><p>中文GBK与UTF8不兼容</p>
+<h2 id="英文字符集"><a href="#英文字符集" class="headerlink" title="英文字符集"></a>英文字符集</h2><p>7比特ASCII码，字节高位为0的，后面7位是英文ASCII码</p>
+<h2 id="中文字符编码GBK"><a href="#中文字符编码GBK" class="headerlink" title="中文字符编码GBK"></a>中文字符编码GBK</h2><p>Windows默认中文编码方案，两个字节表示一个汉字，字节的高位为1，以区别于ASCII码</p>
+<h2 id="中文字符编码UTF8"><a href="#中文字符编码UTF8" class="headerlink" title="中文字符编码UTF8"></a>中文字符编码UTF8</h2><p>许多Linux默认中文编码方案，三个字节表示一个汉字，字节的高位为1，以区别于ASCII码</p>
+<h2 id="检查系统设置"><a href="#检查系统设置" class="headerlink" title="检查系统设置"></a>检查系统设置</h2><p>与语言有关的环境变量LANG应为<code>en_US.UTF-8</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env | grep LANG</span><br></pre></td></tr></table></figure>
+<p>若有问题，设置方法为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export LANG=en_US.UTF-8</span><br></pre></td></tr></table></figure>
+<h2 id="命令iconv：中文字符编码的转换"><a href="#命令iconv：中文字符编码的转换" class="headerlink" title="命令iconv：中文字符编码的转换"></a>命令iconv：中文字符编码的转换</h2><h3 id="from-GBK-to-UTF8"><a href="#from-GBK-to-UTF8" class="headerlink" title="from GBK to UTF8"></a>from GBK to UTF8</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iconv –f gbk –t utf8</span><br></pre></td></tr></table></figure>
+<h3 id="from-UTF8-to-GBK"><a href="#from-UTF8-to-GBK" class="headerlink" title="from UTF8 to GBK"></a>from UTF8 to GBK</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iconv –f utf8 –t gbk</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;汉字&quot; | od -t x1</span><br><span class="line">0000000 e6 b1 89 e5 ad 97 0a</span><br><span class="line">$ echo &quot;汉字&quot; | iconv -f utf-8 -t gbk | od -t x1 </span><br><span class="line">0000000 ba ba d7 d6 0a</span><br></pre></td></tr></table></figure>
+<h1 id="终端配置：配色和中文编码"><a href="#终端配置：配色和中文编码" class="headerlink" title="终端配置：配色和中文编码"></a>终端配置：配色和中文编码</h1><h2 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h2><p>终端不是默认的黑底白字，ls，grep，vi等输出信息无配色<br>中文显示的是乱码</p>
+<h2 id="调整终端仿真软件的配置"><a href="#调整终端仿真软件的配置" class="headerlink" title="调整终端仿真软件的配置"></a>调整终端仿真软件的配置</h2><p>根据所用的终端仿真软件的不同，调整终端类型和字符编码，具体方法与所用软件有关</p>
+<!-- Blog/Programming/Linux/General/VIEditorAndGarbledProblem/DisplayGarbledProblem -->
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/4116ba94/" title="Linux vi显示乱码问题">https://lanlan2017.github.io/blog/4116ba94/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/3658ccba/" rel="prev" title="Linux vi死机问题">
+                  <i class="fa fa-chevron-left"></i> Linux vi死机问题
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/80acc920/" rel="next" title="Linux 文件命名和目录结构">
+                  Linux 文件命名和目录结构 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/4116ba94/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/4116ba94/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

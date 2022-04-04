@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.1">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="总结经过我一天的瞎忙活,我发现安装后的window子系统只有一个简单的文件管理器可以用,其他的图形化工具太少了,还是算了,老老实实用虚拟机来的实在也可能是我不会安装相应软件的原因吧。 打开开发者选项按下**win+I快捷键,打开设置**,然后进入更新和安全 然后点击左侧的开发者选项,在右边选择开发人员模式选项 在弹出的确认框中选择是 打开效果: 勾选适用于Linux的Windows子系统小娜搜索">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Win10 安装Linux子系统">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/942c9c89/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="总结经过我一天的瞎忙活,我发现安装后的window子系统只有一个简单的文件管理器可以用,其他的图形化工具太少了,还是算了,老老实实用虚拟机来的实在也可能是我不会安装相应软件的原因吧。 打开开发者选项按下**win+I快捷键,打开设置**,然后进入更新和安全 然后点击左侧的开发者选项,在右边选择开发人员模式选项 在弹出的确认框中选择是 打开效果: 勾选适用于Linux的Windows子系统小娜搜索">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/11.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/12.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/13.png">
+<meta property="article:published_time" content="2019-11-27T02:49:35.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:51:44.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/1.png">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/942c9c89/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/942c9c89/","path":"/942c9c89/","title":"Win10 安装Linux子系统"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Win10 安装Linux子系统 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-mzjszagu6-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E5%BC%80%E5%8F%91%E8%80%85%E9%80%89%E9%A1%B9"><span class="nav-text">打开开发者选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8B%BE%E9%80%89%E9%80%82%E7%94%A8%E4%BA%8ELinux%E7%9A%84Windows%E5%AD%90%E7%B3%BB%E7%BB%9F"><span class="nav-text">勾选适用于Linux的Windows子系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E5%A8%9C%E6%90%9C%E7%B4%A2-%E8%BF%9B%E5%85%A5-%E5%90%AF%E7%94%A8%E6%88%96%E5%85%B3%E9%97%AD-Windows%E5%8A%9F%E8%83%BD%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="nav-text">小娜搜索 进入 启用或关闭 Windows功能的步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF%E8%BF%9B%E5%85%A5-%E5%90%AF%E7%94%A8%E6%88%96%E5%85%B3%E9%97%AD-Windows%E5%8A%9F%E8%83%BD%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="nav-text">通过控制面板进入 启用或关闭 Windows功能的步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF"><span class="nav-text">快速打开控制面板</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Microsoft-store%E5%AE%89%E8%A3%85Linux"><span class="nav-text">Microsoft store安装Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8Linux"><span class="nav-text">启动Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cmd%E4%B8%AD%E5%90%AF%E5%8A%A8"><span class="nav-text">cmd中启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%AD%E5%90%AF%E5%8A%A8"><span class="nav-text">文件资源管理器中启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AELinux"><span class="nav-text">配置Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEroot%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81"><span class="nav-text">设置root用户密码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E5%9B%BD%E5%86%85apt%E6%BA%90-%E5%B9%B6%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6"><span class="nav-text">更换国内apt源 并更新软件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%BA%90%E5%88%97%E8%A1%A8"><span class="nav-text">更新源列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E5%B7%B2%E5%AE%89%E8%A3%85%E4%BD%BF%E6%89%80%E6%9C%89%E8%BD%AF%E4%BB%B6"><span class="nav-text">更新已安装使所有软件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E5%8F%8A%E8%AE%BE%E7%BD%AE"><span class="nav-text">安装中文字体及设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93"><span class="nav-text">安装中文字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93"><span class="nav-text">查看中文字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93-1"><span class="nav-text">查看中文字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E4%B8%AD%E6%96%87"><span class="nav-text">切换中文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E8%AF%AD%E8%A8%80"><span class="nav-text">查看系统语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E5%AD%90%E7%B3%BB%E7%BB%9F"><span class="nav-text">重启子系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E5%AD%90%E7%B3%BB%E7%BB%9F"><span class="nav-text">关闭子系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AF%E5%AD%90%E7%B3%BB%E7%BB%9F"><span class="nav-text">开启子系统</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E6%96%B9%E5%BC%8F1"><span class="nav-text">安装桌面方式1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E6%96%B9%E5%BC%8F2"><span class="nav-text">安装桌面方式2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E9%94%99%E8%AF%AF1"><span class="nav-text">解决错误1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E7%9B%AE%E5%BD%95"><span class="nav-text">合并目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E9%94%99%E8%AF%AF2"><span class="nav-text">解决错误2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E5%AD%90%E7%B3%BB%E7%BB%9F-1"><span class="nav-text">重启子系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95"><span class="nav-text">安装中文输入法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%8F%98%E9%87%8F"><span class="nav-text">配置变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E6%A1%8C%E9%9D%A2"><span class="nav-text">连接桌面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85VNC"><span class="nav-text">安装VNC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8VNX"><span class="nav-text">启动VNX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%8D%E6%AC%A1%E5%90%AF%E5%8A%A8VNC"><span class="nav-text">再次启动VNC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85VNC%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-text">安装VNC客户端</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%80%80%E5%87%BAVNC%E5%85%A8%E5%B1%8F%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">如何退出VNC全屏的方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8Bubuntu%E7%89%88%E6%9C%AC"><span class="nav-text">如何查看ubuntu版本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F"><span class="nav-text">安装程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC"><span class="nav-text">查看版本</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/942c9c89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Win10 安装Linux子系统 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Win10 安装Linux子系统
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-27 10:49:35" itemprop="dateCreated datePublished" datetime="2019-11-27T10:49:35+08:00">2019-11-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/Win10%E8%AE%BE%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">Win10设置</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/942c9c89/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/942c9c89/" data-xid="/blog/942c9c89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>经过我一天的瞎忙活,我发现安装后的window子系统只有一个简单的文件管理器可以用,其他的图形化工具太少了,还是算了,<strong>老老实实用虚拟机来的实在</strong><br>也可能是我不会安装相应软件的原因吧。</p>
+<h1 id="打开开发者选项"><a href="#打开开发者选项" class="headerlink" title="打开开发者选项"></a>打开开发者选项</h1><p>按下**<code>win+I</code><strong>快捷键,打开</strong>设置**,然后进入<strong>更新和安全</strong><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/1.png" alt="图片"></p>
+<p>然后点击<code>左侧</code>的<strong>开发者选项</strong>,在右边选择<strong>开发人员模式</strong>选项<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/3.png" alt="图片"></p>
+<p>在弹出的确认框中选择<strong>是</strong><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/4.png" alt="图片"></p>
+<p>打开效果:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/5.png" alt="图片"></p>
+<h1 id="勾选适用于Linux的Windows子系统"><a href="#勾选适用于Linux的Windows子系统" class="headerlink" title="勾选适用于Linux的Windows子系统"></a>勾选适用于Linux的Windows子系统</h1><h2 id="小娜搜索-进入-启用或关闭-Windows功能的步骤"><a href="#小娜搜索-进入-启用或关闭-Windows功能的步骤" class="headerlink" title="小娜搜索 进入 启用或关闭 Windows功能的步骤"></a>小娜搜索 进入 启用或关闭 Windows功能的步骤</h2><p>在小娜搜索框中输入<strong>Windows功能</strong>,然后选择<strong>启用或关闭 Windows功能</strong><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/6.png" alt="图片"></p>
+<h2 id="通过控制面板进入-启用或关闭-Windows功能的步骤"><a href="#通过控制面板进入-启用或关闭-Windows功能的步骤" class="headerlink" title="通过控制面板进入 启用或关闭 Windows功能的步骤"></a>通过控制面板进入 启用或关闭 Windows功能的步骤</h2><h3 id="快速打开控制面板"><a href="#快速打开控制面板" class="headerlink" title="快速打开控制面板"></a>快速打开控制面板</h3><p>按下<code>Win+E</code>打开<strong>文件资源管理器</strong>,然后再地址栏上输入<strong>控制面板</strong>,即可打开<strong>控制面板</strong>:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/7.png" alt="图片"></p>
+<p>然后再<strong>控制面板的<code>搜索框</code><strong>中输入</strong>启用或关闭 Windows功能</strong>,然后再搜索结果中点击进入<strong>启用或关闭 Windows功能</strong>,然后<strong>滚动到最底部</strong>,勾选上<strong>适用于 Linux的 Windows子系统</strong>即可:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/8.png" alt="图片"></p>
+<h1 id="Microsoft-store安装Linux"><a href="#Microsoft-store安装Linux" class="headerlink" title="Microsoft store安装Linux"></a>Microsoft store安装Linux</h1><p>打开**<code>Microsoft store*</code>*,在搜索框中输入<code>Linux</code>,或是<code>Linux</code>的发行版的名字来查找你要安装的<code>Linux</code>,例如我这里输入<code>Ubuntu</code>,然后选择<code>Ubuntu 18.04 LTS</code><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/9.png" alt="图片"></p>
+<p>然后点击<strong>获取</strong>,然后等待下载 安装完毕,我已经装好了,下面以获取<strong>Ubuntu 16.04 LTS</strong>为例:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/10.png" alt="图片"></p>
+<h1 id="启动Linux"><a href="#启动Linux" class="headerlink" title="启动Linux"></a>启动Linux</h1><p>安装好Linux后,启动程序,第一次运行,需要输入<strong>用户名</strong>和<strong>密码</strong>.<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/11.png" alt="图片"></p>
+<h2 id="cmd中启动"><a href="#cmd中启动" class="headerlink" title="cmd中启动"></a>cmd中启动</h2><p>通过上面的方式进入,会默认进入用户的<code>home</code>目录,在<code>cmd</code>中输入<code>bash</code>即可在<strong>当前路径</strong>下进入<code>Linux</code><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/12.png" alt="图片"></p>
+<h2 id="文件资源管理器中启动"><a href="#文件资源管理器中启动" class="headerlink" title="文件资源管理器中启动"></a>文件资源管理器中启动</h2><p>也可以在<strong>文件资源管理器</strong>的<strong>地址栏</strong>中输入<code>bash</code>进入<code>Linux</code>。<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/13.png" alt="图片"></p>
+<h1 id="配置Linux"><a href="#配置Linux" class="headerlink" title="配置Linux"></a>配置Linux</h1><h2 id="设置root用户密码"><a href="#设置root用户密码" class="headerlink" title="设置root用户密码"></a>设置root用户密码</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd</span><br></pre></td></tr></table></figure>
+<h1 id="更换国内apt源-并更新软件"><a href="#更换国内apt源-并更新软件" class="headerlink" title="更换国内apt源 并更新软件"></a>更换国内apt源 并更新软件</h1><p>见这篇文章:<a href="/blog/4fc37c0d/">Ubuntu 18.04修改默认源为国内源</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<p>注释其他源,写入如下源:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<h2 id="更新源列表"><a href="#更新源列表" class="headerlink" title="更新源列表"></a>更新源列表</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<h2 id="更新已安装使所有软件"><a href="#更新已安装使所有软件" class="headerlink" title="更新已安装使所有软件"></a>更新已安装使所有软件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装中文字体及设置"><a href="#安装中文字体及设置" class="headerlink" title="安装中文字体及设置"></a>安装中文字体及设置</h1><h2 id="安装中文字体"><a href="#安装中文字体" class="headerlink" title="安装中文字体"></a>安装中文字体</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install language-pack-zh-hans</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y fonts-wqy-zenhei</span><br></pre></td></tr></table></figure>
+<p>或:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y fonts-wqy-microhei</span><br></pre></td></tr></table></figure>
+<h2 id="查看中文字体"><a href="#查看中文字体" class="headerlink" title="查看中文字体"></a>查看中文字体</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">blue@DESKTOP-8ISAT6B:~$ fc-list :lang=zh-cn</span><br><span class="line">/usr/share/fonts/truetype/wqy/wqy-microhei.ttc: WenQuanYi Micro Hei,文泉驛微米黑,文泉驿微米黑:style=Regular</span><br><span class="line">/usr/share/fonts/truetype/wqy/wqy-microhei.ttc: WenQuanYi Micro Hei Mono,文泉驛等寬微米黑,文泉驿等宽微米黑:style=Regular</span><br></pre></td></tr></table></figure>
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .profile</span><br></pre></td></tr></table></figure>
+<p>在末尾添加如下配置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LANG=&quot;zh_CN.UTF-8&quot;</span><br><span class="line">export LC_ALL=&quot;zh_CN.UTF-8&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="查看中文字体-1"><a href="#查看中文字体-1" class="headerlink" title="查看中文字体"></a>查看中文字体</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fc-list :lang=zh-cn</span><br></pre></td></tr></table></figure>
+<h2 id="切换中文"><a href="#切换中文" class="headerlink" title="切换中文"></a>切换中文</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg-reconfigure locales</span><br></pre></td></tr></table></figure>
+<p>按键盘pagedown往下找到并且选择zh_CN.UTF-8（按空格键选择，按Tab键移动到确定，按回车键确定）<br>图片<br>到下一步，选择zh_CN.UTF-8（按回车键确定）<br>图片</p>
+<h2 id="查看系统语言"><a href="#查看系统语言" class="headerlink" title="查看系统语言"></a>查看系统语言</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locale</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">blue@DESKTOP-8ISAT6B:~$ locale</span><br><span class="line">LANG=C.UTF-8</span><br><span class="line">LANGUAGE=</span><br><span class="line">LC_CTYPE=&quot;C.UTF-8&quot;</span><br><span class="line">LC_NUMERIC=&quot;C.UTF-8&quot;</span><br><span class="line">LC_TIME=&quot;C.UTF-8&quot;</span><br><span class="line">LC_COLLATE=&quot;C.UTF-8&quot;</span><br><span class="line">LC_MONETARY=&quot;C.UTF-8&quot;</span><br><span class="line">LC_MESSAGES=&quot;C.UTF-8&quot;</span><br><span class="line">LC_PAPER=&quot;C.UTF-8&quot;</span><br><span class="line">LC_NAME=&quot;C.UTF-8&quot;</span><br><span class="line">LC_ADDRESS=&quot;C.UTF-8&quot;</span><br><span class="line">LC_TELEPHONE=&quot;C.UTF-8&quot;</span><br><span class="line">LC_MEASUREMENT=&quot;C.UTF-8&quot;</span><br><span class="line">LC_IDENTIFICATION=&quot;C.UTF-8&quot;</span><br><span class="line">LC_ALL=</span><br></pre></td></tr></table></figure>
+<p>发现系统语言已经是中文</p>
+<h2 id="重启子系统"><a href="#重启子系统" class="headerlink" title="重启子系统"></a>重启子系统</h2><p>以管理员身份,打开<strong>windows的cmd</strong>,输入如下两个命令行:</p>
+<h3 id="关闭子系统"><a href="#关闭子系统" class="headerlink" title="关闭子系统"></a>关闭子系统</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">net</span> stop LxssManager</span><br></pre></td></tr></table></figure>
+<h3 id="开启子系统"><a href="#开启子系统" class="headerlink" title="开启子系统"></a>开启子系统</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">net</span> <span class="built_in">start</span> LxssManager</span><br></pre></td></tr></table></figure>
+<p>运行效果如下</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">WINDOWS</span>\<span class="title">system32</span>&gt;<span class="title">net</span> <span class="title">stop</span> <span class="title">LxssManager</span></span></span><br><span class="line"><span class="function"><span class="title">LxssManager</span> 服务正在停止.</span></span><br><span class="line"><span class="function"><span class="title">LxssManager</span> 服务已成功停止。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">WINDOWS</span>\<span class="title">system32</span>&gt;<span class="title">net</span> <span class="title">start</span> <span class="title">LxssManager</span></span></span><br><span class="line"><span class="function"><span class="title">LxssManager</span> 服务正在启动 .</span></span><br><span class="line"><span class="function"><span class="title">LxssManager</span> 服务已经启动成功。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">WINDOWS</span>\<span class="title">system32</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="安装桌面方式1"><a href="#安装桌面方式1" class="headerlink" title="安装桌面方式1"></a>安装桌面方式1</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install tasksel -y</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tasksel</span><br></pre></td></tr></table></figure>
+<p>待续…..</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install --no-install-recommends ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim .vnc/xstartup</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">XAUTHORITY=$HOME/.Xauthority</span><br><span class="line">export XAUTHORITY</span><br><span class="line">LANG=zh_CN.UTF-8</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">unset</span> SESSION_MANAGER</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">exec</span> /etc/X11/xinit/xinitrc</span></span><br><span class="line">[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup</span><br><span class="line">[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources</span><br><span class="line">xsetroot -solid grey</span><br><span class="line">vncconfig -iconic &amp;</span><br><span class="line">x-terminal-emulator -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp;</span><br><span class="line">x-window-manager &amp;</span><br><span class="line">gnome-panel &amp;</span><br><span class="line">gnome-settings-daemon &amp;</span><br><span class="line">metacity &amp;</span><br><span class="line">nautilus &amp;</span><br></pre></td></tr></table></figure>
+<h1 id="安装桌面方式2"><a href="#安装桌面方式2" class="headerlink" title="安装桌面方式2"></a>安装桌面方式2</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xubuntu-desktop</span><br></pre></td></tr></table></figure>
+<p>之后会自动安装桌面。（gnome桌面、xfce4桌面、Unity桌面、kde桌面等可自行选择，只需命令sudo install xxx就可安装了）</p>
+<p>如果界面管理器出错就安装（没有就不用管这句）：sudo apt install lightdm 安装完成后重启系统就好了<br>sudo apt-get install xubuntu-desktop</p>
+<h2 id="解决错误1"><a href="#解决错误1" class="headerlink" title="解决错误1"></a>解决错误1</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在处理时有错误发生：</span><br><span class="line"> blueman</span><br><span class="line">E: Sub-process /usr/bin/dpkg returned an error code (1)</span><br></pre></td></tr></table></figure>
+<p>创建需要的文件目录然后再安装:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /var/lib/dpkg/info /var/lib/dpkg/info.bak</span><br><span class="line">sudo mkdir /var/lib/dpkg/info</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install xubuntu-desktop</span><br></pre></td></tr></table></figure>
+<h3 id="合并目录"><a href="#合并目录" class="headerlink" title="合并目录"></a>合并目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /var/lib/dpkg/info/* /var/lib/dpkg/info.bak</span><br><span class="line">sudo rm -rf /var/lib/dpkg/info</span><br><span class="line">sudo mv /var/lib/dpkg/info.bak /var/lib/dpkg/info</span><br></pre></td></tr></table></figure>
+<h2 id="解决错误2"><a href="#解决错误2" class="headerlink" title="解决错误2"></a>解决错误2</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">W: APT had planned for dpkg to do more than it reported back (0 vs 4).</span><br><span class="line">   Affected packages: blueman:amd64</span><br></pre></td></tr></table></figure>
+<p>输入如下命令解决:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -C</span><br></pre></td></tr></table></figure>
+<h2 id="重启子系统-1"><a href="#重启子系统-1" class="headerlink" title="重启子系统"></a>重启子系统</h2><p>以管理员身份启动windows的cmd,输入如下命令:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">net</span> stop LxssManager</span><br><span class="line"><span class="built_in">net</span> <span class="built_in">start</span> LxssManager</span><br></pre></td></tr></table></figure>
+<h1 id="安装中文输入法"><a href="#安装中文输入法" class="headerlink" title="安装中文输入法"></a>安装中文输入法</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y fcitx fcitx-googlepinyin*</span><br></pre></td></tr></table></figure>
+<h2 id="配置变量"><a href="#配置变量" class="headerlink" title="配置变量"></a>配置变量</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim .profile</span><br></pre></td></tr></table></figure>
+<p>在文件末尾添加:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=&quot;@im=fcitx&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="连接桌面"><a href="#连接桌面" class="headerlink" title="连接桌面"></a>连接桌面</h1><h2 id="安装VNC"><a href="#安装VNC" class="headerlink" title="安装VNC"></a>安装VNC</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vnc4server</span><br></pre></td></tr></table></figure>
+<h2 id="启动VNX"><a href="#启动VNX" class="headerlink" title="启动VNX"></a>启动VNX</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vncserver -geometry 1366x768 :0</span><br></pre></td></tr></table></figure>
+<p><code>1366x768</code>是表示屏幕分辨率,<code> :0</code>是表示<strong>桌面</strong>的端口号为零,分辨率和端口号都可以随意自行更改,只要不出错就行<br>然后会提示设置<strong>连接密码</strong>,会提示输入<strong>两次</strong>,然后就能看见为0的端口号在运行。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">blue@DESKTOP-8ISAT6B:~$ sudo vncserver -geometry 1366x768 :0</span><br><span class="line"></span><br><span class="line">You will require a password to access your desktops.</span><br><span class="line"></span><br><span class="line">Password:Verify:xauth:  file /home/blue/.Xauthority does not exist</span><br><span class="line"></span><br><span class="line">New &#x27;DESKTOP-8ISAT6B:0 (root)&#x27; desktop is DESKTOP-8ISAT6B:0</span><br><span class="line"></span><br><span class="line">Creating default startup script /home/blue/.vnc/xstartup</span><br><span class="line">Starting applications specified in /home/blue/.vnc/xstartup</span><br><span class="line">Log file is /home/blue/.vnc/DESKTOP-8ISAT6B:0.log</span><br><span class="line"></span><br><span class="line">blue@DESKTOP-8ISAT6B:~$</span><br></pre></td></tr></table></figure>
+<p>之后输入VNC结束命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vncserver -kill :0</span><br></pre></td></tr></table></figure>
+<p>先输入命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim .vnc/xstartup</span><br></pre></td></tr></table></figure>
+<p>然后复制以下内容粘贴到<code>xstartup</code>文本里:(桌面空白也用此方法解决)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">unset SESSION_MANAGER</span><br><span class="line">unset DBUS_SESSION_BUS_ADDRESS</span><br><span class="line">[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup</span><br><span class="line">[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources</span><br><span class="line">xsetroot -solid grey</span><br><span class="line">startxfce4 &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="再次启动VNC"><a href="#再次启动VNC" class="headerlink" title="再次启动VNC"></a>再次启动VNC</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vncserver -geometry 1366x768 :0</span><br></pre></td></tr></table></figure>
+<p>输出如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">blue@DESKTOP-8ISAT6B:~$ sudo vncserver -geometry 1366x768 :0</span><br><span class="line"></span><br><span class="line">New &#x27;DESKTOP-8ISAT6B:0 (root)&#x27; desktop is DESKTOP-8ISAT6B:0</span><br><span class="line"></span><br><span class="line">Starting applications specified in /home/blue/.vnc/xstartup</span><br><span class="line">Log file is /home/blue/.vnc/DESKTOP-8ISAT6B:0.log</span><br></pre></td></tr></table></figure>
+<p>可以看大这里的煮面端口是<code>0</code>(DESKTOP-8ISAT6B<code>:0</code>)<br>如果<strong>显示端口是4</strong>那么在客户端连接的就是127.0.0.1:4 (每个人的不一样，可自行修改，一般默认是0)<br>使用vnc客户端连接即可查看桌面，</p>
+<h1 id="安装VNC客户端"><a href="#安装VNC客户端" class="headerlink" title="安装VNC客户端"></a>安装VNC客户端</h1><p>到vnc-viewer官网:<a target="_blank" rel="noopener" href="https://vnc-viewer.en.softonic.com/download">https://vnc-viewer.en.softonic.com/download</a>下载VNC客户端</p>
+<p>然后安装,</p>
+<h2 id="如何退出VNC全屏的方法"><a href="#如何退出VNC全屏的方法" class="headerlink" title="如何退出VNC全屏的方法"></a>如何退出VNC全屏的方法</h2><p>如果你不小心在VNC客户段上点击全屏后,是无法在VNC客户端结束全屏的.<br>不过幸好的是现在还连着Linux,所以可以杀死Linux上的VNC进程,这样Windows客户段连接不上Linux,就会自动退出.<br>结束vnc进程命令为.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vncserver -kill :0</span><br></pre></td></tr></table></figure>
+<p>0表示为桌面端口号。</p>
+<h1 id="如何查看ubuntu版本"><a href="#如何查看ubuntu版本" class="headerlink" title="如何查看ubuntu版本"></a>如何查看ubuntu版本</h1><h2 id="安装程序"><a href="#安装程序" class="headerlink" title="安装程序"></a>安装程序</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install neofetch</span><br></pre></td></tr></table></figure>
+<h2 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">neofetch</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>Win10/SubSystem/Linux/Ubuntu/</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av51515689/">https://www.bilibili.com/video/av51515689/</a><br><a target="_blank" rel="noopener" href="https://www.tkdcz.top/post/46.html">https://www.tkdcz.top/post/46.html</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/942c9c89/" title="Win10 安装Linux子系统">https://lanlan2017.github.io/blog/942c9c89/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/9ed0e635/" rel="prev" title="Linux 输出重定向到剪贴板">
+                  <i class="fa fa-chevron-left"></i> Linux 输出重定向到剪贴板
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/a1ad1d5d/" rel="next" title="电脑使用 安卓模拟器 翻墙">
+                  电脑使用 安卓模拟器 翻墙 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.5m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">22:38</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/942c9c89/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/942c9c89/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>
