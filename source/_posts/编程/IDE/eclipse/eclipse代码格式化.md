@@ -9,9 +9,9 @@ updated: 2022-04-04 00:51:45
 ---
 # Preference中搜索Formatter
 Preference然后搜索Fromatter，进入Formatter，然后edit。
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/programming/Idea/Eclipse/EclipseCodeFormattingSettings/1.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/Idea/Eclipse/EclipseCodeFormattingSettings/1.png)
 
 # 然后搜索Comments
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/programming/Idea/Eclipse/EclipseCodeFormattingSettings/2.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/Idea/Eclipse/EclipseCodeFormattingSettings/2.png)
 
 <!-- Blog/programming/Idea/Eclipse/EclipseCodeFormattingSettings -->

@@ -8,25 +8,47 @@ abbrlink: 380c40ce
 date: 2021-05-20 17:31:42
 updated: 2022-04-04 15:56:38
 ---
-Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite
+# 本文已过时
+gitee已经开启防盗链。
+
+如果你把图片放到gitee上，却把博客搭建在github pages上。那么你github pages上的博客是无法访问gitee仓库中的图片的。
+
+如果你还是想使用gitee作为图床，那么你可以把博客搭建到gitee pages上。
+
+同理，如果你想把博客搭建在github pages上，那么你就把图片放到github仓库中。又由于github的图片地址有时候会被墙，你可以使用加速器。（例如 网易UU加速器）
+
+以下为原文：
+
 # 前言
 最近Github搭建的图床老是无法正常访问。所以我打算把放在github上的图床迁移到gitee上。
 # PicGo上安装gitee插件
 点击PicGo左侧的**插件设置**，然后在**搜索框**中输入`gitee`,安装`gitee x.x.x`这个插件:
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/1.png)
+
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/1.png)
+
 # 在gitee上创建仓库
 点击gitee网站右上方的加号，选择创建仓库，或者从github导入。
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/2.png)
+
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/2.png)
+
 我原先在github上有图库了，这里选择从github导入。
 # 获取gitee的token
 点击gitee网站右上角的头像旁边的下拉菜单，选择**设置**，然后点击网站左侧的**安全设置**下方的**私人令牌**：
-![](https://gitee.com/XiaoLan223/images/raw/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/3.png)
+
+![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/3.png)
+
 然后单击右上方的**生成令牌**按钮：
-![](https://gitee.com/XiaoLan223/images/raw/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/4.png)
+
+![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/4.png)
+
 然后只勾选projects即可，其他的不要选：
-![](https://gitee.com/XiaoLan223/images/raw/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/5.png)
+
+![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/5.png)
+
 然后复制生成的token：
-![](https://gitee.com/XiaoLan223/images/raw/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/6.png)
+
+![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/6.png)
+
 # Gitee图床插件设置
 
 |gitee图床插件输入框|描述|
@@ -45,7 +67,9 @@ https://gitee.com/XiaoLan223/images/raw/master/Blog/Hexo<mark>//</mark>7.png
 
 这种形式。
 
-![](https://gitee.com/XiaoLan223/images/raw/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/7.png)
+![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/7.png)
 
 # 上传图片验证
 到这里需要设置的都设置完了，可以上传图片查看效果。
+
+<!-- Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite -->

@@ -20,10 +20,13 @@ updated: 2022-04-04 00:51:44
 - 或者直接搜索:**弹出式窗口和重定向**,然后进入进入**网站设置**.
 
 ![这里有一张图片](https://raw.githubusercontent.com/lanlan2017/images/master/Windows/SoftwareSettings/GoogleChrome/AllowPopups/1.png)
+
 拖动右侧的**滚动条**,找到**弹出式窗口和重定向**
 ![这里有一张图片](https://raw.githubusercontent.com/lanlan2017/images/master/Windows/SoftwareSettings/GoogleChrome/AllowPopups/2.png)
+
 ## 添加 允许弹窗的网站的 域名
 然后**添加允许**即可,设置的时候指定网站的域名即可,如:`docs.oracle.com`
+
 ![这里有一张图片](https://raw.githubusercontent.com/lanlan2017/images/master/Windows/SoftwareSettings/GoogleChrome/AllowPopups/3.png)
 
 <!-- Windows/SoftwareSettings/GoogleChrome/AllowPopups/ -->

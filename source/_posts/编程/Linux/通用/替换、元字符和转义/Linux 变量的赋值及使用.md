@@ -135,7 +135,7 @@ Beijing    China
 ```
 printf '\033[01;33mConnect to %s Network\n' $proto
 ```
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/ReplacementMetadatureAndEscape/AssignmentAndUseOfLinuxVariables/1.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/ReplacementMetadatureAndEscape/AssignmentAndUseOfLinuxVariables/1.png)
 
 
 

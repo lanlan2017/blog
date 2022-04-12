@@ -409,7 +409,7 @@ grep -1 ht.c
 -1
 [root@localhost 文件管理和目录管理]# 
 ```
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/programming/Linux/general/FileManagementAndDirectoryManagementFile/CopyAndDeletion/1.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/Linux/general/FileManagementAndDirectoryManagementFile/CopyAndDeletion/1.png)
 
 如果你想在文件中查找`--help`这个字符串,你输入如下命令：
 ```

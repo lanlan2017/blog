@@ -531,7 +531,7 @@ apple-touch-icon-next.png  avatar.gif  favicon.ico  favicon-16x16-next.png  favi
 ```
 效果如下：
 
-![image-20211219210849192](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20211219210856.png)
+![image-20211219210849192](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20211219210856.png)
 
 然后在next的配置文件中设置如下：
 
@@ -549,7 +549,7 @@ favicon:
 # custom_logo: #/uploads/custom-logo.jpg
 custom_logo: /images/avatar.gif
 ```
-![image-20211220122345692](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20211220122345.png)
+![image-20211220122345692](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20211220122345.png)
 
 ## Creative Commons版权声明
 版权声明
@@ -568,9 +568,9 @@ creative_commons:
   language: deed.zh
 ```
 sidebar: true时的效果：
-![image-20211219211416353](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20211219211416.png)
+![image-20211219211416353](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20211219211416.png)
 post: true时的效果：
-![image-20211219211302792](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20211219211302.png)
+![image-20211219211302792](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20211219211302.png)
 ## 配置菜单项
 [3]
 ### 添加自定义页面
@@ -663,7 +663,7 @@ hexo new page categories
 这个命令将会在站点的`source/`目录下生成一个`categories/`目录。并在`categories/`目录中生成一个index.md的文件。
 该index.md文件的内容如下：
 
-![image-20211220124222735](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20211220124222.png)
+![image-20211220124222735](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20211220124222.png)
 
 
 命令运行效果如下所示：
@@ -841,7 +841,7 @@ avatar:
 ```
 显示效果如下：
 
-![image-20211220140144634](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20211220140144.png)
+![image-20211220140144634](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20211220140144.png)
 
 ### 侧边栏的Posts Categories Tags统计
 https://theme-next.js.org/docs/theme-settings/sidebar.html#Sidebar-Site-State
@@ -852,7 +852,7 @@ site_state: true
 ```
 显示效果：
 
-![image-20211220142056403](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20211220142056.png)
+![image-20211220142056403](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20211220142056.png)
 
 ### 侧边栏的社交链接
 https://theme-next.js.org/docs/theme-settings/sidebar.html#Sidebar-Social-Links
@@ -876,7 +876,7 @@ social_icons:
 ```
 显示效果：
 
-![image-20211221110621775](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20211221110621.png)
+![image-20211221110621775](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20211221110621.png)
 **点击社交连接，浏览器会以新标签打开这个链接**。
 
 ### 侧边栏的站内滚动链接
@@ -895,7 +895,7 @@ links:
 
 显示效果：
 
-![image-20211221110434154](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20211221110441.png)
+![image-20211221110434154](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20211221110441.png)
 
 ### 侧栏的文章目录
 https://theme-next.js.org/docs/theme-settings/sidebar.html#Sidebar-TOC
@@ -916,7 +916,7 @@ toc:
 
 显示效果：
 
-![image-20211220145140014](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20211220145140.png)
+![image-20211220145140014](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20211220145140.png)
 
 ## 站点页脚设置 Footer
 https://theme-next.js.org/docs/theme-settings/footer.html
@@ -1018,9 +1018,9 @@ hexo s
 查看效果
 
 ##### 文章meta中的字符统计
-![image-20211220211332451](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20211220211332.png)
+![image-20211220211332451](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20211220211332.png)
 ##### 全站点的字符统计
-![image-20211220211011359](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20211220211019.png)
+![image-20211220211011359](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20211220211019.png)
 
 ### 捐赠设置
 https://theme-next.js.org/docs/theme-settings/posts.html#Donate-Settings
@@ -1397,4 +1397,4 @@ en:
 ### 查看效果
 输入hexo s,效果如下图：
 
-![image-20211221155312596](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20211221155313.png)
+![image-20211221155312596](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20211221155313.png)

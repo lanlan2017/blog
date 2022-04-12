@@ -12,7 +12,7 @@ mathjax: true
 # 文件系统的结构
 把整个逻辑设备以块(扇区) 为单位为划分，编号为0，1，2，...。
 （每块512字节或其他更大$2^n$字节大小）
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/1.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/1.png)
 
 ## 引导块(0号块)
 用于启动系统，只有根文件系统的引导块有效
@@ -59,7 +59,7 @@ Linux目录结构是树形带交叉勾连的目录结构
 - 用ls命令列出的目录大小是**目录表文件本身的长度**
 
 ## 目录存储结构示意图
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/2.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/2.png)
 
 ## 目录表和i节点两级结构
 主要目的：分开存放的主要目的是为了提高目录检索效率

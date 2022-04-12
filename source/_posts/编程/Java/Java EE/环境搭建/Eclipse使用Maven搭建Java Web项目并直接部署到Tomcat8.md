@@ -42,7 +42,7 @@ updated: 2022-04-04 00:51:44
 
 如果找不到，可以选择Internal，然后拖动到滚动条到最后，选择`maven-archetype-webapp`,点击`Next`
 
-![image-20210831165051568](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210831165058.png)
+![image-20210831165051568](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210831165058.png)
 
 填入坐标,`Group Id`，`Artifact Id`,剩下的随意,最后点击`Finish`即可
 
@@ -74,7 +74,7 @@ updated: 2022-04-04 00:51:44
 
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/19.png)
 
-![image-20210831165704903](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210831165705.png)
+![image-20210831165704903](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210831165705.png)
 
 #### 选择Tomcat ####
 然后点击右边的`Runtimes`勾选上对应的`Tomcat`,最后点击`Apply and Close`即可。
@@ -113,11 +113,11 @@ updated: 2022-04-04 00:51:44
 
 删除掉web.xml
 
-![image-20210831170105661](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210831170105.png)
+![image-20210831170105661](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210831170105.png)
 
 重新生成
 
-![image-20210831170207424](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210831170207.png)
+![image-20210831170207424](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210831170207.png)
 
 到这里就可启动项目了,看到效果了。
 
@@ -126,7 +126,7 @@ updated: 2022-04-04 00:51:44
 ## 测试 ##
 ### 启动项目Run on Server
 
-![image-20210831170538987](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210831170539.png)
+![image-20210831170538987](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210831170539.png)
 
 浏览器将显示`index.jsp`页面之中的内容,如下图所示:
 ![这里有一张图片](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Maven/JavaWeb/24.png)
@@ -138,25 +138,25 @@ updated: 2022-04-04 00:51:44
 
 在`src/main/java`下创建一个`hello`包,
 
-![image-20210831170739596](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210831170739.png)
+![image-20210831170739596](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210831170739.png)
 
 #### 创建Servlet
 
 在包上面，右键，选择Servlet:
 
-![image-20210831170919372](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210831170919.png)
+![image-20210831170919372](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210831170919.png)
 
 输入Servlet名称HelloWorldServlet
 
-![image-20210831171035960](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210831171036.png)
+![image-20210831171035960](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210831171036.png)
 
 点击next,设置这个Servlet的URL
 
-![image-20210831171137384](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210831171137.png)
+![image-20210831171137384](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210831171137.png)
 
 勾选要实现的方法：
 
-![image-20210831171331247](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210831171331.png)
+![image-20210831171331247](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210831171331.png)
 
 #### HelloWorldServlet完整代码
 修改`HelloWorldServlet`文件,得到如下代码：
@@ -214,21 +214,21 @@ public class HelloWorldServlet extends HttpServlet
 
 
 
-![image-20210901104704380](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210901104704.png)
+![image-20210901104704380](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210901104704.png)
 
 ## 验证密码
 
 启动Tomcat,然后进入manager
 
-![image-20210901104919066](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210901104919.png)
+![image-20210901104919066](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210901104919.png)
 
 此时会要求你输入密码，输入你上面设置好的密码:
 
-![image-20210901105020297](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210901105020.png)
+![image-20210901105020297](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210901105020.png)
 
 如果能成功进入如下界面，则说明设置Tomcat的密码成功了：
 
-![image-20210901105447959](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210901105448.png)
+![image-20210901105447959](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210901105448.png)
 
 ## 修改Maven的配置文件 ##
 
@@ -242,7 +242,7 @@ public class HelloWorldServlet extends HttpServlet
     <password>admin</password>
 </server>
 ```
-![image-20210901111047787](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210901111047.png)
+![image-20210901111047787](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210901111047.png)
 
 ## 安装Tomcat Maven部署插件 ##
 

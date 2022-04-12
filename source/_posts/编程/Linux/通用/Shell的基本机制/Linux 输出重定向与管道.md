@@ -10,7 +10,7 @@ updated: 2022-04-04 00:51:45
 ---
 # Linux 输出重定向与管道
 程序的标准输入/输出
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/SHELLBasicMechanism/LinuxOutputRedirectionAndPipeline/1.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/SHELLBasicMechanism/LinuxOutputRedirectionAndPipeline/1.png)
 
 
 # 程序示例
@@ -241,13 +241,13 @@ string2
 ./stda >rpt 2>&1
 ```
 命令执行时，各文件句柄的指向过程：
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/SHELLBasicMechanism/LinuxOutputRedirectionAndPipeline/2.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/SHELLBasicMechanism/LinuxOutputRedirectionAndPipeline/2.png)
 
 错误写法：
 ```
 ./stda 2>&1 >rpt
 ```
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/SHELLBasicMechanism/LinuxOutputRedirectionAndPipeline/3.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/SHELLBasicMechanism/LinuxOutputRedirectionAndPipeline/3.png)
 
 # 管道
 ## 传递前一个命令的标准输出给后一个命令作为标准输出

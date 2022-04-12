@@ -27,41 +27,41 @@ Synaptics Pointing Device还有另一个问题，就是会造成电脑的屏幕�
 Win+R运行，调出运行框，输入“gpedit.msc”打开组策略。
 依次找到： **计算机配置**-**管理模版**-**系统**-**设备安装**--**设备安装限制**
 
-![image-20210724191523875](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210724191531.png)
+![image-20210724191531](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210724191531.png)
 
 接着在右侧找到“**阻止使用与下列设备安装程序类相匹配的驱动程序安装设备**”， 在上面**右键**，选择“**编辑**”
 
-![image-20210724191652817](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210724191652.png)
+![image-20210724191652](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210724191652.png)
 
-![image-20210724191740639](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210724191740.png)
+![image-20210724191740](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210724191740.png)
 
 
 
 打开设置对话框。 勾选“已启用”后点击“显示”输入设备的类GUID
 
-![image-20210724191914699](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210724191914.png)
+![image-20210724191914](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210724191914.png)
 
 ## 获取Synaptics Pointing Device的 类GUID
 Win+X打开设备管理器，然后点开鼠标和其他指针设备，在Synaptics Pointing Device上面右键，选择属性。
 
-![image-20210724191724332](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210724191724.png)
+![image-20210724191724](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210724191724.png)
 
 然后点开详细信息选项卡，点开属性选择列表，选择类 Guid
 
-![image-20210724191733081](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210724191733.png)
+![image-20210724191733](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210724191733.png)
 
 然后在类 Guid值上右键，选择复制。
 
-![image-20210724191749830](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210724191749.png)
+![image-20210724191749](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210724191749.png)
 
 ## 在组策略中 粘贴类Guid
 
-![image-20210724192243210](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210724192243.png)
+![image-20210724192243](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210724192243.png)
 
 ## 卸载Synaptics Pointing Device
 
-![image-20210724192556107](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210724192556.png)
+![image-20210724192556](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210724192556.png)
 
-![image-20210724192602915](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210724192602.png)
+![image-20210724192602](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210724192602.png)
 
-![image-20210724192758855](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210724192758.png)
+![image-20210724192758](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210724192758.png)

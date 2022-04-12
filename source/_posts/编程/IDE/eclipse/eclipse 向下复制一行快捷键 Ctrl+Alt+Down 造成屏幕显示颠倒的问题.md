@@ -15,10 +15,10 @@ eclipse中，向下复制一行的快捷键为Ctrl+Alt+Down快捷键,但是按�
 **禁用与eclipse冲突的软件的快捷键**
 这里冲突的是 **英特尔核芯显卡控制面板** 这个软件的的**图形选项**的快捷键：
 
-![image-20210728202935223](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210728202935.png)
+![image-20210728202935223](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210728202935.png)
 
 ### 如何禁用win10的Ctrl+Alt+Down快捷键
 在**桌面空白**处，按下**鼠标右键**，然后选择**图形选项**，然后选择**快捷键**，最后勾选**禁用**即可。
 如下图所示：
 
-![image-20210728202253098](https://gitee.com/XiaoLan223/images/raw/master/Blog/Sum/20210728202300.png)
+![image-20210728202253098](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210728202300.png)

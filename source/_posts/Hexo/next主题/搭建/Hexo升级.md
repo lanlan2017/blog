@@ -6,7 +6,7 @@ categories:
   - 搭建
 abbrlink: ff1c9b2c
 date: 2020-06-09 11:59:05
-updated: 2022-04-04 15:56:38
+updated: 2022-04-04 17:00:30
 ---
 # 问题描述
 最近推送到GitHub后,无法自动部署.GitHub上的错误报告说是某个依赖版本过低.

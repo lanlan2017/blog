@@ -18,7 +18,7 @@ updated: 2022-04-04 00:51:45
 
 # eclipse中拖动方法的位置
 在Outline中长按方法，并拖动其他方法的前面或后面即可：
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/programming/Idea/Eclipse/EclipseMoveMethodLocation/1.png)
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/programming/Idea/Eclipse/EclipseMoveMethodLocation/2.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/Idea/Eclipse/EclipseMoveMethodLocation/1.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/Idea/Eclipse/EclipseMoveMethodLocation/2.png)
 
 <!-- Blog/programming/Idea/Eclipse/EclipseMoveMethodLocation -->

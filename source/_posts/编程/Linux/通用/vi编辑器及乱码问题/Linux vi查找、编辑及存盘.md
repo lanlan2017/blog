@@ -12,20 +12,20 @@ updated: 2022-04-04 00:51:45
 ## 删除命令
 ### 删除字符
 #### 删除当前字符的命令 x
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/12.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/12.png)
 
 #### 命令5x 删除从当前光标开始的5个字符
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/13.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/13.png)
 
 ### 删除行
 #### 删除当前行的命令 dd
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/14.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/14.png)
 #### 删除从当前行开始的3行命令 3dd
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/15.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/15.png)
 ## 字符替换
 ### 替换光标处字符 r
 #### 将当前光标处字符替换为a：ra命令
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/16.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/16.png)
 ### 连续替换多个字符
 ~~将当前光标处开始的三个字符依次替换为abc，则需要按命令`rarbrc`~~
 
@@ -36,16 +36,16 @@ updated: 2022-04-04 00:51:45
 ### 取消上一次的编辑操作(undo)  u
 如：误删了一段正文，用u命令可撤销删除
 如：把文件中的所有abc字符串替换成xyz字符串， 用u命令可撤销替换
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/12.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/12.png)
 
 ### 重复上一次的编辑操作 圆点.
 按圆点键，可以重复上一次的编辑操作
 例如：按3dd命令删除了三行，然后按圆点键就再删除三行，接着连续按圆点键，则继续删除三行，每按一次删三行。
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/17.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/17.png)
 
 ## 文件操作命令
 ### 存盘退出
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/18.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/18.png)
 
 #### ZZ
 ```
@@ -85,86 +85,86 @@ test.txt line 3
 [root@localhost vi]#
 ```
 光标在第1行时，输入`:r test.txt<CR>`后：
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/19.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/19.png)
 
 ### 把当前文件的部分行写入文件
 写文件,把第50行至文件尾的内容写到文件file1中
 ```
 :50,$w file1<CR>
 ```
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/20.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/20.png)
 
 强制覆，把第50行到行尾的内容强制覆盖到文件file1中：
 ```
 :50,$w! file1<CR>
 ```
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/21.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/21.png)
 ## 剪贴板
 ### 删除，并拷贝到剪贴板
 删除第10-50行：
 ```
 :10,50d<CR>
 ```
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/24.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/24.png)
 
 删除文件首至当前行的部分：
 ```
 :1,.d<CR>
 ```
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/22.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/22.png)
 
 删除当前行到文件尾
 ```
 :.,$d<CR>
 ```
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/23.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/23.png)
 
 ### 不删除，拷贝到剪贴板(yank)
 ```
 :10,50y<CR>
 ```
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/26.png)
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/27.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/26.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/27.png)
 
 ### 粘贴剪贴板信息（paste）
 ```
 p
 ```
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/25.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/25.png)
 ## 块操作：复制与删除
 ### 复制
 复制第5-10行到第56行之下：
 ```
 :5,10co56<CR>
 ```
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/28.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/28.png)
 
 ### 移动
 移动第8-34行的内容到第78行的内容之下：
 ```
 :8,34m78<CR>
 ```
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/29.png)
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/30.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/29.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/30.png)
 ## 行合并、刷屏和状态显示
 ### 两行合并(Join)：J（shiff+j）
 需要注意的是这个J是大写的，也就是按shift+j进行输入，单独按j键是不会起效果的：
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/32.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/32.png)
 ### 两行合并末行命令 :j
 也可以使用在末行命令：
 ```
 :j
 ```
 当前行下面的行合并到当前行
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/31.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/31.png)
 
 ### 刷新屏幕显示(load)  Ctrl-l
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/33.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/33.png)
 
 ### 状态显示Ctrl-g
 在屏幕最下面一行列出正在编辑的文件的名字，总行数，当前行号，文件是否被修改过等信息
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/34.png)
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/35.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/34.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/35.png)
 
 ## 模式查找
 用“正则表达式”来描述一个字符串模式
@@ -177,19 +177,19 @@ p
 /[0-9][0-9]*
 ```
 vi好像只支持基本的正则表达式，扩展的正则表达式例如`.+`并不支持。
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/40.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/40.png)
 
 其实不是而是`.+`需要写成`.\+`
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/39.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/39.png)
 
 ### 继续查找命令
 n 向下查找下一个next
 N 向上查找下一个
 循环式搜索（向下搜索时遇到文件尾则回到文件头继续搜索）
 
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/36.png)
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/37.png)
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/38.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/36.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/37.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/38.png)
 
 ## 模式替换
 替换命令(substitution)

@@ -20,7 +20,7 @@ updated: 2022-04-04 00:51:45
 ```
 :nohlsearch
 ```
-![图片](https://gitee.com/XiaoLan223/images/raw/master/Blog/Programmin/Linux/General/VIEditorAndGarbledIssues/CancelSearchHighlight/1.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programmin/Linux/General/VIEditorAndGarbledIssues/CancelSearchHighlight/1.png)
 # 参考资料
 <https://www.jianshu.com/p/d0a287a26866>
 <https://blog.csdn.net/k7arm/article/details/77370181>

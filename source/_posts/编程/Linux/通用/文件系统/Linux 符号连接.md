@@ -24,14 +24,14 @@ lrwxrwxrwx 1 guest other 8 Jul 26 16:57 sym.link->users_on
 - 一旦建立了符号连接，删除操作**删除的是符号连接文件**，其它所有操作都将访问符号连接所引用的文件
 
 ## 符号连接的实现
-![](https://gitee.com/XiaoLan223/images/raw/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/5.png)
+![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/5.png)
 
 ## 符号连接中的相对路径
 若符号连接包含绝对路径名，引用绝对路径名
 若符号连接包含相对路径名，是相对于符号链接文件的位置(不是相对于调用进程的当前工作目录)
 
 设当前目录（bash进程的当前目录）为d
-![](https://gitee.com/XiaoLan223/images/raw/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/6.png)
+![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/6.png)
 
 ```
 ln -s  d1/dlb d1/dx

@@ -62,10 +62,10 @@ rm：是否删除普通文件 "useEnv.c"？y
 不允许对目录用ln命令建立硬连接
 一般来说,目录的link数=直属子目录数+2
 
-![](https://gitee.com/XiaoLan223/images/raw/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/3.png)
+![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/3.png)
 
 目录表的硬连接示意图：
-![](https://gitee.com/XiaoLan223/images/raw/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/4.png)
+![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/4.png)
 
 # 硬链接的作用
 可以对同一个文件起不同的文件名
