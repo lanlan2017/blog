@@ -169,13 +169,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">607</span>
+          <span class="site-state-item-count">608</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">201</span>
+        <span class="site-state-item-count">202</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -217,6 +217,149 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/40640d2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/40640d2/" class="post-title-link" itemprop="url">java反射调用方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-06-16 13:53:20" itemprop="dateCreated datePublished" datetime="2019-06-16T13:53:20+08:00">2019-06-16</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/%E5%8F%8D%E5%B0%84/" itemprop="url" rel="index"><span itemprop="name">反射</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/40640d2/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/40640d2/" data-xid="/blog/40640d2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="反射调用方法步骤"><a href="#反射调用方法步骤" class="headerlink" title="反射调用方法步骤"></a>反射调用方法步骤</h1><ul>
+<li>1.获取<code>Class</code>对象,使用<code>Class.forName(&quot;类的全限定名&quot;)</code>来加载类的实例,</li>
+<li>2.获取要调用的方法的<code>Method</code>对象,使用<code>Class对象.getMethod(&quot;方法名&quot;,形参列表)</code>获取要调用的方法.</li>
+<li>3.使用<code>Method对象.invoke(该方法的拥有者,实参列表)</code>调用方法.<ul>
+<li>方法的拥有者可以是类和实例,<ul>
+<li>如果是静态方法则拥有者设为类(<code>Class</code>对象),</li>
+<li>如果是实例方法,则方法的拥有者设置为实例(<code>Object</code>对象).这时就要求先创建好实例(<code>Object</code>对象). <ul>
+<li>创建实例时,可以通过调用无参构造方法来创建。<code>Class对象.newInstance()</code>可以调用无参构造器,创建默认实例</li>
+<li>创建实例时,也可以调用带参构造器,通过<code>Class对象.getConstructor(形参列表)</code>可以创建一个指定的构造器(<code>Constructor</code>),然后调用<code>Constructor对象.newInstance(实参列表);</code>就可创建指定参数的实例.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E:\<span class="title">workspace_web2</span>\<span class="title">TestReflect</span></span></span><br><span class="line"><span class="function">└─<span class="title">src</span></span></span><br><span class="line"><span class="function">  ├─<span class="title">test</span></span></span><br><span class="line"><span class="function">  │ └─<span class="title">Test.java</span></span></span><br><span class="line"><span class="function">  └─<span class="title">tools</span></span></span><br><span class="line"><span class="function">    └─<span class="title">Tools.java</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="Tool-java"><a href="#Tool-java" class="headerlink" title="Tool.java"></a>Tool.java</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tools;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tools</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    String sex;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> name</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> sex</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Tools</span><span class="params">(String name, String sex)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.sex = sex;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">publicStaticMethod</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公有 无参 静态 方法 被调用...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">publicStaticMethod</span><span class="params">(String arg1, String arg2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公有 带参 静态 方法 被调用...&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;    参数1:&quot;</span> + arg1 + <span class="string">&quot;,参数2:&quot;</span> + arg2);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">puablicInstanceMethod</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公有 无参 实例 方法 被调用...&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;Tools [name=&quot;</span> + name + <span class="string">&quot;, sex=&quot;</span> + sex + <span class="string">&quot;]&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">puablicInstanceMethod</span><span class="params">(String arg1, String arg2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公有 带参 实例 方法 被调用...&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;    参数1:&quot;</span> + arg1 + <span class="string">&quot;,参数2:&quot;</span> + arg2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Tools.java</code>中定义了一个带参的构造方法,以及无参的静态方法,带参的静态方法,无参的实例方法,带参的实例方法.下面使用反射来调用这些方法.</p>
+<h2 id="Test-java"><a href="#Test-java" class="headerlink" title="Test.java"></a>Test.java</h2><p>使用反射会抛出大量的异常,但是本文的重点在于反射,所以我把所有的异常简单的抛出.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Constructor;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line"><span class="comment">//         callPublicStaticMethod();</span></span><br><span class="line"><span class="comment">//         callPublicStaticMethod(&quot;Hello&quot;, &quot;World&quot;);</span></span><br><span class="line"><span class="comment">//         callPublicInstanceMethod();</span></span><br><span class="line">        callPublicInstanceMethod(<span class="string">&quot;Hello&quot;</span>, <span class="string">&quot;World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">callPublicStaticMethod</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Class&lt;?&gt; classIns = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">        <span class="comment">// getMethod第一个参数是方法名称,后面是方法的形参列表</span></span><br><span class="line">        Method method = classIns.getMethod(<span class="string">&quot;publicStaticMethod&quot;</span>);</span><br><span class="line">        <span class="comment">// invoke方法的第一个参数是该方法的调用者,</span></span><br><span class="line">        <span class="comment">// 如果是静态方法,则设置调用者为类,</span></span><br><span class="line">        <span class="comment">// 如果是实例方法,则调用者为实例</span></span><br><span class="line">        <span class="comment">// invoke后面的参数是方法的实参列表,不需要参数可以省略.</span></span><br><span class="line">        <span class="comment">// 调用类classIns的无参静态方法</span></span><br><span class="line">        method.invoke(classIns);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">callPublicStaticMethod</span><span class="params">(String arg1, String age2)</span> <span class="keyword">throws</span> Exception</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Class&lt;?&gt; classIns = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">        <span class="comment">// getMethod第一个参数是方法名称,后面是方法的形参列表</span></span><br><span class="line">        Method method = classIns.getMethod(<span class="string">&quot;publicStaticMethod&quot;</span>, String.class, String.class);</span><br><span class="line">        <span class="comment">// invoke方法的第一个参数是该方法的调用者,如果是静态方法,则设置调用者为类,如果是实例方法,则调用者为实例</span></span><br><span class="line">        <span class="comment">// invoke后面的参数是方法的实参列表,不需要参数可以不写</span></span><br><span class="line">        <span class="comment">// 调用类classIns的带参静态方法</span></span><br><span class="line">        method.invoke(classIns, arg1, age2);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">callPublicInstanceMethod</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 获取类</span></span><br><span class="line">        Class&lt;?&gt; class1 = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">        <span class="comment">// 根据参数列表获取构造器</span></span><br><span class="line">        Constructor&lt;?&gt; constructor = class1.getConstructor(String.class, String.class);</span><br><span class="line">        <span class="comment">// 创建对象</span></span><br><span class="line">        Object object = constructor.newInstance(<span class="string">&quot;小明&quot;</span>, <span class="string">&quot;男&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">        <span class="comment">// getMethod第一个参数是方法名称,后面的参数是方法的形参列表,没有参数可以不写</span></span><br><span class="line">        Method method = class1.getMethod(<span class="string">&quot;puablicInstanceMethod&quot;</span>);</span><br><span class="line">        <span class="comment">// 调用实例object的puablicInstanceMethod方法.</span></span><br><span class="line">        method.invoke(object);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">callPublicInstanceMethod</span><span class="params">(String arg1, String arg2)</span> <span class="keyword">throws</span> Exception</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 获取类</span></span><br><span class="line">        Class&lt;?&gt; class1 = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">        <span class="comment">// 根据参数列表获取构造器</span></span><br><span class="line">        Constructor&lt;?&gt; constructor = class1.getConstructor(String.class, String.class);</span><br><span class="line">        <span class="comment">// 创建对象</span></span><br><span class="line">        Object object = constructor.newInstance(<span class="string">&quot;小明&quot;</span>, <span class="string">&quot;男&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">        <span class="comment">// getMethod第一个参数是方法名称,后面的参数是方法的形参列表,没有参数可以不写</span></span><br><span class="line">        Method method = class1.getMethod(<span class="string">&quot;puablicInstanceMethod&quot;</span>, String.class, String.class);</span><br><span class="line">        <span class="comment">// invoke方法的第一个参数是该方法的调用者,</span></span><br><span class="line">        <span class="comment">// 如果是静态方法,则设置调用者为类,</span></span><br><span class="line">        <span class="comment">// 如果是实例方法,则调用者为实例</span></span><br><span class="line">        <span class="comment">// invoke后面的参数是方法的实参列表,</span></span><br><span class="line">        <span class="comment">// 调用实例object的puablicInstanceMethod方法.</span></span><br><span class="line">        method.invoke(object, arg1, arg2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="调用静态方法"><a href="#调用静态方法" class="headerlink" title="调用静态方法"></a>调用静态方法</h2><h3 id="调用无参的静态方法"><a href="#调用无参的静态方法" class="headerlink" title="调用无参的静态方法"></a>调用无参的静态方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">callPublicStaticMethod</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Class&lt;?&gt; classIns = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">    <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">    <span class="comment">// getMethod第一个参数是方法名称,后面是方法的形参列表</span></span><br><span class="line">    Method method = classIns.getMethod(<span class="string">&quot;publicStaticMethod&quot;</span>);</span><br><span class="line">    <span class="comment">// invoke方法的第一个参数是该方法的调用者,如果是静态方法,则设置调用者为类,如果是实例方法,则调用者为实例</span></span><br><span class="line">    <span class="comment">// invoke后面的参数是方法的实参列表,不需要参数可以不写</span></span><br><span class="line">    <span class="comment">// 调用类classIns的无参静态方法</span></span><br><span class="line">    method.invoke(classIns);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">公有 无参 静态 方法 被调用...</span><br></pre></td></tr></table></figure>
+<h3 id="调用带参的静态方法"><a href="#调用带参的静态方法" class="headerlink" title="调用带参的静态方法"></a>调用带参的静态方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">callPublicStaticMethod</span><span class="params">(String arg1, String age2)</span> <span class="keyword">throws</span> Exception</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Class&lt;?&gt; classIns = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">    <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">    <span class="comment">// getMethod第一个参数是方法名称,后面是方法的形参列表</span></span><br><span class="line">    Method method = classIns.getMethod(<span class="string">&quot;publicStaticMethod&quot;</span>, String.class, String.class);</span><br><span class="line">    <span class="comment">// invoke方法的第一个参数是该方法的调用者,如果是静态方法,则设置调用者为类,如果是实例方法,则调用者为实例</span></span><br><span class="line">    <span class="comment">// invoke后面的参数是方法的实参列表,不需要参数可以不写</span></span><br><span class="line">    <span class="comment">// 调用类classIns的带参静态方法</span></span><br><span class="line">    method.invoke(classIns, arg1, age2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="运行效果-1"><a href="#运行效果-1" class="headerlink" title="运行效果"></a>运行效果</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">公有 带参 静态 方法 被调用...</span><br><span class="line">    参数<span class="number">1</span>:Hello,参数<span class="number">2</span>:World</span><br></pre></td></tr></table></figure>
+<h2 id="调用实例方法"><a href="#调用实例方法" class="headerlink" title="调用实例方法"></a>调用实例方法</h2><h3 id="调用无参实例方法"><a href="#调用无参实例方法" class="headerlink" title="调用无参实例方法"></a>调用无参实例方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">callPublicInstanceMethod</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 获取类</span></span><br><span class="line">    Class&lt;?&gt; class1 = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">    <span class="comment">// 根据参数列表获取构造器</span></span><br><span class="line">    Constructor&lt;?&gt; constructor = class1.getConstructor(String.class, String.class);</span><br><span class="line">    <span class="comment">// 创建对象</span></span><br><span class="line">    Object object = constructor.newInstance(<span class="string">&quot;小明&quot;</span>, <span class="string">&quot;男&quot;</span>);</span><br><span class="line">    <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">    <span class="comment">// getMethod第一个参数是方法名称,后面的参数是方法的形参列表,没有参数可以不写</span></span><br><span class="line">    Method method = class1.getMethod(<span class="string">&quot;puablicInstanceMethod&quot;</span>);</span><br><span class="line">    <span class="comment">// 调用实例object的puablicInstanceMethod方法.</span></span><br><span class="line">    method.invoke(object);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行效果:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">公有 无参 实例 方法 被调用...</span><br><span class="line">Tools [name=小明, sex=男]</span><br></pre></td></tr></table></figure>
+<h3 id="调用带参实例方法"><a href="#调用带参实例方法" class="headerlink" title="调用带参实例方法"></a>调用带参实例方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">callPublicInstanceMethod</span><span class="params">(String arg1, String arg2)</span> <span class="keyword">throws</span> Exception</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 获取类</span></span><br><span class="line">    Class&lt;?&gt; class1 = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">    <span class="comment">// 根据参数列表获取构造器</span></span><br><span class="line">    Constructor&lt;?&gt; constructor = class1.getConstructor(String.class, String.class);</span><br><span class="line">    <span class="comment">// 创建对象</span></span><br><span class="line">    Object object = constructor.newInstance(<span class="string">&quot;小明&quot;</span>, <span class="string">&quot;男&quot;</span>);</span><br><span class="line">    <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">    <span class="comment">// getMethod第一个参数是方法名称,后面的参数是方法的形参列表,没有参数可以不写</span></span><br><span class="line">    Method method = class1.getMethod(<span class="string">&quot;puablicInstanceMethod&quot;</span>, String.class, String.class);</span><br><span class="line">    <span class="comment">// invoke方法的第一个参数是要调用方法的拥有者,后面剩下的参数是该方法的实参列表</span></span><br><span class="line">    method.invoke(object, arg1, arg2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行效果:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">公有 带参 实例 方法 被调用...</span><br><span class="line">    参数<span class="number">1</span>:Hello,参数<span class="number">2</span>:World</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1453,129 +1596,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/b4dd4730/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/b4dd4730/" class="post-title-link" itemprop="url">如何插入目录</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-05-27 17:24:05" itemprop="dateCreated datePublished" datetime="2019-05-27T17:24:05+08:00">2019-05-27</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/Office/" itemprop="url" rel="index"><span itemprop="name">Office</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/Office/word/" itemprop="url" rel="index"><span itemprop="name">word</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/b4dd4730/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/b4dd4730/" data-xid="/blog/b4dd4730/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>187</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Word如何插入目录"><a href="#Word如何插入目录" class="headerlink" title="Word如何插入目录"></a>Word如何插入目录</h1><h2 id="插入标题"><a href="#插入标题" class="headerlink" title="插入标题"></a>插入标题</h2><p>首先选中一段文本:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Office/Word/MakeTOC/1.png" alt="这里有一张图片"><br>然后点击<code>开始</code>,点击<code>段落</code>区域右下角的小箭头,然后点击<code>缩进和间距</code>选项卡,<code>常规</code>,然后在<code>大纲级别</code>下拉框中选择标题的级别,我这里选择<code>2级</code>:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Office/Word/MakeTOC/2.png" alt="这里有一张图片"><br>此时就可以插入标题了:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Office/Word/MakeTOC/3.png" alt="这里有一张图片"></p>
-<h2 id="更新目录"><a href="#更新目录" class="headerlink" title="更新目录"></a>更新目录</h2><p>点击<code>引用</code>,然后在最左边的<code>目录框</code>中,选择点击<code>更新目录</code>即可:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Office/Word/MakeTOC/4.png" alt="这里有一张图片"></p>
-<h2 id="取消标题"><a href="#取消标题" class="headerlink" title="取消标题"></a>取消标题</h2><p>取消标题和插入标题类似,在<code>开始&gt;段落&gt;缩进和间距&gt;常规&gt;大纲级别</code>选择<code>正文文本</code>即可:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Office/Word/MakeTOC/5.png" alt="这里有一张图片"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Office/Word/MakeTOC/6.png" alt="这里有一张图片"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/41/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/41/">41</a><span class="page-number current">42</span><a class="page-number" href="/blog/page/43/">43</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/61/">61</a><a class="extend next" rel="next" href="/blog/page/43/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1650,7 +1670,7 @@
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
   <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/page/42/"}</script>
   <script src="/blog/js/third-party/quicklink.js"></script>
-<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/page/42/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-mzjszagu6-lanlan2017.vercel.app","placeholder":"请填写邮箱以便接收回复通知","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/page/42/"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.waline.el).then(() => 
