@@ -3,10 +3,10 @@ title: 如何使用FrontAwesome图标
 categories: 
   - Hexo
   - next主题
-  - 搭建
+  - 个性化
 abbrlink: 4181f9ed
 date: 2019-03-11 21:02:57
-updated: 2022-04-04 15:56:38
+updated: 2022-04-04 17:00:30
 ---
 # 选择图标
 到[http://www.fontawesome.com.cn/faicons/](http://www.fontawesome.com.cn/faicons/)这个地方搜索一个你喜欢的图标.

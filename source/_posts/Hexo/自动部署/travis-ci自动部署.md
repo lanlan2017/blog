@@ -2,12 +2,14 @@
 title: travis-ci自动部署
 categories: 
   - Hexo
-  - next主题
   - 自动部署
 abbrlink: 13f63c39
 date: 2019-11-05 10:29:38
-updated: 2022-04-04 00:51:44
+updated: 2022-04-13 09:34:42
 ---
+# 本文似乎过时了
+
+
 # 获取Token
 登陆Github,然后获取token,网上教程一堆。省略
 # 配置Token

@@ -2,11 +2,10 @@
 title: PicGo GitHub图床
 categories: 
   - Hexo
-  - next主题
-  - 搭建
+  - 图床
 abbrlink: b19c6a80
 date: 2019-11-22 12:59:46
-updated: 2022-04-04 15:56:38
+updated: 2022-04-13 09:32:17
 ---
 # 生成github token
 以此点击**github头像**，选择**Setting**，然后下来到最后，选择**Developer settings**，然后选择最下面的**Personal access tokens**菜单，即可进入token设置页面。

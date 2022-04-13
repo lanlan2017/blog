@@ -2,11 +2,10 @@
 title: PicGo gitee图床
 categories: 
   - Hexo
-  - next主题
-  - 搭建
+  - 图床
 abbrlink: 380c40ce
 date: 2021-05-20 17:31:42
-updated: 2022-04-04 15:56:38
+updated: 2022-04-13 09:32:17
 ---
 # 本文已过时
 gitee已经开启防盗链。
