@@ -18,8 +18,10 @@ $ git version
 git version 2.32.0.windows.1
 
 ```
+<!-- more -->
+
 ## 更新git版本
-## git update
+### git update
 ```
 18190@DESKTOP-SH3MQPI MINGW64 /g/Blog
 $ git update
@@ -34,15 +36,13 @@ Download and install Git for Windows 2.34.1 [N/y]? N
 ```
 `git update`已经不推荐使用了，应该使用：`git update-git-for-windows`
 
-## git update-git-for-windows
-
+### git update-git-for-windows
 ```
 18190@DESKTOP-SH3MQPI MINGW64 /g/Blog
 $ git update-git-for-windows
 Git for Windows 2.32.0.windows.1 (64-bit)
 Update 2.34.1.windows.1 is available
 Download and install Git for Windows 2.34.1 [N/y]? y
-
 ```
 
 ## 参考链接

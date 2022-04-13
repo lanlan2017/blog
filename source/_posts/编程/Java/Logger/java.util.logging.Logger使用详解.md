@@ -30,6 +30,7 @@ updated: 2022-04-04 00:51:44
 
 **logger默认的级别是INFO**，比INFO更低的日志将不显示。
 
+<!-- more -->
 可以通过操作Logger上的几个方法来得到不同级别的信息输出。如下列范例：
 ## 示例 不同级别的日志方法
 
@@ -70,7 +71,7 @@ java.util.logging.ConsoleHandler.formatter = java.util.logging.SimpleFormatter
 ```
 Logger默认的输出媒介控制器(Handler)是java.util.logging.ConsolerHandler，也就是将信息输出至控制台。一个Logger可以拥有多个handler，每个handler可以有自己的日志级别，在通过Logger的级别限制后，实际上还要再经过handler的级别限制。所以在上面的范例中**如果想要看到所有的信息，则必须同时设定Logger与ConsoleHandler的级别**。下面的范例示范了如何设定：
 
-<!-- more -->
+
 
 ## 示例 自定义Handler_显示所有的日志
 ```java G:\dev2\idea_workspace\MyJavaTools\Demo\src\logger\LoggingDemo1.java

@@ -14,6 +14,8 @@ MMD 的脚注语法得到广泛的传播和认可，大部分的 Markdown 编辑
 npm install hexo-reference --save
 ```
 便可在文章中使用相关语法插入脚注了。
+<!-- more -->
+
 ## 示例
 
 <pre>

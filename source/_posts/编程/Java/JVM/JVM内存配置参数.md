@@ -9,7 +9,6 @@ updated: 2022-04-04 00:51:44
 ---
 # JVM内存配置参数
 
-
 |参数|描述|
 |:---|:---|
 |`-Xmx`|堆的最大堆|
@@ -17,6 +16,7 @@ updated: 2022-04-04 00:51:44
 |`-Xmn`|新生代大小|
 |`-XX：Survivor-Ratio=8`|新生代中Eden区与**一个Survivor区**的空间比例是8∶1|
 
+<!-- more -->
 Survivor有From和to两个区域。
 
 -XX:SurvivorRatio    设置新生代中eden和S0/S1空间的比例
