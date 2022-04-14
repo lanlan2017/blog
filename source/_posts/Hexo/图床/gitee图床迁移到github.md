@@ -22,7 +22,7 @@ gitee给图片加防盗链了，搭建在gitee pages的文章可以访问gitee�
 
 此时直接使用github的import功能，导入gitee的仓库即可，然后新仓库名可与gitee的仓库名相同。
 
-![image-20220413150718425](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20220413150718.png)
+![image-20220413150718425](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2022/04/20220413150718.png)
 
 # github上有同名仓库时
 
@@ -35,14 +35,14 @@ gitee给图片加防盗链了，搭建在gitee pages的文章可以访问gitee�
 又因为当时懒得批量修改旧文章中的图片链接，所以旧文章中就继续使用github仓库的图片。
 
 ## import时换一个仓库名
-
-![image-20220413145816797](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20220413145826.png)
+因为新旧图床的仓库名都是images，所以在github上导入gitee仓库时，不能再使用images作为仓库名，此时，更换一个仓库名即可。
+![image-20220413145816797](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2022/04/20220413145826.png)
 
 ## 合并到github同名仓库中
+在github上导入gitee仓库，这种方式也是可以使用的，但是这样我github上就有了新旧两个仓库作为图床，不便于统一管理。
+所以我打算把新旧两个图床仓库都合并到github的images仓库上。
 
-github的import功能无法导入到已有的仓库中。
-
-可以先把gitee仓库和github仓库在本地合并好之后，再推送到github上。
+具体做法就是：把gitee仓库和github仓库在本地合并好之后，再推送到github上。
 
 ### 下载gitee上的图床仓库
 
@@ -52,9 +52,9 @@ github的import功能无法导入到已有的仓库中。
 
 #### 打包成zip下载
 
-![image-20220413095024](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum2022/20220413095024.png)
+![image-20220413095024](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2022/04/20220413095024.png)
 
-![image-20220413110627661](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20220413110634.png)
+![image-20220413110627661](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2022/04/20220413110634.png)
 
 
 
@@ -66,30 +66,19 @@ github的import功能无法导入到已有的仓库中。
 
 使用git clone命令下载时，git会给我们建立本地与github远程仓库的联系。我们合并后再推送会github会更简单。
 
-
-
-继续以压缩包方式下载github上的图库仓库
-
-![image-20220413130911664](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20220413130911.png)
-
-
-下载好两个压缩包后，解压到本地。
-
-![image-20220413133953129](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20220413134026.png)
-
 ### 合并到本地github仓库
 
 复制gitee本地仓库中的所有文件和目录
 
-![image-20220413134151026](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20220413134151.png)
+![image-20220413134151026](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2022/04/20220413134151.png)
 
 进入github本地仓库，然后粘贴。
 
 **如果遇到重复的文件，则选择跳过**。
 
-![image-20220413134234111](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20220413134234.png)
+![image-20220413134234111](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2022/04/20220413134234.png)
 
-这样就算合并好了，由于都是图片，也没什么不会出现冲突。
+这样就算合并好了，由于都是图片，也不会出现冲突。
 
 ### 推送到github
 

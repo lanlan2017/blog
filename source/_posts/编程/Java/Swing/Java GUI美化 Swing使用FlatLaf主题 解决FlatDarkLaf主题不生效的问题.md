@@ -38,7 +38,7 @@ UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
 
 跨平台的外观如下图所示：
 
-![image-20210910092750337](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210910092757.png)
+![image-20210910092750337](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/09/20210910092757.png)
 
 另一种就是和系统一样的外观：
 
@@ -48,7 +48,7 @@ UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
 如下图所示：
 
-![image-20210910093214534](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210910093214.png)
+![image-20210910093214534](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/09/20210910093214.png)
 
 这种方式比上面的跨平台外观要好看一些。
 
@@ -134,7 +134,7 @@ public class MainFrom {
 ```
 #### 美化后的外观如下
 
-![image-20210910095538356](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210910095538.png)
+![image-20210910095538356](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/09/20210910095538.png)
 
 这种方式比系统默认的要更加美观一些。
 
@@ -188,7 +188,7 @@ public static void main(String[] args) {
 
 #### 成果示例
 使用暗色主题成功效果：
-![image-20210823220726108](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210823220726.png)
+![image-20210823220726108](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823220726.png)
 
 如果你没有写`SwingUtilities.updateComponentTreeUI(frame);`，虽然你使用的是暗色的主题，但是运行结果不会显示暗色主题，默认使用的是亮色的主题
 
@@ -209,7 +209,7 @@ public static void main(String[] args) {
 
 此时显示的效果如下图所示：
 
-![image-20210823221038003](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210823221038.png)
+![image-20210823221038003](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823221038.png)
 
 #### 为什么不推荐先创建组件再更改外观
 先创建组件，然后再更改外观，可能会造成其他的奇奇怪怪的问题。

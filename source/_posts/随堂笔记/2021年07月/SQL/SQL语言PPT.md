@@ -67,7 +67,7 @@ IBM公司对其进行了修改，并用于其SYSTEM R关系数据库系统中；
 
 SQL语言支持数据库的三级模式结构，如图3.1所示。其中**外模式对应于==视图==**和部分基本表，**模式对应于==基本表==**，**内模式对应于==存储文件==**。 
 
-![image-20210722101821563](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210722101821.png)
+![image-20210722101821563](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/07/20210722101821.png)
 
 # 3.2  SQL数据定义
 

@@ -26,6 +26,6 @@ updated: 2022-04-04 15:13:22
 [chrome://settings/?search=%E6%B8%85%E9%99%A4%E6%B5%8F%E8%A7%88%E6%95%B0%E6%8D%AE](chrome://settings/?search=%E6%B8%85%E9%99%A4%E6%B5%8F%E8%A7%88%E6%95%B0%E6%8D%AE)
 
 如图所示：
-![image-20210907095420866](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210907095421.png)
+![image-20210907095420866](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/09/20210907095421.png)
 # 验证
 这样重新进入leetcode网站，就可以成功弹出登录框了。

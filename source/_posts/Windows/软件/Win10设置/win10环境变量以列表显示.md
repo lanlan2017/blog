@@ -11,7 +11,7 @@ updated: 2022-04-04 00:51:44
 # 问题描述
 今天我调整了Path环境变量的顺序，当我想再次编辑Path环境变量的时候，显示的不是列表，而是一个文本框：
 
-![image-20210729123502151](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210729123509.png)
+![image-20210729123502151](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/07/20210729123509.png)
 
 # 原因：第一个地址以%开头造成的
 这是因为Path环境变量的第一个地址以%开头造成的
@@ -60,4 +60,4 @@ C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\Wind
 
 ### 列表形式
 这样再次编辑path显示的就是列表形式的了：
-![image-20210729123536129](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210729123536.png)
+![image-20210729123536129](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/07/20210729123536.png)

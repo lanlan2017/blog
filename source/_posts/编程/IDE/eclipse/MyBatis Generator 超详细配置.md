@@ -8,18 +8,18 @@ date: 2021-08-29 21:05:55
 updated: 2022-04-04 00:51:45
 ---
 #  创建Mybatis Generator配置文件
-![image-20210829211230965](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210829211231.png)
-![image-20210829211255484](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210829211255.png)
+![image-20210829211230965](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210829211231.png)
+![image-20210829211255484](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210829211255.png)
 
 # 引入外部配置文件
 MyBatis Generator config 是可以引入外部配置文件的，路径为相对于当前配置文件的路径。
 在 `<generatorConfiguration>`下按下`alt+/`启动代码提示，然后选择properties
 
-![image-20210829211525479](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210829211525.png)
+![image-20210829211525479](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210829211525.png)
 
 然后在生成的properties标签里面按下`alt+/`，选择`resource`。
 
-![image-20210829211610728](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210829211610.png)
+![image-20210829211610728](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210829211610.png)
 
 输入properties文件的相对于MybatisGenerator配置文件的相对路径：
 ```xml
@@ -29,7 +29,7 @@ MyBatis Generator config 是可以引入外部配置文件的，路径为相对�
 </generatorConfiguration>
 ```
 
-![image-20210829211751581](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210829211751.png)
+![image-20210829211751581](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210829211751.png)
 
 如果配置正确的话，按下`Ctrl+鼠标左键`，点击properties的文件名，可以跳转到properties文件。
 
@@ -366,7 +366,7 @@ domainObjectName属性表示生成的PO类的类名，如果domainObjectName不�
 ```
 # Eclipse运行MyBatisGenarator
 在MybatisGenarator的配置文件上右键，选择 Run As，然后选择Run MyBatis Generator即可。
-![image-20210829222745789](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210829222745.png)
+![image-20210829222745789](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210829222745.png)
 
 # 生成的效果
 

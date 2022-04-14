@@ -17,12 +17,12 @@ updated: 2022-04-04 00:51:45
 ## 正确的导入第三方jar方式
 
 也就是引入第三方jar的时候使用如下形式：
-![image-20210823222915600](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210823222915.png)
+![image-20210823222915600](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823222915.png)
 
 ### 错误的导入第三方jar方式
 
-![image-20210823223519983](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210823223520.png)
+![image-20210823223519983](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823223520.png)
 
 ## 查看导入的jar是否解压到可执行jar中
 
-![image-20210823223835983](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210823223836.png)
+![image-20210823223835983](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823223836.png)

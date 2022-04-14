@@ -35,7 +35,7 @@ F:\Program Files\scrcpy-win64-v1.17>
 
 这种情况下可以在电脑上的**设置**，**移动热点**页面看到已经连接到电脑热点的手机的IP地址，如下图所示：
 
-![image-20210729091633391](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210729091633.png)
+![image-20210729091633391](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/07/20210729091633.png)
 
 得到手机的IP地址（192.168.137.190）之后，和上面设置的端口号（65000）组合到一起即可得到手机的地址：
 
@@ -72,7 +72,7 @@ libpng warning: iCCP: cHRM chunk does not match sRGB
 
 ```
 
-![image-20210729093457108](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210729093457.png)
+![image-20210729093457108](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/07/20210729093457.png)
 
 ### 使用ScrcpyGui连接手机
 
@@ -84,7 +84,7 @@ libpng warning: iCCP: cHRM chunk does not match sRGB
 
 也可以在GUI里设置打开手机镜像的时候，关闭手机的屏幕。
 
-![image-20210729093252198](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210729093252.png)
+![image-20210729093252198](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/07/20210729093252.png)
 
 
 # 参考资料

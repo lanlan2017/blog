@@ -16,11 +16,11 @@ regedit
 
 然后按文件，导出，
 
-![image-20210823200124636](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210823200131.png)
+![image-20210823200124636](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823200131.png)
 
 导出范围选择全部：
 
-![image-20210823200153678](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210823200153.png)
+![image-20210823200153678](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823200153.png)
 
 ## 管理员身份打开CMD
 
@@ -38,7 +38,7 @@ reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\SynTP\Parameters\De
 
 可以打开注册表查看效果：
 
-![image-20210823200429194](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210823200429.png)
+![image-20210823200429194](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823200429.png)
 
 如果你怕上述命令有问题，也可以在注册表编辑区里面，手动创建上述内容。
 

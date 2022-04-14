@@ -15,11 +15,11 @@ Navicat中有两个地方可以输入sql命令，一个是**命令列界面**，
 
 如何打开**命令列界面**：
 
-![image-20210822161219842](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210822161220.png)
+![image-20210822161219842](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210822161220.png)
 
 这个命令列界面，和再cmd中使用的mysql界面是类似的：
 
-![image-20210822161429544](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210822161429.png)
+![image-20210822161429544](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210822161429.png)
 
 在命令列界面中输入的命令，是没有提示信息的，如上图所示。
 
@@ -27,10 +27,10 @@ Navicat中有两个地方可以输入sql命令，一个是**命令列界面**，
 
 ### 打开查询功能
 
-![image-20210822160826221](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210822160826.png)
+![image-20210822160826221](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210822160826.png)
 
 在查询界面中输入的命令有**提示信息**，并且右侧有**提示列表**
 
-![image-20210822162016734](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210822162016.png)
+![image-20210822162016734](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210822162016.png)
 
-![image-20210822161033909](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Sum/20210822161034.png)
+![image-20210822161033909](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210822161034.png)
