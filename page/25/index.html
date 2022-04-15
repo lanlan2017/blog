@@ -169,7 +169,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">608</span>
+          <span class="site-state-item-count">609</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -217,6 +217,146 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/5d0a8795/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/5d0a8795/" class="post-title-link" itemprop="url">Tomcat无法进入Manager App和Host Manager页面</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-12 09:55:01" itemprop="dateCreated datePublished" datetime="2021-03-12T09:55:01+08:00">2021-03-12</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/Tomcat/" itemprop="url" rel="index"><span itemprop="name">Tomcat</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/5d0a8795/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/5d0a8795/" data-xid="/blog/5d0a8795/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Tomcat无法进入Manager-App和Host-Manager页面"><a href="#Tomcat无法进入Manager-App和Host-Manager页面" class="headerlink" title="Tomcat无法进入Manager App和Host Manager页面"></a>Tomcat无法进入Manager App和Host Manager页面</h1><h2 id="解决无法进入Manager-App页面"><a href="#解决无法进入Manager-App页面" class="headerlink" title="解决无法进入Manager App页面"></a>解决无法进入Manager App页面</h2><p>进入tomcat安装目录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/tomcat/apache-tomcat-8.5.63/</span><br></pre></td></tr></table></figure>
+<h3 id="取消访问IP限制"><a href="#取消访问IP限制" class="headerlink" title="取消访问IP限制"></a>取消访问IP限制</h3><p>进入manager页面的META-INF目录:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd webapps/manager/META-INF</span><br></pre></td></tr></table></figure>
+<p>打开context.xml文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim context.xml</span><br></pre></td></tr></table></figure>
+<p>将最后一个标签中的Value标签注释掉，如下所示：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Context</span> <span class="attr">antiResourceLocking</span>=<span class="string">&quot;false&quot;</span> <span class="attr">privileged</span>=<span class="string">&quot;true&quot;</span> &gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">CookieProcessor</span> <span class="attr">className</span>=<span class="string">&quot;org.apache.tomcat.util.http.Rfc6265CookieProcessor&quot;</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">sameSiteCookies</span>=<span class="string">&quot;strict&quot;</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  &lt;Valve className=&quot;org.apache.catalina.valves.RemoteAddrValve&quot;</span></span><br><span class="line"><span class="comment">         allow=&quot;127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1&quot; /&gt; --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Manager</span> <span class="attr">sessionAttributeValueClassNameFilter</span>=<span class="string">&quot;java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Context</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加manager-gui角色以及tomcat用户名以及密码"><a href="#添加manager-gui角色以及tomcat用户名以及密码" class="headerlink" title="添加manager-gui角色以及tomcat用户名以及密码"></a>添加manager-gui角色以及tomcat用户名以及密码</h3><p>进入tomcat安装目录下的conf目录:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/tomcat/apache-tomcat-8.5.63/</span><br></pre></td></tr></table></figure>
+<p>进入conf目录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd conf</span><br></pre></td></tr></table></figure>
+<p>打开tomcat-user.xml：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim tomcat-users.xml </span><br></pre></td></tr></table></figure>
+<p>在最后一行的<code>&lt;tomcat-users&gt;</code>标签之中，，添加如下以下两行代码：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;manager-gui&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">&quot;tomcat&quot;</span> <span class="attr">password</span>=<span class="string">&quot;tomcat&quot;</span> <span class="attr">roles</span>=<span class="string">&quot;manager-gui&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>添加后的效果如下所示：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tomcat-users</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://tomcat.apache.org/xml&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://tomcat.apache.org/xml tomcat-users.xsd&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">version</span>=<span class="string">&quot;1.0&quot;</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!-- ...  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;manager-gui&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">&quot;tomcat&quot;</span> <span class="attr">password</span>=<span class="string">&quot;tomcat&quot;</span> <span class="attr">roles</span>=<span class="string">&quot;manager-gui&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tomcat-users</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="解决无法进入Host-Manager页面的问题"><a href="#解决无法进入Host-Manager页面的问题" class="headerlink" title="解决无法进入Host Manager页面的问题"></a>解决无法进入Host Manager页面的问题</h2><h3 id="取消访问IP限制-1"><a href="#取消访问IP限制-1" class="headerlink" title="取消访问IP限制"></a>取消访问IP限制</h3><p>打开webapps&#x2F;host-manager&#x2F;META-INF&#x2F;context.xml文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/tomcat/apache-tomcat-8.5.63/webapps/host-manager/META-INF</span><br><span class="line">vim context.xml</span><br></pre></td></tr></table></figure>
+<p>同样注释掉其中的Value标签：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Context</span> <span class="attr">antiResourceLocking</span>=<span class="string">&quot;false&quot;</span> <span class="attr">privileged</span>=<span class="string">&quot;true&quot;</span> &gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">CookieProcessor</span> <span class="attr">className</span>=<span class="string">&quot;org.apache.tomcat.util.http.Rfc6265CookieProcessor&quot;</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">sameSiteCookies</span>=<span class="string">&quot;strict&quot;</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  &lt;Valve className=&quot;org.apache.catalina.valves.RemoteAddrValve&quot;</span></span><br><span class="line"><span class="comment">         allow=&quot;127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1&quot; /&gt;  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Manager</span> <span class="attr">sessionAttributeValueClassNameFilter</span>=<span class="string">&quot;java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Context</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加admin-gui角色，并将该角色授予上面创建的tomcat用户"><a href="#添加admin-gui角色，并将该角色授予上面创建的tomcat用户" class="headerlink" title="添加admin-gui角色，并将该角色授予上面创建的tomcat用户"></a>添加admin-gui角色，并将该角色授予上面创建的tomcat用户</h3><p>进入Tomcat安装目录下的conf目录，打开tomcat-users.xml文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd opt/tomcat/apache-tomcat-8.5.63/conf</span><br><span class="line">vim tomcat-users.xml</span><br></pre></td></tr></table></figure>
+<p>添加一个角色admin-gui,然后将该角色授予上面创建好的tomcat用户：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- ...... --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;manager-gui&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;admin-gui&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">&quot;tomcat&quot;</span> <span class="attr">password</span>=<span class="string">&quot;tomcat&quot;</span> <span class="attr">roles</span>=<span class="string">&quot;manager-gui,admin-gui&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tomcat-users</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这样该tomcat用户既可以访问Manager App页面，也可以访问Host Manager页面。<br>或者为Host Manager重新指定一个用户也可以：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- ...... --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;manager-gui&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;admin-gui&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">&quot;tomcat&quot;</span> <span class="attr">password</span>=<span class="string">&quot;tomcat&quot;</span> <span class="attr">roles</span>=<span class="string">&quot;manager-gui&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">&quot;tomcat_host&quot;</span> <span class="attr">password</span>=<span class="string">&quot;tomcat_host&quot;</span> <span class="attr">roles</span>=<span class="string">&quot;admin-gui&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tomcat-users</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -551,11 +691,11 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="gitbook发布到github-pages"><a href="#gitbook发布到github-pages" class="headerlink" title="gitbook发布到github pages"></a>gitbook发布到github pages</h1><h2 id="初始化git"><a href="#初始化git" class="headerlink" title="初始化git"></a>初始化git</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-<h2 id="创建仓库和gh-pages分支"><a href="#创建仓库和gh-pages分支" class="headerlink" title="创建仓库和gh-pages分支"></a>创建仓库和gh-pages分支</h2><p>登录到Github，创建一个新的仓库，名称我们就命令为book，这样我就就得到了一个book的空仓库。<br>克隆仓库到本地：git clone <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#105;&#x74;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#109;">&#x67;&#105;&#116;&#64;&#x67;&#105;&#x74;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#109;</a>:USER_NAME&#x2F;book.git。<br>创建一个新分支：git checkout -b gh-pages，注意，分支名必须为gh-pages。<br>将分支push到仓库：git push -u origin gh-pages。<br>切换到主分支: git checkout master。</p>
+<h2 id="创建仓库和gh-pages分支"><a href="#创建仓库和gh-pages分支" class="headerlink" title="创建仓库和gh-pages分支"></a>创建仓库和gh-pages分支</h2><p>登录到Github，创建一个新的仓库，名称我们就命令为book，这样我就就得到了一个book的空仓库。<br>克隆仓库到本地：git clone <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#109;">&#x67;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#109;</a>:USER_NAME&#x2F;book.git。<br>创建一个新分支：git checkout -b gh-pages，注意，分支名必须为gh-pages。<br>将分支push到仓库：git push -u origin gh-pages。<br>切换到主分支: git checkout master。</p>
 <p>经过这一步处理，我们已经创建好gh-pages分支了，有了这个分支，Github会自动为你分配一个访问网址：<br>你可以在项目页面右下settings中看到：</p>
 <h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook build</span><br></pre></td></tr></table></figure>
 <p>这样会在项目根目录下生成_book目录,将这个目录清空</p>
-<h2 id="同步静态网站代码到分支"><a href="#同步静态网站代码到分支" class="headerlink" title="同步静态网站代码到分支"></a>同步静态网站代码到分支</h2><p>下面我们就可以将build好的静态网站代码同步到gh-pages分支中去了：<br>切换出master分支目录。我们需要将gh-pages分支内容存放到另一个目录中去。<br>克隆gh-pages分支：git clone -b gh-pages <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;">&#103;&#x69;&#x74;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;</a>:USERNAME&#x2F;book.git book-end。这步我们只克隆了gh-pages分支，并存放在一个新的目录book-end里面。</p>
+<h2 id="同步静态网站代码到分支"><a href="#同步静态网站代码到分支" class="headerlink" title="同步静态网站代码到分支"></a>同步静态网站代码到分支</h2><p>下面我们就可以将build好的静态网站代码同步到gh-pages分支中去了：<br>切换出master分支目录。我们需要将gh-pages分支内容存放到另一个目录中去。<br>克隆gh-pages分支：git clone -b gh-pages <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#x6f;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#x6f;&#109;</a>:USERNAME&#x2F;book.git book-end。这步我们只克隆了gh-pages分支，并存放在一个新的目录book-end里面。</p>
 <h2 id="手动部署"><a href="#手动部署" class="headerlink" title="手动部署"></a>手动部署</h2><p>清空本地gh-pages分支文件夹:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /e/Blog/MyGitBook_GithubPages/*</span><br></pre></td></tr></table></figure>
 <p>复制_book目录下的所有文件到gh-pages分支文件夹</p>
@@ -1421,164 +1561,6 @@ Blog/programming/Java/Swing/SwingSystemTrayProgram/8
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h1><h2 id="控制台中创建文字识别应用"><a href="#控制台中创建文字识别应用" class="headerlink" title="控制台中创建文字识别应用"></a>控制台中创建文字识别应用</h2><h2 id="获取key"><a href="#获取key" class="headerlink" title="获取key"></a>获取key</h2><h2 id="下载Java-SDK"><a href="#下载Java-SDK" class="headerlink" title="下载Java SDK"></a>下载Java SDK</h2><h2 id="创建Java-项目"><a href="#创建Java-项目" class="headerlink" title="创建Java 项目"></a>创建Java 项目</h2><h3 id="导入jar包"><a href="#导入jar包" class="headerlink" title="导入jar包"></a>导入jar包</h3><h3 id="运行文档中的测试类"><a href="#运行文档中的测试类" class="headerlink" title="运行文档中的测试类"></a>运行文档中的测试类</h3><h3 id="JSON转Java对象"><a href="#JSON转Java对象" class="headerlink" title="JSON转Java对象"></a>JSON转Java对象</h3><h3 id="使用单例模式创建客户端"><a href="#使用单例模式创建客户端" class="headerlink" title="使用单例模式创建客户端"></a>使用单例模式创建客户端</h3>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/c5a0d373/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/c5a0d373/" class="post-title-link" itemprop="url">Parameter number 1 is not an OUT parameter</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-09-02 11:57:29" itemprop="dateCreated datePublished" datetime="2020-09-02T11:57:29+08:00">2020-09-02</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Mybatis/" itemprop="url" rel="index"><span itemprop="name">Mybatis</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Mybatis/Debug/" itemprop="url" rel="index"><span itemprop="name">Debug</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/c5a0d373/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/c5a0d373/" data-xid="/blog/c5a0d373/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h1><p>今天复习的时候,运行以前的测试项目出现了如下错误:</p>
-<pre>
-DEBUG [main] ==&gt;  Preparing: { <mark>call insert_user( ?, ?, ?, ? )</mark> } 
-org.apache.ibatis.exceptions.PersistenceException: 
-&#35;&#35;&#35; Error updating database.  Cause: java.sql.SQLException: <mark>Parameter number 1 is not an OUT parameter</mark>
-&#35;&#35;&#35; SQL: { call insert_user( ?,         ?, ?, ? ) }
-&#35;&#35;&#35; Cause: java.sql.SQLException: Parameter number 1 is not an OUT parameter
-    at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
-    at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:200)
-    at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
-    at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
-    at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
-    at com.sun.proxy.$Proxy2.inserUser(Unknown Source)
-    at test.InserTest.main(InserTest.java:21)
-Caused by: java.sql.SQLException: Parameter number 1 is not an OUT parameter
-    at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
-    at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-    at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
-    at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
-    at com.mysql.cj.jdbc.CallableStatement.checkIsOutputParam(CallableStatement.java:643)
-    at com.mysql.cj.jdbc.CallableStatement.registerOutParameter(CallableStatement.java:1714)
-    at com.mysql.cj.jdbc.CallableStatement.registerOutParameter(CallableStatement.java:1722)
-    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-    at java.lang.reflect.Method.invoke(Method.java:498)
-    at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:78)
-    at com.sun.proxy.$Proxy4.registerOutParameter(Unknown Source)
-    at org.apache.ibatis.executor.statement.CallableStatementHandler.registerOutputParameters(CallableStatementHandler.java:110)
-    at org.apache.ibatis.executor.statement.CallableStatementHandler.parameterize(CallableStatementHandler.java:94)
-    at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:64)
-    at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
-    at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
-    at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
-    at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
-    at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
-    ... 5 more
-
-</pre>
-
-<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>这个项目需要调用数据库中的存储过程.由于是测试项目,我当时测试成功之后,就把对应的数据库表格和存储过程删除掉了。<br>今天测试的时候,我忘了事先在数据库中创建需要调用的存储过程<code>insert_user</code>。</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>创建需要的数据库表格,创建需要的存储过程<code>insert_user</code>。</p>
-
       
     </div>
 

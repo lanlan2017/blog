@@ -169,7 +169,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">608</span>
+          <span class="site-state-item-count">609</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -217,6 +217,303 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/fdae6905/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/fdae6905/" class="post-title-link" itemprop="url">Java Properties 操作配置文件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-11-26 18:53:21" itemprop="dateCreated datePublished" datetime="2018-11-26T18:53:21+08:00">2018-11-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E9%9B%86%E5%90%88/" itemprop="url" rel="index"><span itemprop="name">Java 集合</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/fdae6905/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/fdae6905/" data-xid="/blog/fdae6905/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Properties 继承于 Hashtable.表示一个持久的属性集.属性列表中每个键及其对应值都是一个字符串。Properties 类被许多Java类使用。例如，在获取环境变量时它就作为System.getProperties()方法的返回值。</p>
+<h1 id="基本使用步骤"><a href="#基本使用步骤" class="headerlink" title="基本使用步骤"></a>基本使用步骤</h1><h2 id="创建xxx-properties文件"><a href="#创建xxx-properties文件" class="headerlink" title="创建xxx.properties文件"></a>创建xxx.properties文件</h2><p>先在创建一个名为xxx.properties的文件，然后在里面写入键值对的信息。</p>
+<ul>
+<li>键和值用等号隔开，等号左边的是键，等号右边的是值。</li>
+<li>井号后面是注释。</li>
+</ul>
+<p>如下所示:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 部署网站的地址</span><br><span class="line">site = https://www.lansheng.net.cn/</span><br></pre></td></tr></table></figure>
+
+<h2 id="实例化properties类"><a href="#实例化properties类" class="headerlink" title="实例化properties类"></a>实例化properties类</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Properties()</code></td>
+<td align="left">创建一个无默认值的空属性列表。</td>
+</tr>
+<tr>
+<td align="left"><code>Properties(Properties defaults)</code></td>
+<td align="left">创建一个带有指定默认值的空属性列表。</td>
+</tr>
+</tbody></table>
+<h2 id="加载配置文件"><a href="#加载配置文件" class="headerlink" title="加载配置文件"></a>加载配置文件</h2><p>利用Properties中的load()方法加载配置文件,查看api可以看到有两个load()方法，如下表所示:</p>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>void load(InputStream inStream)</code></td>
+<td align="left">从输入流中读取属性列表（键和元素对）。</td>
+</tr>
+<tr>
+<td align="left"><code>void load(Reader reader)</code></td>
+<td align="left">按简单的面向行的格式从输入字符流中读取属性列表（键和元素对）。</td>
+</tr>
+<tr>
+<td align="left"><code>void loadFromXML(InputStream in)</code></td>
+<td align="left">将指定输入流中由 XML 文档所表示的所有属性加载到此属性表中。</td>
+</tr>
+</tbody></table>
+<p>load()方法可以从<code>.properties</code>文件对应的文件输入流中，加载到Properties类对象中。</p>
+<p>加载好了之后，文件中的键值对就已经保存在Properties类对象中了,可以对该对象中的信息进行读写。</p>
+<h2 id="读取键值对"><a href="#读取键值对" class="headerlink" title="读取键值对"></a>读取键值对</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>String getProperty(String key)</code></td>
+<td align="left">用指定的键在此属性列表中搜索属性。</td>
+</tr>
+<tr>
+<td align="left"><code>String getProperty(String key, String defaultValue)</code></td>
+<td align="left">用指定的键在属性列表中搜索属性。</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>String getProperty(String key)</code>用指定的键在此属性列表中搜索属性。<ul>
+<li>如果在此属性列表中未找到该键，则接着递归检查默认属性列表及其默认值。</li>
+<li>如果未找到属性，则此方法返回 null。 </li>
+<li>参数：key - 属性键。 </li>
+<li>返回：属性列表中具有指定键值的值。</li>
+</ul>
+</li>
+<li><code>String getProperty(String key, String defaultValue)</code>用指定的键在属性列表中搜索属性。<ul>
+<li>如果在属性列表中未找到该键，则接着递归检查默认属性列表及其默认值。</li>
+<li>如果未找到属性，则此方法返回默认值变量<code>defaultValue</code>。</li>
+<li>参数：key - 哈希表键。defaultValue - 默认值。 </li>
+<li>返回：属性列表中具有指定键值的值。</li>
+</ul>
+</li>
+</ul>
+<h2 id="设置键值对"><a href="#设置键值对" class="headerlink" title="设置键值对"></a>设置键值对</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Object setProperty(String key, String value)</code></td>
+<td align="left">调用 Hashtable 的方法 put。</td>
+</tr>
+</tbody></table>
+<p>调用 Hashtable 的方法 put。使用 getProperty 方法提供并行性。强制要求为属性的<code>键和值使用字符串</code>。返回值是 Hashtable 调用 put 的结果。 </p>
+<ul>
+<li>参数：<ul>
+<li>key - 要置于属性列表中的键。</li>
+<li>value - 对应于 key 的值。</li>
+</ul>
+</li>
+<li>返回：属性列表中指定键的<code>旧值</code>，如果没有值，则为 null。<h2 id="获取所有键"><a href="#获取所有键" class="headerlink" title="获取所有键"></a>获取所有键</h2></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Set&lt;String&gt; stringPropertyNames()</code></td>
+<td align="left">返回此属性列表中的<code>键集</code>，其中该键及其对应值是字符串，如果在主属性列表中未找到同名的键，则还包括默认属性列表中不同的键。</td>
+</tr>
+<tr>
+<td align="left"><code>Enumeration&lt;?&gt; propertyNames()</code></td>
+<td align="left">返回属性列表中所有<code>键的枚举</code>，如果在主属性列表中未找到同名的键，则包括默认属性列表中不同的键。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><code>stringPropertyNames()</code>方法返回此属性列表中的键集，其中该键及其对应值是字符串，如果在主属性列表中未找到同名的键，则还包括默认属性列表中不同的键。其键或值不是 String 类型的属性被忽略。 返回的 set 不受 Properties 对象支持。对此 Properties 的改变不能在该 set 中反映出来，反之亦然。就是说，你用setter方法改变了Property对象中的键值对后，键集中的键不会跟着改变，要想再次正确的遍历，你就要再调用一次stringPropertyNames()来获取更新后的键集。<br>返回：此属性列表中的<code>键集</code>，其中该键及其对应值是字符串，包括默认属性列表中的键。</p>
+</blockquote>
+<h2 id="写入输出流的方法"><a href="#写入输出流的方法" class="headerlink" title="写入输出流的方法"></a>写入输出流的方法</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>void list(PrintStream out)</code></td>
+<td align="left">将属性列表输出到指定的输出流。</td>
+</tr>
+<tr>
+<td align="left"><code>void list(PrintWriter out)</code></td>
+<td align="left">将属性列表输出到指定的输出流。</td>
+</tr>
+</tbody></table>
+<h2 id="写配置文件"><a href="#写配置文件" class="headerlink" title="写配置文件"></a>写配置文件</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>void store(OutputStream out, String comments)</code></td>
+<td align="left">以适合使用 load(InputStream) 方法加载到 Properties 表中的格式，将此 Properties 表中的属性列表（键和元素对）写入输出流。</td>
+</tr>
+<tr>
+<td align="left"><code>void store(Writer writer, String comments)</code></td>
+<td align="left">以适合使用 load(Reader) 方法的格式，将此 Properties 表中的属性列表（键和元素对）写入输出字符。</td>
+</tr>
+<tr>
+<td align="left"><code>void storeToXML(OutputStream os, String comment)</code></td>
+<td align="left">发出一个表示此表中包含的所有属性的 XML 文档。</td>
+</tr>
+<tr>
+<td align="left"><code>void storeToXML(OutputStream os, String comment, String encoding)</code></td>
+<td align="left">使用指定的编码发出一个表示此表中包含的所有属性的 XML 文档。</td>
+</tr>
+<tr>
+<td align="left">store()方法第一个参数表示输出流对象，第二个参数表示注释信息:</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<ul>
+<li>如果comments不为空，保存后的属性文件第一行会是#comments,表示注释信息；</li>
+<li>如果为空则没有注释信息,注释信息后面是属性文件的当前保存时间信息。</li>
+</ul>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><h2 id="读取一个配置"><a href="#读取一个配置" class="headerlink" title="读取一个配置"></a>读取一个配置</h2><p>我这里有一个配置文件<code>E:\Blog\blog5Copy\FM.properties</code>,内容如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 部署网站的地址</span><br><span class="line">site = https://www.lansheng.net.cn/</span><br></pre></td></tr></table></figure>
+<p>读入配置文件中site的值，如下所示:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> properties.test;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SiteProperties</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> filePath xxx.properties配置文件的路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 配置文件中的site配置项，也就是网站的地址信息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getSite</span><span class="params">(String filePath)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//1 实例化</span></span><br><span class="line">        Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">        String site = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> (InputStream inputStream = <span class="keyword">new</span> FileInputStream(filePath);)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 2加载配置文件到Properties对象中</span></span><br><span class="line">            properties.load(inputStream);</span><br><span class="line">            <span class="comment">// 3读取配置文件中的站点信息</span></span><br><span class="line">            site = properties.getProperty(<span class="string">&quot;site&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> site;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>测试:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    String filePath = <span class="string">&quot;E:\\Blog\\blog5Copy\\FM.properties&quot;</span>;</span><br><span class="line">    System.out.print(<span class="string">&quot;网站地址:&quot;</span>+SiteProperties.getSite(filePath));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">网站地址:https://www.lansheng.net.cn/</span><br></pre></td></tr></table></figure>
+<p>嗯，这里就读取成功了，目前暂时只需要读取功能，后面有需求了。再更新吧。</p>
+<h2 id="遍历配置文件"><a href="#遍历配置文件" class="headerlink" title="遍历配置文件"></a>遍历配置文件</h2><h3 id="SpecialWords-properties文件"><a href="#SpecialWords-properties文件" class="headerlink" title="SpecialWords.properties文件"></a>SpecialWords.properties文件</h3><p>文件路径:<code>Tools/src/property/reader/SpecialWords.properties</code>,该文件位于Tools项目的<code>property.reader</code>包下.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">id=ID</span><br><span class="line">MIME=M I M E</span><br><span class="line">url=URL</span><br><span class="line">GET=get</span><br><span class="line">CRUD=C R U D</span><br><span class="line">JavaEE=Java E E</span><br><span class="line">SpringMVC=Spring MVC</span><br></pre></td></tr></table></figure>
+<h3 id="PropertyTools-java文件"><a href="#PropertyTools-java文件" class="headerlink" title="PropertyTools.java文件"></a>PropertyTools.java文件</h3><p>文件路径:<code>Tools/src/property/reader/PropertyTools.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> property.reader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"><span class="keyword">import</span> res.reader.ResourceFileReader;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PropertyTools</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 1 实例化</span></span><br><span class="line">        Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">        <span class="comment">// 获取当前包下的配置文件路径</span></span><br><span class="line">        <span class="comment">// 注意这个路径的根目录是以src目录为根目录.</span></span><br><span class="line">        <span class="comment">// /Tools/src/property/reader/SpecialWords.properties对应的路径为:</span></span><br><span class="line">        <span class="comment">// /property/reader/SpecialWords.properties,/Tools/src不需要写出来</span></span><br><span class="line">        <span class="comment">// 2.获取配置文件的输入流</span></span><br><span class="line">            InputStream in = ResourceFileReader.class.getResourceAsStream(</span><br><span class="line">                <span class="string">&quot;/property/reader/SpecialWords.properties&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 3.加载配置文件</span></span><br><span class="line">            properties.load(in);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 4.获取所有key的Set集合</span></span><br><span class="line">        Set&lt;String&gt; keys = properties.stringPropertyNames();</span><br><span class="line">        String key;</span><br><span class="line">        String value;</span><br><span class="line">        <span class="comment">// 5.遍历所有的key</span></span><br><span class="line">        <span class="keyword">for</span> (Iterator&lt;String&gt; iterator = keys.iterator(); iterator.hasNext();)</span><br><span class="line">        &#123;</span><br><span class="line">            key = (String) iterator.next();</span><br><span class="line">            <span class="comment">// 取出对应key的value值</span></span><br><span class="line">            value = properties.getProperty(key);</span><br><span class="line">            System.out.println(<span class="string">&quot;key=&quot;</span> + key + <span class="string">&quot;,value=&quot;</span> + value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">key=GET,value=get</span><br><span class="line">key=MIME,value=M I M E</span><br><span class="line">key=CRUD,value=C R U D</span><br><span class="line">key=JavaEE,value=Java E E</span><br><span class="line">key=url,value=URL</span><br><span class="line">key=SpringMVC,value=Spring MVC</span><br><span class="line">key=id,value=ID</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html#method.summary">https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html#method.summary</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xudong-bupt/p/3758136.html">https://www.cnblogs.com/xudong-bupt/p/3758136.html</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/wangdajiao/article/details/54315237">https://blog.csdn.net/wangdajiao/article/details/54315237</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/i745763006/article/details/72475623">https://blog.csdn.net/i745763006/article/details/72475623</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Senton/article/details/4083127">Java读取Properties文件的六种方法</a><br><a target="_blank" rel="noopener" href="http://www.runoob.com/java/java-properties-class.html">Java Properties 类</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1376,165 +1673,6 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="我的问题"><a href="#我的问题" class="headerlink" title="我的问题"></a>我的问题</h1><p>我在<code>任务管理器</code>中的资源监视器中不小心关掉了文件资源管理器<code>explorer.exe</code>，然后就炸了，整个屏幕直接变蓝了，而其按下Win+R也无法调出运行窗口。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/windows/explorer/colseExplorer.png"></p>
 <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>不过还好<code>任务管理器</code>还可以使用，所以：进入任务管理器，点击<code>文件&gt;运行新任务</code>：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/windows/explorer/openStart.png"><br>然后输入<code>explorer</code>，按下回车即可启动文件资源管理器了，这样电脑就恢复正常了。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/windows/explorer/startExplorer.png"><br>启动其他程序也类似。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e44da/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/e44da/" class="post-title-link" itemprop="url">Linux 常用指令</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-11-11 16:35:46" itemprop="dateCreated datePublished" datetime="2018-11-11T16:35:46+08:00">2018-11-11</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/e44da/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/e44da/" data-xid="/blog/e44da/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.5k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我这里是在git-bash中运行的，因为懒得打开虚拟机了，在Linux终端上运行效果也一样。</p>
-<h1 id="文件目录相关命令"><a href="#文件目录相关命令" class="headerlink" title="文件目录相关命令"></a>文件目录相关命令</h1><h2 id="创建一个空白文件命令touch"><a href="#创建一个空白文件命令touch" class="headerlink" title="创建一个空白文件命令touch"></a>创建一个空白文件命令touch</h2><p>命令格式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch 新文件名</span><br></pre></td></tr></table></figure>
-<p>例如，在当前目录下创建一个test.txt的空白文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5/source/_posts/Linux</span><br><span class="line">$ ls -l</span><br><span class="line">total 8</span><br><span class="line">-rw-r--r-- 1 lan 197609 3622 11月 11 17:06 &#x27;Linux 常用指令.md&#x27;</span><br><span class="line">-rw-r--r-- 1 lan 197609 1537 11月  5 17:17  linux下删除目录及其子目录下某种类型文件.md</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5/source/_posts/Linux</span><br><span class="line">$ touch text.txt</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5/source/_posts/Linux</span><br><span class="line">$ ls -l</span><br><span class="line">total 8</span><br><span class="line">-rw-r--r-- 1 lan 197609 3622 11月 11 17:06 &#x27;Linux 常用指令.md&#x27;</span><br><span class="line">-rw-r--r-- 1 lan 197609 1537 11月  5 17:17  linux下删除目录及其子目录下某种类型文件.md</span><br><span class="line">-rw-r--r-- 1 lan 197609    0 11月 11 17:06  text.txt</span><br></pre></td></tr></table></figure>
-<h2 id="文件复制命令cp"><a href="#文件复制命令cp" class="headerlink" title="文件复制命令cp"></a>文件复制命令cp</h2><p><strong>命令格式</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp [option] source1 source2 source3 ... directory</span><br></pre></td></tr></table></figure>
-<p><strong>参数说明</strong></p>
-<ul>
-<li><code>-a</code>:是指archive的意思，也说是指复制所有的目录</li>
-<li><code>-d</code>:若源文件为连接文件(link file)，则复制连接文件属性而非文件本身</li>
-<li><code>-f</code>:强制(force)，若有重复或其它疑问时，不会询问用户，而强制复制</li>
-<li><code>-i</code>:若目标文件(destination)已存在，在覆盖时会先询问是否真的操作</li>
-<li><code>-l</code>:建立硬连接(hard link)的连接文件，而非复制文件本身</li>
-<li><code>-p</code>:与文件的属性一起复制，而非使用默认属性</li>
-<li><code>-r</code>:递归复制，用于目录的复制操作</li>
-<li><code>-s</code>:复制成符号连接文件(symbolic link)，即“快捷方式”文件</li>
-<li><code>-u</code>:若目标文件比源文件旧，更新目标文件</li>
-</ul>
-<p>例如将当前博客站点目录bolg5复制一份到到同级目录blog5copy:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5</span><br><span class="line">$ cd ..</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog</span><br><span class="line">$ cp -r bolg5 blog5copy</span><br></pre></td></tr></table></figure>
-<p>运行结束后，就复制了一份站点目录文件到同级目录(Blog)下的blog5copy目录了。这个blog5copy相当于一个博客站点目录的备份。</p>
-<h2 id="文件移动命令mv"><a href="#文件移动命令mv" class="headerlink" title="文件移动命令mv"></a>文件移动命令mv</h2><p><strong>命令格式</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv [-fiv] source destination</span><br></pre></td></tr></table></figure>
-<p><strong>参数说明</strong></p>
-<ul>
-<li><code>-f</code>:force，强制直接移动而不询问</li>
-<li><code>-i</code>:若目标文件(destination)已经存在，就会询问是否覆盖</li>
-<li><code>-u</code>:若目标文件已经存在，且源文件比较新，才会更新<h3 id="实例-移动文件到其他目录"><a href="#实例-移动文件到其他目录" class="headerlink" title="实例 移动文件到其他目录"></a>实例 移动文件到其他目录</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5dug/source/_posts/Linux</span><br><span class="line">$ mv &#x27;Linux 常用指令.md&#x27; ../../../../*5/source/_posts/Linux</span><br></pre></td></tr></table></figure>
-这个命令会把<code>/e/Blog/bolg5dug/source/_posts/Linux</code>目录下的<code>&#39;Linux 常用指令.md&#39;</code>文件移动到，<code>/e/Blog/bolg5/source/_posts/Linux</code>目录下。<h3 id="使用移动命令重命名文件"><a href="#使用移动命令重命名文件" class="headerlink" title="使用移动命令重命名文件"></a>使用移动命令重命名文件</h3>在当前目录下使用移动命令可以达到给文件重命名的效果：<br>为了不误删我之前写的文章，先来创建一个测试文件：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5/source/_posts/Linux</span><br><span class="line">$ touch test.txt</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5/source/_posts/Linux</span><br><span class="line">$ ls -l</span><br><span class="line">total 8</span><br><span class="line">-rw-r--r-- 1 lan 197609 2447 11月 11 16:58 &#x27;Linux 常用指令.md&#x27;</span><br><span class="line">-rw-r--r-- 1 lan 197609 1537 11月  5 17:17  linux下删除目录及其子目录下某种类型文件.md</span><br><span class="line">-rw-r--r-- 1 lan 197609    0 11月 11 16:59  test.txt</span><br></pre></td></tr></table></figure>
-使用mv命令重命名：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mv test.txt rename.txt</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5/source/_posts/Linux</span><br></pre></td></tr></table></figure>
-重命名结果：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ls -l</span><br><span class="line">total 8</span><br><span class="line">-rw-r--r-- 1 lan 197609 2447 11月 11 16:58 &#x27;Linux 常用指令.md&#x27;</span><br><span class="line">-rw-r--r-- 1 lan 197609 1537 11月  5 17:17  linux下删除目录及其子目录下某种类型文件.md</span><br><span class="line">-rw-r--r-- 1 lan 197609    0 11月 11 16:59  rename.txt</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5/source/_posts/Linux</span><br></pre></td></tr></table></figure>
-<h2 id="文件删除命令rm"><a href="#文件删除命令rm" class="headerlink" title="文件删除命令rm"></a>文件删除命令rm</h2></li>
-</ul>
-<p><strong>命令格式</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm [fir] 文件或目录</span><br></pre></td></tr></table></figure>
-<p><strong>参数说明</strong></p>
-<ul>
-<li><code>-f</code>:强制删除</li>
-<li><code>-i</code>:交互模式，在删除前询问用户是否操作</li>
-<li><code>-r</code>:递归删除，常用在目录的删除</li>
-</ul>
-<h3 id="无法删除的情况"><a href="#无法删除的情况" class="headerlink" title="无法删除的情况"></a>无法删除的情况</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> rm -rf latex/</span></span><br><span class="line">rm: cannot remove &#x27;latex/&#x27;: Device or resource busy</span><br></pre></td></tr></table></figure>
-<p>这是因为有程序在使用当前的目录，打开资源监视器，输入句柄(目录绝对路径)找到该程序，关闭该程序。然后就可以删除了。</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/liaojie970/p/6746230.html">https://www.cnblogs.com/liaojie970/p/6746230.html</a></p>
 
       
     </div>

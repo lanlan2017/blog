@@ -169,7 +169,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">608</span>
+          <span class="site-state-item-count">609</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -217,6 +217,126 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/5c5cd733/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/5c5cd733/" class="post-title-link" itemprop="url">两条有序链表 合并成一条有序链表</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-07-29 16:29:57" itemprop="dateCreated datePublished" datetime="2021-07-29T16:29:57+08:00">2021-07-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B407%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年07月</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B407%E6%9C%88/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/5c5cd733/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/5c5cd733/" data-xid="/blog/5c5cd733/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="合并有序链表"><a href="#合并有序链表" class="headerlink" title="合并有序链表"></a>合并有序链表</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 两条有序列表合并之后仍然有序</span></span><br><span class="line"><span class="comment"> * 同时不断遍历两个链表，取出小的追加到新的头节点后，直至两者其中一个为空</span></span><br><span class="line"><span class="comment"> * 再将另一者追加的新链表最后</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 两个有序的链表合并后得到的链表</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Node <span class="title">mergeOrderedLinkedList</span><span class="params">(Node p1, Node p2)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 创建一个头节点</span></span><br><span class="line">	Node head = <span class="keyword">new</span> Node();</span><br><span class="line">	<span class="comment">// 尾指针指向头节点</span></span><br><span class="line">	Node tail = head;</span><br><span class="line">	<span class="comment">// 遍历两个链表，短的链表接受后循环停止</span></span><br><span class="line">	<span class="keyword">while</span> (p1 != <span class="keyword">null</span> &amp;&amp; p2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">		<span class="comment">// 比较两个链表中的节点</span></span><br><span class="line">		<span class="comment">// 如果链表1的当前节点小</span></span><br><span class="line">		<span class="keyword">if</span> (p1.data &lt; p2.data) &#123;</span><br><span class="line">			<span class="comment">// 小的链表1的当前节点连接到尾节点上。</span></span><br><span class="line">			tail.next = p1;</span><br><span class="line">			<span class="comment">// 链表1的当前节点已经连接到结果链表上了，</span></span><br><span class="line">			<span class="comment">// 链表1的当前节点向前走一步</span></span><br><span class="line">			p1 = p1.next;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="comment">// 如果是链表2的当前节点比较小</span></span><br><span class="line">			<span class="comment">// 把链表2的当前节点接到合并链表的尾节点上</span></span><br><span class="line">			tail.next = p2;</span><br><span class="line">			<span class="comment">// 链表2的当前节点向前走一步</span></span><br><span class="line">			p2 = p2.next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 合并链表尾指针向前走一步</span></span><br><span class="line">		tail = tail.next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 长的链表剩下的部分接到尾节点上</span></span><br><span class="line">	tail.next = (p1 == <span class="keyword">null</span>) ? p2 : p1;</span><br><span class="line">	<span class="keyword">return</span> head.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a = &#123; <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">9</span> &#125;;</span><br><span class="line"><span class="keyword">int</span>[] b = &#123; <span class="number">2</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span> &#125;;</span><br><span class="line">Node nodeA = Node.createLinkByTail(a);</span><br><span class="line">Node nodeB = Node.createLinkByTail(b);</span><br><span class="line">Node.printNode(nodeA);</span><br><span class="line">Node.printNode(nodeB);</span><br><span class="line">Node mernNode = Node.mergeOrderedLinkedList(nodeA, nodeB);</span><br><span class="line">Node.printNode(mernNode);</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">head--&gt;<span class="number">1</span>--&gt;<span class="number">4</span>--&gt;<span class="number">5</span>--&gt;<span class="number">8</span>--&gt;<span class="number">9</span></span><br><span class="line">head--&gt;<span class="number">2</span>--&gt;<span class="number">3</span>--&gt;<span class="number">6</span>--&gt;<span class="number">7</span>--&gt;<span class="number">10</span>--&gt;<span class="number">11</span>--&gt;<span class="number">12</span></span><br><span class="line">head--&gt;<span class="number">1</span>--&gt;<span class="number">2</span>--&gt;<span class="number">3</span>--&gt;<span class="number">4</span>--&gt;<span class="number">5</span>--&gt;<span class="number">6</span>--&gt;<span class="number">7</span>--&gt;<span class="number">8</span>--&gt;<span class="number">9</span>--&gt;<span class="number">10</span>--&gt;<span class="number">11</span>--&gt;<span class="number">12</span></span><br></pre></td></tr></table></figure>
+<p>颠倒上面的数组的循序：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] b = &#123; <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">9</span> &#125;;</span><br><span class="line"><span class="keyword">int</span>[] a = &#123; <span class="number">2</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span> &#125;;</span><br></pre></td></tr></table></figure>
+<p>再次运行：<br>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">head--&gt;2--&gt;3--&gt;6--&gt;7--&gt;10--&gt;11--&gt;12</span><br><span class="line">head--&gt;1--&gt;4--&gt;5--&gt;8--&gt;9</span><br><span class="line">head--&gt;1--&gt;2--&gt;3--&gt;4--&gt;5--&gt;6--&gt;7--&gt;8--&gt;9--&gt;10--&gt;11--&gt;12</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://medium.com/@bittigermanager/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E5%BF%85%E8%AF%BB-merge-two-sorted-lists-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8-b3d64661657b">https://medium.com/@bittigermanager/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E5%BF%85%E8%AF%BB-merge-two-sorted-lists-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8-b3d64661657b</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/biezhihua/article/details/79935765">https://blog.csdn.net/biezhihua/article/details/79935765</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1360,189 +1480,6 @@
 <p>tail&#x3D;node</p>
 <img data-src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuMzguMCAoMjAxNDA0MTMuMjA0MSkKIC0tPgo8IS0tIFRpdGxlOiBkZW1vOCBQYWdlczogMSAtLT4KPHN2ZyB3aWR0aD0iNDM0cHQiIGhlaWdodD0iMTU0cHQiCiB2aWV3Qm94PSIwLjAwIDAuMDAgNDMzLjU5IDE1My41MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CjxnIGlkPSJncmFwaDAiIGNsYXNzPSJncmFwaCIgdHJhbnNmb3JtPSJzY2FsZSgxIDEpIHJvdGF0ZSgwKSB0cmFuc2xhdGUoNCAxNDkuNSkiPgo8dGl0bGU+ZGVtbzg8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSJub25lIiBwb2ludHM9Ii00LDQgLTQsLTE0OS41IDQyOS41ODksLTE0OS41IDQyOS41ODksNCAtNCw0Ii8+CjwhLS0gaGVhZCAtLT4KPGcgaWQ9Im5vZGUxIiBjbGFzcz0ibm9kZSI+PHRpdGxlPmhlYWQ8L3RpdGxlPgo8ZWxsaXBzZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBjeD0iMjcuMjk3NiIgY3k9Ii0xMjciIHJ4PSIyNy4wOTY2IiByeT0iMTgiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMjcuMjk3NiIgeT0iLTEyMy4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPmhlYWQ8L3RleHQ+CjwvZz4KPCEtLSBuMSAtLT4KPGcgaWQ9Im5vZGU0IiBjbGFzcz0ibm9kZSI+PHRpdGxlPm4xPC90aXRsZT4KPHBvbHlnb24gZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI5MC41OTUyLC0xMDkgOTAuNTk1MiwtMTQ1IDE0NC41OTUsLTE0NSAxNDQuNTk1LC0xMDkgOTAuNTk1MiwtMTA5Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEwNC41OTUiIHk9Ii0xMjMuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4xPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIxMTguNTk1LC0xMDkgMTE4LjU5NSwtMTQ1ICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxMzEuNTk1IiB5PSItMTIzLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+IDwvdGV4dD4KPC9nPgo8IS0tIGhlYWQmIzQ1OyZndDtuMSAtLT4KPGcgaWQ9ImVkZ2UzIiBjbGFzcz0iZWRnZSI+PHRpdGxlPmhlYWQmIzQ1OyZndDtuMTwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik01NC43ODk4LC0xMjdDNjIuODA3MSwtMTI3IDcxLjc1NDYsLTEyNyA4MC4yOTY5LC0xMjciLz4KPHBvbHlnb24gZmlsbD0iYmxhY2siIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iODAuNDI2LC0xMzAuNSA5MC40MjU5LC0xMjcgODAuNDI1OSwtMTIzLjUgODAuNDI2LC0xMzAuNSIvPgo8L2c+CjwhLS0gdGFpbCAtLT4KPGcgaWQ9Im5vZGUyIiBjbGFzcz0ibm9kZSI+PHRpdGxlPnRhaWw8L3RpdGxlPgo8ZWxsaXBzZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBjeD0iMzAzLjA5MiIgY3k9Ii03MiIgcng9IjI3IiByeT0iMTgiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMzAzLjA5MiIgeT0iLTY4LjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+dGFpbDwvdGV4dD4KPC9nPgo8IS0tIG40IC0tPgo8ZyBpZD0ibm9kZTciIGNsYXNzPSJub2RlIj48dGl0bGU+bjQ8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjM3MS41ODksLTU0IDM3MS41ODksLTkwIDQyNS41ODksLTkwIDQyNS41ODksLTU0IDM3MS41ODksLTU0Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjM4NS41ODkiIHk9Ii02OC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPjQ8L3RleHQ+Cjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjM5OS41ODksLTU0IDM5OS41ODksLTkwICIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI0MTIuNTg5IiB5PSItNjguMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4gPC90ZXh0Pgo8L2c+CjwhLS0gdGFpbCYjNDU7Jmd0O240IC0tPgo8ZyBpZD0iZWRnZTIiIGNsYXNzPSJlZGdlIj48dGl0bGU+dGFpbCYjNDU7Jmd0O240PC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTMzMC4xMzYsLTcyQzMzOS43ODEsLTcyIDM1MC45LC03MiAzNjEuMjkyLC03MiIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIzNjEuMzYxLC03NS41MDAxIDM3MS4zNjEsLTcyIDM2MS4zNjEsLTY4LjUwMDEgMzYxLjM2MSwtNzUuNTAwMSIvPgo8L2c+CjwhLS0gbm9kZTEgLS0+CjxnIGlkPSJub2RlMyIgY2xhc3M9Im5vZGUiPjx0aXRsZT5ub2RlMTwvdGl0bGU+CjxlbGxpcHNlIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGN4PSIzMDMuMDkyIiBjeT0iLTE4IiByeD0iMzIuNDk0MiIgcnk9IjE4Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjMwMy4wOTIiIHk9Ii0xNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPm5vZGUxPC90ZXh0Pgo8L2c+CjwhLS0gbm9kZTEmIzQ1OyZndDtuNCAtLT4KPGcgaWQ9ImVkZ2UxIiBjbGFzcz0iZWRnZSI+PHRpdGxlPm5vZGUxJiM0NTsmZ3Q7bjQ8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMzI2LjI1LC0zMC43OTcyQzMzNy4wMDgsLTM3LjAxMDYgMzUwLjE5NSwtNDQuNjI2NyAzNjIuMjkxLC01MS42MTMzIi8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjM2MC44NjEsLTU0LjgyOTEgMzcxLjI3MSwtNTYuNzk5NyAzNjQuMzYyLC00OC43Njc1IDM2MC44NjEsLTU0LjgyOTEiLz4KPC9nPgo8IS0tIG4yIC0tPgo8ZyBpZD0ibm9kZTUiIGNsYXNzPSJub2RlIj48dGl0bGU+bjI8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjE4MC41OTUsLTEwOSAxODAuNTk1LC0xNDUgMjM0LjU5NSwtMTQ1IDIzNC41OTUsLTEwOSAxODAuNTk1LC0xMDkiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMTk0LjU5NSIgeT0iLTEyMy4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPjI8L3RleHQ+Cjxwb2x5bGluZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjIwOC41OTUsLTEwOSAyMDguNTk1LC0xNDUgIi8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjIyMS41OTUiIHk9Ii0xMjMuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4gPC90ZXh0Pgo8L2c+CjwhLS0gbjEmIzQ1OyZndDtuMiAtLT4KPGcgaWQ9ImVkZ2U0IiBjbGFzcz0iZWRnZSI+PHRpdGxlPm4xJiM0NTsmZ3Q7bjI8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNMTQ0Ljk5OCwtMTI3QzE1Mi45ODgsLTEyNyAxNjEuOTA2LC0xMjcgMTcwLjQxOSwtMTI3Ii8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjE3MC41MTQsLTEzMC41IDE4MC41MTQsLTEyNyAxNzAuNTE0LC0xMjMuNSAxNzAuNTE0LC0xMzAuNSIvPgo8L2c+CjwhLS0gbjMgLS0+CjxnIGlkPSJub2RlNiIgY2xhc3M9Im5vZGUiPjx0aXRsZT5uMzwvdGl0bGU+Cjxwb2x5Z29uIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iMjc2LjA5MiwtMTA5IDI3Ni4wOTIsLTE0NSAzMzAuMDkyLC0xNDUgMzMwLjA5MiwtMTA5IDI3Ni4wOTIsLTEwOSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIyOTAuMDkyIiB5PSItMTIzLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+MzwvdGV4dD4KPHBvbHlsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iMzA0LjA5MiwtMTA5IDMwNC4wOTIsLTE0NSAiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMzE3LjA5MiIgeT0iLTEyMy4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPiA8L3RleHQ+CjwvZz4KPCEtLSBuMiYjNDU7Jmd0O24zIC0tPgo8ZyBpZD0iZWRnZTUiIGNsYXNzPSJlZGdlIj48dGl0bGU+bjImIzQ1OyZndDtuMzwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0yMzQuNjM5LC0xMjdDMjQ0LjI4NCwtMTI3IDI1NS40MDMsLTEyNyAyNjUuNzk1LC0xMjciLz4KPHBvbHlnb24gZmlsbD0iYmxhY2siIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iMjY1Ljg2NCwtMTMwLjUgMjc1Ljg2NCwtMTI3IDI2NS44NjMsLTEyMy41IDI2NS44NjQsLTEzMC41Ii8+CjwvZz4KPCEtLSBuMyYjNDU7Jmd0O240IC0tPgo8ZyBpZD0iZWRnZTYiIGNsYXNzPSJlZGdlIj48dGl0bGU+bjMmIzQ1OyZndDtuNDwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0icmVkIiBkPSJNMzMwLjEzNiwtMTExLjY3OUMzNDAuMTgzLC0xMDUuNzY5IDM1MS44MjksLTk4LjkxODggMzYyLjU4NywtOTIuNTkwMiIvPgo8cG9seWdvbiBmaWxsPSJyZWQiIHN0cm9rZT0icmVkIiBwb2ludHM9IjM2NC41MTYsLTk1LjUxNjMgMzcxLjM2MSwtODcuNDI5MiAzNjAuOTY3LC04OS40ODI4IDM2NC41MTYsLTk1LjUxNjMiLz4KPC9nPgo8L2c+Cjwvc3ZnPgo='>
 
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/c525e78/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/c525e78/" class="post-title-link" itemprop="url">Hexo的PlantUML插件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-07-27 18:44:19" itemprop="dateCreated datePublished" datetime="2021-07-27T18:44:19+08:00">2021-07-27</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/%E7%BB%98%E5%9B%BE/" itemprop="url" rel="index"><span itemprop="name">绘图</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/c525e78/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/c525e78/" data-xid="/blog/c525e78/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Hexo-使用plantuml"><a href="#Hexo-使用plantuml" class="headerlink" title="Hexo 使用plantuml"></a>Hexo 使用plantuml</h1><p>推荐使用hexo-filter-krok插件，这个插件功能强大，支持的语法也多。<br>使用如下命令进行安装：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-filter-kroki --save</span><br></pre></td></tr></table></figure>
-<p>然后使用markdown代码块来绘图：</p>
-<pre>
-&#96;&#96;&#96;plantuml
-&#64;startuml
-Bob-&gt;Alice : hello
-&#64;enduml
-&#96;&#96;&#96;
-</pre>
-
-<p>显示效果：</p>
-<img data-src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U3R5bGVUeXBlPSJ0ZXh0L2NzcyIgaGVpZ2h0PSIxMjBweCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgc3R5bGU9IndpZHRoOjExM3B4O2hlaWdodDoxMjBweDtiYWNrZ3JvdW5kOiNGRkZGRkY7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMTMgMTIwIiB3aWR0aD0iMTEzcHgiIHpvb21BbmRQYW49Im1hZ25pZnkiPjxkZWZzLz48Zz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjAuNTtzdHJva2UtZGFzaGFycmF5OjUuMCw1LjA7IiB4MT0iMjYiIHgyPSIyNiIgeTE9IjM2LjI5NjkiIHkyPSI4NS40Mjk3Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7c3Ryb2tlLWRhc2hhcnJheTo1LjAsNS4wOyIgeDE9IjgyIiB4Mj0iODIiIHkxPSIzNi4yOTY5IiB5Mj0iODUuNDI5NyIvPjxyZWN0IGZpbGw9IiNFMkUyRjAiIGhlaWdodD0iMzAuMjk2OSIgcng9IjIuNSIgcnk9IjIuNSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7IiB3aWR0aD0iNDMiIHg9IjUiIHk9IjUiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIyOSIgeD0iMTIiIHk9IjI0Ljk5NTEiPkJvYjwvdGV4dD48cmVjdCBmaWxsPSIjRTJFMkYwIiBoZWlnaHQ9IjMwLjI5NjkiIHJ4PSIyLjUiIHJ5PSIyLjUiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MC41OyIgd2lkdGg9IjQzIiB4PSI1IiB5PSI4NC40Mjk3Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMjkiIHg9IjEyIiB5PSIxMDQuNDI0OCI+Qm9iPC90ZXh0PjxyZWN0IGZpbGw9IiNFMkUyRjAiIGhlaWdodD0iMzAuMjk2OSIgcng9IjIuNSIgcnk9IjIuNSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7IiB3aWR0aD0iNDkiIHg9IjU4IiB5PSI1Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMzUiIHg9IjY1IiB5PSIyNC45OTUxIj5BbGljZTwvdGV4dD48cmVjdCBmaWxsPSIjRTJFMkYwIiBoZWlnaHQ9IjMwLjI5NjkiIHJ4PSIyLjUiIHJ5PSIyLjUiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MC41OyIgd2lkdGg9IjQ5IiB4PSI1OCIgeT0iODQuNDI5NyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjM1IiB4PSI2NSIgeT0iMTA0LjQyNDgiPkFsaWNlPC90ZXh0Pjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iNzAuNSw2My40Mjk3LDgwLjUsNjcuNDI5Nyw3MC41LDcxLjQyOTcsNzQuNSw2Ny40Mjk3IiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIyNi41IiB4Mj0iNzYuNSIgeTE9IjY3LjQyOTciIHkyPSI2Ny40Mjk3Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMzAiIHg9IjMzLjUiIHk9IjYyLjM2MzgiPmhlbGxvPC90ZXh0PjwhLS1NRDU9WzJjNWQxYzUzYTMxYTJiZGI0YmVhNjJkNTIxM2QzYjQ3XQpAc3RhcnR1bWwNCkJvYi0+QWxpY2UgOiBoZWxsbw0KQGVuZHVtbA0KClBsYW50VU1MIHZlcnNpb24gMS4yMDIyLjRiZXRhMihVbmtub3duIGNvbXBpbGUgdGltZSkKKEdQTCBzb3VyY2UgZGlzdHJpYnV0aW9uKQpKYXZhIFJ1bnRpbWU6IEphdmEoVE0pIFNFIFJ1bnRpbWUgRW52aXJvbm1lbnQKSlZNOiBKYXZhIEhvdFNwb3QoVE0pIDY0LUJpdCBTZXJ2ZXIgVk0KRGVmYXVsdCBFbmNvZGluZzogVVRGLTgKTGFuZ3VhZ2U6IGVuCkNvdW50cnk6IFVTCi0tPjwvZz48L3N2Zz4='>
-
-<pre>
-&#96;&#96;&#96;plantuml
-&#64;startdot
-digraph demo {
-  rankdir=LR;
-  node [shape=record];
-  h [shape=ellipse];
-  n [shape=ellipse];
-
-  a [label="{1|null}" color="red"];
-  
-  h -&gt; null;
-  n -&gt;a;
-}
-&#64;enddot
-&#96;&#96;&#96;
-</pre>
-
-<p>显示效果</p>
-<img data-src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuMzguMCAoMjAxNDA0MTMuMjA0MSkKIC0tPgo8IS0tIFRpdGxlOiBkZW1vIFBhZ2VzOiAxIC0tPgo8c3ZnIHdpZHRoPSIxNTlwdCIgaGVpZ2h0PSIxMDBwdCIKIHZpZXdCb3g9IjAuMDAgMC4wMCAxNTkuMDAgMTAwLjAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPGcgaWQ9ImdyYXBoMCIgY2xhc3M9ImdyYXBoIiB0cmFuc2Zvcm09InNjYWxlKDEgMSkgcm90YXRlKDApIHRyYW5zbGF0ZSg0IDk2KSI+Cjx0aXRsZT5kZW1vPC90aXRsZT4KPHBvbHlnb24gZmlsbD0id2hpdGUiIHN0cm9rZT0ibm9uZSIgcG9pbnRzPSItNCw0IC00LC05NiAxNTUsLTk2IDE1NSw0IC00LDQiLz4KPCEtLSBoIC0tPgo8ZyBpZD0ibm9kZTEiIGNsYXNzPSJub2RlIj48dGl0bGU+aDwvdGl0bGU+CjxlbGxpcHNlIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGN4PSIyNyIgY3k9Ii0xOC41IiByeD0iMjciIHJ5PSIxOCIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIyNyIgeT0iLTE0LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+aDwvdGV4dD4KPC9nPgo8IS0tIG51bGwgLS0+CjxnIGlkPSJub2RlNCIgY2xhc3M9Im5vZGUiPjx0aXRsZT5udWxsPC90aXRsZT4KPHBvbHlnb24gZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI5My41LC0wLjUgOTMuNSwtMzYuNSAxNDcuNSwtMzYuNSAxNDcuNSwtMC41IDkzLjUsLTAuNSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxMjAuNSIgeT0iLTE0LjgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+bnVsbDwvdGV4dD4KPC9nPgo8IS0tIGgmIzQ1OyZndDtudWxsIC0tPgo8ZyBpZD0iZWRnZTEiIGNsYXNzPSJlZGdlIj48dGl0bGU+aCYjNDU7Jmd0O251bGw8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNTQuNDY1NiwtMTguNUM2My40NTgsLTE4LjUgNzMuNjY3MSwtMTguNSA4My4yODc0LC0xOC41Ii8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjgzLjQwOTksLTIyLjAwMDEgOTMuNDA5OSwtMTguNSA4My40MDk4LC0xNS4wMDAxIDgzLjQwOTksLTIyLjAwMDEiLz4KPC9nPgo8IS0tIG4gLS0+CjxnIGlkPSJub2RlMiIgY2xhc3M9Im5vZGUiPjx0aXRsZT5uPC90aXRsZT4KPGVsbGlwc2UgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgY3g9IjI3IiBjeT0iLTczLjUiIHJ4PSIyNyIgcnk9IjE4Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI3IiB5PSItNjkuOCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5uPC90ZXh0Pgo8L2c+CjwhLS0gYSAtLT4KPGcgaWQ9Im5vZGUzIiBjbGFzcz0ibm9kZSI+PHRpdGxlPmE8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJub25lIiBzdHJva2U9InJlZCIgcG9pbnRzPSI5MCwtNTUuNSA5MCwtOTEuNSAxNTEsLTkxLjUgMTUxLC01NS41IDkwLC01NS41Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEwMS41IiB5PSItNjkuOCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4xPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHBvaW50cz0iMTEzLC01NS41IDExMywtOTEuNSAiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMTMyIiB5PSItNjkuOCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5udWxsPC90ZXh0Pgo8L2c+CjwhLS0gbiYjNDU7Jmd0O2EgLS0+CjxnIGlkPSJlZGdlMiIgY2xhc3M9ImVkZ2UiPjx0aXRsZT5uJiM0NTsmZ3Q7YTwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik01NC40NjU2LC03My41QzYyLjM0NTUsLTczLjUgNzEuMTU5NywtNzMuNSA3OS42OTMyLC03My41Ii8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9Ijc5Ljg4MTUsLTc3LjAwMDEgODkuODgxNCwtNzMuNSA3OS44ODE0LC03MC4wMDAxIDc5Ljg4MTUsLTc3LjAwMDEiLz4KPC9nPgo8L2c+Cjwvc3ZnPgo='>
-
-<pre>
-&#96;&#96;&#96;graphviz
-digraph demo {
-  rankdir=LR;
-  node [shape=record];
-  h [shape=ellipse];
-  n [shape=ellipse];
-
-  a [label="{1|null}" color="red"];
-  
-  h -&gt; null;
-  n -&gt;a;
-}
-&#96;&#96;&#96;
-</pre>
-
-<p>显示效果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">digraph demo &#123;</span><br><span class="line">  rankdir=LR;</span><br><span class="line">  node [shape=record];</span><br><span class="line">  h [shape=ellipse];</span><br><span class="line">  n [shape=ellipse];</span><br><span class="line"></span><br><span class="line">  a [label=&quot;&#123;1|null&#125;&quot; color=&quot;red&quot;];</span><br><span class="line">  </span><br><span class="line">  h -&gt; null;</span><br><span class="line">  n -&gt;a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="插件2：hexo-filter-plantuml"><a href="#插件2：hexo-filter-plantuml" class="headerlink" title="插件2：hexo-filter-plantuml"></a>插件2：hexo-filter-plantuml</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-filter-plantuml --save </span><br></pre></td></tr></table></figure>
-<p>需要注意的时候，这个插件好像和上面的<code>hexo-tag-plantuml</code>插件冲突，如果要使用<code>hexo-filter-plantuml</code>插件，则先卸载掉<code>hexo-tag-plantuml</code>插件。<br>这个插件支持，使用markdown代码块来绘图，语言选择plantuml即可:</p>
-<pre>
-&#96;&#96;&#96;plantuml
-&#64;startuml
-Bob-&gt;Alice : hello
-&#64;enduml
-&#96;&#96;&#96;
-</pre>
-
-<p>显示效果：</p>
-<img data-src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb250ZW50U3R5bGVUeXBlPSJ0ZXh0L2NzcyIgaGVpZ2h0PSIxMjBweCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgc3R5bGU9IndpZHRoOjExM3B4O2hlaWdodDoxMjBweDtiYWNrZ3JvdW5kOiNGRkZGRkY7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMTMgMTIwIiB3aWR0aD0iMTEzcHgiIHpvb21BbmRQYW49Im1hZ25pZnkiPjxkZWZzLz48Zz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjAuNTtzdHJva2UtZGFzaGFycmF5OjUuMCw1LjA7IiB4MT0iMjYiIHgyPSIyNiIgeTE9IjM2LjI5NjkiIHkyPSI4NS40Mjk3Ii8+PGxpbmUgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7c3Ryb2tlLWRhc2hhcnJheTo1LjAsNS4wOyIgeDE9IjgyIiB4Mj0iODIiIHkxPSIzNi4yOTY5IiB5Mj0iODUuNDI5NyIvPjxyZWN0IGZpbGw9IiNFMkUyRjAiIGhlaWdodD0iMzAuMjk2OSIgcng9IjIuNSIgcnk9IjIuNSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7IiB3aWR0aD0iNDMiIHg9IjUiIHk9IjUiLz48dGV4dCBmaWxsPSIjMDAwMDAwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nIiB0ZXh0TGVuZ3RoPSIyOSIgeD0iMTIiIHk9IjI0Ljk5NTEiPkJvYjwvdGV4dD48cmVjdCBmaWxsPSIjRTJFMkYwIiBoZWlnaHQ9IjMwLjI5NjkiIHJ4PSIyLjUiIHJ5PSIyLjUiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MC41OyIgd2lkdGg9IjQzIiB4PSI1IiB5PSI4NC40Mjk3Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMjkiIHg9IjEyIiB5PSIxMDQuNDI0OCI+Qm9iPC90ZXh0PjxyZWN0IGZpbGw9IiNFMkUyRjAiIGhlaWdodD0iMzAuMjk2OSIgcng9IjIuNSIgcnk9IjIuNSIgc3R5bGU9InN0cm9rZTojMTgxODE4O3N0cm9rZS13aWR0aDowLjU7IiB3aWR0aD0iNDkiIHg9IjU4IiB5PSI1Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMzUiIHg9IjY1IiB5PSIyNC45OTUxIj5BbGljZTwvdGV4dD48cmVjdCBmaWxsPSIjRTJFMkYwIiBoZWlnaHQ9IjMwLjI5NjkiIHJ4PSIyLjUiIHJ5PSIyLjUiIHN0eWxlPSJzdHJva2U6IzE4MTgxODtzdHJva2Utd2lkdGg6MC41OyIgd2lkdGg9IjQ5IiB4PSI1OCIgeT0iODQuNDI5NyIvPjx0ZXh0IGZpbGw9IiMwMDAwMDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmciIHRleHRMZW5ndGg9IjM1IiB4PSI2NSIgeT0iMTA0LjQyNDgiPkFsaWNlPC90ZXh0Pjxwb2x5Z29uIGZpbGw9IiMxODE4MTgiIHBvaW50cz0iNzAuNSw2My40Mjk3LDgwLjUsNjcuNDI5Nyw3MC41LDcxLjQyOTcsNzQuNSw2Ny40Mjk3IiBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiLz48bGluZSBzdHlsZT0ic3Ryb2tlOiMxODE4MTg7c3Ryb2tlLXdpZHRoOjEuMDsiIHgxPSIyNi41IiB4Mj0iNzYuNSIgeTE9IjY3LjQyOTciIHkyPSI2Ny40Mjk3Ii8+PHRleHQgZmlsbD0iIzAwMDAwMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxlbmd0aEFkanVzdD0ic3BhY2luZyIgdGV4dExlbmd0aD0iMzAiIHg9IjMzLjUiIHk9IjYyLjM2MzgiPmhlbGxvPC90ZXh0PjwhLS1NRDU9WzJjNWQxYzUzYTMxYTJiZGI0YmVhNjJkNTIxM2QzYjQ3XQpAc3RhcnR1bWwNCkJvYi0+QWxpY2UgOiBoZWxsbw0KQGVuZHVtbA0KClBsYW50VU1MIHZlcnNpb24gMS4yMDIyLjRiZXRhMihVbmtub3duIGNvbXBpbGUgdGltZSkKKEdQTCBzb3VyY2UgZGlzdHJpYnV0aW9uKQpKYXZhIFJ1bnRpbWU6IEphdmEoVE0pIFNFIFJ1bnRpbWUgRW52aXJvbm1lbnQKSlZNOiBKYXZhIEhvdFNwb3QoVE0pIDY0LUJpdCBTZXJ2ZXIgVk0KRGVmYXVsdCBFbmNvZGluZzogVVRGLTgKTGFuZ3VhZ2U6IGVuCkNvdW50cnk6IFVTCi0tPjwvZz48L3N2Zz4='>
-
-<h2 id="hexo-filter-krok插件"><a href="#hexo-filter-krok插件" class="headerlink" title="hexo-filter-krok插件"></a>hexo-filter-krok插件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-filter-kroki --save</span><br></pre></td></tr></table></figure>
-<p>这个插件是上面的插件<code>hexo-filter-plantuml</code>的升级版本，既支持上面的标签写法，也支持代码块写法。<br>而且该插件支持的语法挺多的，强烈建议使用该插件。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://zhangxueren.club/2019/11/plantUML.html">https://zhangxueren.club/2019/11/plantUML.html</a><br><a target="_blank" rel="noopener" href="https://itopic.org/graphviz.html">https://itopic.org/graphviz.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-filter-plantuml">https://www.npmjs.com/package/hexo-filter-plantuml</a><br><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-filter-kroki">https://www.npmjs.com/package/hexo-filter-kroki</a><br><a target="_blank" rel="noopener" href="https://kroki.io/examples.html">https://kroki.io/examples.html</a></p>
 
       
     </div>

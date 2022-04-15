@@ -169,7 +169,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">608</span>
+          <span class="site-state-item-count">609</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -217,6 +217,228 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d794a6a2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/d794a6a2/" class="post-title-link" itemprop="url">Linux 文件的复制与删除</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-02 16:15:15" itemprop="dateCreated datePublished" datetime="2021-06-02T16:15:15+08:00">2021-06-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">文件管理和目录管理</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/d794a6a2/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/d794a6a2/" data-xid="/blog/d794a6a2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="cp-拷贝文件"><a href="#cp-拷贝文件" class="headerlink" title="cp: 拷贝文件"></a>cp: 拷贝文件</h1><h2 id="格式1：cp-file1-file2"><a href="#格式1：cp-file1-file2" class="headerlink" title="格式1：cp file1 file2"></a>格式1：cp file1 file2</h2><p>第一种格式中：</p>
+<ul>
+<li>file2不存在，则创建file2；</li>
+<li>file2存在且是文件，则覆盖file2；</li>
+<li>file2存在且是目录，则按格式二处理</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="file2不存在"><a href="#file2不存在" class="headerlink" title="file2不存在"></a>file2不存在</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# ls</span><br><span class="line">p1.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# cat p1.c </span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">    printf(&quot;%s\n&quot;,&quot;HelloWolrd!&quot;);</span><br><span class="line">&#125;</span><br><span class="line">[root@localhost 文件管理和目录管理]# cp p1.c p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# ls</span><br><span class="line">p1.c  p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# cat p2.c </span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">    printf(&quot;%s\n&quot;,&quot;HelloWolrd!&quot;);</span><br><span class="line">&#125;</span><br><span class="line">[root@localhost 文件管理和目录管理]#</span><br></pre></td></tr></table></figure>
+<h4 id="file2存在"><a href="#file2存在" class="headerlink" title="file2存在"></a>file2存在</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# ls</span><br><span class="line">p1.c  p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# echo line 1 in p2.c &gt;p2.c </span><br><span class="line">[root@localhost 文件管理和目录管理]# cat p2.c </span><br><span class="line">line 1 in p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# cat p1.c </span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">    printf(&quot;%s\n&quot;,&quot;HelloWolrd!&quot;);</span><br><span class="line">&#125;</span><br><span class="line">[root@localhost 文件管理和目录管理]# cp p1.c p2.c </span><br><span class="line">cp：是否覆盖&quot;p2.c&quot;？ y</span><br><span class="line">[root@localhost 文件管理和目录管理]# cat p2.c </span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">    printf(&quot;%s\n&quot;,&quot;HelloWolrd!&quot;);</span><br><span class="line">&#125;</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+
+<h2 id="格式2：cp-file1-file2-…-filen-dir"><a href="#格式2：cp-file1-file2-…-filen-dir" class="headerlink" title="格式2：cp file1 file2 … filen dir"></a>格式2：cp file1 file2 … filen dir</h2><p>其中file1，…，filen为文件名，dir为已有目录名</p>
+<p>第二种格式中：dir必须已经存在并且是一个目录</p>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">cp a.c a.bak</span><br><span class="line">cp a.c b.c backup.d</span><br><span class="line"></span><br><span class="line">[root@localhost 文件管理和目录管理]# ls</span><br><span class="line">p1.c  p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# cp p*.c backup.d</span><br><span class="line">cp: 目标&quot;backup.d&quot; 不是目录</span><br><span class="line">[root@localhost 文件管理和目录管理]# mkdir backup.d</span><br><span class="line">[root@localhost 文件管理和目录管理]# cp p*.c backup.d</span><br><span class="line">[root@localhost 文件管理和目录管理]# ls *</span><br><span class="line">p1.c  p2.c</span><br><span class="line"></span><br><span class="line">backup.d:</span><br><span class="line">p1.c  p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+
+
+<h2 id="带文件通配符星号-的情况"><a href="#带文件通配符星号-的情况" class="headerlink" title="带文件通配符星号*的情况"></a>带文件通配符星号*的情况</h2><p>例:<br>cp *.c backup.d</p>
+<ul>
+<li>与Windows命令COPY *.C BAK.D执行结果相同，过程不同</li>
+<li>UNIX中实际执行cp a1.c a2.c b1.c b2.c backup.d</li>
+</ul>
+<h3 id="从备份目录拷贝回当前目录"><a href="#从备份目录拷贝回当前目录" class="headerlink" title="从备份目录拷贝回当前目录"></a>从备份目录拷贝回当前目录</h3><h4 id="当前目录和备份目录结构"><a href="#当前目录和备份目录结构" class="headerlink" title="当前目录和备份目录结构"></a>当前目录和备份目录结构</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# ls *</span><br><span class="line">p1.c  p2.c</span><br><span class="line"></span><br><span class="line">backup.d:</span><br><span class="line">p1.c  p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]#</span><br></pre></td></tr></table></figure>
+<h4 id="备份目录下的文件的内容"><a href="#备份目录下的文件的内容" class="headerlink" title="备份目录下的文件的内容"></a>备份目录下的文件的内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# cat backup.d/p1.c</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">    printf(&quot;%s\n&quot;,&quot;HelloWolrd!&quot;);</span><br><span class="line">&#125;</span><br><span class="line">[root@localhost 文件管理和目录管理]# cat backup.d/p2.c</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">    printf(&quot;%s\n&quot;,&quot;HelloWolrd!&quot;);</span><br><span class="line">&#125;</span><br><span class="line">[root@localhost 文件管理和目录管理]#</span><br></pre></td></tr></table></figure>
+<h4 id="当前目录下的文件内容"><a href="#当前目录下的文件内容" class="headerlink" title="当前目录下的文件内容"></a>当前目录下的文件内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# cat p1.c </span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">    printf(&quot;%s\n&quot;,&quot;HelloWolrd!&quot;);</span><br><span class="line">&#125;</span><br><span class="line">[root@localhost 文件管理和目录管理]# cat p2.c </span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">    printf(&quot;%s\n&quot;,&quot;HelloWolrd!&quot;);</span><br><span class="line">&#125;</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<h4 id="修改当前目录下的p2-c文件的内容"><a href="#修改当前目录下的p2-c文件的内容" class="headerlink" title="修改当前目录下的p2.c文件的内容"></a>修改当前目录下的p2.c文件的内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# echo this is line 1 in p2.c &gt;p2.c </span><br><span class="line">[root@localhost 文件管理和目录管理]# cat p2.c</span><br><span class="line">this is line 1 in p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<h4 id="使用备份目录下的文件覆盖当前目录下的同名文件"><a href="#使用备份目录下的文件覆盖当前目录下的同名文件" class="headerlink" title="使用备份目录下的文件覆盖当前目录下的同名文件"></a>使用备份目录下的文件覆盖当前目录下的同名文件</h4><h5 id="错误做法"><a href="#错误做法" class="headerlink" title="错误做法"></a>错误做法</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp backup.d/p*.c</span><br></pre></td></tr></table></figure>
+<p>使用通配符*的时候需要注意，命令执行的是经过shell替换之后的命令，也就是实际执行的是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp backup.d/p1.c backup.d/p2.c</span><br></pre></td></tr></table></figure>
+<p>结果：backup.d目录下文件p1.c将覆盖掉p2.c<br>运行过程：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# ls *</span><br><span class="line">p1.c  p2.c</span><br><span class="line"></span><br><span class="line">backup.d:</span><br><span class="line">p1.c  p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# cat p2.c </span><br><span class="line">this is line 1 in p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# cat backup.d/p2.c </span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">    printf(&quot;%s\n&quot;,&quot;HelloWolrd!&quot;);</span><br><span class="line">&#125;</span><br><span class="line">[root@localhost 文件管理和目录管理]# cp backup.d/p*.c </span><br><span class="line">cp：是否覆盖&quot;backup.d/p2.c&quot;？ n</span><br><span class="line">[root@localhost 文件管理和目录管理]#</span><br></pre></td></tr></table></figure>
+<h5 id="正确做法"><a href="#正确做法" class="headerlink" title="正确做法"></a>正确做法</h5><p>将这两个文件拷贝回当前目录下的正确用法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp backup.d/p*.c  .</span><br></pre></td></tr></table></figure>
+<p>运行过程：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# ls *</span><br><span class="line">p1.c  p2.c</span><br><span class="line"></span><br><span class="line">backup.d:</span><br><span class="line">p1.c  p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# cat p2.c </span><br><span class="line">this is line 1 in p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# cat backup.d/p2.c </span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">	printf(&quot;%s\n&quot;,&quot;HelloWolrd!&quot;);</span><br><span class="line">&#125;</span><br><span class="line">[root@localhost 文件管理和目录管理]# cp backup.d/p*.c .</span><br><span class="line">cp：是否覆盖&quot;./p1.c&quot;？ y</span><br><span class="line">cp：是否覆盖&quot;./p2.c&quot;？ y</span><br><span class="line">[root@localhost 文件管理和目录管理]# cat p2.c </span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">	printf(&quot;%s\n&quot;,&quot;HelloWolrd!&quot;);</span><br><span class="line">&#125;</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+
+<h1 id="mv-移动文件"><a href="#mv-移动文件" class="headerlink" title="mv: 移动文件"></a>mv: 移动文件</h1><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mv file1 file2</span><br><span class="line">mv file1 file2 ... filen dir</span><br><span class="line">mv dir1 dir2</span><br></pre></td></tr></table></figure>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><h3 id="重命名文件或目录"><a href="#重命名文件或目录" class="headerlink" title="重命名文件或目录"></a>重命名文件或目录</h3><p>使用mv命令可以将文件和目录改名</p>
+<h4 id="重命名文件"><a href="#重命名文件" class="headerlink" title="重命名文件"></a>重命名文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# ls *</span><br><span class="line">p1.c  p2.c</span><br><span class="line"></span><br><span class="line">backup.d:</span><br><span class="line">p1.c  p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# mv p1.c HelloWorld.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# ls *</span><br><span class="line">HelloWorld.c  p2.c</span><br><span class="line"></span><br><span class="line">backup.d:</span><br><span class="line">p1.c  p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]#</span><br></pre></td></tr></table></figure>
+<h4 id="重命名目录"><a href="#重命名目录" class="headerlink" title="重命名目录"></a>重命名目录</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# ls *</span><br><span class="line">HelloWorld.c  p2.c</span><br><span class="line"></span><br><span class="line">backup.d:</span><br><span class="line">p1.c  p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# mv backup.d/ 备份</span><br><span class="line">[root@localhost 文件管理和目录管理]# ls *</span><br><span class="line">HelloWorld.c  p2.c</span><br><span class="line"></span><br><span class="line">备份:</span><br><span class="line">p1.c  p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<h3 id="将一个目录下的文件和子目录移动到另一个目录下"><a href="#将一个目录下的文件和子目录移动到另一个目录下" class="headerlink" title="将一个目录下的文件和子目录移动到另一个目录下"></a>将一个目录下的文件和子目录移动到另一个目录下</h3><h4 id="一个目录的结构"><a href="#一个目录的结构" class="headerlink" title="一个目录的结构"></a>一个目录的结构</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# ls</span><br><span class="line">a.txt  b.txt  cat  cmp  c.txt  date  d.txt  less  ls  more  ps  sed  sort  tr  uniq  vi  wc  文件管理和目录管理  文件名和文件通配符  正则表达式</span><br><span class="line">[root@localhost Linux_Test]# ls 文件管理和目录管理/*</span><br><span class="line">文件管理和目录管理/HelloWorld2.c  文件管理和目录管理/HelloWorld.c</span><br><span class="line"></span><br><span class="line">文件管理和目录管理/备份:</span><br><span class="line">p1.c  p2.c</span><br><span class="line">[root@localhost Linux_Test]#</span><br></pre></td></tr></table></figure>
+<h4 id="创建一个新目录"><a href="#创建一个新目录" class="headerlink" title="创建一个新目录"></a>创建一个新目录</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# mkdir 文件管理和目录管理2</span><br><span class="line">[root@localhost Linux_Test]# ls</span><br><span class="line">a.txt  cat  c.txt  d.txt  ls    ps   sort  uniq  wc                  文件管理和目录管理2  正则表达式</span><br><span class="line">b.txt  cmp  date   less   more  sed  tr    vi    文件管理和目录管理  文件名和文件通配符</span><br><span class="line">[root@localhost Linux_Test]#</span><br></pre></td></tr></table></figure>
+<h4 id="移动一个目录下的所有文件以及子目录-到-另一个目录"><a href="#移动一个目录下的所有文件以及子目录-到-另一个目录" class="headerlink" title="移动一个目录下的所有文件以及子目录 到 另一个目录"></a>移动一个目录下的所有文件以及子目录 到 另一个目录</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# mv 文件管理和目录管理/* 文件管理和目录管理2</span><br><span class="line">[root@localhost Linux_Test]# ls 文件管理和目录管理/</span><br><span class="line">[root@localhost Linux_Test]# ls 文件管理和目录管理2/*</span><br><span class="line">文件管理和目录管理2/HelloWorld2.c  文件管理和目录管理2/HelloWorld.c</span><br><span class="line"></span><br><span class="line">文件管理和目录管理2/备份:</span><br><span class="line">p1.c  p2.c</span><br><span class="line">[root@localhost Linux_Test]# </span><br></pre></td></tr></table></figure>
+<h3 id="移动一个目录到另一个目录之中"><a href="#移动一个目录到另一个目录之中" class="headerlink" title="移动一个目录到另一个目录之中"></a>移动一个目录到另一个目录之中</h3><p>当前目录结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# ls</span><br><span class="line">a.txt  cat  c.txt  d.txt  ls    ps   sort  uniq  wc                  文件管理和目录管理2  正则表达式</span><br><span class="line">b.txt  cmp  date   less   more  sed  tr    vi    文件管理和目录管理  文件名和文件通配符</span><br><span class="line">[root@localhost Linux_Test]# tree -N 文件管理和目录管理</span><br><span class="line">文件管理和目录管理</span><br><span class="line"></span><br><span class="line">0 directories, 0 files</span><br><span class="line">[root@localhost Linux_Test]# tree -N 文件管理和目录管理2/</span><br><span class="line">文件管理和目录管理2/</span><br><span class="line">├── HelloWorld2.c</span><br><span class="line">├── HelloWorld.c</span><br><span class="line">└── 备份</span><br><span class="line">    ├── p1.c</span><br><span class="line">    └── p2.c</span><br><span class="line"></span><br><span class="line">1 directory, 4 files</span><br><span class="line">[root@localhost Linux_Test]# </span><br></pre></td></tr></table></figure>
+<h4 id="移动一个目录到另一个目录之中-1"><a href="#移动一个目录到另一个目录之中-1" class="headerlink" title="移动一个目录到另一个目录之中"></a>移动一个目录到另一个目录之中</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# mv 文件管理和目录管理2/ 文件管理和目录管理/</span><br><span class="line">[root@localhost Linux_Test]# ls</span><br><span class="line">a.txt  b.txt  cat  cmp  c.txt  date  d.txt  less  ls  more  ps  sed  sort  tr  uniq  vi  wc  文件管理和目录管理  文件名和文件通配符  正则表达式</span><br><span class="line">[root@localhost Linux_Test]# tree -N 文件管理和目录管理/</span><br><span class="line">文件管理和目录管理/</span><br><span class="line">└── 文件管理和目录管理2</span><br><span class="line">    ├── HelloWorld2.c</span><br><span class="line">    ├── HelloWorld.c</span><br><span class="line">    └── 备份</span><br><span class="line">        ├── p1.c</span><br><span class="line">        └── p2.c</span><br><span class="line"></span><br><span class="line">2 directories, 4 files</span><br><span class="line">[root@localhost Linux_Test]# </span><br></pre></td></tr></table></figure>
+<p>mv dir1 dir2 两种执行情况（同文件系统，不同文件系统）</p>
+<h1 id="rm-删除文件"><a href="#rm-删除文件" class="headerlink" title="rm: 删除文件"></a>rm: 删除文件</h1><h2 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm file1 file2 ... filen</span><br></pre></td></tr></table></figure>
+<h2 id="例"><a href="#例" class="headerlink" title="例"></a>例</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm core a.out</span><br><span class="line">rm *.o *.tmp</span><br></pre></td></tr></table></figure>
+<p>错误写法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm * .bak</span><br></pre></td></tr></table></figure>
+<p>会删除当前目录下的所有的文件，最后尝试删除.bak文件，如果有.bak这个文件的话，已经包含在通配符*里面了，也就是被删掉了，此时再想删除.bak，系统会报错，说.bak文件不存在。</p>
+<h2 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h2><table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-r</td>
+<td align="left">递归地(Recursive)删除实参表中的目录，也就是<strong>删除一整棵目录树</strong>。</td>
+</tr>
+<tr>
+<td align="left">-i</td>
+<td align="left">每删除一个文件前需要操作员确认(Inform)</td>
+</tr>
+<tr>
+<td align="left">-f</td>
+<td align="left">强迫删除(Force)。只读文件也被删除并且无提示</td>
+</tr>
+</tbody></table>
+<h2 id="其它问题"><a href="#其它问题" class="headerlink" title="其它问题"></a>其它问题</h2><p>在运行的可执行程序文件不能被删除</p>
+<h1 id="显式区分命令选项和处理对象"><a href="#显式区分命令选项和处理对象" class="headerlink" title="显式区分命令选项和处理对象"></a>显式区分命令选项和处理对象</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>设当前目录下只有a，b，c三个文件<br>执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -i</span><br></pre></td></tr></table></figure>
+<p>只提供选项，未指定任何文件，命令格式错<br>执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls&gt;-i</span><br></pre></td></tr></table></figure>
+<p>生成文件-i(符合文件的命名规则)<br>执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -i</span><br></pre></td></tr></table></figure>
+<p>不能删除文件-i<br>执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm *</span><br></pre></td></tr></table></figure>
+<p>shell会替换成：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -i a b c</span><br></pre></td></tr></table></figure>
+<p>这里的-i会解释成选项，而不是文件，rm会按选项-i的方式处理，而不会删除文件-i。<br>执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat *</span><br></pre></td></tr></table></figure>
+<p>shell会替换成：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat -i a b c</span><br></pre></td></tr></table></figure>
+<p>执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls *</span><br></pre></td></tr></table></figure>
+<p>shell会替换成：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -i a b c</span><br></pre></td></tr></table></figure>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>许多Linux命令(如cp，ls，mv，rm，cat，grep，set等)用<code>--</code>显式地标志命令行选项的结束，识别以-开头的处理对象。如:<br>执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -- -i</span><br></pre></td></tr></table></figure>
+<p>即可删除文件-i<br>例如，我们想在文件ht.c中查找<code>-1</code>这个字符串，你可能输入如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -1 ht.c</span><br></pre></td></tr></table></figure>
+<p>这种情况下，grep可能认为-1，是个选项。<br>此时你可以使用<code>--</code>区分选项和参数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# cat ht.c </span><br><span class="line">56</span><br><span class="line">35</span><br><span class="line">-1</span><br><span class="line">-4</span><br><span class="line">-5</span><br><span class="line">8</span><br><span class="line">[root@localhost 文件管理和目录管理]# grep -1 ht.c </span><br><span class="line">^C</span><br><span class="line">[root@localhost 文件管理和目录管理]# grep -- -1 ht.c </span><br><span class="line">-1</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/Linux/general/FileManagementAndDirectoryManagementFile/CopyAndDeletion/1.png" alt="图片"></p>
+<p>如果你想在文件中查找<code>--help</code>这个字符串,你输入如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep --help *.c</span><br></pre></td></tr></table></figure>
+<p>grep会吧–help解释为选项。而达不到效果。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# cat ht.c </span><br><span class="line">56</span><br><span class="line">-1</span><br><span class="line">-4</span><br><span class="line">8</span><br><span class="line">--help</span><br><span class="line">--hello</span><br><span class="line">--world</span><br><span class="line">[root@localhost 文件管理和目录管理]# grep --help *.c</span><br><span class="line">用法: grep [选项]... PATTERN [FILE]...</span><br><span class="line">在每个 FILE 或是标准输入中查找 PATTERN。</span><br><span class="line">默认的 PATTERN 是一个基本正则表达式(缩写为 BRE)。</span><br><span class="line">......</span><br><span class="line">如果有任意行被匹配，那退出状态为 0，否则为 1；</span><br><span class="line">如果有错误产生，且未指定 -q 参数，那退出状态为 2。</span><br><span class="line"></span><br><span class="line">请将错误报告给: bug-grep@gnu.org</span><br><span class="line">GNU Grep 主页: &lt;http://www.gnu.org/software/grep/&gt;</span><br><span class="line">GNU 软件的通用帮助: &lt;http://www.gnu.org/gethelp/&gt;</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<p>此时输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -- --help *.c</span><br></pre></td></tr></table></figure>
+<p>可以达到效果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# ls</span><br><span class="line">ht.c  文件管理和目录管理2</span><br><span class="line">[root@localhost 文件管理和目录管理]# cat ht.c </span><br><span class="line">56</span><br><span class="line">-1</span><br><span class="line">-4</span><br><span class="line">8</span><br><span class="line">--help</span><br><span class="line">--hello</span><br><span class="line">--world</span><br><span class="line">[root@localhost 文件管理和目录管理]# grep -- --help *.c</span><br><span class="line">--help</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+
+
+<!-- Blog/programming/Linux/general/FileManagementAndDirectoryManagementFile/CopyAndDeletion -->
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1774,338 +1996,6 @@ https://gitee.com/XiaoLan223/images/raw/master/Blog/Hexo<mark>//</mark>7.png
 <h2 id="括号配对"><a href="#括号配对" class="headerlink" title="括号配对%"></a>括号配对%</h2><p>把光标移到一个花括号(或圆括号，或方括号)上，按%键，则光标自动定位到与它配对的那一个括号<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/11.png" alt="图片"></p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="http://c.biancheng.net/vi/">http://c.biancheng.net/vi/</a></p>
 <!-- Blog/Programming/Linux/General/VIEditorAndGarbledProblem -->
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/fe546836/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/fe546836/" class="post-title-link" itemprop="url">Linux 逐行比较文件：diff命令</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-05-19 13:17:06" itemprop="dateCreated datePublished" datetime="2021-05-19T13:17:06+08:00">2021-05-19</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%96%87%E4%BB%B6%E6%AF%94%E8%BE%83/" itemprop="url" rel="index"><span itemprop="name">文件比较</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/fe546836/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/fe546836/" data-xid="/blog/fe546836/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>5.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Linux-求出两个文件的差别：diff命令介绍"><a href="#Linux-求出两个文件的差别：diff命令介绍" class="headerlink" title="Linux 求出两个文件的差别：diff命令介绍"></a>Linux 求出两个文件的差别：diff命令介绍</h1><p>Linux diff命令用于比较文件的差异。</p>
-<p>diff以逐行的方式，比较文本文件的异同处。如果指定要比较目录，则diff会比较目录中相同文件名的文件，但不会比较其中子目录。</p>
-<p>diff 命令是一个分析文件信息的命令，可以打印出文件之间的差异。它可以逐行地比较两个文件的内容，也可以递归地比较文件夹的内容。diff 命令的输出内容可以让我们知道要使两个文件相同需要做哪些修改，这对于我们的工作很有帮助。</p>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">diff file1 file2</span><br><span class="line">diff –u file1 file2</span><br></pre></td></tr></table></figure>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
-<li>比较两个版本的文本文件，以寻找两者间差别</li>
-</ul>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><ul>
-<li>normal，</li>
-<li>unified (-u)</li>
-</ul>
-<h2 id="normal格式"><a href="#normal格式" class="headerlink" title="normal格式"></a>normal格式</h2><p>normal格式：<strong>列出一个如何将原文件file1转化为新文件file2的指令</strong></p>
-<ul>
-<li>这些指令有<ul>
-<li>a（Add），</li>
-<li>c（Change）</li>
-<li>d（Delete）</li>
-</ul>
-</li>
-<li>指令字母左边的行号是file1的行号，右面是file2的行号</li>
-<li>列出内容时，<ul>
-<li>大于号后边的内容是需要在file1文件中增加的内容；</li>
-<li>小于号后边的内容是需从file1中删除的内容</li>
-</ul>
-</li>
-</ul>
-<h3 id="normal格式文件转化指令"><a href="#normal格式文件转化指令" class="headerlink" title="normal格式文件转化指令"></a>normal格式文件转化指令</h3><h4 id="更换指令c"><a href="#更换指令c" class="headerlink" title="更换指令c"></a>更换指令c</h4><pre>
-25<mark>c</mark>25,26
-&lt; &#35;define MAX_WEIGHT 2000000000 
----
-&gt; /* max signed 32-bit integer */
-&gt; &#35;define MAX_WEIGHT 0x7fffffff
-</pre>
-
-<p>将原文件file1的第25行更换(change)成新文件file2的的第25~26行。</p>
-<h4 id="删除指令d"><a href="#删除指令d" class="headerlink" title="删除指令d"></a>删除指令d</h4><pre>
-61,62<mark>d</mark>60
-&lt;                 x2 = ht[j].weight;
-&lt;                 m2 = j;
-</pre>
-
-<p>将原文件file1第6l~62行删除(delete)后，后面的内容与新文件file2的第60行之后一致</p>
-<h4 id="增加指令a"><a href="#增加指令a" class="headerlink" title="增加指令a"></a>增加指令a</h4><pre>
-68<mark>a</mark>67,68
-&gt;         ht[i].parent = -1;
-&gt;         printf("Create new tree\n");
-</pre>
-
-<p>将原文件file1的第68行增加(add)新文件file2中的第67~68行</p>
-<h2 id="unified格式"><a href="#unified格式" class="headerlink" title="unified格式"></a>unified格式</h2><p>unified在git中使用的就是这种格式。</p>
-<pre>
-$ diff -u0 ht.c ht2.c 
---- ht.c 2018-11-14 18:18:59.595497610 +0800
-+++ ht2.c       2018-11-17 08:22:58.191858259 +0800
-@@ -25 +25,2 @@
--&#35;define MAX_WEIGHT 2000000000 
-+/* max signed 32-bit integer */
-+&#35;define MAX_WEIGHT 0x7fffffff
-@@ -50,2 +51 @@
-- x1 = x2 = MAX_WEIGHT;
-- m1 = m2 = 0;
-+        x1 = MAX_WEIGHT;
-@@ -61,2 +60,0 @@
-- x2 = ht[j].weight;
-- m2 = j;
-@@ -68,0 +67,2 @@
-+        ht[i].parent = -1;
-+        printf("Create new tree\n");
-</pre>
-
-<p>以下的信息表示两个文件差异的内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@@ -25 +25,2 @@</span><br><span class="line">-&amp;#35;define MAX_WEIGHT 2000000000 </span><br><span class="line">+/* max signed 32-bit integer */</span><br><span class="line">+&amp;#35;define MAX_WEIGHT 0x7fffffff</span><br></pre></td></tr></table></figure>
-<p>表示删除第一个文件ht.c第25行的内容，然后在第25行添加两行新内容。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@@ -50,2 +51 @@</span><br><span class="line">- x1 = x2 = MAX_WEIGHT;</span><br><span class="line">- m1 = m2 = 0;</span><br><span class="line">+        x1 = MAX_WEIGHT;</span><br></pre></td></tr></table></figure>
-<p>删除第一个文件的50行之后的两行内容。然后在第51行添加一行内容。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@@ -61,2 +60,0 @@</span><br><span class="line">- x2 = ht[j].weight;</span><br><span class="line">- m2 = j;</span><br></pre></td></tr></table></figure>
-<p>删除第一个文件第61行之后的两行内容</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@@ -68,0 +67,2 @@</span><br><span class="line">+        ht[i].parent = -1;</span><br><span class="line">+        printf(&quot;Create new tree\n&quot;);</span><br></pre></td></tr></table></figure>
-<p>在第67行后添加两行内容。</p>
-<h1 id="diff-标准输出"><a href="#diff-标准输出" class="headerlink" title="diff 标准输出"></a>diff 标准输出</h1><pre>
-[root@localhost cmp]&#35; cat -n a.txt 
-     1    this is line a
-     2    this is line b
-     3    helloworld!
-     4    this is line d
-     5    this is a new line
-[root@localhost cmp]&#35; cat -n b.txt 
-     1    this is line a
-     2    this is line b
-     3    this is line c
-     4    this is line d
-[root@localhost cmp]&#35; diff a.txt b.txt 
-3c3
-&lt; helloworld!
-&#45;&#45;&#45;
-&gt; this is line c
-5d4
-&lt; this is a new line
-[root@localhost cmp]&#35; 
-</pre>
-
-<h2 id="diff命令输出信息"><a href="#diff命令输出信息" class="headerlink" title="diff命令输出信息"></a>diff命令输出信息</h2><p>diff 命令所参考的不是第一个文件，而是第二个文件，它的输出信息有以下几种字符：</p>
-<ul>
-<li><code>a</code> : 表示必须文件1必须 添加一行 才能和文件2相同</li>
-<li><code>c</code> : 表示必须文件1必须 修改行 才能和文件2相同</li>
-<li><code>d</code> : 表示必须文件1必须 删除一行 才能和文件2相同</li>
-<li>字符前的数字表示第一个文件中的行数，</li>
-<li>字符后的内容表示第二个文件中的行数。</li>
-<li><code>&lt;</code> 表示引用的第一个文件中的内容，</li>
-<li><code>&gt;</code> 表示引用的第一个文件中的内容。</li>
-</ul>
-<p>所以上面的输出信息的含义如下：</p>
-<pre>
-3c3              &#35; 根据第2个文件b.txt的第3行,第一个文件a.txt的第3行需要改变的内容，我猜这里的c应该是change的意思
-&lt; helloworld!    &#35; 第1个文件a.txt的第3行的内容
-&#45;&#45;&#45;              &#35; 分隔符
-&gt; this is line c &#35; 第2个文件b.txt的第3行的内容
-5d4              &#35; 根据第2个文件的第4行，第一个文件a.txt的第5行需要删除掉的内容
-&lt; this is a new line
-</pre>
-
-<h2 id="diff-a-txt-b-txt"><a href="#diff-a-txt-b-txt" class="headerlink" title="diff a.txt b.txt"></a>diff a.txt b.txt</h2><pre>
-[root@localhost cmp]&#35; diff a.txt b.txt 
-3c3
-&lt; helloworld!
-&#45;&#45;&#45;
-&gt; this is line c
-5d4
-&lt; this is a new line
-[root@localhost cmp]&#35; 
-</pre>
-
-<p>为了使得a.txt和b.txt相同，我们必须</p>
-<ul>
-<li>修改a.txt的第3行的内容。(<mark>3c</mark>3)</li>
-<li>删除a.txt的第5行的内容。(<mark>5d</mark>4)</li>
-</ul>
-<h2 id="diff-b-txt-a-txt"><a href="#diff-b-txt-a-txt" class="headerlink" title="diff b.txt a.txt"></a>diff b.txt a.txt</h2><p>现在调换两个文件的位置,输出如下：</p>
-<pre>
-[root@localhost cmp]&#35; diff b.txt a.txt 
-3c3
-&lt; this is line c
-&#45;&#45;&#45;
-&gt; helloworld!
-4a5
-&gt; this is a new line
-[root@localhost cmp]&#35; 
-</pre>
-
-<p>可以看到如果要使得b.txt和a.txt内容一样。</p>
-<ul>
-<li>修改b.txt的 第3行的内容。</li>
-<li>在b.txt的第4行之后添加内容。</li>
-</ul>
-<h1 id="diff-c：上下文格式"><a href="#diff-c：上下文格式" class="headerlink" title="diff -c：上下文格式"></a>diff -c：上下文格式</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost cmp]# diff -c a.txt b.txt </span><br><span class="line">*** a.txt    2021-05-19 11:45:23.117869628 +0800</span><br><span class="line">--- b.txt    2021-05-15 22:41:56.157986437 +0800</span><br><span class="line">***************</span><br><span class="line">*** 1,5 ****</span><br><span class="line">  this is line a</span><br><span class="line">  this is line b</span><br><span class="line">! helloworld!</span><br><span class="line">  this is line d</span><br><span class="line">- this is a new line</span><br><span class="line">--- 1,4 ----</span><br><span class="line">  this is line a</span><br><span class="line">  this is line b</span><br><span class="line">! this is line c</span><br><span class="line">  this is line d</span><br><span class="line">[root@localhost cmp]# </span><br></pre></td></tr></table></figure>
-<h2 id="diff-c输出信息"><a href="#diff-c输出信息" class="headerlink" title="diff -c输出信息"></a>diff -c输出信息</h2><p>其中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*** a.txt    2021-05-19 11:45:23.117869628 +0800</span><br></pre></td></tr></table></figure>
-<p>表示文件a.txt的信息用星号表示</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--- b.txt    2021-05-15 22:41:56.157986437 +0800</span><br></pre></td></tr></table></figure>
-<p>表示b.txt的信息用减号表示</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*** 1,5 ****   表示下方是a.txt的第1到第5行的内容</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--- 1,4 ----  表示下方是b.txt的第1到第4行的内容。</span><br></pre></td></tr></table></figure>
-<h3 id="行前有感叹号-表示-该行-需要修改"><a href="#行前有感叹号-表示-该行-需要修改" class="headerlink" title="行前有感叹号 表示 该行 需要修改"></a>行前有感叹号 表示 该行 需要修改</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">! helloworld!</span><br></pre></td></tr></table></figure>
-<p>和</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">! this is line c</span><br></pre></td></tr></table></figure>
-<p>表示要使得a.txt与b.txt内容一样，需要修改helloworld为this is line c.</p>
-<h3 id="行前有减号-表示改行需要删除"><a href="#行前有减号-表示改行需要删除" class="headerlink" title="行前有减号 表示改行需要删除"></a>行前有减号 表示改行需要删除</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- this is a new line</span><br></pre></td></tr></table></figure>
-<p>表示要使得a.txt与b.txt内容一样，该行需要删除掉。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost cmp]# diff -c b.txt a.txt </span><br><span class="line">*** b.txt    2021-05-15 22:41:56.157986437 +0800</span><br><span class="line">--- a.txt    2021-05-19 11:45:23.117869628 +0800</span><br><span class="line">***************</span><br><span class="line">*** 1,4 ****</span><br><span class="line">  this is line a</span><br><span class="line">  this is line b</span><br><span class="line">! this is line c</span><br><span class="line">  this is line d</span><br><span class="line">--- 1,5 ----</span><br><span class="line">  this is line a</span><br><span class="line">  this is line b</span><br><span class="line">! helloworld!</span><br><span class="line">  this is line d</span><br><span class="line">+ this is a new line</span><br><span class="line">[root@localhost cmp]# </span><br></pre></td></tr></table></figure>
-<h3 id="行前有加号表示需要添加改行"><a href="#行前有加号表示需要添加改行" class="headerlink" title="行前有加号表示需要添加改行"></a>行前有加号表示需要添加改行</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ this is a new line</span><br></pre></td></tr></table></figure>
-<p>表示要使得b.txt比a.txt多了</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this is a new line</span><br></pre></td></tr></table></figure>
-<p>这一行</p>
-<h1 id="diff-u：统一格式输出"><a href="#diff-u：统一格式输出" class="headerlink" title="diff -u：统一格式输出"></a>diff -u：统一格式输出</h1><p>统一输出格式是上下文格式的改进版本，并产生较小的输出。<br>使用-u选项告诉diff以统一格式打印输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost cmp]# diff -u a.txt b.txt </span><br><span class="line">--- a.txt    2021-05-19 11:45:23.117869628 +0800</span><br><span class="line">+++ b.txt    2021-05-15 22:41:56.157986437 +0800</span><br><span class="line">@@ -1,5 +1,4 @@</span><br><span class="line"> this is line a</span><br><span class="line"> this is line b</span><br><span class="line">-helloworld!</span><br><span class="line">+this is line c</span><br><span class="line"> this is line d</span><br><span class="line">-this is a new line</span><br><span class="line">[root@localhost cmp]# </span><br></pre></td></tr></table></figure>
-<p>表示把b.txt的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">helloworld!</span><br></pre></td></tr></table></figure>
-<p>这样修改为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this is line c</span><br></pre></td></tr></table></figure>
-<p>，然后删除</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this is a new line</span><br></pre></td></tr></table></figure>
-<p>即可得到a.txt</p>
-<h1 id="diff命令手册"><a href="#diff命令手册" class="headerlink" title="diff命令手册"></a>diff命令手册</h1><h2 id="man-diif"><a href="#man-diif" class="headerlink" title="man diif"></a>man diif</h2><p><a target="_blank" rel="noopener" href="https://manned.org/diff.1">https://manned.org/diff.1</a></p>
-<h2 id="tldr-diif"><a href="#tldr-diif" class="headerlink" title="tldr diif"></a>tldr diif</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost cmp]# tldr diff</span><br><span class="line">  diff</span><br><span class="line"></span><br><span class="line">  Compare files and directories.</span><br><span class="line">  More information: https://man7.org/linux/man-pages/man1/diff.1.html.</span><br><span class="line"></span><br><span class="line">  - Compare files (lists changes to turn old_file into new_file):</span><br><span class="line">    diff old_file new_file</span><br><span class="line"></span><br><span class="line">  - Compare files, ignoring white spaces:</span><br><span class="line">    diff -w old_file new_file</span><br><span class="line"></span><br><span class="line">  - Compare files, showing the differences side by side:</span><br><span class="line">    diff -y old_file new_file</span><br><span class="line"></span><br><span class="line">  - Compare files, showing the differences in unified format (as used by git diff):</span><br><span class="line">    diff -u old_file new_file</span><br><span class="line"></span><br><span class="line">  - Compare directories recursively (shows names for differing files/directories as well as changes made to files):</span><br><span class="line">    diff -r old_directory new_directory</span><br><span class="line"></span><br><span class="line">  - Compare directories, only showing the names of files that differ:</span><br><span class="line">    diff -rq old_directory new_directory</span><br><span class="line"></span><br><span class="line">[root@localhost cmp]# </span><br></pre></td></tr></table></figure>
-<h2 id="cheat-diff"><a href="#cheat-diff" class="headerlink" title="cheat diff"></a>cheat diff</h2><pre>
-[root@localhost ~]&#35; cheat diff
-&#35; To view the differences between two files:
-diff -u version1 version2
-
-&#35; To view the differences between two directories:
-diff -ur folder1/ folder2/
-
-&#35; To ignore the white spaces:
-diff -ub version1 version2
-
-&#35; To ignore the blank lines:
-diff -uB version1 version2
-
-&#35; To ignore the differences between uppercase and lowercase:
-diff -ui version1 version2
-
-&#35; To report whether the files differ:
-diff -q version1 version2
-
-&#35; To report whether the files are identical:
-diff -s version1 version2
-
-&#35; To diff the output of two commands or scripts:
-diff &lt;(command1) &lt;(command2)
-
-&#35; Generate a patch file from two files
-diff -Naur version1 version2 &gt; version.patch
-[root@localhost ~]&#35; 
-</pre>
-
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="http://www.weixueyuan.net/a/550.html">http://www.weixueyuan.net/a/550.html</a><br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000023138544">https://segmentfault.com/a/1190000023138544</a><br><a target="_blank" rel="noopener" href="https://www.myfreax.com/diff-command-in-linux/">https://www.myfreax.com/diff-command-in-linux/</a><br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000039105296">https://segmentfault.com/a/1190000039105296</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/6ee74c2790b1">https://www.jianshu.com/p/6ee74c2790b1</a><br><a target="_blank" rel="noopener" href="https://codingdict.com/article/10090">https://codingdict.com/article/10090</a><br><a target="_blank" rel="noopener" href="http://blog.itpub.net/29270124/viewspace-2220511/">http://blog.itpub.net/29270124/viewspace-2220511/</a><br><a target="_blank" rel="noopener" href="https://os.51cto.com/art/201311/418930.htm">https://os.51cto.com/art/201311/418930.htm</a></p>
 
       
     </div>
