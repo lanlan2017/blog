@@ -3,10 +3,10 @@ title: Hexo升级
 categories: 
   - Hexo
   - next主题
-  - 搭建
+  - 更新
 abbrlink: ff1c9b2c
 date: 2020-06-09 11:59:05
-updated: 2022-04-04 17:00:30
+updated: 2022-04-12 16:14:48
 ---
 # 问题描述
 最近推送到GitHub后,无法自动部署.GitHub上的错误报告说是某个依赖版本过低.
