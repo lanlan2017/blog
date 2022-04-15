@@ -1,5 +1,5 @@
 ---
-title: Eclipse 终端Terminal汉字重复问题
+title: Eclipse终端Terminal汉字重复问题
 categories: 
   - Java
   - Java EE
@@ -23,6 +23,7 @@ updated: 2022-04-04 00:51:44
 使用旧版的cmd控制台
 
 Win+R启动运行，然后输入cmd
+<!-- more -->
 
 ![image-20210901144520339](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/09/20210901144520.png)
 
