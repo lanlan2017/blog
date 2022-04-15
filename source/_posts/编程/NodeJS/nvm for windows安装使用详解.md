@@ -15,7 +15,7 @@ https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip
 ```
 # 安装到C盘
 nodejs注意要安装到C盘,如果安装到其他盘，可能会造成无法切换nodejs版本。
-![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10Settings/NVMForWindowsInstallationUseDetails/1.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/NVMForWindowsInstallationUseDetails/1.png)
 
 # 修改setting.txt 添加下载node和npm的淘宝镜像
 

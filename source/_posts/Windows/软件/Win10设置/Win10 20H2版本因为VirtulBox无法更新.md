@@ -11,7 +11,9 @@ updated: 2022-04-04 00:51:44
 # 无法更新的提示信息
 
 <!-- Blog/Windows/Software/WIN10Settings/BecauseTheVirtualBoxWin10_20H2VersionCannotBeUpdated/ -->
-![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/WIN10Settings/BecauseTheVirtualBoxWin10_20H2VersionCannotBeUpdated/1.png)
+
+![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/BecauseTheVirtualBoxWin10_20H2VersionCannotBeUpdated/1.png)
+
 可以看到这里提示Win10与VirtualBox冲突无法安装，我这里有两个VirtualBox：
 - VirtualBox，这个是我安装虚拟机的VirtualBox
 - VirtualBox(LDPlayer)，这个是安卓模拟器的VirtualBox

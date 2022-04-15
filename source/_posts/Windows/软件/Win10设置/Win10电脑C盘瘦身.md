@@ -12,11 +12,11 @@ updated: 2022-04-04 00:51:44
 按Win+E打开文件管理器，点击左侧的用户，进入用户目录；
 ## 移动用户的文档目录到其他磁盘
 在**用户目录**的**文档**目录上按**鼠标右键**，选择**属性**，然后选择**位置**选项卡，修改**文本框**中的路径，然后点击**应用**按钮即可：
-![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10Settings/ComputerCDiskSlimming/2.png)
+![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/ComputerCDiskSlimming/2.png)
 
 ## 移动用户的下载目录到其他磁盘
 在**用户目录**的**下载**目录上点击**右键**，选择**属性**，然后选择**位置**选项卡，然后在输入框中输入新的下载目录的路径，然后点击应用即可：
-![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10Settings/ComputerCDiskSlimming/1.png)
+![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/ComputerCDiskSlimming/1.png)
 
 ## 移动用户的桌面目录到其他磁盘
 # Windows设置-系统-存储
@@ -24,7 +24,7 @@ updated: 2022-04-04 00:51:44
 
 # 移动微信 QQ TIM聊天记录
 ## 更改微信文件的默认保存位置
-![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10Settings/ComputerCDiskSlimming/3.png)
+![](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/ComputerCDiskSlimming/3.png)
 
 ## 移动QQ或者TIM的文件的默认保存位置
 我发现微信移动存储位置是可以的，但是TIM的话，我移动了之后，重启TIM后，默认的存储路径还是没有改变。

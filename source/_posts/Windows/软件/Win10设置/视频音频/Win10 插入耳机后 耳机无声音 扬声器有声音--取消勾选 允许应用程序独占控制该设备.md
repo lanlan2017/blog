@@ -16,13 +16,13 @@ updated: 2022-04-04 00:51:44
 
 ## 打开声音设置
 在右下角的声音图标上**右键**,选择**打开声音设置(E)**:
-![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10Settings/NoSoundFromWiredHeadphones/1.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/NoSoundFromWiredHeadphones/1.png)
 ## 声音控制面板
 点击**声音控制面板**,选择**扬声器**,点击**属性(P)**按钮
-![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10Settings/NoSoundFromWiredHeadphones/2.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/NoSoundFromWiredHeadphones/2.png)
 ##  取消勾选 允许应用程序独占控制该设备
 点击**高级**选项卡,在**独占模式**哪里**取消勾选** **允许应用程序独占控制该设备**
-![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10Settings/NoSoundFromWiredHeadphones/3.png)
+![图片](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/NoSoundFromWiredHeadphones/3.png)
 
 当然如果**取消勾选 允许应用程序独占控制该设备**之后,还是没有解决问题,那可能是其他原因.
 <!-- 
