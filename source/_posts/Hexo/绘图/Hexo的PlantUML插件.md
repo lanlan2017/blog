@@ -31,6 +31,7 @@ Bob-&gt;Alice : hello
 Bob->Alice : hello
 @enduml
 ```
+<!-- more -->
 
 <pre>
 &#96;&#96;&#96;plantuml
