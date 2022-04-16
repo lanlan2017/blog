@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">609</span>
+          <span class="site-state-item-count">611</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">202</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -213,6 +213,438 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9c30cbde/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/9c30cbde/" class="post-title-link" itemprop="url">4 Log4j配置</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-03 04:04:18" itemprop="dateCreated datePublished" datetime="2020-08-03T04:04:18+08:00">2020-08-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">简介</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/9c30cbde/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/9c30cbde/" data-xid="/blog/9c30cbde/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="log4j配置"><a href="#log4j配置" class="headerlink" title="log4j配置"></a>log4j配置</h1><p><code>Log4j</code>的配置包括在配置文件中:</p>
+<ol>
+<li>指定<code>Level</code>、</li>
+<li>定义<code>Appender</code>、</li>
+<li>指明<code>Layout</code>。</li>
+</ol>
+<p><code>Log4j.properties</code>文件是<code>Log4j</code>的配置文件，属性以<strong>键值对</strong>的形式定义。默认情况下，<code>LogManager</code>会在<code>CLASSPATH</code>中寻找<code>Log4j.properties</code>文件。</p>
+<ul>
+<li>根日志的级别定义为<code>DEBUG</code>，并将名为<code>XXX</code>的<code>appender</code>添加其上。</li>
+<li>将名为<code>XXX</code>的<code>appender</code>设置为合法的<code>appender</code>。</li>
+<li>设置<code>XXX</code>这个<code>appender</code>的<code>layout</code>。</li>
+</ul>
+<h2 id="Log4j-properties的语法"><a href="#Log4j-properties的语法" class="headerlink" title="Log4j.properties的语法"></a>Log4j.properties的语法</h2><p>为<code>appender XXXXX</code>定义的<code>Log4j.properties</code>的语法如下：</p>
+<pre>
+&#35; Define the root logger with appender XXX
+log4j.rootLogger = DEBUG, <mark>XXX</mark>
+
+&#35; Set the appender named XXX to be a File appender
+<strong>log4j.appender.<mark>XXX</mark></strong>=org.apache.log4j.FileAppender
+
+&#35; Define the layout for XXX appender
+<strong>log4j.appender.<mark>XXX</mark>.layout</strong>=org.apache.log4j.PatternLayout
+<strong>log4j.appender.<mark>XXX</mark>.layout.conversionPattern</strong>=%m%n
+</pre>
+
+<h2 id="Log4j-properties示例"><a href="#Log4j-properties示例" class="headerlink" title="Log4j.properties示例"></a>Log4j.properties示例</h2><p>使用上述语法，我们在<code>Log4j.properties</code>定义如下属性：</p>
+<ul>
+<li>定义根日志级别为<code>DEBUG</code>，并将名为<code>FILE</code>的<code>appender</code>添加在其上。</li>
+<li><code>appender FILE</code>定义为<code>org.apache.log4j.FileAppender</code>，它将日志写入<code>log</code>目录下一个名为<code>log.out</code>的文件中。</li>
+<li><code>layout</code>被定义为<code>%m%n</code>，其中<code>%m</code>表示日志信息,<code>%n</code>表示换行符,则<code>%m%n</code>表示打印出日志信息并在末尾加入换行。</li>
+</ul>
+<figure class="highlight properties"><figcaption><span>Log4j.properties</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&amp;#35;</span> <span class="string">定义变量,该变量表示日志文件所在的目录</span></span><br><span class="line"><span class="attr">log</span> = <span class="string">E:/workspacne_JDK8Tomcat8.5/Log4jDemo</span></span><br><span class="line"><span class="attr">&amp;#35;</span> <span class="string">Define the root logger with appender file</span></span><br><span class="line"><span class="attr">log4j.rootLogger</span> = <span class="string">DEBUG, FILE</span></span><br><span class="line"></span><br><span class="line"><span class="attr">&amp;#35;</span> <span class="string">Define the file appender</span></span><br><span class="line"><span class="attr">log4j.appender.FILE</span>=<span class="string">org.apache.log4j.FileAppender</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.File</span>=<span class="string">$&#123;log&#125;/log.out</span></span><br><span class="line"></span><br><span class="line"><span class="attr">&amp;#35;</span> <span class="string">Define the layout for file appender</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.layout.conversionPattern</span>=<span class="string">%m%n</span></span><br></pre></td></tr></table></figure>
+<h3 id="变量替换"><a href="#变量替换" class="headerlink" title="变量替换"></a>变量替换</h3><p>值得注意的是，<code>Log4j</code>支持<code>Unix</code>风格的变量替换，比如<code>$&#123;variableName&#125;</code>。</p>
+<h3 id="级别"><a href="#级别" class="headerlink" title="级别"></a>级别</h3><p>所有可能的选项如下：</p>
+<ul>
+<li><code>TRACE</code>、</li>
+<li><code>DEBUG</code>、</li>
+<li><code>INFO</code>、</li>
+<li><code>WARN</code>、</li>
+<li><code>ERROR</code>、</li>
+<li><code>FATAL</code>、</li>
+<li><code>ALL</code>。</li>
+</ul>
+<p>这些级别会在本教程的后续部分讲解。</p>
+<h2 id="Appender对象"><a href="#Appender对象" class="headerlink" title="Appender对象"></a>Appender对象</h2><p><strong><code>Apache Log4j</code>提供的<code>Appender</code>对象主要负责将日志信息打印至不同目的地</strong>，比如控制台、文件、网络套接字、<code>NT</code>事件日志等。</p>
+<h3 id="Appender对象属性"><a href="#Appender对象属性" class="headerlink" title="Appender对象属性"></a>Appender对象属性</h3><p>每个<code>Appender</code>对象都有不同的属性，这些属性决定了该对象的行为。</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>layout</code></td>
+<td align="left"><code>Appender</code>使用<code>Layout</code>对象和与之关联的模式来格式化日志信息。</td>
+</tr>
+<tr>
+<td align="left"><code>target</code></td>
+<td align="left">目的地可以是控制台、文件，或依赖于<code>appender</code>的对象。</td>
+</tr>
+<tr>
+<td align="left"><code>level</code></td>
+<td align="left">级别用来控制过滤日志信息。</td>
+</tr>
+<tr>
+<td align="left"><code>threshold</code></td>
+<td align="left"><code>Appender</code>可脱离于日志级别定义一个阀值级别，<code>Appender</code>对象会忽略所有级别低于阀值级别的日志。</td>
+</tr>
+<tr>
+<td align="left"><code>filter</code></td>
+<td align="left"><code>Filter</code>对象可在级别基础之上分析日志信息，来决定<code>Appender</code>对象是否处理或忽略一条日志记录。</td>
+</tr>
+</tbody></table>
+<h3 id="将Appender添加到Logger对象"><a href="#将Appender添加到Logger对象" class="headerlink" title="将Appender添加到Logger对象"></a>将Appender添加到Logger对象</h3><p>通过在配置文件中使用如下方法，将<code>Appender</code>对象添加至<code>Logger</code>对象：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">log4j.logger.[logger-name]</span>=<span class="string">level, appender1,appender2...appendern</span></span><br></pre></td></tr></table></figure>
+<p>也可以在<code>XML</code>中定义同样的配置：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;com.apress.logging.Log4j&quot;</span> <span class="attr">additivity</span>=<span class="string">&quot;false&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;appender1&quot;</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;appender2&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="在程序中为Logger对象添加Appender对象"><a href="#在程序中为Logger对象添加Appender对象" class="headerlink" title="在程序中为Logger对象添加Appender对象"></a>在程序中为Logger对象添加Appender对象</h3><p>如果想在程序中添加<code>Appender</code>对象，可使用如下方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addAppender</span><span class="params">(Appender appender)</span>;</span><br></pre></td></tr></table></figure>
+<p><code>addAppender()</code>方法为<code>Logger</code>对象增加一个<code>Appender</code>。如示例配置展示的那样，可以通过逗号分隔的列表，为<code>logger</code>添加多个<code>Appender</code>，将日志信息打印到不同的目的地。</p>
+<h3 id="所有可用的Appender"><a href="#所有可用的Appender" class="headerlink" title="所有可用的Appender"></a>所有可用的Appender</h3><p>在上面的例子中，我们只用到了<code>FileAppender</code>，所有可用的<code>appender</code>包括：</p>
+<ul>
+<li><code>AppenderSkeleton</code>、</li>
+<li><code>AsyncAppender</code>、</li>
+<li><code>ConsoleAppender</code>、</li>
+<li><code>DailyRollingFileAppender</code>、</li>
+<li><code>ExternallyRolledFileAppender</code>、</li>
+<li><code>FileAppender</code>、</li>
+<li><code>JDBCAppender</code>、</li>
+<li><code>JMSAppender</code>、</li>
+<li><code>LF5Appender</code>、</li>
+<li><code>NTEventLogAppender</code>、</li>
+<li><code>NullAppender</code>、</li>
+<li><code>RollingFileAppender</code>、</li>
+<li><code>SMTPAppender</code>、</li>
+<li><code>SocketAppender</code>、</li>
+<li><code>SocketHubAppender</code>、</li>
+<li><code>SyslogAppender</code>、</li>
+<li><code>TelnetAppender</code>、</li>
+<li><code>WriterAppender</code>。</li>
+</ul>
+<p>我们将在<a href="https://lanlan2017.github.io/blog/6296507b/">使用文件记录日志</a>一章讲解<code>FileAppender</code>，在<a href="https://lanlan2017.github.io/blog/17eaff0a/">使用数据库记录日志</a>一章讲解<code>JDBCAppender</code>。</p>
+<h2 id="Layout对象"><a href="#Layout对象" class="headerlink" title="Layout对象"></a>Layout对象</h2><p>我们已经在<code>appender</code>中使用了<code>PatternLayout</code>，<code>layout</code>对象的所有选项包括：</p>
+<ul>
+<li><code>DateLayout</code>、</li>
+<li><code>HTMLLayout</code>、</li>
+<li><code>PatternLayout</code>、</li>
+<li><code>SimpleLayout</code>、</li>
+<li><code>XMLLayout</code>。</li>
+</ul>
+<p>使用<code>HTMLLayout</code>和<code>XMLLayout</code>，可以生成<code>HTML</code>和<code>XML</code>格式的日志。</p>
+<p>日志格式化<br>您将在<strong>日志格式</strong>一章学习如何格式化日志信息。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/39ac74b8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/39ac74b8/" class="post-title-link" itemprop="url">3 Log4j架构</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-03 03:47:33" itemprop="dateCreated datePublished" datetime="2020-08-03T03:47:33+08:00">2020-08-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">简介</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/39ac74b8/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/39ac74b8/" data-xid="/blog/39ac74b8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>938</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="log4j架构"><a href="#log4j架构" class="headerlink" title="log4j架构"></a>log4j架构</h1><h2 id="Log4j采用分层架构"><a href="#Log4j采用分层架构" class="headerlink" title="Log4j采用分层架构"></a>Log4j采用分层架构</h2><p><code>Log4j API</code>采用分层架构，每一层有不同的对象，完成不同的任务。这种分层架构让设计变得灵活，且易于日后扩展。</p>
+<h2 id="Log4j框架组件图"><a href="#Log4j框架组件图" class="headerlink" title="Log4j框架组件图"></a>Log4j框架组件图</h2><p>下图展示了Log4j框架中的组件：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/blog/programming/java/log4j/Log4jArchitecture/1.jpg" alt="图片"></p>
+<h2 id="Log4j对象分类"><a href="#Log4j对象分类" class="headerlink" title="Log4j对象分类"></a>Log4j对象分类</h2><p><code>Log4j</code>里有两种类型的对象：</p>
+<ul>
+<li><strong>核心对象</strong>：这是框架必需的对象，使用框架时必需用到它们。</li>
+<li><strong>支持对象</strong>：这是框架的可选对象，它们支持核心对象做一些额外的，但并不重要的任务。</li>
+</ul>
+<h3 id="核心对象"><a href="#核心对象" class="headerlink" title="核心对象"></a>核心对象</h3><p>核心对象包括如下几种类型：</p>
+<h4 id="Logger对象"><a href="#Logger对象" class="headerlink" title="Logger对象"></a>Logger对象</h4><p>最上一层是<code>Logger</code>对象，该对象负责获取日志信息，并存储于一个分层的命名空间之中。</p>
+<h4 id="Layout对象"><a href="#Layout对象" class="headerlink" title="Layout对象"></a>Layout对象</h4><p><code>Layout</code>层提供了用于以各种风格格式化日志信息的对象，在发布日志信息之前，它为<code>appender</code>对象提供支持。<br><code>Layout</code>对象对于发布日志信息非常重要，它使日志变得可读、可复用。</p>
+<h4 id="Appender对象"><a href="#Appender对象" class="headerlink" title="Appender对象"></a>Appender对象</h4><p>该对象位于分层架构中的较低一层，<code>Appender</code>对象负责将日志信息发布到不同目的地，比如:</p>
+<ul>
+<li>数据库、</li>
+<li>文件、</li>
+<li>控制台、</li>
+<li><code>Unix Syslog</code>等。</li>
+</ul>
+<h3 id="支持对象"><a href="#支持对象" class="headerlink" title="支持对象"></a>支持对象</h3><p>Log4j 中还有其他一些对象，同样在框架中发挥着重要作用。</p>
+<h4 id="Level对象"><a href="#Level对象" class="headerlink" title="Level对象"></a>Level对象</h4><p><code>Level</code>对象定义了日志信息的粒度和优先级。<code>API</code>定义了七种级别：</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">级别</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">8</td>
+<td align="left"><code>OFF</code></td>
+<td align="left">最高级别，用于关闭日志。</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left"><code>FATAL</code></td>
+<td align="left">指明非常严重的错误事件，可能会导致应用终止执行。</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left"><code>ERROR</code></td>
+<td align="left">指明错误事件，但应用可能还能继续运行。</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left"><code>WARN</code></td>
+<td align="left">指明潜在的有害状况。</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left"><code>INFO</code></td>
+<td align="left">指明描述信息，从粗粒度上描述了应用运行过程。</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><code>DEBUG</code></td>
+<td align="left">指明细致的事件信息，对调试应用最有用。</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><code>TRACE</code></td>
+<td align="left">比<code>DEBUG</code>级别的粒度更细。</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left"><code>ALL</code></td>
+<td align="left">所有级别，包括定制级别。</td>
+</tr>
+</tbody></table>
+</blockquote>
+<h4 id="Filter对象"><a href="#Filter对象" class="headerlink" title="Filter对象"></a>Filter对象</h4><p><code>Filter</code>对象用来分析日志信息，进而决定该条日志是否被记录。</p>
+<p>一个<code>Appender</code>对象可对应多个<code>Filter</code>对象，当日志信息传给<code>Appender</code>对象时，与其关联的所有<code>Filter</code>对象需要判断是否将日志信息发布到目的地。</p>
+<h4 id="ObjectRenderer对象"><a href="#ObjectRenderer对象" class="headerlink" title="ObjectRenderer对象"></a>ObjectRenderer对象</h4><p><code>ObjectRenderer</code>对象负责为传入日志框架的不同对象提供字符串形式的表示，<code>Layout</code>对象使用该对象来准备最终的日志信息。</p>
+<h4 id="LogManager对象"><a href="#LogManager对象" class="headerlink" title="LogManager对象"></a>LogManager对象</h4><p><code>LogManager</code>对象管理日志框架，它负责从系统级的配置文件或类中读取初始配置参数。</p>
+<!--
+blog/programming/java/log4j/Log4jArchitecture/1.jpg
+-->
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1340,337 +1772,8 @@ Blog/Windows/Software/Win10Settings/NoSoundFromWiredHeadphones/1
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/c9d9ee7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/c9d9ee7/" class="post-title-link" itemprop="url">解决 Github Security报错 Dependabot cannot update to the required version</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-06-25 01:33:18" itemprop="dateCreated datePublished" datetime="2020-06-25T01:33:18+08:00">2020-06-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 15:56:38" itemprop="dateModified" datetime="2022-04-04T15:56:38+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/next%E4%B8%BB%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">next主题</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/next%E4%B8%BB%E9%A2%98/Debug/" itemprop="url" rel="index"><span itemprop="name">Debug</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/c9d9ee7/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/c9d9ee7/" data-xid="/blog/c9d9ee7/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><pre>
-Dependabot cannot update to the required version
-View details about this error or learn more about Dependabot security updates.
-
-1 kind-of vulnerability found in **package-lock.json** on 3 Apr
-**Remediation**
-Upgrade **kind-of** to version **6.0.3** or later. For example:
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;dependencies&quot;: &#123;</span><br><span class="line">  &quot;kind-of&quot;: &quot;&gt;=6.0.3&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-or…
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;devDependencies&quot;: &#123;</span><br><span class="line">  &quot;kind-of&quot;: &quot;&gt;=6.0.3&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-Always verify the validity and compatibility of suggestions with your codebase.
-</pre>
-
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>大概是说<strong>package-lock.json</strong>文件中的kind-of依赖项版本太低,让我修改到6.0.3版本以上.<br>但是我打开<strong>package-lock.json</strong>这个文件查看了一下,各种依赖项密密麻麻,我是不能看手动去一个一个更改的.</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>我们知道,这个<strong>package-lock.json</strong>文件是,npm install安装的时候自动生成的.<br>我如果重新安装一遍,会自动生成这个<strong>package-lock.json</strong>文件.</p>
-<h2 id="具体做法"><a href="#具体做法" class="headerlink" title="具体做法"></a>具体做法</h2><p>将目录<code>node_modules/</code>和文件<code>package-lock.json</code>删除掉,保留<code>package.json</code>文件,然后执行<code>npm install</code>命令重新安装插件即可:</p>
-<h3 id="删除node-modules目录和package-lock-json文件"><a href="#删除node-modules目录和package-lock-json文件" class="headerlink" title="删除node_modules目录和package-lock.json文件"></a>删除node_modules目录和package-lock.json文件</h3><p>删除之前的站点目录:</p>
-<pre>
-lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/blog (master)
-$ ls
-_admin-config.yml  FM.properties  HexoS.sh*      <mark>node_modules/</mark>      scaffolds/        themes/
-_config.yml        HexoD.bat      HexoSTest.bat  package.json       source/
-db.json            HexoS.bat      KillBlog.sh    <mark>package-lock.json</mark>  StartWriting.bat
-</pre>
-<p>删除后的站点目录:</p>
-<pre>
-lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/blog (master)
-$ ls
-_admin-config.yml  db.json        HexoD.bat  HexoS.sh*      KillBlog.sh   scaffolds/  StartWriting.bat
-_config.yml        FM.properties  HexoS.bat  HexoSTest.bat  package.json  source/     themes/
-</pre>
-<h3 id="重新安装package-json中的插件"><a href="#重新安装package-json中的插件" class="headerlink" title="重新安装package.json中的插件"></a>重新安装package.json中的插件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>安装之后:</p>
-<pre>
-lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/blog (master)
-$ ls
-_admin-config.yml  FM.properties  HexoS.sh*      <mark>node_modules/</mark>      scaffolds/        themes/
-_config.yml        HexoD.bat      HexoSTest.bat  package.json       source/
-db.json            HexoS.bat      KillBlog.sh    <mark>package-lock.json</mark>  StartWriting.bat
-</pre>
-<p>可以看到<code>package-lock.json</code>文件又回来了,里面的依赖版本也都更新到最新的版本了.</p>
-<h1 id="推送到Github"><a href="#推送到Github" class="headerlink" title="推送到Github"></a>推送到Github</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit</span><br></pre></td></tr></table></figure>
-<p>刷新GitHub仓库页面,可以看到上面的<strong>Security警告</strong>消失了。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/de4f7be8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/de4f7be8/" class="post-title-link" itemprop="url">Hexo Next主题 添加Valine评论系统 设置有新评论时自动发邮件提醒</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-06-24 08:21:48" itemprop="dateCreated datePublished" datetime="2020-06-24T08:21:48+08:00">2020-06-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 15:56:38" itemprop="dateModified" datetime="2022-04-04T15:56:38+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/next%E4%B8%BB%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">next主题</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/next%E4%B8%BB%E9%A2%98/%E6%8F%92%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">插件</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/de4f7be8/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/de4f7be8/" data-xid="/blog/de4f7be8/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="文本部分内容已过时"><a href="#文本部分内容已过时" class="headerlink" title="文本部分内容已过时"></a>文本部分内容已过时</h1><p>valien评论系统会受到攻击。可以使用衍生的Waline评论系统。</p>
-<h1 id="注册LeanCloud"><a href="#注册LeanCloud" class="headerlink" title="注册LeanCloud"></a>注册LeanCloud</h1><p>LeanCloud分为<strong>国内</strong>和<strong>国际版</strong>的。<br>国内的在2019-10-1之后需要自定义已备案域名才能使用,<br>所以我这里使用国际版,先到<a target="_blank" rel="noopener" href="https://leancloud.app/">LeanCloud国际版</a>注册一个账号.</p>
-<h2 id="验证邮箱-验证手机号"><a href="#验证邮箱-验证手机号" class="headerlink" title="验证邮箱 验证手机号"></a>验证邮箱 验证手机号</h2><p>注册好之后,<strong>点击头像</strong>(图片有误,不是右键,是点击鼠标左键),选择<strong>账号设置</strong>:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/15.png"><br>然后验证手机号和邮箱:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/16.png"></p>
-<h1 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h1><p>点击创建应用按钮:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/1.png"><br>找不到的可以点击这个链接来创建:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://console.leancloud.app/applist.html#/newapp</span><br></pre></td></tr></table></figure>
-<h2 id="选择开发版"><a href="#选择开发版" class="headerlink" title="选择开发版"></a>选择开发版</h2><p>选择不要钱的开发版<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/2.png"></p>
-<h2 id="进入设置"><a href="#进入设置" class="headerlink" title="进入设置"></a>进入设置</h2><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/3.png"></p>
-<h3 id="设置Web安全域名，填入自己的域名"><a href="#设置Web安全域名，填入自己的域名" class="headerlink" title="设置Web安全域名，填入自己的域名"></a>设置Web安全域名，填入自己的域名</h3><p>依次点击左侧边栏上的<strong>设置</strong>,<strong>安全中心</strong>,然后<strong>下拉页面</strong>,找到<strong>Web 安全域名</strong>,把你站点的域名填写进去:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/4.png"></p>
-<h3 id="获取APP-ID-和-APP-Key"><a href="#获取APP-ID-和-APP-Key" class="headerlink" title="获取APP ID 和 APP Key"></a>获取APP ID 和 APP Key</h3><p>依次点击左侧边栏上的<strong>设置</strong>,<strong>应用 Keys</strong>,然后复制下<strong>AppID</strong>和<strong>AppKey</strong>:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/5.png"></p>
-<h1 id="打开Next主题配置文件-启用Valine-填写appid和appkey"><a href="#打开Next主题配置文件-启用Valine-填写appid和appkey" class="headerlink" title="打开Next主题配置文件 启用Valine 填写appid和appkey"></a>打开Next主题配置文件 启用Valine 填写appid和appkey</h1><p>打开博客目录的<code>next</code>主题配置文件 _<code>config.yml</code> ，找到<code>Valine</code>，将上图的<code>APP ID</code> 和<code>APP Key</code>复制到对应位置。:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/6.png"><br><strong>到这里其实就可以使用Valine这个评论系统了,下面来设置邮件提醒</strong></p>
-<h1 id="设置邮件提醒"><a href="#设置邮件提醒" class="headerlink" title="设置邮件提醒"></a>设置邮件提醒</h1><h2 id="部署邮件提醒项目-Valine-Admin"><a href="#部署邮件提醒项目-Valine-Admin" class="headerlink" title="部署邮件提醒项目 Valine-Admin"></a>部署邮件提醒项目 Valine-Admin</h2><p>依次点击左侧边栏上的<strong>云引擎</strong>,<strong>部署</strong>,然后下拉页面,点击<strong>部署项目</strong>:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/8.png"><br>然后选中<strong>Git部署</strong>,点击<strong>配置Git</strong>按钮,<strong>填写</strong>第三方邮件提醒源代码库地址,<strong>保存</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/zhaojun1998/Valine-Admin</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/9.png"><br>继续下拉页面,使用<strong>master</strong>分支,然后点击<strong>部署</strong>:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/10.png"></p>
-<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><p>点击做出的<strong>云引擎</strong>,<strong>设置</strong>,然后点击<strong>添加新变量</strong>按钮添加以下环境变量:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/11.png"></p>
-<ul>
-<li><code>SITE_NAME</code> : 网站名称。</li>
-<li><code>SITE_URL</code> : 网站地址, 最后不要加 &#x2F; 。</li>
-<li><code>SMTP_USER</code> : <code>SMTP</code> 服务用户名，一般为邮箱地址。</li>
-<li><code>SMTP_PASS</code> : <code>SMTP</code> 密码，一般为授权码，而不是邮箱的登陆密码，请自行查询对应邮件服务商的获取方式</li>
-<li><code>SMTP_SERVICE</code> : 邮件服务提供商，支持QQ、163、126、Gmail、”Yahoo”、…… ，全部支持请参考 :<a target="_blank" rel="noopener" href="https://nodemailer.com/smtp/well-known/#supported-services">Nodemailer Supported services</a>。 — 如这里没有你使用的邮件提供商，<a target="_blank" rel="noopener" href="https://github.com/zhaojun1998/Valine-Admin/blob/master/%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE.md#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8">请查看自定义邮件服务器</a></li>
-<li><code>SENDER_NAME</code> : 寄件人名称。</li>
-</ul>
-<h3 id="怎么获取SMTP授权码-SMTP-PASS"><a href="#怎么获取SMTP授权码-SMTP-PASS" class="headerlink" title="怎么获取SMTP授权码(SMTP_PASS)"></a>怎么获取SMTP授权码(SMTP_PASS)</h3><p>我使用的是163的邮箱,参见：<a target="_blank" rel="noopener" href="http://blog.51cto.com/13284080/2065376">163邮箱设置smtp密码步骤</a></p>
-<h1 id="保证绝大多数时间邮件服务正常"><a href="#保证绝大多数时间邮件服务正常" class="headerlink" title="保证绝大多数时间邮件服务正常"></a>保证绝大多数时间邮件服务正常</h1><p><strong>免费版的<code>LeanCloud</code>容器，是有强制性休眠策略的，不能24小时运行：</strong></p>
-<ul>
-<li>每天必须休眠 6 个小时</li>
-<li>30 分钟内没有外部请求，则休眠。</li>
-<li>休眠后如果有新的外部请求实例则马上启动（但激活时此次发送邮件会失败）。</li>
-</ul>
-<p>分析了一下上方的策略，如果不想付费的话，最佳使用方案就设置定时器，每天 7 - 23 点每 20 分钟访问一次，这样可以保持每天的绝大多数时间邮件服务是正常的。</p>
-<h2 id="配置Web主机域名"><a href="#配置Web主机域名" class="headerlink" title="配置Web主机域名"></a>配置Web主机域名</h2><p>首先需要先配置下Web主机的域名，使用定时器时要用到。</p>
-<h2 id="添加新的环境变量"><a href="#添加新的环境变量" class="headerlink" title="添加新的环境变量"></a>添加新的环境变量</h2><p>添加环境变量，<strong>ADMIN_URL</strong>,值设置为<strong>https:&#x2F;&#x2F;你刚才设置的域名.avosapps.us&#x2F;</strong>,如图所示:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/14.png"></p>
-<h2 id="添加定时器"><a href="#添加定时器" class="headerlink" title="添加定时器"></a>添加定时器</h2><p><strong>云引擎</strong>,<strong>定时任务</strong>,<strong>创建定时任务</strong>,名称随便写,选<strong>生产环境</strong>,选择<strong>self_wake</strong>函数,选择<strong>Corn表达式</strong>,输入:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 */20 7-23 * * ?</span><br></pre></td></tr></table></figure>
-<p><strong>保存</strong><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/13.png"></p>
-<h2 id="重启Valine-Admin项目"><a href="#重启Valine-Admin项目" class="headerlink" title="重启Valine-Admin项目"></a>重启Valine-Admin项目</h2><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/12.png"></p>
-<h2 id="查看定时器效果"><a href="#查看定时器效果" class="headerlink" title="查看定时器效果"></a>查看定时器效果</h2><p><strong>云引擎</strong>,<strong>日志</strong>,看到如下信息表示自动唤醒任务运行成功:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">自唤醒任务执行成功，响应状态码为: 200</span><br></pre></td></tr></table></figure>
-<h1 id="测试邮件提醒效果"><a href="#测试邮件提醒效果" class="headerlink" title="测试邮件提醒效果"></a>测试邮件提醒效果</h1><h2 id="填写评论"><a href="#填写评论" class="headerlink" title="填写评论"></a>填写评论</h2><p>填写昵称,邮箱,评论,然后提交<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/17.png"></p>
-<h2 id="查看邮件提醒"><a href="#查看邮件提醒" class="headerlink" title="查看邮件提醒"></a>查看邮件提醒</h2><p>应该过不了多久就可以收到邮件提醒:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/18.png"><br>点击邮件中的 <strong>点击前往查看</strong> 超链接,即可查看评论:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/19.png"></p>
-<h1 id="删除评论"><a href="#删除评论" class="headerlink" title="删除评论"></a>删除评论</h1><h2 id="通过直接在表中的删除"><a href="#通过直接在表中的删除" class="headerlink" title="通过直接在表中的删除"></a>通过直接在表中的删除</h2><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/20.png"></p>
-<h2 id="使用评论管理系统"><a href="#使用评论管理系统" class="headerlink" title="使用评论管理系统"></a>使用评论管理系统</h2><h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><p>然后在Use表中增加账号，<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/21.png"><br>只需要填写<code>password</code>和<code>username</code>。其中<code>username</code>必须设置为你的上面环境变量<code>SMTP_USER</code>的邮箱相同.不然无法登录<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/22.png"></p>
-<h2 id="登录评论管理系统"><a href="#登录评论管理系统" class="headerlink" title="登录评论管理系统"></a>登录评论管理系统</h2><p>地址就是上面设置的web主机名:<strong>https:&#x2F;&#x2F;你刚才设置的域名.avosapps.us&#x2F;</strong><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/23.png"><br>进入评论系统后就可以查看评论或者删除评论了:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/Next/Plugin/ValineCommentSystem/24.png"></p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://juejin.im/post/5d790e706fb9a06af8250665">使用Leancloud+valine打造Hexo-NexT评论系统</a><br><a target="_blank" rel="noopener" href="https://github.com/zhaojun1998/Valine-Admin">https://github.com/zhaojun1998/Valine-Admin</a><br><a target="_blank" rel="noopener" href="https://github.com/zhaojun1998/Valine-Admin/blob/master/%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE.md#web-%E8%AF%84%E8%AE%BA%E7%AE%A1%E7%90%86">https://github.com/zhaojun1998/Valine-Admin/blob/master/高级配置.md#web-评论管理</a><br><a target="_blank" rel="noopener" href="https://lqcoder.com/p/aab4c717.html">https://lqcoder.com/p/aab4c717.html</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/27/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/blog/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/61/">61</a><a class="extend next" rel="next" href="/blog/page/29/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/27/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/blog/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/29/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>

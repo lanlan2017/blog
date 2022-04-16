@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">609</span>
+          <span class="site-state-item-count">611</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">202</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -213,6 +213,253 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/38f33943/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/38f33943/" class="post-title-link" itemprop="url">解决C语言：error C2084：function 'xxx xxx()' already has a body</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-11-14 19:25:05" itemprop="dateCreated datePublished" datetime="2018-11-14T19:25:05+08:00">2018-11-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:01" itemprop="dateModified" datetime="2022-04-04T15:13:01+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/C%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">C语言</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/C%E8%AF%AD%E8%A8%80/Debug/" itemprop="url" rel="index"><span itemprop="name">Debug</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/38f33943/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/38f33943/" data-xid="/blog/38f33943/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>295</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="分析原因"><a href="#分析原因" class="headerlink" title="分析原因"></a>分析原因</h1><p>这是因为头文件重复导入了，我在头文件<code>userBuyMenu.h</code>中导入了<code>#include &quot;findMethod.h&quot;</code>。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/C/debug/alredyHasABody/alreadyhasabody.png"><br>然后又在主方法中同时导入了这个两个头文件：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;userBuyMenu.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;findMethod.h&quot;</span></span></span><br></pre></td></tr></table></figure>
+<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/C/debug/alredyHasABody/congfudaoru.png"><br>这样就<code>findMethod.h</code>被导入了两次，重复了，所以报这个错。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>注释掉<code>userBuyMenu.h</code>中导入的<code>findMethod.h</code>的语句：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//#include &quot;findMethod.h&quot;</span></span><br></pre></td></tr></table></figure>
+<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/C/debug/alredyHasABody/zhushidiao.png"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>以后不要在头文件中导入头文件，再主方法中导入即可。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d400453f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/d400453f/" class="post-title-link" itemprop="url">任务管理器中不小心关掉文件资源管理器explorer了怎么重新打开</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-11-13 15:03:20" itemprop="dateCreated datePublished" datetime="2018-11-13T15:03:20+08:00">2018-11-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/Win10%E8%AE%BE%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">Win10设置</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/d400453f/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/d400453f/" data-xid="/blog/d400453f/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>175</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="我的问题"><a href="#我的问题" class="headerlink" title="我的问题"></a>我的问题</h1><p>我在<code>任务管理器</code>中的资源监视器中不小心关掉了文件资源管理器<code>explorer.exe</code>，然后就炸了，整个屏幕直接变蓝了，而其按下Win+R也无法调出运行窗口。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/windows/explorer/colseExplorer.png"></p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>不过还好<code>任务管理器</code>还可以使用，所以：进入任务管理器，点击<code>文件&gt;运行新任务</code>：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/windows/explorer/openStart.png"><br>然后输入<code>explorer</code>，按下回车即可启动文件资源管理器了，这样电脑就恢复正常了。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/windows/explorer/startExplorer.png"><br>启动其他程序也类似。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1332,338 +1579,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/487a7f53/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/487a7f53/" class="post-title-link" itemprop="url">Java快速读取一个很大的文本文件的最后一行</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-10-29 23:41:16" itemprop="dateCreated datePublished" datetime="2018-10-29T23:41:16+08:00">2018-10-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-IO%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">Java IO流</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-IO%E6%B5%81/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/487a7f53/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/487a7f53/" data-xid="/blog/487a7f53/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="返回文本文件最后一行java代码"><a href="#返回文本文件最后一行java代码" class="headerlink" title="返回文本文件最后一行java代码"></a>返回文本文件最后一行java代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">readLastLine</span><span class="params">(File file, String charset)</span></span><br><span class="line">        <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (!file.exists() || file.isDirectory() || !file.canRead())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">RandomAccessFile</span> <span class="variable">raf</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        raf = <span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(file, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">        <span class="comment">//获取文件占用字节数</span></span><br><span class="line">        <span class="type">long</span> <span class="variable">len</span> <span class="operator">=</span> raf.length();</span><br><span class="line">        <span class="keyword">if</span> (len == <span class="number">0L</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//向前走一个字节</span></span><br><span class="line">            <span class="type">long</span> <span class="variable">pos</span> <span class="operator">=</span> len - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> (pos &gt; <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                pos--;</span><br><span class="line">                <span class="comment">//移动指针</span></span><br><span class="line">                raf.seek(pos);</span><br><span class="line">                <span class="comment">//判断这个字节是不是回车符</span></span><br><span class="line">                <span class="keyword">if</span> (raf.readByte() == <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">break</span>;<span class="comment">//前移到会第一个回车符后结束</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pos == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                raf.seek(<span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//记录下当前位置</span></span><br><span class="line">            </span><br><span class="line">            <span class="type">byte</span>[] bytes = <span class="keyword">new</span> <span class="title class_">byte</span>[(<span class="type">int</span>) (len - pos)];</span><br><span class="line">            <span class="comment">//读取从回车符位置到文件结尾的所有字节</span></span><br><span class="line">            raf.read(bytes);</span><br><span class="line">            <span class="keyword">if</span> (charset == <span class="literal">null</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>(bytes);</span><br><span class="line">            &#125; <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>(bytes, charset);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e)</span><br><span class="line">    &#123;</span><br><span class="line">    &#125; <span class="keyword">finally</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (raf != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                raf.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e2)</span><br><span class="line">            &#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/q_linchao/article/details/79630906">https://blog.csdn.net/q_linchao&#x2F;article&#x2F;details&#x2F;79630906</a></p>
-<h2 id="读取本文文件最后一行，并记下最后一行的位置"><a href="#读取本文文件最后一行，并记下最后一行的位置" class="headerlink" title="读取本文文件最后一行，并记下最后一行的位置"></a>读取本文文件最后一行，并记下最后一行的位置</h2><p>如果文本文件最后一行也有特殊的意义，需要动态的更新最后一行，单单读取最后一行是远远不够的，所以我在上面代码的基础上进一步封装成一个工具类，<strong>把文本文件的最后一行，以及最后一行的位置。保存在内部成员属性中</strong>，源代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.RandomAccessFile;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LastLineInFile</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">long</span> lastlinestart;</span><br><span class="line">    <span class="keyword">private</span> String lastLine;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">LastLineInFile</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.lastlinestart=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">this</span>.lastLine=<span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">long</span> <span class="title function_">getLastlinestart</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> lastlinestart;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getLastLine</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> lastLine;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">setLastlinestart</span><span class="params">(<span class="type">long</span> pos)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.lastlinestart = pos;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">setLastLine</span><span class="params">(String lastLine)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.lastLine = lastLine;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">readLastLine</span><span class="params">(File file, String charset)</span></span><br><span class="line">            <span class="keyword">throws</span> IOException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">RandomAccessFile</span> <span class="variable">raf</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            raf = <span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(file, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">            <span class="comment">//获取文件占用字节数</span></span><br><span class="line">            <span class="type">long</span> <span class="variable">len</span> <span class="operator">=</span> raf.length();</span><br><span class="line">            <span class="keyword">if</span> (len == <span class="number">0L</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                setLastLine(<span class="string">&quot;&quot;</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//向前走一个字节</span></span><br><span class="line">                <span class="type">long</span> <span class="variable">pos</span> <span class="operator">=</span> len - <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">while</span> (pos &gt; <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    pos--;</span><br><span class="line">                    <span class="comment">//移动指针</span></span><br><span class="line">                    raf.seek(pos);</span><br><span class="line">                    <span class="comment">//判断这个字节是不是回车符</span></span><br><span class="line">                    <span class="keyword">if</span> (raf.readByte() == <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">break</span>;<span class="comment">//前移到会第一个回车符后结束</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (pos == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    raf.seek(<span class="number">0</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">//记录下当前位置</span></span><br><span class="line">                setLastlinestart(pos);</span><br><span class="line">                <span class="type">byte</span>[] bytes = <span class="keyword">new</span> <span class="title class_">byte</span>[(<span class="type">int</span>) (len - pos)];</span><br><span class="line">                <span class="comment">//读取从回车符位置到文件结尾的所有字节</span></span><br><span class="line">                raf.read(bytes);</span><br><span class="line">                <span class="keyword">if</span> (charset == <span class="literal">null</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    setLastLine(<span class="keyword">new</span> <span class="title class_">String</span>(bytes));</span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    setLastLine(<span class="keyword">new</span> <span class="title class_">String</span>(bytes,charset));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e)</span><br><span class="line">        &#123;</span><br><span class="line">        &#125; <span class="keyword">finally</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (raf != <span class="literal">null</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">try</span></span><br><span class="line">                &#123;</span><br><span class="line">                    raf.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e2)</span><br><span class="line">                &#123;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>这样我记下了最后一行的位置之后，就可以动态的更新最后一行了,使用代码片段如下所示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">LastLineInFile lastLineInFile=<span class="keyword">new</span> <span class="title class_">LastLineInFile</span>();</span><br><span class="line">File localFile=<span class="keyword">new</span> <span class="title class_">File</span>(localPath);</span><br><span class="line"><span class="comment">//读取最后一行，得到最后一行的位置，和最后一行的字符串</span></span><br><span class="line">lastLineInFile.readLastLine(localFile, <span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line"><span class="comment">//获取最后一行的字符串</span></span><br><span class="line">String lastLine=lastLineInFile.getLastLine();</span><br><span class="line"></span><br><span class="line"><span class="comment">//更新文章最后一行。</span></span><br><span class="line"><span class="comment">//以读写方式打开,同时要求每个更新都写入底层设备</span></span><br><span class="line">RandomAccessFile rf=<span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(localFile, <span class="string">&quot;rwd&quot;</span>);</span><br><span class="line"><span class="comment">//获取最后一行的位置</span></span><br><span class="line"><span class="type">long</span> filelastpos=lastLineInFile.getLastlinestart();</span><br><span class="line">System.out.println(<span class="string">&quot;最后一行位置：&quot;</span>+filelastpos);</span><br><span class="line"><span class="comment">//截取文件，是最后一行被截走，相当于删除掉最后一行</span></span><br><span class="line">rf.setLength(filelastpos);</span><br><span class="line"><span class="comment">//指针移动到文件末尾</span></span><br><span class="line">rf.seek(filelastpos);</span><br><span class="line"><span class="comment">//写入新的信息</span></span><br><span class="line">rf.write(hyperLinks.getBytes(<span class="string">&quot;utf-8&quot;</span>));</span><br><span class="line"><span class="comment">//关闭文件</span></span><br><span class="line">rf.close();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/504e809a/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/504e809a/" class="post-title-link" itemprop="url">Git 命令集合</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-10-29 20:55:48" itemprop="dateCreated datePublished" datetime="2018-10-29T20:55:48+08:00">2018-10-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Git/%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">命令</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/504e809a/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/504e809a/" data-xid="/blog/504e809a/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>9.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>9 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="分支相关"><a href="#分支相关" class="headerlink" title="分支相关"></a>分支相关</h1><h2 id="查询分支"><a href="#查询分支" class="headerlink" title="查询分支"></a>查询分支</h2><p><code>git branch</code></p>
-<h2 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev</span><br></pre></td></tr></table></figure>
-<p><code>git checkout</code>命令加上-b参数表示创建并切换，相当于以下两条命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch dev</span><br><span class="line">git checkout dev</span><br></pre></td></tr></table></figure>
-<h2 id="查看当前分支"><a href="#查看当前分支" class="headerlink" title="查看当前分支"></a>查看当前分支</h2><p>用<code>git branch</code>命令查看当前分支：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /D/dev/workspace/HexoTools (dev)</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch</span></span><br><span class="line">* dev</span><br><span class="line">  master</span><br></pre></td></tr></table></figure>
-<p><code>git branch</code>命令会列出所有分支，当前分支前面会标一个<code>*</code>号。</p>
-<h2 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h2><p>在dev分支的工作完成后，我们就可以切换回master分支：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /D/dev/workspace/HexoTools (dev)</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git checkout master</span></span><br><span class="line">Switched to branch &#x27;master&#x27;</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /D/dev/workspace/HexoTools (master)</span><br></pre></td></tr></table></figure>
-<h2 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h2><p>使用<code>git merge 指定分支</code>命令合并指定分支到当前分支。现在，把dev分支的工作成果合并到master分支上,</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /D/dev/workspace/HexoTools (master)</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git merge dev</span></span><br><span class="line">Updating ec6d299..616432d</span><br><span class="line">Fast-forward</span><br><span class="line"> src/front/matter/tools/AddFrontMatter.java         | 198 ---------</span><br><span class="line">......</span><br><span class="line"> .../to/this_article/CurrentArticlesHyperlinks.java | 194 ++++++++</span><br><span class="line"> 25 files changed, 1842 insertions(+), 1446 deletions(-)</span><br><span class="line"> delete mode 100644 src/front/matter/tools/AddFrontMatter.java</span><br><span class="line">......</span><br><span class="line"> delete mode 100644 src/markdown/add/horizontal/line/AddHorizontalLine.java</span><br><span class="line">......</span><br><span class="line"> create mode 100644 src/useless/generate/links/to/this_article/CurrentArticlesHyperlinks.java</span><br></pre></td></tr></table></figure>
-<p>注意到上面的<code>Fast-forward</code>信息，Git告诉我们，这次合并是“<code>快进模式</code>”，也就是直接把master指向dev的当前提交，所以合并速度非常快。</p>
-<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><p>和并到主分支后，就可以删除dev分支了:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /D/dev/workspace/HexoTools (master)</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch -d dev</span></span><br><span class="line">Deleted branch dev (was 616432d).</span><br></pre></td></tr></table></figure>
-<p>删除后，查看branch，就只剩下master分支了：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /D/dev/workspace/HexoTools (master)</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git branch</span></span><br><span class="line">* master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h1><h2 id="忽略文件的便捷写法"><a href="#忽略文件的便捷写法" class="headerlink" title="忽略文件的便捷写法"></a>忽略文件的便捷写法</h2><p>在<code>.gitignore</code>文件中，写入想要忽略的文件或者目录的相对地址即可。下面介绍一个快速写<code>.gitignore</code>文件的技巧：<br>打开git-bash，输入<code>touch .gitignore</code>创建.gitignore文件。然后输入：<code>ls -ah &gt;.gitignore</code>命令把当前目录下所有的文件以及目录都写入到.gitignore文件中。这表示忽略项目中所有的目录以及文件。可以输入<code>cat .gitignore</code>命令所有忽略的文件或目录，如下所示：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /d/dev/workspace/Coding (master)</span><br><span class="line">$ cat .gitignore</span><br><span class="line">./</span><br><span class="line">../</span><br><span class="line">.classpath</span><br><span class="line">.git/</span><br><span class="line">.gitignore</span><br><span class="line">.project</span><br><span class="line">.settings/</span><br><span class="line">bin/</span><br><span class="line">res/</span><br><span class="line">src/</span><br></pre></td></tr></table></figure>
-<p>最后使用<code>vim .gitigonre</code>命令编辑文件，删除(按下<code>dd</code>)你要加入版本管理的文件以及目录,想要忽略的就保留。这样比我们手动的往里面写要快的多：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/git/git%20cmd/delete_gitignore.png"></p>
-<h2 id="忽略已加入版本控制的文件"><a href="#忽略已加入版本控制的文件" class="headerlink" title="忽略已加入版本控制的文件"></a>忽略已加入版本控制的文件</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p><code>.gitignore</code>中已经标明忽略某个文件或目录,但是这个文件还是默认加到版本库中.</p>
-<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p><strong>如果某些文件已经被纳入了版本管理中，就算是在<code>.gitignore</code>中已经声明了忽略路径也是不起作用的</strong>,<strong>因为.gitignore只对还没有加入版本库的文件有效.</strong><br>这个使用使用<code>git rm</code>命令可以从版本库中删除文件.</p>
-<h3 id="查看要从版本库中删除的文件"><a href="#查看要从版本库中删除的文件" class="headerlink" title="查看要从版本库中删除的文件"></a>查看要从版本库中删除的文件</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -n --cached 文件</span><br></pre></td></tr></table></figure>
-<h3 id="查看要从版本库中删除的目录"><a href="#查看要从版本库中删除的目录" class="headerlink" title="查看要从版本库中删除的目录"></a>查看要从版本库中删除的目录</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r -n --cached 目录</span><br></pre></td></tr></table></figure>
-<p>注意不要使用<code>git rm -r --cached .</code>这个命令很危险,有可能把<code>IDE</code>的配置文件给删掉,免得到时候打不开又得重新建工程。</p>
-<h3 id="实例-从版本库中移除一个文件"><a href="#实例-从版本库中移除一个文件" class="headerlink" title="实例:从版本库中移除一个文件"></a>实例:从版本库中移除一个文件</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/HexoTools (dev)</span><br><span class="line">$ cat .gitignore</span><br><span class="line">bin/</span><br><span class="line">.settings/</span><br><span class="line">*.txt</span><br><span class="line">.project</span><br><span class="line">.classpath</span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/HexoTools (dev)</span><br><span class="line">$ git status</span><br><span class="line">On branch dev</span><br><span class="line">        ...</span><br><span class="line">Changes <span class="keyword">not</span> staged <span class="keyword">for</span> commit:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes <span class="keyword">in</span> working directory)</span><br><span class="line"><span class="function">        modified:   <span class="title">HexoFrontMatter.txt</span></span></span><br><span class="line"><span class="function">        ...</span></span><br></pre></td></tr></table></figure>
-<h4 id="1-清除该文件的缓存"><a href="#1-清除该文件的缓存" class="headerlink" title="1.清除该文件的缓存"></a>1.清除该文件的缓存</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/HexoTools (dev)</span><br><span class="line">$ git rm -n --cached HexoFrontMatter.txt</span><br><span class="line">rm &#x27;HexoFrontMatter.txt&#x27;</span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/HexoTools (dev)</span><br><span class="line">$ git rm --cached HexoFrontMatter.txt</span><br><span class="line">rm &#x27;HexoFrontMatter.txt&#x27;</span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/HexoTools (dev)</span><br><span class="line">$ git status</span><br><span class="line">On branch dev</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span><br><span class="line"><span class="function">        deleted:    <span class="title">HexoFrontMatter.txt</span></span></span><br><span class="line"><span class="function">        ......</span></span><br></pre></td></tr></table></figure>
-<p>加上<code>-n</code>参数表示显示要即将要删除的文件,并不会真正则删除.这个参数用来验证自己删除的对不对,以免误删。</p>
-<h4 id="2-重新添加提交"><a href="#2-重新添加提交" class="headerlink" title="2.重新添加提交"></a>2.重新添加提交</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/HexoTools (dev)</span><br><span class="line">$ git add .</span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/HexoTools (dev)</span><br><span class="line">$ git status</span><br><span class="line">On branch dev</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span><br><span class="line"><span class="function">        deleted:    <span class="title">HexoFrontMatter.txt</span></span></span><br><span class="line"><span class="function">        ......</span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">HexoTools</span> (<span class="title">dev</span>)</span></span><br><span class="line"><span class="function">$ <span class="title">git</span> <span class="title">commit</span> -<span class="title">m</span> &#x27;</span></span><br><span class="line"><span class="function">&gt; 从版本库中移除日志文件(<span class="title">txt</span>)&#x27;</span></span><br><span class="line"><span class="function">[<span class="title">dev</span> 191<span class="title">c3cd</span>] 从版本库中移除日志文件(<span class="title">txt</span>)</span></span><br><span class="line"><span class="function"> 8 <span class="title">files</span> <span class="title">changed</span>, 134 <span class="title">insertions</span>(+), 28 <span class="title">deletions</span>(-)</span></span><br><span class="line"><span class="function"> <span class="title">delete</span> <span class="title">mode</span> 100644 <span class="title">HexoFrontMatter.txt</span></span></span><br><span class="line"><span class="function"> <span class="title">create</span> <span class="title">mode</span> 100644 <span class="title">src</span>/<span class="title">find</span>/<span class="title">not</span>/<span class="title">fm</span>/<span class="title">FindNotFM.java</span></span></span><br><span class="line"><span class="function"> <span class="title">rename</span> <span class="title">src</span>/<span class="title">tools</span>/<span class="title">readlastlineinbigfile</span>/&#123;<span class="title">LastLineInFileTools.java</span> =&gt; <span class="title">LastLineReader.java</span>&#125; (94%)</span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">HexoTools</span> (<span class="title">dev</span>)</span></span><br><span class="line"><span class="function">$ <span class="title">git</span> <span class="title">status</span></span></span><br><span class="line"><span class="function"><span class="title">On</span> <span class="title">branch</span> <span class="title">dev</span></span></span><br><span class="line"><span class="function"><span class="title">nothing</span> <span class="title">to</span> <span class="title">commit</span>, <span class="title">working</span> <span class="title">tree</span> <span class="title">clean</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">HexoTools</span> (<span class="title">dev</span>)</span></span><br></pre></td></tr></table></figure>
-<p>这个时候该<code>txt</code>文件已经从版本库中删除掉了,不过并不会删除工作区的文件,可以用ls命令查看:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">bin/  HexoFrontMatter.txt  lib/  README.<span class="built_in">md</span>  res/  runable/  src/</span><br></pre></td></tr></table></figure>
-<h3 id="实例-从版本库中移除目录"><a href="#实例-从版本库中移除目录" class="headerlink" title="实例:从版本库中移除目录"></a>实例:从版本库中移除目录</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /e/workspace/XunFeiTTS (dev)</span><br><span class="line">$ git status</span><br><span class="line">On branch dev</span><br><span class="line">Changes <span class="keyword">not</span> staged <span class="keyword">for</span> commit:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes <span class="keyword">in</span> working directory)</span><br><span class="line"><span class="function">        modified:   .<span class="title">settings</span>/<span class="title">org.eclipse.core.resources.prefs</span></span></span><br><span class="line"><span class="function">        .......</span></span><br><span class="line"><span class="function"><span class="title">no</span> <span class="title">changes</span> <span class="title">added</span> <span class="title">to</span> <span class="title">commit</span> (<span class="title">use</span> &quot;<span class="title">git</span> <span class="title">add</span>&quot; <span class="title">and</span>/<span class="title">or</span> &quot;<span class="title">git</span> <span class="title">commit</span> -<span class="title">a</span>&quot;)</span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">XunFeiTTS</span> (<span class="title">dev</span>)</span></span><br><span class="line"><span class="function">$ <span class="title">git</span> <span class="title">rm</span> -<span class="title">r</span> -<span class="title">n</span> --<span class="title">cached</span> .<span class="title">settings</span>/</span></span><br><span class="line"><span class="function"><span class="title">rm</span> &#x27;.<span class="title">settings</span>/<span class="title">org.eclipse.core.resources.prefs</span>&#x27;</span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">XunFeiTTS</span> (<span class="title">dev</span>)</span></span><br><span class="line"><span class="function">$ <span class="title">git</span> <span class="title">rm</span> -<span class="title">r</span> --<span class="title">cached</span> .<span class="title">settings</span>/</span></span><br><span class="line"><span class="function"><span class="title">rm</span> &#x27;.<span class="title">settings</span>/<span class="title">org.eclipse.core.resources.prefs</span>&#x27;</span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">XunFeiTTS</span> (<span class="title">dev</span>)</span></span><br><span class="line"><span class="function">$ <span class="title">git</span> <span class="title">add</span> .</span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">XunFeiTTS</span> (<span class="title">dev</span>)</span></span><br><span class="line"><span class="function">$ <span class="title">git</span> <span class="title">commit</span> -<span class="title">m</span> &#x27;</span></span><br><span class="line"><span class="function">&gt; 1.支持输入字符串合成音频</span></span><br><span class="line"><span class="function">&gt; 2.从版本库中移除<span class="title">IDE</span>的配置文件目录.</span></span><br><span class="line"><span class="function">&gt; &#x27;</span></span><br><span class="line"><span class="function">[<span class="title">dev</span> <span class="title">bfd69df</span>] 1.支持输入字符串合成音频 2.从版本库中移除<span class="title">IDE</span>的配置文件目录.</span></span><br><span class="line"><span class="function"> 5 <span class="title">files</span> <span class="title">changed</span>, 28 <span class="title">insertions</span>(+), 28 <span class="title">deletions</span>(-)</span></span><br><span class="line"><span class="function"> <span class="title">delete</span> <span class="title">mode</span> 100644 .<span class="title">settings</span>/<span class="title">org.eclipse.core.resources.prefs</span></span></span><br><span class="line"><span class="function"><span class="title">lan</span>@<span class="title">DESKTOP</span>-8<span class="title">ISAT6B</span> <span class="title">MINGW64</span> /<span class="title">e</span>/<span class="title">workspace</span>/<span class="title">XunFeiTTS</span> (<span class="title">dev</span>)</span></span><br></pre></td></tr></table></figure>
-<h2 id="克隆的仓库中-忽略已经加入文件的更新"><a href="#克隆的仓库中-忽略已经加入文件的更新" class="headerlink" title="克隆的仓库中 忽略已经加入文件的更新"></a>克隆的仓库中 忽略已经加入文件的更新</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>经过上一步,我已经从本地仓库中把一个文件彻底移除了，然后我用<code>git push</code>命令推送到远程仓库中,这样远程仓库也没有了该文件.</p>
-<p>但是我之间在另一个目录中已经克隆了这个仓库,现在我叫这个仓库为<code>克隆的仓库</code>。<br>我想在<code>克隆的仓库</code>中使用<code>git pull</code>进行更新,但是更新之后,<code>克隆的仓库</code>中还是存在这个文件(这是因为在克隆仓库中我修改了这个文件),那又怎么删除呢？<br>我这里不知道其他方法,最后我现在先删除本地克隆仓库，然后再从远程仓库中克隆。这样克隆的仓库中也就没有了这个文件了。</p>
-<h3 id="删除本地仓库"><a href="#删除本地仓库" class="headerlink" title="删除本地仓库"></a>删除本地仓库</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf <span class="built_in">MD</span>/</span><br></pre></td></tr></table></figure>
-<h3 id="重新克隆"><a href="#重新克隆" class="headerlink" title="重新克隆"></a>重新克隆</h3><p>现在重新克隆到本地仓库中,并重名为<code>MD</code></p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:lanlan2017/markdown-command-line-generator.git <span class="built_in">MD</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><h2 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h2><p>语法：<code>git remote add 远程仓库别名 远程仓库地址</code><br>如下所示：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:lanlan2017/GetWiFiPassWord.git</span><br></pre></td></tr></table></figure>
-<h2 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-<h2 id="推送到远程仓库"><a href="#推送到远程仓库" class="headerlink" title="推送到远程仓库"></a>推送到远程仓库</h2><p>推送到master分支：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<p>如果是远程仓库是空的,第一次推送master分支时，则在push后面加上参数<code>-u</code>:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-<h1 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h1><h2 id="查看版本日志"><a href="#查看版本日志" class="headerlink" title="查看版本日志"></a>查看版本日志</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty=oneline</span><br></pre></td></tr></table></figure>
-<p>显示效果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git log --pretty=oneline</span><br><span class="line">c8f251788d8cc9dd69b8622dd1bba0384f2a6d48 (HEAD -&gt; master) 修改README.md文件</span><br><span class="line">8304fffa30f0fd96d317244daaa327ada7f1af6d (origin/master, origin/HEAD) 修改代码输出文件使用相对路径</span><br><span class="line">8f3abbee855216adfd92e7727e4c91204fd451c2 获取所有连接过的wifi密码.</span><br><span class="line">931319f6d7f157fef8558662c5a23693cbf8178c Initial commit</span><br></pre></td></tr></table></figure>
-<p>这里可以看到远程仓库和本地仓库的信息。</p>
-<h2 id="撤销添加"><a href="#撤销添加" class="headerlink" title="撤销添加"></a>撤销添加</h2><p>使用<code>git add</code>命令之后,可以输入:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD</span><br></pre></td></tr></table></figure>
-<p>撤销本次添加,也可以输入:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD filename</span><br></pre></td></tr></table></figure>
-<p>撤销添加某个文件,例如要撤销添加<code>src/mainclass/MMD.java</code>这个文件可以输入:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD src/mainclass/MMD.java</span><br></pre></td></tr></table></figure>
-<h2 id="回退到某次commit"><a href="#回退到某次commit" class="headerlink" title="回退到某次commit"></a>回退到某次commit</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard commit_id  </span><br></pre></td></tr></table></figure>
-<h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改###"></a>撤销修改###</h2><p>有时候会把代码写蹦了，这个时候就要撤销这次的修改。</p>
-<h3 id="撤销一个文件的修改"><a href="#撤销一个文件的修改" class="headerlink" title="撤销一个文件的修改"></a>撤销一个文件的修改</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- filename</span><br></pre></td></tr></table></figure>
-<h3 id="撤销所有修改"><a href="#撤销所有修改" class="headerlink" title="撤销所有修改"></a>撤销所有修改</h3><p>有时候，可能修改了不止一个文件，一个个的修改比较麻烦，所以要，撤销所有的修改：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout .</span><br></pre></td></tr></table></figure>
-<h3 id="删除新增文件"><a href="#删除新增文件" class="headerlink" title="删除新增文件"></a>删除新增文件</h3><p>上面的撤销修改只能对已经修改的文件有效,但是如果你新创建了一些新的文件的话,这些文件没有添加到版本库中,是不会自动删除掉的,使用如下命令删除这些新增的文件:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clean -df</span><br></pre></td></tr></table></figure>
-<h1 id="冲突"><a href="#冲突" class="headerlink" title="冲突"></a>冲突</h1><h2 id="产生冲突的情况"><a href="#产生冲突的情况" class="headerlink" title="产生冲突的情况"></a>产生冲突的情况</h2><p>当<code>两个分支``都</code>分别<code>有新的提交</code>的时候,在合并的时候就会出现冲突.</p>
-<h2 id="查找冲突的文件"><a href="#查找冲突的文件" class="headerlink" title="查找冲突的文件"></a>查找冲突的文件</h2><p>使用<code>git status</code>可以看到发生冲突的文件:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (master|MERGING)</span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Your branch is up to <span class="built_in">date</span> with &#x27;origin/master&#x27;.</span><br><span class="line">You have unmerged paths.</span><br><span class="line">  (fix conflicts and run &quot;git commit&quot;)</span><br><span class="line">  (use &quot;git merge --abort&quot; to abort the merge)</span><br><span class="line">Unmerged paths:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to mark resolution)</span><br><span class="line">        both modified:   src/delete/Delete.java</span><br><span class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span><br></pre></td></tr></table></figure>
-<p>注意其中的这两个提示:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">both modified:   src/delete/Delete.java</span><br></pre></td></tr></table></figure>
-<p>这说明<code>src/delete/Delete.java</code>这个文件冲突了。</p>
-<h2 id="修改冲突的文件"><a href="#修改冲突的文件" class="headerlink" title="修改冲突的文件"></a>修改冲突的文件</h2><p>首先不要慌张.<code>git</code>已经合并了没有冲突的地方,我们只需要修改上面两个文件中发生冲突的地方即可.现在打开冲突的文件<code>src/delete/Delete.java</code>然后修改<code>git</code>提示的有冲突的地方,如下所示:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">deleteSpacesBetweenChinese</span><span class="params">(String text)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 删除英文空格</span></span><br><span class="line">        text = text.replaceAll(<span class="string">&quot;([\\u4e00-\\u9fa5])\\s+([\\u4e00-\\u9fa5])&quot;</span>,</span><br><span class="line">                <span class="string">&quot;$1$2&quot;</span>);</span><br><span class="line">        <span class="comment">// 删除中文空格</span></span><br><span class="line">        text = text.replaceAll(<span class="string">&quot;[ ]+&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">=======</span><br><span class="line">        text = text.replaceAll(<span class="string">&quot;　&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev</span><br><span class="line">        <span class="keyword">return</span> text;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>Git用<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>，<code>=======</code>，<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>标记出不同分支的中有冲突的地方如下所示:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">=======</span><br><span class="line">        text = text.replaceAll(<span class="string">&quot;　&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev</span><br></pre></td></tr></table></figure>
-<p>等号分割了两个分支,上面的是HEAD分支的新内容,这里为空,等号下面的是dev分支上的新内容。修改这部分内容,然后删掉<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>这些提示符就行了。这步叫做<code>手动解决冲突</code>。</p>
-<h2 id="再次提交"><a href="#再次提交" class="headerlink" title="再次提交"></a>再次提交</h2><p>然后<code>再次添加,</code>然后<code>再次提交</code>.</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (master|MERGING)</span><br><span class="line">$ git add .</span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (master|MERGING)</span><br><span class="line">$ git commit -m &#x27;</span><br><span class="line">&gt; 合并冲突&#x27;</span><br><span class="line">[master <span class="number">7</span>d0e456] 合并冲突</span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (master)</span><br></pre></td></tr></table></figure>
-<h2 id="切换分支合并修改"><a href="#切换分支合并修改" class="headerlink" title="切换分支合并修改"></a>切换分支合并修改</h2><p>这样master分支上就没有冲突了,接着切换到dev分支,然后dev分支合并没有冲突的master分支,这样两者就都没有冲突了。</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (master)</span><br><span class="line">$ git checkout dev</span><br><span class="line">Switched to branch &#x27;dev&#x27;</span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (dev)</span><br><span class="line">$ git merge master</span><br><span class="line">Updating <span class="number">9</span>d7c83e..<span class="number">7</span>d0e456</span><br><span class="line">Fast-forward</span><br><span class="line"> M.jar                  | Bin <span class="number">25388</span> -&gt; <span class="number">25372</span> bytes</span><br><span class="line"> src/add/Add.java       |   <span class="number">2</span> +-</span><br><span class="line"> src/delete/Delete.java |   <span class="number">2</span> +-</span><br><span class="line"> <span class="number">3</span> files changed, <span class="number">2</span> insertions(+), <span class="number">2</span> deletions(-)</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (dev)</span><br><span class="line">$ git status</span><br><span class="line">On branch dev</span><br><span class="line">nothing to commit, working <span class="built_in">tree</span> clean</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="显示分支的合并情况"><a href="#显示分支的合并情况" class="headerlink" title="显示分支的合并情况"></a>显示分支的合并情况</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --graph --pretty=oneline --abbrev-commit</span><br></pre></td></tr></table></figure>
-<p>如果提交过多的,可以加上<code>-n</code>参数指定显示提交的次数.例如下面指定显示提交最近8个分支.</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-<span class="number">8</span>ISAT6B MINGW64 /d/dev/workspace/MarkdownTools (dev)</span><br><span class="line">$ git log -<span class="number">8</span> --graph --pretty=oneline --abbrev-commit</span><br><span class="line">*   <span class="number">7</span>d0e456 (HEAD -&gt; dev, master) 合并冲突</span><br><span class="line">|\</span><br><span class="line">| * <span class="number">9</span>d7c83e `dsbc`参数对应的方法中加入移除中文全角空格的功能.</span><br><span class="line">* |   <span class="number">87</span>ef36d (origin/master) 修改`dsbc`参数对应方法中匹配中文空格的正则表达式,支持匹配多个中文空格.</span><br><span class="line">|\ \</span><br><span class="line">| |/</span><br><span class="line">| * cfef0c2 在dsbc参数对应的方法中,添加删除中文空格的功能.^</span><br><span class="line">* | d5527e8 修改参数 enhl对应的方法.\r\n支持\xxxx格式的linux格式路径.</span><br><span class="line">|/</span><br><span class="line">* c51cc3b 修改 enhl参数方法,支持后缀名.xxx以及路径/xxxx的高亮.</span><br><span class="line">* <span class="number">1</span>c18026 update .gitignore</span><br><span class="line">* bd63151 update .gitignore</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="git-rebase-进行-git-压缩"><a href="#git-rebase-进行-git-压缩" class="headerlink" title="git rebase 进行 git 压缩"></a>git rebase 进行 git 压缩</h1><h2 id="压缩最近的分支"><a href="#压缩最近的分支" class="headerlink" title="压缩最近的分支"></a>压缩最近的分支</h2><p>这个命令不是很熟悉,后面再了解了解.</p>
-<h1 id="强制覆盖远程仓库"><a href="#强制覆盖远程仓库" class="headerlink" title="强制覆盖远程仓库"></a>强制覆盖远程仓库</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master --force</span><br></pre></td></tr></table></figure>
-<h1 id="查看分支时间"><a href="#查看分支时间" class="headerlink" title="查看分支时间"></a>查看分支时间</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog show --<span class="built_in">date</span>=iso &lt;branch name&gt;</span><br></pre></td></tr></table></figure>
-<p>运行效果:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git reflog show --<span class="built_in">date</span>=iso master</span><br><span class="line">bfd69df (HEAD -&gt; dev, origin/master, origin/HEAD, master) master@&#123;<span class="number">2019</span>-<span class="number">05</span>-<span class="number">25</span> <span class="number">00</span>:<span class="number">24</span>:<span class="number">04</span> +<span class="number">0800</span>&#125;: merge dev: Fast-forward</span><br><span class="line"><span class="number">0</span>dab55b master@&#123;<span class="number">2019</span>-<span class="number">05</span>-<span class="number">23</span> <span class="number">13</span>:<span class="number">49</span>:<span class="number">04</span> +<span class="number">0800</span>&#125;: merge dev: Fast-forward</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2">Pro Git</a><br><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000">创建与合并分支|廖雪峰的官方网站</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/seikenwu/article/details/81025711">.gitignore忽略已加入版本控制的文件</a><br><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013752340242354807e192f02a44359908df8a5643103a000">添加远程库</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Al_assad/article/details/81145856#t0">Git 合并多次 commit 、 删除某次 commit</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/dhcn/p/7125099.html">git如何移除某文件夹的版本控制</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/55/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/55/">55</a><span class="page-number current">56</span><a class="page-number" href="/blog/page/57/">57</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/61/">61</a><a class="extend next" rel="next" href="/blog/page/57/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/55/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/55/">55</a><span class="page-number current">56</span><a class="page-number" href="/blog/page/57/">57</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/57/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>

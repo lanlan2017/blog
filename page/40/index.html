@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">609</span>
+          <span class="site-state-item-count">611</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">202</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -213,6 +213,496 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e5bb3a41/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/e5bb3a41/" class="post-title-link" itemprop="url">ProcessBuilder和Process类API整理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-09-30 22:59:36" itemprop="dateCreated datePublished" datetime="2019-09-30T22:59:36+08:00">2019-09-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/API%E6%95%B4%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">API整理</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/e5bb3a41/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/e5bb3a41/" data-xid="/blog/e5bb3a41/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="ProcessBuilder-API整理"><a href="#ProcessBuilder-API整理" class="headerlink" title="ProcessBuilder API整理"></a>ProcessBuilder API整理</h1><h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>static class ProcessBuilder.Redirect</code></td>
+<td align="left">表示子进程的输入源或者输出的目的</td>
+</tr>
+</tbody></table>
+<h2 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>ProcessBuilder</code>​(<code>String... command)</code></td>
+<td align="left">使用操作系统程序 和参数创建一个进程生成器</td>
+</tr>
+<tr>
+<td align="left"><code>ProcessBuilder</code>​(<code>List&lt;String&gt; command)</code></td>
+<td align="left">使用操作系统程序和参数创建一个进程生成器</td>
+</tr>
+</tbody></table>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="取出或设置程序和参数的方法"><a href="#取出或设置程序和参数的方法" class="headerlink" title="取出或设置程序和参数的方法"></a>取出或设置程序和参数的方法</h3><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>List&lt;String&gt; command()</code></td>
+<td align="left">返回操作系统程序和该程序的参数。</td>
+</tr>
+<tr>
+<td align="left"><code>ProcessBuilder command(List&lt;String&gt; command)</code></td>
+<td align="left">设置这个进程生成器的 操作系统程序 和 参数。</td>
+</tr>
+<tr>
+<td align="left"><code>ProcessBuilder command(String... command)</code></td>
+<td align="left">置这个进程生成器的 操作系统程序 和 参数。</td>
+</tr>
+</tbody></table>
+<h3 id="取出或设置工作目录的方法"><a href="#取出或设置工作目录的方法" class="headerlink" title="取出或设置工作目录的方法"></a>取出或设置工作目录的方法</h3><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>File directory()</code></td>
+<td align="left">返回此进程生成器的工作目录。</td>
+</tr>
+<tr>
+<td align="left"><code>ProcessBuilder directory(File directory)</code></td>
+<td align="left">设置进程生成器的工作目录。</td>
+</tr>
+</tbody></table>
+<h3 id="设置标准IO的方法"><a href="#设置标准IO的方法" class="headerlink" title="设置标准IO的方法"></a>设置标准IO的方法</h3><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>ProcessBuilder redirectOutput(File file)</code></td>
+<td align="left">使用文件作为标准输出</td>
+</tr>
+<tr>
+<td align="left"><code>ProcessBuilder redirectOutput(ProcessBuilder.Redirect destination)</code></td>
+<td align="left">使用<code>Redirect</code>对象作为标准输出</td>
+</tr>
+<tr>
+<td align="left"><code>ProcessBuilder redirectInput(File file)</code></td>
+<td align="left">重定向标准输入到文件中</td>
+</tr>
+<tr>
+<td align="left"><code>ProcessBuilder redirectInput(ProcessBuilder.Redirect source)</code></td>
+<td align="left">重定向标准输入</td>
+</tr>
+<tr>
+<td align="left"><code>ProcessBuilder redirectError(File file)</code></td>
+<td align="left">将标出错误输出设置到文件中</td>
+</tr>
+<tr>
+<td align="left"><code>ProcessBuilder redirectError(ProcessBuilder.Redirect destination)</code></td>
+<td align="left">设置标准错误输出的目标</td>
+</tr>
+</tbody></table>
+<h3 id="取出标准IO的方法"><a href="#取出标准IO的方法" class="headerlink" title="取出标准IO的方法"></a>取出标准IO的方法</h3><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>ProcessBuilder.Redirect redirectInput()</code></td>
+<td align="left">返回表示<code>标准输入</code>的Redirect实例</td>
+</tr>
+<tr>
+<td align="left"><code>ProcessBuilder.Redirect redirectError()</code></td>
+<td align="left">返回表示<code>标准错误输出</code>的Redirect实例</td>
+</tr>
+<tr>
+<td align="left"><code>ProcessBuilder.Redirect redirectOutput()</code></td>
+<td align="left">返回表示<code>标出输出</code>的目标的Redirect实例</td>
+</tr>
+</tbody></table>
+<h3 id="合并标准输出相关的方法"><a href="#合并标准输出相关的方法" class="headerlink" title="合并标准输出相关的方法"></a>合并标准输出相关的方法</h3><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>ProcessBuilder inheritIO()</code></td>
+<td align="left">子进程和父进程使用相同的标准输入,标准输出,标准错误输出</td>
+</tr>
+<tr>
+<td align="left"><code>ProcessBuilder redirectErrorStream(boolean redirectErrorStream)</code></td>
+<td align="left">设置<code>redirectErrorStream</code>属性</td>
+</tr>
+<tr>
+<td align="left"><code>boolean redirectErrorStream()</code></td>
+<td align="left">判断进程生成器是否合并了标准错误输出和标准输出。</td>
+</tr>
+</tbody></table>
+<h3 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h3><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Map&lt;String,String&gt; environment()</code></td>
+<td align="left">返回保存进程生成器的环境变量的<code>Map</code>集合</td>
+</tr>
+</tbody></table>
+<h3 id="启动进程方法"><a href="#启动进程方法" class="headerlink" title="启动进程方法"></a>启动进程方法</h3><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Process start()</code></td>
+<td align="left">使用进程生成器中设置的属性启动新一个新的进程</td>
+</tr>
+</tbody></table>
+<h1 id="Process类API整理"><a href="#Process类API整理" class="headerlink" title="Process类API整理"></a>Process类API整理</h1><h2 id="杀死子进程"><a href="#杀死子进程" class="headerlink" title="杀死子进程"></a>杀死子进程</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>abstract void destroy()</code></td>
+<td align="left">杀死子流程</td>
+</tr>
+<tr>
+<td align="left"><code>Process destroyForcibly()</code></td>
+<td align="left">杀死子流程</td>
+</tr>
+</tbody></table>
+<h2 id="获取子进程的IO"><a href="#获取子进程的IO" class="headerlink" title="获取子进程的IO"></a>获取子进程的IO</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>abstract InputStream getErrorStream()</code></td>
+<td align="left">返回连接到子进程的错误输出的输入流</td>
+</tr>
+<tr>
+<td align="left"><code>abstract InputStream getInputStream()</code></td>
+<td align="left">返回连接到子进程的正常输出的输入流.</td>
+</tr>
+<tr>
+<td align="left"><code>abstract OutputStream getOutputStream()</code></td>
+<td align="left">返回连接到子进程的正常输入的输出流</td>
+</tr>
+</tbody></table>
+<h2 id="其他方法-1"><a href="#其他方法-1" class="headerlink" title="其他方法"></a>其他方法</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>abstract int exitValue()</code></td>
+<td align="left">返回子进程的退出值</td>
+</tr>
+<tr>
+<td align="left"><code>boolean isAlive()</code></td>
+<td align="left">测试子流程是否有效</td>
+</tr>
+</tbody></table>
+<h2 id="等待子进程"><a href="#等待子进程" class="headerlink" title="等待子进程"></a>等待子进程</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>abstract int waitFor()</code></td>
+<td align="left">使当前线程等待<code>Process</code>对象表示的进程终止</td>
+</tr>
+<tr>
+<td align="left"><code>boolean waitFor(long timeout, TimeUnit unit)</code></td>
+<td align="left">使当前线程在必要时等待，直到此<code>Process</code>对象代表的子进程终止或经过指定的等待时间为止。</td>
+</tr>
+</tbody></table>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/7ab55f4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/7ab55f4/" class="post-title-link" itemprop="url">VScode 运行java是输出乱码解决</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-09-28 10:27:21" itemprop="dateCreated datePublished" datetime="2019-09-28T10:27:21+08:00">2019-09-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/VSCode/" itemprop="url" rel="index"><span itemprop="name">VSCode</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/7ab55f4/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/7ab55f4/" data-xid="/blog/7ab55f4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>636</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>最近我在<code>VSCode</code>中运行<code>Java</code>代码,但是奇怪的的是中文输出的是乱码.</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h2 id="可能是编码的问题"><a href="#可能是编码的问题" class="headerlink" title="可能是编码的问题"></a>可能是编码的问题</h2><p>一般乱码时因为<code>java</code>文件的编码和终端的编码不一样导致的<code>.VScode</code>中的内置终端默认调用的是<code>PowerShell</code>,所以<code>java</code>文件的编码和<code>PowerShell</code>的默认编码一样即可,建议修改成<code>UTF-8</code>编码.</p>
+<ol>
+<li>修改<code>java</code>文件的编码为<code>UTF-8</code></li>
+<li>修改终端(PowerShell)的编码为<code>UTF-8</code></li>
+</ol>
+<p>一般来说到这里就没有乱码了,但是奇怪的是,使用<code>System.out.println()</code>方法输出的时候<code>换行符是乱码的</code>,好奇怪啊,还得再猜一猜是什么原因。</p>
+<h1 id="可能是VScode中的java环境版本太老"><a href="#可能是VScode中的java环境版本太老" class="headerlink" title="可能是VScode中的java环境版本太老"></a>可能是VScode中的java环境版本太老</h1><p>如果修改编码后,还是出现乱码,那么可能是<code>java</code>环境太老了,更新<code>java</code>环境试试:</p>
+<ol>
+<li>卸载掉<code>Java Extension Pack</code>,</li>
+<li>然后重启<code>VScode</code>,</li>
+<li>再重新安装<code>Java Extension Pack</code>。</li>
+</ol>
+<h1 id="可能是PowerShell版本太老"><a href="#可能是PowerShell版本太老" class="headerlink" title="可能是PowerShell版本太老"></a>可能是PowerShell版本太老</h1><p>如果更新了<code>java</code>环境之后还是出现问题,那可能是<code>PowerShell</code>的问题了,接下来重新安装<code>PowerShell</code>试试.</p>
+<ol>
+<li>打开<code>Microsoft store</code></li>
+<li>点击搜索款,输入<code>PowerShell</code>,安装<code>PowerShell</code>即可.</li>
+<li>也可以安装<code>Windows Terminal</code>,<code>Windows Terminal</code>好像评价比较高.</li>
+</ol>
+<p>我试到这一步乱码解决了,但是更新<code>java</code>环境后我没有测试乱码有没有解决,如果更新<code>java</code>环境后乱码解决了,也就不用更新<code>PowerShell</code>了(这是废话)。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1313,267 +1803,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/b4b274e0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/b4b274e0/" class="post-title-link" itemprop="url">批处理 start命令</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-08-25 13:22:53" itemprop="dateCreated datePublished" datetime="2019-08-25T13:22:53+08:00">2019-08-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD%E6%89%B9%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">CMD批处理</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD%E6%89%B9%E5%A4%84%E7%90%86/%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">语法</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD%E6%89%B9%E5%A4%84%E7%90%86/%E8%AF%AD%E6%B3%95/%E6%9E%84%E5%BB%BA%E7%A8%8B%E5%BA%8F%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">构建程序相关命令</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/b4b274e0/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/b4b274e0/" data-xid="/blog/b4b274e0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.3k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="批处理-start命令"><a href="#批处理-start命令" class="headerlink" title="批处理 start命令"></a>批处理 start命令</h1><h2 id="帮助文档"><a href="#帮助文档" class="headerlink" title="帮助文档"></a>帮助文档</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line">启动一个单独的窗口以运行指定的程序或命令。</span><br><span class="line"></span><br><span class="line"><span class="built_in">START</span> [&quot;<span class="built_in">title</span>&quot;] [/D <span class="built_in">path</span>] [/I] [/MIN] [/MAX] [/SEPARATE | /SHARED]</span><br><span class="line">      [/LOW | /NORMAL | /HIGH | /REALTIME | /ABOVENORMAL | /BELOWNORMAL]</span><br><span class="line">      [/NODE &lt;NUMA node&gt;] [/AFFINITY &lt;hex affinity mask&gt;] [/WAIT] [/B]</span><br><span class="line">      [command/program] [parameters]</span><br><span class="line"></span><br><span class="line">    &quot;<span class="built_in">title</span>&quot;     在窗口标题栏中显示的标题。</span><br><span class="line">    <span class="built_in">path</span>        启动目录。</span><br><span class="line">    B           启动应用程序，但不创建新窗口。</span><br><span class="line">                应用程序已忽略 ^C 处理。除非应用程序</span><br><span class="line">                启用 ^C 处理，否则 ^<span class="built_in">Break</span> 是唯一可以中断</span><br><span class="line">                该应用程序的方式。</span><br><span class="line">    I           新的环境将是传递</span><br><span class="line">                给 <span class="built_in">cmd</span>.exe 的原始环境，而不是当前环境。</span><br><span class="line">    MIN         以最小化方式启动窗口。</span><br><span class="line">    MAX         以最大化方式启动窗口。</span><br><span class="line">    SEPARATE    在单独的内存空间中启动 <span class="number">16</span> 位 Windows 程序。</span><br><span class="line">    SHARED      在共享内存空间中启动 <span class="number">16</span> 位 Windows 程序。</span><br><span class="line">    LOW         在 IDLE 优先级类中启动应用程序。</span><br><span class="line">    NORMAL      在 NORMAL 优先级类中启动应用程序。</span><br><span class="line">    HIGH        在 HIGH 优先级类中启动应用程序。</span><br><span class="line">    REALTIME    在 REALTIME 优先级类中启动应用程序。</span><br><span class="line">    ABOVENORMAL 在 ABOVENORMAL 优先级类中启动应用程序。</span><br><span class="line">    BELOWNORMAL 在 BELOWNORMAL 优先级类中启动应用程序。</span><br><span class="line">    NODE        将首选非一致性内存结构(NUMA)节点指定为</span><br><span class="line">                十进制整数。</span><br><span class="line">    AFFINITY    将处理器关联掩码指定为十六进制数字。</span><br><span class="line">                进程被限制在这些处理器上运行。</span><br><span class="line"></span><br><span class="line">                将 /AFFINITY 和 /NODE 结合使用时，会对关联掩码</span><br><span class="line">                进行不同的解释。指定关联掩码，以便将零位作为起始位置(就如将 NUMA</span><br><span class="line">                节点的处理器掩码向右移位一样)。</span><br><span class="line">                进程被限制在指定关联掩码和 NUMA 节点之间的</span><br><span class="line">                那些通用处理器上运行。</span><br><span class="line">                如果没有通用处理器，则进程被限制在</span><br><span class="line">                指定的 NUMA 节点上运行。</span><br><span class="line">    WAIT        启动应用程序并等待它终止。</span><br><span class="line">    command/program</span><br><span class="line">                如果它是内部 <span class="built_in">cmd</span> 命令或批文件，则</span><br><span class="line">                该命令处理器是使用 <span class="built_in">cmd</span>.exe 的 /K 开关运行的。</span><br><span class="line">                这表示运行该命令之后，该窗口</span><br><span class="line">                将仍然存在。</span><br><span class="line"></span><br><span class="line">                如果它不是内部 <span class="built_in">cmd</span> 命令或批文件，则</span><br><span class="line">                它就是一个程序，并将作为一个窗口化应用程序或</span><br><span class="line">                控制台应用程序运行。</span><br><span class="line"></span><br><span class="line">    parameters  这些是传递给 command/program 的参数。</span><br><span class="line"></span><br><span class="line">注意: 在 <span class="number">64</span> 位平台上不支持 SEPARATE 和 SHARED 选项。</span><br><span class="line"></span><br><span class="line">通过指定 /NODE，可按照利用 NUMA 系统中的内存区域的方式</span><br><span class="line">创建进程。例如，可以创建两个完全</span><br><span class="line">通过共享内存互相通信的进程以共享相同的首选 NUMA 节点，</span><br><span class="line">从而最大限度地减少内存延迟。只要有可能，</span><br><span class="line">它们就会分配来自相同 NUMA 节点的</span><br><span class="line">内存，并且会在指定节点之外的处理器上自由运行。</span><br><span class="line"></span><br><span class="line">    <span class="built_in">start</span> /NODE <span class="number">1</span> application1.exe</span><br><span class="line">    <span class="built_in">start</span> /NODE <span class="number">1</span> application2.exe</span><br><span class="line"></span><br><span class="line">这两个进程可被进一步限制在相同 NUMA 节点内的指定处理器</span><br><span class="line">上运行。在以下示例中，application1 在</span><br><span class="line">节点的两个低位处理器上运行，而 application2</span><br><span class="line">在该节点的其后两个处理器上运行。该示例假定指定节点至少具有四个逻辑处理器。请注意，节点号可更改为该计算机的任何有效节点号，</span><br><span class="line">而无需更改关联掩码。</span><br><span class="line"></span><br><span class="line">    <span class="built_in">start</span> /NODE <span class="number">1</span> /AFFINITY <span class="number">0</span>x3 application1.exe</span><br><span class="line">    启动 /NODE <span class="number">1</span> /AFFINITY <span class="number">0</span>xc application2.exe</span><br><span class="line"></span><br><span class="line">如果命令扩展被启用，通过命令行或 <span class="built_in">START</span> 命令的外部命令</span><br><span class="line">调用会如下改变:</span><br><span class="line"></span><br><span class="line">将文件名作为命令键入，非可执行文件可以通过文件关联调用。</span><br><span class="line">    (例如，WORD.DOC 会调用跟 .DOC 文件扩展名关联的应用程序)。</span><br><span class="line">    关于如何从命令脚本内部创建这些关联，请参阅 <span class="built_in">ASSOC</span> 和</span><br><span class="line">     <span class="built_in">FTYPE</span> 命令。</span><br><span class="line"></span><br><span class="line">执行的应用程序是 <span class="number">32</span> 位 GUI 应用程序时，<span class="built_in">CMD</span>.EXE 不等应用</span><br><span class="line">    程序终止就返回命令提示符。如果在命令脚本内执行，该新行为</span><br><span class="line">    则不会发生。</span><br><span class="line"></span><br><span class="line">如果执行的命令行的第一个符号是不带扩展名或路径修饰符的</span><br><span class="line">    字符串 &quot;<span class="built_in">CMD</span>&quot;，&quot;<span class="built_in">CMD</span>&quot; 会被 COMSPEC 变量的数值所替换。这</span><br><span class="line">    防止从当前目录提取 <span class="built_in">CMD</span>.EXE。</span><br><span class="line"></span><br><span class="line">如果执行的命令行的第一个符号没有扩展名，<span class="built_in">CMD</span>.EXE 会使用</span><br><span class="line">    PATHEXT 环境变量的数值来决定要以什么顺序寻找哪些扩展</span><br><span class="line">    名。PATHEXT 变量的默认值是:</span><br><span class="line"></span><br><span class="line">        .COM;.EXE;.BAT;.<span class="built_in">CMD</span></span><br><span class="line"></span><br><span class="line">    请注意，该语法跟 <span class="built_in">PATH</span> 变量的一样，分号隔开不同的元素。</span><br><span class="line"></span><br><span class="line">查找可执行文件时，如果没有相配的扩展名，看一看该名称是否</span><br><span class="line">与目录名相配。如果确实如此，<span class="built_in">START</span> 会在那个路径上调用 </span><br><span class="line">Explorer。如果从命令行执行，则等同于对那个路径作 <span class="built_in">CD</span> /D。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="帮助文档解释"><a href="#帮助文档解释" class="headerlink" title="帮助文档解释"></a>帮助文档解释</h2><p>上面格式有点长,可以精简为<code>start 选项 程序 参数</code>;</p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="在特定目录下启动cmd"><a href="#在特定目录下启动cmd" class="headerlink" title="在特定目录下启动cmd"></a>在特定目录下启动cmd</h3><p>命令格式:<code>start /d 目录路径 cmd.exe</code><br>例如:</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">start</span> /d E:\workspace_QingLiangJiJavaEEQiYeYingYongShiZhang5\lazy-init <span class="built_in">cmd</span>.exe</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/569c8e52/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/569c8e52/" class="post-title-link" itemprop="url">Java int类型转char</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-08-23 13:18:52" itemprop="dateCreated datePublished" datetime="2019-08-23T13:18:52+08:00">2019-08-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/569c8e52/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/569c8e52/" data-xid="/blog/569c8e52/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>451</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近想随机生成一串包含数字和字母的字符串.但是我发现把int类型的数字通过强制类型转换为char类型字符的时候出现了乱码.</p>
-<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>字符<code>&#39;0&#39;</code>的<code>ASCII</code>编码值是<code>48</code>,如果直接通过类似如下的强制类型转换:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> ch=(<span class="type">int</span>) <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<p>得到的字符不是<code>&#39;0&#39;</code>,而是其他字符。</p>
-<h1 id="数字0到9转为’0’到’9’字符的正确做法"><a href="#数字0到9转为’0’到’9’字符的正确做法" class="headerlink" title="数字0到9转为’0’到’9’字符的正确做法"></a>数字0到9转为’0’到’9’字符的正确做法</h1><h2 id="先计算出正确的ASCII码在转为字符"><a href="#先计算出正确的ASCII码在转为字符" class="headerlink" title="先计算出正确的ASCII码在转为字符"></a>先计算出正确的ASCII码在转为字符</h2><h3 id="使用自动类型转换进行计算"><a href="#使用自动类型转换进行计算" class="headerlink" title="使用自动类型转换进行计算"></a>使用自动类型转换进行计算</h3><p>在char类型和int类型进行计算时,会自动把char类型转为int类型,所以可以先把字符<code>&#39;0&#39;</code>和<code>数字</code>进行计算得到正确的<code>ASCII</code>编码值,然后再强制类型转为字符.如下所示:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i=<span class="number">2</span>;</span><br><span class="line"><span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> (<span class="type">char</span>)(<span class="string">&#x27;0&#x27;</span> + i);</span><br></pre></td></tr></table></figure>
-<h3 id="直接计算"><a href="#直接计算" class="headerlink" title="直接计算"></a>直接计算</h3><p>当然换成如下写法也是可以的.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i=<span class="number">2</span>;</span><br><span class="line"><span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> (<span class="type">char</span>)(<span class="number">48</span> + i);</span><br></pre></td></tr></table></figure>
-<h2 id="Character-forDigit-数字-进制-方法进行转换"><a href="#Character-forDigit-数字-进制-方法进行转换" class="headerlink" title="Character.forDigit(数字,进制)方法进行转换"></a>Character.forDigit(数字,进制)方法进行转换</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i=<span class="number">2</span>;</span><br><span class="line"><span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> Character.forDigit(i,<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/39/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/39/">39</a><span class="page-number current">40</span><a class="page-number" href="/blog/page/41/">41</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/61/">61</a><a class="extend next" rel="next" href="/blog/page/41/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/39/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/39/">39</a><span class="page-number current">40</span><a class="page-number" href="/blog/page/41/">41</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/41/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>

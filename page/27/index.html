@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">609</span>
+          <span class="site-state-item-count">611</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">202</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -213,6 +213,342 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/6cc119f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/6cc119f/" class="post-title-link" itemprop="url">13 Log4j HTMLLayout</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-06 01:04:20" itemprop="dateCreated datePublished" datetime="2020-08-06T01:04:20+08:00">2020-08-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">简介</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/6cc119f/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/6cc119f/" data-xid="/blog/6cc119f/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Log4j-HTMLLayout"><a href="#Log4j-HTMLLayout" class="headerlink" title="Log4j HTMLLayout"></a>Log4j HTMLLayout</h1><p>如果您希望以<code>HTML</code>格式输出日志文件，可使用<code>org.apache.log4j.HTMLLayout</code>格式化日志信息。</p>
+<p><code>HTMLLayout</code>继承自抽象类<code>org.apache.log4j.Layout</code>，覆盖了其<code>format()</code>方法来提供<code>HTML</code>格式。</p>
+<p>它提供了如下信息以供显示：</p>
+<ul>
+<li>从应用启动到日志产生之间经过的时间。</li>
+<li>发起记录日志请求的线程名字。</li>
+<li>和记录日志请求关联的级别。</li>
+<li><code>logger</code>的名字和日志信息。</li>
+<li>程序文件的位置信息和触发日志的行号，该信息是可选的。</li>
+</ul>
+<h2 id="HTMLLayout方法"><a href="#HTMLLayout方法" class="headerlink" title="HTMLLayout方法"></a>HTMLLayout方法</h2><p><code>HTMLLayout</code>是一种非常简单的<code>Layout</code>对象，它提供了如下方法：</p>
+<table>
+<thead>
+<tr>
+<th align="left"><code>HTMLLayout</code>方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>setContentType(String)</code></td>
+<td align="left">设置<code>HTML</code>的内容类型，默认为<code>text/html</code>。</td>
+</tr>
+<tr>
+<td align="left"><code>setLocationInfo(String)</code></td>
+<td align="left">设置日志事件的地域信息。</td>
+</tr>
+<tr>
+<td align="left"><code>setTitle(String)</code></td>
+<td align="left">设置<code>HTML</code>文件的标题，默认为<code>Log4j Log Messages</code>。</td>
+</tr>
+</tbody></table>
+<h2 id="HTMLLayout示例"><a href="#HTMLLayout示例" class="headerlink" title="HTMLLayout示例"></a>HTMLLayout示例</h2><p>下面是为<code>HTMLLayout</code>编写的一个简单配置文件：</p>
+<figure class="highlight properties"><figcaption><span>/Log4jDemo/Log4jConfig/HTMLLayout/log4j.properties</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Define the root logger with appender file</span></span><br><span class="line"><span class="comment">#log = /usr/home/log4j</span></span><br><span class="line"><span class="comment">#log = E:/workspacne_JDK8Tomcat8.5/log4jDemo</span></span><br><span class="line"><span class="attr">log4j.rootLogger</span> = <span class="string">DEBUG, FILE</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Define the file appender</span></span><br><span class="line"><span class="attr">log4j.appender.FILE</span>=<span class="string">org.apache.log4j.FileAppender</span></span><br><span class="line"><span class="comment">#log4j.appender.FILE.File=$&#123;log&#125;/htmlLayout.html</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.File</span>=<span class="string">htmlLayout.html</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Define the layout for file appender</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.layout</span>=<span class="string">org.apache.log4j.HTMLLayout</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.layout.Title</span>=<span class="string">HTML Layout Example</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.layout.LocationInfo</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="Log4jExample-java"><a href="#Log4jExample-java" class="headerlink" title="Log4jExample.java"></a>Log4jExample.java</h2><p>下面的<code>Java</code>程序会生成日志信息：</p>
+<figure class="highlight java"><figcaption><span>/Log4jDemo/src/demo/Log4jExample.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"><span class="keyword">import</span> org.apache.log4j.Logger;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Log4jExample</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* Get actual class name to be printed on */</span></span><br><span class="line">    <span class="keyword">static</span> <span class="type">Logger</span> <span class="variable">log</span> <span class="operator">=</span> Logger.getLogger(Log4jExample.class.getName());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, SQLException</span><br><span class="line">    &#123;</span><br><span class="line">        log.debug(<span class="string">&quot;Hello-this-is-a-debug-message&quot;</span>);</span><br><span class="line">        log.info(<span class="string">&quot;Hello this is an info message&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p>编译和运行上述程序，在项目根路径下，会生成一个名为<code>htmlLayout.html</code>的文件，该文件包含如下日志信息：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Java/Log4jTutorial/HTMLLayout/1.png" alt="图片"><br>您可以使用浏览器打开<code>htmlLayout.html</code>文件。需要注意的是末尾缺失了<code>&lt;/body&gt;</code>和<code>&lt;/html&gt;</code>标签。但是并不影响浏览器解析。</p>
+<p>将日志格式化为<code>HTML</code>的一个优势在于可将其发布成一个<code>Web</code>页面，便于远程浏览。</p>
+<!-- 
+Blog/Programming/Java/Log4jTutorial/HTMLLayout/1
+-->
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/17eaff0a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/17eaff0a/" class="post-title-link" itemprop="url">12Log4j 使用数据库记录日志</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-05 03:14:46" itemprop="dateCreated datePublished" datetime="2020-08-05T03:14:46+08:00">2020-08-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">简介</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/17eaff0a/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/17eaff0a/" data-xid="/blog/17eaff0a/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Log4j-使用数据库记录日志"><a href="#Log4j-使用数据库记录日志" class="headerlink" title="Log4j 使用数据库记录日志"></a>Log4j 使用数据库记录日志</h1><p><code>Log4j API</code>提供了<code>org.apache.log4j.jdbc.JDBCAppender</code>对象，该对象可将日志信息记录到特定的数据库之中。</p>
+<h2 id="JDBCAppender-配置"><a href="#JDBCAppender-配置" class="headerlink" title="JDBCAppender 配置"></a>JDBCAppender 配置</h2><table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>bufferSize</code></td>
+<td align="left">设置缓冲区大小，缺省为 1。</td>
+</tr>
+<tr>
+<td align="left"><code>driver</code></td>
+<td align="left">以字符串形式设置驱动类，如果未设置，缺省为<code>sun.jdbc.odbc.JdbcOdbcDriver</code>。</td>
+</tr>
+<tr>
+<td align="left"><code>layout</code></td>
+<td align="left">设置<code>layout</code>，缺省为<code>org.apache.log4j.PatternLayout</code>。</td>
+</tr>
+<tr>
+<td align="left"><code>password</code></td>
+<td align="left">设置数据库密码。</td>
+</tr>
+<tr>
+<td align="left"><code>sql</code></td>
+<td align="left">设置每次日志事件触发时需要执行的<code>SQL</code>语句，该语句可以是<code>INSERT</code>、<code>UPDATE</code>或<code>DELETE</code>。</td>
+</tr>
+<tr>
+<td align="left"><code>URL</code></td>
+<td align="left">设置<code>JDBC URL.</code></td>
+</tr>
+<tr>
+<td align="left"><code>user</code></td>
+<td align="left">设置数据库用户名。</td>
+</tr>
+</tbody></table>
+<h2 id="日志表的配置"><a href="#日志表的配置" class="headerlink" title="日志表的配置"></a>日志表的配置</h2><p>在使用基于<code>JDBC</code>的日志之前，先要创建一张表以保存所有日志信息，下面是用来创建<code>LOGS</code>表的<code>SQL</code>语句：</p>
+<figure class="highlight sql"><figcaption><span>/Log4jDemo/src/logs.sql</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 创建数据库</span><br><span class="line"><span class="keyword">drop</span> database if <span class="keyword">exists</span> dbname;</span><br><span class="line"><span class="keyword">create</span> database dbname <span class="keyword">default</span> <span class="type">character</span> <span class="keyword">set</span> utf8;</span><br><span class="line"># 进入数据库</span><br><span class="line">use dbname;</span><br><span class="line"># 创建表</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> logs(</span><br><span class="line">    user_id <span class="type">varchar</span>(<span class="number">20</span>)    <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    date_time   datetime   <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    logger  <span class="type">varchar</span>(<span class="number">50</span>)    <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    level   <span class="type">varchar</span>(<span class="number">10</span>)    <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">    message <span class="type">varchar</span>(<span class="number">1000</span>)  <span class="keyword">not</span> <span class="keyword">null</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="示例配置文件"><a href="#示例配置文件" class="headerlink" title="示例配置文件"></a>示例配置文件</h2><p>下面是一个为<code>JDBCAppender</code>编写的<code>Log4j.properties</code>的示例配置文件，使用该对象将日志信息记录到<code>LOGS</code>表中。</p>
+<figure class="highlight properties"><figcaption><span>/Log4jDemo/Log4jConfig/JDBCAppender/log4j.properties</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Define the root logger with appender DB and STDOUT</span></span><br><span class="line"><span class="attr">log4j.rootLogger</span> = <span class="string">DEBUG, DB,STDOUT</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Define the DB appender</span></span><br><span class="line"><span class="attr">log4j.appender.DB</span>=<span class="string">org.apache.log4j.jdbc.JDBCAppender</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set JDBC URL</span></span><br><span class="line"><span class="comment">#log4j.appender.DB.URL=jdbc:mysql://localhost/DBNAME</span></span><br><span class="line"><span class="attr">log4j.appender.DB.URL</span>=<span class="string">jdbc:mysql://localhost:3306/DBNAME?serverTimezone=UTC&amp;characterEncoding=utf-8</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set Database Driver</span></span><br><span class="line"><span class="comment">#log4j.appender.DB.driver=com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="comment"># mysql8.0驱动</span></span><br><span class="line"><span class="attr">log4j.appender.DB.driver</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set database user name and password</span></span><br><span class="line"><span class="comment">#log4j.appender.DB.user=user_name</span></span><br><span class="line"><span class="attr">log4j.appender.DB.user</span>=<span class="string">root</span></span><br><span class="line"><span class="comment">#log4j.appender.DB.password=password</span></span><br><span class="line"><span class="attr">log4j.appender.DB.password</span>=<span class="string">root</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the SQL statement to be executed.</span></span><br><span class="line"><span class="comment">#log4j.appender.DB.sql=INSERT INTO LOGS VALUES(&#x27;%x&#x27;,&#x27;%d&#123;yyyy-MM-dd HH:mm:ss&#125;&#x27;,&#x27;%C&#x27;,&#x27;%p&#x27;,&#x27;%m&#x27;)</span></span><br><span class="line"><span class="attr">log4j.appender.DB.sql</span>=<span class="string">insert into logs(user_id,date_time,logger,level,message) values (&#x27;%x&#x27;,&#x27;%d&#123;yyyy-MM-dd HH:mm:ss&#125;&#x27;,&#x27;%C&#x27;,&#x27;%p&#x27;,&#x27;%m&#x27;)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Define the layout for file appender</span></span><br><span class="line"><span class="attr">log4j.appender.DB.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"></span><br><span class="line"><span class="attr">log4j.appender.STDOUT</span>=<span class="string">org.apache.log4j.ConsoleAppender</span></span><br><span class="line"><span class="attr">log4j.appender.STDOUT.Target</span>=<span class="string">System.out</span></span><br><span class="line"><span class="attr">log4j.appender.STDOUT.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.STDOUT.layout.ConversionPattern</span>=<span class="string">user_id=%x,date_time=%d&#123;yyyy-MM-dd HH:mm:ss&#125;,logger=%C,LEVEL=%p,message=%m%n</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>如果使用<code>MySQL</code>数据库，需要使用真实的<code>DBNAME</code>、用户名和密码，就是刚才用来创建<code>LOGS</code>表的那些属性。<code>SQL</code>语句执行<code>INSERT</code>语句，为<code>LOGS</code>表插入具体数值。<br><code>JDBCAppender</code>不需要显示定义<code>layout</code>，传入的<code>SQL</code>语句会使用<code>PatternLayout</code>。</p>
+<h3 id="使用XML配置文件"><a href="#使用XML配置文件" class="headerlink" title="使用XML配置文件"></a>使用XML配置文件</h3><p>如果您需要和上述<code>Log4j.properties</code>文件等价的<code>XML</code>配置文件，如下所示：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">log4j</span>:configuration</span></span><br><span class="line"><span class="meta">    <span class="keyword">PUBLIC</span> <span class="string">&quot;-//LOG4J//DTD LOG4J//EN&quot;</span></span></span><br><span class="line"><span class="meta">    <span class="string">&quot;https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">log4j:configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;DB&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">class</span>=<span class="string">&quot;org.apache.log4j.jdbc.JDBCAppender&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;driver&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;URL&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">value</span>=<span class="string">&quot;jdbc:mysql://localhost:3306/DBNAME?serverTimezone=UTC<span class="symbol">&amp;amp;</span>characterEncoding=UTF-8&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;user&quot;</span> <span class="attr">value</span>=<span class="string">&quot;root&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;root&quot;</span> /&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;param name=&quot;sql&quot; value=&quot;insert into logs(user_id,date_time,logger,level,message) </span></span><br><span class="line"><span class="comment">            values (&#x27;%x&#x27;,&#x27;%d&#x27;,&#x27;%C&#x27;,&#x27;%p&#x27;,&#x27;%m&#x27;)&quot; /&gt; --&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">layout</span> <span class="attr">class</span>=<span class="string">&quot;org.apache.log4j.PatternLayout&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;ConversionPattern&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">value</span>=<span class="string">&quot;insert into logs(user_id,date_time,logger,level,message) values (&#x27;%x&#x27;,&#x27;%d&#123;yyyy-MM-dd HH:mm:ss&#125;&#x27;,&#x27;%C&#x27;,&#x27;%p&#x27;,&#x27;%m&#x27;)&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">level</span> <span class="attr">value</span>=<span class="string">&quot;DEBUG&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;DB&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">log4j:configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="log4j-xml把SQL写到layout的ConversionPattern属性"><a href="#log4j-xml把SQL写到layout的ConversionPattern属性" class="headerlink" title="log4j.xml把SQL写到layout的ConversionPattern属性"></a>log4j.xml把SQL写到layout的ConversionPattern属性</h4><p>经过我的测试,把sql写在layout的ConversionPattern属性中,程序可以运行.<br>而使用appender的sql属性中的sql语句无法正常运行。</p>
+<h4 id="log4j-properties把SQL写在-appender的sql属性"><a href="#log4j-properties把SQL写在-appender的sql属性" class="headerlink" title="log4j.properties把SQL写在 appender的sql属性"></a>log4j.properties把SQL写在 appender的sql属性</h4><p>在log4j.properties配置文件中,SQL既可以写在appender的sql属性中,也可以写在layout的ConversionPattern属性中.</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">log4j.appender.DB.sql</span>=<span class="string">insert into logs(user_id,date_time,logger,level,message) values (&#x27;%x&#x27;,&#x27;%d&#123;yyyy-MM-dd HH:mm:ss&#125;&#x27;,&#x27;%C&#x27;,&#x27;%p&#x27;,&#x27;%m&#x27;)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Define the layout for file appender</span></span><br><span class="line"><span class="attr">log4j.appender.DB.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="comment"># log4j.appender.DB.layout.ConversionPattern=insert into logs(user_id,date_time,logger,level,message) values (&#x27;%x&#x27;,&#x27;%d&#123;yyyy-MM-dd HH:mm:ss&#125;&#x27;,&#x27;%C&#x27;,&#x27;%p&#x27;,&#x27;%m&#x27;)</span></span><br></pre></td></tr></table></figure>
+<p>和</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#log4j.appender.DB.sql=insert into logs(user_id,date_time,logger,level,message) values (&#x27;%x&#x27;,&#x27;%d&#123;yyyy-MM-dd HH:mm:ss&#125;&#x27;,&#x27;%C&#x27;,&#x27;%p&#x27;,&#x27;%m&#x27;)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Define the layout for file appender</span></span><br><span class="line"><span class="attr">log4j.appender.DB.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.DB.layout.ConversionPattern</span>=<span class="string">insert into logs(user_id,date_time,logger,level,message) values (&#x27;%x&#x27;,&#x27;%d&#123;yyyy-MM-dd HH:mm:ss&#125;&#x27;,&#x27;%C&#x27;,&#x27;%p&#x27;,&#x27;%m&#x27;)</span></span><br></pre></td></tr></table></figure>
+<p>这两种方式都是可以的。</p>
+<h2 id="示例程序"><a href="#示例程序" class="headerlink" title="示例程序"></a>示例程序</h2><p>下述<code>Java</code>类是一个非常简单的例子，该类在<code>Java</code>应用中初始化并使用了<code>Log4j</code>类库。</p>
+<figure class="highlight java"><figcaption><span>/Log4jDemo/src/demo/Log4jExample.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"><span class="keyword">import</span> org.apache.log4j.Logger;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Log4jExample</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* Get actual class name to be printed on */</span></span><br><span class="line">    <span class="keyword">static</span> <span class="type">Logger</span> <span class="variable">log</span> <span class="operator">=</span> Logger.getLogger(Log4jExample.class.getName());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, SQLException</span><br><span class="line">    &#123;</span><br><span class="line">        log.debug(<span class="string">&quot;Hello this is a debug message&quot;</span>);</span><br><span class="line">        log.info(<span class="string">&quot;Hello this is an info message&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行<code>Log4jExample.java</code>,然后查询<code>DBNAME`数据库中的</code>LOGS&#96;表，会发现如下条目：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from LOGS;</span><br><span class="line">+---------+---------------------+-------------------+-------+-------------------------------+</span><br><span class="line">| user_id | date_time           | logger            | level | message                       |</span><br><span class="line">+---------+---------------------+-------------------+-------+-------------------------------+</span><br><span class="line">|         | <span class="number">2020</span>-<span class="number">08</span>-<span class="number">05</span> <span class="number">18</span>:<span class="number">22</span>:<span class="number">49</span> | demo.Log4jExample | DEBUG | Hello-this-is-a-debug-message |</span><br><span class="line">|         | <span class="number">2020</span>-<span class="number">08</span>-<span class="number">05</span> <span class="number">18</span>:<span class="number">22</span>:<span class="number">51</span> | demo.Log4jExample | INFO  | Hello this is an info message |</span><br><span class="line">+---------+---------------------+-------------------+-------+-------------------------------+</span><br><span class="line"><span class="number">2</span> rows <span class="keyword">in</span> <span class="built_in">set</span> (<span class="number">0</span>.<span class="number">02</span> sec)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1578,440 +1914,8 @@ E:\workspacne_JDK8Tomcat8.5\Log4jDemo
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9c30cbde/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/9c30cbde/" class="post-title-link" itemprop="url">4 Log4j配置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-08-03 04:04:18" itemprop="dateCreated datePublished" datetime="2020-08-03T04:04:18+08:00">2020-08-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">简介</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/9c30cbde/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/9c30cbde/" data-xid="/blog/9c30cbde/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="log4j配置"><a href="#log4j配置" class="headerlink" title="log4j配置"></a>log4j配置</h1><p><code>Log4j</code>的配置包括在配置文件中:</p>
-<ol>
-<li>指定<code>Level</code>、</li>
-<li>定义<code>Appender</code>、</li>
-<li>指明<code>Layout</code>。</li>
-</ol>
-<p><code>Log4j.properties</code>文件是<code>Log4j</code>的配置文件，属性以<strong>键值对</strong>的形式定义。默认情况下，<code>LogManager</code>会在<code>CLASSPATH</code>中寻找<code>Log4j.properties</code>文件。</p>
-<ul>
-<li>根日志的级别定义为<code>DEBUG</code>，并将名为<code>XXX</code>的<code>appender</code>添加其上。</li>
-<li>将名为<code>XXX</code>的<code>appender</code>设置为合法的<code>appender</code>。</li>
-<li>设置<code>XXX</code>这个<code>appender</code>的<code>layout</code>。</li>
-</ul>
-<h2 id="Log4j-properties的语法"><a href="#Log4j-properties的语法" class="headerlink" title="Log4j.properties的语法"></a>Log4j.properties的语法</h2><p>为<code>appender XXXXX</code>定义的<code>Log4j.properties</code>的语法如下：</p>
-<pre>
-&#35; Define the root logger with appender XXX
-log4j.rootLogger = DEBUG, <mark>XXX</mark>
-
-&#35; Set the appender named XXX to be a File appender
-<strong>log4j.appender.<mark>XXX</mark></strong>=org.apache.log4j.FileAppender
-
-&#35; Define the layout for XXX appender
-<strong>log4j.appender.<mark>XXX</mark>.layout</strong>=org.apache.log4j.PatternLayout
-<strong>log4j.appender.<mark>XXX</mark>.layout.conversionPattern</strong>=%m%n
-</pre>
-
-<h2 id="Log4j-properties示例"><a href="#Log4j-properties示例" class="headerlink" title="Log4j.properties示例"></a>Log4j.properties示例</h2><p>使用上述语法，我们在<code>Log4j.properties</code>定义如下属性：</p>
-<ul>
-<li>定义根日志级别为<code>DEBUG</code>，并将名为<code>FILE</code>的<code>appender</code>添加在其上。</li>
-<li><code>appender FILE</code>定义为<code>org.apache.log4j.FileAppender</code>，它将日志写入<code>log</code>目录下一个名为<code>log.out</code>的文件中。</li>
-<li><code>layout</code>被定义为<code>%m%n</code>，其中<code>%m</code>表示日志信息,<code>%n</code>表示换行符,则<code>%m%n</code>表示打印出日志信息并在末尾加入换行。</li>
-</ul>
-<figure class="highlight properties"><figcaption><span>Log4j.properties</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&amp;#35;</span> <span class="string">定义变量,该变量表示日志文件所在的目录</span></span><br><span class="line"><span class="attr">log</span> = <span class="string">E:/workspacne_JDK8Tomcat8.5/Log4jDemo</span></span><br><span class="line"><span class="attr">&amp;#35;</span> <span class="string">Define the root logger with appender file</span></span><br><span class="line"><span class="attr">log4j.rootLogger</span> = <span class="string">DEBUG, FILE</span></span><br><span class="line"></span><br><span class="line"><span class="attr">&amp;#35;</span> <span class="string">Define the file appender</span></span><br><span class="line"><span class="attr">log4j.appender.FILE</span>=<span class="string">org.apache.log4j.FileAppender</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.File</span>=<span class="string">$&#123;log&#125;/log.out</span></span><br><span class="line"></span><br><span class="line"><span class="attr">&amp;#35;</span> <span class="string">Define the layout for file appender</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.layout.conversionPattern</span>=<span class="string">%m%n</span></span><br></pre></td></tr></table></figure>
-<h3 id="变量替换"><a href="#变量替换" class="headerlink" title="变量替换"></a>变量替换</h3><p>值得注意的是，<code>Log4j</code>支持<code>Unix</code>风格的变量替换，比如<code>$&#123;variableName&#125;</code>。</p>
-<h3 id="级别"><a href="#级别" class="headerlink" title="级别"></a>级别</h3><p>所有可能的选项如下：</p>
-<ul>
-<li><code>TRACE</code>、</li>
-<li><code>DEBUG</code>、</li>
-<li><code>INFO</code>、</li>
-<li><code>WARN</code>、</li>
-<li><code>ERROR</code>、</li>
-<li><code>FATAL</code>、</li>
-<li><code>ALL</code>。</li>
-</ul>
-<p>这些级别会在本教程的后续部分讲解。</p>
-<h2 id="Appender对象"><a href="#Appender对象" class="headerlink" title="Appender对象"></a>Appender对象</h2><p><strong><code>Apache Log4j</code>提供的<code>Appender</code>对象主要负责将日志信息打印至不同目的地</strong>，比如控制台、文件、网络套接字、<code>NT</code>事件日志等。</p>
-<h3 id="Appender对象属性"><a href="#Appender对象属性" class="headerlink" title="Appender对象属性"></a>Appender对象属性</h3><p>每个<code>Appender</code>对象都有不同的属性，这些属性决定了该对象的行为。</p>
-<table>
-<thead>
-<tr>
-<th align="left">属性</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>layout</code></td>
-<td align="left"><code>Appender</code>使用<code>Layout</code>对象和与之关联的模式来格式化日志信息。</td>
-</tr>
-<tr>
-<td align="left"><code>target</code></td>
-<td align="left">目的地可以是控制台、文件，或依赖于<code>appender</code>的对象。</td>
-</tr>
-<tr>
-<td align="left"><code>level</code></td>
-<td align="left">级别用来控制过滤日志信息。</td>
-</tr>
-<tr>
-<td align="left"><code>threshold</code></td>
-<td align="left"><code>Appender</code>可脱离于日志级别定义一个阀值级别，<code>Appender</code>对象会忽略所有级别低于阀值级别的日志。</td>
-</tr>
-<tr>
-<td align="left"><code>filter</code></td>
-<td align="left"><code>Filter</code>对象可在级别基础之上分析日志信息，来决定<code>Appender</code>对象是否处理或忽略一条日志记录。</td>
-</tr>
-</tbody></table>
-<h3 id="将Appender添加到Logger对象"><a href="#将Appender添加到Logger对象" class="headerlink" title="将Appender添加到Logger对象"></a>将Appender添加到Logger对象</h3><p>通过在配置文件中使用如下方法，将<code>Appender</code>对象添加至<code>Logger</code>对象：</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">log4j.logger.[logger-name]</span>=<span class="string">level, appender1,appender2...appendern</span></span><br></pre></td></tr></table></figure>
-<p>也可以在<code>XML</code>中定义同样的配置：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;com.apress.logging.Log4j&quot;</span> <span class="attr">additivity</span>=<span class="string">&quot;false&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;appender1&quot;</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;appender2&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="在程序中为Logger对象添加Appender对象"><a href="#在程序中为Logger对象添加Appender对象" class="headerlink" title="在程序中为Logger对象添加Appender对象"></a>在程序中为Logger对象添加Appender对象</h3><p>如果想在程序中添加<code>Appender</code>对象，可使用如下方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addAppender</span><span class="params">(Appender appender)</span>;</span><br></pre></td></tr></table></figure>
-<p><code>addAppender()</code>方法为<code>Logger</code>对象增加一个<code>Appender</code>。如示例配置展示的那样，可以通过逗号分隔的列表，为<code>logger</code>添加多个<code>Appender</code>，将日志信息打印到不同的目的地。</p>
-<h3 id="所有可用的Appender"><a href="#所有可用的Appender" class="headerlink" title="所有可用的Appender"></a>所有可用的Appender</h3><p>在上面的例子中，我们只用到了<code>FileAppender</code>，所有可用的<code>appender</code>包括：</p>
-<ul>
-<li><code>AppenderSkeleton</code>、</li>
-<li><code>AsyncAppender</code>、</li>
-<li><code>ConsoleAppender</code>、</li>
-<li><code>DailyRollingFileAppender</code>、</li>
-<li><code>ExternallyRolledFileAppender</code>、</li>
-<li><code>FileAppender</code>、</li>
-<li><code>JDBCAppender</code>、</li>
-<li><code>JMSAppender</code>、</li>
-<li><code>LF5Appender</code>、</li>
-<li><code>NTEventLogAppender</code>、</li>
-<li><code>NullAppender</code>、</li>
-<li><code>RollingFileAppender</code>、</li>
-<li><code>SMTPAppender</code>、</li>
-<li><code>SocketAppender</code>、</li>
-<li><code>SocketHubAppender</code>、</li>
-<li><code>SyslogAppender</code>、</li>
-<li><code>TelnetAppender</code>、</li>
-<li><code>WriterAppender</code>。</li>
-</ul>
-<p>我们将在<a href="https://lanlan2017.github.io/blog/6296507b/">使用文件记录日志</a>一章讲解<code>FileAppender</code>，在<a href="https://lanlan2017.github.io/blog/17eaff0a/">使用数据库记录日志</a>一章讲解<code>JDBCAppender</code>。</p>
-<h2 id="Layout对象"><a href="#Layout对象" class="headerlink" title="Layout对象"></a>Layout对象</h2><p>我们已经在<code>appender</code>中使用了<code>PatternLayout</code>，<code>layout</code>对象的所有选项包括：</p>
-<ul>
-<li><code>DateLayout</code>、</li>
-<li><code>HTMLLayout</code>、</li>
-<li><code>PatternLayout</code>、</li>
-<li><code>SimpleLayout</code>、</li>
-<li><code>XMLLayout</code>。</li>
-</ul>
-<p>使用<code>HTMLLayout</code>和<code>XMLLayout</code>，可以生成<code>HTML</code>和<code>XML</code>格式的日志。</p>
-<p>日志格式化<br>您将在<strong>日志格式</strong>一章学习如何格式化日志信息。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/39ac74b8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/39ac74b8/" class="post-title-link" itemprop="url">3 Log4j架构</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-08-03 03:47:33" itemprop="dateCreated datePublished" datetime="2020-08-03T03:47:33+08:00">2020-08-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">简介</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/39ac74b8/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/39ac74b8/" data-xid="/blog/39ac74b8/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>938</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="log4j架构"><a href="#log4j架构" class="headerlink" title="log4j架构"></a>log4j架构</h1><h2 id="Log4j采用分层架构"><a href="#Log4j采用分层架构" class="headerlink" title="Log4j采用分层架构"></a>Log4j采用分层架构</h2><p><code>Log4j API</code>采用分层架构，每一层有不同的对象，完成不同的任务。这种分层架构让设计变得灵活，且易于日后扩展。</p>
-<h2 id="Log4j框架组件图"><a href="#Log4j框架组件图" class="headerlink" title="Log4j框架组件图"></a>Log4j框架组件图</h2><p>下图展示了Log4j框架中的组件：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/blog/programming/java/log4j/Log4jArchitecture/1.jpg" alt="图片"></p>
-<h2 id="Log4j对象分类"><a href="#Log4j对象分类" class="headerlink" title="Log4j对象分类"></a>Log4j对象分类</h2><p><code>Log4j</code>里有两种类型的对象：</p>
-<ul>
-<li><strong>核心对象</strong>：这是框架必需的对象，使用框架时必需用到它们。</li>
-<li><strong>支持对象</strong>：这是框架的可选对象，它们支持核心对象做一些额外的，但并不重要的任务。</li>
-</ul>
-<h3 id="核心对象"><a href="#核心对象" class="headerlink" title="核心对象"></a>核心对象</h3><p>核心对象包括如下几种类型：</p>
-<h4 id="Logger对象"><a href="#Logger对象" class="headerlink" title="Logger对象"></a>Logger对象</h4><p>最上一层是<code>Logger</code>对象，该对象负责获取日志信息，并存储于一个分层的命名空间之中。</p>
-<h4 id="Layout对象"><a href="#Layout对象" class="headerlink" title="Layout对象"></a>Layout对象</h4><p><code>Layout</code>层提供了用于以各种风格格式化日志信息的对象，在发布日志信息之前，它为<code>appender</code>对象提供支持。<br><code>Layout</code>对象对于发布日志信息非常重要，它使日志变得可读、可复用。</p>
-<h4 id="Appender对象"><a href="#Appender对象" class="headerlink" title="Appender对象"></a>Appender对象</h4><p>该对象位于分层架构中的较低一层，<code>Appender</code>对象负责将日志信息发布到不同目的地，比如:</p>
-<ul>
-<li>数据库、</li>
-<li>文件、</li>
-<li>控制台、</li>
-<li><code>Unix Syslog</code>等。</li>
-</ul>
-<h3 id="支持对象"><a href="#支持对象" class="headerlink" title="支持对象"></a>支持对象</h3><p>Log4j 中还有其他一些对象，同样在框架中发挥着重要作用。</p>
-<h4 id="Level对象"><a href="#Level对象" class="headerlink" title="Level对象"></a>Level对象</h4><p><code>Level</code>对象定义了日志信息的粒度和优先级。<code>API</code>定义了七种级别：</p>
-<blockquote>
-<table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">级别</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">8</td>
-<td align="left"><code>OFF</code></td>
-<td align="left">最高级别，用于关闭日志。</td>
-</tr>
-<tr>
-<td align="left">7</td>
-<td align="left"><code>FATAL</code></td>
-<td align="left">指明非常严重的错误事件，可能会导致应用终止执行。</td>
-</tr>
-<tr>
-<td align="left">6</td>
-<td align="left"><code>ERROR</code></td>
-<td align="left">指明错误事件，但应用可能还能继续运行。</td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left"><code>WARN</code></td>
-<td align="left">指明潜在的有害状况。</td>
-</tr>
-<tr>
-<td align="left">4</td>
-<td align="left"><code>INFO</code></td>
-<td align="left">指明描述信息，从粗粒度上描述了应用运行过程。</td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left"><code>DEBUG</code></td>
-<td align="left">指明细致的事件信息，对调试应用最有用。</td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left"><code>TRACE</code></td>
-<td align="left">比<code>DEBUG</code>级别的粒度更细。</td>
-</tr>
-<tr>
-<td align="left">1</td>
-<td align="left"><code>ALL</code></td>
-<td align="left">所有级别，包括定制级别。</td>
-</tr>
-</tbody></table>
-</blockquote>
-<h4 id="Filter对象"><a href="#Filter对象" class="headerlink" title="Filter对象"></a>Filter对象</h4><p><code>Filter</code>对象用来分析日志信息，进而决定该条日志是否被记录。</p>
-<p>一个<code>Appender</code>对象可对应多个<code>Filter</code>对象，当日志信息传给<code>Appender</code>对象时，与其关联的所有<code>Filter</code>对象需要判断是否将日志信息发布到目的地。</p>
-<h4 id="ObjectRenderer对象"><a href="#ObjectRenderer对象" class="headerlink" title="ObjectRenderer对象"></a>ObjectRenderer对象</h4><p><code>ObjectRenderer</code>对象负责为传入日志框架的不同对象提供字符串形式的表示，<code>Layout</code>对象使用该对象来准备最终的日志信息。</p>
-<h4 id="LogManager对象"><a href="#LogManager对象" class="headerlink" title="LogManager对象"></a>LogManager对象</h4><p><code>LogManager</code>对象管理日志框架，它负责从系统级的配置文件或类中读取初始配置参数。</p>
-<!--
-blog/programming/java/log4j/Log4jArchitecture/1.jpg
--->
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/26/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/blog/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/61/">61</a><a class="extend next" rel="next" href="/blog/page/28/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/26/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/blog/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/28/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>

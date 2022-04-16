@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">609</span>
+          <span class="site-state-item-count">611</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">202</span>
+        <span class="site-state-item-count">203</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -213,6 +213,354 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/2b671225/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2b671225/" class="post-title-link" itemprop="url">Linux bash的启动</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-26 14:39:59" itemprop="dateCreated datePublished" datetime="2021-06-26T14:39:59+08:00">2021-06-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/Shell%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9C%BA%E5%88%B6/" itemprop="url" rel="index"><span itemprop="name">Shell的基本机制</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/2b671225/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/2b671225/" data-xid="/blog/2b671225/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="启动交互式bash"><a href="#启动交互式bash" class="headerlink" title="启动交互式bash"></a>启动交互式bash</h2><h2 id="三种启动方法"><a href="#三种启动方法" class="headerlink" title="三种启动方法"></a>三种启动方法</h2><ul>
+<li>注册shell:注册shell（用户登录系统系统时运行）</li>
+<li>键入bash命令:交互式shell（用户打开终端时运行）</li>
+<li>脚本解释器（解释.sh文件）</li>
+</ul>
+<h2 id="自动执行的一批命令（用户偏好）"><a href="#自动执行的一批命令（用户偏好）" class="headerlink" title="自动执行的一批命令（用户偏好）"></a>自动执行的一批命令（用户偏好）</h2><ul>
+<li>当bash作为<code>注册shell</code>被<strong>启动时</strong>:自动执行用户主目录下的<code>.bash_profile</code>文件中命令，<code>~/.bash_profile</code>或<code>$HOME/.bash_profile</code></li>
+<li>当bash作为<code>注册shell</code><strong>退出时</strong>: 自动执行<code>$HOME/.bash_logout</code></li>
+<li>当bash作为<code>交互式shell</code><strong>启动时</strong>: 自动执行<code>$HOME/.bashrc</code></li>
+<li>类似umask之类的命令，应当写在<code>.profile</code>文件中</li>
+</ul>
+<h2 id="启动交互式bash-1"><a href="#启动交互式bash-1" class="headerlink" title="启动交互式bash"></a>启动交互式bash</h2><p>自动执行的一批命令（系统级）</p>
+<ul>
+<li>当bash作为<code>注册shell</code>被<strong>启动</strong>时：自动执行<code>/etc/profile</code>文件中命令</li>
+<li>当bash作为<code>交互式shell</code><strong>启动</strong>时: 自动执行<code>/etc/bash.bashrc</code></li>
+<li>当bash作为<code>注册shell</code><strong>退出</strong>时：自动执行<code>/etc/bash.bash.logout</code></li>
+</ul>
+<h1 id="脚本文件"><a href="#脚本文件" class="headerlink" title="脚本文件"></a>脚本文件</h1><p>◼编辑文件lsdir(格式为文本文件，文件名不必须为.sh后缀，只是个惯例)</p>
+<figure class="highlight sh"><figcaption><span>lsdir.sh</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ <span class="variable">$#</span> = 0 ] <span class="comment">#判断命令行的参数个数是不是0个</span></span><br><span class="line"><span class="keyword">then</span> </span><br><span class="line">    <span class="built_in">dir</span>=. <span class="comment">#如果是0个的话，则使用当前目录</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">dir</span>=<span class="variable">$1</span> <span class="comment">#如果不是的话，则使用第一个参数作为目录</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">find <span class="variable">$dir</span> -<span class="built_in">type</span> d -<span class="built_in">print</span> <span class="comment">#查找目录下的所有子孙目录并打印</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;----------------&#x27;</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$dir</span> <span class="comment"># 修改当前工作目录到指定的目录</span></span><br><span class="line"><span class="built_in">pwd</span> <span class="comment"># 打印当前工作目录</span></span><br></pre></td></tr></table></figure>
+<h2 id="脚本文件的执行"><a href="#脚本文件的执行" class="headerlink" title="脚本文件的执行"></a>脚本文件的执行</h2><h3 id="新创建子进程，并在子进程中执行脚本"><a href="#新创建子进程，并在子进程中执行脚本" class="headerlink" title="新创建子进程，并在子进程中执行脚本"></a>新创建子进程，并在子进程中执行脚本</h3><ul>
+<li><code>bash&lt;lsdir</code><ul>
+<li>无法携带命令行参数</li>
+</ul>
+</li>
+<li><code>bash lsdir</code>，<code>bash -x lsdir</code>（-x选项表示执行命令时，打印出正在执行的命令。这种方式可以看出命令的执行轨迹，便于debug调试），<code>bash lsdir 目录</code></li>
+<li>给文件设置可执行属性x：<code>chmod u+x lsdir</code>然后执行<code>./lsdir 目录</code>。</li>
+</ul>
+<p>三种方法均启动程序&#x2F;bin&#x2F;bash，生成新进程</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost shell的基本机制]# bash &lt; lsdir.sh </span><br><span class="line">.</span><br><span class="line">&amp;#45;&amp;#45;&amp;#45;&amp;#45;&amp;#45;&amp;#45;&amp;#45;&amp;#45;&amp;#45;&amp;#45;&amp;#45;&amp;#45;&amp;#45;&amp;#45;&amp;#45;&amp;#45;</span><br><span class="line">/root/Linux_Test/shell的基本机制</span><br><span class="line">[root@localhost shell的基本机制]# </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost shell的基本机制]# bash -x lsdir.sh </span><br><span class="line">+ &#x27;[&#x27; 0 = 0 &#x27;]&#x27;</span><br><span class="line">+ dir=.</span><br><span class="line">+ find . -type d -print</span><br><span class="line">.</span><br><span class="line">+ echo ----------------</span><br><span class="line">----------------</span><br><span class="line">+ cd .</span><br><span class="line">+ pwd</span><br><span class="line">/root/Linux_Test/shell的基本机制</span><br><span class="line">[root@localhost shell的基本机制]# </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost shell的基本机制]# bash lsdir.sh /root/Linux_Test/文件和目录的权限/</span><br><span class="line">/root/Linux_Test/文件和目录的权限/</span><br><span class="line">/root/Linux_Test/文件和目录的权限/sonDir</span><br><span class="line">/root/Linux_Test/文件和目录的权限/NewShellNewDir</span><br><span class="line">/root/Linux_Test/文件和目录的权限/验证</span><br><span class="line">----------------</span><br><span class="line">/root/Linux_Test/文件和目录的权限</span><br><span class="line">[root@localhost shell的基本机制]# </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost shell的基本机制]# ls -l</span><br><span class="line">总用量 4</span><br><span class="line">-rw-r--r--. 1 root root 378 6月  26 15:00 lsdir.sh</span><br><span class="line">[root@localhost shell的基本机制]# chmod u+x lsdir.sh </span><br><span class="line">[root@localhost shell的基本机制]# ls -l</span><br><span class="line">总用量 4</span><br><span class="line">-rwxr--r--. 1 root root 378 6月  26 15:00 lsdir.sh</span><br><span class="line">[root@localhost shell的基本机制]# ./lsdir.sh /root/Linux_Test/文件和目录的权限/</span><br><span class="line">/root/Linux_Test/文件和目录的权限/</span><br><span class="line">/root/Linux_Test/文件和目录的权限/sonDir</span><br><span class="line">/root/Linux_Test/文件和目录的权限/NewShellNewDir</span><br><span class="line">/root/Linux_Test/文件和目录的权限/验证</span><br><span class="line">----------------</span><br><span class="line">/root/Linux_Test/文件和目录的权限</span><br><span class="line">[root@localhost shell的基本机制]#</span><br></pre></td></tr></table></figure>
+<h3 id="在当前shell进程中执行脚本"><a href="#在当前shell进程中执行脚本" class="headerlink" title="在当前shell进程中执行脚本"></a>在当前shell进程中执行脚本</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. lsdir.sh 参数</span><br></pre></td></tr></table></figure>
+<p>这里最左边的点号<code>.</code>会被当成内部命令运行，表示点号后面的命令在当前shell内运行。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source lsdir 参数</span><br></pre></td></tr></table></figure>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost shell的基本机制]# . lsdir.sh </span><br><span class="line">.</span><br><span class="line">----------------</span><br><span class="line">/root/Linux_Test/shell的基本机制</span><br><span class="line">[root@localhost shell的基本机制]# . lsdir.sh /root/Linux_Test/文件和目录的权限/</span><br><span class="line">/root/Linux_Test/文件和目录的权限/</span><br><span class="line">/root/Linux_Test/文件和目录的权限/sonDir</span><br><span class="line">/root/Linux_Test/文件和目录的权限/NewShellNewDir</span><br><span class="line">/root/Linux_Test/文件和目录的权限/验证</span><br><span class="line">----------------</span><br><span class="line">/root/Linux_Test/文件和目录的权限</span><br><span class="line">[root@localhost 文件和目录的权限]# </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost shell的基本机制]# ls</span><br><span class="line">lsdir.sh</span><br><span class="line">[root@localhost shell的基本机制]# source lsdir.sh </span><br><span class="line">.</span><br><span class="line">----------------</span><br><span class="line">/root/Linux_Test/shell的基本机制</span><br><span class="line">[root@localhost shell的基本机制]# source lsdir.sh /root/Linux_Test/文件和目录的权限/</span><br><span class="line">/root/Linux_Test/文件和目录的权限/</span><br><span class="line">/root/Linux_Test/文件和目录的权限/sonDir</span><br><span class="line">/root/Linux_Test/文件和目录的权限/NewShellNewDir</span><br><span class="line">/root/Linux_Test/文件和目录的权限/验证</span><br><span class="line">----------------</span><br><span class="line">/root/Linux_Test/文件和目录的权限</span><br><span class="line">[root@localhost 文件和目录的权限]# </span><br></pre></td></tr></table></figure>
+<h2 id="启动新的shell运行与在当前shell运行的区别"><a href="#启动新的shell运行与在当前shell运行的区别" class="headerlink" title="启动新的shell运行与在当前shell运行的区别"></a>启动新的shell运行与在当前shell运行的区别</h2><p>脚本里有些命令会影响当前shell进程的状态，如果是启动新的shell子进程运行，则改变的是子进程的状态，对当前shell进程没有影响。</p>
+<p>启动新的bash运行：</p>
+<pre>
+[root@localhost <mark>shell的基本机制</mark>]&#35; ./lsdir.sh /root/Linux_Test/文件和目录的权限/
+/root/Linux_Test/文件和目录的权限/
+/root/Linux_Test/文件和目录的权限/sonDir
+/root/Linux_Test/文件和目录的权限/NewShellNewDir
+/root/Linux_Test/文件和目录的权限/验证
+----------------
+/root/Linux_Test/文件和目录的权限
+[root@localhost shell的基本机制]&#35; ls
+<mark>lsdir.sh</mark>
+[root@localhost <mark>shell的基本机制</mark>]&#35; 
+</pre>
+
+<p>在当前bash中运行：</p>
+<pre>
+[root@localhost <mark>shell的基本机制</mark>]&#35; source lsdir.sh /root/Linux_Test/文件和目录的权限/
+/root/Linux_Test/文件和目录的权限/
+/root/Linux_Test/文件和目录的权限/sonDir
+/root/Linux_Test/文件和目录的权限/NewShellNewDir
+/root/Linux_Test/文件和目录的权限/验证
+----------------
+/root/Linux_Test/文件和目录的权限
+[root@localhost 文件和目录的权限]&#35; ls
+<mark>NewShellNewDir  newShellnewFile.c  sonDir  test.c  验证</mark>
+[root@localhost <mark>文件和目录的权限</mark>]&#35; 
+</pre>
+
+<p><strong>可以看到，在当前bash下运行的脚本里面的cd命令 会改变当前bash的工作路径</strong><br>而启用新的bash运行的脚本，则不会改变当前bash的工作路径。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d37dc0ec/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/d37dc0ec/" class="post-title-link" itemprop="url">Linux shell概述</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-26 14:22:30" itemprop="dateCreated datePublished" datetime="2021-06-26T14:22:30+08:00">2021-06-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/Shell%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9C%BA%E5%88%B6/" itemprop="url" rel="index"><span itemprop="name">Shell的基本机制</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/d37dc0ec/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/d37dc0ec/" data-xid="/blog/d37dc0ec/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>869</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Linux-shell概述"><a href="#Linux-shell概述" class="headerlink" title="Linux shell概述"></a>Linux shell概述</h1><h2 id="Unix的shell"><a href="#Unix的shell" class="headerlink" title="Unix的shell"></a>Unix的shell</h2><h3 id="shell种类"><a href="#shell种类" class="headerlink" title="shell种类"></a>shell种类</h3><ul>
+<li><code>B-shell</code>：由Stephen R. Bourne(1944-)在贝尔实验室开发，是最早被普遍认可的shell，早期UNIX的标准shell， &#x2F;bin&#x2F;sh,</li>
+<li><code>C-shell</code>: &#x2F;bin&#x2F;csh 由加利福尼亚大学的William N. Joy(也叫Bill Joy)在20世纪70年代开发，最初用在BSD2.0。Joy在1982年与他人共同创办了Sun Microsystems</li>
+<li><code>K-shell</code>: Korn shell，&#x2F;bin&#x2F;ksh 贝尔实验室的David Korn在1986年开发。是B-shell的超集，支持带类型的变量，数组</li>
+<li><code>/bin/bash</code>：Bourne Again shell，是Linux上的标准shell， 兼容Bourne Shell，扩展了B-shell，吸收了C shell的某特点。交互式使用时命令行编辑非常方便</li>
+<li>管理员在创建用户时，设置了用户的登录shell</li>
+</ul>
+<h2 id="Shell的功能"><a href="#Shell的功能" class="headerlink" title="Shell的功能"></a>Shell的功能</h2><ul>
+<li>shell是命令解释器</li>
+<li>文件名替换，命令替换，变量替换</li>
+<li>历史替换，别名替换</li>
+<li>流程控制的内部命令 (内部命令和外部命令)</li>
+</ul>
+<h2 id="Shell的特点"><a href="#Shell的特点" class="headerlink" title="Shell的特点"></a>Shell的特点</h2><ul>
+<li>主要用途：<strong>批处理，执行效率比算法语言低</strong></li>
+<li>shell编程风格和C语言等算法语言的区别</li>
+<li>shell是面向命令处理的语言，提供的流程控制结构通过对一些内部命令的解释实现</li>
+<li>如同C语言设计思路一样，shell本身设计得非常精炼，但是它提供了灵活的机制（策略与机制相分离）<ul>
+<li>shell许多灵活的功能，通过shell替换实现</li>
+<li>例如：流程控制所需的条件判断，四则运算，都由shell之外的命令完成</li>
+</ul>
+</li>
+</ul>
+<h2 id="理解Unix的shell"><a href="#理解Unix的shell" class="headerlink" title="理解Unix的shell"></a>理解Unix的shell</h2><h3 id="学习bash的目的"><a href="#学习bash的目的" class="headerlink" title="学习bash的目的"></a>学习bash的目的</h3><ul>
+<li>交互方式下：熟习shell的替换机制、转义机制，掌握循环等流程控制，可以编写复合命令</li>
+<li>非交互方式：编写shell脚本程序，把一系列的操作，编纂成一个脚本文件，批量处理</li>
+</ul>
+<h3 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h3><ul>
+<li>重定向与管道</li>
+<li>方便交互使用的功能：历史替换与别名替换</li>
+<li>shell变量</li>
+<li>shell的变量替换，命令替换，文件名替换</li>
+<li>元字符，如：单引号，双引号</li>
+<li>流程控制</li>
+<li>子程序</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1392,300 +1740,8 @@ drwxrwxrw<mark>t</mark> 13 root root 20480  Mar 22 06:11 /tmp
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/72e4a8f6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/72e4a8f6/" class="post-title-link" itemprop="url">Linux 符号连接</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-06-20 17:07:09" itemprop="dateCreated datePublished" datetime="2021-06-20T17:07:09+08:00">2021-06-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">文件系统</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/72e4a8f6/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/72e4a8f6/" data-xid="/blog/72e4a8f6/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>557</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="符号连接"><a href="#符号连接" class="headerlink" title="符号连接"></a>符号连接</h1><h2 id="符号连接也叫软连接"><a href="#符号连接也叫软连接" class="headerlink" title="符号连接也叫软连接"></a>符号连接也叫软连接</h2><ul>
-<li>用特殊文件“符号连接文件”来实现</li>
-<li>文件中仅包括了一个路径名</li>
-<li>命令ln -s和ls -l</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -s users_on sym.link</span><br><span class="line">ls -l sym.link</span><br><span class="line">lrwxrwxrwx 1 guest other 8 Jul 26 16:57 sym.link-&gt;users_on</span><br></pre></td></tr></table></figure>
-<ul>
-<li>类型为l，大小为8字节，文件中只存放users_on字符串</li>
-<li>文件的最后一次写时间以后不再变化</li>
-<li>一旦建立了符号连接，删除操作<strong>删除的是符号连接文件</strong>，其它所有操作都将访问符号连接所引用的文件</li>
-</ul>
-<h2 id="符号连接的实现"><a href="#符号连接的实现" class="headerlink" title="符号连接的实现"></a>符号连接的实现</h2><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/5.png"></p>
-<h2 id="符号连接中的相对路径"><a href="#符号连接中的相对路径" class="headerlink" title="符号连接中的相对路径"></a>符号连接中的相对路径</h2><p>若符号连接包含绝对路径名，引用绝对路径名<br>若符号连接包含相对路径名，是相对于符号链接文件的位置(不是相对于调用进程的当前工作目录)</p>
-<p>设当前目录（bash进程的当前目录）为d<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/6.png"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s  d1/dlb d1/dx</span><br></pre></td></tr></table></figure>
-<p>在d1下新建文件dx<br>访问d1&#x2F;dx实际访问d1&#x2F;d1&#x2F;d1b</p>
-<h1 id="硬连接与符号连接的比较"><a href="#硬连接与符号连接的比较" class="headerlink" title="硬连接与符号连接的比较"></a>硬连接与符号连接的比较</h1><h2 id="硬连接"><a href="#硬连接" class="headerlink" title="硬连接"></a>硬连接</h2><ul>
-<li>在数据结构层次上实现</li>
-<li><strong>只适用于文件，不适用于目录</strong></li>
-<li>不同文件系统之间也不行</li>
-<li>硬连接能够完成的功能软连接可以做到</li>
-</ul>
-<h2 id="符号连接-1"><a href="#符号连接-1" class="headerlink" title="符号连接"></a>符号连接</h2><ul>
-<li>在算法软件上实现</li>
-<li>硬连接能够完成的功能软连接都可以做到</li>
-<li><strong>适用于目录，也适用于不同的文件系统</strong></li>
-<li>同硬连接相比要占用操作系统内核的一部分开销</li>
-<li>循环式符号连接，以及处理方法（解析路径时设置符号链接解析计数器）</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/753ee3c2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/753ee3c2/" class="post-title-link" itemprop="url">Linux 硬链接</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-06-20 16:31:30" itemprop="dateCreated datePublished" datetime="2021-06-20T16:31:30+08:00">2021-06-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">文件系统</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/753ee3c2/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/753ee3c2/" data-xid="/blog/753ee3c2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.3k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="硬连接"><a href="#硬连接" class="headerlink" title="硬连接"></a>硬连接</h1><ul>
-<li>目录表由目录项构成，目录项是一个“<code>文件名-i节点号</code>”对</li>
-<li>根据文件系统的存储结构，可以在同一目录或者不同目录中的两个目录项，有相同的i节点号</li>
-<li>每个目录项指定的“<code>文件名-i节点号</code>”映射关系，叫做1个硬连接</li>
-<li>硬连接数目(link数)：<strong>同一i节点被目录项引用的次数</strong></li>
-</ul>
-<h1 id="ln-普通文件的硬连接"><a href="#ln-普通文件的硬连接" class="headerlink" title="ln: 普通文件的硬连接"></a>ln: 普通文件的硬连接</h1><p>创建一个文件的硬链接：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux命令风格；文件系统]# ls</span><br><span class="line">useEnv  useEnv.c</span><br><span class="line">[root@localhost Linux命令风格；文件系统]# ln useEnv.c useEnvC</span><br><span class="line">[root@localhost Linux命令风格；文件系统]# ls</span><br><span class="line">useEnv  useEnv.c  useEnvC</span><br><span class="line">[root@localhost Linux命令风格；文件系统]# </span><br></pre></td></tr></table></figure>
-<p>查看文件以及文件的硬链接的详细信息：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux命令风格；文件系统]# ls -l</span><br><span class="line">总用量 24</span><br><span class="line">-rwxr-xr-x. 1 root root 71024 6月  18 22:19 useEnv</span><br><span class="line">-rw-r--r--. 2 root root   239 6月  18 22:19 useEnv.c</span><br><span class="line">-rw-r--r--. 2 root root   239 6月  18 22:19 useEnvC</span><br><span class="line">[root@localhost Linux命令风格；文件系统]# </span><br></pre></td></tr></table></figure>
-<p>可以发现useEnv.c和useEnvC的前几项都完全相同。而useEnv.c和useEnvC的link数都是2.<br>查看文件的i节点：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux命令风格；文件系统]# ls -i</span><br><span class="line">524413 useEnv  524446 useEnv.c  524446 useEnvC</span><br><span class="line">[root@localhost Linux命令风格；文件系统]# </span><br></pre></td></tr></table></figure>
-<p>可以发现文件useEnv.c和useEnvC的i节点都相同。<br><strong>useEnv.c与useEnvC同时存在时，地位完全平等</strong>，硬链接创建完毕后，就无法知道哪个文件是先创建的，哪个文件是后创建的。<br>删除useEnv.c文件，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux命令风格；文件系统]# rm useEnv.c </span><br><span class="line">rm：是否删除普通文件 &quot;useEnv.c&quot;？y</span><br><span class="line">[root@localhost Linux命令风格；文件系统]# ls -l</span><br><span class="line">总用量 20</span><br><span class="line">-rwxr-xr-x. 1 root root 71024 6月  18 22:19 useEnv</span><br><span class="line">-rw-r--r--. 1 root root   239 6月  18 22:19 useEnvC</span><br><span class="line">[root@localhost Linux命令风格；文件系统]# </span><br></pre></td></tr></table></figure>
-<p>可以发现则useEnvC仍存在但link数减1。<br>只有一个文件的link数减到0时，该文件的磁盘空间才会被清理掉。</p>
-<p>硬连接，只限于<strong>同一文件系统中</strong>的<strong>普通文件</strong></p>
-<h1 id="目录表的硬连接"><a href="#目录表的硬连接" class="headerlink" title="目录表的硬连接"></a>目录表的硬连接</h1><p>不允许对目录用ln命令建立硬连接<br>一般来说,目录的link数&#x3D;直属子目录数+2</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/3.png"></p>
-<p>目录表的硬连接示意图：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure/4.png"></p>
-<h1 id="硬链接的作用"><a href="#硬链接的作用" class="headerlink" title="硬链接的作用"></a>硬链接的作用</h1><p>可以对同一个文件起不同的文件名</p>
-<p>一个文件位于另一个个文件系统中，不同的文件系统的i节点不能通用。<br>也就是硬链接不能跨越文件系统。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/blog/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/61/">61</a><a class="extend next" rel="next" href="/blog/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/blog/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
