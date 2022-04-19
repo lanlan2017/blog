@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">611</span>
+          <span class="site-state-item-count">613</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">203</span>
+        <span class="site-state-item-count">204</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -213,6 +213,311 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/345f33d2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/345f33d2/" class="post-title-link" itemprop="url">2.2 Java Servlet 会话管理 使用隐藏域</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-03-20 17:34:13" itemprop="dateCreated datePublished" datetime="2019-03-20T17:34:13+08:00">2019-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">会话管理</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/345f33d2/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/345f33d2/" data-xid="/blog/345f33d2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>21k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>19 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="2-2-隐藏域"><a href="#2-2-隐藏域" class="headerlink" title="2.2 隐藏域"></a>2.2 隐藏域</h2><p>使用隐藏域来保持状态类似于<code>URL</code>重写技术，但不是<strong>将值</strong>附加到<code>URL</code>上，而是<strong>放到<code>HTML</code>表单的隐藏域中。当表单提交时，隐藏域的值也同时提交到服务器端。隐藏域技术只在网页有表单时有效</strong>。隐藏域技术相对于 <code>URL</code>重写的优势在于：没有字符数限制，同时无须额外的编码。但隐藏域技术同<code>URL重写</code>一样，不适合跨越多个界面。</p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><h4 id="User类"><a href="#User类" class="headerlink" title="User类"></a>User类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> session.management.hiddenfields;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//编号</span></span><br><span class="line">    String id;</span><br><span class="line">    <span class="comment">//姓名</span></span><br><span class="line">    String name;</span><br><span class="line">    <span class="comment">//所在地</span></span><br><span class="line">    String city;</span><br><span class="line">    <span class="comment">//姓名</span></span><br><span class="line">    String sex;</span><br><span class="line">    <span class="comment">//getter setter方法</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getId</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(String id)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getCity</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> city;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCity</span><span class="params">(String city)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.city = city;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getSex</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> sex;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSex</span><span class="params">(String sex)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.sex = sex;</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的User类用来存放我们要操作的数据.</p>
+<h4 id="UserServlet类"><a href="#UserServlet类" class="headerlink" title="UserServlet类"></a>UserServlet类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> session.management.hiddenfields;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="meta">@WebServlet(</span></span><br><span class="line"><span class="meta">    name = &quot;UserServlet&quot;,</span></span><br><span class="line"><span class="meta">    // 这些URL都用当前这个Servlet来处理</span></span><br><span class="line"><span class="meta">    urlPatterns =</span></span><br><span class="line"><span class="meta">    &#123;&quot;/showUsers&quot;, &quot;/editUser&quot;, &quot;/updateUser&quot;, &quot;/addUser&quot;&#125;</span></span><br><span class="line"><span class="meta">)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserServlet</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 数据</span></span><br><span class="line">    ArrayList&lt;User&gt;                userList;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span>    <span class="variable">serialVersionUID</span>    <span class="operator">=</span> <span class="number">2L</span>;</span><br><span class="line">    <span class="keyword">private</span> User <span class="title function_">findUserById</span><span class="params">(String id)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (User person : userList) &#123;</span><br><span class="line">            <span class="keyword">if</span> (person.getId().equals(id)) &#123;</span><br><span class="line">                <span class="keyword">return</span> person;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 初始化数据</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException</span><br><span class="line">    &#123;</span><br><span class="line">        userList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;User&gt;();</span><br><span class="line">        <span class="type">User</span> <span class="variable">p1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">        <span class="type">User</span> <span class="variable">p2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">        p1.setId(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        p1.setName(<span class="string">&quot;小明&quot;</span>);</span><br><span class="line">        p1.setCity(<span class="string">&quot;南京&quot;</span>);</span><br><span class="line">        p1.setSex(<span class="string">&quot;男&quot;</span>);</span><br><span class="line">        userList.add(p1);</span><br><span class="line">        p2.setId(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">        p2.setName(<span class="string">&quot;小王&quot;</span>);</span><br><span class="line">        p2.setCity(<span class="string">&quot;南京&quot;</span>);</span><br><span class="line">        p2.setSex(<span class="string">&quot;男&quot;</span>);</span><br><span class="line">        userList.add(p2);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request,</span></span><br><span class="line"><span class="params">        HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 用utf-8来发送数据</span></span><br><span class="line">        response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">        <span class="comment">// 让浏览器用utf-8解析</span></span><br><span class="line">        response.setHeader(<span class="string">&quot;Content-type&quot;</span>, <span class="string">&quot;text/html;charset=UTF-8&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取调用带Servlet的请求所用的链接</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> request.getRequestURI();</span><br><span class="line">        <span class="keyword">if</span> (url.endsWith(<span class="string">&quot;/showUsers&quot;</span>)) &#123;</span><br><span class="line">            <span class="comment">// 显示用户列表</span></span><br><span class="line">            showUserList(response);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url.endsWith(<span class="string">&quot;/editUser&quot;</span>)) &#123;</span><br><span class="line">            <span class="comment">// 发送修改表单</span></span><br><span class="line">            sendEditForm(request, response);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url.endsWith(<span class="string">&quot;/addUser&quot;</span>)) &#123;</span><br><span class="line">            sendAddForm(request, response);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">sendAddForm</span><span class="params">(HttpServletRequest request,</span></span><br><span class="line"><span class="params">        HttpServletResponse response)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">html</span> <span class="operator">=</span> <span class="string">&quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;添加User&lt;/title&gt;&lt;meta charset=&#x27;utf-8&#x27;&gt;&lt;/head&gt;&lt;body&gt;&lt;h2&gt;添加User&lt;/h2&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;form method=&#x27;post&#x27; action=&#x27;addUser&#x27;&gt;&lt;table&gt;&lt;tbody&gt;&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;tr&gt;&lt;td style=&#x27;text-align:right&#x27;&gt;编号:&lt;/td&gt;&lt;td&gt;&lt;input type=&#x27;text&#x27; name=&#x27;id&#x27; value=&#x27;&quot;</span></span><br><span class="line">            + (userList.size() + <span class="number">1</span>)</span><br><span class="line">            + <span class="string">&quot;&#x27; readonly=&#x27;readonly&#x27; title=&#x27;编号由系统指定,无法修改&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;tr&gt;&lt;td style=&#x27;text-align:right&#x27;&gt;姓名:&lt;/td&gt;&lt;td&gt;&lt;input type=&#x27;text&#x27; name=&#x27;name&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;tr&gt;&lt;td style=&#x27;text-align:right&#x27;&gt;城市:&lt;/td&gt;&lt;td&gt;&lt;input type=&#x27;text&#x27; name=&#x27;city&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;tr&gt;&lt;td style=&#x27;text-align:right&#x27;&gt;性别:&lt;/td&gt;&lt;td&gt;&lt;input type=&#x27;text&#x27; name=&#x27;sex&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;tr&gt;&lt;td colspan=&#x27;2&#x27; style=&#x27;text-align:right&#x27;&gt;&lt;input type=&#x27;submit&#x27; value=&#x27;add&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;tr&gt;&lt;td colspan=&#x27;2&#x27;&gt;&lt;a href=&#x27;showUsers&#x27;&gt;返回用户列表&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;/tbody&gt;&lt;/table&gt;&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span>;</span><br><span class="line">        responseHTML(response, html);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest request,</span></span><br><span class="line"><span class="params">        HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 设置请求体的编码,用utf-8来解析表单数据</span></span><br><span class="line">        request.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">        <span class="comment">// 用utf-8编码来发送数据</span></span><br><span class="line">        response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">        <span class="comment">// 让浏览器用utf-8解析数据</span></span><br><span class="line">        response.setHeader(<span class="string">&quot;Content-type&quot;</span>, <span class="string">&quot;text/html;charset=UTF-8&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> request.getRequestURI();</span><br><span class="line">        <span class="keyword">if</span> (url.endsWith(<span class="string">&quot;/updateUser&quot;</span>)) &#123;</span><br><span class="line">            updateUser(request, response);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url.endsWith(<span class="string">&quot;/addUser&quot;</span>)) &#123;</span><br><span class="line">            addUser(request, response);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">addUser</span><span class="params">(HttpServletRequest request,</span></span><br><span class="line"><span class="params">        HttpServletResponse response)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">        <span class="comment">// 创建一个新用户</span></span><br><span class="line">        <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> findUserById(id);</span><br><span class="line">        <span class="keyword">if</span> (user == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 创建一个新用户</span></span><br><span class="line">            user = <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">            user.setId(id);</span><br><span class="line">            user.setName(request.getParameter(<span class="string">&quot;name&quot;</span>));</span><br><span class="line">            user.setCity(request.getParameter(<span class="string">&quot;city&quot;</span>));</span><br><span class="line">            user.setSex(request.getParameter(<span class="string">&quot;sex&quot;</span>));</span><br><span class="line">            userList.add(user);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//请求重定向 显示主界面</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            response.sendRedirect(<span class="string">&quot;showUsers&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">updateUser</span><span class="params">(HttpServletRequest request,</span></span><br><span class="line"><span class="params">        HttpServletResponse response)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">        <span class="type">User</span> <span class="variable">person</span> <span class="operator">=</span> findUserById(id);</span><br><span class="line">        <span class="keyword">if</span> (person != <span class="literal">null</span>) &#123;</span><br><span class="line">            person.setName(request.getParameter(<span class="string">&quot;name&quot;</span>));</span><br><span class="line">            person.setSex(request.getParameter(<span class="string">&quot;sex&quot;</span>));</span><br><span class="line">            person.setCity(request.getParameter(<span class="string">&quot;city&quot;</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//请求重定向 显示主界面</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            response.sendRedirect(<span class="string">&quot;showUsers&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">sendEditForm</span><span class="params">(HttpServletRequest request,</span></span><br><span class="line"><span class="params">        HttpServletResponse response)</span> <span class="keyword">throws</span> IOException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 获取URL中的id参数</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">        PrintWriter writer;</span><br><span class="line">        writer = response.getWriter();</span><br><span class="line">        <span class="type">User</span> <span class="variable">person</span> <span class="operator">=</span> findUserById(id);</span><br><span class="line">        <span class="keyword">if</span> (person != <span class="literal">null</span>) &#123;</span><br><span class="line">            setEditFormByID(response, person);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            writer.println(<span class="string">&quot;&lt;h2&gt;查无此人&lt;/h2&gt;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">setEditFormByID</span><span class="params">(HttpServletResponse response, User person)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">htmlFirst</span> <span class="operator">=</span> <span class="string">&quot;&lt;html&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;head&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;title&gt;更新User&lt;/title&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/head&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;meta charset=\&quot;utf-8\&quot;&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;body&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;h2&gt;更新User&lt;/h2&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;form method=&#x27;post&#x27; action=&#x27;updateUser&#x27;&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;table&gt;&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">htmlTrs</span> <span class="operator">=</span> <span class="string">&quot;&lt;tr&gt;&lt;td style=&#x27;text-align:right&#x27;&gt;姓名:&lt;/td&gt;&lt;td&gt;&lt;input name=&#x27;name&#x27; value=&#x27;&quot;</span></span><br><span class="line">            + person.getName() + <span class="string">&quot;&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;tr&gt;&lt;td style=&#x27;text-align:right&#x27;&gt;城市:&lt;/td&gt;&lt;td&gt;&lt;input name=&#x27;city&#x27; value=&#x27;&quot;</span></span><br><span class="line">            + person.getCity() + <span class="string">&quot;&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;tr&gt;&lt;td style=&#x27;text-align:right&#x27;&gt;性别:&lt;/td&gt;&lt;td&gt;&lt;input name=&#x27;sex&#x27; value=&#x27;&quot;</span></span><br><span class="line">            + person.getSex() + <span class="string">&quot;&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;tr&gt;&lt;td colspan=&#x27;2&#x27; style=&#x27;text-align:right&#x27;&gt;&lt;input type=&#x27;submit&#x27; value=&#x27;Update&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;tr&gt;&lt;td colspan=&#x27;2&#x27;&gt;&lt;a href=&#x27;showUsers&#x27;&gt;返回用户列表&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">htmlAfter</span> <span class="operator">=</span> <span class="string">&quot;&lt;/table&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;input type=\&quot;hidden\&quot; name=\&quot;id\&quot; value=\&quot;&quot;</span> + person.getId()</span><br><span class="line">            + <span class="string">&quot;\&quot;&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/form&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/body&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/html&gt;&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">html</span> <span class="operator">=</span> htmlFirst + htmlTrs + htmlAfter;</span><br><span class="line">        responseHTML(response, html);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">showUserList</span><span class="params">(HttpServletResponse response)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 拼接HTML代码</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">HTML</span> <span class="operator">=</span> createShowPersonHTML();</span><br><span class="line">        <span class="comment">// 响应</span></span><br><span class="line">        responseHTML(response, HTML);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> String <span class="title function_">createShowPersonHTML</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 拼凑html代码</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">htmlBefore</span> <span class="operator">=</span> <span class="string">&quot;&lt;html&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;head&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;title&gt;Person&lt;/title&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/head&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;body&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;h2&gt;Users:&lt;/h2&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;table border=\&quot;1\&quot;&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;tr&gt;&lt;th&gt;编号&lt;/th&gt;&lt;th&gt;姓名&lt;/th&gt;&lt;th&gt;城市&lt;/th&gt;&lt;th&gt;性别&lt;/th&gt;&lt;th&gt;操作&lt;/th&gt;&lt;/tr&gt;&quot;</span>;</span><br><span class="line">        String tr;</span><br><span class="line">        <span class="type">String</span> <span class="variable">htmlAfter</span> <span class="operator">=</span> <span class="string">&quot;&lt;tr&gt;&lt;td colspan=\&quot;5\&quot; style=\&quot;text-align:right\&quot;&gt;&lt;a href=\&quot;addUser\&quot;&gt;添加用户&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;/body&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/html&gt;&quot;</span>;</span><br><span class="line">        <span class="type">StringBuffer</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(htmlBefore);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, lenght = userList.size(); i &lt; lenght; i++) &#123;</span><br><span class="line">            <span class="comment">// 从列表中取出一个对象</span></span><br><span class="line">            <span class="type">User</span> <span class="variable">person</span> <span class="operator">=</span> userList.get(i);</span><br><span class="line">            tr = <span class="string">&quot;&lt;tr&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;td&gt;&quot;</span> + person.getId() + <span class="string">&quot;&lt;/td&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;td&gt;&quot;</span></span><br><span class="line">                + person.getName() + <span class="string">&quot;&lt;/td&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;td&gt;&quot;</span> + person.getCity()</span><br><span class="line">                + <span class="string">&quot;&lt;/td&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;td&gt;&quot;</span> + person.getSex() + <span class="string">&quot;&lt;/td&gt;\r\n&quot;</span></span><br><span class="line">                + <span class="string">&quot;&lt;td&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;a href=\&quot;editUser?id=&quot;</span> + person.getId()</span><br><span class="line">                + <span class="string">&quot;\&quot;&gt;编辑&lt;/a&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/td&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/tr&gt;&quot;</span>;</span><br><span class="line">            sb.append(tr);</span><br><span class="line">        &#125;</span><br><span class="line">        sb.append(htmlAfter);</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">responseHTML</span><span class="params">(HttpServletResponse response, String HTML)</span></span><br><span class="line">    &#123;</span><br><span class="line">        PrintWriter writer;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            writer = response.getWriter();</span><br><span class="line">            writer.write(HTML);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码详解"><a href="#代码详解" class="headerlink" title="代码详解"></a>代码详解</h3><h4 id="URL映射"><a href="#URL映射" class="headerlink" title="URL映射"></a>URL映射</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet(</span></span><br><span class="line"><span class="meta">    name = &quot;PersonServlet&quot;,</span></span><br><span class="line"><span class="meta">    // 这些URL都用当前这个Servlet来处理</span></span><br><span class="line"><span class="meta">    urlPatterns =</span></span><br><span class="line"><span class="meta">    &#123;&quot;/showUsers&quot;, &quot;/editUser&quot;, &quot;/updateUser&quot;&#125;</span></span><br><span class="line"><span class="meta">)</span></span><br></pre></td></tr></table></figure>
+<p>这里为这个Servlet映射了三个URL,分别用于展示数据<a target="_blank" rel="noopener" href="http://localhost:8080/SessionManagement/showUsers">http://localhost:8080/SessionManagement/showUsers</a>,修改数据,展示更新后的数据。</p>
+<h4 id="初始化数据"><a href="#初始化数据" class="headerlink" title="初始化数据"></a>初始化数据</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数据</span></span><br><span class="line">ArrayList&lt;User&gt;                userList;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span>    <span class="variable">serialVersionUID</span>    <span class="operator">=</span> <span class="number">2L</span>;</span><br><span class="line"><span class="comment">// 初始化数据</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException</span><br><span class="line">&#123;</span><br><span class="line">    userList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;User&gt;();</span><br><span class="line">    <span class="type">User</span> <span class="variable">p1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">    <span class="type">User</span> <span class="variable">p2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">    p1.setId(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">    p1.setName(<span class="string">&quot;小明&quot;</span>);</span><br><span class="line">    p1.setCity(<span class="string">&quot;南京&quot;</span>);</span><br><span class="line">    p1.setSex(<span class="string">&quot;男&quot;</span>);</span><br><span class="line">    userList.add(p1);</span><br><span class="line">    p2.setId(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">    p2.setName(<span class="string">&quot;小王&quot;</span>);</span><br><span class="line">    p2.setCity(<span class="string">&quot;南京&quot;</span>);</span><br><span class="line">    p2.setSex(<span class="string">&quot;男&quot;</span>);</span><br><span class="line">    userList.add(p2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里首先声明了一个装有<code>User</code>对象的容器,当用户第一次请求页面时,<code>Tomcat</code>调用<code>init()</code>方法,<code>init()</code>方法,创建并初始化两个<code>User</code>对象,并把它们放到<code>userList</code>中。</p>
+<h4 id="工具方法"><a href="#工具方法" class="headerlink" title="工具方法"></a>工具方法</h4><h5 id="根据用户id获取该用户对象的引用"><a href="#根据用户id获取该用户对象的引用" class="headerlink" title="根据用户id获取该用户对象的引用"></a>根据用户id获取该用户对象的引用</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> User <span class="title function_">findUserById</span><span class="params">(String id)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (User person : userList) &#123;</span><br><span class="line">        <span class="keyword">if</span> (person.getId().equals(id)) &#123;</span><br><span class="line">            <span class="keyword">return</span> person;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个方法可以根据用户的<code>id</code>,从userList中查找User,如果没有将返回null.</p>
+<h5 id="输出HTML字符串到响应对象中"><a href="#输出HTML字符串到响应对象中" class="headerlink" title="输出HTML字符串到响应对象中"></a>输出HTML字符串到响应对象中</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">responseHTML</span><span class="params">(HttpServletResponse response, String HTML)</span></span><br><span class="line">&#123;</span><br><span class="line">    PrintWriter writer;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        writer = response.getWriter();</span><br><span class="line">        writer.write(HTML);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="显示所有用户数据"><a href="#显示所有用户数据" class="headerlink" title="显示所有用户数据"></a>显示所有用户数据</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request,</span></span><br><span class="line"><span class="params">    HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 用utf-8来发送数据</span></span><br><span class="line">    response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">    <span class="comment">// 让浏览器用utf-8解析</span></span><br><span class="line">    response.setHeader(<span class="string">&quot;Content-type&quot;</span>, <span class="string">&quot;text/html;charset=UTF-8&quot;</span>);</span><br><span class="line">    <span class="comment">// 获取调用带Servlet的请求所用的链接</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> request.getRequestURI();</span><br><span class="line">    <span class="keyword">if</span> (url.endsWith(<span class="string">&quot;/showUsers&quot;</span>)) &#123;</span><br><span class="line">        <span class="comment">// 显示用户列表</span></span><br><span class="line">        showUserList(response);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url.endsWith(<span class="string">&quot;/editUser&quot;</span>)) &#123;</span><br><span class="line">        <span class="comment">// 发送修改用户表单</span></span><br><span class="line">        sendEditForm(request, response);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url.endsWith(<span class="string">&quot;/addUser&quot;</span>)) &#123;</span><br><span class="line">        <span class="comment">//发送添加用户表单</span></span><br><span class="line">        sendAddForm(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">showUserList</span><span class="params">(HttpServletResponse response)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 拼接HTML代码</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">HTML</span> <span class="operator">=</span> createShowPersonHTML();</span><br><span class="line">    <span class="comment">// 响应</span></span><br><span class="line">    responseHTML(response, HTML);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">private</span> String <span class="title function_">createShowPersonHTML</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 拼凑html代码</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">htmlBefore</span> <span class="operator">=</span> <span class="string">&quot;&lt;html&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;head&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;title&gt;Person&lt;/title&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/head&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;body&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;h2&gt;Users:&lt;/h2&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;table border=\&quot;1\&quot;&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;tr&gt;&lt;th&gt;编号&lt;/th&gt;&lt;th&gt;姓名&lt;/th&gt;&lt;th&gt;城市&lt;/th&gt;&lt;th&gt;性别&lt;/th&gt;&lt;th&gt;操作&lt;/th&gt;&lt;/tr&gt;&quot;</span>;</span><br><span class="line">    String tr;</span><br><span class="line">    <span class="type">String</span> <span class="variable">htmlAfter</span> <span class="operator">=</span> <span class="string">&quot;&lt;tr&gt;&lt;td colspan=\&quot;5\&quot; style=\&quot;text-align:right\&quot;&gt;&lt;a href=\&quot;addUser\&quot;&gt;添加用户&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;/body&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/html&gt;&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">StringBuffer</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>(htmlBefore);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, lenght = userList.size(); i &lt; lenght; i++) &#123;</span><br><span class="line">        <span class="comment">// 从列表中取出一个对象</span></span><br><span class="line">        <span class="type">User</span> <span class="variable">person</span> <span class="operator">=</span> userList.get(i);</span><br><span class="line">        tr = <span class="string">&quot;&lt;tr&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;td&gt;&quot;</span> + person.getId() + <span class="string">&quot;&lt;/td&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;td&gt;&quot;</span></span><br><span class="line">            + person.getName() + <span class="string">&quot;&lt;/td&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;td&gt;&quot;</span> + person.getCity()</span><br><span class="line">            + <span class="string">&quot;&lt;/td&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;td&gt;&quot;</span> + person.getSex() + <span class="string">&quot;&lt;/td&gt;\r\n&quot;</span></span><br><span class="line">            + <span class="string">&quot;&lt;td&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;a href=\&quot;editUser?id=&quot;</span> + person.getId()</span><br><span class="line">            + <span class="string">&quot;\&quot;&gt;编辑&lt;/a&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/td&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/tr&gt;&quot;</span>;</span><br><span class="line">        sb.append(tr);</span><br><span class="line">    &#125;</span><br><span class="line">    sb.append(htmlAfter);</span><br><span class="line">    <span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>显示效果如下:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/7.png" alt="这里有一张图片"><br><strong>其中超链接HTML代码如下</strong>:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;editUser?id=1&quot;</span>&gt;</span>编辑<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;editUser?id=2&quot;</span>&gt;</span>编辑<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;addUser&quot;</span>&gt;</span>添加用户<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这是前面介绍的<code>URL重写技术</code>,因为前面路径省略,浏览器会发给父路径<code>http://localhost:8080/SessionManagement/</code>,最终得到URL为:<code>http://localhost:8080/SessionManagement/editUser?id=1</code>,点击这个URL可以可以进入修改页面。</p>
+<h4 id="修改用户数据"><a href="#修改用户数据" class="headerlink" title="修改用户数据"></a>修改用户数据</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">sendEditForm</span><span class="params">(HttpServletRequest request,</span></span><br><span class="line"><span class="params">    HttpServletResponse response)</span> <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 获取URL中的id参数</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">    PrintWriter writer;</span><br><span class="line">    writer = response.getWriter();</span><br><span class="line">    <span class="type">User</span> <span class="variable">person</span> <span class="operator">=</span> findUserById(id);</span><br><span class="line">    <span class="keyword">if</span> (person != <span class="literal">null</span>) &#123;</span><br><span class="line">        setEditFormByID(response, person);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        writer.println(<span class="string">&quot;&lt;h2&gt;查无此人&lt;/h2&gt;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">setEditFormByID</span><span class="params">(HttpServletResponse response, User person)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">htmlFirst</span> <span class="operator">=</span> <span class="string">&quot;&lt;html&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;head&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;title&gt;更新User&lt;/title&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/head&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;meta charset=\&quot;utf-8\&quot;&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;body&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;h2&gt;更新User&lt;/h2&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;form method=&#x27;post&#x27; action=&#x27;updateUser&#x27;&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;table&gt;&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">htmlTrs</span> <span class="operator">=</span> <span class="string">&quot;&lt;tr&gt;&lt;td style=&#x27;text-align:right&#x27;&gt;姓名:&lt;/td&gt;&lt;td&gt;&lt;input name=&#x27;name&#x27; value=&#x27;&quot;</span></span><br><span class="line">        + person.getName() + <span class="string">&quot;&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;tr&gt;&lt;td style=&#x27;text-align:right&#x27;&gt;城市:&lt;/td&gt;&lt;td&gt;&lt;input name=&#x27;city&#x27; value=&#x27;&quot;</span></span><br><span class="line">        + person.getCity() + <span class="string">&quot;&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;tr&gt;&lt;td style=&#x27;text-align:right&#x27;&gt;性别:&lt;/td&gt;&lt;td&gt;&lt;input name=&#x27;sex&#x27; value=&#x27;&quot;</span></span><br><span class="line">        + person.getSex() + <span class="string">&quot;&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;tr&gt;&lt;td colspan=&#x27;2&#x27; style=&#x27;text-align:right&#x27;&gt;&lt;input type=&#x27;submit&#x27; value=&#x27;Update&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;tr&gt;&lt;td colspan=&#x27;2&#x27;&gt;&lt;a href=&#x27;showUsers&#x27;&gt;返回用户列表&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">htmlAfter</span> <span class="operator">=</span> <span class="string">&quot;&lt;/table&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;input type=\&quot;hidden\&quot; name=\&quot;id\&quot; value=\&quot;&quot;</span> + person.getId()</span><br><span class="line">        + <span class="string">&quot;\&quot;&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/form&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/body&gt;\r\n&quot;</span> + <span class="string">&quot;&lt;/html&gt;&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">html</span> <span class="operator">=</span> htmlFirst + htmlTrs + htmlAfter;</span><br><span class="line">    responseHTML(response, html);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>假设用户点击的是第一个超链接,也就是通过<a target="_blank" rel="noopener" href="http://localhost:8080/SessionManagement/editUser?id=1">http://localhost:8080/SessionManagement/editUser?id=1</a>这个<code>URL</code>访问。<br>此时,Tomcat将调用doGet方法,doGet方法调用sendEditForm方法，该根据<code>Id</code>找出一个<code>User</code>对象,然后doGet调用<code>setEditFormByID</code>这个方法,把User对象中的数据填入表单,封装成HTML<br>,发送给浏览器显示,用户在浏览器中修改表单中的数据即可完成修改,然后点击<code>update</code>按钮进行更新。如下图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/8.png" alt="这里有一张图片"><br>在服务器发送HTML的时候在表单之中偷偷塞了一个如下的隐藏域:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">name</span>=<span class="string">&quot;id&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个隐藏域存放用户的<code>id</code>信息,这样当用户提交表单的时候,服务器就可根据这id信息，知道要修改的是哪个User对象的数据。<br>还是有就是表达的两个属性:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;form method=<span class="string">&quot;post&quot;</span> action=<span class="string">&quot;updateUser&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>这表明提交方法为<code>post</code>方法,提交给<code>/updateUser</code>这个URL。提交后Tomcat将调用<code>/updateUser</code>这个URL对应的Servlet的<code>doPost()</code>方法。</p>
+<h4 id="服务器端更新数据"><a href="#服务器端更新数据" class="headerlink" title="服务器端更新数据"></a>服务器端更新数据</h4><p>假设用户在表单中修改好了数据,然后点击update按键提交,调用的方法如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest request,</span></span><br><span class="line"><span class="params">    HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 设置请求体的编码,用utf-8来解析表单数据</span></span><br><span class="line">    request.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">    <span class="comment">// 用utf-8编码来发送数据</span></span><br><span class="line">    response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 让浏览器用utf-8解析数据</span></span><br><span class="line">    response.setHeader(<span class="string">&quot;Content-type&quot;</span>, <span class="string">&quot;text/html;charset=UTF-8&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> request.getRequestURI();</span><br><span class="line">    <span class="keyword">if</span> (url.endsWith(<span class="string">&quot;/updateUser&quot;</span>)) &#123;</span><br><span class="line">        updateUser(request, response);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url.endsWith(<span class="string">&quot;/addUser&quot;</span>)) &#123;</span><br><span class="line">        addUser(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">updateUser</span><span class="params">(HttpServletRequest request,</span></span><br><span class="line"><span class="params">    HttpServletResponse response)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">    <span class="type">User</span> <span class="variable">person</span> <span class="operator">=</span> findUserById(id);</span><br><span class="line">    <span class="keyword">if</span> (person != <span class="literal">null</span>) &#123;</span><br><span class="line">        person.setName(request.getParameter(<span class="string">&quot;name&quot;</span>));</span><br><span class="line">        person.setSex(request.getParameter(<span class="string">&quot;sex&quot;</span>));</span><br><span class="line">        person.setCity(request.getParameter(<span class="string">&quot;city&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//请求重定向 显示主界面</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        response.sendRedirect(<span class="string">&quot;showUsers&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为表单提交方式为post,所以Tomcat调用doPost()方法来做出响应。doPost()中做了写编码相关的设置，然后调用<code>updateUser</code>方法，<code>updateUser</code>这个方法,先获取id参数。然后根据id参数找到要修改的User对象。使用文本框中修改过的值更新这个对象的内容。这样就完成了更新数据的操作，最后请求重定向到<code>showUsers</code>这个<code>URL</code>上,也就是显示主界面<br>显示效果如下:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/9.png" alt="这里有一张图片"></p>
+<h4 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h4><p>在主界面中点击最下方的超链接<code>&lt;a href=&quot;addUser&quot;&gt;添加用户&lt;/a&gt;</code>可以添加一个用户,浏览器请求<a target="_blank" rel="noopener" href="http://localhost:8080/SessionManagement/addUser">http://localhost:8080/SessionManagement/addUser</a>这个URL响应,这是一个get请求.Tomcat调用doGet方法响应,doGet方法根据请求的URL,调用sendAddForm方法,这个方法发给浏览器一个表单。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">sendAddForm</span><span class="params">(HttpServletRequest request,</span></span><br><span class="line"><span class="params">    HttpServletResponse response)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">html</span> <span class="operator">=</span> <span class="string">&quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;添加User&lt;/title&gt;&lt;meta charset=&#x27;utf-8&#x27;&gt;&lt;/head&gt;&lt;body&gt;&lt;h2&gt;添加User&lt;/h2&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;form method=&#x27;post&#x27; action=&#x27;addUser&#x27;&gt;&lt;table&gt;&lt;tbody&gt;&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;tr&gt;&lt;td style=&#x27;text-align:right&#x27;&gt;编号:&lt;/td&gt;&lt;td&gt;&lt;input type=&#x27;text&#x27; name=&#x27;id&#x27; value=&#x27;&quot;</span></span><br><span class="line">        + (userList.size() + <span class="number">1</span>)</span><br><span class="line">        + <span class="string">&quot;&#x27; readonly=&#x27;readonly&#x27; title=&#x27;编号由系统指定,无法修改&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;tr&gt;&lt;td style=&#x27;text-align:right&#x27;&gt;姓名:&lt;/td&gt;&lt;td&gt;&lt;input type=&#x27;text&#x27; name=&#x27;name&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;tr&gt;&lt;td style=&#x27;text-align:right&#x27;&gt;城市:&lt;/td&gt;&lt;td&gt;&lt;input type=&#x27;text&#x27; name=&#x27;city&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;tr&gt;&lt;td style=&#x27;text-align:right&#x27;&gt;性别:&lt;/td&gt;&lt;td&gt;&lt;input type=&#x27;text&#x27; name=&#x27;sex&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;tr&gt;&lt;td colspan=&#x27;2&#x27; style=&#x27;text-align:right&#x27;&gt;&lt;input type=&#x27;submit&#x27; value=&#x27;add&#x27;&gt;&lt;/td&gt;&lt;/tr&gt;\r\n&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;tr&gt;&lt;td colspan=&#x27;2&#x27;&gt;&lt;a href=&#x27;showUsers&#x27;&gt;返回用户列表&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&quot;</span></span><br><span class="line">        + <span class="string">&quot;&lt;/tbody&gt;&lt;/table&gt;&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span>;</span><br><span class="line">    responseHTML(response, html);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是id信息,我这里放在隐藏域中:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">name</span>=<span class="string">&quot;id&quot;</span> <span class="attr">value</span>=<span class="string">&quot;3&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>需要注意的是表单的属性:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&#x27;post&#x27;</span> <span class="attr">action</span>=<span class="string">&#x27;addUser&#x27;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这表明表单将会发送给<code>addUser</code>这个URL,虽然还是调用的这个URL,但是这次是post请求,而不是get请求。<br>填写表单如下:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/10.png" alt="这里有一张图片"><br>所以Tomcat会调用doPost方法来响应。doPost根据请求中的URL,调用<code>addUser</code>方法,如下所示:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">addUser</span><span class="params">(HttpServletRequest request,</span></span><br><span class="line"><span class="params">    HttpServletResponse response)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">    <span class="comment">// 创建一个新用户</span></span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> findUserById(id);</span><br><span class="line">    <span class="keyword">if</span> (user == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="comment">// 创建一个新用户</span></span><br><span class="line">        user = <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">        user.setId(id);</span><br><span class="line">        user.setName(request.getParameter(<span class="string">&quot;name&quot;</span>));</span><br><span class="line">        user.setCity(request.getParameter(<span class="string">&quot;city&quot;</span>));</span><br><span class="line">        user.setSex(request.getParameter(<span class="string">&quot;sex&quot;</span>));</span><br><span class="line">        userList.add(user);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 请求重定向 显示主界面</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        response.sendRedirect(<span class="string">&quot;showUsers&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个方法,把表单中提交的数据转换成User对象，然后添加到userList中保存。最后重定向到<code>showUser</code>这个URL去显示添加的效果,如下所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/readbooknote/ServlerJSPAndSpring%20MVCChuXueZhiNan/Chapter2/11.png" alt="这里有一张图片"></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>这个demo就到这里了,本来我还想搞个删除的功能,但是懒得搞了,先这样。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/2cf9b569/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2cf9b569/" class="post-title-link" itemprop="url">2.1 Java Servlet 会话管理 通过URL重写</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-03-20 14:02:50" itemprop="dateCreated datePublished" datetime="2019-03-20T14:02:50+08:00">2019-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">会话管理</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/2cf9b569/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/2cf9b569/" data-xid="/blog/2cf9b569/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>10k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>9 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="URL重写"><a href="#URL重写" class="headerlink" title="URL重写"></a>URL重写</h2><p><code>URL重写</code>是一种会话跟踪技术，它将一个或多个<code>键值对 </code>添加到<code>URL</code>的查询字符串中，每个<code>键值对 </code>通常为 <code>key=value</code>形式，格式如下所示:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url?key_1=value_1&amp;key_2=value_2...&amp;key_n=value_n</span><br></pre></td></tr></table></figure>
+<p>注意，<code>URL</code>和<code>键值对</code>之间用问号<code>?</code>来分割，<code>键值对</code>之间用单与符号<code>&amp;</code>分割。<br><code>URL</code>重写适合于在少数<code>URL</code>之间传递<code>信息</code>的情况下,它有如下限制：</p>
+<ul>
+<li><code>URL</code>在某些浏览器上最大长度为2000字符,所以<code>URL</code>重写可能无法传递大量数据。</li>
+<li>如果要传递<code>信息</code>到下一个资源，需要将<code>信息</code>插入到<code>URL</code>的查询字符串中,这种情况<strong>适用于动态页面之间传值</strong>,而不适用于静态页面之间传值；</li>
+<li><strong><code>URL</code>重写需要在服务端上完成</strong>，所有的链接都必须带值，因此当一个页面存在很多链接时，其处理过程会是一个不小的挑战；</li>
+<li>对应信息中的某些字符，例如<code>空格</code>、单与符号<code>&amp;</code>和问号<code>?</code>等必须用<code>base64</code>编码,而编码和解码会增加开销；</li>
+<li><code>URL</code>的内容会显示在浏览器的地址栏上,所以<code>URL</code>重写不适合用来传递敏感信息。</li>
+</ul>
+<p>所以，**<code>URL</code>重写仅适合于在<code>少量页面间</code> <code>传递不敏感信息</code>的情况。**<br>下面来写个Demo,实用URL重写在同一个页面中传递信息。</p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><h3 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h3><p>穿件一个名为<code>SessionManagement</code>的动态Java Web项目,然后创建项目结果如下所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Servlet/RewriteURL/1.png" alt="这里有一张图片"></p>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> session.management;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="comment">//配置Servlet映射到URL</span></span><br><span class="line"><span class="meta">@WebServlet(</span></span><br><span class="line"><span class="meta">    name = &quot;RewriteURL&quot;,</span></span><br><span class="line"><span class="meta">    // 为一个servlet匹配多个URL</span></span><br><span class="line"><span class="meta">    urlPatterns =&#123;&quot;/test&quot;&#125;</span></span><br><span class="line"><span class="meta">)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RewriteURL</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">1L</span>;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;String&gt; fruits = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;String&gt; vegetables = <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">// 初始化数据</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException</span><br><span class="line">    &#123;</span><br><span class="line">        fruits = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;(<span class="number">5</span>);</span><br><span class="line">        fruits.add(<span class="string">&quot;苹果&quot;</span>);</span><br><span class="line">        fruits.add(<span class="string">&quot;香蕉&quot;</span>);</span><br><span class="line">        fruits.add(<span class="string">&quot;草莓&quot;</span>);</span><br><span class="line">        fruits.add(<span class="string">&quot;西瓜&quot;</span>);</span><br><span class="line">        fruits.add(<span class="string">&quot;龙眼&quot;</span>);</span><br><span class="line">        vegetables = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;(<span class="number">5</span>);</span><br><span class="line">        vegetables.add(<span class="string">&quot;白菜&quot;</span>);</span><br><span class="line">        vegetables.add(<span class="string">&quot;紫菜&quot;</span>);</span><br><span class="line">        vegetables.add(<span class="string">&quot;菠菜&quot;</span>);</span><br><span class="line">        vegetables.add(<span class="string">&quot;南瓜&quot;</span>);</span><br><span class="line">        vegetables.add(<span class="string">&quot;冬瓜&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request,</span></span><br><span class="line"><span class="params">        HttpServletResponse response)</span> </span><br><span class="line">            <span class="keyword">throws</span> ServletException, IOException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 获取查询字符串</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">choice</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;choice&quot;</span>);</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        <span class="keyword">if</span> (choice == <span class="literal">null</span>) &#123;</span><br><span class="line">            showIndex(response);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">&quot;fruits&quot;</span>.equals(choice)) &#123;</span><br><span class="line">            <span class="comment">//如果用户选择了水果的显示水果</span></span><br><span class="line">            showFruits(response);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">&quot;vegetables&quot;</span>.equals(choice)) &#123;</span><br><span class="line">            <span class="comment">//如果用户选择了蔬菜的显示蔬菜</span></span><br><span class="line">            showVegetables(response);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">showIndex</span><span class="params">(HttpServletResponse response)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 设置响应的格式为HTML</span></span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取响应输出</span></span><br><span class="line">        PrintWriter writer;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            writer = response.getWriter();</span><br><span class="line">            <span class="type">String</span> <span class="variable">htmlResponse</span> <span class="operator">=</span> </span><br><span class="line">                <span class="string">&quot;&lt;html&gt;\r\n&quot;</span> + </span><br><span class="line">                <span class="string">&quot;    &lt;head&gt;\r\n&quot;</span>+ </span><br><span class="line">                <span class="string">&quot;        &lt;meta charset=\&quot;utf-8\&quot;&gt;\r\n&quot;</span>+ </span><br><span class="line">                <span class="string">&quot;        &lt;title&gt;测试URL重写&lt;/title&gt;\r\n&quot;</span>+</span><br><span class="line">                <span class="string">&quot;    &lt;/head&gt;\r\n&quot;</span>+ </span><br><span class="line">                <span class="string">&quot;    &lt;body&gt;\r\n&quot;</span>+</span><br><span class="line">                <span class="string">&quot;        &lt;hr&gt;\r\n&quot;</span> +</span><br><span class="line">                <span class="string">&quot;        &lt;br&gt;&lt;br&gt;&quot;</span>+</span><br><span class="line">                <span class="string">&quot;        &lt;hr&gt;\r\n&quot;</span>+</span><br><span class="line">                <span class="string">&quot;        &lt;a href=\&quot;?choice=fruits\&quot;&gt;显示水果&lt;/a&gt;&amp;nbsp;\r\n&quot;</span>+ </span><br><span class="line">                <span class="string">&quot;        &lt;a href=\&quot;?choice=vegetables\&quot;&gt;显示蔬菜&lt;/a&gt;\r\n&quot;</span>+ </span><br><span class="line">                <span class="string">&quot;    &lt;/body&gt;\r\n&quot;</span> + </span><br><span class="line">                <span class="string">&quot;&lt;/html&gt;&quot;</span>;</span><br><span class="line">            <span class="comment">// 输出响应</span></span><br><span class="line">            writer.write(htmlResponse);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">showFruits</span><span class="params">(HttpServletResponse response)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 设置响应的格式为HTML</span></span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        <span class="comment">//因为响应带有中文,设置编码格式为中文,</span></span><br><span class="line">        <span class="comment">//不然会出现中文乱码??????这种情况。</span></span><br><span class="line">        response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">        PrintWriter writer;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 获取响应输出</span></span><br><span class="line">            writer = response.getWriter();</span><br><span class="line">            <span class="comment">// 生成水果列表</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">ul</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">            <span class="keyword">for</span> (String string : fruits) &#123;</span><br><span class="line">                ul += <span class="string">&quot;&lt;li&gt;&quot;</span> + string + <span class="string">&quot;&lt;/li&gt;&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//拼接成完整的HTML内容</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">responseHTML</span> <span class="operator">=</span></span><br><span class="line">                <span class="string">&quot;&lt;html&gt;\r\n&quot;</span> + </span><br><span class="line">                    <span class="string">&quot;    &lt;head&gt;\r\n&quot;</span>+ </span><br><span class="line">                    <span class="string">&quot;        &lt;meta charset=\&quot;utf-8\&quot;&gt;\r\n&quot;</span>+ </span><br><span class="line">                    <span class="string">&quot;        &lt;title&gt;测试URL重写&lt;/title&gt;\r\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot;    &lt;/head&gt;\r\n&quot;</span>+ </span><br><span class="line">                    <span class="string">&quot;    &lt;body&gt;\r\n&quot;</span> + </span><br><span class="line">                    <span class="string">&quot;        &lt;a href=\&quot;test\&quot;&gt;返回首页&lt;/a&gt;&quot;</span>+</span><br><span class="line">                    <span class="string">&quot;        &lt;hr&gt;\r\n&quot;</span> + ul + </span><br><span class="line">                    <span class="string">&quot;        &lt;hr&gt;\r\n&quot;</span>+</span><br><span class="line">                    <span class="string">&quot;        &lt;a href=\&quot;?choice=fruits\&quot;&gt;显示水果&lt;/a&gt;&amp;nbsp;\r\n&quot;</span>+ </span><br><span class="line">                    <span class="string">&quot;        &lt;a href=\&quot;?choice=vegetables\&quot;&gt;显示蔬菜&lt;/a&gt;\r\n&quot;</span>+ </span><br><span class="line">                    <span class="string">&quot;    &lt;/body&gt;\r\n&quot;</span> + </span><br><span class="line">                    <span class="string">&quot;&lt;/html&gt;&quot;</span>;</span><br><span class="line">            <span class="comment">// 输出响应对象中</span></span><br><span class="line">            writer.write(responseHTML);</span><br><span class="line">            <span class="comment">//Servlet容器被把响应对象中的响应发给浏览器,我们不用管</span></span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">showVegetables</span><span class="params">(HttpServletResponse response)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 设置响应的格式为HTML</span></span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取响应输出</span></span><br><span class="line">        PrintWriter writer;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            writer = response.getWriter();</span><br><span class="line">            <span class="type">String</span> <span class="variable">ul</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">            <span class="keyword">for</span> (String string : vegetables) &#123;</span><br><span class="line">                ul += <span class="string">&quot;&lt;li&gt;&quot;</span> + string + <span class="string">&quot;&lt;/li&gt;&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">String</span> <span class="variable">responseHTML</span> <span class="operator">=</span></span><br><span class="line">                <span class="string">&quot;&lt;html&gt;\r\n&quot;</span> + </span><br><span class="line">                    <span class="string">&quot;    &lt;head&gt;\r\n&quot;</span>+ </span><br><span class="line">                    <span class="string">&quot;        &lt;meta charset=\&quot;utf-8\&quot;&gt;\r\n&quot;</span>+ </span><br><span class="line">                    <span class="string">&quot;        &lt;title&gt;测试URL重写&lt;/title&gt;\r\n&quot;</span> +</span><br><span class="line">                    <span class="string">&quot;    &lt;/head&gt;\r\n&quot;</span>+ </span><br><span class="line">                    <span class="string">&quot;    &lt;body&gt;\r\n&quot;</span> + </span><br><span class="line">                    <span class="string">&quot;        &lt;a href=\&quot;test\&quot;&gt;返回首页&lt;/a&gt;&quot;</span>+</span><br><span class="line">                    <span class="string">&quot;        &lt;hr&gt;\r\n&quot;</span> + ul + </span><br><span class="line">                    <span class="string">&quot;        &lt;hr&gt;\r\n&quot;</span>+</span><br><span class="line">                    <span class="string">&quot;        &lt;a href=\&quot;?choice=fruits\&quot;&gt;显示水果&lt;/a&gt;&amp;nbsp;\r\n&quot;</span>+ </span><br><span class="line">                    <span class="string">&quot;        &lt;a href=\&quot;?choice=vegetables\&quot;&gt;显示蔬菜&lt;/a&gt;\r\n&quot;</span>+ </span><br><span class="line">                    <span class="string">&quot;    &lt;/body&gt;\r\n&quot;</span> + </span><br><span class="line">                    <span class="string">&quot;&lt;/html&gt;&quot;</span>;</span><br><span class="line">            <span class="comment">// 输出响应</span></span><br><span class="line">            writer.write(responseHTML);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码详解"><a href="#代码详解" class="headerlink" title="代码详解"></a>代码详解</h3><h4 id="URL映射"><a href="#URL映射" class="headerlink" title="URL映射"></a>URL映射</h4><p>Servlet中的URL映射的注解如下所示:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//配置Servlet映射到URL</span></span><br><span class="line"><span class="meta">@WebServlet(</span></span><br><span class="line"><span class="meta">    name = &quot;RewriteURL&quot;,</span></span><br><span class="line"><span class="meta">    // 为一个servlet匹配多个URL</span></span><br><span class="line"><span class="meta">    urlPatterns =&#123;&quot;/test&quot;&#125;</span></span><br><span class="line"><span class="meta">)</span></span><br></pre></td></tr></table></figure>
+<p><code>name</code>表示当前<code>session.management.RewriteURL</code>这个<code>Servlet</code>的部署名。<br><code>urlPatterns</code>表示该<code>Servlet</code>的<code>URL</code>地址,这个是个数字形式,同一个<code>Servlet</code>可以设置不同的<code>URL</code>地址.<br>映射好URL后,后面就可以通过<code>http://localhost:8080/项目名称/test</code>这样的格式来访问这个Servlet,这里是:<br><a target="_blank" rel="noopener" href="http://localhost:8080/SessionManagement/test">http://localhost:8080/SessionManagement/test</a></p>
+<h4 id="初始化数据"><a href="#初始化数据" class="headerlink" title="初始化数据"></a>初始化数据</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> ArrayList&lt;String&gt; fruits = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">private</span> ArrayList&lt;String&gt; vegetables = <span class="literal">null</span>;</span><br><span class="line"><span class="comment">// 初始化数据</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException</span><br><span class="line">&#123;</span><br><span class="line">    fruits = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;(<span class="number">5</span>);</span><br><span class="line">    fruits.add(<span class="string">&quot;苹果&quot;</span>);</span><br><span class="line">    fruits.add(<span class="string">&quot;香蕉&quot;</span>);</span><br><span class="line">    fruits.add(<span class="string">&quot;草莓&quot;</span>);</span><br><span class="line">    fruits.add(<span class="string">&quot;西瓜&quot;</span>);</span><br><span class="line">    fruits.add(<span class="string">&quot;龙眼&quot;</span>);</span><br><span class="line">    vegetables = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;(<span class="number">5</span>);</span><br><span class="line">    vegetables.add(<span class="string">&quot;白菜&quot;</span>);</span><br><span class="line">    vegetables.add(<span class="string">&quot;紫菜&quot;</span>);</span><br><span class="line">    vegetables.add(<span class="string">&quot;菠菜&quot;</span>);</span><br><span class="line">    vegetables.add(<span class="string">&quot;南瓜&quot;</span>);</span><br><span class="line">    vegetables.add(<span class="string">&quot;冬瓜&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个Servlet中有两个成员变量<code>fruits</code>和<code>vegetables</code>用于存放要展示的数据。<br>当用户第一次通过<code>URL</code>访问到该<code>Servelet</code>时，<code>Web</code>容器(Tomcat)会调用<code>init()</code>方法来初始化数据。在这里,init()方法用来初始化成员变量的数据。</p>
+<h4 id="响应get请求-覆盖doGet方法"><a href="#响应get请求-覆盖doGet方法" class="headerlink" title="响应get请求 覆盖doGet方法"></a>响应get请求 覆盖doGet方法</h4><p>当直接通过<a target="_blank" rel="noopener" href="http://localhost:8080/SessionManagement/test">http://localhost:8080/SessionManagement/test</a>这个URL访问的时候,Tomcat会调用init()方法来初始化,初始化只进行一次.后面不再调用init()方法.然后调用doGet()方法来响应请求。doGet方法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request,</span></span><br><span class="line"><span class="params">    HttpServletResponse response)</span> </span><br><span class="line">        <span class="keyword">throws</span> ServletException, IOException</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 获取查询字符串</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">choice</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;choice&quot;</span>);</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="keyword">if</span> (choice == <span class="literal">null</span>) &#123;</span><br><span class="line">        showIndex(response);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">&quot;fruits&quot;</span>.equals(choice)) &#123;</span><br><span class="line">        <span class="comment">//如果用户选择了水果的显示水果</span></span><br><span class="line">        showFruits(response);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">&quot;vegetables&quot;</span>.equals(choice)) &#123;</span><br><span class="line">        <span class="comment">//如果用户选择了蔬菜的显示蔬菜</span></span><br><span class="line">        showVegetables(response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>doGet方法会获取请求中名称为<code>choice</code>的参数值。然后根据参数值的不同来调用不同的方法进行响应。<br>当我们请求<a target="_blank" rel="noopener" href="http://localhost:8080/SessionManagement/test">http://localhost:8080/SessionManagement/test</a>对应的Servlet时,URL中没有带查询字符串,所以不存在choice这个参数。<code>request.getParameter(&quot;choice&quot;);</code>返回null.这样就会调用<code>showIndex(response);</code>这个方法来响应。</p>
+<h4 id="返回初始界面"><a href="#返回初始界面" class="headerlink" title="返回初始界面"></a>返回初始界面</h4><p>showIndex()方法如下,所谓的响应,就是往响应对象里写一些字符串。Web容器会把响应对象中的这些字符串处理一下然后发送给浏览器。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">showIndex</span><span class="params">(HttpServletResponse response)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 设置响应的格式为HTML</span></span><br><span class="line">    response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">    response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">    <span class="comment">// 获取响应输出</span></span><br><span class="line">    PrintWriter writer;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        writer = response.getWriter();</span><br><span class="line">        <span class="type">String</span> <span class="variable">htmlResponse</span> <span class="operator">=</span> </span><br><span class="line">            <span class="string">&quot;&lt;html&gt;\r\n&quot;</span> + </span><br><span class="line">            <span class="string">&quot;    &lt;head&gt;\r\n&quot;</span>+ </span><br><span class="line">            <span class="string">&quot;        &lt;meta charset=\&quot;utf-8\&quot;&gt;\r\n&quot;</span>+ </span><br><span class="line">            <span class="string">&quot;        &lt;title&gt;测试URL重写&lt;/title&gt;\r\n&quot;</span> +</span><br><span class="line">            <span class="string">&quot;    &lt;/head&gt;\r\n&quot;</span>+ </span><br><span class="line">            <span class="string">&quot;    &lt;body&gt;\r\n&quot;</span>+</span><br><span class="line">            <span class="string">&quot;        &lt;hr&gt;\r\n&quot;</span> +</span><br><span class="line">            <span class="string">&quot;        &lt;br&gt;&lt;br&gt;&quot;</span>+</span><br><span class="line">            <span class="string">&quot;        &lt;hr&gt;\r\n&quot;</span>+</span><br><span class="line">            <span class="string">&quot;        &lt;a href=\&quot;?choice=fruits\&quot;&gt;显示水果&lt;/a&gt;&amp;nbsp;\r\n&quot;</span>+ </span><br><span class="line">            <span class="string">&quot;        &lt;a href=\&quot;?choice=vegetables\&quot;&gt;显示蔬菜&lt;/a&gt;\r\n&quot;</span>+ </span><br><span class="line">            <span class="string">&quot;    &lt;/body&gt;\r\n&quot;</span> + </span><br><span class="line">            <span class="string">&quot;&lt;/html&gt;&quot;</span>;</span><br><span class="line">        <span class="comment">// 输出响应</span></span><br><span class="line">        writer.write(htmlResponse);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时浏览器显示如下:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Servlet/RewriteURL/2.png" alt="这里有一张图片"><br>这个页面有两个超链接,如下所示:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">&quot;?choice=fruits&quot;</span>&gt;显示水果&lt;/a&gt;</span><br><span class="line">&lt;a href=<span class="string">&quot;?choice=vegetables&quot;</span>&gt;显示蔬菜&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="响应重写的URL"><a href="#响应重写的URL" class="headerlink" title="响应重写的URL"></a>响应重写的URL</h4><p>在刚才的页面中,<code>显示水果</code>的URL为<code>?choice=fruits</code>这是个查询字符串,查询字符串中有一个名为<code>choice</code>的参数,参数值为<code>fruits</code>。<br>如果点击这超链接,浏览器会再次发送一个HTTP请求给服务器。<br>这里URL中地址缺省,浏览器会默认发给当前的地址。也就是在<code>http://localhost:8080/SessionManagement/test</code>这个地址后面加上查询字符串,得到的URL为:<code>http://localhost:8080/SessionManagement/test?choice=fruits</code>,这相当于<code>重写了URL</code>.</p>
+<p>虽然,这个时候请求的Servlet还是<code>http://localhost:8080/SessionManagement/test</code>这个URL对应的Servlet.但是这回跟第一次请求时的情况是不一样的，第一次没有带请求参数，这次带了请求参数。Tomcat还是会调用doGet来生成响应。<br>不过这次因为带了参数<code>choice=fruits</code>,doGet方法会调用<code>showFruits</code>方法来生成响应。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">showFruits</span><span class="params">(HttpServletResponse response)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 设置响应的格式为HTML</span></span><br><span class="line">    response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">    <span class="comment">//因为响应带有中文,设置编码格式为中文,不然会出现中文乱码??????这种情况。</span></span><br><span class="line">    response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">    PrintWriter writer;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 获取响应输出</span></span><br><span class="line">        writer = response.getWriter();</span><br><span class="line">        <span class="comment">// 生成水果列表</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">ul</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span> (String string : fruits) &#123;</span><br><span class="line">            ul += <span class="string">&quot;&lt;li&gt;&quot;</span> + string + <span class="string">&quot;&lt;/li&gt;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//拼接成完整的HTML内容</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">responseHTML</span> <span class="operator">=</span></span><br><span class="line">            <span class="string">&quot;&lt;html&gt;\r\n&quot;</span> + </span><br><span class="line">                <span class="string">&quot;    &lt;head&gt;\r\n&quot;</span>+ </span><br><span class="line">                <span class="string">&quot;        &lt;meta charset=\&quot;utf-8\&quot;&gt;\r\n&quot;</span>+ </span><br><span class="line">                <span class="string">&quot;        &lt;title&gt;测试URL重写&lt;/title&gt;\r\n&quot;</span> +</span><br><span class="line">                <span class="string">&quot;    &lt;/head&gt;\r\n&quot;</span>+ </span><br><span class="line">                <span class="string">&quot;    &lt;body&gt;\r\n&quot;</span> + </span><br><span class="line">                <span class="string">&quot;        &lt;hr&gt;\r\n&quot;</span> + ul + </span><br><span class="line">                <span class="string">&quot;        &lt;hr&gt;\r\n&quot;</span>+</span><br><span class="line">                <span class="string">&quot;        &lt;a href=\&quot;?choice=fruits\&quot;&gt;显示水果&lt;/a&gt;&amp;nbsp;\r\n&quot;</span>+ </span><br><span class="line">                <span class="string">&quot;        &lt;a href=\&quot;?choice=vegetables\&quot;&gt;显示蔬菜&lt;/a&gt;\r\n&quot;</span>+ </span><br><span class="line">                <span class="string">&quot;    &lt;/body&gt;\r\n&quot;</span> + </span><br><span class="line">                <span class="string">&quot;&lt;/html&gt;&quot;</span>;</span><br><span class="line">        <span class="comment">// 输出响应对象中</span></span><br><span class="line">        writer.write(responseHTML);</span><br><span class="line">        <span class="comment">//Servlet容器被把响应对象中的响应发给浏览器,我们不用管</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个方法会把水果列表中的数据输出。如下所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Servlet/RewriteURL/3.png" alt="这里有一张图片"><br>同理如果此时点击<code>显示蔬菜</code>链接我们就可以显示蔬菜。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1407,455 +1712,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/3fa03a1d/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/3fa03a1d/" class="post-title-link" itemprop="url">希腊字母顺序表</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-02-19 14:13:00" itemprop="dateCreated datePublished" datetime="2019-02-19T14:13:00+08:00">2019-02-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/latex/" itemprop="url" rel="index"><span itemprop="name">latex</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/latex/LaTex%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">LaTex语法</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/3fa03a1d/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/3fa03a1d/" data-xid="/blog/3fa03a1d/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>828</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="希腊字母顺序表"><a href="#希腊字母顺序表" class="headerlink" title="希腊字母顺序表"></a>希腊字母顺序表</h2><script>
-    function sst(text) {
-        var audio = document.createElement("audio");
-        audio.src = "https://fanyi.baidu.com/gettts?lan=en&text=" + text + "&spd=5&source=web";
-        document.body.appendChild(audio);
-        audio.loop = false;
-        audio.play();
-        audio.addEventListener('ended', function () {
-            document.body.removeChild(audio);
-        }, false);
-    }
-</script>
-
-<table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">大写</th>
-<th align="left">小写</th>
-<th align="left">英文</th>
-<th align="left">读音</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">1</td>
-<td align="left">$A$</td>
-<td align="left">$\alpha$</td>
-<td align="left">alpha</td>
-<td align="left"><i class="fa fa-play" onclick="sst('alpha')"></i></td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left">$B$</td>
-<td align="left">$\beta$</td>
-<td align="left">beta</td>
-<td align="left"><i class="fa fa-play" onclick="sst('beta')"></i></td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">$\Gamma$</td>
-<td align="left">$\gamma$</td>
-<td align="left">gamma</td>
-<td align="left"><i class="fa fa-play" onclick="sst('gamma')"></i></td>
-</tr>
-<tr>
-<td align="left">4</td>
-<td align="left">$\Delta$</td>
-<td align="left">$\delta$</td>
-<td align="left">delta</td>
-<td align="left"><i class="fa fa-play" onclick="sst('delta')"></i></td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left">$E$</td>
-<td align="left">$\epsilon$</td>
-<td align="left">epsilon</td>
-<td align="left"><i class="fa fa-play" onclick="sst('epsilon')"></i></td>
-</tr>
-<tr>
-<td align="left">6</td>
-<td align="left">$Z$</td>
-<td align="left">$\zeta$</td>
-<td align="left">zeta</td>
-<td align="left"><i class="fa fa-play" onclick="sst('zeta')"></i></td>
-</tr>
-<tr>
-<td align="left">7</td>
-<td align="left">$H$</td>
-<td align="left">$\eta$</td>
-<td align="left">eta</td>
-<td align="left"><i class="fa fa-play" onclick="sst('eta')"></i></td>
-</tr>
-<tr>
-<td align="left">8</td>
-<td align="left">$\Theta$</td>
-<td align="left">$\theta$</td>
-<td align="left">theta</td>
-<td align="left"><i class="fa fa-play" onclick="sst('theta')"></i></td>
-</tr>
-<tr>
-<td align="left">9</td>
-<td align="left">$I$</td>
-<td align="left">$\iota$</td>
-<td align="left">iota</td>
-<td align="left"><i class="fa fa-play" onclick="sst('iota')"></i></td>
-</tr>
-<tr>
-<td align="left">10</td>
-<td align="left">$K$</td>
-<td align="left">$\kappa$</td>
-<td align="left">kappa</td>
-<td align="left"><i class="fa fa-play" onclick="sst('kappa')"></i></td>
-</tr>
-<tr>
-<td align="left">11</td>
-<td align="left">$\Lambda$</td>
-<td align="left">$\lambda$</td>
-<td align="left">lambda</td>
-<td align="left"><i class="fa fa-play" onclick="sst('lambda')"></i></td>
-</tr>
-<tr>
-<td align="left">12</td>
-<td align="left">$M$</td>
-<td align="left">$\mu$</td>
-<td align="left">mu</td>
-<td align="left"><i class="fa fa-play" onclick="sst('mu')"></i></td>
-</tr>
-<tr>
-<td align="left">13</td>
-<td align="left">$N$</td>
-<td align="left">$\nu$</td>
-<td align="left">nu</td>
-<td align="left"><i class="fa fa-play" onclick="sst('nu')"></i></td>
-</tr>
-<tr>
-<td align="left">14</td>
-<td align="left">$\Xi$</td>
-<td align="left">$\xi$</td>
-<td align="left">xi</td>
-<td align="left"><i class="fa fa-play" onclick="sst('xi')"></i></td>
-</tr>
-<tr>
-<td align="left">15</td>
-<td align="left">$O$</td>
-<td align="left">$\omicron$</td>
-<td align="left">omicron</td>
-<td align="left"><i class="fa fa-play" onclick="sst('omicron')"></i></td>
-</tr>
-<tr>
-<td align="left">16</td>
-<td align="left">$\Pi$</td>
-<td align="left">$\pi$</td>
-<td align="left">pi</td>
-<td align="left"><i class="fa fa-play" onclick="sst('pi')"></i></td>
-</tr>
-<tr>
-<td align="left">17</td>
-<td align="left">$P$</td>
-<td align="left">$\rho$</td>
-<td align="left">rho</td>
-<td align="left"><i class="fa fa-play" onclick="sst('rho')"></i></td>
-</tr>
-<tr>
-<td align="left">18</td>
-<td align="left">$\Sigma$</td>
-<td align="left">$\sigma$</td>
-<td align="left">sigma</td>
-<td align="left"><i class="fa fa-play" onclick="sst('sigma')"></i></td>
-</tr>
-<tr>
-<td align="left">19</td>
-<td align="left">$T$</td>
-<td align="left">$\tau$</td>
-<td align="left">tau</td>
-<td align="left"><i class="fa fa-play" onclick="sst('tau')"></i></td>
-</tr>
-<tr>
-<td align="left">20</td>
-<td align="left">$\Upsilon$</td>
-<td align="left">$\upsilon$</td>
-<td align="left">upsilon</td>
-<td align="left"><i class="fa fa-play" onclick="sst('upsilon')"></i></td>
-</tr>
-<tr>
-<td align="left">21</td>
-<td align="left">$\Phi$</td>
-<td align="left">$\phi$</td>
-<td align="left">phi</td>
-<td align="left"><i class="fa fa-play" onclick="sst('')"></i></td>
-</tr>
-<tr>
-<td align="left">22</td>
-<td align="left">$X$</td>
-<td align="left">$\chi$</td>
-<td align="left">chi</td>
-<td align="left"><i class="fa fa-play" onclick="sst('phi')"></i></td>
-</tr>
-<tr>
-<td align="left">23</td>
-<td align="left">$\Psi$</td>
-<td align="left">$\psi$</td>
-<td align="left">psi</td>
-<td align="left"><i class="fa fa-play" onclick="sst('psi')"></i></td>
-</tr>
-<tr>
-<td align="left">24</td>
-<td align="left">$\Omega$</td>
-<td align="left">$\omega$</td>
-<td align="left">omega</td>
-<td align="left"><i class="fa fa-play" onclick="sst('omega')"></i></td>
-</tr>
-</tbody></table>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/4428067?fr=aladdin#2_1">https://baike.baidu.com/item/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/4428067?fr=aladdin#2_1</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/f88b012c/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/f88b012c/" class="post-title-link" itemprop="url">mathjax公式删除线</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-02-18 21:39:42" itemprop="dateCreated datePublished" datetime="2019-02-18T21:39:42+08:00">2019-02-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/latex/" itemprop="url" rel="index"><span itemprop="name">latex</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/latex/LaTex%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">LaTex语法</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/f88b012c/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/f88b012c/" data-xid="/blog/f88b012c/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="mathjax公式添加删除线"><a href="#mathjax公式添加删除线" class="headerlink" title="mathjax公式添加删除线"></a>mathjax公式添加删除线</h1><p>使用<code>\require&#123;cancel&#125;</code>声明,来允许片段删除线 的显示,即写成如下形式:</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\require</span>&#123;cancel&#125;</span><br><span class="line">......</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
-
-<p>声明片段删除线后，使用如下代码:</p>
-<ul>
-<li><code>\cancel&#123;字符&#125;</code>斜线(<code>/</code>)、</li>
-<li><code>\bcancel&#123;字符&#125;</code>反斜线(<code>\</code>)、</li>
-<li><code>\xcancel&#123;字符&#125;</code>打叉(<code>x</code>)</li>
-<li><code>\cancelto&#123;字符&#125;</code>带箭头斜线</li>
-</ul>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\require&#123;cancel&#125;</span><br><span class="line">\begin&#123;array&#125;&#123;rl&#125;</span><br><span class="line">\verb|y+\cancel&#123;x&#125;| &amp; y+\cancel&#123;x&#125;\\</span><br><span class="line">\verb|\cancel&#123;y+x&#125;| &amp; \cancel&#123;y+x&#125;\\</span><br><span class="line">\verb|y+\bcancel&#123;x&#125;| &amp; y+\bcancel&#123;x&#125;\\</span><br><span class="line">\verb|y+\xcancel&#123;x&#125;| &amp; y+\xcancel&#123;x&#125;\\</span><br><span class="line">\verb|y+\cancelto&#123;0&#125;&#123;x&#125;| &amp; y+\cancelto&#123;0&#125;&#123;x&#125;\\</span><br><span class="line">\verb+\frac&#123;1\cancel9&#125;&#123;\cancel95&#125; = \frac15+&amp; \frac&#123;1\cancel9&#125;&#123;\cancel95&#125; = \frac15 \\</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-
-<p>显示效果：<br>$$<br>\require{cancel}<br>\begin{array}{rl}<br>\verb|y+\cancel{x}| &amp; y+\cancel{x}\\<br>\verb|\cancel{y+x}| &amp; \cancel{y+x}\\<br>\verb|y+\bcancel{x}| &amp; y+\bcancel{x}\\<br>\verb|y+\xcancel{x}| &amp; y+\xcancel{x}\\<br>\verb|y+\cancelto{0}{x}| &amp; y+\cancelto{0}{x}\\<br>\verb+\frac{1\cancel9}{\cancel95} &#x3D; \frac15+&amp; \frac{1\cancel9}{\cancel95} &#x3D; \frac15 \\<br>\end{array}<br>$$</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30717203/article/details/81139708#t29">https://blog.csdn.net/qq_30717203&#x2F;article&#x2F;details&#x2F;81139708#t29</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/46/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/46/">46</a><span class="page-number current">47</span><a class="page-number" href="/blog/page/48/">48</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/48/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1888,7 +1744,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22:50</span>
+    <span title="站点阅读时长">22:51</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -1925,7 +1781,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/blog/js/third-party/math/mathjax.js"></script>
 
 

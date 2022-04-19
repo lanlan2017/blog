@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">611</span>
+          <span class="site-state-item-count">613</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">203</span>
+        <span class="site-state-item-count">204</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -213,6 +213,282 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/aa025735/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/aa025735/" class="post-title-link" itemprop="url">Java正则表达式 实例</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-08-06 18:24:40" itemprop="dateCreated datePublished" datetime="2018-08-06T18:24:40+08:00">2018-08-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/Java-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">Java 正则表达式</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/aa025735/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/aa025735/" data-xid="/blog/aa025735/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="文件内容丢失"><a href="#文件内容丢失" class="headerlink" title="文件内容丢失"></a>文件内容丢失</h1><p>来解释一下这个<code>(.)\\1+</code>正则表达还是的意思，</p>
+<ul>
+<li><code>(.)</code>:捕获一个任意字符</li>
+<li><code>\1</code>反向引用,表示前面捕获的字符</li>
+<li><code>+</code>表示前面的字符出现1此或多次<br>这句话的意思就是,匹配两个或者两个以上的重复的字符</li>
+</ul>
+<p>然后<code>$1</code>表示第一个捕获组中的内容，也就是捕获到的这个字符。<br>所以<code>temp.replaceAll(&quot;(.)\\1+&quot;, &quot;$1&quot;);</code>这句话的意思就是，把temp字符串中两个或者两个以上的重复字符替换成该字符本身，换句话说就是删除所有重复到的字符。</p>
+<h1 id="对IP地址进行排序"><a href="#对IP地址进行排序" class="headerlink" title="对IP地址进行排序"></a>对IP地址进行排序</h1><p>原文：<a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_36713319/article/details/53463120">https://blog.csdn.net/sinat_36713319&#x2F;article&#x2F;details&#x2F;53463120</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">sortIPAddress</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">temp</span> <span class="operator">=</span> <span class="string">&quot;192.168.1.200 10.10.10.10 10.10.10.11 11.10.10.10 3.3.50.3 127.0.0.1&quot;</span>;</span><br><span class="line">    <span class="comment">// 对所有的数字全部都在前面补上两个0</span></span><br><span class="line">    temp = temp.replaceAll(<span class="string">&quot;(\\d+)&quot;</span>, <span class="string">&quot;00$1&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;ip地址:--&gt;&quot;</span>+temp);</span><br><span class="line">    <span class="comment">// 因为ip地址占3位(\d&#123;3&#125;)捕获后三位,</span></span><br><span class="line">    <span class="comment">// 把多余的0删除掉</span></span><br><span class="line">    temp = temp.replaceAll(<span class="string">&quot;0+(\\d&#123;3&#125;)&quot;</span>, <span class="string">&quot;$1&quot;</span>);<span class="comment">// 将ip地址补成同样位数</span></span><br><span class="line">    System.out.println(<span class="string">&quot;ip地址:--&gt;&quot;</span>+temp);</span><br><span class="line">    <span class="comment">// 用空格割</span></span><br><span class="line">    String[] str = temp.split(<span class="string">&quot; +&quot;</span>);</span><br><span class="line">    <span class="comment">// 排序从大到小排序</span></span><br><span class="line">    Arrays.sort(str);</span><br><span class="line">    System.out.println(<span class="string">&quot;从小到大排序:&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (String string : str)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(string);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">&quot;去掉加上的辅助0&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (String ips : str)</span><br><span class="line">        <span class="comment">//删除多余的0</span></span><br><span class="line">        System.out.println(ips.replaceAll(<span class="string">&quot;0+(\\d+)&quot;</span>, <span class="string">&quot;$1&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ip地址:--&gt;00192.00168.001.00200 0010.0010.0010.0010 0010.0010.0010.0011 0011.0010.0010.0010 003.003.0050.003 00127.000.000.001</span><br><span class="line">ip地址:--&gt;192.168.001.200 010.010.010.010 010.010.010.011 011.010.010.010 003.003.050.003 127.000.000.001</span><br><span class="line">从小到大排序:</span><br><span class="line">003.003.050.003</span><br><span class="line">010.010.010.010</span><br><span class="line">010.010.010.011</span><br><span class="line">011.010.010.010</span><br><span class="line">127.000.000.001</span><br><span class="line">192.168.001.200</span><br><span class="line">去掉加上的辅助0</span><br><span class="line">3.3.50.3</span><br><span class="line">10.10.10.10</span><br><span class="line">10.10.10.11</span><br><span class="line">11.10.10.10</span><br><span class="line">127.0.0.1</span><br><span class="line">192.168.1.20</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>首先来看<code>temp.replaceAll(&quot;(\\d+)&quot;, &quot;00$1&quot;);</code>这句，<code>(\\d+)</code>将捕获到<code>ip</code>地址中除了点号之外的所有数字串，因为ip地址每一位可以是1位数，2位数，3位数，这里先不管使用<code>00$1</code>进行替换，这样每一位就是3位数到5位数。</li>
+<li><code>temp.replaceAll(&quot;0+(\\d&#123;3&#125;)&quot;, &quot;$1&quot;);</code>这句，首先<code>\d&#123;3&#125;</code>表示正好匹配<code>3</code>位数，<code>0+</code>一个或者多个<code>0</code>，<code>0+(\\d&#123;3&#125;)</code>这个表达式的意思就是，匹配多个0开头，然后后面正好有<code>3</code>位数，把这<code>3</code>位数捕获出来，<code>temp.replaceAll(&quot;0+(\\d&#123;3&#125;)&quot;, &quot;$1&quot;);</code>这句话的意思就是捕获最后的3位数，然后用这<code>3</code>位数，<code>替换掉原来的3到5位的数</code></li>
+<li>经过上面两步之后，所有的<code>ip</code>地址都会变成<code>3</code>位数表示的，不足的前面会补<code>0</code>，这样转换的好处就是可以方便的使用<code>Array.sort()</code>方法对这些字符串进行排序。</li>
+<li>注意排序后的字符，都是我们<code>高位补0</code>后的<code>ip</code>地址这与平时的<code>ip</code>地址表示方式不同所以，要把高位的0去掉。</li>
+<li><code>ips.replaceAll(&quot;0+(\\d+)&quot;, &quot;$1&quot;)</code>这句话实现去掉高位的<code>0</code>,高位的0不会被捕获到，高位的<code>0</code>不包含在捕获组<code>$1</code>,这样在进行替换的时候就等于删除了高位的<code>0</code></li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>**使用替换进行删除或添加元素，就是<code>拿出来又放回去</code>**，如果少放了就相当于删除一部分了，如果多方了就是新增了一部分。</p>
+<ul>
+<li>替换删除，<code>以少换多</code>：我们匹配较多的字符，然后只捕获其中较少的一部分，再用捕获到的少量字符替换匹配的较多的字符，这样就等同于删除掉那些没有捕获的部分。这就好比从果篮里拿出几个水果，例如拿出苹果和香蕉，然后我再把苹果放回去，香蕉丢掉。这样果篮里的香蕉就没有了，相当于被删除掉了。</li>
+<li>替换添加，<code>以多换少</code>：我么匹配较少的字符,并且捕获这些字符，然后捕获到的字符加上一些新的字符替换回去。这样等效于添加了字符。例如我现在只拿出雪梨，然后我变出一个芒果，然后雪梨和芒果一起放回果篮里，这样果篮里就多出了一个芒果，而雪梨还是原来的雪梨。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/6aff1849/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/6aff1849/" class="post-title-link" itemprop="url">cmd 创建文件的几个常见命令</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-08-03 14:03:56" itemprop="dateCreated datePublished" datetime="2018-08-03T14:03:56+08:00">2018-08-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/CMD%E6%89%B9%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">CMD批处理</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/CMD%E6%89%B9%E5%A4%84%E7%90%86/%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">语法</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/CMD%E6%89%B9%E5%A4%84%E7%90%86/%E8%AF%AD%E6%B3%95/%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">操作文件或目录的命令</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/6aff1849/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/6aff1849/" data-xid="/blog/6aff1849/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>683</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="一、建立空文件的几种方法"><a href="#一、建立空文件的几种方法" class="headerlink" title="一、建立空文件的几种方法"></a>一、建立空文件的几种方法</h1><h2 id="使用cd命令"><a href="#使用cd命令" class="headerlink" title="使用cd命令"></a>使用cd命令</h2><p>1、<code>cd.&gt;a.txt</code><br>cd.表示改变当前目录为当前目录，即等于没改变；而且cd命令不会有输出。<br>“&gt;”表示把命令输出写入到文件。后面跟着a.txt，就表示写入到a.txt。<br>而此例中命令不会有输出，所以就创建了没有内容的空文件。<br><img data-src="https://i.imgur.com/jLjCU4z.png"><br>当然不用写地址也是可以的，也就是说<code>cd &gt;1.txt</code>也是可以的。<br><img data-src="https://i.imgur.com/s914p7I.png"></p>
+<h2 id="使用copy命令"><a href="#使用copy命令" class="headerlink" title="使用copy命令"></a>使用copy命令</h2><p>2、<code>copy nul a.txt</code><br><strong>nul表示空设备</strong>，从概念上讲，它不可见，存在于每个目录中，可以把它看成一个特殊的“文件”，它没有内容；<strong>一般可把输出写入到nul，来达到屏蔽输出的目的</strong>，如pause&gt;nul，此命令执行效果是暂停，并且不会显示“请按任意键继续…”。<br>此例子表示将空设备复制到a.txt，同样创建了没有内容的空文件。<br><img data-src="https://i.imgur.com/IMKmwSW.png"></p>
+<h2 id="使用type命令"><a href="#使用type命令" class="headerlink" title="使用type命令"></a>使用type命令</h2><p>3、<code>type nul&gt;a.txt</code><br>此例子表示显示空设备的内容，并写入到a.txt。空目录没有内容，所以也就是创建了一个空文件。<br><img data-src="https://i.imgur.com/gvC4DMB.png"></p>
+<h2 id="使用echo命令"><a href="#使用echo命令" class="headerlink" title="使用echo命令"></a>使用echo命令</h2><p>4、<code>echo a 2&gt;a.txt</code><br><strong>“<code>2</code>”表示错误输出的句柄</strong>，此例中没有错误输出，所以创建了没有内容的空文件。<br>其实**<code>&gt;</code>默认都是重定向了<code>句柄1</code>，即标准输出句柄**。比如cd.&gt;a.txt，其实就是cd. 1&gt;a.txt。<br>同样，句柄3到9也可以使用在本例中，它们是未经定义的句柄，也不会有输出，如<br>echo a 3&gt;a.txt。</p>
+<h2 id="使用fsutil命令"><a href="#使用fsutil命令" class="headerlink" title="使用fsutil命令"></a>使用fsutil命令</h2><p>5、<code>fsutil file createnew d:\a.txt 0</code><br>使用fsutil创建了一个空文件。</p>
+<h2 id="关键点"><a href="#关键点" class="headerlink" title="关键点"></a>关键点</h2><p><strong>只要没有输出，并重定向到文件就可以了</strong></p>
+<p><a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/277563240.html">百度知道-cmd 如何新建文件</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -410,7 +686,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22:50</span>
+    <span title="站点阅读时长">22:51</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
