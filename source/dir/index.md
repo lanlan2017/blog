@@ -21,14 +21,14 @@ comments: false
 
 # [Windows](/blog/categories/Windows)
 
-## [CMD批处理](/blog/categories/Windows/CMD批处理)
-- [Debug](/blog/categories/Windows/CMD批处理/Debug)
-- [应用](/blog/categories/Windows/CMD批处理/应用)
-- [语法](/blog/categories/Windows/CMD批处理/语法)
-    - [操作文件或目录的命令](/blog/categories/Windows/CMD批处理/语法/操作文件或目录的命令)
-    - [构建程序相关命令](/blog/categories/Windows/CMD批处理/语法/构建程序相关命令)
-    - [系统相关命令](/blog/categories/Windows/CMD批处理/语法/系统相关命令)
-    - [自定义命令](/blog/categories/Windows/CMD批处理/语法/自定义命令)
+## [CMD](/blog/categories/Windows/CMD)
+- [Debug](/blog/categories/Windows/CMD/Debug)
+- [应用](/blog/categories/Windows/CMD/应用)
+- [批处理](/blog/categories/Windows/CMD/批处理)
+    - [操作文件或目录的命令](/blog/categories/Windows/CMD/批处理/操作文件或目录的命令)
+    - [构建程序相关命令](/blog/categories/Windows/CMD/批处理/构建程序相关命令)
+    - [系统相关命令](/blog/categories/Windows/CMD/批处理/系统相关命令)
+    - [自定义命令](/blog/categories/Windows/CMD/批处理/自定义命令)
 
 ## [下载](/blog/categories/Windows/下载)
 
@@ -89,6 +89,8 @@ comments: false
 ## [电脑升级](/blog/categories/其他/电脑升级)
 
 ## [网站使用问题](/blog/categories/其他/网站使用问题)
+
+## [薅羊毛](/blog/categories/其他/薅羊毛)
 
 ## [设计模式](/blog/categories/其他/设计模式)
 - [单例模式](/blog/categories/其他/设计模式/单例模式)
