@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">614</span>
+          <span class="site-state-item-count">618</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,625 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/16108e1f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/16108e1f/" class="post-title-link" itemprop="url">转换Java项目的文件编码</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-15 03:00:03" itemprop="dateCreated datePublished" datetime="2019-08-15T03:00:03+08:00">2019-08-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-IO%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">Java IO流</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-IO%E6%B5%81/%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">应用</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/16108e1f/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/16108e1f/" data-xid="/blog/16108e1f/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>今天在<code>idea</code>中导入一个项目的时候出现了乱码,乱码的原因时因为这个项目的编码是<code>GBK</code>,但是我设置<code>idea</code>的编码为<code>UTF-8</code>。<br>我知道怎么在<code>idea</code>把一个文件从<code>gbk</code>转为<code>utf-8</code>.但是我还不知道怎么快速把转换整个项目得我编码。<br>倒是可以手动一个文件一个文件的该,但是我懒得手动改.所以我决定写个程序来实现。</p>
+<h1 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h1><ul>
+<li>可以转换一个文件的编码</li>
+<li>可以转换整个目录(项目)的编码</li>
+</ul>
+<h1 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h1><ul>
+<li>通过IO流以一种编码方式从源文件中读入,然后以另一种编码写到临时文件中.</li>
+<li>然后删除源文件,把临时文件重命名为源文件即可。</li>
+</ul>
+<h1 id="编码实现"><a href="#编码实现" class="headerlink" title="编码实现"></a>编码实现</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> args.java.file;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.BufferedWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStreamWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.UnsupportedEncodingException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 项目编码转换器,可以把一个目录下的所有文件从一个编码(如GBK)转换成另一个编码(如UTF-8).&lt;br&gt;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConvertProjectEncode</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换整个目录的编码.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> dirFile 目录对应的File对象.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> fromCharset 原来的文件编码.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> toCharset 要转成的编码.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">convertDirEncode</span><span class="params">(File dirFile, String fromCharset,</span></span><br><span class="line"><span class="params">            String toCharset)</span></span><br><span class="line">    &#123;</span><br><span class="line">        File[] dirFileList = dirFile.listFiles();</span><br><span class="line">        <span class="comment">// 遍历整个目录列表</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; dirFileList.length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 如果是目录</span></span><br><span class="line">            <span class="keyword">if</span> (dirFileList[i].isDirectory())</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 递归处理下一级目录</span></span><br><span class="line">                convertDirEncode(dirFileList[i], fromCharset, toCharset);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 如果是文件</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (dirFileList[i].isFile())</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 转换文件的编码</span></span><br><span class="line">                convertFileEncode(dirFileList[i], fromCharset, toCharset);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转换一个文件的编码.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> file</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> fromCharset</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> toCharset</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">convertFileEncode</span><span class="params">(File file, String fromCharset,</span></span><br><span class="line"><span class="params">            String toCharset)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 生成临时文件</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">tempFile</span> <span class="operator">=</span> createTempFile(file);</span><br><span class="line">        <span class="comment">// 把源文件复制到临时文件</span></span><br><span class="line">        copyToTempFileByNewEncode(file, fromCharset, tempFile, toCharset);</span><br><span class="line">        <span class="comment">// 删除源文件,并把临时文件重名为源文件</span></span><br><span class="line">        <span class="keyword">if</span> (file.delete() &amp;&amp; tempFile.renameTo(file))</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;文件:&quot;</span> + file + <span class="string">&quot;由 &quot;</span> + fromCharset + <span class="string">&quot; 转为 &quot;</span></span><br><span class="line">                    + toCharset + <span class="string">&quot; 成功!&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 从源文件以fromCharset编码读取,以toCharset编码写入临时文件.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> file</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> fromCharset</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> toCharset</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> tempFile</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">copyToTempFileByNewEncode</span><span class="params">(File file, String fromCharset,</span></span><br><span class="line"><span class="params">            File tempFile, String toCharset)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">char</span>[] cbuf = <span class="keyword">new</span> <span class="title class_">char</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="comment">// 读入文件缓存</span></span><br><span class="line">        <span class="keyword">try</span> (<span class="type">BufferedReader</span> <span class="variable">reader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(file), fromCharset));</span><br><span class="line"></span><br><span class="line">                <span class="type">BufferedWriter</span> <span class="variable">writer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedWriter</span>(</span><br><span class="line">                        <span class="keyword">new</span> <span class="title class_">OutputStreamWriter</span>(<span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(tempFile),</span><br><span class="line">                                toCharset));)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            <span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">            <span class="comment">// 从源文件中读出</span></span><br><span class="line">            <span class="keyword">while</span> ((size = reader.read(cbuf)) != -<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 写入临时文件</span></span><br><span class="line">                writer.write(cbuf, <span class="number">0</span>, size);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建一个文件的副本.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> file</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> File <span class="title function_">createTempFile</span><span class="params">(File file)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 源文件名</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> file.getName();</span><br><span class="line">        <span class="comment">// 临时文件名</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">lastIndexOfDot</span> <span class="operator">=</span> fileName.lastIndexOf(<span class="string">&quot;.&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">tempFileName</span> <span class="operator">=</span> fileName.substring(<span class="number">0</span>, lastIndexOfDot) + <span class="string">&quot;_Temp&quot;</span></span><br><span class="line">                + fileName.substring(lastIndexOfDot);</span><br><span class="line">        <span class="type">File</span> <span class="variable">tempFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(file.getParent(), tempFileName);</span><br><span class="line">        <span class="keyword">return</span> tempFile;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 把gbk编码的目录或者文件转换为utf-8编码的.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> file</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">gbkToUtf8</span><span class="params">(File file)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (file.isDirectory())</span><br><span class="line">        &#123;</span><br><span class="line">            convertDirEncode(file, <span class="string">&quot;gbk&quot;</span>, <span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (file.isFile())</span><br><span class="line">        &#123;</span><br><span class="line">            convertFileEncode(file, <span class="string">&quot;gbk&quot;</span>, <span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 把utf-8编码的目录或者文件转换为gbk编码的.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> file</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">utf8ToGbk</span><span class="params">(File file)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (file.isDirectory())</span><br><span class="line">        &#123;</span><br><span class="line">            convertDirEncode(file, <span class="string">&quot;utf-8&quot;</span>, <span class="string">&quot;gbk&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (file.isFile())</span><br><span class="line">        &#123;</span><br><span class="line">            convertFileEncode(file, <span class="string">&quot;utf-8&quot;</span>, <span class="string">&quot;gbk&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;G:\\Desktop\\测试编码转换\\&quot;</span>);</span><br><span class="line">        <span class="comment">// gbkToUtf8(file);</span></span><br><span class="line">        utf8ToGbk(file);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/1f883a6b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/1f883a6b/" class="post-title-link" itemprop="url">git clone速度太慢</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-12 12:55:50" itemprop="dateCreated datePublished" datetime="2019-08-12T12:55:50+08:00">2019-08-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">命令</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/1f883a6b/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/1f883a6b/" data-xid="/blog/1f883a6b/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>833</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shahuhu000/article/details/83965642#commentBox">https://blog.csdn.net/shahuhu000/article/details/83965642#commentBox</a></p>
+<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>最近发现使用git clone的速度比较慢，于是找到了办法分享给大家：</p>
+<h1 id="分析原因"><a href="#分析原因" class="headerlink" title="分析原因"></a>分析原因</h1><p><code>git clone</code>特别慢是因为<code>github.global.ssl.fastly.net</code>域名被限制了。只要找到这个域名对应的ip地址,然后在<code>hosts</code>文件中加上<code>ip 域名</code>的映射，刷新<code>DNS</code>缓存便可。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h2 id="查找域名对应IP地址"><a href="#查找域名对应IP地址" class="headerlink" title="查找域名对应IP地址"></a>查找域名对应IP地址</h2><p>在网站<a target="_blank" rel="noopener" href="https://www.ipaddress.com/">https://www.ipaddress.com/</a>分别搜索：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">github.global.ssl.fastly.net</span><br><span class="line">github.com</span><br></pre></td></tr></table></figure>
+<p>得到域名对应的IP地址如下:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Data</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>github.global.ssl.fastly.net</code></td>
+<td align="left">A</td>
+<td align="left"><code>151.101.185.194</code></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Data</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>github.com</code></td>
+<td align="left">A</td>
+<td align="left"><code>192.30.253.112</code></td>
+</tr>
+<tr>
+<td align="left"><code>github.com</code></td>
+<td align="left">A</td>
+<td align="left"><code>192.30.253.113</code></td>
+</tr>
+</tbody></table>
+<h2 id="添加IP和域名到hosts文件"><a href="#添加IP和域名到hosts文件" class="headerlink" title="添加IP和域名到hosts文件"></a>添加IP和域名到hosts文件</h2><p>打开<code>hosts</code>文件:</p>
+<ul>
+<li><code>Windows</code>上的<code>hosts</code>文件路径在<code>C:\Windows\System32\drivers\etc\hosts</code></li>
+<li><code>Linux</code>上的<code>hosts</code>文件路径在:<code>sudo vim /etc/hosts</code></li>
+</ul>
+<p>在<code>hosts</code>文件<code>末尾</code>添加IP地址和对应的域名,以空格隔开,如下所示:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">192.30.253.112 github.com</span><br><span class="line">151.101.185.194 github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure>
+<h2 id="保存更新DNS"><a href="#保存更新DNS" class="headerlink" title="保存更新DNS"></a>保存更新DNS</h2><ul>
+<li><code>Winodws</code>上的做法:打开<code>CMD</code>,输入<code>ipconfig /flushdns</code></li>
+<li><code>Linux</code>上的做法:在<code>终端</code>输入<code>sudo /etc/init.d/networking restart</code></li>
+</ul>
+<h2 id="测试git-clone"><a href="#测试git-clone" class="headerlink" title="测试git clone"></a>测试git clone</h2><p><code>github.com</code>有两个IP地址:<code>192.30.253.112</code>和<code>192.30.253.113</code>,哪个快就用哪个,我这里测试得到<code>192.30.253.112</code>稍微快点.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/8abadaad/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/8abadaad/" class="post-title-link" itemprop="url">idea 2019.2导出可执行Jar</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-08 20:53:43" itemprop="dateCreated datePublished" datetime="2019-08-08T20:53:43+08:00">2019-08-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/Idea/" itemprop="url" rel="index"><span itemprop="name">Idea</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/8abadaad/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/8abadaad/" data-xid="/blog/8abadaad/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>527</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="idea-2019-2导出可执行Jar"><a href="#idea-2019-2导出可执行Jar" class="headerlink" title="idea 2019.2导出可执行Jar"></a>idea 2019.2导出可执行Jar</h1><h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p>实例项目结构如下,现在我想导出module01中的Test类.<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/idea/ExportRunableJar/1.png" alt="这里有一张图片"></p>
+<h2 id="导出可执行jar步骤"><a href="#导出可执行jar步骤" class="headerlink" title="导出可执行jar步骤"></a>导出可执行jar步骤</h2><h3 id="导出可执行jar需要的设置"><a href="#导出可执行jar需要的设置" class="headerlink" title="导出可执行jar需要的设置"></a>导出可执行jar需要的设置</h3><h4 id="打开Project-Structure"><a href="#打开Project-Structure" class="headerlink" title="打开Project Structure"></a>打开Project Structure</h4><p>依次点击<code>File-&gt;Project Structure</code>打开<code>Project Structure</code>对话框:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/idea/ExportRunableJar/1-1.png" alt="这里有一张图片"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/idea/ExportRunableJar/1-2.png" alt="这里有一张图片"></p>
+<h4 id="打开Create-jar-from-modules对话框"><a href="#打开Create-jar-from-modules对话框" class="headerlink" title="打开Create jar from modules对话框"></a>打开Create jar from modules对话框</h4><p>然后依次点击<code>:Artifacts-&gt;加号-&gt;JAR-&gt;From modules with dependencies...</code>打开<code>Create jar from modules</code>对话框<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/idea/ExportRunableJar/2.png" alt="这里有一张图片"></p>
+<h4 id="选择模块-选择主类"><a href="#选择模块-选择主类" class="headerlink" title="选择模块 选择主类"></a>选择模块 选择主类</h4><ol>
+<li>在<code>Module</code>选择框中选择要导出的模块,</li>
+<li>在<code>Main Class</code>选择框中选择要主类.</li>
+<li>其他的<code>默认</code>,然后点击<code>OK</code>即可.<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/idea/ExportRunableJar/3.png" alt="这里有一张图片"></li>
+<li>继续点击<code>OK</code>:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/idea/ExportRunableJar/4.png" alt="这里有一张图片"></li>
+</ol>
+<p>这时候会在模块根目录下生成一个<code>MANIFEST.ME</code>文件,如下所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/idea/ExportRunableJar/5.png" alt="这里有一张图片"></p>
+<h3 id="生成可执行Jar"><a href="#生成可执行Jar" class="headerlink" title="生成可执行Jar"></a>生成可执行Jar</h3><p>点击<code>Build-&gt;Build artifacts...</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/idea/ExportRunableJar/6.png" alt="这里有一张图片"><br>然后在弹出的对话框中选择<code>Build</code>:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/idea/ExportRunableJar/7.png" alt="这里有一张图片"></p>
+<h3 id="运行可执行jar"><a href="#运行可执行jar" class="headerlink" title="运行可执行jar"></a>运行可执行jar</h3><p>最后会在<code>out</code>目录下的<code>artifacts</code>目录下生成<code>jar</code>文件,如下所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/idea/ExportRunableJar/8.png" alt="这里有一张图片"><br>打开<code>jar</code>文件所在的目录,然后在该目录下打开<code>cmd</code>,使用<code>java -jar xxxx.jar</code>命令运行该<code>jar</code>包:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/idea/ExportRunableJar/9.png" alt="这里有一张图片"><br>运行效果如下所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/idea/ExportRunableJar/10.png" alt="这里有一张图片"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/385c30d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/385c30d/" class="post-title-link" itemprop="url">idea快捷键</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-08 14:41:36" itemprop="dateCreated datePublished" datetime="2019-08-08T14:41:36+08:00">2019-08-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/Idea/" itemprop="url" rel="index"><span itemprop="name">Idea</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/385c30d/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/385c30d/" data-xid="/blog/385c30d/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>485</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="idea快捷键"><a href="#idea快捷键" class="headerlink" title="idea快捷键"></a>idea快捷键</h1><h2 id="idea向上-x2F-向下插入空行"><a href="#idea向上-x2F-向下插入空行" class="headerlink" title="idea向上&#x2F;向下插入空行"></a>idea向上&#x2F;向下插入空行</h2><p>注意下面的快捷不是默认的快捷键,我已经修改过了,所以我给出了快捷键对应的功能的英文名称,可以根据功能名查找对应的快捷键,然后自己修改即可.</p>
+<table>
+<thead>
+<tr>
+<th align="left">功能</th>
+<th align="left">描述</th>
+<th align="left">快捷</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Start New Line Before Current</code></td>
+<td align="left">向上插入空行</td>
+<td align="left"><code>ctrl+alt+enter</code></td>
+</tr>
+<tr>
+<td align="left"><code>Start New Line</code></td>
+<td align="left">向下插入空行</td>
+<td align="left"><code>shift+enter</code></td>
+</tr>
+<tr>
+<td align="left"><code>Reformat Code</code></td>
+<td align="left">格式化代码</td>
+<td align="left"><code>Ctrl+Alt+L</code></td>
+</tr>
+<tr>
+<td align="left"><code>Duplicate Entire Lines</code></td>
+<td align="left">复制向下复制一行代码</td>
+<td align="left"><code>Ctrl+向下箭头</code></td>
+</tr>
+<tr>
+<td align="left"><code>Move Line Up</code></td>
+<td align="left">移动代码到上一行</td>
+<td align="left"><code>alt+向上箭头</code></td>
+</tr>
+<tr>
+<td align="left"><code>Move Line down</code></td>
+<td align="left">移动代码到下一行</td>
+<td align="left"><code>alt+向下箭头</code></td>
+</tr>
+<tr>
+<td align="left"><code>Expand</code></td>
+<td align="left">展开代码</td>
+<td align="left"><code>ctrl+加号</code></td>
+</tr>
+<tr>
+<td align="left"><code>Collapse</code></td>
+<td align="left">折叠代码</td>
+<td align="left"><code>ctrl+减号</code></td>
+</tr>
+<tr>
+<td align="left"><code>Select Opposite Diff Pane</code></td>
+<td align="left">向前切换窗口</td>
+<td align="left"><code>ctrl+tab</code>,如果打开了多个代码可以通过,通过上下箭头选择</td>
+</tr>
+<tr>
+<td align="left"><code>Select Position In Opposite Diff Pane</code></td>
+<td align="left">向后切换窗口</td>
+<td align="left"><code>shift+ctrl+tab</code></td>
+</tr>
+</tbody></table>
+<h1 id="idea中使用eclipse快捷键"><a href="#idea中使用eclipse快捷键" class="headerlink" title="idea中使用eclipse快捷键"></a>idea中使用eclipse快捷键</h1><table>
+<thead>
+<tr>
+<th align="left">功能</th>
+<th align="left">描述</th>
+<th align="left">快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Delete Line</code></td>
+<td align="left">删除一行</td>
+<td align="left"><code>ctrl+d</code></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1002,536 +1621,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/40640d2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/40640d2/" class="post-title-link" itemprop="url">java反射调用方法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-06-16 13:53:20" itemprop="dateCreated datePublished" datetime="2019-06-16T13:53:20+08:00">2019-06-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/%E5%8F%8D%E5%B0%84/" itemprop="url" rel="index"><span itemprop="name">反射</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/40640d2/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/40640d2/" data-xid="/blog/40640d2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="反射调用方法步骤"><a href="#反射调用方法步骤" class="headerlink" title="反射调用方法步骤"></a>反射调用方法步骤</h1><ul>
-<li>1.获取<code>Class</code>对象,使用<code>Class.forName(&quot;类的全限定名&quot;)</code>来加载类的实例,</li>
-<li>2.获取要调用的方法的<code>Method</code>对象,使用<code>Class对象.getMethod(&quot;方法名&quot;,形参列表)</code>获取要调用的方法.</li>
-<li>3.使用<code>Method对象.invoke(该方法的拥有者,实参列表)</code>调用方法.<ul>
-<li>方法的拥有者可以是类和实例,<ul>
-<li>如果是静态方法则拥有者设为类(<code>Class</code>对象),</li>
-<li>如果是实例方法,则方法的拥有者设置为实例(<code>Object</code>对象).这时就要求先创建好实例(<code>Object</code>对象). <ul>
-<li>创建实例时,可以通过调用无参构造方法来创建。<code>Class对象.newInstance()</code>可以调用无参构造器,创建默认实例</li>
-<li>创建实例时,也可以调用带参构造器,通过<code>Class对象.getConstructor(形参列表)</code>可以创建一个指定的构造器(<code>Constructor</code>),然后调用<code>Constructor对象.newInstance(实参列表);</code>就可创建指定参数的实例.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E:\<span class="title">workspace_web2</span>\<span class="title">TestReflect</span></span></span><br><span class="line"><span class="function">└─<span class="title">src</span></span></span><br><span class="line"><span class="function">  ├─<span class="title">test</span></span></span><br><span class="line"><span class="function">  │ └─<span class="title">Test.java</span></span></span><br><span class="line"><span class="function">  └─<span class="title">tools</span></span></span><br><span class="line"><span class="function">    └─<span class="title">Tools.java</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="Tool-java"><a href="#Tool-java" class="headerlink" title="Tool.java"></a>Tool.java</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tools;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Tools</span> &#123;</span><br><span class="line">    String name;</span><br><span class="line">    String sex;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> name</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> sex</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Tools</span><span class="params">(String name, String sex)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">super</span>();</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.sex = sex;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">publicStaticMethod</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公有 无参 静态 方法 被调用...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">publicStaticMethod</span><span class="params">(String arg1, String arg2)</span></span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公有 带参 静态 方法 被调用...&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;    参数1:&quot;</span> + arg1 + <span class="string">&quot;,参数2:&quot;</span> + arg2);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">puablicInstanceMethod</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公有 无参 实例 方法 被调用...&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;Tools [name=&quot;</span> + name + <span class="string">&quot;, sex=&quot;</span> + sex + <span class="string">&quot;]&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">puablicInstanceMethod</span><span class="params">(String arg1, String arg2)</span></span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公有 带参 实例 方法 被调用...&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;    参数1:&quot;</span> + arg1 + <span class="string">&quot;,参数2:&quot;</span> + arg2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>Tools.java</code>中定义了一个带参的构造方法,以及无参的静态方法,带参的静态方法,无参的实例方法,带参的实例方法.下面使用反射来调用这些方法.</p>
-<h2 id="Test-java"><a href="#Test-java" class="headerlink" title="Test.java"></a>Test.java</h2><p>使用反射会抛出大量的异常,但是本文的重点在于反射,所以我把所有的异常简单的抛出.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Constructor;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span><br><span class="line">    &#123;</span><br><span class="line"><span class="comment">//         callPublicStaticMethod();</span></span><br><span class="line"><span class="comment">//         callPublicStaticMethod(&quot;Hello&quot;, &quot;World&quot;);</span></span><br><span class="line"><span class="comment">//         callPublicInstanceMethod();</span></span><br><span class="line">        callPublicInstanceMethod(<span class="string">&quot;Hello&quot;</span>, <span class="string">&quot;World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">callPublicStaticMethod</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span><br><span class="line">    &#123;</span><br><span class="line">        Class&lt;?&gt; classIns = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">        <span class="comment">// getMethod第一个参数是方法名称,后面是方法的形参列表</span></span><br><span class="line">        <span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> classIns.getMethod(<span class="string">&quot;publicStaticMethod&quot;</span>);</span><br><span class="line">        <span class="comment">// invoke方法的第一个参数是该方法的调用者,</span></span><br><span class="line">        <span class="comment">// 如果是静态方法,则设置调用者为类,</span></span><br><span class="line">        <span class="comment">// 如果是实例方法,则调用者为实例</span></span><br><span class="line">        <span class="comment">// invoke后面的参数是方法的实参列表,不需要参数可以省略.</span></span><br><span class="line">        <span class="comment">// 调用类classIns的无参静态方法</span></span><br><span class="line">        method.invoke(classIns);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">callPublicStaticMethod</span><span class="params">(String arg1, String age2)</span> <span class="keyword">throws</span> Exception</span><br><span class="line">    &#123;</span><br><span class="line">        Class&lt;?&gt; classIns = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">        <span class="comment">// getMethod第一个参数是方法名称,后面是方法的形参列表</span></span><br><span class="line">        <span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> classIns.getMethod(<span class="string">&quot;publicStaticMethod&quot;</span>, String.class, String.class);</span><br><span class="line">        <span class="comment">// invoke方法的第一个参数是该方法的调用者,如果是静态方法,则设置调用者为类,如果是实例方法,则调用者为实例</span></span><br><span class="line">        <span class="comment">// invoke后面的参数是方法的实参列表,不需要参数可以不写</span></span><br><span class="line">        <span class="comment">// 调用类classIns的带参静态方法</span></span><br><span class="line">        method.invoke(classIns, arg1, age2);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">callPublicInstanceMethod</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 获取类</span></span><br><span class="line">        Class&lt;?&gt; class1 = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">        <span class="comment">// 根据参数列表获取构造器</span></span><br><span class="line">        Constructor&lt;?&gt; constructor = class1.getConstructor(String.class, String.class);</span><br><span class="line">        <span class="comment">// 创建对象</span></span><br><span class="line">        <span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> constructor.newInstance(<span class="string">&quot;小明&quot;</span>, <span class="string">&quot;男&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">        <span class="comment">// getMethod第一个参数是方法名称,后面的参数是方法的形参列表,没有参数可以不写</span></span><br><span class="line">        <span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> class1.getMethod(<span class="string">&quot;puablicInstanceMethod&quot;</span>);</span><br><span class="line">        <span class="comment">// 调用实例object的puablicInstanceMethod方法.</span></span><br><span class="line">        method.invoke(object);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">callPublicInstanceMethod</span><span class="params">(String arg1, String arg2)</span> <span class="keyword">throws</span> Exception</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 获取类</span></span><br><span class="line">        Class&lt;?&gt; class1 = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">        <span class="comment">// 根据参数列表获取构造器</span></span><br><span class="line">        Constructor&lt;?&gt; constructor = class1.getConstructor(String.class, String.class);</span><br><span class="line">        <span class="comment">// 创建对象</span></span><br><span class="line">        <span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> constructor.newInstance(<span class="string">&quot;小明&quot;</span>, <span class="string">&quot;男&quot;</span>);</span><br><span class="line">        <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">        <span class="comment">// getMethod第一个参数是方法名称,后面的参数是方法的形参列表,没有参数可以不写</span></span><br><span class="line">        <span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> class1.getMethod(<span class="string">&quot;puablicInstanceMethod&quot;</span>, String.class, String.class);</span><br><span class="line">        <span class="comment">// invoke方法的第一个参数是该方法的调用者,</span></span><br><span class="line">        <span class="comment">// 如果是静态方法,则设置调用者为类,</span></span><br><span class="line">        <span class="comment">// 如果是实例方法,则调用者为实例</span></span><br><span class="line">        <span class="comment">// invoke后面的参数是方法的实参列表,</span></span><br><span class="line">        <span class="comment">// 调用实例object的puablicInstanceMethod方法.</span></span><br><span class="line">        method.invoke(object, arg1, arg2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="调用静态方法"><a href="#调用静态方法" class="headerlink" title="调用静态方法"></a>调用静态方法</h2><h3 id="调用无参的静态方法"><a href="#调用无参的静态方法" class="headerlink" title="调用无参的静态方法"></a>调用无参的静态方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">callPublicStaticMethod</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span><br><span class="line">&#123;</span><br><span class="line">    Class&lt;?&gt; classIns = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">    <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">    <span class="comment">// getMethod第一个参数是方法名称,后面是方法的形参列表</span></span><br><span class="line">    <span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> classIns.getMethod(<span class="string">&quot;publicStaticMethod&quot;</span>);</span><br><span class="line">    <span class="comment">// invoke方法的第一个参数是该方法的调用者,如果是静态方法,则设置调用者为类,如果是实例方法,则调用者为实例</span></span><br><span class="line">    <span class="comment">// invoke后面的参数是方法的实参列表,不需要参数可以不写</span></span><br><span class="line">    <span class="comment">// 调用类classIns的无参静态方法</span></span><br><span class="line">    method.invoke(classIns);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">公有 无参 静态 方法 被调用...</span><br></pre></td></tr></table></figure>
-<h3 id="调用带参的静态方法"><a href="#调用带参的静态方法" class="headerlink" title="调用带参的静态方法"></a>调用带参的静态方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">callPublicStaticMethod</span><span class="params">(String arg1, String age2)</span> <span class="keyword">throws</span> Exception</span><br><span class="line">&#123;</span><br><span class="line">    Class&lt;?&gt; classIns = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">    <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">    <span class="comment">// getMethod第一个参数是方法名称,后面是方法的形参列表</span></span><br><span class="line">    <span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> classIns.getMethod(<span class="string">&quot;publicStaticMethod&quot;</span>, String.class, String.class);</span><br><span class="line">    <span class="comment">// invoke方法的第一个参数是该方法的调用者,如果是静态方法,则设置调用者为类,如果是实例方法,则调用者为实例</span></span><br><span class="line">    <span class="comment">// invoke后面的参数是方法的实参列表,不需要参数可以不写</span></span><br><span class="line">    <span class="comment">// 调用类classIns的带参静态方法</span></span><br><span class="line">    method.invoke(classIns, arg1, age2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="运行效果-1"><a href="#运行效果-1" class="headerlink" title="运行效果"></a>运行效果</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">公有 带参 静态 方法 被调用...</span><br><span class="line">    参数<span class="number">1</span>:Hello,参数<span class="number">2</span>:World</span><br></pre></td></tr></table></figure>
-<h2 id="调用实例方法"><a href="#调用实例方法" class="headerlink" title="调用实例方法"></a>调用实例方法</h2><h3 id="调用无参实例方法"><a href="#调用无参实例方法" class="headerlink" title="调用无参实例方法"></a>调用无参实例方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">callPublicInstanceMethod</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 获取类</span></span><br><span class="line">    Class&lt;?&gt; class1 = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">    <span class="comment">// 根据参数列表获取构造器</span></span><br><span class="line">    Constructor&lt;?&gt; constructor = class1.getConstructor(String.class, String.class);</span><br><span class="line">    <span class="comment">// 创建对象</span></span><br><span class="line">    <span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> constructor.newInstance(<span class="string">&quot;小明&quot;</span>, <span class="string">&quot;男&quot;</span>);</span><br><span class="line">    <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">    <span class="comment">// getMethod第一个参数是方法名称,后面的参数是方法的形参列表,没有参数可以不写</span></span><br><span class="line">    <span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> class1.getMethod(<span class="string">&quot;puablicInstanceMethod&quot;</span>);</span><br><span class="line">    <span class="comment">// 调用实例object的puablicInstanceMethod方法.</span></span><br><span class="line">    method.invoke(object);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行效果:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">公有 无参 实例 方法 被调用...</span><br><span class="line">Tools [name=小明, sex=男]</span><br></pre></td></tr></table></figure>
-<h3 id="调用带参实例方法"><a href="#调用带参实例方法" class="headerlink" title="调用带参实例方法"></a>调用带参实例方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">callPublicInstanceMethod</span><span class="params">(String arg1, String arg2)</span> <span class="keyword">throws</span> Exception</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 获取类</span></span><br><span class="line">    Class&lt;?&gt; class1 = Class.forName(<span class="string">&quot;tools.Tools&quot;</span>);</span><br><span class="line">    <span class="comment">// 根据参数列表获取构造器</span></span><br><span class="line">    Constructor&lt;?&gt; constructor = class1.getConstructor(String.class, String.class);</span><br><span class="line">    <span class="comment">// 创建对象</span></span><br><span class="line">    <span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> constructor.newInstance(<span class="string">&quot;小明&quot;</span>, <span class="string">&quot;男&quot;</span>);</span><br><span class="line">    <span class="comment">// 获取不带参数的方法,</span></span><br><span class="line">    <span class="comment">// getMethod第一个参数是方法名称,后面的参数是方法的形参列表,没有参数可以不写</span></span><br><span class="line">    <span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> class1.getMethod(<span class="string">&quot;puablicInstanceMethod&quot;</span>, String.class, String.class);</span><br><span class="line">    <span class="comment">// invoke方法的第一个参数是要调用方法的拥有者,后面剩下的参数是该方法的实参列表</span></span><br><span class="line">    method.invoke(object, arg1, arg2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行效果:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">公有 带参 实例 方法 被调用...</span><br><span class="line">    参数<span class="number">1</span>:Hello,参数<span class="number">2</span>:World</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/7198198c/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/7198198c/" class="post-title-link" itemprop="url">eclipse暗色主题下SQL文件的配色</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-06-14 10:07:26" itemprop="dateCreated datePublished" datetime="2019-06-14T10:07:26+08:00">2019-06-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/IDE/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/7198198c/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/7198198c/" data-xid="/blog/7198198c/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>317</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="eclipse暗色主题下SQL文件的配色"><a href="#eclipse暗色主题下SQL文件的配色" class="headerlink" title="eclipse暗色主题下SQL文件的配色"></a>eclipse暗色主题下SQL文件的配色</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p><code>eclipse</code>的暗色主题下的<code>SQL</code>配色有问题,<strong>代码颜色和背景色对比不明显</strong>,看起来费神.如下图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/CodeColor/1.png" alt="这里有一张图片"></p>
-<h2 id="修改eclipse-sql文件代码配色"><a href="#修改eclipse-sql文件代码配色" class="headerlink" title="修改eclipse sql文件代码配色"></a>修改eclipse sql文件代码配色</h2><p><code>windows-&gt;Preferences</code>,然后在搜索框中输入<code>Syntax Colorin</code>,然后选择<code>Data Management-&gt;SQL Editor-&gt;Syntax Coloring</code>：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/CodeColor/2.png" alt="这里有一张图片"><br>然后在右边<code>Syntax items</code>选择框中选择要修改的类型和<code>Color</code>选择框中选择对应的配色即可.<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/CodeColor/4.png" alt="这里有一张图片"></p>
-<h2 id="eclipse其他代码配色"><a href="#eclipse其他代码配色" class="headerlink" title="eclipse其他代码配色"></a>eclipse其他代码配色</h2><p>同理:<code>windows-&gt;Preferences</code>,然后在搜索框中输入<code>Syntax Colorin</code>,然后选择对个的代码高亮设置即可.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/2f2a13a0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2f2a13a0/" class="post-title-link" itemprop="url">eclipse中如何创建log4j文件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-06-12 22:26:13" itemprop="dateCreated datePublished" datetime="2019-06-12T22:26:13+08:00">2019-06-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/IDE/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/2f2a13a0/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/2f2a13a0/" data-xid="/blog/2f2a13a0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>523</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="eclipse中如何创建log4j文件"><a href="#eclipse中如何创建log4j文件" class="headerlink" title="eclipse中如何创建log4j文件"></a>eclipse中如何创建log4j文件</h1><p>在项目<code>src</code>目录上右键,然后依次选择<code>new</code>,<code>other</code>…,<code>XML</code>,<code>XML File</code>,然后点击<code>next</code>,<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/log4j/newLog4jXmlFile/1.png" alt="这里有一张图片"><br>然后选择要创建的路径,输入文件名<code>log4j.xml</code>,然后点击<code>next</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/log4j/newLog4jXmlFile/2.png" alt="这里有一张图片"><br>选择<code>Create XML file from a DTD file</code>,点击<code>next</code>。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/log4j/newLog4jXmlFile/3.png" alt="这里有一张图片"><br>选择<code>Select XML Catalog entry</code>,选中<code>key</code>为<code>-//LOG4J//DTD LOG4J//EN</code>的选项,然后点击<code>next</code>,<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/log4j/newLog4jXmlFile/4.png" alt="这里有一张图片"><br>最后点击<code>finish</code>即可。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/log4j/newLog4jXmlFile/5.png" alt="这里有一张图片"><br>最后创建得到的<code>xml</code>代码如下:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">log4j</span>:configuration <span class="keyword">PUBLIC</span> <span class="string">&quot;-//LOG4J//DTD LOG4J//EN&quot;</span> <span class="string">&quot;https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">log4j:configuration</span>&gt;</span><span class="tag">&lt;/<span class="name">log4j:configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/5bc9db15/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/5bc9db15/" class="post-title-link" itemprop="url">Java读取src目录下的文件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-06-09 22:53:08" itemprop="dateCreated datePublished" datetime="2019-06-09T22:53:08+08:00">2019-06-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/%E5%8F%8D%E5%B0%84/" itemprop="url" rel="index"><span itemprop="name">反射</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/5bc9db15/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/5bc9db15/" data-xid="/blog/5bc9db15/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.5k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="如何读取src目录下的文件"><a href="#如何读取src目录下的文件" class="headerlink" title="如何读取src目录下的文件"></a>如何读取src目录下的文件</h1><p><code>src</code>目录下的文件都是<strong>资源文件</strong>,运行程序时,可以通过反射来获取这些资源文件的输入流,进而读取这些文件中的内容。<br><strong>放到<code>src</code>目录下的文件会被打包到<code>jar</code>包中</strong>。</p>
-<h1 id="我的用法"><a href="#我的用法" class="headerlink" title="我的用法"></a>我的用法</h1><p>平常会用到好多代码模板,我会把这些<code>代码的模板</code>放到<code>src</code>目录下,这样当打包成可执行<code>jar</code>的时候,这些代码会被打包到<code>jar</code>文件中。<br>以后我要获取这些<code>代码模板</code>时候.我只需要运行这个可执行<code>jar</code>包.然后通过命令行参数确定我要使用哪个模板文件,然后程序读取<code>jar</code>包中的这个模板文件的内容,然后输出到剪贴板上.<br>这样我就直接粘贴即可使用这些代码模板。</p>
-<h1 id="读取资源文件的工具类"><a href="#读取资源文件的工具类" class="headerlink" title="读取资源文件的工具类"></a>读取资源文件的工具类</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 这个类专门用来读取资源文件</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ResourceFileReader</span></span><br><span class="line">&#123;</span><br><span class="line">     <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">     &#123;</span><br><span class="line">     System.out.println(getResourceFileContent(<span class="string">&quot;/AudioPlay.html&quot;</span>, <span class="string">&quot;utf-8&quot;</span>));</span><br><span class="line">     &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * /** 读入资源目录下的path文件中的内容.会以UTF-8编码来读取,所以该文件必须要保存为UTF-8编码格式.</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> path</span></span><br><span class="line"><span class="comment">     *            资源文件的路径,必须以&lt;code&gt;/&lt;/code&gt;开头.&lt;br&gt;</span></span><br><span class="line"><span class="comment">     *            例如项目资源目录res下的的&lt;code&gt;AudioPlay.html&lt;/code&gt;的路径为:</span></span><br><span class="line"><span class="comment">     *            &lt;code&gt;&quot;/AudioPlay.html&quot;&lt;/code&gt;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 资源目录下的path文件的内容</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">getResourceFileContent</span><span class="params">(String path, String charset)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (path.startsWith(<span class="string">&quot;/&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">content</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">            <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">            <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> ResourceFileReader.class</span><br><span class="line">                    .getResourceAsStream(path);</span><br><span class="line">            <span class="keyword">try</span> (<span class="type">BufferedReader</span> <span class="variable">reader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(</span><br><span class="line">                    <span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(inputStream, charset));)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">StringBuilder</span> <span class="variable">builder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">                <span class="type">char</span>[] charArray = <span class="keyword">new</span> <span class="title class_">char</span>[<span class="number">200</span>];</span><br><span class="line">                <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">while</span> ((number = reader.read(charArray)) != -<span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    builder.append(charArray, <span class="number">0</span>, number);</span><br><span class="line">                &#125;</span><br><span class="line">                content = builder.toString();</span><br><span class="line">                <span class="comment">// System.out.println(builder.toString());</span></span><br><span class="line">            &#125; <span class="keyword">catch</span> (FileNotFoundException e)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> content;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h1><p>例如现在有一个<code>MybatisMapperTemplete.xml</code>文件，路径<code>/CodeGenerator/src/res/MybatisMapperTemplete.xml</code>,内容如下:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">mapper</span> <span class="keyword">PUBLIC</span> <span class="string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span> <span class="string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>现在使用上面的工具类来读取这个资源文件.</p>
-<p>需要注意的是:资源文件的路径是相对于<code>src</code>目录的路径.也就是把<code>src/</code>作为根路径<code>/</code>,从而得到的路径为:<code>/res/MybatisMapperTemplete.xml</code><br>然后调用上面的工具方法即可读取该文件中的内容:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">&#123;</span><br><span class="line">    System.out.println(</span><br><span class="line">        ResourceFileReader.getResourceFileContent(<span class="string">&quot;/res/MybatisMapperTemplete.xml&quot;</span>, <span class="string">&quot;utf-8&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>控制台会输出该文件中的内容,如下所示:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;<span class="number">1</span>.<span class="number">0</span>&quot; encoding=&quot;UTF-<span class="number">8</span>&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper <span class="number">3</span>.<span class="number">0</span>//EN&quot; &quot;http://mybatis.org/dtd/mybatis-<span class="number">3</span>-mapper.dtd&quot; &gt;</span><br><span class="line">&lt;mapper namespace=&quot;&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/41/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/41/">41</a><span class="page-number current">42</span><a class="page-number" href="/blog/page/43/">43</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/43/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1564,7 +1653,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22:52</span>
+    <span title="站点阅读时长">22:54</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

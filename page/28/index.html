@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">614</span>
+          <span class="site-state-item-count">618</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,663 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/7cb1400/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/7cb1400/" class="post-title-link" itemprop="url">11 Log4j 逐日生成日志文件 DailyRollingFileAppender类</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-03 11:20:11" itemprop="dateCreated datePublished" datetime="2020-08-03T11:20:11+08:00">2020-08-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">简介</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/7cb1400/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/7cb1400/" data-xid="/blog/7cb1400/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="逐日生成日志文件"><a href="#逐日生成日志文件" class="headerlink" title="逐日生成日志文件"></a>逐日生成日志文件</h1><p>您也许需要逐日生成日志文件，以此更加整洁的记录日志信息。</p>
+<p>为了逐日生成日志文件，需要使用<code>org.apache.log4j.DailyRollingFileAppender</code>，该类继承了<code>FileAppender</code>类，继承了它的所有属性。</p>
+<p>除了上述提到的<code>FileAppender</code>类的属性，该类多包含了一个重要属性：</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>DatePattern</code></td>
+<td align="left">该属性表明什么时间回滚文件，以及文件的命名约定。缺省情况下，在每天午夜回滚文件。</td>
+</tr>
+</tbody></table>
+<p>DatePattern使用如下规则控制回滚计划：</p>
+<table>
+<thead>
+<tr>
+<th align="left"><code>DatePattern</code></th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>&#39;.&#39;yyyy-MM</code></td>
+<td align="left">在本月末，下月初回滚文件。</td>
+</tr>
+<tr>
+<td align="left"><code>&#39;\.&#39;yyyy-MM-dd</code></td>
+<td align="left">在每天午夜回滚文件，这是缺省值。</td>
+</tr>
+<tr>
+<td align="left"><code>&#39;\.&#39;yyyy-MM-dd-a</code></td>
+<td align="left">在每天中午和午夜回滚文件。</td>
+</tr>
+<tr>
+<td align="left"><code>&#39;\.&#39;yyyy-MM-dd-HH</code></td>
+<td align="left">在每个整点回滚文件。</td>
+</tr>
+<tr>
+<td align="left"><code>&#39;\.&#39;yyyy-MM-dd-HH-mm</code></td>
+<td align="left">每分钟回滚文件。</td>
+</tr>
+<tr>
+<td align="left"><code>&#39;\.&#39;yyyy-ww</code></td>
+<td align="left">根据地域，在每周的第一天回滚。</td>
+</tr>
+</tbody></table>
+<h2 id="log4j-properties"><a href="#log4j-properties" class="headerlink" title="log4j.properties"></a>log4j.properties</h2><p>下述<code>Log4j.properties</code>示例文件产生的日志文件在每天中午和午夜回滚：</p>
+<figure class="highlight properties"><figcaption><span>/Log4jDemo/Log4jConfig/DailyRollingFileAppender/log4j.properties</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Define the root logger with appender file</span></span><br><span class="line"><span class="attr">log4j.rootLogger</span> = <span class="string">DEBUG, FILE</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Define the file appender</span></span><br><span class="line"><span class="attr">log4j.appender.FILE</span>=<span class="string">org.apache.log4j.DailyRollingFileAppender</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the name of the file</span></span><br><span class="line"><span class="comment">#log4j.appender.FILE.File=$&#123;log&#125;/log.out</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.File</span>=<span class="string">log.out</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the immediate flush to true (default)</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.ImmediateFlush</span>=<span class="string">true</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the threshold to debug mode</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.Threshold</span>=<span class="string">debug</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the append to false, should not overwrite</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.Append</span>=<span class="string">true</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the DatePattern</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.DatePattern</span>=<span class="string">&#x27;.&#x27; yyyy-MM-dd-a</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Define the layout for file appender</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.layout.conversionPattern</span>=<span class="string">%m%n</span></span><br></pre></td></tr></table></figure>
+<p>如果您想使用<code>XML</code>配置文件，可以像上一节一样生成<code>XML</code>配置文件，只需添加和<code>DailyRollingFileAppender</code>相关的配置即可。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/cbcda66c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/cbcda66c/" class="post-title-link" itemprop="url">10 Log4j 使用多个文件记录日志 RollingFileAppender类</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-03 09:56:40" itemprop="dateCreated datePublished" datetime="2020-08-03T09:56:40+08:00">2020-08-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">简介</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/cbcda66c/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/cbcda66c/" data-xid="/blog/cbcda66c/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Log4j-使用多个文件记录日志-RollingFileAppender类"><a href="#Log4j-使用多个文件记录日志-RollingFileAppender类" class="headerlink" title="Log4j 使用多个文件记录日志 RollingFileAppender类"></a>Log4j 使用多个文件记录日志 RollingFileAppender类</h1><p>您可能因为某些原因，需要将日志写入多个文件，比如当文件大小达到一定阀值时。</p>
+<p>为了将日志写入多个文件，您需要使用<code>org.apache.Log4j.RollingFileAppender</code>，该类继承了<code>FileAppender</code>类，继承了它的所有属性。<br>除了上述提到的<code>FileAppender</code>类的属性，该类还包括如下可配置的属性：</p>
+<table>
+<thead>
+<tr>
+<th align="left">RollingFileAppender新增属性</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>maxFileSize</code></td>
+<td align="left">这是文件大小的关键值，大于该值时，文件会回滚。该值默认为<code>10MB</code>。</td>
+</tr>
+<tr>
+<td align="left"><code>maxBackupIndex</code></td>
+<td align="left">该值表示备份文件的个数，默认为1。</td>
+</tr>
+</tbody></table>
+<h2 id="log4j-properties"><a href="#log4j-properties" class="headerlink" title="log4j.properties"></a>log4j.properties</h2><p>下面是为<code>RollingFileAppender</code>定义的示例配置文件<code>Log4j.properties</code>：</p>
+<figure class="highlight properties"><figcaption><span>/Log4jDemo/Log4jConfig/RollingFileAppender/Log4j.properties</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Define the root logger with appender file</span></span><br><span class="line"><span class="attr">log4j.rootLogger</span> = <span class="string">DEBUG, FILE</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Define the file appender</span></span><br><span class="line"><span class="attr">log4j.appender.FILE</span>=<span class="string">org.apache.log4j.RollingFileAppender</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the name of the file</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.File</span>=<span class="string">log.out</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the immediate flush to true (default)</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.ImmediateFlush</span>=<span class="string">true</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the threshold to debug mode</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.Threshold</span>=<span class="string">debug</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the append to false, should not overwrite</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.Append</span>=<span class="string">true</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the maximum file size before rollover</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.MaxFileSize</span>=<span class="string">5KB</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the the backup index</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.MaxBackupIndex</span>=<span class="string">2</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Define the layout for file appender</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.layout.conversionPattern</span>=<span class="string">%m%n</span></span><br></pre></td></tr></table></figure>
+<p>如果您想使用<code>XML</code>配置文件，可以像上一节一样生成<code>XML</code>配置文件，只需添加和<code>RollingFileAppender</code>相关的配置即可。<br>该示例配置文件展示了每个日志文件最大为<code>5MB</code>，如果超过该最大值，则会生成一个新的日志文件。由于<code>maxBackupIndex</code>的值为2，当第二个文件的大小超过最大值时，会擦去第一个日志文件的内容，所有的日志都回滚至第一个日志文件。 </p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/6296507b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/6296507b/" class="post-title-link" itemprop="url">9 Log4j 使用文件记录日志 FileAppender类</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-03 07:03:03" itemprop="dateCreated datePublished" datetime="2020-08-03T07:03:03+08:00">2020-08-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">简介</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/6296507b/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/6296507b/" data-xid="/blog/6296507b/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Log4j-使用文件记录日志-FileAppender类"><a href="#Log4j-使用文件记录日志-FileAppender类" class="headerlink" title="Log4j 使用文件记录日志 FileAppender类"></a>Log4j 使用文件记录日志 FileAppender类</h1><p>使用<code>org.apache.log4j.FileAppender</code>将日志记录到文件。</p>
+<h2 id="FileAppender配置参数"><a href="#FileAppender配置参数" class="headerlink" title="FileAppender配置参数"></a>FileAppender配置参数</h2><p><code>FileAppender</code>拥有如下配置参数：</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>immediateFlush</code></td>
+<td align="left">该标志位默认为<code>true</code>，意味着每次日志追加操作都将输出流刷新至文件。</td>
+</tr>
+<tr>
+<td align="left"><code>encoding</code></td>
+<td align="left">可以使用任何编码，默认情况下使用平台相关的编码。</td>
+</tr>
+<tr>
+<td align="left"><code>threshold</code></td>
+<td align="left"><code>appender</code>对象的阀值。</td>
+</tr>
+<tr>
+<td align="left"><code>Filename</code></td>
+<td align="left">日志文件名。</td>
+</tr>
+<tr>
+<td align="left"><code>fileAppend</code></td>
+<td align="left">该值默认为<code>true</code>，其含义是让日志追加至文件末尾。</td>
+</tr>
+<tr>
+<td align="left"><code>bufferedIO</code></td>
+<td align="left">该标志位表示是否打开缓冲区写，缺省为<code>false</code>。</td>
+</tr>
+<tr>
+<td align="left"><code>bufferSize</code></td>
+<td align="left">如果开启缓冲区<code>I/O</code>，该属性指示缓冲区大小，缺省为<code>8kb</code>。</td>
+</tr>
+</tbody></table>
+<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><p>以下是<code>FileAppender</code>的配置文件示例<code>log4j.properties</code>。</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置日志文件存放的路径</span></span><br><span class="line"><span class="attr">log</span>=<span class="string">E:\workspacne_JDK8Tomcat8.5\Log4jDemo</span></span><br><span class="line"><span class="comment"># Define the root logger with appender file</span></span><br><span class="line"><span class="attr">log4j.rootLogger</span> = <span class="string">DEBUG, FILE</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Define the file appender</span></span><br><span class="line"><span class="attr">log4j.appender.FILE</span>=<span class="string">org.apache.log4j.FileAppender</span></span><br><span class="line"><span class="comment"># file name</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.File</span>=<span class="string">$&#123;log&#125;/log.out </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the flush to true</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.ImmediateFlush</span>=<span class="string">true</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the threshold to debug mode</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.Threshold</span>=<span class="string">debug</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Set the append to true, overwrite</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.Append</span>=<span class="string">true</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Define the layout for file appender</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.FILE.layout.conversionPattern</span>=<span class="string">%m%n</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">log4j</span>:configuration</span></span><br><span class="line"><span class="meta">    <span class="keyword">PUBLIC</span> <span class="string">&quot;-//LOG4J//DTD LOG4J//EN&quot;</span></span></span><br><span class="line"><span class="meta">    <span class="string">&quot;https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">log4j:configuration</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:log4j</span>=<span class="string">&quot;http://jakarta.apache.org/log4j/&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;STDOUT&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">class</span>=<span class="string">&quot;org.apache.log4j.ConsoleAppender&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">layout</span> <span class="attr">class</span>=<span class="string">&quot;org.apache.log4j.PatternLayout&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;ConversionPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;%5p [%t] %m%n&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;FILE&quot;</span> <span class="attr">class</span>=<span class="string">&quot;org.apache.log4j.FileAppender&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;File&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;log&#125;/log.out&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;ImmediateFlush&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;Threshold&quot;</span> <span class="attr">value</span>=<span class="string">&quot;debug&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;Append&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">layout</span> <span class="attr">class</span>=<span class="string">&quot;org.apache.log4j.PatternLayout&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;conversionPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;%m%n&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">level</span> <span class="attr">value</span>=<span class="string">&quot;DEBUG&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;STDOUT&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;FILE&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">log4j:configuration</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="log4j-xml中如何使用变量替换"><a href="#log4j-xml中如何使用变量替换" class="headerlink" title="log4j.xml中如何使用变量替换"></a>log4j.xml中如何使用变量替换</h3><p>注意,这里的XML文件中使用了变量替换<code>$&#123;log&#125;</code>,在使用这个log变量之前需要创建这个变量,但是在XML中好像没有创建变量的方法.<br><a target="_blank" rel="noopener" href="https://www.coder.work/article/402468">解决方案</a>:<br>使用log4j.xml时实现类似功能的唯一方法是在启动时设置系统属性，然后从log4j.xml中引用该属性。</p>
+<h4 id="运行Java时给定参数"><a href="#运行Java时给定参数" class="headerlink" title="运行Java时给定参数"></a>运行Java时给定参数</h4><p>启动时，设置系统属性：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Dlog=E:\workspacne_JDK8Tomcat8.<span class="number">5</span>\Log4jDemo com.yourorg.yourapp.Main</span><br></pre></td></tr></table></figure>
+<h4 id="编程方式指定"><a href="#编程方式指定" class="headerlink" title="编程方式指定"></a>编程方式指定</h4><p>或在运行时以编程方式设置（在初始化log4j之前）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.setProperty(<span class="string">&quot;log&quot;</span>, <span class="string">&quot;E:\workspacne_JDK8Tomcat8.5\Log4jDemo&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>然后您可以这样引用它：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;FILE&quot;</span> <span class="attr">class</span>=<span class="string">&quot;org.apache.log4j.FileAppender&quot;</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;file&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;log&#125;/log.out&quot;</span>/&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight java"><figcaption><span>/Log4jDemo/src/demo/file/appender/XMLFileAppenderTest.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> demo.file.appender;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"><span class="keyword">import</span> org.apache.log4j.Logger;</span><br><span class="line"><span class="keyword">import</span> demo.Log4jExample;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">XMLFileAppenderTest</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span></span><br><span class="line">    &#123;</span><br><span class="line">        System.setProperty(<span class="string">&quot;log&quot;</span>, <span class="string">&quot;E:/workspacne_JDK8Tomcat8.5/Log4jDemo&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* Get actual class name to be printed on */</span></span><br><span class="line">    <span class="keyword">static</span> <span class="type">Logger</span> <span class="variable">log</span> <span class="operator">=</span> Logger.getLogger(Log4jExample.class.getName());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, SQLException</span><br><span class="line">    &#123;</span><br><span class="line">        log.debug(<span class="string">&quot;Hello this is a debug message&quot;</span>);</span><br><span class="line">        log.info(<span class="string">&quot;Hello this is an info message&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>删除项目目录下的log.out文件,运行上述代码后,项目目录下的会重新生成log.out日志文件</p>
+<h4 id="使用绝对路径不使用变量替换"><a href="#使用绝对路径不使用变量替换" class="headerlink" title="使用绝对路径不使用变量替换"></a>使用绝对路径不使用变量替换</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;FILE&quot;</span> <span class="attr">class</span>=<span class="string">&quot;org.apache.log4j.FileAppender&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;param name=&quot;File&quot; value=&quot;$&#123;log&#125;/log.out&quot; /&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;File&quot;</span> <span class="attr">value</span>=<span class="string">&quot;E:/workspacne_JDK8Tomcat8.5/Log4jDemo/log.out&quot;</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;param name=&quot;File&quot; value=&quot;log.out&quot; /&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;ImmediateFlush&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;Threshold&quot;</span> <span class="attr">value</span>=<span class="string">&quot;debug&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;Append&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">layout</span> <span class="attr">class</span>=<span class="string">&quot;org.apache.log4j.PatternLayout&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;conversionPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;%m%n&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="使用相对路径"><a href="#使用相对路径" class="headerlink" title="使用相对路径"></a>使用相对路径</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;FILE&quot;</span> <span class="attr">class</span>=<span class="string">&quot;org.apache.log4j.FileAppender&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;param name=&quot;File&quot; value=&quot;$&#123;log&#125;/log.out&quot; /&gt; --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;param name=&quot;File&quot; value=&quot;E:/workspacne_JDK8Tomcat8.5/Log4jDemo/log.out&quot; /&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;File&quot;</span> <span class="attr">value</span>=<span class="string">&quot;log.out&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;ImmediateFlush&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;Threshold&quot;</span> <span class="attr">value</span>=<span class="string">&quot;debug&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;Append&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">layout</span> <span class="attr">class</span>=<span class="string">&quot;org.apache.log4j.PatternLayout&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">&quot;conversionPattern&quot;</span> <span class="attr">value</span>=<span class="string">&quot;%m%n&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/6356f492/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/6356f492/" class="post-title-link" itemprop="url">8 Log4j 日志格式 Layout类</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-03 06:52:28" itemprop="dateCreated datePublished" datetime="2020-08-03T06:52:28+08:00">2020-08-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">简介</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/6356f492/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/6356f492/" data-xid="/blog/6356f492/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>802</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Log4j-日志格式-Layout类"><a href="#Log4j-日志格式-Layout类" class="headerlink" title="Log4j 日志格式 Layout类"></a>Log4j 日志格式 Layout类</h1><p><code>Apache Log4j</code>提供了多个<code>Layout</code>对象，每个根据布局的不同都可格式化日志数据。还可以创建一个<code>Layout</code>对象，以应用特有的方式格式化日志。</p>
+<p>所有<code>Layout</code>对象从<code>Appender</code>对象那里接收一个<code>LoggingEvent</code>对象，然后从<code>LoggingEvent</code>对象那里获取信息，并使用恰当的<code>ObjectRenderer</code>对象获取该信息的字符串形式。</p>
+<h2 id="Layout类型"><a href="#Layout类型" class="headerlink" title="Layout类型"></a>Layout类型</h2><p>位于继承关系顶层的是抽象类<code>org.apache.log4j.Layout</code>，这是所有<code>Log4j API</code>中<code>Layout</code>类的基类。<br><code>Layout</code>类是个抽象类，在应用中我们从不直接使用该类，而是使用它的子类，如下所示：</p>
+<ul>
+<li><code>DateLayout</code>、</li>
+<li><code>HTMLLayout</code>、</li>
+<li><code>PatternLayout</code>、</li>
+<li><code>SimpleLayout</code>、</li>
+<li><code>XMLLayout</code>。</li>
+</ul>
+<h2 id="Layout方法"><a href="#Layout方法" class="headerlink" title="Layout方法"></a>Layout方法</h2><p>该类对于所有其他<code>Layout</code>对象的通用操作提供了框架性的实现，声明了两个抽象方法：</p>
+<table>
+<thead>
+<tr>
+<th align="left">Layout抽象类的抽象方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>public abstract boolean ignoresThrowable()</code></td>
+<td align="left">该方法指明日志信息是否处理由日志事件传来的<code>java.lang.Throwable</code>对象，如果<code>Layout</code>对象能处理<code>Throwable</code>对象，则<code>Layout</code>对象不会忽略它，并且返回<code>false</code>。</td>
+</tr>
+<tr>
+<td align="left"><code>public abstract String format(LoggingEvent event)</code></td>
+<td align="left"><strong>各<code>Layout</code>子类实现该方法，以定义各自的格式。</strong></td>
+</tr>
+</tbody></table>
+<p>除了这些抽象方法，Layout 类还提供了如下的具体方法：</p>
+<table>
+<thead>
+<tr>
+<th align="left">Layout抽象类具体方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>public String getContentType()</code></td>
+<td align="left">返回布局对象使用的内容类型。</td>
+</tr>
+<tr>
+<td align="left"><code>public String getFooter()</code></td>
+<td align="left">记录消息的页脚信息。</td>
+</tr>
+<tr>
+<td align="left"><code>public String getHeader()</code></td>
+<td align="left">日志消息的头信息。</td>
+</tr>
+</tbody></table>
+<p><strong>每个子类均可覆盖这些方法的实现，返回各自特有的信息。</strong></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1351,586 +2008,6 @@ blog/programming/java/log4j/Log4jArchitecture/1.jpg
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/f69dab82/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/f69dab82/" class="post-title-link" itemprop="url">1 Log4j概述</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-08-03 03:30:02" itemprop="dateCreated datePublished" datetime="2020-08-03T03:30:02+08:00">2020-08-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">简介</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/f69dab82/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/f69dab82/" data-xid="/blog/f69dab82/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>945</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Log4j概述"><a href="#Log4j概述" class="headerlink" title="Log4j概述"></a>Log4j概述</h1><p><code>Log4j</code>是一个使用<code>Java</code>语言编写的，可靠、快速、灵活的日志框架（<code>API</code>），使用<code>Apache Software License</code>授权。</p>
-<p>它被移植到C、C++、C#、<code>Perl</code>、<code>Python</code>、<code>Ruby</code>和<code>Eiffel</code>语言中。</p>
-<p><code>Log4j</code>是高度可配置的，在运行期使用外部的<strong>配置文件</strong>对其进行配置。它按照优先级别记录日志，并可将日志信息定向输出到各种介质，比如数据库、文件、控制台、<code>Unix Syslog</code>等。</p>
-<h2 id="Log4j组成部分"><a href="#Log4j组成部分" class="headerlink" title="Log4j组成部分"></a>Log4j组成部分</h2><p>Log4j主要由三部分组成：</p>
-<ul>
-<li><code>loggers</code>：负责采集日志信息。</li>
-<li><code>appenders</code>：负责将日志信息发布到不同地方。</li>
-<li><code>layouts</code>：负责以各种风格格式化日志信息。</li>
-</ul>
-<h2 id="Log4j的历史"><a href="#Log4j的历史" class="headerlink" title="Log4j的历史"></a>Log4j的历史</h2><ul>
-<li>始于 1996 年，作为记录<code>E.U. SEMPER</code>(<code>Secure Electronic Marketplace for Europe</code>)项目跟踪信息的<code>API</code>。</li>
-<li>经过大量的完善和蜕变，最初的<code>API</code>终于演进为<code>Log4j</code>，一个在<code>Java</code>社区流行的日志类库。</li>
-<li>该类库使用<code>Apache Software License</code>授权，该授权是经开源促进协会认证的、完整的开源协议。</li>
-<li>最新版本的<code>Log4j</code>，连同其代码、类文件和文档可通过<a target="_blank" rel="noopener" href="http://logging.apache.org/log4j/">http://logging.apache.org/log4j/</a>获取。</li>
-</ul>
-<h2 id="Log4j的功能"><a href="#Log4j的功能" class="headerlink" title="Log4j的功能"></a>Log4j的功能</h2><ul>
-<li>线程安全。</li>
-<li>速度优化。</li>
-<li>基于命名的<code>logger</code>层次。</li>
-<li>每个<code>logger</code>支持多种输出<code>appender</code>。</li>
-<li>支持国际化。</li>
-<li>不受限于预定义好的设施。</li>
-<li>日志记录行为可在运行期通过配置文件设置。</li>
-<li>设计之初就考虑了处理<code>Java</code>异常。</li>
-<li>使用多个日志级别：<ul>
-<li><code>ALL</code>、</li>
-<li><code>TRACE</code>、</li>
-<li><code>DEBUG</code>、</li>
-<li><code>INFO</code>、</li>
-<li><code>WARN</code>、</li>
-<li><code>ERROR</code>、</li>
-<li><code>FATAL</code>。</li>
-</ul>
-</li>
-<li>通过扩展<code>Layout</code>类可轻松改变输出日志的格式。</li>
-<li>输出日志的目的和策略可通过实现<code>Appender</code>接口改变。</li>
-<li>失败即停止。虽然<code>Log4j</code>努力做到最好，但不保证每一条日志都能发送到指定目的地。</li>
-</ul>
-<h2 id="记录日志的优缺点"><a href="#记录日志的优缺点" class="headerlink" title="记录日志的优缺点"></a>记录日志的优缺点</h2><p>记录日志是软件开发中的重要一环。编写良好的日志代码能为运行应用提供快速的诊断信息和良好的存储结构，方便维护。</p>
-<p>记录日志也有其缺点，它会让应用变慢。假如输出太详细，可能会导致屏幕闪动。为了减轻这些影响，<code>Log4j</code>被设计为可靠的，更快的和可扩展的。</p>
-<p>由于日志很少是应用程序关注的焦点，所以<code>Log4j API</code>力争做到简单并易于理解和使用。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/274cd760/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/274cd760/" class="post-title-link" itemprop="url">Win10 Conexant SmartAudio HD声卡 插入耳机没反应</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-07-06 04:24:48" itemprop="dateCreated datePublished" datetime="2020-07-06T04:24:48+08:00">2020-07-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/Win10%E8%AE%BE%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">Win10设置</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/Win10%E8%AE%BE%E7%BD%AE/%E8%A7%86%E9%A2%91%E9%9F%B3%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">视频音频</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/274cd760/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/274cd760/" data-xid="/blog/274cd760/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>327</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Win10-Conexant-SmartAudio-HD声卡-插入耳机没反应"><a href="#Win10-Conexant-SmartAudio-HD声卡-插入耳机没反应" class="headerlink" title="Win10 Conexant SmartAudio HD声卡 插入耳机没反应"></a>Win10 Conexant SmartAudio HD声卡 插入耳机没反应</h1><h2 id="打开SmartAudio"><a href="#打开SmartAudio" class="headerlink" title="打开SmartAudio"></a>打开SmartAudio</h2><p>按下快捷键<code>Win+X</code>,然后按下快捷<code>S</code>,打开小娜的<strong>搜索框</strong>,输入控制面板,进入<strong>控制面板</strong>,点击<strong>硬件和声音</strong>,点击<strong>SmartAudio</strong>:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/VideoAndAudio/Win10ConexantSmartAudioHDSoundCard/NothingHappensWhenIPlugInMyHeadphones/1.png" alt="图片"></p>
-<h2 id="SmartAudio设置"><a href="#SmartAudio设置" class="headerlink" title="SmartAudio设置"></a>SmartAudio设置</h2><h3 id="音频导向器设置"><a href="#音频导向器设置" class="headerlink" title="音频导向器设置"></a>音频导向器设置</h3><p>点击<strong>音频导向器</strong>(下方倒数第二个),选择<strong>MULTI-STREAM</strong>:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/VideoAndAudio/Win10ConexantSmartAudioHDSoundCard/NothingHappensWhenIPlugInMyHeadphones/2.png" alt="图片"></p>
-<h3 id="插口配置"><a href="#插口配置" class="headerlink" title="插口配置"></a>插口配置</h3><p>点击<strong>插口配置</strong>(下方最后),选中<strong>头戴式耳麦</strong>,勾选上<strong>关闭插口配置弹出窗囗</strong>:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/VideoAndAudio/Win10ConexantSmartAudioHDSoundCard/NothingHappensWhenIPlugInMyHeadphones/3.png" alt="图片"></p>
-<h3 id="音量混合器"><a href="#音量混合器" class="headerlink" title="音量混合器"></a>音量混合器</h3><p>点击<strong>音量混合器</strong>,然后<strong>插入耳机</strong>,如果带有耳机图标的音量控件亮起来了,那就识别成功了:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/VideoAndAudio/Win10ConexantSmartAudioHDSoundCard/NothingHappensWhenIPlugInMyHeadphones/4.png" alt="图片"><br>这样就可以了,关掉SmartAudio窗口</p>
-<h2 id="后续使用"><a href="#后续使用" class="headerlink" title="后续使用"></a>后续使用</h2><p>SmartAudio设置好之后,可以在任务栏右下角的<strong>声音图标</strong>上面<strong>点击鼠标左键</strong>,选择<strong>使用耳机播放</strong>或者<strong>使用扬声器播放</strong>:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/VideoAndAudio/Win10ConexantSmartAudioHDSoundCard/NothingHappensWhenIPlugInMyHeadphones/5.png" alt="图片"></p>
-<!--
-Blog/Windows/software/Win10Settings/VideoAndAudio/Win10ConexantSmartAudioHDSoundCard/NothingHappensWhenIPlugInMyHeadphones/
--->
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/93e495c3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/93e495c3/" class="post-title-link" itemprop="url">Conexant声卡实现内录功能</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-07-05 02:58:50" itemprop="dateCreated datePublished" datetime="2020-07-05T02:58:50+08:00">2020-07-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/Win10%E8%AE%BE%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">Win10设置</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/Win10%E8%AE%BE%E7%BD%AE/%E8%A7%86%E9%A2%91%E9%9F%B3%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">视频音频</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/93e495c3/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/93e495c3/" data-xid="/blog/93e495c3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>578</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="使用-屏录软件的录音功能"><a href="#使用-屏录软件的录音功能" class="headerlink" title="使用 屏录软件的录音功能"></a>使用 屏录软件的录音功能</h1><p>大多数屏录软件都会提供录音功能,而且免费的屏录软件比较多.</p>
-<h2 id="EV录屏"><a href="#EV录屏" class="headerlink" title="EV录屏"></a>EV录屏</h2><h3 id="下载-安装"><a href="#下载-安装" class="headerlink" title="下载 安装"></a>下载 安装</h3><p><a target="_blank" rel="noopener" href="https://www.ieway.cn/">https://www.ieway.cn/</a></p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/7.png" alt="图片"></p>
-<h1 id="使用virtual-audio-device-win10自带录音机"><a href="#使用virtual-audio-device-win10自带录音机" class="headerlink" title="使用virtual audio device + win10自带录音机"></a>使用virtual audio device + win10自带录音机</h1><p>这种方式比较麻烦,使用Win10自带的录音器就可以了录音,也是免费的.</p>
-<h2 id="下载virtual-audio-device"><a href="#下载virtual-audio-device" class="headerlink" title="下载virtual audio device"></a>下载virtual audio device</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://vac.muzychenko.net/en/download.htm">https://vac.muzychenko.net/en/download.htm</a></li>
-<li><a target="_blank" rel="noopener" href="https://download.cnet.com/Virtual-Audio-Cable/3001-2168_4-10067766.html">https://download.cnet.com/Virtual-Audio-Cable/3001-2168_4-10067766.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.filehorse.com/download-virtual-audio-cable/">https://www.filehorse.com/download-virtual-audio-cable/</a></li>
-</ul>
-<h2 id="安装virtual-audio-device"><a href="#安装virtual-audio-device" class="headerlink" title="安装virtual audio device"></a>安装virtual audio device</h2><h2 id="设置默认的声音输入声音输出设备"><a href="#设置默认的声音输入声音输出设备" class="headerlink" title="设置默认的声音输入声音输出设备"></a>设置默认的声音输入声音输出设备</h2><h3 id="打开声音设置"><a href="#打开声音设置" class="headerlink" title="打开声音设置"></a>打开声音设置</h3><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/1.png" alt="图片"></p>
-<h3 id="打开-声音控制面板"><a href="#打开-声音控制面板" class="headerlink" title="打开 声音控制面板"></a>打开 声音控制面板</h3><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/2.png" alt="图片"></p>
-<h4 id="设置默认播放设备为Line-1"><a href="#设置默认播放设备为Line-1" class="headerlink" title="设置默认播放设备为Line 1"></a>设置默认播放设备为Line 1</h4><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/3.png" alt="图片"></p>
-<h4 id="设置默认录制设备为Line-2"><a href="#设置默认录制设备为Line-2" class="headerlink" title="设置默认录制设备为Line 2"></a>设置默认录制设备为Line 2</h4><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/4.png" alt="图片"></p>
-<h2 id="转发声音输出"><a href="#转发声音输出" class="headerlink" title="转发声音输出"></a>转发声音输出</h2><h3 id="打开Audio-Repeater-MME"><a href="#打开Audio-Repeater-MME" class="headerlink" title="打开Audio Repeater (MME)"></a>打开Audio Repeater (MME)</h3><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/5.png" alt="图片"></p>
-<h4 id="设置输入为Line-1-设置输出为扬声器或者耳机"><a href="#设置输入为Line-1-设置输出为扬声器或者耳机" class="headerlink" title="设置输入为Line 1 设置输出为扬声器或者耳机"></a>设置输入为Line 1 设置输出为扬声器或者耳机</h4><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Windows/Software/Win10_Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/6.png" alt="图片"></p>
-<h2 id="使用Win10自带录音机进行录音"><a href="#使用Win10自带录音机进行录音" class="headerlink" title="使用Win10自带录音机进行录音"></a>使用Win10自带录音机进行录音</h2><h2 id="使用Windows-10自带的录音机进行录制"><a href="#使用Windows-10自带的录音机进行录制" class="headerlink" title="使用Windows 10自带的录音机进行录制"></a>使用Windows 10自带的录音机进行录制</h2><h1 id="使用第三方录音软件"><a href="#使用第三方录音软件" class="headerlink" title="使用第三方录音软件"></a>使用第三方录音软件</h1><p>我查了一些这样的内录软件,但是基本都是收费的.不建议使用这种方式</p>
-<!-- 
-Blog/Windows/software/Win10Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/2
-Blog/Windows/software/Win10Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/3
-Blog/Windows/software/Win10Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/4
-Blog/Windows/software/Win10Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/5
-Blog/Windows/software/Win10Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/6
-Blog/Windows/software/Win10Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/7
-Blog/Windows/software/Win10Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/1
-Blog/Windows/software/Win10Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/1
-Blog/Windows/software/Win10Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/1
-Blog/Windows/software/Win10Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/1
-Blog/Windows/software/Win10Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/1
-Blog/Windows/software/Win10Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/1
-Blog/Windows/software/Win10Settings/VideoAndAudio/ConexantSoundCardRealizesInternalRecordingFunction/1
--->
-
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/riskyer/p/3304131.html">https://www.cnblogs.com/riskyer/p/3304131.html</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/279b049e/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/279b049e/" class="post-title-link" itemprop="url">如何下载GitHub Releasess上面发布的软件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-06-27 01:23:18" itemprop="dateCreated datePublished" datetime="2020-06-27T01:23:18+08:00">2020-06-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E4%B8%8B%E8%BD%BD/" itemprop="url" rel="index"><span itemprop="name">下载</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/279b049e/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/279b049e/" data-xid="/blog/279b049e/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>413</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="如何下载GitHub-Releasess上面发布的软件"><a href="#如何下载GitHub-Releasess上面发布的软件" class="headerlink" title="如何下载GitHub Releasess上面发布的软件"></a>如何下载GitHub Releasess上面发布的软件</h1><h2 id="使用迅雷下载"><a href="#使用迅雷下载" class="headerlink" title="使用迅雷下载"></a>使用迅雷下载</h2><p>我尝试了一下,目前可以直接使用迅雷下载.</p>
-<h2 id="Chrome浏览器插件"><a href="#Chrome浏览器插件" class="headerlink" title="Chrome浏览器插件"></a>Chrome浏览器插件</h2><p>安装Chrome浏览器插件:<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/github%E5%8A%A0%E9%80%9F/mfnkflidjnladnkldfonnaicljppahpg/related">GitHub加速</a></p>
-<h2 id="Chrome浏览器-使用油猴脚本"><a href="#Chrome浏览器-使用油猴脚本" class="headerlink" title="Chrome浏览器 使用油猴脚本"></a>Chrome浏览器 使用油猴脚本</h2><p>先安装管理脚本的浏览器插件:<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">Tampermonkey</a></p>
-<p>然后安装脚本:<br><a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/scripts/398278-github-%E9%95%9C%E5%83%8F%E8%AE%BF%E9%97%AE-%E5%8A%A0%E9%80%9F%E4%B8%8B%E8%BD%BD">Github 镜像访问，加速下载</a><br>下载打开脚本之前,先退出自己的账号.</p>
-<h2 id="使用GitHub代下载服务"><a href="#使用GitHub代下载服务" class="headerlink" title="使用GitHub代下载服务"></a>使用GitHub代下载服务</h2><p><a target="_blank" rel="noopener" href="http://g.widyun.com/">http://g.widyun.com/</a><br>这个网站会转换成一个高速的下载地址<br>例如</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/Tomotoes/scrcpy-gui/releases/download/1.5.1/ScrcpyGui-1.5.1.win64.exe</span><br></pre></td></tr></table></figure>
-<p>会转换为:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://g.widyun.com/source/20200623/76ee6b5d12a8de08c39daee3f851d6cf.exe</span><br></pre></td></tr></table></figure>
-<p>然后再使用多线程下载工具下载即可</p>
-<h2 id="翻墙"><a href="#翻墙" class="headerlink" title="翻墙"></a>翻墙</h2><p>翻墙后就可以下载了.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/27/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/blog/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/29/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1963,7 +2040,7 @@ Blog/Windows/software/Win10Settings/VideoAndAudio/ConexantSoundCardRealizesInter
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22:52</span>
+    <span title="站点阅读时长">22:54</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

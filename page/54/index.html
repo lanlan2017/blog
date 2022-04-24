@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">614</span>
+          <span class="site-state-item-count">618</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,687 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/7b1e18da/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/7b1e18da/" class="post-title-link" itemprop="url">java Enumeration 接口的使用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-12-09 22:47:36" itemprop="dateCreated datePublished" datetime="2018-12-09T22:47:36+08:00">2018-12-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E9%9B%86%E5%90%88/" itemprop="url" rel="index"><span itemprop="name">Java 集合</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/7b1e18da/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/7b1e18da/" data-xid="/blog/7b1e18da/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="API中的介绍"><a href="#API中的介绍" class="headerlink" title="API中的介绍"></a>API中的介绍</h1><blockquote>
+<p>Enumeration（枚举）接口的功能与 Iterator 接口的功能是重复的。此外，Iterator 接口添加了一个可选的移除操作，并使用较短的方法名。新的实现应该优先考虑使用 Iterator 接口而不是 Enumeration 接口。 </p>
+</blockquote>
+<h1 id="Enumeration接口方法"><a href="#Enumeration接口方法" class="headerlink" title="Enumeration接口方法"></a>Enumeration接口方法</h1><p>枚举接口只有以下两个方法：</p>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>boolean hasMoreElements()</code></td>
+<td align="left">测试此枚举是否包含更多的元素。</td>
+</tr>
+<tr>
+<td align="left"><code>E nextElement()</code></td>
+<td align="left">如果此枚举对象至少还有一个可提供的元素，则返回此枚举的下一个元素。</td>
+</tr>
+</tbody></table>
+<p>虽然知道枚举已经过时了，但是在Java中有些地方还会用到Enumeration来进行输出,所以下面就来用一用这个接口</p>
+<h1 id="Enumeration接口遍历实例"><a href="#Enumeration接口遍历实例" class="headerlink" title="Enumeration接口遍历实例"></a>Enumeration接口遍历实例</h1><p>下面遍历输出JSP session内置对象中的所有的<code>属性/属性值</code>对，为什么举这个例子呢。因为，我看到<code>session.getAttributeNames();</code>这个方法的时候才了解有枚举这个东西。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">session.setAttribute(<span class="string">&quot;user&quot;</span>, <span class="string">&quot;admin&quot;</span>);</span><br><span class="line">session.setAttribute(<span class="string">&quot;password&quot;</span>, <span class="string">&quot;123456&quot;</span>);</span><br><span class="line"><span class="comment">//获取session中的所有属性的枚举</span></span><br><span class="line">Enumeration&lt;String&gt; enu = session.getAttributeNames();</span><br><span class="line"><span class="type">String</span> <span class="variable">attr</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"><span class="comment">//判断是否有属性</span></span><br><span class="line"><span class="keyword">while</span> (enu.hasMoreElements())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//获取一个属性</span></span><br><span class="line">    attr = enu.nextElement();</span><br><span class="line">    <span class="comment">//打印一个属性到控制台</span></span><br><span class="line">    out.println(<span class="string">&quot;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;</span> + attr + <span class="string">&quot;=&quot;</span></span><br><span class="line">            + session.getAttribute(attr) + <span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="另一个遍历枚举的例子"><a href="#另一个遍历枚举的例子" class="headerlink" title="另一个遍历枚举的例子"></a>另一个遍历枚举的例子</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">Vector</span> <span class="variable">v</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Vector</span>();</span><br><span class="line">    v.addElement(<span class="string">&quot;Lisa&quot;</span>);</span><br><span class="line">    v.addElement(<span class="string">&quot;Billy&quot;</span>);</span><br><span class="line">    v.addElement(<span class="string">&quot;Mr Brown&quot;</span>);</span><br><span class="line">    <span class="type">Enumeration</span> <span class="variable">e</span> <span class="operator">=</span> v.elements();<span class="comment">//返回Enumeration对象</span></span><br><span class="line">    <span class="keyword">while</span>(e.hasMoreElements())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> (String)e.nextElement();<span class="comment">//调用nextElement方法获得元素</span></span><br><span class="line">        System.out.print(value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq924862077/article/details/48022185">https://blog.csdn.net/qq924862077/article/details/48022185</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4cc31c44/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/4cc31c44/" class="post-title-link" itemprop="url">JSP 内置对象简介</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-12-08 21:46:24" itemprop="dateCreated datePublished" datetime="2018-12-08T21:46:24+08:00">2018-12-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/JSP/" itemprop="url" rel="index"><span itemprop="name">JSP</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/JSP/%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="index"><span itemprop="name">内置对象</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/4cc31c44/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/4cc31c44/" data-xid="/blog/4cc31c44/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="JSP内置对象概述"><a href="#JSP内置对象概述" class="headerlink" title="JSP内置对象概述"></a>JSP内置对象概述</h1><p>由于JSP使用Java作为脚本语言,所以JSP将具有强大的对象处理能力,并且可以动态创建web页面内容。<strong>但Java语法在使用一个对象前,需要先实例化这个对象</strong>,这其实是一件比较繁琐的事情。JSP为了简化开发,提供了一些内置对象,用来实现很多JSP应用。在使用JSP内置对象时,不需要先定义这些对象,直接使用即可。</p>
+<h2 id="JSP九大内置对象"><a href="#JSP九大内置对象" class="headerlink" title="JSP九大内置对象"></a>JSP九大内置对象</h2><p>在JSP中一共预先定义了9个这样的对象,分别为：</p>
+<ul>
+<li><a href="/blog/8c60ed62/">out</a></li>
+<li><a href="/blog/d5e5b83f/">request</a></li>
+<li><a href="/blog/ddf72c82/">response</a></li>
+<li><a href="/blog/240051d/">session</a></li>
+<li><a href="/blog/bc7737a8/">application</a></li>
+<li><a href="/blog/ee24a152/#page%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1">page</a></li>
+<li><a href="/blog/ee24a152/#pageContext%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1">pageContext</a></li>
+<li><a href="/blog/ee24a152/#Config%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1">config</a></li>
+<li><a href="/blog/ee24a152/#Exception%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1">exception</a></li>
+</ul>
+<p>下面将分别介绍这些内置对象及其常用方法。</p>
+<h1 id="Web程序的请求响应模式"><a href="#Web程序的请求响应模式" class="headerlink" title="Web程序的请求响应模式"></a>Web程序的请求响应模式</h1><ul>
+<li>用户发送请求( request)</li>
+<li>服务器给用户响应( response)</li>
+</ul>
+<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/request_response.png"></p>
+<h1 id="表单的提交方式"><a href="#表单的提交方式" class="headerlink" title="表单的提交方式"></a>表单的提交方式</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt; form name=&quot;formName&quot; action=&quot;动作&quot; method=“提交方式”<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>表单常用的提交方式有两种，分别是get和post</p>
+<h2 id="get"><a href="#get" class="headerlink" title="get"></a>get</h2><p>get:以明文的方式通过UR提交数据,数据在URL中可以看到。提交的数据最多不超过2KB。安全性较低但效率比post方式高。适合提交数据量不大,安全性不高的数据。比如:搜索、查询等功能。</p>
+<h2 id="post"><a href="#post" class="headerlink" title="post"></a>post</h2><p>post:将用户提交的信息封装在 HTML HEADER内。适合提交数据量大,安全性高的用户信息。比如:注册、修改、上传等功能</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>在项目WebContent目录下创建一个名为login.jsp的文件，在其中写入如下的登录表单：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span> <span class="string">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">&quot;Content-Type&quot;</span> content=<span class="string">&quot;text/html; charset=utf-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;用户登录&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;form action=<span class="string">&quot;dologin.jsp&quot;</span> name=<span class="string">&quot;loginForm&quot;</span> method=<span class="string">&quot;get&quot;</span>&gt;</span><br><span class="line">    &lt;table&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td align=<span class="string">&quot;right&quot;</span>&gt;用户名:&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;userName&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td align=<span class="string">&quot;right&quot;</span>&gt;密码:&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type=<span class="string">&quot;password&quot;</span> name=<span class="string">&quot;password&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type=<span class="string">&quot;reset&quot;</span> value=<span class="string">&quot;重置&quot;</span>&gt; &lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;登录&quot;</span>&gt; &lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>然后在创建一个名为dologin.jsp的文件，在该文件中写入登录的提交界面，这里不做什么处理，直接显示登录成功。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span> <span class="string">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">&quot;Content-Type&quot;</span> content=<span class="string">&quot;text/html;charset=utf-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;登录处理&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h2&gt;登录成功&lt;/h2&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="测试get方法"><a href="#测试get方法" class="headerlink" title="测试get方法"></a>测试get方法</h3><p>在login界面中，输入用户名和密码，然后点击登录：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/get_post/login.png"><br>这时候就跳转到dologin界面了，注意看地址栏：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/get_post/dologin_get.png"><br>可以看到使用get方法，用户名和密码都会以明文的方式显示在URL中。</p>
+<h3 id="测试post方法"><a href="#测试post方法" class="headerlink" title="测试post方法"></a>测试post方法</h3><p>把login.jsp文件中的提交方法改为<code>post</code>:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;dologin.jsp&quot;</span> <span class="attr">name</span>=<span class="string">&quot;loginForm&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然再重复上面的操作，观察地址栏，可以发现在地址栏是看不到上有用户的信息的：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/get_post/dologin_post.png"><br>虽然在地址栏看不见，不过表单数据,即用户名和密码还是提交给了服务器的。至于怎么得到这些表单数据往下看request内置对象。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/ec8e0fb7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/ec8e0fb7/" class="post-title-link" itemprop="url">Java Web简介</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-12-08 21:46:18" itemprop="dateCreated datePublished" datetime="2018-12-08T21:46:18+08:00">2018-12-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/JSP/" itemprop="url" rel="index"><span itemprop="name">JSP</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/JSP/Java-Web%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">Java Web简介</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/ec8e0fb7/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/ec8e0fb7/" data-xid="/blog/ec8e0fb7/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <input type="button" onclick="open_closeTOC()" id="showcloseButton">
+<script>
+    function open_closeTOC() {var id = document.querySelector(".post-body > ul"); if (id.style.display == "block") {id.style.display = "none";document.getElementById("showcloseButton").value= "展开目录";}else if (id.style.display == "none") {id.style.display = "block";document.getElementById("showcloseButton").value="折叠目录";}}(function () {document.querySelector(".post-body > ul").style.display = "none";document.getElementById("showcloseButton").value="展开目录";})();
+</script>
+
+<h1 id="Java-Web简介"><a href="#Java-Web简介" class="headerlink" title="Java Web简介"></a>Java Web简介</h1><ul>
+<li>什么是Web应用程序</li>
+<li>静态页面与动态页面</li>
+<li>搭建 Java Web开发环境</li>
+<li>手工编写第一个Web应用程序</li>
+<li>MyEclipse配置</li>
+<li>使用 MyEclipse编写第一个Web应用程序</li>
+<li>修改 Tomcat默认端口</li>
+</ul>
+<h2 id="什么是Web应用程序"><a href="#什么是Web应用程序" class="headerlink" title="什么是Web应用程序"></a>什么是Web应用程序</h2><p>Web应用程序是一种可以通过web访问的应用程序。Web应用程序的一个最大好处是用户很容易访问应用程序。<code>用户只需要有浏览器即可</code>,不需要再安装其他软件.</p>
+<h3 id="常见web应用程序"><a href="#常见web应用程序" class="headerlink" title="常见web应用程序"></a>常见web应用程序</h3><ul>
+<li>在线电子商务网站，淘宝，京东等。</li>
+<li>大型门户站点，新浪，搜狐，网易等。</li>
+</ul>
+<h3 id="目前软件开发领域的三大方向"><a href="#目前软件开发领域的三大方向" class="headerlink" title="目前软件开发领域的三大方向"></a>目前软件开发领域的三大方向</h3><ul>
+<li>桌面应用程序,如qq,office等,一般为C&#x2F;S架构</li>
+<li>Web应用程序,各类网站</li>
+<li>嵌入式应用程序,安卓，苹果等。</li>
+</ul>
+<h2 id="静态网页与动态网页"><a href="#静态网页与动态网页" class="headerlink" title="静态网页与动态网页"></a>静态网页与动态网页</h2><h3 id="静态网页"><a href="#静态网页" class="headerlink" title="静态网页"></a>静态网页</h3><p>表现形式:网页中的内容是固定,不会更新。<br>所需技术: HTML CSS</p>
+<h3 id="动态网页"><a href="#动态网页" class="headerlink" title="动态网页"></a>动态网页</h3><p>表现形式:网页中的内容通过程序动态显示的,自动更新。<br>所需技术: HTML,CSS,数据库技术,至少一门高级语言(Java,C#,PhP), Javascript, XML等。<br>主流的动态网页脚本技术:JSP&#x2F;ASP. net&#x2F;PHP</p>
+<h2 id="搭建-Java-Web开发环境"><a href="#搭建-Java-Web开发环境" class="headerlink" title="搭建 Java Web开发环境"></a>搭建 Java Web开发环境</h2><p>主要需要下面这几个东西,需要：</p>
+<ul>
+<li>JDK</li>
+<li>Tomcat服务器</li>
+<li>IDE</li>
+</ul>
+<h3 id="Tomcat安装步骤"><a href="#Tomcat安装步骤" class="headerlink" title="Tomcat安装步骤"></a>Tomcat安装步骤</h3><h3 id="Tomcat版本和JDK版本之间的映射关系"><a href="#Tomcat版本和JDK版本之间的映射关系" class="headerlink" title="Tomcat版本和JDK版本之间的映射关系"></a>Tomcat版本和JDK版本之间的映射关系</h3><table>
+<thead>
+<tr>
+<th align="left">Apache Tomcat版本</th>
+<th align="left">支持的Java版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">9.0.x</td>
+<td align="left">8及以后</td>
+</tr>
+<tr>
+<td align="left">8.5.x的</td>
+<td align="left">7及以后</td>
+</tr>
+<tr>
+<td align="left">7.0.x</td>
+<td align="left">6及更高版本</td>
+</tr>
+</tbody></table>
+<h3 id="下载Tomcat"><a href="#下载Tomcat" class="headerlink" title="下载Tomcat"></a>下载Tomcat</h3><p>到<a target="_blank" rel="noopener" href="https://tomcat.apache.org/download-80.cgi">https://tomcat.apache.org/download-80.cgi</a>去下载tomcat,我这里下载的是8.5版本的:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/download/download64zip.png"></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>解压即可安装。</p>
+<h3 id="如何启动"><a href="#如何启动" class="headerlink" title="如何启动"></a>如何启动</h3><p>进入安装目录下的bin目录，点击<code>startup.bat</code>即可启动tomcat服务器:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/startup_shutdown/startup.png"><br>看到下面信息表示启动成功:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/startup_shutdown/startupYes.png"><br>然后浏览器打开<a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080/</a>,看到如下页面表示启动就表示启动成功了:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/startup_shutdown/browerYes.png"></p>
+<h3 id="如何关闭"><a href="#如何关闭" class="headerlink" title="如何关闭"></a>如何关闭</h3><p>进入安装目录下的bin目录，点击<code>shutdown.bat</code>即可关闭tomcat服务器。也可以直接关闭上面的<code>startup.bat</code>窗口来关闭服务器。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/startup_shutdown/shutdown.png"></p>
+<h3 id="配置Tomcat环境变量"><a href="#配置Tomcat环境变量" class="headerlink" title="配置Tomcat环境变量"></a>配置Tomcat环境变量</h3><ul>
+<li><code>CATALINA_HOME</code>配置为安装目录<code>D:\dev\apache-tomcat-8.5.35</code></li>
+<li><code>Path</code>环境变量中添加<code>%CATALINA_HOME%\bin</code></li>
+</ul>
+<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/path/CATALINA_HOME.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/path/path.png"></p>
+<h3 id="Tomcat服务器的目录结构"><a href="#Tomcat服务器的目录结构" class="headerlink" title="Tomcat服务器的目录结构"></a>Tomcat服务器的目录结构</h3><p>进入tomcat安装目录，可以看到目录结构如下:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/mulu/mulujiegou.png"><br>各个目录的说明如下:</p>
+<table>
+<thead>
+<tr>
+<th align="left">列名</th>
+<th align="left">列名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&#x2F;bin</td>
+<td align="left">存放各种平台下用于启动和停止 Tomcat的命令文件</td>
+</tr>
+<tr>
+<td align="left">&#x2F;conf</td>
+<td align="left">存放 Tomcat服务器的各种配置文件</td>
+</tr>
+<tr>
+<td align="left">&#x2F;lib</td>
+<td align="left">存放 Toma服务器所需的各种JAR文件</td>
+</tr>
+<tr>
+<td align="left">&#x2F;logs</td>
+<td align="left">存放 Tomcat的日志文件</td>
+</tr>
+<tr>
+<td align="left">&#x2F;temp</td>
+<td align="left">存放Tomcat运行时的临时文件</td>
+</tr>
+<tr>
+<td align="left">&#x2F;webapps</td>
+<td align="left">当发布Web应用时,默认会将Web应用的文件发布到于此目录中</td>
+</tr>
+<tr>
+<td align="left">&#x2F;work</td>
+<td align="left">Tomcat把由JSP生成的 Servlet放于此目录下</td>
+</tr>
+</tbody></table>
+<h2 id="Tomcat中手动创建第一个Java-Web项目"><a href="#Tomcat中手动创建第一个Java-Web项目" class="headerlink" title="Tomcat中手动创建第一个Java Web项目"></a>Tomcat中手动创建第一个Java Web项目</h2><p>写在这里文章就太长了，参见:<a target="_blank" rel="noopener" href="https://www.lansheng.net.cn/blog/ccc57c12/">Tomcat中手工编写第一个Java Web程序</a></p>
+<h2 id="WEB-INF目录详解"><a href="#WEB-INF目录详解" class="headerlink" title="WEB-INF目录详解"></a>WEB-INF目录详解</h2><p>WEB-INF目录结构如下图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/WEB-INF/jiegou.png"><br>WEB-INF是Java WEB应用的<code>安全目录</code>。<strong>所谓安全就是客户端无法访问,只有服务端可以访问的目录</strong>。</p>
+<h3 id="验证客户端是否真的无法访问WEB-INF目录"><a href="#验证客户端是否真的无法访问WEB-INF目录" class="headerlink" title="验证客户端是否真的无法访问WEB-INF目录"></a>验证客户端是否真的无法访问WEB-INF目录</h3><p>可以在WEB-INF目录中创建一个test.html文件:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>WEB-INF安全目录(客户端无法访问)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是WEB-INF目录中test.html文件<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后启动tomcat服务器器，看看浏览器能否打开这个html文件(<a target="_blank" rel="noopener" href="http://localhost:8080/HelloWorld/WEB-INF/test.html">http://localhost:8080/HelloWorld/WEB-INF/test.html</a>):<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/WEB-INF/clientcannot.png"><br>可以看到是客户端(浏览器)是不可以访问到的。</p>
+<h3 id="web-xml配置文件"><a href="#web-xml配置文件" class="headerlink" title="web.xml配置文件"></a>web.xml配置文件</h3><p><code>web.xml</code>是Web项目的配置文件,里面存放了项目的许多配置信息。如可以配置项目的欢迎界面。tomcat中会默认<code>index.jsp</code>页面当成项目的欢迎界面。所以，现在使用<a target="_blank" rel="noopener" href="http://localhost:8080/HelloWorld/">http://localhost:8080/HelloWorld/</a>来访问服务器，显示的还是index.jsp页面:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/web_xml/root.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/web_xml/index_jsp.png"><br>如果项目中没有index.jsp文件，如下面吧index.jsp改名为hhh.jsp<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/web_xml/renameindex_jsp.png"><br>再使用<a target="_blank" rel="noopener" href="http://localhost:8080/HelloWorld/">http://localhost:8080/HelloWorld/</a>，则现在使用项目名来访问就无法看到欢迎界面。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/web_xml/root404.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/web_xml/hhh_jsp.png"></p>
+<h3 id="修改欢迎界面"><a href="#修改欢迎界面" class="headerlink" title="修改欢迎界面"></a>修改欢迎界面</h3><p>打开web.xml文件，然后添加如下的标签:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>/index.jsp<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>/hhh.jsp<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>&lt;/welcome-file-list&gt;</code>顾名思义，就是欢迎界面列表，这里面可以放多个欢迎界面，服务器会按顺序列表中的欢迎界面是否存在，如果第一个存在就以第一个作为欢迎界面，如果不存在则显示后面的。<br>到<code>&lt;web-app&gt;&lt;/web-app&gt;</code>标签之中，如下所示</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;ISO-8859-1&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee</span></span></span><br><span class="line"><span class="string"><span class="tag">                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">version</span>=<span class="string">&quot;3.1&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">metadata-complete</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>/index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>/hhh.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>然后重启tomcat服务器，这个时候通过项目名<a target="_blank" rel="noopener" href="http://localhost:8080/HelloWorld/">http://localhost:8080/HelloWorld/</a>就能正常显示欢迎界面了：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/web_xml/welcome-file.png"></p>
+<h3 id="classes文件夹"><a href="#classes文件夹" class="headerlink" title="classes文件夹"></a>classes文件夹</h3><p>classes文件夹,用以存放项目生成的字节码<code>.class</code>文件。</p>
+<h3 id="lib文件夹"><a href="#lib文件夹" class="headerlink" title="lib文件夹"></a>lib文件夹</h3><p>lib文件夹,用于存放需要项目中用到的jar包,如连接数据库驱动的jar包等。</p>
+<h2 id="Web项目的虚拟路径"><a href="#Web项目的虚拟路径" class="headerlink" title="Web项目的虚拟路径"></a>Web项目的虚拟路径</h2><p>项目URL:<code>http://localhost:8080/HelloWorld/</code>中的<code>HelloWorld</code>是项目的虚拟路径，它默认和项目的名字HelloWorld一样，不过可以修改这个虚拟路径，让虚拟路径和项目的名字不一样。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/introduce/virtualPath.png"></p>
+<h3 id="eclipse中修改Web项目虚拟路径"><a href="#eclipse中修改Web项目虚拟路径" class="headerlink" title="eclipse中修改Web项目虚拟路径"></a>eclipse中修改Web项目虚拟路径</h3><h4 id="修改虚拟路径"><a href="#修改虚拟路径" class="headerlink" title="修改虚拟路径"></a>修改虚拟路径</h4><p>选择项目，打开首选项<code>Properties</code>：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/jsp/xunipath/properties.png"><br>找到<code>Web Proiect Settings</code>–<code>Context root:</code>,修改虚拟路径为<code>HelloWorld2</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/jsp/xunipath/rename.png"><br>到这里就修改成功过了，但是<code>还没有生效</code>。</p>
+<h4 id="重新部署以生效"><a href="#重新部署以生效" class="headerlink" title="重新部署以生效"></a>重新部署以生效</h4><p>先移除掉原来的web项目<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/jsp/xunipath/remove.png"><br>然后，重新部署：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/jsp/xunipath/restart.png"><br>这样就可以使用新的虚拟路径啦：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/jsp/xunipath/yes.png"><br>注意一定要先从tomcat中移除原来的项目。</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="http://tomcat.apache.org/whichversion.html">tomcat版本与JDK版本的对应关系</a><br><a target="_blank" rel="noopener" href="http://tomcat.apache.org/">tomact首页</a><br><a target="_blank" rel="noopener" href="https://tomcat.apache.org/download-80.cgi">tomcat8下载页</a><br><a target="_blank" rel="noopener" href="https://www.imooc.com/video/2925">慕课网 Tmcat目录结构</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/6d6d5543/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/6d6d5543/" class="post-title-link" itemprop="url">安装tomcat windows服务</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-12-08 21:46:18" itemprop="dateCreated datePublished" datetime="2018-12-08T21:46:18+08:00">2018-12-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/JSP/" itemprop="url" rel="index"><span itemprop="name">JSP</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/JSP/Java-Web%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">Java Web简介</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/6d6d5543/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/6d6d5543/" data-xid="/blog/6d6d5543/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <input type="button" onclick="open_closeTOC()" id="showcloseButton">
+<script>
+    function open_closeTOC() {var id = document.querySelector(".post-body > ul"); if (id.style.display == "block") {id.style.display = "none";document.getElementById("showcloseButton").value= "展开目录";}else if (id.style.display == "none") {id.style.display = "block";document.getElementById("showcloseButton").value="折叠目录";}}(function () {document.querySelector(".post-body > ul").style.display = "none";document.getElementById("showcloseButton").value="展开目录";})();
+</script>
+
+<h2 id="什么是Windows服务"><a href="#什么是Windows服务" class="headerlink" title="什么是Windows服务"></a>什么是Windows服务</h2><p> Windows 服务是操作系统启动时可以自动打开的应用程序。服务可以暂停和重新启动，服务不会显示任何用户界面,因而非常适合在服务器上使用。所以，如果把Tomcat注册为Windows Service服务，Tomcat就可以开机自动启动，一来不用每次手动启动,二来不会弹窗不会有那一大串东西输出到控制台上。</p>
+<h2 id="安装tomcat到Windows-服务"><a href="#安装tomcat到Windows-服务" class="headerlink" title="安装tomcat到Windows 服务"></a>安装tomcat到Windows 服务</h2><p>管理员打开命令cmd,然后<code>cd</code> 到tomcat安装目录下的bin目录，然后输入:<code>service install tomcat8</code>安装tomcat服务，服务名为<code>tomcat8</code>,这个名字可以随意起。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\dev\apache-tomcat-8.5.35\bin&gt;service install tomcat8</span><br></pre></td></tr></table></figure>
+<h2 id="启动tomcat服务器"><a href="#启动tomcat服务器" class="headerlink" title="启动tomcat服务器"></a>启动tomcat服务器</h2><p>输入命令<code>net start tomcat8</code>启动服务器，这个时候打开<a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080/</a>就可以看到服务器正常启动了:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/kaiqitomcatfuwu/yes.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D:\dev\apache-tomcat-8.5.35\bin&gt;net start tomcat8</span><br><span class="line">Apache Tomcat 8.5 tomcat8 服务正在启动 .</span><br><span class="line">Apache Tomcat 8.5 tomcat8 服务已经启动成功。</span><br><span class="line">D:\dev\apache-tomcat-8.5.35\bin&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="关闭tomcat服务器"><a href="#关闭tomcat服务器" class="headerlink" title="关闭tomcat服务器"></a>关闭tomcat服务器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:\dev\apache-tomcat-8.5.35\bin&gt;net stop tomcat8</span><br><span class="line">Apache Tomcat 8.5 tomcat8 服务正在停止.</span><br><span class="line">Apache Tomcat 8.5 tomcat8 服务已成功停止。</span><br><span class="line">D:\dev\apache-tomcat-8.5.35\bin&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="重启tomcat服务"><a href="#重启tomcat服务" class="headerlink" title="重启tomcat服务"></a>重启tomcat服务</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@echo off </span><br><span class="line">net stop tomcat8</span><br><span class="line">ping 127.0.0.1 -n 10</span><br><span class="line">net start tomcat8</span><br></pre></td></tr></table></figure>
+<p>先关闭，延迟10秒,然后再启动</p>
+<h2 id="重启时删除日志文件"><a href="#重启时删除日志文件" class="headerlink" title="重启时删除日志文件"></a>重启时删除日志文件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">再删除work下的文件和logs目录下的log文件，批处理命令:</span><br><span class="line">@echo off</span><br><span class="line">net stop tomcat8</span><br><span class="line">ping 127.0.0.1 -n 10</span><br><span class="line">del /f /s /q &quot;Tomcat安装目录\logs\*&quot;</span><br><span class="line">del /f /s /q &quot;Tomcat安装目录\work\*&quot;</span><br><span class="line">rmdir  /s /q &quot;Tomcat安装目录\work\work1&quot;</span><br><span class="line">rmdir  /s /q &quot;Tomcat安装目录\work\Catalina&quot; </span><br><span class="line">ping 127.0.0.1 -n 10</span><br><span class="line">net start tomcat8</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除tomcat-windows服务"><a href="#删除tomcat-windows服务" class="headerlink" title="删除tomcat windows服务"></a>删除tomcat windows服务</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D:\dev\apache-tomcat-8.5.35\bin&gt;service remove tomcat8</span><br><span class="line">Removing the service &#x27;tomcat8&#x27; ...</span><br><span class="line">Using CATALINA_BASE:    &quot;D:\dev\apache-tomcat-8.5.35&quot;</span><br><span class="line">The service &#x27;tomcat8&#x27; has been removed</span><br><span class="line">D:\dev\apache-tomcat-8.5.35\bin&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="比较tomcat-windows服务方式和startup-bat方法"><a href="#比较tomcat-windows服务方式和startup-bat方法" class="headerlink" title="比较tomcat windows服务方式和startup.bat方法"></a>比较tomcat windows服务方式和startup.bat方法</h2><p>通过这种方式来启动tomcat的好处就是不会弹窗，如果通过点击<code>startup.bat</code>来运行的话，会弹窗:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/tomcat/kaiqitomcatfuwu/startup_mode.png"><br>这样挡住屏幕，看起来不友好。</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/fengyao1995/article/details/52927202">https://blog.csdn.net/fengyao1995/article/details/52927202</a><br><a target="_blank" rel="noopener" href="http://gaoxianwei.iteye.com/blog/1520064">http://gaoxianwei.iteye.com/blog/1520064</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1004,495 +1685,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/5d465f14/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/5d465f14/" class="post-title-link" itemprop="url">bat批处理脚本自动部署Hexo博客</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-12-07 00:23:50" itemprop="dateCreated datePublished" datetime="2018-12-07T00:23:50+08:00">2018-12-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-13 09:34:42" itemprop="dateModified" datetime="2022-04-13T09:34:42+08:00">2022-04-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/" itemprop="url" rel="index"><span itemprop="name">自动部署</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/5d465f14/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/5d465f14/" data-xid="/blog/5d465f14/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>548</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="使用bat批处理的好处：省时间"><a href="#使用bat批处理的好处：省时间" class="headerlink" title="使用bat批处理的好处：省时间"></a>使用bat批处理的好处：省时间</h2><p>windows中<code>.bat</code>文件可以直接点击运行，我们可以把<code>多个命令</code>写在里面，运行这个<code>.bat</code>文件时就会运行了文件中的所有命令。这样我们运行一次，就等于运行了好多条指令,这会我们省下宝贵的时间。</p>
-<h2 id="bat脚本启动hexo本地服务器"><a href="#bat脚本启动hexo本地服务器" class="headerlink" title="bat脚本启动hexo本地服务器"></a>bat脚本启动hexo本地服务器</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="function">E:</span></span><br><span class="line"><span class="function"><span class="title">cd</span> <span class="title">E</span>:\<span class="title">Blog</span>\<span class="title">blog5</span></span></span><br><span class="line"><span class="function"><span class="title">hexo</span> <span class="title">s</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="指令说明"><a href="#指令说明" class="headerlink" title="指令说明"></a>指令说明</h3><p>第一条指令<code>@echo off</code>，关闭回显。<br>第二叫指令<code>E:</code>，切换到博客站点目录所在的盘符，我这里是E盘，<br>第三条指令<code>cd E:\Blog\blog5</code>，进入站点目录，我这里是<code>E:\Blog\blog5</code><br>第四条指令<code>hexo s</code>，启动本地服务器。</p>
-<h3 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h3><p>把上述指令写在一个以.bat为后缀的文本文件中，放到桌面上，命名为:<code>启动本地服务器.bat</code>。点击该文件即可运行，效果如下所示：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/hexoSettings/bathexo/startlocal.png"><br>这样就启动好本地服务器了,如果想关闭本地服务器，只需要关闭cmd黑窗口就行了。</p>
-<h2 id="bat脚本部署hexo博客"><a href="#bat脚本部署hexo博客" class="headerlink" title="bat脚本部署hexo博客"></a>bat脚本部署hexo博客</h2><p>修改一下hexo指令就可以部署了，如下所示：</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="function">E:</span></span><br><span class="line"><span class="function"><span class="title">cd</span> <span class="title">E</span>:\<span class="title">Blog</span>\<span class="title">blog5</span></span></span><br><span class="line"><span class="function"><span class="title">hexo</span> <span class="title">clean</span>&amp;&amp;<span class="title">hexo</span> <span class="title">g</span>&amp;&amp;<span class="title">hexo</span> <span class="title">d</span></span></span><br></pre></td></tr></table></figure>
-<p>还是在桌面创建一个名为<code>发布博客.bat</code>的文本文件，粘贴上述代码，然后点击运行，即可发布博客。发布完毕后cmd窗口会自动关闭。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/aa45691f/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/aa45691f/" class="post-title-link" itemprop="url">JDBC 简介</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-12-05 00:25:23" itemprop="dateCreated datePublished" datetime="2018-12-05T00:25:23+08:00">2018-12-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/JDBC/" itemprop="url" rel="index"><span itemprop="name">JDBC</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/aa45691f/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/aa45691f/" data-xid="/blog/aa45691f/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>306</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="JDBC-简介"><a href="#JDBC-简介" class="headerlink" title="JDBC 简介"></a>JDBC 简介</h1><p>JDBC全称为 <code>Java Data Base Connectivity</code> (java数据库连接)。JDBC是一种用于执行SQL语句的Java API，可以为多种关系数据库提供统一访问。<br>有了JDBC API，就不必为访问mysql数据库专门写一个程序，为访问Oracle数据库又专门写一个程序，或为访问sql server数据库又编写另一个程序等等，程序员只需用JDBC API写一个程序就够了。</p>
-<h1 id="JDBC编程步骤"><a href="#JDBC编程步骤" class="headerlink" title="JDBC编程步骤"></a>JDBC编程步骤</h1><ul>
-<li>加载驱动程序 </li>
-<li>获取数据库连接</li>
-<li>创建Statemant对象</li>
-</ul>
-<h2 id="加载驱动程序"><a href="#加载驱动程序" class="headerlink" title="加载驱动程序"></a>加载驱动程序</h2><p>每个数据库都会提供JDBC的驱动开发包，直接把JDBC操作所需要的开发包(一般为.jar或.zip)添加到eclipse buildpath中即可。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/127223bf/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/127223bf/" class="post-title-link" itemprop="url">获取ResultSet结果集记录条数</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-12-05 00:18:01" itemprop="dateCreated datePublished" datetime="2018-12-05T00:18:01+08:00">2018-12-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/JDBC/" itemprop="url" rel="index"><span itemprop="name">JDBC</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/127223bf/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/127223bf/" data-xid="/blog/127223bf/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>545</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="获取ResultSet结果集记录条数"><a href="#获取ResultSet结果集记录条数" class="headerlink" title="获取ResultSet结果集记录条数"></a>获取ResultSet结果集记录条数</h1><p>ResultSet表示数据库结果集的数据表，通常通过执行查询数据库的语句生成。<br>ResultSet 对象具有指向其当前数据行的<code>光标</code>。在最开始的时候，光标被置于第一行<code>之前</code>。next() 方法将光标移动到下一行；next()方法在 ResultSet 对象没有下一行时返回 false，所以可以在 while 循环中使用它来迭代结果集。 </p>
-<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>ResultSet 并没有提供类似size() 方法或者length属性的东西，让我们知道ResultSet中有多少个元素，不过在 JDBC 中，ResultSet的<code>行号是从1开始</code>，所以最后一行的行号,就等于ResultSet中元素的个数:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rs.last();<span class="comment">// 移动到最后</span></span><br><span class="line">System.out.println(rs.getRow());<span class="comment">// 获得结果集长度</span></span><br></pre></td></tr></table></figure>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/DrifterJ/article/details/17720271">https://blog.csdn.net/DrifterJ/article/details/17720271</a>](<a target="_blank" rel="noopener" href="https://blog.csdn.net/DrifterJ/article/details/17720271">https://blog.csdn.net/DrifterJ/article/details/17720271</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_21808961/column/info/24405/2">https://blog.csdn.net/qq_21808961&#x2F;column&#x2F;info&#x2F;24405&#x2F;2</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/84e4b0d4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/84e4b0d4/" class="post-title-link" itemprop="url">Java 插入mysql数据库中文乱码</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-12-03 20:49:58" itemprop="dateCreated datePublished" datetime="2018-12-03T20:49:58+08:00">2018-12-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MySQL/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" itemprop="url" rel="index"><span itemprop="name">中文乱码</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/84e4b0d4/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/84e4b0d4/" data-xid="/blog/84e4b0d4/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>197</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>我在使用java向mysql数据库中插入信息的时候，发现中文全部变成了诡异的问号<code>?</code>。中文乱码了，但是我检查了，数据库的字符集，校对集都是正常的。java项目用的编码也和数据库的编码一样。但是不知道怎么回事，输入就是乱码。</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>在URL中指定数据库编码就行了:注意数据库和后面的配置使用<code>?</code>隔开。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbc:mysql:///usersinfo?characterEncoding=gbk</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/53/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/53/">53</a><span class="page-number current">54</span><a class="page-number" href="/blog/page/55/">55</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/55/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1525,7 +1717,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22:52</span>
+    <span title="站点阅读时长">22:54</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">614</span>
+          <span class="site-state-item-count">618</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,540 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/5a1e201b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/5a1e201b/" class="post-title-link" itemprop="url">使用java上传图片到腾讯云对象存储并返回链接</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-10-10 22:03:14" itemprop="dateCreated datePublished" datetime="2018-10-10T22:03:14+08:00">2018-10-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">我的软件</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8COS/" itemprop="url" rel="index"><span itemprop="name">腾讯云对象存储COS</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/5a1e201b/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/5a1e201b/" data-xid="/blog/5a1e201b/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>690</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="使用java上传图片到腾讯云对象存储并返回链接"><a href="#使用java上传图片到腾讯云对象存储并返回链接" class="headerlink" title="使用java上传图片到腾讯云对象存储并返回链接"></a>使用java上传图片到腾讯云对象存储并返回链接</h1><p>不需要签名的公共链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDQikX6SPUAcqqcAxaT8ZmjPpyrUqwuKei%26q-sign-time%3D1540294349%3B1540294649%26q-key-time%3D1540294349%3B1540294649%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D1e368fb926c8858b9ed65b923a9030bb54234129)</span><br></pre></td></tr></table></figure>
+
+<p>显示效果：<br><img data-src="http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg?sign=q-sign-algorithm=sha1&q-ak=AKIDQikX6SPUAcqqcAxaT8ZmjPpyrUqwuKei&q-sign-time=1540294349;1540294649&q-key-time=1540294349;1540294649&q-header-list=host&q-url-param-list=&q-signature=1e368fb926c8858b9ed65b923a9030bb54234129"></p>
+<p>去掉签名的链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg</span><br></pre></td></tr></table></figure>
+
+<p>显示效果：<br><img data-src="http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg"></p>
+<p>https的图片链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg)</span><br></pre></td></tr></table></figure>
+
+<p>显示效果：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg"><br>使用https的其他图片<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg"></p>
+<p>最后的显示效果：<br><img data-src="http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg"></p>
+<p>软件上传效果：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E4%B8%8A%E4%BC%A0/%E6%88%91%E5%B0%86%E4%BC%9A%E4%B8%8A%E4%BC%A0%E5%88%B0%E8%85%BE%E8%AE%AF%E4%BA%91.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d7d49994/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/d7d49994/" class="post-title-link" itemprop="url">把可执行jar打包成exe文件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-10-10 19:39:02" itemprop="dateCreated datePublished" datetime="2018-10-10T19:39:02+08:00">2018-10-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">我的软件</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/%E6%88%AA%E5%9B%BE%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" itemprop="url" rel="index"><span itemprop="name">截图文字识别</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/d7d49994/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/d7d49994/" data-xid="/blog/d7d49994/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>上次的程序我通过使用,我通过<code>javaw -jar xxx.jar</code>来启动一个程序，在任务管理器中显示如下：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/javaw_process.png"><br>如果有一个javaw进行还好，但是我写的java工具程序可能比较多。进程名都是javaw的话不好分辨。<strong>在Windows下可以把可执行jar包打包成exe文件，这样就有自己的进程名，图标。便于我在任务管理器中管理</strong>(不需要时杀掉该进程)。</p>
+<h1 id="使用eclipse把java项目打包为可执行jar包"><a href="#使用eclipse把java项目打包为可执行jar包" class="headerlink" title="使用eclipse把java项目打包为可执行jar包"></a>使用eclipse把java项目打包为可执行jar包</h1><p>在项目上右键选择<code>Export</code>:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/eclipse_export.png"><br>然后展开Java项，选择<code>Runable JAR File</code>:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/eclipse_export_runableJarFile.png"><br>然后选择主类，jar包的输出位置，依赖包的打包方式。最后点击Finish即可。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/runableJarFileExport.png"></p>
+<h1 id="下载安装破解exe4j"><a href="#下载安装破解exe4j" class="headerlink" title="下载安装破解exe4j"></a>下载安装破解exe4j</h1><h2 id="下载exe4j"><a href="#下载exe4j" class="headerlink" title="下载exe4j"></a>下载exe4j</h2><p>破解版下载路径:<a target="_blank" rel="noopener" href="https://www.jb51.net/softs/541579.html">https://www.jb51.net/softs/541579.html</a></p>
+<h2 id="解压压缩包"><a href="#解压压缩包" class="headerlink" title="解压压缩包"></a>解压压缩包</h2><p>下载后，解压压缩包：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe_install.png"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>点击安装程序<code>exe4j_windows-x64_5_0_1.exe</code>进行安装。</p>
+<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>安装成功后启动<code>exe4j</code>,点击<code>Change License</code>按钮，然后运行压缩包中的<code>Keymaker.exe</code>生成秘钥。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_welcome.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_keymaker.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_License.png"><br>粘贴秘钥到exe4j，点击OK即可。</p>
+<h1 id="打包jar为exe"><a href="#打包jar为exe" class="headerlink" title="打包jar为exe"></a>打包jar为exe</h1><h2 id="Project-type"><a href="#Project-type" class="headerlink" title="Project type"></a>Project type</h2><p>选择<code>JAR in EXE mode</code>,然后点击<code>next</code>.<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_JaxInExe.png"></p>
+<h2 id="Application-info"><a href="#Application-info" class="headerlink" title="Application info"></a>Application info</h2><p>然后输入exe文件的简称，exe文件输出位置。然后<code>next</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_Applicationinfo.png"></p>
+<h2 id="Executable-info"><a href="#Executable-info" class="headerlink" title="Executable info"></a>Executable info</h2><p><code>Executable type:</code>中选择第一项<code>GUI application</code>,表示GUI程序，第二个选项表示控制台程序。<br><code>Executable name:</code>中输入软件的名称(<code>OCR</code>)<br><code>Icon file:</code>中选择图标的位置,图标需要实现下载好，图标不是必须的，没有也没关系。<br><strong>然后展开<code>Advanced options</code>选择第一项<code>Redirection</code></strong><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_Executableinfo.png"></p>
+<h3 id="Redirection"><a href="#Redirection" class="headerlink" title="Redirection"></a>Redirection</h3><p>然后勾选<code>Redirect stderr</code>,显示错误输出目录，然后点<code>next</code>,Service options 和Version info默认即可，所以点击<code>next</code>,<code>next</code>即可。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exej_Executableinfo_Redirection.png"></p>
+<h3 id="32-bit-or-64-bit"><a href="#32-bit-or-64-bit" class="headerlink" title="32-bit or 64-bit"></a>32-bit or 64-bit</h3><p>然后选择<code>Generate 64-bit executable</code>,生成64位的exe程序。然后<code>next</code>,<code>next</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_Executable%20info_64bit.png"></p>
+<h2 id="Java-invocation"><a href="#Java-invocation" class="headerlink" title="Java invocation"></a>Java invocation</h2><p>到了第5个配置项<code>Java invocation</code>这里要把刚才生成的可执行jar包添加进来。以及<code>所有的依赖包</code>，点击绿色的加号，添加可执行Jar包<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_Java_Invocation_add_jar.png"></p>
+<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_Java_Invocation_add_jar_archive.png"><br><strong>导入所有的依赖包</strong><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_Java_Invocation_add_alljar.png"></p>
+<p>然后在<code>Main class:</code>选择主类:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_Java_Invocation_add_jar_mainclass.png"></p>
+<h2 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h2><p>选择最小支持的版本，最大的版本可以默认不写。然后展开<code>Advanced options</code>,选择<code>Search sequence</code>。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_JRE_Serch%20sequency.png"><br>点击绿色的加号<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_JRE_Serchsequency_add.png"><br>然后，选择找到本地的jre：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_JRE_Serchsequency_add_jre.png"><br>然后把它移动到最顶端：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_JRE_Serchsequency_moveUp.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_JRE_Serchsequency_moveUp_yes.png"><br>然后<code>next</code>,</p>
+<p>然后默认，<code>next</code>：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exej_JRE_Preferred%20VM.png"><br>后面一直next即可。</p>
+<h1 id="运行生成的exe"><a href="#运行生成的exe" class="headerlink" title="运行生成的exe"></a>运行生成的exe</h1><p>打开输出目录双击运行exe文件即可运行<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/run_exe.png"></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29232943/article/details/52861800">https://blog.csdn.net/qq_29232943&#x2F;article&#x2F;details&#x2F;52861800</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/217f0f86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/217f0f86/" class="post-title-link" itemprop="url">如何修改java程序的进程名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-10-10 16:37:33" itemprop="dateCreated datePublished" datetime="2018-10-10T16:37:33+08:00">2018-10-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">我的软件</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/%E6%88%AA%E5%9B%BE%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" itemprop="url" rel="index"><span itemprop="name">截图文字识别</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/217f0f86/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/217f0f86/" data-xid="/blog/217f0f86/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>155</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="如何修改java程序的进程名"><a href="#如何修改java程序的进程名" class="headerlink" title="如何修改java程序的进程名"></a>如何修改java程序的进程名</h1><p>我的实现过程：<a href="/2018/10/10/MyApplications/%E6%88%AA%E5%9B%BE%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/%E6%8A%8A%E5%8F%AF%E6%89%A7%E8%A1%8Cjar%E6%89%93%E5%8C%85%E6%88%90exe%E6%96%87%E4%BB%B6/">把可执行jar打包成exe文件</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>相关论坛:<br><a target="_blank" rel="noopener" href="https://bbs.csdn.net/topics/320018756">https://bbs.csdn.net/topics/320018756</a><br><a target="_blank" rel="noopener" href="https://bbs.csdn.net/topics/370063237">https://bbs.csdn.net/topics/370063237</a><br><a target="_blank" rel="noopener" href="https://bbs.csdn.net/topics/90400835">https://bbs.csdn.net/topics/90400835</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d2e9fa85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/d2e9fa85/" class="post-title-link" itemprop="url">截图文字识别软件升级</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-10-02 12:29:28" itemprop="dateCreated datePublished" datetime="2018-10-02T12:29:28+08:00">2018-10-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">我的软件</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/%E6%88%AA%E5%9B%BE%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" itemprop="url" rel="index"><span itemprop="name">截图文字识别</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/d2e9fa85/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/d2e9fa85/" data-xid="/blog/d2e9fa85/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><ul>
+<li>加入保存保存快捷键<code>ctrl+s</code></li>
+<li>修改代码，支持多次保存</li>
+</ul>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="加入保存快捷键"><a href="#加入保存快捷键" class="headerlink" title="加入保存快捷键"></a>加入保存快捷键</h2><p>在ScreenShotWindow.java中加入快捷键变量声明：<br>第1步：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义保存快捷键</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">SaveImage_HOT_KEY</span> <span class="operator">=</span> <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
+<p>第2步：<br>注册快捷键：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加保存快捷键</span></span><br><span class="line">JIntellitype.getInstance().registerHotKey(SaveImage_HOT_KEY,</span><br><span class="line">        JIntellitype.MOD_CONTROL, (<span class="type">int</span>) <span class="string">&#x27;S&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>第3步：编写事件监听逻辑：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第3步：添加热键监听器JIntellitype</span></span><br><span class="line">        JIntellitype.getInstance().addHotKeyListener(<span class="keyword">new</span> <span class="title class_">HotkeyListener</span>()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onHotKey</span><span class="params">(<span class="type">int</span> markCode)</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">switch</span> (markCode)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 按下alt+w快捷键表示再次截屏</span></span><br><span class="line">                    <span class="keyword">case</span> SCREENSHOT_HOT_KEY :</span><br><span class="line">                        <span class="comment">// showMessage();</span></span><br><span class="line"><span class="comment">//                        ScreenShotOCR.visiable();</span></span><br><span class="line">                        <span class="comment">//如果当前窗口可见的话</span></span><br><span class="line">                        <span class="comment">//再次截屏时,隐藏工具窗口</span></span><br><span class="line">                        <span class="keyword">if</span>(tools!=<span class="literal">null</span>)</span><br><span class="line">                        &#123;</span><br><span class="line">                            tools.setVisible(<span class="literal">false</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="comment">//重新截屏</span></span><br><span class="line">                        <span class="keyword">try</span></span><br><span class="line">                        &#123;</span><br><span class="line">                            createScreenCapture();</span><br><span class="line">                        &#125; <span class="keyword">catch</span> (AWTException e)</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                        </span><br><span class="line">                        <span class="comment">//显示窗口</span></span><br><span class="line">                        ScreenShotOCR.visiable();</span><br><span class="line"><span class="comment">//                        //让窗口置顶</span></span><br><span class="line"><span class="comment">//                        这个应该在开始的时候就设置</span></span><br><span class="line"><span class="comment">//                        ScreenShotOCR.ssw.setAlwaysOnTop(true);</span></span><br><span class="line"><span class="comment">//                        tools.setAlwaysOnTop(true);</span></span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="comment">// alt+q快捷键表示退出程序</span></span><br><span class="line">                    <span class="keyword">case</span> EXIT_KEY_MARK :</span><br><span class="line">                        System.exit(<span class="number">0</span>);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> EXIT_SCREENSHOT_HOT_KEY:</span><br><span class="line">                        <span class="comment">//让窗口不显示</span></span><br><span class="line">                        ScreenShotWindow.<span class="built_in">this</span>.setVisible(<span class="literal">false</span>);<span class="comment">//不显示窗口</span></span><br><span class="line">                        tools.setLocation(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> SaveImage_HOT_KEY:</span><br><span class="line">                        <span class="comment">//让窗口不显示</span></span><br><span class="line">                        ScreenShotWindow.<span class="built_in">this</span>.setVisible(<span class="literal">false</span>);<span class="comment">//不显示窗口</span></span><br><span class="line">                        tools.setLocation(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">                        <span class="keyword">try</span></span><br><span class="line">                        &#123;</span><br><span class="line">                            saveImage();</span><br><span class="line">                        &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>关键代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> SaveImage_HOT_KEY:</span><br><span class="line">    <span class="comment">//让窗口不显示</span></span><br><span class="line">    ScreenShotWindow.<span class="built_in">this</span>.setVisible(<span class="literal">false</span>);<span class="comment">//不显示窗口</span></span><br><span class="line">    tools.setLocation(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        saveImage();<span class="comment">//按下ctrl+s时调用保存图片函数</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<p>这样就注册了保存快捷键了。接下来修改保存函数。</p>
+<h2 id="支持多次保存保存后不退出"><a href="#支持多次保存保存后不退出" class="headerlink" title="支持多次保存保存后不退出"></a>支持多次保存保存后不退出</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 保存图像到文件</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">saveImage</span><span class="params">()</span> <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="type">JFileChooser</span> <span class="variable">jfc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JFileChooser</span>();</span><br><span class="line">    jfc.setDialogTitle(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 文件过滤器，用户过滤可选择文件</span></span><br><span class="line">    <span class="type">FileNameExtensionFilter</span> <span class="variable">filter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileNameExtensionFilter</span>(<span class="string">&quot;PNG&quot;</span>,</span><br><span class="line">            <span class="string">&quot;png&quot;</span>);</span><br><span class="line">    jfc.setFileFilter(filter);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化一个默认文件（此文件会生成到桌面上）</span></span><br><span class="line">    <span class="type">SimpleDateFormat</span> <span class="variable">sdf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd HH-mm-ss&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> sdf.format(<span class="keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">    <span class="type">File</span> <span class="variable">filePath</span> <span class="operator">=</span> FileSystemView.getFileSystemView().getHomeDirectory();</span><br><span class="line">    <span class="type">File</span> <span class="variable">defaultFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(</span><br><span class="line">            filePath + File.separator + fileName + <span class="string">&quot;.png&quot;</span>);</span><br><span class="line">    jfc.setSelectedFile(defaultFile);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">flag</span> <span class="operator">=</span> jfc.showSaveDialog(<span class="built_in">this</span>);</span><br><span class="line">    <span class="keyword">if</span> (flag == JFileChooser.APPROVE_OPTION)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> jfc.getSelectedFile();</span><br><span class="line">        <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> file.getPath();</span><br><span class="line">        <span class="comment">// 检查文件后缀，放置用户忘记输入后缀或者输入不正确的后缀</span></span><br><span class="line">        <span class="keyword">if</span> (!(path.endsWith(<span class="string">&quot;.png&quot;</span>) || path.endsWith(<span class="string">&quot;.PNG&quot;</span>)))</span><br><span class="line">        &#123;</span><br><span class="line">            path += <span class="string">&quot;.png&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 写入文件</span></span><br><span class="line">        ImageIO.write(saveImage, <span class="string">&quot;png&quot;</span>, <span class="keyword">new</span> <span class="title class_">File</span>(path));</span><br><span class="line">        <span class="comment">//不退出</span></span><br><span class="line">        <span class="comment">//System.exit(0);</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原先的代码中截图后就退出了，关键代码：<code>System.exit(0);</code>把这一段话注释掉即可。</p>
+<h1 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h1><p>无法使用ctrl+s快捷键，因为JIntellitype注册的是<strong>全局快捷键</strong>，在其他软件中按下<code>ctrl+s</code>进行保存文档的时候，系统会误认为是调用了保存图片。这样是不对的。这里解决方法是吧保存图片快捷键改成<code>ctrl+alt+s</code>。局部快捷键怎么设置为还不知道。先别管他，能用就行了，我先去学点其他东西。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1112,1351 +1646,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/14ec9002/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/14ec9002/" class="post-title-link" itemprop="url">Java截图</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-09-13 10:31:53" itemprop="dateCreated datePublished" datetime="2018-09-13T10:31:53+08:00">2018-09-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/java-GUI/" itemprop="url" rel="index"><span itemprop="name">java GUI</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/14ec9002/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/14ec9002/" data-xid="/blog/14ec9002/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>11k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>10 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>源码：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/feitianshaoxai/p/6560110.html">https://www.cnblogs.com/feitianshaoxai/p/6560110.html</a></p>
-<p>上面代码实现了截图的操作，我要在上面的代码中加入自动保存然后调用百度识图的操作。具体可以模仿上面的保存函数</p>
-<p>加入的百度文字识图按钮：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 百度识图按钮</span></span><br><span class="line"><span class="type">JButton</span> <span class="variable">baiduOCRButton</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JButton</span>(<span class="string">&quot;百度文字识别&quot;</span>);</span><br><span class="line">baiduOCRButton.addActionListener(<span class="keyword">new</span> <span class="title class_">ActionListener</span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">actionPerformed</span><span class="params">(ActionEvent e)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 保存截图</span></span><br><span class="line">            parent.baiduOCR();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e1)</span><br><span class="line">        &#123;</span><br><span class="line">            e1.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">toolBar.add(baiduOCRButton);</span><br></pre></td></tr></table></figure>
-<p>实现算法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用百度识图</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">baiduOCR</span><span class="params">()</span> <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 写入文件</span></span><br><span class="line">    ImageIO.write(saveImage, <span class="string">&quot;png&quot;</span>, <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;1.png&quot;</span>));</span><br><span class="line">    Thread baiduOCR=<span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">BaiduOCR</span>(<span class="string">&quot;1.png&quot;</span>,<span class="built_in">this</span>));</span><br><span class="line">    baiduOCR.start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>说明：直接把截图保存在工程路径下的“1.png”文件中。然后启动一个<code>baiduOCR</code>线程来处理这个图片：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> release.ocr.baidu;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> org.json.JSONObject;</span><br><span class="line"><span class="keyword">import</span> com.baidu.aip.ocr.AipOcr;</span><br><span class="line"><span class="keyword">import</span> clipboard.util.SysClipboardUtil;</span><br><span class="line"><span class="keyword">import</span> net.sf.json.JSONArray;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BaiduOCR</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 设置APPID/AK/SK</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">APP_ID</span> <span class="operator">=</span> <span class="string">&quot;你的百度APP_ID&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">API_KEY</span> <span class="operator">=</span> <span class="string">&quot;你的百度API_KEY&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">SECRET_KEY</span> <span class="operator">=</span> <span class="string">&quot;你的百度SECRET_KEY&quot;</span>;</span><br><span class="line">    <span class="comment">//窗体引用,用于使得窗体不可见</span></span><br><span class="line">    ScreenShotWindow screenShotWindow;</span><br><span class="line">    <span class="comment">//文件路径,我们识别的就是这个图片</span></span><br><span class="line">    String path;</span><br><span class="line">       <span class="comment">//通过构造函数传入参数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">BaiduOCR</span><span class="params">(String path,ScreenShotWindow screenShotWindow)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.path=path;</span><br><span class="line">        <span class="built_in">this</span>.screenShotWindow=screenShotWindow;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//让窗体不可见，以便用户可以进行其他操作</span></span><br><span class="line">        ScreenShotOCR.notVisiabl();</span><br><span class="line">        <span class="comment">//调用百度文字识别接口</span></span><br><span class="line">        baiduOCR(path);</span><br><span class="line">        <span class="comment">//回调函数，执行完毕后关闭程序</span></span><br><span class="line">        ScreenShotWindow.Exit();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**   </span></span><br><span class="line"><span class="comment">     * 调用百度文字识别</span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">baiduOCR</span><span class="params">(String path)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 初始化一个AipOcr</span></span><br><span class="line">        <span class="type">AipOcr</span> <span class="variable">client</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AipOcr</span>(APP_ID, API_KEY, SECRET_KEY);</span><br><span class="line">        <span class="comment">// 可选：设置网络连接参数</span></span><br><span class="line">        client.setConnectionTimeoutInMillis(<span class="number">2000</span>);</span><br><span class="line">        client.setSocketTimeoutInMillis(<span class="number">60000</span>);</span><br><span class="line">        <span class="comment">// 调用接口取得识别的结果：JSON数据</span></span><br><span class="line">        <span class="type">JSONObject</span> <span class="variable">res</span> <span class="operator">=</span> client.basicGeneral(path,</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;String, String&gt;());</span><br><span class="line">        <span class="type">String</span> <span class="variable">text</span> <span class="operator">=</span> res.toString(<span class="number">2</span>);</span><br><span class="line">            <span class="comment">//从JSON数据中取出翻译的结果</span></span><br><span class="line">            <span class="comment">//转为HashMap</span></span><br><span class="line">        HashMap&lt;String, Object&gt; resMap = (HashMap&lt;String, Object&gt;) res.toMap();</span><br><span class="line">        <span class="comment">// 迭代器</span></span><br><span class="line">        Iterator&lt;Map.Entry&lt;String, Object&gt;&gt; it = resMap.entrySet().iterator();</span><br><span class="line">        <span class="comment">// 缓冲，用来存储识别结果</span></span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">sbBuilder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        Map.Entry&lt;String, Object&gt; entry;</span><br><span class="line">            <span class="comment">//遍历Map集合</span></span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            entry = it.next();</span><br><span class="line">                    <span class="comment">//找到翻译结果组</span></span><br><span class="line">            <span class="keyword">if</span> (entry.getKey().equals(<span class="string">&quot;words_result&quot;</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 获取词组</span></span><br><span class="line">                <span class="type">JSONArray</span> <span class="variable">jsonArray</span> <span class="operator">=</span> JSONArray.fromObject(entry.getValue());</span><br><span class="line">                System.out.println(jsonArray.toString());</span><br><span class="line">                <span class="keyword">for</span> (Object object : jsonArray)</span><br><span class="line">                &#123;</span><br><span class="line">                    sbBuilder.append(object.toString());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            <span class="comment">//获取识别结果</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">words</span> <span class="operator">=</span> sbBuilder.toString();</span><br><span class="line">            <span class="comment">//使用正则表达式删除无用信息，只留下翻译的结果</span></span><br><span class="line">        words = words.replaceAll(<span class="string">&quot;(?:(?:\\\&quot;\\&#125;)?\\&#123;\\\&quot;words\\\&quot;:\\\&quot;|\\\&quot;\\&#125;)&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">        SysClipboardUtil.setSysClipboardText(words);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="完整的代码"><a href="#完整的代码" class="headerlink" title="完整的代码"></a>完整的代码</h2><h3 id="ScreenShotOCR类"><a href="#ScreenShotOCR类" class="headerlink" title="ScreenShotOCR类"></a>ScreenShotOCR类</h3><p>ScreenShotOCR类实现截图的功能，窗体的显示。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> release.ocr.baidu;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.AWTException;</span><br><span class="line"><span class="keyword">import</span> java.awt.BorderLayout;</span><br><span class="line"><span class="keyword">import</span> java.awt.Color;</span><br><span class="line"><span class="keyword">import</span> java.awt.Dimension;</span><br><span class="line"><span class="keyword">import</span> java.awt.EventQueue;</span><br><span class="line"><span class="keyword">import</span> java.awt.Graphics;</span><br><span class="line"><span class="keyword">import</span> java.awt.Image;</span><br><span class="line"><span class="keyword">import</span> java.awt.Rectangle;</span><br><span class="line"><span class="keyword">import</span> java.awt.Robot;</span><br><span class="line"><span class="keyword">import</span> java.awt.Toolkit;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.MouseAdapter;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.MouseEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.MouseMotionAdapter;</span><br><span class="line"><span class="keyword">import</span> java.awt.image.BufferedImage;</span><br><span class="line"><span class="keyword">import</span> java.awt.image.RescaleOp;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> javax.imageio.ImageIO;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JButton;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JFileChooser;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JToolBar;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JWindow;</span><br><span class="line"><span class="keyword">import</span> javax.swing.filechooser.FileNameExtensionFilter;</span><br><span class="line"><span class="keyword">import</span> javax.swing.filechooser.FileSystemView;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ScreenShotOCR</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">static</span> ScreenShotWindow ssw;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        EventQueue.invokeLater(<span class="keyword">new</span> <span class="title class_">Runnable</span>()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">try</span></span><br><span class="line">                &#123;</span><br><span class="line">                    ssw = <span class="keyword">new</span> <span class="title class_">ScreenShotWindow</span>();</span><br><span class="line">                    ssw.setVisible(<span class="literal">true</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (AWTException e)</span><br><span class="line">                &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 回调函数，使得当前窗口不可见。</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">notVisiabl</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        ssw.setVisible(<span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 截图矩形窗口</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ScreenShotWindow</span> <span class="keyword">extends</span> <span class="title class_">JWindow</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> orgx, orgy, endx, endy;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">BufferedImage</span> <span class="variable">image</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">BufferedImage</span> <span class="variable">tempImage</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">BufferedImage</span> <span class="variable">saveImage</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">ToolsWindow</span> <span class="variable">tools</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ScreenShotWindow</span><span class="params">()</span> <span class="keyword">throws</span> AWTException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 获取屏幕尺寸</span></span><br><span class="line">        <span class="type">Dimension</span> <span class="variable">d</span> <span class="operator">=</span> Toolkit.getDefaultToolkit().getScreenSize();</span><br><span class="line">        <span class="comment">// 设置窗口显示大小</span></span><br><span class="line">        <span class="built_in">this</span>.setBounds(<span class="number">0</span>, <span class="number">0</span>, d.width, d.height);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 截取整个屏幕</span></span><br><span class="line">        <span class="type">Robot</span> <span class="variable">robot</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Robot</span>();</span><br><span class="line">        image = robot</span><br><span class="line">                .createScreenCapture(<span class="keyword">new</span> <span class="title class_">Rectangle</span>(<span class="number">0</span>, <span class="number">0</span>, d.width, d.height));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 设置鼠标监听事件</span></span><br><span class="line">        <span class="built_in">this</span>.addMouseListener(<span class="keyword">new</span> <span class="title class_">MouseAdapter</span>()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 鼠标按下</span></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">mousePressed</span><span class="params">(MouseEvent e)</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 鼠标松开时记录结束点坐标，并隐藏操作窗口</span></span><br><span class="line">                orgx = e.getX();</span><br><span class="line">                orgy = e.getY();</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (tools != <span class="literal">null</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    tools.setVisible(<span class="literal">false</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">mouseReleased</span><span class="params">(MouseEvent e)</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 鼠标松开时，显示操作窗口</span></span><br><span class="line">                <span class="keyword">if</span> (tools == <span class="literal">null</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    tools = <span class="keyword">new</span> <span class="title class_">ToolsWindow</span>(ScreenShotWindow.<span class="built_in">this</span>, e.getX(),</span><br><span class="line">                            e.getY());</span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    tools.setLocation(e.getX(), e.getY());</span><br><span class="line">                &#125;</span><br><span class="line">                tools.setVisible(<span class="literal">true</span>);</span><br><span class="line">                tools.toFront();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.addMouseMotionListener(<span class="keyword">new</span> <span class="title class_">MouseMotionAdapter</span>()</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">mouseDragged</span><span class="params">(MouseEvent e)</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 鼠标拖动时，记录坐标并重绘窗口</span></span><br><span class="line">                endx = e.getX();</span><br><span class="line">                endy = e.getY();</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 临时图像，用于缓冲屏幕区域放置屏幕闪烁</span></span><br><span class="line">                <span class="type">Image</span> <span class="variable">tempImage2</span> <span class="operator">=</span> createImage(ScreenShotWindow.<span class="built_in">this</span>.getWidth(),</span><br><span class="line">                        ScreenShotWindow.<span class="built_in">this</span>.getHeight());</span><br><span class="line">                <span class="type">Graphics</span> <span class="variable">g</span> <span class="operator">=</span> tempImage2.getGraphics();</span><br><span class="line">                g.drawImage(tempImage, <span class="number">0</span>, <span class="number">0</span>, <span class="literal">null</span>);</span><br><span class="line">                <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> Math.min(orgx, endx);</span><br><span class="line">                <span class="type">int</span> <span class="variable">y</span> <span class="operator">=</span> Math.min(orgy, endy);</span><br><span class="line">                <span class="type">int</span> <span class="variable">width</span> <span class="operator">=</span> Math.abs(endx - orgx) + <span class="number">1</span>;</span><br><span class="line">                <span class="type">int</span> <span class="variable">height</span> <span class="operator">=</span> Math.abs(endy - orgy) + <span class="number">1</span>;</span><br><span class="line">                <span class="comment">// 加上1防止width或height0</span></span><br><span class="line">                g.setColor(Color.BLUE);</span><br><span class="line">                g.drawRect(x - <span class="number">1</span>, y - <span class="number">1</span>, width + <span class="number">1</span>, height + <span class="number">1</span>);</span><br><span class="line">                <span class="comment">// 减1加1都了防止图片矩形框覆盖掉</span></span><br><span class="line">                saveImage = image.getSubimage(x, y, width, height);</span><br><span class="line">                g.drawImage(saveImage, x, y, <span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">                ScreenShotWindow.<span class="built_in">this</span>.getGraphics().drawImage(tempImage2, <span class="number">0</span>, <span class="number">0</span>,</span><br><span class="line">                        ScreenShotWindow.<span class="built_in">this</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">paint</span><span class="params">(Graphics g)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">RescaleOp</span> <span class="variable">ro</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RescaleOp</span>(<span class="number">0.8f</span>, <span class="number">0</span>, <span class="literal">null</span>);</span><br><span class="line">        tempImage = ro.filter(image, <span class="literal">null</span>);</span><br><span class="line">        g.drawImage(tempImage, <span class="number">0</span>, <span class="number">0</span>, <span class="built_in">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 保存图像到文件</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">saveImage</span><span class="params">()</span> <span class="keyword">throws</span> IOException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">JFileChooser</span> <span class="variable">jfc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JFileChooser</span>();</span><br><span class="line">        jfc.setDialogTitle(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 文件过滤器，用户过滤可选择文件</span></span><br><span class="line">        <span class="type">FileNameExtensionFilter</span> <span class="variable">filter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileNameExtensionFilter</span>(<span class="string">&quot;PNG&quot;</span>,</span><br><span class="line">                <span class="string">&quot;png&quot;</span>);</span><br><span class="line">        jfc.setFileFilter(filter);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 初始化一个默认文件（此文件会生成到桌面上）</span></span><br><span class="line">        <span class="type">SimpleDateFormat</span> <span class="variable">sdf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyymmddHHmmss&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> sdf.format(<span class="keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">        <span class="type">File</span> <span class="variable">filePath</span> <span class="operator">=</span> FileSystemView.getFileSystemView().getHomeDirectory();</span><br><span class="line">        <span class="type">File</span> <span class="variable">defaultFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(</span><br><span class="line">                filePath + File.separator + fileName + <span class="string">&quot;.png&quot;</span>);</span><br><span class="line">        jfc.setSelectedFile(defaultFile);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">flag</span> <span class="operator">=</span> jfc.showSaveDialog(<span class="built_in">this</span>);</span><br><span class="line">        <span class="keyword">if</span> (flag == JFileChooser.APPROVE_OPTION)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> jfc.getSelectedFile();</span><br><span class="line">            <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> file.getPath();</span><br><span class="line">            <span class="comment">// 检查文件后缀，放置用户忘记输入后缀或者输入不正确的后缀</span></span><br><span class="line">            <span class="keyword">if</span> (!(path.endsWith(<span class="string">&quot;.png&quot;</span>) || path.endsWith(<span class="string">&quot;.PNG&quot;</span>)))</span><br><span class="line">            &#123;</span><br><span class="line">                path += <span class="string">&quot;.png&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 写入文件</span></span><br><span class="line">            ImageIO.write(saveImage, <span class="string">&quot;png&quot;</span>, <span class="keyword">new</span> <span class="title class_">File</span>(path));</span><br><span class="line">            System.exit(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 调用百度识图</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">baiduOCR</span><span class="params">()</span> <span class="keyword">throws</span> IOException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 写入文件</span></span><br><span class="line">        ImageIO.write(saveImage, <span class="string">&quot;png&quot;</span>, <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;1.png&quot;</span>));</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">baiduOCR</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">BaiduOCR</span>(<span class="string">&quot;1.png&quot;</span>, <span class="built_in">this</span>));</span><br><span class="line">        baiduOCR.start();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">Exit</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        System.exit(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 操作窗口</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ToolsWindow</span> <span class="keyword">extends</span> <span class="title class_">JWindow</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> ScreenShotWindow parent;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ToolsWindow</span><span class="params">(ScreenShotWindow parent, <span class="type">int</span> x, <span class="type">int</span> y)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.parent = parent;</span><br><span class="line">        <span class="built_in">this</span>.init();</span><br><span class="line">        <span class="built_in">this</span>.setLocation(x, y);</span><br><span class="line">        <span class="built_in">this</span>.pack();</span><br><span class="line">        <span class="built_in">this</span>.setVisible(<span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.setLayout(<span class="keyword">new</span> <span class="title class_">BorderLayout</span>());</span><br><span class="line">        <span class="type">JToolBar</span> <span class="variable">toolBar</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JToolBar</span>(<span class="string">&quot;Java 截图&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 保存按钮</span></span><br><span class="line">        <span class="type">JButton</span> <span class="variable">saveButton</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JButton</span>(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line">        saveButton.addActionListener(<span class="keyword">new</span> <span class="title class_">ActionListener</span>()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">actionPerformed</span><span class="params">(ActionEvent e)</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">try</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 保存截图</span></span><br><span class="line">                    parent.saveImage();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e1)</span><br><span class="line">                &#123;</span><br><span class="line">                    e1.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        toolBar.add(saveButton);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 百度识图按钮</span></span><br><span class="line">        <span class="type">JButton</span> <span class="variable">baiduOCRButton</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JButton</span>(<span class="string">&quot;百度文字识别&quot;</span>);</span><br><span class="line">        baiduOCRButton.addActionListener(<span class="keyword">new</span> <span class="title class_">ActionListener</span>()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">actionPerformed</span><span class="params">(ActionEvent e)</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">try</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 保存截图</span></span><br><span class="line">                    parent.baiduOCR();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e1)</span><br><span class="line">                &#123;</span><br><span class="line">                    e1.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        toolBar.add(baiduOCRButton);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 关闭按钮</span></span><br><span class="line">        <span class="type">JButton</span> <span class="variable">closeButton</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JButton</span>(<span class="string">&quot;退出&quot;</span>);</span><br><span class="line">        closeButton.addActionListener(<span class="keyword">new</span> <span class="title class_">ActionListener</span>()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">actionPerformed</span><span class="params">(ActionEvent e)</span></span><br><span class="line">            &#123;</span><br><span class="line">                System.exit(<span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        toolBar.add(closeButton);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.add(toolBar, BorderLayout.NORTH);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="BaiduOCR类"><a href="#BaiduOCR类" class="headerlink" title="BaiduOCR类"></a>BaiduOCR类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> release.ocr.baidu;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> org.json.JSONObject;</span><br><span class="line"><span class="keyword">import</span> com.baidu.aip.ocr.AipOcr;</span><br><span class="line"><span class="keyword">import</span> clipboard.util.SysClipboardUtil;</span><br><span class="line"><span class="keyword">import</span> net.sf.json.JSONArray;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BaiduOCR</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 设置APPID/AK/SK</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">APP_ID</span> <span class="operator">=</span> <span class="string">&quot;你的BaiduAPP_ID&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">API_KEY</span> <span class="operator">=</span> <span class="string">&quot;你的&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">SECRET_KEY</span> <span class="operator">=</span> <span class="string">&quot;你的&quot;</span>;</span><br><span class="line">    <span class="comment">//窗体引用</span></span><br><span class="line">    ScreenShotWindow screenShotWindow;</span><br><span class="line">    <span class="comment">//文件路径</span></span><br><span class="line">    String path;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">BaiduOCR</span><span class="params">(String path,ScreenShotWindow screenShotWindow)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.path=path;</span><br><span class="line">        <span class="built_in">this</span>.screenShotWindow=screenShotWindow;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//让窗体不可见</span></span><br><span class="line">        ScreenShotOCR.notVisiabl();</span><br><span class="line">        <span class="comment">//调用百度文字识别接口</span></span><br><span class="line">        baiduOCR(path);</span><br><span class="line">        <span class="comment">//回调函数，执行完毕后关闭程序</span></span><br><span class="line">        ScreenShotWindow.Exit();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**   </span></span><br><span class="line"><span class="comment">     * 调用百度文字识别</span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">baiduOCR</span><span class="params">(String path)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 初始化一个AipOcr</span></span><br><span class="line">        <span class="type">AipOcr</span> <span class="variable">client</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AipOcr</span>(APP_ID, API_KEY, SECRET_KEY);</span><br><span class="line">        <span class="comment">// 可选：设置网络连接参数</span></span><br><span class="line">        client.setConnectionTimeoutInMillis(<span class="number">2000</span>);</span><br><span class="line">        client.setSocketTimeoutInMillis(<span class="number">60000</span>);</span><br><span class="line">        <span class="comment">// 调用接口</span></span><br><span class="line">        <span class="type">JSONObject</span> <span class="variable">res</span> <span class="operator">=</span> client.basicGeneral(path,</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;String, String&gt;());</span><br><span class="line">        <span class="type">String</span> <span class="variable">text</span> <span class="operator">=</span> res.toString(<span class="number">2</span>);</span><br><span class="line">        HashMap&lt;String, Object&gt; resMap = (HashMap&lt;String, Object&gt;) res.toMap();</span><br><span class="line">        <span class="comment">// 第二种：</span></span><br><span class="line">        Iterator&lt;Map.Entry&lt;String, Object&gt;&gt; it = resMap.entrySet().iterator();</span><br><span class="line">        <span class="comment">// 缓冲，用来存储识别结果</span></span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">sbBuilder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        Map.Entry&lt;String, Object&gt; entry;</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())</span><br><span class="line">        &#123;</span><br><span class="line">            entry = it.next();</span><br><span class="line">            <span class="keyword">if</span> (entry.getKey().equals(<span class="string">&quot;words_result&quot;</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 获取词组</span></span><br><span class="line">                <span class="type">JSONArray</span> <span class="variable">jsonArray</span> <span class="operator">=</span> JSONArray.fromObject(entry.getValue());</span><br><span class="line">                System.out.println(jsonArray.toString());</span><br><span class="line">                <span class="keyword">for</span> (Object object : jsonArray)</span><br><span class="line">                &#123;</span><br><span class="line">                    sbBuilder.append(object.toString());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">String</span> <span class="variable">words</span> <span class="operator">=</span> sbBuilder.toString();</span><br><span class="line">        words = words.replaceAll(<span class="string">&quot;(?:(?:\\\&quot;\\&#125;)?\\&#123;\\\&quot;words\\\&quot;:\\\&quot;|\\\&quot;\\&#125;)&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">        SysClipboardUtil.setSysClipboardText(words);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/83c2e83a/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/83c2e83a/" class="post-title-link" itemprop="url">LaTex 常用语法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-08-30 18:46:38" itemprop="dateCreated datePublished" datetime="2018-08-30T18:46:38+08:00">2018-08-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/latex/" itemprop="url" rel="index"><span itemprop="name">latex</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/latex/LaTex%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">LaTex语法</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/83c2e83a/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/83c2e83a/" data-xid="/blog/83c2e83a/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>16k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>15 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="公式显示位置"><a href="#公式显示位置" class="headerlink" title="公式显示位置"></a>公式显示位置</h1><h2 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h2><p>在公式两边各自加上一个美元符号即使行内公式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是文本$a^2+b^2=c^2$这是文本</span><br></pre></td></tr></table></figure>
-
-<p>显示效果：<br>这是文本$a^2+b^2&#x3D;c^2$这是文本</p>
-<h2 id="行间公式"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式</h2><p>在公式两边各自加上两个美元符号即使行将公式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是文本$$a^2+b^2=c^2$$这是文本</span><br></pre></td></tr></table></figure>
-
-<p>显示效果:<br>这是文本$$a^2+b^2&#x3D;c^2$$这是文本</p>
-<h1 id="数学符号"><a href="#数学符号" class="headerlink" title="数学符号"></a>数学符号</h1><h2 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h2><p>在LaTex中用<code>^</code>和<code>_</code>表明上下标。注意如果上下标只对其后面的一个字符起作用，如果上下标的内容超过一个字符，则需要用花括号<code>&#123;&#125;</code>包裹，否则上下标只对后面的一个符号起作用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$p^3_&#123;ij&#125;\qquad\sum_&#123;K=1&#125;^3ka^x+y\qquad\neq a^&#123;x+y&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>显示效果:<br>$$p^3_{ij}\qquad\sum_{K&#x3D;1}^3ka^x+y\qquad\neq a^{x+y}$$</p>
-<h2 id="导数符号"><a href="#导数符号" class="headerlink" title="导数符号"></a>导数符号</h2><p>导数符号<code>&#39;</code>是一个特殊的上标，可以适当连用表示多阶导数，也可以在其后连用上标：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$f(x)=x^2 \quad f&#x27;(x)=2x \quad f&#x27;&#x27;^&#123;2&#125;=4$</span><br></pre></td></tr></table></figure>
-
-<p>显示效果:<br>$f(x)&#x3D;x^2 \quad f’(x)&#x3D;2x \quad f’’^{2}&#x3D;4$</p>
-<h3 id="偏导-条件偏导"><a href="#偏导-条件偏导" class="headerlink" title="偏导 条件偏导"></a>偏导 条件偏导</h3><p>偏导符号$\partial$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\left.\frac&#123;\partial f(x,y)&#125;&#123;\partial x&#125;\right|_&#123;x=0&#125;$</span><br></pre></td></tr></table></figure>
-
-<p>$\left.\frac{\partial f(x,y)}{\partial x}\right|_{x&#x3D;0}$</p>
-<h2 id="分式"><a href="#分式" class="headerlink" title="分式"></a>分式</h2><p>如果是简单的根式，可以写成斜分式的形式,如<code>3/8</code>:,在latex中分式一般使用<code>\frac&#123;分子&#125;&#123;分母&#125;</code>来书写。不过这种分式的大小在行间公式是正常显示大小，而在行内被极度压缩了。amsmath提供了方便的命令<code>\dfrac&#123;分子&#125;&#123;分母&#125;</code>和<code>\tfrac&#123;分子&#125;&#123;分母&#125;</code>,令用户能够在行内使用正常大小的行内公式。<br>显示效果:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">斜分式: $3/8 \qquad $,压缩分式：$\frac&#123;3&#125;&#123;8&#125;\qquad$ ,显示正常大小：$\dfrac&#123;3&#125;&#123;8&#125;$</span><br></pre></td></tr></table></figure>
-
-<p>斜分式: $3&#x2F;8 \qquad $,压缩分式：$\frac{3}{8}\qquad$ ,显示正常大小：$\dfrac{3}{8}$</p>
-<h2 id="根式"><a href="#根式" class="headerlink" title="根式"></a>根式</h2><p>一般的根式使用<code>\sqrt&#123;…&#125;</code>表示，表示n此方根式写成<code>\sqrt[n]&#123;…&#125;</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$\sqrt&#123;x&#125; \Leftrightarrow x^&#123;1/2&#125;</span><br><span class="line">\quad \sqrt[3]&#123;2&#125;</span><br><span class="line">\quad \sqrt&#123;x^&#123;2&#125;+\sqrt&#123;y&#125;&#125;$</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
-
-<p>显示效果:<br>$\sqrt{x} \Leftrightarrow x^{1&#x2F;2}<br>\quad \sqrt[3]{2}<br>\quad \sqrt{x^{2}+\sqrt{y}}<br>$</p>
-<p>特殊的分式形式，如二项式结构，由amsmath宏包的\binom命令生成：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Pascal&#x27;s rule is</span><br><span class="line">$$</span><br><span class="line">\binom&#123;n&#125;&#123;k&#125;=\binom&#123;n-1&#125;&#123;k&#125;+\binom&#123;n-1&#125;&#123;k-1&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-
-<p>Pascal’s rule is<br>$$<br>\binom{n}{k}&#x3D;\binom{n-1}{k}+\binom{n-1}{k-1}<br>$$</p>
-<h2 id="无穷大符号"><a href="#无穷大符号" class="headerlink" title="无穷大符号"></a>无穷大符号</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$\infty$</span><br></pre></td></tr></table></figure>
-<p>$\infty$</p>
-<p>这个是个缩写，原单词(infinity)读音:<input type="button" onclick="sst('infinity')" value="播放" /></p>
-<script>
-    function sst(text) {
-        var audio = document.createElement("audio");
-        audio.src = "https://fanyi.baidu.com/gettts?lan=en&text=" + text + "&spd=5&source=web";
-        document.body.appendChild(audio);
-        audio.loop = false;
-        audio.play();
-        audio.addEventListener('ended', function () {
-            document.body.removeChild(audio);
-        }, false);
-    }
-</script>
-
-<h2 id="省略号"><a href="#省略号" class="headerlink" title="省略号"></a>省略号</h2><table>
-<thead>
-<tr>
-<th align="left">名称</th>
-<th align="left">符号</th>
-<th align="left">效果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">水平省略号</td>
-<td align="left">\dots</td>
-<td align="left">$\dots$</td>
-</tr>
-<tr>
-<td align="left">水平省略号</td>
-<td align="left">\cdots</td>
-<td align="left">$\cdots$</td>
-</tr>
-<tr>
-<td align="left">竖直省略号</td>
-<td align="left">\vdots</td>
-<td align="left">$\vdots$</td>
-</tr>
-<tr>
-<td align="left">斜排省略号</td>
-<td align="left">\ddots</td>
-<td align="left">$\ddots$</td>
-</tr>
-</tbody></table>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$a_1,a_2,\dots,a_n$</span><br><span class="line">$a_1,a_2,\cdots,a_n$</span><br></pre></td></tr></table></figure>
-<p>显示效果如下：<br>$a_1,a_2,\dots,a_n$<br>$a_1,a_2,\cdots,a_n$</p>
-<p><code>\cdots</code>和<code>\dots</code>是完全等效的，它们既能用在公式中，也用在文本里作为<strong>省略号</strong>。<br>除此之外，在矩阵中可能会用到竖排的$\vdots$(\vdots)和斜排的$\ddots$(\ddots)</p>
-<h2 id="关系符"><a href="#关系符" class="headerlink" title="关系符"></a>关系符</h2><p>LaTex常见的关系符号除了可以直接输入的&#x3D;,&gt;,&lt;，其他符号用命令输入，常用的有不等于: $\ne$ (\ne),大于等于号: $\ge$ (\ge)和小于等于号:$\le$  (\le),约等于号: $\approx$ (\approx),等价 $\equiv$ (\equiv),正比: $\propto$ (\propto),相似: $\sim$ (\sim)等等。<br>LaTex还提供了自定义二元关系符的命令<code>\stackrel</code>,用于将一个符号叠加在原有的二元关系符之上：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">f_n(x) \stackrel&#123;*&#125;&#123;\approx&#125; 1</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>f_n(x) \stackrel{*}{\approx} 1<br>$$</p>
-<h2 id="巨算子"><a href="#巨算子" class="headerlink" title="巨算子"></a>巨算子</h2><p>积分号,求和号等符号称为**<a target="_blank" rel="noopener" href="http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf#54">巨算子</a>**。</p>
-<table>
-<thead>
-<tr>
-<th align="left">名称</th>
-<th align="left">符号</th>
-<th align="left">效果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">积分号</td>
-<td align="left">\int</td>
-<td align="left">$\int$</td>
-</tr>
-<tr>
-<td align="left">求和号</td>
-<td align="left">\sum</td>
-<td align="left">$\sum$</td>
-</tr>
-</tbody></table>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\sum_&#123;i=1&#125;^n \quad</span><br><span class="line">\int_0^&#123;\frac&#123;\pi&#125;&#123;2&#125;&#125; \quad</span><br><span class="line">\oint_0^&#123;\frac&#123;\pi&#125;&#123;2&#125;&#125; \quad</span><br><span class="line">\prod_\epsilon </span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\sum_{i&#x3D;1}^n \quad<br>\int_0^{\frac{\pi}{2}} \quad<br>\oint_0^{\frac{\pi}{2}} \quad<br>\prod_\epsilon<br>$$</p>
-<p>巨算符的上下标用作其<strong>上下限</strong>。行间公式中，积分号默认将上下限放在右上角和右下角，求和号默认在上下方；行内公式一律默认在右上角和右下角。<strong>可以在巨算符后使用\limits手动令上下限显示在上下方</strong>，\nolimits则相反,即不显示在上下方，也就是显示在右上角，右下角。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\sum\nolimits_&#123;i=1&#125;^n \quad</span><br><span class="line">\int\limits_0^&#123;\frac&#123;\pi&#125;&#123;2&#125;&#125; \quad</span><br><span class="line">\prod\nolimits_\epsilon </span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\sum\nolimits_{i&#x3D;1}^n \quad<br>\int\limits_0^{\frac{\pi}{2}} \quad<br>\prod\nolimits_\epsilon<br>$$</p>
-<h2 id="极限符号"><a href="#极限符号" class="headerlink" title="极限符号"></a>极限符号</h2><h3 id="行间公式极限"><a href="#行间公式极限" class="headerlink" title="行间公式极限"></a>行间公式极限</h3><p>行间公式下标默认放在符号的下方，所以直接再极限符号<code>\lim</code>下方写上符号极限范围即可：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$&#123;\lim_&#123;x \to +\infty&#125;&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>$${\lim_{x \to +\infty}}$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$&#123;\lim_&#123;x \to -\infty&#125;&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>$${\lim_{x \to -\infty}}$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$&#123;\lim_&#123;x \to 0&#125;&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>$${\lim_{x \to 0}}$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$&#123;\lim_&#123;x \to 0^+&#125;&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>$${\lim_{x \to 0^+}}$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$&#123; \lim_&#123;x \to 0&#125; \frac&#123;3x^2 +7x^3&#125;&#123;x^2 +5x^4&#125; = 3&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>$${ \lim_{x \to 0} \frac{3x^2 +7x^3}{x^2 +5x^4} &#x3D; 3}$$</p>
-<h3 id="行间极限"><a href="#行间极限" class="headerlink" title="行间极限"></a>行间极限</h3><p>行间的下标默认放在右下角，可以使用<code>\limits_&#123;下标&#125;</code>把下标放到符号下方即可。实例如下所示：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;\lim \limits_&#123;x \to -\infty&#125;&#125;$</span><br></pre></td></tr></table></figure>
-<p>行间极限符号:${\lim \limits_{x \to -\infty}}$</p>
-<h1 id="集合相关符号"><a href="#集合相关符号" class="headerlink" title="集合相关符号"></a>集合相关符号</h1><h2 id="元素与集合的关系"><a href="#元素与集合的关系" class="headerlink" title="元素与集合的关系"></a>元素与集合的关系</h2><table>
-<thead>
-<tr>
-<th align="left">名称</th>
-<th align="left">符号</th>
-<th align="left">效果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">属于</td>
-<td align="left">\in</td>
-<td align="left">$\in$</td>
-</tr>
-<tr>
-<td align="left">不属于</td>
-<td align="left">\notin</td>
-<td align="left">$\notin$</td>
-</tr>
-</tbody></table>
-<h2 id="集合与集合相关的关系"><a href="#集合与集合相关的关系" class="headerlink" title="集合与集合相关的关系"></a>集合与集合相关的关系</h2><table>
-<thead>
-<tr>
-<th align="left">名称</th>
-<th align="left">符号</th>
-<th align="left">效果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">空集</td>
-<td align="left">\emptyset</td>
-<td align="left">$\emptyset$</td>
-</tr>
-<tr>
-<td align="left">子集</td>
-<td align="left">\subset</td>
-<td align="left">$\subset$</td>
-</tr>
-<tr>
-<td align="left">真子集</td>
-<td align="left">\subseteq</td>
-<td align="left">$\subseteq$</td>
-</tr>
-<tr>
-<td align="left">交集</td>
-<td align="left">\bigcap和\cap</td>
-<td align="left">$\bigcap$和$\cap$</td>
-</tr>
-<tr>
-<td align="left">并集</td>
-<td align="left">\bigcup和\cup</td>
-<td align="left">$\bigcup$和$\cup$</td>
-</tr>
-</tbody></table>
-<h1 id="数学重音和上下括号"><a href="#数学重音和上下括号" class="headerlink" title="数学重音和上下括号"></a>数学重音和上下括号</h1><p>数学符号可以像文字一样<strong>加重音</strong>，比如对时间求导的符号$\dot{r}$(\dot{r})、$ddot{r}$(ddot{r})、表示向量的箭头$vec{r}$(vec{r})、表示欧式空间单位向量的$\hat{\mathbf{e}}$(\hat{\mathbf{e}})等，详见表<a target="_blank" rel="noopener" href="http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf#e1">4.9</a>。使用时要注意重音符号的作用区域，<strong>一般应当对某个符号而不是不符号加下表使用重音：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$\bar&#123;x_0&#125; \quad \bar&#123;x&#125;_0$\\[5pt]</span><br><span class="line">$\vec&#123;x_0&#125; \quad \vec&#123;x&#125;_0$\\[5pt]</span><br><span class="line">$\hat&#123;\mathbf&#123;e&#125;_x&#125; \quad</span><br><span class="line">\hat&#123;\mathbf&#123;e&#125;&#125;_x$</span><br></pre></td></tr></table></figure>
-
-<p>$\bar{x_0} \quad \bar{x}_0$<br>$\vec{x_0} \quad \vec{x}_0$<br>$\hat{\mathbf{e}_x} \quad<br>\hat{\mathbf{e}}_x$</p>
-<p>LATEX也能为多个字符加重音，包括直接画线的<code>\overline</code>和<code>\underline</code>命令（可叠加使用）、宽重音符号<code>\widehat</code>、表示向量的箭头<code>\overrightarrow</code>等。后两者详见表4.9和4.11等。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$0.\overline&#123;3&#125; =</span><br><span class="line">\underline&#123;\underline&#123;1/3&#125;&#125;$</span><br><span class="line">$\hat&#123;XY&#125; \qquad \widehat&#123;XY&#125;$</span><br><span class="line">$\vec&#123;AB&#125; \qquad</span><br><span class="line">\overrightarrow&#123;AB&#125;$</span><br></pre></td></tr></table></figure>
-<p>$0.\overline{3} &#x3D;<br>\underline{\underline{1&#x2F;3}}$<br>$\hat{XY} \qquad \widehat{XY}$<br>$\vec{AB} \qquad<br>\overrightarrow{AB}$</p>
-<p>\overbrace和\underbrace命令用来生成上&#x2F;下括号，各自可带一个上&#x2F;下标公式。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$\underbrace&#123;\overbrace&#123;a+b+c&#125;^6</span><br><span class="line">\cdot \overbrace&#123;d+e+f&#125;^7&#125;</span><br><span class="line">_\text&#123;meaning of life&#125; = 42$</span><br></pre></td></tr></table></figure>
-<p>$\underbrace{\overbrace{a+b+c}^6<br>\cdot \overbrace{d+e+f}^7}<br>_\text{meaning of life} &#x3D; 42$</p>
-<h1 id="多行公式"><a href="#多行公式" class="headerlink" title="多行公式"></a>多行公式</h1><h2 id="长公式折行"><a href="#长公式折行" class="headerlink" title="长公式折行"></a>长公式折行</h2><p>通常来讲应当避免写出超过一行而需要折行的长公式。如果一定要折行的话，<strong>优先在等号之前折行，其次在加号、减号之前，再次在乘号、除号之前。其它位置应当避免折行</strong>。<br>amsmath宏包的multline环境提供了书写折行长公式的方便环境。它允许用<code>\\\\</code>(markdown中显示:\\)折行，<strong>将公式编号放在最后一行</strong>。多行公式的<strong>首行左对齐</strong>，<strong>末行右对齐</strong>，<strong>其余行居中</strong>。<br>因为markdown中<code>\</code>是转义符，所以<code>\\</code>才表示一个\,所以这里要写四个<code>\</code>(<code>\\\\</code>)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;multline&#125;a + b + c + d + e + f+ g + h + i \\\\</span><br><span class="line">= j + k + l + m + n\\\\</span><br><span class="line">= o + p + q + r + s\\\\</span><br><span class="line">= t + u + v + x + z\end&#123;multline&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\begin{multline}a + b + c + d + e + f+ g + h + i \\<br>&#x3D; j + k + l + m + n\\<br>&#x3D; o + p + q + r + s\\<br>&#x3D; t + u + v + x + z\end{multline}<br>$$</p>
-<p>与表格不同的是，公式的最后一行不写<code>\\</code>，如果写了，反倒会产生一个多余的空行。类似<code>equation\*</code>，<code>multline\*</code>环境排版不带编号的折行长公式。</p>
-<p><strong>需要注意的是，只是在Hexo的默认Markdown渲染器中才需要使用四个反斜杠</strong><br><strong>为了通用，本文下面的演示代码都使用两个反斜杠</strong></p>
-<h2 id="多行公式-1"><a href="#多行公式-1" class="headerlink" title="多行公式"></a>多行公式</h2><p>更多的情况是，我们需要罗列一系列公式，并令其按照等号对齐。读者可能阅读过其它手册或者资料，知道LATEX提供了eqnarray环境。它按照等号左边——等号——等号右边呈三列对齐，但等号周围的空隙过大，加上公式编号等一些bug，目前已不推荐使用</p>
-<p><strong>目前最常用的是align环境，它将公式用&amp;隔为两部分并对齐。分隔符通常放在等号左边：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;align&#125;</span><br><span class="line">a &amp; = b + c \\</span><br><span class="line">&amp; = d + e</span><br><span class="line">\end&#123;align&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{align}<br>a &amp; &#x3D; b + c \\<br>&amp; &#x3D; d + e<br>\end{align}<br>$$</p>
-<p><code>align</code>环境会给每行公式都编号。我们仍然可以用<code>\notag</code>去掉某行的编号。在以下的例子，为了对齐加号，我们将分隔符放在等号右边，这时需要给等号后添加一对括号{}以产生正常的间距：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;align&#125;</span><br><span class="line">a =&#123;&#125; &amp; b + c \\</span><br><span class="line">=&#123;&#125; &amp; d + e + f + g + h + i+ j + k + l \notag \\</span><br><span class="line">&amp; + m + n + o \\</span><br><span class="line">=&#123;&#125; &amp; p + q + r + s</span><br><span class="line">\end&#123;align&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{align}<br>a &#x3D;{} &amp; b + c \\<br>&#x3D;{} &amp; d + e + f + g + h + i+ j + k + l \notag \\<br>&amp; + m + n + o \\<br>&#x3D;{} &amp; p + q + r + s<br>\end{align}<br>$$</p>
-<p>align还能够对齐多组公式，除等号前的&amp;之外，公式之间也用&amp;分隔：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;align&#125;</span><br><span class="line">a &amp;=1  &amp;  b &amp;=2   &amp; c &amp;=3   \\</span><br><span class="line">d &amp;=-1 &amp;  e &amp;=-2  &amp; f &amp;=-5</span><br><span class="line">\end&#123;align&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{align}<br>a &amp;&#x3D;1  &amp;  b &amp;&#x3D;2   &amp; c &amp;&#x3D;3   \\<br>d &amp;&#x3D;-1 &amp;  e &amp;&#x3D;-2  &amp; f &amp;&#x3D;-5<br>\end{align}<br>$$</p>
-<p>如果我们不需要按等号对齐，只需罗列数个公式，gather将是一个很好用的环境：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;gather&#125;</span><br><span class="line">a = b + c \\</span><br><span class="line">d = e + f + g \\</span><br><span class="line">h + i = j + k \notag \\</span><br><span class="line">l + m = n</span><br><span class="line">\end&#123;gather&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{gather}<br>a &#x3D; b + c \\<br>d &#x3D; e + f + g \\<br>h + i &#x3D; j + k \notag \\<br>l + m &#x3D; n<br>\end{gather}<br>$$</p>
-<p>align和gather有对应的不带编号的版本<code>align\*</code>和<code>gather\*</code>。</p>
-<h3 id="公用编号的多行公式"><a href="#公用编号的多行公式" class="headerlink" title="公用编号的多行公式"></a>公用编号的多行公式</h3><p>另一个常见的需求是将多个公式组在一起公用一个编号，编号位于公式的居中位置。为此，amsmath宏包提供了诸如aligned、gathered等环境，与equation环境套用。以-ed结尾的环境用法与前一节不以<code>-ed</code>结尾的环境用法一一对应。我们仅以aligned举例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;equation&#125;</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">a &amp;= b + c \\</span><br><span class="line">d &amp;= e + f + g \\</span><br><span class="line">h + i &amp;= j + k \\</span><br><span class="line">l + m &amp;= n</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\end&#123;equation&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{equation}<br>\begin{aligned}<br>a &amp;&#x3D; b + c \\<br>d &amp;&#x3D; e + f + g \\<br>h + i &amp;&#x3D; j + k \\<br>l + m &amp;&#x3D; n<br>\end{aligned}<br>\end{equation}<br>$$</p>
-<p>split环境和aligned环境用法类似，也用于和equation环境套用，区别是split只能将每行的一个公式分两栏，aligned允许每行多个公式多栏。</p>
-<h2 id="公式中的间距"><a href="#公式中的间距" class="headerlink" title="公式中的间距"></a>公式中的间距</h2><p>前文提到过，绝大部分时候，数学公式中各元素的间距是根据符号类型自动生成的，需要我们手动调整的情况极少。我们已经认识了两个生成间距的命令<code>\quad</code>和<code>\qquad</code>。在公式中我们还可能用到的间距包括<code>\,</code>、<code>\:</code>、<code>\;</code>以及负间距<code>\!</code>，其中<code>\quad</code>、<code>\qquad</code>和<code>\,</code>在文本和数学环境中可用，后三个命令只用于数学环境。文本中的<code>\␣</code>也能使用在数学公式中。<br>此处应该有图片，但是我的图片好像用不了了</p>
-<p>一个常见的用途是修正积分的被积函数$f(x)$和微元$dx$之间的距离。注意微元里的$d$用的是直立体：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\int_a^b f(x)\mathrm&#123;d&#125;x</span><br><span class="line">\qquad</span><br><span class="line">\int_a^b f(x)\,\mathrm&#123;d&#125;x</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\int_a^b f(x)\mathrm{d}x<br>\qquad<br>\int_a^b f(x),\mathrm{d}x<br>$$</p>
-<p>另一个用途是生成多重积分号。如果我们直接连写两个\int，之间的间距将会过宽，此时可以使用负间距<code>\\!</code>修正之。不过amsmath提供了更方便的多重积分号，如**二重积分<code>\iint</code><strong>、</strong>三重积分<code>\iiint</code>**等。</p>
-<h1 id="数组和矩阵"><a href="#数组和矩阵" class="headerlink" title="数组和矩阵"></a>数组和矩阵</h1><p>为了排版二维数组，LATEX提供了array环境，用法与tabular环境极为类似，也需要定义列格式，并用<code>\\</code>换行。数组可作为一个公式块，在外套用<code>\left</code>、<code>\right</code>等定界符:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\mathbf&#123;X&#125; = \left(</span><br><span class="line">\begin&#123;array&#125;&#123;cccc&#125;</span><br><span class="line">x_&#123;11&#125; &amp; x_&#123;12&#125; &amp; \ldots &amp; x_&#123;1n&#125;\\</span><br><span class="line">x_&#123;21&#125; &amp; x_&#123;22&#125; &amp; \ldots &amp; x_&#123;2n&#125;\\</span><br><span class="line">\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\</span><br><span class="line">x_&#123;n1&#125; &amp; x_&#123;n2&#125; &amp; \ldots &amp; x_&#123;nn&#125;\\</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">\right) </span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>还是因为是在markdown文档中<code>\</code>需要转义，所以两个斜杠:<code>\\</code>,在markdown文档中需要使用四个斜杠:<code>\\\\</code>来表示<br>$$<br>\mathbf{X} &#x3D; \left(<br>\begin{array}{cccc}<br>x_{11} &amp; x_{12} &amp; \ldots &amp; x_{1n}\\<br>x_{21} &amp; x_{22} &amp; \ldots &amp; x_{2n}\\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\<br>x_{n1} &amp; x_{n2} &amp; \ldots &amp; x_{nn}\\<br>\end{array}<br>\right)<br>$$</p>
-<p>值得注意的是，上一节末尾介绍的aligned等环境也可以用定界符包裹。我们还可以利用空的定界符排版出这样的效果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">|x| = \left\&#123;</span><br><span class="line">\begin&#123;array&#125;&#123;rl&#125;</span><br><span class="line">-x &amp; \text&#123;if &#125; x &lt; 0,\\</span><br><span class="line">0 &amp; \text&#123;if &#125; x = 0,\\</span><br><span class="line">x &amp; \text&#123;if &#125; x &gt; 0.</span><br><span class="line">\end&#123;array&#125; \right. </span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>|x| &#x3D; \left \{<br>\begin{array}{rl}<br>-x &amp; \text{if } x &lt; 0,\\<br>0 &amp; \text{if } x &#x3D; 0,\\<br>x &amp; \text{if } x &gt; 0.<br>\end{array} \right.<br>$$</p>
-<p>我不知道这里为什么显示不正常，可以能不支持把，下面的例子同样也可额完成，衣柜对于分段函数可以写下面的这种形式。</p>
-<h1 id="分段函数"><a href="#分段函数" class="headerlink" title="分段函数"></a>分段函数</h1><p>不过上述例子可以用amsmath提供的cases环境更轻松地完成：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$ |x| =</span><br><span class="line">\begin&#123;cases&#125;</span><br><span class="line">-x &amp; \text&#123;if &#125; x &lt; 0,\\</span><br><span class="line">0 &amp; \text&#123;if &#125; x = 0,\\</span><br><span class="line">x &amp; \text&#123;if &#125; x &gt; 0.</span><br><span class="line">\end&#123;cases&#125; $$</span><br></pre></td></tr></table></figure>
-<p>$$ |x| &#x3D;<br>\begin{cases}<br>-x &amp; \text{if } x &lt; 0,\\<br>0 &amp; \text{if } x &#x3D; 0,\\<br>x &amp; \text{if } x &gt; 0.<br>\end{cases} $$</p>
-<p>我们当然也可以用array环境排版各种矩阵。amsmath宏包还直接提供了多种排版矩阵的环境，包括不带定界符的matrix，以及带各种定界符的矩阵pmatrix（<code>(</code>）、bmatrix（<code>[</code>）、Bmatrix（<code>&#123;</code>）、vmatrix（<code>|</code>）、Vmatrix（<code>||</code>）。使用这些环境时，无需给定列格式5：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">1 &amp; 2 \\\\ 3 &amp; 4</span><br><span class="line">\end&#123;matrix&#125; \qquad</span><br><span class="line">\begin&#123;bmatrix&#125;</span><br><span class="line">x_&#123;11&#125; &amp; x_&#123;12&#125; &amp; \ldots &amp; x_&#123;1n&#125;\\</span><br><span class="line">x_&#123;21&#125; &amp; x_&#123;22&#125; &amp; \ldots &amp; x_&#123;2n&#125;\\</span><br><span class="line">\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\</span><br><span class="line">x_&#123;n1&#125; &amp; x_&#123;n2&#125; &amp; \ldots &amp; x_&#123;nn&#125;\\</span><br><span class="line">\end&#123;bmatrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{matrix}<br>1 &amp; 2 \\ 3 &amp; 4<br>\end{matrix} \qquad<br>\begin{bmatrix}<br>x_{11} &amp; x_{12} &amp; \ldots &amp; x_{1n}\\<br>x_{21} &amp; x_{22} &amp; \ldots &amp; x_{2n}\\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\<br>x_{n1} &amp; x_{n2} &amp; \ldots &amp; x_{nn}\\<br>\end{bmatrix}<br>$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;pmatrix&#125;</span><br><span class="line">1 &amp; 2 \\ 3 &amp; 4</span><br><span class="line">\end&#123;pmatrix&#125;</span><br><span class="line">\qquad</span><br><span class="line">\begin&#123;bmatrix&#125;</span><br><span class="line">1 &amp; 2 \\ 3 &amp; 4</span><br><span class="line">\end&#123;bmatrix&#125;</span><br><span class="line">\qquad</span><br><span class="line">\begin&#123;Bmatrix&#125;</span><br><span class="line">1 &amp; 2 \\ 3 &amp; 4</span><br><span class="line">\end&#123;Bmatrix&#125;</span><br><span class="line">\qquad</span><br><span class="line">\begin&#123;vmatrix&#125;</span><br><span class="line">1 &amp; 2 \\ 3 &amp; 4</span><br><span class="line">\end&#123;vmatrix&#125;</span><br><span class="line">\qquad</span><br><span class="line">\begin&#123;Vmatrix&#125;</span><br><span class="line">1 &amp; 2 \\ 3 &amp; 4</span><br><span class="line">\end&#123;Vmatrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>显示效果：<br>$$<br>\begin{pmatrix}<br>1 &amp; 2 \\ 3 &amp; 4<br>\end{pmatrix}<br>\qquad<br>\begin{bmatrix}<br>1 &amp; 2 \\ 3 &amp; 4<br>\end{bmatrix}<br>\qquad<br>\begin{Bmatrix}<br>1 &amp; 2 \\ 3 &amp; 4<br>\end{Bmatrix}<br>\qquad<br>\begin{vmatrix}<br>1 &amp; 2 \\ 3 &amp; 4<br>\end{vmatrix}<br>\qquad<br>\begin{Vmatrix}<br>1 &amp; 2 \\ 3 &amp; 4<br>\end{Vmatrix}<br>$$</p>
-<p>在矩阵中的元素里排版分式时，一来要用到<code>\dfrac</code>等命令，二来行与行之间有可能紧贴着，这时要用到3.6.6小节的方法来调节间距：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\mathbf&#123;H&#125;=</span><br><span class="line">\begin&#123;bmatrix&#125;</span><br><span class="line">\dfrac&#123;\partial^2 f&#125;&#123;\partial x^2&#125; &amp;</span><br><span class="line">\dfrac&#123;\partial^2 f&#125;</span><br><span class="line">&#123;\partial x \partial y&#125; \\</span><br><span class="line">\dfrac&#123;\partial^2 f&#125;</span><br><span class="line">&#123;\partial x \partial y&#125; &amp;</span><br><span class="line">\dfrac&#123;\partial^2 f&#125;&#123;\partial y^2&#125;</span><br><span class="line">\end&#123;bmatrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\mathbf{H}&#x3D;<br>\begin{bmatrix}<br>\dfrac{\partial^2 f}{\partial x^2} &amp;<br>\dfrac{\partial^2 f}<br>{\partial x \partial y} \\<br>\dfrac{\partial^2 f}<br>{\partial x \partial y} &amp;<br>\dfrac{\partial^2 f}{\partial y^2}<br>\end{bmatrix}<br>$$</p>
-<h1 id="数学符号的字体控制"><a href="#数学符号的字体控制" class="headerlink" title="数学符号的字体控制"></a>数学符号的字体控制</h1><h2 id="数学字母字体"><a href="#数学字母字体" class="headerlink" title="数学字母字体"></a>数学字母字体</h2><p>LATEX允许一部分数学符号切换字体，主要是拉丁字母、数字等等。表4.2给出了切换字体的命令。某一些命令需要字体宏包的支持。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$\mathcal&#123;R&#125; \quad \mathfrak&#123;R&#125;</span><br><span class="line">\quad \mathbb&#123;R&#125;$</span><br><span class="line">$$\mathcal&#123;L&#125;</span><br><span class="line">= -\frac&#123;1&#125;&#123;4&#125;F_&#123;\mu\nu&#125;F^&#123;\mu\nu&#125;$$</span><br><span class="line">$\mathfrak&#123;su&#125;(2)$ and</span><br><span class="line">$\mathfrak&#123;so&#125;(3)$ Lie algebr</span><br></pre></td></tr></table></figure>
-<p>$\mathcal{R} \quad \mathfrak{R}<br>\quad \mathbb{R}$<br>$$\mathcal{L}<br>&#x3D; -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}$$<br>$\mathfrak{su}(2)$ and<br>$\mathfrak{so}(3)$ Lie algebr</p>
-<h2 id="数学符号的尺寸"><a href="#数学符号的尺寸" class="headerlink" title="数学符号的尺寸"></a>数学符号的尺寸</h2><p>数学符号按照符号排版的位置规定尺寸，从大到小包括行间公式尺寸、行内公式尺寸、上下标尺寸、次级上下标尺寸。除了字号有别之外，行间和行内公式尺寸下的巨算符也使用不一样的大小。LATEX为每个数学尺寸指定了一个切换的命令，见4.3。<br>例如行间公式的分式内，分子分母使用行内公式尺寸，巨算符采用行内尺寸的形式。对比一下分子分母使用\displaystyle命令与否的区别：<br>这里有一个表格</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">P = \frac</span><br><span class="line">&#123;\sum_&#123;i=1&#125;^n (x_i- x)(y_i- y)&#125;</span><br><span class="line">&#123;\displaystyle \left[</span><br><span class="line">\sum_&#123;i=1&#125;^n (x_i-x)^2</span><br><span class="line">\sum_&#123;i=1&#125;^n (y_i-y)^2</span><br><span class="line">\right]^&#123;1/2&#125; &#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>P &#x3D; \frac<br>{\sum_{i&#x3D;1}^n (x_i- x)(y_i- y)}<br>{\displaystyle \left[<br>\sum_{i&#x3D;1}^n (x_i-x)^2<br>\sum_{i&#x3D;1}^n (y_i-y)^2<br>\right]^{1&#x2F;2} }<br>$$</p>
-<h1 id="符号表"><a href="#符号表" class="headerlink" title="符号表"></a>符号表</h1><p>后面把这些符号表粘贴进来就行了，后面的那些不需要再看了，保留官方文档的连接，现在只要留个印象。</p>
-<h2 id="文本-x2F-数学模式通用符号"><a href="#文本-x2F-数学模式通用符号" class="headerlink" title="文本&#x2F;数学模式通用符号"></a>文本&#x2F;数学模式通用符号</h2><table>
-<thead>
-<tr>
-<th align="left">文本&#x2F;数学模式通用符号</th>
-<th align="left">命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">$\{$</td>
-<td align="left">{</td>
-</tr>
-<tr>
-<td align="left">$\}$</td>
-<td align="left">}</td>
-</tr>
-<tr>
-<td align="left">$\$$</td>
-<td align="left">$</td>
-</tr>
-<tr>
-<td align="left">$\%$</td>
-<td align="left">%</td>
-</tr>
-<tr>
-<td align="left">$\dag$</td>
-<td align="left">\dag</td>
-</tr>
-<tr>
-<td align="left">$\S$</td>
-<td align="left">\S</td>
-</tr>
-<tr>
-<td align="left">$\copyright$</td>
-<td align="left">\copyright</td>
-</tr>
-<tr>
-<td align="left">$\dots$</td>
-<td align="left">\dots</td>
-</tr>
-<tr>
-<td align="left">$\ddag$</td>
-<td align="left">\ddag</td>
-</tr>
-<tr>
-<td align="left">$\P$</td>
-<td align="left">\P</td>
-</tr>
-<tr>
-<td align="left">$\pounds$</td>
-<td align="left">\pounds</td>
-</tr>
-</tbody></table>
-<h2 id="二元关系符"><a href="#二元关系符" class="headerlink" title="二元关系符"></a>二元关系符</h2><p>有的二元关系符都可以加\not前缀得到相反意义的关系符，例如\not&#x3D;就得到不等号（同\ne）。</p>
-<table>
-<thead>
-<tr>
-<th align="right">效果</th>
-<th align="left">命令</th>
-<th align="right">效果</th>
-<th align="left">命令</th>
-<th align="right">效果</th>
-<th align="left">命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">$&lt;$</td>
-<td align="left">&lt;</td>
-<td align="right">$&gt;$</td>
-<td align="left">&gt;</td>
-<td align="right">$&#x3D;$</td>
-<td align="left">&#x3D;</td>
-</tr>
-<tr>
-<td align="right">$\leq$</td>
-<td align="left">\leq or \le</td>
-<td align="right">$\ge$</td>
-<td align="left">\geq or \ge</td>
-<td align="right">$\equiv$</td>
-<td align="left">\equiv</td>
-</tr>
-<tr>
-<td align="right">$\ll$</td>
-<td align="left">\ll</td>
-<td align="right">$\gg$</td>
-<td align="left">\gg</td>
-<td align="right">$\doteq$</td>
-<td align="left">\doteq</td>
-</tr>
-<tr>
-<td align="right">$\prec$</td>
-<td align="left">\prec</td>
-<td align="right">$\succ$</td>
-<td align="left">\succ</td>
-<td align="right">$\sim$</td>
-<td align="left">\sim</td>
-</tr>
-<tr>
-<td align="right">$\preceq$</td>
-<td align="left">\preceq</td>
-<td align="right">$\succeq$</td>
-<td align="left">\succeq</td>
-<td align="right">$\simeq$</td>
-<td align="left">\simeq</td>
-</tr>
-<tr>
-<td align="right">$\subset$</td>
-<td align="left">\subset</td>
-<td align="right">$\supset$</td>
-<td align="left">\supset</td>
-<td align="right">$\approx$</td>
-<td align="left">\approx</td>
-</tr>
-<tr>
-<td align="right">$\subseteq$</td>
-<td align="left">\subseteq</td>
-<td align="right">$\supseteq$</td>
-<td align="left">\supseteq</td>
-<td align="right">$\cong$</td>
-<td align="left">\cong</td>
-</tr>
-<tr>
-<td align="right">$\sqsubset$</td>
-<td align="left">\sqsubset</td>
-<td align="right">$\sqsupset$</td>
-<td align="left">\sqsupset</td>
-<td align="right">$\Join$</td>
-<td align="left">\Join</td>
-</tr>
-<tr>
-<td align="right">$\sqsubseteq$</td>
-<td align="left">\sqsubseteq</td>
-<td align="right">$\sqsupseteq$</td>
-<td align="left">\sqsupseteq</td>
-<td align="right">$\bowtie$</td>
-<td align="left">\bowtie</td>
-</tr>
-<tr>
-<td align="right">$\in$</td>
-<td align="left">\in</td>
-<td align="right">$\ni$</td>
-<td align="left">\ni or \owns</td>
-<td align="right">$\propto$</td>
-<td align="left">\propto</td>
-</tr>
-<tr>
-<td align="right">$\vdash$</td>
-<td align="left">\vdash</td>
-<td align="right">$\dashv$</td>
-<td align="left">\dashv</td>
-<td align="right">$\models$</td>
-<td align="left">\models</td>
-</tr>
-<tr>
-<td align="right">$\mid$</td>
-<td align="left">\mid</td>
-<td align="right">$\parallel$</td>
-<td align="left">\parallel</td>
-<td align="right">$\perp$</td>
-<td align="left">\perp</td>
-</tr>
-<tr>
-<td align="right">$\smile$</td>
-<td align="left">\smile</td>
-<td align="right">$\frown$</td>
-<td align="left">\frown</td>
-<td align="right">$\asymp$</td>
-<td align="left">\asymp</td>
-</tr>
-<tr>
-<td align="right">$:$</td>
-<td align="left">:</td>
-<td align="right">$\notin$</td>
-<td align="left">\notin</td>
-<td align="right">$\ne$</td>
-<td align="left">\neq or \ne</td>
-</tr>
-</tbody></table>
-<h2 id="二元运算符"><a href="#二元运算符" class="headerlink" title="二元运算符"></a>二元运算符</h2><p>LaTex中的算符大多数是二元算符，除了直接用键盘可以输入的+，-，*，&#x2F;外，其他符号用命令输入，常用的符号有乘号：$\times$(\times),除号: $\div$ (\div),点乘: $\cdot$ (\cdot),加减号 $\pm$ (\pm) 或者 $\mp$ (\mp)等等。更多符号命令可参考表4.7以及表4.17 </p>
-<h3 id="图片内容"><a href="#图片内容" class="headerlink" title="图片内容"></a>图片内容</h3><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/eryuanyunsuan.png"></p>
-<h3 id="渲染效果"><a href="#渲染效果" class="headerlink" title="渲染效果"></a>渲染效果</h3><table>
-<thead>
-<tr>
-<th align="left">latex符号</th>
-<th align="left">效果</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">+</td>
-<td align="left">$+$</td>
-<td align="left">加号</td>
-</tr>
-<tr>
-<td align="left">-</td>
-<td align="left">$-$</td>
-<td align="left">减号</td>
-</tr>
-<tr>
-<td align="left">\pm</td>
-<td align="left">$\pm$</td>
-<td align="left">正负号</td>
-</tr>
-<tr>
-<td align="left">\mp</td>
-<td align="left">$\mp$</td>
-<td align="left">正负号</td>
-</tr>
-<tr>
-<td align="left">\cdot</td>
-<td align="left">$\cdot$</td>
-<td align="left">点乘</td>
-</tr>
-<tr>
-<td align="left">\times</td>
-<td align="left">$\times$</td>
-<td align="left">乘法</td>
-</tr>
-<tr>
-<td align="left">\div</td>
-<td align="left">$\div$</td>
-<td align="left">除法</td>
-</tr>
-<tr>
-<td align="left">\cup</td>
-<td align="left">$\cup$</td>
-<td align="left">并</td>
-</tr>
-<tr>
-<td align="left">\cap</td>
-<td align="left">$\cap$</td>
-<td align="left">交集</td>
-</tr>
-<tr>
-<td align="left">\sqcup</td>
-<td align="left">$\sqcup$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\sqcap</td>
-<td align="left">$\sqcap$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\vee,或者\lor</td>
-<td align="left">$\vee$,$\lor$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\wedgw,或者\land</td>
-<td align="left">$\wedge$,$\land$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\oplus</td>
-<td align="left">$\oplus$</td>
-<td align="left">异或运算</td>
-</tr>
-<tr>
-<td align="left">\ominus</td>
-<td align="left">$\ominus$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\odot</td>
-<td align="left">$\odot$</td>
-<td align="left">异或运算</td>
-</tr>
-<tr>
-<td align="left">\oslash</td>
-<td align="left">$\oslash$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\otimes</td>
-<td align="left">$\times$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\bigtriangleup</td>
-<td align="left">$\bigtriangleup$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\bigtriangledown</td>
-<td align="left">$\bigtriangledown$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\triangleleft</td>
-<td align="left">$\triangleleft$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\triangleright</td>
-<td align="left">$\triangleright$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\star</td>
-<td align="left">$\star$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\ast</td>
-<td align="left">$\ast$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\circ</td>
-<td align="left">$\circ$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\bigcirc</td>
-<td align="left">$\bigcirc$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\bullet</td>
-<td align="left">$\bullet$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\diamond</td>
-<td align="left">$\diamond$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\uplus</td>
-<td align="left">$\uplus$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\amalg</td>
-<td align="left">$\amalg$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\dagger</td>
-<td align="left">$\dagger$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\ddagger</td>
-<td align="left">$\ddagger$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-<tr>
-<td align="left">\wr</td>
-<td align="left">$\wr$</td>
-<td align="left">不懂叫啥</td>
-</tr>
-</tbody></table>
-<h2 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h2><p>latex希腊字母符号代码就是<code>斜杠+其英文名称</code>，如<code>$\alpha$</code>:$\alpha$,<code>$\beta$</code>:$\beta$…等。<br>大写的latex希腊字母就是<code>斜杠+首字母大写的英文名称</code>，如<code>$\Gamma$</code>:$\Gamma$,<code>$\Delta$</code>:$\Delta$…。<br>\Alpha，\Beta等希腊字母符号不存在，因为它们和拉丁字母A,B等一模一样；小写字母里也不存在\omicron，可以直接用字母<code>o</code>代替，省的打那么长的代码。</p>
-<h3 id="希腊字母顺序表"><a href="#希腊字母顺序表" class="headerlink" title="希腊字母顺序表"></a>希腊字母顺序表</h3><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">大写</th>
-<th align="left">小写</th>
-<th align="left">英文</th>
-<th align="left">读音</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">1</td>
-<td align="left">$A$</td>
-<td align="left">$\alpha$</td>
-<td align="left">alpha</td>
-<td align="left"><i class="fa fa-play" onclick="sst('alpha')"></i></td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left">$B$</td>
-<td align="left">$\beta$</td>
-<td align="left">beta</td>
-<td align="left"><i class="fa fa-play" onclick="sst('beta')"></i></td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">$\Gamma$</td>
-<td align="left">$\gamma$</td>
-<td align="left">gamma</td>
-<td align="left"><i class="fa fa-play" onclick="sst('gamma')"></i></td>
-</tr>
-<tr>
-<td align="left">4</td>
-<td align="left">$\Delta$</td>
-<td align="left">$\delta$</td>
-<td align="left">delta</td>
-<td align="left"><i class="fa fa-play" onclick="sst('delta')"></i></td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left">$E$</td>
-<td align="left">$\epsilon$</td>
-<td align="left">epsilon</td>
-<td align="left"><i class="fa fa-play" onclick="sst('epsilon')"></i></td>
-</tr>
-<tr>
-<td align="left">6</td>
-<td align="left">$Z$</td>
-<td align="left">$\zeta$</td>
-<td align="left">zeta</td>
-<td align="left"><i class="fa fa-play" onclick="sst('zeta')"></i></td>
-</tr>
-<tr>
-<td align="left">7</td>
-<td align="left">$H$</td>
-<td align="left">$\eta$</td>
-<td align="left">eta</td>
-<td align="left"><i class="fa fa-play" onclick="sst('eta')"></i></td>
-</tr>
-<tr>
-<td align="left">8</td>
-<td align="left">$\Theta$</td>
-<td align="left">$\theta$</td>
-<td align="left">theta</td>
-<td align="left"><i class="fa fa-play" onclick="sst('theta')"></i></td>
-</tr>
-<tr>
-<td align="left">9</td>
-<td align="left">$I$</td>
-<td align="left">$\iota$</td>
-<td align="left">iota</td>
-<td align="left"><i class="fa fa-play" onclick="sst('iota')"></i></td>
-</tr>
-<tr>
-<td align="left">10</td>
-<td align="left">$K$</td>
-<td align="left">$\kappa$</td>
-<td align="left">kappa</td>
-<td align="left"><i class="fa fa-play" onclick="sst('kappa')"></i></td>
-</tr>
-<tr>
-<td align="left">11</td>
-<td align="left">$\Lambda$</td>
-<td align="left">$\lambda$</td>
-<td align="left">lambda</td>
-<td align="left"><i class="fa fa-play" onclick="sst('lambda')"></i></td>
-</tr>
-<tr>
-<td align="left">12</td>
-<td align="left">$M$</td>
-<td align="left">$\mu$</td>
-<td align="left">mu</td>
-<td align="left"><i class="fa fa-play" onclick="sst('mu')"></i></td>
-</tr>
-<tr>
-<td align="left">13</td>
-<td align="left">$N$</td>
-<td align="left">$\nu$</td>
-<td align="left">nu</td>
-<td align="left"><i class="fa fa-play" onclick="sst('nu')"></i></td>
-</tr>
-<tr>
-<td align="left">14</td>
-<td align="left">$\Xi$</td>
-<td align="left">$\xi$</td>
-<td align="left">xi</td>
-<td align="left"><i class="fa fa-play" onclick="sst('xi')"></i></td>
-</tr>
-<tr>
-<td align="left">15</td>
-<td align="left">$O$</td>
-<td align="left">$\omicron$</td>
-<td align="left">omicron</td>
-<td align="left"><i class="fa fa-play" onclick="sst('omicron')"></i></td>
-</tr>
-<tr>
-<td align="left">16</td>
-<td align="left">$\Pi$</td>
-<td align="left">$\pi$</td>
-<td align="left">pi</td>
-<td align="left"><i class="fa fa-play" onclick="sst('pi')"></i></td>
-</tr>
-<tr>
-<td align="left">17</td>
-<td align="left">$P$</td>
-<td align="left">$\rho$</td>
-<td align="left">rho</td>
-<td align="left"><i class="fa fa-play" onclick="sst('rho')"></i></td>
-</tr>
-<tr>
-<td align="left">18</td>
-<td align="left">$\Sigma$</td>
-<td align="left">$\sigma$</td>
-<td align="left">sigma</td>
-<td align="left"><i class="fa fa-play" onclick="sst('sigma')"></i></td>
-</tr>
-<tr>
-<td align="left">19</td>
-<td align="left">$T$</td>
-<td align="left">$\tau$</td>
-<td align="left">tau</td>
-<td align="left"><i class="fa fa-play" onclick="sst('tau')"></i></td>
-</tr>
-<tr>
-<td align="left">20</td>
-<td align="left">$\Upsilon$</td>
-<td align="left">$\upsilon$</td>
-<td align="left">upsilon</td>
-<td align="left"><i class="fa fa-play" onclick="sst('upsilon')"></i></td>
-</tr>
-<tr>
-<td align="left">21</td>
-<td align="left">$\Phi$</td>
-<td align="left">$\phi$</td>
-<td align="left">phi</td>
-<td align="left"><i class="fa fa-play" onclick="sst('')"></i></td>
-</tr>
-<tr>
-<td align="left">22</td>
-<td align="left">$X$</td>
-<td align="left">$\chi$</td>
-<td align="left">chi</td>
-<td align="left"><i class="fa fa-play" onclick="sst('phi')"></i></td>
-</tr>
-<tr>
-<td align="left">23</td>
-<td align="left">$\Psi$</td>
-<td align="left">$\psi$</td>
-<td align="left">psi</td>
-<td align="left"><i class="fa fa-play" onclick="sst('psi')"></i></td>
-</tr>
-<tr>
-<td align="left">24</td>
-<td align="left">$\Omega$</td>
-<td align="left">$\omega$</td>
-<td align="left">omega</td>
-<td align="left"><i class="fa fa-play" onclick="sst('omega')"></i></td>
-</tr>
-</tbody></table>
-<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/4428067?fr=aladdin#2_1">https://baike.baidu.com/item/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/4428067?fr=aladdin#2_1</a></p>
-<h2 id="巨算符"><a href="#巨算符" class="headerlink" title="巨算符"></a>巨算符</h2><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/jusuanfu.png"></p>
-<h2 id="箭头"><a href="#箭头" class="headerlink" title="箭头"></a>箭头</h2><p><a target="_blank" rel="noopener" href="https://learnku.com/articles/46821">https://learnku.com/articles/46821</a><br>除了作为上下标之外，箭头还用于表示过程。amsmath的<code>\xleftarrow</code>和<code>\xrightarrow</code>命令可以为箭头增加上下标：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$$ a\xleftarrow&#123;x+y+z&#125; b $$</span><br><span class="line">$$ c\xrightarrow[x&lt;y]&#123;a*b*c&#125;d $$</span><br></pre></td></tr></table></figure>
-<p>显示效果:<br>$$<br>a\xleftarrow{x+y+z} b<br>$$<br>和<br>$$<br>c \xrightarrow [x&lt;y]{a*b*c} d<br>$$</p>
-<h3 id="箭头详细表-图片"><a href="#箭头详细表-图片" class="headerlink" title="箭头详细表 图片"></a>箭头详细表 图片</h3><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/jiantou.png"></p>
-<h3 id="箭头详细表-渲染"><a href="#箭头详细表-渲染" class="headerlink" title="箭头详细表 渲染"></a>箭头详细表 渲染</h3><table>
-<thead>
-<tr>
-<th align="left">效果</th>
-<th align="left">源码</th>
-<th align="left">效果</th>
-<th align="left">源码</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">$\leftarrow$或者$\gets$</td>
-<td align="left">\leftarrow或者\gets</td>
-<td align="left">$\longleftarrow$</td>
-<td align="left">\longleftarrow</td>
-</tr>
-<tr>
-<td align="left">$\rightarrow$或者$\to$</td>
-<td align="left">\rightarrow或者\to</td>
-<td align="left">$\longrightarrow$</td>
-<td align="left">\longrightarrow</td>
-</tr>
-<tr>
-<td align="left">$\leftrightarrow$</td>
-<td align="left">\leftrightarrow</td>
-<td align="left">$\longleftrightarrow$</td>
-<td align="left">\longleftrightarrow</td>
-</tr>
-<tr>
-<td align="left">$\Leftarrow$</td>
-<td align="left">\Leftarrow</td>
-<td align="left">$\Longleftarrow$</td>
-<td align="left">\Longleftarrow</td>
-</tr>
-<tr>
-<td align="left">$\Rightarrow$</td>
-<td align="left">\Rightarrow</td>
-<td align="left">$\Longrightarrow$</td>
-<td align="left">\Longrightarrow</td>
-</tr>
-</tbody></table>
-<h1 id="括号和定界符"><a href="#括号和定界符" class="headerlink" title="括号和定界符"></a>括号和定界符</h1><p>LATEX提供了多种括号和定界符表示公式块的边界。除小括号( )、中括号[ ]之外，其余都是LATEX命令，包括大括号{ }。表4.12和4.13给出了更多的括号&#x2F;定界符命令。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;a,b,c&#125; \neq \&#123;a,b,c\&#125;$</span><br></pre></td></tr></table></figure>
-<p>${a,b,c} \neq {a,b,c}$</p>
-<p>使用\left和\right命令可令括号（定界符）的大小可变，在行间公式中常用。LATEX会自动根据括号内的公式大小决定定界符大小。\left和\right必须成对使用。需要使用单个定界符时，另一个定界符写成\left.或\right.。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\[1 + \left(\frac&#123;1&#125;&#123;1-x^&#123;2&#125;&#125;</span><br><span class="line">\right)^3 \qquad</span><br><span class="line">\left.\frac&#123;\partial f&#125;&#123;\partial t&#125;</span><br><span class="line">\right|_&#123;t=0&#125;\]</span><br></pre></td></tr></table></figure>
-<p>$$<br>1 + \left(\frac{1}{1-x^{2}}<br>\right)^3 \qquad<br>\left.\frac{\partial f}{\partial t}<br>\right|_{t&#x3D;0}<br>$$</p>
-<h2 id="作为重音的箭头符号"><a href="#作为重音的箭头符号" class="headerlink" title="作为重音的箭头符号"></a>作为重音的箭头符号</h2><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/dingbujiantou.png"></p>
-<h2 id="定界符"><a href="#定界符" class="headerlink" title="定界符"></a>定界符</h2><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/tables/dingjief.png"></p>
-<h2 id="公式中的间距-1"><a href="#公式中的间距-1" class="headerlink" title="公式中的间距"></a>公式中的间距</h2><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/latex/latex/math/JianJu.png"></p>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>参考文献: <a target="_blank" rel="noopener" href="http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf">http://texdoc.net/texmf-dist/doc/latex/lshort-chinese/lshort-zh-cn.pdf</a><br>参考链接: <a target="_blank" rel="noopener" href="https://blog.csdn.net/thither_shore/article/details/52260742">https://blog.csdn.net/thither_shore&#x2F;article&#x2F;details&#x2F;52260742</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/87aa90c2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/87aa90c2/" class="post-title-link" itemprop="url">Hexo博客 网站名中文乱码</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-08-29 19:35:07" itemprop="dateCreated datePublished" datetime="2018-08-29T19:35:07+08:00">2018-08-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 15:56:38" itemprop="dateModified" datetime="2022-04-04T15:56:38+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/next%E4%B8%BB%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">next主题</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/next%E4%B8%BB%E9%A2%98/Debug/" itemprop="url" rel="index"><span itemprop="name">Debug</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/87aa90c2/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/87aa90c2/" data-xid="/blog/87aa90c2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>256</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="设置语言为简体中文"><a href="#设置语言为简体中文" class="headerlink" title="设置语言为简体中文"></a>设置语言为简体中文</h2><p>首先在站点配置文件中,把语言设置成中文。<br>例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: 蓝生的博客</span><br><span class="line">subtitle:</span><br><span class="line">description: 记录美好生活</span><br><span class="line">keywords:</span><br><span class="line">author: 蓝生</span><br><span class="line">language: zh_CN</span><br><span class="line">timezone:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="修改站点配置文件的编码为UTF-8"><a href="#修改站点配置文件的编码为UTF-8" class="headerlink" title="修改站点配置文件的编码为UTF-8"></a>修改站点配置文件的编码为UTF-8</h2><p>然后按下<code>ctrl+a</code>复制所有的配置项,然后修改站点配置文件的编码格式为<code>UTF-8</code>.然后再按下<code>Ctrl+V</code>,粘贴回去,保存。</p>
-<h2 id="重新启动"><a href="#重新启动" class="headerlink" title="重新启动"></a>重新启动</h2><p>然后重新启动即可：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/2fe8061d/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2fe8061d/" class="post-title-link" itemprop="url">Java使用BOM判断一个文件是不是UTF-8文件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-08-29 19:35:00" itemprop="dateCreated datePublished" datetime="2018-08-29T19:35:00+08:00">2018-08-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-IO%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">Java IO流</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-IO%E6%B5%81/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/2fe8061d/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/2fe8061d/" data-xid="/blog/2fe8061d/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="查看16进制的源文件"><a href="#查看16进制的源文件" class="headerlink" title="查看16进制的源文件"></a>查看16进制的源文件</h1><p>例如test_utf8.py这个文件用的是utf-8+BOM编码的.<br>现在打开这个文件，然后<strong>以16进制的方式</strong>查看该文件。<br>可以看到该文件以<code>EF BB BF</code>这三个字节开头，这三个字节表示该文件是UTF-8编码的。<br><code>EF BB BF</code>转成字节表示就是<code>-17,-69,-65</code>.不信来看下面的代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">&#123;</span><br><span class="line">    System.out.print((<span class="type">byte</span>)Integer.parseInt(<span class="string">&quot;EF&quot;</span>, <span class="number">16</span>)+<span class="string">&quot;,&quot;</span>);</span><br><span class="line">    System.out.print((<span class="type">byte</span>)Integer.parseInt(<span class="string">&quot;BB&quot;</span>, <span class="number">16</span>)+<span class="string">&quot;,&quot;</span>);</span><br><span class="line">    System.out.print((<span class="type">byte</span>)Integer.parseInt(<span class="string">&quot;BF&quot;</span>, <span class="number">16</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>运行结果：<code>-17,-69,-65</code></p>
-<h1 id="判断文件是不是udf-8加BOM"><a href="#判断文件是不是udf-8加BOM" class="headerlink" title="判断文件是不是udf-8加BOM"></a>判断文件是不是udf-8加BOM</h1><p>利用BOM判断一个文件是不是utf-8文件：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 判断是不是utf8编码</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> file 文件名</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> 根据文件字节序列的头部的编码信息判断是不是utf8编码</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isUTF8File</span><span class="params">(File file)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">in</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="type">byte</span>[] b = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        in = <span class="keyword">new</span> <span class="title class_">java</span>.io.FileInputStream(file);</span><br><span class="line"><span class="comment">//      读取3个字节</span></span><br><span class="line">        in.read(b);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e)</span><br><span class="line">    &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">    &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (in != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                in.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">            &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (b[<span class="number">0</span>] == -<span class="number">17</span> &amp;&amp; b[<span class="number">1</span>] == -<span class="number">69</span> &amp;&amp; b[<span class="number">2</span>] == -<span class="number">65</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>测试：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> <span class="string">&quot;D:\\学习\\python\\test_utf8.py&quot;</span>;</span><br><span class="line">    <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(path);</span><br><span class="line">    System.out.println(file.getAbsolutePath()+<span class="string">&quot;是utf-8编码的文件:&quot;</span>+isUTF8File(file));</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\学习\python\test_utf8.py是utf-8编码的文件:true</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><p>这么做的问题是只能判断带BOM的文件，如果不带BOM那就不好判断了。例如把上面的文件从utf-8+BOM改成utf-8格式，然后保存。<br>再切换到16进制视图查看：<br>可以看到<strong>不带BOM的utf-8格式的文件不以<code>EF BB BF</code>这三个字节开头</strong>，这样来上述的方法就不好使了。<br>运行结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\学习\python\test_utf8.py是utf-8编码的文件:false</span><br></pre></td></tr></table></figure>
-<p>可以看到我明明是utf-8的文件，但是判断的结果却是false。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/58/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/58/">58</a><span class="page-number current">59</span><a class="page-number" href="/blog/page/60/">60</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/60/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -2489,7 +1678,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22:52</span>
+    <span title="站点阅读时长">22:54</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
@@ -2525,7 +1714,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/blog/js/third-party/math/mathjax.js"></script>
 
 
