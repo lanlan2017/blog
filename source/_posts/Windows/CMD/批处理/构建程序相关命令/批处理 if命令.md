@@ -10,7 +10,6 @@ date: 2022-04-24 21:30:03
 updated: 2022-04-24 21:30:03
 ---
 # 批处理if命令
-
 ```bat
 if (condition) (do_something) ELSE (do_something_else)
 ```
