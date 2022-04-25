@@ -1,5 +1,5 @@
 ---
-title: cmd 设置环境cmd环境变量命令set 设置永久环境变量命令setx
+title: 批处理 set命令（临时环境变量） setx命令（永久环境变量）
 categories: 
   - Windows
   - CMD
@@ -9,15 +9,19 @@ abbrlink: 7c811d1c
 date: 2019-02-01 16:31:16
 updated: 2022-04-04 16:36:22
 ---
-# set命令
+# set命令（临时环境变量） setx命令（永久环境变量）
+set命令可设置当前cmd窗口的临时变量，
+setx命令可以设置系统环境变量。
+<!-- more -->
+## set命令
 set命令用于设置当前cmd窗口中的环境变量，只在当前cmd窗口有效，cmd窗口关闭后将会失效。而其不会影响到系统中保存的用户环境变量.
-## 批处理输入信息 set /p
+### 批处理输入信息 set /p
 ```cmd
 SET /P variable=[promptString]
 ```
 这个命令表示从键盘读入信息.
-# setx命令
-## setx设置永久用户环境变量
+## setx命令
+### setx设置永久用户环境变量
 ```cmd
 setx env_name env_value
 ```
@@ -29,7 +33,7 @@ setx "env_name" "env_value"
 ```cmd
 setx "path" "D:\test;%path%"
 ```
-## setx设置永久系统环境变量
+### setx设置永久系统环境变量
 setx加上`/m`参数表示设置的是系统的环境变量，格式如下所示:
 ```cmd
 setx env_name env_value /m
@@ -52,4 +56,6 @@ setx "Path" "D:\test;%path%" /m
 setx "Path" "D:\test;%path%" /m
 ```
 这样`D:\test`将会在path环境变量中出现两次.
+
+## 参考资料
 [https://blog.csdn.net/fm0517/article/details/52450940](https://blog.csdn.net/fm0517/article/details/52450940)
