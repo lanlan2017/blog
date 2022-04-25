@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">618</span>
+          <span class="site-state-item-count">620</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,263 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/a192b88d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/a192b88d/" class="post-title-link" itemprop="url">Linux tree命令中文乱码问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-02 17:46:51" itemprop="dateCreated datePublished" datetime="2021-06-02T17:46:51+08:00">2021-06-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/Debug/" itemprop="url" rel="index"><span itemprop="name">Debug</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/a192b88d/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/a192b88d/" data-xid="/blog/a192b88d/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>819</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="tree命令中文乱码问题"><a href="#tree命令中文乱码问题" class="headerlink" title="tree命令中文乱码问题"></a>tree命令中文乱码问题</h1><p>tree打印目录树时，遇到中文的目录或文件名时，打印的是<code>\数字</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# tree 文件管理和目录管理/</span><br><span class="line">\346\226\207\344\273\266\347\256\241\347\220\206\345\222\214\347\233\256\345\275\225\347\256\241\347\220\206/</span><br><span class="line">└── \346\226\207\344\273\266\347\256\241\347\220\206\345\222\214\347\233\256\345\275\225\347\256\241\347\220\2062</span><br><span class="line">    ├── HelloWorld2.c</span><br><span class="line">    ├── HelloWorld.c</span><br><span class="line">    └── \345\244\207\344\273\275</span><br><span class="line">        ├── p1.c</span><br><span class="line">        └── p2.c</span><br><span class="line"></span><br><span class="line">2 directories, 4 files</span><br><span class="line">[root@localhost Linux_Test]#</span><br></pre></td></tr></table></figure>
+<h1 id="解决方案：tree-N"><a href="#解决方案：tree-N" class="headerlink" title="解决方案：tree -N"></a>解决方案：tree -N</h1><p>man tree查看相关选项，可以看到使用-N选项可以<strong>按原样打印不可打印的字符，而不是转义的八进制数。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">......</span><br><span class="line">FILE OPTIONS</span><br><span class="line">......</span><br><span class="line">       -N     Print non-printable characters as is instead of as escaped octal numbers.</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>打印效果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# tree -N 文件管理和目录管理/</span><br><span class="line">文件管理和目录管理/</span><br><span class="line">└── 文件管理和目录管理2</span><br><span class="line">    ├── HelloWorld2.c</span><br><span class="line">    ├── HelloWorld.c</span><br><span class="line">    └── 备份</span><br><span class="line">        ├── p1.c</span><br><span class="line">        └── p2.c</span><br><span class="line"></span><br><span class="line">2 directories, 4 files</span><br><span class="line">[root@localhost Linux_Test]# </span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/52a4cedcfea0">https://www.jianshu.com/p/52a4cedcfea0</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/b066b617/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/b066b617/" class="post-title-link" itemprop="url">Linux vim取消搜索高亮</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-02 16:29:47" itemprop="dateCreated datePublished" datetime="2021-06-02T16:29:47+08:00">2021-06-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/vi%E7%BC%96%E8%BE%91%E5%99%A8%E5%8F%8A%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">vi编辑器及乱码问题</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/b066b617/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/b066b617/" data-xid="/blog/b066b617/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>225</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <!-- Blog/Programmin/Linux/General/VIEditorAndGarbledIssues/CancelSearchHighlight -->
+<h1 id="问题：vim搜索的关键字不会自动取消高亮显示"><a href="#问题：vim搜索的关键字不会自动取消高亮显示" class="headerlink" title="问题：vim搜索的关键字不会自动取消高亮显示"></a>问题：vim搜索的关键字不会自动取消高亮显示</h1><p>在vim中使用正则表达式搜索时，匹配的关键字会高亮显示。但当我们不需要搜索时，这些匹配的关键字还是高亮。退出文件后再次用vim打开该文件，还是会高亮显示。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>在末行模式下输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:noh</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:nohlsearch</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programmin/Linux/General/VIEditorAndGarbledIssues/CancelSearchHighlight/1.png" alt="图片"></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d0a287a26866">https://www.jianshu.com/p/d0a287a26866</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/k7arm/article/details/77370181">https://blog.csdn.net/k7arm/article/details/77370181</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1699,367 +1956,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/380c40ce/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/380c40ce/" class="post-title-link" itemprop="url">PicGo gitee图床</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-05-20 17:31:42" itemprop="dateCreated datePublished" datetime="2021-05-20T17:31:42+08:00">2021-05-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-13 09:32:17" itemprop="dateModified" datetime="2022-04-13T09:32:17+08:00">2022-04-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/%E5%9B%BE%E5%BA%8A/" itemprop="url" rel="index"><span itemprop="name">图床</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/380c40ce/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/380c40ce/" data-xid="/blog/380c40ce/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>895</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="本文已过时"><a href="#本文已过时" class="headerlink" title="本文已过时"></a>本文已过时</h1><p>gitee已经开启防盗链。</p>
-<p>如果你把图片放到gitee上，却把博客搭建在github pages上。那么你github pages上的博客是无法访问gitee仓库中的图片的。</p>
-<p>如果你还是想使用gitee作为图床，那么你可以把博客搭建到gitee pages上。</p>
-<p>同理，如果你想把博客搭建在github pages上，那么你就把图片放到github仓库中。又由于github的图片地址有时候会被墙，你可以使用加速器。（例如 网易UU加速器）</p>
-<p>以下为原文：</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近Github搭建的图床老是无法正常访问。所以我打算把放在github上的图床迁移到gitee上。</p>
-<h1 id="PicGo上安装gitee插件"><a href="#PicGo上安装gitee插件" class="headerlink" title="PicGo上安装gitee插件"></a>PicGo上安装gitee插件</h1><p>点击PicGo左侧的<strong>插件设置</strong>，然后在<strong>搜索框</strong>中输入<code>gitee</code>,安装<code>gitee x.x.x</code>这个插件:</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/1.png" alt="图片"></p>
-<h1 id="在gitee上创建仓库"><a href="#在gitee上创建仓库" class="headerlink" title="在gitee上创建仓库"></a>在gitee上创建仓库</h1><p>点击gitee网站右上方的加号，选择创建仓库，或者从github导入。</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/2.png" alt="图片"></p>
-<p>我原先在github上有图库了，这里选择从github导入。</p>
-<h1 id="获取gitee的token"><a href="#获取gitee的token" class="headerlink" title="获取gitee的token"></a>获取gitee的token</h1><p>点击gitee网站右上角的头像旁边的下拉菜单，选择<strong>设置</strong>，然后点击网站左侧的<strong>安全设置</strong>下方的<strong>私人令牌</strong>：</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/3.png"></p>
-<p>然后单击右上方的<strong>生成令牌</strong>按钮：</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/4.png"></p>
-<p>然后只勾选projects即可，其他的不要选：</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/5.png"></p>
-<p>然后复制生成的token：</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/6.png"></p>
-<h1 id="Gitee图床插件设置"><a href="#Gitee图床插件设置" class="headerlink" title="Gitee图床插件设置"></a>Gitee图床插件设置</h1><table>
-<thead>
-<tr>
-<th align="left">gitee图床插件输入框</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">owner</td>
-<td align="left">填写你的gitee的用户名，不知道用户名可以从浏览器的地址中得到。</td>
-</tr>
-<tr>
-<td align="left">repo</td>
-<td align="left">填写仓库名，可从仓库的地址中复制的到</td>
-</tr>
-<tr>
-<td align="left">path</td>
-<td align="left">填写本次上传的图片相对于仓库根目录的路径，如果没有设置则图片保存在仓库的根路径中。还需要注意的是这个路径开头和结尾都不要带有地址符<code>/</code>。</td>
-</tr>
-<tr>
-<td align="left">token</td>
-<td align="left">填写刚才复制的私人令牌</td>
-</tr>
-</tbody></table>
-<p>path开头和结尾不要带有地址符‘&#x2F;’，也就是要写成<code>Blog/Hexo</code>，而不是<code>/Blog/Hexo/</code>或者<code>Blog/Hexo/</code>。<br>如果你path填写成<code>Blog/Hexo/</code>则得到的图片地址可能是</p>
-<pre>
-https://gitee.com/XiaoLan223/images/raw/master/Blog/Hexo<mark>//</mark>7.png
-</pre>
-
-<p>这种形式。</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite/7.png"></p>
-<h1 id="上传图片验证"><a href="#上传图片验证" class="headerlink" title="上传图片验证"></a>上传图片验证</h1><p>到这里需要设置的都设置完了，可以上传图片查看效果。</p>
-<!-- Blog/Hexo/NextTheme/Build/PicgoGiteeImageHostingWebSite -->
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/f09fb131/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/f09fb131/" class="post-title-link" itemprop="url">Linux vi编辑状态和光标移动</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-05-20 16:49:27" itemprop="dateCreated datePublished" datetime="2021-05-20T16:49:27+08:00">2021-05-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/vi%E7%BC%96%E8%BE%91%E5%99%A8%E5%8F%8A%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">vi编辑器及乱码问题</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/f09fb131/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/f09fb131/" data-xid="/blog/f09fb131/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="vi用户的偏好设置"><a href="#vi用户的偏好设置" class="headerlink" title="vi用户的偏好设置"></a>vi用户的偏好设置</h1><h2 id="通过用户HOME目录下的文件-exrc设置vi偏好"><a href="#通过用户HOME目录下的文件-exrc设置vi偏好" class="headerlink" title="通过用户HOME目录下的文件.exrc设置vi偏好"></a>通过用户HOME目录下的文件.exrc设置vi偏好</h2><p>记作$HOME&#x2F;.exrc(每用户一份，用户独立设置)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set number       每行左边显示行号</span><br><span class="line">set tabstop=4   制表符位置为4格对齐</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vi]# vi ~/.exrc</span><br><span class="line">[root@localhost vi]# cat ~/.exrc </span><br><span class="line">set number</span><br><span class="line">set tabstop=4</span><br><span class="line">[root@localhost vi]# </span><br></pre></td></tr></table></figure>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/2.png" alt="图片"></p>
-<h2 id="在vi运行时检查偏好设置"><a href="#在vi运行时检查偏好设置" class="headerlink" title="在vi运行时检查偏好设置"></a>在vi运行时检查偏好设置</h2><p>在vim中输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:set number</span><br><span class="line">:set tabstop=4</span><br></pre></td></tr></table></figure>
-<p>执行<code>:set number</code>和<code>:set tabstop=4</code>后：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/1.png" alt="图片"></p>
-<h1 id="vi的两种工作状态"><a href="#vi的两种工作状态" class="headerlink" title="vi的两种工作状态"></a>vi的两种工作状态</h1><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/3.png" alt="图片"></p>
-<h2 id="命令状态：键盘输入解释为命令"><a href="#命令状态：键盘输入解释为命令" class="headerlink" title="命令状态：键盘输入解释为命令"></a>命令状态：键盘输入解释为命令</h2><ul>
-<li>vi一启动就进入命令方式，键盘输入解释为命令</li>
-<li>一般按键无回显</li>
-<li>以冒号可以引入行编辑的命令和查找命令</li>
-<li>在命令状态下按下i键或a键等，可以从命令状态转到文本状态</li>
-</ul>
-<h2 id="文本状态"><a href="#文本状态" class="headerlink" title="文本状态"></a>文本状态</h2><ul>
-<li>键盘输入解释为输入的文本</li>
-<li>可以输入多行，每输入完一行后按回车转入下一行</li>
-<li>正文输入时有回显</li>
-<li>输入完毕按键盘左上角的Esc键，返回到命令状态</li>
-</ul>
-<h2 id="正文插入"><a href="#正文插入" class="headerlink" title="正文插入"></a>正文插入</h2><h3 id="命令i"><a href="#命令i" class="headerlink" title="命令i"></a>命令i</h3><p><strong>在当前字符前</strong>插入正文段，直至按Esc键(insert)</p>
-<h3 id="命令a"><a href="#命令a" class="headerlink" title="命令a"></a>命令a</h3><p><strong>在当前字符后</strong>插入正文段，直至按Esc键(append)</p>
-<h2 id="光标单字符移动"><a href="#光标单字符移动" class="headerlink" title="光标单字符移动"></a>光标单字符移动</h2><h3 id="单字符移动"><a href="#单字符移动" class="headerlink" title="单字符移动"></a>单字符移动</h3><p>（四个字母键盘上相邻的按键）</p>
-<ul>
-<li>h 光标左移一列</li>
-<li>j 光标下移一行</li>
-<li>k 光标上移一行</li>
-<li>l 光标右移一列</li>
-</ul>
-<p>一般可以直接使用键盘上的方向键代替这四个字母</p>
-<h3 id="执行多次单字符移动命令"><a href="#执行多次单字符移动命令" class="headerlink" title="执行多次单字符移动命令"></a>执行多次单字符移动命令</h3><p>命令前加一整数，表示这个命令连续执行多少遍</p>
-<ul>
-<li>5h 光标左移5列</li>
-<li>6j 光标下移6行</li>
-<li>23k 光标上移23行</li>
-<li>10l 光标右移10列</li>
-</ul>
-<p>注意：在vi命令状态下的按键命令没有回显<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/4.png" alt="图片"></p>
-<h2 id="翻页命令"><a href="#翻页命令" class="headerlink" title="翻页命令"></a>翻页命令</h2><ul>
-<li>Ctrl+b 向后翻页(Backward)</li>
-<li>Ctrl+f 向前翻页(Forward)</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/5.png" alt="图片"></p>
-<p>一般可以用PgDn键代替Ctrl+f，用PgUp键代替Ctrl+b</p>
-<h3 id="连续翻页"><a href="#连续翻页" class="headerlink" title="连续翻页"></a>连续翻页</h3><p>也可以使用下面的命令</p>
-<ul>
-<li>6Ctrl-f 向前翻6页</li>
-<li>15Ctrl-b 向后翻15页</li>
-</ul>
-<h2 id="光标行内快速移动"><a href="#光标行内快速移动" class="headerlink" title="光标行内快速移动"></a>光标行内快速移动</h2><h3 id="行尾行首"><a href="#行尾行首" class="headerlink" title="行尾行首"></a>行尾行首</h3><ul>
-<li>将光标移至当前行首<code>^</code>，（按shift+6按键即可输入<code>^</code>）</li>
-<li>将光标移至当前行尾<code>$</code>，（按shift+4按钮即可输入<code>$</code>）</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/7.png" alt="图片"></p>
-<h3 id="移动一个单词"><a href="#移动一个单词" class="headerlink" title="移动一个单词"></a>移动一个单词</h3><ul>
-<li>移到右一个单词<code>w</code></li>
-<li>移到左一个单词<code>b</code></li>
-<li>也可以使用6w，5b命令</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/6.png" alt="图片"><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/8.png" alt="图片"></p>
-<h2 id="光标移动到指定行"><a href="#光标移动到指定行" class="headerlink" title="光标移动到指定行"></a>光标移动到指定行</h2><h3 id="移到指定的行"><a href="#移到指定的行" class="headerlink" title="移到指定的行"></a>移到指定的行</h3><ul>
-<li><code>:476</code> 将光标定位于第476行</li>
-<li><code>:1</code> 将光标定位于第1行（文件首）</li>
-<li><code>:$</code> 将光标定位于文件尾</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/9.png" alt="图片"></p>
-<h4 id="在描述行号时可以使用"><a href="#在描述行号时可以使用" class="headerlink" title="在描述行号时可以使用"></a>在描述行号时可以使用</h4><p>圆点（<code>.</code>）代表当前行号，<br><code>$</code>代表最后一行的行号。</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/10.png" alt="图片"></p>
-<h2 id="括号配对"><a href="#括号配对" class="headerlink" title="括号配对%"></a>括号配对%</h2><p>把光标移到一个花括号(或圆括号，或方括号)上，按%键，则光标自动定位到与它配对的那一个括号<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/11.png" alt="图片"></p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="http://c.biancheng.net/vi/">http://c.biancheng.net/vi/</a></p>
-<!-- Blog/Programming/Linux/General/VIEditorAndGarbledProblem -->
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/16/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/blog/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/18/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -2092,7 +1988,7 @@ https://gitee.com/XiaoLan223/images/raw/master/Blog/Hexo<mark>//</mark>7.png
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22:54</span>
+    <span title="站点阅读时长">23:01</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

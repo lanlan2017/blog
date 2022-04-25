@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">618</span>
+          <span class="site-state-item-count">620</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,280 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e4a1ea9f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/e4a1ea9f/" class="post-title-link" itemprop="url">Java IO 合并多个二进制文件为一个二进制文件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-06-27 17:54:33" itemprop="dateCreated datePublished" datetime="2019-06-27T17:54:33+08:00">2019-06-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-IO%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">Java IO流</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-IO%E6%B5%81/%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">应用</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/e4a1ea9f/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/e4a1ea9f/" data-xid="/blog/e4a1ea9f/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Java-IO-合并多个二进制文件为一个二进制文件"><a href="#Java-IO-合并多个二进制文件为一个二进制文件" class="headerlink" title="Java IO 合并多个二进制文件为一个二进制文件"></a>Java IO 合并多个二进制文件为一个二进制文件</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li>我最近在调用讯飞语音的<code>API</code>来把我的博客中的文字转成音频,</li>
+<li>讯飞语音合成有数字限制,如果超过字数限制,会合成失败.</li>
+<li>为了不超过字数限制,我把文章分割成好几部分,分别合成,</li>
+<li>然后再把这些部分合并为一个文件.</li>
+<li>讯飞合成的音频文件是<code>.pcm</code>文件,这是个二进制文件,</li>
+</ul>
+<p>好了,废话就说到这,下面介绍<strong>如何把多个二进制文件合并为一个二进制文件</strong>.</p>
+<h2 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h2><p>复制文件的算法如下:</p>
+<ul>
+<li>从源文件中读入一些字节到内存(字节数组)中</li>
+<li>把内存中的这些字节写到目标文件中.</li>
+</ul>
+<p>多个源文件合并成一个目标文件,算法跟复制文件差不多,算法描述如下:</p>
+<ul>
+<li>读取第一个源文件中的内容,输出到目标文件中.</li>
+<li>然后读取第二个源文件中的内容,然后输出到目标文件中.</li>
+<li>然后读取第三个源文件中的内容,然后输出到目标文件中.</li>
+<li>依次类推,直到处理所有的源文件完成。</li>
+</ul>
+<h2 id="关键代码"><a href="#关键代码" class="headerlink" title="关键代码"></a>关键代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 缓存数组</span></span><br><span class="line"><span class="type">byte</span>[] buffer = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">2048</span>];</span><br><span class="line"><span class="comment">// 每次读入的字节数量</span></span><br><span class="line"><span class="type">int</span> <span class="variable">inSize</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line"><span class="comment">// 批量读入字节到buffer缓存中,并返回读入的自己数量给inSize</span></span><br><span class="line"><span class="comment">// 这里的in为输入流对象</span></span><br><span class="line"><span class="keyword">while</span> ((inSize = in.read(buffer)) != -<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 把buffer缓存中的字节写入输出流(也就是目标文件)</span></span><br><span class="line">      <span class="comment">// 这里的out为输出流对象  </span></span><br><span class="line">    out.write(buffer, <span class="number">0</span>, inSize);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="合并多个源文件到目标文件并删除源文件"><a href="#合并多个源文件到目标文件并删除源文件" class="headerlink" title="合并多个源文件到目标文件并删除源文件"></a>合并多个源文件到目标文件并删除源文件</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 合并文件ArrayList中的多个源文件为一个文件.</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> targetFilePath</span></span><br><span class="line"><span class="comment"> *            目标文件路径名称字符串.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> sourceFilePathList</span></span><br><span class="line"><span class="comment"> *            存放源文件的路径名称字符串的ArrayList集合.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">merge2TargetFileDeleteSourceFile</span><span class="params">(String targetFilePath,</span></span><br><span class="line"><span class="params">        ArrayList&lt;String&gt; sourceFilePathList)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 如果ArrayList中有东西</span></span><br><span class="line">    <span class="keyword">if</span> (sourceFilePathList.size() &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        BufferedInputStream in;</span><br><span class="line">        <span class="keyword">try</span> (<span class="type">BufferedOutputStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedOutputStream</span>(</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="keyword">new</span> <span class="title class_">File</span>(targetFilePath)));)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;源文件列表:&quot;</span>);</span><br><span class="line">            <span class="keyword">for</span> (Iterator&lt;String&gt; iterator = sourceFilePathList</span><br><span class="line">                    .iterator(); iterator.hasNext();)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">sourceFilePath</span> <span class="operator">=</span> iterator.next();</span><br><span class="line">                System.out.println(<span class="string">&quot;    &quot;</span> + sourceFilePath);</span><br><span class="line">                <span class="type">File</span> <span class="variable">sourceFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(sourceFilePath);</span><br><span class="line">                in = <span class="keyword">new</span> <span class="title class_">BufferedInputStream</span>(</span><br><span class="line">                        <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(sourceFile));</span><br><span class="line">                <span class="comment">// 缓存数组</span></span><br><span class="line">                <span class="type">byte</span>[] buffer = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">2048</span>];</span><br><span class="line">                <span class="comment">// 每次读入的字节数量</span></span><br><span class="line">                <span class="type">int</span> <span class="variable">inSize</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">                <span class="comment">// 批量读入字节到buffer缓存中,并返回读入的自己数量给inSize</span></span><br><span class="line">                <span class="keyword">while</span> ((inSize = in.read(buffer)) != -<span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 把buffer缓存中的字节写入输出流(也就是目标文件)</span></span><br><span class="line">                    out.write(buffer, <span class="number">0</span>, inSize);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 关闭源文件</span></span><br><span class="line">                in.close();</span><br><span class="line">                <span class="comment">// 删除这个源文件</span></span><br><span class="line">                sourceFile.delete();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/511c4c42/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/511c4c42/" class="post-title-link" itemprop="url">eclipse中字体的中英文大小不一致</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-06-19 01:19:37" itemprop="dateCreated datePublished" datetime="2019-06-19T01:19:37+08:00">2019-06-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/IDE/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/511c4c42/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/511c4c42/" data-xid="/blog/511c4c42/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>325</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="eclipse中字体的中英文大小不一致"><a href="#eclipse中字体的中英文大小不一致" class="headerlink" title="eclipse中字体的中英文大小不一致"></a>eclipse中字体的中英文大小不一致</h1><h2 id="分析原因"><a href="#分析原因" class="headerlink" title="分析原因"></a>分析原因</h2><p><code>eclipse</code>的默认字体好像是<code>Consolas</code>,但</p>
+<blockquote>
+<p><code>Consolas</code>字体原本是微软为 <code>Visual Studio 2005</code>和<code>2008</code>用户提供的，<strong>原版只是单独的英文字体，不含中文</strong>。因此<strong>在中文环境下显示会是“宋体”+<code>Consolas</code> 的组合</strong>。</p>
+</blockquote>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>使用<code>Consolas+雅黑混合版</code>,下载路径<a target="_blank" rel="noopener" href="https://www.iplaysoft.com/consolas.html">https://www.iplaysoft.com/consolas.html</a></p>
+<h2 id="eclipse中使用"><a href="#eclipse中使用" class="headerlink" title="eclipse中使用"></a>eclipse中使用</h2><p><code>Window-Preferences-General-Appearance-Colors and fonts-Text Font</code>,选择<code>YaHei Consolas Hybrid</code>,大小选择<code>小四</code>或者<code>五号</code>之类的带中文的字号.这两种字号比较清晰。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1272,376 +1546,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/691d97e3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/691d97e3/" class="post-title-link" itemprop="url">Java网络编程4---TCP程序设计</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-05-30 17:00:03" itemprop="dateCreated datePublished" datetime="2019-05-30T17:00:03+08:00">2019-05-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Java 网络编程</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/691d97e3/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/691d97e3/" data-xid="/blog/691d97e3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>12k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>11 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Java-TCP程序设计"><a href="#Java-TCP程序设计" class="headerlink" title="Java TCP程序设计"></a>Java TCP程序设计</h1><p>在<code>Java</code>中使用<code>Socket</code>(即套接字)完成<code>TCP</code>程序的开发，使用此类可以方便的建立可靠的，双向的，持续的，点对点的通信连接。<br>在<code>Socket</code>的程序开发中，服务器段使用<code>SeverSocket</code>等待客户端的连接，对于<code>Java</code>的网络编程，每一个客户端都使用一个<code>Socket</code>对象表示,如下图所示。<br><img data-src="https://img-blog.csdn.net/20180712190751259?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="Socket与SeverSocket"></p>
-<h2 id="SeverSocket类与Socket类"><a href="#SeverSocket类与Socket类" class="headerlink" title="SeverSocket类与Socket类"></a>SeverSocket类与Socket类</h2><p><code>SeverSocket</code>类主要用于在服务器端程序的开发上，用于接收客户端的连接请求。<code>SeverSocket</code>类的常用方法如下表所示。</p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td><code>ServerSocket(int port)</code></td>
-<td>创建SeverSocket实例，并制定监听窗口</td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>Socket accept()</code></td>
-<td>侦听并接受到此套接字的连接。等待客户端的连接，此方法之前一直阻塞</td>
-</tr>
-<tr>
-<td>3</td>
-<td><code>InetAddress getInetAddress()</code></td>
-<td>返回服务器的IP地址</td>
-</tr>
-<tr>
-<td>4</td>
-<td><code>boolean isClosed()</code></td>
-<td>返回 ServerSocket 的关闭状态。</td>
-</tr>
-<tr>
-<td>5</td>
-<td><code>void close()</code></td>
-<td>关闭此套接字。</td>
-</tr>
-</tbody></table>
-<p>在服务器端每次运行时都要使用<code>accept()</code>方法等待客户端连接，此方法发执行之后服务器段将进入到阻塞状态，直到客户端连接之后程序才能向下继续执行。此方法的返回值是<code>Socket</code>,每一个<code>Socket</code>都表示一个客户端对象，<code>Socket</code>的常用方法如下表所示。</p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td><code>Socket(String host, int port)</code></td>
-<td>创建一个流套接字并将其连接到指定主机上的指定端口号。</td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>InputStream getInputStream()</code></td>
-<td>返回此套接字的输入流。</td>
-</tr>
-<tr>
-<td>3</td>
-<td><code>OutputStream getOutputStream()</code></td>
-<td>返回此套接字的输出流。</td>
-</tr>
-<tr>
-<td>4</td>
-<td><code>boolean isClosed()</code></td>
-<td>判断此套接字是否被关闭</td>
-</tr>
-<tr>
-<td>5</td>
-<td><code>void close()</code></td>
-<td>关闭此套接字。</td>
-</tr>
-</tbody></table>
-<p>&amp;emsp;&amp;emsp;在客户端，程序可以通过<code>Socket</code>类的<code>getInputStream()</code>方法取得服务器的输出信息，在服务端可以通过<code>getOutputStream()</code>方法取得客户端的输出信息,如下图所示：<br><img data-src="https://img-blog.csdn.net/20180712221756197?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="服务器和客户端的连接"><br>在网络编程中需要使用输入及输出流的形式完成信息的传递，所以在开发时需要导入<code>java.io</code>包。</p>
-<h2 id="第一个TCP程序"><a href="#第一个TCP程序" class="headerlink" title="第一个TCP程序"></a>第一个TCP程序</h2><p>&amp;emsp;&amp;emsp;下面通过<code>ServerSocket</code>类及<code>Socket</code>类完成 一个服务器的程序开发，此服务向客户端输出”<code>hello</code> <code>world</code>!”的字符串信息。</p>
-<h3 id="服务端代码"><a href="#服务端代码" class="headerlink" title="服务端代码"></a>服务端代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> my.net.tcp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.net.*;</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloServer</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception</span><br><span class="line">    &#123; </span><br><span class="line"></span><br><span class="line">        <span class="type">ServerSocket</span> <span class="variable">server</span> <span class="operator">=</span> <span class="literal">null</span>; <span class="comment">// 定义ServerSocket类</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">client</span> <span class="operator">=</span> <span class="literal">null</span>; <span class="comment">// 表示客 户端</span></span><br><span class="line">        <span class="type">PrintStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="literal">null</span>; <span class="comment">// 打印流输出最方便</span></span><br><span class="line">        server = <span class="keyword">new</span> <span class="title class_">ServerSocket</span>(<span class="number">8888</span>); <span class="comment">// 服务器在8888端口上监听</span></span><br><span class="line">        System.out.println(<span class="string">&quot;服务器运行，等待客户端连接。&quot;</span>);</span><br><span class="line">        client = server.accept(); <span class="comment">// 得到连接，程序进入到阻塞状态</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;hello world&quot;</span>; <span class="comment">// 表示要输出的信息</span></span><br><span class="line">        <span class="comment">//在服务端可以通过Socket类的getOutputStream()得到对客户端的输出流</span></span><br><span class="line">        out = <span class="keyword">new</span> <span class="title class_">PrintStream</span>(client.getOutputStream());</span><br><span class="line">        <span class="comment">//向客户端输出信息</span></span><br><span class="line">        out.println(str); </span><br><span class="line">        client.close();</span><br><span class="line">        server.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="客户端代码"><a href="#客户端代码" class="headerlink" title="客户端代码"></a>客户端代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> my.net.tcp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.net.*;</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloClient</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//表示客 户端</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">client</span> <span class="operator">=</span> <span class="literal">null</span>; </span><br><span class="line">        client = <span class="keyword">new</span> <span class="title class_">Socket</span>(<span class="string">&quot;localhost&quot;</span>, <span class="number">8888</span>);</span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">buf</span> <span class="operator">=</span> <span class="literal">null</span>; </span><br><span class="line">        <span class="comment">//客户端 可以通过getInputStream()方法获取服务器的输出</span></span><br><span class="line">        buf = <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(client.getInputStream()));</span><br><span class="line">        <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> buf.readLine();</span><br><span class="line">        System.out.println(<span class="string">&quot;接收到服务器端输出内容：&quot;</span> + str);</span><br><span class="line">        buf.close();</span><br><span class="line">        client.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="编码问题"><a href="#编码问题" class="headerlink" title="编码问题"></a>编码问题</h3><p>上面的代码在<code>eclipse</code>中运行控制台输出可能有问题,所以到命令行中去编译和运行。因为用的编码是<code>UTF-8</code>编码的,所以编译的时候要指定编码。<br>如果不指定编码的话,会造成无法编译:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HelloServer.java:10: 错误: 编码GBK的不可映射字符</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://img-blog.csdn.net/20180712212103511?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="编码GBK的不可映射字符"></p>
-<h3 id="CMD-中编译运行服务端"><a href="#CMD-中编译运行服务端" class="headerlink" title="CMD 中编译运行服务端"></a>CMD 中编译运行服务端</h3><p><strong>编译服务端：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac -encoding UTF-8 -d . HelloServer.java</span><br></pre></td></tr></table></figure>
-<p><strong>运行服务端：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java my.net.tcp.HelloServer</span><br></pre></td></tr></table></figure>
-<p><strong>此时的运行结果:</strong><br><img data-src="https://img-blog.csdn.net/20180712212338858?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>可以看到服务器正在等待客户端的连接，如果没有收到客户端的连接，服务器端的将一直等待客户端的连接。</p>
-<h3 id="CMD-中编译运行客户端"><a href="#CMD-中编译运行客户端" class="headerlink" title="CMD 中编译运行客户端"></a>CMD 中编译运行客户端</h3><p><strong>编译客户端：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac -encoding utf-8 -d . HelloClient.java</span><br></pre></td></tr></table></figure>
-<p><strong>运行客户端：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java my.net.tcp.HelloClient</span><br></pre></td></tr></table></figure>
-<p>客户端连接上了之后，服务端程序才能接着往下运行，此时，服务端和客户端的运行结果如下。<br><strong>服务端运行结果：</strong><br><img data-src="https://img-blog.csdn.net/20180712211749672?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="客户端运行结果"><br><strong>客户端运行结果：</strong><br><img data-src="https://img-blog.csdn.net/20180712211854366?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="客户端运行结果"></p>
-<p>从上面的程序的运行结果可以发现，服务器程序一执行到accept()方法后，程序将进入阻塞状态，直到客户端连接上之后，服务器才会继续往下执行。</p>
-<h2 id="使用telnet命令连接服务器端进行验证"><a href="#使用telnet命令连接服务器端进行验证" class="headerlink" title="使用telnet命令连接服务器端进行验证"></a>使用telnet命令连接服务器端进行验证</h2><p>服务器端程序建立完成之后，因为这里使用的是<code>TCP</code>通信协议连接的，所以可以直接使用<code>telnet</code>即可取得服务器的输出信息。<br>步骤：<br>在命令行下输入<code>telnet</code>即可进入<code>telnet</code>：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://img-blog.csdn.net/20180712222845262?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="成功进入telnet"><br>重新打开一个<code>cmd</code>窗口，进入到服务端所在的目录，然后启动客户端：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java my.net.tcp.HelloServer</span><br></pre></td></tr></table></figure>
-<p>客户端输出：</p>
-<p><img data-src="https://img-blog.csdn.net/20180712222526564?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="服务端输出，等待Telnet的连接"><br>然后切换到telnet命令行窗口，输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open localhost 8888</span><br></pre></td></tr></table></figure>
-<p><strong>telnet运行结果：</strong><br><img data-src="https://img-blog.csdn.net/20180712223000321?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="telnet连接服务器"><br>可以看到telnet成功连接到服务器端，此时telnet为客户端，服务器端向telnet客户端输出”hello world”<br><strong>服务端运行结果：</strong><br><img data-src="https://img-blog.csdn.net/20180712223147394?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="服务端运行结果"><br>可以看到<code>telnet</code>连接到服务端之后，服务器停止监听，继续往下运行。打印一条信息后服务端后停止运行。</p>
-<h3 id="telnet运行不正正常的情况-没有开启telnet服务"><a href="#telnet运行不正正常的情况-没有开启telnet服务" class="headerlink" title="telnet运行不正正常的情况: 没有开启telnet服务"></a>telnet运行不正正常的情况: 没有开启telnet服务</h3><p>如果还没有开启telnet服务的话，是无法启动telnet的。输入telnet显示如下的错误信息：<br><img data-src="https://img-blog.csdn.net/20180712223742871?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="没有启动telnet的情况"><br>解决方法是启动telnet即可</p>
-<h3 id="如何启动telnet"><a href="#如何启动telnet" class="headerlink" title="如何启动telnet"></a>如何启动telnet</h3><p>首先进入控制面板：<br><img data-src="https://img-blog.csdn.net/20180712223916700?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="进入控制面板"><br>然后在控制面板的收缩框中输入：<code>启用或关闭Windows功能</code>，然后点击<code>启用或关闭Windows功能</code>进入<br><img data-src="https://img-blog.csdn.net/20180712224037403?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="点击启用或关闭Windows功能进入"><br>然后下拉滚动条，找到Telnet客户端，在前面打钩，然后点确定即可启动Telnet客户端。<br><img data-src="https://img-blog.csdn.net/20180712224235617?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h2 id="TCP实例：Echo程序"><a href="#TCP实例：Echo程序" class="headerlink" title="TCP实例：Echo程序"></a>TCP实例：Echo程序</h2><p><code>Echo</code>程序是一个网络编程通信交互的一个经典案例，称为回应程序，即客户端输入什么内容，服务器端就会在这些内容前面加上”<code>Echo:</code>“，然后把这些信息发回给客户端，下面实现这样的一个程序。<br>在上面的代码中，服务器端每次执行完毕后服务器都会退出，这是因为服务器端指定接收一个客户端的连接，主要是由于<code>accpet()</code>方法只能使用一次。下面的程序中将通过循环的方式使用<code>accpt()</code>,这样每一个客户端执行完毕后，服务器端都可以重新等待用户连接。</p>
-<h3 id="实例：EchoServer"><a href="#实例：EchoServer" class="headerlink" title="实例：EchoServer"></a>实例：EchoServer</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> my.net.tcp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.net.*;</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EchoServer</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//定义服务器引用</span></span><br><span class="line">        <span class="type">ServerSocket</span> <span class="variable">server</span> <span class="operator">=</span> <span class="literal">null</span>; </span><br><span class="line">        <span class="comment">//定义客户端引用</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">client</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">buf</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">PrintStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="literal">null</span>; </span><br><span class="line">        <span class="comment">//创建服务器，监听6666端口</span></span><br><span class="line">        server = <span class="keyword">new</span> <span class="title class_">ServerSocket</span>(<span class="number">6666</span>);</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">f</span> <span class="operator">=</span> <span class="literal">true</span>; <span class="comment">// 定义个标记位</span></span><br><span class="line">        <span class="keyword">while</span> (f)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;服务器运行，等待客户端连接。&quot;</span>);</span><br><span class="line">            <span class="comment">//等待客户端连接</span></span><br><span class="line">            client = server.accept();</span><br><span class="line">            <span class="comment">//连接成功之后</span></span><br><span class="line">            <span class="comment">//生成对客户端的输出流</span></span><br><span class="line">            out = <span class="keyword">new</span> <span class="title class_">PrintStream</span>(client.getOutputStream());</span><br><span class="line">            <span class="comment">//获取客户端对本服务器的输入流</span></span><br><span class="line">            buf = <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(</span><br><span class="line">                    <span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(client.getInputStream()));</span><br><span class="line">            <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">true</span>; <span class="comment">// 标志位，表示可以一直接收并回应信息</span></span><br><span class="line">            <span class="keyword">while</span> (flag)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//从客户端读入一条消息</span></span><br><span class="line">                <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> buf.readLine();</span><br><span class="line">                <span class="comment">//如果有读到消息，或者没有读到</span></span><br><span class="line">                <span class="keyword">if</span> (str == <span class="literal">null</span> || <span class="string">&quot;&quot;</span>.equals(str))</span><br><span class="line">                &#123; <span class="comment">// 表示没有内容</span></span><br><span class="line">                    flag = <span class="literal">false</span>; <span class="comment">// 退出循环</span></span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="string">&quot;exit&quot;</span>.equals(str))</span><br><span class="line">                    &#123; <span class="comment">// 如果输入的内容为exit表示结束</span></span><br><span class="line">                        flag = <span class="literal">false</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        out.println(<span class="string">&quot;ECHO : &quot;</span> + str); <span class="comment">// 回应信息</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//关闭客户端</span></span><br><span class="line">            client.close();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//关闭服务端</span></span><br><span class="line">        server.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>程序运行结果：</strong><br><img data-src="https://img-blog.csdn.net/20180713100717682?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="启动服务器"><br>可以看到服务器运行之后，和之前的一样，要等待客户端的连接。下面是客户端程序的代码。</p>
-<h3 id="实例：EchoClient"><a href="#实例：EchoClient" class="headerlink" title="实例：EchoClient"></a>实例：EchoClient</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> my.net.tcp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.net.*;</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EchoClient</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//定义客户端引用</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">client</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">//创建客户端监听本机的6666端口</span></span><br><span class="line">        client = <span class="keyword">new</span> <span class="title class_">Socket</span>(<span class="string">&quot;localhost&quot;</span>, <span class="number">6666</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">buf</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="type">PrintStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">input</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">//获取键盘输入流</span></span><br><span class="line">        input = <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(System.in));</span><br><span class="line">        <span class="comment">//获取服务器对本客户端的输入流</span></span><br><span class="line">        buf = <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(client.getInputStream()));</span><br><span class="line">        <span class="comment">//获取对服务器的输出流</span></span><br><span class="line">        out = <span class="keyword">new</span> <span class="title class_">PrintStream</span>(client.getOutputStream());</span><br><span class="line">        </span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">true</span>; <span class="comment">// 定义标志位</span></span><br><span class="line">        <span class="keyword">while</span> (flag)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.print(<span class="string">&quot;输入信息：&quot;</span>);</span><br><span class="line">            <span class="comment">//接收键盘输入</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> input.readLine();</span><br><span class="line">            <span class="comment">//把键盘输入的字符串，打印到输出流，也就是打印到服务器端</span></span><br><span class="line">            out.println(str);</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&quot;exit&quot;</span>.equals(str))</span><br><span class="line">            &#123;</span><br><span class="line">                flag = <span class="literal">false</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//接收服务端的输入流</span></span><br><span class="line">                <span class="type">String</span> <span class="variable">echo</span> <span class="operator">=</span> buf.readLine(); <span class="comment">// 接收返回结果</span></span><br><span class="line">                System.out.println(echo); <span class="comment">// 输出回应信息</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//关闭服务器对本客户端的输入流</span></span><br><span class="line">        buf.close();</span><br><span class="line">        <span class="comment">//关闭客户端</span></span><br><span class="line">        client.close();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>在客户端EchoClient.java目录下，重新打开一个cmd窗口，然后编译运行客户端。<br><strong>运行结果：</strong><br><img data-src="https://img-blog.csdn.net/20180713101131815?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="EchoClient运行结果"><br>从程序运行的结果中可以发现，所有的输入信息最终都会通过回显的方式发回给客户端，并且在前面加上了”<code>ECHO：</code>“的信息。另外在本程序用，当一个客户端结束之后服务器端并并不会退出，而是继续等待下一个用户连接，下一个用户连接上了之后，服务器端会继续执行。<br><img data-src="https://img-blog.csdn.net/20180713102711688?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="客户端退出后服务器不会退出，等待下一个客户端的连接"><br>但是在本程序中有一个问题，就是现在的服务器端每次只能有一个用户能连接，属于单线程的处理机制，如果现在有其他客户端要连接到客户端，由于现在已经有一个客户端连接到服务器端了，其他客户端是无法连接的，要等待服务器出现空闲才可以连接。<br><img data-src="https://img-blog.csdn.net/20180713102344506?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="此时服务器端只能连接一个客户端，其他客户端无法得到响应"></p>
-<p>为了能保证服务器可以同时连接多个客户端，可以加入多线程机制，即每一个客户端连接之后都启动一个线程，这样一个服务器就可以同时支持多个客户端的连接。<br><img data-src="https://img-blog.csdn.net/20180713102053995?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="使用多线程机制，实现多个客户端同时连接"></p>
-<h2 id="在服务器上应用多线程"><a href="#在服务器上应用多线程" class="headerlink" title="在服务器上应用多线程"></a>在服务器上应用多线程</h2><p>对于服务器端来说，如果要加入多线程机制，则应该在每个用户连接之后启动一个新的线程提供服务。下面先建立一个EchoThread类，EchoThread类是专门用于提供服务的多线程操作，这里的多线程使用Runnable接口的方式实现。<br>把EchoSever.java中的accpet()之后的服务代码打包成线程，这样客户端连接上之后服务器就启动一个线程为该客户端提供服务，然后等待下一个客户端的连接。这样就能接收多个客户端的连接，并同时为多个客户端提供服务。<br>具体的做法是，把EchoSever.java中的accpet()之后的提供服务的代码，放到EchoThread.java的run()方法中。</p>
-<h3 id="实例：EchoThread"><a href="#实例：EchoThread" class="headerlink" title="实例：EchoThread"></a>实例：EchoThread</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> my.net.tcp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.net.*;</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EchoThread</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//客户端引用</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Socket</span> <span class="variable">client</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">//构造函数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">EchoThread</span><span class="params">(Socket client)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.client = client;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//线程执行体</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//表示来着客户端的输入</span></span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">clientIn</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">//对客户端的输出</span></span><br><span class="line">        <span class="type">PrintStream</span> <span class="variable">outToClient</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//获取对客户端的输出流</span></span><br><span class="line">            outToClient = <span class="keyword">new</span> <span class="title class_">PrintStream</span>(client.getOutputStream());</span><br><span class="line">            <span class="comment">//获取来自客户端的输入流</span></span><br><span class="line">            clientIn = <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(</span><br><span class="line">                    <span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(client.getInputStream()));</span><br><span class="line">            <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">true</span>; <span class="comment">// 标志位，表示可以一直接收并回应信息</span></span><br><span class="line">            <span class="keyword">while</span> (flag)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//读取来自客户端的输入</span></span><br><span class="line">                <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> clientIn.readLine(); </span><br><span class="line">                <span class="keyword">if</span> (str == <span class="literal">null</span> || <span class="string">&quot;&quot;</span>.equals(str))</span><br><span class="line">                &#123; <span class="comment">// 表示没有内容</span></span><br><span class="line">                    flag = <span class="literal">false</span>; <span class="comment">// 退出循环</span></span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="string">&quot;exit&quot;</span>.equals(str))</span><br><span class="line">                    &#123; <span class="comment">// 如果输入的内容为bye表示结束</span></span><br><span class="line">                        flag = <span class="literal">false</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="comment">//输出到客户端</span></span><br><span class="line">                        outToClient.println(<span class="string">&quot;ECHO : &quot;</span> + str); <span class="comment">// 回应信息</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            client.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e)</span><br><span class="line">        &#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>EchoThread.java的主要功能就是接受一个客户端的Socket，并通过循环的方式接受客户端的输入信息，然后向客户端回送刚才输入的信息。<br>下面创建EchoThreadServer类，使用上面的EchoThread来为客户端提供服务。</p>
-<h3 id="实例：EchoThreadServer类"><a href="#实例：EchoThreadServer类" class="headerlink" title="实例：EchoThreadServer类"></a>实例：EchoThreadServer类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> my.net.tcp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.net.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EchoThreadServer</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//定义服务器的引用</span></span><br><span class="line">        <span class="type">ServerSocket</span> <span class="variable">server</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">//客户端的引用</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">client</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">//建立服务器，监听本地6666端口</span></span><br><span class="line">        server = <span class="keyword">new</span> <span class="title class_">ServerSocket</span>(<span class="number">6666</span>);</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">f</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">while</span> (f)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;服务器运行，等待客户端连接。&quot;</span>);</span><br><span class="line">            <span class="comment">//取得连接，客户端没连接之前先等待连接。</span></span><br><span class="line">            client = server.accept(); </span><br><span class="line">            <span class="comment">//一个客户端连接之后，为该客户端启动一个服务线程进行服务</span></span><br><span class="line">            <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">EchoThread</span>(client)).start();</span><br><span class="line">        &#125;</span><br><span class="line">        server.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>还是对比上面的EchoServer.java，我们发现把EchoServer.java的<strong>接受连接的部分</strong>和<strong>提供服务功能部分</strong>分割出来成两个类，即可得到接受连接部分EchoThreadServer.java，和提供服务功能部分：EchoThread.java</p>
-<h3 id="运行服务端EchoThreadServer"><a href="#运行服务端EchoThreadServer" class="headerlink" title="运行服务端EchoThreadServer"></a>运行服务端EchoThreadServer</h3><p><img data-src="https://img-blog.csdn.net/20180713113701338?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="运行服务端"></p>
-<h3 id="然后运行客户端-EchoClient"><a href="#然后运行客户端-EchoClient" class="headerlink" title="然后运行客户端:EchoClient"></a>然后运行客户端:EchoClient</h3><p><img data-src="https://img-blog.csdn.net/20180713113820305?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="运行客户端"><br>此时服务器端程序会创建一个服务进程来提供服务，然后进入下一个循环，等待下一个客户端的连接<br><img data-src="https://img-blog.csdn.net/20180713114025634?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="等待下一个客户端的连接"><br>再打开一个cmd窗口，然后启动另一个客户端：<br><img data-src="https://img-blog.csdn.net/20180713114426691?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="多个窗口同时连接到服务器端"><br>可以看到此时已经成功连接上两个客户端了，这两个客户端都正常运行，且服务器端已经准备等待第三个客户端的连接。这样，在服务端，每一个连接到服务器的客户端Socket都会以一个线程的方式运行，无论有多少个客户端连接都可以同时完成操作。</p>
-<h2 id="使用回调函数"><a href="#使用回调函数" class="headerlink" title="使用回调函数"></a>使用回调函数</h2><p>如果想知道到底有多少个客户端正在和服务器进行通讯,可以通过回调函数来实现.</p>
-<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>假设A线程创建了B线程,B线程运行过程中调用了A线程的方法,则该方法就叫回调方法.</p>
-<h2 id="如何通过客户端关闭服务器"><a href="#如何通过客户端关闭服务器" class="headerlink" title="如何通过客户端关闭服务器"></a>如何通过客户端关闭服务器</h2><h3 id="EchoThreadServer"><a href="#EchoThreadServer" class="headerlink" title="EchoThreadServer"></a>EchoThreadServer</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tcp;</span><br><span class="line"><span class="keyword">import</span> java.net.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EchoThreadServer</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 静态变量,可以更改该标记以便停止服务端</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="variable">isServerAlive</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">clientNum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 定义服务器的引用</span></span><br><span class="line">        <span class="type">ServerSocket</span> <span class="variable">server</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">// 客户端的引用</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">client</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">// 建立服务器，监听本地6666端口</span></span><br><span class="line">        server = <span class="keyword">new</span> <span class="title class_">ServerSocket</span>(<span class="number">6666</span>);</span><br><span class="line">        <span class="keyword">while</span> (isServerAlive)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;等待客户端连接...&quot;</span>);</span><br><span class="line">            <span class="comment">// 取得连接，客户端没连接之前先等待连接。</span></span><br><span class="line">            client = server.accept();</span><br><span class="line">            System.out.println(<span class="string">&quot;    客户端连接成功,当前客户端数量:&quot;</span> + clientNum);</span><br><span class="line">            <span class="keyword">if</span> (isServerAlive)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 一个客户端连接之后，为该客户端启动一个服务线程进行服务</span></span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">EchoThread</span>(client)).start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        server.close();</span><br><span class="line">        client.close();</span><br><span class="line">        System.out.println(<span class="string">&quot;服务端已经停止...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">addClientNum</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        clientNum = clientNum + <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 注意了,下面的赋值方法错误</span></span><br><span class="line">        <span class="comment">// 后++:先取值,再增加,这将达不到增加的效果</span></span><br><span class="line">        <span class="comment">// clientNum = clientNum ++;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">minusClientNum</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        clientNum = clientNum - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getClientNum</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> clientNum;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">shutdownServer</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        isServerAlive = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isServerAlive</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> isServerAlive;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>EchoThreadServer</code>这个类中的,<code>minusClientNum</code>,<code>getClientNum</code>,<code>shutdownServer</code>这三个方法都是给子线程调用的方法,也就是所谓的回调方法.</p>
-<h3 id="EchoThread"><a href="#EchoThread" class="headerlink" title="EchoThread"></a>EchoThread</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tcp;</span><br><span class="line"><span class="keyword">import</span> java.net.*;</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EchoThread</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 客户端引用</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Socket</span> <span class="variable">client</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="type">int</span> clienId;</span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">EchoThread</span><span class="params">(Socket client)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.client = client;</span><br><span class="line">        <span class="comment">// 设置服务线程编号</span></span><br><span class="line">        <span class="built_in">this</span>.clienId = EchoThreadServer.getClientNum();</span><br><span class="line">        <span class="comment">// 服务线程数量加1</span></span><br><span class="line">        EchoThreadServer.addClientNum();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 线程执行体</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 表示来着客户端的输入</span></span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">inByclient</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">// 对客户端的输出</span></span><br><span class="line">        <span class="type">PrintStream</span> <span class="variable">outToClient</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 获取对客户端的输出流</span></span><br><span class="line">            outToClient = <span class="keyword">new</span> <span class="title class_">PrintStream</span>(client.getOutputStream());</span><br><span class="line">            <span class="comment">// 获取来自客户端的输入流</span></span><br><span class="line">            inByclient = <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(</span><br><span class="line">                    <span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(client.getInputStream()));</span><br><span class="line">            <span class="type">boolean</span> <span class="variable">isClientAlive</span> <span class="operator">=</span> <span class="literal">true</span>; <span class="comment">// 标志位，表示可以一直接收并回应信息</span></span><br><span class="line">            <span class="keyword">while</span> (isClientAlive)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 读取来自客户端的输入</span></span><br><span class="line">                <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> inByclient.readLine();</span><br><span class="line">                <span class="comment">// 表示客户端要退出</span></span><br><span class="line">                <span class="keyword">if</span> (<span class="string">&quot;exit&quot;</span>.equals(str))</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 结束循环不再接收客户端的输入.</span></span><br><span class="line">                    isClientAlive = <span class="literal">false</span>;</span><br><span class="line">                    <span class="comment">// 服务线程数目减1</span></span><br><span class="line">                    EchoThreadServer.minusClientNum();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 关闭服务端</span></span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">&quot;shutdownServer&quot;</span>.equals(str))</span><br><span class="line">                &#123;</span><br><span class="line">                    EchoThreadServer.shutdownServer();</span><br><span class="line">                    System.out.println(<span class="string">&quot;关闭服务器&quot;</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 输出到客户端</span></span><br><span class="line">                    outToClient.println(</span><br><span class="line">                            <span class="string">&quot;服务线程 &quot;</span> + <span class="built_in">this</span>.clienId + <span class="string">&quot; ECHO to client: &quot;</span> + str); <span class="comment">// 回应信息</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e)</span><br><span class="line">        &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当<code>EchoThread</code>的一个线程启动时,将会调用主线程的<code>addClientNum</code>方法对主线程中的计数器<code>加1</code>,该线程结束时调用<code>minusClientNum</code>方法对主线程中的计数器<code>减1</code>.<br>当服务线程收到<code>shutdownServer</code>这个字符串的时候,将调用主线程的<code>shutdownServer</code>方法关闭服务器的主线程,这样服务器就不能响应新的客户端连接了.等到之前连接过的客户端都结束后客户端将会真正结束。</p>
-<h3 id="EchoClient"><a href="#EchoClient" class="headerlink" title="EchoClient"></a>EchoClient</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tcp;</span><br><span class="line"><span class="keyword">import</span> java.net.*;</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EchoClient</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 定义客户端引用</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">client</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">// 创建客户端监听本机的6666端口</span></span><br><span class="line">        client = <span class="keyword">new</span> <span class="title class_">Socket</span>(<span class="string">&quot;localhost&quot;</span>, <span class="number">6666</span>);</span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">inputByServer</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">PrintStream</span> <span class="variable">outToServer</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">input</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">// 获取键盘输入流</span></span><br><span class="line">        input = <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(System.in));</span><br><span class="line">        <span class="comment">// 获取服务器对本客户端的输入流</span></span><br><span class="line">        inputByServer = <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(client.getInputStream()));</span><br><span class="line">        <span class="comment">// 获取对服务器的输出流</span></span><br><span class="line">        outToServer = <span class="keyword">new</span> <span class="title class_">PrintStream</span>(client.getOutputStream());</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">true</span>; <span class="comment">// 定义标志位</span></span><br><span class="line">        <span class="comment">// 如果服务器没死</span></span><br><span class="line">        <span class="keyword">while</span> (flag &amp;&amp; EchoThreadServer.isServerAlive())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.print(<span class="string">&quot;输入信息：&quot;</span>);</span><br><span class="line">            <span class="comment">// 接收键盘输入</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> input.readLine();</span><br><span class="line">            <span class="comment">// 把键盘输入的字符串，打印到输出流，也就是打印到服务器端</span></span><br><span class="line">            outToServer.println(str);</span><br><span class="line">            <span class="comment">// 客户端退出或者关闭服务器</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&quot;exit&quot;</span>.equals(str))</span><br><span class="line">            &#123;</span><br><span class="line">                flag = <span class="literal">false</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">&quot;shutdownServer&quot;</span>.equals(str))</span><br><span class="line">            &#123;</span><br><span class="line">                flag = <span class="literal">false</span>;</span><br><span class="line">                <span class="comment">// 无效连接,用来抵消服务端的监听连接请求,</span></span><br><span class="line">                <span class="comment">// 不然服务端会一直阻塞造成无法关闭</span></span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">Socket</span>(<span class="string">&quot;localhost&quot;</span>, <span class="number">6666</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 接收服务端的输入流</span></span><br><span class="line">                <span class="type">String</span> <span class="variable">echo</span> <span class="operator">=</span> inputByServer.readLine(); <span class="comment">// 接收返回结果</span></span><br><span class="line">                System.out.println(echo); <span class="comment">// 输出回应信息</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 关闭服务器对本客户端的输入流</span></span><br><span class="line">        inputByServer.close();</span><br><span class="line">        <span class="comment">// 关闭客户端</span></span><br><span class="line">        client.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h3><p>打开两个客户端,并各自发送两个字符串,显示效果如下图:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/net/TCP/1.png" alt="这里有一张图片"><br>关闭一个客户端,然后再打开,则此时服务线程的数量先减一后加一,服务线程(等于客户端数量)数量不变.<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/net/TCP/2.png" alt="这里有一张图片"><br>现在输入shutdownServer关闭服务器,效果如下:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/net/TCP/3.png" alt="这里有一张图片"><br>这只对新的客户端有影响,对已经连接的客户端并没有影响.<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/net/TCP/4.png" alt="这里有一张图片"><br>当所有连接过的客户端都结束后,服务端没有任何线程在运行,此时服务器才真正的结束:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/net/TCP/5.png" alt="这里有一张图片"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/503e570d/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/503e570d/" class="post-title-link" itemprop="url">eclipse HTML代码格式化</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-05-29 16:12:41" itemprop="dateCreated datePublished" datetime="2019-05-29T16:12:41+08:00">2019-05-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/IDE/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/503e570d/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/503e570d/" data-xid="/blog/503e570d/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>211</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="eclipse-HTML代码格式化"><a href="#eclipse-HTML代码格式化" class="headerlink" title="eclipse HTML代码格式化"></a>eclipse HTML代码格式化</h1><p>如下图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Format/HTML/1.png" alt="这里有一张图片"></p>
-<ul>
-<li><code>Line width</code>:表示代码显示的宽度</li>
-<li><code>Split multiple attributes each on a new line</code>:表示<code>html</code>标签的属性各自放在一行,这个没必要.</li>
-<li><code>Align final bracket in multi-line element tags</code>:表示对齐多行元素的结束符</li>
-<li><code>Clear all blank lines</code>:删除空行</li>
-<li><code>Indent using spaces</code>:使用空格对齐,而不是<code>tab</code>键</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/42/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/42/">42</a><span class="page-number current">43</span><a class="page-number" href="/blog/page/44/">44</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/44/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1674,7 +1578,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22:54</span>
+    <span title="站点阅读时长">23:01</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">618</span>
+          <span class="site-state-item-count">620</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,307 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/37dcd881/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/37dcd881/" class="post-title-link" itemprop="url">eclipse发布web项目到tomcat的webapps中</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-12-11 20:43:57" itemprop="dateCreated datePublished" datetime="2018-12-11T20:43:57+08:00">2018-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/37dcd881/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/37dcd881/" data-xid="/blog/37dcd881/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>836</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>在Eclipse中，默认会把Web项目发布到Eclipse的工作空间下的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps</span><br></pre></td></tr></table></figure>
+<p>这个目录中</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>关掉eclipse后无法访问Web项目。因为Tomcat只会到自己目录下的webapps目录中去寻找Web项目，发布在其他地方的项目Tomcat是找不到的。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>设置eclipse，把web项目发布到Tomcat安装目录下的webapps目录中。</p>
+<h2 id="eclipse中设置把Web项目发布到Tomcat-webapps中"><a href="#eclipse中设置把Web项目发布到Tomcat-webapps中" class="headerlink" title="eclipse中设置把Web项目发布到Tomcat webapps中"></a>eclipse中设置把Web项目发布到Tomcat webapps中</h2><p>先在Servers中展开Tomcat中运行的项目，把这些项目先<code>remove</code>掉：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/change_webapps/remove.png"><br>然后在Tomcat服务器上，右键，点击<code>open</code>:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/change_webapps/open.png"><br>如果<code>Server locations</code>是灰色的，这是因为Tomcat没有启动，先启动，然后再进行下面的操作,如果不是灰色则跳过这步：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/change_webapps/gray.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/change_webapps/start.png"><br>展开<code>Server locations</code>，可以看到这里默认选了第一个<code>Use workspace metadata(does not modify Tomcat installation</code>，这个表示发布到eclipse自己的目录中。<strong>我们选择第二个</strong><code>Use Tomcat installation(takes control of Tomcat installation)</code>这个表示发布到Tomcat安装目录中。<br>然后在<code>deploy path:</code>中填入tomcat安装目录下的webapps目录,如下图所示：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/change_webapps/settings.png"><br>最后，重启eclipse中的tomcat服务器，它会提示让你<strong>保存</strong>配置，点击保存保存我们上面的设置：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/change_webapps/save.png"><br>然后在运行我们的项目，打开Tomcat安装目录下的webapps目录，可以在里面看到了我们的HelloWrold项目已经发布到这里了：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/change_webapps/deploy_yes.png"><br>关闭eclipse，用命令直接打开Tomcat服务器，这个时候也是能访问我们的Web项目的：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/change_webapps/startTomcat.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/change_webapps/helloworld.png"></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mihu/p/4772509.html">https://www.cnblogs.com/mihu/p/4772509.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/2b8e86b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2b8e86b/" class="post-title-link" itemprop="url">eclipse常用设置</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-12-11 20:43:57" itemprop="dateCreated datePublished" datetime="2018-12-11T20:43:57+08:00">2018-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/2b8e86b/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/2b8e86b/" data-xid="/blog/2b8e86b/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="eclipse-for-JavaEE下载"><a href="#eclipse-for-JavaEE下载" class="headerlink" title="eclipse for JavaEE下载"></a>eclipse for JavaEE下载</h1><h2 id="下载URL"><a href="#下载URL" class="headerlink" title="下载URL"></a>下载URL</h2><p>到<a target="_blank" rel="noopener" href="https://www.eclipse.org/downloads/packages/">https://www.eclipse.org/downloads/packages/</a>中找到Eclipse IDE for Java EE Developers,然后点击64位的版本<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/downEclipse/forJavaEEDevelopers.png"></p>
+<h2 id="选择镜像"><a href="#选择镜像" class="headerlink" title="选择镜像"></a>选择镜像</h2><p>点击<code>&gt;&gt; Select Another Mirror</code>选择中国的镜像，这样下载可能快一点。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/downEclipse/selectMirror.png"><br>我这里选上海大学的镜像:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/downEclipse/shanghaiUniversityMirror.png"></p>
+<h2 id="解压安装"><a href="#解压安装" class="headerlink" title="解压安装"></a>解压安装</h2><p>下载好后解压缩即可使用</p>
+<h1 id="eclipse创建工作空间workspace"><a href="#eclipse创建工作空间workspace" class="headerlink" title="eclipse创建工作空间workspace"></a>eclipse创建工作空间workspace</h1><h2 id="新建文件夹"><a href="#新建文件夹" class="headerlink" title="新建文件夹"></a>新建文件夹</h2><p>先创建一个文件夹作为workspace，如下图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/workspace/newWorkSpace/newMulu.png"></p>
+<h2 id="选择该文件夹作为workspace"><a href="#选择该文件夹作为workspace" class="headerlink" title="选择该文件夹作为workspace"></a>选择该文件夹作为workspace</h2><p>然后在eclipse中，依次点击file-&gt;switch workspace-&gt;others,选择这个新建的目录<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/workspace/newWorkSpace/switchWorkSpace_others.png"><br>点击ok即可：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/workspace/newWorkSpace/copysettings.png"></p>
+<h1 id="eclipse删除多余的工作区间"><a href="#eclipse删除多余的工作区间" class="headerlink" title="eclipse删除多余的工作区间"></a>eclipse删除多余的工作区间</h1><p>之前在eclipse中创建了太多的WorkSpace来放demo了,现在记录一下怎么从eclipse中删除掉这些无用的工作区间。<br><code>window</code>-&gt;<code>Preferences</code>-&gt;<code>General</code>-&gt;<code>startup and shutdown</code>-&gt;<code>Workspaces</code>,然后选中，<code>remove</code>掉即可。如下图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/removeUselessWorkSpace.png"></p>
+<h1 id="eclipse设置字体"><a href="#eclipse设置字体" class="headerlink" title="eclipse设置字体"></a>eclipse设置字体</h1><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/settings/textFont/font.png"></p>
+<h1 id="自动补全"><a href="#自动补全" class="headerlink" title="自动补全"></a>自动补全</h1><p>自动补全<code>Content Assist</code></p>
+<h2 id="Java自动补全"><a href="#Java自动补全" class="headerlink" title="Java自动补全"></a>Java自动补全</h2><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/settings/contentAssist/java.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span><br></pre></td></tr></table></figure>
+<h2 id="XML自动补全"><a href="#XML自动补全" class="headerlink" title="XML自动补全"></a>XML自动补全</h2><p><code>Window</code>–<code>Preferences</code>–<code>XML</code>–<code>XML Files</code>–<code>Editor</code>–<code>Content Assist</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/settings/contentAssist/xml.png"><br>“<code>&lt;=:</code>“替换成:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;=: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span><br></pre></td></tr></table></figure>
+<p>注意a前面还有一个空格）</p>
+<h2 id="HTML自动补全"><a href="#HTML自动补全" class="headerlink" title="HTML自动补全"></a>HTML自动补全</h2><p><code>Window</code>–<code>Preferences</code>–<code>Web</code>–<code>HTML Files</code>–<code>Editor</code>—<code>Content Assist</code>，勾选上<code>Automatically make suggestions</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/settings/contentAssist/html.png"><br>“<code>&lt;=:</code>“替换成”</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;=: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span><br></pre></td></tr></table></figure>
+<p>(注意a前面还有一个空格)</p>
+<h2 id="JavaScript自动补全"><a href="#JavaScript自动补全" class="headerlink" title="JavaScript自动补全"></a>JavaScript自动补全</h2><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/settings/contentAssist/javascript.png"><br><code>Window</code>–<code>Preferences</code>–<code>JavaScript</code>–<code>Editor</code>—<code>Content Assist</code>,勾选上<code>Enable auto activation</code>启用自动补全。然后，在<code>Auto activation triggers for Java Script:</code>框中，把点号<code>.</code>设置为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span><br></pre></td></tr></table></figure>
+<h2 id="eclipse-按下syso没有自动提示"><a href="#eclipse-按下syso没有自动提示" class="headerlink" title="eclipse 按下syso没有自动提示"></a>eclipse 按下syso没有自动提示</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在<code>eclipse</code>中按下<code>syso</code>时,没有出现<code>System.out.println()</code>的自动提示,按下<code>alt+/</code>也没有出现自动提示.</p>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>这是因为没有开启<code>Template Proposals</code>(模板建议)引起的,勾选上这个功能就行了。</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>在<code>eclipse</code>中依次点击<code>Window-&gt;Preferences-&gt;Java-&gt;Editor-&gt;Content Assist-&gt;Advanced</code>,然后勾选上右边方框中的<code>Template Proposals</code>,最后点击<code>Apply and Close</code>即可,如下图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/CanNotSYSO/1.png" alt="这里有一张图片"></p>
+<h1 id="使用外部浏览器打开JavaWeb项目"><a href="#使用外部浏览器打开JavaWeb项目" class="headerlink" title="使用外部浏览器打开JavaWeb项目"></a>使用外部浏览器打开JavaWeb项目</h1><p>Window–preferences–General–Web Brower​，选择Use external web browser<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/settings/externalWeb/browser.png"></p>
+<h1 id="eclipse-使用自带暗色主题"><a href="#eclipse-使用自带暗色主题" class="headerlink" title="eclipse 使用自带暗色主题"></a>eclipse 使用自带暗色主题</h1><p><code>Window</code>-&gt;<code>Preferences</code>-&gt;<code>General</code>-&gt;<code>Appearance</code>,<code>Theme:</code>-&gt;<code>Dark</code>如下图所示<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/theme/defaultDark/defaultDark.png"></p>
+<h1 id="设置工作区间为UTF-8"><a href="#设置工作区间为UTF-8" class="headerlink" title="设置工作区间为UTF-8"></a>设置工作区间为UTF-8</h1><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/encoding/workspace_enchoding.png"></p>
+<h1 id="设置创建JSP文件使用的编码"><a href="#设置创建JSP文件使用的编码" class="headerlink" title="设置创建JSP文件使用的编码"></a>设置创建JSP文件使用的编码</h1><p>在eclipse中，JSP文件的默认编码是ISO-8859-1，每次新增一个JSP文件，就必须手动的将JSP文件的编码格式改为UTF-8。这个挺烦人的。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/encoding/jsp.png"><br>这样新建的jsp就是UTF-8编码的了。</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq193423571/article/details/76146046">Eclipse设置打开的默认浏览器</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/erlian1992/article/details/53706736">https://blog.csdn.net/erlian1992/article/details/53706736</a><br><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/046a7b3ebb211df9c27fa926.html">Eclipse怎样删除多余workspace</a></p>
+<h1 id="使用空格缩进"><a href="#使用空格缩进" class="headerlink" title="使用空格缩进"></a>使用空格缩进</h1><h2 id="Java代码中设置tab键为4个空格"><a href="#Java代码中设置tab键为4个空格" class="headerlink" title="Java代码中设置tab键为4个空格"></a>Java代码中设置tab键为4个空格</h2><p><code>eclipse</code>中依次点击<code>windows</code>,<code>preferences</code>,然后在搜索框中输入<code>Formatter</code>,然后选中<code>Java</code>&gt;<code>Code Style</code>下的<code>Formatter</code>,在右侧的界面中点击<code>Edit</code>进行编辑<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/TabUse4Space.png"><br>然后点击展开<code>Indentation</code>,在<code>Tab policy</code>:下拉框中选择<code>Spaces only</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/TabUse4Space/1.png"><br>最后点击<code>Apply</code>即可</p>
+<h2 id="JavaScript代码中设置tab键为4个空格"><a href="#JavaScript代码中设置tab键为4个空格" class="headerlink" title="JavaScript代码中设置tab键为4个空格"></a>JavaScript代码中设置tab键为4个空格</h2><p>类似上面的操作,选择<code>JavaScript</code>&gt;<code>Code Style</code>下的<code>Formatter</code>进行设置即可：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/TabUse4Space/2.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/TabUse4Space/3.png"></p>
+<h2 id="XML代码中设置tab键为4个空格"><a href="#XML代码中设置tab键为4个空格" class="headerlink" title="XML代码中设置tab键为4个空格"></a>XML代码中设置tab键为4个空格</h2><p>在<code>preferences</code>的搜索框中输入<code>XML</code>,选择<code>XML</code>&gt;<code>XML Files</code>下的<code>Editor</code>,然后在<code>Formatting</code>方框中选择<code>Indent using spaces</code>;<br><code>indentation size</code>:选择<code>4</code>,如下图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/TabUse4Space/4.png"></p>
+<h2 id="CSS代码中设置tab键为4个空格"><a href="#CSS代码中设置tab键为4个空格" class="headerlink" title="CSS代码中设置tab键为4个空格"></a>CSS代码中设置tab键为4个空格</h2><p>在<code>preferences</code>的搜索框中输入<code>Editor</code>,找到<code>Web</code>&gt;<code>CSS Files</code>下的<code>Editor</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/TabUse4Space/5.png"></p>
+<h2 id="HTML-JSP代码中设置tab键为4个空格"><a href="#HTML-JSP代码中设置tab键为4个空格" class="headerlink" title="HTML JSP代码中设置tab键为4个空格"></a>HTML JSP代码中设置tab键为4个空格</h2><p><code>preferences</code>&gt;<code>Web</code>&gt;<code>HTML Files</code>&gt;<code>Editor</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/IDESetting/eclipse/TabUse4Space/6.png"><br>因为<code>JSP</code>代码使用的是<code>HTML</code>的模板来渲染的,所以设置好了<code>HTML</code>,也是设置好了<code>JSP</code></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37932863/article/details/73611785">https://blog.csdn.net/qq_37932863&#x2F;article&#x2F;details&#x2F;73611785</a></p>
+<h1 id="eclipse中安装Spring-MVC插件"><a href="#eclipse中安装Spring-MVC插件" class="headerlink" title="eclipse中安装Spring MVC插件"></a>eclipse中安装Spring MVC插件</h1><h2 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤"></a>步骤</h2><ul>
+<li><code>help</code></li>
+<li><code>Eclipse Marketplace...</code></li>
+<li>在搜索框中输入<code>spring</code>查找插件</li>
+<li>安装第二个插件:<code>Spring Tools 3 Add-On for Spring Tools 4 3.9.13. RELEASE</code></li>
+</ul>
+<h2 id="eclipse中直接创建Spring配置文件"><a href="#eclipse中直接创建Spring配置文件" class="headerlink" title="eclipse中直接创建Spring配置文件"></a>eclipse中直接创建Spring配置文件</h2><p>安装好之后就可以直接使用插件来创建Spring的配置文件了,步骤如下:</p>
+<ul>
+<li>在一个目录(<code>WEB-INF</code>)下按下<strong>右键</strong></li>
+<li><code>New</code></li>
+<li><code>Other... Ctrl+N</code></li>
+<li>搜索框中输入<code>spring</code>,或者下拉,找到Spring目录</li>
+<li>选则<code>Spring Bean Configuration File</code>,即可创建Spring配置文件</li>
+</ul>
+<h2 id="eclipse中自动导入Spring名字空间-namespace"><a href="#eclipse中自动导入Spring名字空间-namespace" class="headerlink" title="eclipse中自动导入Spring名字空间(namespace)"></a>eclipse中自动导入Spring名字空间(namespace)</h2><ul>
+<li>在Spring配置文件(<code>springmvc-connig.xml</code>)上<strong>右键</strong></li>
+<li><code>Open With</code></li>
+<li><code>Spring Config Editor</code></li>
+</ul>
+<p>即可在<strong>文件编辑器下方</strong>找到以下功能:</p>
+<ul>
+<li><code>Source</code>,这个对应的是源代码</li>
+<li><code>Namespaces</code>,点击这个按钮即可导入名字空间</li>
+<li><code>Overview</code></li>
+<li><code>Beans</code></li>
+<li><code>Context</code></li>
+<li><code>Mvc</code></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1393,298 +1694,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/f1601c3e/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/f1601c3e/" class="post-title-link" itemprop="url">单例模式</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-12-08 00:15:25" itemprop="dateCreated datePublished" datetime="2018-12-08T00:15:25+08:00">2018-12-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 16:02:25" itemprop="dateModified" datetime="2022-04-04T16:02:25+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">单例模式</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/f1601c3e/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/f1601c3e/" data-xid="/blog/f1601c3e/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h1><p>设计模式( Design Pattern) 是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。</p>
-<h2 id="使用设计模式的目的"><a href="#使用设计模式的目的" class="headerlink" title="使用设计模式的目的"></a>使用设计模式的目的</h2><p>使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。</p>
-<h1 id="Java设计模式有哪些"><a href="#Java设计模式有哪些" class="headerlink" title="Java设计模式有哪些"></a>Java设计模式有哪些</h1><p>基本模式有23种：</p>
-<ul>
-<li>单例模式</li>
-<li>抽象工厂模式</li>
-<li>建造者模式</li>
-<li>工厂模式</li>
-<li>原型模式</li>
-<li>……</li>
-</ul>
-<h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><p>在开发过程中，有些对象我们只需要一个,比如配置文件、工具类、线程池、缓存、日志对象等。<br>如果创造出多个实例,就会导致许多问题,比如占用过多资源,不一致的结果等</p>
-<h2 id="单例模式分类"><a href="#单例模式分类" class="headerlink" title="单例模式分类"></a>单例模式分类</h2><p>常用的单例模式有两种，一种叫懒汉模式，一种叫饿汉模式。</p>
-<h2 id="饿汉模式"><a href="#饿汉模式" class="headerlink" title="饿汉模式"></a>饿汉模式</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>1.将构造方法私有化，不允许外部直接创建对象<br>2.在类内部<code>创建</code>类的唯一实例，使用<code>private static</code>修饰<br>3.提供一个用于获取实例的方法，使用<code>public static</code>修饰</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//1.将构造方法私有化，不允许外部直接创建对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span></span><br><span class="line">    &#123;        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//2.创建类的唯一实例，使用private static修饰</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance=<span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br><span class="line">    <span class="comment">//3.提供一个用于获取实例的方法，使用public static修饰</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>测试</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 饿汉模式</span></span><br><span class="line">    <span class="type">Singleton</span> <span class="variable">s1</span> <span class="operator">=</span> Singleton.getInstance();</span><br><span class="line">    <span class="type">Singleton</span> <span class="variable">s2</span> <span class="operator">=</span> Singleton.getInstance();</span><br><span class="line">    <span class="keyword">if</span> (s1 == s2)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;s1和s2是同一个实例&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;s1和s2不是同一个实例&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s1和s2是同一个实例</span><br></pre></td></tr></table></figure>
-<h2 id="为什么叫饿汉模式"><a href="#为什么叫饿汉模式" class="headerlink" title="为什么叫饿汉模式"></a>为什么叫饿汉模式</h2><p>不管程序是否需要这个对象的实例，总是在类加载的时候就先创建好实例，理解起来就像不管一个人想不想吃东西，他都把吃的先买好存着，如同饿怕了一样。</p>
-<h1 id="懒汉模式"><a href="#懒汉模式" class="headerlink" title="懒汉模式"></a>懒汉模式</h1><h2 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤"></a>步骤</h2><ul>
-<li>将构造方式私有化，不允许外边直接创建对象</li>
-<li>在类内部<code>声明</code>类的唯一实例，使用private static修饰</li>
-<li>提供一个用于获取实例的方法，使用public static修饰。当第一个用户来获取的时候，才创建一个实例，后面就不需要创建了。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton2</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 1.将构造方式私有化，不允许外边直接创建对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton2</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 2.声明类的唯一实例，使用private static修饰</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton2 instance;</span><br><span class="line">    <span class="comment">// 3.提供一个用于获取实例的方法，使用public static修饰</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span>  Singleton2 <span class="title function_">getInstance</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//第一次获取的时候，创建实例</span></span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> <span class="title class_">Singleton2</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>测试</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 懒汉模式</span></span><br><span class="line">    <span class="type">Singleton2</span> <span class="variable">s3</span> <span class="operator">=</span> Singleton2.getInstance();</span><br><span class="line">    <span class="type">Singleton2</span> <span class="variable">s4</span> <span class="operator">=</span> Singleton2.getInstance();</span><br><span class="line">    <span class="keyword">if</span> (s3 == s4) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;s3和s4是同一个实例&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;S3和s4不是同一个实例&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s3和s4是同一个实例</span><br></pre></td></tr></table></figure>
-<h2 id="为什么叫懒汉模式"><a href="#为什么叫懒汉模式" class="headerlink" title="为什么叫懒汉模式"></a>为什么叫懒汉模式</h2><p><strong>当程序需要这个实例的时候才去创建对象，就如同一个人懒的饿到不行了才去吃东西</strong>。</p>
-<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><ul>
-<li>饿汉模式的特点是加载类时比较慢，但运行时获取对象的速度比较快，<code>线程安全</code></li>
-<li>懒汉模式的特点是加载类时比较快，但运行时获取对象的速度比较慢，<code>线程不安全</code></li>
-</ul>
-<p>如果一个对象使用频率不高，占用内存还特别大，明显就不合适用饿汉式了。这时应该使用懒汉模式。</p>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/272488727/answer/370044004">为什么单例模式要起名叫饿汉式和懒汉式？</a><br><a target="_blank" rel="noopener" href="https://www.imooc.com/video/1772">慕课网 单例模式</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/358dbd0e/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/358dbd0e/" class="post-title-link" itemprop="url">根据Java源码生成流程图</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-12-08 00:07:22" itemprop="dateCreated datePublished" datetime="2018-12-08T00:07:22+08:00">2018-12-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 16:01:01" itemprop="dateModified" datetime="2022-04-04T16:01:01+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%B5%81%E7%A8%8B%E5%9B%BE/" itemprop="url" rel="index"><span itemprop="name">流程图</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/358dbd0e/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/358dbd0e/" data-xid="/blog/358dbd0e/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近我写了点操作数据库的代码，但是呢，要在报告里画上流程图。手动来画的话很繁琐，于是我就想着有没有工具可以根据java源代码直接生成流程图。网上找了一番找到一个可以免费<code>试用</code>的流程图生成工具(<code>visustin</code>)。</p>
-<h2 id="工具软件"><a href="#工具软件" class="headerlink" title="工具软件"></a>工具软件</h2><p><strong>visustin</strong>这个软件是一个<code>代码转换成流程图</code>的神器，支持43种语言，包括C&#x2F;C++，Java等等等等。这是一款收费的软件，不过好在其官网提供了一个demo版本可供用户下载使用。使用demo版，就可以根据Java代码生成流程图了，不过这个图你只能看，不能保存，也不能导出到word或者Visio中。但是这样就足够了，我们可以使用截图软件把流程图保存下来即可。</p>
-<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="下载demo版安装包"><a href="#下载demo版安装包" class="headerlink" title="下载demo版安装包"></a>下载demo版安装包</h3><p>进入官方网站:<a target="_blank" rel="noopener" href="http://www.aivosto.com/visustin.html">http://www.aivosto.com/visustin.html</a>：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/codetoflow/welcome.png"></p>
-<p>然后下来找到<strong>Download for free</strong>标题下面的<code>Download demo</code>链接地址：<a target="_blank" rel="noopener" href="http://www.aivosto.com/getshareware.html">http://www.aivosto.com/getshareware.html</a>：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/codetoflow/downloadDemo.png"></p>
-<p>点击进入，然后点击<code>Go download</code>链接:<a target="_blank" rel="noopener" href="http://www.aivosto.com/download.html">http://www.aivosto.com/download.html</a>跳过问卷直接下载：</p>
-<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/codetoflow/quitQues.png"></p>
-<p>然后找到<strong>Free downloads for Windows</strong>标题，选择最新的版本，点击<code>Download demo</code>链接<a target="_blank" rel="noopener" href="http://www.aivosto.com/shareware/visus805.zip">http://www.aivosto.com/shareware/visus805.zip</a>下载即可：</p>
-<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/codetoflow/dowmdemofree.png"></p>
-<h3 id="安装demo版本"><a href="#安装demo版本" class="headerlink" title="安装demo版本"></a>安装demo版本</h3><p>下载到的Demo程序是个压缩包，解压下载的压缩包，然后点击<code>setup.exe</code>进行安装。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/codetoflow/unzip_install.png"></p>
-<h3 id="使用demo版本生成流程图"><a href="#使用demo版本生成流程图" class="headerlink" title="使用demo版本生成流程图"></a>使用demo版本生成流程图</h3><p>java代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 事件监听</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">actionPerformed</span><span class="params">(ActionEvent e)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 如果按下的录入按钮</span></span><br><span class="line">    <span class="keyword">if</span> (e.getSource() == insert)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> Student.getInstance();</span><br><span class="line">        <span class="comment">// 获取文本框中的文本</span></span><br><span class="line">        getAllInputs(student);</span><br><span class="line">        <span class="comment">// 检查是否全都输入了</span></span><br><span class="line">        <span class="keyword">if</span> (!isInputAll(student))</span><br><span class="line">        &#123;</span><br><span class="line">            JOptionPane.showMessageDialog(<span class="built_in">this</span>, <span class="string">&quot;请全部填写所有输入项&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 判断</span></span><br><span class="line">            <span class="keyword">if</span> (canBeInsert())</span><br><span class="line">            &#123;</span><br><span class="line">                insetIntoStudent(student);</span><br><span class="line">                JOptionPane.showMessageDialog(<span class="built_in">this</span>, <span class="string">&quot;录入成功!&quot;</span>, <span class="string">&quot;信息管理系统&quot;</span>,</span><br><span class="line">                        JOptionPane.INFORMATION_MESSAGE);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 如果按下了重置按钮</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (e.getSource() == reset)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 清空所有的输入框</span></span><br><span class="line">        cleanInput();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>打开软件，选择开发语言为:Java:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/codetoflow/useJava.png"></p>
-<p>开始界面如下：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/codetoflow/startupshow.png"></p>
-<p>取消勾选，下次不再显示。<br>然后在code输入框中，粘贴java代码，点击下方的Drow生成流程图，生成的流程图可以在右侧的窗口中显示。点击下方的Editor按钮可以编辑生成的流程图：</p>
-<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/codetoflow/shiyong.png"><br>双击流程图的各个文本框，就可以改变里面的文本：</p>
-<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/codetoflow/edit.png"><br>修改完毕后使用截图工具，截图保存即可：</p>
-<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/codetoflow/editResult.png"><br>使用demo版本可以实现基本功能。但是如果想到处到Word或者Visio中就要使用付费版的。如果你嫌弃画面太丑了，可以用其他工具照着着重新画一遍这里推荐<a target="_blank" rel="noopener" href="https://www.processon.com/">https://www.processon.com/</a>这个在线工具。不过差不多啦，能看就行了。</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/aademeng/articles/6905351.html">https://www.cnblogs.com/aademeng/articles/6905351.html</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/53/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/53/">53</a><span class="page-number current">54</span><a class="page-number" href="/blog/page/55/">55</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/55/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1717,7 +1726,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22:54</span>
+    <span title="站点阅读时长">23:01</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

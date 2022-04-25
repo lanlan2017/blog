@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">618</span>
+          <span class="site-state-item-count">620</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,279 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/80deef00/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/80deef00/" class="post-title-link" itemprop="url">C语言 创建动态结构体数组</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-02-13 00:31:18" itemprop="dateCreated datePublished" datetime="2019-02-13T00:31:18+08:00">2019-02-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:01" itemprop="dateModified" datetime="2022-04-04T15:13:01+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/C%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">C语言</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/C%E8%AF%AD%E8%A8%80/%E7%BB%93%E6%9E%84%E4%BD%93/" itemprop="url" rel="index"><span itemprop="name">结构体</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/80deef00/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/80deef00/" data-xid="/blog/80deef00/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>319</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>结构体类型数据组就和我们平常定义的基本类型的数组一样，只不过是类型变了。</p>
+<h1 id="基本类型数组动态分配大小"><a href="#基本类型数组动态分配大小" class="headerlink" title="基本类型数组动态分配大小"></a>基本类型数组动态分配大小</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* a = (<span class="type">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>)*<span class="number">10</span>) ; <span class="comment">//动态分配10个大小的int类型的内存空间</span></span><br></pre></td></tr></table></figure>
+<h1 id="结构体类型数组分配大小"><a href="#结构体类型数组分配大小" class="headerlink" title="结构体类型数组分配大小"></a>结构体类型数组分配大小</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">DIYDEFINE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">char</span> ch;</span><br><span class="line">    <span class="type">long</span> lnum;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//动态分配10个大小的结构体类型DIYDEFINE的内存空间。 </span></span><br><span class="line">DIYDEFINE* pDiy = (DIYDEFINE*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(DIYDEFINE)*<span class="number">10</span>); </span><br><span class="line"><span class="comment">//最后不要忘了释放动态申请的内存空间</span></span><br><span class="line"><span class="built_in">free</span>(pDiy)；</span><br></pre></td></tr></table></figure>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/1882917470304248548.html?qbl=relate_question_0&word=C%EF%BF%BD%EF%BF%BD%EF%BF%BD%D4%B6%EF%BF%BD%CC%AC%EF%BF%BD%E1%B9%B9%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD">C语言中结构体数组的大小如何动态分配</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4f1b06ea/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/4f1b06ea/" class="post-title-link" itemprop="url">hexo博客中 使用javascirpt和jqurey播放audio</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-02-13 00:24:14" itemprop="dateCreated datePublished" datetime="2019-02-13T00:24:14+08:00">2019-02-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/HTML/" itemprop="url" rel="index"><span itemprop="name">HTML</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/HTML/%E9%9F%B3%E8%A7%86%E9%A2%91/" itemprop="url" rel="index"><span itemprop="name">音视频</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/4f1b06ea/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/4f1b06ea/" data-xid="/blog/4f1b06ea/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>markdown中可以插入html标签，所以可以插入audio标签来播放音频。</p>
+<h1 id="方式0-使用原生的audio播放音频"><a href="#方式0-使用原生的audio播放音频" class="headerlink" title="方式0 使用原生的audio播放音频"></a>方式0 使用原生的audio播放音频</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">&quot;https://fanyi.baidu.com/gettts?lan=en&amp;text=focus&amp;spd=5&amp;source=web&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>显示效果：<br><audio src="https://fanyi.baidu.com/gettts?lan=en&text=focus&spd=5&source=web" controls="controls"></audio></p>
+<p>但是原生的audio标签控件太大了，占用文章太多空间,在电脑端，看起来还勉强凑合，但是在手机端的原生的audio控件会超出屏幕之外很不美观。所以我想着不用原生的audio,而是使用其他方式来打开音频。</p>
+<h1 id="方式1-使用javascript播放音频"><a href="#方式1-使用javascript播放音频" class="headerlink" title="方式1 使用javascript播放音频"></a>方式1 使用javascript播放音频</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">&quot;https://fanyi.baidu.com/gettts?lan=en&amp;text=document&amp;spd=3&amp;source=web&quot;</span> <span class="attr">id</span>=<span class="string">&quot;audio0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;paly_audio0();&quot;</span> <span class="attr">value</span>=<span class="string">&quot;使用JS播放&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">paly_audio0</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//找到音频</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> audio0 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;audio0&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (audio0 != <span class="literal">null</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            audio0.<span class="title function_">play</span>();</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>显示效果：</p>
+<p><audio src="https://fanyi.baidu.com/gettts?lan=en&text=document&spd=3&source=web" id="audio0"></audio><br><input type="button" onclick="paly_audio0();" value="使用JS播放" /></p>
+<script>
+    function paly_audio0() {
+        //找到音频
+        var audio0 = document.getElementById("audio0");
+        if (audio0 != null) {
+            audio0.play();
+        }
+    }
+</script>
+
+<h1 id="方式2-使用javascript播放音频-简写"><a href="#方式2-使用javascript播放音频-简写" class="headerlink" title="方式2 使用javascript播放音频 简写"></a>方式2 使用javascript播放音频 简写</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">&quot;https://fanyi.baidu.com/gettts?lan=en&amp;text=hello world&amp;spd=3&amp;source=web&quot;</span>  <span class="attr">id</span>=<span class="string">&quot;audio1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;document.getElementById(&#x27;audio1&#x27;).play();&quot;</span> <span class="attr">value</span>=<span class="string">&quot;播放&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这种方式，直接写在html中是可以播放的，但是写到在这里hexo 无法渲染。我用的是next主题，也不知道是hexo的原因，还是next主题的原因 。总之不要在文章中使用这种简写的方式就行了。</p>
+<h1 id="方式2-使用jquery播放音频"><a href="#方式2-使用jquery播放音频" class="headerlink" title="方式2 使用jquery播放音频"></a>方式2 使用jquery播放音频</h1><p>跟使用javascript方式，也可以使用jquery来播放：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">&quot;https://fanyi.baidu.com/gettts?lan=en&amp;text=document&amp;spd=3&amp;source=web&quot;</span> <span class="attr">id</span>=<span class="string">&quot;documentAudio&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">id</span>=<span class="string">&quot;documentPlay&quot;</span> <span class="attr">value</span>=<span class="string">&quot;播放document&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    $(<span class="string">&#x27;#documentPlay&#x27;</span>).<span class="title function_">click</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//找到音频</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> documentAudio = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;documentAudio&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (documentAudio != <span class="literal">null</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            documentAudio.<span class="title function_">play</span>();</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><audio src="https://fanyi.baidu.com/gettts?lan=en&text=document&spd=3&source=web" id="documentAudio"></audio><br><input type="button" id="documentPlay" value="播放document" /></p>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $('#documentPlay').click(function () {
+        //找到音频
+        var documentAudio = document.getElementById('documentAudio');
+        if (documentAudio != null) {
+            documentAudio.play();
+        }
+    })
+</script>
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>还是直接使用javascript来播放音频的好，这样还少几行代码，也不用引入jqurey库。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1911,277 +2184,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d0992fb0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/d0992fb0/" class="post-title-link" itemprop="url">editplus快捷键</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-02-07 21:47:54" itemprop="dateCreated datePublished" datetime="2019-02-07T21:47:54+08:00">2019-02-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/VSCode/" itemprop="url" rel="index"><span itemprop="name">VSCode</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/d0992fb0/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/d0992fb0/" data-xid="/blog/d0992fb0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>126</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="editplus移动一行快捷键"><a href="#editplus移动一行快捷键" class="headerlink" title="editplus移动一行快捷键"></a>editplus移动一行快捷键</h2><p><code>shitf+alt+上下箭头键</code>可把一行上下移动</p>
-<h2 id="editplus复制一行到快捷键"><a href="#editplus复制一行到快捷键" class="headerlink" title="editplus复制一行到快捷键"></a>editplus复制一行到快捷键</h2><p><code>ctrl+j</code>快捷键可以复制一行到到下一行</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/189856473.html">https://zhidao.baidu.com/question/189856473.html</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e6156b85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/e6156b85/" class="post-title-link" itemprop="url">批处理 设置系统path环境变量,相同路径不重复设置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-02-03 18:14:35" itemprop="dateCreated datePublished" datetime="2019-02-03T18:14:35+08:00">2019-02-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 16:35:10" itemprop="dateModified" datetime="2022-04-04T16:35:10+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/" itemprop="url" rel="index"><span itemprop="name">CMD</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/%E6%89%B9%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">批处理</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/%E6%89%B9%E5%A4%84%E7%90%86/%E6%9E%84%E5%BB%BA%E7%A8%8B%E5%BA%8F%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">构建程序相关命令</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/e6156b85/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/e6156b85/" data-xid="/blog/e6156b85/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>5k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>我想点击运行一个批处理文件(install.bat)，然后把该文件所在的目录配置到path系统环境变量中。<br>这种功能我用在软件安装程序中,为自己的软件自动搭建好需要的环境。</p>
-<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><p>追加一个路径到永久的path系统环境变量中，可以通过<code>setx /m &quot;path&quot; &quot;%newpath%;%path%&quot;</code>命令来实现，但是我可能运行多次<code>intall.bat</code>，这样就会造成intall.bat会<code>写入多个相同的路径到path环境变量中</code>。要解决这个问题，就需要在追加新路径到path环境变量之前，先检查path环境变量中是否已经存在了该路径，如果有了该路径，那我就不需要再添加。如果没有我再添加。不能一直无脑的添加。</p>
-<h1 id="实现1-使用find命令"><a href="#实现1-使用find命令" class="headerlink" title="实现1 使用find命令"></a>实现1 使用find命令</h1><h2 id="获取当前文件所在的目录"><a href="#获取当前文件所在的目录" class="headerlink" title="获取当前文件所在的目录"></a>获取当前文件所在的目录</h2><p>批处理中<code>%0</code>变量表示当前的批处理文件，<code>%~dp0</code>则表示当前文件的绝对路径.</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">::获取当前文件所在的目录的绝对路径</span><br><span class="line"><span class="built_in">set</span> &quot;thispath=%~dp0&quot;</span><br><span class="line">::删除之后的路径分隔符号“\”</span><br><span class="line"><span class="built_in">set</span> &quot;thispath=<span class="variable">%thispath:~0,-1%</span>&quot;</span><br><span class="line"><span class="built_in">echo</span> 当前文件所在目录路径:<span class="variable">%thispath%</span></span><br></pre></td></tr></table></figure>
-<h2 id="在path环境变量中查找当前目录路径"><a href="#在path环境变量中查找当前目录路径" class="headerlink" title="在path环境变量中查找当前目录路径"></a>在path环境变量中查找当前目录路径</h2><p>这里使用find命令来实现查找，但是find命令好像只能在文件中查找字符串，不能再字符串中查找子串，所以我们要先把path环境变量先写到一个临时文件中，然后再在临时文件中查找。</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">::读取<span class="built_in">path</span>环境变量到自定义变量中</span><br><span class="line"><span class="built_in">set</span> mypath=<span class="variable">%path%</span></span><br><span class="line">::把<span class="built_in">path</span>环境变量写入临时文件中,以备后续使用<span class="built_in">findstr</span>命令进行查找</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%mypath%</span> &gt; temp.txt</span><br><span class="line">::在临时文件中查找有没有当前路径</span><br><span class="line"><span class="built_in">find</span> &quot;<span class="variable">%thispath%</span>&quot; temp.txt</span><br></pre></td></tr></table></figure>
-<h2 id="根据查找结果处理"><a href="#根据查找结果处理" class="headerlink" title="根据查找结果处理"></a>根据查找结果处理</h2><p>批处理命令都有程序返回码<code>errorlevel</code>，对于find命令，如果在文件中查找到则返回<code>0</code>，如果没有找到则返回<code>1</code>，返回的结果就保存在程序返回码<code>errorlevel</code>中。所以我们可以根据程序返回码来做响应的条件处理:</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="variable">%errorlevel%</span> == <span class="number">0</span> (</span><br><span class="line">    <span class="built_in">echo</span> <span class="built_in">path</span>环境变量中 已经包含了 当前路径<span class="variable">%thispath%</span></span><br><span class="line">    <span class="built_in">echo</span> 程序返回码:<span class="variable">%errorlevel%</span></span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">    <span class="built_in">echo</span> <span class="built_in">path</span>环境变量中 没有包含   当前路径<span class="variable">%thispath%</span></span><br><span class="line">    <span class="built_in">echo</span> 程序返回码:<span class="variable">%errorlevel%</span></span><br><span class="line">    ::追加当前文件所在目录的路径到<span class="built_in">path</span>环境变量中</span><br><span class="line">    setx /m &quot;<span class="built_in">path</span>&quot; &quot;<span class="variable">%thispath%</span>;<span class="variable">%path%</span>&quot;</span><br><span class="line">)    </span><br></pre></td></tr></table></figure>
-<p>设置好环境变量后，删除临时文件即可,完整的代码如下:</p>
-<h2 id="添加当前目录路径到path系统环境变量中-不重复添加"><a href="#添加当前目录路径到path系统环境变量中-不重复添加" class="headerlink" title="添加当前目录路径到path系统环境变量中 不重复添加"></a>添加当前目录路径到path系统环境变量中 不重复添加</h2><p>install.bat:</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">::获取当前文件所在的目录的绝对路径</span><br><span class="line"><span class="built_in">set</span> &quot;thispath=%~dp0&quot;</span><br><span class="line">::删除之后的路径分隔符号“\”</span><br><span class="line"><span class="built_in">set</span> &quot;thispath=<span class="variable">%thispath:~0,-1%</span>&quot;</span><br><span class="line"><span class="built_in">echo</span> 当前文件所在的目录的绝对路径:<span class="variable">%thispath%</span></span><br><span class="line">::读取<span class="built_in">path</span>环境变量到自定义变量中</span><br><span class="line"><span class="built_in">set</span> mypath=<span class="variable">%path%</span></span><br><span class="line">::把<span class="built_in">path</span>环境变量写入临时文件中,以备后续使用<span class="built_in">findstr</span>命令进行查找</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%mypath%</span> &gt; temp.txt</span><br><span class="line">::在临时文件中查找有没有当前路径</span><br><span class="line"><span class="built_in">find</span> &quot;<span class="variable">%thispath%</span>&quot; temp.txt</span><br><span class="line">::如果查找到则fin命令返回<span class="number">0</span>,如果没有找到<span class="built_in">find</span>命令返回<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> <span class="variable">%errorlevel%</span> == <span class="number">0</span> (</span><br><span class="line">    <span class="built_in">echo</span> <span class="built_in">path</span>环境变量中 已经包含了 当前路径<span class="variable">%thispath%</span></span><br><span class="line">    <span class="built_in">echo</span> 程序返回码:<span class="variable">%errorlevel%</span></span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line">    <span class="built_in">echo</span> <span class="built_in">path</span>环境变量中 没有包含   当前路径<span class="variable">%thispath%</span></span><br><span class="line">    <span class="built_in">echo</span> 程序返回码:<span class="variable">%errorlevel%</span></span><br><span class="line">    ::追加当前文件所在目录的路径到<span class="built_in">path</span>环境变量中</span><br><span class="line">    setx /m &quot;<span class="built_in">path</span>&quot; &quot;<span class="variable">%thispath%</span>;<span class="variable">%path%</span>&quot;</span><br><span class="line">)    </span><br><span class="line">::删除临时文件</span><br><span class="line"><span class="built_in">del</span> temp.txt</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
-<p>还有要注意的是<code>setx /m &quot;path&quot; &quot;%thispath%;%path%&quot;</code>命令需要管理员权限,所以要以管理员身份运行该批处理脚本。</p>
-<h1 id="实现2-使用for命令"><a href="#实现2-使用for命令" class="headerlink" title="实现2 使用for命令"></a>实现2 使用for命令</h1><h2 id="批处理-for命令-增加-一个系统path环境变量"><a href="#批处理-for命令-增加-一个系统path环境变量" class="headerlink" title="批处理 for命令 增加 一个系统path环境变量"></a>批处理 for命令 增加 一个系统path环境变量</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">setlocal</span> enabledelayedexpansion </span><br><span class="line"><span class="built_in">set</span> remain=<span class="variable">%path%</span></span><br><span class="line">::待查找字符串</span><br><span class="line"><span class="built_in">set</span> toAdd=D:\dev\workspace\MarkdownTools</span><br><span class="line">::标记,默认没有重复</span><br><span class="line"><span class="built_in">set</span> finded=false</span><br><span class="line">:loop</span><br><span class="line"><span class="keyword">for</span> /f &quot;tokens=<span class="number">1</span>* delims=;&quot; <span class="variable">%%a</span> <span class="keyword">in</span> (&quot;<span class="variable">%remain%</span>&quot;) <span class="keyword">do</span> (</span><br><span class="line">    ::如果找到相同的了</span><br><span class="line">    <span class="keyword">if</span> &quot;<span class="variable">%toAdd%</span>&quot;==&quot;<span class="variable">%%a</span>&quot; (</span><br><span class="line">        ::直接退出</span><br><span class="line">        <span class="keyword">goto</span> :isFinded</span><br><span class="line">        ::该表标记,true表示有重复的了</span><br><span class="line">        <span class="built_in">set</span> finded=true</span><br><span class="line">    )</span><br><span class="line"><span class="comment">    rem 将截取剩下的部分赋给变量remain，其实这里可以使用延迟变量开关</span></span><br><span class="line">    <span class="built_in">set</span> remain=<span class="variable">%%b</span></span><br><span class="line">)</span><br><span class="line">::如果还有剩余,则继续分割</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">defined</span> remain <span class="keyword">goto</span> :loop</span><br><span class="line">::如果没有重复:</span><br><span class="line"><span class="keyword">if</span> &quot;<span class="variable">%finded%</span>&quot;==&quot;false&quot; (</span><br><span class="line">    <span class="built_in">echo</span> 正在修改系统<span class="built_in">path</span>环境变量...</span><br><span class="line">    setx /m &quot;<span class="built_in">path</span>&quot; &quot;<span class="variable">%toAdd%</span>;<span class="variable">%path%</span>&quot;</span><br><span class="line">    ::结束程序</span><br><span class="line">    <span class="keyword">goto</span> :end</span><br><span class="line">)</span><br><span class="line">:isFinded</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">path</span>环境变量中已经有了该环境变量,无须重复添加.</span><br><span class="line">:end</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
-<h1 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h1><h2 id="批处理-for命令-遍历-系统path环境变量"><a href="#批处理-for命令-遍历-系统path环境变量" class="headerlink" title="批处理 for命令 遍历 系统path环境变量"></a>批处理 for命令 遍历 系统path环境变量</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">setlocal</span> enabledelayedexpansion </span><br><span class="line"><span class="built_in">set</span> remain=<span class="variable">%path%</span></span><br><span class="line">:loop</span><br><span class="line"><span class="keyword">for</span> /f &quot;tokens=<span class="number">1</span>* delims=;&quot; <span class="variable">%%a</span> <span class="keyword">in</span> (&quot;<span class="variable">%remain%</span>&quot;) <span class="keyword">do</span> (</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">%%a</span></span><br><span class="line">    ::剩下的赋值给原来的副本,以备下次分段</span><br><span class="line">    <span class="built_in">set</span> remain=<span class="variable">%%b</span></span><br><span class="line">)</span><br><span class="line">::如果还有剩余,则继续分割</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">defined</span> remain <span class="keyword">goto</span> :loop</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
-<p>运行结果:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">D:\dev\workspace\MarkdownTools</span><br><span class="line">D:\dev\workspace\HexoTools\runable</span><br><span class="line">D:\dev\workspace\BaiduTranslatorPronunciationGenerator\runable</span><br><span class="line">C:\Windows</span><br><span class="line">C:\windows\system32</span><br><span class="line">C:\Windows\System32\Wbem</span><br><span class="line">C:\Windows\System32\WindowsPowerShell\v1.0\</span><br><span class="line">C:\Windows\System32\OpenSSH\</span><br><span class="line">D:\快捷方式</span><br><span class="line">D:\dev\java\jdk1.8.0_91\bin</span><br><span class="line">F:\Program Files\nodejs\node_global</span><br><span class="line">F:\Program Files\nodejs\</span><br><span class="line">F:\Program Files\Git\bin</span><br><span class="line">D:\dev\apache-maven-3.5.4\bin</span><br><span class="line">C:\Program Files\Microsoft VS Code\bin</span><br><span class="line">D:\MinGW\bin</span><br><span class="line">D:\dev\apache-tomcat-8.5.35\bin</span><br><span class="line">D:\dev\java\my\runable\openwith</span><br><span class="line">D:\GitHub\latex</span><br><span class="line">F:\texlive\2018\texlive\2018\bin\win32</span><br><span class="line">D:\GitHub\MD</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure>
-<h2 id="批处理-for命令-查找-一个系统path环境变量"><a href="#批处理-for命令-查找-一个系统path环境变量" class="headerlink" title="批处理 for命令 查找 一个系统path环境变量"></a>批处理 for命令 查找 一个系统path环境变量</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">setlocal enabledelayedexpansion </span><br><span class="line">set remain=%path%</span><br><span class="line">echo %remain%</span><br><span class="line">echo.</span><br><span class="line">::待查找字符串</span><br><span class="line">set toFind=D:\dev\workspace\MarkdownTools</span><br><span class="line">:loop</span><br><span class="line">for /f &quot;tokens=1* delims=;&quot; %%a in (&quot;%remain%&quot;) do (</span><br><span class="line">    if &quot;%toFind%&quot;==&quot;%%a&quot; (echo 找到:%%a)</span><br><span class="line">    rem 将截取剩下的部分赋给变量remain，其实这里可以使用延迟变量开关</span><br><span class="line">    set remain=%%b</span><br><span class="line">)</span><br><span class="line">::如果还有剩余,则继续分割</span><br><span class="line">if defined remain goto :loop</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-<p>运行结果:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">D:\dev\workspace\MarkdownTools;D:\dev\workspace\HexoTools\runable;D:\dev\workspace\BaiduTranslatorPronunciationGenerator\runable;C:\Windows;C:\windows\sy</span><br><span class="line">stem32;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\快捷方式;D:\dev\java\jdk1.8.0_91\bin;F:\Progr</span><br><span class="line">am Files\nodejs\node_global;F:\Program Files\nodejs\;F:\Program Files\Git\bin;D:\dev\apache-maven-3.5.4\bin;C:\Program Files\Microsoft VS Code\bin;D:\Min</span><br><span class="line">GW\bin;D:\dev\apache-tomcat-8.5.35\bin;D:\dev\java\my\runable\openwith;D:\GitHub\latex;F:\texlive\2018\texlive\2018\bin\win32;D:\GitHub\MD;</span><br><span class="line"></span><br><span class="line">找到:D:\dev\workspace\MarkdownTools</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure>
-
-<h2 id="批处理-for命令-删除-一个系统path环境变量"><a href="#批处理-for命令-删除-一个系统path环境变量" class="headerlink" title="批处理 for命令 删除 一个系统path环境变量"></a>批处理 for命令 删除 一个系统path环境变量</h2><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">setlocal</span> enabledelayedexpansion </span><br><span class="line"><span class="built_in">set</span> remain=<span class="variable">%path%</span></span><br><span class="line">::待删除字符串</span><br><span class="line"><span class="built_in">set</span> toDel=D:\dev\workspace\MarkdownTools</span><br><span class="line">:loop</span><br><span class="line"><span class="keyword">for</span> /f &quot;tokens=<span class="number">1</span>* delims=;&quot; <span class="variable">%%a</span> <span class="keyword">in</span> (&quot;<span class="variable">%remain%</span>&quot;) <span class="keyword">do</span> (</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> &quot;<span class="variable">%toDel%</span>&quot;==&quot;<span class="variable">%%a</span>&quot; (</span><br><span class="line">        ::如果mypath没有定义的话就直接赋值,赋值之后就只需要追加</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">defined</span> mypath ( <span class="built_in">set</span> mypath=<span class="variable">%%a</span>) <span class="keyword">else</span> (<span class="built_in">set</span> mypath=<span class="variable">%mypath%</span>;<span class="variable">%%a</span>)</span><br><span class="line">    )</span><br><span class="line"><span class="comment">    rem 将截取剩下的部分赋给变量remain，其实这里可以使用延迟变量开关</span></span><br><span class="line">    <span class="built_in">set</span> remain=<span class="variable">%%b</span></span><br><span class="line">)</span><br><span class="line">::如果还有剩余,则继续分割</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">defined</span> remain <span class="keyword">goto</span> :loop</span><br><span class="line"><span class="built_in">echo</span> 删除之前的<span class="built_in">path</span>环境变量</span><br><span class="line"><span class="built_in">echo</span>     <span class="variable">%path%</span></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> 删除之后的<span class="built_in">path</span>环境变量</span><br><span class="line"><span class="built_in">echo</span>     <span class="variable">%mypath%</span></span><br><span class="line"><span class="built_in">echo</span> 正在修改系统<span class="built_in">path</span>环境变量...</span><br><span class="line">setx /m &quot;<span class="built_in">path</span>&quot; &quot;<span class="variable">%mypath%</span>&quot;</span><br><span class="line"><span class="built_in">echo</span> 修改完毕...</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="http://blog.51cto.com/langlichong/1851961">Bat 处理字符串分割 （split功能）</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/48/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/48/">48</a><span class="page-number current">49</span><a class="page-number" href="/blog/page/50/">50</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/50/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -2214,7 +2216,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22:54</span>
+    <span title="站点阅读时长">23:01</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

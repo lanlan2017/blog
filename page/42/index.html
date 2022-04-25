@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">618</span>
+          <span class="site-state-item-count">620</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,302 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/569c8e52/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/569c8e52/" class="post-title-link" itemprop="url">Java int类型转char</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-23 13:18:52" itemprop="dateCreated datePublished" datetime="2019-08-23T13:18:52+08:00">2019-08-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/569c8e52/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/569c8e52/" data-xid="/blog/569c8e52/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>451</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近想随机生成一串包含数字和字母的字符串.但是我发现把int类型的数字通过强制类型转换为char类型字符的时候出现了乱码.</p>
+<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>字符<code>&#39;0&#39;</code>的<code>ASCII</code>编码值是<code>48</code>,如果直接通过类似如下的强制类型转换:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> ch=(<span class="type">int</span>) <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<p>得到的字符不是<code>&#39;0&#39;</code>,而是其他字符。</p>
+<h1 id="数字0到9转为’0’到’9’字符的正确做法"><a href="#数字0到9转为’0’到’9’字符的正确做法" class="headerlink" title="数字0到9转为’0’到’9’字符的正确做法"></a>数字0到9转为’0’到’9’字符的正确做法</h1><h2 id="先计算出正确的ASCII码在转为字符"><a href="#先计算出正确的ASCII码在转为字符" class="headerlink" title="先计算出正确的ASCII码在转为字符"></a>先计算出正确的ASCII码在转为字符</h2><h3 id="使用自动类型转换进行计算"><a href="#使用自动类型转换进行计算" class="headerlink" title="使用自动类型转换进行计算"></a>使用自动类型转换进行计算</h3><p>在char类型和int类型进行计算时,会自动把char类型转为int类型,所以可以先把字符<code>&#39;0&#39;</code>和<code>数字</code>进行计算得到正确的<code>ASCII</code>编码值,然后再强制类型转为字符.如下所示:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i=<span class="number">2</span>;</span><br><span class="line"><span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> (<span class="type">char</span>)(<span class="string">&#x27;0&#x27;</span> + i);</span><br></pre></td></tr></table></figure>
+<h3 id="直接计算"><a href="#直接计算" class="headerlink" title="直接计算"></a>直接计算</h3><p>当然换成如下写法也是可以的.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i=<span class="number">2</span>;</span><br><span class="line"><span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> (<span class="type">char</span>)(<span class="number">48</span> + i);</span><br></pre></td></tr></table></figure>
+<h2 id="Character-forDigit-数字-进制-方法进行转换"><a href="#Character-forDigit-数字-进制-方法进行转换" class="headerlink" title="Character.forDigit(数字,进制)方法进行转换"></a>Character.forDigit(数字,进制)方法进行转换</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i=<span class="number">2</span>;</span><br><span class="line"><span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> Character.forDigit(i,<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/11f888fa/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/11f888fa/" class="post-title-link" itemprop="url">使用Visual Studio Code写Markdown</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-08-20 12:06:20" itemprop="dateCreated datePublished" datetime="2019-08-20T12:06:20+08:00">2019-08-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/Markdown/%E7%BC%96%E8%BE%91%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">编辑器</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/11f888fa/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/11f888fa/" data-xid="/blog/11f888fa/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>210</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="快捷键支持"><a href="#快捷键支持" class="headerlink" title="快捷键支持"></a>快捷键支持</h1><p>安装<code>Markdown All in One</code>插件,该插件提供了快捷键支持.</p>
+<h2 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h2><p>Ctrl+B</p>
+<h2 id="切换代办列表"><a href="#切换代办列表" class="headerlink" title="切换代办列表"></a>切换代办列表</h2><p>Alt+C</p>
+<h2 id="格式化表格"><a href="#格式化表格" class="headerlink" title="格式化表格"></a>格式化表格</h2><p>Alt+Shitf+F</p>
+<h1 id="快捷键表格"><a href="#快捷键表格" class="headerlink" title="快捷键表格"></a>快捷键表格</h1><table>
+<thead>
+<tr>
+<th align="left"><code>快捷键</code></th>
+<th align="left"><code>功能</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Ctrl + B</code></td>
+<td align="left"><code>切换粗体</code></td>
+</tr>
+<tr>
+<td align="left"><code>Ctrl + I</code></td>
+<td align="left"><code>切换斜体</code></td>
+</tr>
+<tr>
+<td align="left"><code>Ctrl + Shift + ]</code></td>
+<td align="left"><code>提升标题</code></td>
+</tr>
+<tr>
+<td align="left"><code>Ctrl + Shift + [</code></td>
+<td align="left"><code>降低标题</code></td>
+</tr>
+<tr>
+<td align="left"><code>Ctrl + M</code></td>
+<td align="left"><code>切换公式</code></td>
+</tr>
+<tr>
+<td align="left"><code>Alt + C</code></td>
+<td align="left"><code>勾选或者取消勾选任务列表</code></td>
+</tr>
+<tr>
+<td align="left"><code>Ctrl + Shift + V</code></td>
+<td align="left"><code>切换预览</code></td>
+</tr>
+<tr>
+<td align="left"><code>Ctrl + K V</code></td>
+<td align="left"><code>将预览切换到侧边</code></td>
+</tr>
+</tbody></table>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>快捷键支持并不完全.还是算了.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1347,280 +1643,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e4a1ea9f/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/e4a1ea9f/" class="post-title-link" itemprop="url">Java IO 合并多个二进制文件为一个二进制文件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-06-27 17:54:33" itemprop="dateCreated datePublished" datetime="2019-06-27T17:54:33+08:00">2019-06-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-IO%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">Java IO流</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-IO%E6%B5%81/%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">应用</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/e4a1ea9f/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/e4a1ea9f/" data-xid="/blog/e4a1ea9f/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Java-IO-合并多个二进制文件为一个二进制文件"><a href="#Java-IO-合并多个二进制文件为一个二进制文件" class="headerlink" title="Java IO 合并多个二进制文件为一个二进制文件"></a>Java IO 合并多个二进制文件为一个二进制文件</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
-<li>我最近在调用讯飞语音的<code>API</code>来把我的博客中的文字转成音频,</li>
-<li>讯飞语音合成有数字限制,如果超过字数限制,会合成失败.</li>
-<li>为了不超过字数限制,我把文章分割成好几部分,分别合成,</li>
-<li>然后再把这些部分合并为一个文件.</li>
-<li>讯飞合成的音频文件是<code>.pcm</code>文件,这是个二进制文件,</li>
-</ul>
-<p>好了,废话就说到这,下面介绍<strong>如何把多个二进制文件合并为一个二进制文件</strong>.</p>
-<h2 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h2><p>复制文件的算法如下:</p>
-<ul>
-<li>从源文件中读入一些字节到内存(字节数组)中</li>
-<li>把内存中的这些字节写到目标文件中.</li>
-</ul>
-<p>多个源文件合并成一个目标文件,算法跟复制文件差不多,算法描述如下:</p>
-<ul>
-<li>读取第一个源文件中的内容,输出到目标文件中.</li>
-<li>然后读取第二个源文件中的内容,然后输出到目标文件中.</li>
-<li>然后读取第三个源文件中的内容,然后输出到目标文件中.</li>
-<li>依次类推,直到处理所有的源文件完成。</li>
-</ul>
-<h2 id="关键代码"><a href="#关键代码" class="headerlink" title="关键代码"></a>关键代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 缓存数组</span></span><br><span class="line"><span class="type">byte</span>[] buffer = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">2048</span>];</span><br><span class="line"><span class="comment">// 每次读入的字节数量</span></span><br><span class="line"><span class="type">int</span> <span class="variable">inSize</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line"><span class="comment">// 批量读入字节到buffer缓存中,并返回读入的自己数量给inSize</span></span><br><span class="line"><span class="comment">// 这里的in为输入流对象</span></span><br><span class="line"><span class="keyword">while</span> ((inSize = in.read(buffer)) != -<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 把buffer缓存中的字节写入输出流(也就是目标文件)</span></span><br><span class="line">      <span class="comment">// 这里的out为输出流对象  </span></span><br><span class="line">    out.write(buffer, <span class="number">0</span>, inSize);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="合并多个源文件到目标文件并删除源文件"><a href="#合并多个源文件到目标文件并删除源文件" class="headerlink" title="合并多个源文件到目标文件并删除源文件"></a>合并多个源文件到目标文件并删除源文件</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 合并文件ArrayList中的多个源文件为一个文件.</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> targetFilePath</span></span><br><span class="line"><span class="comment"> *            目标文件路径名称字符串.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> sourceFilePathList</span></span><br><span class="line"><span class="comment"> *            存放源文件的路径名称字符串的ArrayList集合.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">merge2TargetFileDeleteSourceFile</span><span class="params">(String targetFilePath,</span></span><br><span class="line"><span class="params">        ArrayList&lt;String&gt; sourceFilePathList)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 如果ArrayList中有东西</span></span><br><span class="line">    <span class="keyword">if</span> (sourceFilePathList.size() &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        BufferedInputStream in;</span><br><span class="line">        <span class="keyword">try</span> (<span class="type">BufferedOutputStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedOutputStream</span>(</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="keyword">new</span> <span class="title class_">File</span>(targetFilePath)));)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;源文件列表:&quot;</span>);</span><br><span class="line">            <span class="keyword">for</span> (Iterator&lt;String&gt; iterator = sourceFilePathList</span><br><span class="line">                    .iterator(); iterator.hasNext();)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">sourceFilePath</span> <span class="operator">=</span> iterator.next();</span><br><span class="line">                System.out.println(<span class="string">&quot;    &quot;</span> + sourceFilePath);</span><br><span class="line">                <span class="type">File</span> <span class="variable">sourceFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(sourceFilePath);</span><br><span class="line">                in = <span class="keyword">new</span> <span class="title class_">BufferedInputStream</span>(</span><br><span class="line">                        <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(sourceFile));</span><br><span class="line">                <span class="comment">// 缓存数组</span></span><br><span class="line">                <span class="type">byte</span>[] buffer = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">2048</span>];</span><br><span class="line">                <span class="comment">// 每次读入的字节数量</span></span><br><span class="line">                <span class="type">int</span> <span class="variable">inSize</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">                <span class="comment">// 批量读入字节到buffer缓存中,并返回读入的自己数量给inSize</span></span><br><span class="line">                <span class="keyword">while</span> ((inSize = in.read(buffer)) != -<span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 把buffer缓存中的字节写入输出流(也就是目标文件)</span></span><br><span class="line">                    out.write(buffer, <span class="number">0</span>, inSize);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 关闭源文件</span></span><br><span class="line">                in.close();</span><br><span class="line">                <span class="comment">// 删除这个源文件</span></span><br><span class="line">                sourceFile.delete();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/511c4c42/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/511c4c42/" class="post-title-link" itemprop="url">eclipse中字体的中英文大小不一致</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-06-19 01:19:37" itemprop="dateCreated datePublished" datetime="2019-06-19T01:19:37+08:00">2019-06-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/IDE/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/511c4c42/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/511c4c42/" data-xid="/blog/511c4c42/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>325</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="eclipse中字体的中英文大小不一致"><a href="#eclipse中字体的中英文大小不一致" class="headerlink" title="eclipse中字体的中英文大小不一致"></a>eclipse中字体的中英文大小不一致</h1><h2 id="分析原因"><a href="#分析原因" class="headerlink" title="分析原因"></a>分析原因</h2><p><code>eclipse</code>的默认字体好像是<code>Consolas</code>,但</p>
-<blockquote>
-<p><code>Consolas</code>字体原本是微软为 <code>Visual Studio 2005</code>和<code>2008</code>用户提供的，<strong>原版只是单独的英文字体，不含中文</strong>。因此<strong>在中文环境下显示会是“宋体”+<code>Consolas</code> 的组合</strong>。</p>
-</blockquote>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>使用<code>Consolas+雅黑混合版</code>,下载路径<a target="_blank" rel="noopener" href="https://www.iplaysoft.com/consolas.html">https://www.iplaysoft.com/consolas.html</a></p>
-<h2 id="eclipse中使用"><a href="#eclipse中使用" class="headerlink" title="eclipse中使用"></a>eclipse中使用</h2><p><code>Window-Preferences-General-Appearance-Colors and fonts-Text Font</code>,选择<code>YaHei Consolas Hybrid</code>,大小选择<code>小四</code>或者<code>五号</code>之类的带中文的字号.这两种字号比较清晰。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/41/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/41/">41</a><span class="page-number current">42</span><a class="page-number" href="/blog/page/43/">43</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/43/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1653,7 +1675,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22:54</span>
+    <span title="站点阅读时长">23:01</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">618</span>
+          <span class="site-state-item-count">620</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,531 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/ee24a152/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/ee24a152/" class="post-title-link" itemprop="url">JSP pageContext config page exception 内置对象</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-12-19 15:14:31" itemprop="dateCreated datePublished" datetime="2018-12-19T15:14:31+08:00">2018-12-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/JSP/" itemprop="url" rel="index"><span itemprop="name">JSP</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/JSP/%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="index"><span itemprop="name">内置对象</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/ee24a152/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/ee24a152/" data-xid="/blog/ee24a152/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="pageContext内置对象"><a href="#pageContext内置对象" class="headerlink" title="pageContext内置对象"></a>pageContext内置对象</h1><p>获取页面上下文的 pageContext对象是一个比较特殊的对象,通过它可以获取JSP页面的 request、response、 session、 application、 exception等对象。 pageContext对象的创建和初始化都是由容器来完成的,JP页面中可以直接使用 pageContext对象。 page Context对象的常用方法如下表所示。</p>
+<ul>
+<li>pageContext对象提供了对JSP页面内所有的对象及名字空间的访问</li>
+<li>pageContext对象可以访问到本页所在的 session,也可以读取本页面所在的application的某一属性值</li>
+<li>pageContext对象相当于页面中所有功能的集大成者</li>
+<li>pageContext对象的本类名也叫 pageContext</li>
+</ul>
+<h2 id="获取其他对象的方法"><a href="#获取其他对象的方法" class="headerlink" title="获取其他对象的方法"></a>获取其他对象的方法</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">JspWriter getOut()</td>
+<td align="left">返回当前客户端响应被使用的JspWriter流(out内置对象)</td>
+</tr>
+<tr>
+<td align="left">ServletRequest getRequest()</td>
+<td align="left">返回当前页的ServletReques对象 (request内置对象)</td>
+</tr>
+<tr>
+<td align="left">ServletResponse getResponse()</td>
+<td align="left">返回当前页的ServletResponse对象(response内置对象)</td>
+</tr>
+<tr>
+<td align="left">Http Session getsession()</td>
+<td align="left">返回当前页中的Httpsession对象(session内置对象)</td>
+</tr>
+<tr>
+<td align="left">Object getPage()</td>
+<td align="left">返回当前页的Object对象(page内置对象)</td>
+</tr>
+</tbody></table>
+<h2 id="设置属性方法"><a href="#设置属性方法" class="headerlink" title="设置属性方法"></a>设置属性方法</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">void setAttribute(String name, Object attribute)</td>
+<td align="left">设置属性</td>
+</tr>
+<tr>
+<td align="left">Object getAttribute(String name, int scope)</td>
+<td align="left">在指定范围内取属性的值</td>
+</tr>
+<tr>
+<td align="left">nt getAttributeScope(String name)</td>
+<td align="left">返回某属性的作用范围</td>
+</tr>
+<tr>
+<td align="left">void forward(String relativeUrlPath)</td>
+<td align="left">把页面转发到另一个页面</td>
+</tr>
+<tr>
+<td align="left">void include( String relativeUrlPath)</td>
+<td align="left">在当前位置包含另一文件</td>
+</tr>
+</tbody></table>
+<p>pageContext对象在实际JSP开发过程中很少使用,因为 request和 response等对象均为内置对象,如果通过 pageContext来调用这些对象比较麻烦,都可以直接调用其相关方法实现具体的功能。</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;pageContext内置对象&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        out.println(<span class="string">&quot;&lt;hr&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;取出的是 out 内置对象：&quot;</span>+(out==pageContext.getOut())+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;取出的是 request 内置对象：&quot;</span>+(request==pageContext.getRequest())+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;取出的是 response 内置对象：&quot;</span>+(response==pageContext.getResponse())+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;取出的是 session 内置对象：&quot;</span>+(session==pageContext.getSession())+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;取出的是 page 内置对象：&quot;</span>+(page==pageContext.getPage())+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;hr&gt;&quot;</span>);</span><br><span class="line">        <span class="type">HttpSession</span> <span class="variable">session2</span> <span class="operator">=</span> pageContext.getSession();</span><br><span class="line">        out.println(<span class="string">&quot;session 中的user=&quot;</span>+session2.getAttribute(<span class="string">&quot;user&quot;</span>)+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        Object page2=pageContext.getPage();</span><br><span class="line">        out.println(<span class="string">&quot;page toString():&quot;</span>+page2.toString()+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        <span class="comment">//跳转到session.jsp页面</span></span><br><span class="line"><span class="comment">//         pageContext.forward(&quot;session.jsp&quot;);</span></span><br><span class="line">        <span class="comment">//包含login.jsp页面中的内容</span></span><br><span class="line"><span class="comment">//         pageContext.include(&quot;login.jsp&quot;);</span></span><br><span class="line">    %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/pageContext/show.png"><br>可以看到这里<code>pageContext.getOut()</code>方法取出的对象就是out内置对象，剩下的几个获取方法也类似。<br>pageContext.include(“login.jsp”);方法会把login.jsp页面显示的放到当前页面中，取消前面的注释可以看到效果：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/pageContext/include.png"><br>pageContext.forward(“session.jsp”);方法，会直接跳转到session.jsp页面。显示的内容是session.jsp中的内容。不过<code>浏览器中地址栏中的地址不会发生改变</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/pageContext/forward.png"></p>
+<h1 id="page内置对象"><a href="#page内置对象" class="headerlink" title="page内置对象"></a>page内置对象</h1><p>page对象就是指向当前JSP页面本身,有点像类中的this指针,它是 java.lang. Object类的实例。<br>page对象代表JSP本身,只有在JSP页面内才是合法的。page对象本质上是包含当前 Servlet接口用的变量,可以看作是this关键字的别名。</p>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">class getclass()</td>
+<td align="left">返回此 Object的类</td>
+</tr>
+<tr>
+<td align="left">int hashCode()</td>
+<td align="left">返回此 Object的hash码</td>
+</tr>
+<tr>
+<td align="left">boolean equals(Object obj)</td>
+<td align="left">判断此 Object是否与指定的 Object对象相等</td>
+</tr>
+<tr>
+<td align="left">void copy(Object obj)</td>
+<td align="left">把此 Object拷贝到指定的Object埘象中</td>
+</tr>
+<tr>
+<td align="left">Object clone()</td>
+<td align="left">克隆此 Objec对象</td>
+</tr>
+<tr>
+<td align="left">String toString()</td>
+<td align="left">把此 Object对象转换成 String类的对象</td>
+</tr>
+<tr>
+<td align="left">void notify()</td>
+<td align="left">唤醒一个等待的线程</td>
+</tr>
+<tr>
+<td align="left">void notifyAll()</td>
+<td align="left">唤醒所有等待的线程</td>
+</tr>
+<tr>
+<td align="left">void wait(int timeout)</td>
+<td align="left">使一个线程处于等待直到 timeout结束或被唤醒</td>
+</tr>
+<tr>
+<td align="left">void wait()</td>
+<td align="left">使一个线程处于等待直到被唤醒</td>
+</tr>
+</tbody></table>
+<h2 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h2><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        out.println(<span class="string">&quot;当前page页面的字符串描述：&quot;</span> + page.toString());</span><br><span class="line">    %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当前page页面的字符串描述：org.apache.jsp.page_jsp@3d351d0b </span><br></pre></td></tr></table></figure>
+<p>可以查看tomcat中的work目录中找到项目对应的目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\dev\apache-tomcat-8.5.35\work\Catalina\localhost\HelloWorld</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/page/sevlert.png"><br>这个目录下面的都是jsp页面编译成的java类和字节码文件：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/page/java_class.png"><br>其中page.jsp页面编译成的类为<code>page_jsp.java</code></p>
+<h1 id="Config内置对象"><a href="#Config内置对象" class="headerlink" title="Config内置对象"></a>Config内置对象</h1><p>config内置对象用来读取web.xml配置信息。<br>config对象主要用于取得服务器的配置信息。通过 pageContext对象的 getServletConfig()法可以获取一个 config对象。当一个 Servlet初始化时,容器把某些信息通过 config对象传递给这个 Servlet。开发者可以在 web.xml文件中为应用程序环境中的 Servlet程序和JSP页面提供初始化参数。 config对象的常用方法如下表所示。<br>config对象用于在一个Servlet初始化时,接收JSP擎向传递的信息,此信息包括Servlet初始化时所要用到的参数(通过属性名&#x2F;属性值对构成)以及服务器的有关信息(通传递一个 Servletcontext对象)</p>
+<h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ServletContext getservletcontext()</td>
+<td align="left">返回含有服务器相关信息的 Servletcontext对象</td>
+</tr>
+<tr>
+<td align="left">String getinitParameter(String name)</td>
+<td align="left">返回初始化参数的值</td>
+</tr>
+<tr>
+<td align="left">Enumeration getinitParameterNames()</td>
+<td align="left">返回 Servlet初始化所需所有参数的枚举</td>
+</tr>
+</tbody></table>
+<p>后面再更新</p>
+<h1 id="Exception内置对象"><a href="#Exception内置对象" class="headerlink" title="Exception内置对象"></a>Exception内置对象</h1><p>exception内置对象是java.lang.Throwable接口的一个实例，用来处理JSP文件执行时发生的所有错误和异常,只有在page指令中设置为 isErrorPage属性值为true的页面中才可以被使用,在一般的JSP页面中使用该对象将无法编译JSP文件。 exception对象几乎定义了所有异常情况,在Java程序中,可以使用try…catch关键字来处理异常情况,如果在JSP页面中出现没有捕捉到的异常,就会生成 exception对象,并把 exception对象传送到在page指令中设定的错误页面中,然后在错误页面中处理相应的 exception对象。</p>
+<h2 id="exception对象的常用方法"><a href="#exception对象的常用方法" class="headerlink" title="exception对象的常用方法"></a>exception对象的常用方法</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">String getMessage()</td>
+<td align="left">返回描述异常的消息</td>
+</tr>
+<tr>
+<td align="left">String toString()</td>
+<td align="left">返回关于异常的简短描述消息</td>
+</tr>
+<tr>
+<td align="left">void printStackTrace()</td>
+<td align="left">显示异常及其栈轨迹</td>
+</tr>
+<tr>
+<td align="left">Throwable fillInStackTrace()</td>
+<td align="left">重写异常的执行栈轨迹</td>
+</tr>
+</tbody></table>
+<h3 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h3><p>创建生成异常的页面：<code>exception_test.jsp</code>，指定异常处理页面为<code>exception.jsp</code>，如下所示：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;!--     指定异常处理页面为exception.jsp --&gt;</span><br><span class="line">&lt;%@ page errorPage=<span class="string">&quot;exception.jsp&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;生成异常&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">100</span> / <span class="number">0</span>;<span class="comment">//抛出算术异常，除数不能为零</span></span><br><span class="line">    %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>创建异常处理页面<code>exception.jsp</code>，并设置该页面为异常处理页面：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;!-- 定义当前页面为异常处理页面 --&gt;</span><br><span class="line">&lt;%@ page isErrorPage=<span class="string">&quot;true&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    异常信息为:&lt;%=exception.getMessage()%&gt;&lt;br&gt; </span><br><span class="line">    异常字符串描述为:&lt;%=exception.toString()%&gt;&lt;br&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>浏览器访问exception_test.jsp,该页面出现了异常，会自动跳转到异常处理页面：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/exception/exception_test.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/ddf72c82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/ddf72c82/" class="post-title-link" itemprop="url">JSP response 内置对象</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-12-19 15:11:39" itemprop="dateCreated datePublished" datetime="2018-12-19T15:11:39+08:00">2018-12-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/JSP/" itemprop="url" rel="index"><span itemprop="name">JSP</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/JSP/%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="index"><span itemprop="name">内置对象</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/ddf72c82/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/ddf72c82/" data-xid="/blog/ddf72c82/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="response内置对象简介"><a href="#response内置对象简介" class="headerlink" title="response内置对象简介"></a>response内置对象简介</h2><ul>
+<li>是HttpServletrResponse类的实例</li>
+<li>response对象用于响应客户请求,向客户端输出信息。它封装了JSP产生的响应,并发送到客户端以响应客户端的请求。请求的数据可以是各种数据类型,甚至是文件。</li>
+<li>response对象具有<code>页面作用域</code>,<strong>即访问一个页面时,该页面内的 response对象只<code>能对这次访问</code>有效,其它页面的 response对象对当前页面无效</strong></li>
+</ul>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">String getCharacterEncoding()</td>
+<td align="left">返回响应用的是何种字符编码</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">void setContentType(String type)</td>
+<td align="left">设置响应的MIME类型</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">PrintWriter getwriter()</td>
+<td align="left">返回可以向客户端输出字符的一个输出流对象(注意比较PrintWriter与内置out对象的区别)</td>
+</tr>
+</tbody></table>
+<h2 id="请求重定向和请求转发的区别"><a href="#请求重定向和请求转发的区别" class="headerlink" title="请求重定向和请求转发的区别"></a>请求重定向和请求转发的区别</h2><h3 id="请求重定向"><a href="#请求重定向" class="headerlink" title="请求重定向"></a>请求重定向</h3><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">sendRedirect(String path)</td>
+<td align="left">重新定向客户端的请求,path:用于指定目标路径,可以是相对路径,也可以是不同主机的其他URL地址。</td>
+</tr>
+</tbody></table>
+<p>使用 response对象提供的 <code>sendRedirect(String path);</code>方法可以将网页重定向到另一个页面。重定向操作支持将地址重定向到不同的主机上。重定向时,在客户端浏览器上将会得到跳转的地址显示在浏览器的地址栏,并重新发送请求链接。因为重发了请求,所以此时的request对象是新的request对象，原先resquest对象中的属性也就全部失效。</p>
+<p><strong>注意</strong>:在JSP页面中使用该方法时,不要再用JSP脚本代码(包括 retun语句),因为<strong>重定向之后的JSP脚本代码已经没有意义了,并且还可能产生错误</strong>。<br><strong>总结</strong>：请求重定向,是客户端行为,从本质上讲<strong>等同于两次请求,前一次的请求对象不会保存,同时地址栏的URL地址<code>会改变</code>。</strong></p>
+<h3 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h3><p>请求转发是服务器行为,<code>request.getRequestDispatcher(&quot;转发的页面&quot;).forward(request,response);</code>是一次请求,转发后请求对象会保存,地址栏的URL地址<code>不会改变</code>。</p>
+<h3 id="生活中的例子"><a href="#生活中的例子" class="headerlink" title="生活中的例子"></a>生活中的例子</h3><p>假设你去办理某个护照<br>重定向:你先去了A局,A局的人说:“这个事不归我们管,去B局”,然后,你就从A退了出来,自己乘车去了B局。<br>转发:你去了A局,A局看了以后,知道这个事情其实应该B局来管,但是他没有把你退回来,而是让你坐一会儿,自己到后面办公室联系了B的人,让他们办好后,送了过来</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>修改login.jsp,requset.jsp，response.jsp如下所示：<br>login.jsp:</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span> <span class="string">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">&quot;Content-Type&quot;</span> content=<span class="string">&quot;text/html; charset=utf-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;用户登录&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;!-- &lt;form action=<span class="string">&quot;request.jsp&quot;</span> name=<span class="string">&quot;loginForm&quot;</span> method=<span class="string">&quot;get&quot;</span>&gt; --&gt;</span><br><span class="line">&lt;form action=<span class="string">&quot;response.jsp&quot;</span> name=<span class="string">&quot;loginForm&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">    &lt;table&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td align=<span class="string">&quot;right&quot;</span>&gt;用户名:&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;userName&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td align=<span class="string">&quot;right&quot;</span>&gt;爱好:&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;</span><br><span class="line">            &lt;input type=<span class="string">&quot;checkbox&quot;</span> name=<span class="string">&quot;hobbys&quot;</span> value=<span class="string">&quot;book&quot;</span>&gt;读书</span><br><span class="line">            &lt;input type=<span class="string">&quot;checkbox&quot;</span> name=<span class="string">&quot;hobbys&quot;</span> value=<span class="string">&quot;music&quot;</span>&gt;音乐</span><br><span class="line">            &lt;input type=<span class="string">&quot;checkbox&quot;</span> name=<span class="string">&quot;hobbys&quot;</span> value=<span class="string">&quot;sports&quot;</span>&gt;运动</span><br><span class="line">            &lt;input type=<span class="string">&quot;checkbox&quot;</span> name=<span class="string">&quot;hobbys&quot;</span> value=<span class="string">&quot;movie&quot;</span>&gt;电影</span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td align=<span class="string">&quot;right&quot;</span>&gt;密码:&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type=<span class="string">&quot;password&quot;</span> name=<span class="string">&quot;password&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type=<span class="string">&quot;reset&quot;</span> value=<span class="string">&quot;重置&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;登录&quot;</span>&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">    &lt;a href=<span class="string">&quot;http://localhost:8080/HelloWorld/request.jsp?userName=%E5%B0%8F%E6%98%8E&amp;hobbys=book&amp;password=123&quot;</span>&gt;直接提交&lt;/a&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>response.jsp:</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    <span class="comment">//     //暂停五秒，以查看跳转的效果</span></span><br><span class="line">    Thread.sleep(<span class="number">5</span> * <span class="number">1000</span>);</span><br><span class="line">    <span class="comment">//请求重定向到requset.jsp</span></span><br><span class="line">    response.sendRedirect(<span class="string">&quot;request.jsp&quot;</span>);</span><br><span class="line">    <span class="comment">//请求转发</span></span><br><span class="line">    <span class="comment">// request.getRequestDispatcher(&quot;requset.jsp&quot;).forward(request,response);</span></span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+<p>request.jsp:</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span> <span class="string">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">&quot;Content-Type&quot;</span> content=<span class="string">&quot;text/html; charset=utf-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;request内置对象测试&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h2&gt;request内置对象&lt;/h2&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="comment">//解决post提交的数据中的。中文乱码问题.无法解决URL传参方式的中文乱码问题</span></span><br><span class="line">        request.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    获取到用户名:&lt;%=request.getParameter(<span class="string">&quot;userName&quot;</span>)%&gt;&lt;br&gt; 爱好:&lt;%</span><br><span class="line">        String[] hobbys = request.getParameterValues(<span class="string">&quot;hobbys&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (hobbys != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; hobbys.length; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                out.println(hobbys[i] + <span class="string">&quot;,&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    %&gt;&lt;br&gt; 密码:&lt;%=request.getParameter(<span class="string">&quot;password&quot;</span>)%&gt;&lt;br&gt; </span><br><span class="line">    请求体的MME类型:&lt;%=request.getContentType()%&gt;&lt;br&gt; </span><br><span class="line">    请求体的长度:&lt;%=request.getContentLength()%&gt;字节&lt;br&gt;</span><br><span class="line">    请求用的协议类型及版本号:&lt;%=request.getProtocol()%&gt;&lt;br&gt;</span><br><span class="line">    请求的服务器主机名:&lt;%=request.getServerName()%&gt;&lt;br&gt; </span><br><span class="line">    服务器接受此请求所用的端口号:&lt;%=request.getServerPort()%&gt;&lt;br&gt;</span><br><span class="line">    请求的客户端IP地址:&lt;%=request.getRemoteAddr()%&gt;&lt;br&gt;</span><br><span class="line">    请求的物理路径:&lt;%=request.getRealPath(<span class="string">&quot;request.jsp&quot;</span>) %&gt;&lt;br&gt;</span><br><span class="line">    请求的上下文路径:&lt;%=request.getContextPath() %&gt;&lt;br&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="请求重定向-1"><a href="#请求重定向-1" class="headerlink" title="请求重定向"></a>请求重定向</h4><p>浏览器打开login.jsp,填写表单，登录：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/chongdingxiang_zhuanfa/login.png"><br>虽然我们请求的是response.jsp页面，但是5秒钟后，浏览器却跳转到requset.jsp页面：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/chongdingxiang_zhuanfa/chongdingxiang.png"><br>可以看到页面中的表单信息(用户名，爱好，密码)为空。这是因为请求中定向不保存第一次请求，第二次请求是新的请求，新的请求中不带有用户登录信息，所以requset.jsp页面中获取不到。</p>
+<h4 id="请求转发-1"><a href="#请求转发-1" class="headerlink" title="请求转发"></a>请求转发</h4><p>修改上述的response.jsp，把请求重定向注释，取消强求转发的注释：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    <span class="comment">//     //暂停五秒，以查看跳转的效果</span></span><br><span class="line">    Thread.sleep(<span class="number">5</span> * <span class="number">1000</span>);</span><br><span class="line">    <span class="comment">//请求重定向到requset.jsp</span></span><br><span class="line"><span class="comment">//     response.sendRedirect(&quot;request.jsp&quot;);</span></span><br><span class="line">    <span class="comment">//请求转发</span></span><br><span class="line">    request.getRequestDispatcher(<span class="string">&quot;requset.jsp&quot;</span>).forward(request,response);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+<p>重复上面的步骤：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/chongdingxiang_zhuanfa/qingqiuzhuanfa.png"><br>我们可以发现，地址栏上的地址没有改变，还是我们请求的response.jsp，而内容是requset.jsp的内容，并且用户信息也能正常显示。</p>
+<h2 id="设置HTP响应报头"><a href="#设置HTP响应报头" class="headerlink" title="设置HTP响应报头"></a>设置HTP响应报头</h2><p>通过 response对象可以设置HTP响应报头,其中,最常用的是<code>禁用缓存</code>、<code>设置页面自动刷新</code>和<code>定时跳转网页</code>。下面分别进行介绍。<br><code>response.setHeader()</code>方法 是用来设置返回页面的头 meta 信息</p>
+<h3 id="禁用缓存"><a href="#禁用缓存" class="headerlink" title="禁用缓存"></a>禁用缓存</h3><p>在默认的情况下,浏览器将会对显示的网页内容进行缓存。这样,当用户再次访问相关网页时,浏览器会判断网页是否有变化,如果没有变化则直接显示缓存中的内容,这样可以提高网页的显示速度。对于一些安全性要求较高的网站,通常需要禁用缓存。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">response. setHeader(<span class="string">&quot;Cache-Control&quot;</span>, <span class="string">&quot;no-store&quot;</span>);</span><br><span class="line">response. setDateHeader(<span class="string">&quot;Expires&quot;</span>,<span class="number">0</span>);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="设置过期的时间期限"><a href="#设置过期的时间期限" class="headerlink" title="设置过期的时间期限"></a>设置过期的时间期限</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setDateHeader(<span class="string">&quot;Expires&quot;</span>, System.currentTimeMillis()+自己设置的时间期限);</span><br></pre></td></tr></table></figure>
+<h3 id="定时刷新页面"><a href="#定时刷新页面" class="headerlink" title="定时刷新页面"></a>定时刷新页面</h3><p>通过设置HTTP头还可以实现页面的自动刷新。使网页每隔10秒自动刷新一次。示例代码如下:</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(<span class="string">&quot;refresh&quot;</span>, <span class="string">&quot;10&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="定时跳转页面"><a href="#定时跳转页面" class="headerlink" title="定时跳转页面"></a>定时跳转页面</h3><p>通过设置HTTP头还可以实现定时跳转网页的功能,使网页20秒钟后自动跳转到指定的网页(login.jsp)。示例代码如下:</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(<span class="string">&quot;refresh&quot;</span>, <span class="string">&quot;10;URL=login.jsp&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="设置输出缓冲"><a href="#设置输出缓冲" class="headerlink" title="设置输出缓冲"></a>设置输出缓冲</h2><p>通常情况下,服务器要输出到客户端的内容不会直接写到客户端,而是先写到一个输出缓冲区,在计算机术语中,<strong>缓冲区被定义为暂时放置输入或输出资料的内存</strong>。实际上,缓冲区也可以这样理解在一个粮库中,由于装卸车队的速度要快于传送带的传输速度,为了不造成装卸车队的浪费,粮库设计了一个站台,装卸车队可以先将运送的粮食卸到这个平台上,然后让传送机慢慢传送。粮库的这个站台就起到了缓冲的作用。当满足以下3种情况之一,就会把缓冲区的内容写到客户端。</p>
+<ul>
+<li>JSP页面的输出信息已经全部写入到了缓冲区。</li>
+<li>缓冲区已满。</li>
+<li>在JSP页面中,调用了 response对象的 flush Buffer方法或out对象的 flush方法。</li>
+</ul>
+<h3 id="缓冲相关方法"><a href="#缓冲相关方法" class="headerlink" title="缓冲相关方法"></a>缓冲相关方法</h3><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">flushBuffer()</td>
+<td align="left">强制将缓冲区的内容输出到客户端</td>
+</tr>
+<tr>
+<td align="left">getBufferSize()</td>
+<td align="left">获取响应所使用的缓冲区的实际大小,如果没有使用缓冲区,则返回0</td>
+</tr>
+<tr>
+<td align="left">setBufferSize(int size)</td>
+<td align="left">设置缓冲区的大小为size<code>KB</code>,如果size为0则表示不缓冲</td>
+</tr>
+<tr>
+<td align="left">rese()</td>
+<td align="left">清除缓冲区的内容,同时清除状态码和报头</td>
+</tr>
+<tr>
+<td align="left">isCommitted()</td>
+<td align="left">检测服务器端是否已经把数据写入到了客户端</td>
+</tr>
+</tbody></table>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setBufferSize(<span class="number">32</span>);<span class="comment">//设置缓冲区的大小为32KB</span></span><br></pre></td></tr></table></figure>
+<h4 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h4><p>创建<code>response.jsp</code>,写入如下的代码：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">&quot;java.io.PrintWriter&quot;</span>%&gt;</span><br><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    <span class="comment">//设置响应的MIME类型</span></span><br><span class="line">    response.setContentType(<span class="string">&quot;text/html; charset=utf-8&quot;</span>);</span><br><span class="line">    out.println(<span class="string">&quot;&lt;h2&gt; 测试response内置对象 &lt;/h2&gt;&lt;br&gt;&quot;</span>);</span><br><span class="line"><span class="comment">//     out.flush();//强制清空缓冲区,先写内置的out输出流对象</span></span><br><span class="line">    <span class="comment">//在打印的时候,会提前于内置的out对象</span></span><br><span class="line">    PrintWriter writer=response.getWriter();</span><br><span class="line">    writer.println(<span class="string">&quot;response.getWriter()输出&quot;</span>);</span><br><span class="line">%&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>运行效果：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/response/getWriter/result.png"><br>可以看到内置输出流对象out先于writer对象打印，但是浏览器访问的时候，writer对象却先打印，如果想要顺序打印，可以先刷新内置out对象的缓冲区,把缓冲区的内容写到到浏览器上。取消<code>out.flush();</code>前面的注释，再次打开response.jsp，这时候就按顺序显示了：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/innerClass/response/getWriter/flush.png"></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/107218.htm">response.setHeader各种用法详解</a><br><a target="_blank" rel="noopener" href="https://www.jb51.net/article/16437.htm">response.setHeader参数、用法的介绍</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1591,260 +2116,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/c26fdf44/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/c26fdf44/" class="post-title-link" itemprop="url">Java 集合 Iterator用法整理</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-12-14 23:10:23" itemprop="dateCreated datePublished" datetime="2018-12-14T23:10:23+08:00">2018-12-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E9%9B%86%E5%90%88/" itemprop="url" rel="index"><span itemprop="name">Java 集合</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/c26fdf44/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/c26fdf44/" data-xid="/blog/c26fdf44/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>474</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><p>迭代器是一种设计模式，Iterator是Java迭代器最简单的实现。它是一个对象，它可以遍历并选择序列中的对象，而开发人员不需要了解该序列的底层结构。<br>使用集合对象的<code>.iterator()</code>返回一个Iterator。第一次调用Iterator的next()方法时，它返回序列的第一个元素。</p>
-<h1 id="Iterator的接口"><a href="#Iterator的接口" class="headerlink" title="Iterator的接口"></a>Iterator的接口</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Iterator</span> </span><br><span class="line">&#123;  </span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">hasNext</span><span class="params">()</span>;  <span class="comment">//获得序列中的下一个元素。</span></span><br><span class="line">    Object <span class="title function_">next</span><span class="params">()</span>;  <span class="comment">//检查序列中是否还有元素。</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">remove</span><span class="params">()</span>;  <span class="comment">//将迭代器新返回的元素删除。</span></span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
-<h1 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">Iterator</span> <span class="variable">it</span> <span class="operator">=</span> c.iterator(); it.hasNext(); )&#123;  </span><br><span class="line">    <span class="type">Object</span> <span class="variable">o</span> <span class="operator">=</span> it.next();  </span><br><span class="line">     <span class="comment">//do something  </span></span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/hasse/p/5024193.html">https://www.cnblogs.com/hasse/p/5024193.html</a><br><a target="_blank" rel="noopener" href="http://www.cnblogs.com/lxqiaoyixuan/p/7156944.html">http://www.cnblogs.com/lxqiaoyixuan/p/7156944.html</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/ef2dac38/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/ef2dac38/" class="post-title-link" itemprop="url">java 集合 Map遍历方式</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-12-14 21:43:36" itemprop="dateCreated datePublished" datetime="2018-12-14T21:43:36+08:00">2018-12-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E9%9B%86%E5%90%88/" itemprop="url" rel="index"><span itemprop="name">Java 集合</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/ef2dac38/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/ef2dac38/" data-xid="/blog/ef2dac38/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="方式1-通过keysSet遍历Map"><a href="#方式1-通过keysSet遍历Map" class="headerlink" title="方式1 通过keysSet遍历Map"></a>方式1 通过keysSet遍历Map</h1><ul>
-<li>先通过keySet方法先生成键key的Set集合，</li>
-<li>然后再根据Set集合的迭代器从set集合里取出键key </li>
-<li>再根据键key 通过 Map 的get(key)方法取出值，这样就取出了键值对：key-value</li>
-</ul>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p><strong>先设置Map中的数据</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Integer&gt; map2=<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;String,Integer&gt;();</span><br><span class="line">map2.put(<span class="string">&quot;山羊&quot;</span>, <span class="number">123</span>);</span><br><span class="line">map2.put(<span class="string">&quot;茄子&quot;</span>,<span class="number">456</span>);</span><br><span class="line">map2.put(<span class="string">&quot;西瓜&quot;</span>,<span class="number">789</span>);</span><br></pre></td></tr></table></figure>
-<p><strong>通过key来遍历</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1 获取Map中key的Set集合</span></span><br><span class="line">Set&lt;String&gt; keys=map2.keySet();</span><br><span class="line"><span class="comment">// 生成key Set集合的迭代器</span></span><br><span class="line">Iterator&lt;String&gt; its=keys.iterator();</span><br><span class="line"><span class="comment">// 遍历 key Set集合</span></span><br><span class="line"><span class="keyword">while</span>(its.hasNext())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//2 使用迭代器从key Set集合中取出key</span></span><br><span class="line">    String key=its.next();</span><br><span class="line">    <span class="comment">//3 根据key取出Map中对应的值</span></span><br><span class="line">    <span class="type">int</span> value=map2.get(key);<span class="comment">//然后再根据键，取出值</span></span><br><span class="line">    System.out.println(<span class="string">&quot;key=&quot;</span>+key+<span class="string">&quot; value=&quot;</span>+value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="方式2-通过Map-Entry对象遍历Map"><a href="#方式2-通过Map-Entry对象遍历Map" class="headerlink" title="方式2 通过Map.Entry对象遍历Map"></a>方式2 通过Map.Entry对象遍历Map</h1><ul>
-<li>获取Map的Map.Entry对象的Set集合 </li>
-<li>然后通过Map.Entry对象的迭代器 从Map.Entry对象的Set集合中，取出一个 Map.Entry对象：</li>
-<li>再从该Map.Entry中分别取出key和value</li>
-</ul>
-<h2 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1 获取Map.Entry对象的Set集合</span></span><br><span class="line">Set&lt;Map.Entry&lt;String, Integer&gt;&gt; mapEntry=map2.entrySet();</span><br><span class="line"><span class="comment">//2 Map.Entry对象的Set集合迭代器</span></span><br><span class="line">Iterator&lt;Map.Entry&lt;String, Integer&gt;&gt; mapEntryIt=mapEntry.iterator();</span><br><span class="line"><span class="keyword">while</span>(mapEntryIt.hasNext())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//2 从Set集合中取出一个 Map.Entry实例</span></span><br><span class="line">    Map.Entry&lt;String, Integer&gt; mapEntryElement=mapEntryIt.next();</span><br><span class="line">    <span class="comment">//3 分别取出键和值</span></span><br><span class="line">    String key=mapEntryElement.getKey();</span><br><span class="line">    Integer value=mapEntryElement.getValue();</span><br><span class="line">    System.out.println(<span class="string">&quot;key=&quot;</span>+key+<span class="string">&quot;value=&quot;</span>+value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="直接遍历所有的值"><a href="#直接遍历所有的值" class="headerlink" title="直接遍历所有的值"></a>直接遍历所有的值</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;Integer&gt; values = map2.values();</span><br><span class="line">Iterator&lt;Integer&gt; it = values.iterator();</span><br><span class="line"><span class="keyword">while</span> (it.hasNext())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">value</span> <span class="operator">=</span> it.next();</span><br><span class="line">    System.out.println(<span class="string">&quot;value=&quot;</span> + value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/51/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/51/">51</a><span class="page-number current">52</span><a class="page-number" href="/blog/page/53/">53</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/53/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1877,7 +2148,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22:54</span>
+    <span title="站点阅读时长">23:01</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

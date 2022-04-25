@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">618</span>
+          <span class="site-state-item-count">620</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,279 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/73224a52/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/73224a52/" class="post-title-link" itemprop="url">Linux中Java环境变量配置的几种方式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-08-11 14:25:09" itemprop="dateCreated datePublished" datetime="2018-08-11T14:25:09+08:00">2018-08-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/Linux%E7%B3%BB%E7%BB%9F%E4%B8%8Ajava%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">Linux系统上java使用</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/73224a52/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/73224a52/" data-xid="/blog/73224a52/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>889</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="永久修改，对所有用户有效"><a href="#永久修改，对所有用户有效" class="headerlink" title="永久修改，对所有用户有效"></a>永久修改，对所有用户有效</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">vi /etc/profile</span></span><br></pre></td></tr></table></figure>
+<p>在<code>/etc/profile</code>文件<code>最后</code>添加下面的内容:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#set Java environment</span><br><span class="line">export JAVA_HOME=/usr/lib/java/jdk1.8.0_171</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+<p>修改文件后如果想马上生效，执行命令：<code>source /etc/profile</code><br>最后重启：<code>shutdown -r -t 0</code></p>
+<h1 id="永久修改，对单一用户有效"><a href="#永久修改，对单一用户有效" class="headerlink" title="永久修改，对单一用户有效"></a>永久修改，对单一用户有效</h1><p>修改用户目录下的<code>.bash_profile</code>文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">vi .bash_profile</span><br></pre></td></tr></table></figure>
+<p>在文件<code>最后</code>添加下面的内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#set Java environment</span><br><span class="line">export JAVA_HOME=/usr/lib/java/jdk1.8.0_171</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+<p>此时如果想要马上生效执命令：<code>source .bash_profile</code><br>最后重启：<code>shutdown -r -t 0</code></p>
+<h1 id="只对当前bash-x2F-shell-生效"><a href="#只对当前bash-x2F-shell-生效" class="headerlink" title="只对当前bash &#x2F;shell 生效"></a>只对当前bash &#x2F;shell 生效</h1><p>直接在<code>shell</code>中输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/java/jdk1.8.0_171</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+<p>这个只对当前<code>shell/bash</code>有效重新打开一个<code>shell</code>就没有用了。</p>
+<p>原文：<a target="_blank" rel="noopener" href="https://blog.csdn.net/jillliang/article/details/8216308">https://blog.csdn.net/jillliang/article/details/8216308</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/bda55058/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/bda55058/" class="post-title-link" itemprop="url">JavaIO流 复制一个目录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-08-10 23:32:16" itemprop="dateCreated datePublished" datetime="2018-08-10T23:32:16+08:00">2018-08-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-IO%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">Java IO流</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-IO%E6%B5%81/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/bda55058/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/bda55058/" data-xid="/blog/bda55058/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>实现把一个目录中的所有内容复制到一个目录中去</p>
+<h1 id="实现文件复制"><a href="#实现文件复制" class="headerlink" title="实现文件复制"></a>实现文件复制</h1><p>因为一个目录下的文件可能是字符文件，也可能是二进制文件，所以使用字节流来进行复制,这样能复制所有类型的文件。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 复制一个文件</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> srcFile 源文件</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> destFile 目的文件</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">copyFile</span><span class="params">(String srcFile, String destFile)</span></span><br><span class="line">        <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">FileInputStream</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(srcFile);</span><br><span class="line">    <span class="type">FileOutputStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(destFile);</span><br><span class="line">    <span class="comment">// 2097152(Byte)=2048(KB)=2M</span></span><br><span class="line">    <span class="type">byte</span>[] buffer = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">2097152</span>];</span><br><span class="line">    <span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//每次读取一个字节数组</span></span><br><span class="line">    <span class="keyword">while</span> ((size = in.read(buffer)) != -<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//读到多少写入多少</span></span><br><span class="line">        out.write(buffer, <span class="number">0</span>, size);</span><br><span class="line">    &#125;</span><br><span class="line">    in.close();</span><br><span class="line">    out.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述方法可以复制一个文件，我们可以在这个方法的基础之上实现目录的复制。</p>
+<h1 id="复制目录的算法"><a href="#复制目录的算法" class="headerlink" title="复制目录的算法"></a>复制目录的算法</h1><ul>
+<li>遍历该目录列表，如果列表项是文件就调用上面的copyFile()方法复制该文件</li>
+<li>如果是该列表项是一个目录的话，就递归调用自己，复制该子目录。</li>
+</ul>
+<h2 id="复制目录的实现代码"><a href="#复制目录的实现代码" class="headerlink" title="复制目录的实现代码"></a>复制目录的实现代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用递归复制目录,</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> FromDir 源目录的路径名称</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> ToDir 目的目录的路径名称</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">copyDir</span><span class="params">(String FromDir, String ToDir)</span> <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 创建目录的File对象</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">srcDir</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(FromDir);</span><br><span class="line">    <span class="comment">// 判断源目录是不是一个目录</span></span><br><span class="line">    <span class="keyword">if</span> (!srcDir.isDirectory())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//如果不是目录那就不复制</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//创建目的目录的File对象</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">destDir</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(ToDir);</span><br><span class="line">    <span class="comment">// 如果目的目录不存在</span></span><br><span class="line">    <span class="keyword">if</span> (!destDir.exists())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 创建目的目录</span></span><br><span class="line">        destDir.mkdir();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 获取源目录下的File对象列表,每一个对象代表一个目录或者文件</span></span><br><span class="line">    File[] srcDirList = srcDir.listFiles();</span><br><span class="line">    <span class="comment">// 遍历源目录File对象列表</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; srcDirList.length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 如果是目录的话</span></span><br><span class="line">        <span class="keyword">if</span> (srcDirList[i].isDirectory())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 递归调用复制该目录</span></span><br><span class="line">            copyDir(FromDir + File.separator + srcDirList[i].getName(),</span><br><span class="line">                    ToDir + File.separator + srcDirList[i].getName());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果是文件的话</span></span><br><span class="line">        <span class="keyword">if</span> (srcDirList[i].isFile())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 调用复制文件的方法</span></span><br><span class="line">            copyFile(FromDir + File.separator + srcDirList[i].getName(),</span><br><span class="line">                    ToDir + File.separator + srcDirList[i].getName());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>main方法中调用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    copyDir(<span class="string">&quot;FromDir&quot;</span>, <span class="string">&quot;ToDir&quot;</span>);<span class="comment">//复制当前工程下的FromDir目录中的内容到ToDir目录中。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当前eclipse中的目录结构如下：<br><img data-src="https://i.imgur.com/WWYtG31.png"></p>
+<p>运行后的目录结构：</p>
+<p><img data-src="https://i.imgur.com/Amy5dyL.png"></p>
+<p>可以看到整个目录复制成功了。</p>
+<h1 id="完整代码如下："><a href="#完整代码如下：" class="headerlink" title="完整代码如下："></a>完整代码如下：</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> copy.file;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CopyDir</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span><br><span class="line">    &#123;</span><br><span class="line">        copyDir(<span class="string">&quot;FromDir&quot;</span>, <span class="string">&quot;ToDir&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 使用递归复制目录,</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> FromDir</span></span><br><span class="line"><span class="comment">     *            源目录的路径名称</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> ToDir</span></span><br><span class="line"><span class="comment">     *            目的目录的路径名称</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">copyDir</span><span class="params">(String FromDir, String ToDir)</span> <span class="keyword">throws</span> IOException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 创建目录的File对象</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">srcDir</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(FromDir);</span><br><span class="line">        <span class="comment">// 判断源目录是不是一个目录</span></span><br><span class="line">        <span class="keyword">if</span> (!srcDir.isDirectory())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 如果不是目录那就不复制</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 创建目的目录的File对象</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">destDir</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(ToDir);</span><br><span class="line">        <span class="comment">// 如果目的目录不存在</span></span><br><span class="line">        <span class="keyword">if</span> (!destDir.exists())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 创建目的目录</span></span><br><span class="line">            destDir.mkdir();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取源目录下的File对象列表,每一个对象代表一个目录或者文件</span></span><br><span class="line">        File[] srcDirList = srcDir.listFiles();</span><br><span class="line">        <span class="comment">// 遍历源目录File对象列表</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; srcDirList.length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 如果是目录的话</span></span><br><span class="line">            <span class="keyword">if</span> (srcDirList[i].isDirectory())</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 递归调用复制该目录</span></span><br><span class="line">                copyDir(FromDir + File.separator + srcDirList[i].getName(),</span><br><span class="line">                        ToDir + File.separator + srcDirList[i].getName());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 如果是文件的话</span></span><br><span class="line">            <span class="keyword">if</span> (srcDirList[i].isFile())</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 调用复制文件的方法</span></span><br><span class="line">                copyFile(FromDir + File.separator + srcDirList[i].getName(),</span><br><span class="line">                        ToDir + File.separator + srcDirList[i].getName());</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 复制一个文件</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> srcFile</span></span><br><span class="line"><span class="comment">     *            源文件</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> destFile</span></span><br><span class="line"><span class="comment">     *            目的文件</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">copyFile</span><span class="params">(String srcFile, String destFile)</span></span><br><span class="line">            <span class="keyword">throws</span> IOException</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(srcFile);</span><br><span class="line">        <span class="type">FileOutputStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(destFile);</span><br><span class="line">        <span class="comment">// 2097152(Byte)=2048(KB)=2M</span></span><br><span class="line">        <span class="type">byte</span>[] buffer = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">2097152</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 每次读取一个字节数组</span></span><br><span class="line">        <span class="keyword">while</span> ((size = in.read(buffer)) != -<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 读到多少写入多少</span></span><br><span class="line">            out.write(buffer, <span class="number">0</span>, size);</span><br><span class="line">        &#125;</span><br><span class="line">        in.close();</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1539,7 +1812,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22:54</span>
+    <span title="站点阅读时长">23:01</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
