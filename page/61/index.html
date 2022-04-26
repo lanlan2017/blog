@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">620</span>
+          <span class="site-state-item-count">621</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,142 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/2e0f7472/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2e0f7472/" class="post-title-link" itemprop="url">JavaIO流 节点流和处理流</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-08-21 22:26:21" itemprop="dateCreated datePublished" datetime="2018-08-21T22:26:21+08:00">2018-08-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-IO%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">Java IO流</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-IO%E6%B5%81/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/2e0f7472/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/2e0f7472/" data-xid="/blog/2e0f7472/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>523</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="常用处理流（关闭处理流使用关闭里面的节点流）"><a href="#常用处理流（关闭处理流使用关闭里面的节点流）" class="headerlink" title="常用处理流（关闭处理流使用关闭里面的节点流）"></a>常用处理流（关闭处理流使用关闭里面的节点流）</h1><ul>
+<li>缓冲流：BufferedInputStrean BufferedOutputStream BufferedReader BufferedWriter—增加缓冲功能，避免频繁读写硬盘。</li>
+<li>转换流：InputStreamReader OutputStreamReader实现字节流和字符流之间的转换。</li>
+<li>数据流 DataInputStream DataOutputStream 等-提供将基础数据类型写入到文件中，或者读取出来.</li>
+</ul>
+<h1 id="流的关闭顺序"><a href="#流的关闭顺序" class="headerlink" title="流的关闭顺序"></a>流的关闭顺序</h1><ul>
+<li>一般情况下是：先打开的后关闭，后打开的先关闭</li>
+<li>另一种情况：看依赖关系，如果流a依赖流b，应该先关闭流a，再关闭流b。例如，处理流a依赖节点流b，应该先关闭处理流a，再关闭节点流b</li>
+<li>可以只关闭处理流，不用关闭节点流。处理流关闭的时候，会调用其处理的节点流的关闭方法。</li>
+</ul>
+<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><ul>
+<li>如果将节点流关闭以后再关闭处理流，会抛出IO异常。</li>
+<li>如果关闭了处理流，在关闭与之相关的节点流，也可能出现IO异常。（hadoop编程文件流操作中遇到了。）</li>
+</ul>
+<p><strong>总结：通常在IO的继承树中，<code>继承自Filter开头的流</code>或者转换流(InputStreamReader,OutputStreamReader)都是处理流，其他的都是节点流。</strong></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -3287,172 +3423,8 @@ public File[] listFiles(FilenameFilter filter);
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/6249459e/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/6249459e/" class="post-title-link" itemprop="url">Linux 常用环境变量及作用和环境变量文件的详细介绍及其加载执行顺序</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-08-11 15:28:20" itemprop="dateCreated datePublished" datetime="2018-08-11T15:28:20+08:00">2018-08-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/Linux%E7%B3%BB%E7%BB%9F%E4%B8%8Ajava%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">Linux系统上java使用</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/6249459e/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/6249459e/" data-xid="/blog/6249459e/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.5k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Linux 常用环境变量及作用和环境变量文件的详细介绍及其加载执行顺序<br>原文：</p>
-<h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><ol>
-<li>环境变量是操作系统环境设置的变量，适用于整个系统的用户进程；</li>
-<li>环境变量可以在命令中设置，但是用户注销的时候将会丢失这些设置值；</li>
-<li>若要重复适用，则<strong>最好在.profile中定义</strong>；环境变量的使用与本地变量的使用方法相同，</li>
-<li>但是在使用之前，必须用export命令导出。</li>
-</ol>
-<h1 id="一、环境变量文件介绍"><a href="#一、环境变量文件介绍" class="headerlink" title="一、环境变量文件介绍"></a>一、环境变量文件介绍</h1><p>Linux中环境变量包括<code>系统级</code>和<code>用户级</code>。</p>
-<ul>
-<li>系统级的环境变量是每个登录到系统的用户都要读取的系统变量，</li>
-<li>而用户级的环境变量则是该用户使用系统时加载的环境变量，<br>所以管理环境变量的文件也分为系统级和用户级的。</li>
-</ul>
-<h1 id="二、Linux的变量种类"><a href="#二、Linux的变量种类" class="headerlink" title="二、Linux的变量种类"></a>二、Linux的变量种类</h1><p>按变量的生存周期来划分，Linux变量可分为两类：</p>
-<ul>
-<li>永久的：需要修改配置文件，变量永久生效</li>
-<li>临时的：使用export命令声明即可，变量在关闭shell时失效</li>
-</ul>
-<h1 id="三、Linux-环境变量文件"><a href="#三、Linux-环境变量文件" class="headerlink" title="三、Linux 环境变量文件"></a>三、Linux 环境变量文件</h1><p>linux变量文件有</p>
-<ul>
-<li><code>/etc/environment </code></li>
-<li><code>/etc/profile</code></li>
-<li><code>~/.profile</code></li>
-<li><code>/etc/bash.bashrc</code></li>
-<li><code>~/.bashrc</code></li>
-<li><code>~/.bash_profile(一般是用户在自己目录下新建的</code>）</li>
-<li><code>~/.bash_logout.</code></li>
-</ul>
-<h2 id="系统级："><a href="#系统级：" class="headerlink" title="系统级："></a>系统级：</h2><h3 id="x2F-etc-x2F-environment"><a href="#x2F-etc-x2F-environment" class="headerlink" title="&#x2F;etc&#x2F;environment"></a>&#x2F;etc&#x2F;environment</h3><ul>
-<li>该文件是<strong>系统在登录时读取的第一个文件</strong>，该文件设置的是整个系统的环境变量，只要启动系统就会读取该文件，用于为所有进程设置环境变量。</li>
-<li>系统使用此文件时<strong>并不是执行此文件中的命令</strong>，而是根据而是根据KEY&#x3D;VALUE模式的代码，对KEY赋值以VALUE，因此文件中如果要定义PATH环境变量，只需加入一行形如 PATH&#x3D;$PATH:&#x2F;xxx&#x2F;bin的代码即可<br>例如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games&quot;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="x2F-etc-x2F-profile"><a href="#x2F-etc-x2F-profile" class="headerlink" title="&#x2F;etc&#x2F;profile"></a>&#x2F;etc&#x2F;profile</h3><ul>
-<li>此文件是系统登录时执行的第二个文件。 为系统的每个用户设置环境信息，当用户第一次登录时，该文件被执行。并从<code>/etc/profile.d</code>目录的配置文件中搜集shell的设置。</li>
-<li>&#x2F;etc&#x2F;profile可以用于设定针对全系统所有用户的环境变量，环境变量周期是永久性，例如如果需要让所有用户可以使用java,把Java环境变量写在该文件中。</li>
-</ul>
-<h2 id="x2F-etc-x2F-bashrc"><a href="#x2F-etc-x2F-bashrc" class="headerlink" title="&#x2F;etc&#x2F;bashrc"></a>&#x2F;etc&#x2F;bashrc</h2><ul>
-<li>是针对所有用户的bash初始化文件，在此中设定的环境变量将应用于所有用户的shell中，此文件会在用户每次打开shell时执行一次。</li>
-<li>即每次新开一个终端，都会执行&#x2F;etc&#x2F;bashrc</li>
-</ul>
-<h1 id="用户级："><a href="#用户级：" class="headerlink" title="用户级："></a>用户级：</h1><p>这些文件处于(Home)家目录下<code>~</code>,用于定制<code>该用户的专属环境变量</code>。</p>
-<h2 id="profile"><a href="#profile" class="headerlink" title="~/.profile"></a><code>~/.profile</code></h2><p>对应当前登录用户的profile文件，用于定制当前用户的个人工作环境(变量是永久性)，每个用户都可使用该文件输入专用于自己使用的shell信息,<strong>当用户登录时,该文件仅仅执行一次</strong>!默认情况下,他设置一些环境变量,执行用户的.bashrc文件。这里是推荐放置个人设置的地方</p>
-<h2 id="x2F-bashrc"><a href="#x2F-bashrc" class="headerlink" title="~&#x2F;.bashrc"></a>~&#x2F;.bashrc</h2><p>该文件包含专用于你的bash shell的bash信息，当登录时以及<strong>每次打开新的shell时，该文件被读取</strong>。(~&#x2F;.bashrc只针对当前用户，变量的生命周期是永久的)，所以不推荐在这里设置常用的变量，因为每开一个shell，这个文件会读取一次，效率肯定有影响。</p>
-<p>暂时整理到这里，我看作者写的有点乱。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/60/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/60/">60</a><span class="page-number current">61</span><a class="page-number" href="/blog/page/62/">62</a><a class="extend next" rel="next" href="/blog/page/62/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/60/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/60/">60</a><span class="page-number current">61</span><a class="page-number" href="/blog/page/62/">62</a><a class="page-number" href="/blog/page/63/">63</a><a class="extend next" rel="next" href="/blog/page/62/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
