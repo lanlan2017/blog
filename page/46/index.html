@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">621</span>
+          <span class="site-state-item-count">623</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,287 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9b90d554/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/9b90d554/" class="post-title-link" itemprop="url">CSS文件加载：@import和link的区别</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-05-01 10:29:08" itemprop="dateCreated datePublished" datetime="2019-05-01T10:29:08+08:00">2019-05-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/CSS/%E6%A6%82%E8%BF%B0/" itemprop="url" rel="index"><span itemprop="name">概述</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/9b90d554/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/9b90d554/" data-xid="/blog/9b90d554/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="css文件加载：-import和link的区别"><a href="#css文件加载：-import和link的区别" class="headerlink" title="css文件加载：@import和link的区别"></a>css文件加载：@import和link的区别</h1><p><strong>本质上，这两种方式都是为了加载<code>CSS</code>文件</strong>，但还是存在着细微的差别。</p>
+<h2 id="使用CSS的三种方式"><a href="#使用CSS的三种方式" class="headerlink" title="使用CSS的三种方式"></a>使用CSS的三种方式</h2><p>页面中使用<code>CSS</code>的方式主要有3种：</p>
+<ul>
+<li>行内添加定义<code>style</code>属性值,</li>
+<li>页面头部内嵌,</li>
+<li>调用和外面链接调用，其中外面引用有两种：<ul>
+<li><code>link</code>和<code>@import</code>。</li>
+</ul>
+</li>
+</ul>
+<h2 id="impot使用方法"><a href="#impot使用方法" class="headerlink" title="@impot使用方法"></a>@impot使用方法</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml"><span class="comment">&lt;!--</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">    @import url(&quot;css/main.css&quot;);</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">    @import url(&quot;css/base.css&quot;);</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">--&gt;</span></span></span><br><span class="line"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="link的使用方法"><a href="#link的使用方法" class="headerlink" title="link的使用方法"></a>link的使用方法</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;css/main.css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><h3 id="功能上的区别"><a href="#功能上的区别" class="headerlink" title="功能上的区别"></a>功能上的区别</h3><ul>
+<li><code>link</code>是<code>XHTML</code>标签，除了加载<code>CSS</code>外，还可以定义<code>RSS</code>等其他事务；</li>
+<li><code>@import</code>属于<code>CSS</code>范畴，只能加载<code>CSS</code>。</li>
+</ul>
+<h3 id="加载顺序上的区别"><a href="#加载顺序上的区别" class="headerlink" title="加载顺序上的区别"></a>加载顺序上的区别</h3><ul>
+<li><strong>当一个页面被加载的时候</strong>（就是被浏览者浏览的时候），**<code>link</code>引用的<code>CSS</code>会同时被加载**，</li>
+<li>而**<code>@import</code>引用的<code>CSS</code>会等到页面全部被下载完再被加载**。</li>
+<li>所以有时候浏览<code>@import</code>加载<code>CSS</code>的页面时开始会没有样式,后面样式加载出来后网页会闪烁。</li>
+</ul>
+<h3 id="兼容性上的区别"><a href="#兼容性上的区别" class="headerlink" title="兼容性上的区别"></a>兼容性上的区别</h3><ul>
+<li><strong><code>link</code><strong>是<code>XHTML</code>标签，</strong>无兼容问题</strong>。</li>
+<li>由于**<code>@import</code>是<code>CSS2.1</code>提出的所以老的浏览器不支持**，</li>
+</ul>
+<h3 id="dom支持上的区别"><a href="#dom支持上的区别" class="headerlink" title="dom支持上的区别"></a>dom支持上的区别</h3><ul>
+<li><code>link</code>支持使用<code>Javascript</code>控制<code>DOM</code>去改变样式</li>
+<li>而<code>@import</code>不支持。</li>
+</ul>
+<h3 id="嵌套支持上的区别"><a href="#嵌套支持上的区别" class="headerlink" title="嵌套支持上的区别"></a>嵌套支持上的区别</h3><ul>
+<li><strong><code>@import</code>可以在<code>css</code>中再次引入其他样式表</strong>，比如可以创建一个主样式表，在主样式表中再引入其他的样式表，这样更利于修改和扩展。如下所示:</li>
+</ul>
+<p><strong>main.css</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> “sub1.css”;</span><br><span class="line"><span class="keyword">@import</span> “sub2.css”;</span><br></pre></td></tr></table></figure>
+<p><strong>sub1.css</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">color</span>:red;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>sub2.css</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.myclass</span> &#123;<span class="attribute">color</span>:blue&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从上面的分析来看，<strong>还是使用<code>link</code>标签比较好</strong>。标准网页制作加载<code>CSS</code>文件时，还应该选定要加载的媒体（<code>media</code>），比如<code>screen</code>，<code>print</code>，或者全部<code>all</code>等。</p>
+<p>提示：这样做有一个缺点，<strong>会对网站服务器产生过多的<code>HTTP</code>请求</strong>，以前是一个文件，而现在却是两个或更多文件了，<strong>服务器的压力增大，浏览量大的网站还是谨慎使用</strong>。有兴趣的可以观察一下像新浪等网站的首页或栏目首页代码，他们总会<strong>把<code>css</code>或<code>js</code>直接写在<code>html</code>里，而不用外部文件</strong>。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pp-cat/p/4001628.html">https://www.cnblogs.com/pp-cat/p/4001628.html</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_36414515/article/details/80392321">https://blog.csdn.net/sinat_36414515&#x2F;article&#x2F;details&#x2F;80392321</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/7e675acc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/7e675acc/" class="post-title-link" itemprop="url">Git 错误集合</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-04-30 23:53:43" itemprop="dateCreated datePublished" datetime="2019-04-30T23:53:43+08:00">2019-04-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/Debug/" itemprop="url" rel="index"><span itemprop="name">Debug</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/7e675acc/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/7e675acc/" data-xid="/blog/7e675acc/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>895</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="git-error-bad-signature"><a href="#git-error-bad-signature" class="headerlink" title="git error:bad signature"></a>git error:bad signature</h1><p>**解决方案:**删除<code>index</code>文件再重新生成</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -f .git/index</span><br><span class="line">git reset</span><br></pre></td></tr></table></figure>
+<h1 id="ERROR-You-must-verify-your-email-address"><a href="#ERROR-You-must-verify-your-email-address" class="headerlink" title="ERROR: You must verify your email address."></a>ERROR: You must verify your email address.</h1><p>今天使用Hexo发布博客时,报了如下错误:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ERROR: <span class="title">You</span> <span class="title">must</span> <span class="title">verify</span> <span class="title">your</span> <span class="title">email</span> <span class="title">address</span>.</span></span><br><span class="line"><span class="function"><span class="title">See</span> <span class="title">https</span>://<span class="title">github.com</span>/<span class="title">settings</span>/<span class="title">emails</span>.</span></span><br><span class="line"><span class="function"><span class="title">fatal</span>: <span class="title">Could</span> <span class="title">not</span> <span class="title">read</span> <span class="title">from</span> <span class="title">remote</span> <span class="title">repository</span>.</span></span><br><span class="line"><span class="function"><span class="title">Please</span> <span class="title">make</span> <span class="title">sure</span> <span class="title">you</span> <span class="title">have</span> <span class="title">the</span> <span class="title">correct</span> <span class="title">access</span> <span class="title">rights</span></span></span><br><span class="line"><span class="function"><span class="title">and</span> <span class="title">the</span> <span class="title">repository</span> <span class="title">exists</span>.</span></span><br><span class="line"><span class="function"><span class="title">FATAL</span> <span class="title">Something</span>&#x27;<span class="title">s</span> <span class="title">wrong</span>. <span class="title">Maybe</span> <span class="title">you</span> <span class="title">can</span> <span class="title">find</span> <span class="title">the</span> <span class="title">solution</span> <span class="title">here</span>: <span class="title">http</span>://<span class="title">hexo.io</span>/<span class="title">docs</span>/<span class="title">troubleshooting.html</span></span></span><br><span class="line"><span class="function"><span class="title">Error</span>: <span class="title">Spawn</span> <span class="title">failed</span></span></span><br><span class="line"><span class="function">    <span class="title">at</span> <span class="title">ChildProcess</span>.&lt;<span class="title">anonymous</span>&gt; (<span class="title">E</span>:\<span class="title">Blog</span>\<span class="title">blog6</span>\<span class="title">node_modules</span>\<span class="title">hexo</span>-<span class="title">util</span>\<span class="title">lib</span>\<span class="title">spawn.js</span>:52:19)</span></span><br><span class="line"><span class="function">    <span class="title">at</span> <span class="title">emitTwo</span> (<span class="title">events.js</span>:126:13)</span></span><br><span class="line"><span class="function">    <span class="title">at</span> <span class="title">ChildProcess.emit</span> (<span class="title">events.js</span>:214:7)</span></span><br><span class="line"><span class="function">    <span class="title">at</span> <span class="title">ChildProcess.cp.emit</span> (<span class="title">E</span>:\<span class="title">Blog</span>\<span class="title">blog6</span>\<span class="title">node_modules</span>\<span class="title">cross</span>-<span class="title">spawn</span>\<span class="title">lib</span>\<span class="title">enoent.js</span>:40:29)</span></span><br><span class="line"><span class="function">    <span class="title">at</span> <span class="title">Process.ChildProcess._handle.onexit</span> (<span class="title">internal</span>/<span class="title">child_process.js</span>:198:12)</span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></table></figure>
+<p>这是因为邮箱突然没有通过验证,具体怎么回事不知道.打开提示的链接<a target="_blank" rel="noopener" href="https://github.com/settings/emails">https://github.com/settings/emails</a>,然后重新验证就好了:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/git/Error/Email/1.png" alt="这里有一张图片"><br>这时github会给你发邮件,打开邮箱接收邮件,然后点击按钮验证即可:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/git/Error/Email/2.png" alt="这里有一张图片"></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d478f6fd381b">https://www.jianshu.com/p/d478f6fd381b</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1371,288 +1652,6 @@ function ps() {var a = document.getElementById('m');var p_s=document.getElementB
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/ae393936/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/ae393936/" class="post-title-link" itemprop="url">解决JSP中include指令导入的tag HTML文件出现乱码问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-04-12 15:16:17" itemprop="dateCreated datePublished" datetime="2019-04-12T15:16:17+08:00">2019-04-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/%E6%A0%87%E7%AD%BE%E6%96%87%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">标签文件</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/ae393936/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/ae393936/" data-xid="/blog/ae393936/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在JSP页面中导入了自定义的标签文件出现乱码,这里涉及到四个文件分别是:</p>
-<ul>
-<li><code>/app07a/WebContent/includeDemoTagTest.jsp</code>这个<code>jsp</code>是入口页面</li>
-<li><code>/app07a/WebContent/WEB-INF/tags/includeDemoTag.tag</code>,<code>includeDemoTagTest.jsp</code>中引用这个个标签文件。</li>
-<li><code>/app07a/WebContent/WEB-INF/tags/included.html</code>,<code>includeDemoTag.tag</code>中引用这个<code>html</code>文件。</li>
-<li><code>/app07a/WebContent/WEB-INF/tags/included.tagf</code>,<code>includeDemoTag.tag</code>中引用引入这个<code>tagf</code>文件。&#96;</li>
-</ul>
-<h2 id="详细代码"><a href="#详细代码" class="headerlink" title="详细代码"></a>详细代码</h2><p><code>/app07a/WebContent/includeDemoTagTest.jsp</code>:</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h2&gt;下面是标签文件includeDemoTag.tag中的内容&lt;/h2&gt;</span><br><span class="line">    &lt;hr color=<span class="string">&quot;green&quot;</span>&gt;</span><br><span class="line">    &lt;!-- 引入自定义标签目录,取个别名为前缀`easy` --&gt;</span><br><span class="line">    &lt;%@ taglib prefix=<span class="string">&quot;easy&quot;</span> tagdir=<span class="string">&quot;/WEB-INF/tags&quot;</span>%&gt;</span><br><span class="line">    &lt;!-- 引入前缀`easy`所表示的标签目录中的`includeDemoTag.tag`文件 --&gt;</span><br><span class="line">    &lt;easy:includeDemoTag /&gt;</span><br><span class="line">    &lt;hr color=<span class="string">&quot;green&quot;</span>&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><code>/app07a/WebContent/WEB-INF/tags/includeDemoTag.tag</code>:</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;strong&gt;以下是included.html的内容：&lt;/strong&gt;</span><br><span class="line">&lt;hr color=<span class="string">&quot;red&quot;</span>&gt;</span><br><span class="line">&lt;%@ include file=<span class="string">&quot;included2.tagf&quot;</span>%&gt;</span><br><span class="line">&lt;hr color=<span class="string">&quot;red&quot;</span>&gt;</span><br><span class="line">&lt;hr color=<span class="string">&quot;blue&quot;</span>&gt;</span><br><span class="line">&lt;strong&gt;下面是included.tagf文件中的内容:&lt;/strong&gt;</span><br><span class="line">&lt;%@ include file=<span class="string">&quot;included.tagf&quot;</span>%&gt;</span><br><span class="line"></span><br><span class="line">&lt;hr color=<span class="string">&quot;blue&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
-<p><code>/app07a/WebContent/WEB-INF/tags/included.tagf</code>:</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    out.print(<span class="string">&quot;&lt;strong&gt;included.tagf文件中的内容&lt;/strong&gt;&quot;</span>);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
-<p><code>/app07a/WebContent/WEB-INF/tags/included.html</code>:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>水果<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>单价(斤)<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>苹果<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>4.8<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>香蕉<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>3.6<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>草莓<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>12.5<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="浏览器显示效果"><a href="#浏览器显示效果" class="headerlink" title="浏览器显示效果"></a>浏览器显示效果</h2><p>通过URL:<br><a target="_blank" rel="noopener" href="http://localhost:8080/app07a/includeDemoTagTest.jsp">http://localhost:8080/app07a/includeDemoTagTest.jsp</a>访问,浏览器将显示乱码,如下图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/tag%20file/encoding/1.png" alt="这里有一张图片"></p>
-<h2 id="解决乱码"><a href="#解决乱码" class="headerlink" title="解决乱码"></a>解决乱码</h2><h3 id="解决jsp文件乱码"><a href="#解决jsp文件乱码" class="headerlink" title="解决jsp文件乱码"></a>解决jsp文件乱码</h3><p>在JSP文件第一行加入如下page指令:</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br></pre></td></tr></table></figure>
-<p>可以解决JSP文件中的乱码.现在浏览器显示效果如下:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/tag%20file/encoding/2.png" alt="这里有一张图片"></p>
-<h3 id="解决jsp中引入的tag文件出现的乱码"><a href="#解决jsp中引入的tag文件出现的乱码" class="headerlink" title="解决jsp中引入的tag文件出现的乱码"></a>解决jsp中引入的tag文件出现的乱码</h3><p>在tag文件第一行中加入如下tag指令:</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ tag pageEncoding=<span class="string">&quot;utf-8&quot;</span>%&gt;</span><br></pre></td></tr></table></figure>
-<p>即可解决乱码,浏览器显示效果:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/tag%20file/encoding/3.png" alt="这里有一张图片"></p>
-<h3 id="解决tag文件中引入的tagf文件出现的乱码"><a href="#解决tag文件中引入的tagf文件出现的乱码" class="headerlink" title="解决tag文件中引入的tagf文件出现的乱码"></a>解决tag文件中引入的tagf文件出现的乱码</h3><p>类似tag文件,在tagf文件中的第一行加入如下tag指令,可以解决乱码:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/tag%20file/encoding/4.png" alt="这里有一张图片"></p>
-<h3 id="解决tag文件中引入的html文件中出现的乱码"><a href="#解决tag文件中引入的html文件中出现的乱码" class="headerlink" title="解决tag文件中引入的html文件中出现的乱码"></a>解决tag文件中引入的html文件中出现的乱码</h3><p>我试了好多办法,都无法修改html文件的乱码,我的做法是:不使用html文件,也就是把<code>included.html</code>这个html文件改成<code>included2.tagf</code>tagf文件,然后利用tag指令来设置编码.<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/tag%20file/encoding/5.png" alt="这里有一张图片"></p>
-<h2 id="修改后的代码"><a href="#修改后的代码" class="headerlink" title="修改后的代码"></a>修改后的代码</h2><h3 id="includeDemoTagTest-jsp"><a href="#includeDemoTagTest-jsp" class="headerlink" title="includeDemoTagTest.jsp"></a>includeDemoTagTest.jsp</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h2&gt;下面是标签文件includeDemoTag.tag中的内容&lt;/h2&gt;</span><br><span class="line">    &lt;hr color=<span class="string">&quot;green&quot;</span>&gt;</span><br><span class="line">    &lt;!-- 引入自定义标签目录,取个别名为前缀`easy` --&gt;</span><br><span class="line">    &lt;%@ taglib prefix=<span class="string">&quot;easy&quot;</span> tagdir=<span class="string">&quot;/WEB-INF/tags&quot;</span>%&gt;</span><br><span class="line">    &lt;!-- 引入前缀`easy`所表示的标签目录中的`includeDemoTag.tag`文件 --&gt;</span><br><span class="line">    &lt;easy:includeDemoTag /&gt;</span><br><span class="line">    &lt;hr color=<span class="string">&quot;green&quot;</span>&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="includeDemoTag-tag"><a href="#includeDemoTag-tag" class="headerlink" title="includeDemoTag.tag"></a>includeDemoTag.tag</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 设置tag文件的编码 --&gt;</span><br><span class="line">&lt;%@ tag pageEncoding=<span class="string">&quot;utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;strong&gt;以下是included.html的内容：&lt;/strong&gt;</span><br><span class="line">&lt;hr color=<span class="string">&quot;red&quot;</span>&gt;</span><br><span class="line">&lt;%@ include file=<span class="string">&quot;included2.tagf&quot;</span>%&gt;</span><br><span class="line">&lt;hr color=<span class="string">&quot;red&quot;</span>&gt;</span><br><span class="line">&lt;hr color=<span class="string">&quot;blue&quot;</span>&gt;</span><br><span class="line">&lt;strong&gt;下面是included.tagf文件中的内容:&lt;/strong&gt;</span><br><span class="line">&lt;%@ include file=<span class="string">&quot;included.tagf&quot;</span>%&gt;</span><br><span class="line">&lt;hr color=<span class="string">&quot;blue&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="included-tagf"><a href="#included-tagf" class="headerlink" title="included.tagf"></a>included.tagf</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ tag pageEncoding=<span class="string">&quot;utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    out.print(<span class="string">&quot;&lt;strong&gt;included.tagf文件中的内容&lt;/strong&gt;&quot;</span>);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="included2-tagf"><a href="#included2-tagf" class="headerlink" title="included2.tagf"></a>included2.tagf</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ tag pageEncoding=<span class="string">&quot;utf-8&quot;</span>%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    out.print(<span class="string">&quot;&lt;strong&gt;included.tagf文件中的内容&lt;/strong&gt;&quot;</span>);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9d84ecc2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/9d84ecc2/" class="post-title-link" itemprop="url">java单词首字母大写 首字母小写</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-04-03 22:05:32" itemprop="dateCreated datePublished" datetime="2019-04-03T22:05:32+08:00">2019-04-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">字符串处理</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/9d84ecc2/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/9d84ecc2/" data-xid="/blog/9d84ecc2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h3 id="ASCII码运算"><a href="#ASCII码运算" class="headerlink" title="ASCII码运算"></a>ASCII码运算</h3><p>先来看实例代码:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">&quot;a-z:&quot;</span>+(<span class="type">int</span>)<span class="string">&#x27;a&#x27;</span>+<span class="string">&quot;-&quot;</span>+(<span class="type">int</span>)<span class="string">&#x27;z&#x27;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;A-Z:&quot;</span>+(<span class="type">int</span>)<span class="string">&#x27;A&#x27;</span>+<span class="string">&quot;-&quot;</span>+(<span class="type">int</span>)<span class="string">&#x27;Z&#x27;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;0-9:&quot;</span>+(<span class="type">int</span>)<span class="string">&#x27;0&#x27;</span>+<span class="string">&quot;-&quot;</span>+(<span class="type">int</span>)<span class="string">&#x27;9&#x27;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;a减去A=&quot;</span>+(<span class="type">int</span>)(<span class="string">&#x27;a&#x27;</span>-<span class="string">&#x27;A&#x27;</span>));</span><br></pre></td></tr></table></figure>
-<p>运行结果:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a-z:<span class="number">97</span>-<span class="number">122</span></span><br><span class="line">A-Z:<span class="number">65</span>-<span class="number">90</span></span><br><span class="line"><span class="number">0</span>-<span class="number">9</span>:<span class="number">48</span>-<span class="number">57</span></span><br><span class="line">a减去A=<span class="number">32</span></span><br></pre></td></tr></table></figure>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><ul>
-<li>小写字母<code>a到z</code>的<code>ASCII</code>码范围为:<code>97到122</code>。</li>
-<li>大写字母<code>A到Z</code>的<code>ASCII</code>码范围为:<code>65到90</code>,</li>
-<li><strong>小写字母减去<code>32</code>就得到大写字母,同样的大写字母加上<code>32</code>就得到了小写字母.</strong></li>
-</ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> first.letter;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LowerUpperCaseFirstLetter</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 首字母小写</span></span><br><span class="line">        System.out.println(<span class="string">&quot;首字母变小写:&quot;</span> + lowerCaseFirstLetter(<span class="string">&quot;Java&quot;</span>));</span><br><span class="line">        <span class="comment">// 首字母大写</span></span><br><span class="line">        System.out.println(<span class="string">&quot;首字母变大写:&quot;</span> + upperCaseFirstLetter(<span class="string">&quot;java&quot;</span>));</span><br><span class="line"><span class="comment">//        System.out.println(&quot;a-z:&quot;+(int)&#x27;a&#x27;+&quot;-&quot;+(int)&#x27;z&#x27;);</span></span><br><span class="line"><span class="comment">//        System.out.println(&quot;A-Z:&quot;+(int)&#x27;A&#x27;+&quot;-&quot;+(int)&#x27;Z&#x27;);</span></span><br><span class="line"><span class="comment">//        System.out.println(&quot;0-9:&quot;+(int)&#x27;0&#x27;+&quot;-&quot;+(int)&#x27;9&#x27;);</span></span><br><span class="line"><span class="comment">//        System.out.println(&quot;a减去A=&quot;+(int)(&#x27;a&#x27;-&#x27;A&#x27;));</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 首字母变大写.</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> str</span></span><br><span class="line"><span class="comment">     *            英文单词.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 首字母大写的英文单词.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">upperCaseFirstLetter</span><span class="params">(String str)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">char</span>[] chars = str.toCharArray();</span><br><span class="line">        <span class="comment">// 如果是小写字母</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="string">&#x27;a&#x27;</span> &lt;= chars[<span class="number">0</span>] &amp;&amp; chars[<span class="number">0</span>] &lt;= <span class="string">&#x27;z&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(chars[<span class="number">0</span>] + <span class="string">&quot;:&quot;</span> + (<span class="type">int</span>) (chars[<span class="number">0</span>]));</span><br><span class="line">            <span class="comment">// 小写-32变大写</span></span><br><span class="line">            chars[<span class="number">0</span>] = (<span class="type">char</span>) (chars[<span class="number">0</span>] - <span class="number">32</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> String.valueOf(chars);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 首字母变小写.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> str 英文单词.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 首字母变小写的英文单词.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">lowerCaseFirstLetter</span><span class="params">(String str)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">char</span>[] chars = str.toCharArray();</span><br><span class="line">        <span class="comment">// 如果是大写字母</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="string">&#x27;A&#x27;</span> &lt;= chars[<span class="number">0</span>] &amp;&amp; chars[<span class="number">0</span>] &lt;= <span class="string">&#x27;Z&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(chars[<span class="number">0</span>] + <span class="string">&quot;:&quot;</span> + (<span class="type">int</span>) (chars[<span class="number">0</span>]));</span><br><span class="line">            <span class="comment">// 大写+32是变小写</span></span><br><span class="line">            chars[<span class="number">0</span>] += <span class="number">32</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> String.valueOf(chars);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">J:74</span></span><br><span class="line"><span class="function">首字母变小写:<span class="title">java</span></span></span><br><span class="line"><span class="function"><span class="title">j</span>:106</span></span><br><span class="line"><span class="function">首字母变大写:<span class="title">Java</span></span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/45/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/45/">45</a><span class="page-number current">46</span><a class="page-number" href="/blog/page/47/">47</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/63/">63</a><a class="extend next" rel="next" href="/blog/page/47/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1685,7 +1684,7 @@ function ps() {var a = document.getElementById('m');var p_s=document.getElementB
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23:01</span>
+    <span title="站点阅读时长">23:04</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

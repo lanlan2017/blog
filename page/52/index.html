@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">621</span>
+          <span class="site-state-item-count">623</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,290 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/efd55c13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/efd55c13/" class="post-title-link" itemprop="url">Java 删除所有空子目录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-12-22 19:15:36" itemprop="dateCreated datePublished" datetime="2018-12-22T19:15:36+08:00">2018-12-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-IO%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">Java IO流</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-IO%E6%B5%81/File/" itemprop="url" rel="index"><span itemprop="name">File</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/efd55c13/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/efd55c13/" data-xid="/blog/efd55c13/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="向下递归-删除所有空子目录"><a href="#向下递归-删除所有空子目录" class="headerlink" title="向下递归 删除所有空子目录"></a>向下递归 删除所有空子目录</h1><p>删除方法如下所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">deleteEmptyDIR</span><span class="params">(String dir)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 转成File对象</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">dirFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(dir);</span><br><span class="line">    <span class="comment">// 获取列表</span></span><br><span class="line">    File[] fileList = dirFile.listFiles();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; fileList.length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 如果是目录的话</span></span><br><span class="line">        <span class="keyword">if</span> (fileList[i].isDirectory())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (fileList[i].listFiles().length == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (fileList[i].delete())</span><br><span class="line">                &#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;成功删除空目录:&quot;</span> + fileList[i].getAbsolutePath());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 递归下一个目录</span></span><br><span class="line">                deleteEmptyDIR(fileList[i].getAbsolutePath());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述代码只能删除目录树中最末尾的空目录,有可能删除之后，又出现了空目录。但是此时递归已经结束了,新出现的空目录将无法删除。<br>1.这个时候可以先多运行几次，直到删除干净为止。<br>2.在上面的删除到目录树的最后的空子目录的时候，再递归向上删除空的父目录</p>
+<h1 id="向上递归-删除所有空父目录"><a href="#向上递归-删除所有空父目录" class="headerlink" title="向上递归 删除所有空父目录"></a>向上递归 删除所有空父目录</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 向上递归删除空目录</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> dir</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">deleteEmptyParentDIR</span><span class="params">(File dir)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">File</span> <span class="variable">parentFile</span> <span class="operator">=</span> dir.getParentFile();</span><br><span class="line">    <span class="comment">// 如果dir目录的父目录为空的话</span></span><br><span class="line">    <span class="keyword">if</span> (parentFile.isDirectory() &amp;&amp; parentFile.listFiles().length == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (parentFile.delete())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;成功删除 父 目录&gt;&quot;</span> + parentFile.getAbsolutePath());</span><br><span class="line">            <span class="comment">// 递归删除父目录</span></span><br><span class="line">            deleteEmptyParentDIR(parentFile);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="删除空目录完整代码"><a href="#删除空目录完整代码" class="headerlink" title="删除空目录完整代码"></a>删除空目录完整代码</h1><p>整合两者后代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DeleteEmptyDir</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 获取目录</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">dirPath</span> <span class="operator">=</span> <span class="string">&quot;test&quot;</span>;</span><br><span class="line">        deleteEmptyDIR(dirPath);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 向下递归,删除目录树中最后的空子目录.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> dir</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">deleteEmptyDIR</span><span class="params">(String dir)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 转成File对象</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">dirFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(dir);</span><br><span class="line">        <span class="comment">// 获取列表</span></span><br><span class="line">        File[] fileList = dirFile.listFiles();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; fileList.length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 如果是目录的话</span></span><br><span class="line">            <span class="keyword">if</span> (fileList[i].isDirectory())</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 如果当前是空目录</span></span><br><span class="line">                <span class="keyword">if</span> (fileList[i].listFiles().length == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 删除当前的空目录</span></span><br><span class="line">                    <span class="keyword">if</span> (fileList[i].delete())</span><br><span class="line">                    &#123;</span><br><span class="line">                        System.out.println(<span class="string">&quot;成功删除 空 目录&gt;&quot;</span> + fileList[i].getAbsolutePath());</span><br><span class="line">                        <span class="comment">// 往回删除父目录</span></span><br><span class="line">                        deleteEmptyParentDIR(fileList[i]);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 递归下一个目录</span></span><br><span class="line">                    deleteEmptyDIR(fileList[i].getAbsolutePath());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 向上递归删除空目录</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> dir</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">deleteEmptyParentDIR</span><span class="params">(File dir)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">parentFile</span> <span class="operator">=</span> dir.getParentFile();</span><br><span class="line">        <span class="comment">// 如果dir目录的父目录为空的话</span></span><br><span class="line">        <span class="keyword">if</span> (parentFile.isDirectory() &amp;&amp; parentFile.listFiles().length == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//如果父目录删除成功</span></span><br><span class="line">            <span class="keyword">if</span> (parentFile.delete())</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;成功删除 空 父 目录&gt;&quot;</span> + parentFile.getAbsolutePath());</span><br><span class="line">                <span class="comment">// 再递归删除父目录的父目录</span></span><br><span class="line">                deleteEmptyParentDIR(parentFile);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>测试目录结构如下：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Java%20IO/File/delete/emptyDirs/example.png"><br>运行结果：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">成功删除 空 目录&gt;D:\dev\workspace\Test\test\test1\test2\test22</span><br><span class="line">成功删除 空 目录&gt;D:\dev\workspace\Test\test\test1\test2\test3\test4</span><br><span class="line">成功删除 空 父 目录&gt;D:\dev\workspace\Test\test\test1\test2\test3</span><br><span class="line">成功删除 空 目录&gt;D:\dev\workspace\Test\test\test1\test2\test33</span><br><span class="line">成功删除 空 父 目录&gt;D:\dev\workspace\Test\test\test1\test2</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Java%20IO/File/delete/emptyDirs/delete.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/7b20b86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/7b20b86/" class="post-title-link" itemprop="url">JSP 指令</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-12-20 23:51:51" itemprop="dateCreated datePublished" datetime="2018-12-20T23:51:51+08:00">2018-12-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/JSP/" itemprop="url" rel="index"><span itemprop="name">JSP</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/JSP/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础语法</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/7b20b86/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/7b20b86/" data-xid="/blog/7b20b86/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="page指令"><a href="#page指令" class="headerlink" title="page指令"></a>page指令</h1><p>page是JSP页面最常用的指令,用于定义整个JSP页面的相关属性,这些属性在JSP被服务器解析成 Servlet时会转换为相应的Java程序代码。page指令的语法格式如下:</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page attr1=<span class="string">&quot;value1&quot;</span>attr2=<span class="string">&quot;value2&quot;</span>%&gt;</span><br></pre></td></tr></table></figure>
+<p>page指令包含的属性有15个,下面对一些常用的属性进行介绍。</p>
+<h2 id="language属性"><a href="#language属性" class="headerlink" title="language属性"></a>language属性</h2><p>该属性用于设置JSP页面使用的语言,目前只支持Java语言,默认值为Java。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="extends属性"><a href="#extends属性" class="headerlink" title="extends属性"></a>extends属性</h2><p>该属性用于设置JSP页面继承的Java类,所有JSP页面在执行之前都会被服务器解析成 Servlet,而 Servlet是由Java类定义的,所以JSP和 Servlet都可以继承指定的父类。该属性并不常用,而且有可能影响服务器的性能优化。</p>
+<h2 id="import属性"><a href="#import属性" class="headerlink" title="import属性"></a>import属性</h2><p>该属性用于设置JSP导入的类包。JSP页面可以嵌入Java代码片段,这些Java代码在调用API需要导入相应的类包。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;java.util.Enumeration&quot;</span>%&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="pageEccoding属性"><a href="#pageEccoding属性" class="headerlink" title="pageEccoding属性"></a>pageEccoding属性</h2><p>该属性用于<strong>定义JSP页面的编码格式,也就是指定文件编码</strong>。JSP页面中的所有代码都使用该属性指定的字符集,如果该属性值设置为ISO-8859-1,那么这个JSP页面就不支持中文字符。通常设置编码格式为UTF-8.</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="contentType属性"><a href="#contentType属性" class="headerlink" title="contentType属性"></a>contentType属性</h2><p>该属性用于设置JSP页面的MIME类型和字符编码,浏览器会据此显示网页内容。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="session属性"><a href="#session属性" class="headerlink" title="session属性"></a>session属性</h2><p>该属性指定JSP页面是否使用HTP的 session会话对象。其属性值是 boolean类型,可选值为true和 false<strong>。默认值为true,表示可以使用 session会话对象</strong>;如果设置为 false,则当前JSP页面将无法使用 session会话对象。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> session=<span class="string">&quot;false&quot;</span>%&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="buffer属性"><a href="#buffer属性" class="headerlink" title="buffer属性"></a>buffer属性</h2><p>该属性用于设置JSP的out输出对象使用的缓冲区大小,默认大小为8KB,且单位只能使用KB。建议程序开发人员使用8的倍数16、32、64、128等作为该属性的属性值。</p>
+<h2 id="autoFlush属性"><a href="#autoFlush属性" class="headerlink" title="autoFlush属性"></a>autoFlush属性</h2><p>该属性用于设置JsP页面缓存满时,是否自动刷新缓存。默认值为tue;如果设置为 false,则缓存被填满时将抛出异常。</p>
+<h2 id="isErrorPage属性"><a href="#isErrorPage属性" class="headerlink" title="isErrorPage属性"></a>isErrorPage属性</h2><p>通过该属性可以将当前JSP页面设置成错误处理页面来处理另一个JSP页面的错误,也就是异常处理。这意味着当前JSP页面业务的改变。</p>
+<h2 id="errorPage属性"><a href="#errorPage属性" class="headerlink" title="errorPage属性"></a>errorPage属性</h2><p>该属性用于指定处理当前JSP页面异常错误的另一个JSP页面,指定的JSP错误处理页面必须设置 isErrorPage属性为true。 errorPage属性的属性值是一个url字符串。</p>
+<h1 id="inc-ude指令"><a href="#inc-ude指令" class="headerlink" title="inc|ude指令"></a>inc|ude指令</h1><p>文件包含指令 include是JSP的另一条指令标识。通过该指令可以在一个JSP页面中包含另一个JSP页面。不过该指令是静态包含,也就是说被包含文件中所有内容会被原样包含到该JSP页面中,即使被包含文件中有JSP代码,在包含时也不会被编译执行。使用 include指令,最终将生成一个文件,<strong>所以在被包含和包含的文件中,不能有相同名称的变量</strong>。 include指令包含文件的过程如图下图所示：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/JSP/CMD/include/include.png"><br>include指令的语法格式如下:</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;% include file=<span class="string">&quot;path&quot;</span>%&gt;</span><br></pre></td></tr></table></figure>
+<p>该指令只有一个file属性,用于指定要包含文件的路径。该路径可以是相对路径,也可以是绝对路径。但是不可以是通过<code>&lt;%=%&gt;</code>表达式所代表的文件。<br>使用 include指令包含文件可以大大提高代码的重用性,而且也便于以后的维护和升级</p>
+<p>在应用include指令进行文件包含时,为了使整个页面的层次结构不发生冲突,建议在被包含页面中将<code>&lt;htm&gt;</code>、<code>&lt;body&gt;</code>等标记删除.因为在包含该页面的文件中巳经指定这些标记</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>后面再更新。。。。</p>
+<h1 id="taglib指令"><a href="#taglib指令" class="headerlink" title="taglib指令"></a>taglib指令</h1><p>在JSP文件中,可以通过taglib指令标识声明该页面中所使用的标签库,同时引用标签库,并指定标签的前缀。在页面中引用标签库后,就可以通过前缀来引用标签库中的标签。 taglib指令的语法格式如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;% taglib prefix=&quot;tagPrefix uri=&quot;tagURI&quot;%&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>prefix:用于指定标签的前缀。该前缀不能命名为jsp、jspx、java、 Javax、sun、 servlet和sunw。</li>
+<li>uri:用于指定标签库文件的存放位置</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1827,323 +2111,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/211bb72a/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/211bb72a/" class="post-title-link" itemprop="url">正则表达式 实现html 表格转markdown表格</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-12-17 01:40:14" itemprop="dateCreated datePublished" datetime="2018-12-17T01:40:14+08:00">2018-12-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">应用</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/211bb72a/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/211bb72a/" data-xid="/blog/211bb72a/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>5.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="抓取文章信息"><a href="#抓取文章信息" class="headerlink" title="抓取文章信息"></a>抓取文章信息</h2><h3 id="匹配正则"><a href="#匹配正则" class="headerlink" title="匹配正则"></a>匹配正则</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.+&lt;div class=&quot;post-body&quot;.*?&gt;(.+?)&lt;\/div&gt;.+</span><br></pre></td></tr></table></figure>
-<p>替换正则</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$1</span><br></pre></td></tr></table></figure>
-<h2 id="精简表格正则"><a href="#精简表格正则" class="headerlink" title="精简表格正则##"></a>精简表格正则##</h2><p>生成的表格如下，</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;<span class="name">thead</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">th</span> <span class="attr">style</span>=<span class="string">&quot;text-align:left&quot;</span>&gt;</span>序号<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span> <span class="attr">style</span>=<span class="string">&quot;text-align:left&quot;</span>&gt;</span>方法<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span> <span class="attr">style</span>=<span class="string">&quot;text-align:left&quot;</span>&gt;</span>描述<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">thead</span>&gt;</span><span class="tag">&lt;<span class="name">tbody</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">&quot;text-align:left&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">&quot;text-align:left&quot;</span>&gt;</span>String getCharacterEncoding()<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">&quot;text-align:left&quot;</span>&gt;</span>返回响应用的是何种字符编码<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">&quot;text-align:left&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">&quot;text-align:left&quot;</span>&gt;</span>void setContentType(String type)<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">&quot;text-align:left&quot;</span>&gt;</span>设置响应的MIME类型<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">&quot;text-align:left&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">&quot;text-align:left&quot;</span>&gt;</span>PrintWriter getwriter()<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">&quot;text-align:left&quot;</span>&gt;</span>返回可以向客户端输出字符的一个输出流对象(注意比较PrintWriter与内置out对象的区别)<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>转markdown的时候样式是不需要的，先删除样式：</p>
-<h3 id="删除内嵌样式"><a href="#删除内嵌样式" class="headerlink" title="删除内嵌样式"></a>删除内嵌样式</h3><h4 id="匹配正则-1"><a href="#匹配正则-1" class="headerlink" title="匹配正则"></a>匹配正则</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&lt;t[h|d]) style=.*?(&gt;)</span><br></pre></td></tr></table></figure>
-<h4 id="替换正则"><a href="#替换正则" class="headerlink" title="替换正则"></a>替换正则</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$1$2</span><br></pre></td></tr></table></figure>
-<p>替换后的效果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;序号&lt;/th&gt;&lt;th&gt;方法&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;String getCharacterEncoding()&lt;/td&gt;&lt;td&gt;返回响应用的是何种字符编码&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;void setContentType(String type)&lt;/td&gt;&lt;td&gt;设置响应的MIME类型&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;PrintWriter getwriter()&lt;/td&gt;&lt;td&gt;返回可以向客户端输出字符的一个输出流对象(注意比较PrintWriter与内置out对象的区别)&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="生成分割符"><a href="#生成分割符" class="headerlink" title="生成分割符"></a>生成分割符</h3><p><strong>匹配正则:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(?:&lt;\/t[hd]&gt;&lt;t[hd]&gt;|&lt;\/?t[hd]&gt;)</span><br></pre></td></tr></table></figure>
-<p><strong>替换正则:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">|</span><br></pre></td></tr></table></figure>
-<h4 id="替换结果"><a href="#替换结果" class="headerlink" title="替换结果"></a>替换结果</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;&lt;thead&gt;&lt;tr&gt;|序号|方法|描述|&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;|1|String getCharacterEncoding()|返回响应用的是何种字符编码|&lt;/tr&gt;&lt;tr&gt;|2|void setContentType(String type)|设置响应的MIME类型|&lt;/tr&gt;&lt;tr&gt;|3|PrintWriter getwriter()|返回可以向客户端输出字符的一个输出流对象(注意比较PrintWriter与内置out对象的区别)|&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="按行分割"><a href="#按行分割" class="headerlink" title="按行分割"></a>按行分割</h3><p><strong>匹配正则:</strong><code>&lt;tr&gt;(.+?)&lt;/tr&gt;</code><br><strong>替换正则:</strong><code>$1\n</code><br><strong>替换结果:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;&lt;thead&gt;|序号|方法|描述|</span><br><span class="line">&lt;/thead&gt;&lt;tbody&gt;|1|String getCharacterEncoding()|返回响应用的是何种字符编码|</span><br><span class="line">|2|void setContentType(String type)|设置响应的MIME类型|</span><br><span class="line">|3|PrintWriter getwriter()|返回可以向客户端输出字符的一个输出流对象(注意比较PrintWriter与内置out对象的区别)|</span><br><span class="line">&lt;/tbody&gt;&lt;/table&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除其他html多余标签行"><a href="#删除其他html多余标签行" class="headerlink" title="删除其他html多余标签行"></a>删除其他html多余标签行</h3><p><strong>匹配正则:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;\/?(?:table|thead|tbody)&gt;</span><br></pre></td></tr></table></figure>
-<p>**替换正则:**空字符串<code>&quot;&quot;</code><br><strong>替换结果:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|序号|方法|描述|</span><br><span class="line">|1|String getCharacterEncoding()|返回响应用的是何种字符编码|</span><br><span class="line">|2|void setContentType(String type)|设置响应的MIME类型|</span><br><span class="line">|3|PrintWriter getwriter()|返回可以向客户端输出字符的一个输出流对象(注意比较PrintWriter与内置out对象的区别)|</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="生成对齐方式"><a href="#生成对齐方式" class="headerlink" title="生成对齐方式"></a>生成对齐方式</h3><p>剩下的就交给java来解决吧。一行一行的遍历这个字符串，<strong>在第二行的时候，把里面的文本替换成对齐方式即可</strong>。<br><strong>匹配正则</strong> </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[^|]+\|</span><br></pre></td></tr></table></figure>
-<p><strong>替换正则</strong><br>对齐方式，这里默认为左对齐</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:--|</span><br></pre></td></tr></table></figure>
-<h4 id="java代码"><a href="#java代码" class="headerlink" title="java代码"></a>java代码</h4><p>要想单纯的替换第二行，首先要知道现在匹配的是第几次，这里我通过使用计数器来实现。<br>匹配到第二次的时候，我先获取匹配的文本，然后对修改该文生成一个新的文本(对齐方式)。<br>接下来就是要使用新的文本替换字符串中旧的文本了，这里使用<code>Matcher.appendReplacement(StringBuffer sb, String replacement)</code>这个方法，这个方法可以在匹配过程中动态的替换，但是与其他替换方法不同，其他替换方法会把替换的结果直接返回，但appendReplacement方法替换后的结果会放在sb参数中。还有就是appendReplacement方法只会把扫描过的文本放到sb中，没有扫描的文本它不管，使用<code>Matcher.appendTail(StringBuffer sb)</code>可以把没有扫描过的文本追加到sb中。这样才真正做到动态的替换。<br>代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">StringBuffer</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>();</span><br><span class="line"><span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="type">Pattern</span> <span class="variable">alignPattern</span> <span class="operator">=</span> Pattern.compile(<span class="string">&quot;(\\|(?:.+?\\|)+\\n)&quot;</span>);</span><br><span class="line"><span class="type">Matcher</span> <span class="variable">alignMatcher</span> <span class="operator">=</span> alignPattern.matcher(htmlTable);</span><br><span class="line"><span class="keyword">while</span> (alignMatcher.find())</span><br><span class="line">&#123;</span><br><span class="line">    count++;</span><br><span class="line">    <span class="keyword">if</span> (count == <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 获取匹配的文本</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">align</span> <span class="operator">=</span> alignMatcher.group();</span><br><span class="line">        <span class="comment">// 生成替换的文本</span></span><br><span class="line">        align = align.replaceAll(<span class="string">&quot;[^|]+\\|&quot;</span>, <span class="string">&quot;:--|&quot;</span>);;</span><br><span class="line">        <span class="comment">// 使用新的替换旧的 然后处理过的文本放到缓存中</span></span><br><span class="line">        alignMatcher.appendReplacement(sb, align);</span><br><span class="line">        <span class="comment">// 没有扫描过的文本放到缓存中</span></span><br><span class="line">        alignMatcher.appendTail(sb);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="替换结果-1"><a href="#替换结果-1" class="headerlink" title="替换结果"></a>替换结果</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|序号|方法|描述|</span><br><span class="line">|:--|:--|:--|</span><br><span class="line">|1|String getCharacterEncoding()|返回响应用的是何种字符编码|</span><br><span class="line">|2|void setContentType(String type)|设置响应的MIME类型|</span><br><span class="line">|3|PrintWriter getwriter()|返回可以向客户端输出字符的一个输出流对象(注意比较PrintWriter与内置out对象的区别)|</span><br></pre></td></tr></table></figure>
-<p>这样就得到了markdown表格了，显示效果如下：</p>
-<table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">1</td>
-<td align="left">String getCharacterEncoding()</td>
-<td align="left">返回响应用的是何种字符编码</td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left">void setContentType(String type)</td>
-<td align="left">设置响应的MIME类型</td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">PrintWriter getwriter()</td>
-<td align="left">返回可以向客户端输出字符的一个输出流对象(注意比较PrintWriter与内置out对象的区别)</td>
-</tr>
-</tbody></table>
-<h2 id="html-table转Markdown-Java方法"><a href="#html-table转Markdown-Java方法" class="headerlink" title="html table转Markdown Java方法"></a>html table转Markdown Java方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">table2Markdown</span><span class="params">(String htmlTable)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">StringBuilder</span> <span class="variable">temp</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(htmlTable);</span><br><span class="line">    htmlTable = htmlTable</span><br><span class="line">            .replaceAll(<span class="string">&quot;(&lt;t(?:h|d)) style=\&quot;text\\-align:.*?(&gt;)&quot;</span>, <span class="string">&quot;$1$2&quot;</span>);</span><br><span class="line">    htmlTable = htmlTable.replaceAll(</span><br><span class="line">            <span class="string">&quot;(?:&lt;\\/?t(?:h|d)&gt;\\n\\s+&lt;\\/?t(?:h|d)&gt;|&lt;\\/?t(?:h|d)&gt;)&quot;</span>, <span class="string">&quot;|&quot;</span>);</span><br><span class="line">    htmlTable = htmlTable.replaceAll(<span class="string">&quot;&lt;\\/?t(?:able|body|r)&gt;&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">    htmlTable = htmlTable.replaceAll(<span class="string">&quot;^\\s*&lt;\\/?t(?:able|body|r)&gt;$&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">    htmlTable = htmlTable.replaceAll(<span class="string">&quot;(?m)^\\s*$(?:\\n|\\r\\n)+&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">    htmlTable = htmlTable.replaceAll(<span class="string">&quot;(?m)^\\s&#123;2,&#125;&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">    htmlTable = htmlTable</span><br><span class="line">            .replaceAll(<span class="string">&quot;&lt;thead&gt;\\n?((?:\\|.*)|)\\n?&lt;\\/thead&gt;&quot;</span>, <span class="string">&quot;$1\n$1&quot;</span>);</span><br><span class="line">    <span class="type">StringBuffer</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>();</span><br><span class="line">    <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">Pattern</span> <span class="variable">alignPattern</span> <span class="operator">=</span> Pattern.compile(<span class="string">&quot;(\\|(?:.+?\\|)+\\n)&quot;</span>);</span><br><span class="line">    <span class="type">Matcher</span> <span class="variable">alignMatcher</span> <span class="operator">=</span> alignPattern.matcher(htmlTable);</span><br><span class="line">    <span class="keyword">while</span> (alignMatcher.find())</span><br><span class="line">    &#123;</span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">if</span> (count == <span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 获取匹配的文本</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">align</span> <span class="operator">=</span> alignMatcher.group();</span><br><span class="line">            <span class="comment">// 生成替换的文本</span></span><br><span class="line">            align = align.replaceAll(<span class="string">&quot;[^|]+\\|&quot;</span>, <span class="string">&quot;:--|&quot;</span>);;</span><br><span class="line">            <span class="comment">// 使用新的替换旧的 然后处理过的文本放到缓存中</span></span><br><span class="line">            alignMatcher.appendReplacement(sb, align);</span><br><span class="line">            <span class="comment">// 没有扫描过的文本放到缓存中</span></span><br><span class="line">            alignMatcher.appendTail(sb);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/accb1b6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/accb1b6/" class="post-title-link" itemprop="url">正则表达式 实现hexo next主题代码块转markdown代码块</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-12-16 20:05:20" itemprop="dateCreated datePublished" datetime="2018-12-16T20:05:20+08:00">2018-12-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">应用</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/accb1b6/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/accb1b6/" data-xid="/blog/accb1b6/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="处理文本"><a href="#处理文本" class="headerlink" title="处理文本"></a>处理文本</h2><p>hexo next主题 生成的代码块html代码，如下所示</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span> <span class="attr">class</span>=<span class="string">&quot;highlight plain&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">&quot;gutter&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">pre</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;line&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">&quot;code&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">pre</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;line&quot;</span>&gt;</span><span class="symbol">&amp;lt;</span>div class=<span class="symbol">&amp;quot;</span>post-body<span class="symbol">&amp;quot;</span>.*?<span class="symbol">&amp;gt;</span>(.+)<span class="symbol">&amp;lt;</span>\/div<span class="symbol">&amp;gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>现在把这段代码转为原生的markdown代码块：</p>
-<h2 id="获取代码文本"><a href="#获取代码文本" class="headerlink" title="获取代码文本"></a>获取代码文本</h2><h3 id="删除代码块行数"><a href="#删除代码块行数" class="headerlink" title="删除代码块行数"></a>删除代码块行数</h3><p><strong>匹配正则</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;td class=&quot;gutter&quot;&gt;(\s*.*?)+?&lt;\/td&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>替换正则</strong><br>空字符串<br><strong>替换结果</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;figure class=&quot;highlight plain&quot;&gt;</span><br><span class="line">    &lt;table&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line"></span><br><span class="line">            &lt;td class=&quot;code&quot;&gt;</span><br><span class="line">                &lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;div class=&amp;quot;post-body&amp;quot;.*?&amp;gt;(.+)&amp;lt;\/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;</span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">&lt;/figure&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="替换换行符"><a href="#替换换行符" class="headerlink" title="替换换行符"></a>替换换行符</h3><p>代码文可能有多行，需要把换行符从<code>&lt;br&gt;</code>换成<code>\n</code>:<br><strong>匹配正则:</strong><code>&lt;br&gt;</code><br><strong>替换正则:</strong><code>\n</code><br><strong>替换结果:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;figure class=&quot;highlight plain&quot;&gt;</span><br><span class="line">    &lt;table&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            </span><br><span class="line">            &lt;td class=&quot;code&quot;&gt;</span><br><span class="line">                &lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;div class=&amp;quot;post-body&amp;quot;.*?&amp;gt;(.+)&amp;lt;\/div&amp;gt;&lt;/span&gt;</span><br><span class="line">&lt;/pre&gt;</span><br><span class="line">            &lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">&lt;/figure&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除剩下的所有html标签"><a href="#删除剩下的所有html标签" class="headerlink" title="删除剩下的所有html标签"></a>删除剩下的所有html标签</h3><p>删除掉行号之后，旧简单了，只要删除掉所有的html标签即可得到代码块中的文本<br><strong>匹配正则</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;\/?.*?&gt;</span><br></pre></td></tr></table></figure>
-<p>**替换正则:**空字符串<br><strong>替换结果:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    </span><br><span class="line">        </span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">&amp;lt;div class=&amp;quot;post-body&amp;quot;.*?&amp;gt;(.+)&amp;lt;\/div&amp;gt;</span><br><span class="line"></span><br><span class="line">            </span><br><span class="line">        </span><br><span class="line">    </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="删除空行"><a href="#删除空行" class="headerlink" title="删除空行"></a>删除空行</h3><p><strong>匹配正则:</strong><code>^\s*$(\n|\r\n)*</code><br><strong>替换正则:</strong><code>&quot;&quot;</code>,空字符串<br><strong>替换结果:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;div class=&amp;quot;post-body&amp;quot;.*?&amp;gt;(.+)&amp;lt;\/div&amp;gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="删除多余空白符"><a href="#删除多余空白符" class="headerlink" title="删除多余空白符"></a>删除多余空白符</h3><p><strong>匹配正则：</strong><code>^\s&#123;2&#125;</code><br>**替换正则:**空字符串<br><strong>替换结果:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;div class=&amp;quot;post-body&amp;quot;.*?&amp;gt;(.+)&amp;lt;\/div&amp;gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="HTML逆转义"><a href="#HTML逆转义" class="headerlink" title="HTML逆转义"></a>HTML逆转义</h3><p>我这里没有找到什么好的办法，暂时先使用穷举法来弄，就是把看到的html转移字符逐个进行替换。<br>&lt;div class&#x3D;&quot;post-body&quot;.*?&gt;(.+)&lt;/div&gt;<br><code>&amp;lt;</code>替换为<code>&lt;</code><br><code>&amp;quot;</code>替换为<code>&quot;</code><br><code>&amp;gt;</code>替换为<code>&gt;</code></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/51/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/51/">51</a><span class="page-number current">52</span><a class="page-number" href="/blog/page/53/">53</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/63/">63</a><a class="extend next" rel="next" href="/blog/page/53/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -2176,7 +2143,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23:01</span>
+    <span title="站点阅读时长">23:04</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

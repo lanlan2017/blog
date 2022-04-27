@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">621</span>
+          <span class="site-state-item-count">623</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,322 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4116ba94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/4116ba94/" class="post-title-link" itemprop="url">Linux vi显示乱码问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-05-30 21:01:41" itemprop="dateCreated datePublished" datetime="2021-05-30T21:01:41+08:00">2021-05-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/vi%E7%BC%96%E8%BE%91%E5%99%A8%E5%8F%8A%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">vi编辑器及乱码问题</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/4116ba94/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/4116ba94/" data-xid="/blog/4116ba94/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="屏幕显示乱码问题"><a href="#屏幕显示乱码问题" class="headerlink" title="屏幕显示乱码问题"></a>屏幕显示乱码问题</h1><h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /bin/bash</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head -n 1 /bin/bash</span><br></pre></td></tr></table></figure>
+<p>导致屏幕乱码，键盘输入也只能看到画表用的框框符</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>&#x2F;bin&#x2F;bash文件不是文本文件，这些二进制内容逐字节送到终端，凑巧一个序列被终端理解为一个转义序列，执行动作：修改了终端字符集</p>
+<h2 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h2><p>ASCII字符集（7比特128种符号）<br>选择其他字符集，相同码值代表了那个字符集之中的某个符号</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>断开连接，重新登录<br>注意不要把非文本信息在终端输出</p>
+<h1 id="文本文件格式问题"><a href="#文本文件格式问题" class="headerlink" title="文本文件格式问题"></a>文本文件格式问题</h1><h2 id="现象-1"><a href="#现象-1" class="headerlink" title="现象"></a>现象</h2><p>Linux下的文本文件在Windows用notepad打开，所有内容粘在一行内</p>
+<h2 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h2><p>Linux和Windows的文本文件的存储格式不同</p>
+<h2 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h2><p>在Linux完成格式转换后再用Windows处理（首选此方案）<br>用Windows中可容忍Linux文本文件格式的其他编辑器</p>
+<h2 id="文本文件格式"><a href="#文本文件格式" class="headerlink" title="文本文件格式"></a>文本文件格式</h2><p>Windows和Linux文本文件行的行尾不同</p>
+<ul>
+<li>Linux：行尾处仅存换行字符</li>
+<li>Windows：行尾处存回车和换行两个字符</li>
+</ul>
+<p>例:文件mini.txt，第一行为ab，第二行为xyz<br>Windows中，文件的大小为9字节</p>
+<pre>
+61 62 <mark>0d 0a</mark> 78 79 7a <mark>0d 0a</mark>
+</pre>
+
+<p>在Linux中，文件的大小为7字节</p>
+<pre>
+61 62 <mark>0a</mark> 78 79 7a <mark>0a</mark>
+</pre>
+
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="Windows文本文件"><a href="#Windows文本文件" class="headerlink" title="Windows文本文件"></a>Windows文本文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ ls</span><br><span class="line">helloworld.c  mini_windows.txt</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ file mini_windows.txt</span><br><span class="line">mini_windows.txt: ASCII text, with CRLF line terminators</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ cat mini_windows.txt</span><br><span class="line">ab</span><br><span class="line">xyz</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ od -t x1 mini_windows.txt</span><br><span class="line">0000000 61 62 0d 0a 78 79 7a</span><br><span class="line">0000007</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+<h4 id="linux文本文件"><a href="#linux文本文件" class="headerlink" title="linux文本文件"></a>linux文本文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost encode]# file mini.txt </span><br><span class="line">mini.txt: ASCII text</span><br><span class="line">[root@localhost encode]# cat mini.txt </span><br><span class="line">ab</span><br><span class="line">xyz</span><br><span class="line">[root@localhost encode]# od -t x1 mini.txt </span><br><span class="line">0000000 61 62 0a 78 79 7a 0a</span><br><span class="line">0000007</span><br><span class="line">[root@localhost encode]# </span><br></pre></td></tr></table></figure>
+
+<h2 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h2><p>（两种格式间转换）<br>dos2unix&#x2F;unix2dos, todos&#x2F;fromdos<br>（查看文件的数据类型，供参考）</p>
+<h3 id="dos2unix和fromdos命令"><a href="#dos2unix和fromdos命令" class="headerlink" title="dos2unix和fromdos命令"></a>dos2unix和fromdos命令</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.linuxidc.com/Linux/2014-01/95144.htm">https://www.linuxidc.com/Linux/2014-01/95144.htm</a><br>两个命令的用法相同,不同的是两个命令使用的环境不一样.<br>dos2unix在CentOS系列的系统中使用，fromdos则在Ubuntu系列的系统中使用。<br>用法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dos2unix filename</span><br><span class="line">fromdos filename</span><br></pre></td></tr></table></figure>
+<p>意思是：转换文件格式，将windos系统的文件转换成linux系统可以使用的文件格式，否则文件在linux系统中可能会出现错误，如：文件中显示^m 这样的错误字符。<br>导致这样的错误出现的原因是，windos环境中的换行符是<code>\r\n</code>,而linux系统中的换行符直接<code>\n</code>就行了。</p>
+</blockquote>
+<h3 id="file"><a href="#file" class="headerlink" title="file"></a>file</h3><p>如果没有file命令则需要先安装file命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vi]# file helloworld.c </span><br><span class="line">-bash: file: 未找到命令</span><br><span class="line">[root@localhost vi]# yum list file</span><br><span class="line">已加载插件：fastestmirror</span><br><span class="line">Repodata is over 2 weeks old. Install yum-cron? Or run: yum makecache fast</span><br><span class="line">Determining fastest mirrors</span><br><span class="line"> * epel: mirrors.ustc.edu.cn</span><br><span class="line">可安装的软件包</span><br><span class="line">file.aarch64                                                                     5.11-37.el7                                                                     base</span><br><span class="line">[root@localhost vi]# yum install file</span><br></pre></td></tr></table></figure>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vi]# file helloworld.c </span><br><span class="line">helloworld.c: C source, ASCII text</span><br><span class="line">[root@localhost vi]# </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/blog/source/_posts/编程/Linux/通用/vi编辑器及乱码问题 (master)</span><br><span class="line">$ file &#x27;Linux 显示乱码问题.md&#x27;</span><br><span class="line">Linux 显示乱码问题.md: UTF-8 Unicode text</span><br></pre></td></tr></table></figure>
+<h3 id="Windows文本文件和Linux文本文件相互转换"><a href="#Windows文本文件和Linux文本文件相互转换" class="headerlink" title="Windows文本文件和Linux文本文件相互转换"></a>Windows文本文件和Linux文本文件相互转换</h3><h4 id="Windows系统中用记事本创建的helloworld-c文件"><a href="#Windows系统中用记事本创建的helloworld-c文件" class="headerlink" title="Windows系统中用记事本创建的helloworld.c文件"></a>Windows系统中用记事本创建的helloworld.c文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ cat helloworld.c</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">        printf(&quot;%s\n&quot;,&quot;Hello&quot;);</span><br><span class="line">        printf(&quot;%s\n&quot;,&quot;World&quot;);</span><br><span class="line">        printf(&quot;%s\n&quot;,&quot;Welcome to Linux&quot;);</span><br><span class="line">&#125;</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ file helloworld.c</span><br><span class="line">helloworld.c: C source, ASCII text, with CRLF line terminators</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>可以看到helloworld.c文件使用的是CRLF，也就是<strong>回车换行符</strong><code>\r\n</code>。</p>
+<h4 id="Linux中打开Windows文本文件"><a href="#Linux中打开Windows文本文件" class="headerlink" title="Linux中打开Windows文本文件"></a>Linux中打开Windows文本文件</h4><p>将该文件上传到CentOS中，再次执行file命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost encode]# file helloworld.c </span><br><span class="line">helloworld.c: C source, ASCII text, with CRLF line terminators</span><br><span class="line">[root@localhost encode]# </span><br></pre></td></tr></table></figure>
+<p>使用vi打开该文件：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/DisplayGarbledProblem/1.png" alt="图片"></p>
+<h4 id="Linux中吧Windows文本文件转换成Linux文本文件"><a href="#Linux中吧Windows文本文件转换成Linux文本文件" class="headerlink" title="Linux中吧Windows文本文件转换成Linux文本文件"></a>Linux中吧Windows文本文件转换成Linux文本文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost encode]# dos2unix helloworld.c </span><br><span class="line">dos2unix: converting file helloworld.c to Unix format ...</span><br><span class="line">[root@localhost encode]# file helloworld.c </span><br><span class="line">helloworld.c: C source, ASCII text</span><br><span class="line">[root@localhost encode]# </span><br></pre></td></tr></table></figure>
+<p>然后在使用vi打开该文件:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/DisplayGarbledProblem/2.png" alt="图片"></p>
+<h1 id="中文编码问题"><a href="#中文编码问题" class="headerlink" title="中文编码问题"></a>中文编码问题</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>从Windows迁来的文件，只有在显示中文字符时是乱码。Linux本生的中文信息正常显示。</p>
+<h2 id="原因-2"><a href="#原因-2" class="headerlink" title="原因"></a>原因</h2><p>中文GBK与UTF8不兼容</p>
+<h2 id="英文字符集"><a href="#英文字符集" class="headerlink" title="英文字符集"></a>英文字符集</h2><p>7比特ASCII码，字节高位为0的，后面7位是英文ASCII码</p>
+<h2 id="中文字符编码GBK"><a href="#中文字符编码GBK" class="headerlink" title="中文字符编码GBK"></a>中文字符编码GBK</h2><p>Windows默认中文编码方案，两个字节表示一个汉字，字节的高位为1，以区别于ASCII码</p>
+<h2 id="中文字符编码UTF8"><a href="#中文字符编码UTF8" class="headerlink" title="中文字符编码UTF8"></a>中文字符编码UTF8</h2><p>许多Linux默认中文编码方案，三个字节表示一个汉字，字节的高位为1，以区别于ASCII码</p>
+<h2 id="检查系统设置"><a href="#检查系统设置" class="headerlink" title="检查系统设置"></a>检查系统设置</h2><p>与语言有关的环境变量LANG应为<code>en_US.UTF-8</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env | grep LANG</span><br></pre></td></tr></table></figure>
+<p>若有问题，设置方法为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export LANG=en_US.UTF-8</span><br></pre></td></tr></table></figure>
+<h2 id="命令iconv：中文字符编码的转换"><a href="#命令iconv：中文字符编码的转换" class="headerlink" title="命令iconv：中文字符编码的转换"></a>命令iconv：中文字符编码的转换</h2><h3 id="from-GBK-to-UTF8"><a href="#from-GBK-to-UTF8" class="headerlink" title="from GBK to UTF8"></a>from GBK to UTF8</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iconv –f gbk –t utf8</span><br></pre></td></tr></table></figure>
+<h3 id="from-UTF8-to-GBK"><a href="#from-UTF8-to-GBK" class="headerlink" title="from UTF8 to GBK"></a>from UTF8 to GBK</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iconv –f utf8 –t gbk</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;汉字&quot; | od -t x1</span><br><span class="line">0000000 e6 b1 89 e5 ad 97 0a</span><br><span class="line">$ echo &quot;汉字&quot; | iconv -f utf-8 -t gbk | od -t x1 </span><br><span class="line">0000000 ba ba d7 d6 0a</span><br></pre></td></tr></table></figure>
+<h1 id="终端配置：配色和中文编码"><a href="#终端配置：配色和中文编码" class="headerlink" title="终端配置：配色和中文编码"></a>终端配置：配色和中文编码</h1><h2 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h2><p>终端不是默认的黑底白字，ls，grep，vi等输出信息无配色<br>中文显示的是乱码</p>
+<h2 id="调整终端仿真软件的配置"><a href="#调整终端仿真软件的配置" class="headerlink" title="调整终端仿真软件的配置"></a>调整终端仿真软件的配置</h2><p>根据所用的终端仿真软件的不同，调整终端类型和字符编码，具体方法与所用软件有关</p>
+<!-- Blog/Programming/Linux/General/VIEditorAndGarbledProblem/DisplayGarbledProblem -->
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/3658ccba/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/3658ccba/" class="post-title-link" itemprop="url">Linux vi死机问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-05-30 17:42:19" itemprop="dateCreated datePublished" datetime="2021-05-30T17:42:19+08:00">2021-05-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/vi%E7%BC%96%E8%BE%91%E5%99%A8%E5%8F%8A%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">vi编辑器及乱码问题</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/3658ccba/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/3658ccba/" data-xid="/blog/3658ccba/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>619</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="死机问题"><a href="#死机问题" class="headerlink" title="死机问题"></a>死机问题</h1><h2 id="所谓“死机”问题"><a href="#所谓“死机”问题" class="headerlink" title="所谓“死机”问题"></a>所谓“死机”问题</h2><h3 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h3><p>vi编辑结束后执行存盘操作，结果导致屏幕卡死，输入任何信息都不再有显示（死机，终端死机）</p>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>vi编辑结束后按下Ctrl-S，因为Windows编辑器一般设置Ctrl-S热键的动作为Save，但Linux却进入流量控制状态</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>按下Ctrl-Q键后流量控制解除</p>
+<h2 id="意外中止问题"><a href="#意外中止问题" class="headerlink" title="意外中止问题"></a>意外中止问题</h2><h3 id="现象-1"><a href="#现象-1" class="headerlink" title="现象"></a>现象</h3><p>vi编辑结束后存盘，程序意外中止，编辑成果丢失，文件内容未发生变化</p>
+<h3 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h3><p>vi存盘命令Shift-ZZ，误操作为Ctrl-ZZ，而Ctrl-Z按键导致当前运行进程被挂起（suspend），暂停运行（但进程尚在，处于Stopped状态）</p>
+<h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><p>调用bash的作业管理机制，恢复运行被Stopped的进程<br>列表当前被Stopped的进程有哪些</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jobs</span><br></pre></td></tr></table></figure>
+<p>将1号作业恢复到前台（foreground）运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fg %1</span><br></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%1</span><br></pre></td></tr></table></figure>
+<h2 id="退格键-Backspace-无法使用的问题"><a href="#退格键-Backspace-无法使用的问题" class="headerlink" title="退格键(Backspace)无法使用的问题"></a>退格键(Backspace)无法使用的问题</h2><h3 id="现象-2"><a href="#现象-2" class="headerlink" title="现象"></a>现象</h3><p>bash命令输入时，Backspace键可用，但是，运行自己写的程序时Backspace键无法正常使用</p>
+<h3 id="原因-2"><a href="#原因-2" class="headerlink" title="原因"></a>原因</h3><p>当前终端的“行律”设置不正确</p>
+<h3 id="解决方法-2"><a href="#解决方法-2" class="headerlink" title="解决方法"></a>解决方法</h3><p>Backspace按键对应的ASCII码是控制字符<code>Ctrl-H</code><br>执行<code>stty erase ^H</code>设定行律模块把Ctrl-H为删除符，以后Ctrl-H和Backspace都可以做删除。如果需要，把命令放到<code>$HOME/.bash_profile</code>中（类似的，stty erase ^A可以设置用Ctrl-A做删除操作）<br><code>stty -a</code>可以了解终端行律的状态</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1798,361 +2114,6 @@ cmp：a.txt 已结束
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/42d91331/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/42d91331/" class="post-title-link" itemprop="url">Linux tldr命令</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-05-08 22:22:58" itemprop="dateCreated datePublished" datetime="2021-05-08T22:22:58+08:00">2021-05-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/" itemprop="url" rel="index"><span itemprop="name">帮助文档</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/42d91331/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/42d91331/" data-xid="/blog/42d91331/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.7k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="tldr命令介绍"><a href="#tldr命令介绍" class="headerlink" title="tldr命令介绍"></a>tldr命令介绍</h1><p>该命令可以显示一些命令的常见用法<br>tldr全称Too long, Don’t read，翻译成中文就是[太长不读]。tldr根据二八原则将命令的常用场景给出示例，让人一看就懂。<br>tldr是简化版的使用手册，并不会像man一样把所有的使用参数和说明都列出来，而是只显示常用的几个使用Sample和说明。</p>
-<h2 id="相关网址"><a href="#相关网址" class="headerlink" title="相关网址"></a>相关网址</h2><p>官网：<a target="_blank" rel="noopener" href="https://tldr.sh/">https://tldr.sh/</a><br>在线查询网站：<a target="_blank" rel="noopener" href="https://tldr.ostera.io/">https://tldr.ostera.io/</a><br>在线查询网站源码：<a target="_blank" rel="noopener" href="https://github.com/ostera/tldr.jsx">https://github.com/ostera/tldr.jsx</a><br>github:<a target="_blank" rel="noopener" href="https://github.com/tldr-pages/tldr">https://github.com/tldr-pages/tldr</a><br>安卓客户端：<br><a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=io.github.hidroh.tldroid">https://play.google.com/store/apps/details?id=io.github.hidroh.tldroid</a><br><a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=wtf.technodisaster.tldr">https://play.google.com/store/apps/details?id=wtf.technodisaster.tldr</a><br>电脑客户端：<a target="_blank" rel="noopener" href="https://github.com/terenceng2010/tldr-electron">https://github.com/terenceng2010/tldr-electron</a></p>
-<h1 id="tldr安装"><a href="#tldr安装" class="headerlink" title="tldr安装"></a>tldr安装</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g tldr</span><br></pre></td></tr></table></figure>
-<h1 id="tldr使用示例"><a href="#tldr使用示例" class="headerlink" title="tldr使用示例"></a>tldr使用示例</h1><h2 id="tldr-man"><a href="#tldr-man" class="headerlink" title="tldr man"></a>tldr man</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost sed]# tldr man</span><br><span class="line"></span><br><span class="line">  man</span><br><span class="line"></span><br><span class="line">  Format and display manual pages.</span><br><span class="line">  More information: https://www.man7.org/linux/man-pages/man1/man.1.html.</span><br><span class="line"></span><br><span class="line">  - Display the man page for a command:</span><br><span class="line">    man command</span><br><span class="line"></span><br><span class="line">  - Display the man page for a command from section 7:</span><br><span class="line">    man command.7</span><br><span class="line"></span><br><span class="line">  - Display the path searched for manpages:</span><br><span class="line">    man --path</span><br><span class="line"></span><br><span class="line">  - Display the location of a manpage rather than the manpage itself:</span><br><span class="line">    man -w command</span><br><span class="line"></span><br><span class="line">  - Display the man page using a specific locale:</span><br><span class="line">    man command --locale=locale</span><br><span class="line"></span><br><span class="line">  - Search for manpages containing a search string:</span><br><span class="line">    man -k &quot;search_string&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root@localhost sed]# </span><br></pre></td></tr></table></figure>
-<h2 id="tldr-ls"><a href="#tldr-ls" class="headerlink" title="tldr ls"></a>tldr ls</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost sed]# tldr ls</span><br><span class="line"></span><br><span class="line">  ls</span><br><span class="line"></span><br><span class="line">  List directory contents.</span><br><span class="line">  More information: https://www.gnu.org/software/coreutils/ls.</span><br><span class="line"></span><br><span class="line">  - List files one per line:</span><br><span class="line">    ls -1</span><br><span class="line"></span><br><span class="line">  - List all files, including hidden files:</span><br><span class="line">    ls -a</span><br><span class="line"></span><br><span class="line">  - List all files, with trailing / added to directory names:</span><br><span class="line">    ls -F</span><br><span class="line"></span><br><span class="line">  - Long format list (permissions, ownership, size, and modification date) of all files:</span><br><span class="line">    ls -la</span><br><span class="line"></span><br><span class="line">  - Long format list with size displayed using human readable units (KiB, MiB, GiB):</span><br><span class="line">    ls -lh</span><br><span class="line"></span><br><span class="line">  - Long format list sorted by size (descending):</span><br><span class="line">    ls -lS</span><br><span class="line"></span><br><span class="line">  - Long format list of all files, sorted by modification date (oldest first):</span><br><span class="line">    ls -ltr</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root@localhost sed]# </span><br></pre></td></tr></table></figure>
-<h2 id="tldr-tar"><a href="#tldr-tar" class="headerlink" title="tldr tar"></a>tldr tar</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost sed]# tldr tar</span><br><span class="line"></span><br><span class="line">  tar</span><br><span class="line"></span><br><span class="line">  Archiving utility.</span><br><span class="line">  Often combined with a compression method, such as gzip or bzip2.</span><br><span class="line">  More information: https://www.gnu.org/software/tar.</span><br><span class="line"></span><br><span class="line">  - [c]reate an archive and write it to a [f]ile:</span><br><span class="line">    tar cf target.tar file1 file2 file3</span><br><span class="line"></span><br><span class="line">  - [c]reate a g[z]ipped archive and write it to a [f]ile:</span><br><span class="line">    tar czf target.tar.gz file1 file2 file3</span><br><span class="line"></span><br><span class="line">  - [c]reate a g[z]ipped archive from a directory using relative paths:</span><br><span class="line">    tar czf target.tar.gz --directory=path/to/directory .</span><br><span class="line"></span><br><span class="line">  - E[x]tract a (compressed) archive [f]ile into the current directory [v]erbosely:</span><br><span class="line">    tar xvf source.tar[.gz|.bz2|.xz]</span><br><span class="line"></span><br><span class="line">  - E[x]tract a (compressed) archive [f]ile into the target directory:</span><br><span class="line">    tar xf source.tar[.gz|.bz2|.xz] --directory=directory</span><br><span class="line"></span><br><span class="line">  - [c]reate a compressed archive and write it to a [f]ile, using [a]rchive suffix to determine the compression program:</span><br><span class="line">    tar caf target.tar.xz file1 file2 file3</span><br><span class="line"></span><br><span class="line">  - Lis[t] the contents of a tar [f]ile [v]erbosely:</span><br><span class="line">    tar tvf source.tar</span><br><span class="line"></span><br><span class="line">  - E[x]tract files matching a pattern from an archive [f]ile:</span><br><span class="line">    tar xf source.tar --wildcards &quot;*.html&quot;</span><br><span class="line"></span><br><span class="line">[root@localhost sed]# </span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.hi-linux.com/posts/16098.html">https://www.hi-linux.com/posts/16098.html</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/xingchenxuanfeng/article/details/89398327">https://blog.csdn.net/xingchenxuanfeng/article/details/89398327</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/561eb334/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/561eb334/" class="post-title-link" itemprop="url">基本正则表达式BRE和扩展正则表达式ERE</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-05-08 17:51:37" itemprop="dateCreated datePublished" datetime="2021-05-08T17:51:37+08:00">2021-05-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/561eb334/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/561eb334/" data-xid="/blog/561eb334/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>701</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="基本正则表达式-BRE元字符表"><a href="#基本正则表达式-BRE元字符表" class="headerlink" title="基本正则表达式 BRE元字符表"></a>基本正则表达式 BRE元字符表</h1><table>
-<thead>
-<tr>
-<th align="left">元字符</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>*</code></td>
-<td align="left">将<code>*</code>前面的正则表达式匹配的结果重复任意次(含0次)。</td>
-</tr>
-<tr>
-<td align="left"><code>\+</code></td>
-<td align="left">与星号(<code>*</code>)相同，只是至少重复1次，GNU的扩展功能。</td>
-</tr>
-<tr>
-<td align="left"><code>\?</code></td>
-<td align="left">与星号(<code>*</code>)相同，只是最多重复1次，GNU的扩展功能。</td>
-</tr>
-<tr>
-<td align="left"><code>\&#123;i\&#125;</code></td>
-<td align="left">与星号(<code>*</code>)相同，只是重复指定的i次。</td>
-</tr>
-<tr>
-<td align="left"><code>\&#123;i,j\&#125;</code></td>
-<td align="left">与星号(<code>*</code>)相同，只是重复i至j次。</td>
-</tr>
-<tr>
-<td align="left"><code>\&#123;i, \&#125;</code></td>
-<td align="left">与星号(<code>*</code>)相同，只是至少重复i次。</td>
-</tr>
-<tr>
-<td align="left"><code>\(regexp\)</code></td>
-<td align="left">将regexp看作一个整体，用于后向引用，与<code>\digit</code>配合使用。</td>
-</tr>
-<tr>
-<td align="left"><code>.</code></td>
-<td align="left">匹配任意单个字符。</td>
-</tr>
-<tr>
-<td align="left"><code>^</code></td>
-<td align="left">匹配模版空间开始处的NULL字符串。</td>
-</tr>
-<tr>
-<td align="left"><code>$</code></td>
-<td align="left">匹配的是模版空间结束处的NULL字符串。</td>
-</tr>
-<tr>
-<td align="left"><code>[list]</code></td>
-<td align="left">匹配方括号中的字符列表中的任意一个。</td>
-</tr>
-<tr>
-<td align="left"><code>[^list]</code></td>
-<td align="left">否定匹配方括号中的字符列表中的任意一个。</td>
-</tr>
-<tr>
-<td align="left"><code>regexp1&amp;#124;regexp2</code></td>
-<td align="left">用在相邻的正则表达式之间，表示匹配这些正则表达式中任一个都可以。匹配是从左向右开始的，一旦匹配成功就停止匹配。</td>
-</tr>
-<tr>
-<td align="left"><code>regexp1&#124;regexp2</code></td>
-<td align="left">匹配regexp1和regexp2的连接结果。</td>
-</tr>
-<tr>
-<td align="left"><code>\digit</code></td>
-<td align="left">匹配正则表达式前半部分定义的后向引用的第digit个子表达式。digit为1至9的数字, 1为从左开始。</td>
-</tr>
-<tr>
-<td align="left"><code>\n</code></td>
-<td align="left">匹配换行符。</td>
-</tr>
-<tr>
-<td align="left"><code>\meta</code></td>
-<td align="left">将元字符meta转换成普通字符，以便匹配该字符本身，有<code>$</code>、 <code>*</code>、 <code>.</code>、 <code>[</code>、 <code>\</code> 和 <code>^</code>。</td>
-</tr>
-</tbody></table>
-<h1 id="扩展正则表达式"><a href="#扩展正则表达式" class="headerlink" title="扩展正则表达式"></a>扩展正则表达式</h1><p>扩展正则表达式除了以下元字符与基本正则表达式不同外，其余相似。</p>
-<p>BRE与ERE元字符对应表</p>
-<table>
-<thead>
-<tr>
-<th align="left">基本正则表达式</th>
-<th align="left">扩展正则表达式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>\?</code></td>
-<td align="left"><code>?</code></td>
-</tr>
-<tr>
-<td align="left"><code>\+</code></td>
-<td align="left"><code>+</code></td>
-</tr>
-<tr>
-<td align="left"><code>&amp;#124;</code></td>
-<td align="left"><code>&#124;</code></td>
-</tr>
-<tr>
-<td align="left"><code>\&#123; \&#125;</code></td>
-<td align="left"><code>&#123; &#125;</code></td>
-</tr>
-<tr>
-<td align="left"><code>\( \)</code></td>
-<td align="left"><code>( )</code></td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/blog/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/63/">63</a><a class="extend next" rel="next" href="/blog/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -2185,7 +2146,7 @@ cmp：a.txt 已结束
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23:01</span>
+    <span title="站点阅读时长">23:04</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
