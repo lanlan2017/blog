@@ -188,7 +188,7 @@ NVM_HOME=G:\dev2\nvm
 ```
 ## SET /A var=math expression：执行数学运算
 ### 没有使用/a时
-```bat D:\Desktop\test\CMD\phone\set_a_test.bat
+```bat D:\Desktop\test\CMD\set\set_a_test.bat
 @echo off
 @REM 最小的秒
 set /a min=5
@@ -200,14 +200,14 @@ echo min=%min% max=%max% average=%average%
 ```
 运行结果：
 ```
-D:\Desktop\test\CMD\phone>test.bat
+D:\Desktop\test\CMD\set>test.bat
 min=5 max=14 average=(14+5)/2
 
-D:\Desktop\test\CMD\phone>
+D:\Desktop\test\CMD\set>
 ```
 可以看到，没有使用/a参数时，等号右边的会当成字符串进行处理，而不是算术表达式。
 ### 使用/a参数时
-```bat D:\Desktop\test\CMD\phone\set_a_test.bat
+```bat D:\Desktop\test\CMD\set\set_a_test.bat
 @echo off
 @REM 最小的秒
 set /a min=5
@@ -220,14 +220,14 @@ echo min=%min% max=%max% average=%average%
 
 运行结果：
 ```
-D:\Desktop\test\CMD\phone>test.bat
+D:\Desktop\test\CMD\set>test.bat
 min=5 max=14 average=9
 
-D:\Desktop\test\CMD\phone>
+D:\Desktop\test\CMD\set>
 ```
 可以看到使用/a参数后，等号右边的当成数学表达式进行计算，可以正确求得两个数的平均值。
 ## set /p var=提示信息：读取键盘输入
-```bat D:\Desktop\test\CMD\phone\set_p.bat
+```bat D:\Desktop\test\CMD\set\set_p.bat
 @echo off
 set /p input=请输入字符串:
 echo input=%input%
@@ -239,13 +239,13 @@ pause
 运行结果：
 
 ```
-D:\Desktop\test\CMD\phone>set_p.bat
+D:\Desktop\test\CMD\set>set_p.bat
 请输入字符串:helloworld!
 input=helloworld!
 请按任意键继续. . .
 ```
 ## 示例
-```bat D:\Desktop\test\CMD\phone\set_p_a.bat
+```bat D:\Desktop\test\CMD\set\set_p_a.bat
 @echo off
 :head
 echo ............................
@@ -258,7 +258,7 @@ goto head
 ```
 ### 计算加减法
 ```
-D:\Desktop\test\CMD\phone>set_p_a.bat
+D:\Desktop\test\CMD\set>set_p_a.bat
 ............................
 请输入计算表达式：1+9+20+30-10
 计算结果：1+9+20+30-10 = 50
@@ -326,7 +326,7 @@ DOS计算只能精确到32位，这个32位是指二进制32位，其中最高�
 ............................
 ```
 ## 一行代码设置多个变量 同时声明多个变量
-```bat D:\Desktop\test\CMD\phone\set_a_mul.bat
+```bat D:\Desktop\test\CMD\set\set_a_mul.bat
 @echo off
 set /a a=1+1,b=2+1,c=3+1
 echo %a% %b% %c%
@@ -334,7 +334,7 @@ echo %a% %b% %c%
 
 运行结果：
 ```
-D:\Desktop\test\CMD\phone>set_a_mul.bat
+D:\Desktop\test\CMD\set>set_a_mul.bat
 2 3 4
 ```
 
