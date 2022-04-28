@@ -244,7 +244,18 @@ D:\Desktop\test\CMD\set>set_p.bat
 input=helloworld!
 请按任意键继续. . .
 ```
+## set变量默认值
+https://zhidao.baidu.com/question/269052314.html
+
+可以提前给变量赋值，然后再使用set /p从键盘读取内容给该变量。运行的时候，不输入任何东西，直接按回车。即可得到默认值。
+```bat
+set phone_id=75aed56d
+set /p phone_id=手机设备ID(默认%phone_id%):
+```
+![image-20220428182056459](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2022/04/20220428182056.png)
+
 ## 示例
+
 ```bat D:\Desktop\test\CMD\set\set_p_a.bat
 @echo off
 :head

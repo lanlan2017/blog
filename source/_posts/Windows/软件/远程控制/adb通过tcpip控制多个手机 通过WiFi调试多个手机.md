@@ -105,3 +105,6 @@ F:\Program Files\scrcpy-win64-v1.18>
 
 ## 使用'adb -s 手机2IP:5556 命令'控制手机2
 此时就可以拔掉手机2的数据线，然后使用`adb -s 192.168.10.39:5556 控制命令`来控制手机2.
+
+# 参考资料
+https://blog.csdn.net/weixin_42522148/article/details/117303866

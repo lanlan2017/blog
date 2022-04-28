@@ -56,3 +56,6 @@ List of devices attached
 F:\Program Files\scrcpy-win64-v1.18>
 ```
 可以看到第2个手机也成功连接上了，此时就可以拔掉第2个手机的数据先，后面使用tcpip来操作手机即可。
+
+# 参考资料
+https://blog.51cto.com/u_15328720/3382916
