@@ -15,7 +15,7 @@ Scrcpy是Genymobile开发的一个手机远程控制工具,使用的是命令行
 ## Scrcpy GUI
 原生的Scrcpy没有提供图形界面,Scrcpy GUI是Github用户`Simon Ma`开发的基于Scrcpy的图形工具.
 项目地址:[https://github.com/Tomotoes/scrcpy-gui/](https://github.com/Tomotoes/scrcpy-gui/)
-## Scrcpy GUI
+
 参考[Scrcpy GUI项目中文文档](https://github.com/Tomotoes/scrcpy-gui/blob/master/README.zh_CN.md)
 # 配置scrcpy
 ## 下载 解压scrcpy
