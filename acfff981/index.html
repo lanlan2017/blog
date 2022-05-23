@@ -35,6 +35,7 @@
 <meta property="og:description" content="批处理set命令详解set命令用于在当前cmd窗口中设置环境变量，这些环境变量只对当前cmd窗口有效。set &#x2F;a可以进行数学运算，如执行加减乘除，求余等。set &#x2F;p可以读取一行键盘输入。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2022/04/20220425155200.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2022/04/20220428182056.png">
 <meta property="article:published_time" content="2022-04-25T07:20:49.000Z">
 <meta property="article:modified_time" content="2022-04-25T07:20:49.000Z">
 <meta property="article:author" content="蓝蓝">
@@ -155,7 +156,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%B9%E5%A4%84%E7%90%86set%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3"><span class="nav-text">批处理set命令详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#set%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3"><span class="nav-text">set帮助文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set%EF%BC%9A%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-text">set：查看所有环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SET-x2F-A-var-x3D-math-expression%EF%BC%9A%E6%89%A7%E8%A1%8C%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="nav-text">SET &#x2F;A var&#x3D;math expression：执行数学运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B2%A1%E6%9C%89%E4%BD%BF%E7%94%A8-x2F-a%E6%97%B6"><span class="nav-text">没有使用&#x2F;a时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-x2F-a%E5%8F%82%E6%95%B0%E6%97%B6"><span class="nav-text">使用&#x2F;a参数时</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-x2F-p-var-x3D-%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AF%EF%BC%9A%E8%AF%BB%E5%8F%96%E9%94%AE%E7%9B%98%E8%BE%93%E5%85%A5"><span class="nav-text">set &#x2F;p var&#x3D;提示信息：读取键盘输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%8A%A0%E5%87%8F%E6%B3%95"><span class="nav-text">计算加减法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E9%99%A4%E6%B3%95"><span class="nav-text">计算除法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%9F%E6%95%B0%E8%AE%A1%E7%AE%97"><span class="nav-text">负数计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E4%BD%99%E8%BF%90%E7%AE%97"><span class="nav-text">求余运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">计算复杂表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dos%E8%AE%A1%E7%AE%97%E7%B2%BE%E7%A1%AE%E8%8C%83%E5%9B%B4"><span class="nav-text">dos计算精确范围</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E5%80%BC%E5%87%8F1-%E7%BB%93%E6%9E%9C%E6%AD%A3%E7%A1%AE"><span class="nav-text">最大值减1 结果正确</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8A%A0%E4%B8%80-%E6%BA%A2%E5%87%BA"><span class="nav-text">最大值加一 溢出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E5%80%BC%E5%87%8F%E4%B8%80-%E4%B8%8D%E6%AD%A3%E7%A1%AE"><span class="nav-text">最小值减一 不正确</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%AE%BE%E7%BD%AE%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F-%E5%90%8C%E6%97%B6%E5%A3%B0%E6%98%8E%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F"><span class="nav-text">一行代码设置多个变量 同时声明多个变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%B9%E5%A4%84%E7%90%86set%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3"><span class="nav-text">批处理set命令详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#set%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3"><span class="nav-text">set帮助文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set%EF%BC%9A%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-text">set：查看所有环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SET-x2F-A-var-x3D-math-expression%EF%BC%9A%E6%89%A7%E8%A1%8C%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="nav-text">SET &#x2F;A var&#x3D;math expression：执行数学运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B2%A1%E6%9C%89%E4%BD%BF%E7%94%A8-x2F-a%E6%97%B6"><span class="nav-text">没有使用&#x2F;a时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-x2F-a%E5%8F%82%E6%95%B0%E6%97%B6"><span class="nav-text">使用&#x2F;a参数时</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-x2F-p-var-x3D-%E6%8F%90%E7%A4%BA%E4%BF%A1%E6%81%AF%EF%BC%9A%E8%AF%BB%E5%8F%96%E9%94%AE%E7%9B%98%E8%BE%93%E5%85%A5"><span class="nav-text">set &#x2F;p var&#x3D;提示信息：读取键盘输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set%E5%8F%98%E9%87%8F%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-text">set变量默认值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%8A%A0%E5%87%8F%E6%B3%95"><span class="nav-text">计算加减法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E9%99%A4%E6%B3%95"><span class="nav-text">计算除法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%9F%E6%95%B0%E8%AE%A1%E7%AE%97"><span class="nav-text">负数计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E4%BD%99%E8%BF%90%E7%AE%97"><span class="nav-text">求余运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">计算复杂表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dos%E8%AE%A1%E7%AE%97%E7%B2%BE%E7%A1%AE%E8%8C%83%E5%9B%B4"><span class="nav-text">dos计算精确范围</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E5%80%BC%E5%87%8F1-%E7%BB%93%E6%9E%9C%E6%AD%A3%E7%A1%AE"><span class="nav-text">最大值减1 结果正确</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8A%A0%E4%B8%80-%E6%BA%A2%E5%87%BA"><span class="nav-text">最大值加一 溢出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E5%80%BC%E5%87%8F%E4%B8%80-%E4%B8%8D%E6%AD%A3%E7%A1%AE"><span class="nav-text">最小值减一 不正确</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%AE%BE%E7%BD%AE%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F-%E5%90%8C%E6%97%B6%E5%A3%B0%E6%98%8E%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F"><span class="nav-text">一行代码设置多个变量 同时声明多个变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -170,13 +171,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">623</span>
+          <span class="site-state-item-count">648</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">204</span>
+        <span class="site-state-item-count">215</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -302,7 +303,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>5.7k</span>
+      <span>5.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -338,6 +339,10 @@
 <p>运行之后，程序阻塞，并且要求用户输入一行字符串：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2022/04/20220425155200.png" alt="image-20220425155159669"></p>
 <p>运行结果：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:\Desktop\test\CMD\set&gt;set_p.bat</span><br><span class="line">请输入字符串:helloworld!</span><br><span class="line">input=helloworld!</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure>
+<h2 id="set变量默认值"><a href="#set变量默认值" class="headerlink" title="set变量默认值"></a>set变量默认值</h2><p><a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/269052314.html">https://zhidao.baidu.com/question/269052314.html</a></p>
+<p>可以提前给变量赋值，然后再使用set &#x2F;p从键盘读取内容给该变量。运行的时候，不输入任何东西，直接按回车。即可得到默认值。</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> phone_id=<span class="number">75</span>aed56d</span><br><span class="line"><span class="built_in">set</span> /p phone_id=手机设备ID(默认<span class="variable">%phone_id%</span>):</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2022/04/20220428182056.png" alt="image-20220428182056459"></p>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight bat"><figcaption><span>D:\Desktop\test\CMD\set\set_p_a.bat</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">:head</span><br><span class="line"><span class="built_in">echo</span> ............................</span><br><span class="line"><span class="built_in">set</span> /p input=请输入计算表达式：</span><br><span class="line"><span class="comment">@REM 转换成数学表达式</span></span><br><span class="line"><span class="built_in">set</span> /a var=<span class="variable">%input%</span></span><br><span class="line"><span class="built_in">echo</span> 计算结果：<span class="variable">%input%</span> = <span class="variable">%var%</span></span><br><span class="line"><span class="built_in">echo</span> ............................</span><br><span class="line"><span class="keyword">goto</span> head</span><br></pre></td></tr></table></figure>
 <h3 id="计算加减法"><a href="#计算加减法" class="headerlink" title="计算加减法"></a>计算加减法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D:\Desktop\test\CMD\set&gt;set_p_a.bat</span><br><span class="line">............................</span><br><span class="line">请输入计算表达式：1+9+20+30-10</span><br><span class="line">计算结果：1+9+20+30-10 = 50</span><br><span class="line">............................</span><br></pre></td></tr></table></figure>
 <h3 id="计算除法"><a href="#计算除法" class="headerlink" title="计算除法"></a>计算除法</h3><p>除法只能精确到整数</p>
@@ -442,14 +447,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">1.5m</span>
+    <span title="站点总字数">1.6m</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23:04</span>
+    <span title="站点阅读时长">23:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

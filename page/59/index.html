@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">623</span>
+          <span class="site-state-item-count">648</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">204</span>
+        <span class="site-state-item-count">215</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -222,7 +222,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d819de9c/">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/b57484e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -240,7 +240,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/d819de9c/" class="post-title-link" itemprop="url">java中BufferedImage类的用法</a>
+          <a href="/blog/b57484e/" class="post-title-link" itemprop="url">JavaScript计算两个日期之间相差的天数</a>
         </h2>
 
         <div class="post-meta-container">
@@ -251,14 +251,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-10-22 08:37:16" itemprop="dateCreated datePublished" datetime="2018-10-22T08:37:16+08:00">2018-10-22</time>
+      <time title="创建时间：2018-11-24 14:03:53" itemprop="dateCreated datePublished" datetime="2018-11-24T14:03:53+08:00">2018-11-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -266,15 +266,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+          <a href="/blog/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/java-GUI/" itemprop="url" rel="index"><span itemprop="name">java GUI</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/java-GUI/java-%E5%9B%BE%E7%89%87%E6%93%8D%E4%BD%9C/" itemprop="url" rel="index"><span itemprop="name">java 图片操作</span></a>
+          <a href="/blog/categories/JavaScript/Date/" itemprop="url" rel="index"><span itemprop="name">Date</span></a>
         </span>
     </span>
 
@@ -287,8 +283,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/blog/d819de9c/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/d819de9c/" data-xid="/blog/d819de9c/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/b57484e/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/b57484e/" data-xid="/blog/b57484e/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -299,14 +295,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>378</span>
+      <span>2.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -317,11 +313,48 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>首先必须明确的是：<strong>要想操作一张图片，首先必须将其从磁盘加载到内存中，然后才能对图片做进一步的处理</strong>。<br><strong>继承关系</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object</span><br><span class="line">    |----&gt; java.awt.Image</span><br><span class="line">        |----&gt; java.awt.image.BufferedImage</span><br></pre></td></tr></table></figure>
-
-<p>BufferedImage是Image的一个子类，Image和BufferedImage的主要作用就是将一副图片加载到内存中。BufferedImage生成的图片在内存里有一个图像缓冲区，利用这个缓冲区我们可以很方便的操作这个图片，通常用来做图片修改操作如大小变换、图片变灰、设置图片透明或不透明等。Java将一副图片加载到内存中的方法是：<br>1</p>
-<p>BufferedImage bufferedImage &#x3D; ImageIO.read(new FileInputStream(filePath));  </p>
+          <h1 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h1><p>求出两个日期之间相差的毫秒数,然后除以一天的毫秒数即得到两个日期之间相差的天数。</p>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="js求两个日期之间相隔天数的方法-字符串参数"><a href="#js求两个日期之间相隔天数的方法-字符串参数" class="headerlink" title="js求两个日期之间相隔天数的方法 字符串参数"></a>js求两个日期之间相隔天数的方法 字符串参数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//date1和date2是2006-12-18格式 </span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">daysDistance</span>(<span class="params">date1, date2</span>) &#123;     </span><br><span class="line">    <span class="keyword">var</span> distance,</span><br><span class="line">        tempDate,</span><br><span class="line">        daysApart;</span><br><span class="line">    date1 = <span class="title class_">Date</span>.<span class="title function_">parse</span>(date1);</span><br><span class="line">    date2 = <span class="title class_">Date</span>.<span class="title function_">parse</span>(date2);</span><br><span class="line">    <span class="comment">//计算两个日期之间相差的毫秒数</span></span><br><span class="line">    distance = date2 - date1;</span><br><span class="line">    <span class="comment">//取绝对值</span></span><br><span class="line">    distance = <span class="title class_">Math</span>.<span class="title function_">abs</span>(distance);</span><br><span class="line">    <span class="comment">//毫秒数除以一天的毫秒数,就的到了天数</span></span><br><span class="line">    distance = <span class="title class_">Math</span>.<span class="title function_">floor</span>(distance / (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>));</span><br><span class="line">    <span class="keyword">return</span> distance;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="js获取当日的格式化时间"><a href="#js获取当日的格式化时间" class="headerlink" title="js获取当日的格式化时间"></a>js获取当日的格式化时间</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取今天的格式化日期</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">today</span>(<span class="params"></span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> today=<span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">    <span class="keyword">var</span> str=<span class="string">&quot;&quot;</span>;</span><br><span class="line">    str+=today.<span class="title function_">getFullYear</span>()+<span class="string">&quot;-&quot;</span>;</span><br><span class="line">    <span class="keyword">var</span> month=today.<span class="title function_">getMonth</span>()+<span class="number">1</span>;<span class="comment">//返回值是 0（一月） 到 11（十二月） 之间的一个整数。</span></span><br><span class="line">    <span class="keyword">if</span>(month&lt;<span class="number">10</span>)</span><br><span class="line">        str+=<span class="string">&quot;0&quot;</span>;</span><br><span class="line">    str+=month+<span class="string">&quot;-&quot;</span>;</span><br><span class="line">    <span class="keyword">var</span> day=today.<span class="title function_">getDate</span>();<span class="comment">//返回值是 1 ~ 31 之间的一个整数</span></span><br><span class="line">    <span class="keyword">if</span>(day&lt;<span class="number">10</span>)</span><br><span class="line">        str+=<span class="string">&quot;0&quot;</span>;</span><br><span class="line">    str+=day;</span><br><span class="line">    <span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"> <span class="comment">//两个时间相差天数 兼容firefox chrome</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//date1和date2是2006-12-18格式 </span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">function</span> <span class="title function_">daysDistance</span>(<span class="params">date1, date2</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> distance,</span></span><br><span class="line"><span class="language-javascript">                tempDate,</span></span><br><span class="line"><span class="language-javascript">                daysApart;</span></span><br><span class="line"><span class="language-javascript">            date1 = <span class="title class_">Date</span>.<span class="title function_">parse</span>(date1);</span></span><br><span class="line"><span class="language-javascript">            date2 = <span class="title class_">Date</span>.<span class="title function_">parse</span>(date2);</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//计算两个日期之间相差的毫秒数</span></span></span><br><span class="line"><span class="language-javascript">            distance = date2 - date1;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//取绝对值</span></span></span><br><span class="line"><span class="language-javascript">            daysApart = <span class="title class_">Math</span>.<span class="title function_">abs</span>(distance);</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//毫秒数除以一天的毫秒数,就的到了天数</span></span></span><br><span class="line"><span class="language-javascript">            daysApart = <span class="title class_">Math</span>.<span class="title function_">floor</span>(distance / (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>));</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span> daysApart;</span></span><br><span class="line"><span class="language-javascript">        &#125;;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//获取今天的格式化日期</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">function</span> <span class="title function_">today</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> today = <span class="keyword">new</span> <span class="title class_">Date</span>();</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> str = <span class="string">&quot;&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">            str += today.<span class="title function_">getFullYear</span>() + <span class="string">&quot;-&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> month = today.<span class="title function_">getMonth</span>() + <span class="number">1</span>;<span class="comment">//返回值是 0（一月） 到 11（十二月） 之间的一个整数。</span></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">if</span> (month &lt; <span class="number">10</span>)</span></span><br><span class="line"><span class="language-javascript">                str += <span class="string">&quot;0&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">            str += month + <span class="string">&quot;-&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> day = today.<span class="title function_">getDate</span>();<span class="comment">//返回值是 1 ~ 31 之间的一个整数</span></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">if</span> (day &lt; <span class="number">10</span>)</span></span><br><span class="line"><span class="language-javascript">                str += <span class="string">&quot;0&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">            str += day;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span> str;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">function</span> <span class="title function_">show</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;in_output&quot;</span>).<span class="property">innerText</span> = <span class="string">&quot;今天&quot;</span> + <span class="title function_">today</span>() + <span class="string">&quot;到2017-3-1共计:&quot;</span> + <span class="title function_">daysDistance</span>(<span class="string">&quot;2017-3-1&quot;</span>, <span class="title function_">today</span>()) + <span class="string">&quot;天&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;in_output&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;show()&quot;</span> <span class="attr">value</span>=<span class="string">&quot;显示今日到2017-3-1间隔的天数&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>显示效果:</p>
+<p><input type="button" onclick="show()" value="显示今日到2017-3-1间隔的天数:"><span id="in_output"></span></p>
+<script>
+    //date1和date2是2006-12-18格式 
+    function daysDistance(date1, date2) {
+        var distance,
+            tempDate,
+            daysApart;
+        date1 = Date.parse(date1);
+        date2 = Date.parse(date2);
+        //计算两个日期之间相差的毫秒数
+        distance = date2 - date1;
+        //取绝对值
+        daysApart = Math.abs(distance);
+        //毫秒数除以一天的毫秒数,就的到了天数
+        daysApart = Math.floor(distance / (24 * 3600 * 1000));
+        return daysApart;
+    };
+    //获取今天的格式化日期
+    function today() {
+        var today = new Date();
+        var str = "";
+        str += today.getFullYear() + "-";
+        var month = today.getMonth() + 1;//返回值是 0（一月） 到 11（十二月） 之间的一个整数。
+        if (month < 10)
+            str += "0";
+        str += month + "-";
+        var day = today.getDate();//返回值是 1 ~ 31 之间的一个整数
+        if (day < 10)
+            str += "0";
+        str += day;
+        return str;
+    }
+    //
+    function show() {
+        document.getElementById("in_output").innerText = "今天" + today() + "到2017-3-1共计:" + daysDistance("2017-3-1", today()) + "天";
+    }
+</script>
 
       
     </div>
@@ -348,7 +381,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/3cc3e684/">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4fd080c1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -366,7 +399,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/3cc3e684/" class="post-title-link" itemprop="url">移除win10多余的微软拼音输入法</a>
+          <a href="/blog/4fd080c1/" class="post-title-link" itemprop="url">代码压缩 使用逻辑与替代单个if语句</a>
         </h2>
 
         <div class="post-meta-container">
@@ -377,7 +410,946 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-10-21 22:23:49" itemprop="dateCreated datePublished" datetime="2018-10-21T22:23:49+08:00">2018-10-21</time>
+      <time title="创建时间：2018-11-22 22:32:15" itemprop="dateCreated datePublished" datetime="2018-11-22T22:32:15+08:00">2018-11-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/4fd080c1/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/4fd080c1/" data-xid="/blog/4fd080c1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>782</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="发现过程"><a href="#发现过程" class="headerlink" title="发现过程"></a>发现过程</h1><p>我的博客中使用了hexo-neat插件来压缩代码，我之前天真认为，压缩代码应该就是把html标签直接的中的空白(空白符，空白行)删除掉而已。但是，我今天发现用来播放音频的javascript代码有点奇怪，奇怪在和我之前写的不一样，经过压缩后，代码变精简了。<br>压缩之前的js代码为：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">paly_audio0</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//找到音频</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> audio0 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;audio0&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (audio0 != <span class="literal">null</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            audio0.<span class="title function_">play</span>();</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>压缩后的代码为：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">paly_audio0</span>(<span class="params"></span>)&#123;<span class="keyword">var</span> a=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;audio0&quot;</span>);<span class="literal">null</span>!=a&amp;&amp;a.<span class="title function_">play</span>()&#125;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>为了看清楚点,格式化一下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">paly_audio0</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="language-javascript">&#123; </span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> a = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;audio0&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="literal">null</span> != a &amp;&amp; a.<span class="title function_">play</span>();</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>可以看到空白符,换行符,注释都被删除掉的了，神奇的是但是代码也变了，if语句消失了！嗯，很棒，逻辑没变。代码精简了。</p>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>这是因为逻辑与(<code>表达式1&amp;&amp;表达式2</code>)有<code>短路</code>的功能，当前一个表达式为假的话，整个表达式的结果也就是假的了，程序不会就再去判断后面的表达式了。而是直接执行下一条语句,或者后面的表达式被<code>短路</code>掉了。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4190ffbf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/4190ffbf/" class="post-title-link" itemprop="url">git bash中使用多个github用户</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-11-20 20:19:24" itemprop="dateCreated datePublished" datetime="2018-11-20T20:19:24+08:00">2018-11-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/GitBash/" itemprop="url" rel="index"><span itemprop="name">GitBash</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/4190ffbf/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/4190ffbf/" data-xid="/blog/4190ffbf/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>我在github注册了两个账号，想在在git-bash上同时使用这两个github账号。前提是现在github上注册好账号了。</p>
+<h2 id="生成新ssh-key"><a href="#生成新ssh-key" class="headerlink" title="生成新ssh key"></a>生成新ssh key</h2><p>在git-bash中,cd到一个目录下(&#x2F;e&#x2F;Blog)，输入命令<code>ssh-keygen -t rsa -C 新用户的邮箱</code>,然后在该命令的第一个输入项时，为生成的秘钥换个名字，我这里是<code>id_rsa_lanlan233</code>,其他的直接回车即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog</span><br><span class="line">$ ssh-keygen -t rsa -C xxxxxxxxxxx@qq.com</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/c/Users/lan/.ssh/id_rsa): id_rsa_lanlan233</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in id_rsa_lanlan233.</span><br><span class="line">Your public key has been saved in id_rsa_lanlan233.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:sFQcPwt2pzC2kzkclvjA5TCklu60+YdTh/QhlKFMQZ8 1819091040@qq.com</span><br><span class="line">The key&#x27;s randomart image is:</span><br><span class="line">+---[RSA 2048]----+</span><br><span class="line">|     oBo=+       |</span><br><span class="line">|     * X++       |</span><br><span class="line">|    + O.E + .    |</span><br><span class="line">|   o . XoX.=     |</span><br><span class="line">|    o ..S+o.     |</span><br><span class="line">|   o o  ooo      |</span><br><span class="line">|    +  o .       |</span><br><span class="line">|     .o .        |</span><br><span class="line">|      .o         |</span><br><span class="line">+----[SHA256]-----+</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>然后，复制生成的私钥<code>id_rsa_lanlan233</code>，和公钥<code>id_rsa_lanlan233.pub</code>到<code>~/.ssh/</code>目录下。接下来用新的github账号登录github。把公钥<code>id_rsa_lanlan233.pub</code>添加到上面。</p>
+<h2 id="添加新ssh-key"><a href="#添加新ssh-key" class="headerlink" title="添加新ssh key"></a>添加新ssh key</h2><p>默认SSH只会读取<code>id_rsa</code>，所以为了让SSH识别新的私钥，需要将其添加到<code>SSH agent</code><br>使用命令：<code>ssh-add ~/.ssh/id_rsa_lanlan233</code><br>如果报错：<code>Could not open a connection to your authentication agent.</code>无法连接到ssh agent<br>可执行<code>ssh-agent bash</code>命令后再执行<code>ssh-add ~/.ssh/id_rsa_lanlan233</code>命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 ~/.ssh</span><br><span class="line">$ ls</span><br><span class="line">id_rsa  id_rsa.pub  id_rsa_lanlan233  id_rsa_lanlan233.pub  known_hosts</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 ~/.ssh</span><br><span class="line">$ ssh-add id_rsa_lanlan233</span><br><span class="line">Could not open a connection to your authentication agent.</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 ~/.ssh</span><br><span class="line">$ ssh-agent bash</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 ~/.ssh</span><br><span class="line">$ ssh-add id_rsa_lanlan233</span><br><span class="line">Identity added: id_rsa_lanlan233 (id_rsa_lanlan233)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="添加公钥到github上"><a href="#添加公钥到github上" class="headerlink" title="添加公钥到github上"></a>添加公钥到github上</h2><p>复制公钥,粘贴到<code>github</code>之中.<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/git/GitBash/MoreAccont/1.png" alt="这里有一张图片"></p>
+<h2 id="配置config文件"><a href="#配置config文件" class="headerlink" title="配置config文件"></a>配置config文件</h2><p>查看<code>~/.ssh/</code>目录中是否存在<code>config</code>文件</p>
+<p>如果已存在则直接编辑config文件。如果不存在则需要创建config文件，命令：<code>touch config</code>，再对config文件进行编辑，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#Default 第一个账号(18251956727@163.com)</span><br><span class="line">Host default</span><br><span class="line">    HostName github.com</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa</span><br><span class="line">#second 第二个账号（1819091040@qq.com）</span><br><span class="line">Host lanlan233</span><br><span class="line">    HostName github.com</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_lanlan233</span><br></pre></td></tr></table></figure>
+<p>其中Host 后的名字可以随意方便自己记忆，但<code>HostName必须为github.com(或者其它git地址)</code>。</p>
+<h2 id="测试是否配置成功"><a href="#测试是否配置成功" class="headerlink" title="测试是否配置成功"></a>测试是否配置成功</h2><p>使用命令：<code>ssh -T git@lanlan233</code>,如果看到下面的命令表示配置成功了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 ~/.ssh</span><br><span class="line">$ ssh -T git@lanlan233</span><br><span class="line">Hi xiaolan233! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>如果命令输出如下,则表示你没有在github上添加公钥:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@blueblue233</span><br><span class="line"><span class="function">git@github.com: <span class="title">Permission</span> <span class="title">denied</span> (<span class="title">publickey</span>).</span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></table></figure>
+<h2 id="使用新用户时修改远程仓库的地址"><a href="#使用新用户时修改远程仓库的地址" class="headerlink" title="使用新用户时修改远程仓库的地址"></a>使用新用户时修改远程仓库的地址</h2><p>配置完成后，在连接Host不是github.com的github仓库时，远程库的地址要对应地做一些修改:</p>
+<p>例如对于地址</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">git@github.com:<span class="title">xiaolan233</span>/<span class="title">xiaolan233.github.io.git</span></span></span><br></pre></td></tr></table></figure>
+<p>修改为:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">git@lanlan233:<span class="title">xiaolan233</span>/<span class="title">xiaolan233.github.io.git</span></span></span><br></pre></td></tr></table></figure>
+<p>如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /E/Blog</span><br><span class="line">$ git clone git@lanlan233:xiaolan233/xiaolan233.github.io.git</span><br><span class="line">Cloning into &#x27;xiaolan233.github.io&#x27;...</span><br><span class="line">remote: Enumerating objects: 6, done.</span><br><span class="line">remote: Counting objects: 100% (6/6), done.</span><br><span class="line">remote: Compressing objects: 100% (2/2), done.</span><br><span class="line">remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">Receiving objects: 100% (6/6), done.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>到这里就可以了</p>
+<h2 id="下面是个人的操作"><a href="#下面是个人的操作" class="headerlink" title="下面是个人的操作"></a>下面是个人的操作</h2><p>我还是用来写东西的，所以懒得再配置主题了。使用的是hexo+next.这里我直接把之前的博客文件夹<code>bolg5</code>，复制一份到新的站点目录<code>xuexi</code>下即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -r bolg5/ xuexi</span><br></pre></td></tr></table></figure>
+<p>复制完毕后，进入学习，修改站点配置文件中的远程仓库地址即可。</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/williamjie/p/9145570.html">多个git账号之间的切换</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/96819592/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/96819592/" class="post-title-link" itemprop="url">C语言头文件正确写法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-11-20 18:52:35" itemprop="dateCreated datePublished" datetime="2018-11-20T18:52:35+08:00">2018-11-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:01" itemprop="dateModified" datetime="2022-04-04T15:13:01+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/C%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">C语言</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/C%E8%AF%AD%E8%A8%80/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" itemprop="url" rel="index"><span itemprop="name">代码规范</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/96819592/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/96819592/" data-xid="/blog/96819592/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="一般写法"><a href="#一般写法" class="headerlink" title="一般写法"></a>一般写法</h1><p>例如这样有一根file.h头文件，一般写法如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//file.h</span></span><br><span class="line"><span class="comment">//条件编译</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> _FILE_H_ <span class="comment">//如果没有引入头文件file.h</span></span></span><br><span class="line">    <span class="meta">#<span class="keyword">define</span> _FILE_H_ <span class="comment">//那就引入头文件file.h</span></span></span><br><span class="line">    <span class="comment">//结构体和函数声明....</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//1 根据跟文件路径和模式获取文件指针</span></span><br><span class="line">    FILE* <span class="title function_">getFILE</span><span class="params">(<span class="type">char</span>* filePath,<span class="type">char</span>* mode)</span>;</span><br><span class="line">    <span class="comment">//2 使用临时文件替换原文件</span></span><br><span class="line">    <span class="type">void</span> <span class="title function_">updateOldFileByNew</span><span class="params">(<span class="type">char</span>*oldFileName,<span class="type">char</span>*newFileName)</span>;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="自动生成"><a href="#自动生成" class="headerlink" title="自动生成"></a>自动生成</h1><h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p>当然，手动写还是有点麻烦，所以我写了点js代码来自动生成：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>变成大写<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">daxie</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> input = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;output&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (input.<span class="property">value</span> == <span class="literal">null</span> || input.<span class="property">value</span> == <span class="string">&quot;&quot;</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="title function_">alert</span>(<span class="string">&quot;请先输入&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span>;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        input.<span class="property">value</span> = input.<span class="property">value</span>.<span class="title function_">toUpperCase</span>();<span class="comment">//变成大写</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">clean</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="language-javascript">    &#123;    </span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;output&quot;</span>).<span class="property">value</span>=<span class="string">&quot;&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//复制方法</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">copy</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> in_output = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;output&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        in_output.<span class="title function_">select</span>(); <span class="comment">// 选择对象</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">execCommand</span>(<span class="string">&quot;Copy&quot;</span>); <span class="comment">// 执行浏览器复制命令</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span>(<span class="title function_">confirm</span>(<span class="string">&quot;代码已经复制到剪贴板粘贴即可&quot;</span>))</span></span><br><span class="line"><span class="language-javascript">        &#123;</span></span><br><span class="line"><span class="language-javascript">            in_output.<span class="property">value</span>=<span class="string">&quot;&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">cyuyantouwenjianshengming</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> input = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;output&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> oldValue = input.<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (oldValue == <span class="literal">null</span> || oldValue == <span class="string">&quot;&quot;</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="title function_">alert</span>(<span class="string">&quot;请先输入头文件名(一个单词)&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span>;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> isOneWord = <span class="regexp">/^\w+$/</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (isOneWord.<span class="title function_">test</span>(oldValue)) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> daxie = input.<span class="property">value</span>.<span class="title function_">toUpperCase</span>();<span class="comment">//变成大写</span></span></span><br><span class="line"><span class="language-javascript">            input.<span class="property">value</span> = <span class="string">&quot;//&quot;</span> + oldValue + <span class="string">&quot;.h\n&quot;</span> +</span></span><br><span class="line"><span class="language-javascript">                <span class="string">&quot;#ifndef _&quot;</span> + daxie + <span class="string">&quot;_H_ //如果没有引入头文件&quot;</span> + oldValue + <span class="string">&quot;.h\n&quot;</span> +</span></span><br><span class="line"><span class="language-javascript">                <span class="string">&quot;    #define _&quot;</span> + daxie + <span class="string">&quot;_H_ //那就引入头文件&quot;</span> + oldValue + <span class="string">&quot;.h\n&quot;</span> +</span></span><br><span class="line"><span class="language-javascript">                <span class="string">&quot;#endif&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="title function_">copy</span>();</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">else</span> <span class="keyword">if</span> (<span class="title function_">confirm</span>(<span class="string">&quot;输入格式错误,是否清空输入框&quot;</span>))</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;output&quot;</span>).<span class="property">value</span> = <span class="string">&quot;&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">rows</span>=<span class="string">&quot;5&quot;</span> <span class="attr">id</span>=<span class="string">&quot;output&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width:99%;margin-right:auto&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">name</span>=<span class="string">&quot;button1&quot;</span> <span class="attr">id</span>=<span class="string">&quot;button1&quot;</span> <span class="attr">value</span>=<span class="string">&quot;变成大写&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;daxie()&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">name</span>=<span class="string">&quot;butto2&quot;</span> <span class="attr">id</span>=<span class="string">&quot;button2&quot;</span> <span class="attr">value</span>=<span class="string">&quot;生成c语言头文件声明&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;cyuyantouwenjianshengming()&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">name</span>=<span class="string">&quot;butto2&quot;</span> <span class="attr">id</span>=<span class="string">&quot;button2&quot;</span> <span class="attr">value</span>=<span class="string">&quot;清空输入框&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;clean()&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果,在下面文本框中输入文件名即可生成,然后把代码粘贴到头文件<code>file.h</code>中即可。</p>
+<h2 id="C语言头文件生成工具"><a href="#C语言头文件生成工具" class="headerlink" title="C语言头文件生成工具"></a>C语言头文件生成工具</h2><textarea rows="5" id="output" style="width:99%;margin-right:auto"></textarea><br><input type="button" name="button1" id="button1" value="变成大写" onclick="daxie()" /><input type="button" name="button1" id="button1" value="变成小写" onclick="xiaoxie()" /><input type="button" name="butto2" id="button2" value="生成c语言头文件声明" onclick="cyuyantouwenjianshengming()" /><input type="button" name="butto2" id="button2" value="清空输入框" onclick="clean()" />
+
+<script>
+    function daxie() {
+        var input = document.getElementById("output");
+        if (input.value == null || input.value == "") {
+            alert("请先输入");
+            return;
+        }
+        input.value = input.value.toUpperCase();//变成大写
+    }
+    function xiaoxie() {
+        var input = document.getElementById("output");
+        if (input.value == null || input.value == "") {
+            alert("请先输入");
+            return;
+        }
+        input.value = input.value.toLowerCase();//变成小写
+    }
+
+    function clean() {
+        document.getElementById("output").value = "";
+    }
+    //复制方法
+    function copy() {
+        var in_output = document.getElementById("output");
+        in_output.select(); // 选择对象
+        document.execCommand("Copy"); // 执行浏览器复制命令
+        if (confirm("代码已经复制到剪贴板粘贴即可")) {
+            in_output.value = "";
+        }
+    }
+    function cyuyantouwenjianshengming() {
+        var input = document.getElementById("output");
+        var oldValue = input.value;
+        if (oldValue == null || oldValue == "") {
+            alert("请先输入头文件名(一个单词)");
+            return;
+        }
+        var isOneWord = /^\w+$/;
+        if (isOneWord.test(oldValue)) {
+            var daxie = input.value.toUpperCase();//变成大写
+            input.value = "//" + oldValue + ".h\n" +
+                "#ifndef _" + daxie + "_H_ //如果没有引入头文件" + oldValue + ".h\n" +
+                "    #define _" + daxie + "_H_ //那就引入头文件" + oldValue + ".h\n" +
+                "#endif";
+            copy();
+        }
+        else if (confirm("输入格式错误,是否清空输入框"))
+            document.getElementById("output").value = "";
+    }
+</script>
+
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Com_ma/article/details/78546807">https://blog.csdn.net/Com_ma&#x2F;article&#x2F;details&#x2F;78546807</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/K346K346/article/details/48877773">https://blog.csdn.net/K346K346/article/details/48877773</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/wr132/article/details/65635003">https://blog.csdn.net/wr132/article/details/65635003</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/abc_12366/article/details/79155540">https://blog.csdn.net/abc_12366&#x2F;article&#x2F;details&#x2F;79155540</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/wr132/article/details/65635003">https://blog.csdn.net/wr132/article/details/65635003</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/wandermen/article/details/9254919">https://blog.csdn.net/wandermen/article/details/9254919</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/xhbxhbsq/article/details/78955216">https://blog.csdn.net/xhbxhbsq/article/details/78955216</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/ae21e76c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/ae21e76c/" class="post-title-link" itemprop="url">冒泡排序</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-11-18 14:11:07" itemprop="dateCreated datePublished" datetime="2018-11-18T14:11:07+08:00">2018-11-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%8E%92%E5%BA%8F/" itemprop="url" rel="index"><span itemprop="name">排序</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/ae21e76c/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/ae21e76c/" data-xid="/blog/ae21e76c/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="冒泡排序-C语言实现"><a href="#冒泡排序-C语言实现" class="headerlink" title="冒泡排序 C语言实现"></a>冒泡排序 C语言实现</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//待排序的数字</span></span><br><span class="line">    <span class="type">int</span> a[] = &#123;<span class="number">900</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">-58</span>, <span class="number">34</span>, <span class="number">76</span>, <span class="number">32</span>, <span class="number">43</span>, <span class="number">56</span>, <span class="number">-70</span>, <span class="number">35</span>, <span class="number">-234</span>, <span class="number">532</span>, <span class="number">543</span>, <span class="number">2500</span>&#125;;</span><br><span class="line">    <span class="type">int</span> n;  <span class="comment">//存放数组a中元素的个数</span></span><br><span class="line">    <span class="type">int</span> i;  <span class="comment">//比较的轮数</span></span><br><span class="line">    <span class="type">int</span> j;  <span class="comment">//每轮比较的次数</span></span><br><span class="line">    <span class="type">int</span> buf;  <span class="comment">//交换数据时用于存放中间数据</span></span><br><span class="line">    <span class="comment">//计算数组个数</span></span><br><span class="line">    n = <span class="keyword">sizeof</span>(a) / <span class="keyword">sizeof</span>(a[<span class="number">0</span>]);  <span class="comment">/*a[0]是int型, 占4字节, 所以总的字节数除以4等于数组中元素的个数*/</span></span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;n<span class="number">-1</span>; i++)  <span class="comment">//比较n-1轮</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j=<span class="number">0</span>; j&lt;n<span class="number">-1</span>-i; j++)  <span class="comment">//每轮比较n-1-i次,</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//比较如果后面的数大</span></span><br><span class="line">            <span class="keyword">if</span> (a[j] &lt; a[j+<span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//交换</span></span><br><span class="line">                buf = a[j];     <span class="comment">//把小的先缓存</span></span><br><span class="line">                a[j] = a[j+<span class="number">1</span>];  <span class="comment">//把大的放到前面</span></span><br><span class="line">                a[j+<span class="number">1</span>] = buf;   <span class="comment">//把小的放后面</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\x20&quot;</span>, a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2500 900 543 532 76 56 43 35 34 32 3 2 -58 -70 -234</span><br></pre></td></tr></table></figure>
+<h1 id="冒泡排序-JavaScript实现"><a href="#冒泡排序-JavaScript实现" class="headerlink" title="冒泡排序 JavaScript实现"></a>冒泡排序 JavaScript实现</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> array = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">2</span>];</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="title function_">writeln</span>(<span class="string">&quot;排序前:&quot;</span> + array + <span class="string">&quot;&lt;br&gt;&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">bubbleSort</span>(<span class="params">array</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> temp = <span class="number">0</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.<span class="property">length</span> - <span class="number">1</span>; i++) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; array.<span class="property">length</span> - <span class="number">1</span> - i; j++) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="comment">// 如果后面的比前面的大</span></span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">if</span> (array[j] &lt; array[j + <span class="number">1</span>]) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">// 将小的数缓存</span></span></span><br><span class="line"><span class="language-javascript">                    temp = array[j];</span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">// 将 大的 数放到前面</span></span></span><br><span class="line"><span class="language-javascript">                    array[j] = array[j + <span class="number">1</span>];</span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">// 将 小的 数放到后面</span></span></span><br><span class="line"><span class="language-javascript">                    array[j + <span class="number">1</span>] = temp;</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span> array;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> sortarray = <span class="title function_">bubbleSort</span>(array);</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="title function_">writeln</span>(<span class="string">&quot;排序后:&quot;</span> + sortarray + <span class="string">&quot;&lt;br&gt;&quot;</span>);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>运行效果:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">排序前:3,4,1,2</span><br><span class="line">排序后:4,3,2,1</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/fe_dev/article/details/79600448">https://blog.csdn.net/fe_dev&#x2F;article&#x2F;details&#x2F;79600448</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/a579418/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/a579418/" class="post-title-link" itemprop="url">C语言 判断文件是否为空文件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-11-16 23:11:18" itemprop="dateCreated datePublished" datetime="2018-11-16T23:11:18+08:00">2018-11-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:01" itemprop="dateModified" datetime="2022-04-04T15:13:01+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/C%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">C语言</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/C%E8%AF%AD%E8%A8%80/%E6%96%87%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">文件</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/a579418/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/a579418/" data-xid="/blog/a579418/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>375</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">FILE* movieFile=fopen(<span class="string">&quot;movie.txt&quot;</span>,<span class="string">&quot;r&quot;</span>);</span><br><span class="line"><span class="comment">//如果文件打开失败</span></span><br><span class="line"><span class="keyword">if</span>(movieFile==<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;文件打开失败！\n&quot;</span>);</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//判断是否是空文件</span></span><br><span class="line"><span class="keyword">if</span>(fgetc(movieFile)==EOF)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;   文件 movie.txt 为空 请先录入\n&quot;</span>);    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    rewind(movieFile);<span class="comment">//文件指针移动会首部</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//其他操作...</span></span><br><span class="line"></span><br><span class="line">fclose(movieFile);<span class="comment">//关闭文件</span></span><br></pre></td></tr></table></figure>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lwpping/article/details/7441950">C语言怎么判断文件是否为空</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/65f494cf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/65f494cf/" class="post-title-link" itemprop="url">C语言创建 删除 重命名文件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-11-15 00:44:39" itemprop="dateCreated datePublished" datetime="2018-11-15T00:44:39+08:00">2018-11-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:01" itemprop="dateModified" datetime="2022-04-04T15:13:01+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/C%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">C语言</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/C%E8%AF%AD%E8%A8%80/%E6%96%87%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">文件</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/65f494cf/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/65f494cf/" data-xid="/blog/65f494cf/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>757</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="C语言创建文件"><a href="#C语言创建文件" class="headerlink" title="C语言创建文件"></a>C语言创建文件</h1><p>以<code>只写方式</code>打开文件，如果没有改文件的话则会创建该文件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FILE* trainFILETemp=getFILE(<span class="string">&quot;trainTemp.txt&quot;</span>,<span class="string">&quot;w&quot;</span>);</span><br><span class="line"><span class="built_in">fprintf</span>(trainFILETemp,<span class="string">&quot;使用C语言创建文件&quot;</span>);</span><br><span class="line"><span class="comment">//关闭文件</span></span><br><span class="line">fclose(trainFILETemp);</span><br></pre></td></tr></table></figure>
+<h1 id="C语言重命名文件"><a href="#C语言重命名文件" class="headerlink" title="C语言重命名文件"></a>C语言重命名文件</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> result;</span><br><span class="line"><span class="type">char</span> oldname[] =<span class="string">&quot;trainTemp.txt&quot;</span>;</span><br><span class="line"><span class="type">char</span> newname[] =<span class="string">&quot;trainRename.txt&quot;</span>;</span><br><span class="line">result= rename( oldname , newname );</span><br><span class="line"><span class="keyword">if</span> ( result == <span class="number">0</span> )</span><br><span class="line">    <span class="built_in">printf</span>( <span class="string">&quot;File successfully renamed&quot;</span> );</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    perror( <span class="string">&quot;Error renaming file&quot;</span> );</span><br></pre></td></tr></table></figure>
+<h1 id="C语言删除文件"><a href="#C语言删除文件" class="headerlink" title="C语言删除文件"></a>C语言删除文件</h1><blockquote>
+<p>在C语言中，有专门的删除文件函数remove。<br>1、头文件：<code>stdio.h</code><br>2、声明：<code>int remove(const char* filename);</code><br>3、功能：删除文件名为filename的文件。<br>4、返回值：<code>删除成功，返回0</code>.<code>否则返回-1</code>.</p>
+</blockquote>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> ret;</span><br><span class="line"><span class="type">char</span> deleteFile[]=<span class="string">&quot;trainRename.txt&quot;</span>;</span><br><span class="line">ret = remove(deleteFile);<span class="comment">//删除文件</span></span><br><span class="line"><span class="keyword">if</span>(ret==<span class="number">0</span>)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;删除文件成功\n&quot;</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;删除文件失败\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/71801.htm">详解C语言中的rename()函数和remove()函数的使用方法</a><br><a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/267104376240933125.html">如何用C语言创建和删除文件</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/goodboy_wkx/article/details/45561327">c 重命名文件</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/38f33943/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/38f33943/" class="post-title-link" itemprop="url">解决C语言：error C2084：function 'xxx xxx()' already has a body</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-11-14 19:25:05" itemprop="dateCreated datePublished" datetime="2018-11-14T19:25:05+08:00">2018-11-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:01" itemprop="dateModified" datetime="2022-04-04T15:13:01+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/C%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">C语言</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/C%E8%AF%AD%E8%A8%80/Debug/" itemprop="url" rel="index"><span itemprop="name">Debug</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/38f33943/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/38f33943/" data-xid="/blog/38f33943/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>295</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="分析原因"><a href="#分析原因" class="headerlink" title="分析原因"></a>分析原因</h1><p>这是因为头文件重复导入了，我在头文件<code>userBuyMenu.h</code>中导入了<code>#include &quot;findMethod.h&quot;</code>。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/C/debug/alredyHasABody/alreadyhasabody.png"><br>然后又在主方法中同时导入了这个两个头文件：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;userBuyMenu.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;findMethod.h&quot;</span></span></span><br></pre></td></tr></table></figure>
+<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/C/debug/alredyHasABody/congfudaoru.png"><br>这样就<code>findMethod.h</code>被导入了两次，重复了，所以报这个错。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>注释掉<code>userBuyMenu.h</code>中导入的<code>findMethod.h</code>的语句：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//#include &quot;findMethod.h&quot;</span></span><br></pre></td></tr></table></figure>
+<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/C/debug/alredyHasABody/zhushidiao.png"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>以后不要在头文件中导入头文件，再主方法中导入即可。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d400453f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/d400453f/" class="post-title-link" itemprop="url">任务管理器中不小心关掉文件资源管理器explorer了怎么重新打开</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-11-13 15:03:20" itemprop="dateCreated datePublished" datetime="2018-11-13T15:03:20+08:00">2018-11-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -413,8 +1385,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/blog/3cc3e684/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/3cc3e684/" data-xid="/blog/3cc3e684/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/d400453f/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/d400453f/" data-xid="/blog/d400453f/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -425,7 +1397,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>272</span>
+      <span>175</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -443,16 +1415,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>我不是很喜欢win10自带的微软拼音输入法，自己安装了搜狗拼音输入法，但是这样同时用两个输入法，经常需要按下shift+ctrl进行切换。我不喜欢来回切换输入法,现在来介绍移除多余的微软拼音输入法。</p>
-<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol>
-<li>打开设置<br> <img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/others/Windows_Settings/windows_setting.png"></li>
-<li>进入时间和语言<br> <img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/others/Windows_Settings/time_language.png"></li>
-<li>选择区域和语言<br> <img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/others/Windows_Settings/region_language.png"></li>
-<li>单击<code>中文(中华人民共和国)</code>，然后选择选项<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/others/Windows_Settings/ClickChinese.png"></li>
-<li>然后再键盘中单击微软拼音，然后点击删除即可移除掉微软拼音输入法<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/others/Windows_Settings/delete_Microsoft_pinyin.png"></li>
-</ol>
-<h1 id="删除无效的情况"><a href="#删除无效的情况" class="headerlink" title="删除无效的情况"></a>删除无效的情况</h1><p>今天win10更新了,微软输入法又回来了,按上述的方法老是删不掉,每当我按下shift+ctrl后,微软输入法就跳出来了.</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>安装<code>英语(美国)</code>语言包,然后按上述步骤就可以删除了.</p>
+          <h1 id="我的问题"><a href="#我的问题" class="headerlink" title="我的问题"></a>我的问题</h1><p>我在<code>任务管理器</code>中的资源监视器中不小心关掉了文件资源管理器<code>explorer.exe</code>，然后就炸了，整个屏幕直接变蓝了，而其按下Win+R也无法调出运行窗口。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/windows/explorer/colseExplorer.png"></p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>不过还好<code>任务管理器</code>还可以使用，所以：进入任务管理器，点击<code>文件&gt;运行新任务</code>：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/windows/explorer/openStart.png"><br>然后输入<code>explorer</code>，按下回车即可启动文件资源管理器了，这样电脑就恢复正常了。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/windows/explorer/startExplorer.png"><br>启动其他程序也类似。</p>
 
       
     </div>
@@ -479,7 +1443,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/8859faa9/">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e44da/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -497,7 +1461,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/8859faa9/" class="post-title-link" itemprop="url">markdown语法 待办事项</a>
+          <a href="/blog/e44da/" class="post-title-link" itemprop="url">Linux 常用指令</a>
         </h2>
 
         <div class="post-meta-container">
@@ -508,14 +1472,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-10-21 10:01:08" itemprop="dateCreated datePublished" datetime="2018-10-21T10:01:08+08:00">2018-10-21</time>
+      <time title="创建时间：2018-11-11 16:35:46" itemprop="dateCreated datePublished" datetime="2018-11-11T16:35:46+08:00">2018-11-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -523,15 +1487,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/Markdown/%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">语法</span></a>
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
         </span>
     </span>
 
@@ -544,8 +1504,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/blog/8859faa9/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/8859faa9/" data-xid="/blog/8859faa9/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/e44da/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/e44da/" data-xid="/blog/e44da/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -556,14 +1516,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>272</span>
+      <span>2.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -574,942 +1534,53 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Markdown待办事项语法"><a href="#Markdown待办事项语法" class="headerlink" title="Markdown待办事项语法"></a>Markdown待办事项语法</h1><p>不是所有的markdown都支持待办事项的，语法：<strong>横框+ 空格+方括号（方括号中必须有空格或者x） + 空格+ 文本</strong>。例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- [x] test</span><br><span class="line">- [ ] test2</span><br><span class="line">- [ ] test4</span><br></pre></td></tr></table></figure>
-<p>已经完成的事项，在中括号中写入英文<code>x</code>,未完成的事项在中括号中的写入空格,显示效果：</p>
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我这里是在git-bash中运行的，因为懒得打开虚拟机了，在Linux终端上运行效果也一样。</p>
+<h1 id="文件目录相关命令"><a href="#文件目录相关命令" class="headerlink" title="文件目录相关命令"></a>文件目录相关命令</h1><h2 id="创建一个空白文件命令touch"><a href="#创建一个空白文件命令touch" class="headerlink" title="创建一个空白文件命令touch"></a>创建一个空白文件命令touch</h2><p>命令格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch 新文件名</span><br></pre></td></tr></table></figure>
+<p>例如，在当前目录下创建一个test.txt的空白文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5/source/_posts/Linux</span><br><span class="line">$ ls -l</span><br><span class="line">total 8</span><br><span class="line">-rw-r--r-- 1 lan 197609 3622 11月 11 17:06 &#x27;Linux 常用指令.md&#x27;</span><br><span class="line">-rw-r--r-- 1 lan 197609 1537 11月  5 17:17  linux下删除目录及其子目录下某种类型文件.md</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5/source/_posts/Linux</span><br><span class="line">$ touch text.txt</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5/source/_posts/Linux</span><br><span class="line">$ ls -l</span><br><span class="line">total 8</span><br><span class="line">-rw-r--r-- 1 lan 197609 3622 11月 11 17:06 &#x27;Linux 常用指令.md&#x27;</span><br><span class="line">-rw-r--r-- 1 lan 197609 1537 11月  5 17:17  linux下删除目录及其子目录下某种类型文件.md</span><br><span class="line">-rw-r--r-- 1 lan 197609    0 11月 11 17:06  text.txt</span><br></pre></td></tr></table></figure>
+<h2 id="文件复制命令cp"><a href="#文件复制命令cp" class="headerlink" title="文件复制命令cp"></a>文件复制命令cp</h2><p><strong>命令格式</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp [option] source1 source2 source3 ... directory</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明</strong></p>
 <ul>
-<li><input checked="" disabled="" type="checkbox"> 已经完成的事项</li>
-<li><input disabled="" type="checkbox"> 未完成的事项</li>
+<li><code>-a</code>:是指archive的意思，也说是指复制所有的目录</li>
+<li><code>-d</code>:若源文件为连接文件(link file)，则复制连接文件属性而非文件本身</li>
+<li><code>-f</code>:强制(force)，若有重复或其它疑问时，不会询问用户，而强制复制</li>
+<li><code>-i</code>:若目标文件(destination)已存在，在覆盖时会先询问是否真的操作</li>
+<li><code>-l</code>:建立硬连接(hard link)的连接文件，而非复制文件本身</li>
+<li><code>-p</code>:与文件的属性一起复制，而非使用默认属性</li>
+<li><code>-r</code>:递归复制，用于目录的复制操作</li>
+<li><code>-s</code>:复制成符号连接文件(symbolic link)，即“快捷方式”文件</li>
+<li><code>-u</code>:若目标文件比源文件旧，更新目标文件</li>
 </ul>
-<h1 id="MarkdownPad2-中支持待办事项"><a href="#MarkdownPad2-中支持待办事项" class="headerlink" title="MarkdownPad2 中支持待办事项"></a>MarkdownPad2 中支持待办事项</h1><p>点击左下角的<code>M图标</code>切换CSS模式，选择<code>GitHub Flavored Markdown (Offline)</code>。这样导出的html就支持待办事项了。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/markdown/undo/markdownPad2_css_settings.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/markdown/undo/markdownPad2_Undo_settings.png"><br>再按下<code>ctrl+shift+1</code>导出为html，就可查看效果了：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/markdown/undo/markdownPad2_Undo_show.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/72162c39/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/72162c39/" class="post-title-link" itemprop="url">正则实例：多行html代码合并为一行</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-10-14 22:51:59" itemprop="dateCreated datePublished" datetime="2018-10-14T22:51:59+08:00">2018-10-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%AE%9E%E4%BE%8B/" itemprop="url" rel="index"><span itemprop="name">实例</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%AE%9E%E4%BE%8B/%E5%8C%B9%E9%85%8DHTML%E6%A0%87%E7%AD%BE/" itemprop="url" rel="index"><span itemprop="name">匹配HTML标签</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/72162c39/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/72162c39/" data-xid="/blog/72162c39/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>4.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>有下面这样一段HTML代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:auto&quot;</span>&gt;</span></span><br><span class="line">    Auto<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:crosshair&quot;</span>&gt;</span></span><br><span class="line">    Crosshair<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:default&quot;</span>&gt;</span></span><br><span class="line">    Default<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:pointer&quot;</span>&gt;</span></span><br><span class="line">    Pointer<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:move&quot;</span>&gt;</span></span><br><span class="line">    Move<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:e-resize&quot;</span>&gt;</span></span><br><span class="line">    e-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:ne-resize&quot;</span>&gt;</span></span><br><span class="line">    ne-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:nw-resize&quot;</span>&gt;</span></span><br><span class="line">    nw-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:n-resize&quot;</span>&gt;</span></span><br><span class="line">    n-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:se-resize&quot;</span>&gt;</span></span><br><span class="line">    se-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:sw-resize&quot;</span>&gt;</span></span><br><span class="line">    sw-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:s-resize&quot;</span>&gt;</span></span><br><span class="line">    s-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:w-resize&quot;</span>&gt;</span></span><br><span class="line">    w-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:text&quot;</span>&gt;</span></span><br><span class="line">    text<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:wait&quot;</span>&gt;</span></span><br><span class="line">    wait<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:help&quot;</span>&gt;</span></span><br><span class="line">    help<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>例如第一句：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:auto&quot;</span>&gt;</span></span><br><span class="line">    Auto<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>改成：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:auto&quot;</span>&gt;</span>Auto<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>当然我是不可能一行行的来改的。使用正则表达式来做比较方便。匹配表达式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&lt;span.*?&gt;)\n\s+(.*&lt;/span&gt;)\n\s+</span><br></pre></td></tr></table></figure>
-<p>匹配效果(VScode中)：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%BA%94%E7%94%A8/%E5%8C%B9%E9%85%8DHTML/%E5%A4%9A%E8%A1%8Chtml%E5%90%88%E5%B9%B6%E4%B8%BA%E4%B8%80%E8%A1%8C.png"><br>html代码，会被括号捕获到，而换行符和空白符就不会被捕获，使用捕获到的html代码替换掉原来匹配的文本即可。所以替换的正则表达式为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$1$2</span><br></pre></td></tr></table></figure>
-<p><code>$1</code>表示第一个捕获组，<code>$2</code>表示第二个捕获组。捕获组不同的软件(体系)中的表示方式不同。VScode中是使用$1,$2,… 而NotePad++中使用的是<code>\1,\2,\3...</code>。<br>使用上述正则表达式是进行替换即可。替换后的结果为：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>请把鼠标移动到单词上，可以看到鼠标指针发生变化：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:auto&quot;</span>&gt;</span>Auto<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:crosshair&quot;</span>&gt;</span>Crosshair<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:default&quot;</span>&gt;</span>Default<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:pointer&quot;</span>&gt;</span>Pointer<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:move&quot;</span>&gt;</span>Move<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:e-resize&quot;</span>&gt;</span>e-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:ne-resize&quot;</span>&gt;</span>ne-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:nw-resize&quot;</span>&gt;</span>nw-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:n-resize&quot;</span>&gt;</span>n-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:se-resize&quot;</span>&gt;</span>se-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:sw-resize&quot;</span>&gt;</span>sw-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:s-resize&quot;</span>&gt;</span>s-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:w-resize&quot;</span>&gt;</span>w-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:text&quot;</span>&gt;</span>text<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:wait&quot;</span>&gt;</span>wait<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:help&quot;</span>&gt;</span></span><br><span class="line">    help<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>当然最后一句，并没有能够成功匹配到。但这样的效果。还算满意,因为现在我只需要修改最后一行的效果。当然最佳的方式，应该是现在VScode中看匹配的结果。编写更好的正则表达式，尽可能匹配到所有的内容。完美的正则表达式为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&lt;span.*?&gt;)\n\s+(.*&lt;/span&gt;)(:?\n\s+)?</span><br></pre></td></tr></table></figure>
-<p>这样所有的span标签都会被匹配到。替换后的效果为：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>请把鼠标移动到单词上，可以看到鼠标指针发生变化：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:auto&quot;</span>&gt;</span>Auto<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:crosshair&quot;</span>&gt;</span>Crosshair<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:default&quot;</span>&gt;</span>Default<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:pointer&quot;</span>&gt;</span>Pointer<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:move&quot;</span>&gt;</span>Move<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:e-resize&quot;</span>&gt;</span>e-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:ne-resize&quot;</span>&gt;</span>ne-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:nw-resize&quot;</span>&gt;</span>nw-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:n-resize&quot;</span>&gt;</span>n-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:se-resize&quot;</span>&gt;</span>se-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:sw-resize&quot;</span>&gt;</span>sw-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:s-resize&quot;</span>&gt;</span>s-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:w-resize&quot;</span>&gt;</span>w-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:text&quot;</span>&gt;</span>text<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:wait&quot;</span>&gt;</span>wait<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:help&quot;</span>&gt;</span>help<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/1d153e30/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/1d153e30/" class="post-title-link" itemprop="url">正则应用：把Markdown中的加粗文本改为标题文本</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-10-11 09:12:13" itemprop="dateCreated datePublished" datetime="2018-10-11T09:12:13+08:00">2018-10-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 16:20:19" itemprop="dateModified" datetime="2022-04-04T16:20:19+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%AE%9E%E4%BE%8B/" itemprop="url" rel="index"><span itemprop="name">实例</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/1d153e30/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/1d153e30/" data-xid="/blog/1d153e30/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>125</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>用notepad++打开该文章，按下ctrl+h打开替换，在查找模式选择框，选择正则表达式，然后输入查找正则表达式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[*]&#123;2&#125;(\d+.+?)[*]&#123;2&#125;</span><br></pre></td></tr></table></figure>
-<p>输入替换正则表达式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">###\1###</span><br></pre></td></tr></table></figure>
-<p>如图所示：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/java/my_regex_example/ctrl_b3ctrl_3.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/5a1e201b/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/5a1e201b/" class="post-title-link" itemprop="url">使用java上传图片到腾讯云对象存储并返回链接</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-10-10 22:03:14" itemprop="dateCreated datePublished" datetime="2018-10-10T22:03:14+08:00">2018-10-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">我的软件</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8COS/" itemprop="url" rel="index"><span itemprop="name">腾讯云对象存储COS</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/5a1e201b/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/5a1e201b/" data-xid="/blog/5a1e201b/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>690</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="使用java上传图片到腾讯云对象存储并返回链接"><a href="#使用java上传图片到腾讯云对象存储并返回链接" class="headerlink" title="使用java上传图片到腾讯云对象存储并返回链接"></a>使用java上传图片到腾讯云对象存储并返回链接</h1><p>不需要签名的公共链接：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDQikX6SPUAcqqcAxaT8ZmjPpyrUqwuKei%26q-sign-time%3D1540294349%3B1540294649%26q-key-time%3D1540294349%3B1540294649%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D1e368fb926c8858b9ed65b923a9030bb54234129)</span><br></pre></td></tr></table></figure>
-
-<p>显示效果：<br><img data-src="http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg?sign=q-sign-algorithm=sha1&q-ak=AKIDQikX6SPUAcqqcAxaT8ZmjPpyrUqwuKei&q-sign-time=1540294349;1540294649&q-key-time=1540294349;1540294649&q-header-list=host&q-url-param-list=&q-signature=1e368fb926c8858b9ed65b923a9030bb54234129"></p>
-<p>去掉签名的链接：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg</span><br></pre></td></tr></table></figure>
-
-<p>显示效果：<br><img data-src="http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg"></p>
-<p>https的图片链接：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg)</span><br></pre></td></tr></table></figure>
-
-<p>显示效果：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg"><br>使用https的其他图片<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg"></p>
-<p>最后的显示效果：<br><img data-src="http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg"></p>
-<p>软件上传效果：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E4%B8%8A%E4%BC%A0/%E6%88%91%E5%B0%86%E4%BC%9A%E4%B8%8A%E4%BC%A0%E5%88%B0%E8%85%BE%E8%AE%AF%E4%BA%91.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d7d49994/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/d7d49994/" class="post-title-link" itemprop="url">把可执行jar打包成exe文件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-10-10 19:39:02" itemprop="dateCreated datePublished" datetime="2018-10-10T19:39:02+08:00">2018-10-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">我的软件</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/%E6%88%AA%E5%9B%BE%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" itemprop="url" rel="index"><span itemprop="name">截图文字识别</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/d7d49994/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/d7d49994/" data-xid="/blog/d7d49994/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>上次的程序我通过使用,我通过<code>javaw -jar xxx.jar</code>来启动一个程序，在任务管理器中显示如下：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/javaw_process.png"><br>如果有一个javaw进行还好，但是我写的java工具程序可能比较多。进程名都是javaw的话不好分辨。<strong>在Windows下可以把可执行jar包打包成exe文件，这样就有自己的进程名，图标。便于我在任务管理器中管理</strong>(不需要时杀掉该进程)。</p>
-<h1 id="使用eclipse把java项目打包为可执行jar包"><a href="#使用eclipse把java项目打包为可执行jar包" class="headerlink" title="使用eclipse把java项目打包为可执行jar包"></a>使用eclipse把java项目打包为可执行jar包</h1><p>在项目上右键选择<code>Export</code>:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/eclipse_export.png"><br>然后展开Java项，选择<code>Runable JAR File</code>:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/eclipse_export_runableJarFile.png"><br>然后选择主类，jar包的输出位置，依赖包的打包方式。最后点击Finish即可。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/runableJarFileExport.png"></p>
-<h1 id="下载安装破解exe4j"><a href="#下载安装破解exe4j" class="headerlink" title="下载安装破解exe4j"></a>下载安装破解exe4j</h1><h2 id="下载exe4j"><a href="#下载exe4j" class="headerlink" title="下载exe4j"></a>下载exe4j</h2><p>破解版下载路径:<a target="_blank" rel="noopener" href="https://www.jb51.net/softs/541579.html">https://www.jb51.net/softs/541579.html</a></p>
-<h2 id="解压压缩包"><a href="#解压压缩包" class="headerlink" title="解压压缩包"></a>解压压缩包</h2><p>下载后，解压压缩包：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe_install.png"></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>点击安装程序<code>exe4j_windows-x64_5_0_1.exe</code>进行安装。</p>
-<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>安装成功后启动<code>exe4j</code>,点击<code>Change License</code>按钮，然后运行压缩包中的<code>Keymaker.exe</code>生成秘钥。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_welcome.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_keymaker.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_License.png"><br>粘贴秘钥到exe4j，点击OK即可。</p>
-<h1 id="打包jar为exe"><a href="#打包jar为exe" class="headerlink" title="打包jar为exe"></a>打包jar为exe</h1><h2 id="Project-type"><a href="#Project-type" class="headerlink" title="Project type"></a>Project type</h2><p>选择<code>JAR in EXE mode</code>,然后点击<code>next</code>.<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_JaxInExe.png"></p>
-<h2 id="Application-info"><a href="#Application-info" class="headerlink" title="Application info"></a>Application info</h2><p>然后输入exe文件的简称，exe文件输出位置。然后<code>next</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_Applicationinfo.png"></p>
-<h2 id="Executable-info"><a href="#Executable-info" class="headerlink" title="Executable info"></a>Executable info</h2><p><code>Executable type:</code>中选择第一项<code>GUI application</code>,表示GUI程序，第二个选项表示控制台程序。<br><code>Executable name:</code>中输入软件的名称(<code>OCR</code>)<br><code>Icon file:</code>中选择图标的位置,图标需要实现下载好，图标不是必须的，没有也没关系。<br><strong>然后展开<code>Advanced options</code>选择第一项<code>Redirection</code></strong><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_Executableinfo.png"></p>
-<h3 id="Redirection"><a href="#Redirection" class="headerlink" title="Redirection"></a>Redirection</h3><p>然后勾选<code>Redirect stderr</code>,显示错误输出目录，然后点<code>next</code>,Service options 和Version info默认即可，所以点击<code>next</code>,<code>next</code>即可。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exej_Executableinfo_Redirection.png"></p>
-<h3 id="32-bit-or-64-bit"><a href="#32-bit-or-64-bit" class="headerlink" title="32-bit or 64-bit"></a>32-bit or 64-bit</h3><p>然后选择<code>Generate 64-bit executable</code>,生成64位的exe程序。然后<code>next</code>,<code>next</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_Executable%20info_64bit.png"></p>
-<h2 id="Java-invocation"><a href="#Java-invocation" class="headerlink" title="Java invocation"></a>Java invocation</h2><p>到了第5个配置项<code>Java invocation</code>这里要把刚才生成的可执行jar包添加进来。以及<code>所有的依赖包</code>，点击绿色的加号，添加可执行Jar包<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_Java_Invocation_add_jar.png"></p>
-<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_Java_Invocation_add_jar_archive.png"><br><strong>导入所有的依赖包</strong><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_Java_Invocation_add_alljar.png"></p>
-<p>然后在<code>Main class:</code>选择主类:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_Java_Invocation_add_jar_mainclass.png"></p>
-<h2 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h2><p>选择最小支持的版本，最大的版本可以默认不写。然后展开<code>Advanced options</code>,选择<code>Search sequence</code>。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_JRE_Serch%20sequency.png"><br>点击绿色的加号<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_JRE_Serchsequency_add.png"><br>然后，选择找到本地的jre：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_JRE_Serchsequency_add_jre.png"><br>然后把它移动到最顶端：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_JRE_Serchsequency_moveUp.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exe4j_JRE_Serchsequency_moveUp_yes.png"><br>然后<code>next</code>,</p>
-<p>然后默认，<code>next</code>：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/exej_JRE_Preferred%20VM.png"><br>后面一直next即可。</p>
-<h1 id="运行生成的exe"><a href="#运行生成的exe" class="headerlink" title="运行生成的exe"></a>运行生成的exe</h1><p>打开输出目录双击运行exe文件即可运行<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/MyApplications/SwingBaiduOCR/runablejar2exe/run_exe.png"></p>
-<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29232943/article/details/52861800">https://blog.csdn.net/qq_29232943&#x2F;article&#x2F;details&#x2F;52861800</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/217f0f86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/217f0f86/" class="post-title-link" itemprop="url">如何修改java程序的进程名</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-10-10 16:37:33" itemprop="dateCreated datePublished" datetime="2018-10-10T16:37:33+08:00">2018-10-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">我的软件</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/%E6%88%AA%E5%9B%BE%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" itemprop="url" rel="index"><span itemprop="name">截图文字识别</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/217f0f86/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/217f0f86/" data-xid="/blog/217f0f86/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>155</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="如何修改java程序的进程名"><a href="#如何修改java程序的进程名" class="headerlink" title="如何修改java程序的进程名"></a>如何修改java程序的进程名</h1><p>我的实现过程：<a href="/2018/10/10/MyApplications/%E6%88%AA%E5%9B%BE%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/%E6%8A%8A%E5%8F%AF%E6%89%A7%E8%A1%8Cjar%E6%89%93%E5%8C%85%E6%88%90exe%E6%96%87%E4%BB%B6/">把可执行jar打包成exe文件</a></p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>相关论坛:<br><a target="_blank" rel="noopener" href="https://bbs.csdn.net/topics/320018756">https://bbs.csdn.net/topics/320018756</a><br><a target="_blank" rel="noopener" href="https://bbs.csdn.net/topics/370063237">https://bbs.csdn.net/topics/370063237</a><br><a target="_blank" rel="noopener" href="https://bbs.csdn.net/topics/90400835">https://bbs.csdn.net/topics/90400835</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d2e9fa85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/d2e9fa85/" class="post-title-link" itemprop="url">截图文字识别软件升级</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-10-02 12:29:28" itemprop="dateCreated datePublished" datetime="2018-10-02T12:29:28+08:00">2018-10-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">我的软件</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/%E6%88%AA%E5%9B%BE%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" itemprop="url" rel="index"><span itemprop="name">截图文字识别</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/d2e9fa85/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/d2e9fa85/" data-xid="/blog/d2e9fa85/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><ul>
-<li>加入保存保存快捷键<code>ctrl+s</code></li>
-<li>修改代码，支持多次保存</li>
+<p>例如将当前博客站点目录bolg5复制一份到到同级目录blog5copy:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5</span><br><span class="line">$ cd ..</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog</span><br><span class="line">$ cp -r bolg5 blog5copy</span><br></pre></td></tr></table></figure>
+<p>运行结束后，就复制了一份站点目录文件到同级目录(Blog)下的blog5copy目录了。这个blog5copy相当于一个博客站点目录的备份。</p>
+<h2 id="文件移动命令mv"><a href="#文件移动命令mv" class="headerlink" title="文件移动命令mv"></a>文件移动命令mv</h2><p><strong>命令格式</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv [-fiv] source destination</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明</strong></p>
+<ul>
+<li><code>-f</code>:force，强制直接移动而不询问</li>
+<li><code>-i</code>:若目标文件(destination)已经存在，就会询问是否覆盖</li>
+<li><code>-u</code>:若目标文件已经存在，且源文件比较新，才会更新<h3 id="实例-移动文件到其他目录"><a href="#实例-移动文件到其他目录" class="headerlink" title="实例 移动文件到其他目录"></a>实例 移动文件到其他目录</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5dug/source/_posts/Linux</span><br><span class="line">$ mv &#x27;Linux 常用指令.md&#x27; ../../../../*5/source/_posts/Linux</span><br></pre></td></tr></table></figure>
+这个命令会把<code>/e/Blog/bolg5dug/source/_posts/Linux</code>目录下的<code>&#39;Linux 常用指令.md&#39;</code>文件移动到，<code>/e/Blog/bolg5/source/_posts/Linux</code>目录下。<h3 id="使用移动命令重命名文件"><a href="#使用移动命令重命名文件" class="headerlink" title="使用移动命令重命名文件"></a>使用移动命令重命名文件</h3>在当前目录下使用移动命令可以达到给文件重命名的效果：<br>为了不误删我之前写的文章，先来创建一个测试文件：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5/source/_posts/Linux</span><br><span class="line">$ touch test.txt</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5/source/_posts/Linux</span><br><span class="line">$ ls -l</span><br><span class="line">total 8</span><br><span class="line">-rw-r--r-- 1 lan 197609 2447 11月 11 16:58 &#x27;Linux 常用指令.md&#x27;</span><br><span class="line">-rw-r--r-- 1 lan 197609 1537 11月  5 17:17  linux下删除目录及其子目录下某种类型文件.md</span><br><span class="line">-rw-r--r-- 1 lan 197609    0 11月 11 16:59  test.txt</span><br></pre></td></tr></table></figure>
+使用mv命令重命名：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mv test.txt rename.txt</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5/source/_posts/Linux</span><br></pre></td></tr></table></figure>
+重命名结果：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ls -l</span><br><span class="line">total 8</span><br><span class="line">-rw-r--r-- 1 lan 197609 2447 11月 11 16:58 &#x27;Linux 常用指令.md&#x27;</span><br><span class="line">-rw-r--r-- 1 lan 197609 1537 11月  5 17:17  linux下删除目录及其子目录下某种类型文件.md</span><br><span class="line">-rw-r--r-- 1 lan 197609    0 11月 11 16:59  rename.txt</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/bolg5/source/_posts/Linux</span><br></pre></td></tr></table></figure>
+<h2 id="文件删除命令rm"><a href="#文件删除命令rm" class="headerlink" title="文件删除命令rm"></a>文件删除命令rm</h2></li>
 </ul>
-<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="加入保存快捷键"><a href="#加入保存快捷键" class="headerlink" title="加入保存快捷键"></a>加入保存快捷键</h2><p>在ScreenShotWindow.java中加入快捷键变量声明：<br>第1步：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义保存快捷键</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">SaveImage_HOT_KEY</span> <span class="operator">=</span> <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
-<p>第2步：<br>注册快捷键：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加保存快捷键</span></span><br><span class="line">JIntellitype.getInstance().registerHotKey(SaveImage_HOT_KEY,</span><br><span class="line">        JIntellitype.MOD_CONTROL, (<span class="type">int</span>) <span class="string">&#x27;S&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<p>第3步：编写事件监听逻辑：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第3步：添加热键监听器JIntellitype</span></span><br><span class="line">        JIntellitype.getInstance().addHotKeyListener(<span class="keyword">new</span> <span class="title class_">HotkeyListener</span>()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onHotKey</span><span class="params">(<span class="type">int</span> markCode)</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">switch</span> (markCode)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 按下alt+w快捷键表示再次截屏</span></span><br><span class="line">                    <span class="keyword">case</span> SCREENSHOT_HOT_KEY :</span><br><span class="line">                        <span class="comment">// showMessage();</span></span><br><span class="line"><span class="comment">//                        ScreenShotOCR.visiable();</span></span><br><span class="line">                        <span class="comment">//如果当前窗口可见的话</span></span><br><span class="line">                        <span class="comment">//再次截屏时,隐藏工具窗口</span></span><br><span class="line">                        <span class="keyword">if</span>(tools!=<span class="literal">null</span>)</span><br><span class="line">                        &#123;</span><br><span class="line">                            tools.setVisible(<span class="literal">false</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="comment">//重新截屏</span></span><br><span class="line">                        <span class="keyword">try</span></span><br><span class="line">                        &#123;</span><br><span class="line">                            createScreenCapture();</span><br><span class="line">                        &#125; <span class="keyword">catch</span> (AWTException e)</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                        </span><br><span class="line">                        <span class="comment">//显示窗口</span></span><br><span class="line">                        ScreenShotOCR.visiable();</span><br><span class="line"><span class="comment">//                        //让窗口置顶</span></span><br><span class="line"><span class="comment">//                        这个应该在开始的时候就设置</span></span><br><span class="line"><span class="comment">//                        ScreenShotOCR.ssw.setAlwaysOnTop(true);</span></span><br><span class="line"><span class="comment">//                        tools.setAlwaysOnTop(true);</span></span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="comment">// alt+q快捷键表示退出程序</span></span><br><span class="line">                    <span class="keyword">case</span> EXIT_KEY_MARK :</span><br><span class="line">                        System.exit(<span class="number">0</span>);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> EXIT_SCREENSHOT_HOT_KEY:</span><br><span class="line">                        <span class="comment">//让窗口不显示</span></span><br><span class="line">                        ScreenShotWindow.<span class="built_in">this</span>.setVisible(<span class="literal">false</span>);<span class="comment">//不显示窗口</span></span><br><span class="line">                        tools.setLocation(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> SaveImage_HOT_KEY:</span><br><span class="line">                        <span class="comment">//让窗口不显示</span></span><br><span class="line">                        ScreenShotWindow.<span class="built_in">this</span>.setVisible(<span class="literal">false</span>);<span class="comment">//不显示窗口</span></span><br><span class="line">                        tools.setLocation(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">                        <span class="keyword">try</span></span><br><span class="line">                        &#123;</span><br><span class="line">                            saveImage();</span><br><span class="line">                        &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
-<p>关键代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> SaveImage_HOT_KEY:</span><br><span class="line">    <span class="comment">//让窗口不显示</span></span><br><span class="line">    ScreenShotWindow.<span class="built_in">this</span>.setVisible(<span class="literal">false</span>);<span class="comment">//不显示窗口</span></span><br><span class="line">    tools.setLocation(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        saveImage();<span class="comment">//按下ctrl+s时调用保存图片函数</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
-<p>这样就注册了保存快捷键了。接下来修改保存函数。</p>
-<h2 id="支持多次保存保存后不退出"><a href="#支持多次保存保存后不退出" class="headerlink" title="支持多次保存保存后不退出"></a>支持多次保存保存后不退出</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 保存图像到文件</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">saveImage</span><span class="params">()</span> <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="type">JFileChooser</span> <span class="variable">jfc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JFileChooser</span>();</span><br><span class="line">    jfc.setDialogTitle(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 文件过滤器，用户过滤可选择文件</span></span><br><span class="line">    <span class="type">FileNameExtensionFilter</span> <span class="variable">filter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileNameExtensionFilter</span>(<span class="string">&quot;PNG&quot;</span>,</span><br><span class="line">            <span class="string">&quot;png&quot;</span>);</span><br><span class="line">    jfc.setFileFilter(filter);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化一个默认文件（此文件会生成到桌面上）</span></span><br><span class="line">    <span class="type">SimpleDateFormat</span> <span class="variable">sdf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd HH-mm-ss&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> sdf.format(<span class="keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">    <span class="type">File</span> <span class="variable">filePath</span> <span class="operator">=</span> FileSystemView.getFileSystemView().getHomeDirectory();</span><br><span class="line">    <span class="type">File</span> <span class="variable">defaultFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(</span><br><span class="line">            filePath + File.separator + fileName + <span class="string">&quot;.png&quot;</span>);</span><br><span class="line">    jfc.setSelectedFile(defaultFile);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">flag</span> <span class="operator">=</span> jfc.showSaveDialog(<span class="built_in">this</span>);</span><br><span class="line">    <span class="keyword">if</span> (flag == JFileChooser.APPROVE_OPTION)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> jfc.getSelectedFile();</span><br><span class="line">        <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> file.getPath();</span><br><span class="line">        <span class="comment">// 检查文件后缀，放置用户忘记输入后缀或者输入不正确的后缀</span></span><br><span class="line">        <span class="keyword">if</span> (!(path.endsWith(<span class="string">&quot;.png&quot;</span>) || path.endsWith(<span class="string">&quot;.PNG&quot;</span>)))</span><br><span class="line">        &#123;</span><br><span class="line">            path += <span class="string">&quot;.png&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 写入文件</span></span><br><span class="line">        ImageIO.write(saveImage, <span class="string">&quot;png&quot;</span>, <span class="keyword">new</span> <span class="title class_">File</span>(path));</span><br><span class="line">        <span class="comment">//不退出</span></span><br><span class="line">        <span class="comment">//System.exit(0);</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>原先的代码中截图后就退出了，关键代码：<code>System.exit(0);</code>把这一段话注释掉即可。</p>
-<h1 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h1><p>无法使用ctrl+s快捷键，因为JIntellitype注册的是<strong>全局快捷键</strong>，在其他软件中按下<code>ctrl+s</code>进行保存文档的时候，系统会误认为是调用了保存图片。这样是不对的。这里解决方法是吧保存图片快捷键改成<code>ctrl+alt+s</code>。局部快捷键怎么设置为还不知道。先别管他，能用就行了，我先去学点其他东西。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/de8eb4f9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/de8eb4f9/" class="post-title-link" itemprop="url">正则实例：markdown文档中给HTML标记加反引号</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-09-27 22:00:53" itemprop="dateCreated datePublished" datetime="2018-09-27T22:00:53+08:00">2018-09-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%AE%9E%E4%BE%8B/" itemprop="url" rel="index"><span itemprop="name">实例</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%AE%9E%E4%BE%8B/%E5%8C%B9%E9%85%8DHTML%E6%A0%87%E7%AD%BE/" itemprop="url" rel="index"><span itemprop="name">匹配HTML标签</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/de8eb4f9/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/de8eb4f9/" data-xid="/blog/de8eb4f9/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>655</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>写到HTML这章的时候，在Markdown中添加了好多html标记，这样会引起文章渲染乱码。所以需要都让对一些HTML标记进行”转义”。我这里的做法是，使用反引号把HTML标记包裹起来。如下所示:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`&lt;h1&gt;`</span><br></pre></td></tr></table></figure>
-<p>这样渲染的时候就以代码的方式渲染，而不是渲染为HTML标记。我写文章用的是MarkdownPad2,因为MarkdownPad2的快捷键很好用。不过MarkdownPad2好像只支持正则表达查找，不能替换，更不支持正则表达式替换。后来发现<strong>NotePad++支持正则表达式替换</strong>。<br>所以，就用<strong>NotePad++来完成正则表达式替换功能</strong>。</p>
-<p>匹配HTML标签的正则表达式:<code>(&lt;/?[a-zA_Z]*&gt;)</code>。<br>在这个HTML标签两边加上反引号”转义”：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`\1`</span><br></pre></td></tr></table></figure>
-<p>这里使用括号捕获这个HTML标签。然后使用反向引用<code>\1</code>即可引用到这个刚匹配的文本，用反引号包裹起来，替换掉原来的文本即可实现我的要求。<br>具体设置如下图所示:<br><a target="_blank" rel="noopener" href="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java%20Web%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/2/Notepad%2B%2B%E6%AD%A3%E5%88%99%E6%9B%BF%E6%8D%A2.png">https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java%20Web%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/2/Notepad%2B%2B%E6%AD%A3%E5%88%99%E6%9B%BF%E6%8D%A2.png</a><br>最后，说一下，NotePad++打开替换的快捷键是:<code>ctrl+H</code>。当然，这个正则表达式并不严谨，但是对我来说已经够用了。</p>
+<p><strong>命令格式</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm [fir] 文件或目录</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明</strong></p>
+<ul>
+<li><code>-f</code>:强制删除</li>
+<li><code>-i</code>:交互模式，在删除前询问用户是否操作</li>
+<li><code>-r</code>:递归删除，常用在目录的删除</li>
+</ul>
+<h3 id="无法删除的情况"><a href="#无法删除的情况" class="headerlink" title="无法删除的情况"></a>无法删除的情况</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">rm</span> -rf latex/</span></span><br><span class="line">rm: cannot remove &#x27;latex/&#x27;: Device or resource busy</span><br></pre></td></tr></table></figure>
+<p>这是因为有程序在使用当前的目录，打开资源监视器，输入句柄(目录绝对路径)找到该程序，关闭该程序。然后就可以删除了。</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/liaojie970/p/6746230.html">https://www.cnblogs.com/liaojie970/p/6746230.html</a></p>
 
       
     </div>
@@ -1529,7 +1600,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/58/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/58/">58</a><span class="page-number current">59</span><a class="page-number" href="/blog/page/60/">60</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/63/">63</a><a class="extend next" rel="next" href="/blog/page/60/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/58/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/58/">58</a><span class="page-number current">59</span><a class="page-number" href="/blog/page/60/">60</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/65/">65</a><a class="extend next" rel="next" href="/blog/page/60/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1553,14 +1624,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">1.5m</span>
+    <span title="站点总字数">1.6m</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23:04</span>
+    <span title="站点阅读时长">23:46</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
