@@ -41,21 +41,24 @@ load()方法可以从`.properties`文件对应的文件输入流中，加载到P
 
 加载好了之后，文件中的键值对就已经保存在Properties类对象中了,可以对该对象中的信息进行读写。
 
-## 读取键值对
+## 获取value
 
 |方法|描述|
 |:-|:-|
 |`String getProperty(String key)`|用指定的键在此属性列表中搜索属性。 |
 |`String getProperty(String key, String defaultValue)`|用指定的键在属性列表中搜索属性。 |
+
 - `String getProperty(String key)`用指定的键在此属性列表中搜索属性。
     - 如果在此属性列表中未找到该键，则接着递归检查默认属性列表及其默认值。
     - 如果未找到属性，则此方法返回 null。 
-    - 参数：key - 属性键。 
+    - 参数：key:属性键。 
     - 返回：属性列表中具有指定键值的值。
 - `String getProperty(String key, String defaultValue)`用指定的键在属性列表中搜索属性。
     - 如果在属性列表中未找到该键，则接着递归检查默认属性列表及其默认值。
     -  如果未找到属性，则此方法返回默认值变量`defaultValue`。
-    -  参数：key - 哈希表键。defaultValue - 默认值。 
+    -  参数：
+       -  key:哈希表键。
+        - defaultValue:默认值。 
     -  返回：属性列表中具有指定键值的值。 
 
 
@@ -67,18 +70,21 @@ load()方法可以从`.properties`文件对应的文件输入流中，加载到P
 
 调用 Hashtable 的方法 put。使用 getProperty 方法提供并行性。强制要求为属性的`键和值使用字符串`。返回值是 Hashtable 调用 put 的结果。 
 - 参数：
-    - key - 要置于属性列表中的键。
-    - value - 对应于 key 的值。 
+  - key:要置于属性列表中的键。
+  - value:对应于 key 的值。 
 - 返回：属性列表中指定键的`旧值`，如果没有值，则为 null。
-## 获取所有键
+
+## 获取所有的key
 
 |方法|描述|
 |:-|:-|
 |`Set<String> stringPropertyNames()`|返回此属性列表中的`键集`，其中该键及其对应值是字符串，如果在主属性列表中未找到同名的键，则还包括默认属性列表中不同的键。 |
 |`Enumeration<?> propertyNames()`|返回属性列表中所有`键的枚举`，如果在主属性列表中未找到同名的键，则包括默认属性列表中不同的键。 |
+
 > `stringPropertyNames()`方法返回此属性列表中的键集，其中该键及其对应值是字符串，如果在主属性列表中未找到同名的键，则还包括默认属性列表中不同的键。其键或值不是 String 类型的属性被忽略。 返回的 set 不受 Properties 对象支持。对此 Properties 的改变不能在该 set 中反映出来，反之亦然。就是说，你用setter方法改变了Property对象中的键值对后，键集中的键不会跟着改变，要想再次正确的遍历，你就要再调用一次stringPropertyNames()来获取更新后的键集。
 返回：此属性列表中的`键集`，其中该键及其对应值是字符串，包括默认属性列表中的键。
-## 写入输出流的方法
+
+## 写入输出流
 
 |方法|描述|
 |:-|:-|
@@ -94,11 +100,13 @@ load()方法可以从`.properties`文件对应的文件输入流中，加载到P
 |`void store(Writer writer, String comments)`|以适合使用 load(Reader) 方法的格式，将此 Properties 表中的属性列表（键和元素对）写入输出字符。 |
 |`void storeToXML(OutputStream os, String comment)`|发出一个表示此表中包含的所有属性的 XML 文档。 |
 |`void storeToXML(OutputStream os, String comment, String encoding)`|使用指定的编码发出一个表示此表中包含的所有属性的 XML 文档。 |
+
 store()方法第一个参数表示输出流对象，第二个参数表示注释信息:
 - 如果comments不为空，保存后的属性文件第一行会是#comments,表示注释信息；
 - 如果为空则没有注释信息,注释信息后面是属性文件的当前保存时间信息。
 
 # 实例
+
 ## 读取一个配置
 我这里有一个配置文件`E:\Blog\blog5Copy\FM.properties`,内容如下:
 ```
@@ -151,7 +159,9 @@ public static void main(String[] args)
 网站地址:https://www.lansheng.net.cn/
 ```
 嗯，这里就读取成功了，目前暂时只需要读取功能，后面有需求了。再更新吧。
+
 ## 遍历配置文件
+
 ### SpecialWords.properties文件
 文件路径:`Tools/src/property/reader/SpecialWords.properties`,该文件位于Tools项目的`property.reader`包下.
 ```java
@@ -163,6 +173,7 @@ CRUD=C R U D
 JavaEE=Java E E
 SpringMVC=Spring MVC
 ```
+
 ### PropertyTools.java文件
 文件路径:`Tools/src/property/reader/PropertyTools.java`
 ```java

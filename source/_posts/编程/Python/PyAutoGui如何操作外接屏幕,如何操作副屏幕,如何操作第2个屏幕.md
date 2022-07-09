@@ -42,7 +42,7 @@ A：不，PyAutoGUI 目前无法做到这一点。
 可知，目前PyAutoGui不能操作副屏幕，只能操作主屏幕。
 
 
-![image-20220614150736907](C:/Users/18190/AppData/Roaming/Typora/typora-user-images/image-20220614150736907.png)
+![image-20220614150736907](https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2022/04/20220614161124.png)
 
 ## 解决方案
 

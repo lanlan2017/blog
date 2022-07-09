@@ -65,7 +65,9 @@ TASKKILL [/S system [/U username [/P [password]]]]
 ```cmd
 taskkill /im notepad.exe
 ```
+
 ## 根据pid杀死进程
+
 ### 查找pid
 例如杀死窗口标题为hexo的cmd进程:
 查找进程的pid:
@@ -86,5 +88,28 @@ taskkill /pid 11952
 E:\Blog\JavaReadingNotes>taskkill /pid 11952
 成功: 给进程发送了终止信号，进程的 PID 为 11952。
 ```
+
+## 杀死进程树 杀死进程及其后代
+
+```
+G:\dev2\idea_workspace\MyJavaTools\runable>jps -m
+17300 Jps -m
+16376 RemoteMavenServer36
+4648
+10268 AdbTools.jar
+10460 OpenScrcpy 75aed56d OppoUSB
+6940 AdbTools.jar
+
+G:\dev2\idea_workspace\MyJavaTools\runable>taskkill -f -t -pid 10460
+成功: 已终止 PID 16180 (属于 PID 16820 子进程)的进程。
+成功: 已终止 PID 2288 (属于 PID 16352 子进程)的进程。
+成功: 已终止 PID 16820 (属于 PID 16352 子进程)的进程。
+成功: 已终止 PID 16360 (属于 PID 10460 子进程)的进程。
+成功: 已终止 PID 16352 (属于 PID 10460 子进程)的进程。
+成功: 已终止 PID 10460 (属于 PID 4648 子进程)的进程。
+
+G:\dev2\idea_workspace\MyJavaTools\runable>
+```
+
 # 参考资料
 [https://www.yiibai.com/batch_script/batch_script_process.html](https://www.yiibai.com/batch_script/batch_script_process.html)
