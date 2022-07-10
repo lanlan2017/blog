@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">648</span>
+          <span class="site-state-item-count">656</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">215</span>
+        <span class="site-state-item-count">216</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -213,6 +213,1084 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/ecbd02e2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/ecbd02e2/" class="post-title-link" itemprop="url">Git 强制拉去远程分支 删除本地分支</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-12-03 19:17:52" itemprop="dateCreated datePublished" datetime="2019-12-03T19:17:52+08:00">2019-12-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">命令</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/ecbd02e2/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/ecbd02e2/" data-xid="/blog/ecbd02e2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>833</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>我的博客源码放在src分支上,pages放在master分支上,但是今天我在另一个电脑上想写博客,但是我克隆博客源码的时候输错了命令,不小心克隆到了master分支上.master分支上的pages是自动部署的,不需要我操作,我不想再本地上看到任何master分支的内容.</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h2 id="方案1-删除本地仓库-重新克隆src分支"><a href="#方案1-删除本地仓库-重新克隆src分支" class="headerlink" title="方案1 删除本地仓库 重新克隆src分支"></a>方案1 删除本地仓库 重新克隆src分支</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br><span class="line">rm -rf blogRoot/</span><br><span class="line">git clone -b src git@github.com:lanlan2017/lanlan2017.github.io.git</span><br></pre></td></tr></table></figure>
+<h2 id="方案2-下载src分支-然后删除本地master分支"><a href="#方案2-下载src分支-然后删除本地master分支" class="headerlink" title="方案2 下载src分支 然后删除本地master分支"></a>方案2 下载src分支 然后删除本地master分支</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin src:src</span><br><span class="line">git checkout src </span><br><span class="line">git branch -d master</span><br></pre></td></tr></table></figure>
+<h3 id="删除远程master分支的记录"><a href="#删除远程master分支的记录" class="headerlink" title="删除远程master分支的记录"></a>删除远程master分支的记录</h3><p>查看远程仓库地址:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> u0_a391@localhost ~/my/blogRoot&gt; (src) git remote -v                                                                   </span><br><span class="line">origin	git@github.com:lanlan2017/lanlan2017.github.io.git (fetch)</span><br><span class="line">origin	git@github.com:lanlan2017/lanlan2017.github.io.git (push)</span><br></pre></td></tr></table></figure>
+<p>先删除远程地址,然后再添加远程地址:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote remove origin</span><br><span class="line">git remote add -t src origin git@github.com:lanlan2017/lanlan2017.github.io.git</span><br></pre></td></tr></table></figure>
+<p>拉去远程src分支,这样本地上就只有远程上的src分支的记录:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> u0_a391@localhost ~/my/blogRoot&gt; (src) git pull origin src </span><br><span class="line">From github.com:lanlan2017/lanlan2017.github.io</span><br><span class="line"> * branch            src        -&gt; FETCH_HEAD</span><br><span class="line"> * [new branch]      src        -&gt; origin/src</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9f3d9944/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/9f3d9944/" class="post-title-link" itemprop="url">Github SSH地址和HTTPS地址的相互转换</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-12-03 10:38:35" itemprop="dateCreated datePublished" datetime="2019-12-03T10:38:35+08:00">2019-12-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">命令</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/9f3d9944/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/9f3d9944/" data-xid="/blog/9f3d9944/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>我在手机上想通过SSH克隆我的仓库,但是需要登入到Github上才能获取到SSH链接,其他方式好像只能获取HTTPS链接.有时候登陆比较麻烦,所以我需要写点代码来实现HTTPS和SSH地址的相互转换。</p>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>在下面输入框中<code>输入地址</code>,然后点击<code>转换</code>按钮即可转换HTTPS地址为SSH地址,或者转换SSH地址为HTTPS地址:</p>
+<p><input type="text" id='input' placeholder="请输入HTTPS/SSH地址" size="40"/><button onclick='switchHttpsSsh()'>转换</button></p>
+<script>
+    var input = document.getElementById('input');
+    function switchHttpsSsh(text) {
+        if (text == null) {
+            copy(switchHttpsSsh(input.value));
+        } else {
+            var httpsRegex = /^https:\/\/(.+?)\/(.+?\/.+?\.git)$/;
+            var sshRegex = /^git@(.+?):(.+?\/.+?\.git)$/;
+            if (httpsRegex.test(text)) {
+                // 将https的git仓库地址转为ssh
+                text = text.replace(httpsRegex, "git@$1:$2");
+            } else if (sshRegex.test(text)) {
+                // 将ssh的git仓库地址转为https
+                text = text.replace(sshRegex, "https://$1/$2");
+            }
+            input.value=text;
+            return text;
+        }
+    }
+    function copy(text) {
+        var temp = document.createElement("textarea");
+        temp.value = text;
+        document.body.appendChild(temp);
+        temp.select();
+        // alert('打断,看效果');
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+    }
+</script>
+
+<h1 id="SSH链接格式"><a href="#SSH链接格式" class="headerlink" title="SSH链接格式"></a>SSH链接格式</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git@远程仓库域名:用户名/仓库名.git</span><br></pre></td></tr></table></figure>
+<p>例如:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git@github.com:lanlan2017/lanlan2017.github.io.git</span><br></pre></td></tr></table></figure>
+<h1 id="Https格式"><a href="#Https格式" class="headerlink" title="Https格式"></a>Https格式</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://远程仓库域名/用户名/仓库名.git</span><br></pre></td></tr></table></figure>
+<p>例如:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/lanlan2017/lanlan2017.github.io.git</span><br></pre></td></tr></table></figure>
+<h1 id="转换规则"><a href="#转换规则" class="headerlink" title="转换规则"></a>转换规则</h1><p>经过观察,我发现后面的<code>用户名/仓库名.git</code>都是一样的,</p>
+<ul>
+<li>在这部分前面加上<code>git@远程仓库域名:</code>就得到SSH地址,</li>
+<li>在这部分前面加上<code>https://远程仓库域名/</code>就得到HTTPS地址.</li>
+</ul>
+<h2 id="SSH转HTTPS"><a href="#SSH转HTTPS" class="headerlink" title="SSH转HTTPS"></a>SSH转HTTPS</h2><p>匹配正则:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^git@(.+?):(.+?/.+?\.git)$</span><br></pre></td></tr></table></figure>
+<p>替换正则:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://$1/$2</span><br></pre></td></tr></table></figure>
+<h2 id="HTTPS转SSH"><a href="#HTTPS转SSH" class="headerlink" title="HTTPS转SSH"></a>HTTPS转SSH</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^https://(.+?)/(.+?/.+?\.git)$</span><br></pre></td></tr></table></figure>
+<p>替换正则:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git@$1:$2</span><br></pre></td></tr></table></figure>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&#x27;input&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入HTTPS/SSH地址&quot;</span> <span class="attr">size</span>=<span class="string">&quot;40&quot;</span>/&gt;</span><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&#x27;switchHttpsSsh()&#x27;</span>&gt;</span>转换<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> input = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;input&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">switchHttpsSsh</span>(<span class="params">text</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (text == <span class="literal">null</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="title function_">copy</span>(<span class="title function_">switchHttpsSsh</span>(input.<span class="property">value</span>));</span></span><br><span class="line"><span class="language-javascript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> httpsRegex = <span class="regexp">/^https:\/\/(.+?)\/(.+?\/.+?\.git)$/</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> sshRegex = <span class="regexp">/^git@(.+?):(.+?\/.+?\.git)$/</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">if</span> (httpsRegex.<span class="title function_">test</span>(text)) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="comment">// 将https的git仓库地址转为ssh</span></span></span><br><span class="line"><span class="language-javascript">                text = text.<span class="title function_">replace</span>(httpsRegex, <span class="string">&quot;git@$1:$2&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sshRegex.<span class="title function_">test</span>(text)) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="comment">// 将ssh的git仓库地址转为https</span></span></span><br><span class="line"><span class="language-javascript">                text = text.<span class="title function_">replace</span>(sshRegex, <span class="string">&quot;https://$1/$2&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">            input.<span class="property">value</span>=text;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span> text;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">copy</span>(<span class="params">text</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> temp = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;textarea&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        temp.<span class="property">value</span> = text;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(temp);</span></span><br><span class="line"><span class="language-javascript">        temp.<span class="title function_">select</span>();</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// alert(&#x27;打断,看效果&#x27;);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">execCommand</span>(<span class="string">&#x27;copy&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">removeChild</span>(temp);</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/2b78c799/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2b78c799/" class="post-title-link" itemprop="url">JavaScirpt 解决 正则表达式匹配HTML标签 的错误问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-12-02 22:40:18" itemprop="dateCreated datePublished" datetime="2019-12-02T22:40:18+08:00">2019-12-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/2b78c799/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/2b78c799/" data-xid="/blog/2b78c799/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>974</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>JS中当在正则表达式中写HTML标签时,浏览器可能会错误的将正则表达式中的HTML标签当成HTML标签解析,而不是正则表达式,例如,对于如下JS代码:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    ...</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    var regexs=/<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&#x27;my_toc&#x27;</span>&gt;</span>\n\n(.+\n)+\n<span class="tag">&lt;/<span class="name">div</span>&gt;</span>\n<span class="tag">&lt;<span class="name">script</span>&gt;</span>.+</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>\n/m;</span><br><span class="line">    text=text.replace(regexs,toc);</span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>浏览器可能会解析成:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    ...</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    var regexs=/<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&#x27;my_toc&#x27;</span>&gt;</span>\n\n(.+\n)+\n<span class="tag">&lt;/<span class="name">div</span>&gt;</span>\n<span class="tag">&lt;<span class="name">script</span>&gt;</span>.+</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这就会运行错误:</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>使用字符组<code>[]</code>,<strong>将html标签的<code>反斜线</code>,或者尖括号<code>&lt;&gt;</code>包裹起来</strong>,也就是将改如下形式:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    ...</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> regexs=<span class="regexp">/[&lt;]div id=&#x27;my_toc&#x27;&gt;\n\n(.+\n)+\n&lt;[/]div&gt;\n[&lt;]script&gt;.+&lt;[/]script&gt;\n/m</span>;</span></span><br><span class="line"><span class="language-javascript">    text=text.<span class="title function_">replace</span>(regexs,toc);</span></span><br><span class="line"><span class="language-javascript">    ...</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这样<code>&lt;[/]script&gt;</code>依然匹配<code>&lt;/script&gt;</code>,浏览器也不会解析错误.</p>
+<h1 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h1><p>其实是因为我通过<code>/pattern/</code>这种方式来创建正则,而HTML中带有反斜线<code>/</code>,将反斜线写成:<code>\/</code>即可,也就是如下所示:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">var</span> regexs=<span class="regexp">/&lt;div id=&#x27;my_toc&#x27;&gt;\n\n(.+\n)+\n&lt;\/div&gt;\n&lt;script&gt;.+&lt;\/script&gt;\n/m</span>;</span><br><span class="line">    text=text.<span class="title function_">replace</span>(regexs,toc);</span><br><span class="line">    ...</span><br><span class="line">&lt;/script&gt;                </span><br></pre></td></tr></table></figure>
+<p>不过还是使用上面的那种方式比较严格,这种方式<code>&lt;script&gt;</code>可能依旧被解析成<code>html</code>标签.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/7aaab990/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/7aaab990/" class="post-title-link" itemprop="url">Git 克隆指定分支</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-12-01 15:37:28" itemprop="dateCreated datePublished" datetime="2019-12-01T15:37:28+08:00">2019-12-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">命令</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/7aaab990/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/7aaab990/" data-xid="/blog/7aaab990/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>104</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b 分支名 git仓库地址 本地路径</span><br></pre></td></tr></table></figure>
+<p>例如:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b src git@github.com:lanlan2017/lanlan2017.github.io.git blogRoot</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/3f12657a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/3f12657a/" class="post-title-link" itemprop="url">git 强制推送到远程仓库</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-12-01 15:16:23" itemprop="dateCreated datePublished" datetime="2019-12-01T15:16:23+08:00">2019-12-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">命令</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/3f12657a/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/3f12657a/" data-xid="/blog/3f12657a/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>257</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>今天我使用自动部署<code>Travis CI</code>自动部署的Hexo博客的时候,仓库名称不小心填错了,导致我的Github上的其他仓库被覆盖了.</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>进入本地仓库,然后<code>强制推送</code>到被错误覆盖的仓库上.</p>
+<h1 id="格式1"><a href="#格式1" class="headerlink" title="格式1"></a>格式1</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push 远程仓库名 分支名 --force</span><br></pre></td></tr></table></figure>
+<p>例如:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master --force</span><br></pre></td></tr></table></figure>
+<h1 id="格式2"><a href="#格式2" class="headerlink" title="格式2"></a>格式2</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f 远程仓库名 分支名</span><br></pre></td></tr></table></figure>
+<p>例如:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f origin master</span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/WangJQ12/article/details/80974031">https://blog.csdn.net/WangJQ12/article/details/80974031</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/242f5d55/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/242f5d55/" class="post-title-link" itemprop="url">Hexo NexT 7谷歌收录 必应收录 百度收录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-12-01 12:12:27" itemprop="dateCreated datePublished" datetime="2019-12-01T12:12:27+08:00">2019-12-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:56:38" itemprop="dateModified" datetime="2022-04-04T15:56:38+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Hexo/next%E4%B8%BB%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">next主题</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Hexo/next%E4%B8%BB%E9%A2%98/SEO/" itemprop="url" rel="index"><span itemprop="name">SEO</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/242f5d55/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/242f5d55/" data-xid="/blog/242f5d55/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文基于Hexo+NexT7.</p>
+<h1 id="安装生成站点地图的插件"><a href="#安装生成站点地图的插件" class="headerlink" title="安装生成站点地图的插件"></a>安装生成站点地图的插件</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<h1 id="谷歌收录"><a href="#谷歌收录" class="headerlink" title="谷歌收录"></a>谷歌收录</h1><h2 id="验证网站所有权"><a href="#验证网站所有权" class="headerlink" title="验证网站所有权"></a>验证网站所有权</h2><p>先<a href="https://lanlan2017.github.io/blog/a1ad1d5d/">翻墙</a>,然后打开<code>Google Webmaster Tools</code>:<a target="_blank" rel="noopener" href="https://www.google.com/webmasters/tools">https://www.google.com/webmasters/tools</a>,<br>登陆,然后选择获取<code>content</code>:</p>
+<h2 id="配置主题配置文件"><a href="#配置主题配置文件" class="headerlink" title="配置主题配置文件"></a>配置主题配置文件</h2><p>打开主题配置文件<br>搜素:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">google_site_verification</span><br></pre></td></tr></table></figure>
+<p>然后粘贴获取的:<code>content</code>即可:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Google/6.png" alt="这里有一张图片"></p>
+<h2 id="重新部署"><a href="#重新部署" class="headerlink" title="重新部署"></a>重新部署</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean&amp;&amp;hexo g&amp;&amp;hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="提交站点地图"><a href="#提交站点地图" class="headerlink" title="提交站点地图"></a>提交站点地图</h2><p>重新部署后,会在<code>网站根目录</code>下生成一个<code>sitemap.xml</code>文件,先在浏览器看看是否能正确访问到这个文件.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://lanlan2017.github.io/sitemap.xml</span><br></pre></td></tr></table></figure>
+<p>在谷歌站长工具控制台中提交sitemap.xml的地址即可.<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Google/1.png" alt="这里有一张图片"><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Google/2.png" alt="这里有一张图片"><br>然后在已提交的站点地图,点击站点地图,可以看到索引的数量:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Google/4.png" alt="这里有一张图片"><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Google/5.png" alt="这里有一张图片"></p>
+<h1 id="必应收录"><a href="#必应收录" class="headerlink" title="必应收录"></a>必应收录</h1><p>必应收录和谷歌收录类似,必应收录不需要翻墙即可设置</p>
+<h1 id="百度收录"><a href="#百度收录" class="headerlink" title="百度收录"></a>百度收录</h1><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
+<h2 id="获取content"><a href="#获取content" class="headerlink" title="获取content"></a>获取content</h2><p>打开百度站长工具:<a target="_blank" rel="noopener" href="https://ziyuan.baidu.com/site/">https://ziyuan.baidu.com/site/</a><br>点击<code>站点管理</code>,<code>添加网站</code>:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Baidu/1.png" alt="这里有一张图片"><br>选择协议头,然后填入站点:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Baidu/2.png" alt="这里有一张图片"><br><code>设置站点领域</code>:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Baidu/3.png" alt="这里有一张图片"><br>然后选择HTML验证,复制content的值:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Baidu/4.png" alt="这里有一张图片"></p>
+<h2 id="配置主题配置文件-1"><a href="#配置主题配置文件-1" class="headerlink" title="配置主题配置文件"></a>配置主题配置文件</h2><p>打开主题配置文件,搜索:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">baidu_site_verification</span><br></pre></td></tr></table></figure>
+<p>然后粘贴获取都的<code>content</code>.<br>然后搜素:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">baidu_push</span><br></pre></td></tr></table></figure>
+<p>设置为true即可:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">baidu_push: true</span><br></pre></td></tr></table></figure>
+<h2 id="重新部署-1"><a href="#重新部署-1" class="headerlink" title="重新部署"></a>重新部署</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean&amp;&amp;hexo g&amp;&amp;hexo d</span><br></pre></td></tr></table></figure>
+<p>然后会在站点根目录下生成站点地图文件:<code>baidusitemap.xml</code>:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://lanlan2017.github.io/baidusitemap.xml</span><br></pre></td></tr></table></figure>
+<p>等待部署完毕,然后点击<code>完成验证</code>。</p>
+<h2 id="提交sitemap"><a href="#提交sitemap" class="headerlink" title="提交sitemap"></a>提交sitemap</h2><p>在百度站长工具中,点击左侧的<code>数据引入</code>,<code>链接提交</code>,<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Google/8.png" alt="这里有一张图片"><br>然后<code>下拉</code>,选择<code>自动提交</code>,然后选择<code>sitemap</code>,粘贴<code>baidusitemap.xml</code>的地址,<code>提交</code>即可<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Google/9.png" alt="这里有一张图片"></p>
+<!--
+Hexo/seo/Google/
+-->
+<h1 id="查看被收录的文章"><a href="#查看被收录的文章" class="headerlink" title="查看被收录的文章"></a>查看被收录的文章</h1><p>在搜素框中输入:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:网站地址</span><br></pre></td></tr></table></figure>
+<p>即可查看搜素引擎收录的效果:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:https://lanlan2017.github.io</span><br></pre></td></tr></table></figure>
+<p>例如谷歌收录的效果如下:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/seo/Goolge/10.png" alt="这里有一张图片"></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://theme-next.org/docs/theme-settings/seo">https://theme-next.org/docs/theme-settings/seo</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/913bbb38/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/913bbb38/" class="post-title-link" itemprop="url">VScode Markdown插件汇总</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-12-01 00:35:59" itemprop="dateCreated datePublished" datetime="2019-12-01T00:35:59+08:00">2019-12-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/VSCode/" itemprop="url" rel="index"><span itemprop="name">VSCode</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/913bbb38/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/913bbb38/" data-xid="/blog/913bbb38/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>194</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="VScode-Markdown插件汇总"><a href="#VScode-Markdown插件汇总" class="headerlink" title="VScode Markdown插件汇总"></a>VScode Markdown插件汇总</h1><h2 id="Markdown-Shortcuts"><a href="#Markdown-Shortcuts" class="headerlink" title="Markdown Shortcuts"></a>Markdown Shortcuts</h2><p>支持的功能<br>使用方式:</p>
+<h3 id="鼠标右键方式"><a href="#鼠标右键方式" class="headerlink" title="鼠标右键方式"></a>鼠标右键方式</h3><p>选中文字,然后按下鼠标右键,点击对应的方式即可.</p>
+<h3 id="命令方式"><a href="#命令方式" class="headerlink" title="命令方式"></a>命令方式</h3><p>按下ctrl+3然后输入对应的命令即可.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <h2 id="Markdown-All-in-One"><a href="#Markdown-All-in-One" class="headerlink" title="Markdown All in One"></a>Markdown All in One</h2></li>
+</ul>
+<h2 id="Markdown-Todo"><a href="#Markdown-Todo" class="headerlink" title="Markdown Todo"></a>Markdown Todo</h2><p>这个插件可以<strong>勾选todo</strong>或者<strong>取消勾选todo</strong><br>使用方式:<br>按下ctrl+3,打开<code>命令面板</code>,然后输入todo,根据提示选择即可进行选择即可</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/100bdc9a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/100bdc9a/" class="post-title-link" itemprop="url">Termux使用 清华安装源</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-30 17:48:40" itemprop="dateCreated datePublished" datetime="2019-11-30T17:48:40+08:00">2019-11-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/Termux/" itemprop="url" rel="index"><span itemprop="name">Termux</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/100bdc9a/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/100bdc9a/" data-xid="/blog/100bdc9a/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>442</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="更换国内源"><a href="#更换国内源" class="headerlink" title="更换国内源"></a>更换国内源</h1><p>更换<code>Termux</code>清华大学源,加快软件包下载速度. </p>
+<h2 id="官方方法"><a href="#官方方法" class="headerlink" title="官方方法"></a>官方方法</h2><p>设置默认编辑器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export EDITOR=vi</span><br></pre></td></tr></table></figure>
+<p>编辑源文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt edit-sources</span><br></pre></td></tr></table></figure>
+<p>将原来的<code>https://termux.net</code>官方源替换为<code>http://mirrors.tuna.tsinghua.edu.cn/termux</code></p>
+<h2 id="直接编辑源文件"><a href="#直接编辑源文件" class="headerlink" title="直接编辑源文件"></a>直接编辑源文件</h2><p>上面是官方推荐的方法,其实还有更简单的方法,类似于Linux下直接去编辑源文件:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi  $PREFIX/etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<h2 id="修改效果"><a href="#修改效果" class="headerlink" title="修改效果"></a>修改效果</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">u0_a391@localhost~ cat $PREFIX/etc/apt/sources.list</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">The main termux repository:</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">deb https://termux.org/packages/ stable main</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">The termux repository mirror from TUNA:</span></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -477,1200 +1555,8 @@ Windows/Setting/Startup/
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/ae0d2128/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/ae0d2128/" class="post-title-link" itemprop="url">Git 取消commit</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-11-28 16:08:50" itemprop="dateCreated datePublished" datetime="2019-11-28T16:08:50+08:00">2019-11-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Git/%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">命令</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/ae0d2128/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/ae0d2128/" data-xid="/blog/ae0d2128/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>606</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>你可能在执行git add .和git commit -m ‘xxx’之后后悔了,如何回退到上一个版本呢。</p>
-<table>
-<thead>
-<tr>
-<th align="left">版本代号</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>HEAD</code></td>
-<td align="left">表示当前版本</td>
-</tr>
-<tr>
-<td align="left"><code>HEAD^</code></td>
-<td align="left">表示上一个版本</td>
-</tr>
-<tr>
-<td align="left"><code>HEAD^^</code></td>
-<td align="left">上上一个版本就是</td>
-</tr>
-<tr>
-<td align="left"><code>HEAD~100</code></td>
-<td align="left">当前版本之前的第100个版本</td>
-</tr>
-</tbody></table>
-<h1 id="回退到上个版本"><a href="#回退到上个版本" class="headerlink" title="回退到上个版本"></a>回退到上个版本</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
-<h1 id="回退到执行版本"><a href="#回退到执行版本" class="headerlink" title="回退到执行版本"></a>回退到执行版本</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard commit_id</span><br></pre></td></tr></table></figure>
-<p>如:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 1094a</span><br></pre></td></tr></table></figure>
-<h1 id="自动生成"><a href="#自动生成" class="headerlink" title="自动生成"></a>自动生成</h1><p>请在下面输入框中,<strong>输入</strong><code>commit_id</code>,然后点击<strong>生成</strong>即可生成代码到剪贴板中.</p>
-<p><input type="text" id="commitId" placeholder="请输入commit_d"><button onclick="switchCommit(document.getElementById('commitId').value)">生成代码</button></p>
-<script>
-    function switchCommit(text) {
-        var input = document.getElementById('commitId');
-        var code = "git reset --head " + text;
-        input.value = '';
-        copy(code);
-    }
-    function copy(text) {
-        var temp = document.createElement("textarea");
-        temp.value = text;
-        document.body.appendChild(temp);
-        temp.select();
-        // alert('打断,看效果');
-        document.execCommand('copy');
-        document.body.removeChild(temp);
-        alert('已经复制如下代码到剪贴板:\n'+text);
-    }
-</script>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/aee7c65a/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/aee7c65a/" class="post-title-link" itemprop="url">JS 添加DOM元素 删除DOM元素 复制文本到剪贴板</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-11-28 15:26:51" itemprop="dateCreated datePublished" datetime="2019-11-28T15:26:51+08:00">2019-11-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/JavaScript/DOM/" itemprop="url" rel="index"><span itemprop="name">DOM</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/aee7c65a/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/aee7c65a/" data-xid="/blog/aee7c65a/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="JS-添加DOM元素-删除DOM元素"><a href="#JS-添加DOM元素-删除DOM元素" class="headerlink" title="JS 添加DOM元素 删除DOM元素"></a>JS 添加DOM元素 删除DOM元素</h1><h2 id="创建一个DOM对象"><a href="#创建一个DOM对象" class="headerlink" title="创建一个DOM对象"></a>创建一个DOM对象</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;标签名&quot;</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="DOM对象添加一个子DOM"><a href="#DOM对象添加一个子DOM" class="headerlink" title="DOM对象添加一个子DOM"></a>DOM对象添加一个子DOM</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dom.<span class="title function_">appendChild</span>(subDOM);</span><br></pre></td></tr></table></figure>
-<p>例如:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> bodyDom = <span class="variable language_">document</span>.<span class="property">body</span>;</span><br><span class="line">    <span class="keyword">var</span> inputText = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;input&quot;</span>);</span><br><span class="line">    inputText.<span class="property">value</span> = <span class="string">&#x27;内容&#x27;</span>;</span><br><span class="line">    inputText.<span class="property">id</span> = <span class="string">&#x27;generatedDom&#x27;</span>;</span><br><span class="line">    bodyDom.<span class="title function_">appendChild</span>(inputText);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="DOM删除一个子DOM"><a href="#DOM删除一个子DOM" class="headerlink" title="DOM删除一个子DOM"></a>DOM删除一个子DOM</h2><p>格式:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dom.<span class="title function_">removeChild</span>(subDom);</span><br></pre></td></tr></table></figure>
-<p>例如:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">remove</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> bodyDom = <span class="variable language_">document</span>.<span class="property">body</span>;</span><br><span class="line">    <span class="keyword">var</span> inputText = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;generatedDom&quot;</span>);</span><br><span class="line">    bodyDom.<span class="title function_">removeChild</span>(inputText);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="JS-复制到系统剪贴板"><a href="#JS-复制到系统剪贴板" class="headerlink" title="JS 复制到系统剪贴板"></a>JS 复制到系统剪贴板</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">copy</span>(<span class="params">text</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> temp = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;textarea&quot;</span>);</span><br><span class="line">    temp.<span class="property">value</span> = text;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(temp);</span><br><span class="line">    temp.<span class="title function_">select</span>();</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&#x27;打断,看效果&#x27;</span>);</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">execCommand</span>(<span class="string">&#x27;copy&#x27;</span>);</span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">removeChild</span>(temp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="完整例子"><a href="#完整例子" class="headerlink" title="完整例子"></a>完整例子</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">function</span> <span class="title function_">add</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> bodyDom = <span class="variable language_">document</span>.<span class="property">body</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> inputText = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;input&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">            inputText.<span class="property">value</span> = <span class="string">&#x27;内容&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">            inputText.<span class="property">id</span> = <span class="string">&#x27;generatedDom&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">            bodyDom.<span class="title function_">appendChild</span>(inputText);</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">function</span> <span class="title function_">remove</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> bodyDom = <span class="variable language_">document</span>.<span class="property">body</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> inputText = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;generatedDom&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">            bodyDom.<span class="title function_">removeChild</span>(inputText);</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">function</span> <span class="title function_">copy</span>(<span class="params">text</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> temp = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;textarea&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">            temp.<span class="property">value</span> = text;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(temp);</span></span><br><span class="line"><span class="language-javascript">            temp.<span class="title function_">select</span>();</span></span><br><span class="line"><span class="language-javascript">            <span class="title function_">alert</span>(<span class="string">&#x27;打断,看效果&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">document</span>.<span class="title function_">execCommand</span>(<span class="string">&#x27;copy&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">removeChild</span>(temp);</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">cols</span>=<span class="string">&quot;100&quot;</span> <span class="attr">rows</span>=<span class="string">&quot;10&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display: block;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;add()&quot;</span>&gt;</span>添加元素<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;remove()&quot;</span>&gt;</span>移除元素<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;copy(&#x27;通过复制的到的内容&#x27;)&quot;</span>&gt;</span>复制元素<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/a1ad1d5d/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/a1ad1d5d/" class="post-title-link" itemprop="url">电脑使用 安卓模拟器 翻墙</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-11-28 12:12:01" itemprop="dateCreated datePublished" datetime="2019-11-28T12:12:01+08:00">2019-11-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">安卓模拟器</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/a1ad1d5d/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/a1ad1d5d/" data-xid="/blog/a1ad1d5d/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>952</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>安卓上的Google Play上有好多免费的VPN可以使用,但是我在Window上没有找到类似的翻墙软件.<br>那么能不能在电脑上使用安卓的翻墙软件呢,答案是可以的.</p>
-<h1 id="电脑上安装安卓模拟器"><a href="#电脑上安装安卓模拟器" class="headerlink" title="电脑上安装安卓模拟器"></a>电脑上安装安卓模拟器</h1><p>推荐使用<a target="_blank" rel="noopener" href="https://www.ldmnq.com/">雷电安卓模拟器</a>,这个提供<strong>谷歌套件</strong>,这样安卓谷歌套件比较简单.<br>在电脑上,到<a target="_blank" rel="noopener" href="https://www.ldmnq.com/">雷电安卓模拟器官网</a>下载雷电模拟器,然后安装雷电模拟器即可。</p>
-<h2 id="雷电安卓模拟器中安卓谷歌套件"><a href="#雷电安卓模拟器中安卓谷歌套件" class="headerlink" title="雷电安卓模拟器中安卓谷歌套件"></a>雷电安卓模拟器中安卓谷歌套件</h2><p>打开雷电安卓模拟器,然后进入主页中的系统应用文件夹<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Windows/AndroidSimulator/VPN/1.png"><br>点击运行**谷歌安装…**这个软件,然后按提示安装即可<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Windows/AndroidSimulator/VPN/2.png"><br>安装好谷歌套件后,现在还不能访问<a target="_blank" rel="noopener" href="https://www.google.com/">Google</a>,当然也不能使用Google Play商店下载软件,还需要安装翻墙软件.</p>
-<p>Windows&#x2F;AndroidSimulator&#x2F;VPN&#x2F;</p>
-<h2 id="下载安卓VPN-apk"><a href="#下载安卓VPN-apk" class="headerlink" title="下载安卓VPN apk"></a>下载安卓VPN apk</h2><p>进入这个GitHub的<a target="_blank" rel="noopener" href="https://github.com/haoleiqin/Over-The-Wall">Over-The-Wall</a>这个仓库上去,上面有几个推荐的VPN软件,推荐下载<a target="_blank" rel="noopener" href="https://apkgk.com/com.findtheway">老王VPN</a></p>
-<h3 id="其他VPN-apk下载"><a href="#其他VPN-apk下载" class="headerlink" title="其他VPN apk下载"></a>其他VPN apk下载</h3><p><a target="_blank" rel="noopener" href="https://apkgk.com/com.pandavpnfree.androidproxy">Panda VPN Free</a></p>
-<h2 id="雷电模拟器中安装VPN"><a href="#雷电模拟器中安装VPN" class="headerlink" title="雷电模拟器中安装VPN"></a>雷电模拟器中安装VPN</h2><p>将下载好的VPN apk,<code>拖动</code>到雷电模拟器中,雷电模拟器会自动安装,然后打开翻墙软件.</p>
-<h2 id="打开VPN-登陆Google账号"><a href="#打开VPN-登陆Google账号" class="headerlink" title="打开VPN 登陆Google账号"></a>打开VPN 登陆Google账号</h2><p>打开翻墙软件后就可以在浏览器中访问<a target="_blank" rel="noopener" href="https://www.google.com/">Google</a>了,然后打开Google Play商店,按提示登陆账号后即可。</p>
-<h2 id="通过谷歌商店下载更多的VPN"><a href="#通过谷歌商店下载更多的VPN" class="headerlink" title="通过谷歌商店下载更多的VPN"></a>通过谷歌商店下载更多的VPN</h2><p>目前在雷电模拟器中测试到下面的VPN可以使用:</p>
-<ul>
-<li>免费SS VPN,能用,支持PC使用(使用SSR客户端进行连接,手动填写)</li>
-<li>KUTO VPN,直接连接,连上后有广告</li>
-<li>老王VPN,稳定,可能慢</li>
-<li>Surf VPN,30分钟掉线一次,速度比较快</li>
-<li>蚂蚁VPN,</li>
-<li>蓝灯,老牌VPN了,每个月有赠送的快速流量</li>
-<li>无码VPN,签到获取积分,使用积分解锁群组,慢,备用</li>
-<li>蜂鸟VPN,速度快,可看广告获取金币,5000金币换500M流量.<ul>
-<li>开发者开发了新的海鸥VPN,这个海鸥VPN和雷电模拟器的安卓系统不兼容</li>
-<li>蜂鸟VPN应该快用不了了(2020年03月26日)</li>
-</ul>
-</li>
-<li>V2VPN,看广告获取流量,每天15次,还挺多,现在好像用不了了(2020年03月26日)</li>
-<li>V2ray VPN,可以用</li>
-</ul>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="电报汉化"><a href="#电报汉化" class="headerlink" title="电报汉化"></a>电报汉化</h2><p>先翻墙,然后打开电报,在顶部搜索栏中输入<code>@zh_CN</code>,然后选择<code>Telegram-zh_CN简体中文语言包</code>:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Windows/AndroidSimulator/VPN/3.png"><br>然后<strong>往上翻</strong>,然后点击<code>点击此处安装语言包</code>这个超链接，即可安装:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Windows/AndroidSimulator/VPN/4.png"></p>
-<!-- Windows/AndroidSimulator/VPN/ -->
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/942c9c89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/942c9c89/" class="post-title-link" itemprop="url">Win10 安装Linux子系统</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-11-27 10:49:35" itemprop="dateCreated datePublished" datetime="2019-11-27T10:49:35+08:00">2019-11-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/Win10%E8%AE%BE%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">Win10设置</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/942c9c89/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/942c9c89/" data-xid="/blog/942c9c89/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>6.3k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>经过我一天的瞎忙活,我发现安装后的window子系统只有一个简单的文件管理器可以用,其他的图形化工具太少了,还是算了,<strong>老老实实用虚拟机来的实在</strong><br>也可能是我不会安装相应软件的原因吧。</p>
-<h1 id="打开开发者选项"><a href="#打开开发者选项" class="headerlink" title="打开开发者选项"></a>打开开发者选项</h1><p>按下**<code>win+I</code><strong>快捷键,打开</strong>设置**,然后进入<strong>更新和安全</strong><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/1.png" alt="图片"></p>
-<p>然后点击<code>左侧</code>的<strong>开发者选项</strong>,在右边选择<strong>开发人员模式</strong>选项<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/3.png" alt="图片"></p>
-<p>在弹出的确认框中选择<strong>是</strong><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/4.png" alt="图片"></p>
-<p>打开效果:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/5.png" alt="图片"></p>
-<h1 id="勾选适用于Linux的Windows子系统"><a href="#勾选适用于Linux的Windows子系统" class="headerlink" title="勾选适用于Linux的Windows子系统"></a>勾选适用于Linux的Windows子系统</h1><h2 id="小娜搜索-进入-启用或关闭-Windows功能的步骤"><a href="#小娜搜索-进入-启用或关闭-Windows功能的步骤" class="headerlink" title="小娜搜索 进入 启用或关闭 Windows功能的步骤"></a>小娜搜索 进入 启用或关闭 Windows功能的步骤</h2><p>在小娜搜索框中输入<strong>Windows功能</strong>,然后选择<strong>启用或关闭 Windows功能</strong><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/6.png" alt="图片"></p>
-<h2 id="通过控制面板进入-启用或关闭-Windows功能的步骤"><a href="#通过控制面板进入-启用或关闭-Windows功能的步骤" class="headerlink" title="通过控制面板进入 启用或关闭 Windows功能的步骤"></a>通过控制面板进入 启用或关闭 Windows功能的步骤</h2><h3 id="快速打开控制面板"><a href="#快速打开控制面板" class="headerlink" title="快速打开控制面板"></a>快速打开控制面板</h3><p>按下<code>Win+E</code>打开<strong>文件资源管理器</strong>,然后再地址栏上输入<strong>控制面板</strong>,即可打开<strong>控制面板</strong>:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/7.png" alt="图片"></p>
-<p>然后再<strong>控制面板的<code>搜索框</code><strong>中输入</strong>启用或关闭 Windows功能</strong>,然后再搜索结果中点击进入<strong>启用或关闭 Windows功能</strong>,然后<strong>滚动到最底部</strong>,勾选上<strong>适用于 Linux的 Windows子系统</strong>即可:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/8.png" alt="图片"></p>
-<h1 id="Microsoft-store安装Linux"><a href="#Microsoft-store安装Linux" class="headerlink" title="Microsoft store安装Linux"></a>Microsoft store安装Linux</h1><p>打开**<code>Microsoft store*</code>*,在搜索框中输入<code>Linux</code>,或是<code>Linux</code>的发行版的名字来查找你要安装的<code>Linux</code>,例如我这里输入<code>Ubuntu</code>,然后选择<code>Ubuntu 18.04 LTS</code><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/9.png" alt="图片"></p>
-<p>然后点击<strong>获取</strong>,然后等待下载 安装完毕,我已经装好了,下面以获取<strong>Ubuntu 16.04 LTS</strong>为例:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/10.png" alt="图片"></p>
-<h1 id="启动Linux"><a href="#启动Linux" class="headerlink" title="启动Linux"></a>启动Linux</h1><p>安装好Linux后,启动程序,第一次运行,需要输入<strong>用户名</strong>和<strong>密码</strong>.<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/11.png" alt="图片"></p>
-<h2 id="cmd中启动"><a href="#cmd中启动" class="headerlink" title="cmd中启动"></a>cmd中启动</h2><p>通过上面的方式进入,会默认进入用户的<code>home</code>目录,在<code>cmd</code>中输入<code>bash</code>即可在<strong>当前路径</strong>下进入<code>Linux</code><br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/12.png" alt="图片"></p>
-<h2 id="文件资源管理器中启动"><a href="#文件资源管理器中启动" class="headerlink" title="文件资源管理器中启动"></a>文件资源管理器中启动</h2><p>也可以在<strong>文件资源管理器</strong>的<strong>地址栏</strong>中输入<code>bash</code>进入<code>Linux</code>。<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Win10/SubSystem/Linux/Ubuntu/13.png" alt="图片"></p>
-<h1 id="配置Linux"><a href="#配置Linux" class="headerlink" title="配置Linux"></a>配置Linux</h1><h2 id="设置root用户密码"><a href="#设置root用户密码" class="headerlink" title="设置root用户密码"></a>设置root用户密码</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd</span><br></pre></td></tr></table></figure>
-<h1 id="更换国内apt源-并更新软件"><a href="#更换国内apt源-并更新软件" class="headerlink" title="更换国内apt源 并更新软件"></a>更换国内apt源 并更新软件</h1><p>见这篇文章:<a href="/blog/4fc37c0d/">Ubuntu 18.04修改默认源为国内源</a></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
-<p>注释其他源,写入如下源:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
-<h2 id="更新源列表"><a href="#更新源列表" class="headerlink" title="更新源列表"></a>更新源列表</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
-<h2 id="更新已安装使所有软件"><a href="#更新已安装使所有软件" class="headerlink" title="更新已安装使所有软件"></a>更新已安装使所有软件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
-
-<h1 id="安装中文字体及设置"><a href="#安装中文字体及设置" class="headerlink" title="安装中文字体及设置"></a>安装中文字体及设置</h1><h2 id="安装中文字体"><a href="#安装中文字体" class="headerlink" title="安装中文字体"></a>安装中文字体</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install language-pack-zh-hans</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y fonts-wqy-zenhei</span><br></pre></td></tr></table></figure>
-<p>或:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y fonts-wqy-microhei</span><br></pre></td></tr></table></figure>
-<h2 id="查看中文字体"><a href="#查看中文字体" class="headerlink" title="查看中文字体"></a>查看中文字体</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">blue@DESKTOP-8ISAT6B:~$ fc-list :lang=zh-cn</span><br><span class="line">/usr/share/fonts/truetype/wqy/wqy-microhei.ttc: WenQuanYi Micro Hei,文泉驛微米黑,文泉驿微米黑:style=Regular</span><br><span class="line">/usr/share/fonts/truetype/wqy/wqy-microhei.ttc: WenQuanYi Micro Hei Mono,文泉驛等寬微米黑,文泉驿等宽微米黑:style=Regular</span><br></pre></td></tr></table></figure>
-<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .profile</span><br></pre></td></tr></table></figure>
-<p>在末尾添加如下配置：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LANG=&quot;zh_CN.UTF-8&quot;</span><br><span class="line">export LC_ALL=&quot;zh_CN.UTF-8&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="查看中文字体-1"><a href="#查看中文字体-1" class="headerlink" title="查看中文字体"></a>查看中文字体</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fc-list :lang=zh-cn</span><br></pre></td></tr></table></figure>
-<h2 id="切换中文"><a href="#切换中文" class="headerlink" title="切换中文"></a>切换中文</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg-reconfigure locales</span><br></pre></td></tr></table></figure>
-<p>按键盘pagedown往下找到并且选择zh_CN.UTF-8（按空格键选择，按Tab键移动到确定，按回车键确定）<br>图片<br>到下一步，选择zh_CN.UTF-8（按回车键确定）<br>图片</p>
-<h2 id="查看系统语言"><a href="#查看系统语言" class="headerlink" title="查看系统语言"></a>查看系统语言</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locale</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">blue@DESKTOP-8ISAT6B:~$ locale</span><br><span class="line">LANG=C.UTF-8</span><br><span class="line">LANGUAGE=</span><br><span class="line">LC_CTYPE=&quot;C.UTF-8&quot;</span><br><span class="line">LC_NUMERIC=&quot;C.UTF-8&quot;</span><br><span class="line">LC_TIME=&quot;C.UTF-8&quot;</span><br><span class="line">LC_COLLATE=&quot;C.UTF-8&quot;</span><br><span class="line">LC_MONETARY=&quot;C.UTF-8&quot;</span><br><span class="line">LC_MESSAGES=&quot;C.UTF-8&quot;</span><br><span class="line">LC_PAPER=&quot;C.UTF-8&quot;</span><br><span class="line">LC_NAME=&quot;C.UTF-8&quot;</span><br><span class="line">LC_ADDRESS=&quot;C.UTF-8&quot;</span><br><span class="line">LC_TELEPHONE=&quot;C.UTF-8&quot;</span><br><span class="line">LC_MEASUREMENT=&quot;C.UTF-8&quot;</span><br><span class="line">LC_IDENTIFICATION=&quot;C.UTF-8&quot;</span><br><span class="line">LC_ALL=</span><br></pre></td></tr></table></figure>
-<p>发现系统语言已经是中文</p>
-<h2 id="重启子系统"><a href="#重启子系统" class="headerlink" title="重启子系统"></a>重启子系统</h2><p>以管理员身份,打开<strong>windows的cmd</strong>,输入如下两个命令行:</p>
-<h3 id="关闭子系统"><a href="#关闭子系统" class="headerlink" title="关闭子系统"></a>关闭子系统</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">net</span> stop LxssManager</span><br></pre></td></tr></table></figure>
-<h3 id="开启子系统"><a href="#开启子系统" class="headerlink" title="开启子系统"></a>开启子系统</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">net</span> <span class="built_in">start</span> LxssManager</span><br></pre></td></tr></table></figure>
-<p>运行效果如下</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">WINDOWS</span>\<span class="title">system32</span>&gt;<span class="title">net</span> <span class="title">stop</span> <span class="title">LxssManager</span></span></span><br><span class="line"><span class="function"><span class="title">LxssManager</span> 服务正在停止.</span></span><br><span class="line"><span class="function"><span class="title">LxssManager</span> 服务已成功停止。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">WINDOWS</span>\<span class="title">system32</span>&gt;<span class="title">net</span> <span class="title">start</span> <span class="title">LxssManager</span></span></span><br><span class="line"><span class="function"><span class="title">LxssManager</span> 服务正在启动 .</span></span><br><span class="line"><span class="function"><span class="title">LxssManager</span> 服务已经启动成功。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">WINDOWS</span>\<span class="title">system32</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="安装桌面方式1"><a href="#安装桌面方式1" class="headerlink" title="安装桌面方式1"></a>安装桌面方式1</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install tasksel -y</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tasksel</span><br></pre></td></tr></table></figure>
-<p>待续…..</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install --no-install-recommends ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim .vnc/xstartup</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">XAUTHORITY=$HOME/.Xauthority</span><br><span class="line">export XAUTHORITY</span><br><span class="line">LANG=zh_CN.UTF-8</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">unset</span> SESSION_MANAGER</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">exec</span> /etc/X11/xinit/xinitrc</span></span><br><span class="line">[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup</span><br><span class="line">[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources</span><br><span class="line">xsetroot -solid grey</span><br><span class="line">vncconfig -iconic &amp;</span><br><span class="line">x-terminal-emulator -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp;</span><br><span class="line">x-window-manager &amp;</span><br><span class="line">gnome-panel &amp;</span><br><span class="line">gnome-settings-daemon &amp;</span><br><span class="line">metacity &amp;</span><br><span class="line">nautilus &amp;</span><br></pre></td></tr></table></figure>
-<h1 id="安装桌面方式2"><a href="#安装桌面方式2" class="headerlink" title="安装桌面方式2"></a>安装桌面方式2</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xubuntu-desktop</span><br></pre></td></tr></table></figure>
-<p>之后会自动安装桌面。（gnome桌面、xfce4桌面、Unity桌面、kde桌面等可自行选择，只需命令sudo install xxx就可安装了）</p>
-<p>如果界面管理器出错就安装（没有就不用管这句）：sudo apt install lightdm 安装完成后重启系统就好了<br>sudo apt-get install xubuntu-desktop</p>
-<h2 id="解决错误1"><a href="#解决错误1" class="headerlink" title="解决错误1"></a>解决错误1</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在处理时有错误发生：</span><br><span class="line"> blueman</span><br><span class="line">E: Sub-process /usr/bin/dpkg returned an error code (1)</span><br></pre></td></tr></table></figure>
-<p>创建需要的文件目录然后再安装:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /var/lib/dpkg/info /var/lib/dpkg/info.bak</span><br><span class="line">sudo mkdir /var/lib/dpkg/info</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install xubuntu-desktop</span><br></pre></td></tr></table></figure>
-<h3 id="合并目录"><a href="#合并目录" class="headerlink" title="合并目录"></a>合并目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /var/lib/dpkg/info/* /var/lib/dpkg/info.bak</span><br><span class="line">sudo rm -rf /var/lib/dpkg/info</span><br><span class="line">sudo mv /var/lib/dpkg/info.bak /var/lib/dpkg/info</span><br></pre></td></tr></table></figure>
-<h2 id="解决错误2"><a href="#解决错误2" class="headerlink" title="解决错误2"></a>解决错误2</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">W: APT had planned for dpkg to do more than it reported back (0 vs 4).</span><br><span class="line">   Affected packages: blueman:amd64</span><br></pre></td></tr></table></figure>
-<p>输入如下命令解决:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -C</span><br></pre></td></tr></table></figure>
-<h2 id="重启子系统-1"><a href="#重启子系统-1" class="headerlink" title="重启子系统"></a>重启子系统</h2><p>以管理员身份启动windows的cmd,输入如下命令:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">net</span> stop LxssManager</span><br><span class="line"><span class="built_in">net</span> <span class="built_in">start</span> LxssManager</span><br></pre></td></tr></table></figure>
-<h1 id="安装中文输入法"><a href="#安装中文输入法" class="headerlink" title="安装中文输入法"></a>安装中文输入法</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y fcitx fcitx-googlepinyin*</span><br></pre></td></tr></table></figure>
-<h2 id="配置变量"><a href="#配置变量" class="headerlink" title="配置变量"></a>配置变量</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim .profile</span><br></pre></td></tr></table></figure>
-<p>在文件末尾添加:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=&quot;@im=fcitx&quot;</span><br></pre></td></tr></table></figure>
-<h1 id="连接桌面"><a href="#连接桌面" class="headerlink" title="连接桌面"></a>连接桌面</h1><h2 id="安装VNC"><a href="#安装VNC" class="headerlink" title="安装VNC"></a>安装VNC</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vnc4server</span><br></pre></td></tr></table></figure>
-<h2 id="启动VNX"><a href="#启动VNX" class="headerlink" title="启动VNX"></a>启动VNX</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vncserver -geometry 1366x768 :0</span><br></pre></td></tr></table></figure>
-<p><code>1366x768</code>是表示屏幕分辨率,<code> :0</code>是表示<strong>桌面</strong>的端口号为零,分辨率和端口号都可以随意自行更改,只要不出错就行<br>然后会提示设置<strong>连接密码</strong>,会提示输入<strong>两次</strong>,然后就能看见为0的端口号在运行。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">blue@DESKTOP-8ISAT6B:~$ sudo vncserver -geometry 1366x768 :0</span><br><span class="line"></span><br><span class="line">You will require a password to access your desktops.</span><br><span class="line"></span><br><span class="line">Password:Verify:xauth:  file /home/blue/.Xauthority does not exist</span><br><span class="line"></span><br><span class="line">New &#x27;DESKTOP-8ISAT6B:0 (root)&#x27; desktop is DESKTOP-8ISAT6B:0</span><br><span class="line"></span><br><span class="line">Creating default startup script /home/blue/.vnc/xstartup</span><br><span class="line">Starting applications specified in /home/blue/.vnc/xstartup</span><br><span class="line">Log file is /home/blue/.vnc/DESKTOP-8ISAT6B:0.log</span><br><span class="line"></span><br><span class="line">blue@DESKTOP-8ISAT6B:~$</span><br></pre></td></tr></table></figure>
-<p>之后输入VNC结束命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vncserver -kill :0</span><br></pre></td></tr></table></figure>
-<p>先输入命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim .vnc/xstartup</span><br></pre></td></tr></table></figure>
-<p>然后复制以下内容粘贴到<code>xstartup</code>文本里:(桌面空白也用此方法解决)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line">unset SESSION_MANAGER</span><br><span class="line">unset DBUS_SESSION_BUS_ADDRESS</span><br><span class="line">[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup</span><br><span class="line">[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources</span><br><span class="line">xsetroot -solid grey</span><br><span class="line">startxfce4 &amp;</span><br></pre></td></tr></table></figure>
-<h2 id="再次启动VNC"><a href="#再次启动VNC" class="headerlink" title="再次启动VNC"></a>再次启动VNC</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vncserver -geometry 1366x768 :0</span><br></pre></td></tr></table></figure>
-<p>输出如下:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">blue@DESKTOP-8ISAT6B:~$ sudo vncserver -geometry 1366x768 :0</span><br><span class="line"></span><br><span class="line">New &#x27;DESKTOP-8ISAT6B:0 (root)&#x27; desktop is DESKTOP-8ISAT6B:0</span><br><span class="line"></span><br><span class="line">Starting applications specified in /home/blue/.vnc/xstartup</span><br><span class="line">Log file is /home/blue/.vnc/DESKTOP-8ISAT6B:0.log</span><br></pre></td></tr></table></figure>
-<p>可以看大这里的煮面端口是<code>0</code>(DESKTOP-8ISAT6B<code>:0</code>)<br>如果<strong>显示端口是4</strong>那么在客户端连接的就是127.0.0.1:4 (每个人的不一样，可自行修改，一般默认是0)<br>使用vnc客户端连接即可查看桌面，</p>
-<h1 id="安装VNC客户端"><a href="#安装VNC客户端" class="headerlink" title="安装VNC客户端"></a>安装VNC客户端</h1><p>到vnc-viewer官网:<a target="_blank" rel="noopener" href="https://vnc-viewer.en.softonic.com/download">https://vnc-viewer.en.softonic.com/download</a>下载VNC客户端</p>
-<p>然后安装,</p>
-<h2 id="如何退出VNC全屏的方法"><a href="#如何退出VNC全屏的方法" class="headerlink" title="如何退出VNC全屏的方法"></a>如何退出VNC全屏的方法</h2><p>如果你不小心在VNC客户段上点击全屏后,是无法在VNC客户端结束全屏的.<br>不过幸好的是现在还连着Linux,所以可以杀死Linux上的VNC进程,这样Windows客户段连接不上Linux,就会自动退出.<br>结束vnc进程命令为.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vncserver -kill :0</span><br></pre></td></tr></table></figure>
-<p>0表示为桌面端口号。</p>
-<h1 id="如何查看ubuntu版本"><a href="#如何查看ubuntu版本" class="headerlink" title="如何查看ubuntu版本"></a>如何查看ubuntu版本</h1><h2 id="安装程序"><a href="#安装程序" class="headerlink" title="安装程序"></a>安装程序</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install neofetch</span><br></pre></td></tr></table></figure>
-<h2 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">neofetch</span><br></pre></td></tr></table></figure>
-
-
-
-
-<p>Win10&#x2F;SubSystem&#x2F;Linux&#x2F;Ubuntu&#x2F;</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av51515689/">https://www.bilibili.com/video/av51515689/</a><br><a target="_blank" rel="noopener" href="https://www.tkdcz.top/post/46.html">https://www.tkdcz.top/post/46.html</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9ed0e635/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/9ed0e635/" class="post-title-link" itemprop="url">Linux 输出重定向到剪贴板</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-11-27 00:18:09" itemprop="dateCreated datePublished" datetime="2019-11-27T00:18:09+08:00">2019-11-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/9ed0e635/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/9ed0e635/" data-xid="/blog/9ed0e635/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>446</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="xsel"><a href="#xsel" class="headerlink" title="xsel"></a>xsel</h1><h2 id="安装xsel"><a href="#安装xsel" class="headerlink" title="安装xsel"></a>安装xsel</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xsel</span><br></pre></td></tr></table></figure>
-<h2 id="输出到剪贴板中"><a href="#输出到剪贴板中" class="headerlink" title="输出到剪贴板中"></a>输出到剪贴板中</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat file | xsel -i -b</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo HelloWorld | xsel -i -b</span><br></pre></td></tr></table></figure>
-<h2 id="读取剪贴板内容"><a href="#读取剪贴板内容" class="headerlink" title="读取剪贴板内容"></a>读取剪贴板内容</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xsel -o -b</span><br></pre></td></tr></table></figure>
-<p>运行效果:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">blue@blue-VirtualBox:~$ echo HelloWorld | xsel -i -b</span><br><span class="line">blue@blue-VirtualBox:~$ xsel -o -b</span><br><span class="line">HelloWorld</span><br><span class="line">blue@blue-VirtualBox:~$ echo HelloWorld! | xsel -i -b</span><br><span class="line">blue@blue-VirtualBox:~$ xsel -o -b</span><br><span class="line">HelloWorld!</span><br><span class="line">blue@blue-VirtualBox:~$</span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/aka_xingwenpeng/article/details/8776779">https://blog.csdn.net/aka_xingwenpeng&#x2F;article&#x2F;details&#x2F;8776779</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/mosesmo1989/article/details/51094957">https://blog.csdn.net/mosesmo1989/article/details/51094957</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/cc785ddc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/cc785ddc/" class="post-title-link" itemprop="url">Ubuntu 为shell脚本创建.destop快捷方式</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-11-26 00:48:27" itemprop="dateCreated datePublished" datetime="2019-11-26T00:48:27+08:00">2019-11-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/VirtualBox/" itemprop="url" rel="index"><span itemprop="name">VirtualBox</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/VirtualBox/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/cc785ddc/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/cc785ddc/" data-xid="/blog/cc785ddc/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.3k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Ubuntu-为shell脚本创建-destop快捷方式"><a href="#Ubuntu-为shell脚本创建-destop快捷方式" class="headerlink" title="Ubuntu 为shell脚本创建.destop快捷方式"></a>Ubuntu 为shell脚本创建.destop快捷方式</h1><h2 id="HexoS-sh"><a href="#HexoS-sh" class="headerlink" title="HexoS.sh"></a>HexoS.sh</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">! /bin/bash</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">杀死占用端口的所有进程</span></span><br><span class="line">kill -s 9 $(lsof -i:4007 -t)</span><br><span class="line">cd /home/blue/桌面/Blog/blog9/</span><br><span class="line">hexo s -p 4007</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="启动博客-desktop"><a href="#启动博客-desktop" class="headerlink" title="启动博客.desktop"></a>启动博客.desktop</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Encoding=UTF-8</span><br><span class="line">Name=启动博客</span><br><span class="line">Type=Application</span><br><span class="line">Categories=Application;</span><br><span class="line">StartupNotify=true</span><br><span class="line">Terminal=true</span><br><span class="line">Exec=sh /home/blue/桌面/Blog/blog9/HexoS.sh</span><br></pre></td></tr></table></figure>
-
-<h2 id="desktop-配置详解"><a href="#desktop-配置详解" class="headerlink" title=".desktop 配置详解"></a>.desktop 配置详解</h2><p><code>Desktop Entry</code> 文件以”<code>.desktop</code>“为后缀名。<br>以 <code>Linux GNOME</code> 桌面系统为例，用户打开应用程序浏览器后（见图1）会看见很多应用程序快捷方式。<br>事实上，每个应用程序快捷方式都和一个 <code>Desktop Entry</code> 文件相对应。<br>这些 <code>Desktop Entry</code> 文件通常被存放在 &#x2F;<code>usr/share/applications/</code> 和&#x2F;<code>opt/gnome/share/applications/</code> 等目录下。<br>从文件浏览器进入这些目录，点击相应的 <code>Desktop Entry</code> 文件就可以启动相对应的应用程序。</p>
-<h2 id="Desktop-Entry-文件结构"><a href="#Desktop-Entry-文件结构" class="headerlink" title="Desktop Entry 文件结构"></a>Desktop Entry 文件结构</h2><p>Desktop Entry 文件通常以字符串”[Desktop Entry]”开始</p>
-<p>Desktop Entry文件的剩余内容由若干形如</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">标准关键字＝值</span><br></pre></td></tr></table></figure>
-<p>的键值对组成。</p>
-<h2 id="关键字详解"><a href="#关键字详解" class="headerlink" title="关键字详解"></a>关键字详解</h2><p>Desktop Entry 文件标准定义了一系列标准关键字。<br>标准关键字分为<strong>必选</strong>和<strong>可选</strong>两种：</p>
-<ul>
-<li>必选标准关键字必须在 .desktop 文件中被定义；</li>
-<li>可选关键字则可以省略不写</li>
-</ul>
-<h3 id="必选关键字"><a href="#必选关键字" class="headerlink" title="必选关键字"></a>必选关键字</h3><p>关键字”Name”：[必选]<br>该数值指定了相关应用程序的名称，快捷方式的显示名称由关键字”Name”的数值所决定<br>关键字”Type”：[必选]<br>关键字”Type”定义了Desktop Entry文件的类型。常见的”Type”数值是”Application”和”Link”。</p>
-<ul>
-<li>“Type &#x3D; Application”表示当前Desktop Entry文件指向了一个应用程序；</li>
-<li>而”Type &#x3D; Link”表示当前Desktop Entry文件指向了一个URL</li>
-</ul>
-<h3 id="可选关键字"><a href="#可选关键字" class="headerlink" title="可选关键字"></a>可选关键字</h3><p>关键字”Version”：[可选] 该数值指定了当前 Desktop Entry 文件所遵循的 Desktop Entry 文件标准版本。<br>关键字”Encoding”：[1.0 版本不推荐使用] 该数值指定了当前 Desktop Entry 文件中特定字符串所使用的编码方式。尽管Desktop Entry 文件标准 1.0 不再推荐使用该关键字，但由于历史原因该关键字仍然广泛出现在现有的 Desktop Entry 文件中。<br>关键字”GenericName”：[可选]<br>该数值指定了相关应用程序的通用名称<br>关键字”Comment”：[可选]<br>该数值是对当前Desktop Entry的简单描述。<br>关键字”Icon”：[可选]<br>该数值定义了当前Desktop Entry文件在应用程序浏览器或是在文件浏览器中所显示的图标<br>关键字”OnlyShowIn”和”NotShowIn”：[可选]<br>这两个关键字分别定义了当前Desktop Entry是否在特定Linux 桌面系统（例如：Linux GNOME 或 Linux KDE）下显示（由”OnlyShowIn”定义），或不显示（由”NotShowIn”定义）。具体定义请参考”Desktop Specification Menu”[4]</p>
-<h4 id="以”Type”类型是”Application”为前提的关键字"><a href="#以”Type”类型是”Application”为前提的关键字" class="headerlink" title="以”Type”类型是”Application”为前提的关键字"></a>以”Type”类型是”Application”为前提的关键字</h4><p>关键字”Exec”：[可选]<br>关键字”Exec”只有在”Type”类型是”Application”时才有意义。”Exec”的数值定义了启动指定应用程序所要执行的命令，在此命令 是可以带参数的</p>
-<p>关键字”StartupNotify”：[可选]<br>关键字”StartupNotify”的数值是布尔值（true 或是 false）。该关键字只有在”Type”类型是”Application”时才有意义。其数值的含义由规范”Startup Notification Protocol Specifications”[3]定义，在此不再详述。<br>关键字”Terminal”：[可选]<br>和”StartupNotify”一样，关键字”StartupNotify”的数值也是布尔值，并且该关键字只有在”Type”类型 是”Application”时才有意义。其数值指出了关键字”Exec”的指定的应用程序<strong>是否需要在终端窗口中运行</strong>。<br>关键字”Categories”只有在”Type”类型是”Application”时才有意义。”Categories”的数值指出了相关应用程序在菜单中显示的类别。具体菜单分类由规范”Desktop Specification Menu”具体定义[4]。</p>
-<h4 id="以”Type”类型是”Link”为前提的关键字"><a href="#以”Type”类型是”Link”为前提的关键字" class="headerlink" title="以”Type”类型是”Link”为前提的关键字"></a>以”Type”类型是”Link”为前提的关键字</h4><p>关键字”URL”：[可选]<br>关键字”URL”只有在”Type”类型是”Link”时才有意义。”URL”的数值定义了该Desktop Entry文件指向的URL</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Type = <span class="type">Link</span></span><br><span class="line"><span class="variable">URL</span> <span class="operator">=</span> http:<span class="comment">//www.ibm.com/developerworks</span></span><br></pre></td></tr></table></figure>
-<p>则双击含有上述内容的Desktop Entry文件将启动web浏览器，并打开指定网页”<a target="_blank" rel="noopener" href="http://www.ibm.com/developerworks&quot;">http://www.ibm.com/developerworks&quot;</a></p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="http://m.blog.chinaunix.net/uid-20332519-id-3015914">Linux桌面快捷方式 Desktop Entry 详解</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e2b78dd9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/e2b78dd9/" class="post-title-link" itemprop="url">Linux 杀死占用端口的所有进程</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-11-25 23:26:06" itemprop="dateCreated datePublished" datetime="2019-11-25T23:26:06+08:00">2019-11-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/e2b78dd9/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/e2b78dd9/" data-xid="/blog/e2b78dd9/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>934</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="查找占用端口的程序"><a href="#查找占用端口的程序" class="headerlink" title="查找占用端口的程序"></a>查找占用端口的程序</h1><h2 id="命令1"><a href="#命令1" class="headerlink" title="命令1"></a>命令1</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:端口号</span><br></pre></td></tr></table></figure>
-<p>例如查看4007端口是否被占用:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:4007</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">blue@blue-VirtualBox:~/桌面/Blog/blog9$ lsof -i:4007</span><br><span class="line">COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME</span><br><span class="line">hexo    2564 blue   19u  IPv6  39809      0t0  TCP *:4007 (LISTEN)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="查找占用端口的程序的PID"><a href="#查找占用端口的程序的PID" class="headerlink" title="查找占用端口的程序的PID"></a>查找占用端口的程序的PID</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:端口号 -t</span><br></pre></td></tr></table></figure>
-<p>效果如下:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">blue@blue-VirtualBox:~/桌面$ lsof -i:4007</span><br><span class="line">COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME</span><br><span class="line">hexo    4924 blue   21u  IPv6  56489      0t0  TCP *:4007 (LISTEN)</span><br><span class="line">blue@blue-VirtualBox:~/桌面$ lsof -i:4007 -t</span><br><span class="line">4924</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="命令2"><a href="#命令2" class="headerlink" title="命令2"></a>命令2</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunlp | grep 端口号</span><br></pre></td></tr></table></figure>
-<p>例如</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunlp | grep 4007</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">blue@blue-VirtualBox:~/桌面/Blog/blog9$ netstat -tunlp | grep 4007</span><br><span class="line">（并非所有进程都能被检测到，所有非本用户的进程信息将不会显示，如果想看到所有信息，则必须切换到 root 用户）</span><br><span class="line">tcp6       0      0 :::4007                 :::*                    LISTEN      2564/hexo   </span><br></pre></td></tr></table></figure>
-<h1 id="根据PID杀死进程"><a href="#根据PID杀死进程" class="headerlink" title="根据PID杀死进程"></a>根据PID杀死进程</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -s 9 PID</span><br></pre></td></tr></table></figure>
-<p>例如:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -s 9 2564</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">blue@blue-VirtualBox:~/桌面/Blog/blog9$ lsof -i:4007</span><br><span class="line">COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME</span><br><span class="line">hexo    2564 blue   19u  IPv6  39809      0t0  TCP *:4007 (LISTEN)</span><br><span class="line">blue@blue-VirtualBox:~/桌面/Blog/blog9$ kill -s 9 2564</span><br></pre></td></tr></table></figure>
-<h1 id="一条命令杀死占用端口的所有进程"><a href="#一条命令杀死占用端口的所有进程" class="headerlink" title="一条命令杀死占用端口的所有进程"></a>一条命令杀死占用端口的所有进程</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo kill -s 9 $(lsof -i:端口号 -t)</span><br></pre></td></tr></table></figure>
-<p>例如:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -s 9 $(lsof -i:4007 -t)</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Linux/Common/kill/port/1.png" alt="图片"><br>效果:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Linux/Common/kill/port/2.png" alt="图片"></p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/showker/p/11567863.html">https://www.cnblogs.com/showker/p/11567863.html</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/92f73acb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/92f73acb/" class="post-title-link" itemprop="url">Ubuntu 安装Git NodeJS Hexo</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-11-25 19:55:24" itemprop="dateCreated datePublished" datetime="2019-11-25T19:55:24+08:00">2019-11-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/VirtualBox/" itemprop="url" rel="index"><span itemprop="name">VirtualBox</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/VirtualBox/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/92f73acb/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/92f73acb/" data-xid="/blog/92f73acb/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>923</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Ubuntu-安装-git"><a href="#Ubuntu-安装-git" class="headerlink" title="Ubuntu 安装 git"></a>Ubuntu 安装 git</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
-<h1 id="Ubuntu-安装-nodejs"><a href="#Ubuntu-安装-nodejs" class="headerlink" title="Ubuntu 安装 nodejs"></a>Ubuntu 安装 nodejs</h1><h2 id="安装指定的版本"><a href="#安装指定的版本" class="headerlink" title="安装指定的版本"></a>安装指定的版本</h2><p>进入<a target="_blank" rel="noopener" href="https://nodejs.org/en/">nodejs官网</a>查看最新的<strong>长期执行版本(LTS)</strong>,可以看到现在的长期支持版本为<code>12</code>.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://deb.nodesource.com/setup_12.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
-<p>如果要安装<code>nodejs10.x</code>则将上面的数字改成10即可,也就是:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://deb.nodesource.com/setup_12.x | sudo -E bash -</span><br></pre></td></tr></table></figure>
-<h2 id="配置Nodejs"><a href="#配置Nodejs" class="headerlink" title="配置Nodejs"></a>配置Nodejs</h2><h3 id="使用淘宝镜像"><a href="#使用淘宝镜像" class="headerlink" title="使用淘宝镜像"></a>使用淘宝镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<h3 id="产看配置是否成功"><a href="#产看配置是否成功" class="headerlink" title="产看配置是否成功"></a>产看配置是否成功</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">blue@blue-VirtualBox:~/桌面/Blog$ npm config ls</span><br><span class="line">; cli configs</span><br><span class="line">metrics-registry = &quot;https://registry.npm.taobao.org/&quot;</span><br><span class="line">scope = &quot;&quot;</span><br><span class="line">user-agent = &quot;npm/6.12.1 node/v12.13.1 linux x64&quot;</span><br><span class="line"></span><br><span class="line">; userconfig /home/blue/.npmrc</span><br><span class="line">registry = &quot;https://registry.npm.taobao.org/&quot;</span><br><span class="line"></span><br><span class="line">; node bin location = /usr/bin/node</span><br><span class="line">; cwd = /home/blue/桌面/Blog</span><br><span class="line">; HOME = /home/blue</span><br><span class="line">; &quot;npm config ls -l&quot; to show all defaults.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/heiheiya/article/details/86008575">https://blog.csdn.net/heiheiya/article/details/86008575</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/37/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/37/">37</a><span class="page-number current">38</span><a class="page-number" href="/blog/page/39/">39</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/65/">65</a><a class="extend next" rel="next" href="/blog/page/39/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/37/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/37/">37</a><span class="page-number current">38</span><a class="page-number" href="/blog/page/39/">39</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/66/">66</a><a class="extend next" rel="next" href="/blog/page/39/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1701,7 +1587,7 @@ Windows/Setting/Startup/
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23:46</span>
+    <span title="站点阅读时长">23:51</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

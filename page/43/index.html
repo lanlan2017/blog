@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">648</span>
+          <span class="site-state-item-count">656</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">215</span>
+        <span class="site-state-item-count">216</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -213,6 +213,1026 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d58ef648/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/d58ef648/" class="post-title-link" itemprop="url">java打印表格 将ResultSet中的数据打印成表格</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-23 22:19:13" itemprop="dateCreated datePublished" datetime="2019-10-23T22:19:13+08:00">2019-10-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">自定义工具类</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/d58ef648/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/d58ef648/" data-xid="/blog/d58ef648/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="java打印表格-将ResultSet中的数据打印成表格"><a href="#java打印表格-将ResultSet中的数据打印成表格" class="headerlink" title="java打印表格 将ResultSet中的数据打印成表格"></a>java打印表格 将ResultSet中的数据打印成表格</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p><code>MySQL</code>的查询语句输出如下:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from instructor;</span><br><span class="line">+-------+------------+------------+-----------+</span><br><span class="line">| ID    | name       | dept_name  | salary    |</span><br><span class="line">+-------+------------+------------+-----------+</span><br><span class="line">| <span class="number">10101</span> | Srinivasan | <span class="built_in">Comp</span>. Sci. | <span class="number">65000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">12121</span> | Wu         | Finance    | <span class="number">90000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">15151</span> | Mozart     | Music      | <span class="number">40000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">22222</span> | Einstein   | Physics    | <span class="number">95000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">25566</span> | Brown      | Biology    | <span class="number">100000</span>.<span class="number">00</span> |</span><br><span class="line">| <span class="number">30765</span> | Green      | Music      | NULL      |</span><br><span class="line">| <span class="number">32343</span> | El Said    | History    | <span class="number">60000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">33456</span> | Gold       | Physics    | <span class="number">87000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">45565</span> | Katz       | <span class="built_in">Comp</span>. Sci. | <span class="number">75000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">58583</span> | Califieri  | History    | <span class="number">62000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">76543</span> | Singh      | Finance    | <span class="number">80000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">76766</span> | Crick      | Biology    | <span class="number">72000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">77987</span> | Kim        | Physics    | <span class="number">98000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">83821</span> | Brandt     | <span class="built_in">Comp</span>. Sci. | <span class="number">92000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">88877</span> | Perry      | Finance    | <span class="number">125000</span>.<span class="number">00</span> |</span><br><span class="line">| <span class="number">88878</span> | Perry      | Finance    | <span class="number">125000</span>.<span class="number">00</span> |</span><br><span class="line">| <span class="number">98345</span> | Kim        | Elec. Eng. | <span class="number">80000</span>.<span class="number">00</span>  |</span><br><span class="line">+-------+------------+------------+-----------+</span><br><span class="line"><span class="number">17</span> rows <span class="keyword">in</span> <span class="built_in">set</span> (<span class="number">0</span>.<span class="number">04</span> sec)</span><br></pre></td></tr></table></figure>
+<p>使用<code>JDBC</code>执行上述的查询语句,将结果集中的查询结果以表格的形式打印出来。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
+<li>通过结果集的元数据可以知道结果集中的列数,和列名.</li>
+<li>然后遍历结果集,分别统计每一列中的最大字符数。</li>
+<li>然后通过<code>System.out.printf()</code>方法进行格式化输出。</li>
+</ul>
+<h2 id="字符串格式化方式"><a href="#字符串格式化方式" class="headerlink" title="字符串格式化方式"></a>字符串格式化方式</h2><h3 id="左对齐"><a href="#左对齐" class="headerlink" title="左对齐"></a>左对齐</h3><p><code>%-10s</code>表示这个字符串的长度为10,不足10的地方以空格填充,带<code>-</code>的表示左对齐.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.printf(<span class="string">&quot;属性:%-10s &quot;</span>, rsmd.getColumnName(i));</span><br><span class="line">System.out.printf(<span class="string">&quot;类型:%-10s\n&quot;</span>, rsmd.getColumnTypeName(i));</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">属性:ID         类型:VARCHAR   </span><br><span class="line">属性:name       类型:VARCHAR   </span><br><span class="line">属性:dept_name  类型:VARCHAR   </span><br><span class="line">属性:salary     类型:DECIMAL  </span><br></pre></td></tr></table></figure>
+<h3 id="右对齐"><a href="#右对齐" class="headerlink" title="右对齐"></a>右对齐</h3><p><code>%10s</code>表示这个字符串的长度为10,不足10的地方以空格填充,默认右对齐</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.printf(<span class="string">&quot;属性:%10s &quot;</span>, rsmd.getColumnName(i));</span><br><span class="line">System.out.printf(<span class="string">&quot;类型:%10s\n&quot;</span>, rsmd.getColumnTypeName(i));</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">属性:        ID 类型:   VARCHAR</span><br><span class="line">属性:      name 类型:   VARCHAR</span><br><span class="line">属性: dept_name 类型:   VARCHAR</span><br><span class="line">属性:    salary 类型:   DECIMAL</span><br></pre></td></tr></table></figure>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tools;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;</span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSetMetaData;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 结果集打印机.将结果集中的数据打印成表格.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ResultSetPrinter</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printResultSet</span><span class="params">(ResultSet rs)</span> <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="type">ResultSetMetaData</span> <span class="variable">resultSetMetaData</span> <span class="operator">=</span> rs.getMetaData();</span><br><span class="line">        <span class="comment">// 获取列数</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">ColumnCount</span> <span class="operator">=</span> resultSetMetaData.getColumnCount();</span><br><span class="line">        <span class="comment">// 保存当前列最大长度的数组</span></span><br><span class="line">        <span class="type">int</span>[] columnMaxLengths = <span class="keyword">new</span> <span class="title class_">int</span>[ColumnCount];</span><br><span class="line">        <span class="comment">// 缓存结果集,结果集可能有序,所以用ArrayList保存变得打乱顺序.</span></span><br><span class="line">        ArrayList&lt;String[]&gt; results = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">// 按行遍历</span></span><br><span class="line">        <span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">            <span class="comment">// 保存当前行所有列</span></span><br><span class="line">            String[] columnStr = <span class="keyword">new</span> <span class="title class_">String</span>[ColumnCount];</span><br><span class="line">            <span class="comment">// 获取属性值.</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ColumnCount; i++) &#123;</span><br><span class="line">                <span class="comment">// 获取一列</span></span><br><span class="line">                columnStr[i] = rs.getString(i + <span class="number">1</span>);</span><br><span class="line">                <span class="comment">// 计算当前列的最大长度</span></span><br><span class="line">                columnMaxLengths[i] = Math.max(columnMaxLengths[i], (columnStr[i] == <span class="literal">null</span>) ? <span class="number">0</span> : columnStr[i].length());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 缓存这一行.</span></span><br><span class="line">            results.add(columnStr);</span><br><span class="line">        &#125;</span><br><span class="line">        printSeparator(columnMaxLengths);</span><br><span class="line">        printColumnName(resultSetMetaData, columnMaxLengths);</span><br><span class="line">        printSeparator(columnMaxLengths);</span><br><span class="line">        <span class="comment">// 遍历集合输出结果</span></span><br><span class="line">        Iterator&lt;String[]&gt; iterator = results.iterator();</span><br><span class="line">        String[] columnStr;</span><br><span class="line">        <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">            columnStr = iterator.next();</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ColumnCount; i++) &#123;</span><br><span class="line">                <span class="comment">// System.out.printf(&quot;|%&quot; + (columnMaxLengths[i] + 1) + &quot;s&quot;, columnStr[i]);</span></span><br><span class="line">                System.out.printf(<span class="string">&quot;|%&quot;</span> + columnMaxLengths[i] + <span class="string">&quot;s&quot;</span>, columnStr[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">&quot;|&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        printSeparator(columnMaxLengths);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 输出列名.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> resultSetMetaData 结果集的元数据对象.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> columnMaxLengths  每一列最大长度的字符串的长度.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> SQLException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printColumnName</span><span class="params">(ResultSetMetaData resultSetMetaData, <span class="type">int</span>[] columnMaxLengths)</span> <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">columnCount</span> <span class="operator">=</span> resultSetMetaData.getColumnCount();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; columnCount; i++) &#123;</span><br><span class="line">            <span class="comment">// System.out.printf(&quot;|%&quot; + (columnMaxLengths[i] + 1) + &quot;s&quot;, resultSetMetaData.getColumnName(i + 1));</span></span><br><span class="line">            System.out.printf(<span class="string">&quot;|%&quot;</span> + columnMaxLengths[i] + <span class="string">&quot;s&quot;</span>, resultSetMetaData.getColumnName(i + <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;|&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 输出分隔符.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> columnMaxLengths 保存结果集中每一列的最长的字符串的长度.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printSeparator</span><span class="params">(<span class="type">int</span>[] columnMaxLengths)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; columnMaxLengths.length; i++) &#123;</span><br><span class="line">            System.out.print(<span class="string">&quot;+&quot;</span>);</span><br><span class="line">            <span class="comment">// for (int j = 0; j &lt; columnMaxLengths[i] + 1; j++) &#123;</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; columnMaxLengths[i]; j++) &#123;</span><br><span class="line">                System.out.print(<span class="string">&quot;-&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;+&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tools;</span><br><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">driver</span> <span class="operator">=</span> <span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">URL</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://127.0.0.1:3306/university?serverTimezone=UTC&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">user</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * JDBC测试.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">JDBCexample</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 1.加载数据库驱动</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">            Class.forName(driver);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        testStatement();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试Statement的用法.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">testStatement</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> (<span class="comment">// 2.打开数据库连接</span></span><br><span class="line">             <span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> DriverManager.getConnection(URL, user, password);</span><br><span class="line">             <span class="comment">// 3.创建语句</span></span><br><span class="line">             <span class="type">Statement</span> <span class="variable">stmt</span> <span class="operator">=</span> conn.createStatement()) &#123;</span><br><span class="line">            <span class="comment">// 模拟SQL注入</span></span><br><span class="line">            testSqlInjecton(stmt);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException sqle) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;SQLException : &quot;</span> + sqle);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 模拟SQL注入.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> stmt Statement对象.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> SQLException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">testSqlInjecton</span><span class="params">(Statement stmt)</span> <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;X&#x27; or &#x27;Y&#x27; = &#x27;Y&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;select * from instructor where name = &#x27;&quot;</span> + name + <span class="string">&quot;&#x27;&quot;</span>;</span><br><span class="line">        <span class="type">ResultSet</span> <span class="variable">rs</span> <span class="operator">=</span> stmt.executeQuery(sql);</span><br><span class="line">        ResultSetPrinter.printResultSet(rs);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        JDBCexample();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">+-----+----------+----------+---------+</span><br><span class="line">|   ID|      name| dept_name|   salary|</span><br><span class="line">+-----+----------+----------+---------+</span><br><span class="line">|<span class="number">10101</span>|Srinivasan|<span class="built_in">Comp</span>. Sci.| <span class="number">65000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">12121</span>|        Wu|   Finance| <span class="number">90000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">15151</span>|    Mozart|     Music| <span class="number">40000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">22222</span>|  Einstein|   Physics| <span class="number">95000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">25566</span>|     Brown|   Biology|<span class="number">100000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">30765</span>|     Green|     Music|     null|</span><br><span class="line">|<span class="number">32343</span>|   El Said|   History| <span class="number">60000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">33456</span>|      Gold|   Physics| <span class="number">87000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">45565</span>|      Katz|<span class="built_in">Comp</span>. Sci.| <span class="number">75000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">58583</span>| Califieri|   History| <span class="number">62000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">76543</span>|     Singh|   Finance| <span class="number">80000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">76766</span>|     Crick|   Biology| <span class="number">72000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">77987</span>|       Kim|   Physics| <span class="number">98000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">83821</span>|    Brandt|<span class="built_in">Comp</span>. Sci.| <span class="number">92000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">88877</span>|     Perry|   Finance|<span class="number">125000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">88878</span>|     Perry|   Finance|<span class="number">125000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">98345</span>|       Kim|Elec. Eng.| <span class="number">80000</span>.<span class="number">00</span>|</span><br><span class="line">+-----+----------+----------+---------+</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/17349c5f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/17349c5f/" class="post-title-link" itemprop="url">最新版MySQL数据库驱动的问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-23 15:59:21" itemprop="dateCreated datePublished" datetime="2019-10-23T15:59:21+08:00">2019-10-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/MySQL/debug/" itemprop="url" rel="index"><span itemprop="name">debug</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/17349c5f/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/17349c5f/" data-xid="/blog/17349c5f/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="最新版MySQL数据库驱动的问题"><a href="#最新版MySQL数据库驱动的问题" class="headerlink" title="最新版MySQL数据库驱动的问题"></a>最新版MySQL数据库驱动的问题</h1><h2 id="问题1-驱动名称不对"><a href="#问题1-驱动名称不对" class="headerlink" title="问题1 驱动名称不对"></a>问题1 驱动名称不对</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Loading class `com.mysql.jdbc.Driver&#x27;. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver&#x27;. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.</span><br></pre></td></tr></table></figure>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>将数据库驱动名称<code>com.mysql.jdbc.Driver</code>改成<code>com.mysql.cj.jdbc.Driver</code></p>
+<h2 id="问题2-没有指定时区"><a href="#问题2-没有指定时区" class="headerlink" title="问题2 没有指定时区"></a>问题2 没有指定时区</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQLException : java.sql.SQLException: The server <span class="built_in">time</span> zone value &#x27;�й���׼ʱ��&#x27; is unrecognized or represents <span class="built_in">more</span> than one <span class="built_in">time</span> zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a <span class="built_in">more</span> specifc <span class="built_in">time</span> zone value <span class="keyword">if</span> you want to utilize <span class="built_in">time</span> zone support.</span><br></pre></td></tr></table></figure>
+<h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h3><p>在</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcUrl=jdbc:mysql://localhost:3306/spring</span><br></pre></td></tr></table></figure>
+<p>后面加上<code>?serverTimezone=UTC</code>,如下所示:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcUrl=jdbc:mysql://localhost:3306/spring?serverTimezone=UTC</span><br></pre></td></tr></table></figure>
+<h2 id="问题3-查询字符串分隔符没有使用转义字符"><a href="#问题3-查询字符串分隔符没有使用转义字符" class="headerlink" title="问题3 查询字符串分隔符没有使用转义字符"></a>问题3 查询字符串分隔符没有使用转义字符</h2><p><strong>如果有多个查询字符串要用&amp;隔开,并且&amp;要转义成<code>&amp;amp;</code></strong><br>但如果你的jdbcUrl类似下面：<br><code>jdbcUrl=jdbc:mysql://localhost:3306/spring?serverTimezone=UTC&amp;characterEncoding=utf-8</code><br>就是有多个<code>params</code>的时候需要以<code>&amp;</code>分开，但<code>&amp;</code>要改为<code>&amp;amp;</code>  如下：<br><code>jdbc:mysql://localhost:3306/spring?serverTimezone=UTC&amp;amp;characterEncoding=utf-8</code></p>
+<h3 id="不需要转义的情况"><a href="#不需要转义的情况" class="headerlink" title="不需要转义的情况"></a>不需要转义的情况</h3><p>经过为的实践,也不一定都要对<code>&amp;</code>进行转义,在使用Mybatis时,如果把URL写在<code>.properties</code>文件中,然后在mybatis配置文件中通过<code>$&#123;&#125;</code>来引用,这种情况下不需要<code>对URL中</code>的<code>&amp;</code>进行转义.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4f42ffba/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/4f42ffba/" class="post-title-link" itemprop="url">旧版本的navicat无法连接mysql8.0</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-18 17:01:51" itemprop="dateCreated datePublished" datetime="2019-10-18T17:01:51+08:00">2019-10-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/MySQL/%E5%9B%BE%E5%BD%A2%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">图形工具</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/4f42ffba/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/4f42ffba/" data-xid="/blog/4f42ffba/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>487</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="旧版本的navicat无法连接mysql8-0"><a href="#旧版本的navicat无法连接mysql8-0" class="headerlink" title="旧版本的navicat无法连接mysql8.0"></a>旧版本的navicat无法连接mysql8.0</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>最新安装了最新的MySQL8.0,但是使用navicat9.1无法连接,报错如下:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Client does <span class="keyword">not</span> support authentication protocol requested by server; consider upgrading MySQL client</span><br></pre></td></tr></table></figure>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>应该是<code>MySQL8.0</code>的加密方式改变了，但是比较老版本的<code>navicate</code>没有来得及支持，因此需要将<code>mysql</code>设置为支持传统的那种密码加密。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>登入<code>MySQL</code>的命令行界面，然后输入：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;you_password&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+<p>修改上面的<code>you_password</code>为你数据库<code>root</code>用户的密码即可.</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m_amazing/article/details/84313789">https://blog.csdn.net/m_amazing&#x2F;article&#x2F;details&#x2F;84313789</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/85e5e68e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/85e5e68e/" class="post-title-link" itemprop="url">解决MySQL错误 Every derived table must have its own alias</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-18 13:51:08" itemprop="dateCreated datePublished" datetime="2019-10-18T13:51:08+08:00">2019-10-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/MySQL/debug/" itemprop="url" rel="index"><span itemprop="name">debug</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/85e5e68e/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/85e5e68e/" data-xid="/blog/85e5e68e/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>978</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>今天使用如下的子查询时:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name,avg_salary</span><br><span class="line"><span class="keyword">from</span> ( <span class="keyword">select</span> dept_name, <span class="built_in">avg</span>(salary) <span class="keyword">as</span> avg_salary</span><br><span class="line">    <span class="keyword">from</span> instructor </span><br><span class="line">    <span class="keyword">group</span> <span class="keyword">by</span> dept_name</span><br><span class="line">)</span><br><span class="line"><span class="keyword">where</span> avg_salary<span class="operator">&gt;</span><span class="number">42000</span>;</span><br></pre></td></tr></table></figure>
+<p>报了<code>:Every derived table must have its own alias</code>这个错误</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select dept_name,avg_salary</span><br><span class="line">from ( select dept_name, avg(salary) as avg_salary</span><br><span class="line">    from instructor </span><br><span class="line">    group by dept_name</span><br><span class="line">)</span><br><span class="line">where avg_salary&gt;<span class="number">42000</span>;</span><br><span class="line"><span class="number">1248</span> - Every derived table must have its own alias</span><br></pre></td></tr></table></figure>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p><code>Every derived table must have its own alias</code>翻译成中文就是:<strong>每个派生表都必须有自己的别名</strong><br>所以给子查询取一个别名即可:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name,avg_salary</span><br><span class="line"><span class="keyword">from</span> ( <span class="keyword">select</span> dept_name, <span class="built_in">avg</span>(salary) <span class="keyword">as</span> avg_salary</span><br><span class="line">    <span class="keyword">from</span> instructor </span><br><span class="line">    <span class="keyword">group</span> <span class="keyword">by</span> dept_name</span><br><span class="line">) <span class="keyword">as</span> I</span><br><span class="line"><span class="keyword">where</span> avg_salary<span class="operator">&gt;</span><span class="number">42000</span>;</span><br></pre></td></tr></table></figure>
+<p>这样就能正常执行了:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select dept_name,avg_salary</span><br><span class="line">from ( select dept_name, avg(salary) as avg_salary</span><br><span class="line">    from instructor </span><br><span class="line">    group by dept_name</span><br><span class="line">) as I</span><br><span class="line">where avg_salary&gt;<span class="number">42000</span>;</span><br><span class="line">+------------+--------------+</span><br><span class="line">| dept_name  | avg_salary   |</span><br><span class="line">+------------+--------------+</span><br><span class="line">| Biology    | <span class="number">72000</span>        |</span><br><span class="line">| <span class="built_in">Comp</span>. Sci. | <span class="number">77333</span>.<span class="number">333333</span> |</span><br><span class="line">| Elec. Eng. | <span class="number">80000</span>        |</span><br><span class="line">| Finance    | <span class="number">85000</span>        |</span><br><span class="line">| History    | <span class="number">61000</span>        |</span><br><span class="line">| Physics    | <span class="number">91000</span>        |</span><br><span class="line">+------------+--------------+</span><br><span class="line"><span class="number">6</span> rows <span class="keyword">in</span> <span class="built_in">set</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/a3223bac/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/a3223bac/" class="post-title-link" itemprop="url">如何下载数据库系统教程第6版 大学模式源码</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-15 17:30:47" itemprop="dateCreated datePublished" datetime="2019-10-15T17:30:47+08:00">2019-10-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E9%9A%8F%E4%B9%A6%E6%BA%90%E7%A0%81/" itemprop="url" rel="index"><span itemprop="name">随书源码</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/a3223bac/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/a3223bac/" data-xid="/blog/a3223bac/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>42</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="如何下载数据库系统教程第6版-大学模式源码"><a href="#如何下载数据库系统教程第6版-大学模式源码" class="headerlink" title="如何下载数据库系统教程第6版 大学模式源码"></a>如何下载数据库系统教程第6版 大学模式源码</h1><p><a target="_blank" rel="noopener" href="http://www.db-book.com/">http://www.db-book.com</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e1bf4c3f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/e1bf4c3f/" class="post-title-link" itemprop="url">cmd切换到 新版控制台 后没有显示文字怎么办</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-07 00:20:19" itemprop="dateCreated datePublished" datetime="2019-10-07T00:20:19+08:00">2019-10-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 16:40:54" itemprop="dateModified" datetime="2022-04-04T16:40:54+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/CMD/" itemprop="url" rel="index"><span itemprop="name">CMD</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Windows/CMD/Debug/" itemprop="url" rel="index"><span itemprop="name">Debug</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/e1bf4c3f/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/e1bf4c3f/" data-xid="/blog/e1bf4c3f/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>127</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="cmd切换到-新版控制台-后没有显示文字怎么办"><a href="#cmd切换到-新版控制台-后没有显示文字怎么办" class="headerlink" title="cmd切换到 新版控制台 后没有显示文字怎么办"></a>cmd切换到 新版控制台 后没有显示文字怎么办</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>今天从旧版控制台切换到新版控制台后,弹出的cmd是个黑框框,上面没有文字,好奇怪.</p>
+<p><img data-src="https://img-blog.csdnimg.cn/20191007002459946.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在cmd窗体顶部<code>右键</code>,选择<code>属性</code><br><img data-src="https://img-blog.csdnimg.cn/20191007002644467.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">然后切换到<code>终端</code>选项卡,在终端颜色那一块,<strong>取消勾选</strong><code>使用单独的前景</code>即可。</p>
+<p><img data-src="https://img-blog.csdnimg.cn/20191007002826494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">这样就有文字了。<br><img data-src="https://img-blog.csdnimg.cn/20191007002914887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/6221fd78/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/6221fd78/" class="post-title-link" itemprop="url">如何切换VScode里面的java版本</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-06 21:46:08" itemprop="dateCreated datePublished" datetime="2019-10-06T21:46:08+08:00">2019-10-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/VSCode/" itemprop="url" rel="index"><span itemprop="name">VSCode</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/6221fd78/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/6221fd78/" data-xid="/blog/6221fd78/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>406</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="如何切换VScode里面的java版本"><a href="#如何切换VScode里面的java版本" class="headerlink" title="如何切换VScode里面的java版本"></a>如何切换VScode里面的java版本</h1><p>最近用<code>VScode</code>打开新版本的<code>java</code>代码,发现无法通过编译,这肯定是因为我用的旧版本的<code>java</code>。</p>
+<h2 id="1-电脑使用新版本的java"><a href="#1-电脑使用新版本的java" class="headerlink" title="1. 电脑使用新版本的java"></a>1. 电脑使用新版本的java</h2><p>排查后发现是<code>java</code>版本不对,然后我把电脑上<code>java</code>版本切换为新版,然后发现,通过其他编译可以正常编译运行,但是<code>VSCode</code>里面就是无法编译运行,个人猜测<code>VScode</code>里面使用的还是旧版本的<code>java</code>,网上找了一通没有找到该怎么切换<code>VScode</code>里面的<code>java</code>版本.</p>
+<h2 id="2-重装VScode里面的java环境"><a href="#2-重装VScode里面的java环境" class="headerlink" title="2. 重装VScode里面的java环境"></a>2. 重装VScode里面的java环境</h2><p>保证现在电脑里用的是新版本的<code>java</code>,然后卸载<code>VScode</code>里面的<code>java</code>环境(<code>Java Extension Pack</code>),然后重启<code>VScode</code>,再重新安装<code>Java</code>插件(<code>Java Extension Pack</code>),这个使用插件就会使用电脑里的新版本的<code>java</code>.</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这样做就是<code>重装插件比较耗时</code>,不过还算能用,有人知道怎么切换<code>VScode</code>里面的<code>java</code>版本的话教教我.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/957ae50e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/957ae50e/" class="post-title-link" itemprop="url">安装了多个java 如何切换java版本</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-06 10:42:44" itemprop="dateCreated datePublished" datetime="2019-10-06T10:42:44+08:00">2019-10-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/%E7%89%88%E6%9C%AC/" itemprop="url" rel="index"><span itemprop="name">版本</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/957ae50e/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/957ae50e/" data-xid="/blog/957ae50e/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="安装了多个java-如何切换java版本"><a href="#安装了多个java-如何切换java版本" class="headerlink" title="安装了多个java 如何切换java版本"></a>安装了多个java 如何切换java版本</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>平常用的是<code>java8</code>,最近在学习<code>java</code>的新特性。这就需要从<code>java8</code>往更高的<code>java</code>版本切换。由于还在使用<code>java8</code>,测试完新特性后我需要再切换回<code>java8</code>.</p>
+<h2 id="如何切换"><a href="#如何切换" class="headerlink" title="如何切换"></a>如何切换</h2><p>安装<code>java</code>的时候我们会配置<code>JAVA_HOME</code>这个环境变量.所有要切换<code>java</code>版本,只需要修改<code>JAVA_HOME</code>即可,在<code>JAVA_HOME</code>里面写上<code>java8</code>的安装目录,那就使用的是<code>java8</code>,<code>JAVA_HOME</code>里面写上<code>java9</code>的安装目录,则使用的是<code>java9</code>。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h2 id="手动切换"><a href="#手动切换" class="headerlink" title="手动切换"></a>手动切换</h2><p>手动修改,<code>JAVA_HOME</code>中的地址即可,这里不介绍。</p>
+<h2 id="在cmd中临时切换java版本"><a href="#在cmd中临时切换java版本" class="headerlink" title="在cmd中临时切换java版本"></a>在cmd中临时切换java版本</h2><p>例如现在在cmd中,临时需要用到java9的jshell,可以输入如下命令进行设置:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> <span class="built_in">path</span>=E:\java\java9\jdk-<span class="number">9</span>\bin;<span class="variable">%path%</span></span><br></pre></td></tr></table></figure>
+<p>其中:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E:\java\java9\jdk-9\bin</span><br></pre></td></tr></table></figure>
+<p>是jdk9的安装路径.</p>
+<h2 id="批处理实现"><a href="#批处理实现" class="headerlink" title="批处理实现"></a>批处理实现</h2><p>因为手动修改<code>JAVA_HOME</code>,太过繁琐,所以通过一个批处理程序来实现.</p>
+<h3 id="新增环境变量"><a href="#新增环境变量" class="headerlink" title="新增环境变量"></a>新增环境变量</h3><p>新增<code>JAVA_HOME_8</code>,<code>JAVA_HOME_9</code>,<code>JAVA_HOME_11</code>分别写入<code>java8</code>,<code>java9</code>,<code>java11</code>的安装目录,这和配置<code>JAVA_HOME</code>一样.</p>
+<h3 id="批处理脚本"><a href="#批处理脚本" class="headerlink" title="批处理脚本"></a>批处理脚本</h3><p>创建一个名为<code>快捷方式</code>的目录。</p>
+<h4 id="TJava-bat"><a href="#TJava-bat" class="headerlink" title="TJava.bat"></a>TJava.bat</h4><p>在这个<code>快捷方式</code>目录下新建<code>TJava.bat</code>,写入如下命令:</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">java -version</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<p>运行这个批处理就可以看到当前用的是哪个<code>java</code>版本了.这里使用批处理是为了快速运行这个<code>java -version</code>命令,不用手动操作。</p>
+<h4 id="CJavaBat-bat"><a href="#CJavaBat-bat" class="headerlink" title="CJavaBat.bat"></a>CJavaBat.bat</h4><p>然后在<code>快捷方式</code>下,创建批处理脚本<code>CJavaBat.bat</code>,开头的<code>C</code>是<code>change</code>的意思.</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">@<span class="built_in">echo</span> ------------------------------------------------</span><br><span class="line">@<span class="built_in">echo</span> 当前Java版本为:</span><br><span class="line"><span class="keyword">call</span> TJava.bat</span><br><span class="line">@<span class="built_in">echo</span> ------------------------------------------------</span><br><span class="line">@<span class="built_in">echo</span> 输入要使用的java版本对应的选项:</span><br><span class="line">@<span class="built_in">echo</span> 选项   含义</span><br><span class="line">@<span class="built_in">echo</span> <span class="number">8</span>      切换环境为JDK8</span><br><span class="line">@<span class="built_in">echo</span> <span class="number">9</span>      切换环境为JDK9</span><br><span class="line">@<span class="built_in">echo</span> <span class="number">11</span>     切换环境为JDK11</span><br><span class="line">@<span class="built_in">echo</span> ------------------------------------------------</span><br><span class="line"><span class="built_in">set</span> /P choose=请输入选择:</span><br><span class="line"><span class="keyword">IF</span> &quot;<span class="variable">%choose%</span>&quot; <span class="keyword">EQU</span> &quot;<span class="number">8</span>&quot; (</span><br><span class="line"><span class="comment">    REM 修改JAVA_HOME环境变量为%JAVA_HOME_8%,</span></span><br><span class="line">    setx &quot;JAVA_HOME&quot; &quot;<span class="variable">%%J</span>AVA_HOME_8<span class="variable">%%&quot;</span> /m</span><br><span class="line">    <span class="built_in">echo</span> 已经修改 &quot;JAVA_HOME&quot; 为 <span class="variable">%%J</span>AVA_HOME_8<span class="variable">%%</span></span><br><span class="line"><span class="variable"></span>) <span class="keyword">ELSE</span> <span class="keyword">IF</span> &quot;<span class="variable">%choose%</span>&quot; <span class="keyword">EQU</span> &quot;<span class="number">9</span>&quot; (</span><br><span class="line">    setx &quot;JAVA_HOME&quot; &quot;<span class="variable">%%J</span>AVA_HOME_9<span class="variable">%%&quot;</span> /m</span><br><span class="line">    <span class="built_in">echo</span> 已经修改 &quot;JAVA_HOME&quot; 为 <span class="variable">%%J</span>AVA_HOME_9<span class="variable">%%</span></span><br><span class="line"><span class="variable"></span><span class="comment">REM setx &quot;Path&quot; &quot;%cd%;%path%&quot; /m</span></span><br><span class="line">) <span class="keyword">ELSE</span> <span class="keyword">IF</span> &quot;<span class="variable">%choose%</span>&quot; <span class="keyword">EQU</span> &quot;<span class="number">11</span>&quot; (</span><br><span class="line">    setx &quot;JAVA_HOME&quot; &quot;<span class="variable">%%J</span>AVA_HOME_11<span class="variable">%%&quot;</span> /m</span><br><span class="line">    <span class="built_in">echo</span> 已经修改 &quot;JAVA_HOME&quot; 为 <span class="variable">%%J</span>AVA_HOME_11<span class="variable">%%</span></span><br><span class="line"><span class="variable"></span>)</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
+<p>上面程序中的<code>setx</code>命令就是用来修改环境变量的.语法格式为:<code>setx 环境变量名 环境变量值 /m</code>。<code>setx</code>设置环境变量需要管理员权限,以管理员身份,运行上面的<code>CJavaBat.bat</code>就可以修改<code>JAVA_HOME</code>环境变量的内容,从而切换<code>Java</code>版本。</p>
+<h3 id="给CJavaBat-bat设置管理员权限"><a href="#给CJavaBat-bat设置管理员权限" class="headerlink" title="给CJavaBat.bat设置管理员权限"></a>给<code>CJavaBat.bat</code>设置管理员权限</h3><p>创建<code>CJavaBat.bat</code>的快捷方式,然后将这个<code>快捷方式</code>重命名为<code>CJava</code>,注意一定要修改名字。<br>然后在<code>快捷方式</code>上面右键。选择<code>属性</code>,在<code>快捷方式</code>选项卡上,点击<code>高级</code>,然后勾选上<code>用管理员身份运行</code>。<br>这样以后直接点击<code>CJava</code>这个快捷方式就可以以管理身份运行<code>CJavaBat.bat</code>这个批处理脚本了。<br><img data-src="https://img-blog.csdnimg.cn/20191006113119847.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img data-src="https://img-blog.csdnimg.cn/20191006113329396.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="配置CJava到Path环境变量"><a href="#配置CJava到Path环境变量" class="headerlink" title="配置CJava到Path环境变量"></a>配置CJava到Path环境变量</h3><p>将这个<code>快捷方式</code>目录配置到<code>Path</code>环境变量中,这样系统会在这个目录下查找程序,</p>
+<h3 id="通过Win-R运行CJava"><a href="#通过Win-R运行CJava" class="headerlink" title="通过Win+R运行CJava"></a>通过Win+R运行CJava</h3><p>然后就可以按下<code>Win+R</code>来启动运行,结束输入<code>CJava</code>,即可启动程序。</p>
+<h3 id="CJava程序说明"><a href="#CJava程序说明" class="headerlink" title="CJava程序说明"></a>CJava程序说明</h3><p>在<code>CJava</code>中输入选项:8,则切换到<code>Java8</code>,输入9,则切换到<code>Java9</code>,输入11则切换到<code>java11</code>,依次类推,可以拓展上面的程序,以支持切换更多的<code>java</code>版本。</p>
+<h3 id="CJava运行效果"><a href="#CJava运行效果" class="headerlink" title="CJava运行效果"></a>CJava运行效果</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">------------------------------------------------</span><br><span class="line">当前Java版本为:</span><br><span class="line">java version &quot;1.8.0_221&quot;</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_221-b11)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.221-b11, mixed mode)</span><br><span class="line">请按任意键继续. . .</span><br><span class="line">------------------------------------------------</span><br><span class="line">输入要使用的java版本对应的选项:</span><br><span class="line">选项   含义</span><br><span class="line">8      切换环境为JDK8</span><br><span class="line">9      切换环境为JDK9</span><br><span class="line">11     切换环境为JDK11</span><br><span class="line">------------------------------------------------</span><br><span class="line">请输入选择:11</span><br><span class="line">成功: 指定的值已得到保存。</span><br><span class="line">已经修改 &quot;JAVA_HOME&quot; 为 %JAVA_HOME_11%</span><br><span class="line">请按任意键继续. . .</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>可以看到切换之前是<code>Java8</code>,切换后为<code>Java11</code></p>
+<h3 id="查看是否切换成功"><a href="#查看是否切换成功" class="headerlink" title="查看是否切换成功"></a>查看是否切换成功</h3><p>运行上面创建<code>TJava.bat</code>,查看运行效果:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java version &quot;11.0.4&quot; 2019-07-16 LTS</span><br><span class="line">Java(TM) SE Runtime Environment 18.9 (build 11.0.4+10-LTS)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.4+10-LTS, mixed mode)</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure>
+<p>可以看到现在已经成功切换为<code>Java11</code>了</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -473,1328 +1493,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/dafbf269/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/dafbf269/" class="post-title-link" itemprop="url">解决 命令行程序 中文英文不对齐的情况</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-10-02 22:58:09" itemprop="dateCreated datePublished" datetime="2019-10-02T22:58:09+08:00">2019-10-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 16:31:36" itemprop="dateModified" datetime="2022-04-04T16:31:36+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/" itemprop="url" rel="index"><span itemprop="name">CMD</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">应用</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/dafbf269/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/dafbf269/" data-xid="/blog/dafbf269/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>381</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="解决-命令行程序-中文英文不对齐的情况"><a href="#解决-命令行程序-中文英文不对齐的情况" class="headerlink" title="解决 命令行程序 中文英文不对齐的情况"></a>解决 命令行程序 中文英文不对齐的情况</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>我用java写了个命令行的工具程序,在程序中我会输出一些提示语句,这些输出语句中有中文,但是奇怪的是中文老是对不齐,强迫症的我看起来很不舒服.<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/cmd/OutputAlign/1.png" alt="这里有一张图片"></p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>之所以加入空格后中文无法对齐,是因为你用的是<code>半角空格</code>,全角空格的宽度小于一个中文的宽度.又大于中文宽度的一半,所以使用半角空格永远也无法让中文对齐。</p>
-<h2 id="使用全角空格来对齐中文"><a href="#使用全角空格来对齐中文" class="headerlink" title="使用全角空格来对齐中文"></a>使用全角空格来对齐中文</h2><p>换成全角的空格就可以,全角的空格占用的宽度和和一个中文占的宽度一样,所以加上<code>全角空格</code>后就可以让中文对齐!</p>
-<h2 id="如何输入全角空格"><a href="#如何输入全角空格" class="headerlink" title="如何输入全角空格"></a>如何输入全角空格</h2><p>这个就要看具体的输入法了,我用的是搜狗输入法,下面介绍搜狗输入法如何切换全角半角:</p>
-<ol>
-<li>先切换到中文状态,然后随便输入点拼音,这时候弹出工具条,</li>
-<li>在弹出的工具条上右键,</li>
-<li>然后点击上面的全半角切换即可:</li>
-</ol>
-<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/cmd/OutputAlign/2.png" alt="这里有一张图片"></p>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>然后输入全角空格就行了,这样中文就对齐了:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/cmd/OutputAlign/3.png" alt="这里有一张图片"><br>这样打包成可执行程序,在cmd中运行也是对齐的:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/cmd/OutputAlign/4.png" alt="这里有一张图片"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e5bb3a41/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/e5bb3a41/" class="post-title-link" itemprop="url">ProcessBuilder和Process类API整理</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-09-30 22:59:36" itemprop="dateCreated datePublished" datetime="2019-09-30T22:59:36+08:00">2019-09-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/API%E6%95%B4%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">API整理</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/e5bb3a41/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/e5bb3a41/" data-xid="/blog/e5bb3a41/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="ProcessBuilder-API整理"><a href="#ProcessBuilder-API整理" class="headerlink" title="ProcessBuilder API整理"></a>ProcessBuilder API整理</h1><h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>static class ProcessBuilder.Redirect</code></td>
-<td align="left">表示子进程的输入源或者输出的目的</td>
-</tr>
-</tbody></table>
-<h2 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h2><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>ProcessBuilder</code>​(<code>String... command)</code></td>
-<td align="left">使用操作系统程序 和参数创建一个进程生成器</td>
-</tr>
-<tr>
-<td align="left"><code>ProcessBuilder</code>​(<code>List&lt;String&gt; command)</code></td>
-<td align="left">使用操作系统程序和参数创建一个进程生成器</td>
-</tr>
-</tbody></table>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="取出或设置程序和参数的方法"><a href="#取出或设置程序和参数的方法" class="headerlink" title="取出或设置程序和参数的方法"></a>取出或设置程序和参数的方法</h3><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>List&lt;String&gt; command()</code></td>
-<td align="left">返回操作系统程序和该程序的参数。</td>
-</tr>
-<tr>
-<td align="left"><code>ProcessBuilder command(List&lt;String&gt; command)</code></td>
-<td align="left">设置这个进程生成器的 操作系统程序 和 参数。</td>
-</tr>
-<tr>
-<td align="left"><code>ProcessBuilder command(String... command)</code></td>
-<td align="left">置这个进程生成器的 操作系统程序 和 参数。</td>
-</tr>
-</tbody></table>
-<h3 id="取出或设置工作目录的方法"><a href="#取出或设置工作目录的方法" class="headerlink" title="取出或设置工作目录的方法"></a>取出或设置工作目录的方法</h3><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>File directory()</code></td>
-<td align="left">返回此进程生成器的工作目录。</td>
-</tr>
-<tr>
-<td align="left"><code>ProcessBuilder directory(File directory)</code></td>
-<td align="left">设置进程生成器的工作目录。</td>
-</tr>
-</tbody></table>
-<h3 id="设置标准IO的方法"><a href="#设置标准IO的方法" class="headerlink" title="设置标准IO的方法"></a>设置标准IO的方法</h3><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>ProcessBuilder redirectOutput(File file)</code></td>
-<td align="left">使用文件作为标准输出</td>
-</tr>
-<tr>
-<td align="left"><code>ProcessBuilder redirectOutput(ProcessBuilder.Redirect destination)</code></td>
-<td align="left">使用<code>Redirect</code>对象作为标准输出</td>
-</tr>
-<tr>
-<td align="left"><code>ProcessBuilder redirectInput(File file)</code></td>
-<td align="left">重定向标准输入到文件中</td>
-</tr>
-<tr>
-<td align="left"><code>ProcessBuilder redirectInput(ProcessBuilder.Redirect source)</code></td>
-<td align="left">重定向标准输入</td>
-</tr>
-<tr>
-<td align="left"><code>ProcessBuilder redirectError(File file)</code></td>
-<td align="left">将标出错误输出设置到文件中</td>
-</tr>
-<tr>
-<td align="left"><code>ProcessBuilder redirectError(ProcessBuilder.Redirect destination)</code></td>
-<td align="left">设置标准错误输出的目标</td>
-</tr>
-</tbody></table>
-<h3 id="取出标准IO的方法"><a href="#取出标准IO的方法" class="headerlink" title="取出标准IO的方法"></a>取出标准IO的方法</h3><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>ProcessBuilder.Redirect redirectInput()</code></td>
-<td align="left">返回表示<code>标准输入</code>的Redirect实例</td>
-</tr>
-<tr>
-<td align="left"><code>ProcessBuilder.Redirect redirectError()</code></td>
-<td align="left">返回表示<code>标准错误输出</code>的Redirect实例</td>
-</tr>
-<tr>
-<td align="left"><code>ProcessBuilder.Redirect redirectOutput()</code></td>
-<td align="left">返回表示<code>标出输出</code>的目标的Redirect实例</td>
-</tr>
-</tbody></table>
-<h3 id="合并标准输出相关的方法"><a href="#合并标准输出相关的方法" class="headerlink" title="合并标准输出相关的方法"></a>合并标准输出相关的方法</h3><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>ProcessBuilder inheritIO()</code></td>
-<td align="left">子进程和父进程使用相同的标准输入,标准输出,标准错误输出</td>
-</tr>
-<tr>
-<td align="left"><code>ProcessBuilder redirectErrorStream(boolean redirectErrorStream)</code></td>
-<td align="left">设置<code>redirectErrorStream</code>属性</td>
-</tr>
-<tr>
-<td align="left"><code>boolean redirectErrorStream()</code></td>
-<td align="left">判断进程生成器是否合并了标准错误输出和标准输出。</td>
-</tr>
-</tbody></table>
-<h3 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h3><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>Map&lt;String,String&gt; environment()</code></td>
-<td align="left">返回保存进程生成器的环境变量的<code>Map</code>集合</td>
-</tr>
-</tbody></table>
-<h3 id="启动进程方法"><a href="#启动进程方法" class="headerlink" title="启动进程方法"></a>启动进程方法</h3><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>Process start()</code></td>
-<td align="left">使用进程生成器中设置的属性启动新一个新的进程</td>
-</tr>
-</tbody></table>
-<h1 id="Process类API整理"><a href="#Process类API整理" class="headerlink" title="Process类API整理"></a>Process类API整理</h1><h2 id="杀死子进程"><a href="#杀死子进程" class="headerlink" title="杀死子进程"></a>杀死子进程</h2><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>abstract void destroy()</code></td>
-<td align="left">杀死子流程</td>
-</tr>
-<tr>
-<td align="left"><code>Process destroyForcibly()</code></td>
-<td align="left">杀死子流程</td>
-</tr>
-</tbody></table>
-<h2 id="获取子进程的IO"><a href="#获取子进程的IO" class="headerlink" title="获取子进程的IO"></a>获取子进程的IO</h2><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>abstract InputStream getErrorStream()</code></td>
-<td align="left">返回连接到子进程的错误输出的输入流</td>
-</tr>
-<tr>
-<td align="left"><code>abstract InputStream getInputStream()</code></td>
-<td align="left">返回连接到子进程的正常输出的输入流.</td>
-</tr>
-<tr>
-<td align="left"><code>abstract OutputStream getOutputStream()</code></td>
-<td align="left">返回连接到子进程的正常输入的输出流</td>
-</tr>
-</tbody></table>
-<h2 id="其他方法-1"><a href="#其他方法-1" class="headerlink" title="其他方法"></a>其他方法</h2><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>abstract int exitValue()</code></td>
-<td align="left">返回子进程的退出值</td>
-</tr>
-<tr>
-<td align="left"><code>boolean isAlive()</code></td>
-<td align="left">测试子流程是否有效</td>
-</tr>
-</tbody></table>
-<h2 id="等待子进程"><a href="#等待子进程" class="headerlink" title="等待子进程"></a>等待子进程</h2><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>abstract int waitFor()</code></td>
-<td align="left">使当前线程等待<code>Process</code>对象表示的进程终止</td>
-</tr>
-<tr>
-<td align="left"><code>boolean waitFor(long timeout, TimeUnit unit)</code></td>
-<td align="left">使当前线程在必要时等待，直到此<code>Process</code>对象代表的子进程终止或经过指定的等待时间为止。</td>
-</tr>
-</tbody></table>
-<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/7ab55f4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/7ab55f4/" class="post-title-link" itemprop="url">VScode 运行java是输出乱码解决</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-09-28 10:27:21" itemprop="dateCreated datePublished" datetime="2019-09-28T10:27:21+08:00">2019-09-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/VSCode/" itemprop="url" rel="index"><span itemprop="name">VSCode</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/7ab55f4/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/7ab55f4/" data-xid="/blog/7ab55f4/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>636</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>最近我在<code>VSCode</code>中运行<code>Java</code>代码,但是奇怪的的是中文输出的是乱码.</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h2 id="可能是编码的问题"><a href="#可能是编码的问题" class="headerlink" title="可能是编码的问题"></a>可能是编码的问题</h2><p>一般乱码时因为<code>java</code>文件的编码和终端的编码不一样导致的<code>.VScode</code>中的内置终端默认调用的是<code>PowerShell</code>,所以<code>java</code>文件的编码和<code>PowerShell</code>的默认编码一样即可,建议修改成<code>UTF-8</code>编码.</p>
-<ol>
-<li>修改<code>java</code>文件的编码为<code>UTF-8</code></li>
-<li>修改终端(PowerShell)的编码为<code>UTF-8</code></li>
-</ol>
-<p>一般来说到这里就没有乱码了,但是奇怪的是,使用<code>System.out.println()</code>方法输出的时候<code>换行符是乱码的</code>,好奇怪啊,还得再猜一猜是什么原因。</p>
-<h1 id="可能是VScode中的java环境版本太老"><a href="#可能是VScode中的java环境版本太老" class="headerlink" title="可能是VScode中的java环境版本太老"></a>可能是VScode中的java环境版本太老</h1><p>如果修改编码后,还是出现乱码,那么可能是<code>java</code>环境太老了,更新<code>java</code>环境试试:</p>
-<ol>
-<li>卸载掉<code>Java Extension Pack</code>,</li>
-<li>然后重启<code>VScode</code>,</li>
-<li>再重新安装<code>Java Extension Pack</code>。</li>
-</ol>
-<h1 id="可能是PowerShell版本太老"><a href="#可能是PowerShell版本太老" class="headerlink" title="可能是PowerShell版本太老"></a>可能是PowerShell版本太老</h1><p>如果更新了<code>java</code>环境之后还是出现问题,那可能是<code>PowerShell</code>的问题了,接下来重新安装<code>PowerShell</code>试试.</p>
-<ol>
-<li>打开<code>Microsoft store</code></li>
-<li>点击搜索款,输入<code>PowerShell</code>,安装<code>PowerShell</code>即可.</li>
-<li>也可以安装<code>Windows Terminal</code>,<code>Windows Terminal</code>好像评价比较高.</li>
-</ol>
-<p>我试到这一步乱码解决了,但是更新<code>java</code>环境后我没有测试乱码有没有解决,如果更新<code>java</code>环境后乱码解决了,也就不用更新<code>PowerShell</code>了(这是废话)。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/b1b65659/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/b1b65659/" class="post-title-link" itemprop="url">cmd schtasks命令</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-09-25 00:35:36" itemprop="dateCreated datePublished" datetime="2019-09-25T00:35:36+08:00">2019-09-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 16:40:23" itemprop="dateModified" datetime="2022-04-04T16:40:23+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/" itemprop="url" rel="index"><span itemprop="name">CMD</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/%E6%89%B9%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">批处理</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/%E6%89%B9%E5%A4%84%E7%90%86/%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">系统相关命令</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/b1b65659/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/b1b65659/" data-xid="/blog/b1b65659/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>6.7k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="schtask命令文档"><a href="#schtask命令文档" class="headerlink" title="schtask命令文档"></a>schtask命令文档</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">schtasks /parameter [arguments] </span><br><span class="line"></span><br><span class="line">描述:</span><br><span class="line">    允许管理员创建、删除、查询、更改、运行和中止本地或远程系统上的计划任务。</span><br><span class="line"></span><br><span class="line">参数列表:</span><br><span class="line">    /create         创建新计划任务。</span><br><span class="line"></span><br><span class="line">    /delete         删除计划任务。</span><br><span class="line"></span><br><span class="line">    /query          显示所有计划任务。</span><br><span class="line"></span><br><span class="line">    /change         更改计划任务属性。</span><br><span class="line"></span><br><span class="line">    /run            按需运行计划任务。</span><br><span class="line"></span><br><span class="line">    /end            中止当前正在运行的计划任务。</span><br><span class="line"></span><br><span class="line">    /showsid        显示与计划的任务名称相应的安全标识符。</span><br><span class="line"></span><br><span class="line">    /?              显示此帮助消息。</span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">examples:</span></span><br><span class="line"><span class="function">    <span class="title">schtasks</span> </span></span><br><span class="line"><span class="function">    <span class="title">schtasks</span> /?</span></span><br><span class="line"><span class="function">    <span class="title">schtasks</span> /<span class="title">run</span> /?</span></span><br><span class="line"><span class="function">    <span class="title">schtasks</span> /<span class="title">end</span> /?</span></span><br><span class="line"><span class="function">    <span class="title">schtasks</span> /<span class="title">create</span> /?</span></span><br><span class="line"><span class="function">    <span class="title">schtasks</span> /<span class="title">delete</span> /?</span></span><br><span class="line"><span class="function">    <span class="title">schtasks</span> /<span class="title">query</span>  /?</span></span><br><span class="line"><span class="function">    <span class="title">schtasks</span> /<span class="title">change</span> /?</span></span><br><span class="line"><span class="function">    <span class="title">schtasks</span> /<span class="title">showsid</span> /?</span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></table></figure>
-<h2 id="创建新任务计划"><a href="#创建新任务计划" class="headerlink" title="创建新任务计划"></a>创建新任务计划</h2><h3 id="schtasks-x2F-create文档"><a href="#schtasks-x2F-create文档" class="headerlink" title="schtasks &#x2F;create文档"></a>schtasks &#x2F;create文档</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">schtasks /create [/s system [/u username [/p [password]]]]</span><br><span class="line">    [/ru username [/rp password]] /sc schedule [/mo modifier] [/d day]</span><br><span class="line">    [/m months] [/i idletime] /tn taskname /tr taskrun [/st starttime]</span><br><span class="line">    [/ri interval] [ &#123;/et endtime | /du duration&#125; [/k] [/xml xmlfile] [/v1]]</span><br><span class="line">    [/sd startdate] [/ed enddate] [/it | /np] [/z] [/f] [/hresult] [/?]</span><br><span class="line"></span><br><span class="line">描述:</span><br><span class="line">     允许管理员在本地或远程系统上创建计划任务。</span><br><span class="line"></span><br><span class="line">参数列表:</span><br><span class="line">    /s   system        指定要连接到的远程系统。如果省略这个</span><br><span class="line">                       系统参数，默认是本地系统。</span><br><span class="line"></span><br><span class="line">    /u   username      指定应在其中执行 schtasks.exe 的用户上下文。</span><br><span class="line"></span><br><span class="line">    /p   [password]    指定给定用户上下文的密码。如果省略则</span><br><span class="line">                       提示输入。</span><br><span class="line"></span><br><span class="line">    /ru  username      指定任务在其下运行的“运行方式”用户帐户(用户上下文)。</span><br><span class="line">                                对于系统帐户，有效 值是 &quot;&quot;、&quot;nt authority\system&quot; 或 &quot;system&quot;。</span><br><span class="line">                                对于 v2 任务，&quot;nt authority\localservice&quot;和&quot;nt authority\networkservice&quot;以及常见的 sid 对这三个也都可用。</span><br><span class="line"></span><br><span class="line">    /rp  [password]    指定“运行方式”用户的密码。要提示输</span><br><span class="line">                       入密码，值必须是 &quot;*&quot; 或无。系统帐户会忽略该</span><br><span class="line">                       密码。必须和 /ru 或 /xml 开关一起使用。</span><br><span class="line"></span><br><span class="line">    /ru/xml    /sc   schedule     指定计划频率。</span><br><span class="line">                       有效计划任务:  minute、 hourly、daily、weekly、 </span><br><span class="line">                       monthly, once, onstart, onlogon, onidle, onevent.</span><br><span class="line"></span><br><span class="line">    /mo   modifier     改进计划类型以允许更好地控制计划重复周期。有效值列于下面“修改者”部分中。</span><br><span class="line"></span><br><span class="line">    /d    days         指定该周内运行任务的日期。有效值: </span><br><span class="line">                       mon、tue、wed、thu、fri、sat、sun</span><br><span class="line">                       和对 monthly 计划的 <span class="number">1</span> - <span class="number">31</span></span><br><span class="line">                       (某月中的日期)。通配符“*”指定所有日期。</span><br><span class="line"></span><br><span class="line">    /m    months       指定一年内的某月。默认是该月的第一天。</span><br><span class="line">                       有效值: jan、feb、mar、apr、may、jun、</span><br><span class="line">                       jul、 aug、sep、oct、nov  和 dec。通配符</span><br><span class="line">                       “*” 指定所有的月。</span><br><span class="line"></span><br><span class="line">    /i    idletime     指定运行一个已计划的 onidle 任务之前</span><br><span class="line">                       要等待的空闲时间。</span><br><span class="line">                       有效值范围: <span class="number">1</span> 到 <span class="number">999</span> 分钟。</span><br><span class="line"></span><br><span class="line">    /tn   taskname     以路径\名称形式指定</span><br><span class="line">                       对此计划任务进行唯一标识的字符串。</span><br><span class="line"></span><br><span class="line">    /tr   taskrun      指定在这个计划时间运行的程序的路径</span><br><span class="line">                       和文件名。</span><br><span class="line">                       例如: c:\windows\system32\calc.exe</span><br><span class="line"></span><br><span class="line">    /st   starttime    指定运行任务的开始时间。</span><br><span class="line">                       时间格式为 hh:mm (<span class="number">24</span> 小时时间)，例如 <span class="number">14</span>:<span class="number">30</span> 表示</span><br><span class="line">                       <span class="number">2</span>:<span class="number">30</span> pm。如果未指定 /st，则默认值为</span><br><span class="line">                       当前时间。/sc once 必需有此选项。</span><br><span class="line"></span><br><span class="line">    /ri   interval     用分钟指定重复间隔。这不适用于</span><br><span class="line">                       计划类型: minute、hourly、</span><br><span class="line">                       onstart, onlogon, onidle, onevent.</span><br><span class="line">                       有效范围: <span class="number">1</span> - <span class="number">599940</span> 分钟。</span><br><span class="line">                       如果已指定 /et 或 /du，则其默认值为</span><br><span class="line">                       <span class="number">10</span> 分钟。</span><br><span class="line"></span><br><span class="line">    /et   endtime      指定运行任务的结束时间。</span><br><span class="line">                       时间格式为 hh:mm (<span class="number">24</span> 小时时间)，例如，<span class="number">14</span>:<span class="number">50</span> 表示 <span class="number">2</span>:<span class="number">50</span> pm。</span><br><span class="line">                       这不适用于计划类型: onstart、</span><br><span class="line">                       onlogon, onidle, onevent.</span><br><span class="line"></span><br><span class="line">    /du   duration     指定运行任务的持续时间。</span><br><span class="line">                       时间格式为 hh:mm。这不适用于 /et 和</span><br><span class="line">                       计划类型: onstart, onlogon, onidle, onevent.</span><br><span class="line">                       对于 /v1 任务，如果已指定 /ri，则持续时间默认值为</span><br><span class="line">                       <span class="number">1</span> 小时。</span><br><span class="line"></span><br><span class="line">    /k                 在结束时间或持续时间终止任务。</span><br><span class="line">                       这不适用于计划类型: onstart、</span><br><span class="line">                       onlogon, onidle, onevent. </span><br><span class="line">                       必须指定 /et 或 /du。</span><br><span class="line"></span><br><span class="line">    /sd   startdate    指定运行任务的第一个日期。</span><br><span class="line">                       格式为 yyyy/mm/dd。默认值为</span><br><span class="line">                       当前日期。这不适用于计划类型: once、</span><br><span class="line">                       onstart, onlogon, onidle, onevent.</span><br><span class="line"></span><br><span class="line">    /ed   enddate      指定此任务运行的最后一天的日期。</span><br><span class="line">                       格式是 yyyy/mm/dd。这不适用于计划类型: </span><br><span class="line">                        once、onstart、onlogon、onidle。</span><br><span class="line"></span><br><span class="line">    /ec   channelname  为 onevent 触发器指定事件通道。</span><br><span class="line"></span><br><span class="line">    /it                仅有在 /ru 用户当前已登录且</span><br><span class="line">                       作业正在运行时才可以交互式运行任务。</span><br><span class="line">                       此任务只有在用户已登录的情况下才运行。</span><br><span class="line"></span><br><span class="line">    /np                不储存任何密码。任务以给定用户的身份</span><br><span class="line">                       非交互的方式运行。只有本地资源可用。</span><br><span class="line"></span><br><span class="line">    /z                 标记在最终运行完任务后删除任务。</span><br><span class="line"></span><br><span class="line">    /xml  xmlfile      从文件的指定任务 xml 中创建任务。</span><br><span class="line">                       可以组合使用 /ru 和 /rp 开关，或者在任务 xml 已包含</span><br><span class="line">                       主体时单独使用 /rp。</span><br><span class="line"></span><br><span class="line">    /v1                创建 vista 以前的平台可以看见的任务。</span><br><span class="line">                       不兼容 /xml。</span><br><span class="line"></span><br><span class="line">    /f                 如果指定的任务已经存在，则强制创建</span><br><span class="line">                       任务并抑制警告。</span><br><span class="line"></span><br><span class="line">    /rl   level        为作业设置运行级别。有效值为</span><br><span class="line">                       limited 和 highest。默认值为 limited。</span><br><span class="line"></span><br><span class="line">    /delay delaytime   指定触发触发器后延迟任务运行的</span><br><span class="line">                       等待时间。时间格式为</span><br><span class="line"><span class="function">                       mmmm:<span class="title">ss</span>。此选项仅对计划类型</span></span><br><span class="line"><span class="function">                       <span class="title">onstart</span>, <span class="title">onlogon</span>, <span class="title">onevent</span>.</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    /<span class="title">hresult</span>          为获得更出色的故障诊断能力，处理退出代码</span></span><br><span class="line"><span class="function">                       将采用 <span class="title">hresult</span> 格式。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    /?                 显示此帮助消息。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">修改者: 按计划类型的 /<span class="title">mo</span> 开关的有效值:</span></span><br><span class="line"><span class="function">    <span class="title">minute</span>:  1 到 1439 分钟。</span></span><br><span class="line"><span class="function">    <span class="title">hourly</span>:  1 - 23 小时。</span></span><br><span class="line"><span class="function">    <span class="title">daily</span>:   1 到 365 天。</span></span><br><span class="line"><span class="function">    <span class="title">weekly</span>:  1 到 52 周。</span></span><br><span class="line"><span class="function">    <span class="title">once</span>:    无修改者。</span></span><br><span class="line"><span class="function">    <span class="title">onstart</span>: 无修改者。</span></span><br><span class="line"><span class="function">    <span class="title">onlogon</span>: 无修改者。</span></span><br><span class="line"><span class="function">    <span class="title">onidle</span>:  无修改者。</span></span><br><span class="line"><span class="function">    <span class="title">monthly</span>: 1 到 12，或</span></span><br><span class="line"><span class="function">             <span class="title">first</span>, <span class="title">second</span>, <span class="title">third</span>, <span class="title">fourth</span>, <span class="title">last</span>, <span class="title">lastday</span>。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="title">onevent</span>:  <span class="title">xpath</span> 事件查询字符串。</span></span><br><span class="line"><span class="function">示例:</span></span><br><span class="line"><span class="function">    ==&gt; 在远程机器 &quot;<span class="title">abc</span>&quot; 上创建计划任务 &quot;<span class="title">doc</span>&quot;，</span></span><br><span class="line"><span class="function">        该机器每小时在 &quot;<span class="title">runasuser</span>&quot; 用户下运行 <span class="title">notepad.exe</span>。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">        <span class="title">schtasks</span> /<span class="title">create</span> /<span class="title">s</span> <span class="title">abc</span> /<span class="title">u</span> <span class="title">user</span> /<span class="title">p</span> <span class="title">password</span> /<span class="title">ru</span> <span class="title">runasuser</span></span></span><br><span class="line"><span class="function">                 /<span class="title">rp</span> <span class="title">runaspassword</span> /<span class="title">sc</span> <span class="title">hourly</span> /<span class="title">tn</span> <span class="title">doc</span> /<span class="title">tr</span> <span class="title">notepad</span> </span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    ==&gt; 在远程机器 &quot;<span class="title">abc</span>&quot; 上创建计划任务 &quot;<span class="title">accountant</span>&quot;，</span></span><br><span class="line"><span class="function">        在指定的开始日期和结束日期之间的开始时间和结束时间内，</span></span><br><span class="line"><span class="function">        每隔五分钟运行 <span class="title">calc.exe</span>。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">        <span class="title">schtasks</span> /<span class="title">create</span> /<span class="title">s</span> <span class="title">abc</span> /<span class="title">u</span> <span class="title">domain</span>\<span class="title">user</span> /<span class="title">p</span> <span class="title">password</span> /<span class="title">sc</span> <span class="title">minute</span></span></span><br><span class="line"><span class="function">                 /<span class="title">mo</span> 5 /<span class="title">tn</span> <span class="title">accountant</span> /<span class="title">tr</span> <span class="title">calc.exe</span> /<span class="title">st</span> 12:00 /<span class="title">et</span> 14:00</span></span><br><span class="line"><span class="function">                 /<span class="title">sd</span> 06/06/2006 /<span class="title">ed</span> 06/06/2006 /<span class="title">ru</span> <span class="title">runasuser</span> /<span class="title">rp</span> <span class="title">userpassword</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    ==&gt; 创建计划任务 &quot;<span class="title">gametime</span>&quot;，在每月的第一个星期天 </span></span><br><span class="line"><span class="function">        运行“空当接龙”。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">        <span class="title">schtasks</span> /<span class="title">create</span> /<span class="title">sc</span> <span class="title">monthly</span> /<span class="title">mo</span> <span class="title">first</span> /<span class="title">d</span> <span class="title">sun</span> /<span class="title">tn</span> <span class="title">gametime</span> </span></span><br><span class="line"><span class="function">                 /<span class="title">tr</span> <span class="title">c</span>:\<span class="title">windows</span>\<span class="title">system32</span>\<span class="title">freecell</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    ==&gt; 在远程机器 &quot;<span class="title">abc</span>&quot; 创建计划任务 &quot;<span class="title">report</span>&quot;，</span></span><br><span class="line"><span class="function">        每个星期运行 <span class="title">notepad.exe</span>。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">        <span class="title">schtasks</span> /<span class="title">create</span> /<span class="title">s</span> <span class="title">abc</span> /<span class="title">u</span> <span class="title">user</span> /<span class="title">p</span> <span class="title">password</span> /<span class="title">ru</span> <span class="title">runasuser</span></span></span><br><span class="line"><span class="function">                 /<span class="title">rp</span> <span class="title">runaspassword</span> /<span class="title">sc</span> <span class="title">weekly</span> /<span class="title">tn</span> <span class="title">report</span> /<span class="title">tr</span> <span class="title">notepad.exe</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    ==&gt; 在远程机器 &quot;<span class="title">abc</span>&quot; 创建计划任务 &quot;<span class="title">logtracker</span>&quot;，</span></span><br><span class="line"><span class="function">        每隔五分钟从指定的开始时间到无结束时间，</span></span><br><span class="line"><span class="function">        运行 <span class="title">notepad.exe</span>。将提示输入 /<span class="title">rp</span> </span></span><br><span class="line"><span class="function">        密码。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">        <span class="title">schtasks</span> /<span class="title">create</span> /<span class="title">s</span> <span class="title">abc</span> /<span class="title">u</span> <span class="title">domain</span>\<span class="title">user</span> /<span class="title">p</span> <span class="title">password</span> /<span class="title">sc</span> <span class="title">minute</span></span></span><br><span class="line"><span class="function">                 /<span class="title">mo</span> 5 /<span class="title">tn</span> <span class="title">logtracker</span> </span></span><br><span class="line"><span class="function">                 /<span class="title">tr</span> <span class="title">c</span>:\<span class="title">windows</span>\<span class="title">system32</span>\<span class="title">notepad.exe</span> /<span class="title">st</span> 18:30</span></span><br><span class="line"><span class="function">                 /<span class="title">ru</span> <span class="title">runasuser</span> /<span class="title">rp</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    ==&gt; 创建计划任务 &quot;<span class="title">gaming</span>&quot;，每天从 12:00 点开始到</span></span><br><span class="line"><span class="function">        14:00 点自动结束，运行 <span class="title">freecell.exe</span>。</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">        <span class="title">schtasks</span> /<span class="title">create</span> /<span class="title">sc</span> <span class="title">daily</span> /<span class="title">tn</span> <span class="title">gaming</span> /<span class="title">tr</span> <span class="title">c</span>:\<span class="title">freecell</span> /<span class="title">st</span> 12:00</span></span><br><span class="line"><span class="function">                 /<span class="title">et</span> 14:00 /<span class="title">k</span></span></span><br><span class="line"><span class="function">    ==&gt; 创建计划任务“<span class="title">eventlog</span>”以开始运行 <span class="title">wevtvwr.msc</span></span></span><br><span class="line"><span class="function">        只要在“系统”通道中发布事件 101</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">        <span class="title">schtasks</span> /<span class="title">create</span> /<span class="title">tn</span> <span class="title">eventlog</span> /<span class="title">tr</span> <span class="title">wevtvwr.msc</span> /<span class="title">sc</span> <span class="title">onevent</span></span></span><br><span class="line"><span class="function">                 /<span class="title">ec</span> <span class="title">system</span> /<span class="title">mo</span> *[<span class="title">system</span>/<span class="title">eventid</span>=101] </span></span><br><span class="line"><span class="function">    ==&gt; 文件路径中可以加入空格，但需要加上两组引号，</span></span><br><span class="line"><span class="function">        一组引号用于 <span class="title">cmd.exe</span>，另一组用于 <span class="title">schtasks.exe</span>。用于 <span class="title">cmd</span></span></span><br><span class="line"><span class="function">        的外部引号必须是一对双引号；内部引号可以是一对单引号或</span></span><br><span class="line"><span class="function">        一对转义双引号:</span></span><br><span class="line"><span class="function">        <span class="title">schtasks</span> /<span class="title">create</span> </span></span><br><span class="line"><span class="function">           /<span class="title">tr</span> &quot;&#x27;<span class="title">c</span>:\<span class="title">program</span> <span class="title">files</span>\<span class="title">internet</span> <span class="title">explorer</span>\<span class="title">iexplorer.exe</span>&#x27; </span></span><br><span class="line"><span class="function">           \&quot;<span class="title">c</span>:\<span class="title">log</span> <span class="title">data</span>\<span class="title">today.xml</span>\&quot;&quot; ... </span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></table></figure>
-<h2 id="定时关机"><a href="#定时关机" class="headerlink" title="定时关机"></a>定时关机</h2><h3 id="先用计算器测试"><a href="#先用计算器测试" class="headerlink" title="先用计算器测试"></a>先用计算器测试</h3><p><strong>在00:53时启动计算器</strong></p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /create /tn shutdown_test /st <span class="number">00</span>:<span class="number">53</span> /sc once /tr &quot;c:\windows\system32\calc.exe&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="查询任务计划"><a href="#查询任务计划" class="headerlink" title="查询任务计划"></a>查询任务计划</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">schtasks /query [/s system [/u username [/p [password]]]]</span><br><span class="line">         [/fo <span class="built_in">format</span> | /xml [xml_type]] [/nh] [/v]</span><br><span class="line">         [/tn taskname] [/hresult] [/?]</span><br><span class="line"></span><br><span class="line">描述: </span><br><span class="line">    允许管理员显示本地或远程系统上的计划任务。</span><br><span class="line"></span><br><span class="line">参数列表:</span><br><span class="line">    /s    system         指定要连接到的远程系统。</span><br><span class="line"></span><br><span class="line">    /u    username       指定 schtasks.exe 要执行的用户上下文。</span><br><span class="line"></span><br><span class="line">    /p    [password]     指定给定的用户上下文密码。如果省略则</span><br><span class="line">                         提示输入。</span><br><span class="line"></span><br><span class="line">    /fo   <span class="built_in">format</span>         为输出指定格式。有效值: table、list、csv。</span><br><span class="line"></span><br><span class="line">    /nh                  指定在输出中不显示列标题。</span><br><span class="line">                         只对 table 格式有效。</span><br><span class="line">                         仅适用于 table 和 csv 格式。</span><br><span class="line"></span><br><span class="line">    /v                   显示详细任务输出。</span><br><span class="line"></span><br><span class="line">    /tn   taskname       指定要检索其信息的任务路径\名称，</span><br><span class="line">                         否则会检索所有任务的信息。</span><br><span class="line"></span><br><span class="line">    /xml  [xml_type]     以 xml 格式显示任务定义。</span><br><span class="line"></span><br><span class="line">                         如果 xml_type 为 one，则输出为一个有效 xml 文件。</span><br><span class="line"></span><br><span class="line">                         如果 xml_type 不存在，则输出将为</span><br><span class="line"></span><br><span class="line">                         所有 xml 任务定义的串联。</span><br><span class="line"></span><br><span class="line">    /hresult             为获得更出色的故障诊断能力，处理退出代码</span><br><span class="line">                         将采用 hresult 格式。</span><br><span class="line"></span><br><span class="line">    /?                   显示此帮助消息。</span><br><span class="line"></span><br><span class="line">示例:</span><br><span class="line">    schtasks /query </span><br><span class="line">    schtasks /query /? </span><br><span class="line">    schtasks /query /s system /u user /p password</span><br><span class="line">    schtasks /query /fo list /v /s system /u user /p password</span><br><span class="line">    schtasks /query /fo table /nh /v</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>查询该任务:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SCHTASKS /Query /TN shutdown_test</span><br></pre></td></tr></table></figure>
-<p>显示效果:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">lan</span>&gt;<span class="title">SCHTASKS</span> /<span class="title">Query</span> /<span class="title">TN</span> <span class="title">shutdown_test</span></span></span><br><span class="line"><span class="function">文件夹: \</span></span><br><span class="line"><span class="function">任务名                                   下次运行时间           模式</span></span><br><span class="line"><span class="function">======================================== ====================== ===============</span></span><br><span class="line"><span class="function"><span class="title">shutdown_test</span>                            <span class="title">N</span>/<span class="title">A</span>                    就绪</span></span><br></pre></td></tr></table></figure>
-<h2 id="删除任务计划"><a href="#删除任务计划" class="headerlink" title="删除任务计划"></a>删除任务计划</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">schtasks /delete [/s system [/u username [/p [password]]]]</span><br><span class="line">         /tn taskname [/f] [/hresult] [/?]</span><br><span class="line"></span><br><span class="line">描述:</span><br><span class="line">    删除一个或多个计划任务。</span><br><span class="line"></span><br><span class="line">参数列表:</span><br><span class="line">    /s   system         指定要连接到的远程系统。</span><br><span class="line"></span><br><span class="line">    /u   username       指定 schtasks.exe  要执行的用户上下文。</span><br><span class="line"></span><br><span class="line">    /p   [password]     指定给定用户上下文密码。如果省略则</span><br><span class="line">                        提示输入。</span><br><span class="line"></span><br><span class="line">    /tn  taskname       指定要删除的任务的路径\名称。</span><br><span class="line">                        可以使用通配符 &quot;*&quot; 来删除所有任务。</span><br><span class="line"></span><br><span class="line">    /f                  强制删除该任务，而且</span><br><span class="line">                        如果指定的任务当前正在运行，则抑制警告。</span><br><span class="line"></span><br><span class="line">    /hresult           为获得更好的故障诊断能力，处理退出代码</span><br><span class="line">                        将采用 hresult 格式。</span><br><span class="line"></span><br><span class="line">    /?                  显示此帮助消息。</span><br><span class="line"></span><br><span class="line">示例:</span><br><span class="line">    schtasks /delete /tn * /f</span><br><span class="line">    schtasks /delete /tn &quot;\备份\备份和还原&quot;</span><br><span class="line">    schtasks /delete /s system /u user /p password /tn &quot;\备份\启动还原&quot;</span><br><span class="line">    schtasks /delete /s system /u user /p password /tn &quot;\备份\启动备份&quot; /f</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="删除上面创建的任务"><a href="#删除上面创建的任务" class="headerlink" title="删除上面创建的任务"></a>删除上面创建的任务</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks /delete /tn  taskname shutdown_test</span><br></pre></td></tr></table></figure>
-<p>运行结果:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E:\<span class="title">dev2</span>\<span class="title">idea_workspace</span>\<span class="title">CodeGenerator</span>&gt;<span class="title">schtasks</span> /<span class="title">delete</span> /<span class="title">tn</span> <span class="title">shutdown_test</span></span></span><br><span class="line"><span class="function">警告: 确实要删除任务 &quot;<span class="title">shutdown_test</span>&quot; 吗 (<span class="title">Y</span>/<span class="title">N</span> )? <span class="title">y</span></span></span><br><span class="line"><span class="function">成功: 计划的任务 &quot;<span class="title">shutdown_test</span>&quot; 被成功删除。</span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/122fc4b2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/122fc4b2/" class="post-title-link" itemprop="url">UML类图</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-09-16 13:14:42" itemprop="dateCreated datePublished" datetime="2019-09-16T13:14:42+08:00">2019-09-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/UML/" itemprop="url" rel="index"><span itemprop="name">UML</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/122fc4b2/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/122fc4b2/" data-xid="/blog/122fc4b2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>964</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h1><h2 id="UML类图关系"><a href="#UML类图关系" class="headerlink" title="UML类图关系"></a>UML类图关系</h2><p>在<code>UML</code>类图中,常见的有以下几种关系: 泛化(<code>Generalization</code>), 实现(<code>Realization</code>),关联(<code>Association)</code>,聚合(<code>Aggregation</code>),组合(<code>Composition</code>),依赖(<code>Dependency</code>)。</p>
-<h2 id="关系的强弱"><a href="#关系的强弱" class="headerlink" title="关系的强弱"></a>关系的强弱</h2><p>各种关系的强弱顺序: 泛化 &#x3D; 实现 &gt; 组合 &gt; 聚合 &gt; 关联 &gt; 依赖</p>
-<h2 id="2-1-泛化"><a href="#2-1-泛化" class="headerlink" title="2.1.泛化"></a>2.1.泛化</h2><p>【泛化关系】:是一种<code>继承</code>关系,表示一般与特殊的关系,它指定了子类如何继承父类的所有特征和行为。</p>
-<h3 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h3><p>箭头:空心三角形<br>箭身:实线</p>
-<h3 id="代码体现"><a href="#代码体现" class="headerlink" title="代码体现"></a>代码体现</h3><p><code>java</code>中继承通过<code>extends</code>关键字来定义.</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>例如：老虎是动物的一种，即有老虎的特性也有动物的共性。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/UML/1.png" alt="这里有一张图片"></p>
-<h2 id="2-2-实现"><a href="#2-2-实现" class="headerlink" title="2.2.实现"></a>2.2.实现</h2><p>【实现关系】：是一种类与接口的关系，表示类是接口所有特征和行为的实现。</p>
-<h3 id="符号-1"><a href="#符号-1" class="headerlink" title="符号"></a>符号</h3><p>箭头:空心三角形<br>箭身:虚线</p>
-<h3 id="代码体现-1"><a href="#代码体现-1" class="headerlink" title="代码体现"></a>代码体现</h3><p><code>java</code>中<code>实现</code>通过<code>implement</code>关键字来定义。</p>
-<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/UML/2.png" alt="这里有一张图片"></p>
-<h2 id="2-3-关联"><a href="#2-3-关联" class="headerlink" title="2.3.关联"></a>2.3.关联</h2><p>【关联关系】:是一种<code>拥有</code>的关系,它<strong>使一个类知道另一个类的属性和方法</strong>;如:老师可以知道它的学生,丈夫可以知道妻子。关联可以是双向的,也可以是单向的。</p>
-<h3 id="符号-2"><a href="#符号-2" class="headerlink" title="符号"></a>符号</h3><p>箭头:</p>
-<ul>
-<li>双向的关联可以有两个箭头或者没有箭头</li>
-<li>单向的关联有一个箭头。</li>
-<li>箭头指向被关联的类</li>
-</ul>
-<p>箭身:实线</p>
-<h3 id="代码体现-2"><a href="#代码体现-2" class="headerlink" title="代码体现"></a>代码体现</h3><p>使用关联类作为当前类的<code>成员变量</code>实现。</p>
-<h3 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h3><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/UML/3.png" alt="这里有一张图片"></p>
-<h2 id="2-4-聚合关系"><a href="#2-4-聚合关系" class="headerlink" title="2.4. 聚合关系"></a>2.4. 聚合关系</h2><p>**聚合关系:是<code>整体与部分</code>的关系,且<code>部分可以离开整体而单独存在</code>**。如车和轮胎是整体和部分的关系,轮胎离开车仍然可以存在。<br><strong>聚合关系是关联关系的一种</strong>,是强的关联关系;关联和聚合在语法上无法区分,必须考察具体的逻辑关系。</p>
-<h3 id="符号-3"><a href="#符号-3" class="headerlink" title="符号"></a>符号</h3><p>聚合关系的箭头有两个,一个是<code>空心的菱形</code>,一个是<code>普通箭头</code>。菱形的一端指向<code>整体</code>,普通箭头指向<code>部分</code><br>箭身:和关联关系一样是<code>实线</code></p>
-<h3 id="代码体现-3"><a href="#代码体现-3" class="headerlink" title="代码体现"></a>代码体现</h3><p>通过定义<code>成员变量</code>实现。</p>
-<h3 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h3><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/UML/4.png" alt="这里有一张图片"></p>
-<h2 id="2-5-组合关系"><a href="#2-5-组合关系" class="headerlink" title="2.5.组合关系"></a>2.5.组合关系</h2><p><strong>组合关系:是<code>整体与部分</code>的关系,但<code>部分不能离开整体而单独存在</code><strong>。如公司和部门是整体和部分的关系,没有公司就不存在部门。<br><strong>组合关系是关联关系的一种</strong>，</strong>是比聚合关系还要强的关系.</strong></p>
-<h3 id="符号-4"><a href="#符号-4" class="headerlink" title="符号"></a>符号</h3><ul>
-<li>箭头及指向<ul>
-<li>实心菱形指向整体</li>
-<li>普通箭头指向部分</li>
-</ul>
-</li>
-<li>箭身:实线</li>
-</ul>
-<h3 id="代码体现-4"><a href="#代码体现-4" class="headerlink" title="代码体现"></a>代码体现</h3><p>通过定义成员变量实现。</p>
-<h3 id="实例-4"><a href="#实例-4" class="headerlink" title="实例"></a>实例</h3><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/UML/5.png" alt="这里有一张图片"></p>
-<h2 id="2-6-依赖"><a href="#2-6-依赖" class="headerlink" title="2.6.依赖"></a>2.6.依赖</h2><p>依赖关系是指一个类的元素使用了另一个类,依赖关系使用带箭头的虚线表示,其中箭头指向被依赖的类。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Others/UML/1.png" alt="这里有一张图片"></p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/44518805">https://zhuanlan.zhihu.com/p/44518805</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e6e67208/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/e6e67208/" class="post-title-link" itemprop="url">FFmpeg命令初次学习</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-09-11 16:54:24" itemprop="dateCreated datePublished" datetime="2019-09-11T16:54:24+08:00">2019-09-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/FFmpeg/" itemprop="url" rel="index"><span itemprop="name">FFmpeg</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/FFmpeg/%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">命令</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/e6e67208/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/e6e67208/" data-xid="/blog/e6e67208/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>70</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="书籍下载"><a href="#书籍下载" class="headerlink" title="书籍下载"></a>书籍下载</h1><p><a target="_blank" rel="noopener" href="https://pan.baidu.com/wap/init?surl=7SxXM9_cqrhnoM4KV7SQVw">https://pan.baidu.com/wap/init?surl=7SxXM9_cqrhnoM4KV7SQVw</a><br>提取码: gnn4</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/6a7ac4ce/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/6a7ac4ce/" class="post-title-link" itemprop="url">批处理 timeout命令</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-09-11 11:20:03" itemprop="dateCreated datePublished" datetime="2019-09-11T11:20:03+08:00">2019-09-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 16:36:11" itemprop="dateModified" datetime="2022-04-04T16:36:11+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/" itemprop="url" rel="index"><span itemprop="name">CMD</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/%E6%89%B9%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">批处理</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/%E6%89%B9%E5%A4%84%E7%90%86/%E6%9E%84%E5%BB%BA%E7%A8%8B%E5%BA%8F%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">构建程序相关命令</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/6a7ac4ce/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/6a7ac4ce/" data-xid="/blog/6a7ac4ce/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>521</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="timeout命令"><a href="#timeout命令" class="headerlink" title="timeout命令"></a>timeout命令</h1><h2 id="帮助文档"><a href="#帮助文档" class="headerlink" title="帮助文档"></a>帮助文档</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">timeout [/t] timeout [/nobreak] </span><br><span class="line"></span><br><span class="line">描述:</span><br><span class="line">    这个工具接受超时参数，等候一段指定的时间(秒)或等按任意键。它还接受</span><br><span class="line">    一个参数，忽视按键。</span><br><span class="line"></span><br><span class="line">参数列表:</span><br><span class="line">    /t        timeout       指定等候的秒数。有效范围从 -<span class="number">1</span> 到 <span class="number">99999</span> 秒。</span><br><span class="line">    /nobreak                忽略按键并等待指定的时间。</span><br><span class="line">    /?                      显示此帮助消息。</span><br><span class="line"></span><br><span class="line">注意: 超时值 -<span class="number">1</span> 表示无限期地等待按键。</span><br><span class="line"></span><br><span class="line">示例:</span><br><span class="line">    timeout /?</span><br><span class="line">    timeout /t <span class="number">10</span></span><br><span class="line">    timeout /t <span class="number">300</span> /nobreak</span><br><span class="line">    timeout /t -<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>这个命令可以使用<code>&amp;&amp;</code>连接符与其他命令串联到一起,从而实现定时执行后面命令的功能。</p>
-<h3 id="30秒后休眠电脑"><a href="#30秒后休眠电脑" class="headerlink" title="30秒后休眠电脑"></a>30秒后休眠电脑</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timeout /t <span class="number">30</span> /nobreak &amp;&amp; shutdown -h</span><br></pre></td></tr></table></figure>
-<h3 id="定时休眠批处理程序"><a href="#定时休眠批处理程序" class="headerlink" title="定时休眠批处理程序"></a>定时休眠批处理程序</h3><p>下面根据用户输入的秒数来休眠电脑:</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> /P waitTime=输入要休眠的秒数:</span><br><span class="line">timeout /t <span class="variable">%waitTime%</span> /nobreak &amp;&amp; shutdown -h</span><br><span class="line"><span class="comment">REM timeout /t %waitTime% /nobreak &amp;&amp; echo 休眠电脑啦!</span></span><br><span class="line"><span class="comment">REM pause</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4508a6a3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/4508a6a3/" class="post-title-link" itemprop="url">cmd shutdown命令</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-09-04 00:23:58" itemprop="dateCreated datePublished" datetime="2019-09-04T00:23:58+08:00">2019-09-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 16:40:28" itemprop="dateModified" datetime="2022-04-04T16:40:28+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/" itemprop="url" rel="index"><span itemprop="name">CMD</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/%E6%89%B9%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">批处理</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/%E6%89%B9%E5%A4%84%E7%90%86/%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">系统相关命令</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/4508a6a3/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/4508a6a3/" data-xid="/blog/4508a6a3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="cmd-shutdown命令"><a href="#cmd-shutdown命令" class="headerlink" title="cmd shutdown命令"></a>cmd shutdown命令</h1><h2 id="帮助文档"><a href="#帮助文档" class="headerlink" title="帮助文档"></a>帮助文档</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">用法: shutdown [/i | /l | /s | /sg | /r | /g | /a | /p | /h | /e | /o] [/hybrid] [/soft] [/fw] [/f]</span><br><span class="line">    [/m \\computer][/t xxx][/d [p|u:]xx:yy [/c &quot;comment&quot;]]</span><br><span class="line"></span><br><span class="line">    没有参数   显示帮助。这与键入 /? 是一样的。</span><br><span class="line">    /?         显示帮助。这与不键入任何选项是一样的。</span><br><span class="line">    /i         显示图形用户界面(GUI)。</span><br><span class="line">               这必须是第一个选项。</span><br><span class="line">    /l         注销。这不能与 /m 或 /d 选项一起使用。</span><br><span class="line">    /s         关闭计算机。</span><br><span class="line">    /sg        关闭计算机。在下一次启动时，</span><br><span class="line">               重启任何注册的应用程序。</span><br><span class="line">    /r         完全关闭并重启计算机。</span><br><span class="line">    /g         完全关闭并重新启动计算机。在重新启动系统后，</span><br><span class="line">               重启任何注册的应用程序。</span><br><span class="line">    /a         中止系统关闭。</span><br><span class="line">               这只能在超时期间使用。</span><br><span class="line">               与 /fw 结合使用，以清除任何未完成的至固件的引导。</span><br><span class="line">    /p         关闭本地计算机，没有超时或警告。</span><br><span class="line">               可以与 /d 和 /f 选项一起使用。</span><br><span class="line">    /h         休眠本地计算机。</span><br><span class="line">               可以与 /f 选项一起使用。</span><br><span class="line">    /hybrid    执行计算机关闭并进行准备以快速启动。</span><br><span class="line">               必须与 /s 选项一起使用。</span><br><span class="line">    /fw        与关闭选项结合使用，使下次启动转到</span><br><span class="line">               固件用户界面。</span><br><span class="line">    /e         记录计算机意外关闭的原因。</span><br><span class="line">    /o         转到高级启动选项菜单并重新启动计算机。</span><br><span class="line">               必须与 /r 选项一起使用。</span><br><span class="line">    /m \\computer 指定目标计算机。</span><br><span class="line">    /t xxx     将关闭前的超时时间设置为 xxx 秒。</span><br><span class="line">               有效范围是 <span class="number">0</span>-<span class="number">315360000</span> (<span class="number">10</span> 年)，默认值为 <span class="number">30</span>。</span><br><span class="line">               如果超时时间大于 <span class="number">0</span>，则默示为</span><br><span class="line">               /f 参数。</span><br><span class="line">    /c &quot;comment&quot; 有关重新启动或关闭的原因的注释。</span><br><span class="line">               最多允许 <span class="number">512</span> 个字符。</span><br><span class="line">    /f         强制关闭正在运行的应用程序而不事先警告用户。</span><br><span class="line">               如果为 /t 参数指定大于 <span class="number">0</span> 的值，</span><br><span class="line">               则默示为 /f 参数。</span><br><span class="line">    /d [p|u:]xx:yy  提供重新启动或关闭的原因。</span><br><span class="line">               p 指示重启或关闭是计划内的。</span><br><span class="line">               u 指示原因是用户定义的。</span><br><span class="line">               如果未指定 p 也未指定 u，则重新启动或关闭</span><br><span class="line">               是计划外的。</span><br><span class="line">               xx 是主要原因编号(小于 <span class="number">256</span> 的正整数)。</span><br><span class="line">               yy 是次要原因编号(小于 <span class="number">65536</span> 的正整数)。</span><br><span class="line"></span><br><span class="line">此计算机上的原因:</span><br><span class="line">(E = 预期 U = 意外 P = 计划内，C = 自定义)</span><br><span class="line">类别    主要     次要    标题</span><br><span class="line"></span><br><span class="line"> U      <span class="number">0</span>    <span class="number">0</span>    其他(计划外)</span><br><span class="line">E       <span class="number">0</span>    <span class="number">0</span>    其他(计划外)</span><br><span class="line">E P     <span class="number">0</span>    <span class="number">0</span>    其他(计划内)</span><br><span class="line"> U      <span class="number">0</span>    <span class="number">5</span>    其他故障: 系统没有反应</span><br><span class="line">E       <span class="number">1</span>    <span class="number">1</span>    硬件: 维护(计划外)</span><br><span class="line">E P     <span class="number">1</span>    <span class="number">1</span>    硬件: 维护(计划内)</span><br><span class="line">E       <span class="number">1</span>    <span class="number">2</span>    硬件: 安装(计划外)</span><br><span class="line">E P     <span class="number">1</span>    <span class="number">2</span>    硬件: 安装(计划内)</span><br><span class="line">E       <span class="number">2</span>    <span class="number">2</span>    操作系统: 恢复(计划外)</span><br><span class="line">E P     <span class="number">2</span>    <span class="number">2</span>    操作系统: 恢复(计划内)</span><br><span class="line">  P     <span class="number">2</span>    <span class="number">3</span>    操作系统: 升级(计划内)</span><br><span class="line">E       <span class="number">2</span>    <span class="number">4</span>    操作系统: 重新配置(计划外)</span><br><span class="line">E P     <span class="number">2</span>    <span class="number">4</span>    操作系统: 重新配置(计划内)</span><br><span class="line">  P     <span class="number">2</span>    <span class="number">16</span>    操作系统: Service Pack (计划内)</span><br><span class="line">        <span class="number">2</span>    <span class="number">17</span>    操作系统: 热修补(计划外)</span><br><span class="line">  P     <span class="number">2</span>    <span class="number">17</span>    操作系统: 热修补(计划内)</span><br><span class="line">        <span class="number">2</span>    <span class="number">18</span>    操作系统: 安全修补(计划外)</span><br><span class="line">  P     <span class="number">2</span>    <span class="number">18</span>    操作系统: 安全修补(计划内)</span><br><span class="line">E       <span class="number">4</span>    <span class="number">1</span>    应用程序: 维护(计划外)</span><br><span class="line">E P     <span class="number">4</span>    <span class="number">1</span>    应用程序: 维护(计划内)</span><br><span class="line">E P     <span class="number">4</span>    <span class="number">2</span>    应用程序: 安装(计划内)</span><br><span class="line">E       <span class="number">4</span>    <span class="number">5</span>    应用程序: 没有反应</span><br><span class="line">E       <span class="number">4</span>    <span class="number">6</span>    应用程序: 不稳定</span><br><span class="line"> U      <span class="number">5</span>    <span class="number">15</span>    系统故障: 停止错误</span><br><span class="line"> U      <span class="number">5</span>    <span class="number">19</span>    安全问题(计划外)</span><br><span class="line">E       <span class="number">5</span>    <span class="number">19</span>    安全问题(计划外)</span><br><span class="line">E P     <span class="number">5</span>    <span class="number">19</span>    安全问题(计划内)</span><br><span class="line">E       <span class="number">5</span>    <span class="number">20</span>    网络连接丢失(计划外)</span><br><span class="line"> U      <span class="number">6</span>    <span class="number">11</span>    电源故障: 电线被拔掉</span><br><span class="line"> U      <span class="number">6</span>    <span class="number">12</span>    电源故障: 环境</span><br><span class="line">  P     <span class="number">7</span>    <span class="number">0</span>    旧版 API 关机</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="shutdown-x2F-i"><a href="#shutdown-x2F-i" class="headerlink" title="shutdown &#x2F;i"></a>shutdown &#x2F;i</h2><p>启动后的图形界面如下图所示，但是我看不懂该怎么操作。知道就行。</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2022/04/20220426132253.png" alt="image-20220426132253567"></p>
-<h2 id="shutdown-x2F-h"><a href="#shutdown-x2F-h" class="headerlink" title="shutdown &#x2F;h"></a>shutdown &#x2F;h</h2><p>这个命令可以让当前计算机立即休眠。<br>需要注意的是，<code>shutdown /h -t 60</code>这样的命令是错误的。</p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="定时关机"><a href="#定时关机" class="headerlink" title="定时关机"></a>定时关机</h3><table>
-<thead>
-<tr>
-<th align="left">命令</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>shutdown -s -t 0</code></td>
-<td align="left">立即关机</td>
-</tr>
-<tr>
-<td align="left"><code>shutdown -s -t 3600</code></td>
-<td align="left">3600秒后关机</td>
-</tr>
-</tbody></table>
-<h3 id="在执行其他命令后休眠"><a href="#在执行其他命令后休眠" class="headerlink" title="在执行其他命令后休眠"></a>在执行其他命令后休眠</h3><p>可以使用<code>&amp;&amp;</code>符号把命令链接起来,例如:<br><code>A命令 &amp;&amp; B命令</code>的意思是<code>先执行A命令</code>,<code>如果A命令执行成功则执行B命令</code>。<br>我有使用Hexo写博客,在睡觉之前我会发布博客,但是发布需要一定的时间,可以通过在发布命令后用<code>&amp;&amp;</code>连接上休眠命令<code>shutdown /h</code>，这样发布接收之后就会休眠电脑。<br>休眠的好处就是下次开机不用打开常用的软件.</p>
-<table>
-<thead>
-<tr>
-<th align="left">命令</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>hexo clean&amp;&amp;hexo g&amp;&amp;hexo d&amp;&amp;shutdown /h</code></td>
-<td align="left">发布<code>Hexo</code>博客后休眠电脑</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/42/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/42/">42</a><span class="page-number current">43</span><a class="page-number" href="/blog/page/44/">44</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/65/">65</a><a class="extend next" rel="next" href="/blog/page/44/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/42/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/42/">42</a><span class="page-number current">43</span><a class="page-number" href="/blog/page/44/">44</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/66/">66</a><a class="extend next" rel="next" href="/blog/page/44/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1825,7 +1525,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23:46</span>
+    <span title="站点阅读时长">23:51</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

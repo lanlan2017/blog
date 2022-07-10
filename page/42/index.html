@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">648</span>
+          <span class="site-state-item-count">656</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">215</span>
+        <span class="site-state-item-count">216</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -213,6 +213,1049 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/471198f0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/471198f0/" class="post-title-link" itemprop="url">grep命令</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-03 15:40:40" itemprop="dateCreated datePublished" datetime="2019-11-03T15:40:40+08:00">2019-11-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/471198f0/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/471198f0/" data-xid="/blog/471198f0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">grep --help                                                               </span><br><span class="line">Usage: grep [OPTION]... PATTERNS [FILE]...</span><br><span class="line">Search for PATTERNS in each FILE.</span><br><span class="line">Example: grep -i &#x27;hello world&#x27; menu.h main.c</span><br><span class="line">PATTERNS can contain multiple patterns separated by newlines.</span><br><span class="line"></span><br><span class="line">Pattern selection and interpretation:</span><br><span class="line">  -E, --extended-regexp     PATTERNS are extended regular expressions</span><br><span class="line">  -F, --fixed-strings       PATTERNS are strings</span><br><span class="line">  -G, --basic-regexp        PATTERNS are basic regular expressions</span><br><span class="line">  -P, --perl-regexp         PATTERNS are Perl regular expressions</span><br><span class="line">  -e, --regexp=PATTERNS     use PATTERNS for matching</span><br><span class="line">  -f, --file=FILE           take PATTERNS from FILE</span><br><span class="line">  -i, --ignore-case         ignore case distinctions</span><br><span class="line">  -w, --word-regexp         match only whole words</span><br><span class="line">  -x, --line-regexp         match only whole lines</span><br><span class="line">  -z, --null-data           a data line ends in 0 byte, not newline</span><br><span class="line"></span><br><span class="line">Miscellaneous:</span><br><span class="line">  -s, --no-messages         suppress error messages</span><br><span class="line">  -v, --invert-match        select non-matching lines</span><br><span class="line">  -V, --version             display version information and exit</span><br><span class="line">      --help                display this help text and exit</span><br><span class="line"></span><br><span class="line">Output control:</span><br><span class="line">  -m, --max-count=NUM       stop after NUM selected lines</span><br><span class="line">  -b, --byte-offset         print the byte offset with output lines</span><br><span class="line">  -n, --line-number         print line number with output lines</span><br><span class="line">      --line-buffered       flush output on every line</span><br><span class="line">  -H, --with-filename       print file name with output lines</span><br><span class="line">  -h, --no-filename         suppress the file name prefix on output</span><br><span class="line">      --label=LABEL         use LABEL as the standard input file name prefix</span><br><span class="line">  -o, --only-matching       show only nonempty parts of lines that match</span><br><span class="line">  -q, --quiet, --silent     suppress all normal output</span><br><span class="line">      --binary-files=TYPE   assume that binary files are TYPE;</span><br><span class="line">                            TYPE is &#x27;binary&#x27;, &#x27;text&#x27;, or &#x27;without-match&#x27;</span><br><span class="line">  -a, --text                equivalent to --binary-files=text</span><br><span class="line">  -I                        equivalent to --binary-files=without-match</span><br><span class="line">  -d, --directories=ACTION  how to handle directories;</span><br><span class="line">                            ACTION is &#x27;read&#x27;, &#x27;recurse&#x27;, or &#x27;skip&#x27;</span><br><span class="line">  -D, --devices=ACTION      how to handle devices, FIFOs and sockets;</span><br><span class="line">                            ACTION is &#x27;read&#x27; or &#x27;skip&#x27;</span><br><span class="line">  -r, --recursive           like --directories=recurse</span><br><span class="line">  -R, --dereference-recursive  likewise, but follow all symlinks</span><br><span class="line">      --include=GLOB        search only files that match GLOB (a file pattern)</span><br><span class="line">      --exclude=GLOB        skip files and directories matching GLOB</span><br><span class="line">      --exclude-from=FILE   skip files matching any file pattern from FILE</span><br><span class="line">      --exclude-dir=GLOB    skip directories that match GLOB</span><br><span class="line">  -L, --files-without-match  print only names of FILEs with no selected lines</span><br><span class="line">  -l, --files-with-matches  print only names of FILEs with selected lines</span><br><span class="line">  -c, --count               print only a count of selected lines per FILE</span><br><span class="line">  -T, --initial-tab         make tabs line up (if needed)</span><br><span class="line">  -Z, --null                print 0 byte after FILE name</span><br><span class="line"></span><br><span class="line">Context control:</span><br><span class="line">  -B, --before-context=NUM  print NUM lines of leading context</span><br><span class="line">  -A, --after-context=NUM   print NUM lines of trailing context</span><br><span class="line">  -C, --context=NUM         print NUM lines of output context</span><br><span class="line">  -NUM                      same as --context=NUM</span><br><span class="line">      --color[=WHEN],</span><br><span class="line">      --colour[=WHEN]       use markers to highlight the matching strings;</span><br><span class="line">                            WHEN is &#x27;always&#x27;, &#x27;never&#x27;, or &#x27;auto&#x27;</span><br><span class="line">  -U, --binary              do not strip CR characters at EOL (MSDOS/Windows)</span><br><span class="line"></span><br><span class="line">When FILE is &#x27;-&#x27;, read standard input.  With no FILE, read &#x27;.&#x27; if</span><br><span class="line">recursive, &#x27;-&#x27; otherwise.  With fewer than two FILEs, assume -h.</span><br><span class="line">Exit status is 0 if any line (or file if -L) is selected, 1 otherwise;</span><br><span class="line">if any error occurs and -q is not given, the exit status is 2.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/f8d0ff32/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/f8d0ff32/" class="post-title-link" itemprop="url">TL-WR800N v1路由器配置</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-01 14:39:51" itemprop="dateCreated datePublished" datetime="2019-11-01T14:39:51+08:00">2019-11-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">路由器配置</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/f8d0ff32/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/f8d0ff32/" data-xid="/blog/f8d0ff32/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>626</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="TL-WR800N-v1路由器配置"><a href="#TL-WR800N-v1路由器配置" class="headerlink" title="TL-WR800N v1路由器配置"></a>TL-WR800N v1路由器配置</h1><h2 id="固定电脑IP地址"><a href="#固定电脑IP地址" class="headerlink" title="固定电脑IP地址"></a>固定电脑IP地址</h2><p><strong>网络和internet设置</strong>,<strong>更改适配器选项</strong>,然后在<code>WLAN</code>上右键,选择<strong>属性(R)</strong>,然后点击<strong>internet协议版本4(TCP&#x2F;IPv4)<strong>选项,然后按下</strong>属性(R)<strong>按钮,在弹出的窗口上选择</strong>使用下面的IP地址(S)</strong>,<br>然后设置固IP为<code>192.168.1.200</code>,子网掩码为:<code>255.255.255.0</code>,最后选择<strong>确定</strong>即可</p>
+<h2 id="连接路由器的WiFi"><a href="#连接路由器的WiFi" class="headerlink" title="连接路由器的WiFi"></a>连接路由器的WiFi</h2><p>在<code>WiFi</code>列表中链接<code>WiFi</code>,这个<code>WiFI</code>的格式为:<code>TP-LINK_xxxxxx</code></p>
+<h2 id="进入路由器后台"><a href="#进入路由器后台" class="headerlink" title="进入路由器后台"></a>进入路由器后台</h2><p><a target="_blank" rel="noopener" href="http://192.168.1.253/">http://192.168.1.253/</a><br>后台用户名:<code>admin</code>,后台密码:<code>admin</code></p>
+<h2 id="AP模式"><a href="#AP模式" class="headerlink" title="AP模式"></a>AP模式</h2><p>AP模式就是将有线信号转成无线信号<br>参见:<a target="_blank" rel="noopener" href="https://www.192ly.com/router-settings/tp-link/tl-wr800n-v1-ap.html">https://www.192ly.com/router-settings/tp-link/tl-wr800n-v1-ap.html</a></p>
+<h2 id="中继模式"><a href="#中继模式" class="headerlink" title="中继模式"></a>中继模式</h2><p>中继模式用来将弱的无线信号放大,以便扩大无线的覆盖范围<br>参见:<a target="_blank" rel="noopener" href="https://service.tp-link.com.cn/detail_article_1131.html">https://service.tp-link.com.cn/detail_article_1131.html</a></p>
+<h2 id="取消固定电脑IP地址"><a href="#取消固定电脑IP地址" class="headerlink" title="取消固定电脑IP地址"></a>取消固定电脑IP地址</h2><p>重复<a href="%E5%9B%BA%E5%AE%9A%E7%94%B5%E8%84%91IP%E5%9C%B0%E5%9D%80">第一步</a>的步骤,然后选择**自动获得IP地址(O)**即可.</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://service.tp-link.com.cn/detail_download_621.html">TL-WR800N v1 说明书</a><br><a target="_blank" rel="noopener" href="https://www.192ly.com/router-settings/tp-link/tl-wr800n-v1-ap.html">TP-Link TL-WR800N V1路由器-AP模式设置</a><br><a target="_blank" rel="noopener" href="https://www.192ly.com/router-settings/tp-link/tl-wr800n-v1-repeater.html">TP-Link TL-WR800N V1路由器中继设置</a><br><a target="_blank" rel="noopener" href="https://www.192ly.com/?s=TP-Link+TL-WR800N+V1%E8%B7%AF%E7%94%B1%E5%99%A8">TP-Link TL-WR800N V1路由器 其他设置</a><br><a target="_blank" rel="noopener" href="https://service.tp-link.com.cn/detail_article_1131.html">[TL-WR800N V1] 中继放大无线信号-中继模式</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/c3146b3e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/c3146b3e/" class="post-title-link" itemprop="url">Termux 电脑上登录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-01 11:37:04" itemprop="dateCreated datePublished" datetime="2019-11-01T11:37:04+08:00">2019-11-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/Termux/" itemprop="url" rel="index"><span itemprop="name">Termux</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/c3146b3e/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/c3146b3e/" data-xid="/blog/c3146b3e/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="下载安装Xshell免费版"><a href="#下载安装Xshell免费版" class="headerlink" title="下载安装Xshell免费版"></a>下载安装Xshell免费版</h1><h2 id="进入中文官网"><a href="#进入中文官网" class="headerlink" title="进入中文官网"></a>进入中文官网</h2><p>进入<a target="_blank" rel="noopener" href="https://www.netsarang.com/zh/xshell/">Xshell的官网</a>,然后点击顶部导航条上的<code>所有下载</code>，<code>家庭/学校免费</code>.<br><img data-src="https://img-blog.csdnimg.cn/20191101155722848.png" alt="在这里插入图片描述"></p>
+<h2 id="填写邮箱获取下载链接"><a href="#填写邮箱获取下载链接" class="headerlink" title="填写邮箱获取下载链接"></a>填写邮箱获取下载链接</h2><p>然后填写姓名和邮箱，选择要下载的程序，然后点击下载,下载链接会发送到刚才邮箱上。<br><img data-src="https://img-blog.csdnimg.cn/20191101155404912.png" alt="在这里插入图片描述"></p>
+<h2 id="接收邮件-并下载"><a href="#接收邮件-并下载" class="headerlink" title="接收邮件 并下载"></a>接收邮件 并下载</h2><p>打开邮箱,点击下载链接即可下载Xshell<br>下载好之后安装Xshell,过程省略..</p>
+<h1 id="使用Xshell创建秘钥"><a href="#使用Xshell创建秘钥" class="headerlink" title="使用Xshell创建秘钥"></a>使用Xshell创建秘钥</h1><h2 id="Xshell创建秘钥详细过程"><a href="#Xshell创建秘钥详细过程" class="headerlink" title="Xshell创建秘钥详细过程"></a>Xshell创建秘钥详细过程</h2><p>打开Xshell，点击<code>工具</code>，<code>新建用户密钥生成向导</code><br><img data-src="https://img-blog.csdnimg.cn/20191101160249858.png" alt="在这里插入图片描述"><br>然后选择<code>秘钥类型</code>和<code>秘钥长度</code>,默认即可,点击下一步<br><img data-src="https://img-blog.csdnimg.cn/20191101160107548.png" alt="在这里插入图片描述"><br>等待秘钥生成结束后,继续点击<code>下一步</code>.<br><img data-src="https://img-blog.csdnimg.cn/20191101160358582.png" alt="在这里插入图片描述"><br>输入<code>秘钥名称</code>和<code>秘钥密码</code>,继续点击<code>下一步</code><br><img data-src="https://img-blog.csdnimg.cn/20191101160534926.png" alt="在这里插入图片描述"></p>
+<h2 id="保存公钥"><a href="#保存公钥" class="headerlink" title="保存公钥"></a>保存公钥</h2><p>此时可以看到公钥了,点击<code>存为文件</code><br><img data-src="https://img-blog.csdnimg.cn/20191101160745914.png" alt="在这里插入图片描述"><br>保存到电脑上的用户目录下的.ssh目录下:<br><img data-src="https://img-blog.csdnimg.cn/20191101161001353.png" alt="在这里插入图片描述"></p>
+<h2 id="导出私钥并保存"><a href="#导出私钥并保存" class="headerlink" title="导出私钥并保存"></a>导出私钥并保存</h2><p>然后就看看到创建好的用户秘钥了.<br><img data-src="https://img-blog.csdnimg.cn/201911011616115.png" alt="在这里插入图片描述"><br>导出私钥<br><img data-src="https://img-blog.csdnimg.cn/20191101161525994.png" alt="在这里插入图片描述"><br>输入密码<br><img data-src="https://img-blog.csdnimg.cn/20191101161743902.png" alt="在这里插入图片描述"></p>
+<h1 id="将Xshell创建的秘钥设置到Termux中"><a href="#将Xshell创建的秘钥设置到Termux中" class="headerlink" title="将Xshell创建的秘钥设置到Termux中"></a>将Xshell创建的秘钥设置到Termux中</h1><h2 id="Termux-获得存储权限"><a href="#Termux-获得存储权限" class="headerlink" title="Termux 获得存储权限"></a>Termux 获得存储权限</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termux-setup-storage</span><br></pre></td></tr></table></figure>
+<p>成功拿到存储权限后会在<code>home</code>目录生成<code>storage</code> 目录,并且生成若干目录(软连接),这些软连接都指向外置存储卡的相应目录应目录。</p>
+<p><code>storage</code>目录下的<code>shared</code>目录对应我们手机<strong>内部存储的根目录</strong>(<code>/storage/emulated/0/</code>),我们通过文件资源浏览器打开的就是这个<code>/storage/emulated/0/</code>目录,只不过在<code>Termux</code>中<code>/storage/emulated/0/</code>对应的是<code>storage</code>目录下的<code>shared</code>目录。</p>
+<h2 id="将公钥发送到手机上"><a href="#将公钥发送到手机上" class="headerlink" title="将公钥发送到手机上"></a>将公钥发送到手机上</h2><p>我这里将公钥通过<code>QQ</code>发送到手机上.<br><img data-src="https://img-blog.csdnimg.cn/20191101161929142.png" alt="在这里插入图片描述">然后打开手机QQ,接收电脑上发送过来的公钥.</p>
+<h2 id="复制公钥到-ssh目录下"><a href="#复制公钥到-ssh目录下" class="headerlink" title="复制公钥到.ssh目录下"></a>复制公钥到.ssh目录下</h2><p>打开<code>Termux</code>,进入用户<code>home</code>目录下:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br></pre></td></tr></table></figure>
+<p>创建手机QQ<code>接收文件的那个目录</code>(<code>tencent/QQfile_recv</code>)的<code>软连接</code>.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /data/data/com.termux/files/home/storage/shared/tencent/QQfile_recv qq</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://img-blog.csdnimg.cn/20191101163019713.png" alt="在这里插入图片描述"><br>然后复制qq软连接下的公钥到home目录下的.ssh目录中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv ~/qq/id_rsa_2048.pub ~/.ssh</span><br></pre></td></tr></table></figure>
+<h2 id="将公钥写入authorized-keys中"><a href="#将公钥写入authorized-keys中" class="headerlink" title="将公钥写入authorized_keys中"></a>将公钥写入authorized_keys中</h2><p>进入home目录下的.ssh目录.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure>
+<p>将公钥写入<code>authorized_keys</code>文件中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa_2048.pub &gt; authorized_keys</span><br></pre></td></tr></table></figure>
+<p>查看公钥</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat authorized_keys</span><br><span class="line">ssh-rsa AAAAB3Nza.............................................................</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://img-blog.csdnimg.cn/20191101164033332.png" alt="在这里插入图片描述"></p>
+<h1 id="开启sshd"><a href="#开启sshd" class="headerlink" title="开启sshd"></a>开启sshd</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sshd</span><br></pre></td></tr></table></figure>
+<h1 id="获取链接信息"><a href="#获取链接信息" class="headerlink" title="获取链接信息"></a>获取链接信息</h1><h2 id="查看当前Termux用户信息"><a href="#查看当前Termux用户信息" class="headerlink" title="查看当前Termux用户信息"></a>查看当前Termux用户信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whoami</span><br></pre></td></tr></table></figure>
+<p>whoami的输出就是当前用户的信息:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u0_a391</span><br></pre></td></tr></table></figure>
+<h2 id="查看Termux的ip地址"><a href="#查看Termux的ip地址" class="headerlink" title="查看Termux的ip地址"></a>查看Termux的ip地址</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifcofig</span><br></pre></td></tr></table></figure>
+<p>ifcofig运行效果如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">dummy0: flags=195&lt;UP,BROADCAST,RUNNING,NOARP&gt;  mtu 1500</span><br><span class="line">        inet6 fe80::bc05:1ff:fe55:4556  prefixlen 64  scopeid 0x20&lt;link&gt;</span><br><span class="line">        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 1000  (UNSPEC)</span><br><span class="line">        RX packets 0  bytes 0 (0.0 B)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 66  bytes 4620 (4.5 KiB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br><span class="line">......这里省略部分信息.</span><br><span class="line">wlan0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500</span><br><span class="line">        inet 192.168.43.1  netmask 255.255.255.0  broadcast 192.168.137.255</span><br><span class="line">        inet6 fe80::76d2:1dff:fe00:73fd  prefixlen 64  scopeid 0x20&lt;link&gt;</span><br><span class="line">        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 1000  (UNSPEC)</span><br><span class="line">        RX packets 1824  bytes 1096921 (1.0 MiB)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 2529  bytes 366296 (357.7 KiB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这里的<code>wlan0</code>中的** inet 192.168.43.1<strong>中的<code>192.168.43.1</code>就是</strong>当前手机的ip地址**</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wlan0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500</span><br><span class="line">        inet 192.168.43.1  netmask 255.255.255.0  broadcast 192.168.137.255</span><br></pre></td></tr></table></figure>
+<h3 id="使用正则取出正确的IP所在的行"><a href="#使用正则取出正确的IP所在的行" class="headerlink" title="使用正则取出正确的IP所在的行"></a>使用正则取出正确的IP所在的行</h3><p>ifconfig命令的输出很多,可以使用grep命令从ifconfig命令中筛选出:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inet 192.168.43.1  netmask 255.255.255.0  broadcast 192.168.137.255</span><br></pre></td></tr></table></figure>
+<p>这一行.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig |grep -E &#x27;inet ([0-9]&#123;1,3&#125;(\.[0-9]&#123;1,3&#125;)&#123;3,3&#125;)\s.netmask.+broadcast&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig |grep -P &#x27;[0-9]&#123;1,3&#125;(?:\.[0-9]&#123;1,3&#125;)&#123;3&#125;\s.netmask.+broadcast&#x27;</span><br></pre></td></tr></table></figure>
+<h1 id="确保手机和电脑在同一个网络下"><a href="#确保手机和电脑在同一个网络下" class="headerlink" title="确保手机和电脑在同一个网络下"></a>确保手机和电脑在同一个网络下</h1><ul>
+<li><strong>电脑和手机链接到同一个WiFi下</strong>,<ul>
+<li>这种方式可能会失败,</li>
+<li>我在电脑上和手机上分别登录到校园网后,使用Xshell链接不成功,估计是校园网有限制吧,这个问题,浪费我好长时间!,最后发现可以通过热点进行连接</li>
+</ul>
+</li>
+<li><strong>电脑链接到手机热点上</strong></li>
+<li><strong>手机链接到电脑的热点上</strong></li>
+<li>手机USB线连接电脑，然后打开手机上的USB共享网络</li>
+</ul>
+<p>经过我的测试两种热点连接方式都可以通过<code>Xshell</code>连接到手机上的<code>Termux</code>,所以，最好<strong>使用热点方式</strong>，或者USB共享网络。</p>
+<h1 id="使用Xshell链接Termux"><a href="#使用Xshell链接Termux" class="headerlink" title="使用Xshell链接Termux"></a>使用Xshell链接Termux</h1><p><img data-src="https://img-blog.csdnimg.cn/20191101164512819.png" alt="在这里插入图片描述"></p>
+<h2 id="设置链接常规信息"><a href="#设置链接常规信息" class="headerlink" title="设置链接常规信息"></a>设置链接常规信息</h2><p>在弹出的窗口左侧点击<code>连接</code>填写上面获取到的的<code>ip</code>地址:<br>端口填写<code>8020</code><br><img data-src="https://img-blog.csdnimg.cn/20191101164932939.png" alt="在这里插入图片描述"></p>
+<h2 id="设置用户身份验证信息"><a href="#设置用户身份验证信息" class="headerlink" title="设置用户身份验证信息"></a>设置用户身份验证信息</h2><ul>
+<li>点击窗口左侧的<code>用户身份验证</code></li>
+<li>方法选择框中选择使用<code>Public key</code>,</li>
+<li>在用户名填写上面获取到的Termux<code>用户名</code>,</li>
+<li>选择上面创建好的<code>秘钥</code>,</li>
+<li>填写创建秘钥时的指定的<code>秘钥密码</code>.</li>
+<li>最后点击<code>连接</code></li>
+</ul>
+<p><img data-src="https://img-blog.csdnimg.cn/20191101165201792.png" alt="在这里插入图片描述"></p>
+<h2 id="链接成功效果"><a href="#链接成功效果" class="headerlink" title="链接成功效果"></a>链接成功效果</h2><h3 id="链接成功但是无法操作的情况"><a href="#链接成功但是无法操作的情况" class="headerlink" title="链接成功但是无法操作的情况"></a>链接成功但是无法操作的情况</h3><p>如果运行效果如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Connecting to 192.168.137.191:8022...</span><br><span class="line">Connection established.</span><br><span class="line">To escape to local shell, press &#x27;Ctrl+Alt+]&#x27;.</span><br></pre></td></tr></table></figure>
+<p>这说明链接是成功的,但是无法操作,这是因为Termux现在不在前台,把Termux显示在前台即可,也就是显示在屏幕上.</p>
+<h3 id="保证Termux显示在手机屏幕最上方"><a href="#保证Termux显示在手机屏幕最上方" class="headerlink" title="保证Termux显示在手机屏幕最上方"></a>保证Termux显示在手机屏幕最上方</h3><p>如果Termux没有显示在前台的话Xshell无法操作.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Connecting to 192.168.137.191:8022...</span><br><span class="line">Connection established.</span><br><span class="line">To escape to local shell, press &#x27;Ctrl+Alt+]&#x27;.</span><br><span class="line">WARNING! The remote SSH server rejected X11 forwarding request.</span><br><span class="line">Welcome to Termux!</span><br><span class="line">Wiki:            https://wiki.termux.com</span><br><span class="line">Community forum: https://termux.com/community</span><br><span class="line">Gitter chat:     https://gitter.im/termux/termux</span><br><span class="line">IRC channel:     #termux on freenode</span><br><span class="line">Working with packages:</span><br><span class="line"> * Search packages:   pkg search &lt;query&gt;</span><br><span class="line"> * Install a package: pkg install &lt;package&gt;</span><br><span class="line"> * Upgrade packages:  pkg upgrade</span><br><span class="line">Subscribing to additional repositories:</span><br><span class="line"> * Root:     pkg install root-repo</span><br><span class="line"> * Unstable: pkg install unstable-repo</span><br><span class="line"> * X11:      pkg install x11-repo</span><br><span class="line">Report issues at https://termux.com/issues</span><br><span class="line"> u0_a391@localhost  ~  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>Termux</code>从前台切换到后台后连接失败,需要重新连接。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Socket error Event: 32 Error: 10053.</span><br><span class="line">Connection closing...Socket close.</span><br><span class="line"></span><br><span class="line">Connection closed by foreign host.</span><br><span class="line"></span><br><span class="line">Disconnected from remote host(Termux) at 16:57:47.</span><br><span class="line"></span><br><span class="line">Type `help&#x27; to learn how to use Xshell prompt.</span><br><span class="line">[F:\~]$ </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="如何重新链接"><a href="#如何重新链接" class="headerlink" title="如何重新链接"></a>如何重新链接</h2><p>将<code>Termux</code>切换到前台,然后点击<code>Xshell</code>菜单栏面的<code>文件</code>,然后点击<code>重新连接</code>。<br><img data-src="https://img-blog.csdnimg.cn/20191101165959918.png" alt="在这里插入图片描述"><br><img data-src="https://img-blog.csdnimg.cn/20191101170131315.png" alt="在这里插入图片描述"></p>
+<h2 id="设置Termux常驻后台"><a href="#设置Termux常驻后台" class="headerlink" title="设置Termux常驻后台"></a>设置Termux常驻后台</h2><p>一直将<code>Termux</code>显示在前台还是不方便,可以点击手机通知栏上的<code>ACQUIRE WAKELOCK</code>,让<code>Termux</code>常驻后台.这样<code>Termux</code>在后台的时候也可以保持和<code>Xshell</code>的连接。<br><img data-src="https://img-blog.csdnimg.cn/20191103145704397.png" alt="在这里插入图片描述"><br>常驻后台时的效果:<br><img data-src="https://img-blog.csdnimg.cn/20191103145858917.png" alt="在这里插入图片描述"></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jacka654321/article/details/81145756">https://blog.csdn.net/jacka654321/article/details/81145756</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/1598bd9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/1598bd9/" class="post-title-link" itemprop="url">Linux 执行多个命令</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-01 10:24:47" itemprop="dateCreated datePublished" datetime="2019-11-01T10:24:47+08:00">2019-11-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/1598bd9/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/1598bd9/" data-xid="/blog/1598bd9/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>87</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Linux执行多个命令"><a href="#Linux执行多个命令" class="headerlink" title="Linux执行多个命令"></a>Linux执行多个命令</h1><h2 id="全部执行"><a href="#全部执行" class="headerlink" title="全部执行"></a>全部执行</h2><p>使用英文分号将多个命令隔开,这样不管前面的命令执行是否成功,后面的命令都会执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> hello1;<span class="built_in">echo</span> hello2;<span class="built_in">echo</span> hello3</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d305bdc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/d305bdc/" class="post-title-link" itemprop="url">termux 安装软件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-01 10:14:33" itemprop="dateCreated datePublished" datetime="2019-11-01T10:14:33+08:00">2019-11-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/Termux/" itemprop="url" rel="index"><span itemprop="name">Termux</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/d305bdc/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/d305bdc/" data-xid="/blog/d305bdc/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>29</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="更新软件"><a href="#更新软件" class="headerlink" title="更新软件"></a>更新软件</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br></pre></td></tr></table></figure>
+<h1 id="查看已安装软件"><a href="#查看已安装软件" class="headerlink" title="查看已安装软件"></a>查看已安装软件</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt list</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/196cfe9b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/196cfe9b/" class="post-title-link" itemprop="url">Linux 常见命令2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-01 10:14:33" itemprop="dateCreated datePublished" datetime="2019-11-01T10:14:33+08:00">2019-11-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/196cfe9b/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/196cfe9b/" data-xid="/blog/196cfe9b/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>32</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install tree</span><br></pre></td></tr></table></figure>
+<h1 id="pstree"><a href="#pstree" class="headerlink" title="pstree"></a>pstree</h1><h1 id="rsync"><a href="#rsync" class="headerlink" title="rsync"></a>rsync</h1>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/6a91baf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/6a91baf/" class="post-title-link" itemprop="url">Git 更新推送流程</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-31 20:20:41" itemprop="dateCreated datePublished" datetime="2019-10-31T20:20:41+08:00">2019-10-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Git/%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">命令</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/6a91baf/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/6a91baf/" data-xid="/blog/6a91baf/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>266</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="进入项目地址"><a href="#进入项目地址" class="headerlink" title="进入项目地址"></a>进入项目地址</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blog/blog/</span><br></pre></td></tr></table></figure>
+<h1 id="拉取远程分支"><a href="#拉取远程分支" class="headerlink" title="拉取远程分支"></a>拉取远程分支</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<h1 id="查看更新"><a href="#查看更新" class="headerlink" title="查看更新"></a>查看更新</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+<h2 id="一步到位"><a href="#一步到位" class="headerlink" title="一步到位"></a>一步到位</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog/blog/ &amp;&amp; git pull origin master &amp;&amp; git status</span><br></pre></td></tr></table></figure>
+<h1 id="处理冲突或者其他操作"><a href="#处理冲突或者其他操作" class="headerlink" title="处理冲突或者其他操作"></a>处理冲突或者其他操作</h1><p>省略….</p>
+<h1 id="添加所有文件"><a href="#添加所有文件" class="headerlink" title="添加所有文件"></a>添加所有文件</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .^</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+<h1 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h1><h2 id="提交语句开始"><a href="#提交语句开始" class="headerlink" title="提交语句开始"></a>提交语句开始</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &#x27;</span><br></pre></td></tr></table></figure>
+<h2 id="写入提交描述"><a href="#写入提交描述" class="headerlink" title="写入提交描述"></a>写入提交描述</h2><p>省略…</p>
+<h2 id="描述结束符"><a href="#描述结束符" class="headerlink" title="描述结束符"></a>描述结束符</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;</span><br></pre></td></tr></table></figure>
+<h1 id="推送到指定分支"><a href="#推送到指定分支" class="headerlink" title="推送到指定分支"></a>推送到指定分支</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h1 id="输入GitHub用户名"><a href="#输入GitHub用户名" class="headerlink" title="输入GitHub用户名"></a>输入GitHub用户名</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lanlan2017</span><br></pre></td></tr></table></figure>
+<h1 id="输入密码"><a href="#输入密码" class="headerlink" title="输入密码"></a>输入密码</h1><p>省略…</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/45517ea0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/45517ea0/" class="post-title-link" itemprop="url">termux 安装linux</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-31 15:08:27" itemprop="dateCreated datePublished" datetime="2019-10-31T15:08:27+08:00">2019-10-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/Termux/" itemprop="url" rel="index"><span itemprop="name">Termux</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/45517ea0/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/45517ea0/" data-xid="/blog/45517ea0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>620</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="首先先下载Termux"><a href="#首先先下载Termux" class="headerlink" title="首先先下载Termux"></a>首先先下载Termux</h1><p>从应用商店下载安装即可，属于存储权限</p>
+<h1 id="安装proot"><a href="#安装proot" class="headerlink" title="安装proot"></a>安装proot</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install proot</span><br></pre></td></tr></table></figure>
+<h1 id="获取root权限"><a href="#获取root权限" class="headerlink" title="获取root权限"></a>获取root权限</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termux-chroot</span><br></pre></td></tr></table></figure>
+<h1 id="安装git并获取atilo"><a href="#安装git并获取atilo" class="headerlink" title="安装git并获取atilo"></a>安装git并获取atilo</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install git</span><br><span class="line">git clone https://github.com/YadominJinta/atilo</span><br></pre></td></tr></table></figure>
+<h1 id="进去atilo下并获取权限"><a href="#进去atilo下并获取权限" class="headerlink" title="进去atilo下并获取权限"></a>进去atilo下并获取权限</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd atilo/</span><br><span class="line">chmod +x atilo</span><br></pre></td></tr></table></figure>
+<h1 id="查看支持的版本"><a href="#查看支持的版本" class="headerlink" title="查看支持的版本"></a>查看支持的版本</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/atilo ./atilo list  </span><br><span class="line">alpine                                                     arch                                                       centos                                                     debian                                                     fedora                                                     kali                                                       opensuse                                                   parrot                                                     ubuntu                                                     ubuntults</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装ubuntu"><a href="#安装ubuntu" class="headerlink" title="安装ubuntu"></a>安装ubuntu</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./atilo install ubuntu</span><br></pre></td></tr></table></figure>
+<h1 id="启动ubuntu"><a href="#启动ubuntu" class="headerlink" title="启动ubuntu"></a>启动ubuntu</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startubuntu</span><br></pre></td></tr></table></figure>
+<h1 id="卸载ubuntu"><a href="#卸载ubuntu" class="headerlink" title="卸载ubuntu"></a>卸载ubuntu</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./atilo remove ubuntu</span><br></pre></td></tr></table></figure>
+<h1 id="安装centos"><a href="#安装centos" class="headerlink" title="安装centos"></a>安装centos</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./atilo install centos</span><br></pre></td></tr></table></figure>
+<h1 id="通过anLinux安装"><a href="#通过anLinux安装" class="headerlink" title="通过anLinux安装"></a>通过anLinux安装</h1><p>先从应用商店下载安装anLinux,然打开anLinux，按提示安装。</p>
+<h2 id="安装centos-1"><a href="#安装centos-1" class="headerlink" title="安装centos"></a>安装centos</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install wget openssl-tool proot tar -y &amp;&amp; hash -r &amp;&amp; wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/CentOS/centos.sh &amp;&amp; bash centos.sh</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -534,1028 +1577,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d58ef648/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/d58ef648/" class="post-title-link" itemprop="url">java打印表格 将ResultSet中的数据打印成表格</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-10-23 22:19:13" itemprop="dateCreated datePublished" datetime="2019-10-23T22:19:13+08:00">2019-10-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">自定义工具类</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/d58ef648/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/d58ef648/" data-xid="/blog/d58ef648/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="java打印表格-将ResultSet中的数据打印成表格"><a href="#java打印表格-将ResultSet中的数据打印成表格" class="headerlink" title="java打印表格 将ResultSet中的数据打印成表格"></a>java打印表格 将ResultSet中的数据打印成表格</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p><code>MySQL</code>的查询语句输出如下:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from instructor;</span><br><span class="line">+-------+------------+------------+-----------+</span><br><span class="line">| ID    | name       | dept_name  | salary    |</span><br><span class="line">+-------+------------+------------+-----------+</span><br><span class="line">| <span class="number">10101</span> | Srinivasan | <span class="built_in">Comp</span>. Sci. | <span class="number">65000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">12121</span> | Wu         | Finance    | <span class="number">90000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">15151</span> | Mozart     | Music      | <span class="number">40000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">22222</span> | Einstein   | Physics    | <span class="number">95000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">25566</span> | Brown      | Biology    | <span class="number">100000</span>.<span class="number">00</span> |</span><br><span class="line">| <span class="number">30765</span> | Green      | Music      | NULL      |</span><br><span class="line">| <span class="number">32343</span> | El Said    | History    | <span class="number">60000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">33456</span> | Gold       | Physics    | <span class="number">87000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">45565</span> | Katz       | <span class="built_in">Comp</span>. Sci. | <span class="number">75000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">58583</span> | Califieri  | History    | <span class="number">62000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">76543</span> | Singh      | Finance    | <span class="number">80000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">76766</span> | Crick      | Biology    | <span class="number">72000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">77987</span> | Kim        | Physics    | <span class="number">98000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">83821</span> | Brandt     | <span class="built_in">Comp</span>. Sci. | <span class="number">92000</span>.<span class="number">00</span>  |</span><br><span class="line">| <span class="number">88877</span> | Perry      | Finance    | <span class="number">125000</span>.<span class="number">00</span> |</span><br><span class="line">| <span class="number">88878</span> | Perry      | Finance    | <span class="number">125000</span>.<span class="number">00</span> |</span><br><span class="line">| <span class="number">98345</span> | Kim        | Elec. Eng. | <span class="number">80000</span>.<span class="number">00</span>  |</span><br><span class="line">+-------+------------+------------+-----------+</span><br><span class="line"><span class="number">17</span> rows <span class="keyword">in</span> <span class="built_in">set</span> (<span class="number">0</span>.<span class="number">04</span> sec)</span><br></pre></td></tr></table></figure>
-<p>使用<code>JDBC</code>执行上述的查询语句,将结果集中的查询结果以表格的形式打印出来。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
-<li>通过结果集的元数据可以知道结果集中的列数,和列名.</li>
-<li>然后遍历结果集,分别统计每一列中的最大字符数。</li>
-<li>然后通过<code>System.out.printf()</code>方法进行格式化输出。</li>
-</ul>
-<h2 id="字符串格式化方式"><a href="#字符串格式化方式" class="headerlink" title="字符串格式化方式"></a>字符串格式化方式</h2><h3 id="左对齐"><a href="#左对齐" class="headerlink" title="左对齐"></a>左对齐</h3><p><code>%-10s</code>表示这个字符串的长度为10,不足10的地方以空格填充,带<code>-</code>的表示左对齐.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.printf(<span class="string">&quot;属性:%-10s &quot;</span>, rsmd.getColumnName(i));</span><br><span class="line">System.out.printf(<span class="string">&quot;类型:%-10s\n&quot;</span>, rsmd.getColumnTypeName(i));</span><br></pre></td></tr></table></figure>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">属性:ID         类型:VARCHAR   </span><br><span class="line">属性:name       类型:VARCHAR   </span><br><span class="line">属性:dept_name  类型:VARCHAR   </span><br><span class="line">属性:salary     类型:DECIMAL  </span><br></pre></td></tr></table></figure>
-<h3 id="右对齐"><a href="#右对齐" class="headerlink" title="右对齐"></a>右对齐</h3><p><code>%10s</code>表示这个字符串的长度为10,不足10的地方以空格填充,默认右对齐</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.printf(<span class="string">&quot;属性:%10s &quot;</span>, rsmd.getColumnName(i));</span><br><span class="line">System.out.printf(<span class="string">&quot;类型:%10s\n&quot;</span>, rsmd.getColumnTypeName(i));</span><br></pre></td></tr></table></figure>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">属性:        ID 类型:   VARCHAR</span><br><span class="line">属性:      name 类型:   VARCHAR</span><br><span class="line">属性: dept_name 类型:   VARCHAR</span><br><span class="line">属性:    salary 类型:   DECIMAL</span><br></pre></td></tr></table></figure>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tools;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;</span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSetMetaData;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 结果集打印机.将结果集中的数据打印成表格.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ResultSetPrinter</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printResultSet</span><span class="params">(ResultSet rs)</span> <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="type">ResultSetMetaData</span> <span class="variable">resultSetMetaData</span> <span class="operator">=</span> rs.getMetaData();</span><br><span class="line">        <span class="comment">// 获取列数</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">ColumnCount</span> <span class="operator">=</span> resultSetMetaData.getColumnCount();</span><br><span class="line">        <span class="comment">// 保存当前列最大长度的数组</span></span><br><span class="line">        <span class="type">int</span>[] columnMaxLengths = <span class="keyword">new</span> <span class="title class_">int</span>[ColumnCount];</span><br><span class="line">        <span class="comment">// 缓存结果集,结果集可能有序,所以用ArrayList保存变得打乱顺序.</span></span><br><span class="line">        ArrayList&lt;String[]&gt; results = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">// 按行遍历</span></span><br><span class="line">        <span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">            <span class="comment">// 保存当前行所有列</span></span><br><span class="line">            String[] columnStr = <span class="keyword">new</span> <span class="title class_">String</span>[ColumnCount];</span><br><span class="line">            <span class="comment">// 获取属性值.</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ColumnCount; i++) &#123;</span><br><span class="line">                <span class="comment">// 获取一列</span></span><br><span class="line">                columnStr[i] = rs.getString(i + <span class="number">1</span>);</span><br><span class="line">                <span class="comment">// 计算当前列的最大长度</span></span><br><span class="line">                columnMaxLengths[i] = Math.max(columnMaxLengths[i], (columnStr[i] == <span class="literal">null</span>) ? <span class="number">0</span> : columnStr[i].length());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 缓存这一行.</span></span><br><span class="line">            results.add(columnStr);</span><br><span class="line">        &#125;</span><br><span class="line">        printSeparator(columnMaxLengths);</span><br><span class="line">        printColumnName(resultSetMetaData, columnMaxLengths);</span><br><span class="line">        printSeparator(columnMaxLengths);</span><br><span class="line">        <span class="comment">// 遍历集合输出结果</span></span><br><span class="line">        Iterator&lt;String[]&gt; iterator = results.iterator();</span><br><span class="line">        String[] columnStr;</span><br><span class="line">        <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">            columnStr = iterator.next();</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ColumnCount; i++) &#123;</span><br><span class="line">                <span class="comment">// System.out.printf(&quot;|%&quot; + (columnMaxLengths[i] + 1) + &quot;s&quot;, columnStr[i]);</span></span><br><span class="line">                System.out.printf(<span class="string">&quot;|%&quot;</span> + columnMaxLengths[i] + <span class="string">&quot;s&quot;</span>, columnStr[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">&quot;|&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        printSeparator(columnMaxLengths);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 输出列名.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> resultSetMetaData 结果集的元数据对象.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> columnMaxLengths  每一列最大长度的字符串的长度.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> SQLException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printColumnName</span><span class="params">(ResultSetMetaData resultSetMetaData, <span class="type">int</span>[] columnMaxLengths)</span> <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">columnCount</span> <span class="operator">=</span> resultSetMetaData.getColumnCount();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; columnCount; i++) &#123;</span><br><span class="line">            <span class="comment">// System.out.printf(&quot;|%&quot; + (columnMaxLengths[i] + 1) + &quot;s&quot;, resultSetMetaData.getColumnName(i + 1));</span></span><br><span class="line">            System.out.printf(<span class="string">&quot;|%&quot;</span> + columnMaxLengths[i] + <span class="string">&quot;s&quot;</span>, resultSetMetaData.getColumnName(i + <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;|&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 输出分隔符.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> columnMaxLengths 保存结果集中每一列的最长的字符串的长度.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printSeparator</span><span class="params">(<span class="type">int</span>[] columnMaxLengths)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; columnMaxLengths.length; i++) &#123;</span><br><span class="line">            System.out.print(<span class="string">&quot;+&quot;</span>);</span><br><span class="line">            <span class="comment">// for (int j = 0; j &lt; columnMaxLengths[i] + 1; j++) &#123;</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; columnMaxLengths[i]; j++) &#123;</span><br><span class="line">                System.out.print(<span class="string">&quot;-&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;+&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tools;</span><br><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">driver</span> <span class="operator">=</span> <span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">URL</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://127.0.0.1:3306/university?serverTimezone=UTC&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">user</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * JDBC测试.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">JDBCexample</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 1.加载数据库驱动</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">            Class.forName(driver);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        testStatement();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试Statement的用法.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">testStatement</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> (<span class="comment">// 2.打开数据库连接</span></span><br><span class="line">             <span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> DriverManager.getConnection(URL, user, password);</span><br><span class="line">             <span class="comment">// 3.创建语句</span></span><br><span class="line">             <span class="type">Statement</span> <span class="variable">stmt</span> <span class="operator">=</span> conn.createStatement()) &#123;</span><br><span class="line">            <span class="comment">// 模拟SQL注入</span></span><br><span class="line">            testSqlInjecton(stmt);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException sqle) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;SQLException : &quot;</span> + sqle);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 模拟SQL注入.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> stmt Statement对象.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> SQLException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">testSqlInjecton</span><span class="params">(Statement stmt)</span> <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;X&#x27; or &#x27;Y&#x27; = &#x27;Y&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;select * from instructor where name = &#x27;&quot;</span> + name + <span class="string">&quot;&#x27;&quot;</span>;</span><br><span class="line">        <span class="type">ResultSet</span> <span class="variable">rs</span> <span class="operator">=</span> stmt.executeQuery(sql);</span><br><span class="line">        ResultSetPrinter.printResultSet(rs);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        JDBCexample();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">+-----+----------+----------+---------+</span><br><span class="line">|   ID|      name| dept_name|   salary|</span><br><span class="line">+-----+----------+----------+---------+</span><br><span class="line">|<span class="number">10101</span>|Srinivasan|<span class="built_in">Comp</span>. Sci.| <span class="number">65000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">12121</span>|        Wu|   Finance| <span class="number">90000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">15151</span>|    Mozart|     Music| <span class="number">40000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">22222</span>|  Einstein|   Physics| <span class="number">95000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">25566</span>|     Brown|   Biology|<span class="number">100000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">30765</span>|     Green|     Music|     null|</span><br><span class="line">|<span class="number">32343</span>|   El Said|   History| <span class="number">60000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">33456</span>|      Gold|   Physics| <span class="number">87000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">45565</span>|      Katz|<span class="built_in">Comp</span>. Sci.| <span class="number">75000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">58583</span>| Califieri|   History| <span class="number">62000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">76543</span>|     Singh|   Finance| <span class="number">80000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">76766</span>|     Crick|   Biology| <span class="number">72000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">77987</span>|       Kim|   Physics| <span class="number">98000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">83821</span>|    Brandt|<span class="built_in">Comp</span>. Sci.| <span class="number">92000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">88877</span>|     Perry|   Finance|<span class="number">125000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">88878</span>|     Perry|   Finance|<span class="number">125000</span>.<span class="number">00</span>|</span><br><span class="line">|<span class="number">98345</span>|       Kim|Elec. Eng.| <span class="number">80000</span>.<span class="number">00</span>|</span><br><span class="line">+-----+----------+----------+---------+</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/17349c5f/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/17349c5f/" class="post-title-link" itemprop="url">最新版MySQL数据库驱动的问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-10-23 15:59:21" itemprop="dateCreated datePublished" datetime="2019-10-23T15:59:21+08:00">2019-10-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MySQL/debug/" itemprop="url" rel="index"><span itemprop="name">debug</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/17349c5f/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/17349c5f/" data-xid="/blog/17349c5f/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="最新版MySQL数据库驱动的问题"><a href="#最新版MySQL数据库驱动的问题" class="headerlink" title="最新版MySQL数据库驱动的问题"></a>最新版MySQL数据库驱动的问题</h1><h2 id="问题1-驱动名称不对"><a href="#问题1-驱动名称不对" class="headerlink" title="问题1 驱动名称不对"></a>问题1 驱动名称不对</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Loading class `com.mysql.jdbc.Driver&#x27;. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver&#x27;. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.</span><br></pre></td></tr></table></figure>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>将数据库驱动名称<code>com.mysql.jdbc.Driver</code>改成<code>com.mysql.cj.jdbc.Driver</code></p>
-<h2 id="问题2-没有指定时区"><a href="#问题2-没有指定时区" class="headerlink" title="问题2 没有指定时区"></a>问题2 没有指定时区</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQLException : java.sql.SQLException: The server <span class="built_in">time</span> zone value &#x27;�й���׼ʱ��&#x27; is unrecognized or represents <span class="built_in">more</span> than one <span class="built_in">time</span> zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a <span class="built_in">more</span> specifc <span class="built_in">time</span> zone value <span class="keyword">if</span> you want to utilize <span class="built_in">time</span> zone support.</span><br></pre></td></tr></table></figure>
-<h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h3><p>在</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcUrl=jdbc:mysql://localhost:3306/spring</span><br></pre></td></tr></table></figure>
-<p>后面加上<code>?serverTimezone=UTC</code>,如下所示:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcUrl=jdbc:mysql://localhost:3306/spring?serverTimezone=UTC</span><br></pre></td></tr></table></figure>
-<h2 id="问题3-查询字符串分隔符没有使用转义字符"><a href="#问题3-查询字符串分隔符没有使用转义字符" class="headerlink" title="问题3 查询字符串分隔符没有使用转义字符"></a>问题3 查询字符串分隔符没有使用转义字符</h2><p><strong>如果有多个查询字符串要用&amp;隔开,并且&amp;要转义成<code>&amp;amp;</code></strong><br>但如果你的jdbcUrl类似下面：<br><code>jdbcUrl=jdbc:mysql://localhost:3306/spring?serverTimezone=UTC&amp;characterEncoding=utf-8</code><br>就是有多个<code>params</code>的时候需要以<code>&amp;</code>分开，但<code>&amp;</code>要改为<code>&amp;amp;</code>  如下：<br><code>jdbc:mysql://localhost:3306/spring?serverTimezone=UTC&amp;amp;characterEncoding=utf-8</code></p>
-<h3 id="不需要转义的情况"><a href="#不需要转义的情况" class="headerlink" title="不需要转义的情况"></a>不需要转义的情况</h3><p>经过为的实践,也不一定都要对<code>&amp;</code>进行转义,在使用Mybatis时,如果把URL写在<code>.properties</code>文件中,然后在mybatis配置文件中通过<code>$&#123;&#125;</code>来引用,这种情况下不需要<code>对URL中</code>的<code>&amp;</code>进行转义.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4f42ffba/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/4f42ffba/" class="post-title-link" itemprop="url">旧版本的navicat无法连接mysql8.0</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-10-18 17:01:51" itemprop="dateCreated datePublished" datetime="2019-10-18T17:01:51+08:00">2019-10-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MySQL/%E5%9B%BE%E5%BD%A2%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">图形工具</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/4f42ffba/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/4f42ffba/" data-xid="/blog/4f42ffba/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>487</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="旧版本的navicat无法连接mysql8-0"><a href="#旧版本的navicat无法连接mysql8-0" class="headerlink" title="旧版本的navicat无法连接mysql8.0"></a>旧版本的navicat无法连接mysql8.0</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>最新安装了最新的MySQL8.0,但是使用navicat9.1无法连接,报错如下:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Client does <span class="keyword">not</span> support authentication protocol requested by server; consider upgrading MySQL client</span><br></pre></td></tr></table></figure>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>应该是<code>MySQL8.0</code>的加密方式改变了，但是比较老版本的<code>navicate</code>没有来得及支持，因此需要将<code>mysql</code>设置为支持传统的那种密码加密。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>登入<code>MySQL</code>的命令行界面，然后输入：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;you_password&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
-<p>修改上面的<code>you_password</code>为你数据库<code>root</code>用户的密码即可.</p>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m_amazing/article/details/84313789">https://blog.csdn.net/m_amazing&#x2F;article&#x2F;details&#x2F;84313789</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/85e5e68e/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/85e5e68e/" class="post-title-link" itemprop="url">解决MySQL错误 Every derived table must have its own alias</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-10-18 13:51:08" itemprop="dateCreated datePublished" datetime="2019-10-18T13:51:08+08:00">2019-10-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MySQL/debug/" itemprop="url" rel="index"><span itemprop="name">debug</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/85e5e68e/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/85e5e68e/" data-xid="/blog/85e5e68e/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>978</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>今天使用如下的子查询时:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name,avg_salary</span><br><span class="line"><span class="keyword">from</span> ( <span class="keyword">select</span> dept_name, <span class="built_in">avg</span>(salary) <span class="keyword">as</span> avg_salary</span><br><span class="line">    <span class="keyword">from</span> instructor </span><br><span class="line">    <span class="keyword">group</span> <span class="keyword">by</span> dept_name</span><br><span class="line">)</span><br><span class="line"><span class="keyword">where</span> avg_salary<span class="operator">&gt;</span><span class="number">42000</span>;</span><br></pre></td></tr></table></figure>
-<p>报了<code>:Every derived table must have its own alias</code>这个错误</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select dept_name,avg_salary</span><br><span class="line">from ( select dept_name, avg(salary) as avg_salary</span><br><span class="line">    from instructor </span><br><span class="line">    group by dept_name</span><br><span class="line">)</span><br><span class="line">where avg_salary&gt;<span class="number">42000</span>;</span><br><span class="line"><span class="number">1248</span> - Every derived table must have its own alias</span><br></pre></td></tr></table></figure>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p><code>Every derived table must have its own alias</code>翻译成中文就是:<strong>每个派生表都必须有自己的别名</strong><br>所以给子查询取一个别名即可:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> dept_name,avg_salary</span><br><span class="line"><span class="keyword">from</span> ( <span class="keyword">select</span> dept_name, <span class="built_in">avg</span>(salary) <span class="keyword">as</span> avg_salary</span><br><span class="line">    <span class="keyword">from</span> instructor </span><br><span class="line">    <span class="keyword">group</span> <span class="keyword">by</span> dept_name</span><br><span class="line">) <span class="keyword">as</span> I</span><br><span class="line"><span class="keyword">where</span> avg_salary<span class="operator">&gt;</span><span class="number">42000</span>;</span><br></pre></td></tr></table></figure>
-<p>这样就能正常执行了:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select dept_name,avg_salary</span><br><span class="line">from ( select dept_name, avg(salary) as avg_salary</span><br><span class="line">    from instructor </span><br><span class="line">    group by dept_name</span><br><span class="line">) as I</span><br><span class="line">where avg_salary&gt;<span class="number">42000</span>;</span><br><span class="line">+------------+--------------+</span><br><span class="line">| dept_name  | avg_salary   |</span><br><span class="line">+------------+--------------+</span><br><span class="line">| Biology    | <span class="number">72000</span>        |</span><br><span class="line">| <span class="built_in">Comp</span>. Sci. | <span class="number">77333</span>.<span class="number">333333</span> |</span><br><span class="line">| Elec. Eng. | <span class="number">80000</span>        |</span><br><span class="line">| Finance    | <span class="number">85000</span>        |</span><br><span class="line">| History    | <span class="number">61000</span>        |</span><br><span class="line">| Physics    | <span class="number">91000</span>        |</span><br><span class="line">+------------+--------------+</span><br><span class="line"><span class="number">6</span> rows <span class="keyword">in</span> <span class="built_in">set</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/a3223bac/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/a3223bac/" class="post-title-link" itemprop="url">如何下载数据库系统教程第6版 大学模式源码</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-10-15 17:30:47" itemprop="dateCreated datePublished" datetime="2019-10-15T17:30:47+08:00">2019-10-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E9%9A%8F%E4%B9%A6%E6%BA%90%E7%A0%81/" itemprop="url" rel="index"><span itemprop="name">随书源码</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/a3223bac/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/a3223bac/" data-xid="/blog/a3223bac/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>42</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="如何下载数据库系统教程第6版-大学模式源码"><a href="#如何下载数据库系统教程第6版-大学模式源码" class="headerlink" title="如何下载数据库系统教程第6版 大学模式源码"></a>如何下载数据库系统教程第6版 大学模式源码</h1><p><a target="_blank" rel="noopener" href="http://www.db-book.com/">http://www.db-book.com</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e1bf4c3f/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/e1bf4c3f/" class="post-title-link" itemprop="url">cmd切换到 新版控制台 后没有显示文字怎么办</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-10-07 00:20:19" itemprop="dateCreated datePublished" datetime="2019-10-07T00:20:19+08:00">2019-10-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 16:40:54" itemprop="dateModified" datetime="2022-04-04T16:40:54+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/" itemprop="url" rel="index"><span itemprop="name">CMD</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/Debug/" itemprop="url" rel="index"><span itemprop="name">Debug</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/e1bf4c3f/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/e1bf4c3f/" data-xid="/blog/e1bf4c3f/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>127</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="cmd切换到-新版控制台-后没有显示文字怎么办"><a href="#cmd切换到-新版控制台-后没有显示文字怎么办" class="headerlink" title="cmd切换到 新版控制台 后没有显示文字怎么办"></a>cmd切换到 新版控制台 后没有显示文字怎么办</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>今天从旧版控制台切换到新版控制台后,弹出的cmd是个黑框框,上面没有文字,好奇怪.</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20191007002459946.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在cmd窗体顶部<code>右键</code>,选择<code>属性</code><br><img data-src="https://img-blog.csdnimg.cn/20191007002644467.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">然后切换到<code>终端</code>选项卡,在终端颜色那一块,<strong>取消勾选</strong><code>使用单独的前景</code>即可。</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20191007002826494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">这样就有文字了。<br><img data-src="https://img-blog.csdnimg.cn/20191007002914887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/6221fd78/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/6221fd78/" class="post-title-link" itemprop="url">如何切换VScode里面的java版本</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-10-06 21:46:08" itemprop="dateCreated datePublished" datetime="2019-10-06T21:46:08+08:00">2019-10-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/IDE/VSCode/" itemprop="url" rel="index"><span itemprop="name">VSCode</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/6221fd78/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/6221fd78/" data-xid="/blog/6221fd78/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>406</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="如何切换VScode里面的java版本"><a href="#如何切换VScode里面的java版本" class="headerlink" title="如何切换VScode里面的java版本"></a>如何切换VScode里面的java版本</h1><p>最近用<code>VScode</code>打开新版本的<code>java</code>代码,发现无法通过编译,这肯定是因为我用的旧版本的<code>java</code>。</p>
-<h2 id="1-电脑使用新版本的java"><a href="#1-电脑使用新版本的java" class="headerlink" title="1. 电脑使用新版本的java"></a>1. 电脑使用新版本的java</h2><p>排查后发现是<code>java</code>版本不对,然后我把电脑上<code>java</code>版本切换为新版,然后发现,通过其他编译可以正常编译运行,但是<code>VSCode</code>里面就是无法编译运行,个人猜测<code>VScode</code>里面使用的还是旧版本的<code>java</code>,网上找了一通没有找到该怎么切换<code>VScode</code>里面的<code>java</code>版本.</p>
-<h2 id="2-重装VScode里面的java环境"><a href="#2-重装VScode里面的java环境" class="headerlink" title="2. 重装VScode里面的java环境"></a>2. 重装VScode里面的java环境</h2><p>保证现在电脑里用的是新版本的<code>java</code>,然后卸载<code>VScode</code>里面的<code>java</code>环境(<code>Java Extension Pack</code>),然后重启<code>VScode</code>,再重新安装<code>Java</code>插件(<code>Java Extension Pack</code>),这个使用插件就会使用电脑里的新版本的<code>java</code>.</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这样做就是<code>重装插件比较耗时</code>,不过还算能用,有人知道怎么切换<code>VScode</code>里面的<code>java</code>版本的话教教我.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/957ae50e/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/957ae50e/" class="post-title-link" itemprop="url">安装了多个java 如何切换java版本</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-10-06 10:42:44" itemprop="dateCreated datePublished" datetime="2019-10-06T10:42:44+08:00">2019-10-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/%E7%89%88%E6%9C%AC/" itemprop="url" rel="index"><span itemprop="name">版本</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/957ae50e/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/957ae50e/" data-xid="/blog/957ae50e/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="安装了多个java-如何切换java版本"><a href="#安装了多个java-如何切换java版本" class="headerlink" title="安装了多个java 如何切换java版本"></a>安装了多个java 如何切换java版本</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>平常用的是<code>java8</code>,最近在学习<code>java</code>的新特性。这就需要从<code>java8</code>往更高的<code>java</code>版本切换。由于还在使用<code>java8</code>,测试完新特性后我需要再切换回<code>java8</code>.</p>
-<h2 id="如何切换"><a href="#如何切换" class="headerlink" title="如何切换"></a>如何切换</h2><p>安装<code>java</code>的时候我们会配置<code>JAVA_HOME</code>这个环境变量.所有要切换<code>java</code>版本,只需要修改<code>JAVA_HOME</code>即可,在<code>JAVA_HOME</code>里面写上<code>java8</code>的安装目录,那就使用的是<code>java8</code>,<code>JAVA_HOME</code>里面写上<code>java9</code>的安装目录,则使用的是<code>java9</code>。</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h2 id="手动切换"><a href="#手动切换" class="headerlink" title="手动切换"></a>手动切换</h2><p>手动修改,<code>JAVA_HOME</code>中的地址即可,这里不介绍。</p>
-<h2 id="在cmd中临时切换java版本"><a href="#在cmd中临时切换java版本" class="headerlink" title="在cmd中临时切换java版本"></a>在cmd中临时切换java版本</h2><p>例如现在在cmd中,临时需要用到java9的jshell,可以输入如下命令进行设置:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> <span class="built_in">path</span>=E:\java\java9\jdk-<span class="number">9</span>\bin;<span class="variable">%path%</span></span><br></pre></td></tr></table></figure>
-<p>其中:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E:\java\java9\jdk-9\bin</span><br></pre></td></tr></table></figure>
-<p>是jdk9的安装路径.</p>
-<h2 id="批处理实现"><a href="#批处理实现" class="headerlink" title="批处理实现"></a>批处理实现</h2><p>因为手动修改<code>JAVA_HOME</code>,太过繁琐,所以通过一个批处理程序来实现.</p>
-<h3 id="新增环境变量"><a href="#新增环境变量" class="headerlink" title="新增环境变量"></a>新增环境变量</h3><p>新增<code>JAVA_HOME_8</code>,<code>JAVA_HOME_9</code>,<code>JAVA_HOME_11</code>分别写入<code>java8</code>,<code>java9</code>,<code>java11</code>的安装目录,这和配置<code>JAVA_HOME</code>一样.</p>
-<h3 id="批处理脚本"><a href="#批处理脚本" class="headerlink" title="批处理脚本"></a>批处理脚本</h3><p>创建一个名为<code>快捷方式</code>的目录。</p>
-<h4 id="TJava-bat"><a href="#TJava-bat" class="headerlink" title="TJava.bat"></a>TJava.bat</h4><p>在这个<code>快捷方式</code>目录下新建<code>TJava.bat</code>,写入如下命令:</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">java -version</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
-<p>运行这个批处理就可以看到当前用的是哪个<code>java</code>版本了.这里使用批处理是为了快速运行这个<code>java -version</code>命令,不用手动操作。</p>
-<h4 id="CJavaBat-bat"><a href="#CJavaBat-bat" class="headerlink" title="CJavaBat.bat"></a>CJavaBat.bat</h4><p>然后在<code>快捷方式</code>下,创建批处理脚本<code>CJavaBat.bat</code>,开头的<code>C</code>是<code>change</code>的意思.</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">@<span class="built_in">echo</span> ------------------------------------------------</span><br><span class="line">@<span class="built_in">echo</span> 当前Java版本为:</span><br><span class="line"><span class="keyword">call</span> TJava.bat</span><br><span class="line">@<span class="built_in">echo</span> ------------------------------------------------</span><br><span class="line">@<span class="built_in">echo</span> 输入要使用的java版本对应的选项:</span><br><span class="line">@<span class="built_in">echo</span> 选项   含义</span><br><span class="line">@<span class="built_in">echo</span> <span class="number">8</span>      切换环境为JDK8</span><br><span class="line">@<span class="built_in">echo</span> <span class="number">9</span>      切换环境为JDK9</span><br><span class="line">@<span class="built_in">echo</span> <span class="number">11</span>     切换环境为JDK11</span><br><span class="line">@<span class="built_in">echo</span> ------------------------------------------------</span><br><span class="line"><span class="built_in">set</span> /P choose=请输入选择:</span><br><span class="line"><span class="keyword">IF</span> &quot;<span class="variable">%choose%</span>&quot; <span class="keyword">EQU</span> &quot;<span class="number">8</span>&quot; (</span><br><span class="line"><span class="comment">    REM 修改JAVA_HOME环境变量为%JAVA_HOME_8%,</span></span><br><span class="line">    setx &quot;JAVA_HOME&quot; &quot;<span class="variable">%%J</span>AVA_HOME_8<span class="variable">%%&quot;</span> /m</span><br><span class="line">    <span class="built_in">echo</span> 已经修改 &quot;JAVA_HOME&quot; 为 <span class="variable">%%J</span>AVA_HOME_8<span class="variable">%%</span></span><br><span class="line"><span class="variable"></span>) <span class="keyword">ELSE</span> <span class="keyword">IF</span> &quot;<span class="variable">%choose%</span>&quot; <span class="keyword">EQU</span> &quot;<span class="number">9</span>&quot; (</span><br><span class="line">    setx &quot;JAVA_HOME&quot; &quot;<span class="variable">%%J</span>AVA_HOME_9<span class="variable">%%&quot;</span> /m</span><br><span class="line">    <span class="built_in">echo</span> 已经修改 &quot;JAVA_HOME&quot; 为 <span class="variable">%%J</span>AVA_HOME_9<span class="variable">%%</span></span><br><span class="line"><span class="variable"></span><span class="comment">REM setx &quot;Path&quot; &quot;%cd%;%path%&quot; /m</span></span><br><span class="line">) <span class="keyword">ELSE</span> <span class="keyword">IF</span> &quot;<span class="variable">%choose%</span>&quot; <span class="keyword">EQU</span> &quot;<span class="number">11</span>&quot; (</span><br><span class="line">    setx &quot;JAVA_HOME&quot; &quot;<span class="variable">%%J</span>AVA_HOME_11<span class="variable">%%&quot;</span> /m</span><br><span class="line">    <span class="built_in">echo</span> 已经修改 &quot;JAVA_HOME&quot; 为 <span class="variable">%%J</span>AVA_HOME_11<span class="variable">%%</span></span><br><span class="line"><span class="variable"></span>)</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
-<p>上面程序中的<code>setx</code>命令就是用来修改环境变量的.语法格式为:<code>setx 环境变量名 环境变量值 /m</code>。<code>setx</code>设置环境变量需要管理员权限,以管理员身份,运行上面的<code>CJavaBat.bat</code>就可以修改<code>JAVA_HOME</code>环境变量的内容,从而切换<code>Java</code>版本。</p>
-<h3 id="给CJavaBat-bat设置管理员权限"><a href="#给CJavaBat-bat设置管理员权限" class="headerlink" title="给CJavaBat.bat设置管理员权限"></a>给<code>CJavaBat.bat</code>设置管理员权限</h3><p>创建<code>CJavaBat.bat</code>的快捷方式,然后将这个<code>快捷方式</code>重命名为<code>CJava</code>,注意一定要修改名字。<br>然后在<code>快捷方式</code>上面右键。选择<code>属性</code>,在<code>快捷方式</code>选项卡上,点击<code>高级</code>,然后勾选上<code>用管理员身份运行</code>。<br>这样以后直接点击<code>CJava</code>这个快捷方式就可以以管理身份运行<code>CJavaBat.bat</code>这个批处理脚本了。<br><img data-src="https://img-blog.csdnimg.cn/20191006113119847.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img data-src="https://img-blog.csdnimg.cn/20191006113329396.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="配置CJava到Path环境变量"><a href="#配置CJava到Path环境变量" class="headerlink" title="配置CJava到Path环境变量"></a>配置CJava到Path环境变量</h3><p>将这个<code>快捷方式</code>目录配置到<code>Path</code>环境变量中,这样系统会在这个目录下查找程序,</p>
-<h3 id="通过Win-R运行CJava"><a href="#通过Win-R运行CJava" class="headerlink" title="通过Win+R运行CJava"></a>通过Win+R运行CJava</h3><p>然后就可以按下<code>Win+R</code>来启动运行,结束输入<code>CJava</code>,即可启动程序。</p>
-<h3 id="CJava程序说明"><a href="#CJava程序说明" class="headerlink" title="CJava程序说明"></a>CJava程序说明</h3><p>在<code>CJava</code>中输入选项:8,则切换到<code>Java8</code>,输入9,则切换到<code>Java9</code>,输入11则切换到<code>java11</code>,依次类推,可以拓展上面的程序,以支持切换更多的<code>java</code>版本。</p>
-<h3 id="CJava运行效果"><a href="#CJava运行效果" class="headerlink" title="CJava运行效果"></a>CJava运行效果</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">------------------------------------------------</span><br><span class="line">当前Java版本为:</span><br><span class="line">java version &quot;1.8.0_221&quot;</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_221-b11)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.221-b11, mixed mode)</span><br><span class="line">请按任意键继续. . .</span><br><span class="line">------------------------------------------------</span><br><span class="line">输入要使用的java版本对应的选项:</span><br><span class="line">选项   含义</span><br><span class="line">8      切换环境为JDK8</span><br><span class="line">9      切换环境为JDK9</span><br><span class="line">11     切换环境为JDK11</span><br><span class="line">------------------------------------------------</span><br><span class="line">请输入选择:11</span><br><span class="line">成功: 指定的值已得到保存。</span><br><span class="line">已经修改 &quot;JAVA_HOME&quot; 为 %JAVA_HOME_11%</span><br><span class="line">请按任意键继续. . .</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>可以看到切换之前是<code>Java8</code>,切换后为<code>Java11</code></p>
-<h3 id="查看是否切换成功"><a href="#查看是否切换成功" class="headerlink" title="查看是否切换成功"></a>查看是否切换成功</h3><p>运行上面创建<code>TJava.bat</code>,查看运行效果:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java version &quot;11.0.4&quot; 2019-07-16 LTS</span><br><span class="line">Java(TM) SE Runtime Environment 18.9 (build 11.0.4+10-LTS)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.4+10-LTS, mixed mode)</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure>
-<p>可以看到现在已经成功切换为<code>Java11</code>了</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/41/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/41/">41</a><span class="page-number current">42</span><a class="page-number" href="/blog/page/43/">43</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/65/">65</a><a class="extend next" rel="next" href="/blog/page/43/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/41/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/41/">41</a><span class="page-number current">42</span><a class="page-number" href="/blog/page/43/">43</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/66/">66</a><a class="extend next" rel="next" href="/blog/page/43/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1586,7 +1609,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23:46</span>
+    <span title="站点阅读时长">23:51</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

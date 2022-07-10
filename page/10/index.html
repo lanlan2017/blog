@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">648</span>
+          <span class="site-state-item-count">656</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">215</span>
+        <span class="site-state-item-count">216</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -213,6 +213,1064 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/77355077/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/77355077/" class="post-title-link" itemprop="url">2021年08月15日 课堂笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-15 09:13:00" itemprop="dateCreated datePublished" datetime="2021-08-15T09:13:00+08:00">2021-08-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年08月</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/77355077/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/77355077/" data-xid="/blog/77355077/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="ReentrantLock重入锁"><a href="#ReentrantLock重入锁" class="headerlink" title="ReentrantLock重入锁"></a>ReentrantLock重入锁</h1><ul>
+<li>ReentrantLock是JDK方法,需要手动声明上锁和释放锁</li>
+<li>ReentrantLock可设置内部 Condition,实现线程交互</li>
+<li>Renentrantlock能实现公平锁(默认非公平)</li>
+<li><code>lock(), tryLock()</code>加锁</li>
+<li><code>unlock()</code>解锁</li>
+<li><code>newCondition()</code>获得<code>condition</code>对象。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ReentrantLock</span> <span class="variable">lock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ReentrantLock</span>(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<p>lock()，抢不到，则等待<br>tryLock(),抢不到，不等待，</p>
+<h1 id="Callable接口"><a href="#Callable接口" class="headerlink" title="Callable接口"></a>Callable接口</h1><ul>
+<li>创建线程的方法:<ul>
+<li>1.通过自定义<code>Thread</code>子类</li>
+<li>2.通过使用<code>Runnable</code>接口</li>
+<li>run方法无法返回值</li>
+</ul>
+</li>
+</ul>
+<p>特点:</p>
+<ul>
+<li><p>对于<code>Callable</code>,需要实现<code>call()</code>方法</p>
+</li>
+<li><p>支持泛型返回值</p>
+</li>
+<li><p>可以抛出异常</p>
+</li>
+<li><p>需要解决的问题</p>
+<ul>
+<li><ol>
+<li>如何将返回值存储到主线程变量中</li>
+</ol>
+</li>
+<li><ol start="2">
+<li><code>Callable</code>接口并不能直接创建线程,只有<code>Runnable</code>接口可以,怎么办?</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p>解决方法:借助<code>Future</code>接口接受线程返回值,其具体实现类<code>FutureTask</code>实现了<code>Runnable</code>接口,可以作为<code>Thread</code>的<code>Target</code>。</p>
+<p>Future</p>
+<h2 id="Callable线程编程基本步骤"><a href="#Callable线程编程基本步骤" class="headerlink" title="Callable线程编程基本步骤"></a><code>Callable</code>线程编程基本步骤</h2><p>1.创建线程体类,实现<code>Callable</code>接口,重写<code>Ca(()</code>方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Thread</span> Target <span class="keyword">implements</span> <span class="title class_">Callable</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>2.基于<code>Callable</code>对象,创建<code>FutureTask</code>对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ThreadTarget</span> <span class="variable">target</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadTarget</span>()</span><br><span class="line">Future <span class="type">Task</span> <span class="variable">task</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Future</span> Task(target);</span><br></pre></td></tr></table></figure>
+<p>3.基于<code>FutureTask</code>对象,创建线程对象,并启动</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(task);</span><br><span class="line">thread.start()</span><br></pre></td></tr></table></figure>
+<p>4.调用<code>FutureTask</code>,获取线程状态及返回值。(异步)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object result= task.get()</span><br></pre></td></tr></table></figure>
+<h2 id="Future接口主要方法"><a href="#Future接口主要方法" class="headerlink" title="Future接口主要方法"></a>Future接口主要方法</h2><p><code>get()</code>阻塞式,用于获取<code>cabe</code>行完后的返回值<br><code>get(long timeout, TimeUnit unit)</code>: <code>get()</code>的重载方法用于最多等待的时间后,如仍未返回则线程将继续执行。<br><code>cancel()</code>:撤销正在执行<code>Callale</code>的<code>Task</code>。<br><code>isDone()</code>:是否执行完毕<br><code>isCancelled()</code>:任务是否已经被取消。</p>
+<h1 id="Java线程池"><a href="#Java线程池" class="headerlink" title="Java线程池"></a>Java线程池</h1><h2 id="Executor架构"><a href="#Executor架构" class="headerlink" title="Executor架构"></a>Executor架构</h2><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210815101731.png" alt="image-20210815101724705"></p>
+<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210815102136.png" alt="image-20210815102136570"></p>
+<h2 id="ThreadPoolExecutor类"><a href="#ThreadPoolExecutor类" class="headerlink" title="ThreadPoolExecutor类"></a>ThreadPoolExecutor类</h2>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/3add9035/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/3add9035/" class="post-title-link" itemprop="url">2021年08月14日 课堂笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-14 09:11:55" itemprop="dateCreated datePublished" datetime="2021-08-14T09:11:55+08:00">2021-08-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年08月</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/3add9035/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/3add9035/" data-xid="/blog/3add9035/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>375</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h2 id="并行计算"><a href="#并行计算" class="headerlink" title="并行计算"></a>并行计算</h2><h2 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h2><h2 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h2><h2 id="实现线程"><a href="#实现线程" class="headerlink" title="实现线程"></a>实现线程</h2><h3 id="方式1：继承Thread"><a href="#方式1：继承Thread" class="headerlink" title="方式1：继承Thread"></a>方式1：继承Thread</h3><h3 id="方式2：实现Runable接口"><a href="#方式2：实现Runable接口" class="headerlink" title="方式2：实现Runable接口"></a>方式2：实现Runable接口</h3><h2 id="线程状态及转换"><a href="#线程状态及转换" class="headerlink" title="线程状态及转换"></a>线程状态及转换</h2><h2 id="线程调度"><a href="#线程调度" class="headerlink" title="线程调度"></a>线程调度</h2><h2 id="线程让步"><a href="#线程让步" class="headerlink" title="线程让步"></a>线程让步</h2><h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><h3 id="JVM内置锁机制"><a href="#JVM内置锁机制" class="headerlink" title="JVM内置锁机制"></a>JVM内置锁机制</h3><h4 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a>同步代码块</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span> (锁对象) &#123;</span><br><span class="line">    同步代码    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Object里面有锁标志位，当锁标志位为1的时候，表示被占用，当锁为0时时，表示可用。</p>
+<h4 id="同步方法"><a href="#同步方法" class="headerlink" title="同步方法"></a>同步方法</h4><p>锁就是this对象</p>
+<h2 id="生产者-消费者"><a href="#生产者-消费者" class="headerlink" title="生产者 消费者"></a>生产者 消费者</h2><h2 id="锁对象的wait和notify"><a href="#锁对象的wait和notify" class="headerlink" title="锁对象的wait和notify"></a>锁对象的wait和notify</h2><h1 id="Java并发编程常识"><a href="#Java并发编程常识" class="headerlink" title="Java并发编程常识"></a>Java并发编程常识</h1><h2 id="系统内存"><a href="#系统内存" class="headerlink" title="系统内存"></a>系统内存</h2><h2 id="三大特性"><a href="#三大特性" class="headerlink" title="三大特性"></a>三大特性</h2><h3 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h3><p>通用场景OcR</p>
+<h3 id="Volatile变量"><a href="#Volatile变量" class="headerlink" title="Volatile变量"></a>Volatile变量</h3><p>满足可见性，不满足原子性。</p>
+<h3 id="AotimeXxxx类"><a href="#AotimeXxxx类" class="headerlink" title="AotimeXxxx类"></a>AotimeXxxx类</h3><h2 id="CAS机制"><a href="#CAS机制" class="headerlink" title="CAS机制"></a>CAS机制</h2><h3 id="悲观锁"><a href="#悲观锁" class="headerlink" title="悲观锁"></a>悲观锁</h3><h3 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h3><p>CAS</p>
+<h3 id="CAS原理"><a href="#CAS原理" class="headerlink" title="CAS原理"></a>CAS原理</h3><p>具体实现：AotimeXxxx类</p>
+<h3 id="Threadlocal类型"><a href="#Threadlocal类型" class="headerlink" title="Threadlocal类型"></a>Threadlocal类型</h3><p>在内存里面属于共享的变量，但是在线程里则不是</p>
+<p>做数据隔离的，线程访问Threadlocal变量的时候，使用的是线程缓存的副本。</p>
+<p>晚上安排<br>做线程习题</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9de9273d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/9de9273d/" class="post-title-link" itemprop="url">2021年08月12日 课堂笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-13 22:39:15" itemprop="dateCreated datePublished" datetime="2021-08-13T22:39:15+08:00">2021-08-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年08月</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/9de9273d/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/9de9273d/" data-xid="/blog/9de9273d/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>714</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Mybatis要点"><a href="#Mybatis要点" class="headerlink" title="Mybatis要点"></a>Mybatis要点</h1><h2 id="和"><a href="#和" class="headerlink" title="#{}和${}"></a><code>#&#123;&#125;</code>和<code>$&#123;&#125;</code></h2><p>#{}表示占位符<br>${}表示先拼接，直接进行字符串替换。</p>
+<h2 id="parameterType和resultType"><a href="#parameterType和resultType" class="headerlink" title="parameterType和resultType"></a>parameterType和resultType</h2><h2 id="mysql自增返回"><a href="#mysql自增返回" class="headerlink" title="mysql自增返回"></a>mysql自增返回</h2><p>Mysql UUID</p>
+<h2 id="自定义别名"><a href="#自定义别名" class="headerlink" title="自定义别名"></a>自定义别名</h2><h2 id="传po对象"><a href="#传po对象" class="headerlink" title="传po对象"></a>传po对象</h2><h2 id="resultType总结"><a href="#resultType总结" class="headerlink" title="resultType总结"></a>resultType总结</h2><h2 id="输出HashMap"><a href="#输出HashMap" class="headerlink" title="输出HashMap"></a>输出HashMap</h2><h2 id="问：Mybatis有哪些标签"><a href="#问：Mybatis有哪些标签" class="headerlink" title="问：Mybatis有哪些标签"></a>问：Mybatis有哪些标签</h2><h2 id="动态SQL"><a href="#动态SQL" class="headerlink" title="动态SQL"></a>动态SQL</h2><h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><h3 id="where"><a href="#where" class="headerlink" title="where"></a>where</h3><h4 id="传递list"><a href="#传递list" class="headerlink" title="传递list"></a>传递list</h4><h4 id="传递array"><a href="#传递array" class="headerlink" title="传递array"></a>传递array</h4><p>不好用，不要用，写在业务层里面的。</p>
+<p>sql标签，include</p>
+<h1 id="分页显示"><a href="#分页显示" class="headerlink" title="分页显示"></a>分页显示</h1><h2 id="方式1：查询全部，发送前端，然后使用JS分段显示。"><a href="#方式1：查询全部，发送前端，然后使用JS分段显示。" class="headerlink" title="方式1：查询全部，发送前端，然后使用JS分段显示。"></a>方式1：查询全部，发送前端，然后使用JS分段显示。</h2><p>缺点，传输慢，占内存</p>
+<h2 id="方式2：每次发送请求，读取数据库。"><a href="#方式2：每次发送请求，读取数据库。" class="headerlink" title="方式2：每次发送请求，读取数据库。"></a>方式2：每次发送请求，读取数据库。</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>select * from student limit 开始坐标,条目数<br>查询十条：<br>第一次查询：<br>select * from student limit 0,10<br>第2次查询<br>select * from student limit 10,10<br>第3次查询：<br>select * from student limit 20,10</p>
+<p>select * from student limit (page-1)*10,size</p>
+<p>(page-1)*10,size</p>
+<p>一次性读取到后端，逐段返回给后端。</p>
+<p>VO类<br>PageInfo{<br>    page—-当前页<br>    size—-一页要显示的条数<br>    total—总的记录数<br>    pages—总页数<br>    uuid—-缓存—&gt;Map(key(uuid),List<Object>)<br>    rows—-List<Object><br>}</p>
+<p>查询请求的时候，先查看uuid有没有，如果没有的话就查询数据库，如果已经有了的话就直接返回缓存中的分页数据。</p>
+<p><strong>二级缓存，自己实现</strong>，缓存长久不用占用内存怎么办，加入一个线程，如果发现一个缓存长时间不被使用，就删除掉该缓存。</p>
+<h2 id="自动生成主键"><a href="#自动生成主键" class="headerlink" title="自动生成主键"></a>自动生成主键</h2><h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><h2 id="不允许异地登录"><a href="#不允许异地登录" class="headerlink" title="不允许异地登录"></a>不允许异地登录</h2><p>得到用户和密码之后，</p>
+<p>不允许多地登录</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d001e77f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/d001e77f/" class="post-title-link" itemprop="url">2021年08月13日 课堂笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-13 14:07:13" itemprop="dateCreated datePublished" datetime="2021-08-13T14:07:13+08:00">2021-08-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年08月</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/d001e77f/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/d001e77f/" data-xid="/blog/d001e77f/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>361</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Spring-MVC要点"><a href="#Spring-MVC要点" class="headerlink" title="Spring MVC要点"></a>Spring MVC要点</h1><h2 id="restful风格"><a href="#restful风格" class="headerlink" title="restful风格"></a>restful风格</h2><p>老师个人理解：请求参数放在路径里面，这样传递参数的时候就不需要在URL后面添加?key1&#x3D;value1&amp;key2&#x3D;value2</p>
+<h2 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h2><p>用法：权限判定，登录检查。</p>
+<p><strong>明天</strong><br>线程，IO流，网络编程</p>
+<h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><p>上传到服务器，写到服务器的磁盘，不再本地。</p>
+<p>HTTP协议不能做到断电续传，一般情况下不允许上传大图片。</p>
+<p>文件上传<br>文件下载</p>
+<ul>
+<li>直接下载</li>
+<li>输出到响应流</li>
+</ul>
+<p>JQuery文件上传</p>
+<h2 id="计算机网络-传输层"><a href="#计算机网络-传输层" class="headerlink" title="计算机网络 传输层"></a>计算机网络 传输层</h2><p>IP网络：主机到主机之间的通信<br>端口：程序到程序之间的通信。</p>
+<p>端口是干什么用的</p>
+<h3 id="UDP应用"><a href="#UDP应用" class="headerlink" title="UDP应用"></a>UDP应用</h3><p>视频会议。<br>IP电话</p>
+<p>脏包</p>
+<h3 id="TCP如何做到可靠传输"><a href="#TCP如何做到可靠传输" class="headerlink" title="TCP如何做到可靠传输"></a>TCP如何做到可靠传输</h3><p>累加确认<br>超时重传</p>
+<p>流量控制，拥塞控制是什么</p>
+<p>三次握手，四次挥手。</p>
+<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210813161849.png" alt="image-20210813161842429"></p>
+<p>DOS攻击</p>
+<p>UDP没有拒绝服务攻击。</p>
+<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><p>DNS<br>输入网址到首页出现经过的步骤</p>
+<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><p>截获<br>中断<br>篡改<br>伪造</p>
+<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210813162515.png" alt="image-20210813162515791"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9556200000000000000/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/9556200000000000000/" class="post-title-link" itemprop="url">eclipse导入的动态JavaWeb项目前面后红叉号</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-12 22:51:34" itemprop="dateCreated datePublished" datetime="2021-08-12T22:51:34+08:00">2021-08-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/9556200000000000000/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/9556200000000000000/" data-xid="/blog/9556200000000000000/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>233</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="问题1：Buildpath不对"><a href="#问题1：Buildpath不对" class="headerlink" title="问题1：Buildpath不对"></a>问题1：Buildpath不对</h1><p>JRE和Tomcat的不对<br>重新导入即可</p>
+<h1 id="问题2：eclipse项目配置问题"><a href="#问题2：eclipse项目配置问题" class="headerlink" title="问题2：eclipse项目配置问题"></a>问题2：eclipse项目配置问题</h1><h1 id="删除eclipse配置文件，重新导入项目即可"><a href="#删除eclipse配置文件，重新导入项目即可" class="headerlink" title="删除eclipse配置文件，重新导入项目即可"></a>删除eclipse配置文件，重新导入项目即可</h1><p>项目结构如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.classpath</span><br><span class="line">.project</span><br><span class="line">.settings/</span><br><span class="line">WebContent/</span><br><span class="line">build/</span><br><span class="line">src/</span><br></pre></td></tr></table></figure>
+<p>删除eclipse的配置文件和build目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.classpath</span><br><span class="line">.project</span><br><span class="line">.settings/</span><br><span class="line">build/</span><br></pre></td></tr></table></figure>
+<p>剩下如下目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">WebContent/</span><br><span class="line">src/</span><br></pre></td></tr></table></figure>
+<p>然后在重新导入该项目即可。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d91920ba/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/d91920ba/" class="post-title-link" itemprop="url">HTML DOM table对象 HTMLTableElement</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-11 16:47:39" itemprop="dateCreated datePublished" datetime="2021-08-11T16:47:39+08:00">2021-08-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/DOM/" itemprop="url" rel="index"><span itemprop="name">DOM</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/DOM/HTML-DOM-table%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="index"><span itemprop="name">HTML DOM table对象</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/d91920ba/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/d91920ba/" data-xid="/blog/d91920ba/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>819</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="HTMLTableElement"><a href="#HTMLTableElement" class="headerlink" title="HTMLTableElement"></a>HTMLTableElement</h1><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLTableElement">https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLTableElement</a></p>
+<blockquote>
+<p>HTMLTableElement.insertRow() (en-US)<br>返回一个 HTMLTableRowElement，表示表格中的一个新行。它会被立即插入到行集合中给定 index 位置所表示的 <tr> 元素之前。如果有必要一个 <tbody> (en-US) 会被创建。如果 index 值为 -1， 这个新行会被追加到集合中。如果 index 值小于 -1 或者大于集合中的行总数，一个带有 IndexSizeError 值的异常 DOMException 会发生。</p>
+</blockquote>
+<h2 id="HTMLTableElement-insertRow-index"><a href="#HTMLTableElement-insertRow-index" class="headerlink" title="HTMLTableElement.insertRow(index)"></a>HTMLTableElement.insertRow(index)</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/insertRow">https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/insertRow</a></p>
+<h3 id="句法"><a href="#句法" class="headerlink" title="句法"></a>句法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newRow = <span class="title class_">HTMLTableElement</span>.<span class="title function_">insertRow</span>(index);</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>index 可选的</p>
+<p>新行的行索引。如果index是-1或等于行数，该行被追加为最后一行。如果index大于行数，IndexSizeError则会导致异常。如果index省略，则默认为-1。</p>
+<h2 id="HTMLTableRowElement-insertCell-index"><a href="#HTMLTableRowElement-insertCell-index" class="headerlink" title="HTMLTableRowElement.insertCell(index)"></a>HTMLTableRowElement.insertCell(index)</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/insertCell">https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/insertCell</a></p>
+<h3 id="句法-1"><a href="#句法-1" class="headerlink" title="句法"></a>句法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newCell = <span class="title class_">HTMLTableRowElement</span>.<span class="title function_">insertCell</span>(index);</span><br></pre></td></tr></table></figure>
+<h3 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h3><p>index 可选的</p>
+<p>index是新单元格的单元格索引。如果index是 -1或等于细胞的数量，细胞被附加作为行中的最后一个单元。如果index大于单元格数， IndexSizeError则会导致异常。如果index省略，则默认为-1。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4532976d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/4532976d/" class="post-title-link" itemprop="url">在表格指定行之前添加新行</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-11 15:59:16" itemprop="dateCreated datePublished" datetime="2021-08-11T15:59:16+08:00">2021-08-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/DOM/" itemprop="url" rel="index"><span itemprop="name">DOM</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/DOM/HTML-DOM-table%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="index"><span itemprop="name">HTML DOM table对象</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/4532976d/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/4532976d/" data-xid="/blog/4532976d/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>0</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9f87877c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/9f87877c/" class="post-title-link" itemprop="url">在表格的最后一行后面添加一行</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-11 15:48:36" itemprop="dateCreated datePublished" datetime="2021-08-11T15:48:36+08:00">2021-08-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/DOM/" itemprop="url" rel="index"><span itemprop="name">DOM</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/DOM/HTML-DOM-table%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="index"><span itemprop="name">HTML DOM table对象</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/9f87877c/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/9f87877c/" data-xid="/blog/9f87877c/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="完整HTML代码"><a href="#完整HTML代码" class="headerlink" title="完整HTML代码"></a>完整HTML代码</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="variable constant_">DOCTYPE</span> html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;在第一行前面插入新行&lt;/title&gt;</span><br><span class="line">		&lt;script&gt;</span><br><span class="line">			count = 0;</span><br><span class="line">			function insertRowBeforFirst(tableID) &#123;</span><br><span class="line">				var table = document.getElementById(tableID);</span><br><span class="line">				// 在第一行前面插入新行</span><br><span class="line">				var row = table.insertRow(0);</span><br><span class="line">				// 给新行插入第一个单元格</span><br><span class="line">				var cell1 = row.insertCell(0);</span><br><span class="line">				// 给单元格填写内容</span><br><span class="line">				cell1.innerHTML = &quot;New_&quot; + count++;</span><br><span class="line">				// 给新行插入第二个单元格</span><br><span class="line">				var cell2 = row.insertCell(1);</span><br><span class="line">				cell2.innerHTML = &quot;New_&quot; + count++;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;h2&gt;在表格的第一行前面插入新行&lt;/h2&gt;</span><br><span class="line">		&lt;table id=&quot;myTable&quot; border=&quot;1&quot;&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;cell 1&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;cell 2&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;cell 3&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;cell 4&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">		&lt;/table&gt;</span><br><span class="line">		&lt;br&gt;</span><br><span class="line">		&lt;button type=&quot;button&quot; onclick=&quot;insertRowBeforFirst(&#x27;myTable&#x27;)&quot;&gt;插入新行&lt;/button&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="详细代码"><a href="#详细代码" class="headerlink" title="详细代码"></a>详细代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">count = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">insertRowBeforFirst</span>(<span class="params">tableID</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> table = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(tableID);</span><br><span class="line">    <span class="comment">// 在第一行前面插入新行</span></span><br><span class="line">    <span class="keyword">var</span> row = table.<span class="title function_">insertRow</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 给新行插入第一个单元格</span></span><br><span class="line">    <span class="keyword">var</span> cell1 = row.<span class="title function_">insertCell</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 给单元格填写内容</span></span><br><span class="line">    cell1.<span class="property">innerHTML</span> = <span class="string">&quot;New_&quot;</span> + count++;</span><br><span class="line">    <span class="comment">// 给新行插入第二个单元格</span></span><br><span class="line">    <span class="keyword">var</span> cell2 = row.<span class="title function_">insertCell</span>(<span class="number">1</span>);</span><br><span class="line">    cell2.<span class="property">innerHTML</span> = <span class="string">&quot;New_&quot;</span> + count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -491,1140 +1549,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d7f8ec7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/d7f8ec7/" class="post-title-link" itemprop="url">2021年08月09日 课堂笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-08-09 09:24:37" itemprop="dateCreated datePublished" datetime="2021-08-09T09:24:37+08:00">2021-08-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年08月</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/d7f8ec7/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/d7f8ec7/" data-xid="/blog/d7f8ec7/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h1><p>hashCode()<br>equals()</p>
-<p>Set如何判断里面的元素是否相等。</p>
-<p>先比较hashCode,如果hashCode不相等，那么这两个元素就是不相等的。<br>如果hashCode相等的话，接着使用equals()方法来判断这两个元素是否相等。</p>
-<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p>底层还是HeashMap</p>
-<h2 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h2><p>底层是TreeMap<br>compare方法<br>compareTo方法</p>
-<h3 id="TreeSet排序"><a href="#TreeSet排序" class="headerlink" title="TreeSet排序"></a>TreeSet排序</h3><p>要装入TreeSet的元素要实现Comparable接口<br>或者实现Comparator接口<br>一般优先使用Comparable接口。</p>
-<h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><h2 id="PriorityQueue"><a href="#PriorityQueue" class="headerlink" title="PriorityQueue"></a>PriorityQueue</h2><p><strong>数组实现的</strong>。<br>不能加入null,</p>
-<p>链式队列(LinkedList)</p>
-<h3 id="如何扩容"><a href="#如何扩容" class="headerlink" title="如何扩容"></a>如何扩容</h3><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210809104348.png" alt="image-20210809104340812"></p>
-<h4 id="poll方法"><a href="#poll方法" class="headerlink" title="poll方法"></a>poll方法</h4><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210809104517.png" alt="image-20210809104517250"></p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210809104523.png" alt="image-20210809104523574"></p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210809104531.png" alt="image-20210809104531534"></p>
-<h2 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h2><p>负载因子是什么意思。</p>
-<p>如何扩容</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210809140512.png" alt="image-20210809140512779"></p>
-<p>Hashtable是线程安全的，而且是用拉链法做的，头插法。</p>
-<p>看老师的PPT.</p>
-<h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><p>Hashtable的子类。</p>
-<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p>HashSet是通过HashMap构造</p>
-<p>负载因子<br>loadFactor</p>
-<p>拉链法</p>
-<p>线程不安全</p>
-<p>红黑树（平衡树，AVL数）</p>
-<p>Hashtable纯粹是拉链法<br>HashMap是拉链法+红黑树。<br>当存储的元素的数量超过负载因子的时候，不是使用拉链法开辟地址，而是改成红黑树。</p>
-<p>HashMap的key可以为null,但是value可以为null.<br>key要唯一，所以key只能设置为null一次，value可以随意。</p>
-<p>线程安全的HashMap。</p>
-<p>如何判别两个对象是否一致<br>先调用hashCode,如果hashCode不一致，再调用equals()判断是否一致。</p>
-<p>Map里面没有迭代器。</p>
-<p>HashMap和Hashtable都由一个东西叫负载因子</p>
-<h2 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h2><p>排序的<br>存储机制是<strong>红黑树</strong></p>
-<p>TreeMap里面key可以为null吗？<br>key不能为null，因为compare方法需要使用key1.compareto(key2)方法，null不能调用方法所以TreeMap的可以不能为null.</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210809143850.png" alt="image-20210809143850249"></p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210809143901.png" alt="image-20210809143901731"></p>
-<h2 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h2><p>Key和value是否能为空，不可以：源码就是这么写的：</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210809144756.png" alt="image-20210809144756873"></p>
-<p>原子操作</p>
-<p>同步方法</p>
-<p>同步代码块，同步代码块锁的颗粒度比较小，效率更高</p>
-<p>三次登录，可以先不做了，（自己还需要做）<br><strong>明天讲Mybatis</strong></p>
-<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><p>工具类</p>
-<p>问在集合里面线程安全</p>
-<p>List里面有Vetor,<br>Map里面有<br>concurrentHashMap—-拉链方法+红黑树，</p>
-<p>Collections工具类的SynchronizeedXXXX方法。</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210809145921.png" alt="image-20210809145921694"></p>
-<p>问的时候，已经不要问什么就说什么，一定要展开说。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4.0974e+89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/4.0974e+89/" class="post-title-link" itemprop="url">2021年08月08日 课堂笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-08-08 09:09:33 / 修改时间：15:10:04" itemprop="dateCreated datePublished" datetime="2021-08-08T09:09:33+08:00">2021-08-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年08月</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/4.0974e+89/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/4.0974e+89/" data-xid="/blog/4.0974e+89/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>392</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="编程-实现Spring-MVC核心功能"><a href="#编程-实现Spring-MVC核心功能" class="headerlink" title="编程 实现Spring MVC核心功能"></a>编程 实现Spring MVC核心功能</h1><h1 id="中期项目题目解读"><a href="#中期项目题目解读" class="headerlink" title="中期项目题目解读"></a>中期项目题目解读</h1><p>专业表，直接写在数据库里。</p>
-<p>注册的时候，先生成学号，要求事务</p>
-<p>分页——-后面会使用AOP来表示</p>
-<p>只能在客户端登录形式</p>
-<p>下午讲集合，晚上自习。</p>
-<p>先做后端，</p>
-<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210808140945.png" alt="image-20210808140937993"><br>集合只能放引用类型，如果要放引用类型，则放对应的包装类。</p>
-<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><h2 id="ArrayList如何扩容"><a href="#ArrayList如何扩容" class="headerlink" title="ArrayList如何扩容"></a>ArrayList如何扩容</h2><p>(<strong>其实是考你有没有看过源码</strong>)<br>查看add方法，</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210808142243.png" alt="image-20210808142243498"></p>
-<p>native调用第三方的功能(C语言)</p>
-<h2 id="foreach循环"><a href="#foreach循环" class="headerlink" title="foreach循环"></a>foreach循环</h2><h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><h2 id="LinkList"><a href="#LinkList" class="headerlink" title="LinkList"></a>LinkList</h2><p><strong>双链表存储</strong></p>
-<p>get方法，如何获取值，从中间开始查找，而不是从前往后查找</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210808144442.png" alt="image-20210808144441932"></p>
-<p>迭代器</p>
-<p>add()方法，默认是尾插法</p>
-<p>addFirst()方法，头插法</p>
-<h3 id="堆方法"><a href="#堆方法" class="headerlink" title="堆方法"></a>堆方法</h3><h2 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h2><p>向量</p>
-<h3 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h3><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210808150248.png" alt="image-20210808150248048"></p>
-<p>List接口的实现类，有哪些是线程安全的</p>
-<p>只有Vector,Stack继承与Vector，也是线程安全。</p>
-<h3 id="push方法"><a href="#push方法" class="headerlink" title="push方法"></a>push方法</h3><p>源码</p>
-<p>调用了Vector方法</p>
-<p>peek方法</p>
-<p>今天讲完了List分支，明天将Set,Map</p>
-<p>集合要总结</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/cbfdbd12/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/cbfdbd12/" class="post-title-link" itemprop="url">2021年08月06日 课堂笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-08-06 09:16:32" itemprop="dateCreated datePublished" datetime="2021-08-06T09:16:32+08:00">2021-08-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年08月</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/cbfdbd12/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/cbfdbd12/" data-xid="/blog/cbfdbd12/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>591</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Spring有什么作用"><a href="#Spring有什么作用" class="headerlink" title="Spring有什么作用"></a>Spring有什么作用</h1><p>使得项目解耦</p>
-<h1 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h1><p>byName<br>byType<br>AOP编程（后面再说，要弄懂）</p>
-<h1 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h1><p>xml一定要有根节点<br>xml要严格遵守开闭原则，有开标签，一定要有闭标签。</p>
-<p>xml是树形结构<br>不能有交叉，交叉的话就变成图了</p>
-<p>属性要放在开标签里面</p>
-<p>xml属性值必须使用引号包裹</p>
-<p>转义字符</p>
-<p>PCDATA</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">PCDATA[<span class="tag">&lt;<span class="name">b</span>&gt;</span>my<span class="tag">&lt;/<span class="name">b</span>&gt;</span>]</span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>解析为：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>my<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>CDATA<br>解析为文本：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="symbol">&amp;lt;</span>b<span class="symbol">&amp;gt;</span>my<span class="symbol">&amp;lt;</span>/b<span class="symbol">&amp;gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="XML约束"><a href="#XML约束" class="headerlink" title="XML约束"></a>XML约束</h2><p>DTD（Document Type Definition）<br>XML </p>
-<p>对于不符合DTD的文档,DTD解析器或解释器会报错<br>常用的解析器是 XML Editor(E</p>
-<p>DTD结构</p>
-<h3 id="XML约束-XML-Schema"><a href="#XML约束-XML-Schema" class="headerlink" title="XML约束 XML Schema"></a>XML约束 XML Schema</h3><p>XML Schema的作用是定义XML文档的合法构建模块,类似<br>DTD。</p>
-<h3 id="XML解析"><a href="#XML解析" class="headerlink" title="XML解析"></a>XML解析</h3><p>SAX,DOM两种接口</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210806100154.png" alt="image-20210806100153425"></p>
-<h2 id="解析XML示例"><a href="#解析XML示例" class="headerlink" title="解析XML示例"></a>解析XML示例</h2><h2 id="使用XML实现IOC功能"><a href="#使用XML实现IOC功能" class="headerlink" title="使用XML实现IOC功能"></a>使用XML实现IOC功能</h2><p>面试的时候，别人问的，要先回答清楚，然后要引导到自己如何应用该知识，实现了什么，自己掌握主动性。</p>
-<p>注解是谁开发的?<br>框架的开发者开发的。</p>
-<h1 id="下午"><a href="#下午" class="headerlink" title="下午"></a>下午</h1><p>主键应该用Char,Char长度固定，数据库使用主键作为索引，固定长度，数据库找起来方便。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9867e696/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/9867e696/" class="post-title-link" itemprop="url">2021年08月05日 课堂笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-08-05 09:05:50" itemprop="dateCreated datePublished" datetime="2021-08-05T09:05:50+08:00">2021-08-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年08月</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/9867e696/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/9867e696/" data-xid="/blog/9867e696/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>355</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h1><p>Ajax理解为http客户端</p>
-<p>MVC是一种软件架构</p>
-<h2 id="Spring-MVC流程图"><a href="#Spring-MVC流程图" class="headerlink" title="Spring MVC流程图"></a>Spring MVC流程图</h2><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210805095427.png" alt="image-20210805095427250"></p>
-<h2 id="接口回调方式"><a href="#接口回调方式" class="headerlink" title="接口回调方式"></a>接口回调方式</h2><p>实现控制器接口方式实现。</p>
-<h2 id="注解方式"><a href="#注解方式" class="headerlink" title="注解方式"></a>注解方式</h2><p><strong>返回JSON数据的注解</strong></p>
-<p><strong>下午两点到三点半改造</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseBody</span></span><br></pre></td></tr></table></figure>
-
-
-<h2 id="项目作业"><a href="#项目作业" class="headerlink" title="项目作业"></a>项目作业</h2><h3 id="项目1"><a href="#项目1" class="headerlink" title="项目1"></a>项目1</h3><p>学会表</p>
-<ul>
-<li>专业不要写在表里，拆分出来作为专业表，学生表中通过外键引入</li>
-<li>删除某，改成头像</li>
-</ul>
-<h3 id="项目2-社团"><a href="#项目2-社团" class="headerlink" title="项目2 社团"></a>项目2 社团</h3><p>下不用做，先画出表</p>
-<p>社团里面有多少社员要知道<br>社团人员，毕业后的历史信息，<br>社团管理层的历史信息。</p>
-<h3 id="JVM书"><a href="#JVM书" class="headerlink" title="JVM书"></a>JVM书</h3><p>第2章<br>第3章 关键</p>
-<h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h2 id="手动装配"><a href="#手动装配" class="headerlink" title="手动装配"></a>手动装配</h2><h2 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h2><p>类的注解：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span>---业务类</span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Repository</span>----访问数据库的类</span><br></pre></td></tr></table></figure>
-<p>属性的注解：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowied</span> -- 先对象名查找，再按类型查找</span><br><span class="line"><span class="meta">@Resource</span> -- 和上面的一样</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controlor</span></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="自习"><a href="#自习" class="headerlink" title="自习"></a>自习</h3><p>中期项目<br>spring+之前的登录项目。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/a36f91ea/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/a36f91ea/" class="post-title-link" itemprop="url">2021年0804 课堂笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-08-04 09:09:16" itemprop="dateCreated datePublished" datetime="2021-08-04T09:09:16+08:00">2021-08-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年08月</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/a36f91ea/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/a36f91ea/" data-xid="/blog/a36f91ea/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>308</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h1><p>变量命名规则</p>
-<h2 id="弹出对话框"><a href="#弹出对话框" class="headerlink" title="弹出对话框"></a>弹出对话框</h2><p>alert()<br>confirm()<br>prompt()</p>
-<h2 id="JS事件"><a href="#JS事件" class="headerlink" title="JS事件"></a>JS事件</h2><p>js事件很重要</p>
-<h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><p>AJAX相当于一个HTTP客户端</p>
-<ol>
-<li>Ajax创建对象</li>
-<li>open()</li>
-<li>设置回调函数</li>
-<li>send</li>
-</ol>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210804101837.png" alt="image-20210804101829879"></p>
-<!-- HTTP协议详解 -->
-
-<p>前后端分离的时候一定要看前端有没有请求发送到后端。</p>
-<p>同步和异步的问题。</p>
-<h2 id="前后端分离-登录示例"><a href="#前后端分离-登录示例" class="headerlink" title="前后端分离 登录示例"></a>前后端分离 登录示例</h2><h2 id="分离示例：注册的时候，判断是否可以注册"><a href="#分离示例：注册的时候，判断是否可以注册" class="headerlink" title="分离示例：注册的时候，判断是否可以注册"></a>分离示例：注册的时候，判断是否可以注册</h2><h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><p>与<br>或<br>非<br>亦或</p>
-<h1 id="移位运算"><a href="#移位运算" class="headerlink" title="移位运算"></a>移位运算</h1><h2 id="算术移位"><a href="#算术移位" class="headerlink" title="算术移位"></a>算术移位</h2><p><code>&gt;&gt;</code>,<code>&lt;&lt;</code><br>低位-高位，补零<br>高位-&gt;低位，补符号位</p>
-<h2 id="逻辑移位"><a href="#逻辑移位" class="headerlink" title="逻辑移位"></a>逻辑移位</h2><p>都补零<br>只有右移：<code>&gt;&gt;&gt;</code></p>
-<p>按位右移补零操作符</p>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>从键盘中输入两个整形数，问在存储的二进制中，有多少位是相等的。</p>
-<p>输出一个数，输出它的补码</p>
-<p><strong>要先把JSP版本的和前后端分离版本的先弄懂</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/3f53519e/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/3f53519e/" class="post-title-link" itemprop="url">2021年08月03日 课堂笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-08-03 09:02:35" itemprop="dateCreated datePublished" datetime="2021-08-03T09:02:35+08:00">2021-08-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年08月</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/3f53519e/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/3f53519e/" data-xid="/blog/3f53519e/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>376</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>上午</p>
-<ul>
-<li>过滤器</li>
-<li>监听器</li>
-</ul>
-<h1 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h1><p>先做用的少<br>用的比较多的是用来做编码转换<br>最对请求体进行转换，不会对请求头做改变。<br>所以对get请求，不做转换。</p>
-<p>过滤器是不响应的。</p>
-<p>注解<br>web.xml中配置过滤器</p>
-<h1 id="监听器"><a href="#监听器" class="headerlink" title="监听器"></a>监听器</h1><p>引例，显示一个网站的在线人数目。<br>游客数目。</p>
-<p>使用session,创建Session时，在线人数加一。<br>登录的时候创建保存用户的Session时，会员人数加一，<br>在线人数减去会员数，即可得到游客数目。</p>
-<p>监听器是服务端的事件触发的，所以监听器不会配置URL。</p>
-<h2 id="有哪几类监听器"><a href="#有哪几类监听器" class="headerlink" title="有哪几类监听器"></a>有哪几类监听器</h2><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210803093926.png" alt="image-20210803093926168"></p>
-<h2 id="编程示例"><a href="#编程示例" class="headerlink" title="编程示例"></a>编程示例</h2><p>统计在线人数</p>
-<p>线程不安全的</p>
-<p>使用线程线程安全的数据类型。</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210803094801.png" alt="image-20210803094801574"></p>
-<h2 id="整理web知识点"><a href="#整理web知识点" class="headerlink" title="整理web知识点"></a>整理web知识点</h2><p>一个URL只能给一个servlet</p>
-<p>一个servlet可以监听多个URL</p>
-<h2 id="把学生登录的项目"><a href="#把学生登录的项目" class="headerlink" title="把学生登录的项目"></a>把学生登录的项目</h2><p><strong>把增删改查做出来</strong></p>
-<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><h3 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h3><p>编程题：给定单个对象，写一个工具，把该对象专户转换成JSON字符串。</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210803104029.png" alt="image-20210803104029739"></p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210803104029.png"></p>
-<p>JSON转对象</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210803104432.png" alt="image-20210803104432858"></p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210803104438.png" alt="image-20210803104438270"></p>
-<p>如何判断数组,检查字符串中是否有<code>[]</code></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/eb6fc159/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/eb6fc159/" class="post-title-link" itemprop="url">2021年08月01日 课堂笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-08-02 14:01:18" itemprop="dateCreated datePublished" datetime="2021-08-02T14:01:18+08:00">2021-08-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年08月</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/eb6fc159/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/eb6fc159/" data-xid="/blog/eb6fc159/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>树</li>
-<li>基数排序</li>
-<li>快速排序和归并排序的非递归实现</li>
-</ul>
-<h1 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h1><p>顺序<br>链式<br>哈希（散列）<br>索引（）</p>
-<p>前三种用在内存中，索引可以用来内存也可以用在外存中。</p>
-<p>HashTable就是使用链接地法解决冲突。</p>
-<p>自己写一个HashMap,使用拉链法进行存储。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="type">int</span> key,T value);</span><br><span class="line">T <span class="title function_">get</span><span class="params">(<span class="type">int</span> key)</span>;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><p>链地址法实现哈希存储<br>快速排序非递归实现。</p>
-<p>讲解<br>2G内存，如何对8G大的内容排序</p>
-<p>讲解2<br>从N个有序大的数组中，从这批数组中，找到m个最小的数字。</p>
-<p>定义一个长度为m的数组，第0个元素，存放第1个数组的第1个值，第1个元素存放地2个数组的值。</p>
-<p>讲解2<br>判断链表尾环<br>使用两个指针X,Y，一个X每次走一步，一个Y每次走两步，当两个指针相遇的时候就表示有尾环<br>求出环的入口：<br>相遇的时候走一步的指针X不变，每次X走一步，再使用一个指针Z从链表的头开始，每次Z走一步<br>当<br>当两者相遇的时候，就是入口点。</p>
-<p>web应用赶紧做。<br>下次讲二叉树的遍历<br>前序遍历<br>中序遍历<br>后续遍历</p>
-<h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><p>面试要问</p>
-<p>递归方式<br>非递归方式</p>
-<p>概念详解</p>
-<p>练习题</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210803090056.png" alt="image-20210803090047554"></p>
-<p>非递归遍历实现</p>
-<p>前序非递归实现</p>
-<h2 id="编程题，实现：八个方法"><a href="#编程题，实现：八个方法" class="headerlink" title="编程题，实现：八个方法"></a>编程题，实现：八个方法</h2><p>前序，中序，后序，递归和非递归实现，6<br>层次遍历，1<br>判断是否是完全二叉树。1</p>
-<p>递归的，使用非递归实现，<br>使用栈来解决</p>
-<p>stack.push(t)<br>while(栈非空){<br>  t&#x3D;pop();<br>  打印t.data<br>  if(t.rChirld!&#x3D;null)<br>    入栈<br>  if(t.lChirld!&#x3D;null)<br>    入栈<br>}</p>
-<p>方式2 前序：<br>while(t!&#x3D;null)<br>{<br>  打印t.data<br>  pusu(t)<br>  t&#x3D;t.lchirld<br>}<br>while(栈非空){<br>  t&#x3D;pop()<br>  if(t.rchild!&#x3D;null){<br>    t&#x3D;t.rchild;<br>    while(t!&#x3D;null)<br>    {<br>      打印t.data<br>      pusu(t)<br>      t&#x3D;t.lchirld<br>    }<br>  }<br>}</p>
-<p>中序：</p>
-<p>while(t!&#x3D;null)<br>{<br>  &#x2F;&#x2F;打印t.data<br>  pusu(t)<br>  t&#x3D;t.lchirld<br>}<br>while(栈非空){<br>  t&#x3D;pop()<br>  打印t.data<br>  if(t.rchild!&#x3D;null){<br>    t&#x3D;t.rchild;<br>    while(t!&#x3D;null)<br>    {<br>      打印t.data<br>      pusu(t)<br>      t&#x3D;t.lchirld<br>    }<br>  }<br>}</p>
-<p>层次遍历：<br>（队列实现）</p>
-<p>入队(t)<br>while(队列非空){<br>  t&#x3D;出队<br>  打印<br>  if(左非空)<br>    入队<br>  if(右非空)<br>    入队<br>}</p>
-<p>判断完全二叉树<br>（队列实现）</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/2b06d603/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2b06d603/" class="post-title-link" itemprop="url">直接插入排序</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-08-01 22:21:44 / 修改时间：22:33:38" itemprop="dateCreated datePublished" datetime="2021-08-01T22:21:44+08:00">2021-08-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B407%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年07月</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B407%E6%9C%88/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/2b06d603/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/2b06d603/" data-xid="/blog/2b06d603/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <div id='my_toc'>
-
-<ul>
-<li><a href="/blog/null/#%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F">直接插入排序</a><ul>
-<li><a href="/blog/null/#%E5%86%99%E6%B3%951%EF%BC%9A%E6%9F%A5%E6%89%BE%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE-%E5%90%8E%E7%A7%BB%E8%85%BE%E5%87%BA%E4%BD%8D%E7%BD%AE-%E6%8F%92%E5%85%A5">写法1：查找插入位置 后移腾出位置 插入</a></li>
-<li><a href="/blog/null/#%E5%86%99%E6%B3%952%EF%BC%9A%E6%8F%92%E5%85%A5%E6%9C%AB%E5%B0%BE-%E5%90%91%E5%89%8D%E5%86%92%E6%B3%A1">写法2：插入末尾 向前冒泡</a></li>
-<li><a href="/blog/null/#%E6%94%B9%E8%BF%9B%E5%86%99%E6%B3%95%EF%BC%9A%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%9D%A5%E6%89%BE%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE">改进写法：二分查找来找插入位置</a></li>
-</ul>
-</li>
-</ul>
-</div>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2b06d603/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/blog/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/65/">65</a><a class="extend next" rel="next" href="/blog/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/blog/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/66/">66</a><a class="extend next" rel="next" href="/blog/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1655,7 +1581,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23:46</span>
+    <span title="站点阅读时长">23:51</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
