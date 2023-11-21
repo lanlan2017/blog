@@ -1,12 +1,11 @@
 ---
 title: adb报错：‘error冒号 more than one device斜杠emulator’
-categories:
-  - Windows
-  - 软件
-  - 远程控制
+categories: 
+  - 编程
+  - adb
 abbrlink: 4f6d3c70
 date: 2022-04-27 11:01:03
-updated: 2022-04-27 11:01:03
+updated: 2022-04-27 12:28:10
 ---
 # error: more than one device/emulator
 这是因为电脑上连接了多个手机，使用`adb -s 手机设备ID`给adb命令指定要操作哪个手机即可。

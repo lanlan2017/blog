@@ -178,7 +178,7 @@ if "%VAR%" == "before" (
 ```cmd
 D:\Desktop\test\CMD>set
 ALLUSERSPROFILE=C:\ProgramData
-APPDATA=C:\Users\18190\AppData\Roaming
+APPDATA=C:\\Users\\haha\AppData\Roaming
 CLASSPATH=.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;
 ......
 JAVA_HOME=G:\java\java11\jdk-11.0.4

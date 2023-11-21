@@ -204,6 +204,10 @@ lan                      WDAGUtilityAccount
 命令成功完成。
 请按任意键继续. . .
 ```
+
+# 示例
+[批处理给Android设备批量卸载APP](/blog/b3f4e072/)
+
 # 参考资料
 [http://www.hechaku.com/arcitle/201810398.html](http://www.hechaku.com/arcitle/201810398.html)
 [http://www.hechaku.com/arcitle/201810344.html](http://www.hechaku.com/arcitle/201810344.html)

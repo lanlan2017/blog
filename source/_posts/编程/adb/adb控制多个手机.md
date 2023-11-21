@@ -1,12 +1,11 @@
 ---
 title: adb控制多个手机
-categories:
-  - Windows
-  - 软件
-  - 远程控制
+categories: 
+  - 编程
+  - adb
 abbrlink: 9a1e9796
 date: 2022-04-25 09:18:34
-updated: 2022-04-25 09:18:34
+updated: 2023-05-02 22:43:44
 ---
 # adb控制多个手机
 如果直接将好几台不同的手机设备直接连接在电脑上，使用一般的 adb 便会不好使，因为电脑不知道我们操作哪一个手机，这时候，我们需要添加`-s 手机设备ID`参数来指定手机设备来执行操作。
@@ -14,7 +13,7 @@ updated: 2022-04-25 09:18:34
 <!-- more -->
 ## 使用"adb devices"获取到连接的设备ID
 ```cmd
-C:\Users\18190>adb devices
+C:\\Users\\haha>adb devices
 adb server version (40) doesn't match this client (41); killing...
 * daemon started successfully
 List of devices attached

@@ -1,12 +1,11 @@
 ---
 title: 电脑控制安卓手机神奇Scrcpy ScrcpyGUI的使用
 categories: 
-  - Windows
-  - 软件
-  - 远程控制
+  - 编程
+  - adb
 abbrlink: c57ac4f
 date: 2019-12-03 21:30:26
-updated: 2022-04-04 00:51:44
+updated: 2022-05-06 21:04:20
 ---
 # 简介
 ## Scrcpy

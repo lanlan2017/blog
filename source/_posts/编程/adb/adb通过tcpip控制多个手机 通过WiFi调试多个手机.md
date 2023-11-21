@@ -1,12 +1,11 @@
 ---
 title: adb通过tcpip控制多个手机 通过WiFi调试多个手机
-categories:
-  - Windows
-  - 软件
-  - 远程控制
+categories: 
+  - 编程
+  - adb
 abbrlink: 15f3dec3
 date: 2022-04-27 10:16:48
-updated: 2022-04-27 10:17:04
+updated: 2022-04-27 12:29:11
 ---
 # adb通过tcpip控制多个手机 通过WiFi调试多个手机
 通过USB连接第1个手机，执行`adb tcpip 5555`设置在5555端口监听手机1，然后执行`adb connect 手机1的IP:5555`，就可以通过tcpip调试手机1。

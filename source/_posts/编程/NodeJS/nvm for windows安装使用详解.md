@@ -34,7 +34,7 @@ nvm list available
 ```
 运行效果：
 ```
-PS C:\Users\18190> nvm list available
+PS C:\\Users\\haha> nvm list available
 |   CURRENT    |     LTS      |  OLD STABLE  | OLD UNSTABLE |
 |--------------|--------------|--------------|--------------|
 |    16.4.2    |   14.17.3    |   0.12.18    |   0.11.16    |
@@ -58,14 +58,14 @@ PS C:\Users\18190> nvm list available
 |    15.4.0    |   12.20.1    |    0.12.0    |    0.9.11    |
 |    15.3.0    |   12.20.0    |   0.10.48    |    0.9.10    |
 This is a partial list. For a complete list, visit https://nodejs.org/download/release
-PS C:\Users\18190>
+PS C:\\Users\\haha>
 ```
 ## 参看可切换的版本
 ```
-PS C:\Users\18190> nvm list
+PS C:\\Users\\haha> nvm list
     12.22.3
   * 10.24.1 (Currently using 64-bit executable)
-PS C:\Users\18190>
+PS C:\\Users\\haha>
 ```
 ## 使用特定版本
 ```

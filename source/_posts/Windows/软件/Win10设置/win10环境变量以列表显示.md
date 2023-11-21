@@ -20,7 +20,7 @@ updated: 2022-04-04 00:51:44
 ## 赋值path的值
 全选，复制path的值。
 ```
-%JAVA_HOME%\bin;%NVM_HOME%;%NVM_SYMLINK%;%NVM_HOME%\nodejs\node_global;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\18190\AppData\Local\Microsoft\WindowsApps;F:\Program Files (x86)\NetSarang\Xshell 7\;E:\dev2\mysql5.58\mysql5.5.8\bin;E:\快捷方式;F:\Program Files (x86)\NetSarang\Xftp 7\;F:\Program Files\scrcpy-win64-v1.18;F:\Program Files\Graphviz\bin;G:\Program Files\Microsoft VS Code\bin;G:\Program Files\Git;G:\dev2\idea_workspace\HexoTools\runable;G:\Program Files\Git\cmd;G:\apache-tomcat-8.5.35\bin;
+%JAVA_HOME%\bin;%NVM_HOME%;%NVM_SYMLINK%;%NVM_HOME%\nodejs\node_global;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\\Users\\haha\AppData\Local\Microsoft\WindowsApps;F:\Program Files (x86)\NetSarang\Xshell 7\;E:\dev2\mysql5.58\mysql5.5.8\bin;E:\快捷方式;F:\Program Files (x86)\NetSarang\Xftp 7\;F:\Program Files\scrcpy-win64-v1.18;F:\Program Files\Graphviz\bin;G:\Program Files\Microsoft VS Code\bin;G:\Program Files\Git;G:\dev2\idea_workspace\HexoTools\runable;G:\Program Files\Git\cmd;G:\apache-tomcat-8.5.35\bin;
 ```
 ## 调整path变量的顺序
 ### 拆分成多行显示
@@ -31,7 +31,7 @@ C:\Windows;
 C:\Windows\System32\Wbem;
 C:\Windows\System32\WindowsPowerShell\v1.0\;
 C:\Windows\System32\OpenSSH\;
-C:\Users\18190\AppData\Local\Microsoft\WindowsApps;
+C:\\Users\\haha\AppData\Local\Microsoft\WindowsApps;
 F:\Program Files (x86)\NetSarang\Xshell 7\;
 E:\dev2\mysql5.58\mysql5.5.8\bin;
 E:\快捷方式;
@@ -51,7 +51,7 @@ G:\apache-tomcat-8.5.35\bin;
 ### 调整顺序后再合并成一行
 最后再把`;\n`,替换成`;`：
 ```
-C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\18190\AppData\Local\Microsoft\WindowsApps;F:\Program Files (x86)\NetSarang\Xshell 7\;E:\dev2\mysql5.58\mysql5.5.8\bin;E:\快捷方式;F:\Program Files (x86)\NetSarang\Xftp 7\;F:\Program Files\scrcpy-win64-v1.18;F:\Program Files\Graphviz\bin;G:\Program Files\Microsoft VS Code\bin;G:\Program Files\Git;G:\dev2\idea_workspace\HexoTools\runable;G:\Program Files\Git\cmd;G:\apache-tomcat-8.5.35\bin;%JAVA_HOME%\bin;%NVM_HOME%;%NVM_SYMLINK%;%NVM_HOME%\nodejs\node_global;
+C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\\Users\\haha\AppData\Local\Microsoft\WindowsApps;F:\Program Files (x86)\NetSarang\Xshell 7\;E:\dev2\mysql5.58\mysql5.5.8\bin;E:\快捷方式;F:\Program Files (x86)\NetSarang\Xftp 7\;F:\Program Files\scrcpy-win64-v1.18;F:\Program Files\Graphviz\bin;G:\Program Files\Microsoft VS Code\bin;G:\Program Files\Git;G:\dev2\idea_workspace\HexoTools\runable;G:\Program Files\Git\cmd;G:\apache-tomcat-8.5.35\bin;%JAVA_HOME%\bin;%NVM_HOME%;%NVM_SYMLINK%;%NVM_HOME%\nodejs\node_global;
 ```
 ### 粘贴回path变量值
 再粘贴会path的文本框即可。

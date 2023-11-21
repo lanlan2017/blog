@@ -1,12 +1,11 @@
 ---
 title: adb传输文件到外置sd卡
-categories:
-  - Windows
-  - 软件
-  - 远程控制
+categories: 
+  - 编程
+  - adb
 abbrlink: b2a02ec1
 date: 2022-08-24 16:58:09
-updated: 2022-08-24 16:58:09
+updated: 2022-08-24 21:36:13
 ---
 # adb传输文件到手机
 使用adb push命令即可把文件传输到Android手机。

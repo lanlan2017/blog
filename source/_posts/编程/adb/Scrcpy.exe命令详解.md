@@ -1,12 +1,11 @@
 ---
 title: Scrcpy.exe命令详解
-categories:
-  - Windows
-  - 软件
-  - 远程控制
+categories: 
+  - 编程
+  - adb
 abbrlink: e280fb30
 date: 2022-05-05 15:06:08
-updated: 2022-05-05 15:06:08
+updated: 2022-05-07 13:50:50
 ---
 # Scrcpy.exe命令详解
 - 指定连接到192.168.10.4:5555的手机
