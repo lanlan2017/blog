@@ -14,7 +14,7 @@ updated: 2022-04-25 09:18:34
 <!-- more -->
 ## 使用"adb devices"获取到连接的设备ID
 ```cmd
-C:\Users\18190>adb devices
+C:\\Users\\haha>adb devices
 adb server version (40) doesn't match this client (41); killing...
 * daemon started successfully
 List of devices attached

@@ -36,7 +36,7 @@ PS C:\Users\HellloWorld>
 
 ## 输入$host也可以查看
 ```
-PS C:\Users\18190> $host
+PS C:\\Users\\haha> $host
 
 
 Name             : ConsoleHost
@@ -52,7 +52,7 @@ Runspace         : System.Management.Automation.Runspaces.LocalRunspace
 
 
 
-PS C:\Users\18190>
+PS C:\\Users\\haha>
 ```
 # 参考资料
 https://blog.csdn.net/qq_40015157/article/details/112217153

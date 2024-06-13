@@ -39,7 +39,7 @@ D:\Desktop\test\CMD\phone>
 
 ```
 D:\Desktop\test\CMD\phone>where python
-C:\Users\18190\AppData\Local\Programs\Python\Python310\python.exe
+C:\\Users\\haha\AppData\Local\Programs\Python\Python310\python.exe
 
 D:\Desktop\test\CMD\phone>python
 Python 3.10.4 (tags/v3.10.4:9d38120, Mar 23 2022, 23:13:41) [MSC v.1929 64 bit (AMD64)] on win32
