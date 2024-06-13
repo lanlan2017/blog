@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">697</span>
+          <span class="site-state-item-count">698</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,166 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4c9a9125/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/4c9a9125/" class="post-title-link" itemprop="url">Linux vmstat命令</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-04-21 19:58:37" itemprop="dateCreated datePublished" datetime="2021-04-21T19:58:37+08:00">2021-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E7%B3%BB%E7%BB%9F%E7%8A%B6%E6%80%81/" itemprop="url" rel="index"><span itemprop="name">系统状态</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/4c9a9125/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/4c9a9125/" data-xid="/blog/4c9a9125/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="vmstat命令：了解系统负载"><a href="#vmstat命令：了解系统负载" class="headerlink" title="vmstat命令：了解系统负载"></a>vmstat命令：了解系统负载</h1><p>vmstat是Virtual Meomory Statistics（虚拟内存统计）的缩写，可对操作系统的虚拟内存、进程、CPU活动进行监控。他是对系统的整体情况进行统计，不足之处是无法对某个进程进行深入分析。vmstat 工具提供了一种低开销的系统性能观察方式。因为 vmstat 本身就是低开销工具，在非常高负荷的服务器上，你需要查看并监控系统的健康情况,在控制窗口还是能够使用vmstat 输出结果。在学习vmstat命令前，我们先了解一下Linux系统中关于物理内存和虚拟内存相关信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vmstat</span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st</span><br><span class="line"> 1  0      0  49160 492020 2017324    0    0    57    15  108  374 10  2 87  0  0</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
+<h2 id="vmstat-–help"><a href="#vmstat-–help" class="headerlink" title="vmstat –help"></a>vmstat –help</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vmstat</span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st</span><br><span class="line"> 1  0      0  49160 492020 2017324    0    0    57    15  108  374 10  2 87  0  0</span><br><span class="line">[root@localhost ~]# vmstat --help</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line"> vmstat [options] [delay [count]]</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line"> -a, --active           active/inactive memory</span><br><span class="line"> -f, --forks            number of forks since boot</span><br><span class="line"> -m, --slabs            slabinfo</span><br><span class="line"> -n, --one-header       do not redisplay header</span><br><span class="line"> -s, --stats            event counter statistics</span><br><span class="line"> -d, --disk             disk statistics</span><br><span class="line"> -D, --disk-sum         summarize disk statistics</span><br><span class="line"> -p, --partition &lt;dev&gt;  partition specific statistics</span><br><span class="line"> -S, --unit &lt;char&gt;      define display unit</span><br><span class="line"> -w, --wide             wide output</span><br><span class="line"> -t, --timestamp        show timestamp</span><br><span class="line"></span><br><span class="line"> -h, --help     display this help and exit</span><br><span class="line"> -V, --version  output version information and exit</span><br><span class="line"></span><br><span class="line">For more details see vmstat(8).</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
+<h2 id="vmstat输出字段说明"><a href="#vmstat输出字段说明" class="headerlink" title="vmstat输出字段说明"></a>vmstat输出字段说明</h2><h3 id="Procs（进程）"><a href="#Procs（进程）" class="headerlink" title="Procs（进程）"></a>Procs（进程）</h3><p>r: 运行队列中进程数量。<br>b: 等待IO的进程数量</p>
+<h3 id="Memory（内存）"><a href="#Memory（内存）" class="headerlink" title="Memory（内存）"></a>Memory（内存）</h3><p>swpd: 虚拟内存已使用的大小，如果大于0，表示你的机器物理内存不足了，如果不是程序内存泄露的原因，那么你该升级内存了或者把耗内存的任务迁移到其他机器。<br>free: 可用内存大小<br>buff: 用作缓冲的内存大小<br>cache: 用作缓存的内存大小</p>
+<h3 id="swap"><a href="#swap" class="headerlink" title="swap"></a>swap</h3><p>si: 每秒从交换区写到内存的大小<br>so: 每秒写入交换区的内存大小</p>
+<h3 id="io"><a href="#io" class="headerlink" title="io"></a>io</h3><p>（现在的Linux版本块的大小为1024bytes）<br>bi: 每秒读取的块数<br>bo: 每秒写入的块数</p>
+<h3 id="system"><a href="#system" class="headerlink" title="system"></a>system</h3><p>in: 每秒的硬件中断数(interrupt)，包括时钟中断<br>cs: 每秒上下文切换数。每秒的环境切换次数(context switch)</p>
+<h3 id="cpu（以百分比表示）"><a href="#cpu（以百分比表示）" class="headerlink" title="cpu（以百分比表示）"></a>cpu（以百分比表示）</h3><p>us: 用户进程执行时间(user time)。us的值比较高时，说明用户进程消耗的CPU时间多，但是如果长期超50%的使用，那么我们就该考虑优化程序算法或者进行加速。<br>sy: 系统进程执行时间(system time)。sy的值高时，说明系统内核消耗的CPU资源多，这并不是良性表现，我们应该检查原因。<br>id: 空闲时间(包括IO等待时间)（id&#x3D;idle）,中央处理器的空闲时间 。以百分比表示。<br>wa: 等待IO时间（wa&#x3D;wait for disk I&#x2F;O）。wa的值高时，说明IO等待比较严重，这可能由于磁盘大量作随机访问造成，也有可能磁盘出现瓶颈（块操作）。<br>st：被虚拟机所盗用的 CPU 百分比。</p>
+<p>如果r经常大于4 ，且id经常少于40，表示cpu的负荷很重。<br>如果bi，bo 长期不等于0，表示内存不足。  </p>
+<h2 id="vmstat-a：显示活跃和非活跃内存"><a href="#vmstat-a：显示活跃和非活跃内存" class="headerlink" title="vmstat -a：显示活跃和非活跃内存"></a>vmstat -a：显示活跃和非活跃内存</h2><pre>
+[root@localhost ~]&#35; vmstat
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   <mark>buff</mark>  <mark>cache</mark>   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 1016976 121900 1388660    0    0    54    19  173  477 12  3 85  0  0
+[root@localhost ~]&#35; vmstat -a
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free  <mark>inact</mark> <mark>active</mark>   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 1015720 701804 1447844    0    0    54    19  173  477 12  3 85  0  0
+</pre>
+
+<p>使用-a选项显示活跃和非活跃内存时，所显示的内容除增加inact和active外，其他显示内容与vmstat的输出结果相同。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]&amp;#35; vmstat -a 2 4</span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free  inact active   si   so    bi    bo   in   cs us sy id wa st</span><br><span class="line"> 0  0      0 1015684 701812 1447868    0    0    54    19  173  477 12  3 85  0  0</span><br><span class="line"> 0  0      0 1015512 701844 1447560    0    0     0   122  567 2103 15  2 83  0  0</span><br><span class="line"> 1  0      0 1015356 701844 1447896    0    0     0    38  959 2730 13  2 85  0  0</span><br><span class="line"> 0  0      0 1015232 701852 1447976    0    0     0   128  441 1786 13  2 84  0  0</span><br><span class="line">[root@localhost ~]&amp;#35; </span><br></pre></td></tr></table></figure>
+
+<h2 id="vmstat-d：查看磁盘的读-x2F-写"><a href="#vmstat-d：查看磁盘的读-x2F-写" class="headerlink" title="vmstat -d：查看磁盘的读&#x2F;写"></a>vmstat -d：查看磁盘的读&#x2F;写</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vmstat -d</span><br><span class="line">disk- ------------reads------------ ------------writes----------- -----IO------</span><br><span class="line">       total merged sectors      ms  total merged sectors      ms    cur    sec</span><br><span class="line">ram0       0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram1       0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram2       0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram3       0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram4       0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram5       0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram6       0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram7       0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram8       0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram9       0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram10      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram11      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram12      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram13      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram14      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">ram15      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">loop0      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">loop1      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">loop2      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">loop3      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">loop4      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">loop5      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">loop6      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">loop7      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">zram0      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">mmcblk0  48322 103620 8479349  122610 112502 182009 3262515  655590      0    213</span><br><span class="line">mmcblk0rpmb      0      0       0       0      0      0       0       0      0      0</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+<p>说明：这些信息主要来自于&#x2F;proc&#x2F;diskstats.merged:表示一次来自于合并的写&#x2F;读请求,一般系统会把多个连接&#x2F;邻近的读&#x2F;写请求合并到一起来操作.</p>
+<h2 id="vmstat-f：查看系统已经fork了多少次"><a href="#vmstat-f：查看系统已经fork了多少次" class="headerlink" title="vmstat -f：查看系统已经fork了多少次"></a>vmstat -f：查看系统已经fork了多少次</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vmstat -f</span><br><span class="line">        25753 forks</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
+<h2 id="vmstat-s：查看内存使用的详细信息"><a href="#vmstat-s：查看内存使用的详细信息" class="headerlink" title="vmstat -s：查看内存使用的详细信息"></a>vmstat -s：查看内存使用的详细信息</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vmstat -s</span><br><span class="line">      3686064 K total memory</span><br><span class="line">      1150608 K used memory</span><br><span class="line">      1439196 K active memory</span><br><span class="line">       702928 K inactive memory</span><br><span class="line">      1023524 K free memory</span><br><span class="line">       123272 K buffer memory</span><br><span class="line">      1388660 K swap cache</span><br><span class="line">            0 K total swap</span><br><span class="line">            0 K used swap</span><br><span class="line">            0 K free swap</span><br><span class="line">       961982 non-nice user cpu ticks</span><br><span class="line">        14417 nice user cpu ticks</span><br><span class="line">       194461 system cpu ticks</span><br><span class="line">      6825684 idle cpu ticks</span><br><span class="line">        12403 IO-wait cpu ticks</span><br><span class="line">           63 IRQ cpu ticks</span><br><span class="line">         5608 softirq cpu ticks</span><br><span class="line">            0 stolen cpu ticks</span><br><span class="line">      4264662 pages paged in</span><br><span class="line">      1487185 pages paged out</span><br><span class="line">            0 pages swapped in</span><br><span class="line">            0 pages swapped out</span><br><span class="line">     13762036 interrupts</span><br><span class="line">     38103830 CPU context switches</span><br><span class="line">   1619001796 boot time</span><br><span class="line">        25897 forks</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
+<h2 id="vmstat-m：获取"><a href="#vmstat-m：获取" class="headerlink" title="vmstat -m：获取"></a>vmstat -m：获取</h2><h3 id="slab"><a href="#slab" class="headerlink" title="slab"></a>slab</h3><p>由于内核会有许多小对象，这些对象构造销毁十分频繁，比如i-node，dentry，这些对象如果每次构建的时候就向内存要一个页(4kb)，而其实只有几个字节，这样就会非常浪费，为了解决这个问题，就引入了一种新的机制来处理在同一个页框中如何分配小存储区，而slab可以对小对象进行分配,这样就不用为每一个对象分配页框，从而节省了空间，内核对一些小对象创建析构很频繁，slab对这些小对象进行缓冲,可以重复利用,减少内存分配次数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vmstat -m</span><br><span class="line">vmstat: your kernel does not support slabinfo or your permissions are insufficient</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
+<p>翻译：vmstat:您的内核不支持slabinfo或您的权限不足</p>
+<h2 id="vmstat-w宽版输出"><a href="#vmstat-w宽版输出" class="headerlink" title="vmstat -w宽版输出"></a>vmstat -w宽版输出</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vmstat -w</span><br><span class="line">procs -----------------------memory---------------------- ---swap-- -----io---- -system-- --------cpu--------</span><br><span class="line"> r  b         swpd         free         buff        cache   si   so    bi    bo   in   cs  us  sy  id  wa  st</span><br><span class="line"> 3  0            0      1095624       110728      1352572    0    0    60    19  183  494  13   3  85   0   0</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
+<h2 id="vmstat-t显示时间"><a href="#vmstat-t显示时间" class="headerlink" title="vmstat -t显示时间"></a>vmstat -t显示时间</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vmstat -t</span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu----- -----timestamp-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st                 CST</span><br><span class="line"> 2  0      0 1067744 112572 1359264    0    0    60    19  182  493 13  3 85  0  0 2021-04-21 22:00:53</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
+<h3 id="vmstat-wt宽版输出并显示时间"><a href="#vmstat-wt宽版输出并显示时间" class="headerlink" title="vmstat -wt宽版输出并显示时间"></a>vmstat -wt宽版输出并显示时间</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vmstat -wt</span><br><span class="line">procs -----------------------memory---------------------- ---swap-- -----io---- -system-- --------cpu-------- -----timestamp-----</span><br><span class="line"> r  b         swpd         free         buff        cache   si   so    bi    bo   in   cs  us  sy  id  wa  st                 CST</span><br><span class="line"> 0  0            0      1069064       112492      1359276    0    0    60    19  182  493  13   3  85   0   0 2021-04-21 22:00:40</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+<h2 id="vmstat-秒数"><a href="#vmstat-秒数" class="headerlink" title="vmstat 秒数"></a>vmstat 秒数</h2><p>每3秒输出一条结果<code>vmstat 3</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vmstat 3</span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st</span><br><span class="line"> 0  0      0 1021912 117064 1387020    0    0    57    19  177  483 12  3 85  0  0</span><br><span class="line"> 0  0      0 1025868 117128 1386988    0    0     0   197  631 2179 14  3 83  1  0</span><br><span class="line"> 1  0      0 1025964 117152 1387008    0    0     0    99  468 1978 14  2 84  0  0</span><br><span class="line"> 0  0      0 1025880 117152 1387032    0    0     0     0  669 2216 14  2 84  0  0</span><br><span class="line"> 3  0      0 1025756 117176 1387012    0    0     0    76  432 1661 13  1 86  0  0</span><br><span class="line"> 3  0      0 1025756 117176 1387028    0    0     0    20  468 1844 14  2 83  0  0</span><br><span class="line"> 1  0      0 1025492 117220 1387004    0    0     0   153  598 2191 12  3 85  0  0</span><br><span class="line">^C</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
+<h2 id="vmstat-间隔秒数-采集次数"><a href="#vmstat-间隔秒数-采集次数" class="headerlink" title="vmstat 间隔秒数 采集次数"></a>vmstat 间隔秒数 采集次数</h2><p>每隔3秒采集一次，共采集4次：<code>vmstat 3 4</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vmstat 3 4</span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st</span><br><span class="line"> 2  0      0 1011904 119464 1388380    0    0    55    19  175  479 12  3 85  0  0</span><br><span class="line"> 0  0      0 1011764 119468 1388380    0    0     0    25  371 1729 14  1 85  0  0</span><br><span class="line"> 0  2      0 1011640 119520 1388356    0    0     0   176  716 2481 13  3 83  0  0</span><br><span class="line"> 2  0      0 1011328 119524 1388380    0    0     0    24  631 2129  7  1 92  0  0</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="http://www.ha97.com/4512.html">http://www.ha97.com/4512.html</a><br><a target="_blank" rel="noopener" href="https://wangchujiang.com/linux-command/c/vmstat.html">https://wangchujiang.com/linux-command/c/vmstat.html</a><br><a target="_blank" rel="noopener" href="https://www.yiibai.com/linux/vmstat.html">https://www.yiibai.com/linux/vmstat.html</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ggjucheng/archive/2012/01/05/2312625.html">https://www.cnblogs.com/ggjucheng/archive/2012/01/05/2312625.html</a><br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018834649">https://segmentfault.com/a/1190000018834649</a><br><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/1081.html">http://c.biancheng.net/view/1081.html</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ggjucheng/archive/2012/01/05/2312625.html">https://www.cnblogs.com/ggjucheng/archive/2012/01/05/2312625.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1833,152 +1993,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4afae6e5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/4afae6e5/" class="post-title-link" itemprop="url">Linux date命令</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-04-20 17:36:46" itemprop="dateCreated datePublished" datetime="2021-04-20T17:36:46+08:00">2021-04-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E6%97%A5%E5%8E%86/" itemprop="url" rel="index"><span itemprop="name">日期时间日历</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/4afae6e5/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/4afae6e5/" data-xid="/blog/4afae6e5/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="读取系统日期和时间命令date"><a href="#读取系统日期和时间命令date" class="headerlink" title="读取系统日期和时间命令date"></a>读取系统日期和时间命令date</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# date</span><br><span class="line">2021年 04月 20日 星期二 17:38:08 CST</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
-<h2 id="定制date输出格式"><a href="#定制date输出格式" class="headerlink" title="定制date输出格式"></a>定制date输出格式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date &quot;+%Y-%m-%d %H:%M:%S Day %j&quot;</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# date &quot;+%Y-%m-%d %H:%M:%S Day %j&quot;</span><br><span class="line">2021-04-20 17:41:05 Day 110</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
-<p>110 指 的是今天是今年的 第 110 天，</p>
-<h3 id="date格式控制字符串"><a href="#date格式控制字符串" class="headerlink" title="date格式控制字符串"></a>date格式控制字符串</h3><p><strong>第一个字符必须为<code>+</code>号</strong>，<code>%Y</code>代表年号，<code>%m</code>代表月份，<code>%M</code> 代表分钟。<code>%H</code>表示小时<br><code>%s</code>表示秒坐标（从 UTC1970 开始），或者叫时间戳常用于计算时间间隔。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date &quot;+%s&quot;</span><br></pre></td></tr></table></figure>
-<p>运行结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# date &quot;+%s&quot;</span><br><span class="line">1618912024</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
-<h2 id="man-date"><a href="#man-date" class="headerlink" title="man date"></a>man date</h2><p>Linux 命令 往往有很多选项和复杂的功能，通过 man date 查阅联机手册</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line">DATE(1)                                                                         FSF                                                                        DATE(1)</span><br><span class="line"></span><br><span class="line">NAME</span><br><span class="line">       date - 打印或设置系统日期和时间</span><br><span class="line"></span><br><span class="line">总览</span><br><span class="line">       date [选项]... [+格式]</span><br><span class="line">       date [选项] [MMDDhhmm[[CC]YY][.ss]]</span><br><span class="line"></span><br><span class="line">描述</span><br><span class="line">       根据指定格式显示当前时间或设置系统时间.</span><br><span class="line"></span><br><span class="line">       -d, --date=STRING</span><br><span class="line">              显示由 STRING 指定的时间, 而不是当前时间</span><br><span class="line"></span><br><span class="line">       -f, --file=DATEFILE</span><br><span class="line">              显示 DATEFILE 中每一行指定的时间, 如同将 DATEFILE 中的每行作为 --date 的参数一样</span><br><span class="line"></span><br><span class="line">              -I, --iso-8601[=TIMESPEC] 按照 ISO-8601 的日期/时间格式输出时间.</span><br><span class="line"></span><br><span class="line">              TIMESPEC=`date&#x27; (或者不指定时)仅输出日期,等于 `hours&#x27;, `minutes&#x27;, 或`seconds&#x27; 时按照指定精度输出日期及时间.</span><br><span class="line"></span><br><span class="line">       -r, --reference=FILE</span><br><span class="line">              显示 FILE 的最后修改时间</span><br><span class="line"></span><br><span class="line">       -R, --rfc-822</span><br><span class="line">              根据 RFC-822 指定格式输出日期</span><br><span class="line"></span><br><span class="line">       -s, --set=STRING</span><br><span class="line">              根据 STRING 设置时间</span><br><span class="line"></span><br><span class="line">       -u, --utc, --universal</span><br><span class="line">              显示或设置全球时间(格林威治时间)</span><br><span class="line"></span><br><span class="line">       --help 显示本帮助文件并退出</span><br><span class="line"></span><br><span class="line">       --version</span><br><span class="line">              显示版本信息并退出</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       格式 FORMAT 控制着输出格式. 仅当选项指定为全球时间时本格式才有效。 分别解释如下:</span><br><span class="line"></span><br><span class="line">       %%     文本的 %</span><br><span class="line"></span><br><span class="line">       %a     当前区域的星期几的简写 (Sun..Sat)</span><br><span class="line"></span><br><span class="line">       %A     当前区域的星期几的全称 (不同长度) (Sunday..Saturday)</span><br><span class="line"></span><br><span class="line">       %b     当前区域的月份的简写 (Jan..Dec)</span><br><span class="line"></span><br><span class="line">       %B     当前区域的月份的全称(变长) (January..December)</span><br><span class="line"></span><br><span class="line">       %c     当前区域的日期和时间 (Sat Nov 04 12:02:33 EST 1989)</span><br><span class="line"></span><br><span class="line">       %d     (月份中的)几号(用两位表示) (01..31)</span><br><span class="line"></span><br><span class="line">       %D     日期(按照 月/日期/年 格式显示) (mm/dd/yy)</span><br><span class="line"></span><br><span class="line">       %e     (月份中的)几号(去零表示) ( 1..31)</span><br><span class="line"></span><br><span class="line">       %h     同 %b</span><br><span class="line"></span><br><span class="line">       %H     小时(按 24 小时制显示，用两位表示) (00..23)</span><br><span class="line"></span><br><span class="line">       %I     小时(按 12 小时制显示，用两位表示) (01..12)</span><br><span class="line"></span><br><span class="line">       %j     (一年中的)第几天(用三位表示) (001..366)</span><br><span class="line"></span><br><span class="line">       %k     小时(按 24 小时制显示，去零显示) ( 0..23)</span><br><span class="line"></span><br><span class="line">       %l     小时(按 12 小时制显示，去零表示) ( 1..12)</span><br><span class="line"></span><br><span class="line">       %m     月份(用两位表示) (01..12)</span><br><span class="line"></span><br><span class="line">       %M     分钟数(用两位表示) (00..59)</span><br><span class="line"></span><br><span class="line">       %n     换行</span><br><span class="line"></span><br><span class="line">       %p     当前时间是上午 AM 还是下午 PM</span><br><span class="line"></span><br><span class="line">       %r     时间,按 12 小时制显示 (hh:mm:ss [A/P]M)</span><br><span class="line"></span><br><span class="line">       %s     从 1970年1月1日0点0分0秒到现在历经的秒数 (GNU扩充)</span><br><span class="line"></span><br><span class="line">       %S     秒数(用两位表示)(00..60)</span><br><span class="line"></span><br><span class="line">       %t     水平方向的 tab 制表符</span><br><span class="line"></span><br><span class="line">       %T     时间,按 24 小时制显示(hh:mm:ss)</span><br><span class="line"></span><br><span class="line">       %U     (一年中的)第几个星期，以星期天作为一周的开始(用两位表示) (00..53)</span><br><span class="line"></span><br><span class="line">       %V     (一年中的)第几个星期，以星期一作为一周的开始(用两位表示) (01..52)</span><br><span class="line"></span><br><span class="line">       %w     用数字表示星期几 (0..6); 0 代表星期天</span><br><span class="line"></span><br><span class="line">       %W     (一年中的)第几个星期，以星期一作为一周的开始(用两位表示) (00..53)</span><br><span class="line"></span><br><span class="line">       %x     按照 (mm/dd/yy) 格式显示当前日期</span><br><span class="line"></span><br><span class="line">       %X     按照 (%H:%M:%S) 格式显示当前时间</span><br><span class="line"></span><br><span class="line">       %y     年的后两位数字 (00..99)</span><br><span class="line"></span><br><span class="line">       %Y     年(用 4 位表示) (1970...)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       %z     按照 RFC-822 中指定的数字时区显示(如, -0500) (为非标准扩充)</span><br><span class="line"></span><br><span class="line">       %Z     时区(例如, EDT (美国东部时区)), 如果不能决定是哪个时区则为空</span><br><span class="line"></span><br><span class="line">       默认情况下,用 0 填充数据的空缺部分.  GNU 的 date 命令能分辨在 `%&#x27;和数字指示之间的以下修改.</span><br><span class="line"></span><br><span class="line">              `-&#x27; (连接号) 不进行填充 `_&#x27; (下划线) 用空格进行填充</span><br><span class="line"></span><br><span class="line">BUG报告</span><br><span class="line">       请向&lt;bug-sh-utils@gnu.org&gt;报告BUG.</span><br><span class="line"></span><br><span class="line">参考</span><br><span class="line">       关于 date 的详细说明是个 Texinfo 手册. 如果在你的计算机上已经成功安装了 info 和 date 程序,你可以使用</span><br><span class="line"></span><br><span class="line">              info date</span><br><span class="line"></span><br><span class="line">       命令访问完全手册.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="date-d-String"><a href="#date-d-String" class="headerlink" title="date -d String"></a>date -d String</h2><p>显示字符串对应的时间</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# date -d 2014-2-7</span><br><span class="line">2014年 02月 07日 星期五 00:00:00 CST</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
-<h2 id="date-f-日期文件"><a href="#date-f-日期文件" class="headerlink" title="date -f 日期文件"></a>date -f 日期文件</h2><p>解析日期文件中的每个日期</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# cat date_test.txt </span><br><span class="line">2020-01-24 04:05:06</span><br><span class="line">2021/4/25</span><br><span class="line">[root@localhost Linux_Test]#</span><br></pre></td></tr></table></figure>
-<p>显示date_test.txt文件中每行日期对应的具体时间：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# date -f date_test.txt </span><br><span class="line">2020年 01月 24日 星期五 04:05:06 CST</span><br><span class="line">2021年 04月 25日 星期日 00:00:00 CST</span><br><span class="line">[root@localhost Linux_Test]# </span><br></pre></td></tr></table></figure>
-<h2 id="date-r-文件"><a href="#date-r-文件" class="headerlink" title="date -r 文件"></a>date -r 文件</h2><p>显示文件最新更改时间。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# ls</span><br><span class="line">date_test.txt  vi_replaceAllTest.txt</span><br><span class="line">[root@localhost Linux_Test]# date -r vi_replaceAllTest.txt </span><br><span class="line">2021年 04月 14日 星期三 01:48:41 CST</span><br><span class="line">[root@localhost Linux_Test]# </span><br></pre></td></tr></table></figure>
-<h2 id="date-R"><a href="#date-R" class="headerlink" title="date -R"></a>date -R</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# date -R</span><br><span class="line">Tue, 20 Apr 2021 18:25:59 +0800</span><br><span class="line">[root@localhost Linux_Test]# </span><br></pre></td></tr></table></figure>
-<h2 id="date-s-日期时间字符串"><a href="#date-s-日期时间字符串" class="headerlink" title="date -s 日期时间字符串"></a>date -s 日期时间字符串</h2><p>根据传入的日期时间字符串设置系统的时间</p>
-<h2 id="date-u"><a href="#date-u" class="headerlink" title="date -u"></a>date -u</h2><p>显示格林威治时间</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux_Test]# date -u</span><br><span class="line">2021年 04月 20日 星期二 10:28:52 UTC</span><br><span class="line">[root@localhost Linux_Test]# </span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/27/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/blog/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/70/">70</a><a class="extend next" rel="next" href="/blog/page/29/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -2011,7 +2025,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">24:53</span>
+    <span title="站点阅读时长">24:54</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

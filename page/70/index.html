@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">697</span>
+          <span class="site-state-item-count">698</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,217 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/3f2a064c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/3f2a064c/" class="post-title-link" itemprop="url">JavaIO流 BufferedReader和BufferedWriter</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-08-10 15:00:32" itemprop="dateCreated datePublished" datetime="2018-08-10T15:00:32+08:00">2018-08-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-IO%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">Java IO流</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-IO%E6%B5%81/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/3f2a064c/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/3f2a064c/" data-xid="/blog/3f2a064c/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="部分内容已经丢失"><a href="#部分内容已经丢失" class="headerlink" title="部分内容已经丢失"></a>部分内容已经丢失</h1><p>可以看到包装<code>FileReader</code>的<code>BufferedReader</code>在读取文件时候如果文件的编码和项目的编码不一样的时候，会出现乱。</p>
+<h2 id="乱码问题"><a href="#乱码问题" class="headerlink" title="乱码问题"></a>乱码问题</h2><p>使用包装<code>InputStreamReader</code>的<code>BufferedReader</code>读取文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String file = &quot;utf8.txt&quot;;</span><br><span class="line">BufferedReader reader = new BufferedReader(</span><br><span class="line">        new InputStreamReader(new FileInputStream(file), &quot;utf-8&quot;));</span><br><span class="line">char[] cbuf=new char[20];</span><br><span class="line">int size;</span><br><span class="line">while((size=reader.read(cbuf, 0, cbuf.length))!=-1)</span><br><span class="line">&#123;</span><br><span class="line">    System.out.println(new String(cbuf,0,size));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">utf-8 file</span><br><span class="line">这里是一句中文</span><br></pre></td></tr></table></figure>
+<p>这里要弄清楚的是BufferedReader只负责读到它的内部缓冲区中，而解码的工作是InputStreamReader完成的。</p>
+<h1 id="BufferedWriter"><a href="#BufferedWriter" class="headerlink" title="BufferedWriter"></a>BufferedWriter</h1><p>BufferedWriter的API：</p>
+<h2 id="继承关系"><a href="#继承关系" class="headerlink" title="继承关系"></a>继承关系</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object</span><br><span class="line">  |----&gt; java.io.Writer</span><br><span class="line">      |----&gt; java.io.BufferedWriter</span><br></pre></td></tr></table></figure>
+<h2 id="构造函数："><a href="#构造函数：" class="headerlink" title="构造函数："></a>构造函数：</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>BufferedWriter(Writer out)</code></td>
+<td align="left">创建一个缓冲字符输出流,使用默认大小的输出缓冲区</td>
+</tr>
+<tr>
+<td align="left"><code>BufferedWriter(Writer out, int sz)</code></td>
+<td align="left">创建一个缓冲字符输出流,使用给定大小的输出缓冲区</td>
+</tr>
+</tbody></table>
+<h2 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>void write(int c)</code></td>
+<td align="left">写入单个字符。</td>
+</tr>
+<tr>
+<td align="left"><code>void write(char[] cbuf, int off, int len)</code></td>
+<td align="left">写入字符数组的某一部分。</td>
+</tr>
+<tr>
+<td align="left"><code>void write(String s, int off, int len)</code></td>
+<td align="left">写入字符串的某一部分。</td>
+</tr>
+<tr>
+<td align="left"><code>void newLine()</code></td>
+<td align="left">写入一个行分隔符。</td>
+</tr>
+<tr>
+<td align="left"><code>void close()</code></td>
+<td align="left">关闭此流，但要先刷新它。</td>
+</tr>
+<tr>
+<td align="left"><code>void flush()</code></td>
+<td align="left">刷新该流的缓冲。</td>
+</tr>
+</tbody></table>
+<h2 id="写文件实例"><a href="#写文件实例" class="headerlink" title="写文件实例"></a>写文件实例</h2><p>使用上述三个写方法写文件：一个字符一个字符的复制文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    BufferedWriter writer=<span class="keyword">new</span> <span class="title class_">BufferedWriter</span>(<span class="keyword">new</span> <span class="title class_">FileWriter</span>(<span class="string">&quot;静夜思.txt&quot;</span>));</span><br><span class="line">    <span class="type">char</span> ch=<span class="string">&#x27;床&#x27;</span>;</span><br><span class="line">    <span class="comment">//写入一个字符</span></span><br><span class="line">    writer.write(ch);</span><br><span class="line">    String next=<span class="string">&quot;前明月光,&quot;</span>;</span><br><span class="line">    <span class="type">char</span>[] nexts=next.toCharArray();</span><br><span class="line">    <span class="comment">//写入一个字符数组</span></span><br><span class="line">    writer.write(nexts,<span class="number">0</span>,nexts.length);</span><br><span class="line">    <span class="comment">//写入换行符</span></span><br><span class="line">    writer.newLine();<span class="comment">//写入换行符</span></span><br><span class="line">    String nextLine=<span class="string">&quot;疑是地上霜。&quot;</span>;</span><br><span class="line">    <span class="comment">//写入一个字符串。</span></span><br><span class="line">    writer.write(nextLine);</span><br><span class="line">    <span class="comment">//关闭流</span></span><br><span class="line">    writer.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果,静夜思.txt：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">床前明月光,</span><br><span class="line">疑是地上霜。</span><br></pre></td></tr></table></figure>
+<h1 id="应用：复制文本文件"><a href="#应用：复制文本文件" class="headerlink" title="应用：复制文本文件"></a>应用：复制文本文件</h1><h2 id="逐个字符复制文件"><a href="#逐个字符复制文件" class="headerlink" title="逐个字符复制文件"></a>逐个字符复制文件</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">copyByChar</span><span class="params">(String srcFile, String destFile)</span> <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">reader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(srcFile));</span><br><span class="line">    <span class="type">BufferedWriter</span> <span class="variable">writer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedWriter</span>(<span class="keyword">new</span> <span class="title class_">FileWriter</span>(destFile));</span><br><span class="line">    <span class="type">int</span> ch=<span class="number">0</span>;</span><br><span class="line">    <span class="comment">//读取一个字符</span></span><br><span class="line">    <span class="keyword">while</span> ((ch = reader.read()) != -<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//写入一个字符</span></span><br><span class="line">        writer.write(ch);</span><br><span class="line">    &#125;</span><br><span class="line">    reader.close();</span><br><span class="line">    writer.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="逐个字符数组复制文件"><a href="#逐个字符数组复制文件" class="headerlink" title="逐个字符数组复制文件"></a>逐个字符数组复制文件</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">copyByCharArray</span><span class="params">(String srcFile, String destFile)</span> <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">reader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(srcFile));</span><br><span class="line">    <span class="type">BufferedWriter</span> <span class="variable">writer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedWriter</span>(<span class="keyword">new</span> <span class="title class_">FileWriter</span>(destFile));</span><br><span class="line">    <span class="type">int</span> size=<span class="number">0</span>;</span><br><span class="line">    <span class="type">char</span>[] cbuf=<span class="keyword">new</span> <span class="title class_">char</span>[<span class="number">20</span>];</span><br><span class="line">    <span class="comment">//读取一个字符数组</span></span><br><span class="line">    <span class="keyword">while</span> ((size = reader.read(cbuf)) != -<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//读入多少写入多少</span></span><br><span class="line">        writer.write(cbuf,<span class="number">0</span>,size);</span><br><span class="line">    &#125;</span><br><span class="line">    reader.close();</span><br><span class="line">    writer.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="按行复制文件"><a href="#按行复制文件" class="headerlink" title="按行复制文件"></a>按行复制文件</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">copyByLine</span><span class="params">(String srcFile,String destFile)</span> <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    BufferedReader reader=<span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(srcFile));</span><br><span class="line">    BufferedWriter writer=<span class="keyword">new</span> <span class="title class_">BufferedWriter</span>(<span class="keyword">new</span> <span class="title class_">FileWriter</span>(destFile));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="comment">//BufferedReader读取一行的时候返回的字符串中不包括换行符</span></span><br><span class="line">    <span class="comment">//如果有一行字符就返回该行字符串，没有就返回null</span></span><br><span class="line">    <span class="keyword">while</span>((line=reader.readLine())!=<span class="literal">null</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        writer.write(line);</span><br><span class="line">        writer.newLine();<span class="comment">//写换行符</span></span><br><span class="line">    &#125;</span><br><span class="line">    reader.close();</span><br><span class="line">    writer.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是,<code>BufferedReader</code>的<code>readLine()</code>读取一行的时候返回的字符串没有换行符，所以，复制的时候写文件是我们好多写入一个换行符，使用<code>writer.newLine()</code>方法即可。</p>
+<h2 id="测试："><a href="#测试：" class="headerlink" title="测试："></a>测试：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) throws IOException</span><br><span class="line">&#123;</span><br><span class="line">    String from = &quot;gbk.txt&quot;;</span><br><span class="line">    String to = &quot;gbk_copy.txt&quot;;</span><br><span class="line">    String to1 = &quot;gbk_copy1.txt&quot;;</span><br><span class="line">    String to2 = &quot;gbk_copy2.txt&quot;;</span><br><span class="line">    copyByChar(from, to);</span><br><span class="line">    copyByCharArray(from, to1);</span><br><span class="line">    copyByLine(from, to2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>源文件gbk.txt:<br>运行结果：<br>gbk_copy.txt</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gbk file</span><br><span class="line">这里是一句中文</span><br></pre></td></tr></table></figure>
+<p>gbk_copy1.txt</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gbk file</span><br><span class="line">这里是一句中文</span><br></pre></td></tr></table></figure>
+<p>gbk_copy2.txt</p>
+<pre><code>gbk file
+这里是一句中文
+
+</code></pre>
+
+<h2 id="bug-按行复制的时候多写换行符"><a href="#bug-按行复制的时候多写换行符" class="headerlink" title="bug:按行复制的时候多写换行符"></a>bug:按行复制的时候多写换行符</h2><p>细心的朋友可能发现，按行复制的时候，复制的文件会莫名其妙的在文件后面多了一个换行符。这是因为我们每次都在读到的字符串后面写一个换行符。<br>解决办法：在读到的字符串前面写换行符，这样出现新的问题,就是在文件开头多出了一个空行，所以加入控制语句，在第一行不写入换行符，第二行后再写。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">copyByLine</span><span class="params">(String srcFile,String destFile)</span> <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    BufferedReader reader=<span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(srcFile));</span><br><span class="line">    BufferedWriter writer=<span class="keyword">new</span> <span class="title class_">BufferedWriter</span>(<span class="keyword">new</span> <span class="title class_">FileWriter</span>(destFile));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="comment">//BufferedReader读取一行的时候返回的字符串中不包括换行符</span></span><br><span class="line">    <span class="comment">//如果有一行字符就返回该行字符串，没有就返回null</span></span><br><span class="line">    <span class="type">boolean</span> flag=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span>((line=reader.readLine())!=<span class="literal">null</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!flag)</span><br><span class="line">        &#123;</span><br><span class="line">            flag=<span class="literal">true</span>;</span><br><span class="line">            writer.write(line);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            writer.newLine();<span class="comment">//写换行符</span></span><br><span class="line">            writer.write(line);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    reader.close();</span><br><span class="line">    writer.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样复制的文件就不会多谢换行符了，保证复制的文件和源文件是一模一样的。</p>
+<h2 id="bug-乱码问题"><a href="#bug-乱码问题" class="headerlink" title="bug:乱码问题"></a>bug:乱码问题</h2><p>因为我们使用的是包装<code>FileReader</code>的<code>BufferedReader</code>，包装<code>FileWriter</code>的<code>BufferedWriter</code>。所以读字符，写字符的时候使用的是默认的字符编码读写的。所以读写文件的时候会出现乱码，可以使用包装<code>InputStreamReader</code>的<code>BufferedReader</code>,包装<code>OutputStreamWriter</code>的<code>BufferedWriter</code>来复制文件，这样就可以支持各种字符编码。</p>
+<h3 id="实例：gbk编码的文件复制到utf8编码的文件中："><a href="#实例：gbk编码的文件复制到utf8编码的文件中：" class="headerlink" title="实例：gbk编码的文件复制到utf8编码的文件中："></a>实例：gbk编码的文件复制到utf8编码的文件中：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">copyByLineEncoding</span><span class="params">(String srcFile, String srcEncoding, String destFile,</span></span><br><span class="line"><span class="params">        String destEncoding)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">reader</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="type">BufferedWriter</span> <span class="variable">writer</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        reader = <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(srcFile), srcEncoding));</span><br><span class="line">        writer = <span class="keyword">new</span> <span class="title class_">BufferedWriter</span>(<span class="keyword">new</span> <span class="title class_">OutputStreamWriter</span>(</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(destFile), destEncoding));</span><br><span class="line">        <span class="type">char</span>[] charArray = <span class="keyword">new</span> <span class="title class_">char</span>[<span class="number">512</span>];</span><br><span class="line">        <span class="type">int</span> size;</span><br><span class="line">        <span class="keyword">while</span> ((size = reader.read(charArray, <span class="number">0</span>, charArray.length)) != -<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            writer.write(charArray, <span class="number">0</span>, size);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">catch</span> (UnsupportedEncodingException | FileNotFoundException e)</span><br><span class="line">    &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">    &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (writer != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                writer.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">            &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (reader != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                reader.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">            &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>main方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">from</span> <span class="operator">=</span> <span class="string">&quot;gbk.txt&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">to</span> <span class="operator">=</span> <span class="string">&quot;copyto_utf8.txt&quot;</span>;</span><br><span class="line">    copyByLineEncoding(from,<span class="string">&quot;gbk&quot;</span>,to,<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>源文件gbk.txt(gbk编码)：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gbk file</span><br><span class="line">这里是一句中文</span><br></pre></td></tr></table></figure>
+<p>目标文件copyto_utf8.txt：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">utf-8 file</span><br><span class="line">杩欓噷鏄竴鍙ヤ腑鏂�</span><br></pre></td></tr></table></figure>
+<p>乱码是正常的，因为我们的工程目录用的gbk编码，把copyto_utf8.txt编码显示就好了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">utf-8 file</span><br><span class="line">这里是一句中文</span><br></pre></td></tr></table></figure>
+<p>所以使用包装<code>InputStreamReader</code>的<code>BufferedReader</code>,包装<code>OutputStreamWriter</code>的<code>BufferedWriter</code>来复制文件的好处就是可以指定复制文件的时候使用的字符编码，例如上面的复制操作，从gbk编码的文件中读取，然后写入到utf8编码的文件中去。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1328,7 +1539,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">24:53</span>
+    <span title="站点阅读时长">24:54</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

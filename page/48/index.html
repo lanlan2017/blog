@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">697</span>
+          <span class="site-state-item-count">698</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,144 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e14f1dac/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/e14f1dac/" class="post-title-link" itemprop="url">解决String concatenation as argument to 'StringBuffer.append()' call警告</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-03 21:19:47" itemprop="dateCreated datePublished" datetime="2019-10-03T21:19:47+08:00">2019-10-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">代码优化</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/e14f1dac/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/e14f1dac/" data-xid="/blog/e14f1dac/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="解决-String-concatenation-as-argument-to-‘StringBuffer-append-’-call-警告"><a href="#解决-String-concatenation-as-argument-to-‘StringBuffer-append-’-call-警告" class="headerlink" title="解决 String concatenation as argument to ‘StringBuffer.append()’ call 警告"></a>解决 String concatenation as argument to ‘StringBuffer.append()’ call 警告</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>最近带idea中老是收到下面这个警告:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning:(20, 16) String concatenation as argument to &#x27;StringBuffer.append()&#x27; call</span><br></pre></td></tr></table></figure>
+<p>出现警告的代码:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sb.append(<span class="string">&quot;&lt;property name=\&quot;&quot;</span> + group1 + <span class="string">&quot;\&quot; value=\&quot;$&#123;&quot;</span> + group1+ <span class="string">&quot;&#125;\&quot;/&gt;\r\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="分析原因"><a href="#分析原因" class="headerlink" title="分析原因"></a>分析原因</h2><p>其实这个提示是表示方法使用不恰当,因为<code>StringBuffer</code>对象的<code>append</code>方法目的就是做对象拼接用的,里面再通过”<code>+</code>“来拼接就不得当,这是编译器对<code>Java</code>的代码规范。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="1-全部使用append方法"><a href="#1-全部使用append方法" class="headerlink" title="1. 全部使用append方法"></a>1. 全部使用append方法</h3><h4 id="替换-号为-append"><a href="#替换-号为-append" class="headerlink" title="替换+号为).append("></a>替换<code>+</code>号为<code>).append(</code></h4><p>因为<code>append</code>方法的返回值还是<code>StringBuffer</code>,所以可以链式调用,我们可以通过链式调用来替换掉里面的加号。<br>也就是，将:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sb.append(<span class="string">&quot;&lt;property name=\&quot;&quot;</span> + group1 + <span class="string">&quot;\&quot; value=\&quot;$&#123;&quot;</span> + group1+ <span class="string">&quot;&#125;\&quot;/&gt;\r\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>替换成:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sb.append(<span class="string">&quot;&lt;property name=\&quot;&quot;</span>).append(group1).append(<span class="string">&quot;\&quot; value=\&quot;$&#123;&quot;</span>).append(group1).append(<span class="string">&quot;&#125;\&quot;/&gt;\r\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="使用IDE的查找替换功能进行替换"><a href="#使用IDE的查找替换功能进行替换" class="headerlink" title="使用IDE的查找替换功能进行替换"></a>使用IDE的查找替换功能进行替换</h4><p>当然,手动替换可能有些繁琐,需要使用<code>查找替换功能</code>,</p>
+<ol>
+<li>查找:<code>+</code></li>
+<li>替换为:<code>).append(</code>即可。</li>
+</ol>
+<h4 id="写代码实现替换"><a href="#写代码实现替换" class="headerlink" title="写代码实现替换"></a>写代码实现替换</h4><p>核心代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 把StringBuffer或StringBuilder中的字符串连接符&lt;code&gt;+&lt;/code&gt;替换append()方法</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 替换后的字符串.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">StringConnectorToAppend</span><span class="params">(String stringBufferAppendCode)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">returnValue</span> <span class="operator">=</span> <span class="string">&quot;// &quot;</span> + stringBufferAppendCode + <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> returnValue + stringBufferAppendCode.replaceAll(<span class="string">&quot;\\s*\\+\\s*&quot;</span>, <span class="string">&quot;).append(&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-忽略"><a href="#2-忽略" class="headerlink" title="2. 忽略"></a>2. 忽略</h3><p>这个不替换也能运行,而且替换后代码长度变长了,不好阅读,可以选择忽略.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1655,132 +1793,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/ced73660/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/ced73660/" class="post-title-link" itemprop="url">在eclipse项目路径下启动cmd并解决乱码</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-08-29 22:34:38" itemprop="dateCreated datePublished" datetime="2019-08-29T22:34:38+08:00">2019-08-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/IDE/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/ced73660/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/ced73660/" data-xid="/blog/ced73660/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>540</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="在eclipse项目路径下启动cmd并解决乱码"><a href="#在eclipse项目路径下启动cmd并解决乱码" class="headerlink" title="在eclipse项目路径下启动cmd并解决乱码"></a>在eclipse项目路径下启动cmd并解决乱码</h1><h2 id="在eclipse中启动cmd"><a href="#在eclipse中启动cmd" class="headerlink" title="在eclipse中启动cmd"></a>在eclipse中启动cmd</h2><p>依次点击菜单栏上的<code>Run</code>，<code>External tools</code>，这样会弹出的<code>External Tools Configurations</code>对话框,在该对话框左边的<code>Program</code>上右键,选择<code>New Configuration</code>,然后:</p>
-<ol>
-<li>在<code>name:</code>输入框中输入名字<code>cmd</code>。</li>
-<li>在<code>Location:</code>输入框中输入<code>cmd.exe</code>的路径:<code>C:\Windows\System32\cmd.exe</code></li>
-<li>在<code>Working Directory</code>输入框输入:<code>$&#123;project_loc&#125;</code>,这两个可以点击右边的<code>Variables…</code>按钮进行选择.这个<code>$&#123;project_loc&#125;</code>的意思就是当前项目的路径.</li>
-</ol>
-<h2 id="选择cmd的编码为GBK"><a href="#选择cmd的编码为GBK" class="headerlink" title="选择cmd的编码为GBK"></a>选择cmd的编码为GBK</h2><p>点击最右边的<code>Common</code>选项卡,然后在<code>Encoding</code>选择框里面选择<code>GBK</code>即可。</p>
-<h2 id="启动cmd-exe"><a href="#启动cmd-exe" class="headerlink" title="启动cmd.exe"></a>启动cmd.exe</h2><p>在<code>Package Explorer</code>中点击要打开的项目或者项目中的文件,这样<code>$&#123;workspace_loc&#125;$&#123;project_path&#125;</code>才能正确定位到项目路径.然后接着点击<code>Run</code>，<code>External Tools</code>，<code>cmd</code>即可在该项目下启动<code>cmd</code>.</p>
-<h2 id="操作过程"><a href="#操作过程" class="headerlink" title="操作过程"></a>操作过程</h2><p>如下<code>gif</code>所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/gif/IDE/eclipse/cmd/1.gif" alt="这是一个gif文件"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/47/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/47/">47</a><span class="page-number current">48</span><a class="page-number" href="/blog/page/49/">49</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/70/">70</a><a class="extend next" rel="next" href="/blog/page/49/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1813,7 +1825,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">24:53</span>
+    <span title="站点阅读时长">24:54</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
