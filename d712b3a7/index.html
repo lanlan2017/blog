@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.1.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="adb命令收集获取内部版本号 1adb shell getprop ro.build.display.innerver  获取按键值 1adb shell getevent  获取apk信息adb shell dumpsys package 包名 -&gt;info.txt获取应用包名adb shell dumpsys window windows | grep mFocusedApp或者adb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="adb命令收集">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/d712b3a7/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="adb命令收集获取内部版本号 1adb shell getprop ro.build.display.innerver  获取按键值 1adb shell getevent  获取apk信息adb shell dumpsys package 包名 -&gt;info.txt获取应用包名adb shell dumpsys window windows | grep mFocusedApp或者adb">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-05T07:58:59.000Z">
+<meta property="article:modified_time" content="2023-09-05T07:58:59.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/d712b3a7/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/d712b3a7/","path":"/d712b3a7/","title":"adb命令收集"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>adb命令收集 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#adb%E5%91%BD%E4%BB%A4%E6%94%B6%E9%9B%86"><span class="nav-text">adb命令收集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80WiFi%E8%AE%BE%E7%BD%AE%E7%95%8C%E9%9D%A2"><span class="nav-text">打开WiFi设置界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D%E6%93%8D%E4%BD%9C"><span class="nav-text">定位操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E5%AE%9A%E4%BD%8D%E8%AE%BE%E7%BD%AE%E7%95%8C%E9%9D%A2"><span class="nav-text">打开定位设置界面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BB%91%E5%8A%A8%E7%82%B9%E5%87%BB"><span class="nav-text">滑动点击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%89%8B%E6%9C%BA%E5%9E%8B%E5%8F%B7"><span class="nav-text">获取手机型号</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">697</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">223</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d712b3a7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="adb命令收集 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          adb命令收集
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-09-05 15:58:59" itemprop="dateCreated datePublished" datetime="2023-09-05T15:58:59+08:00">2023-09-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/adb/" itemprop="url" rel="index"><span itemprop="name">adb</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/d712b3a7/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/d712b3a7/" data-xid="/blog/d712b3a7/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="adb命令收集"><a href="#adb命令收集" class="headerlink" title="adb命令收集"></a>adb命令收集</h1><p>获取内部版本号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell getprop ro.build.display.innerver</span><br></pre></td></tr></table></figure>
+
+<p>获取按键值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell getevent</span><br></pre></td></tr></table></figure>
+
+<p>获取apk信息<br>adb shell dumpsys package 包名 -&gt;info.txt<br>获取应用包名<br>adb shell dumpsys window windows | grep mFocusedApp<br>或者<br>adb shell dumpsys window windows | findstr mFocusedApp</p>
+<h2 id="打开WiFi设置界面"><a href="#打开WiFi设置界面" class="headerlink" title="打开WiFi设置界面"></a>打开WiFi设置界面</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am start -a android.intent.action.MAIN -n com.android.settings/.wifi.WifiSettings</span><br></pre></td></tr></table></figure>
+<p>打开热点设置界面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am start -n com.android.settings/.TetherSettings</span><br></pre></td></tr></table></figure>
+<p>查询蓝牙是否开启</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings get global bluetooth_on</span><br></pre></td></tr></table></figure>
+<p>返回结果0代表关闭，1代表开启</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys bluetooth_manager | findstr enabled</span><br></pre></td></tr></table></figure>
+<p>返回结果是true或者false，说明开启或关闭</p>
+<p>查询WiFi是否开启</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings get global wifi_on</span><br></pre></td></tr></table></figure>
+<p>返回结果0代表关闭，1代表开启<br>查询蓝牙地址<br>adb shell settings get secure bluetooth_address<br>查询WiFi地址<br>adb shell cat &#x2F;sys&#x2F;class&#x2F;net&#x2F;wlan0&#x2F;address<br>开启WiFi</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell svc wifi enable</span><br></pre></td></tr></table></figure>
+<p>关闭WiFi</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell svc wifi disable</span><br></pre></td></tr></table></figure>
+<p>打开蓝牙设置界面<br>adb shell am start -a android.settings.BLUETOOTH_SETTINGS<br>获取手机休眠时间<br>adb shell settings get system screen_off_timeout<br>更改手机休眠时间<br>adb shell settings put system screen_off_timeout 600000（10分钟）<br>获取系统默认输入法<br>adb shell settings get secure default_input_method<br>获取手机是否为自动亮度<br>adb shell settings get system screen_brightness_mode  （0代表非自动，1代表为自动）<br>设置手机为自动调整亮度<br>adb shell settings put system screen_brightness_mode 1<br>获取手机当前亮度<br>adb shell settings get system screen_brightness<br>设置手机亮度（0-255）<br>adb shell settings put system screen_brightness 350</p>
+<h2 id="定位操作"><a href="#定位操作" class="headerlink" title="定位操作"></a>定位操作</h2><h3 id="打开定位设置界面"><a href="#打开定位设置界面" class="headerlink" title="打开定位设置界面"></a>打开定位设置界面</h3><p>得先打开设置APP，然后再执行下面的命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am start -a android.settings.LOCATION_SOURCE_SETTINGS</span><br></pre></td></tr></table></figure>
+
+<p>开启定位</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put secure location_providers_allowed +gps</span><br></pre></td></tr></table></figure>
+<p>关闭定位</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put secure location_providers_allowed -gps</span><br></pre></td></tr></table></figure>
+<p>查看定位方式<br>adb shell settings get secure location_providers_allowed  （前提是位置信息开启）<br>拨打电话<br>adb shell am start -a android.intent.action.CALL tel:8888888888888</p>
+<p>发送短信<br>adb shell am start -a android.intent.action.SENDTO -d sms:10086（发送目的号码） –es sms_body “hello”（短信内容） –ez exit_on_sent true </p>
+<p>获取应用包名<br>adb shell dumpsys window windows | findstr  mFocusedApp</p>
+<p>清除应用数据与缓存:<br>adb shell pm clear cn.com.test.mobile<br>启动应用:<br>adb shell am start -n cn.com.test.mobile&#x2F;.ui.SplashActivity<br>停止应用<br>adb shell am force-stop cn.com.test.mobile<br>飞行模式<br>adb shell settings set global airplane_mode_on<br>(0&#x3D;&#x3D;关闭，1&#x3D;&#x3D;开启)<br>开启飞行模式<br>adb shell settings put global airplane_mode_on 1</p>
+<p>手机震动测试（前提手机root）<br>adb shell echo ‘3000’&gt;&#x2F;sys&#x2F;devices&#x2F;virtual&#x2F;timed_output&#x2F;vibrator&#x2F;enable</p>
+<h2 id="滑动点击"><a href="#滑动点击" class="headerlink" title="滑动点击"></a>滑动点击</h2><p>向上滑<br>adb shell input touchscreen swipe 930 880 930 380<br>向下滑<br>adb shell input touchscreen swipe 930 380 930 880<br>向右滑<br>adb shell input touchscreen swipe 330 880 930 880<br>向左滑<br>adb shell input touchscreen swipe 930 880 330 880<br>模拟鼠标点击操作<br>adb shell input mouse tap 100 500<br>长按<br>adb shell input swipe startX startY startX startY 500<br>滑动解锁<br>adb shell input swipe 300 1000 300 500<br>冷启动app<br>adb shell am start -W -n package&#x2F;activity<br>热启动<br>①停止app<br>adb shell input keyevent 3  ②adb shell am start -W -n package&#x2F;activity<br>查看内存占用情况<br>adb -s 设备号 shell top -m 进程数量 -n 数据的刷新次数 -s 按哪列进行排序 -d 刷新时间间隔（默认5秒）</p>
+<p>切换手机电池为非充电状态<br>adb shell dumpsys battery set status 1<br>改变手机电量<br>adb shell dumpsys battery set level 58</p>
+<p>获取当前电量<br>adb shell cat &#x2F;sys&#x2F;class&#x2F;power_supply&#x2F;battery&#x2F;capacity</p>
+<p>手机截屏</p>
+<p>adb shell &#x2F;system&#x2F;bin&#x2F;screencap -p &#x2F;sdcard&#x2F;screenshot.png</p>
+<p>录制屏幕<br>adb shell screenrecord –time-limit 10 &#x2F;sdcard&#x2F;demo.mp4</p>
+<h2 id="获取手机型号"><a href="#获取手机型号" class="headerlink" title="获取手机型号"></a>获取手机型号</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell getprop ro.product.model</span><br></pre></td></tr></table></figure>
+
+<p>获取电池信息<br>adb shell dumpsys battery<br>获取屏幕分辨率<br>adb shell wm size<br>获取屏幕密度<br>adb shell wm density<br>显示屏参数<br>adb shell dumpsys window displays<br>获取手机IP地址<br>adb shell ifconfig | findstr Mask<br>查看WiFi局域网地址<br>adb shell ifconfig wlan0<br>显示区域位置<br>adb shell wm overscan 0,0,0,200  （四个数字分别表示距离左、上、右、下边缘的留白像素，以上命令表示将屏幕底部 200px 留白）<br>恢复原显示区域命令<br>adb shell wm overscan reset</p>
+<p>获取USB调试模式<br>adb shell settings get global adb_enabled<br>关闭USB调试模式<br>adb shell settings put global adb_enabled 0</p>
+<p>状态栏和导航栏的显示隐藏<br>adb shell settings put global policy_control key-values<br>key-values 可由如下几种键及其对应的值组成，格式为 key1&#x3D;value1:key2&#x3D;value2。<br>  immersive.full———-同时隐藏<br>  immersive.status———-隐藏状态栏<br>  immersive.navigation———-隐藏导航栏<br>  immersive.preconfirms———-?<br>这些键对应的值可则如下值用逗号组合：<br>  apps———-所有应用<br>  <em>———-所有界面<br>  packagename———-指定应用<br> -packagename———-排除指定应用<br>例如：<br>adb shell settings put global policy_control immersive.full&#x3D;</em><br>表示设置在所有界面下都同时隐藏状态栏和导航栏。<br>adb shell settings put global policy_control immersive.status&#x3D;com.package1,com.package2:immersive.navigation&#x3D;apps,-com.package3<br>表示设置在包名为 com.package1 和 com.package2 的应用里隐藏状态栏，在除了包名为 com.package3 的所有应用里隐藏导航栏。</p>
+<p>打开网页： adb shell am start -a android.intent.action.VIEW -d <a target="_blank" rel="noopener" href="http://www.baidu.com/">http://www.baidu.com</a></p>
+<p>查看通信日志 ：<br>adb logcat -b radio (常用于查看详细的通话状态)<br>获取界面控件：<br>adb uiautomator dump<br>列出输入法：<br>adb shell ime list -s</p>
+<p>永不休眠：<br>adb shell settings put system screen_off_timeout 2147483647</p>
+<p>关闭\打开自动旋转：<br>adb shell settings put system accelerometer_rotation 0\1</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_28170363/article/details/108695746">https://blog.csdn.net/qq_28170363/article/details/108695746</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/d712b3a7/" title="adb命令收集">https://lanlan2017.github.io/blog/d712b3a7/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/b3f4e072/" rel="prev" title="批处理给Android设备批量卸载APP">
+                  <i class="fa fa-chevron-left"></i> 批处理给Android设备批量卸载APP
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/3c05c2ec/" rel="next" title="adb获取手机型号">
+                  adb获取手机型号 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.6m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">24:53</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js","integrity":"sha256-7wT34TI0pEBeEFoi4z+vhuSddGh6vUTMWdqJ2SDe2jg="}}</script>
+  <script src="/blog/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/d712b3a7/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-lanlan2017.vercel.app","placeholder":"填写邮箱可接收回复通知 填写个人网址可为您引流","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/d712b3a7/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

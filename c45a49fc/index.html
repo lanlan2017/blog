@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.1.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lanlan2017.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","darkmode":true,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="需求1：部署Hexo站点到另一台电脑上最近买了个台式机，我想把我的Hexo站点部署到台式机上。因为这个台式机我打算二十四小时都开着，当服务器使用。这样我就可以随时访问我的Hexo站点了。 做法复制整个博客站点的的文件夹到台式机上我在笔记本上开启网络共享功能，然后在台式机上访问我的笔记本，把Hexo站点的整个文件夹复制到台式机上。 这个时候Hexo站点就已经迁移(复制)完成了，但是还不能开启本地服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="把Hexo站点从一台电脑拷贝到另一台电脑上">
+<meta property="og:url" content="https://lanlan2017.github.io/blog/c45a49fc/index.html">
+<meta property="og:site_name" content="蓝蓝站点">
+<meta property="og:description" content="需求1：部署Hexo站点到另一台电脑上最近买了个台式机，我想把我的Hexo站点部署到台式机上。因为这个台式机我打算二十四小时都开着，当服务器使用。这样我就可以随时访问我的Hexo站点了。 做法复制整个博客站点的的文件夹到台式机上我在笔记本上开启网络共享功能，然后在台式机上访问我的笔记本，把Hexo站点的整个文件夹复制到台式机上。 这个时候Hexo站点就已经迁移(复制)完成了，但是还不能开启本地服务">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-05T13:07:21.000Z">
+<meta property="article:modified_time" content="2023-07-05T16:13:09.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="Java 数据库">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lanlan2017.github.io/blog/c45a49fc/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lanlan2017.github.io/blog/c45a49fc/","path":"/c45a49fc/","title":"把Hexo站点从一台电脑拷贝到另一台电脑上"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>把Hexo站点从一台电脑拷贝到另一台电脑上 | 蓝蓝站点</title>
+  
+
+  <script src="/blog/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?dadeb188eb14ccde0b25a19230c429b5"></script>
+
+
+
+<link rel="dns-prefetch" href="https://waline-test-lanlan2017.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">蓝蓝站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-dir"><a href="/blog/dir/" rel="section"><i class="fa fa-sitemap fa-fw"></i>目录</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9C%80%E6%B1%821%EF%BC%9A%E9%83%A8%E7%BD%B2Hexo%E7%AB%99%E7%82%B9%E5%88%B0%E5%8F%A6%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A"><span class="nav-text">需求1：部署Hexo站点到另一台电脑上</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%81%9A%E6%B3%95"><span class="nav-text">做法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6%E6%95%B4%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%AB%99%E7%82%B9%E7%9A%84%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%88%B0%E5%8F%B0%E5%BC%8F%E6%9C%BA%E4%B8%8A"><span class="nav-text">复制整个博客站点的的文件夹到台式机上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hexo%E7%AB%99%E7%82%B9%E9%9C%80%E8%A6%81%E7%9A%84%E8%BD%AF%E4%BB%B6"><span class="nav-text">安装Hexo站点需要的软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Git"><span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85nodejs"><span class="nav-text">安装nodejs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8nvm%E7%AE%A1%E7%90%86nodejs"><span class="nav-text">使用nvm管理nodejs</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85hexo"><span class="nav-text">安装hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2Hexo"><span class="nav-text">本地部署Hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9C%80%E6%B1%822%EF%BC%9A%E5%90%8C%E4%B8%80%E4%B8%AA%E8%B4%A6%E6%88%B7%E5%9C%A8%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E5%8D%8F%E4%BD%9C"><span class="nav-text">需求2：同一个账户在两台电脑上协作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%81%9A%E6%B3%95-1"><span class="nav-text">做法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%8F%B0%E5%BC%8F%E6%9C%BA%E4%B8%8A%E9%87%8D%E6%96%B0-%E9%85%8D%E7%BD%AEGit-SSH"><span class="nav-text">在台式机上重新 配置Git SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEgit%E7%9A%84%E9%82%AE%E7%AE%B1%E5%92%8C%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-text">配置git的邮箱和用户名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E9%82%AE%E7%AE%B1"><span class="nav-text">配置邮箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-text">配置用户名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%95%88%E6%9E%9C"><span class="nav-text">查看效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E6%97%A7%E7%94%B5%E8%84%91%E4%B8%8A%E5%A4%8D%E5%88%B6%E7%A7%81%E9%92%A5%E5%92%8Cknown-hosts%E6%96%87%E4%BB%B6%E5%88%B0%E5%88%B0%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A"><span class="nav-text">从旧电脑上复制私钥和known_hosts文件到到新电脑上</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6id-rsa%E5%92%8Cknown-hosts%E5%88%B0%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A%E7%9A%84-ssh%E7%9B%AE%E5%BD%95%E4%B8%AD"><span class="nav-text">复制id_rsa和known_hosts到新电脑上的.ssh目录中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%A7%81%E9%92%A5%E5%88%B0SSH"><span class="nav-text">添加私钥到SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AFssh%E6%9C%8D%E5%8A%A1"><span class="nav-text">开启ssh服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%A7%81%E9%92%A5"><span class="nav-text">添加私钥</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E9%93%BE%E6%8E%A5%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="nav-text">测试链接是否成功</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%EF%BC%9Assh-connect-to-host-github-com-port-22-Connection-refused"><span class="nav-text">解决：ssh: connect to host github.com port 22: Connection refused</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3The-authenticity-of-host-%E2%80%98github-com-127-0-0-1-%E2%80%99-can%E2%80%99t-be-established"><span class="nav-text">解决The authenticity of host ‘github.com (127.0.0.1)’ can’t be established.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8B%89%E5%8F%96GitHub%E4%B8%8A%E7%9A%84%E4%BB%93%E5%BA%93%E5%88%B0%E6%96%B0%E7%94%B5%E8%84%91"><span class="nav-text">拉取GitHub上的仓库到新电脑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git%E6%96%87%E4%BB%B6%E5%90%8D%E4%B9%B1%E7%A0%81-gitbash%E6%96%87%E4%BB%B6%E5%90%8D%E4%B9%B1%E7%A0%81"><span class="nav-text">git文件名乱码 gitbash文件名乱码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="蓝蓝"
+      src="/blog/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">记录一些学习心得</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">697</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">223</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/todo/" title="todo → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;todo&#x2F;"><i class="fa fa-check-square fa-fw"></i>todo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://lanlan2017.github.io/links/" title="links → https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;links&#x2F;"><i class="fa fa-link fa-fw"></i>links</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/c45a49fc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="把Hexo站点从一台电脑拷贝到另一台电脑上 | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          把Hexo站点从一台电脑拷贝到另一台电脑上
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-07-05 21:07:21" itemprop="dateCreated datePublished" datetime="2023-07-05T21:07:21+08:00">2023-07-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-07-06 00:13:09" itemprop="dateModified" datetime="2023-07-06T00:13:09+08:00">2023-07-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Hexo/%E8%BF%81%E7%A7%BB/" itemprop="url" rel="index"><span itemprop="name">迁移</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/c45a49fc/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/c45a49fc/" data-xid="/blog/c45a49fc/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="需求1：部署Hexo站点到另一台电脑上"><a href="#需求1：部署Hexo站点到另一台电脑上" class="headerlink" title="需求1：部署Hexo站点到另一台电脑上"></a>需求1：部署Hexo站点到另一台电脑上</h1><p>最近买了个台式机，我想把我的Hexo站点部署到台式机上。因为这个台式机我打算二十四小时都开着，当服务器使用。这样我就可以随时访问我的Hexo站点了。</p>
+<h1 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h1><h2 id="复制整个博客站点的的文件夹到台式机上"><a href="#复制整个博客站点的的文件夹到台式机上" class="headerlink" title="复制整个博客站点的的文件夹到台式机上"></a>复制整个博客站点的的文件夹到台式机上</h2><p>我在笔记本上开启网络共享功能，然后在台式机上访问我的笔记本，把Hexo站点的整个文件夹复制到台式机上。</p>
+<p>这个时候Hexo站点就已经迁移(复制)完成了，但是还不能开启本地服务器。<br>为什么呢，因为还没安装好Hexo所需要的依赖软件</p>
+<h2 id="安装Hexo站点需要的软件"><a href="#安装Hexo站点需要的软件" class="headerlink" title="安装Hexo站点需要的软件"></a>安装Hexo站点需要的软件</h2><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>略</p>
+<h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><p>略</p>
+<h4 id="使用nvm管理nodejs"><a href="#使用nvm管理nodejs" class="headerlink" title="使用nvm管理nodejs"></a>使用nvm管理nodejs</h4><p>略</p>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>略</p>
+<h2 id="本地部署Hexo"><a href="#本地部署Hexo" class="headerlink" title="本地部署Hexo"></a>本地部署Hexo</h2><p>安装好上述软件之后，就可以在台式机上部署hexo站点了，执行hexo s命令，不出意外的话可以成功部署。</p>
+<h1 id="需求2：同一个账户在两台电脑上协作"><a href="#需求2：同一个账户在两台电脑上协作" class="headerlink" title="需求2：同一个账户在两台电脑上协作"></a>需求2：同一个账户在两台电脑上协作</h1><p>我习惯在笔记本上编写Hexo站点文章，不过Hexo站点我部署在台式机上了。<br>所以我需要在两台电脑之间进行协作。</p>
+<h1 id="做法-1"><a href="#做法-1" class="headerlink" title="做法"></a>做法</h1><p>我先在笔记本上写好Hexo站点的文章，然后我推送到github上。<br>接着，我在台式机上拉取GitHub上的文章，然后在台式机上本地部署即可。</p>
+<h2 id="在台式机上重新-配置Git-SSH"><a href="#在台式机上重新-配置Git-SSH" class="headerlink" title="在台式机上重新 配置Git SSH"></a>在台式机上重新 配置Git SSH</h2><p>因为我直接把整个Hexo站点（git仓库）复制到台式机上了，此时台式机上的远程仓库链接已经设置好了，我不用重新init仓库。</p>
+<p>不过，此时是不可以直接拉取Github上的仓库，这是因为在台式机上还没配置好Git SSH的缘故。此时执行<code>git push origin master</code>命令，将会输出如下的错误信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ git pull origin master</span><br><span class="line">ssh: connect to host github.com port 22: Connection refused</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
+<h2 id="配置git的邮箱和用户名"><a href="#配置git的邮箱和用户名" class="headerlink" title="配置git的邮箱和用户名"></a>配置git的邮箱和用户名</h2><h3 id="配置邮箱"><a href="#配置邮箱" class="headerlink" title="配置邮箱"></a>配置邮箱</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;your_email@example.com&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="配置用户名"><a href="#配置用户名" class="headerlink" title="配置用户名"></a>配置用户名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;your_name&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global  --list</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ git config --global  --list</span><br><span class="line">user.email=xxxxxxx@163.com</span><br><span class="line">user.name=xyzabc</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
+
+<h2 id="从旧电脑上复制私钥和known-hosts文件到到新电脑上"><a href="#从旧电脑上复制私钥和known-hosts文件到到新电脑上" class="headerlink" title="从旧电脑上复制私钥和known_hosts文件到到新电脑上"></a>从旧电脑上复制私钥和known_hosts文件到到新电脑上</h2><p>在笔记本上进入用户目录下的.ssh目录中，.ssh目录结构如下代码块所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xyzabc\.ssh&gt;dir</span><br><span class="line"> 驱动器 C 中的卷没有标签。</span><br><span class="line"> 卷的序列号是 FA82-C79F</span><br><span class="line"></span><br><span class="line"> C:\Users\xyzabc\.ssh 的目录</span><br><span class="line"></span><br><span class="line">2023.07.04  19:46    &lt;DIR&gt;          .</span><br><span class="line">2023.07.04  19:46    &lt;DIR&gt;          ..</span><br><span class="line">2021.10.11  09:23                 0 config</span><br><span class="line">2021.07.12  09:13             2,610 id_rsa</span><br><span class="line">2021.07.12  09:13               573 id_rsa.pub</span><br><span class="line">2023.07.04  19:46               919 known_hosts</span><br><span class="line">2022.04.12  15:40               747 known_hosts.old</span><br><span class="line">               5 个文件          4,849 字节</span><br><span class="line">               2 个目录 59,848,286,208 可用字节</span><br><span class="line"></span><br><span class="line">C:\Users\xyzabc\.ssh&gt;</span><br></pre></td></tr></table></figure>
+<p>其中的id_rsa文件就是我们需要的私钥文件，id_rsa.pub是公钥文件，这个公钥我们之前已经放到GitHub上了</p>
+<h3 id="复制id-rsa和known-hosts到新电脑上的-ssh目录中"><a href="#复制id-rsa和known-hosts到新电脑上的-ssh目录中" class="headerlink" title="复制id_rsa和known_hosts到新电脑上的.ssh目录中"></a>复制id_rsa和known_hosts到新电脑上的.ssh目录中</h3><p>在台式机上同样进入用户目录，</p>
+<ul>
+<li>如果有.ssh目录，则进入.ssh目录，然后把 私钥文件id_rsa和known_hosts文件 粘贴到.ssh目录。</li>
+<li>如果没有.ssh目录，则创建一个.ssh目录。然后把 私钥文件id_rsa和known_hosts文件 粘贴到.ssh目录中。</li>
+</ul>
+<p>不过，为了方便起见，你把旧电脑上.ssh目录下的所有文件都复制到新电脑的.ssh目录下也可以。</p>
+<p>我之所以说复制私钥文件和known_hosts就可以了，是因为在我的操作中，复制私钥文件id_rsa和known_hosts文件之后，就可以通过SSH访问GitHub了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\abc\.ssh&gt;dir</span><br><span class="line"> 驱动器 C 中的卷没有标签。</span><br><span class="line"> 卷的序列号是 4A1D-5B3F</span><br><span class="line"></span><br><span class="line"> C:\Users\abc\.ssh 的目录</span><br><span class="line"></span><br><span class="line">2023/07/05  23:23    &lt;DIR&gt;          .</span><br><span class="line">2023/07/05  23:23    &lt;DIR&gt;          ..</span><br><span class="line">2023/07/05  22:59             2,610 id_rsa</span><br><span class="line">2023/07/05  23:23               919 known_hosts</span><br><span class="line">               2 个文件          3,529 字节</span><br><span class="line">               2 个目录 11,805,638,656 可用字节</span><br><span class="line"></span><br><span class="line">C:\Users\abc\.ssh&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加私钥到SSH"><a href="#添加私钥到SSH" class="headerlink" title="添加私钥到SSH"></a>添加私钥到SSH</h2><h3 id="开启ssh服务"><a href="#开启ssh服务" class="headerlink" title="开启ssh服务"></a>开启ssh服务</h3><p>在台式机上的.ssh目录中打开git-bash。<br>输入如下命令启动SSH服务：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br></pre></td></tr></table></figure>
+<p>这条命令没有输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 ~/.ssh</span><br><span class="line">$ ssh-agent bash</span><br></pre></td></tr></table></figure>
+<h3 id="添加私钥"><a href="#添加私钥" class="headerlink" title="添加私钥"></a>添加私钥</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add id_rsa</span><br></pre></td></tr></table></figure>
+<p>命令输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 ~/.ssh</span><br><span class="line">$ ssh-add id_rsa</span><br><span class="line">Identity added: id_rsa (xxxxxxx@163.com)</span><br></pre></td></tr></table></figure>
+<h2 id="测试链接是否成功"><a href="#测试链接是否成功" class="headerlink" title="测试链接是否成功"></a>测试链接是否成功</h2><p>因为之前在旧电脑的Git SSH配置中我们已经把公钥保存到github上了，所以现在我们就不用再重新布置了。</p>
+<p>git-bash<strong>进入Hexo站点目录</strong>，然后执行如下命令，测试是否能成功连接到github上。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>如果有如下的输出，则表示成功连接到GitHub上：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi githbubUseName! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
+<h3 id="解决：ssh-connect-to-host-github-com-port-22-Connection-refused"><a href="#解决：ssh-connect-to-host-github-com-port-22-Connection-refused" class="headerlink" title="解决：ssh: connect to host github.com port 22: Connection refused"></a>解决：ssh: connect to host github.com port 22: Connection refused</h3><p>我测试的时候并没有成功连接到GitHub上而是输出如下信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">ssh: connect to host github.com port 22: Connection refused</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
+<p>我这里应该是被墙了，安装Steam++，加速GitHub之后即可正常连接。</p>
+<h2 id="解决The-authenticity-of-host-‘github-com-127-0-0-1-’-can’t-be-established"><a href="#解决The-authenticity-of-host-‘github-com-127-0-0-1-’-can’t-be-established" class="headerlink" title="解决The authenticity of host ‘github.com (127.0.0.1)’ can’t be established."></a>解决The authenticity of host ‘github.com (127.0.0.1)’ can’t be established.</h2><p>如果出现如下的输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">an@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">The authenticity of host &#x27;github.com (127.0.0.1)&#x27; can&#x27;t be established.</span><br><span class="line">ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.</span><br><span class="line">This key is not known by any other names.</span><br><span class="line">Are you sure you want to continue connecting (yes/no/[fingerprint])?</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
+<p>这说明你只复制了秘钥文件到新电脑上，忘了从旧电脑上把known_hosts文件复制到新电脑的.ssh目录中。</p>
+<p>从旧电脑上把known_hosts文件复制到新电脑的.ssh目录中，然后在重新测试连接即可。此时应该就能正常连接了。</p>
+<h1 id="拉取GitHub上的仓库到新电脑"><a href="#拉取GitHub上的仓库到新电脑" class="headerlink" title="拉取GitHub上的仓库到新电脑"></a>拉取GitHub上的仓库到新电脑</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ git pull origin master</span><br><span class="line">remote: Enumerating objects: 23, done.</span><br><span class="line">remote: Counting objects: 100% (23/23), done.</span><br><span class="line">remote: Compressing objects: 100% (4/4), done.</span><br><span class="line">remote: Total 12 (delta 8), reused 12 (delta 8), pack-reused 0</span><br><span class="line">Unpacking objects: 100% (12/12), 2.29 KiB | 3.00 KiB/s, done.</span><br><span class="line">From github.com:githbubUseName/JavaReadingNotes</span><br><span class="line"> * branch              master     -&gt; FETCH_HEAD</span><br><span class="line">   d1bf8037..cd1954fe  master     -&gt; origin/master</span><br><span class="line">Updating d1bf8037..cd1954fe</span><br><span class="line">Fast-forward</span><br><span class="line"> ...277\220\350\241\214\346\234\272\345\210\266.md&quot; | 17 +++--</span><br><span class="line"> ...221Java\347\232\204\345\207\206\345\244\207.md&quot; | 79 +++++++++++++---------</span><br><span class="line"> ...200\344\270\252Java\347\250\213\345\272\217.md&quot; | 61 ++++++++++-------</span><br><span class="line"> 3 files changed, 91 insertions(+), 66 deletions(-)</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="git文件名乱码-gitbash文件名乱码"><a href="#git文件名乱码-gitbash文件名乱码" class="headerlink" title="git文件名乱码 gitbash文件名乱码"></a>git文件名乱码 gitbash文件名乱码</h2><p>此时可以成功拉取更新了，不过文件名是乱码的，输入如下命令解决：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.quotepath false</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="blog/8d23490d/">Git SSH配置过程</a><br><a href="blog/ad35763b/">git bash中文乱码</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/wechatpay.png" alt="蓝蓝 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>蓝蓝
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lanlan2017.github.io/blog/c45a49fc/" title="把Hexo站点从一台电脑拷贝到另一台电脑上">https://lanlan2017.github.io/blog/c45a49fc/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/0/" rel="prev" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/49194f9b/" rel="next" title="手机屏幕坏了如何在另一台电脑上开启USB调试功能">
+                  手机屏幕坏了如何在另一台电脑上开启USB调试功能 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">1.6m</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">24:53</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js","integrity":"sha256-7wT34TI0pEBeEFoi4z+vhuSddGh6vUTMWdqJ2SDe2jg="}}</script>
+  <script src="/blog/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/blog/js/third-party/fancybox.js"></script>
+
+  <script src="/blog/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://lanlan2017.github.io/blog/c45a49fc/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":null,"enable":true,"serverURL":"https://waline-test-lanlan2017.vercel.app","placeholder":"填写邮箱可接收回复通知 填写个人网址可为您引流","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/blog/c45a49fc/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
+</body>
+</html>

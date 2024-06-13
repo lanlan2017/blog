@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">656</span>
+          <span class="site-state-item-count">697</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">216</span>
+        <span class="site-state-item-count">223</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -222,7 +222,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/a5e554af/">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/18ab79a8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -240,7 +240,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/a5e554af/" class="post-title-link" itemprop="url">JavaIO InputStreamReader和OutputStreamWriter</a>
+          <a href="/blog/18ab79a8/" class="post-title-link" itemprop="url">java读取jar包内的文件</a>
         </h2>
 
         <div class="post-meta-container">
@@ -251,7 +251,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-08-09 19:25:05" itemprop="dateCreated datePublished" datetime="2018-08-09T19:25:05+08:00">2018-08-09</time>
+      <time title="创建时间：2018-10-26 19:56:09" itemprop="dateCreated datePublished" datetime="2018-10-26T19:56:09+08:00">2018-10-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -287,8 +287,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/blog/a5e554af/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/a5e554af/" data-xid="/blog/a5e554af/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/18ab79a8/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/18ab79a8/" data-xid="/blog/18ab79a8/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -299,147 +299,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>——–读字符：——————-<br>I am groot<br>I am groot!</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`test.txt`文件中的内容：</span><br></pre></td></tr></table></figure>
-<p>I am groot<br>I am groot!</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">需要注意的是，写文件的时候`test.txt`文件可以不存在，OutputStreamWriter会自动创建这文件，然后写入该文件中。但前提是可以找到`test.txt`这个文件的父路径。如果父路径不存在，会抛出异常：`FileNotFoundException`。</span><br><span class="line"></span><br><span class="line">例如把上面main中的代码改为：</span><br></pre></td></tr></table></figure>
-<p>String fileName &#x3D; “\new1\test222.txt”;<br>System.out.println(“写文件结束…”);<br>writeByOutputStreamWriter(fileName);<br>System.out.println(“写文件结束…”);</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">因为当前工作目录下没有`new1`这个文件夹,所以无法在`new1`目录下创建`test222.txt`这个文件。</span><br><span class="line">运行部分结果入下：</span><br></pre></td></tr></table></figure>
-<p>Exception in thread “main” java.io.FileNotFoundException: \new1\test222.txt (系统找不到指定的路径。)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 应用：复制字符文件#</span><br><span class="line"></span><br><span class="line">我们可以从一个文件中读取字符，然后再把这些字符写入到另一个文件中，然后再读，再写，一直循环知道读取结束。从而实现文件的复制操作。</span><br><span class="line"></span><br><span class="line">但是只能复制存放字符的文件(.txt,.c,.java等)，不能复制二进制文件(如音频，视屏，音乐)</span><br><span class="line"></span><br><span class="line">关键代码：</span><br></pre></td></tr></table></figure>
-<p>while((size&#x3D;in.read(cbuf, 0, cbuf.length))!&#x3D;-1)<br>{<br>    &#x2F;&#x2F;然后把数字中读取到的字符写入到输出流中，注意读多少写多好，不要整个数组都写进去<br>    out.write(cbuf, 0, size);<br>}</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">完整的代码：</span><br></pre></td></tr></table></figure>
-<p>public static void copy(String from, String to)<br>{<br>    InputStreamReader in&#x3D;null;<br>    OutputStreamWriter out&#x3D;null;<br>    try<br>    {<br>        in &#x3D; new InputStreamReader(new FileInputStream(from),”gbk”);<br>        &#x2F;&#x2F;如果可以读了<br>        if(in.ready())<br>        {<br>            out&#x3D;new OutputStreamWriter(new FileOutputStream(to), “gbk”);<br>            &#x2F;&#x2F;缓存字符数组<br>            char[] cbuf&#x3D;new char[20];<br>            int size;<br>            &#x2F;&#x2F;从输入流中读取一个数组的字符到数组中<br>            while((size&#x3D;in.read(cbuf, 0, cbuf.length))!&#x3D;-1)<br>            {<br>                &#x2F;&#x2F;然后把数字中读取到的字符写入到输出流中，注意读多少写多好，不要整个数组都写进去<br>                out.write(cbuf, 0, size);<br>            }<br>        }<br>    } catch (UnsupportedEncodingException | FileNotFoundException e)<br>    {<br>        &#x2F;&#x2F; TODO Auto-generated catch block<br>        e.printStackTrace();<br>    } catch (IOException e)<br>    {<br>        &#x2F;&#x2F; TODO Auto-generated catch block<br>        e.printStackTrace();<br>    }<br>    finally<br>    {<br>        if(in!&#x3D;null)<br>        {<br>            try{in.close();}<br>            catch (IOException e)<br>            {e.printStackTrace();}<br>        }<br>        if(out!&#x3D;null)<br>        {<br>            try{out.close();}<br>            catch (IOException e)<br>            {e.printStackTrace();}<br>        }<br>    }<br>}</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">源文件：</span><br></pre></td></tr></table></figure>
-<p>I am groot<br>I am groot!</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">测试：</span><br></pre></td></tr></table></figure>
-<p>String from &#x3D; “test.txt”;<br>String to &#x3D; “copy.txt”;<br>copy(from, to);</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">运行后，当前工程目录下创建了一个`copy.txt`文件，文件中的内容如下：</span><br></pre></td></tr></table></figure>
-<p>I am groot<br>I am groot!</p>
-<pre><code>
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/51e02fda/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/51e02fda/" class="post-title-link" itemprop="url">Java正则表达式 删除一个或多个空行</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-08-07 15:56:18" itemprop="dateCreated datePublished" datetime="2018-08-07T15:56:18+08:00">2018-08-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/Java-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">Java 正则表达式</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/51e02fda/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/51e02fda/" data-xid="/blog/51e02fda/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1k</span>
+      <span>1.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -457,16 +317,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="删除一个或多个空行"><a href="#删除一个或多个空行" class="headerlink" title="删除一个或多个空行"></a>删除一个或多个空行</h1><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^\s*$(?:\n|\r\n)</span><br></pre></td></tr></table></figure>
-<p><code>(?m)</code>表示开启多行匹配模式，<code>^</code>是行开始，<code>\\s*</code>代表任意个空格，<code>$</code>代表行结束。<br>所以这句话的意思是:<br>&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;所有空行(包括有任意空格的行)都会被替换为空字符串，即空行被从字符串中移除。</p>
-<p>但是这样还是存在一个问题，那就是如果最后一行如果是空行的话，上面的正则是无法删除的。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/regex/Examples/BlankLine/after.png"><br>所以还要再执行一步正则替换，把最后一行的换行符给删除掉:</p>
-<h2 id="匹配空行正则2"><a href="#匹配空行正则2" class="headerlink" title="匹配空行正则2"></a>匹配空行正则2</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(?:\n|\r\n)^\s*$</span><br></pre></td></tr></table></figure>
-<p>匹配效果:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/regex/Examples/BlankLine/after2.png"><br>这两个正则一起使用就可以删除掉所有空行了，两个正则的顺序可以随意。</p>
-<h2 id="删除所有空行Java代码"><a href="#删除所有空行Java代码" class="headerlink" title="删除所有空行Java代码"></a>删除所有空行Java代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">deleteEmptyLine</span><span class="params">(String input)</span></span><br><span class="line">&#123;</span><br><span class="line">    input=input.replaceAll(<span class="string">&quot;(?m)(?:\\n|\\r\\n)(?:^\\s*$)&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">    input=input.replaceAll(<span class="string">&quot;(?m)(?:^\\s*$(?:\\n|\\r\\n))&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> input;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="移除多余的连续空格，只留下一个空格。"><a href="#移除多余的连续空格，只留下一个空格。" class="headerlink" title="移除多余的连续空格，只留下一个空格。"></a>移除多余的连续空格，只留下一个空格。</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string.replaceAll(&quot;[ ]+&quot;, &quot; &quot;);</span><br></pre></td></tr></table></figure>
-<p><code>[ ]+</code>表示一个或多个空格，<code>&quot; &quot;</code>表示一个空格。这句话的意思就是把多个空格替换为一个空格。<br>原文:<a target="_blank" rel="noopener" href="https://blog.csdn.net/kaukiyou/article/details/46829375">https://blog.csdn.net/kaukiyou/article/details/46829375</a></p>
-<h1 id="在线正则图形化工具"><a href="#在线正则图形化工具" class="headerlink" title="在线正则图形化工具"></a>在线正则图形化工具</h1><p><a target="_blank" rel="noopener" href="https://regexper.com/">https://regexper.com/</a>这个在线工具支持javascirpt类型的正则表达式。<code>(?:(?:^\s*$(?:\n|\r\n))|(?:(?:\n|\r\n)^\s*$))</code>的图形如下:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/regex/Examples/BlankLine/picture.png"><br><a target="_blank" rel="noopener" href="https://www.debuggex.com/">https://www.debuggex.com/</a>,这个在线工具支持javascript,python,pcre这三种方式，同时还支持在线匹配测试,<code>(?:(?:^\s*$(?:\n|\r\n))|(?:(?:\n|\r\n)^\s*$))</code>的图形如下:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/regex/Examples/BlankLine/picture1.png"><br><a target="_blank" rel="noopener" href="https://jex.im/regulex/">https://jex.im/regulex/</a>这个在线工具和第一个差不多，也可以绘图。<code>(?:(?:^\s*$(?:\n|\r\n))|(?:(?:\n|\r\n)^\s*$))</code>的图形如下:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/regex/Examples/BlankLine/picture2.png"></p>
+          <h2 id="首先介绍怎么把资源文件打包到可执行jar包中"><a href="#首先介绍怎么把资源文件打包到可执行jar包中" class="headerlink" title="首先介绍怎么把资源文件打包到可执行jar包中"></a>首先介绍怎么把资源文件打包到可执行jar包中</h2><p>打开eclipse，在你Java项目下建立一个资源文件夹res，然后在里面放入要打包到可执行jar包中的文件(我这里是JSTest.html)，如下图所示：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Java%20IO%E6%B5%81/java%E8%AF%BB%E5%8F%96jar%E5%8C%85%E5%86%85%E7%9A%84%E6%96%87%E4%BB%B6/new_res_folder.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Java%20IO%E6%B5%81/java%E8%AF%BB%E5%8F%96jar%E5%8C%85%E5%86%85%E7%9A%84%E6%96%87%E4%BB%B6/project_view.png"><br>这样等我们打包成可执行jar包时，JSTest.html被放到jar包里面的根目录下：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Java%20IO%E6%B5%81/java%E8%AF%BB%E5%8F%96jar%E5%8C%85%E5%86%85%E7%9A%84%E6%96%87%E4%BB%B6/afterpackingfilepath.png"></p>
+<h2 id="读取jar包中的文件"><a href="#读取jar包中的文件" class="headerlink" title="读取jar包中的文件"></a>读取jar包中的文件</h2><p>那么我们怎么在JSTest类中读取jar包中的这个JSTest.html文件呢，使用下面的代码即可获取包内文件的InputStream实例。后面就跟读取普通文件一样了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">InputStream inputStream = JSTest.class.getResourceAsStream(&quot;/JSTest.html&quot;);</span><br></pre></td></tr></table></figure>
+<p>完整代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> js.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JSTest</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> JSTest.class.getResourceAsStream(<span class="string">&quot;/JSTest.html&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">BufferedReader</span> <span class="variable">reader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(</span><br><span class="line">                    <span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(inputStream, <span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">            <span class="type">StringBuilder</span> <span class="variable">builder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">            <span class="type">char</span>[] charArray = <span class="keyword">new</span> <span class="title class_">char</span>[<span class="number">200</span>];</span><br><span class="line">            <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> ((number = reader.read(charArray)) != -<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                builder.append(charArray,<span class="number">0</span>,number);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(builder.toString());</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>JSTest.html文件内容：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后我们打包成可执行jar包，运行该可执行jar包即可读取它自己包内的<code>JSTest.html</code>文件：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Java%20IO%E6%B5%81/java%E8%AF%BB%E5%8F%96jar%E5%8C%85%E5%86%85%E7%9A%84%E6%96%87%E4%BB%B6/runjar_show.png"><br>可以看到，已经成功把JSTest.html中的内容输出到控制台了。</p>
+<h2 id="读取jar包中资源文件子目录中的文件"><a href="#读取jar包中资源文件子目录中的文件" class="headerlink" title="读取jar包中资源文件子目录中的文件"></a>读取jar包中资源文件子目录中的文件</h2><p>如下图所示，如果想读取资源目录res下的子目录son中的文件inside.txt。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Java%20IO%E6%B5%81/java%E8%AF%BB%E5%8F%96jar%E5%8C%85%E5%86%85%E7%9A%84%E6%96%87%E4%BB%B6/fileInSonFolder.png"><br>只需要把上面的代码改成即可：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> JSTest.class.getResourceAsStream(<span class="string">&quot;/son/inside.txt&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>其他的代码不用改动。打包成可执行jar包红，inside.txt在jar包中的位置：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Java%20IO%E6%B5%81/java%E8%AF%BB%E5%8F%96jar%E5%8C%85%E5%86%85%E7%9A%84%E6%96%87%E4%BB%B6/fileInJarSonFolder.png"><br>运行可执行jar包：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/Java%20IO%E6%B5%81/java%E8%AF%BB%E5%8F%96jar%E5%8C%85%E5%86%85%E7%9A%84%E6%96%87%E4%BB%B6/runjar_show_sonFolder.png"><br>同样运行成功。</p>
 
       
     </div>
@@ -493,7 +354,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/12fb64fe/">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/59f64c86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -511,7 +372,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/12fb64fe/" class="post-title-link" itemprop="url">String类中的正则表达式</a>
+          <a href="/blog/59f64c86/" class="post-title-link" itemprop="url">正则应用 删除文章中空行</a>
         </h2>
 
         <div class="post-meta-container">
@@ -522,14 +383,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-08-06 23:46:40" itemprop="dateCreated datePublished" datetime="2018-08-06T23:46:40+08:00">2018-08-06</time>
+      <time title="创建时间：2018-10-26 11:45:12" itemprop="dateCreated datePublished" datetime="2018-10-26T11:45:12+08:00">2018-10-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -537,15 +398,15 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/Java-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">Java 正则表达式</span></a>
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%AE%9E%E4%BE%8B/" itemprop="url" rel="index"><span itemprop="name">实例</span></a>
         </span>
     </span>
 
@@ -558,8 +419,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/blog/12fb64fe/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/12fb64fe/" data-xid="/blog/12fb64fe/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/59f64c86/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/59f64c86/" data-xid="/blog/59f64c86/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -570,7 +431,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.3k</span>
+      <span>604</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -588,24 +449,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="本文内容已丢失"><a href="#本文内容已丢失" class="headerlink" title="本文内容已丢失"></a>本文内容已丢失</h1><p>所以平常使用的时候为了不分割到空字符串，还是设置<code>limit=0</code>比较好，可以就是直接调用<code>String.split(regex)</code>就行了。</p>
-<h2 id="replaceFirst-方法"><a href="#replaceFirst-方法" class="headerlink" title="replaceFirst()方法"></a>replaceFirst()方法</h2><blockquote>
-<p>String replaceFirst(String regex, String replacement)<br>&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;使用给定的 replacement 替换此字符串匹配给定的正则表达式的第一个子字符串。 调用此方法的 str.replaceFirst(regex, repl) 形式与以下表达式产生的结果完全相同：<br>&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;<code>Pattern.compile(regex).matcher(str).replaceFirst(repl)</code></p>
-</blockquote>
-<p>源码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">replaceFirst</span><span class="params">(String regex, String replacement)</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> Pattern.compile(regex).matcher(<span class="built_in">this</span>).replaceFirst(replacement);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个方法简直人如其名，我不知道该怎么详细些了。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String text=<span class="string">&quot;aaa:hahaha...&quot;</span>;</span><br><span class="line">System.out.println(text.replaceFirst(<span class="string">&quot;aaa&quot;</span>, <span class="string">&quot;I am groot&quot;</span>));</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I am groot:hahaha...</span><br></pre></td></tr></table></figure>
-<h2 id="replaceAll-方法"><a href="#replaceAll-方法" class="headerlink" title="replaceAll()方法"></a>replaceAll()方法</h2><blockquote>
-<p><code>public String replaceAll(String regex,String replacement)</code><br>使用给定的 <code>replacement</code> 替换此字符串所有匹配给定的正则表达式的子字符串。<br>调用此方法的 <code>str.replaceAll(regex, repl)</code> 形式与以下表达式产生的结果完全相同： &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;<code>Pattern.compile(regex).matcher(str).replaceAll(repl)</code></p>
-</blockquote>
-<p>源码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">replaceAll</span><span class="params">(String regex, String replacement)</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> Pattern.compile(regex).matcher(<span class="built_in">this</span>).replaceAll(replacement);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String text=<span class="string">&quot;A:你好\nGtoot:_\nA:额，听不懂\nGroot:_\nA:。。。&quot;</span>;</span><br><span class="line">text=text.replaceAll(<span class="string">&quot;A&quot;</span>, <span class="string">&quot;Tony Stark&quot;</span>);</span><br><span class="line">System.out.println(text.replaceAll(<span class="string">&quot;_&quot;</span>, <span class="string">&quot;I am groot&quot;</span>));</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Tony Stark:你好</span><br><span class="line">Gtoot:I am groot</span><br><span class="line">Tony Stark:额，听不懂</span><br><span class="line">Groot:I am groot</span><br><span class="line">Tony Stark:。。。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          <h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>删除下面多余的空行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">定义和用法</span><br><span class="line"></span><br><span class="line">&lt;kbd&gt; 标签定义键盘文本。</span><br><span class="line"></span><br><span class="line">说到技术概念上的特殊样式时，就要提到 &lt;kbd&gt; 标签。正如你已经猜到的，它用来表示文本是从键盘上键入的。</span><br><span class="line"></span><br><span class="line">浏览器通常用等宽字体来显示该标签中包含的文本。</span><br><span class="line"></span><br><span class="line">&lt;kbd&gt; 标签经常用在于计算机相关的文档和手册中。例如：</span><br><span class="line"></span><br><span class="line">键入 &lt;kbd&gt;quit&lt;/kbd&gt; 来退出程序，或者键入 &lt;kbd&gt;menu&lt;/kbd&gt; 来返回主菜单。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>在notepad++使用按下<kbd>Ctrl+H<kbd>打开替换，勾选上正则表达式功能，然后使用上面的正则表达式进行替换：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%AE%9E%E4%BE%8B/%E6%AD%A3%E5%88%99%E5%BA%94%E7%94%A8%20%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0%E7%A9%BA%E8%A1%8C/notepadplusplus_settings.png"><br>替换结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">定义和用法</span><br><span class="line">&lt;kbd&gt; 标签定义键盘文本。</span><br><span class="line">说到技术概念上的特殊样式时，就要提到 &lt;kbd&gt; 标签。正如你已经猜到的，它用来表示文本是从键盘上键入的。</span><br><span class="line">浏览器通常用等宽字体来显示该标签中包含的文本。</span><br><span class="line">&lt;kbd&gt; 标签经常用在于计算机相关的文档和手册中。例如：</span><br><span class="line">键入 &lt;kbd&gt;quit&lt;/kbd&gt; 来退出程序，或者键入 &lt;kbd&gt;menu&lt;/kbd&gt; 来返回主菜单。</span><br></pre></td></tr></table></figure>
+<p>在Java中使用,添加反斜杠注释即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string.replaceAll(<span class="string">&quot;(?m)^\\s*$(\\n|\\r\\n)&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -632,7 +481,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/aa025735/">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/6507a83c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -650,7 +499,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/aa025735/" class="post-title-link" itemprop="url">Java正则表达式 实例</a>
+          <a href="/blog/6507a83c/" class="post-title-link" itemprop="url">markdown文档中使用键盘键</a>
         </h2>
 
         <div class="post-meta-container">
@@ -661,7 +510,266 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-08-06 18:24:40" itemprop="dateCreated datePublished" datetime="2018-08-06T18:24:40+08:00">2018-08-06</time>
+      <time title="创建时间：2018-10-26 11:23:58" itemprop="dateCreated datePublished" datetime="2018-10-26T11:23:58+08:00">2018-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/Markdown/%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">语法</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/Markdown/%E8%AF%AD%E6%B3%95/%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8HTML/" itemprop="url" rel="index"><span itemprop="name">直接使用HTML</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/6507a83c/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/6507a83c/" data-xid="/blog/6507a83c/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>386</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="键盘键"><a href="#键盘键" class="headerlink" title="键盘键"></a>键盘键</h1><p>markdown中可以插入html标签来实现更加丰富的显示效果。例如<code>&lt;kbd&gt;</code>标签来插入键盘按键：<kbd>Ctrl</kbd>+<kbd>H</kbd></p>
+<blockquote>
+<p><strong>定义和用法</strong><br><code>&lt;kbd&gt;</code>标签定义键盘文本。<br>说到技术概念上的特殊样式时，就要提到 <code>&lt;kbd&gt;</code>标签。<br>正如你已经猜到的，它用来表示文本是从键盘上键入的。<br>浏览器通常用等宽字体来显示该标签中包含的文本。<code>&lt;kbd&gt;</code>标签经常用在于计算机相关的文档和手册中。例如：<br>键入<code>&lt;kbd&gt;quit&lt;/kbd&gt;</code>来退出程序，或者键入<code>&lt;kbd&gt;menu&lt;/kbd&gt;</code>来返回主菜单。</p>
+</blockquote>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">kbd</span>&gt;</span></span>Ctrl<span class="language-xml"><span class="tag">&lt;/<span class="name">kbd</span>&gt;</span></span>+<span class="language-xml"><span class="tag">&lt;<span class="name">kbd</span>&gt;</span></span>H<span class="language-xml"><span class="tag">&lt;/<span class="name">kbd</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>显示效果：<br><kbd>Ctrl</kbd>+<kbd>H</kbd><br>参考：<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/tags/tag_kbd.asp">http://www.w3school.com.cn/tags/tag_kbd.asp</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/93d942f1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/93d942f1/" class="post-title-link" itemprop="url">正则应用：匹配Windows路径</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-10-23 16:02:37" itemprop="dateCreated datePublished" datetime="2018-10-23T16:02:37+08:00">2018-10-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 16:20:34" itemprop="dateModified" datetime="2022-04-04T16:20:34+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%AE%9E%E4%BE%8B/" itemprop="url" rel="index"><span itemprop="name">实例</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/93d942f1/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/93d942f1/" data-xid="/blog/93d942f1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>835</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>下面的文本中有好多路径如:<code>D:\dev\workspace\HexoTools</code>，我想用markdown<code>代码段标记</code>出来。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">### 文件位置</span><br><span class="line">- java工程位置：D:\dev\workspace\HexoTools</span><br><span class="line">- java源码位置：D:\dev\workspace\HexoTools\src\front\matter\tools\HexoFrontMatter.java</span><br><span class="line">- jar包文件位置：D:\dev\java\my\runable\HexoTools\FrontMatter\HexoFrontMatter.jar</span><br><span class="line">- bat文件位置：D:\dev\java\my\runable\HexoTools\FrontMatter\HexoFrontMatter.bat</span><br><span class="line">- 快捷方式位置：D:\快捷方式\HexoFrontMatter.lnk</span><br></pre></td></tr></table></figure>
+
+<p>也就是替换为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">### 文件位置</span><br><span class="line">- java工程位置：`D:\dev\workspace\HexoTools`</span><br><span class="line">- java源码位置：`D:\dev\workspace\HexoTools\src\front\matter\tools\HexoFrontMatter.java`</span><br><span class="line">- jar包文件位置：`D:\dev\java\my\runable\HexoTools\FrontMatter\HexoFrontMatter.jar`</span><br><span class="line">- bat文件位置：`D:\dev\java\my\runable\HexoTools\FrontMatter\HexoFrontMatter.bat`</span><br><span class="line">- 快捷方式位置：`D:\快捷方式\HexoFrontMatter.lnk`</span><br></pre></td></tr></table></figure>
+
+<h1 id="应用正则"><a href="#应用正则" class="headerlink" title="应用正则"></a>应用正则</h1><p>这里使用的编辑器是：editplus，打开这篇文章，按下ctrl+h,打开查找替换，使用下面的正则表达式<br>查找正则:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(\w:(?:\\.+)+)</span><br></pre></td></tr></table></figure>
+<p>替换正则：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`$1`</span><br></pre></td></tr></table></figure>
+<p>这个匹配的不是很正确，使用的时候我还不敢点全部替换，我对正则表达式的掌握还不够,还得继续去学。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d819de9c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/d819de9c/" class="post-title-link" itemprop="url">java中BufferedImage类的用法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-10-22 08:37:16" itemprop="dateCreated datePublished" datetime="2018-10-22T08:37:16+08:00">2018-10-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -680,11 +788,11 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java 基础</span></a>
+          <a href="/blog/categories/Java/java-GUI/" itemprop="url" rel="index"><span itemprop="name">java GUI</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-%E5%9F%BA%E7%A1%80/Java-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">Java 正则表达式</span></a>
+          <a href="/blog/categories/Java/java-GUI/java-%E5%9B%BE%E7%89%87%E6%93%8D%E4%BD%9C/" itemprop="url" rel="index"><span itemprop="name">java 图片操作</span></a>
         </span>
     </span>
 
@@ -697,8 +805,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/blog/aa025735/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/aa025735/" data-xid="/blog/aa025735/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/d819de9c/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/d819de9c/" data-xid="/blog/d819de9c/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -709,14 +817,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.5k</span>
+      <span>378</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -727,29 +835,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="文件内容丢失"><a href="#文件内容丢失" class="headerlink" title="文件内容丢失"></a>文件内容丢失</h1><p>来解释一下这个<code>(.)\\1+</code>正则表达还是的意思，</p>
-<ul>
-<li><code>(.)</code>:捕获一个任意字符</li>
-<li><code>\1</code>反向引用,表示前面捕获的字符</li>
-<li><code>+</code>表示前面的字符出现1此或多次<br>这句话的意思就是,匹配两个或者两个以上的重复的字符</li>
-</ul>
-<p>然后<code>$1</code>表示第一个捕获组中的内容，也就是捕获到的这个字符。<br>所以<code>temp.replaceAll(&quot;(.)\\1+&quot;, &quot;$1&quot;);</code>这句话的意思就是，把temp字符串中两个或者两个以上的重复字符替换成该字符本身，换句话说就是删除所有重复到的字符。</p>
-<h1 id="对IP地址进行排序"><a href="#对IP地址进行排序" class="headerlink" title="对IP地址进行排序"></a>对IP地址进行排序</h1><p>原文：<a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_36713319/article/details/53463120">https://blog.csdn.net/sinat_36713319&#x2F;article&#x2F;details&#x2F;53463120</a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">sortIPAddress</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">temp</span> <span class="operator">=</span> <span class="string">&quot;192.168.1.200 10.10.10.10 10.10.10.11 11.10.10.10 3.3.50.3 127.0.0.1&quot;</span>;</span><br><span class="line">    <span class="comment">// 对所有的数字全部都在前面补上两个0</span></span><br><span class="line">    temp = temp.replaceAll(<span class="string">&quot;(\\d+)&quot;</span>, <span class="string">&quot;00$1&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;ip地址:--&gt;&quot;</span>+temp);</span><br><span class="line">    <span class="comment">// 因为ip地址占3位(\d&#123;3&#125;)捕获后三位,</span></span><br><span class="line">    <span class="comment">// 把多余的0删除掉</span></span><br><span class="line">    temp = temp.replaceAll(<span class="string">&quot;0+(\\d&#123;3&#125;)&quot;</span>, <span class="string">&quot;$1&quot;</span>);<span class="comment">// 将ip地址补成同样位数</span></span><br><span class="line">    System.out.println(<span class="string">&quot;ip地址:--&gt;&quot;</span>+temp);</span><br><span class="line">    <span class="comment">// 用空格割</span></span><br><span class="line">    String[] str = temp.split(<span class="string">&quot; +&quot;</span>);</span><br><span class="line">    <span class="comment">// 排序从大到小排序</span></span><br><span class="line">    Arrays.sort(str);</span><br><span class="line">    System.out.println(<span class="string">&quot;从小到大排序:&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (String string : str)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(string);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">&quot;去掉加上的辅助0&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (String ips : str)</span><br><span class="line">        <span class="comment">//删除多余的0</span></span><br><span class="line">        System.out.println(ips.replaceAll(<span class="string">&quot;0+(\\d+)&quot;</span>, <span class="string">&quot;$1&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ip地址:--&gt;00192.00168.001.00200 0010.0010.0010.0010 0010.0010.0010.0011 0011.0010.0010.0010 003.003.0050.003 00127.000.000.001</span><br><span class="line">ip地址:--&gt;192.168.001.200 010.010.010.010 010.010.010.011 011.010.010.010 003.003.050.003 127.000.000.001</span><br><span class="line">从小到大排序:</span><br><span class="line">003.003.050.003</span><br><span class="line">010.010.010.010</span><br><span class="line">010.010.010.011</span><br><span class="line">011.010.010.010</span><br><span class="line">127.000.000.001</span><br><span class="line">192.168.001.200</span><br><span class="line">去掉加上的辅助0</span><br><span class="line">3.3.50.3</span><br><span class="line">10.10.10.10</span><br><span class="line">10.10.10.11</span><br><span class="line">11.10.10.10</span><br><span class="line">127.0.0.1</span><br><span class="line">192.168.1.20</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<ul>
-<li>首先来看<code>temp.replaceAll(&quot;(\\d+)&quot;, &quot;00$1&quot;);</code>这句，<code>(\\d+)</code>将捕获到<code>ip</code>地址中除了点号之外的所有数字串，因为ip地址每一位可以是1位数，2位数，3位数，这里先不管使用<code>00$1</code>进行替换，这样每一位就是3位数到5位数。</li>
-<li><code>temp.replaceAll(&quot;0+(\\d&#123;3&#125;)&quot;, &quot;$1&quot;);</code>这句，首先<code>\d&#123;3&#125;</code>表示正好匹配<code>3</code>位数，<code>0+</code>一个或者多个<code>0</code>，<code>0+(\\d&#123;3&#125;)</code>这个表达式的意思就是，匹配多个0开头，然后后面正好有<code>3</code>位数，把这<code>3</code>位数捕获出来，<code>temp.replaceAll(&quot;0+(\\d&#123;3&#125;)&quot;, &quot;$1&quot;);</code>这句话的意思就是捕获最后的3位数，然后用这<code>3</code>位数，<code>替换掉原来的3到5位的数</code></li>
-<li>经过上面两步之后，所有的<code>ip</code>地址都会变成<code>3</code>位数表示的，不足的前面会补<code>0</code>，这样转换的好处就是可以方便的使用<code>Array.sort()</code>方法对这些字符串进行排序。</li>
-<li>注意排序后的字符，都是我们<code>高位补0</code>后的<code>ip</code>地址这与平时的<code>ip</code>地址表示方式不同所以，要把高位的0去掉。</li>
-<li><code>ips.replaceAll(&quot;0+(\\d+)&quot;, &quot;$1&quot;)</code>这句话实现去掉高位的<code>0</code>,高位的0不会被捕获到，高位的<code>0</code>不包含在捕获组<code>$1</code>,这样在进行替换的时候就等于删除了高位的<code>0</code></li>
-</ul>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>**使用替换进行删除或添加元素，就是<code>拿出来又放回去</code>**，如果少放了就相当于删除一部分了，如果多方了就是新增了一部分。</p>
-<ul>
-<li>替换删除，<code>以少换多</code>：我们匹配较多的字符，然后只捕获其中较少的一部分，再用捕获到的少量字符替换匹配的较多的字符，这样就等同于删除掉那些没有捕获的部分。这就好比从果篮里拿出几个水果，例如拿出苹果和香蕉，然后我再把苹果放回去，香蕉丢掉。这样果篮里的香蕉就没有了，相当于被删除掉了。</li>
-<li>替换添加，<code>以多换少</code>：我么匹配较少的字符,并且捕获这些字符，然后捕获到的字符加上一些新的字符替换回去。这样等效于添加了字符。例如我现在只拿出雪梨，然后我变出一个芒果，然后雪梨和芒果一起放回果篮里，这样果篮里就多出了一个芒果，而雪梨还是原来的雪梨。</li>
-</ul>
+          <p>首先必须明确的是：<strong>要想操作一张图片，首先必须将其从磁盘加载到内存中，然后才能对图片做进一步的处理</strong>。<br><strong>继承关系</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object</span><br><span class="line">    |----&gt; java.awt.Image</span><br><span class="line">        |----&gt; java.awt.image.BufferedImage</span><br></pre></td></tr></table></figure>
+
+<p>BufferedImage是Image的一个子类，Image和BufferedImage的主要作用就是将一副图片加载到内存中。BufferedImage生成的图片在内存里有一个图像缓冲区，利用这个缓冲区我们可以很方便的操作这个图片，通常用来做图片修改操作如大小变换、图片变灰、设置图片透明或不透明等。Java将一副图片加载到内存中的方法是：<br>1</p>
+<p>BufferedImage bufferedImage &#x3D; ImageIO.read(new FileInputStream(filePath));  </p>
 
       
     </div>
@@ -776,7 +866,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/6aff1849/">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/3cc3e684/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -794,7 +884,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/6aff1849/" class="post-title-link" itemprop="url">cmd 创建文件的几个常见命令</a>
+          <a href="/blog/3cc3e684/" class="post-title-link" itemprop="url">移除win10多余的微软拼音输入法</a>
         </h2>
 
         <div class="post-meta-container">
@@ -805,14 +895,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-08-03 14:03:56" itemprop="dateCreated datePublished" datetime="2018-08-03T14:03:56+08:00">2018-08-03</time>
+      <time title="创建时间：2018-10-21 22:23:49" itemprop="dateCreated datePublished" datetime="2018-10-21T22:23:49+08:00">2018-10-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 16:32:44" itemprop="dateModified" datetime="2022-04-04T16:32:44+08:00">2022-04-04</time>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -824,15 +914,11 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/" itemprop="url" rel="index"><span itemprop="name">CMD</span></a>
+          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/%E6%89%B9%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">批处理</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/%E6%89%B9%E5%A4%84%E7%90%86/%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">操作文件或目录的命令</span></a>
+          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/Win10%E8%AE%BE%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">Win10设置</span></a>
         </span>
     </span>
 
@@ -845,8 +931,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/blog/6aff1849/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/6aff1849/" data-xid="/blog/6aff1849/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/3cc3e684/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/3cc3e684/" data-xid="/blog/3cc3e684/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -857,7 +943,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>683</span>
+      <span>272</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -875,13 +961,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="一、建立空文件的几种方法"><a href="#一、建立空文件的几种方法" class="headerlink" title="一、建立空文件的几种方法"></a>一、建立空文件的几种方法</h1><h2 id="使用cd命令"><a href="#使用cd命令" class="headerlink" title="使用cd命令"></a>使用cd命令</h2><p>1、<code>cd.&gt;a.txt</code><br>cd.表示改变当前目录为当前目录，即等于没改变；而且cd命令不会有输出。<br>“&gt;”表示把命令输出写入到文件。后面跟着a.txt，就表示写入到a.txt。<br>而此例中命令不会有输出，所以就创建了没有内容的空文件。<br><img data-src="https://i.imgur.com/jLjCU4z.png"><br>当然不用写地址也是可以的，也就是说<code>cd &gt;1.txt</code>也是可以的。<br><img data-src="https://i.imgur.com/s914p7I.png"></p>
-<h2 id="使用copy命令"><a href="#使用copy命令" class="headerlink" title="使用copy命令"></a>使用copy命令</h2><p>2、<code>copy nul a.txt</code><br><strong>nul表示空设备</strong>，从概念上讲，它不可见，存在于每个目录中，可以把它看成一个特殊的“文件”，它没有内容；<strong>一般可把输出写入到nul，来达到屏蔽输出的目的</strong>，如pause&gt;nul，此命令执行效果是暂停，并且不会显示“请按任意键继续…”。<br>此例子表示将空设备复制到a.txt，同样创建了没有内容的空文件。<br><img data-src="https://i.imgur.com/IMKmwSW.png"></p>
-<h2 id="使用type命令"><a href="#使用type命令" class="headerlink" title="使用type命令"></a>使用type命令</h2><p>3、<code>type nul&gt;a.txt</code><br>此例子表示显示空设备的内容，并写入到a.txt。空目录没有内容，所以也就是创建了一个空文件。<br><img data-src="https://i.imgur.com/gvC4DMB.png"></p>
-<h2 id="使用echo命令"><a href="#使用echo命令" class="headerlink" title="使用echo命令"></a>使用echo命令</h2><p>4、<code>echo a 2&gt;a.txt</code><br><strong>“<code>2</code>”表示错误输出的句柄</strong>，此例中没有错误输出，所以创建了没有内容的空文件。<br>其实**<code>&gt;</code>默认都是重定向了<code>句柄1</code>，即标准输出句柄**。比如cd.&gt;a.txt，其实就是cd. 1&gt;a.txt。<br>同样，句柄3到9也可以使用在本例中，它们是未经定义的句柄，也不会有输出，如<br>echo a 3&gt;a.txt。</p>
-<h2 id="使用fsutil命令"><a href="#使用fsutil命令" class="headerlink" title="使用fsutil命令"></a>使用fsutil命令</h2><p>5、<code>fsutil file createnew d:\a.txt 0</code><br>使用fsutil创建了一个空文件。</p>
-<h2 id="关键点"><a href="#关键点" class="headerlink" title="关键点"></a>关键点</h2><p><strong>只要没有输出，并重定向到文件就可以了</strong></p>
-<p><a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/277563240.html">百度知道-cmd 如何新建文件</a></p>
+          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>我不是很喜欢win10自带的微软拼音输入法，自己安装了搜狗拼音输入法，但是这样同时用两个输入法，经常需要按下shift+ctrl进行切换。我不喜欢来回切换输入法,现在来介绍移除多余的微软拼音输入法。</p>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol>
+<li>打开设置<br> <img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/others/Windows_Settings/windows_setting.png"></li>
+<li>进入时间和语言<br> <img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/others/Windows_Settings/time_language.png"></li>
+<li>选择区域和语言<br> <img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/others/Windows_Settings/region_language.png"></li>
+<li>单击<code>中文(中华人民共和国)</code>，然后选择选项<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/others/Windows_Settings/ClickChinese.png"></li>
+<li>然后再键盘中单击微软拼音，然后点击删除即可移除掉微软拼音输入法<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/others/Windows_Settings/delete_Microsoft_pinyin.png"></li>
+</ol>
+<h1 id="删除无效的情况"><a href="#删除无效的情况" class="headerlink" title="删除无效的情况"></a>删除无效的情况</h1><p>今天win10更新了,微软输入法又回来了,按上述的方法老是删不掉,每当我按下shift+ctrl后,微软输入法就跳出来了.</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>安装<code>英语(美国)</code>语言包,然后按上述步骤就可以删除了.</p>
 
       
     </div>
@@ -908,7 +997,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/aa316c45/">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/8859faa9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -926,7 +1015,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/aa316c45/" class="post-title-link" itemprop="url">java获取文件大小的方法</a>
+          <a href="/blog/8859faa9/" class="post-title-link" itemprop="url">markdown语法 待办事项</a>
         </h2>
 
         <div class="post-meta-container">
@@ -937,14 +1026,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2018-07-30 20:05:28" itemprop="dateCreated datePublished" datetime="2018-07-30T20:05:28+08:00">2018-07-30</time>
+      <time title="创建时间：2018-10-21 10:01:08" itemprop="dateCreated datePublished" datetime="2018-10-21T10:01:08+08:00">2018-10-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -952,15 +1041,15 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-IO%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">Java IO流</span></a>
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-IO%E6%B5%81/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/Markdown/%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">语法</span></a>
         </span>
     </span>
 
@@ -973,8 +1062,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/blog/aa316c45/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/aa316c45/" data-xid="/blog/aa316c45/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/8859faa9/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/8859faa9/" data-xid="/blog/8859faa9/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -985,14 +1074,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>5.1k</span>
+      <span>272</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -1003,49 +1092,412 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>本文转自：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/hellowhy/p/7238570.html">https://www.cnblogs.com/hellowhy/p/7238570.html</a></p>
-<h1 id="java获取文件大小的方法"><a href="#java获取文件大小的方法" class="headerlink" title="java获取文件大小的方法"></a>java获取文件大小的方法</h1><p><strong>目前Java获取文件大小的方法有两种：</strong></p>
+          <h1 id="Markdown待办事项语法"><a href="#Markdown待办事项语法" class="headerlink" title="Markdown待办事项语法"></a>Markdown待办事项语法</h1><p>不是所有的markdown都支持待办事项的，语法：<strong>横框+ 空格+方括号（方括号中必须有空格或者x） + 空格+ 文本</strong>。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- [x] test</span><br><span class="line">- [ ] test2</span><br><span class="line">- [ ] test4</span><br></pre></td></tr></table></figure>
+<p>已经完成的事项，在中括号中写入英文<code>x</code>,未完成的事项在中括号中的写入空格,显示效果：</p>
 <ul>
-<li><p>1、通过file的length()方法获取；</p>
-</li>
-<li><p>2、通过流式方法获取；</p>
-</li>
+<li><input checked="" disabled="" type="checkbox"> 已经完成的事项</li>
+<li><input disabled="" type="checkbox"> 未完成的事项</li>
 </ul>
-<p>通过流式方法又有两种，分别是旧的<code>java.io.*</code>中<code>FileInputStream</code>的<code>available()</code>方法和新的<code>java.nio.*</code>中的<code>FileChannel</code></p>
-<p>下面依次介绍这几种方法：</p>
-<p>首先选择一个文件并查看这个文件在windows中显示的大小，为了测试准确性，我这里选取了一个大文件（超过2GB）</p>
-<p>查看这个文件在windows中显示的大小：<br>![图片描述][img_2018&#x2F;07&#x2F;30_19:46:37]</p>
-<p>可以看出这个文件的实际大小是<code>2588266496Byte</code>(<code>2527604KB</code>)，下面通过代码来获取文件大小，并进行比较：</p>
-<h2 id="一、通过File类的length-方法获取文件的大小"><a href="#一、通过File类的length-方法获取文件的大小" class="headerlink" title="一、通过File类的length()方法获取文件的大小"></a>一、通过File类的length()方法获取文件的大小</h2><p>1、创建一个文件：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">File bigFile=<span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;F:\\软件\\安装包_office2016\\Office2016.iso&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="MarkdownPad2-中支持待办事项"><a href="#MarkdownPad2-中支持待办事项" class="headerlink" title="MarkdownPad2 中支持待办事项"></a>MarkdownPad2 中支持待办事项</h1><p>点击左下角的<code>M图标</code>切换CSS模式，选择<code>GitHub Flavored Markdown (Offline)</code>。这样导出的html就支持待办事项了。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/markdown/undo/markdownPad2_css_settings.png"><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/markdown/undo/markdownPad2_Undo_settings.png"><br>再按下<code>ctrl+shift+1</code>导出为html，就可查看效果了：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/markdown/undo/markdownPad2_Undo_show.png"></p>
 
-<p>2、获取文件大小：File.length()方法可以获取文件的大小(占用的字节数)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 获取文件长度</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> file</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">getFileSize1</span><span class="params">(File file)</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (file.exists() &amp;&amp; file.isFile()) </span><br><span class="line">    &#123;</span><br><span class="line">      </span><br><span class="line">        System.out.println(<span class="string">&quot;文件&quot;</span>+file.getName()+<span class="string">&quot;的大小是：&quot;</span>+file.length()\<span class="number">1024</span>+<span class="string">&quot;KB&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>3.运行结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">文件Office2016.iso的大小是：2588266496(Byte)=2527604(KB)</span><br></pre></td></tr></table></figure>
+      
+    </div>
 
-<p><strong>可见，使用length方法获取的文件大小与windows中显示的大小一致！</strong></p>
-<h2 id="二、通过file-io-中的流式方法获取"><a href="#二、通过file-io-中的流式方法获取" class="headerlink" title="二、通过file.io.*中的流式方法获取"></a>二、通过file.io.*中的流式方法获取</h2><p><strong>使用FileInputStream.available方法获取：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 根据java.io.*的流获取文件大小</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> file</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">getFileSize2</span><span class="params">(File file)</span>&#123;</span><br><span class="line">    <span class="type">FileInputStream</span> <span class="variable">fis</span>  <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(file.exists() &amp;&amp; file.isFile())&#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> file.getName();</span><br><span class="line">            fis = <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(file);</span><br><span class="line">            System.out.println(<span class="string">&quot;文件&quot;</span>+fileName+<span class="string">&quot;的大小是：&quot;</span>+fis.available()+<span class="string">&quot;(Byte)=&quot;</span>+fis.available()/<span class="number">1024</span>+<span class="string">&quot;(KB)&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="literal">null</span>!=fis)&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                fis.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+    
+    
 
-<p>3、查看结果：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">文件Office2016.iso的大小是：<span class="number">2147483647</span>(Byte)=<span class="number">2097151</span>(KB)</span><br></pre></td></tr></table></figure>
-<p>通过这种方法获取的文件大小是2147483647(Byte)，很明显，这是int类型所能表示的最大值<code>(2^31-1)=2147483647</code>，究其原因是因<strong>为文件的大小超过了int所能表示的最大值！！！</strong></p>
-<p>而上面file.length()方法计算没有问题是因为，<strong>file.length()方法返回的是long,而available()方法返回的类型是int类型。</strong></p>
-<h2 id="三、通过file-nio-中的FileChannel工具来获取文件大小："><a href="#三、通过file-nio-中的FileChannel工具来获取文件大小：" class="headerlink" title="三、通过file.nio.*中的FileChannel工具来获取文件大小："></a>三、通过file.nio.*中的FileChannel工具来获取文件大小：</h2><p><strong>使用FileChannel获取文件大小：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 根据java.nio.*的流获取文件大小</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> file</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">getFileSize3</span><span class="params">(File file)</span>&#123;</span><br><span class="line">      <span class="type">FileChannel</span> <span class="variable">fc</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">          <span class="keyword">if</span>(file.exists() &amp;&amp; file.isFile())&#123;</span><br><span class="line">              <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> file.getName();</span><br><span class="line">              <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(file);</span><br><span class="line">              fc = fis.getChannel();</span><br><span class="line">              System.out.println(<span class="string">&quot;文件&quot;</span>+fileName+<span class="string">&quot;的大小是：&quot;</span>+fc.size()+<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">          e.printStackTrace();</span><br><span class="line">      &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">          <span class="keyword">if</span>(<span class="literal">null</span>!=fc)&#123;</span><br><span class="line">              <span class="keyword">try</span> &#123;</span><br><span class="line">                  fc.close();</span><br><span class="line">              &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                  e.printStackTrace();</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>该方法运行结果。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">文件Office2016.iso的大小是：<span class="number">2588266496</span>(Byte)=2527604KB</span><br></pre></td></tr></table></figure>
-<p>这里的size()方法的返回值类型也是long,通过这种方法获取的文件大小和第一种一样，都能获取文件实际大小。</p>
-<h2 id="四、使用小文件测试以上三种方法："><a href="#四、使用小文件测试以上三种方法：" class="headerlink" title="四、使用小文件测试以上三种方法："></a>四、使用小文件测试以上三种方法：</h2><p>以上情况中文件大小超过了available()返回类型int的最大值，下面使用一个没有超过int最大值的文件测试，来验证通过这三种方法获取的大小是否和windows中显示的一致：</p>
-<p>1、获取文件，查看其在windows中的大小：</p>
-<p>![图片描述][img_2018&#x2F;07&#x2F;30_19:54:42]</p>
-<p>可见该文件总共有<code>1345</code>个字节。</p>
-<p>3、查看通过三种方法获取的结果：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">文件CodeFormat.jar的大小是：<span class="number">1345</span>(Byte)=<span class="number">1</span>(KB)</span><br><span class="line">文件CodeFormat.jar的大小是：<span class="number">1345</span>(Byte)=<span class="number">1</span>(KB)</span><br><span class="line">最大的<span class="type">int</span>值=<span class="number">2147483647</span></span><br><span class="line">文件CodeFormat.jar的大小是：<span class="number">1345</span>(Byte)=1KB</span><br></pre></td></tr></table></figure>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
-<h2 id="java获取文件大小总结"><a href="#java获取文件大小总结" class="headerlink" title="java获取文件大小总结"></a>java获取文件大小总结</h2><p>1、三种方法获取小文件(小于int能表示的最大范围:2147483647(Byte)&#x3D;2097151(KB))时结果一样。<br>2、获取大文件时，为避免文件长度大于方法返回值类型的最大值，<strong>尽量使用File.length()或FileChannel.size()方法获取；</strong><br>最大的long值&#x3D;9223372036854775807，9223372036854775807(Byte)转换为<code>TB</code>大小如下图，我想没有这么大的文件吧。使用long表示绝对是够了。<br>![图片描述][img_2018&#x2F;07&#x2F;30_20:01:38]</p>
-<h2 id="完整的代码"><a href="#完整的代码" class="headerlink" title="完整的代码"></a>完整的代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> lan.base;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.nio.channels.FileChannel;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GetFileLength</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">getFileSize1</span><span class="params">(File file)</span> </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (file.exists() &amp;&amp; file.isFile()) </span><br><span class="line">        &#123;</span><br><span class="line">          </span><br><span class="line">            System.out.println(<span class="string">&quot;文件&quot;</span>+file.getName()+<span class="string">&quot;的大小是：&quot;</span>+file.length()+<span class="string">&quot;(Byte)=&quot;</span>+file.length()/<span class="number">1024</span>+<span class="string">&quot;(KB)&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据java.io.*的流获取文件大小</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> file</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">getFileSize2</span><span class="params">(File file)</span>&#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span>  <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(file.exists() &amp;&amp; file.isFile())&#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> file.getName();</span><br><span class="line">                fis = <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(file);</span><br><span class="line">                System.out.println(<span class="string">&quot;文件&quot;</span>+fileName+<span class="string">&quot;的大小是：&quot;</span>+fis.available()+<span class="string">&quot;(Byte)=&quot;</span>+fis.available()/<span class="number">1024</span>+<span class="string">&quot;(KB)&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="literal">null</span>!=fis)&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    fis.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据java.nio.*的流获取文件大小</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> file</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">getFileSize3</span><span class="params">(File file)</span>&#123;</span><br><span class="line">        <span class="type">FileChannel</span> <span class="variable">fc</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(file.exists() &amp;&amp; file.isFile())&#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> file.getName();</span><br><span class="line">                <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(file);</span><br><span class="line">                fc = fis.getChannel();</span><br><span class="line">                System.out.println(<span class="string">&quot;文件&quot;</span>+fileName+<span class="string">&quot;的大小是：&quot;</span>+fc.size()+<span class="string">&quot;(Byte)=&quot;</span>+fc.size()/<span class="number">1024</span>+<span class="string">&quot;KB&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="literal">null</span>!=fc)&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    fc.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">    &#123;</span><br><span class="line">        File bigFile=<span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;F:\\软件\\安装包_office2016\\Office2016.iso&quot;</span>);</span><br><span class="line"><span class="comment">//        File smallFile=new File(&quot;D:\\dev\\java\\my\\tools\\CodeFormat.jar&quot;);</span></span><br><span class="line">        getFileSize1(bigFile);</span><br><span class="line">        getFileSize2(bigFile);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大的int值=&quot;</span>+Integer.MAX_VALUE);</span><br><span class="line">        getFileSize3(bigFile);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/72162c39/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/72162c39/" class="post-title-link" itemprop="url">正则实例：多行html代码合并为一行</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-10-14 22:51:59" itemprop="dateCreated datePublished" datetime="2018-10-14T22:51:59+08:00">2018-10-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%AE%9E%E4%BE%8B/" itemprop="url" rel="index"><span itemprop="name">实例</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%AE%9E%E4%BE%8B/%E5%8C%B9%E9%85%8DHTML%E6%A0%87%E7%AD%BE/" itemprop="url" rel="index"><span itemprop="name">匹配HTML标签</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/72162c39/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/72162c39/" data-xid="/blog/72162c39/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>有下面这样一段HTML代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:auto&quot;</span>&gt;</span></span><br><span class="line">    Auto<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:crosshair&quot;</span>&gt;</span></span><br><span class="line">    Crosshair<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:default&quot;</span>&gt;</span></span><br><span class="line">    Default<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:pointer&quot;</span>&gt;</span></span><br><span class="line">    Pointer<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:move&quot;</span>&gt;</span></span><br><span class="line">    Move<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:e-resize&quot;</span>&gt;</span></span><br><span class="line">    e-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:ne-resize&quot;</span>&gt;</span></span><br><span class="line">    ne-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:nw-resize&quot;</span>&gt;</span></span><br><span class="line">    nw-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:n-resize&quot;</span>&gt;</span></span><br><span class="line">    n-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:se-resize&quot;</span>&gt;</span></span><br><span class="line">    se-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:sw-resize&quot;</span>&gt;</span></span><br><span class="line">    sw-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:s-resize&quot;</span>&gt;</span></span><br><span class="line">    s-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:w-resize&quot;</span>&gt;</span></span><br><span class="line">    w-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:text&quot;</span>&gt;</span></span><br><span class="line">    text<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:wait&quot;</span>&gt;</span></span><br><span class="line">    wait<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:help&quot;</span>&gt;</span></span><br><span class="line">    help<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>例如第一句：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:auto&quot;</span>&gt;</span></span><br><span class="line">    Auto<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>改成：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:auto&quot;</span>&gt;</span>Auto<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当然我是不可能一行行的来改的。使用正则表达式来做比较方便。匹配表达式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&lt;span.*?&gt;)\n\s+(.*&lt;/span&gt;)\n\s+</span><br></pre></td></tr></table></figure>
+<p>匹配效果(VScode中)：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%BA%94%E7%94%A8/%E5%8C%B9%E9%85%8DHTML/%E5%A4%9A%E8%A1%8Chtml%E5%90%88%E5%B9%B6%E4%B8%BA%E4%B8%80%E8%A1%8C.png"><br>html代码，会被括号捕获到，而换行符和空白符就不会被捕获，使用捕获到的html代码替换掉原来匹配的文本即可。所以替换的正则表达式为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$1$2</span><br></pre></td></tr></table></figure>
+<p><code>$1</code>表示第一个捕获组，<code>$2</code>表示第二个捕获组。捕获组不同的软件(体系)中的表示方式不同。VScode中是使用$1,$2,… 而NotePad++中使用的是<code>\1,\2,\3...</code>。<br>使用上述正则表达式是进行替换即可。替换后的结果为：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>请把鼠标移动到单词上，可以看到鼠标指针发生变化：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:auto&quot;</span>&gt;</span>Auto<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:crosshair&quot;</span>&gt;</span>Crosshair<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:default&quot;</span>&gt;</span>Default<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:pointer&quot;</span>&gt;</span>Pointer<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:move&quot;</span>&gt;</span>Move<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:e-resize&quot;</span>&gt;</span>e-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:ne-resize&quot;</span>&gt;</span>ne-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:nw-resize&quot;</span>&gt;</span>nw-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:n-resize&quot;</span>&gt;</span>n-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:se-resize&quot;</span>&gt;</span>se-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:sw-resize&quot;</span>&gt;</span>sw-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:s-resize&quot;</span>&gt;</span>s-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:w-resize&quot;</span>&gt;</span>w-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:text&quot;</span>&gt;</span>text<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:wait&quot;</span>&gt;</span>wait<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:help&quot;</span>&gt;</span></span><br><span class="line">    help<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当然最后一句，并没有能够成功匹配到。但这样的效果。还算满意,因为现在我只需要修改最后一行的效果。当然最佳的方式，应该是现在VScode中看匹配的结果。编写更好的正则表达式，尽可能匹配到所有的内容。完美的正则表达式为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&lt;span.*?&gt;)\n\s+(.*&lt;/span&gt;)(:?\n\s+)?</span><br></pre></td></tr></table></figure>
+<p>这样所有的span标签都会被匹配到。替换后的效果为：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>请把鼠标移动到单词上，可以看到鼠标指针发生变化：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:auto&quot;</span>&gt;</span>Auto<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:crosshair&quot;</span>&gt;</span>Crosshair<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:default&quot;</span>&gt;</span>Default<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:pointer&quot;</span>&gt;</span>Pointer<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:move&quot;</span>&gt;</span>Move<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:e-resize&quot;</span>&gt;</span>e-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:ne-resize&quot;</span>&gt;</span>ne-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:nw-resize&quot;</span>&gt;</span>nw-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:n-resize&quot;</span>&gt;</span>n-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:se-resize&quot;</span>&gt;</span>se-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:sw-resize&quot;</span>&gt;</span>sw-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:s-resize&quot;</span>&gt;</span>s-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:w-resize&quot;</span>&gt;</span>w-resize<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:text&quot;</span>&gt;</span>text<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:wait&quot;</span>&gt;</span>wait<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;cursor:help&quot;</span>&gt;</span>help<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/1d153e30/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/1d153e30/" class="post-title-link" itemprop="url">正则应用：把Markdown中的加粗文本改为标题文本</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-10-11 09:12:13" itemprop="dateCreated datePublished" datetime="2018-10-11T09:12:13+08:00">2018-10-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 16:20:19" itemprop="dateModified" datetime="2022-04-04T16:20:19+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%AE%9E%E4%BE%8B/" itemprop="url" rel="index"><span itemprop="name">实例</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/1d153e30/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/1d153e30/" data-xid="/blog/1d153e30/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>125</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>用notepad++打开该文章，按下ctrl+h打开替换，在查找模式选择框，选择正则表达式，然后输入查找正则表达式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[*]&#123;2&#125;(\d+.+?)[*]&#123;2&#125;</span><br></pre></td></tr></table></figure>
+<p>输入替换正则表达式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">###\1###</span><br></pre></td></tr></table></figure>
+<p>如图所示：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/java/my_regex_example/ctrl_b3ctrl_3.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/5a1e201b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/5a1e201b/" class="post-title-link" itemprop="url">使用java上传图片到腾讯云对象存储并返回链接</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-10-10 22:03:14" itemprop="dateCreated datePublished" datetime="2018-10-10T22:03:14+08:00">2018-10-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 15:13:22" itemprop="dateModified" datetime="2022-04-04T15:13:22+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">我的软件</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8COS/" itemprop="url" rel="index"><span itemprop="name">腾讯云对象存储COS</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/5a1e201b/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/5a1e201b/" data-xid="/blog/5a1e201b/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>690</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="使用java上传图片到腾讯云对象存储并返回链接"><a href="#使用java上传图片到腾讯云对象存储并返回链接" class="headerlink" title="使用java上传图片到腾讯云对象存储并返回链接"></a>使用java上传图片到腾讯云对象存储并返回链接</h1><p>不需要签名的公共链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDQikX6SPUAcqqcAxaT8ZmjPpyrUqwuKei%26q-sign-time%3D1540294349%3B1540294649%26q-key-time%3D1540294349%3B1540294649%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D1e368fb926c8858b9ed65b923a9030bb54234129)</span><br></pre></td></tr></table></figure>
+
+<p>显示效果：<br><img data-src="http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg?sign=q-sign-algorithm=sha1&q-ak=AKIDQikX6SPUAcqqcAxaT8ZmjPpyrUqwuKei&q-sign-time=1540294349;1540294649&q-key-time=1540294349;1540294649&q-header-list=host&q-url-param-list=&q-signature=1e368fb926c8858b9ed65b923a9030bb54234129"></p>
+<p>去掉签名的链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg</span><br></pre></td></tr></table></figure>
+
+<p>显示效果：<br><img data-src="http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg"></p>
+<p>https的图片链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg)</span><br></pre></td></tr></table></figure>
+
+<p>显示效果：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg"><br>使用https的其他图片<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg"></p>
+<p>最后的显示效果：<br><img data-src="http://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/blue.jpg"></p>
+<p>软件上传效果：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/%E6%B5%8B%E8%AF%95COS%E7%9A%84Java%20SDK/%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E4%B8%8A%E4%BC%A0/%E6%88%91%E5%B0%86%E4%BC%9A%E4%B8%8A%E4%BC%A0%E5%88%B0%E8%85%BE%E8%AE%AF%E4%BA%91.png"></p>
 
       
     </div>
@@ -1065,7 +1517,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/65/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/65/">65</a><span class="page-number current">66</span>
+    <a class="extend prev" rel="prev" href="/blog/page/65/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/65/">65</a><span class="page-number current">66</span><a class="page-number" href="/blog/page/67/">67</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/70/">70</a><a class="extend next" rel="next" href="/blog/page/67/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1077,7 +1529,7 @@
 
 <div class="copyright">
   &copy; 2018 – 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1096,7 +1548,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23:51</span>
+    <span title="站点阅读时长">24:53</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

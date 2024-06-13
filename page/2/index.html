@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">656</span>
+          <span class="site-state-item-count">697</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">216</span>
+        <span class="site-state-item-count">223</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -222,7 +222,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/2589d62/">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/d712b3a7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -240,7 +240,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2589d62/" class="post-title-link" itemprop="url">Java Swing 如何判断JSplitPane左侧面板是否折叠 如何判断右侧面板是否折叠</a>
+          <a href="/blog/d712b3a7/" class="post-title-link" itemprop="url">adb命令收集</a>
         </h2>
 
         <div class="post-meta-container">
@@ -251,7 +251,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-05-15 20:12:22" itemprop="dateCreated datePublished" datetime="2022-05-15T20:12:22+08:00">2022-05-15</time>
+      <time title="创建时间：2023-09-05 15:58:59" itemprop="dateCreated datePublished" datetime="2023-09-05T15:58:59+08:00">2023-09-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -263,11 +263,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Swing/" itemprop="url" rel="index"><span itemprop="name">Swing</span></a>
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/adb/" itemprop="url" rel="index"><span itemprop="name">adb</span></a>
         </span>
     </span>
 
@@ -280,8 +276,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/blog/2589d62/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/2589d62/" data-xid="/blog/2589d62/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/d712b3a7/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/d712b3a7/" data-xid="/blog/d712b3a7/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -292,14 +288,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
+      <span>4.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>4 分钟</span>
     </span>
 </div>
 
@@ -310,31 +306,57 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Java-Swing-如何判断JSplitPane左侧面板是否折叠-如何判断右侧面板是否折叠"><a href="#Java-Swing-如何判断JSplitPane左侧面板是否折叠-如何判断右侧面板是否折叠" class="headerlink" title="Java Swing 如何判断JSplitPane左侧面板是否折叠 如何判断右侧面板是否折叠"></a>Java Swing 如何判断JSplitPane左侧面板是否折叠 如何判断右侧面板是否折叠</h1><p>相同问题：</p>
-<ul>
-<li>如何判断JSplitPane顶部面板是否折叠 如何判断底部面板是否折叠</li>
-<li>如何判断JSplitPane面板1是否折叠 如何判断面板2是否折叠</li>
-</ul>
-<h2 id="监听PropertyChangeEvent"><a href="#监听PropertyChangeEvent" class="headerlink" title="监听PropertyChangeEvent"></a>监听PropertyChangeEvent</h2><p>可以通过判断分割条的位置来判断左右侧面板是否被折叠：</p>
-<ul>
-<li><strong>当分隔条的位置为0的时候，左侧面板被折叠</strong></li>
-<li>但是由于窗体可大可小，折叠右侧面板时，分隔条的位置是不固定的。<ul>
-<li>如果窗体大小时固定的话，我们可以尝试折叠右侧面板，记下此时分隔条的位置Xxx。<ul>
-<li>当下次分隔条的位置为Xxx时，就说明右侧面板被折叠。</li>
-</ul>
-</li>
-<li>不过我发现<code>jSplitPane.getMaximumDividerLocation()</code>和<code>jSplitPane.getMinimumDividerLocation()</code>相加起来的结果，就是折叠右侧面板时分隔条的坐标值。</li>
-</ul>
-</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2589d62/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h1 id="adb命令收集"><a href="#adb命令收集" class="headerlink" title="adb命令收集"></a>adb命令收集</h1><p>获取内部版本号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell getprop ro.build.display.innerver</span><br></pre></td></tr></table></figure>
+
+<p>获取按键值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell getevent</span><br></pre></td></tr></table></figure>
+
+<p>获取apk信息<br>adb shell dumpsys package 包名 -&gt;info.txt<br>获取应用包名<br>adb shell dumpsys window windows | grep mFocusedApp<br>或者<br>adb shell dumpsys window windows | findstr mFocusedApp</p>
+<h2 id="打开WiFi设置界面"><a href="#打开WiFi设置界面" class="headerlink" title="打开WiFi设置界面"></a>打开WiFi设置界面</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am start -a android.intent.action.MAIN -n com.android.settings/.wifi.WifiSettings</span><br></pre></td></tr></table></figure>
+<p>打开热点设置界面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am start -n com.android.settings/.TetherSettings</span><br></pre></td></tr></table></figure>
+<p>查询蓝牙是否开启</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings get global bluetooth_on</span><br></pre></td></tr></table></figure>
+<p>返回结果0代表关闭，1代表开启</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys bluetooth_manager | findstr enabled</span><br></pre></td></tr></table></figure>
+<p>返回结果是true或者false，说明开启或关闭</p>
+<p>查询WiFi是否开启</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings get global wifi_on</span><br></pre></td></tr></table></figure>
+<p>返回结果0代表关闭，1代表开启<br>查询蓝牙地址<br>adb shell settings get secure bluetooth_address<br>查询WiFi地址<br>adb shell cat &#x2F;sys&#x2F;class&#x2F;net&#x2F;wlan0&#x2F;address<br>开启WiFi</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell svc wifi enable</span><br></pre></td></tr></table></figure>
+<p>关闭WiFi</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell svc wifi disable</span><br></pre></td></tr></table></figure>
+<p>打开蓝牙设置界面<br>adb shell am start -a android.settings.BLUETOOTH_SETTINGS<br>获取手机休眠时间<br>adb shell settings get system screen_off_timeout<br>更改手机休眠时间<br>adb shell settings put system screen_off_timeout 600000（10分钟）<br>获取系统默认输入法<br>adb shell settings get secure default_input_method<br>获取手机是否为自动亮度<br>adb shell settings get system screen_brightness_mode  （0代表非自动，1代表为自动）<br>设置手机为自动调整亮度<br>adb shell settings put system screen_brightness_mode 1<br>获取手机当前亮度<br>adb shell settings get system screen_brightness<br>设置手机亮度（0-255）<br>adb shell settings put system screen_brightness 350</p>
+<h2 id="定位操作"><a href="#定位操作" class="headerlink" title="定位操作"></a>定位操作</h2><h3 id="打开定位设置界面"><a href="#打开定位设置界面" class="headerlink" title="打开定位设置界面"></a>打开定位设置界面</h3><p>得先打开设置APP，然后再执行下面的命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am start -a android.settings.LOCATION_SOURCE_SETTINGS</span><br></pre></td></tr></table></figure>
+
+<p>开启定位</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put secure location_providers_allowed +gps</span><br></pre></td></tr></table></figure>
+<p>关闭定位</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put secure location_providers_allowed -gps</span><br></pre></td></tr></table></figure>
+<p>查看定位方式<br>adb shell settings get secure location_providers_allowed  （前提是位置信息开启）<br>拨打电话<br>adb shell am start -a android.intent.action.CALL tel:8888888888888</p>
+<p>发送短信<br>adb shell am start -a android.intent.action.SENDTO -d sms:10086（发送目的号码） –es sms_body “hello”（短信内容） –ez exit_on_sent true </p>
+<p>获取应用包名<br>adb shell dumpsys window windows | findstr  mFocusedApp</p>
+<p>清除应用数据与缓存:<br>adb shell pm clear cn.com.test.mobile<br>启动应用:<br>adb shell am start -n cn.com.test.mobile&#x2F;.ui.SplashActivity<br>停止应用<br>adb shell am force-stop cn.com.test.mobile<br>飞行模式<br>adb shell settings set global airplane_mode_on<br>(0&#x3D;&#x3D;关闭，1&#x3D;&#x3D;开启)<br>开启飞行模式<br>adb shell settings put global airplane_mode_on 1</p>
+<p>手机震动测试（前提手机root）<br>adb shell echo ‘3000’&gt;&#x2F;sys&#x2F;devices&#x2F;virtual&#x2F;timed_output&#x2F;vibrator&#x2F;enable</p>
+<h2 id="滑动点击"><a href="#滑动点击" class="headerlink" title="滑动点击"></a>滑动点击</h2><p>向上滑<br>adb shell input touchscreen swipe 930 880 930 380<br>向下滑<br>adb shell input touchscreen swipe 930 380 930 880<br>向右滑<br>adb shell input touchscreen swipe 330 880 930 880<br>向左滑<br>adb shell input touchscreen swipe 930 880 330 880<br>模拟鼠标点击操作<br>adb shell input mouse tap 100 500<br>长按<br>adb shell input swipe startX startY startX startY 500<br>滑动解锁<br>adb shell input swipe 300 1000 300 500<br>冷启动app<br>adb shell am start -W -n package&#x2F;activity<br>热启动<br>①停止app<br>adb shell input keyevent 3  ②adb shell am start -W -n package&#x2F;activity<br>查看内存占用情况<br>adb -s 设备号 shell top -m 进程数量 -n 数据的刷新次数 -s 按哪列进行排序 -d 刷新时间间隔（默认5秒）</p>
+<p>切换手机电池为非充电状态<br>adb shell dumpsys battery set status 1<br>改变手机电量<br>adb shell dumpsys battery set level 58</p>
+<p>获取当前电量<br>adb shell cat &#x2F;sys&#x2F;class&#x2F;power_supply&#x2F;battery&#x2F;capacity</p>
+<p>手机截屏</p>
+<p>adb shell &#x2F;system&#x2F;bin&#x2F;screencap -p &#x2F;sdcard&#x2F;screenshot.png</p>
+<p>录制屏幕<br>adb shell screenrecord –time-limit 10 &#x2F;sdcard&#x2F;demo.mp4</p>
+<h2 id="获取手机型号"><a href="#获取手机型号" class="headerlink" title="获取手机型号"></a>获取手机型号</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell getprop ro.product.model</span><br></pre></td></tr></table></figure>
+
+<p>获取电池信息<br>adb shell dumpsys battery<br>获取屏幕分辨率<br>adb shell wm size<br>获取屏幕密度<br>adb shell wm density<br>显示屏参数<br>adb shell dumpsys window displays<br>获取手机IP地址<br>adb shell ifconfig | findstr Mask<br>查看WiFi局域网地址<br>adb shell ifconfig wlan0<br>显示区域位置<br>adb shell wm overscan 0,0,0,200  （四个数字分别表示距离左、上、右、下边缘的留白像素，以上命令表示将屏幕底部 200px 留白）<br>恢复原显示区域命令<br>adb shell wm overscan reset</p>
+<p>获取USB调试模式<br>adb shell settings get global adb_enabled<br>关闭USB调试模式<br>adb shell settings put global adb_enabled 0</p>
+<p>状态栏和导航栏的显示隐藏<br>adb shell settings put global policy_control key-values<br>key-values 可由如下几种键及其对应的值组成，格式为 key1&#x3D;value1:key2&#x3D;value2。<br>  immersive.full———-同时隐藏<br>  immersive.status———-隐藏状态栏<br>  immersive.navigation———-隐藏导航栏<br>  immersive.preconfirms———-?<br>这些键对应的值可则如下值用逗号组合：<br>  apps———-所有应用<br>  <em>———-所有界面<br>  packagename———-指定应用<br> -packagename———-排除指定应用<br>例如：<br>adb shell settings put global policy_control immersive.full&#x3D;</em><br>表示设置在所有界面下都同时隐藏状态栏和导航栏。<br>adb shell settings put global policy_control immersive.status&#x3D;com.package1,com.package2:immersive.navigation&#x3D;apps,-com.package3<br>表示设置在包名为 com.package1 和 com.package2 的应用里隐藏状态栏，在除了包名为 com.package3 的所有应用里隐藏导航栏。</p>
+<p>打开网页： adb shell am start -a android.intent.action.VIEW -d <a target="_blank" rel="noopener" href="http://www.baidu.com/">http://www.baidu.com</a></p>
+<p>查看通信日志 ：<br>adb logcat -b radio (常用于查看详细的通话状态)<br>获取界面控件：<br>adb uiautomator dump<br>列出输入法：<br>adb shell ime list -s</p>
+<p>永不休眠：<br>adb shell settings put system screen_off_timeout 2147483647</p>
+<p>关闭\打开自动旋转：<br>adb shell settings put system accelerometer_rotation 0\1</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_28170363/article/details/108695746">https://blog.csdn.net/qq_28170363/article/details/108695746</a></p>
+
       
     </div>
 
@@ -360,7 +382,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/2b294c47/">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/b3f4e072/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -378,7 +400,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2b294c47/" class="post-title-link" itemprop="url">Java Swing 使用JPopupMenu+JDialog实现系统托盘弹出菜单 解决中文乱码问题</a>
+          <a href="/blog/b3f4e072/" class="post-title-link" itemprop="url">批处理给Android设备批量卸载APP</a>
         </h2>
 
         <div class="post-meta-container">
@@ -390,7 +412,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-05-14 13:37:36 / 修改时间：14:55:03" itemprop="dateCreated datePublished" datetime="2022-05-14T13:37:36+08:00">2022-05-14</time>
+      <time title="创建时间：2023-08-24 17:49:16 / 修改时间：17:49:38" itemprop="dateCreated datePublished" datetime="2023-08-24T17:49:16+08:00">2023-08-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -398,15 +420,15 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+          <a href="/blog/categories/Windows/CMD/" itemprop="url" rel="index"><span itemprop="name">CMD</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Swing/" itemprop="url" rel="index"><span itemprop="name">Swing</span></a>
+          <a href="/blog/categories/Windows/CMD/%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">应用</span></a>
         </span>
     </span>
 
@@ -419,8 +441,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/blog/2b294c47/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/2b294c47/" data-xid="/blog/2b294c47/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/b3f4e072/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/b3f4e072/" data-xid="/blog/b3f4e072/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -431,163 +453,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>6.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="使用JPopupMenu实现系统托盘中文弹出菜单"><a href="#使用JPopupMenu实现系统托盘中文弹出菜单" class="headerlink" title="使用JPopupMenu实现系统托盘中文弹出菜单"></a>使用JPopupMenu实现系统托盘中文弹出菜单</h1><h2 id="TrayIcon构造函数"><a href="#TrayIcon构造函数" class="headerlink" title="TrayIcon构造函数"></a>TrayIcon构造函数</h2><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>TrayIcon(Image image)</code></td>
-<td align="left">Creates a TrayIcon with the specified image.</td>
-</tr>
-<tr>
-<td align="left"><code>TrayIcon(Image image, String tooltip)</code></td>
-<td align="left">Creates a TrayIcon with the specified image and tooltip text.</td>
-</tr>
-<tr>
-<td align="left"><code>TrayIcon(Image image, String tooltip, PopupMenu popup)</code></td>
-<td align="left">Creates a TrayIcon with the specified image, tooltip and popup menu.</td>
-</tr>
-</tbody></table>
-<p>可以看到，我们可以使用<code>PopupMenu</code>作为系统托盘程序的弹出菜单。</p>
-<h2 id="PopupMenu不支持中文"><a href="#PopupMenu不支持中文" class="headerlink" title="PopupMenu不支持中文"></a>PopupMenu不支持中文</h2><p>但是PopupMenu有如下问题：</p>
-<ul>
-<li>PopupMenu添加的菜单项MenuItem不支持图标，是awt级组件，没有提供paint函数，也就意味着不能重绘，去实现带图标的菜单；</li>
-<li>PopupMenu只支持英文,中文会乱码，如果确实需要支持中文的话，运行的jar时候，需要使用加上<code>-Dfile.encoding=GBK</code>参数，指定以GBK编码来运行，一般来说我们要处理的文件也通常是UTF-8编码的，如果使用这个GBK编码运行的jar来处理此文件，就会出现乱码问题。</li>
-</ul>
-<h2 id="基于JPopupMenu的解决方案"><a href="#基于JPopupMenu的解决方案" class="headerlink" title="基于JPopupMenu的解决方案"></a>基于JPopupMenu的解决方案</h2><p>JPopupMenu是Swing组件，而且支持图标+文本，更美观。在标准API里，添加JPopupMenu的有两种方式：<br>1、Component组件调用setComponentPopuMenu(JPopupMenu)方法来绑定JPopupMenu；<br>2、JPopupMneu调用show(Component c,int x,int y)方法绑定至组件的(x,y)坐标上；</p>
-<p>但问题是，<strong>TrayIcon不是Component</strong>，不能通过上述两种方法进行绑定。</p>
-<h3 id="弹出菜单的触发过程"><a href="#弹出菜单的触发过程" class="headerlink" title="弹出菜单的触发过程"></a>弹出菜单的触发过程</h3><p>在 鼠标点击或者按下快捷键 时 生成弹出菜单。</p>
-<p>所以我们可以在点击系统托盘的时候，单独创建一个Component作为JPopupMenu的参考坐标。</p>
-<p>这个Component，我们可选择Java现成的JWindow或者JDialog等等。经过测试JDialog来实现会更好一些。</p>
-<h2 id="JPopupMenu实现系统托盘弹出菜单的步骤"><a href="#JPopupMenu实现系统托盘弹出菜单的步骤" class="headerlink" title="JPopupMenu实现系统托盘弹出菜单的步骤"></a>JPopupMenu实现系统托盘弹出菜单的步骤</h2><p>获取鼠标点击的坐标值，在这个坐标值上创建一个JDialog，然后将JPopupMenu绑定到这个JDialog的（0,0）位置上，弹出菜单显示后再获取弹出菜单的尺寸，再根据尺寸回调JDialog的大小，这样JPopupMenu就完美的遮罩了JDialog，看不出JDialog的存在。<br>不过这样做，还有最后一个问题，那就是在弹出菜单消失后，JDialog依然存在；</p>
-<p>这倒不用担心，JPopupMenu提供了：firePopupMenuCanceled()、firePopupMenuWillBecomeInvisible()、firePopupMenuWillBecomeVisible()，菜单消失、消失前、消失后，这三个回调函数。</p>
-<p>所以，我们可以选择重写其中任意一个函数，在JPopupMenu消失之前关闭JPopupMenu的载体即可。</p>
-<p>这样就可以完美实现系统托盘弹出菜单啦。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/2b294c47/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e3c88386/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/e3c88386/" class="post-title-link" itemprop="url">Java 网络编程6---网络编程要点</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-05-13 21:24:41" itemprop="dateCreated datePublished" datetime="2022-05-13T21:24:41+08:00">2022-05-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">网络编程</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/e3c88386/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/e3c88386/" data-xid="/blog/e3c88386/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>271</span>
+      <span>1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -605,15 +471,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>InetAddress表示IP地址的操作类，可以通过此类指定要连接的主机名称。</li>
-<li>在开发中如果要取得一个网络资源可以使用URL类进行定位，只有使用IO流的方式进行读取。</li>
-<li>使用URLEcoder可以为信息编码，使用URLDecoder可以为编码的内容进行解码</li>
-<li>ServerSocket主要用在TCP协议的服务器程序开发上，使用accept()方法等待客户端连接，每一个连接的客户端都使用一个Socket表示。</li>
-<li>服务器端加入多线程机制之后，就可以同时多个用户提供服务。</li>
-<li>UDP属于不可靠的连接协议，采用数据报的形式，对于服务器发送的信息，客户端不一定能收到。</li>
-</ul>
-
+          <figure class="highlight bat"><figcaption><span>adbui.bat</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">setlocal</span> EnableExtensions</span><br><span class="line"><span class="comment">@REM 进入当前盘符</span></span><br><span class="line">%~d0</span><br><span class="line"><span class="comment">@REM 进入当前文件所在目录</span></span><br><span class="line"><span class="built_in">cd</span> %~dp0</span><br><span class="line"><span class="comment">@REM 执行命令，遍历命令的输出结果</span></span><br><span class="line"><span class="comment">@REM 命令的输出的第一行没有我们需要的设备序列号.</span></span><br><span class="line"><span class="comment">@REM 遍历的时候跳过第一行.</span></span><br><span class="line"><span class="comment">@REM 对遍历的每行以空白符进行分隔,取分隔得到的第1个字段作为循环变量的值.</span></span><br><span class="line"><span class="comment">@REM 如果存在多个设备的话,第1个字段就是该设备的序列号.</span></span><br><span class="line"><span class="keyword">for</span> /f &quot;skip=<span class="number">1</span> tokens=<span class="number">1</span>&quot; <span class="variable">%%i</span> <span class="keyword">in</span> (&#x27;adb devices -l&#x27;) <span class="keyword">do</span> (</span><br><span class="line">    <span class="built_in">echo</span> -----------------------------------------</span><br><span class="line">    <span class="built_in">echo</span> --------------------------</span><br><span class="line"><span class="comment">    @REM 输出设备的序列号.</span></span><br><span class="line">    <span class="built_in">echo</span> current device: <span class="variable">%%i</span></span><br><span class="line">    <span class="built_in">echo</span> --------------------------</span><br><span class="line"><span class="comment">    @REM 遍历文件中的没一行,以空白符作为分隔符来分隔每一行,取每行的分割得到的一个字段作为循环变量的值.</span></span><br><span class="line"><span class="comment">    @REM 文件中每行的第一个字段保存有我们要写在的APP的包名</span></span><br><span class="line">    <span class="keyword">for</span> /f &quot;tokens=<span class="number">1</span>&quot; <span class="variable">%%k</span> <span class="keyword">in</span> (adbui.txt) <span class="keyword">do</span> (</span><br><span class="line"><span class="comment">    @REM 执行adb命令获取该设备上安装的所有第三方APP的包名.</span></span><br><span class="line"><span class="comment">    @REM 遍历命令的输出结果,以冒号作为分割符来分割每一行,取分割后的第2段字符串作为循环变量的值.</span></span><br><span class="line">        <span class="keyword">for</span> /f &quot;tokens=<span class="number">2</span> delims=:&quot; <span class="variable">%%j</span> <span class="keyword">in</span> (&#x27;adb -s <span class="variable">%%i</span> shell pm list packages -<span class="number">3</span>&#x27;) <span class="keyword">do</span> (</span><br><span class="line"><span class="comment">            @REM 比较文件中的保存的第三方APP包名和设备中的安装的第三方APP的包名.</span></span><br><span class="line"><span class="comment">            @REM 如果两者相等,则说明该包名的APP需要卸载。</span></span><br><span class="line">            <span class="keyword">if</span> <span class="variable">%%j</span> == <span class="variable">%%k</span> (</span><br><span class="line">                <span class="built_in">echo</span> uninstall: <span class="variable">%%j</span></span><br><span class="line">                <span class="built_in">echo</span>.</span><br><span class="line">                <span class="built_in">echo</span> code: adb -s <span class="variable">%%i</span> uninstall <span class="variable">%%j</span></span><br><span class="line"><span class="comment">                @REM 执行adb命令，从该设备上根据包名卸载这个APP.</span></span><br><span class="line"><span class="comment">                @REM 等真正执行的时候取消下面的注释即可.</span></span><br><span class="line">                adb -s <span class="variable">%%i</span> uninstall <span class="variable">%%j</span></span><br><span class="line">                <span class="built_in">echo</span>.</span><br><span class="line">            ) <span class="keyword">else</span> (</span><br><span class="line">                <span class="built_in">echo</span> no uninstall: <span class="variable">%%j</span></span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line">    <span class="built_in">echo</span> -----------------------------------------</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -639,7 +497,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/58cb8d9/">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/91359636/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -657,7 +515,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/58cb8d9/" class="post-title-link" itemprop="url">批处理 延迟变量SetLocal EnableDelayedExpansion</a>
+          <a href="/blog/91359636/" class="post-title-link" itemprop="url">解决 批处理的中文注释 输出 不是内部或外部命令，也不是可运行的程序或批处理文件的。bug</a>
         </h2>
 
         <div class="post-meta-container">
@@ -667,8 +525,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2022-05-08 11:01:24" itemprop="dateCreated datePublished" datetime="2022-05-08T11:01:24+08:00">2022-05-08</time>
+      <time title="创建时间：2023-08-24 17:23:04 / 修改时间：17:23:19" itemprop="dateCreated datePublished" datetime="2023-08-24T17:23:04+08:00">2023-08-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -686,10 +545,6 @@
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/blog/categories/Windows/CMD/%E6%89%B9%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">批处理</span></a>
         </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/%E6%89%B9%E5%A4%84%E7%90%86/%E6%9E%84%E5%BB%BA%E7%A8%8B%E5%BA%8F%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">构建程序相关命令</span></a>
-        </span>
     </span>
 
   
@@ -701,8 +556,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/blog/58cb8d9/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/58cb8d9/" data-xid="/blog/58cb8d9/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/91359636/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/91359636/" data-xid="/blog/91359636/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -713,7 +568,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.8k</span>
+      <span>3.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -731,27 +586,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="批处理-延迟变量SetLocal-EnableDelayedExpansion"><a href="#批处理-延迟变量SetLocal-EnableDelayedExpansion" class="headerlink" title="批处理 延迟变量SetLocal EnableDelayedExpansion"></a>批处理 延迟变量SetLocal EnableDelayedExpansion</h1><p>在cmd执行命令前会对脚本进行预处理，其中有一个过程是变量识别过程，在这个过程中，如果有两个%括起来的如%value%类似这样的变量，就会对其进行识别，并且查找这个变量对应的值，再而将值替换掉这个变量，这个替换值的过程,就叫做变量扩展，然后再执行命令。</p>
-<h2 id="示例0"><a href="#示例0" class="headerlink" title="示例0"></a>示例0</h2><figure class="highlight bat"><figcaption><span>D:\Desktop\test\CMD\延迟变量\test0.bat</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> value=kkkkkkk </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%value%</span> </span><br></pre></td></tr></table></figure>
-<p>将这段代码保存到<code>test0.bat</code>文件中。然后打开cmd，进到对应目录下，执行这个文件。</p>
-<p>运行结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">D:\Desktop\test\CMD\延迟变量&gt;test0.bat</span><br><span class="line"></span><br><span class="line">D:\Desktop\test\CMD\延迟变量&gt;set value=kkkkkkk</span><br><span class="line"></span><br><span class="line">D:\Desktop\test\CMD\延迟变量&gt;echo kkkkkkk</span><br><span class="line">kkkkkkk</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>最近我在用idea写批处理脚本的时候遇到了一个很无语的bug。</p>
+<p>我使用<code>@REM</code>在.bat文件中写了<strong>中文注释</strong>。在我运行的时候，程序会莫名其妙的输出一些乱码，并且提示这些乱码 不是内部或外部命令，也不是可运行的程序<br>或批处理文件。</p>
+<h1 id="批处理-中文注释-引起-“不是内部或外部命令，也不是可运行的程序或批处理文件。”bug"><a href="#批处理-中文注释-引起-“不是内部或外部命令，也不是可运行的程序或批处理文件。”bug" class="headerlink" title="批处理 中文注释 引起 “不是内部或外部命令，也不是可运行的程序或批处理文件。”bug"></a>批处理 中文注释 引起 “不是内部或外部命令，也不是可运行的程序或批处理文件。”bug</h1><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><figure class="highlight bat"><figcaption><span>adbui5.bat</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">setlocal</span> EnableExtensions</span><br><span class="line"><span class="comment">@REM 进入当前盘符</span></span><br><span class="line">%~d0</span><br><span class="line"><span class="comment">@REM 进入当前文件所在目录</span></span><br><span class="line"><span class="built_in">cd</span> %~dp0</span><br><span class="line"><span class="comment">@REM 执行命令，遍历命令的输出结果</span></span><br><span class="line"><span class="comment">@REM 命令的输出的第一行没有我们需要的设备序列号.</span></span><br><span class="line"><span class="comment">@REM 遍历的时候跳过第一行.</span></span><br><span class="line"><span class="comment">@REM 对遍历的每行以空白符进行分隔,取分隔得到的第1个字段作为循环变量的值.</span></span><br><span class="line"><span class="comment">@REM 如果存在多个设备的话,第1个字段就是该设备的序列号.</span></span><br><span class="line"><span class="keyword">for</span> /f &quot;skip=<span class="number">1</span> tokens=<span class="number">1</span>&quot; <span class="variable">%%i</span> <span class="keyword">in</span> (&#x27;adb devices -l&#x27;) <span class="keyword">do</span> (</span><br><span class="line">    <span class="built_in">echo</span> -----------------------------------------</span><br><span class="line">    <span class="built_in">echo</span> --------------------------</span><br><span class="line"><span class="comment">    @REM 输出设备的序列号.</span></span><br><span class="line">    <span class="built_in">echo</span> current device: <span class="variable">%%i</span></span><br><span class="line">    <span class="built_in">echo</span> --------------------------</span><br><span class="line"><span class="comment">    @REM 遍历文件中的没一行,以空白符作为分隔符来分隔每一行,取每行的分割得到的一个字段作为循环变量的值.</span></span><br><span class="line"><span class="comment">    @REM 文件中每行的第一个字段保存有我们要写在的APP的包名</span></span><br><span class="line">    <span class="keyword">for</span> /f &quot;tokens=<span class="number">1</span>&quot; <span class="variable">%%k</span> <span class="keyword">in</span> (adbui.txt) <span class="keyword">do</span> (</span><br><span class="line"><span class="comment">    @REM 执行adb命令获取该设备上安装的所有第三方APP的包名.</span></span><br><span class="line"><span class="comment">    @REM 遍历命令的输出结果,以冒号作为分割符来分割每一行,取分割后的第2段字符串作为循环变量的值.</span></span><br><span class="line">        <span class="keyword">for</span> /f &quot;tokens=<span class="number">2</span> delims=:&quot; <span class="variable">%%j</span> <span class="keyword">in</span> (&#x27;adb -s <span class="variable">%%i</span> shell pm list packages -<span class="number">3</span>&#x27;) <span class="keyword">do</span> (</span><br><span class="line"><span class="comment">            @REM 比较文件中的保存的第三方APP包名和设备中的安装的第三方APP的包名.</span></span><br><span class="line"><span class="comment">            @REM 如果两者相等,则说明该包名的APP需要卸载。</span></span><br><span class="line">            <span class="keyword">if</span> <span class="variable">%%j</span> == <span class="variable">%%k</span> (</span><br><span class="line">                <span class="built_in">echo</span> uninstall: <span class="variable">%%j</span></span><br><span class="line">                <span class="built_in">echo</span>.</span><br><span class="line">                <span class="built_in">echo</span> code: adb -s <span class="variable">%%i</span> uninstall <span class="variable">%%j</span></span><br><span class="line"><span class="comment">                @REM 执行adb命令，从该设备上根据包名卸载这个APP。</span></span><br><span class="line"><span class="comment">                @REM 等真正执行的时候取消下面的注释即可。</span></span><br><span class="line"><span class="comment">                @REM adb -s %%i uninstall %%j</span></span><br><span class="line">                <span class="built_in">echo</span>.</span><br><span class="line">            ) <span class="keyword">else</span> (</span><br><span class="line">                <span class="built_in">echo</span> no uninstall: <span class="variable">%%j</span></span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> -----------------------------------------</span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>最后一行是结果，但是在结果之前，还有两句，set value&#x3D;kkkkkkk 和 echo kkkkkkk。<br>但是在test0.bat中，我们并没有写echo kkkkkkk这样的语句，这表明至少在执行到echo %value% 这句时，cmd已经把 变量value 替换成 kkkkkkk这个值。</p>
-<p>这就是变量的扩展</p>
-<p>那么什么是变量的延迟扩展呢？</p>
-<h2 id="变量延迟两要素"><a href="#变量延迟两要素" class="headerlink" title="变量延迟两要素"></a>变量延迟两要素</h2><ul>
-<li>变量延迟的启动语句是“SetLocal EnableDelayedExpansion”，</li>
-<li>并且变量要用一对英文感叹号“!!”括起来</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/58cb8d9/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p>运行的部分结果如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">PS G:\dev2\idea_workspace\MyJavaTools&gt; adbui5</span><br><span class="line">-----------------------------------------</span><br><span class="line">--------------------------</span><br><span class="line">current device: QWXNU18B27101030</span><br><span class="line">--------------------------</span><br><span class="line">no uninstall: com.quark.browser</span><br><span class="line">no uninstall: com.jooan.qiaoanzhilian</span><br><span class="line">uninstall: com.meta.box</span><br><span class="line"></span><br><span class="line">code: adb -s QWXNU18B27101030 uninstall com.meta.box</span><br><span class="line">&#x27;姝ｆ墽琛岀殑鏃跺€欏彇娑堜笅闈㈢殑娉ㄩ噴鍗冲彲銆?&#x27; 不是内部或外部命令，也不是可运行的程序</span><br><span class="line">或批处理文件。</span><br><span class="line"></span><br><span class="line">no uninstall: com.tencent.mobileqq</span><br><span class="line">no uninstall: com.hunantv.imgo.activity</span><br><span class="line">uninstall: com.m4399.gamecenter</span><br><span class="line"></span><br><span class="line">code: adb -s QWXNU18B27101030 uninstall com.m4399.gamecenter</span><br><span class="line">&#x27;姝ｆ墽琛岀殑鏃跺€欏彇娑堜笅闈㈢殑娉ㄩ噴鍗冲彲銆?&#x27; 不是内部或外部命令，也不是可运行的程序</span><br><span class="line">或批处理文件。</span><br><span class="line"></span><br><span class="line">no uninstall: com.android.chrome</span><br><span class="line">no uninstall: com.tencent.qqlivepad</span><br><span class="line">uninstall: com.wuba</span><br><span class="line"></span><br><span class="line">code: adb -s QWXNU18B27101030 uninstall com.wuba</span><br><span class="line">&#x27;姝ｆ墽琛岀殑鏃跺€欏彇娑堜笅闈㈢殑娉ㄩ噴鍗冲彲銆?&#x27; 不是内部或外部命令，也不是可运行的程序</span><br><span class="line">或批处理文件。</span><br><span class="line"></span><br><span class="line">no uninstall: com.microsoft.emmx</span><br><span class="line">no uninstall: cn.wps.moffice_eng</span><br><span class="line">-----------------------------------------</span><br><span class="line">PS G:\dev2\idea_workspace\MyJavaTools&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="解决：乱码"><a href="#解决：乱码" class="headerlink" title="解决：乱码"></a>解决：乱码</h2><p>乱码的问题，是因为我用的编码是UTF-8编码，和Windows的编码不一致造成的，把文件的编码换成GBK后就可以解决。</p>
+<h2 id="解决：不是内部或外部命令，也不是可运行的程序或批处理文件。"><a href="#解决：不是内部或外部命令，也不是可运行的程序或批处理文件。" class="headerlink" title="解决：不是内部或外部命令，也不是可运行的程序或批处理文件。"></a>解决：不是内部或外部命令，也不是可运行的程序或批处理文件。</h2><p>经过都反复确认，我的语法并没有问题。删掉上面的注释后，乱码就消失的。可见问题出现在的注释上。</p>
+<p>换成英文的注释，没有乱码，可见出现在中文的注释上。</p>
+<h3 id="解决方法-使用英文的标点符号"><a href="#解决方法-使用英文的标点符号" class="headerlink" title="解决方法:使用英文的标点符号"></a>解决方法:使用英文的标点符号</h3><p>经过我的反复试错，我发现在注释中如果最后一个字符是中文，或者中文的标点符号，当你在末尾按下回车之后，接着写下一条注释的时候就会出现上述的问题。</p>
+<p><strong>把中文注释末尾的中文标点符号删掉，换成英文的标点符号就可以解决这个问题。</strong></p>
+<p>我把中文注释末尾的中文句号，换成英文的点号后就不会出现“不是内部或外部命令，也不是可运行的程序或批处理文件。”这样的提示信息了。</p>
+<h3 id="修改后的代码"><a href="#修改后的代码" class="headerlink" title="修改后的代码"></a>修改后的代码</h3><figure class="highlight bat"><figcaption><span>adbui5.bat</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">setlocal</span> EnableExtensions</span><br><span class="line"><span class="comment">@REM 进入当前盘符</span></span><br><span class="line">%~d0</span><br><span class="line"><span class="comment">@REM 进入当前文件所在目录</span></span><br><span class="line"><span class="built_in">cd</span> %~dp0</span><br><span class="line"><span class="comment">@REM 执行命令，遍历命令的输出结果</span></span><br><span class="line"><span class="comment">@REM 命令的输出的第一行没有我们需要的设备序列号.</span></span><br><span class="line"><span class="comment">@REM 遍历的时候跳过第一行.</span></span><br><span class="line"><span class="comment">@REM 对遍历的每行以空白符进行分隔,取分隔得到的第1个字段作为循环变量的值.</span></span><br><span class="line"><span class="comment">@REM 如果存在多个设备的话,第1个字段就是该设备的序列号.</span></span><br><span class="line"><span class="keyword">for</span> /f &quot;skip=<span class="number">1</span> tokens=<span class="number">1</span>&quot; <span class="variable">%%i</span> <span class="keyword">in</span> (&#x27;adb devices -l&#x27;) <span class="keyword">do</span> (</span><br><span class="line">    <span class="built_in">echo</span> -----------------------------------------</span><br><span class="line">    <span class="built_in">echo</span> --------------------------</span><br><span class="line"><span class="comment">    @REM 输出设备的序列号.</span></span><br><span class="line">    <span class="built_in">echo</span> current device: <span class="variable">%%i</span></span><br><span class="line">    <span class="built_in">echo</span> --------------------------</span><br><span class="line"><span class="comment">    @REM 遍历文件中的没一行,以空白符作为分隔符来分隔每一行,取每行的分割得到的一个字段作为循环变量的值.</span></span><br><span class="line"><span class="comment">    @REM 文件中每行的第一个字段保存有我们要写在的APP的包名</span></span><br><span class="line">    <span class="keyword">for</span> /f &quot;tokens=<span class="number">1</span>&quot; <span class="variable">%%k</span> <span class="keyword">in</span> (adbui.txt) <span class="keyword">do</span> (</span><br><span class="line"><span class="comment">    @REM 执行adb命令获取该设备上安装的所有第三方APP的包名.</span></span><br><span class="line"><span class="comment">    @REM 遍历命令的输出结果,以冒号作为分割符来分割每一行,取分割后的第2段字符串作为循环变量的值.</span></span><br><span class="line">        <span class="keyword">for</span> /f &quot;tokens=<span class="number">2</span> delims=:&quot; <span class="variable">%%j</span> <span class="keyword">in</span> (&#x27;adb -s <span class="variable">%%i</span> shell pm list packages -<span class="number">3</span>&#x27;) <span class="keyword">do</span> (</span><br><span class="line"><span class="comment">            @REM 比较文件中的保存的第三方APP包名和设备中的安装的第三方APP的包名.</span></span><br><span class="line"><span class="comment">            @REM 如果两者相等,则说明该包名的APP需要卸载。</span></span><br><span class="line">            <span class="keyword">if</span> <span class="variable">%%j</span> == <span class="variable">%%k</span> (</span><br><span class="line">                <span class="built_in">echo</span> uninstall: <span class="variable">%%j</span></span><br><span class="line">                <span class="built_in">echo</span>.</span><br><span class="line">                <span class="built_in">echo</span> code: adb -s <span class="variable">%%i</span> uninstall <span class="variable">%%j</span></span><br><span class="line"><span class="comment">                @REM 执行adb命令，从该设备上根据包名卸载这个APP.</span></span><br><span class="line"><span class="comment">                @REM 等真正执行的时候取消下面的注释即可.</span></span><br><span class="line"><span class="comment">                @REM adb -s %%i uninstall %%j</span></span><br><span class="line">                <span class="built_in">echo</span>.</span><br><span class="line">            ) <span class="keyword">else</span> (</span><br><span class="line">                <span class="built_in">echo</span> no uninstall: <span class="variable">%%j</span></span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> -----------------------------------------</span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -777,7 +625,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/be9b7855/">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/11d7c013/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -795,7 +643,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/be9b7855/" class="post-title-link" itemprop="url">运行python却弹出Microsoft Store</a>
+          <a href="/blog/11d7c013/" class="post-title-link" itemprop="url">adb安装 adb卸载</a>
         </h2>
 
         <div class="post-meta-container">
@@ -806,14 +654,172 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-05-06 22:52:55" itemprop="dateCreated datePublished" datetime="2022-05-06T22:52:55+08:00">2022-05-06</time>
+      <time title="创建时间：2023-08-24 10:28:13" itemprop="dateCreated datePublished" datetime="2023-08-24T10:28:13+08:00">2023-08-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/adb/" itemprop="url" rel="index"><span itemprop="name">adb</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/11d7c013/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/11d7c013/" data-xid="/blog/11d7c013/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="adb安装-apk到手机"><a href="#adb安装-apk到手机" class="headerlink" title="adb安装 apk到手机"></a>adb安装 apk到手机</h1><p>从豌豆荚，或者其他应用市场，下载应用的apk文件到电脑上。然后在apk文件的目录下打开cmd，输入如下命令即可安装该应用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb install 应用名称.apk</span><br></pre></td></tr></table></figure>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>把我电脑上的京东.apk安装到Android平板上：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb install 京东.apk</span><br></pre></td></tr></table></figure>
+<p>命令输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\网络共享\可读可写\apk&gt;adb install 京东.apk</span><br><span class="line">Performing Streamed Install</span><br></pre></td></tr></table></figure>
+<p>此时命令会阻塞一阵子，需要等待命令把apk文件传输到Android设备中，等待一会后，Android设备上会弹出安装界面，点击继续安装即可。如下图所示：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2023/08/20230824104405.png"></p>
+<h3 id="安装成功的输出"><a href="#安装成功的输出" class="headerlink" title="安装成功的输出"></a>安装成功的输出</h3><p>如果安装成功，命令会输出一个”Success”提示信息。如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D:\网络共享\可读可写\apk&gt;adb install 京东.apk</span><br><span class="line">Performing Streamed Install</span><br><span class="line">Success</span><br><span class="line"></span><br><span class="line">D:\网络共享\可读可写\apk&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="安装失败的输出"><a href="#安装失败的输出" class="headerlink" title="安装失败的输出"></a>安装失败的输出</h3><p>输出不是”Success”，那就是安装失败了，安装失败的提示如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D:\网络共享\可读可写\apk&gt;adb install 京东.apk</span><br><span class="line">Performing Streamed Install</span><br><span class="line">adb: failed to install 京东.apk: Failure [INSTALL_FAILED_ABORTED: User rejected permissions]</span><br><span class="line"></span><br><span class="line">D:\网络共享\可读可写\apk&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="adb卸载"><a href="#adb卸载" class="headerlink" title="adb卸载"></a>adb卸载</h1><h2 id="先获取APP的包名"><a href="#先获取APP的包名" class="headerlink" title="先获取APP的包名"></a>先获取APP的包名</h2><p>打开APP，让APP显示在屏幕最上方。<br>然后输入如下命令获取屏幕最上方的APP的activity：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys window | findstr mCurrentFocus</span><br></pre></td></tr></table></figure>
+<p>命令输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:\网络共享\可读可写\apk&gt;adb shell dumpsys window | findstr mCurrentFocus</span><br><span class="line">  mCurrentFocus=Window&#123;9902caf u0 com.jingdong.app.mall/com.jingdong.app.mall.main.MainActivity&#125;</span><br><span class="line"></span><br><span class="line">D:\网络共享\可读可写\apk&gt;</span><br></pre></td></tr></table></figure>
+<p>命令输出的<code>com.jingdong.app.mall/com.jingdong.app.mall.main.MainActivity</code>就是activity名称，activity名称斜杠<code>/</code>前面的就是包名<code>com.jingdong.app.mall</code>。</p>
+<h2 id="根据包名卸载APP"><a href="#根据包名卸载APP" class="headerlink" title="根据包名卸载APP"></a>根据包名卸载APP</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb uninstall app_key 包名</span><br></pre></td></tr></table></figure>
+<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h2><p>卸载刚才安装的京东APP：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb uninstall com.jingdong.app.mall</span><br></pre></td></tr></table></figure>
+
+<p>卸载成功效果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:\网络共享\可读可写\apk&gt;adb uninstall com.jingdong.app.mall</span><br><span class="line">Success</span><br><span class="line"></span><br><span class="line">D:\网络共享\可读可写\apk&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="批量卸载第3方APP"><a href="#批量卸载第3方APP" class="headerlink" title="批量卸载第3方APP"></a>批量卸载第3方APP</h1><h2 id="使用批处理"><a href="#使用批处理" class="headerlink" title="使用批处理"></a>使用批处理</h2><p>应用包名文件：</p>
+<h3 id="adbui-txt"><a href="#adbui-txt" class="headerlink" title="adbui.txt"></a>adbui.txt</h3><p>这个文件保存了需要卸载的应用的包名，和应用名，其中包名是必须的，并且必须写在第一列。因为后面的批处理文件主要读取的是第一列的内容。<br>第二列写应用名，应用名不是必须的，可以不写，因为后面的批处理文件不会读取第2列的内容。</p>
+<figure class="highlight txt"><figcaption><span>adbui.txt</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">com.meta.box 233乐园</span><br><span class="line">com.m4399.gamecenter 4399游戏盒</span><br><span class="line">com.wuba</span><br></pre></td></tr></table></figure>
+<h3 id="批处理文件"><a href="#批处理文件" class="headerlink" title="批处理文件"></a>批处理文件</h3><figure class="highlight bat"><figcaption><span>adbui.bat</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">:: 进入当前批处理所在的盘符</span><br><span class="line">%~d0</span><br><span class="line">:: 进入当前批处理文件所在目录</span><br><span class="line"><span class="built_in">cd</span> %~dp0</span><br><span class="line">:: 遍历同目录下的adbui.txt文件，读取第一个字段到变量i中，对每一个变量i执行一次adb卸载命令。</span><br><span class="line"><span class="keyword">for</span> /f &quot;tokens=<span class="number">1</span>&quot; <span class="variable">%%i</span> <span class="keyword">in</span> (adbui.txt) <span class="keyword">do</span> adb uninstall <span class="variable">%%i</span></span><br><span class="line">:: &quot;tokens=<span class="number">1</span>&quot; 表示获取txt文件每行的第一列作为变量的值。</span><br></pre></td></tr></table></figure>
+<p>执行效果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PS G:\dev2\idea_workspace\MyJavaTools\runable&gt; adbui</span><br><span class="line">Success</span><br><span class="line">Success</span><br><span class="line">Success</span><br><span class="line">PS G:\dev2\idea_workspace\MyJavaTools\runable</span><br></pre></td></tr></table></figure>
+<p>如果Android设备中并没有安装这些应用，则卸载失败。</p>
+<h2 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h2><h3 id="adb列出第三方apk"><a href="#adb列出第三方apk" class="headerlink" title="adb列出第三方apk"></a>adb列出第三方apk</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell pm list packages -3</span><br></pre></td></tr></table></figure>
+<h3 id="adbui4-bat"><a href="#adbui4-bat" class="headerlink" title="adbui4.bat"></a>adbui4.bat</h3><p>先列出第三方应用，然后在第三方应用列表中查找 adbui.txt中的包名，如果找到，再使用adb卸载命令。</p>
+<figure class="highlight bat"><figcaption><span>adbui4.bat</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">setlocal</span> EnableExtensions</span><br><span class="line">:: 进入当前盘符</span><br><span class="line">%~d0</span><br><span class="line">:: 进入当前文件所在目录</span><br><span class="line"><span class="built_in">cd</span> %~dp0</span><br><span class="line"><span class="comment">@REM 遍历adb命令的输出结果，以冒号作为分隔符，取命令输出的 每行分隔后得到的第2个字段作为</span></span><br><span class="line"><span class="keyword">for</span> /f &quot;tokens=<span class="number">2</span> delims=:&quot; <span class="variable">%%i</span> <span class="keyword">in</span> (&#x27;adb shell pm list packages -<span class="number">3</span>&#x27;) <span class="keyword">do</span> (</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">%%i</span></span><br><span class="line">    <span class="keyword">for</span> /f &quot;tokens=<span class="number">1</span>&quot; <span class="variable">%%j</span> <span class="keyword">in</span> (adbui.txt) <span class="keyword">do</span> (</span><br><span class="line">        <span class="keyword">if</span> <span class="variable">%%i</span> == <span class="variable">%%j</span> (</span><br><span class="line">            <span class="built_in">echo</span> <span class="variable">%%j</span> == <span class="variable">%%i</span></span><br><span class="line"><span class="comment">            @REM 相等，执行卸载命令</span></span><br><span class="line">            <span class="built_in">echo</span> 卸载</span><br><span class="line">            adb uninstall <span class="variable">%%i</span></span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="改进2"><a href="#改进2" class="headerlink" title="改进2"></a>改进2</h2><p>存在多个设备的情况</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">setlocal</span> EnableExtensions</span><br><span class="line"><span class="comment">@REM 进入当前盘符</span></span><br><span class="line">%~d0</span><br><span class="line"><span class="comment">@REM 进入当前文件所在目录</span></span><br><span class="line"><span class="built_in">cd</span> %~dp0</span><br><span class="line"><span class="comment">@REM  遍历命令的输出结果，</span></span><br><span class="line"><span class="comment">@REM 第一行的输出没有我们需要的序列号，skip=1表示跳过第一行</span></span><br><span class="line"><span class="comment">@REM for默认以空白符分割每行，tokens=1表示在分割结果中取第1个字段作为循环变量的值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /f &quot;skip=<span class="number">1</span> tokens=<span class="number">1</span>&quot; <span class="variable">%%i</span> <span class="keyword">in</span> (&#x27;adb devices -l&#x27;) <span class="keyword">do</span> (</span><br><span class="line">    <span class="built_in">echo</span> -----------------------------------------</span><br><span class="line">    <span class="built_in">echo</span> --------------------------</span><br><span class="line">    <span class="built_in">echo</span> current device: <span class="variable">%%i</span></span><br><span class="line">    <span class="built_in">echo</span> --------------------------</span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">@REM     使用文件中的第一个字符作为循环变量的值，</span></span><br><span class="line"><span class="comment">@REM     这个文件中的第一个字段保存我们需要卸载的APP的包名</span></span><br><span class="line"><span class="comment">@REM     从文件中读取要卸载的APP的包名</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> /f &quot;tokens=<span class="number">1</span>&quot; <span class="variable">%%k</span> <span class="keyword">in</span> (adbui.txt) <span class="keyword">do</span> (</span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">@REM      执行命令列出该设备上的第三方APP的包名，</span></span><br><span class="line"><span class="comment">@REM      遍历命令的输出结果，以冒号分割命令的每行输出</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> /f &quot;tokens=<span class="number">2</span> delims=:&quot; <span class="variable">%%j</span> <span class="keyword">in</span> (&#x27;adb -s <span class="variable">%%i</span> shell pm list packages -<span class="number">3</span>&#x27;) <span class="keyword">do</span> (</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> <span class="variable">%%j</span> == <span class="variable">%%k</span> (</span><br><span class="line">                <span class="built_in">echo</span> uninstall: <span class="variable">%%j</span></span><br><span class="line">                <span class="built_in">echo</span>.</span><br><span class="line">                <span class="built_in">echo</span> code: adb -s <span class="variable">%%i</span> uninstall <span class="variable">%%j</span></span><br><span class="line"><span class="comment">@REM            adb -s %%i uninstall %%j</span></span><br><span class="line">                <span class="built_in">echo</span>.</span><br><span class="line">            ) <span class="keyword">else</span> (</span><br><span class="line">                <span class="built_in">echo</span> no uninstall: <span class="variable">%%j</span></span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> -----------------------------------------</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/pclrmsc/yqaho0.html">https://www.w3cschool.cn/pclrmsc/yqaho0.html</a><br><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/pclrmsc/gmjsnz.html">https://www.w3cschool.cn/pclrmsc/gmjsnz.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e0ddc9c1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/e0ddc9c1/" class="post-title-link" itemprop="url">adb禁止USB充电adb允许USB充电</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-08-22 20:10:58" itemprop="dateCreated datePublished" datetime="2023-08-22T20:10:58+08:00">2023-08-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-05-07 13:23:09" itemprop="dateModified" datetime="2022-05-07T13:23:09+08:00">2022-05-07</time>
+      <time title="修改时间：2023-08-23 20:07:22" itemprop="dateModified" datetime="2023-08-23T20:07:22+08:00">2023-08-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -821,11 +827,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E4%B8%8B%E8%BD%BD/" itemprop="url" rel="index"><span itemprop="name">下载</span></a>
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/adb/" itemprop="url" rel="index"><span itemprop="name">adb</span></a>
         </span>
     </span>
 
@@ -838,8 +844,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/blog/be9b7855/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/be9b7855/" data-xid="/blog/be9b7855/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/e0ddc9c1/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/e0ddc9c1/" data-xid="/blog/e0ddc9c1/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -850,7 +856,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>898</span>
+      <span>475</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -868,19 +874,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="运行python却弹出Microsoft-Store"><a href="#运行python却弹出Microsoft-Store" class="headerlink" title="运行python却弹出Microsoft Store"></a>运行python却弹出Microsoft Store</h1><p>今天安装好python之后，我在cmd中输入python,但是并没有运行python，而是弹出了Microsoft Store，并跳转到python的安装下载界面。</p>
-<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2022/04/20220506230809.png" alt="image-20220506230809031"></p>
-<p>然后我查找了一下，居然有两个python:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">D:\Desktop\test\CMD\phone&gt;python</span><br><span class="line"></span><br><span class="line">D:\Desktop\test\CMD\phone&gt;where python</span><br><span class="line">C:\Users\HellloWorld\AppData\Local\Microsoft\WindowsApps\python.exe</span><br><span class="line">C:\Users\HellloWorld\AppData\Local\Programs\Python\Python310\python.exe</span><br><span class="line"></span><br><span class="line">D:\Desktop\test\CMD\phone&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>打开<strong>设置</strong>，进入<strong>应用执行别名</strong>，关掉python.exe即可。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/be9b7855/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>为了避免 Android 手机在连接 USB 进行自动化测试时充电过度导致电池鼓包的问题，可以通过以下步骤实现禁止充电若干小时后自动充电的功能。</p>
+<h1 id="adb禁止Android手机使用USB充电"><a href="#adb禁止Android手机使用USB充电" class="headerlink" title="adb禁止Android手机使用USB充电"></a>adb禁止Android手机使用USB充电</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys battery set usb 0</span><br></pre></td></tr></table></figure>
+
+<h1 id="adb允许手机USB充电"><a href="#adb允许手机USB充电" class="headerlink" title="adb允许手机USB充电"></a>adb允许手机USB充电</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys battery set usb 1</span><br></pre></td></tr></table></figure>
+
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>当前手机 设置 电池的信息如下：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2023/08/20230822201723.png" alt="图1"></p>
+<p>从图中可以看到，电池电量百分数的百分号后面有“正在充电”四个字，这说明当前手机正在充电。下面还有一行字显示还需要多少时间电池能充满<br>执行下面的命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys battery set usb 0</span><br></pre></td></tr></table></figure>
+<p>禁止USB充电后，电池信息如下：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2023/08/20230822202048.png" alt="图2"><br>从图中可以看到，电量百分号后面的“正在充电”的提示信息消失了。电量下面的一行字变成我们可以使用多少分钟。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>adb获取电池信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys battery</span><br></pre></td></tr></table></figure>
+<p>adb获取电池电量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys battery | findstr level</span><br></pre></td></tr></table></figure>
+<h2 id="adb恢复电池默认设置-adb电池复位"><a href="#adb恢复电池默认设置-adb电池复位" class="headerlink" title="adb恢复电池默认设置 adb电池复位"></a>adb恢复电池默认设置 adb电池复位</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys battery reset</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -906,7 +913,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/68c4b9be/">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/49194f9b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -924,7 +931,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/68c4b9be/" class="post-title-link" itemprop="url">Windows官方软件包管理器winget</a>
+          <a href="/blog/49194f9b/" class="post-title-link" itemprop="url">手机屏幕坏了如何在另一台电脑上开启USB调试功能</a>
         </h2>
 
         <div class="post-meta-container">
@@ -935,7 +942,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-05-06 22:17:46" itemprop="dateCreated datePublished" datetime="2022-05-06T22:17:46+08:00">2022-05-06</time>
+      <time title="创建时间：2023-08-10 09:55:31" itemprop="dateCreated datePublished" datetime="2023-08-10T09:55:31+08:00">2023-08-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-08-23 20:07:22" itemprop="dateModified" datetime="2023-08-23T20:07:22+08:00">2023-08-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -943,11 +957,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E4%B8%8B%E8%BD%BD/" itemprop="url" rel="index"><span itemprop="name">下载</span></a>
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/adb/" itemprop="url" rel="index"><span itemprop="name">adb</span></a>
         </span>
     </span>
 
@@ -960,8 +974,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/blog/68c4b9be/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/68c4b9be/" data-xid="/blog/68c4b9be/" itemprop="commentCount"></span>
+    <a title="waline" href="/blog/49194f9b/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/49194f9b/" data-xid="/blog/49194f9b/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -972,7 +986,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>72</span>
+      <span>931</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -990,485 +1004,583 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>未完待续</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/package-manager/winget/">https://docs.microsoft.com/zh-cn/windows/package-manager/winget/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9945f96b/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/9945f96b/" class="post-title-link" itemprop="url">如何查看PowerShell版本</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-05-06 21:08:52" itemprop="dateCreated datePublished" datetime="2022-05-06T21:08:52+08:00">2022-05-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/" itemprop="url" rel="index"><span itemprop="name">CMD</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/9945f96b/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/9945f96b/" data-xid="/blog/9945f96b/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>918</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="如何查看PowerShell版本"><a href="#如何查看PowerShell版本" class="headerlink" title="如何查看PowerShell版本"></a>如何查看PowerShell版本</h1><h2 id="PSVersionTable"><a href="#PSVersionTable" class="headerlink" title="$PSVersionTable"></a>$PSVersionTable</h2><p>输入如下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$PSVersionTable</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/9945f96b/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9e62d9d3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/9e62d9d3/" class="post-title-link" itemprop="url">windows软件包管理器Scoop</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-05-05 16:23:37 / 修改时间：16:25:48" itemprop="dateCreated datePublished" datetime="2022-05-05T16:23:37+08:00">2022-05-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E4%B8%8B%E8%BD%BD/" itemprop="url" rel="index"><span itemprop="name">下载</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/9e62d9d3/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/9e62d9d3/" data-xid="/blog/9e62d9d3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>27</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>未完待续</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://scoop.sh/#/">https://scoop.sh/#/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/da92e58e/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/da92e58e/" class="post-title-link" itemprop="url">windows软件包管理器Chocolatey</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-05-05 16:08:33 / 修改时间：16:26:02" itemprop="dateCreated datePublished" datetime="2022-05-05T16:08:33+08:00">2022-05-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E4%B8%8B%E8%BD%BD/" itemprop="url" rel="index"><span itemprop="name">下载</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/da92e58e/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/da92e58e/" data-xid="/blog/da92e58e/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>498</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="安装Chocolatey"><a href="#安装Chocolatey" class="headerlink" title="安装Chocolatey"></a>安装Chocolatey</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#x27;https://community.chocolatey.org/install.ps1&#x27;))</span><br></pre></td></tr></table></figure>
-<p>未完待续</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://chocolatey.org/install">https://chocolatey.org/install</a><br><a target="_blank" rel="noopener" href="https://sspai.com/post/55309">https://sspai.com/post/55309</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6994715287178182693">https://juejin.cn/post/6994715287178182693</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/53421288">https://zhuanlan.zhihu.com/p/53421288</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/42441423">https://zhuanlan.zhihu.com/p/42441423</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a1ba81746fe8">https://www.jianshu.com/p/a1ba81746fe8</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e280fb30/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/e280fb30/" class="post-title-link" itemprop="url">Scrcpy.exe命令详解</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-05-05 15:06:08" itemprop="dateCreated datePublished" datetime="2022-05-05T15:06:08+08:00">2022-05-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/%E8%BD%AF%E4%BB%B6/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/" itemprop="url" rel="index"><span itemprop="name">远程控制</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/e280fb30/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/e280fb30/" data-xid="/blog/e280fb30/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>9.2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>8 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Scrcpy-exe命令详解"><a href="#Scrcpy-exe命令详解" class="headerlink" title="Scrcpy.exe命令详解"></a>Scrcpy.exe命令详解</h1><ul>
-<li>指定连接到192.168.10.4:5555的手机</li>
-<li>启动镜像时关闭手机屏幕</li>
-<li>进制手机休眠</li>
-<li>镜像最大高度为768</li>
-<li>镜像标题设置为xxx</li>
-<li>镜像永远置顶</li>
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我有两台新旧电脑，一个安卓手机。</p>
+<p>安卓机已经开启USB调试功能，并且安卓机已经授权给旧电脑USB调试权限了。</p>
+<p>后来我又新买了一台新电脑，新电脑我也想用来调试这台安卓机。</p>
+<p>不过不巧的是，安卓机此时屏幕正好坏掉了。也就是我无法通过点击屏幕来给新电脑授予USB调试权限。</p>
+<p>那么，此时我该怎么授予新电脑调试这台安卓机呢？</p>
+<h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><ul>
+<li>一台已经允许USB调试的旧电脑，</li>
+<li>一台已经开启USB调试的手机</li>
+<li>一个WiFi</li>
+<li>一台新电脑</li>
+<li>adb.exe</li>
+<li>scrcpy.exe</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrcpy.exe -s 192.168.10.4:5555 --turn-screen-off --stay-awake -m 768 --window-title xxx --always-on-top</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/e280fb30/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><p>因为在手机屏幕坏掉之前，我们已经始终允许旧电脑对手机进行USB调试了。所以我们可以在旧电脑上通过adb命令和scrcpy命令来操作这台屏幕坏掉的手机。</p>
+<ul>
+<li><strong>先把手机用USB数据线连接到旧电脑上</strong></li>
+<li>在旧电脑上，运行adb devices -l命令，并记下 <strong>序列表</strong></li>
+<li>在旧电脑上，运行scrcpy.exe，把手机投屏到旧电脑得屏幕上。</li>
+<li>在旧电脑上，通过adb命令，开启手机的网络调试功能。执行命令：<code>adb -s 序列号 tcpip 5555</code>。</li>
+<li>获取手机的IP地址，<ul>
+<li>可以通过操作旧电脑的手机投屏获取IP地址，</li>
+<li>或者登陆路由器后台获取。最好能固定手机的IP地址，方便后续通过网络调试。</li>
+</ul>
+</li>
+<li>在新电脑上，通过网络调试手机，在旧电脑的手机投屏上，点击弹出的授权对话框。<ul>
+<li>首先要确保手机和新电脑在同一个网络中，也就是新电脑和手机连接的路由器是同一个。(新电脑和手机连接同一个WiFi,新电脑通过网线连接路由器，手机通过WiFi连接同一个路由器都行)，</li>
+<li>然后在新电脑上执行如下命令：<code>adb connect 手机IP:5555</code>。<ul>
+<li>此时就电脑上的手机投屏就会弹出一个对话框，要你是否授权新电脑对手机进行USB调试。<ul>
+<li>勾选始终允许这台电脑进行USB调试。然后点击确认按钮。</li>
+<li>此时新电脑终于可以USB调试这台手机了。但是执行adb devices -l命令可能还是显示没有授权。<ul>
+<li>没关系，在新电脑上，执行adb disconnect 手机IP:5555，先断开网络调试，然后再执行<code>adb connect 手机IP:5555</code>开启网络调试。然后再执行adb devices -l命令查看，这个时候就不会显示没有授权了。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>获取USB授权之后，就可以把手机通过USB数据线连接到新电脑上。新电脑可以像旧电脑那样通过USB调试手机了。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/c45a49fc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/c45a49fc/" class="post-title-link" itemprop="url">把Hexo站点从一台电脑拷贝到另一台电脑上</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-07-05 21:07:21" itemprop="dateCreated datePublished" datetime="2023-07-05T21:07:21+08:00">2023-07-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-07-06 00:13:09" itemprop="dateModified" datetime="2023-07-06T00:13:09+08:00">2023-07-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Hexo/%E8%BF%81%E7%A7%BB/" itemprop="url" rel="index"><span itemprop="name">迁移</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/c45a49fc/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/c45a49fc/" data-xid="/blog/c45a49fc/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="需求1：部署Hexo站点到另一台电脑上"><a href="#需求1：部署Hexo站点到另一台电脑上" class="headerlink" title="需求1：部署Hexo站点到另一台电脑上"></a>需求1：部署Hexo站点到另一台电脑上</h1><p>最近买了个台式机，我想把我的Hexo站点部署到台式机上。因为这个台式机我打算二十四小时都开着，当服务器使用。这样我就可以随时访问我的Hexo站点了。</p>
+<h1 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h1><h2 id="复制整个博客站点的的文件夹到台式机上"><a href="#复制整个博客站点的的文件夹到台式机上" class="headerlink" title="复制整个博客站点的的文件夹到台式机上"></a>复制整个博客站点的的文件夹到台式机上</h2><p>我在笔记本上开启网络共享功能，然后在台式机上访问我的笔记本，把Hexo站点的整个文件夹复制到台式机上。</p>
+<p>这个时候Hexo站点就已经迁移(复制)完成了，但是还不能开启本地服务器。<br>为什么呢，因为还没安装好Hexo所需要的依赖软件</p>
+<h2 id="安装Hexo站点需要的软件"><a href="#安装Hexo站点需要的软件" class="headerlink" title="安装Hexo站点需要的软件"></a>安装Hexo站点需要的软件</h2><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>略</p>
+<h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><p>略</p>
+<h4 id="使用nvm管理nodejs"><a href="#使用nvm管理nodejs" class="headerlink" title="使用nvm管理nodejs"></a>使用nvm管理nodejs</h4><p>略</p>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>略</p>
+<h2 id="本地部署Hexo"><a href="#本地部署Hexo" class="headerlink" title="本地部署Hexo"></a>本地部署Hexo</h2><p>安装好上述软件之后，就可以在台式机上部署hexo站点了，执行hexo s命令，不出意外的话可以成功部署。</p>
+<h1 id="需求2：同一个账户在两台电脑上协作"><a href="#需求2：同一个账户在两台电脑上协作" class="headerlink" title="需求2：同一个账户在两台电脑上协作"></a>需求2：同一个账户在两台电脑上协作</h1><p>我习惯在笔记本上编写Hexo站点文章，不过Hexo站点我部署在台式机上了。<br>所以我需要在两台电脑之间进行协作。</p>
+<h1 id="做法-1"><a href="#做法-1" class="headerlink" title="做法"></a>做法</h1><p>我先在笔记本上写好Hexo站点的文章，然后我推送到github上。<br>接着，我在台式机上拉取GitHub上的文章，然后在台式机上本地部署即可。</p>
+<h2 id="在台式机上重新-配置Git-SSH"><a href="#在台式机上重新-配置Git-SSH" class="headerlink" title="在台式机上重新 配置Git SSH"></a>在台式机上重新 配置Git SSH</h2><p>因为我直接把整个Hexo站点（git仓库）复制到台式机上了，此时台式机上的远程仓库链接已经设置好了，我不用重新init仓库。</p>
+<p>不过，此时是不可以直接拉取Github上的仓库，这是因为在台式机上还没配置好Git SSH的缘故。此时执行<code>git push origin master</code>命令，将会输出如下的错误信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ git pull origin master</span><br><span class="line">ssh: connect to host github.com port 22: Connection refused</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
+<h2 id="配置git的邮箱和用户名"><a href="#配置git的邮箱和用户名" class="headerlink" title="配置git的邮箱和用户名"></a>配置git的邮箱和用户名</h2><h3 id="配置邮箱"><a href="#配置邮箱" class="headerlink" title="配置邮箱"></a>配置邮箱</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;your_email@example.com&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="配置用户名"><a href="#配置用户名" class="headerlink" title="配置用户名"></a>配置用户名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;your_name&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global  --list</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ git config --global  --list</span><br><span class="line">user.email=xxxxxxx@163.com</span><br><span class="line">user.name=xyzabc</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
+
+<h2 id="从旧电脑上复制私钥和known-hosts文件到到新电脑上"><a href="#从旧电脑上复制私钥和known-hosts文件到到新电脑上" class="headerlink" title="从旧电脑上复制私钥和known_hosts文件到到新电脑上"></a>从旧电脑上复制私钥和known_hosts文件到到新电脑上</h2><p>在笔记本上进入用户目录下的.ssh目录中，.ssh目录结构如下代码块所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xyzabc\.ssh&gt;dir</span><br><span class="line"> 驱动器 C 中的卷没有标签。</span><br><span class="line"> 卷的序列号是 FA82-C79F</span><br><span class="line"></span><br><span class="line"> C:\Users\xyzabc\.ssh 的目录</span><br><span class="line"></span><br><span class="line">2023.07.04  19:46    &lt;DIR&gt;          .</span><br><span class="line">2023.07.04  19:46    &lt;DIR&gt;          ..</span><br><span class="line">2021.10.11  09:23                 0 config</span><br><span class="line">2021.07.12  09:13             2,610 id_rsa</span><br><span class="line">2021.07.12  09:13               573 id_rsa.pub</span><br><span class="line">2023.07.04  19:46               919 known_hosts</span><br><span class="line">2022.04.12  15:40               747 known_hosts.old</span><br><span class="line">               5 个文件          4,849 字节</span><br><span class="line">               2 个目录 59,848,286,208 可用字节</span><br><span class="line"></span><br><span class="line">C:\Users\xyzabc\.ssh&gt;</span><br></pre></td></tr></table></figure>
+<p>其中的id_rsa文件就是我们需要的私钥文件，id_rsa.pub是公钥文件，这个公钥我们之前已经放到GitHub上了</p>
+<h3 id="复制id-rsa和known-hosts到新电脑上的-ssh目录中"><a href="#复制id-rsa和known-hosts到新电脑上的-ssh目录中" class="headerlink" title="复制id_rsa和known_hosts到新电脑上的.ssh目录中"></a>复制id_rsa和known_hosts到新电脑上的.ssh目录中</h3><p>在台式机上同样进入用户目录，</p>
+<ul>
+<li>如果有.ssh目录，则进入.ssh目录，然后把 私钥文件id_rsa和known_hosts文件 粘贴到.ssh目录。</li>
+<li>如果没有.ssh目录，则创建一个.ssh目录。然后把 私钥文件id_rsa和known_hosts文件 粘贴到.ssh目录中。</li>
+</ul>
+<p>不过，为了方便起见，你把旧电脑上.ssh目录下的所有文件都复制到新电脑的.ssh目录下也可以。</p>
+<p>我之所以说复制私钥文件和known_hosts就可以了，是因为在我的操作中，复制私钥文件id_rsa和known_hosts文件之后，就可以通过SSH访问GitHub了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\abc\.ssh&gt;dir</span><br><span class="line"> 驱动器 C 中的卷没有标签。</span><br><span class="line"> 卷的序列号是 4A1D-5B3F</span><br><span class="line"></span><br><span class="line"> C:\Users\abc\.ssh 的目录</span><br><span class="line"></span><br><span class="line">2023/07/05  23:23    &lt;DIR&gt;          .</span><br><span class="line">2023/07/05  23:23    &lt;DIR&gt;          ..</span><br><span class="line">2023/07/05  22:59             2,610 id_rsa</span><br><span class="line">2023/07/05  23:23               919 known_hosts</span><br><span class="line">               2 个文件          3,529 字节</span><br><span class="line">               2 个目录 11,805,638,656 可用字节</span><br><span class="line"></span><br><span class="line">C:\Users\abc\.ssh&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加私钥到SSH"><a href="#添加私钥到SSH" class="headerlink" title="添加私钥到SSH"></a>添加私钥到SSH</h2><h3 id="开启ssh服务"><a href="#开启ssh服务" class="headerlink" title="开启ssh服务"></a>开启ssh服务</h3><p>在台式机上的.ssh目录中打开git-bash。<br>输入如下命令启动SSH服务：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br></pre></td></tr></table></figure>
+<p>这条命令没有输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 ~/.ssh</span><br><span class="line">$ ssh-agent bash</span><br></pre></td></tr></table></figure>
+<h3 id="添加私钥"><a href="#添加私钥" class="headerlink" title="添加私钥"></a>添加私钥</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add id_rsa</span><br></pre></td></tr></table></figure>
+<p>命令输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 ~/.ssh</span><br><span class="line">$ ssh-add id_rsa</span><br><span class="line">Identity added: id_rsa (xxxxxxx@163.com)</span><br></pre></td></tr></table></figure>
+<h2 id="测试链接是否成功"><a href="#测试链接是否成功" class="headerlink" title="测试链接是否成功"></a>测试链接是否成功</h2><p>因为之前在旧电脑的Git SSH配置中我们已经把公钥保存到github上了，所以现在我们就不用再重新布置了。</p>
+<p>git-bash<strong>进入Hexo站点目录</strong>，然后执行如下命令，测试是否能成功连接到github上。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>如果有如下的输出，则表示成功连接到GitHub上：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi githbubUseName! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
+<h3 id="解决：ssh-connect-to-host-github-com-port-22-Connection-refused"><a href="#解决：ssh-connect-to-host-github-com-port-22-Connection-refused" class="headerlink" title="解决：ssh: connect to host github.com port 22: Connection refused"></a>解决：ssh: connect to host github.com port 22: Connection refused</h3><p>我测试的时候并没有成功连接到GitHub上而是输出如下信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">ssh: connect to host github.com port 22: Connection refused</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
+<p>我这里应该是被墙了，安装Steam++，加速GitHub之后即可正常连接。</p>
+<h2 id="解决The-authenticity-of-host-‘github-com-127-0-0-1-’-can’t-be-established"><a href="#解决The-authenticity-of-host-‘github-com-127-0-0-1-’-can’t-be-established" class="headerlink" title="解决The authenticity of host ‘github.com (127.0.0.1)’ can’t be established."></a>解决The authenticity of host ‘github.com (127.0.0.1)’ can’t be established.</h2><p>如果出现如下的输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">an@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">The authenticity of host &#x27;github.com (127.0.0.1)&#x27; can&#x27;t be established.</span><br><span class="line">ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.</span><br><span class="line">This key is not known by any other names.</span><br><span class="line">Are you sure you want to continue connecting (yes/no/[fingerprint])?</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
+<p>这说明你只复制了秘钥文件到新电脑上，忘了从旧电脑上把known_hosts文件复制到新电脑的.ssh目录中。</p>
+<p>从旧电脑上把known_hosts文件复制到新电脑的.ssh目录中，然后在重新测试连接即可。此时应该就能正常连接了。</p>
+<h1 id="拉取GitHub上的仓库到新电脑"><a href="#拉取GitHub上的仓库到新电脑" class="headerlink" title="拉取GitHub上的仓库到新电脑"></a>拉取GitHub上的仓库到新电脑</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ git pull origin master</span><br><span class="line">remote: Enumerating objects: 23, done.</span><br><span class="line">remote: Counting objects: 100% (23/23), done.</span><br><span class="line">remote: Compressing objects: 100% (4/4), done.</span><br><span class="line">remote: Total 12 (delta 8), reused 12 (delta 8), pack-reused 0</span><br><span class="line">Unpacking objects: 100% (12/12), 2.29 KiB | 3.00 KiB/s, done.</span><br><span class="line">From github.com:githbubUseName/JavaReadingNotes</span><br><span class="line"> * branch              master     -&gt; FETCH_HEAD</span><br><span class="line">   d1bf8037..cd1954fe  master     -&gt; origin/master</span><br><span class="line">Updating d1bf8037..cd1954fe</span><br><span class="line">Fast-forward</span><br><span class="line"> ...277\220\350\241\214\346\234\272\345\210\266.md&quot; | 17 +++--</span><br><span class="line"> ...221Java\347\232\204\345\207\206\345\244\207.md&quot; | 79 +++++++++++++---------</span><br><span class="line"> ...200\344\270\252Java\347\250\213\345\272\217.md&quot; | 61 ++++++++++-------</span><br><span class="line"> 3 files changed, 91 insertions(+), 66 deletions(-)</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="git文件名乱码-gitbash文件名乱码"><a href="#git文件名乱码-gitbash文件名乱码" class="headerlink" title="git文件名乱码 gitbash文件名乱码"></a>git文件名乱码 gitbash文件名乱码</h2><p>此时可以成功拉取更新了，不过文件名是乱码的，输入如下命令解决：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.quotepath false</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="blog/8d23490d/">Git SSH配置过程</a><br><a href="blog/ad35763b/">git bash中文乱码</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-07-04 16:12:47 / 修改时间：12:10:22" itemprop="dateCreated datePublished" datetime="2023-07-04T16:12:47+08:00">2023-07-04</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/0/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/0/" data-xid="/blog/0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>305</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="int数组正则替换为String数组"><a href="#int数组正则替换为String数组" class="headerlink" title="int数组正则替换为String数组"></a>int数组正则替换为String数组</h1><p>查找:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(\d+)(,|&#125;)</span><br></pre></td></tr></table></figure>
+<p>替换为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;$1&quot;$2</span><br></pre></td></tr></table></figure>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>要处理的文本</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> String[] widthArr = &#123;<span class="number">600</span>, <span class="number">540</span>, <span class="number">500</span>, <span class="number">480</span>, <span class="number">420</span>, <span class="number">360</span>, <span class="number">350</span>, <span class="number">340</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>替换之后：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> String[] widthArr = &#123;<span class="string">&quot;600&quot;</span>, <span class="string">&quot;540&quot;</span>, <span class="string">&quot;500&quot;</span>, <span class="string">&quot;480&quot;</span>, <span class="string">&quot;420&quot;</span>, <span class="string">&quot;360&quot;</span>, <span class="string">&quot;350&quot;</span>, <span class="string">&quot;340&quot;</span>&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/fa55fbf8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/fa55fbf8/" class="post-title-link" itemprop="url">adb获取Android手机上的apk到电脑</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-05-11 14:22:04" itemprop="dateCreated datePublished" datetime="2023-05-11T14:22:04+08:00">2023-05-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/adb/" itemprop="url" rel="index"><span itemprop="name">adb</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/fa55fbf8/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/fa55fbf8/" data-xid="/blog/fa55fbf8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="adb获取Android手机上的apk到电脑"><a href="#adb获取Android手机上的apk到电脑" class="headerlink" title="adb获取Android手机上的apk到电脑"></a>adb获取Android手机上的apk到电脑</h1><h2 id="获取APP的包名"><a href="#获取APP的包名" class="headerlink" title="获取APP的包名"></a>获取APP的包名</h2><p>可以通过先在手机中启动相应的应用，使该应用位于前台。通过如下命令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys window | <span class="built_in">findstr</span> mCurrentFocus</span><br></pre></td></tr></table></figure>
+<p>可以获取到当前的activity。</p>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:\只读&gt;adb -s U8ENW18117021408 shell dumpsys window | findstr mCurrentFocus</span><br><span class="line">  mCurrentFocus=Window&#123;409f2b3 u0 com.playgame.havefun/com.bd.ad.v.game.center.MainActivity&#125;</span><br><span class="line"></span><br><span class="line">D:\只读&gt;</span><br></pre></td></tr></table></figure>
+<p>这条命令的输出中斜杠<code>/</code>之前和倒数第1个空格之间的字符串<code>com.playgame.havefun</code>就是包名</p>
+<h2 id="根据包名查找APP在手机上的apk的路径"><a href="#根据包名查找APP在手机上的apk的路径" class="headerlink" title="根据包名查找APP在手机上的apk的路径"></a>根据包名查找APP在手机上的apk的路径</h2><p>有了包名之后，通过如下命令来查询apk在Android设备上的路径：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell pm <span class="built_in">path</span> 包名</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:\只读&gt;adb -s U8ENW18117021408 shell pm path com.playgame.havefun</span><br><span class="line">package:/data/app/com.playgame.havefun-p8wNMhz11x_BgqI5wH6d8A==/base.apk</span><br><span class="line"></span><br><span class="line">D:\只读&gt;</span><br></pre></td></tr></table></figure>
+<p>这条命令的输出结果中的<code>package:</code>后面的就是我们需要的apk的地址：<code>/data/app/com.playgame.havefun-p8wNMhz11x_BgqI5wH6d8A==/base.apk</code>。</p>
+<h2 id="从手机pull到电脑上"><a href="#从手机pull到电脑上" class="headerlink" title="从手机pull到电脑上"></a>从手机pull到电脑上</h2><p>知道apk在Android上的地址之后，通过如下的命令即可把apk从Android拉取到电脑上：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb pull 手机上的apk路径 电脑上的路径</span><br></pre></td></tr></table></figure>
+<p>电脑上的路径可以是相对路径，如果是相对路径的话，则下载到当前目录下。在拉取的时候可以给apk取一个别名。</p>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D:\只读&gt;adb -s U8ENW18426004595 pull /data/app/com.ztgame.wzzt-4COnnGkt9XsPxhOhVnhu5Q==/base.apk 王者征途.apk</span><br><span class="line">从lan 获取</span><br><span class="line">/data/app/com.ztgame.wzzt-4COnnGkt9XsPxhOhVnhu5Q==/base.apk...ile pulled, 0 skipped. 30.4 MB/s (36797240 bytes in 1.153s)</span><br><span class="line"></span><br><span class="line">D:\只读&gt;</span><br></pre></td></tr></table></figure>
+<p>如果出现类似上面的输出，可以看到拉取成功了。</p>
+<h2 id="查看从Android获取到的apk"><a href="#查看从Android获取到的apk" class="headerlink" title="查看从Android获取到的apk"></a>查看从Android获取到的apk</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:\只读&gt;dir|findstr 王者征途.apk</span><br><span class="line">2023.05.11  13:02        36,797,240 王者征途.apk</span><br><span class="line"></span><br><span class="line">D:\只读&gt;</span><br></pre></td></tr></table></figure>
+<p>可以看到我们已经成功从手机上获取到这个apk了。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013379032/article/details/106663706">https://blog.csdn.net/u013379032/article/details/106663706</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/62915f14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/62915f14/" class="post-title-link" itemprop="url">adb获取手机的IP地址</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-05-09 02:31:18" itemprop="dateCreated datePublished" datetime="2023-05-09T02:31:18+08:00">2023-05-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/adb/" itemprop="url" rel="index"><span itemprop="name">adb</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/62915f14/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/62915f14/" data-xid="/blog/62915f14/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="adb-shell-ifconfig"><a href="#adb-shell-ifconfig" class="headerlink" title="adb shell ifconfig"></a>adb shell ifconfig</h2><p><code>adb shell ifconfig</code>会列出所有的IP地址。<br>例如：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">haha</span>&gt;<span class="title">adb</span> -<span class="title">s</span> <span class="title">U8ENW18119024027</span> <span class="title">shell</span> <span class="title">ifconfig</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_ims00</span> <span class="title">Link</span> <span class="title">encap:UNSPEC</span></span></span><br><span class="line"><span class="function">          <span class="title">inet6</span> <span class="title">addr</span>: <span class="title">fe80</span>::5<span class="title">a02</span>:3<span class="title">ff:fe04</span>:50<span class="title">d</span>/64 <span class="title">Scope</span>: <span class="title">Link</span></span></span><br><span class="line"><span class="function">          <span class="title">inet6</span> <span class="title">addr</span>: 2409:8120:9<span class="title">a34:f7c3</span>:1:2:6112:8<span class="title">ffc</span>/64 <span class="title">Scope</span>: <span class="title">Global</span></span></span><br><span class="line"><span class="function">          <span class="title">UP</span> <span class="title">RUNNING</span> <span class="title">NOARP</span>  <span class="title">MTU</span>:1280  <span class="title">Metric</span>:1</span></span><br><span class="line"><span class="function">          <span class="title">RX</span> <span class="title">packets</span>:0 <span class="title">errors</span>:0 <span class="title">dropped</span>:0 <span class="title">overruns</span>:0 <span class="title">frame</span>:0</span></span><br><span class="line"><span class="function">          <span class="title">TX</span> <span class="title">packets</span>:99 <span class="title">errors</span>:0 <span class="title">dropped</span>:0 <span class="title">overruns</span>:0 <span class="title">carrier</span>:0</span></span><br><span class="line"><span class="function">          <span class="title">collisions</span>:0 <span class="title">txqueuelen</span>:1000</span></span><br><span class="line"><span class="function">          <span class="title">RX</span> <span class="title">bytes</span>:0 <span class="title">TX</span> <span class="title">bytes</span>:5544</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">wlan0</span>     <span class="title">Link</span> <span class="title">encap:UNSPEC</span></span></span><br><span class="line"><span class="function">          <span class="title">inet</span> <span class="title">addr</span>:192.168.0.112  <span class="title">Bcast</span>:192.168.0.255  <span class="title">Mask</span>:255.255.255.0</span></span><br><span class="line"><span class="function">          <span class="title">inet6</span> <span class="title">addr</span>: <span class="title">fe80</span>::<span class="title">b92e</span>:4<span class="title">d41:c756</span>:280<span class="title">c</span>/64 <span class="title">Scope</span>: <span class="title">Link</span></span></span><br><span class="line"><span class="function">          <span class="title">UP</span> <span class="title">BROADCAST</span> <span class="title">RUNNING</span> <span class="title">MULTICAST</span>  <span class="title">MTU</span>:1500  <span class="title">Metric</span>:1</span></span><br><span class="line"><span class="function">          <span class="title">RX</span> <span class="title">packets</span>:1242540 <span class="title">errors</span>:0 <span class="title">dropped</span>:0 <span class="title">overruns</span>:0 <span class="title">frame</span>:0</span></span><br><span class="line"><span class="function">          <span class="title">TX</span> <span class="title">packets</span>:1852388 <span class="title">errors</span>:0 <span class="title">dropped</span>:0 <span class="title">overruns</span>:0 <span class="title">carrier</span>:0</span></span><br><span class="line"><span class="function">          <span class="title">collisions</span>:0 <span class="title">txqueuelen</span>:1000</span></span><br><span class="line"><span class="function">          <span class="title">RX</span> <span class="title">bytes</span>:655964181 <span class="title">TX</span> <span class="title">bytes</span>:268463682</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">p2p0</span>      <span class="title">Link</span> <span class="title">encap:UNSPEC</span></span></span><br><span class="line"><span class="function">          <span class="title">UP</span> <span class="title">BROADCAST</span> <span class="title">MULTICAST</span>  <span class="title">MTU</span>:1500  <span class="title">Metric</span>:1</span></span><br><span class="line"><span class="function">          <span class="title">RX</span> <span class="title">packets</span>:0 <span class="title">errors</span>:0 <span class="title">dropped</span>:0 <span class="title">overruns</span>:0 <span class="title">frame</span>:0</span></span><br><span class="line"><span class="function">          <span class="title">TX</span> <span class="title">packets</span>:0 <span class="title">errors</span>:0 <span class="title">dropped</span>:0 <span class="title">overruns</span>:0 <span class="title">carrier</span>:0</span></span><br><span class="line"><span class="function">          <span class="title">collisions</span>:0 <span class="title">txqueuelen</span>:1000</span></span><br><span class="line"><span class="function">          <span class="title">RX</span> <span class="title">bytes</span>:0 <span class="title">TX</span> <span class="title">bytes</span>:0</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">lo</span>        <span class="title">Link</span> <span class="title">encap:UNSPEC</span></span></span><br><span class="line"><span class="function">          <span class="title">inet</span> <span class="title">addr</span>:127.0.0.1  <span class="title">Mask</span>:255.0.0.0</span></span><br><span class="line"><span class="function">          <span class="title">inet6</span> <span class="title">addr</span>: ::1/128 <span class="title">Scope</span>: <span class="title">Host</span></span></span><br><span class="line"><span class="function">          <span class="title">UP</span> <span class="title">LOOPBACK</span> <span class="title">RUNNING</span>  <span class="title">MTU</span>:65536  <span class="title">Metric</span>:1</span></span><br><span class="line"><span class="function">          <span class="title">RX</span> <span class="title">packets</span>:177062 <span class="title">errors</span>:0 <span class="title">dropped</span>:0 <span class="title">overruns</span>:0 <span class="title">frame</span>:0</span></span><br><span class="line"><span class="function">          <span class="title">TX</span> <span class="title">packets</span>:177062 <span class="title">errors</span>:0 <span class="title">dropped</span>:0 <span class="title">overruns</span>:0 <span class="title">carrier</span>:0</span></span><br><span class="line"><span class="function">          <span class="title">collisions</span>:0 <span class="title">txqueuelen</span>:1</span></span><br><span class="line"><span class="function">          <span class="title">RX</span> <span class="title">bytes</span>:622693892 <span class="title">TX</span> <span class="title">bytes</span>:622693892</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">dummy0</span>    <span class="title">Link</span> <span class="title">encap:UNSPEC</span></span></span><br><span class="line"><span class="function">          <span class="title">inet6</span> <span class="title">addr</span>: <span class="title">fe80</span>::<span class="title">b423:b9ff</span>:<span class="title">fe08:f390</span>/64 <span class="title">Scope</span>: <span class="title">Link</span></span></span><br><span class="line"><span class="function">          <span class="title">UP</span> <span class="title">BROADCAST</span> <span class="title">RUNNING</span> <span class="title">NOARP</span>  <span class="title">MTU</span>:1500  <span class="title">Metric</span>:1</span></span><br><span class="line"><span class="function">          <span class="title">RX</span> <span class="title">packets</span>:0 <span class="title">errors</span>:0 <span class="title">dropped</span>:0 <span class="title">overruns</span>:0 <span class="title">frame</span>:0</span></span><br><span class="line"><span class="function">          <span class="title">TX</span> <span class="title">packets</span>:2279 <span class="title">errors</span>:0 <span class="title">dropped</span>:0 <span class="title">overruns</span>:0 <span class="title">carrier</span>:0</span></span><br><span class="line"><span class="function">          <span class="title">collisions</span>:0 <span class="title">txqueuelen</span>:1000</span></span><br><span class="line"><span class="function">          <span class="title">RX</span> <span class="title">bytes</span>:0 <span class="title">TX</span> <span class="title">bytes</span>:596525</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Users</span>\<span class="title">haha</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="adb-shell-ifconfig-findstr-Mask"><a href="#adb-shell-ifconfig-findstr-Mask" class="headerlink" title="adb shell ifconfig | findstr Mask"></a>adb shell ifconfig | findstr Mask</h3><p>可以使用管道符和findstr命令来做进一步的筛选</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell ifconfig | <span class="built_in">findstr</span> Mask</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb -s U8ENW18119024027 shell ifconfig | <span class="built_in">findstr</span> Mask</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">haha</span>&gt;<span class="title">adb</span> -<span class="title">s</span> <span class="title">U8ENW18119024027</span> <span class="title">shell</span> <span class="title">ifconfig</span> | <span class="title">findstr</span> <span class="title">Mask</span></span></span><br><span class="line"><span class="function">          <span class="title">inet</span> <span class="title">addr</span>:192.168.0.112  <span class="title">Bcast</span>:192.168.0.255  <span class="title">Mask</span>:255.255.255.0</span></span><br><span class="line"><span class="function">          <span class="title">inet</span> <span class="title">addr</span>:127.0.0.1  <span class="title">Mask</span>:255.0.0.0</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Users</span>\<span class="title">haha</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这里有两个地址，第一个就是我当前手机的地址。</p>
+<h3 id="adb-shell-ifconfig-wlan0"><a href="#adb-shell-ifconfig-wlan0" class="headerlink" title="adb shell ifconfig wlan0"></a>adb shell ifconfig wlan0</h3><p>例如：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">haha</span>&gt;<span class="title">adb</span> -<span class="title">s</span> <span class="title">U8ENW18119024027</span> <span class="title">shell</span> <span class="title">ifconfig</span> <span class="title">wlan0</span></span></span><br><span class="line"><span class="function"><span class="title">wlan0</span>     <span class="title">Link</span> <span class="title">encap:UNSPEC</span></span></span><br><span class="line"><span class="function">          <span class="title">inet</span> <span class="title">addr</span>:192.168.0.112  <span class="title">Bcast</span>:192.168.0.255  <span class="title">Mask</span>:255.255.255.0</span></span><br><span class="line"><span class="function">          <span class="title">inet6</span> <span class="title">addr</span>: <span class="title">fe80</span>::<span class="title">b92e</span>:4<span class="title">d41:c756</span>:280<span class="title">c</span>/64 <span class="title">Scope</span>: <span class="title">Link</span></span></span><br><span class="line"><span class="function">          <span class="title">UP</span> <span class="title">BROADCAST</span> <span class="title">RUNNING</span> <span class="title">MULTICAST</span>  <span class="title">MTU</span>:1500  <span class="title">Metric</span>:1</span></span><br><span class="line"><span class="function">          <span class="title">RX</span> <span class="title">packets</span>:1451964 <span class="title">errors</span>:0 <span class="title">dropped</span>:0 <span class="title">overruns</span>:0 <span class="title">frame</span>:0</span></span><br><span class="line"><span class="function">          <span class="title">TX</span> <span class="title">packets</span>:1985457 <span class="title">errors</span>:0 <span class="title">dropped</span>:0 <span class="title">overruns</span>:0 <span class="title">carrier</span>:0</span></span><br><span class="line"><span class="function">          <span class="title">collisions</span>:0 <span class="title">txqueuelen</span>:1000</span></span><br><span class="line"><span class="function">          <span class="title">RX</span> <span class="title">bytes</span>:946642186 <span class="title">TX</span> <span class="title">bytes</span>:277407859</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Users</span>\<span class="title">haha</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="adb-shell-ifconfig-wlan0-findstr-Mask"><a href="#adb-shell-ifconfig-wlan0-findstr-Mask" class="headerlink" title="adb shell ifconfig wlan0| findstr Mask"></a>adb shell ifconfig wlan0| findstr Mask</h4><p>一般来说，我们值需要ipv4的地址就够了，可以使用管道符号和findstr来做更进一步的筛选<br>例如：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">haha</span>&gt;<span class="title">adb</span> -<span class="title">s</span> <span class="title">U8ENW18119024027</span> <span class="title">shell</span> <span class="title">ifconfig</span> <span class="title">wlan0</span>| <span class="title">findstr</span> <span class="title">Mask</span></span></span><br><span class="line"><span class="function">          <span class="title">inet</span> <span class="title">addr</span>:192.168.0.112  <span class="title">Bcast</span>:192.168.0.255  <span class="title">Mask</span>:255.255.255.0</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Users</span>\<span class="title">haha</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="adb-shell-netcfg"><a href="#adb-shell-netcfg" class="headerlink" title="adb shell netcfg"></a>adb shell netcfg</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">haha</span>&gt;<span class="title">adb</span> -<span class="title">s</span> <span class="title">U8ENW18119024027</span> <span class="title">shell</span> <span class="title">netcfg</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_ims00</span> <span class="title">UP</span>                                     0.0.0.0/0   0<span class="title">x000000c1</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_tun11</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_tun01</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">wlan0</span>    <span class="title">UP</span>                               192.168.0.112/24  0<span class="title">x00001043</span></span></span><br><span class="line"><span class="function"><span class="title">dummy0</span>   <span class="title">UP</span>                                     0.0.0.0/0   0<span class="title">x000000c3</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet4</span>   <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">p2p0</span>     <span class="title">UP</span>                                     0.0.0.0/0   0<span class="title">x00001003</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet2</span>   <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">Hisilicon0</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00001002</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_tun14</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet0</span>   <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_tun04</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_tun12</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_tun02</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">lo</span>       <span class="title">UP</span>                                   127.0.0.1/8   0<span class="title">x00000049</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_emc0</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_tun10</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_tun00</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet3</span>   <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">sit0</span>     <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000080</span></span></span><br><span class="line"><span class="function"><span class="title">ip6tnl0</span>  <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000080</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet1</span>   <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_r_ims10</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">ip_vti0</span>  <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000080</span></span></span><br><span class="line"><span class="function"><span class="title">ip6_vti0</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000080</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_r_ims00</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_tun13</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_tun03</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"><span class="title">rmnet_ims10</span> <span class="title">DOWN</span>                                   0.0.0.0/0   0<span class="title">x00000000</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Users</span>\<span class="title">haha</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="adb-shell-netcfg-findstr-wlan0"><a href="#adb-shell-netcfg-findstr-wlan0" class="headerlink" title="adb shell netcfg| findstr wlan0"></a>adb shell netcfg| findstr wlan0</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">haha</span>&gt;<span class="title">adb</span> -<span class="title">s</span> <span class="title">U8ENW18119024027</span> <span class="title">shell</span> <span class="title">netcfg</span>| <span class="title">findstr</span> <span class="title">wlan0</span></span></span><br><span class="line"><span class="function"><span class="title">wlan0</span>    <span class="title">UP</span>                               192.168.0.112/24  0<span class="title">x00001043</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Users</span>\<span class="title">haha</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/HDFQQ188816190/article/details/98599940">https://blog.csdn.net/HDFQQ188816190/article/details/98599940</a></p>
+
       
     </div>
 
@@ -1487,7 +1599,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/66/">66</a><a class="extend next" rel="next" href="/blog/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/70/">70</a><a class="extend next" rel="next" href="/blog/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1499,7 +1611,7 @@
 
 <div class="copyright">
   &copy; 2018 – 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1518,7 +1630,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23:51</span>
+    <span title="站点阅读时长">24:53</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
