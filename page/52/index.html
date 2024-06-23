@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">698</span>
+          <span class="site-state-item-count">700</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,353 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/ef25533d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/ef25533d/" class="post-title-link" itemprop="url">Java 网络编程1---IP与InetAddress</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-05-30 16:59:00" itemprop="dateCreated datePublished" datetime="2019-05-30T16:59:00+08:00">2019-05-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-13 21:31:07" itemprop="dateModified" datetime="2022-05-13T21:31:07+08:00">2022-05-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">网络编程</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/ef25533d/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/ef25533d/" data-xid="/blog/ef25533d/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>网络可以使不同物理位置上的计算机达到资源共享和通信的目的，在Java中也提供了专门的网络开发程序包—-java.net,以方便开发者进行网络程序的开发。<br>Java的网络编程提供了两种通信协议：TCP(传输控制协议)，UDP(数据报协议)。<br><strong>关于TCP和UDP</strong><br>TCP和UDP都属于传输层协议，TCP(Transmission Control Protocol)是可靠的传输协议，传输前会采用<code>三次握手</code>的方式建立连接，以保证传输的可靠性。<br>而UDP(User Datagram Protocol)协议是不可靠的传输协议，即发送出去的数据不一定接收得到，网上的聊天工具一般使用UDP协议。</p>
+<h2 id="IP-Internet-Protocal-与InetAddress"><a href="#IP-Internet-Protocal-与InetAddress" class="headerlink" title="IP(Internet Protocal)与InetAddress"></a>IP(Internet Protocal)与InetAddress</h2><h3 id="IP地址简介"><a href="#IP地址简介" class="headerlink" title="IP地址简介"></a>IP地址简介</h3><p>互联网上的每一台计算机都有一个唯一表示自己的标记，这个标记就是IP地址。<br>IP地址使用32位长度的二进制数据表示，一般在实际中看到的大部分IP地址都是以点分十进制形式表示的，如<code>192.168.1.1</code>。</p>
+<h3 id="IP地址格式"><a href="#IP地址格式" class="headerlink" title="IP地址格式"></a>IP地址格式</h3><p>IP地址&#x3D;网络地址+主机地址</p>
+<ul>
+<li>网络号：用于识别主机所在的网络。</li>
+<li>主机号：用于识别该网络中的主机。<br> IP地址分为5类，A类地址保留给政府机构，B类地址分配给中等规模的公司，C类地址分配给任何需要的人，D类地址用户组播，E类地址用于实验，各类地址可以容纳的地址数目不同，这5类地址的范围如下表所示。<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">地址分类</th>
+<th align="center">地址范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">A类地址</td>
+<td align="center">1.0.0.1~126.255.255.254</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">B类地址</td>
+<td align="center">128.0.0.1~191.255.255.254</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">C类地址</td>
+<td align="center">192.0.0.1~233.255.255.254</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">D类地址</td>
+<td align="center">224.0.0.1~239.255.255.254</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">E类地址</td>
+<td align="center">240.0.0.1~255.255.255.254</td>
+</tr>
+<tr>
+<td align="center">在上面的地址分类表中可以发现没哟<code>127.X.X.X</code>的表示，<strong>这是因为<code>127.X.X.X</code>是保留地址，用做循环测试</strong>，在开发测试中经常使用127.0.0.1表示本机的IP地址。</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">####IPv4,IPv6</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">IPv4(Internet Protocal version 4)是互联网协议的第4个版本，也是使用最广泛的版本，但是IPv4已经无法满足当今互联网上的主机数量，所以在此基础之上有产生的新的版本IPv6,使用IPv6可以比IPv4容纳更多的主机。</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="InetAddress"><a href="#InetAddress" class="headerlink" title="InetAddress"></a>InetAddress</h3>InetAddress类主要表示IP地址，这个类有两个子类：Inet4Address,Inet6Address,一个用于表示IPv4，另一个用于表示IPv6。InetAddress类的常用方法如下表所示。<table>
+<thead>
+<tr>
+<th>序号</th>
+<th></th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>public static InetAddress getByName(String host)throws UnknownHostException</td>
+<td>在给定主机名的情况下确定主机的 IP 地址(InetAddress对象)。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>public static InetAddress getLocalHost() throws UnknownHostException</td>
+<td>返回本地主机的IP地址(InetAddress对象)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>public String getHostName()</td>
+<td>获取此 IP 地址(InetAddress对象)的主机名。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>public boolean isReachable(int timeout) throws IOException</td>
+<td>测试是否可以达到该地址。</td>
+</tr>
+<tr>
+<td>实例: 测试InetAddress类</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java1.net.ip;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.net.InetAddress;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InetAddressDemo</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception</span><br><span class="line">	&#123;	</span><br><span class="line">		<span class="type">InetAddress</span> <span class="variable">locAdd</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">		<span class="type">InetAddress</span> <span class="variable">csdn</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">		locAdd = InetAddress.getLocalHost();<span class="comment">// 得到本机</span></span><br><span class="line">		<span class="comment">//https://www.csdn.net/---注意要把&quot;https://&quot;去掉</span></span><br><span class="line">		csdn = InetAddress.getByName(<span class="string">&quot;blog.csdn.net&quot;</span>);</span><br><span class="line">		System.out.println(<span class="string">&quot;本机的        IP地址：&quot;</span> + locAdd.getHostAddress());</span><br><span class="line">		System.out.println(<span class="string">&quot;   CSDN博客地址：&quot;</span> + csdn.getHostAddress());</span><br><span class="line">		System.out.println(<span class="string">&quot;    本机是否可达：&quot;</span> + locAdd.isReachable(<span class="number">5000</span>));</span><br><span class="line">		System.out.println(<span class="string">&quot;CSDN博客是否可达：&quot;</span> + csdn.isReachable(<span class="number">5000</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">本机的   IP地址：192.168.45.9</span><br><span class="line">   CSDN博客地址：47.95.47.253</span><br><span class="line">    本机是否可达：true</span><br><span class="line">CSDN博客是否可达：true</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/503e570d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/503e570d/" class="post-title-link" itemprop="url">eclipse HTML代码格式化</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-05-29 16:12:41" itemprop="dateCreated datePublished" datetime="2019-05-29T16:12:41+08:00">2019-05-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-EE/IDE/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/503e570d/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/503e570d/" data-xid="/blog/503e570d/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>211</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="eclipse-HTML代码格式化"><a href="#eclipse-HTML代码格式化" class="headerlink" title="eclipse HTML代码格式化"></a>eclipse HTML代码格式化</h1><p>如下图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Format/HTML/1.png" alt="这里有一张图片"></p>
+<ul>
+<li><code>Line width</code>:表示代码显示的宽度</li>
+<li><code>Split multiple attributes each on a new line</code>:表示<code>html</code>标签的属性各自放在一行,这个没必要.</li>
+<li><code>Align final bracket in multi-line element tags</code>:表示对齐多行元素的结束符</li>
+<li><code>Clear all blank lines</code>:删除空行</li>
+<li><code>Indent using spaces</code>:使用空格对齐,而不是<code>tab</code>键</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1566,276 +1913,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/874828d8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/874828d8/" class="post-title-link" itemprop="url">eclipse创建Spring MVC配置文件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-05-13 22:21:13" itemprop="dateCreated datePublished" datetime="2019-05-13T22:21:13+08:00">2019-05-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/" itemprop="url" rel="index"><span itemprop="name">Java EE</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-EE/IDE/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/874828d8/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/874828d8/" data-xid="/blog/874828d8/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>795</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Spring-MVC配置文件模版"><a href="#Spring-MVC配置文件模版" class="headerlink" title="Spring MVC配置文件模版"></a>Spring MVC配置文件模版</h1><p>Spring MVC配置文件模板如下所示:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>虽然知道大概是这样,但是我们不可能把上面这些代码背出来,下面介绍在eclipse之中如何创建Spring MVC的配置文件.</p>
-<h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><p>使用安装<code>Spring Tools3</code></p>
-<h1 id="使用Spring-Tools3插件创建配置文件"><a href="#使用Spring-Tools3插件创建配置文件" class="headerlink" title="使用Spring Tools3插件创建配置文件"></a>使用Spring Tools3插件创建配置文件</h1><p>在需要创建的目录上右键,选择<code>new&gt;Other...</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Spring/SpringMVC/NewFile/1.png" alt="这里有一张图片"><br>然后在弹出的选择框中下拉,展开Spring目录,选择<code>Spring Bean Configuration File</code>,选择<code>next</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Spring/SpringMVC/NewFile/2.png" alt="这里有一张图片"><br>最后填入文件名,然后点击<code>next</code>,再次点击<code>next</code>即可创建<code>Spring MVC</code>配置文件.<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Spring/SpringMVC/NewFile/3.png" alt="这里有一张图片"><br>效果如下图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Spring/SpringMVC/NewFile/4.png" alt="这里有一张图片"></p>
-<h1 id="手动创建web-xml"><a href="#手动创建web-xml" class="headerlink" title="手动创建web.xml"></a>手动创建web.xml</h1><p>有时候,刚开始创建项目时,并没有创建<code>web.xml</code>文件,等到需要用到时,总不能再创建一个一个项目,然后再把<code>web.xml</code>复制过来吧。下面来介绍怎么手动创建<code>web.xml</code>:<br>在项目上右键,选择<code>Java EE tools</code>,然后选择<code>Generate Deployment Descriptor Stub</code>即可创建<code>web.xml</code>:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/Spring/SpringMVC/NewFile/5.png" alt="这里有一张图片"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/2738012d/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2738012d/" class="post-title-link" itemprop="url">定位元素</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-05-11 22:05:12" itemprop="dateCreated datePublished" datetime="2019-05-11T22:05:12+08:00">2019-05-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/CSS/%E5%AE%9A%E4%BD%8D%E5%85%83%E7%B4%A0/" itemprop="url" rel="index"><span itemprop="name">定位元素</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/2738012d/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/2738012d/" data-xid="/blog/2738012d/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>881</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><p><strong>所谓盒模型，就是浏览器为页面中的每个HTML元素生成的矩形盒子</strong>。这些盒子们都要按照可见版式模型（visual formatting model）在页面上排布。</p>
-<h2 id="可见的页面版式"><a href="#可见的页面版式" class="headerlink" title="可见的页面版式"></a>可见的页面版式</h2><p>可见的页面版式主要由三个属性控制：<code>position</code>属性、<code>display</code>属性和<code>float</code>属性。其中，</p>
-<ul>
-<li><code>position</code>属性控制页面上元素间的位置关系，</li>
-<li><code>display</code>属性控制元素是堆叠、并排，还是根本不在页面上出现，</li>
-<li><code>float</code>属性提供控制的方式，以便把元素组成成多栏布局。</li>
-</ul>
-<p>每一个元素都会在页面上生成一个盒子。因此，HTML页面实际上就是由一堆盒子组成的。<br><strong>默认情况下，每个盒子的边框不可见，背景也是透明的，所以我们不能直接看到页面中盒子的结构</strong></p>
-<h2 id="盒子的属性"><a href="#盒子的属性" class="headerlink" title="盒子的属性"></a>盒子的属性</h2><p>我们先从每个元素盒子的属性开始吧。这些属性可以分成三组。</p>
-<ul>
-<li>边框（<code>border</code>）。可以设置边框的宽窄、样式和颜色。</li>
-<li>内边距（<code>padding</code>）。可以设置盒子内容区与边框的间距。</li>
-<li>外边距（<code>margin</code>）。可以设置盒子与相邻元素的间距。</li>
-</ul>
-<p><strong>外边距是边框向外开推其他元素的距离，而内边距是从边框向内推开其他元素的距离</strong>,如下图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/CSS/chapter3/1.png" alt="这里有一张图片"><br>图中文字：<code>Border</code>：边框；<code>Padding</code>：内边距；<code>Margin</code>：外边距.<br>元素盒子还有一个背景层，可以改变颜色，也可以添加图片。<br><strong>一个盒子有4条边，因此与边框、内边距和外边距相关的属性也各有4个</strong>，分别是上（top）、右（right）、下（bottom）、左（left）。</p>
-<h3 id="简写样式"><a href="#简写样式" class="headerlink" title="简写样式"></a>简写样式</h3><p>CSS为<code>边框</code>、<code>内边距</code>和<code>外边距</code>分别规定了简写属性，让你通过一条声明就可以完成设定。</p>
-<h4 id="简写样式属性顺序"><a href="#简写样式属性顺序" class="headerlink" title="简写样式属性顺序"></a>简写样式属性顺序</h4><p>在每个简写声明中，属性值的顺序都是<code>上</code>、<code>右</code>、<code>下</code>、<code>左</code>。想象一下<code>从上开始绕顺时针旋转</code>就记住了。</p>
-<p>举个例子吧，如果要设定盒子的外边距，不用简写属性就得这样写：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">选择器xxx&#123;</span><br><span class="line">    <span class="attribute">margin-top</span>:<span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>:<span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">margin-bottom</span>:<span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>:<span class="number">8px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>而使用简写属性，则可以简写为这样：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">选择器xxx&#123;</span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">5px</span> <span class="number">10px</span> <span class="number">12px</span> <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="盒子边框"><a href="#盒子边框" class="headerlink" title="盒子边框"></a>盒子边框</h2><iframe frameborder= "no" border= "0" marginwidth= "0" marginheight= "0" width=900 height=1380 src= "http://edrawcloudpubliccn.oss-cn-shenzhen.aliyuncs.com/viewer/self/738327/share/2019-5-12/1557631930/main.svg"></iframe>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/51/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/51/">51</a><span class="page-number current">52</span><a class="page-number" href="/blog/page/53/">53</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/70/">70</a><a class="extend next" rel="next" href="/blog/page/53/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1868,7 +1945,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">24:54</span>
+    <span title="站点阅读时长">24:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

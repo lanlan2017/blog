@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">698</span>
+          <span class="site-state-item-count">700</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,271 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/cff504bd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/cff504bd/" class="post-title-link" itemprop="url">JavaScript格式化日期</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-21 10:59:52" itemprop="dateCreated datePublished" datetime="2021-03-21T10:59:52+08:00">2021-03-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/JavaScript/Date/" itemprop="url" rel="index"><span itemprop="name">Date</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/cff504bd/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/cff504bd/" data-xid="/blog/cff504bd/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="JavaScript格式化日期"><a href="#JavaScript格式化日期" class="headerlink" title="JavaScript格式化日期"></a>JavaScript格式化日期</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Date</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">formatDate</span> = <span class="keyword">function</span> (<span class="params">fmt</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> o = &#123;</span><br><span class="line">        <span class="string">&quot;M+&quot;</span>: <span class="variable language_">this</span>.<span class="title function_">getMonth</span>() + <span class="number">1</span>,                   <span class="comment">//月份</span></span><br><span class="line">        <span class="string">&quot;d+&quot;</span>: <span class="variable language_">this</span>.<span class="title function_">getDate</span>(),                        <span class="comment">//日</span></span><br><span class="line">        <span class="string">&quot;h+&quot;</span>: <span class="variable language_">this</span>.<span class="title function_">getHours</span>(),                       <span class="comment">//小时</span></span><br><span class="line">        <span class="string">&quot;m+&quot;</span>: <span class="variable language_">this</span>.<span class="title function_">getMinutes</span>(),                     <span class="comment">//分</span></span><br><span class="line">        <span class="string">&quot;s+&quot;</span>: <span class="variable language_">this</span>.<span class="title function_">getSeconds</span>(),                     <span class="comment">//秒</span></span><br><span class="line">        <span class="string">&quot;q+&quot;</span>: <span class="title class_">Math</span>.<span class="title function_">floor</span>((<span class="variable language_">this</span>.<span class="title function_">getMonth</span>() + <span class="number">3</span>) / <span class="number">3</span>), <span class="comment">//季度</span></span><br><span class="line">        <span class="string">&quot;S&quot;</span>: <span class="variable language_">this</span>.<span class="title function_">getMilliseconds</span>()                  <span class="comment">//毫秒</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">//  获取年份 </span></span><br><span class="line">    <span class="comment">// ①</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="regexp">/(y+)/i</span>.<span class="title function_">test</span>(fmt)) &#123;</span><br><span class="line">        fmt = fmt.<span class="title function_">replace</span>(<span class="title class_">RegExp</span>.<span class="property">$1</span>, (<span class="variable language_">this</span>.<span class="title function_">getFullYear</span>() + <span class="string">&quot;&quot;</span>).<span class="title function_">substr</span>(<span class="number">4</span> - <span class="title class_">RegExp</span>.<span class="property">$1</span>.<span class="property">length</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> o) &#123;</span><br><span class="line">        <span class="comment">// ②</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&quot;(&quot;</span> + k + <span class="string">&quot;)&quot;</span>, <span class="string">&quot;i&quot;</span>).<span class="title function_">test</span>(fmt)) &#123;</span><br><span class="line">            fmt = fmt.<span class="title function_">replace</span>(</span><br><span class="line">                <span class="title class_">RegExp</span>.<span class="property">$1</span>, (<span class="title class_">RegExp</span>.<span class="property">$1</span>.<span class="property">length</span> == <span class="number">1</span>) ? (o[k]) : ((<span class="string">&quot;00&quot;</span> + o[k]).<span class="title function_">substr</span>((<span class="string">&quot;&quot;</span> + o[k]).<span class="property">length</span>)));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fmt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// var now = new Date();</span></span><br><span class="line"><span class="comment">// console.log(now.format(&quot;YYYY-MM-DD&quot;));    // 2021-01-11</span></span><br><span class="line"><span class="comment">// console.log(now.format(&quot;yyyy年MM月dd日&quot;));</span></span><br><span class="line"><span class="comment">// console.log(now.format(&quot;MM/dd/yyyy&quot;));</span></span><br><span class="line"><span class="comment">// console.log(now.format(&quot;yyyyMMdd&quot;));</span></span><br><span class="line"><span class="comment">// console.log(now.format(&quot;yyyy-MM-dd hh:mm:ss&quot;));</span></span><br></pre></td></tr></table></figure>
+<h1 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h1><p><input type="text" id="formateDateInput" /><button onclick="formatDateShow()">显示日期</button></p>
+<script>
+    Date.prototype.formatDate = function (fmt) {
+        var o = {
+            "M+": this.getMonth() + 1,                   //月份
+            "d+": this.getDate(),                        //日
+            "h+": this.getHours(),                       //小时
+            "m+": this.getMinutes(),                     //分
+            "s+": this.getSeconds(),                     //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds()                  //毫秒
+        };
+        if (/(y+)/i.test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        }
+        for (var k in o) {
+            if (new RegExp("(" + k + ")", "i").test(fmt)) {
+                fmt = fmt.replace(
+                    RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            }
+        }
+        return fmt;
+    }
+    function formatDateShow() {
+        var input = document.getElementById("formateDateInput");
+        input.value = new Date().formatDate("yyyy年MM月dd日");
+    }
+</script>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/87cde06d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/87cde06d/" class="post-title-link" itemprop="url">java字符串数组去重复</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-20 04:55:35" itemprop="dateCreated datePublished" datetime="2021-03-20T04:55:35+08:00">2021-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">字符串处理</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/87cde06d/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/87cde06d/" data-xid="/blog/87cde06d/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>168</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="java字符串数组去重复-算法描述"><a href="#java字符串数组去重复-算法描述" class="headerlink" title="java字符串数组去重复 算法描述"></a>java字符串数组去重复 算法描述</h1><p>依次从原来的数组中取出元素，放入到缓存数组中。<br>每次放入之前先在缓存数组中查找该元素，如果缓存数组中已经有该元素了，就不放入缓存数组，如果没有，则放入缓存数组中。</p>
+<h1 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h1><p>创建list集合，每次放入之前先在list里面查找，list里面没有则放入。<br>利用Set集合不能放入重复的元素的特性，直接放入Set集合。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1366,277 +1631,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e5ce3c15/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/e5ce3c15/" class="post-title-link" itemprop="url">LinuxDeploy CentOS7 安装java tomcat</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-17 09:36:50" itemprop="dateCreated datePublished" datetime="2021-03-17T09:36:50+08:00">2021-03-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/LinuxDeploy/" itemprop="url" rel="index"><span itemprop="name">LinuxDeploy</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/e5ce3c15/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/e5ce3c15/" data-xid="/blog/e5ce3c15/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>5.7k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="下载java"><a href="#下载java" class="headerlink" title="下载java"></a>下载java</h1><p>上面安装的linux系统是aarch64架构的，所以需要下载aarch64对应的版本：</p>
-<p>jdk8官方下载地址:<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html</a></p>
-<p>获得安装包：<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html#license-lightbox">jdk-8u281-linux-aarch64.tar.gz</a></p>
-<h1 id="下载Tomcat"><a href="#下载Tomcat" class="headerlink" title="下载Tomcat"></a>下载Tomcat</h1><p>Tomcat8下载路径：<a target="_blank" rel="noopener" href="https://tomcat.apache.org/download-80.cgi">https://tomcat.apache.org/download-80.cgi</a><br>下载<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.64/bin/apache-tomcat-8.5.64.tar.gz">tar.gz</a>版本的Tomcat</p>
-<h1 id="使用Xftp上传到手机中"><a href="#使用Xftp上传到手机中" class="headerlink" title="使用Xftp上传到手机中"></a>使用Xftp上传到手机中</h1><h2 id="Xftp如何连接到手机上的linux"><a href="#Xftp如何连接到手机上的linux" class="headerlink" title="Xftp如何连接到手机上的linux"></a>Xftp如何连接到手机上的linux</h2><p>启动centos,打开Xshell，连接到手机。然后点击上面<strong>窗口</strong>菜单，选择<strong>传输新建文件</strong>菜单项。即可打开Xftp.</p>
-<p>Xftp有两个分栏，左边的是电脑的目录树，右边是手机上的linux的目录树，进入linux的<code>/opt</code>目录。然后把电脑上下载好的java和tomcat的压缩包拖动到Xftp上的右边的Linux分栏中。这样就可以上传文件到Linux中了。等待上传完毕即可。</p>
-<h1 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h1><h2 id="解压java的压缩包"><a href="#解压java的压缩包" class="headerlink" title="解压java的压缩包"></a>解压java的压缩包</h2><p>切换到Xshell中，进入刚才上传文件的目录(&#x2F;opt目录)，创建一个名为java的目录，然后把java压缩包解压到这个&#x2F;opt&#x2F;java目录中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cd /opt</span><br><span class="line">[root@localhost opt]# ls</span><br><span class="line">apache-tomcat-8.5.63.tar.gz  jdk-8u281-linux-aarch64.tar.gz</span><br><span class="line">[root@localhost opt]# tar -zxvf jdk-8u281-linux-aarch64.tar.gz -C java</span><br><span class="line">tar: java：无法 open: 没有那个文件或目录</span><br><span class="line">tar: Error is not recoverable: exiting now</span><br><span class="line">[root@localhost opt]# mkdir java</span><br><span class="line">[root@localhost opt]# tar -zxvf jdk-8u281-linux-aarch64.tar.gz -C java</span><br></pre></td></tr></table></figure>
-<h2 id="解压Tomcat的压缩包"><a href="#解压Tomcat的压缩包" class="headerlink" title="解压Tomcat的压缩包"></a>解压Tomcat的压缩包</h2><p>创建tomcat目录，然后将tomcat的压缩包解压到这个&#x2F;opt&#x2F;tomcat目录中：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost opt]# ls</span><br><span class="line">apache-tomcat-8.5.63.tar.gz  java  jdk-8u281-linux-aarch64.tar.gz</span><br><span class="line">[root@localhost opt]# mkdir tomcat</span><br><span class="line">[root@localhost opt]# tar -zxvf apache-tomcat-8.5.63.tar.gz -C tomcat/</span><br><span class="line">apache-tomcat-8.5.63/conf/</span><br><span class="line">apache-tomcat-8.5.63/conf/catalina.policy</span><br><span class="line">......</span><br><span class="line">apache-tomcat-8.5.63/bin/tool-wrapper.sh</span><br><span class="line">apache-tomcat-8.5.63/bin/version.sh</span><br><span class="line">[root@localhost opt]# ls</span><br><span class="line">apache-tomcat-8.5.63.tar.gz  java  jdk-8u281-linux-aarch64.tar.gz  tomcat</span><br><span class="line">[root@localhost opt]# cd tomcat/</span><br><span class="line">[root@localhost tomcat]# ls</span><br><span class="line">apache-tomcat-8.5.63</span><br></pre></td></tr></table></figure>
-<h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><h2 id="配置java环境"><a href="#配置java环境" class="headerlink" title="配置java环境"></a>配置java环境</h2><h3 id="获取JDK绝对路径"><a href="#获取JDK绝对路径" class="headerlink" title="获取JDK绝对路径"></a>获取JDK绝对路径</h3><p>进入jdk根目录，获取jdk根目录的绝对路径：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost opt]# ls</span><br><span class="line">apache-tomcat-8.5.63.tar.gz  java  jdk-8u281-linux-aarch64.tar.gz  tomcat</span><br><span class="line">[root@localhost opt]# cd java</span><br><span class="line">[root@localhost java]# ls</span><br><span class="line">jdk1.8.0_281</span><br><span class="line">[root@localhost java]# cd jdk1.8.0_281/</span><br><span class="line">[root@localhost jdk1.8.0_281]# ls</span><br><span class="line">bin  COPYRIGHT  include  jre  legal  lib  LICENSE  man  README.html  release  src.zip  THIRDPARTYLICENSEREADME.txt</span><br><span class="line">[root@localhost jdk1.8.0_281]# pwd</span><br><span class="line">/opt/java/jdk1.8.0_281</span><br></pre></td></tr></table></figure>
-<h3 id="在-x2F-etc-x2F-profile文件中配置Java环境变量"><a href="#在-x2F-etc-x2F-profile文件中配置Java环境变量" class="headerlink" title="在&#x2F;etc&#x2F;profile文件中配置Java环境变量"></a>在&#x2F;etc&#x2F;profile文件中配置Java环境变量</h3><h4 id="java环境变量模板"><a href="#java环境变量模板" class="headerlink" title="java环境变量模板"></a>java环境变量模板</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># java 环境变量</span><br><span class="line"># JAVA_HOME路径根据你实际安装的路径填写</span><br><span class="line">export JAVA_HOME=JDK目录的绝对地址</span><br><span class="line"># 下面剩下的配置不需要更改</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:JAVA_HOME/lib:JRE_HOME/lib:$&#123;CLASSPATH&#125;</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
-<p>上一步得到的jdk的绝对路径为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/java/jdk1.8.0_281</span><br></pre></td></tr></table></figure>
-<p>所以我的配置为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># java 环境变量</span><br><span class="line"># JAVA_HOME路径根据你实际安装的路径填写</span><br><span class="line">export JAVA_HOME=/opt/java/jdk1.8.0_281</span><br><span class="line"># 下面剩下的配置不需要更改</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:JAVA_HOME/lib:JRE_HOME/lib:$&#123;CLASSPATH&#125;</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
-<h4 id="设置java环境变量"><a href="#设置java环境变量" class="headerlink" title="设置java环境变量"></a>设置java环境变量</h4><p>打开&#x2F;etc&#x2F;profile文件，在文件末尾填写上面的配置即可：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost jdk1.8.0_281]# vim /etc/profile</span><br><span class="line">[root@localhost ~]# cat /etc/profile</span><br><span class="line"># /etc/profile</span><br><span class="line"></span><br><span class="line"># System wide environment and startup programs, for login setup</span><br><span class="line"># Functions and aliases go in /etc/bashrc</span><br><span class="line">......</span><br><span class="line">unset i</span><br><span class="line">unset -f pathmunge</span><br><span class="line"></span><br><span class="line"># java 环境变量</span><br><span class="line"># JAVA_HOME路径根据你实际安装的路径填写</span><br><span class="line">export JAVA_HOME=/opt/java/jdk1.8.0_281</span><br><span class="line"># 下面剩下的配置不需要更改</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:JAVA_HOME/lib:JRE_HOME/lib:$&#123;CLASSPATH&#125;</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
-<h4 id="使配置生效"><a href="#使配置生效" class="headerlink" title="使配置生效"></a>使配置生效</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
-<h3 id="验证java是否配置成功"><a href="#验证java是否配置成功" class="headerlink" title="验证java是否配置成功"></a>验证java是否配置成功</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# java -version</span><br><span class="line">java version &quot;1.8.0_281&quot;</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_281-b09)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.281-b09, mixed mode)</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
-<h2 id="配置Tomcat"><a href="#配置Tomcat" class="headerlink" title="配置Tomcat"></a>配置Tomcat</h2><h3 id="创建Tomcat安装目录的软链接"><a href="#创建Tomcat安装目录的软链接" class="headerlink" title="创建Tomcat安装目录的软链接"></a>创建Tomcat安装目录的软链接</h3><p>由于上面解压出来的Tomcat安装目录的名称太长了，为了后面启动或者关闭tomcat的时候输入命令方便一点。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost opt]# ls</span><br><span class="line">apache-tomcat-8.5.63.tar.gz  java  jdk-8u281-linux-aarch64.tar.gz  tomcat</span><br><span class="line">[root@localhost opt]# cd tomcat/</span><br><span class="line">[root@localhost tomcat]# ls</span><br><span class="line">apache-tomcat-8.5.63</span><br><span class="line">[root@localhost tomcat]# cd apache-tomcat-8.5.63/</span><br><span class="line">[root@localhost apache-tomcat-8.5.63]# ls</span><br><span class="line">bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  work</span><br><span class="line">[root@localhost apache-tomcat-8.5.63]# pwd</span><br><span class="line">/opt/tomcat/apache-tomcat-8.5.63</span><br><span class="line">[root@localhost apache-tomcat-8.5.63]# ln -s /opt/tomcat/apache-tomcat-8.5.63 /opt/tomcat85</span><br><span class="line">[root@localhost apache-tomcat-8.5.63]# cd /opt</span><br><span class="line">[root@localhost opt]# ls</span><br><span class="line">apache-tomcat-8.5.63.tar.gz  java  jdk-8u281-linux-aarch64.tar.gz  tomcat  tomcat85</span><br></pre></td></tr></table></figure>
-<p>现在使用tomcat85这个软链接就可以替代“&#x2F;tomcat&#x2F;apache-tomcat-8.5.63”。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost opt]# cd tomcat85</span><br><span class="line">[root@localhost tomcat85]# ls</span><br><span class="line">bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  work</span><br></pre></td></tr></table></figure>
-<h3 id="启动Tomcat"><a href="#启动Tomcat" class="headerlink" title="启动Tomcat"></a>启动Tomcat</h3><p>&#x2F;opt&#x2F;tomcat85&#x2F;startup.sh</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost opt]# /opt/tomcat85/bin/startup.sh </span><br><span class="line">Using CATALINA_BASE:   /opt/tomcat85</span><br><span class="line">Using CATALINA_HOME:   /opt/tomcat85</span><br><span class="line">Using CATALINA_TMPDIR: /opt/tomcat85/temp</span><br><span class="line">Using JRE_HOME:        /opt/java/jdk1.8.0_281/jre</span><br><span class="line">Using CLASSPATH:       /opt/tomcat85/bin/bootstrap.jar:/opt/tomcat85/bin/tomcat-juli.jar</span><br><span class="line">Using CATALINA_OPTS:   </span><br><span class="line">Tomcat started.</span><br><span class="line">[root@localhost opt]# </span><br></pre></td></tr></table></figure>
-<h3 id="在电脑上的浏览器访问Tomcat"><a href="#在电脑上的浏览器访问Tomcat" class="headerlink" title="在电脑上的浏览器访问Tomcat"></a>在电脑上的浏览器访问Tomcat</h3><h4 id="确保手机和电脑在同一网络之下"><a href="#确保手机和电脑在同一网络之下" class="headerlink" title="确保手机和电脑在同一网络之下"></a>确保手机和电脑在同一网络之下</h4><p>使得电脑和手机在同一个网络之下，有如下几种：<br>(1) 电脑和手机连接同一个WIFI,并且该wifi没有设置防火墙。<br>(2) 手机开热点，电脑连接到手机的热点上。<br>(3) 电脑开热点，手机连接到电脑的热点上。<br>有的WIFI可能有防火墙，使得同一个WIFI下的电脑和手机不能相互访问。如果发现老是连不上，可以试着通过热点的方式进行连接。</p>
-<p>Tomcat默认运行在8080端口，确保电脑和手机在同一个网络之下，然后在浏览器的地址栏中输入手机的<code>IP地址:8080</code>即可访问Tomcat.<br>LinuxDeploy上方的那四位数字就是IP地址。<br>此时我的IP地址为192.168.1.6，所以打开<a target="_blank" rel="noopener" href="http://192.168.1.6:8080/">http://192.168.1.6:8080/</a>即可访问Tomcat</p>
-<h3 id="关闭Tomcat"><a href="#关闭Tomcat" class="headerlink" title="关闭Tomcat"></a>关闭Tomcat</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost opt]# /opt/tomcat85/bin/startup.sh </span><br><span class="line">Using CATALINA_BASE:   /opt/tomcat85</span><br><span class="line">Using CATALINA_HOME:   /opt/tomcat85</span><br><span class="line">Using CATALINA_TMPDIR: /opt/tomcat85/temp</span><br><span class="line">Using JRE_HOME:        /opt/java/jdk1.8.0_281/jre</span><br><span class="line">Using CLASSPATH:       /opt/tomcat85/bin/bootstrap.jar:/opt/tomcat85/bin/tomcat-juli.jar</span><br><span class="line">Using CATALINA_OPTS:   </span><br><span class="line">Tomcat started.</span><br><span class="line">[root@localhost opt]# /opt/tomcat85/bin/shutdown.sh </span><br><span class="line">Using CATALINA_BASE:   /opt/tomcat85</span><br><span class="line">Using CATALINA_HOME:   /opt/tomcat85</span><br><span class="line">Using CATALINA_TMPDIR: /opt/tomcat85/temp</span><br><span class="line">Using JRE_HOME:        /opt/java/jdk1.8.0_281/jre</span><br><span class="line">Using CLASSPATH:       /opt/tomcat85/bin/bootstrap.jar:/opt/tomcat85/bin/tomcat-juli.jar</span><br><span class="line">Using CATALINA_OPTS:   </span><br><span class="line">[root@localhost opt]# </span><br></pre></td></tr></table></figure>
-<h3 id="无法访问Tomcat的Manager-App和Host-Manager页面"><a href="#无法访问Tomcat的Manager-App和Host-Manager页面" class="headerlink" title="无法访问Tomcat的Manager App和Host Manager页面"></a>无法访问Tomcat的Manager App和Host Manager页面</h3><p>解决办法：设置角色，设置Tomcat用户名和密码。<br>见：<a href="https://lanlan2017.github.io/blog/5d0a8795/">https://lanlan2017.github.io/blog/5d0a8795/</a></p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yjl15517377095/article/details/102060442">https://blog.csdn.net/yjl15517377095/article/details/102060442</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/ffecb566/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/ffecb566/" class="post-title-link" itemprop="url">github.io无法访问</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-17 02:37:25" itemprop="dateCreated datePublished" datetime="2021-03-17T02:37:25+08:00">2021-03-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 15:56:38" itemprop="dateModified" datetime="2022-04-04T15:56:38+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/next%E4%B8%BB%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">next主题</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/next%E4%B8%BB%E9%A2%98/Debug/" itemprop="url" rel="index"><span itemprop="name">Debug</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/ffecb566/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/ffecb566/" data-xid="/blog/ffecb566/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>156</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="解析地址"><a href="#解析地址" class="headerlink" title="解析地址"></a>解析地址</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">140.82.112.4 github.com</span><br><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">185.199.108.133 user-images.githubusercontent.com</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/31/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/31/">31</a><span class="page-number current">32</span><a class="page-number" href="/blog/page/33/">33</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/70/">70</a><a class="extend next" rel="next" href="/blog/page/33/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1669,7 +1663,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">24:54</span>
+    <span title="站点阅读时长">24:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

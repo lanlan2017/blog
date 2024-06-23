@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">698</span>
+          <span class="site-state-item-count">700</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,351 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/f6ac4b15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/f6ac4b15/" class="post-title-link" itemprop="url">Linux 输出重定向与管道</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-26 21:49:08" itemprop="dateCreated datePublished" datetime="2021-06-26T21:49:08+08:00">2021-06-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/Shell%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9C%BA%E5%88%B6/" itemprop="url" rel="index"><span itemprop="name">Shell的基本机制</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/f6ac4b15/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/f6ac4b15/" data-xid="/blog/f6ac4b15/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Linux-输出重定向与管道"><a href="#Linux-输出重定向与管道" class="headerlink" title="Linux 输出重定向与管道"></a>Linux 输出重定向与管道</h1><p>程序的标准输入&#x2F;输出<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/SHELLBasicMechanism/LinuxOutputRedirectionAndPipeline/1.png" alt="图片"></p>
+<h1 id="程序示例"><a href="#程序示例" class="headerlink" title="程序示例"></a>程序示例</h1><h2 id="使用系统调用（原始I-x2F-O）"><a href="#使用系统调用（原始I-x2F-O）" class="headerlink" title="使用系统调用（原始I&#x2F;O）"></a>使用系统调用（原始I&#x2F;O）</h2><h3 id="stda-c"><a href="#stda-c" class="headerlink" title="stda.c"></a>stda.c</h3><figure class="highlight c"><figcaption><span>stda.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span> <span class="comment">/* 使用原始I/O */</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">char</span> *str1 = <span class="string">&quot;string1\n&quot;</span>;</span><br><span class="line">    <span class="type">static</span> <span class="type">char</span> *str2 = <span class="string">&quot;string2\n&quot;</span>;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        <span class="comment">// 写入1号文件，也就是标准输出</span></span><br><span class="line">        write(<span class="number">1</span>, str1, <span class="built_in">strlen</span>(str1));</span><br><span class="line">        <span class="comment">// 写入2号文件，也就是标准错误输出</span></span><br><span class="line">        write(<span class="number">2</span>, str2, <span class="built_in">strlen</span>(str2));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用C语言库函数（缓冲I-x2F-O）"><a href="#使用C语言库函数（缓冲I-x2F-O）" class="headerlink" title="使用C语言库函数（缓冲I&#x2F;O）"></a>使用C语言库函数（缓冲I&#x2F;O）</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">/* FILE*类型的变量stdin，stdout和stderr */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span> <span class="comment">/* 使用缓冲I/O */</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">char</span> *str1 = <span class="string">&quot;string1\n&quot;</span>;</span><br><span class="line">    <span class="type">static</span> <span class="type">char</span> *str2 = <span class="string">&quot;string2\n&quot;</span>;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        <span class="comment">// 打印到标准输出</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, str1); <span class="comment">/*或:fprintf(stdout, &quot;%s&quot;, str1);*/</span></span><br><span class="line">        <span class="comment">// 打印到标准错误输出</span></span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;%s&quot;</span>, str2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="stdout输出重定向"><a href="#stdout输出重定向" class="headerlink" title="stdout输出重定向"></a>stdout输出重定向</h1><h2 id="重定向覆盖文件"><a href="#重定向覆盖文件" class="headerlink" title="重定向覆盖文件"></a>重定向覆盖文件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; filename</span><br></pre></td></tr></table></figure>
+<p>将stdout重定向到文件filename，文件已存在则先清空（覆盖方式）</p>
+<h2 id="重定向追加到文件"><a href="#重定向追加到文件" class="headerlink" title="重定向追加到文件"></a>重定向追加到文件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; filename</span><br></pre></td></tr></table></figure>
+<p>将stdout重定向追加到文件filename尾</p>
+<h1 id="stderr输出重定向"><a href="#stderr输出重定向" class="headerlink" title="stderr输出重定向"></a>stderr输出重定向</h1><h2 id="标准错误输出重定向到文件"><a href="#标准错误输出重定向到文件" class="headerlink" title="标准错误输出重定向到文件"></a>标准错误输出重定向到文件</h2><p>将文件句柄2重定向到文件filename</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2&gt; filename</span><br></pre></td></tr></table></figure>
+<p>分离stdout与stderr的意义：有时候会把stdout作为程序的运行结果重定向到文件中，如果不分离的话，文件中会夹杂有错误输出，干扰我们想要的结果。</p>
+<h2 id="标准错误输出与标准输出相同"><a href="#标准错误输出与标准输出相同" class="headerlink" title="标准错误输出与标准输出相同"></a>标准错误输出与标准输出相同</h2><p>将文件句柄2重定向到文件描述符1指向的文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+<h2 id="使用其他文件句柄"><a href="#使用其他文件句柄" class="headerlink" title="使用其他文件句柄"></a>使用其他文件句柄</h2><p>允许对除0，1，2外其它文件句柄输入或输出重定向,例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./myap 5&lt; a.txt 6&gt; b.dat</span><br></pre></td></tr></table></figure>
+<p>那么，在运行myap这个程序的时候，</p>
+<ul>
+<li>5号文件则不需要打开，可以直接从5号文件中读取。也就是直接从a.txt中读取。</li>
+<li>可以直接往6号文件中输出，也就是会直接写到b.dat文件中。</li>
+</ul>
+<p>虽然这种用法不常见，但是也是可以这样使用的。</p>
+<h1 id="输出重定向示例"><a href="#输出重定向示例" class="headerlink" title="输出重定向示例"></a>输出重定向示例</h1><h2 id="重定向stdout到文件"><a href="#重定向stdout到文件" class="headerlink" title="重定向stdout到文件"></a>重定向stdout到文件</h2><p>将命令ls标准输出stdout定向到文件file.list中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l &gt; file.list</span><br></pre></td></tr></table></figure>
+<h2 id="重定向stderr到文件"><a href="#重定向stderr到文件" class="headerlink" title="重定向stderr到文件"></a>重定向stderr到文件</h2><p>将gcc命令的stderr重定向到文件try.err中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc try.c -o try 2&gt; try.err</span><br></pre></td></tr></table></figure>
+<h2 id="重定向stdout和strerr到不同文件"><a href="#重定向stdout和strerr到不同文件" class="headerlink" title="重定向stdout和strerr到不同文件"></a>重定向stdout和strerr到不同文件</h2><p>将try程序执行后的stdout和stderr分别重定向到不同的文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">try &gt; try.out 2&gt;try.err</span><br></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">try 1&gt; try.out 2&gt;try.err</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./stda 1&gt; try.out 2&gt;/dev/null</span><br></pre></td></tr></table></figure>
+<p>stdout和stderr均存入文件rpt：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./stda &gt;rpt 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+<h2 id="程序示例-1"><a href="#程序示例-1" class="headerlink" title="程序示例"></a>程序示例</h2><figure class="highlight c"><figcaption><span>stda.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span> <span class="comment">/* 使用原始I/O */</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">char</span> *str1 = <span class="string">&quot;string1\n&quot;</span>;</span><br><span class="line">    <span class="type">static</span> <span class="type">char</span> *str2 = <span class="string">&quot;string2\n&quot;</span>;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        <span class="comment">//写入1号文件，也就是标准输出</span></span><br><span class="line">        write(<span class="number">1</span>, str1, <span class="built_in">strlen</span>(str1));</span><br><span class="line">        <span class="comment">//写入2号文件，也就是标准错误输出</span></span><br><span class="line">        write(<span class="number">2</span>, str2, <span class="built_in">strlen</span>(str2));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译，运行该程序：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost shell的基本机制]# gcc stda.c -o stda</span><br><span class="line">[root@localhost shell的基本机制]# ls |grep &#x27;stda&#x27;</span><br><span class="line">stda</span><br><span class="line">stda.c</span><br><span class="line">[root@localhost shell的基本机制]# ./stda </span><br><span class="line">string1</span><br><span class="line">string2</span><br><span class="line">string1</span><br><span class="line">string2</span><br><span class="line">string1</span><br><span class="line">string2</span><br><span class="line">string1</span><br><span class="line">string2</span><br><span class="line">string1</span><br><span class="line">string2</span><br><span class="line">string1</span><br><span class="line">string2</span><br><span class="line">string1</span><br><span class="line">string2</span><br><span class="line">string1</span><br><span class="line">string2</span><br><span class="line">string1</span><br><span class="line">string2</span><br><span class="line">string1</span><br><span class="line">string2</span><br><span class="line">[root@localhost shell的基本机制]# </span><br></pre></td></tr></table></figure>
+<p>可以看到标准输出和标准错误输出交替输出到屏幕上。光从打印的结果是无法看出那条是标准输出，那条是标准错误输出。</p>
+<h3 id="重定向标准输出到文件"><a href="#重定向标准输出到文件" class="headerlink" title="重定向标准输出到文件"></a>重定向标准输出到文件</h3><p>运行该程序，把标准输出重定向到文件中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost shell的基本机制]# ./stda &gt;stda.out</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">[root@localhost shell的基本机制]# </span><br></pre></td></tr></table></figure>
+<p>此时，屏幕上输出的就只剩下标准错误输出。</p>
+<h3 id="标准输出和标准错误输出都重定向到文件中"><a href="#标准输出和标准错误输出都重定向到文件中" class="headerlink" title="标准输出和标准错误输出都重定向到文件中"></a>标准输出和标准错误输出都重定向到文件中</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost shell的基本机制]# ./stda &gt;stda.out 2&gt;stda.err</span><br><span class="line">[root@localhost shell的基本机制]# cat stda.out </span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">[root@localhost shell的基本机制]# cat stda.err </span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">[root@localhost shell的基本机制]# </span><br></pre></td></tr></table></figure>
+<p>或者，不省略标准输出的文件描述符：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost shell的基本机制]# rm *.out *.err</span><br><span class="line">rm：是否删除普通文件 &quot;stda.out&quot;？y</span><br><span class="line">rm：是否删除普通文件 &quot;stda.err&quot;？y</span><br><span class="line">[root@localhost shell的基本机制]# ./stda 1&gt;stda.out 2&gt;stda.err</span><br><span class="line">[root@localhost shell的基本机制]# cat stda.out </span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">string1</span><br><span class="line">[root@localhost shell的基本机制]# cat stda.err </span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">string2</span><br><span class="line">[root@localhost shell的基本机制]# </span><br></pre></td></tr></table></figure>
+<h1 id="输出重定向顺序不要颠倒"><a href="#输出重定向顺序不要颠倒" class="headerlink" title="输出重定向顺序不要颠倒"></a>输出重定向顺序不要颠倒</h1><p>正确写法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./stda &gt;rpt 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+<p>命令执行时，各文件句柄的指向过程：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/SHELLBasicMechanism/LinuxOutputRedirectionAndPipeline/2.png" alt="图片"></p>
+<p>错误写法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./stda 2&gt;&amp;1 &gt;rpt</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/SHELLBasicMechanism/LinuxOutputRedirectionAndPipeline/3.png" alt="图片"></p>
+<h1 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h1><h2 id="传递前一个命令的标准输出给后一个命令作为标准输出"><a href="#传递前一个命令的标准输出给后一个命令作为标准输出" class="headerlink" title="传递前一个命令的标准输出给后一个命令作为标准输出"></a>传递前一个命令的标准输出给后一个命令作为标准输出</h2><p>前一命令的stdout作后一命令的stdin</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l | grep &#x27;^d&#x27;</span><br></pre></td></tr></table></figure>
+<h2 id="管道如何传递前一个命令的标准错误输出给后一个命令"><a href="#管道如何传递前一个命令的标准错误输出给后一个命令" class="headerlink" title="管道如何传递前一个命令的标准错误输出给后一个命令"></a>管道如何传递前一个命令的标准错误输出给后一个命令</h2><p>前一命令的stdout+stderr作为下一命令的stdin：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc try.c -o try 2&gt;&amp;1 | more</span><br></pre></td></tr></table></figure>
+<p>这样才能实现使用more逐屏查看。因为编译是输出的错误信息，很多都是标准错误输出，但是呢，管道是把前面的标准输出传递给后面的命令作为标准输入。对于前一个命令的标准错误输出，管道是不会传递的。<br>所以为了使得后面的命令能看到前一个命令的标准错误输出，可以把标准错误输出合并到标准输出。这样才会通过管道传递给后面的命令。</p>
+<!-- Blog/Programming/Linux/General/SHELLBasicMechanism/LinuxOutputRedirectionAndPipeline -->
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/265ffeb5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/265ffeb5/" class="post-title-link" itemprop="url">Linux 输入重定向</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-26 17:02:11" itemprop="dateCreated datePublished" datetime="2021-06-26T17:02:11+08:00">2021-06-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/Shell%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9C%BA%E5%88%B6/" itemprop="url" rel="index"><span itemprop="name">Shell的基本机制</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/265ffeb5/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/265ffeb5/" data-xid="/blog/265ffeb5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="输入重定向（从数据文件中获取stdin）"><a href="#输入重定向（从数据文件中获取stdin）" class="headerlink" title="输入重定向（从数据文件中获取stdin）"></a>输入重定向（从数据文件中获取stdin）</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt; filename</span><br></pre></td></tr></table></figure>
+<p>从文件filename中获取stdin,例如: <code>sort &lt; telno.txt</code>。</p>
+<h1 id="输入重定向（从shell中获得stdin：允许替换）"><a href="#输入重定向（从shell中获得stdin：允许替换）" class="headerlink" title="输入重定向（从shell中获得stdin：允许替换）"></a>输入重定向（从shell中获得stdin：允许替换）</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;word</span><br></pre></td></tr></table></figure>
+<p>从shell脚本文件获取数据直到再次遇到定界符word</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cat &lt;&lt; END</span><br><span class="line">&gt; 1</span><br><span class="line">&gt; 2</span><br><span class="line">&gt; 3</span><br><span class="line">&gt; 4</span><br><span class="line">&gt; END</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
+<p>不加单引号的情况，可以使用<code>$变量名</code>的形式获取变量的值：</p>
+<pre>
+[root@localhost 文件管理和目录管理]&#35; cat &lt;&lt; END
+&gt; hello you home dir is <mark>$HOME</mark>
+&gt; END
+hello you home dir is <mark>/root</mark>
+[root@localhost 文件管理和目录管理]&#35; 
+</pre>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# cat &lt;&lt; END</span><br><span class="line">&gt; now：`date`</span><br><span class="line">&gt; you home dir is：$HOME</span><br><span class="line">&gt; END</span><br><span class="line">now：2021年 06月 26日 星期六 17:38:32 CST</span><br><span class="line">you home dir is：/root</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+
+<p>定界符所界定内容加工处理(等同双引号处理):</p>
+<ul>
+<li>变量替换，命令替换</li>
+<li>不执行文件名生成</li>
+</ul>
+<h1 id="输入重定向（从shell中获得stdin：不许替换）"><a href="#输入重定向（从shell中获得stdin：不许替换）" class="headerlink" title="输入重定向（从shell中获得stdin：不许替换）"></a>输入重定向（从shell中获得stdin：不许替换）</h1><p><code>&lt;&lt;word</code>从shell脚本程序获取数据直到再次遇到定界符,<strong>定界符两侧加单引号</strong>：不允许定界符之间的内容进行替换操作。</p>
+<p>定界符加上单引号，禁止<strong>替换操作</strong>：</p>
+<pre>
+[root@localhost 文件管理和目录管理]&#35; cat &lt;&lt; 'END'
+&gt; hello you home sir is <mark>$HOME</mark>
+&gt; END
+hello you home sir is <mark>$HOME</mark>
+[root@localhost 文件管理和目录管理]&#35; 
+</pre>
+
+<h1 id="输入重定向（从命令行获取信息作为标准输入）"><a href="#输入重定向（从命令行获取信息作为标准输入）" class="headerlink" title="输入重定向（从命令行获取信息作为标准输入）"></a>输入重定向（从命令行获取信息作为标准输入）</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;word</span><br></pre></td></tr></table></figure>
+<p>直接使用三个大于号后面的单词作为命令的输入。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost shell的基本机制]# base64 &lt;&lt;&lt; helloWorld</span><br><span class="line">aGVsbG9Xb3JsZAo=</span><br><span class="line">[root@localhost shell的基本机制]# </span><br></pre></td></tr></table></figure>
+
+<p>在批处理文件中输入重定向的定界符之后还可接着写其他命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost shell的基本机制]# cat InputRedirection.sh </span><br><span class="line">cat &lt;&lt; TOAST</span><br><span class="line">**************************</span><br><span class="line">Now : `date`</span><br><span class="line">My Home Directory is $HOME</span><br><span class="line">**************************</span><br><span class="line">TOAST</span><br><span class="line"></span><br><span class="line">pwd</span><br><span class="line">[root@localhost shell的基本机制]# bash InputRedirection.sh </span><br><span class="line">**************************</span><br><span class="line">Now : 2021年 06月 26日 星期六 18:23:20 CST</span><br><span class="line">My Home Directory is /root</span><br><span class="line">**************************</span><br><span class="line">/root/Linux_Test/shell的基本机制</span><br><span class="line">[root@localhost shell的基本机制]# </span><br></pre></td></tr></table></figure>
+<p>[root@localhost shell的基本机制]# cat InputRedirection2.sh<br>cat &lt;&lt; ‘TOAST’</p>
+<hr>
+<p>Now : <code>date</code><br>My Home Directory is $HOME</p>
+<hr>
+<p>TOAST</p>
+<p>pwd<br>[root@localhost shell的基本机制]# bash InputRedirection2.sh </p>
+<hr>
+<p>Now : <code>date</code><br>My Home Directory is $HOME</p>
+<hr>
+<p>&#x2F;root&#x2F;Linux_Test&#x2F;shell的基本机制<br>[root@localhost shell的基本机制]# </p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1486,279 +1831,6 @@ drwxrwxrw<mark>t</mark> 13 root root 20480  Mar 22 06:11 /tmp
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/1.9662e+45/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/1.9662e+45/" class="post-title-link" itemprop="url">CentOS安装C语言帮助手册</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-06-23 13:53:12" itemprop="dateCreated datePublished" datetime="2021-06-23T13:53:12+08:00">2021-06-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/C%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">C语言</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/1.9662e+45/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/1.9662e+45/" data-xid="/blog/1.9662e+45/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="CentOS安装C语言帮助手册"><a href="#CentOS安装C语言帮助手册" class="headerlink" title="CentOS安装C语言帮助手册"></a>CentOS安装C语言帮助手册</h1><p>CentOS系统有可能默认没有安装C语言帮助手册，man一个函数时会找不到帮助文件，用下面的命令安装：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install man-pages.noarch</span><br></pre></td></tr></table></figure>
-<h2 id="centos没有c语言的帮助手册"><a href="#centos没有c语言的帮助手册" class="headerlink" title="centos没有c语言的帮助手册"></a>centos没有c语言的帮助手册</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux命令风格；文件系统]# man malloc</span><br><span class="line">没有 malloc 的手册页条目</span><br><span class="line">[root@localhost Linux命令风格；文件系统]# </span><br></pre></td></tr></table></figure>
-<h2 id="安装-noarch版本的man-pages"><a href="#安装-noarch版本的man-pages" class="headerlink" title="安装.noarch版本的man-pages"></a>安装.noarch版本的man-pages</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux命令风格；文件系统]# yum install man-pages.noarch</span><br><span class="line">已加载插件：fastestmirror</span><br><span class="line">Determining fastest mirrors</span><br><span class="line">epel/aarch64/metalink                                                                                                                | 8.8 kB  00:00:00     </span><br><span class="line"> * epel: mirrors.bfsu.edu.cn</span><br><span class="line">base                                                                                                                                 | 3.6 kB  00:00:00     </span><br><span class="line">centos-7-aarch64                                                                                                                     | 3.6 kB  00:00:00     </span><br><span class="line">extras                                                                                                                               | 2.9 kB  00:00:00     </span><br><span class="line">nodesource                                                                                                                           | 2.5 kB  00:00:00     </span><br><span class="line">updates                                                                                                                              | 2.9 kB  00:00:00     </span><br><span class="line">(1/2): extras/7/aarch64/primary_db                                                                                                   | 245 kB  00:00:01     </span><br><span class="line">(2/2): updates/7/aarch64/primary_db                                                                                                  | 1.2 MB  00:00:05     </span><br><span class="line">正在解决依赖关系</span><br><span class="line">--&gt; 正在检查事务</span><br><span class="line">---&gt; 软件包 man-pages.noarch.0.3.53-5.el7 将被 安装</span><br><span class="line">--&gt; 解决依赖关系完成</span><br><span class="line"></span><br><span class="line">依赖关系解决</span><br><span class="line"></span><br><span class="line">============================================================================================================================================================</span><br><span class="line"> Package                                架构                                版本                                    源                                 大小</span><br><span class="line">============================================================================================================================================================</span><br><span class="line">正在安装:</span><br><span class="line"> man-pages                              noarch                              3.53-5.el7                              base                              5.0 M</span><br><span class="line"></span><br><span class="line">事务概要</span><br><span class="line">============================================================================================================================================================</span><br><span class="line">安装  1 软件包</span><br><span class="line"></span><br><span class="line">总下载量：5.0 M</span><br><span class="line">安装大小：4.6 M</span><br><span class="line">Is this ok [y/d/N]: y</span><br><span class="line">Downloading packages:</span><br><span class="line">man-pages-3.53-5.el7.noarch.rpm                                                                                                      | 5.0 MB  00:00:21     </span><br><span class="line">Running transaction check</span><br><span class="line">Running transaction test</span><br><span class="line">Transaction test succeeded</span><br><span class="line">Running transaction</span><br><span class="line">  正在安装    : man-pages-3.53-5.el7.noarch                                                                                                             1/1 </span><br><span class="line">  验证中      : man-pages-3.53-5.el7.noarch                                                                                                             1/1 </span><br><span class="line"></span><br><span class="line">已安装:</span><br><span class="line">  man-pages.noarch 0:3.53-5.el7                                                                                                                             </span><br><span class="line"></span><br><span class="line">完毕！</span><br><span class="line">[root@localhost Linux命令风格；文件系统]#</span><br></pre></td></tr></table></figure>
-<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><h3 id="man-malloc"><a href="#man-malloc" class="headerlink" title="man malloc"></a>man malloc</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">MALLOC(3)                                                       Linux Programmer&#x27;s Manual                                                      MALLOC(3)</span><br><span class="line"></span><br><span class="line">NAME</span><br><span class="line">       malloc, free, calloc, realloc - allocate and free dynamic memory</span><br><span class="line"></span><br><span class="line">SYNOPSIS</span><br><span class="line">       #include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">       void *malloc(size_t size);</span><br><span class="line">       void free(void *ptr);</span><br><span class="line">       void *calloc(size_t nmemb, size_t size);</span><br><span class="line">       void *realloc(void *ptr, size_t size);</span><br><span class="line"></span><br><span class="line">DESCRIPTION</span><br><span class="line">       The  malloc()  function  allocates  size bytes and returns a pointer to the allocated memory.  The memory is not initialized.  If size is 0, then</span><br><span class="line">       malloc() returns either NULL, or a unique pointer value that can later be successfully passed to free().</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-<h3 id="man-3-printf"><a href="#man-3-printf" class="headerlink" title="man 3 printf"></a>man 3 printf</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">PRINTF(3)                                                       Linux Programmer&#x27;s Manual                                                      PRINTF(3)</span><br><span class="line"></span><br><span class="line">NAME</span><br><span class="line">       printf, fprintf, sprintf, snprintf, vprintf, vfprintf, vsprintf, vsnprintf - formatted output conversion</span><br><span class="line"></span><br><span class="line">SYNOPSIS</span><br><span class="line">       #include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">       int printf(const char *format, ...);</span><br><span class="line">       int fprintf(FILE *stream, const char *format, ...);</span><br><span class="line">       int sprintf(char *str, const char *format, ...);</span><br><span class="line">       int snprintf(char *str, size_t size, const char *format, ...);</span><br><span class="line"></span><br><span class="line">       #include &lt;stdarg.h&gt;</span><br><span class="line"></span><br><span class="line">       int vprintf(const char *format, va_list ap);</span><br><span class="line">       int vfprintf(FILE *stream, const char *format, va_list ap);</span><br><span class="line">       int vsprintf(char *str, const char *format, va_list ap);</span><br><span class="line">       int vsnprintf(char *str, size_t size, const char *format, va_list ap);</span><br><span class="line"></span><br><span class="line">   Feature Test Macro Requirements for glibc (see feature_test_macros(7)):</span><br><span class="line"></span><br><span class="line">       snprintf(), vsnprintf():</span><br><span class="line">           _BSD_SOURCE || _XOPEN_SOURCE &gt;= 500 || _ISOC99_SOURCE || _POSIX_C_SOURCE &gt;= 200112L;</span><br><span class="line">           or cc -std=c99</span><br><span class="line"></span><br><span class="line">DESCRIPTION</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yasi_xi/article/details/8658333">https://blog.csdn.net/yasi_xi/article/details/8658333</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/caiyaodeng/article/details/45291905">https://blog.csdn.net/caiyaodeng/article/details/45291905</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/406107/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/406107/" class="post-title-link" itemprop="url">Linux 访问i节点和目录</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-06-20 18:33:25" itemprop="dateCreated datePublished" datetime="2021-06-20T18:33:25+08:00">2021-06-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">文件系统</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/406107/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/406107/" data-xid="/blog/406107/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="统调用stat-x2F-fstat：从i节点获得文件的状态信息"><a href="#统调用stat-x2F-fstat：从i节点获得文件的状态信息" class="headerlink" title="统调用stat&#x2F;fstat：从i节点获得文件的状态信息"></a>统调用stat&#x2F;fstat：从i节点获得文件的状态信息</h1><p>从i节点获得文件的状态信息</p>
-<ul>
-<li>stat得到指定路径名的文件的i节点</li>
-<li>fstat得到已打开文件的i节点</li>
-</ul>
-<p>stat和fstat将数据放入调用者提供的stat结构中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;sys/types.h&gt;</span><br><span class="line">#include &lt;sys/stat.h&gt;</span><br><span class="line">#include &lt;unistd.h&gt;</span><br><span class="line">int stat(const char *pathname, struct stat *buf);</span><br><span class="line">int fstat(int fd, struct stat *buf);</span><br><span class="line">struct stat &#123;</span><br><span class="line">    dev_t st_dev; /* 存储该文件的块设备的设备号ID */</span><br><span class="line">    ino_t st_ino; /* inode号 */</span><br><span class="line">    mode_t st_mode; /* 访问权限及文件类型 */</span><br><span class="line">    nlink_t st_nlink; /* link数 */</span><br><span class="line">    uid_t st_uid; /* 文件主ID */</span><br><span class="line">    gid_t st_gid; /* 组ID */</span><br><span class="line">    dev_t st_rdev; /* device ID (if special file) */</span><br><span class="line">    off_t st_size; /* 文件大小（字节数）*/</span><br><span class="line">    blksize_t st_blksize; /* blocksize for filesystem I/O */</span><br><span class="line">    blkcnt_t st_blocks; /* 分配的512字节尺寸块个数 */</span><br><span class="line">    struct timespec st_atim; /* access时间 */</span><br><span class="line">    struct timespec st_mtim; /* modification时间 */</span><br><span class="line">    struct timespec st_ctim; /* change时间 */</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="结构体stat"><a href="#结构体stat" class="headerlink" title="结构体stat"></a>结构体stat</h2><p> st_dev：存储该文件的块设备的设备号，包括主设备号与次设备号<br>例如stat命令显示文件Device: 821h&#x2F;2081d<br>十六进制0821，主设备号8（高字节），次设备号33(低字节)， &#x2F;dev&#x2F;sdc1</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls -l /dev | grep &#x27;^b.* 8, *33&#x27;</span><br><span class="line">brw-rw---- 1 root disk      8,  33 Nov 18 10:40 sdc1</span><br></pre></td></tr></table></figure>
-<h3 id="st-mode域：16比特"><a href="#st-mode域：16比特" class="headerlink" title="st_mode域：16比特"></a>st_mode域：16比特</h3><p>文件的基本存取权限和SUID&#x2F;SGID权限(11比特)以及文件的类型(若干比特)<br>文件类型判st_mode &amp; S_IFMT<br>S_IFREG     普通磁盘文件<br>S_IFDIR     目录文件<br>S_IFCHR     字符设备文件<br>S_IFIFO      管道文件<br>S_IFLNK     符号连接文件</p>
-<h3 id="st-size与st-blocks"><a href="#st-size与st-blocks" class="headerlink" title="st_size与st_blocks"></a>st_size与st_blocks</h3><p>程序可以通过st_size获取文件大小。<br>一般情况:st_size ≤ st_blocks * 512<br>稀疏文件:st_size &gt; st_blocks * 512</p>
-<h3 id="st-ctim，st-atim，st-mtim域"><a href="#st-ctim，st-atim，st-mtim域" class="headerlink" title="st_ctim，st_atim，st_mtim域"></a>st_ctim，st_atim，st_mtim域</h3><p>Linux中存储这三个时间的精度为纳秒<br>“a访问”：读，执行（有些系统为了效率做懒惰处理，不更新，但不早于m时间）<br>“m修改”：文件内容修改。写文件<br>“c改变”：i节点信息变化。写文件，修改权限&#x2F;link数&#x2F;文件主等（m变，c也变）</p>
-<h2 id="目录访问"><a href="#目录访问" class="headerlink" title="目录访问"></a>目录访问</h2><p>早期的UNIX象普通磁盘文件那样open()打开目录read()读取<br>现在的系统不再这样操作，而是直接使用封装好的库函数</p>
-<h2 id="目录访问的一组库函数"><a href="#目录访问的一组库函数" class="headerlink" title="目录访问的一组库函数"></a>目录访问的一组库函数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;dirent.h&gt;</span></span></span><br><span class="line">DIR *<span class="title function_">opendir</span><span class="params">(<span class="type">char</span> *dirname)</span>;</span><br><span class="line"><span class="keyword">struct</span> dirent *<span class="title function_">readdir</span><span class="params">(DIR *dir)</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">closedir</span><span class="params">(DIR *dir)</span>;</span><br></pre></td></tr></table></figure>
-<p>opendir打开目录得到句柄（NULL表示失败）<br>readdir获取一个目录项</p>
-<ul>
-<li>返回值指针指向的dirent结构体（返回NULL表示已经读到目录尾）</li>
-<li>dirent结构体：记录i节点号和文件名(d_ino和d_name成员)<br>访问结束：用closedir关闭不再使用的目录句柄。</li>
-</ul>
-<h2 id="目录访问程序"><a href="#目录访问程序" class="headerlink" title="目录访问程序"></a>目录访问程序</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;dirent.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    DIR *dir;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">dirent</span> *<span class="title">entry</span>;</span></span><br><span class="line">    <span class="keyword">if</span> (argc != <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Usage : %s &lt;dirname&gt;\n&quot;</span>, argv[<span class="number">0</span>]);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ((dir = opendir(argv[<span class="number">1</span>])) == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Open directory \&quot;%s\&quot;: %s (ERROR %d)\n&quot;</span>, argv[<span class="number">1</span>], strerror(errno), errno);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> ((entry = readdir(dir)) != <span class="literal">NULL</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d %s\n&quot;</span>, entry-&gt;d_ino, entry-&gt;d_name);</span><br><span class="line">    closedir(dir);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行效果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Linux命令风格；文件系统]# ./dir .</span><br><span class="line">524351 .</span><br><span class="line">524325 ..</span><br><span class="line">524413 useEnv</span><br><span class="line">524326 openfile</span><br><span class="line">524446 useEnvC</span><br><span class="line">524336 openfile.c</span><br><span class="line">524346 dir</span><br><span class="line">524353 dir.c</span><br><span class="line">[root@localhost Linux命令风格；文件系统]# </span><br></pre></td></tr></table></figure>
-<h2 id="利用目录访问和stat调用来-编程构造自己的工具"><a href="#利用目录访问和stat调用来-编程构造自己的工具" class="headerlink" title="利用目录访问和stat调用来 编程构造自己的工具"></a>利用目录访问和stat调用来 编程构造自己的工具</h2><ul>
-<li>目录访问：可以穷举一个目录中的所有项目，可得文件名及节点号</li>
-<li>stat调用：可以根据文件名获得文件i节点中的状态信息</li>
-</ul>
-<p>由此，可以编程构造诸如ls, rm, find等类似的工具，并理解系统命令是如何实现的。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/21/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/blog/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/70/">70</a><a class="extend next" rel="next" href="/blog/page/23/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1791,7 +1863,7 @@ drwxrwxrw<mark>t</mark> 13 root root 20480  Mar 22 06:11 /tmp
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">24:54</span>
+    <span title="站点阅读时长">24:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">698</span>
+          <span class="site-state-item-count">700</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,404 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9d991fe9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/9d991fe9/" class="post-title-link" itemprop="url">通过JIntellitype给Java程序注册系统热键</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-09-13 15:17:26" itemprop="dateCreated datePublished" datetime="2018-09-13T15:17:26+08:00">2018-09-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/java-GUI/" itemprop="url" rel="index"><span itemprop="name">java GUI</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/java-GUI/%E5%85%A8%E5%B1%80%E7%83%AD%E9%94%AE/" itemprop="url" rel="index"><span itemprop="name">全局热键</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/9d991fe9/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/9d991fe9/" data-xid="/blog/9d991fe9/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>参考:<a target="_blank" rel="noopener" href="https://blog.csdn.net/iteye_11213/article/details/81886200">https://blog.csdn.net/iteye_11213&#x2F;article&#x2F;details&#x2F;81886200</a></p>
+<p>JIntellitype提供了简单的调用方法去注册系统热键。操作简单，示例明确，下载后阅读一下readme.txt文档，就可以使用了。</p>
+<p>使用时首先要定义一个实现了HotkeyListener接口的类，实现其onHotKey(int)方法，这个方法接收一个数字，作为标志</p>
+<p>然后就可以使用JIntellitype.getInstance().registerHotKey(int,int,int)方法注册需要的热键了，其中第一个参数将是触发时传递个onHotKey方法的参数，所以两者要保持统一，第二个参数为ctrl、alt、shift等的组合结果，第三个一般为组合键的字母。<br>示例代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.iflysse.swing;</span><br><span class="line"><span class="keyword">import</span> com.melloware.jintellitype.HotkeyListener;</span><br><span class="line"><span class="keyword">import</span> com.melloware.jintellitype.JIntellitype;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* <span class="doctag">@author</span> ZYWANG</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HotkeyTest</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//注册一个ctrl+alt+a的热键</span></span><br><span class="line">        JIntellitype.getInstance().registerHotKey(<span class="number">100</span>, JIntellitype.MOD_CONTROL+JIntellitype.MOD_ALT, (<span class="type">int</span>)<span class="string">&#x27;T&#x27;</span>);</span><br><span class="line">        <span class="comment">//添加热键监听器</span></span><br><span class="line">        JIntellitype.getInstance().addHotKeyListener(<span class="keyword">new</span> <span class="title class_">HotkeyListener</span>() </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onHotKey</span><span class="params">(<span class="type">int</span> arg0)</span> </span><br><span class="line">            &#123;</span><br><span class="line">                System.out.println(arg0);<span class="comment">//打印参数</span></span><br><span class="line">                <span class="comment">//JIntellitype.getInstance().unregisterHotKey(arg0);//用于移除热键注册的方法</span></span><br><span class="line">                System.exit(<span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        Thread.sleep(<span class="number">10000000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>JIntellitype下载地址：<a target="_blank" rel="noopener" href="http://melloware.com/download/">http://melloware.com/download/</a> （打开页面，找到JIntellitype）<br>下载地址：<a target="_blank" rel="noopener" href="https://code.google.com/archive/p/jintellitype/downloads">https://code.google.com/archive/p/jintellitype/downloads</a>,注意需要科学上网。<br>附件中提供了一个jintellitype-1.3.4-dist版本备用</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/795fc6f9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/795fc6f9/" class="post-title-link" itemprop="url">Java图形界面编程</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-09-13 14:26:54" itemprop="dateCreated datePublished" datetime="2018-09-13T14:26:54+08:00">2018-09-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/java-GUI/" itemprop="url" rel="index"><span itemprop="name">java GUI</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/795fc6f9/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/795fc6f9/" data-xid="/blog/795fc6f9/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="AWT简介"><a href="#AWT简介" class="headerlink" title="AWT简介"></a>AWT简介</h2><p>Java1.0的出现带来了<code>抽象窗口工具箱(AWT)</code>。设计目标是希望构建一个通用的GUI,使得利用它编写的程序能够运行在所有的平台上,以实现Sun公司提出的口号“一次编写,随处运行”。 Java AWT中包含了许多类来支持GUI设计。AWT由Java的 Java.awt包提供,该包中有许多用来设计GU的组件类,如按钮、菜单、列表、文本框等组件类;同时还包含窗口、面板等容器类。AWT的具体层次结构如图16.1所示。<br><img data-src="http://pefsyzdwh.bkt.clouddn.com/18-9-12/77483434.jpg"></p>
+<p>Java提供了一系列AWT软件包,其中主要的包及包的描述如图16.2所示。<br><img data-src="http://pefsyzdwh.bkt.clouddn.com/18-9-12/21263787.jpg"></p>
+<ul>
+<li><p>java.awt包:是AWT的核心包，包含用于创建用户界面和绘制图形图像的所有类</p>
+</li>
+<li><p>java.awt包：</p>
+<ul>
+<li>AWT的核心包,包含用于创建用户界面和绘制图形图像的所有类</li>
+</ul>
+</li>
+<li><p>java.awt.color包：</p>
+<ul>
+<li>提供定义颜色及其空间</li>
+</ul>
+</li>
+<li><p>java.awt.datatransfer包：</p>
+<ul>
+<li>提供在应用程序之间和在应用程序内部传输数据的接口和类</li>
+</ul>
+</li>
+<li><p>java.awt.event包:</p>
+<ul>
+<li>提供处理由AWT组件所激发的各类事件的接口和类</li>
+</ul>
+</li>
+<li><p>java.awt.font包:</p>
+<ul>
+<li>提供各种字体,包括类及接口</li>
+</ul>
+</li>
+<li><p>java.awt.image包:</p>
+<ul>
+<li>用于图像处理,提供创建和修改图像的各种类</li>
+</ul>
+</li>
+<li><p>java.awt.print包:</p>
+<ul>
+<li>2D图像的API包,为通用的打印API提供类和接口<br>java.awt包提供了基本的Java程序的GUI设计工具。主要包括<code>组件、容器和布局管理器</code>三个概念,其具体描述如下所示。</li>
+</ul>
+</li>
+</ul>
+<h3 id="GUI设计工具组件"><a href="#GUI设计工具组件" class="headerlink" title="GUI设计工具组件"></a>GUI设计工具组件</h3><ul>
+<li>组件Component)：图形用户界面的最基本组成部分是组件,组件是<code>一个可以以图形化的方式显示在屏幕上并能与用户进行交互的对象</code>,例如个按钮,一个标签等</li>
+<li>容器( Container)：是Component(组件)的子类,容器本身是一个组件具有组件的所有性质,但是其<code>主要功能是容纳其他组件和容器</code></li>
+<li>布局管理器(LayoutManager): 每个容器都有一个布局管理器,使用<strong>布局管理器可以对容器中的某个组件进行定位或判断其大小尺寸</strong>等</li>
+</ul>
+<h2 id="Swing简介"><a href="#Swing简介" class="headerlink" title="Swing简介"></a>Swing简介</h2><p>Swing是Java基础类库( Java Foundation Classes)中有关图形界面的类库。 <code>Swing扩展自AWT</code>。例如JFrame扩展自 Frame, JButton扩展自Component等。<code>基本上AWT中的每种控件都能在Swing中找到替代品</code>,比如AWT中的Button对应于 Swing中的 JButton,AWT中的 TextField对应于 Swing中的 JTextField等。</p>
+<p>Swing包是JFC(Java Foundation Classes)的一部分,它由许多包组成,这些包的名称及描述如表16.1所示。<br><img data-src="http://pefsyzdwh.bkt.clouddn.com/18-9-12/64122628.jpg"></p>
+<h2 id="容器类"><a href="#容器类" class="headerlink" title="容器类"></a>容器类</h2><p>窗口( JFrame)、面板( JPanel)和对话框(J)是Swing中提供用来创建表示图形用户界面的类。该类的对象将被当作容器使用,所有的 Swing组件都必须被添加到容器中,才能被显示出来。</p>
+<h3 id="JFrame类"><a href="#JFrame类" class="headerlink" title="JFrame类"></a>JFrame类</h3><p>Jframe是一个窗口容器组件,可以被显示在用户桌面上,同时也是一个框架,在其中,可以添加需要的其他的Swing组件。 **Jframe是少数几个不<code>是通过绘制的方式显示的Swing组件</code>**。 Jframe类的构造方法如下所示</p>
+<ul>
+<li>public JFrame(String title)<ul>
+<li>构造一个初始状态是不可见的、有指定标题的JFrame对象。参数 title指明了 JFrame对象的标题</li>
+</ul>
+</li>
+</ul>
+<p>Jframe类中还提供了一些与窗口有关的方法。其主要方法与方法描述如表16.2所示。<br><img data-src="http://pefsyzdwh.bkt.clouddn.com/18-9-12/64122628.jpg"></p>
+<h2 id="JDialog类"><a href="#JDialog类" class="headerlink" title="JDialog类"></a>JDialog类</h2><p>JDialog是一个用来<strong>创建对话框的类</strong>,是 Dialog类的子类。创建的 <strong>JDialog对象可以用来向用户返回信息,接收用户的输入,实现与用户的交互</strong>。 </p>
+<h3 id="JDialog与Jframe的区别"><a href="#JDialog与Jframe的区别" class="headerlink" title="JDialog与Jframe的区别"></a>JDialog与Jframe的区别</h3><p>JDialog对象需要依赖于其他的对话框(比如 Jframe)而存在,当它所依赖的对话框关闭或最小化的时候,该对话框也随之关闭或最小化。</p>
+<p>JDialog类创建对话框对象的构造方法如图16.7所示。</p>
+<ul>
+<li>Dialog(JFrame frame,String s)<ul>
+<li>创建一个对话框对象,初始状态为不可见。参数s用来设置对话框的名字</li>
+</ul>
+</li>
+<li>Dialog(frame frame, String s, boolean b)<ul>
+<li>创建一个对话框对象。参数s用来设置对话框的名字,参数b用来决定该对话框的模式</li>
+</ul>
+</li>
+</ul>
+<p>JDialog类中的主要方法及方法描述如表16.3所示。<br><img data-src="http://pefsyzdwh.bkt.clouddn.com/18-9-12/6477777.jpg"></p>
+<h2 id="JPanel类"><a href="#JPanel类" class="headerlink" title="JPanel类"></a>JPanel类</h2><p>在得到了 JFrame的内容面板后我们就可以直接将其他的 Swing组件放在其中,或者直接在上面描绘图画或文字,但是习惯上一般不会这么做。<strong>通常会将这些图画或文字信息描绘在名为JPanel的容器上,然后再将 JPanel实例放在内容面板上。这样可以使得面板上的布局更合理</strong>。JPanel通常只作为纯粹的容器来使用,它不能像框架、窗口或者对话框那样独立存在。 JPanel的构造方法如下所示。</p>
+<ul>
+<li>JPanel()<ul>
+<li>构造一个使用默认的布局管理器创建的面板</li>
+</ul>
+</li>
+<li>JPanel(LayoutManager layout)<ul>
+<li>构造一个使用指定布局管理器的面板</li>
+</ul>
+</li>
+</ul>
+<h2 id="Swing常用基本组件"><a href="#Swing常用基本组件" class="headerlink" title="Swing常用基本组件"></a>Swing常用基本组件</h2><p>创建图形用户界面GUI,就是为了让计算机程序更好的和用户交互。 Java Swing提供了二十多种不同的用户界面组件。<strong>所有的Swng组件都是从javax.swing.Jcomponent类中派生而来的,从而继承了组件所特有的属性和方法</strong>。</p>
+<h3 id="常用组件的共性操作"><a href="#常用组件的共性操作" class="headerlink" title="常用组件的共性操作"></a>常用组件的共性操作</h3><p>Swing类库中的组件都继承自 javax.swing.JComponent,因此都具有 JComponent的操作,包括<code>设置背景色</code>,<code>设置前景色</code>、<code>设置字体</code>以及<code>设置是否禁用</code>等。表16.4中是 JComponent中常用的方法及方法描述。<br><img data-src="http://pefsyzdwh.bkt.clouddn.com/18-9-12/27250573.jpg"></p>
+<h3 id="按钮-JButton"><a href="#按钮-JButton" class="headerlink" title="按钮( JButton)"></a>按钮( JButton)</h3><p>按钮是用户界面中常用的组件。用户使用 Swing按钮可以显示图像,将整个按钮设置为窗口默认图标,来处理鼠标在按钮上的事件。java.swing包中提供了标准的按压式按钮( JButton)。同时提供了选择式按钮:多选择( JCheckBox)、单选择( JRadioButton)等。我们在这里先来讲解 JButton的知识JButton的构造方法如图16.1所示。</p>
+<ul>
+<li>public JButton ()方法<ul>
+<li>用于创建不带有设置文本或图标的按钮</li>
+</ul>
+</li>
+<li>public JButton(Icon icon)方法<ul>
+<li>用于创建一个带图标的按钮</li>
+</ul>
+</li>
+<li>public JButton(String text)方法<ul>
+<li>用于创建一个带文本的按钮</li>
+</ul>
+</li>
+<li>public JButton(Action a)方法<ul>
+<li>用于创建一个按钮,其属性从所提供的 Action中获取</li>
+</ul>
+</li>
+</ul>
+<h3 id="文本框-JTextField-与密码输入框-JPasswordField"><a href="#文本框-JTextField-与密码输入框-JPasswordField" class="headerlink" title="文本框( JTextField)与密码输入框( JPasswordField)"></a>文本框( JTextField)与密码输入框( JPasswordField)</h3><p><strong>文本框( JTextField)<strong>也是一种常见的组件</strong>,用于处理一行文本</strong>(中间没有回车符)。 JTextField是JTextComponent的子类。密码输入框是 JTextField的个子类。 JTextField和 PasswordField的构造函数形式和常用方法完全一样。这里只列出 JTextField的构造函数,如下所示。</p>
+<ul>
+<li>JTextField()<ul>
+<li>构造一个空文本域</li>
+</ul>
+</li>
+<li>JTextField(String text)<ul>
+<li>构造一个显示指定字符串的文本域</li>
+</ul>
+</li>
+<li>JTextField(int columns)<ul>
+<li>构造一个显示指定列数的空文本域</li>
+</ul>
+</li>
+<li>JTextField(String text,int columns)<ul>
+<li>构造一个具有显示指定字符串,指定列数的文本域<h3 id="文本域-JTextArea"><a href="#文本域-JTextArea" class="headerlink" title="文本域( JTextArea)"></a>文本域( JTextArea)</h3>文本域( JTextArea)也是一种常用组件,<strong>用于处理多行文本</strong>。 JTextArea同 JTextField一样,都是JTextcomponent的子类,因此它们的很多操作都类似,我们不再赘述。 JTextArea的构造函数如下所示：</li>
+</ul>
+</li>
+<li>JTextArea</li>
+<li>构造一个空文本区</li>
+<li>JTextArea(String text)<ul>
+<li>构造一个显示指定字符串的文本区</li>
+</ul>
+</li>
+<li>JTextArea(int columns)<ul>
+<li>构造一个显示指定列数的空文本区</li>
+</ul>
+</li>
+<li>JTextArea(String text, int columns)<ul>
+<li>构造一个具有显示指定字符串,指定列数的文本区</li>
+</ul>
+</li>
+</ul>
+<h3 id="标签-JLabel"><a href="#标签-JLabel" class="headerlink" title="标签( JLabel)"></a>标签( JLabel)</h3><p>标签( JLabel)用来显示一段文本,常用在 JTextField或者 JTextArea前面,提示用户要填写什么样的信息。JLabel用于显示文字,也可以同时显示文字和图标,一般不用于接收鼠标键盘的动作。 JLabel的构造方法如下所示。</p>
+<ul>
+<li>public JLabel (String text)</li>
+<li>使用左对齐字符串来构造一个标签</li>
+<li>public JLabel (Icon icon)<ul>
+<li>使用左对齐图标来构造一个标签</li>
+</ul>
+</li>
+<li>public JLabel (String text, int align)<ul>
+<li>构造一个显示指定列数的空文本区</li>
+</ul>
+</li>
+<li>public JLabel(String text, Icon icon, int align)<ul>
+<li>构造一个具有显示指定字符串,指定列数的文本区</li>
+</ul>
+</li>
+</ul>
+<p>先搬运到这里,后面再看看。看了这么多还是没能达到我想要的结果:设置一个截图的软件，然后自动调用百度识图获取JSON数据，并去除识别的文字，复制到剪贴板中。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -2127,297 +2525,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/c52cb4ad/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/c52cb4ad/" class="post-title-link" itemprop="url">JavaIO流 过滤器流</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-08-21 22:19:08" itemprop="dateCreated datePublished" datetime="2018-08-21T22:19:08+08:00">2018-08-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-IO%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">Java IO流</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Java-IO%E6%B5%81/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/c52cb4ad/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/c52cb4ad/" data-xid="/blog/c52cb4ad/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>134</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="过滤器使用规则"><a href="#过滤器使用规则" class="headerlink" title="过滤器使用规则"></a>过滤器使用规则</h1><p>过滤器可以和其他过滤器、原始流和阅读器&#x2F;书写器链接使用，但要遵守以下规则：</p>
-<ul>
-<li>过滤器流可以置于原始流或其他过滤器流之上；</li>
-<li>阅读器&#x2F;书写器可置于原始流、过滤器流或其他阅读器&#x2F;书写器之上；</li>
-<li>过滤器流不能放在阅读器&#x2F;书写器之后。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9e1b6b70/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/9e1b6b70/" class="post-title-link" itemprop="url">正则表达式 匹配IP地址</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-08-19 19:39:36" itemprop="dateCreated datePublished" datetime="2018-08-19T19:39:36+08:00">2018-08-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">应用</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/9e1b6b70/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/9e1b6b70/" data-xid="/blog/9e1b6b70/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="正则表达式匹配IP地址"><a href="#正则表达式匹配IP地址" class="headerlink" title="正则表达式匹配IP地址"></a>正则表达式匹配IP地址</h1><blockquote>
-<p>正则表达式，又称规则表达式。接下来通过本文给大家介绍正则表达式匹配<code>IP</code>的表达式，非常不错，具有参考借鉴价值，需要的的朋友参考下吧</p>
-</blockquote>
-<p>这里给大家详细讲解一下一个匹配IP地址的正则表达式，<br>有关正则方面的知识，会在详细的讲解中提到。<br>在讲解之前，我先给大家介绍一下，ip地址的生成规则。<br>IP地址，是由32位数字二进制转为四个十进制的字符串组成。<br>怎么转化？下面讲解：</p>
-<p>二进制：<code>11111111111111111111111111111111</code><br>分为四部分：<code>11111111.11111111.11111111.11111111</code><br>转化：<code>2^7+2^6+2^5+2^4+2^3+2^2+2^1+2^0=255</code><br>转为十进制范围：<code>0~255.0~255.0~255.0~255</code><br>这就是<code>IP</code>地址的范围。<br>根据这个生成<code>IP</code>的规则和范围，我们可以用正则表达式来匹配出<code>IP</code>地址，但怎么匹配呢？各人有各人的方法，这里我讲解一下我的思路。</p>
-<p>根据IP地址的字符串规律，我把匹配IP地址的表达式分为两部分来考虑。<br>第一部分：匹配3个<code>0~255.</code>（注意后面的一个点）<br>第二部分：匹配最后的数字<code>0~255</code><br>也就是说，<strong>先匹配出<code> 0~255.</code>（注意后面的一个点） 这个字符串，然后重复匹配3次，然后再匹配最后的数字部分0~255</strong>。这就是我匹配<code>IP</code>地址的思路。</p>
-<p>首先，我要提一下<strong>，正则是没有办法做数字运算的</strong>，所以，我们无法用数字运算的方式筛选出IP的数字范围。既然没法用数字运算的方式筛选出IP的数字范围，那么我们应该用什么其他方式来筛选这个数字范围呢？我的思路是分组讨论，然后再把这些分组合并起来组成IP的数字范围。</p>
-<h2 id="匹配一个合法的数字"><a href="#匹配一个合法的数字" class="headerlink" title="匹配一个合法的数字"></a>匹配一个合法的数字</h2><h3 id="三位数的情况："><a href="#三位数的情况：" class="headerlink" title="三位数的情况："></a>三位数的情况：</h3><ul>
-<li>假设百位是<code>2</code>，那么根据<code>IP</code>数字的范围规则，这里又要分为两种情况，为什么？你想想，最大数字是<code>255</code>，当十位数为<code>5</code>时，个位数最大只能为<code>5</code>是吧？(<code>250-255</code>).而当十位数为<code>0到4</code>时，个位数可以是任意数字对吧？(<code>200-249</code>)<br>所以，这里的两种情况分别为：<ul>
-<li><code>2[0-4][0-9]</code></li>
-<li><code>25[0-5]</code></li>
-</ul>
-</li>
-<li>假设百位数是<code>1</code>，那么这个数字的范围为<code>100-199</code>,对应正则表达式就为<code>1[0-9][0-9]</code>。这个应该不难理解，就不解释。</li>
-</ul>
-<h3 id="两位数的情况"><a href="#两位数的情况" class="headerlink" title="两位数的情况"></a>两位数的情况</h3><p>分析完了三位数的情况，接下来就是两数的情况了，假如是两位数，那么十位数的前面第一个数不能为零是吧？也就是范围为<code>10-99</code>(<code>10,11...,19,20,...,99</code>),对应的正则表达式为<code>[1-9][0-9]</code></p>
-<h3 id="一位数的情况"><a href="#一位数的情况" class="headerlink" title="一位数的情况"></a>一位数的情况</h3><p>剩下的就是个位数的情况了，个位数的情况，大家应该很容易得出结论，就是：<code>[0-9]</code>。</p>
-<p>四种情况分析下来，我们得出了IP数字的范围分组为：</p>
-<ul>
-<li><code>25[0-5]</code></li>
-<li><code>2[0-4][0-9]</code></li>
-<li><code>1[0-9][0-9]</code></li>
-<li><code>[1-9][0-9]</code></li>
-<li><code>[0-9]</code></li>
-</ul>
-<h3 id="匹配一个合法的数字-1"><a href="#匹配一个合法的数字-1" class="headerlink" title="匹配一个合法的数字"></a>匹配一个合法的数字</h3><p>所以匹配IPv4中一个和法的数组的正则表达式为<code>(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])</code></p>
-<h3 id="优化："><a href="#优化：" class="headerlink" title="优化："></a>优化：</h3><ul>
-<li>可以把两位数的正则<code>[1-9][0-9]</code>和一位数的正则<code>[0-9]</code>合并，写为<code>[1-9]?[0-9]</code>.</li>
-<li>用简写<code>\d</code>替代<code>[0-9]</code></li>
-</ul>
-<p>所以优化后的一个合法的数字的正则表达式为：<code>(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)</code></p>
-<h2 id="匹配一个合法的数字和点号三次-："><a href="#匹配一个合法的数字和点号三次-：" class="headerlink" title="匹配一个合法的数字和点号三次 ##："></a>匹配一个合法的数字和点号三次 ##：</h2><p>需要注意的是，点号要转义为<code>\.</code>,所以得到的正则表达式为：<br><code>((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.)&#123;3&#125;</code></p>
-<h2 id="最终的表达式："><a href="#最终的表达式：" class="headerlink" title="最终的表达式："></a>最终的表达式：</h2><p>三组数字和点号之后，后面还有一组数字。这样的话综合起来就是：<br><code>((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.)&#123;3&#125;(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)</code></p>
-<h3 id="优化：-1"><a href="#优化：-1" class="headerlink" title="优化："></a>优化：</h3><p>上面我们使用了括号<code>(...)</code>来限定量词和多选的作用范围。但是这样也会在匹配的时候进行捕获，捕获的话会造成不必要的开销，这里使用<code>(?:...)</code>来限定，这样省去捕获分组的开销。<br><code>(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.)&#123;3&#125;(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)</code></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="匹配IP地址中的一个数"><a href="#匹配IP地址中的一个数" class="headerlink" title="匹配IP地址中的一个数"></a>匹配IP地址中的一个数</h3><p>支持0开头,捕获分组:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(25[0-5]|2[0-4]\d|[0-1]\d&#123;2&#125;|[1-9]?\d)</span><br></pre></td></tr></table></figure>
-<p>不支持0开头,不捕获分组:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(?:25[0-5]|2[0-4]\d|1\d&#123;2&#125;|[1-9]?\d)</span><br></pre></td></tr></table></figure>
-<p>不支持0开头,匹配整个IP地址</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.)&#123;3&#125;(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/java/my_regex_example/IP/IP_match_only.svg"><br>匹配整个IP地址，并捕获每个数字:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(25[0-5]|2[0-4]\d|[0-1]\d&#123;2&#125;|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d&#123;2&#125;|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d&#123;2&#125;|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d&#123;2&#125;|[1-9]?\d)</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/java/my_regex_example/IP/IP_match_group.svg"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/67/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/67/">67</a><span class="page-number current">68</span><a class="page-number" href="/blog/page/69/">69</a><a class="page-number" href="/blog/page/70/">70</a><a class="extend next" rel="next" href="/blog/page/69/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -2450,7 +2557,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">24:54</span>
+    <span title="站点阅读时长">24:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

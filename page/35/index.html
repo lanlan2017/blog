@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">698</span>
+          <span class="site-state-item-count">700</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,281 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/50f38d8e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/50f38d8e/" class="post-title-link" itemprop="url">A query was run and no Result Maps were found for the Mapped Statement</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-25 01:12:01" itemprop="dateCreated datePublished" datetime="2020-08-25T01:12:01+08:00">2020-08-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Mybatis/" itemprop="url" rel="index"><span itemprop="name">Mybatis</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Mybatis/Debug/" itemprop="url" rel="index"><span itemprop="name">Debug</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/50f38d8e/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/50f38d8e/" data-xid="/blog/50f38d8e/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>931</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="错误提示"><a href="#错误提示" class="headerlink" title="错误提示"></a>错误提示</h1><pre>
+Exception in thread "main" org.apache.ibatis.exceptions.PersistenceException: 
+&#35;&#35;&#35; Error querying database.  Cause: org.apache.ibatis.executor.ExecutorException:<mark>A query was run and no Result Maps were found for the Mapped Statement 'mapper.StudentMapper.selectStudentsByClazzId'.  It's likely that neither a Result Type nor a Result Map was specified.</mark>
+&#35;&#35;&#35; The error may exist in mapper/StudentMapper.xml
+&#35;&#35;&#35; The error may involve mapper.StudentMapper.selectStudentsByClazzId
+</pre>
+
+<h1 id="分析原因"><a href="#分析原因" class="headerlink" title="分析原因"></a>分析原因</h1><p>mapper.StudentMapper.selectStudentsByClazzId这条语句没有设置参数和返回值</p>
+<h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><figure class="highlight xml"><figcaption><span>/OneToManyTest3/src/mapper/StudentMapper.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;selectStudentsByClazzId&quot;</span>&gt;</span></span><br><span class="line">    select * from tb_student</span><br><span class="line">    <span class="tag">&lt;<span class="name">where</span>&gt;</span>clazz_id=#&#123;clazz_id&#125;<span class="tag">&lt;/<span class="name">where</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>给selectStudentsByClazzId语句加上参数和返回值声明:</p>
+<pre>
+&lt;select id="selectStudentsByClazzId" <mark>parameterType="int"</mark>
+    <mark>resultMap="studentMap"</mark>&gt;
+    select * from tb_student
+    &lt;where&gt;clazz_id=&#35;{clazz_id}&lt;/where&gt;
+&lt;/select&gt;
+</pre>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/2efc4260/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2efc4260/" class="post-title-link" itemprop="url">15 No appenders could be found for logger Please initialize the log4j system properly</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-06 11:57:02" itemprop="dateCreated datePublished" datetime="2020-08-06T11:57:02+08:00">2020-08-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/Debug/" itemprop="url" rel="index"><span itemprop="name">Debug</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/2efc4260/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/2efc4260/" data-xid="/blog/2efc4260/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Log4j-Debug记录"><a href="#Log4j-Debug记录" class="headerlink" title="Log4j Debug记录"></a>Log4j Debug记录</h1><h2 id="log4j-WARN-No-appenders-could-be-found-for-logger"><a href="#log4j-WARN-No-appenders-could-be-found-for-logger" class="headerlink" title="log4j:WARN No appenders could be found for logger"></a>log4j:WARN No appenders could be found for logger</h2><h3 id="错误提示信息"><a href="#错误提示信息" class="headerlink" title="错误提示信息"></a>错误提示信息</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">log4j:<span class="title">WARN</span> <span class="title">No</span> <span class="title">appenders</span> <span class="title">could</span> <span class="title">be</span> <span class="title">found</span> <span class="title">for</span> <span class="title">logger</span> (<span class="title">demo.Log4jExample</span>).</span></span><br><span class="line"><span class="function"><span class="title">log4j:WARN</span> <span class="title">Please</span> <span class="title">initialize</span> <span class="title">the</span> <span class="title">log4j</span> <span class="title">system</span> <span class="title">properly</span>.</span></span><br><span class="line"><span class="function"><span class="title">log4j:WARN</span> <span class="title">See</span> <span class="title">http</span>://<span class="title">logging.apache.org</span>/<span class="title">log4j</span>/1.2/<span class="title">faq.html</span>#<span class="title">noconfig</span> <span class="title">for</span> <span class="title">more</span> <span class="title">info</span>.</span></span><br></pre></td></tr></table></figure>
+<h3 id="配置文件内容"><a href="#配置文件内容" class="headerlink" title="配置文件内容"></a>配置文件内容</h3><figure class="highlight properties"><figcaption><span>/Log4jDemo/src/log4j.properties</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Define the root logger with appender file</span></span><br><span class="line"><span class="attr">Log4j.rootLogger</span> = <span class="string">DEBUG, FILE</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Define the file appender</span></span><br><span class="line"><span class="attr">Log4j.appender.FILE</span>=<span class="string">org.apache.Log4j.FileAppender</span></span><br><span class="line"><span class="attr">Log4j.appender.FILE.File</span>=<span class="string">htmlLayout.html</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Define the layout for file appender</span></span><br><span class="line"><span class="attr">Log4j.appender.FILE.layout</span>=<span class="string">org.apache.Log4j.HTMLLayout</span></span><br><span class="line"><span class="attr">Log4j.appender.FILE.layout.Title</span>=<span class="string">HTML Layout Example</span></span><br><span class="line"><span class="attr">Log4j.appender.FILE.layout.LocationInfo</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>配置文件写错了,包名应该小写开头,将上述的<code>Log4j</code>改成<code>log4j</code>:</p>
+<pre>
+&#35; Define the root logger with appender file
+<mark>log4j</mark>.rootLogger = DEBUG, FILE
+
+&#35; Define the file appender
+<mark>log4j</mark>.appender.FILE=org.apache.<mark>log4j</mark>.FileAppender
+<mark>log4j</mark>.appender.FILE.File=htmlLayout.html
+
+&#35; Define the layout for file appender
+<mark>log4j</mark>.appender.FILE.layout=org.apache.<mark>log4j</mark>.HTMLLayout
+<mark>log4j</mark>.appender.FILE.layout.Title=HTML Layout Example
+<mark>log4j</mark>.appender.FILE.layout.LocationInfo=true
+</pre>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1637,354 +1912,6 @@ Blog/Windows/Software/ChromeBrowser/Picture-in-pictureFunctionWithoutBarrage/1
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9f922eef/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/9f922eef/" class="post-title-link" itemprop="url">7 Log4j 日志级别 Level类</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-08-03 06:03:06" itemprop="dateCreated datePublished" datetime="2020-08-03T06:03:06+08:00">2020-08-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">简介</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/9f922eef/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/9f922eef/" data-xid="/blog/9f922eef/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Log4j-日志级别Level类"><a href="#Log4j-日志级别Level类" class="headerlink" title="Log4j 日志级别Level类"></a>Log4j 日志级别Level类</h1><p><code>org.apache.Log4j.Level</code>类定义了日志级别，您可通过继承<code>Level</code>类定制自己的级别。</p>
-<table>
-<thead>
-<tr>
-<th align="left">级别</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>OFF</code></td>
-<td align="left">最高级别，用于关闭日志。</td>
-</tr>
-<tr>
-<td align="left"><code>FATAL</code></td>
-<td align="left">指明非常严重的错误事件，可能会导致应用终止执行。</td>
-</tr>
-<tr>
-<td align="left"><code>ERROR</code></td>
-<td align="left">指明错误事件，但应用可能还能继续运行。</td>
-</tr>
-<tr>
-<td align="left"><code>WARN</code></td>
-<td align="left">指明潜在的有害状况。</td>
-</tr>
-<tr>
-<td align="left"><code>INFO</code></td>
-<td align="left">指明描述信息，从粗粒度上描述了应用运行过程。</td>
-</tr>
-<tr>
-<td align="left"><code>DEBUG</code></td>
-<td align="left">指明细致的事件信息，对调试应用最有用。</td>
-</tr>
-<tr>
-<td align="left"><code>TRACE</code></td>
-<td align="left">比<code>DEBUG</code>级别的粒度更细。</td>
-</tr>
-<tr>
-<td align="left"><code>ALL</code></td>
-<td align="left">所有级别，包括定制级别。</td>
-</tr>
-</tbody></table>
-<h2 id="日志级别是如何工作的"><a href="#日志级别是如何工作的" class="headerlink" title="日志级别是如何工作的"></a>日志级别是如何工作的</h2><p>在一个级别为q的<code>logger</code>对象中，一个级别为p的日志请求在<code>p &gt;= q</code>的情况下是开启的。该规则是<code>Log4j</code>的核心，它假设级别是有序的。<br>对于标准级别，其顺序为：<code>ALL</code>&lt;<code>TRACE</code>&lt;<code>DEBUG</code>&lt;<code>INFO</code>&lt;<code>WARN</code>&lt;<code>ERROR</code>&lt;<code>FATAL</code>&lt;<code>OFF</code>。<br>例如设置级别为<code>DEBUG</code>,则比<code>DEBUG</code>高的<code>INFO</code>,<code>WARN</code>,<code>ERROR</code>,<code>FATAL</code>都是开启的.</p>
-<h2 id="在程序中设置日志级别"><a href="#在程序中设置日志级别" class="headerlink" title="在程序中设置日志级别"></a>在程序中设置日志级别</h2><p>使用<code>logger</code>对象的<code>setLevel(Level.级别)</code>方法可以设置期望的日志级别：</p>
-<h3 id="SetLevelByMethod-java"><a href="#SetLevelByMethod-java" class="headerlink" title="SetLevelByMethod.java"></a>SetLevelByMethod.java</h3><figure class="highlight java"><figcaption><span>/Log4jDemo/src/demo/level/SetLevelByMethod.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> demo.level;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.log4j.Level;</span><br><span class="line"><span class="keyword">import</span> org.apache.log4j.Logger;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SetLevelByMethod</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Logger</span> <span class="variable">log</span> <span class="operator">=</span> Logger.getLogger(SetLevelByMethod.class);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 使用方法设置日志级别</span></span><br><span class="line">        log.setLevel(Level.WARN);</span><br><span class="line">        log.trace(<span class="string">&quot;Trace Message!&quot;</span>);</span><br><span class="line">        log.debug(<span class="string">&quot;Debug Message!&quot;</span>);</span><br><span class="line">        log.info(<span class="string">&quot;Info Message!&quot;</span>);</span><br><span class="line">        log.warn(<span class="string">&quot;Warn Message!&quot;</span>);</span><br><span class="line">        log.error(<span class="string">&quot;Error Message!&quot;</span>);</span><br><span class="line">        log.fatal(<span class="string">&quot;Fatal Message!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2020-08-03 18:32:58 WARN  SetLevelByMethod:17 - Warn Message!</span><br><span class="line">2020-08-03 18:32:58 ERROR SetLevelByMethod:18 - Error Message!</span><br><span class="line">2020-08-03 18:32:58 FATAL SetLevelByMethod:19 - Fatal Message!</span><br></pre></td></tr></table></figure>
-<p>可以看到,程序只输出<code>WARM</code>级别和比<code>WARN</code>更高的级别的日志输出</p>
-<h2 id="使用配置文件设置日志级别"><a href="#使用配置文件设置日志级别" class="headerlink" title="使用配置文件设置日志级别"></a>使用配置文件设置日志级别</h2><p><code>Log4j</code>提供了基于配置文件设置日志级别的功能.当您需要改变调试级别时，只需要修改配置文件即可,不用再去修改代码。</p>
-<h3 id="log4j-properties"><a href="#log4j-properties" class="headerlink" title="log4j.properties"></a>log4j.properties</h3><p>下面这个例子和上面那个例子功能一样，不过不用使用<code>setLevel(Level.WARN)</code>方法，只需修改配置文件：</p>
-<figure class="highlight properties"><figcaption><span>/Log4jDemo/Log4jConfig/Level/log4j.properties</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出到控制台</span></span><br><span class="line"><span class="comment"># Root logger option</span></span><br><span class="line"><span class="comment">#ALL&lt;TRACE&lt;DEBUG&lt;INFO&lt; WARN&lt; ERROR&lt; FATAL&lt; OFF</span></span><br><span class="line"><span class="comment">#log4j.rootLogger=OFF, STDOUT</span></span><br><span class="line"><span class="comment">#log4j.rootLogger=FATAL, STDOUT</span></span><br><span class="line"><span class="comment">#log4j.rootLogger=ERROR, STDOUT</span></span><br><span class="line"><span class="comment">#log4j.rootLogger=WARN, STDOUT</span></span><br><span class="line"><span class="attr">log4j.rootLogger</span>=<span class="string">INFO, STDOUT</span></span><br><span class="line"><span class="comment">#log4j.rootLogger=DEBUG, STDOUT</span></span><br><span class="line"><span class="comment">#log4j.rootLogger=TRACE, STDOUT</span></span><br><span class="line"><span class="comment">#log4j.rootLogger=ALL, STDOUT</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># Direct log messages to STDOUT</span></span><br><span class="line"><span class="attr">log4j.appender.STDOUT</span>=<span class="string">org.apache.log4j.ConsoleAppender</span></span><br><span class="line"><span class="attr">log4j.appender.STDOUT.Target</span>=<span class="string">System.out</span></span><br><span class="line"><span class="attr">log4j.appender.STDOUT.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.STDOUT.layout.ConversionPattern</span>=<span class="string">%d&#123;yyyy-MM-dd HH:mm:ss&#125; %-5p %c&#123;1&#125;:%L - %m%n</span></span><br></pre></td></tr></table></figure>
-<h3 id="SetLevleByConfig-java"><a href="#SetLevleByConfig-java" class="headerlink" title="SetLevleByConfig.java"></a>SetLevleByConfig.java</h3><figure class="highlight java"><figcaption><span>/Log4jDemo/src/demo/level/SetLevleByConfig.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> demo.level;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.log4j.Logger;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SetLevleByConfig</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Logger</span> <span class="variable">log</span> <span class="operator">=</span> Logger.getLogger(SetLevleByConfig.class);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        log.trace(<span class="string">&quot;Trace Message!&quot;</span>);</span><br><span class="line">        log.debug(<span class="string">&quot;Debug Message!&quot;</span>);</span><br><span class="line">        log.info(<span class="string">&quot;Info Message!&quot;</span>);</span><br><span class="line">        log.warn(<span class="string">&quot;Warn Message!&quot;</span>);</span><br><span class="line">        log.error(<span class="string">&quot;Error Message!&quot;</span>);</span><br><span class="line">        log.fatal(<span class="string">&quot;Fatal Message!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2020-08-03 18:49:27 INFO  SetLevleByConfig:14 - Info Message!</span><br><span class="line">2020-08-03 18:49:27 WARN  SetLevleByConfig:15 - Warn Message!</span><br><span class="line">2020-08-03 18:49:27 ERROR SetLevleByConfig:16 - Error Message!</span><br><span class="line">2020-08-03 18:49:27 FATAL SetLevleByConfig:17 - Fatal Message!</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/295e501e/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/295e501e/" class="post-title-link" itemprop="url">6 Log4j Logger类方法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-08-03 05:44:24" itemprop="dateCreated datePublished" datetime="2020-08-03T05:44:24+08:00">2020-08-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">Log4j教程</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Java/Log4j%E6%95%99%E7%A8%8B/%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">简介</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/295e501e/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/295e501e/" data-xid="/blog/295e501e/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.5k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Log4j-Logger类方法"><a href="#Log4j-Logger类方法" class="headerlink" title="Log4j Logger类方法"></a>Log4j Logger类方法</h1><h2 id="获取Logger类实例"><a href="#获取Logger类实例" class="headerlink" title="获取Logger类实例"></a>获取Logger类实例</h2><p><code>Logger</code>类提供了很多方法用来处理日志，<code>Logger</code>类不允许初始化一个新的实例，但提供了两个静态方法用来获取<code>Logger</code>对象：</p>
-<table>
-<thead>
-<tr>
-<th align="left">Logger类获取Logger实例的方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>public static Logger getRootLogger();</code></td>
-<td align="left">返回没有名称的根日志记录器</td>
-</tr>
-<tr>
-<td align="left"><code>public static Logger getLogger(String name);</code></td>
-<td align="left">按名称返回记录器。<br>日志的名字是传入的任何字符串，通常为<strong>类名或者包名</strong>。例如:<br><code>static Logger log = Logger.getLogger(log4jExample.class.getName());</code></td>
-</tr>
-</tbody></table>
-<h2 id="打印日志信息的方法"><a href="#打印日志信息的方法" class="headerlink" title="打印日志信息的方法"></a>打印日志信息的方法</h2><p>一旦获取一个有名字的<code>logger</code>实例，就可以使用多个方法记录日志。<code>Logger</code>类拥有如下方法用于打印日志信息。</p>
-<table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>public void debug(Object message)</code></td>
-<td align="left">打印<code>Level.DEBUG</code>级别的消息。</td>
-</tr>
-<tr>
-<td align="left"><code>public void error(Object message)</code></td>
-<td align="left">打印<code>Level.ERROR</code>级别的消息。</td>
-</tr>
-<tr>
-<td align="left"><code>public void fatal(Object message)</code></td>
-<td align="left">打印具有<code>Level.FATAL</code>级别的消息。</td>
-</tr>
-<tr>
-<td align="left"><code>public void info(Object message)</code></td>
-<td align="left">打印<code>Level.INFO</code>级别的消息。</td>
-</tr>
-<tr>
-<td align="left"><code>public void warn(Object message)</code></td>
-<td align="left">打印<code>Level.WARN</code>级别的消息。</td>
-</tr>
-<tr>
-<td align="left"><code>public void trace(Object message)</code></td>
-<td align="left">打印<code>Level.TRACE</code>级别的消息</td>
-</tr>
-</tbody></table>
-<p>所有级别均在<code>org.apache.log4j.Level</code> 类中定义。</p>
-<h2 id="示例程序"><a href="#示例程序" class="headerlink" title="示例程序"></a>示例程序</h2><figure class="highlight java"><figcaption><span>/Log4jDemo/src/demo/method/LoggerMethodTest.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> demo.method;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.log4j.Logger;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LogClass</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Logger</span> <span class="variable">log</span> <span class="operator">=</span> Logger.getLogger(LogClass.class);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        log.trace(<span class="string">&quot;Trace Message!&quot;</span>);</span><br><span class="line">        log.debug(<span class="string">&quot;Debug Message!&quot;</span>);</span><br><span class="line">        log.info(<span class="string">&quot;Info Message!&quot;</span>);</span><br><span class="line">        log.warn(<span class="string">&quot;Warn Message!&quot;</span>);</span><br><span class="line">        log.error(<span class="string">&quot;Error Message!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行效果如下:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2020-08-03 17:55:26 DEBUG LogClass:13 - Debug Message!</span><br><span class="line">2020-08-03 17:55:26 INFO  LogClass:14 - Info Message!</span><br><span class="line">2020-08-03 17:55:26 WARN  LogClass:15 - Warn Message!</span><br><span class="line">2020-08-03 17:55:26 ERROR LogClass:16 - Error Message!</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>可以看到<code>log.trace(&quot;Trace Message!&quot;);</code>这句代码并没有输出,这是因为当前的日志级别是<code>debug</code>，<code>Log4j</code>只会输出级别为<code>debug</code>或者小于<code>debug</code>的日志信息.<code>trace</code>的级别更高,所以不会输出</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/34/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/34/">34</a><span class="page-number current">35</span><a class="page-number" href="/blog/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/70/">70</a><a class="extend next" rel="next" href="/blog/page/36/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -2017,7 +1944,7 @@ Blog/Windows/Software/ChromeBrowser/Picture-in-pictureFunctionWithoutBarrage/1
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">24:54</span>
+    <span title="站点阅读时长">24:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

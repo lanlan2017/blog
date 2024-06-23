@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">698</span>
+          <span class="site-state-item-count">700</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,352 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/8c94a702/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/8c94a702/" class="post-title-link" itemprop="url">Linux 批量处理文件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-15 17:07:33" itemprop="dateCreated datePublished" datetime="2021-06-15T17:07:33+08:00">2021-06-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">文件管理和目录管理</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/8c94a702/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/8c94a702/" data-xid="/blog/8c94a702/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>遍历当前目录<code>.</code>的所有后缀为.c文件，查找文件中带有–help的内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name \*.c -exec grep -n -- --help &#123;&#125; /dev/null \;</span><br></pre></td></tr></table></figure>
+<p>借助find的“壳”功能去遍历目录，对遍历到的每个符合条件的文件执行grep命令。</p>
+<p>缺点：效率低，因为每个命中的对象都需要执行grep命令：<br>对于find命令查找到的文件，创建一个grep进程来处理这个文件，完成任务后grep进程消亡；<br>然后find命令找到下一个文件，再创建一个grep进程来处理。</p>
+<p>也就是说对于find找到n个文件，就需要创建n个grep进程来处理这n个文件。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 批量处理文件]# tree -N</span><br><span class="line">.</span><br><span class="line">├── a</span><br><span class="line">│   └── HelloWorld.c</span><br><span class="line">├── b</span><br><span class="line">│   └── WorldHello.c</span><br><span class="line">├── hello.c</span><br><span class="line">├── other.txt</span><br><span class="line">└── world.c</span><br><span class="line"></span><br><span class="line">2 directories, 5 files</span><br><span class="line">[root@localhost 批量处理文件]# </span><br></pre></td></tr></table></figure>
+<h4 id="各文件内容"><a href="#各文件内容" class="headerlink" title="各文件内容"></a>各文件内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 批量处理文件]# cat hello.c </span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">d</span><br><span class="line">--help</span><br><span class="line">-hello</span><br><span class="line">--hello</span><br><span class="line">[root@localhost 批量处理文件]# cat world.c </span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">-world</span><br><span class="line">--help</span><br><span class="line">--world</span><br><span class="line">[root@localhost 批量处理文件]# cat a/HelloWorld.c </span><br><span class="line">a</span><br><span class="line">1</span><br><span class="line">b</span><br><span class="line">2</span><br><span class="line">helloworld</span><br><span class="line">-helloworld</span><br><span class="line">--helloworld</span><br><span class="line">helloworld8</span><br><span class="line">[root@localhost 批量处理文件]# cat b/WorldHello.c </span><br><span class="line">1</span><br><span class="line">a</span><br><span class="line">2</span><br><span class="line">b</span><br><span class="line">WorldHello</span><br><span class="line">--help</span><br><span class="line">--worldhello</span><br><span class="line">[root@localhost 批量处理文件]# cat other.txt </span><br><span class="line">非.c文件</span><br><span class="line">xxx</span><br><span class="line">yyy</span><br><span class="line">zzz</span><br><span class="line">--help</span><br><span class="line">[root@localhost 批量处理文件]# </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>在当前目录下的所有.c文件中查找–help字符串：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 批量处理文件]# find . -name \*.c -exec grep -n -- --help &#123;&#125; /dev/null \;</span><br><span class="line">./hello.c:5:--help</span><br><span class="line">./world.c:5:--help</span><br><span class="line">./b/WorldHello.c:6:--help</span><br><span class="line">[root@localhost 批量处理文件]# </span><br></pre></td></tr></table></figure>
+<p>grep -nr – –help *.c</p>
+<h2 id="grep-r"><a href="#grep-r" class="headerlink" title="grep -r"></a>grep -r</h2><p>grep命令也提供了-r选项，可以递归地搜索子目录下的文件，</p>
+<p>但是对于如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -nr -- --help *.c </span><br></pre></td></tr></table></figure>
+<p>达不到效果，因为这里的子目录的名字为<code>a/</code>、<code>b/</code>，这些子目录的名字不能被*.c匹配。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 批量处理文件]# grep -nr -- --help *.c </span><br><span class="line">hello.c:5:--help</span><br><span class="line">world.c:5:--help</span><br><span class="line">[root@localhost 批量处理文件]# </span><br></pre></td></tr></table></figure>
+<p>而命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -nr -- --help *</span><br></pre></td></tr></table></figure>
+<p>倒是可以检索出文件中带<code>--help</code>的内容，但是这样是检索所有的文件，不是单独的检索<code>.c</code>文件，输出结果会被无用的信息干扰，甚至淹没。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 批量处理文件]# grep -nr -- --help *</span><br><span class="line">b/WorldHello.c:6:--help</span><br><span class="line">hello.c:5:--help</span><br><span class="line">other.txt:5:--help</span><br><span class="line">world.c:5:--help</span><br><span class="line">[root@localhost 批量处理文件]# </span><br></pre></td></tr></table></figure>
+<p>所以还是应该使用find精确筛选的功能。然后再通过grep搜索这些文件的内容。</p>
+<h2 id="利用find与xargs的组合"><a href="#利用find与xargs的组合" class="headerlink" title="利用find与xargs的组合"></a>利用find与xargs的组合</h2><p>对于上述命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name \*.c -exec grep -n -- --help &#123;&#125; /dev/null \;</span><br></pre></td></tr></table></figure>
+<p>如果能把</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name \*.c -print</span><br></pre></td></tr></table></figure>
+<p>的输出结果，也就是生成的文件名列表追加在下列grep命令后面就可以好了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -n -- --help filelist</span><br></pre></td></tr></table></figure>
+<p>这样我们就只需要执行一次grep命令，处理这些文件列表即可。不需要对一个文件，的执行一次grep命令。</p>
+<p>命令xargs可以用来完成这个工作：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name \*.c -print | xargs grep -n -- --help</span><br></pre></td></tr></table></figure>
+<p>xargs命令把标准输入追加到它的参数列表后面，也就是上述<code>grep -n -- --help</code>的后面，再作为一个命令来执行。这样利用find精确筛选，利用grep批量处理文件，提高效率。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 批量处理文件]# find . -name \*.c -print | xargs grep -n -- --help</span><br><span class="line">./hello.c:5:--help</span><br><span class="line">./world.c:5:--help</span><br><span class="line">./b/WorldHello.c:6:--help</span><br><span class="line">[root@localhost 批量处理文件]# </span><br></pre></td></tr></table></figure>
+<h2 id="验证使用xargs可以节省时间"><a href="#验证使用xargs可以节省时间" class="headerlink" title="验证使用xargs可以节省时间"></a>验证使用xargs可以节省时间</h2><p>执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name \*.c -print | xargs grep -n -- --help</span><br></pre></td></tr></table></figure>
+<p>需要的时间：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 批量处理文件]# time find . -name \*.c -print | xargs grep -n -- --help</span><br><span class="line">./hello.c:5:--help</span><br><span class="line">./world.c:5:--help</span><br><span class="line">./b/WorldHello.c:6:--help</span><br><span class="line"></span><br><span class="line">real    0m0.022s</span><br><span class="line">user    0m0.010s</span><br><span class="line">sys    0m0.000s</span><br><span class="line">[root@localhost 批量处理文件]# </span><br></pre></td></tr></table></figure>
+<p>执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name \*.c -exec grep -n -- --help &#123;&#125; /dev/null \;</span><br></pre></td></tr></table></figure>
+<p>需要的时间：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 批量处理文件]# time find . -name \*.c -exec grep -n -- --help &#123;&#125; /dev/null \;</span><br><span class="line">./hello.c:5:--help</span><br><span class="line">./world.c:5:--help</span><br><span class="line">./b/WorldHello.c:6:--help</span><br><span class="line"></span><br><span class="line">real    0m0.044s</span><br><span class="line">user    0m0.000s</span><br><span class="line">sys    0m0.010s</span><br><span class="line">[root@localhost 批量处理文件]# </span><br></pre></td></tr></table></figure>
+<p>可以看到使用xargs确实节省和时间。</p>
+<h1 id="xargs：将标准输入组织成命令执行"><a href="#xargs：将标准输入组织成命令执行" class="headerlink" title="xargs：将标准输入组织成命令执行"></a>xargs：将标准输入组织成命令执行</h1><ul>
+<li>将标准输入构造为命令的命令行参数</li>
+<li>如果标准输入的数据量很大，xargs指定的处理程序会启动多个进程运行，每个进程处理一批。</li>
+<li>可以使用xargs的-n选项指定每批处理多少个</li>
+<li>xargs经常与find配合使用，也可以与其它命令组合使用</li>
+</ul>
+<h1 id="xargs-构造参数列表并运行命令"><a href="#xargs-构造参数列表并运行命令" class="headerlink" title="xargs:构造参数列表并运行命令"></a>xargs:构造参数列表并运行命令</h1><p>解决shell文件名生成时，因为文件太多，缓冲区空间受限而文件名展开失败的问题</p>
+<p>对于命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -f *.dat</span><br></pre></td></tr></table></figure>
+<p>如果匹配的文件很多，则文件名*.dat可能会展开失败，<br>此时可以使用下面的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls | grep &quot;.dat$&quot; | xargs rm -f</span><br></pre></td></tr></table></figure>
+<p>find命中目录名因删除目录导致目录遍历过程遇到麻烦</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name CVS -exec rm -rf &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+<p>改为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name CVS -print | xargs rm -rf</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/a84f434c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/a84f434c/" class="post-title-link" itemprop="url">Linux 目录遍历命令find的应用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-08 01:52:55" itemprop="dateCreated datePublished" datetime="2021-06-08T01:52:55+08:00">2021-06-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%92%8C%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">文件管理和目录管理</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/a84f434c/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/a84f434c/" data-xid="/blog/a84f434c/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Linux-目录遍历命令find的应用"><a href="#Linux-目录遍历命令find的应用" class="headerlink" title="Linux 目录遍历命令find的应用"></a>Linux 目录遍历命令find的应用</h1><h2 id="查找当前目录下的所有目录"><a href="#查找当前目录下的所有目录" class="headerlink" title="查找当前目录下的所有目录"></a>查找当前目录下的所有目录</h2><p>从当前目录开始查找，寻找所有目录，打印路径名：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -type d -print</span><br></pre></td></tr></table></figure>
+<p>结果：按层次列出当前的目录结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# tree -N</span><br><span class="line">.</span><br><span class="line">├── hello</span><br><span class="line">│   └── world</span><br><span class="line">│       └── HelloWorld.c</span><br><span class="line">├── ht.c</span><br><span class="line">└── 文件管理</span><br><span class="line">    ├── HelloWorld2.c</span><br><span class="line">    ├── HelloWorld.c</span><br><span class="line">    ├── p1.c</span><br><span class="line">    └── p2.c</span><br><span class="line"></span><br><span class="line">3 directories, 6 files</span><br><span class="line">[root@localhost 文件管理和目录管理]# find . -type d -print</span><br><span class="line">.</span><br><span class="line">./hello</span><br><span class="line">./hello/world</span><br><span class="line">./文件管理</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<p>指定了两个条件：名字与stud*匹配，类型为目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name &#x27;stud*&#x27; -type d -print</span><br></pre></td></tr></table></figure>
+<h2 id="使用多个条件选项"><a href="#使用多个条件选项" class="headerlink" title="使用多个条件选项"></a>使用多个条件选项</h2><p>两个条件逻辑“与”，必须同时符合这两个条件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# tree -N</span><br><span class="line">.</span><br><span class="line">├── hello</span><br><span class="line">│   └── world</span><br><span class="line">│       └── HelloWorld.c</span><br><span class="line">├── hello2</span><br><span class="line">│   ├── HelloWorld2.c</span><br><span class="line">│   ├── HelloWorld.c</span><br><span class="line">│   ├── p1.c</span><br><span class="line">│   └── p2.c</span><br><span class="line">└── ht.c</span><br><span class="line"></span><br><span class="line">3 directories, 6 files</span><br><span class="line">[root@localhost 文件管理和目录管理]# find . -name &#x27;hello*&#x27; -type d -print</span><br><span class="line">./hello</span><br><span class="line">./hello2</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<h2 id="检索最近10天内修改过的普通文件"><a href="#检索最近10天内修改过的普通文件" class="headerlink" title="检索最近10天内修改过的普通文件"></a>检索最近10天内修改过的普通文件</h2><p>从根目录开始检索最近10天之内曾经修改过的普通磁盘文件（目录不算）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -type f -mtime -10 -print</span><br></pre></td></tr></table></figure>
+<p>当前的时间：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# date</span><br><span class="line">2021年 06月 09日 星期三 13:29:26 CST</span><br><span class="line">[root@localhost 文件管理和目录管理]#</span><br></pre></td></tr></table></figure>
+<p>当前目录树结构，以及各个文件的最后修改时间：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# tree -N</span><br><span class="line">.</span><br><span class="line">├── hello</span><br><span class="line">│   └── HelloWorld.c</span><br><span class="line">├── hello2</span><br><span class="line">│   ├── HelloWorld2.c</span><br><span class="line">│   ├── HelloWorld.c</span><br><span class="line">│   ├── p1.c</span><br><span class="line">│   └── p2.c</span><br><span class="line">└── ht.c</span><br><span class="line"></span><br><span class="line">2 directories, 6 files</span><br><span class="line">[root@localhost 文件管理和目录管理]# ls -l *</span><br><span class="line">-rw-r--r--. 1 root root   34 6月   3 17:33 ht.c</span><br><span class="line"></span><br><span class="line">hello:</span><br><span class="line">总用量 0</span><br><span class="line">-rw-r--r--. 1 root root 0 6月   7 16:49 HelloWorld.c</span><br><span class="line"></span><br><span class="line">hello2:</span><br><span class="line">总用量 16</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:17 HelloWorld2.c</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:17 HelloWorld.c</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:00 p1.c</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:16 p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<p>查找刚好5天之前更新的文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# find . -type f -mtime 5 -print</span><br><span class="line">./ht.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<p>查找刚好6天之前更新的文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# find . -type f -mtime 6 -print</span><br><span class="line">./hello2/HelloWorld2.c</span><br><span class="line">./hello2/HelloWorld.c</span><br><span class="line">./hello2/p1.c</span><br><span class="line">./hello2/p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<p>查找5天之前更新的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# find . -type f -mtime +4 -print</span><br><span class="line">./hello2/HelloWorld2.c</span><br><span class="line">./hello2/HelloWorld.c</span><br><span class="line">./hello2/p1.c</span><br><span class="line">./hello2/p2.c</span><br><span class="line">./ht.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<h2 id="使用逻辑运算符非"><a href="#使用逻辑运算符非" class="headerlink" title="使用逻辑运算符非!"></a>使用逻辑运算符非!</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . ! -type d -links +2 -print</span><br></pre></td></tr></table></figure>
+<p>从当前目录开始检索link数大于2的非目录文件<br>条件“非”用！<br>注意：!号与-type之间必须保留一空格</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# find . -type f -mtime 6 -print</span><br><span class="line">./hello2/HelloWorld2.c</span><br><span class="line">./hello2/HelloWorld.c</span><br><span class="line">./hello2/p1.c</span><br><span class="line">./hello2/p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# find . -type f ! -mtime 6 -print</span><br><span class="line">./hello/HelloWorld.c</span><br><span class="line">./ht.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<h2 id="使用逻辑运算或-o"><a href="#使用逻辑运算或-o" class="headerlink" title="使用逻辑运算或-o"></a>使用逻辑运算或-o</h2><p>寻找当前目录下大于100字节的名叫hello的或.c后缀的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# tree -Nh</span><br><span class="line">.</span><br><span class="line">├── [ 131]  arg.c</span><br><span class="line">├── [4.0K]  hello</span><br><span class="line">│   └── [   0]  HelloWorld.c</span><br><span class="line">├── [4.0K]  hello2</span><br><span class="line">│   ├── [  66]  HelloWorld2.c</span><br><span class="line">│   ├── [  66]  HelloWorld.c</span><br><span class="line">│   ├── [  66]  p1.c</span><br><span class="line">│   └── [  66]  p2.c</span><br><span class="line">├── [ 121]  helloworld.c</span><br><span class="line">└── [  34]  ht.c</span><br><span class="line"></span><br><span class="line">2 directories, 8 files</span><br><span class="line">[root@localhost 文件管理和目录管理]# find -size +100c \( -name &#x27;hello&#x27; -o -name &#x27;*.c&#x27; \) -print</span><br><span class="line">./hello</span><br><span class="line">./arg.c</span><br><span class="line">./helloworld.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用了两条件“或” (-o)及组合(圆括号)</li>
+<li>不要遗漏了所必需的引号，反斜线和空格，尤其是圆括号前和圆括号后。圆括号是shell的特殊字符，所以需要写成<code>\(</code>或<code>\)</code></li>
+</ul>
+<p>其他写法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# find -size +100c &#x27;(&#x27; -name &#x27;hello&#x27; -o -name &#x27;*.c&#x27; &#x27;)&#x27; -print</span><br><span class="line">./hello</span><br><span class="line">./arg.c</span><br><span class="line">./helloworld.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# find -size +100c \( -name &#x27;hello&#x27; -o -name &#x27;*.c&#x27; &#x27;)&#x27; -print</span><br><span class="line">./hello</span><br><span class="line">./arg.c</span><br><span class="line">./helloworld.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<h2 id="find-exec执行命令"><a href="#find-exec执行命令" class="headerlink" title="find -exec执行命令"></a>find -exec执行命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -type d -print -exec ls -l &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>-exec</code>及随后的分号<code>;</code>之间的内容作为一条命令执行</li>
+<li><code>shell</code>中分号<code>;</code>有特殊含义，前面加反斜线\</li>
+<li><code>&#123;&#125;</code>代表遍历时所查到的符合条件的路径名。注意，<strong>两花括号间无空格，之后的空格不可省略</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# tree -N</span><br><span class="line">.</span><br><span class="line">├── arg.c</span><br><span class="line">├── hello</span><br><span class="line">│   └── HelloWorld.c</span><br><span class="line">├── hello2</span><br><span class="line">│   ├── HelloWorld2.c</span><br><span class="line">│   ├── HelloWorld.c</span><br><span class="line">│   ├── p1.c</span><br><span class="line">│   └── p2.c</span><br><span class="line">├── helloworld.c</span><br><span class="line">└── ht.c</span><br><span class="line"></span><br><span class="line">2 directories, 8 files</span><br><span class="line">[root@localhost 文件管理和目录管理]#</span><br></pre></td></tr></table></figure>
+<p>查找当前目录下的子目录，并对这些子目录执行<code>ls -l</code>命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# find . -type d -print -exec ls -l &#123;&#125; \;</span><br><span class="line">.</span><br><span class="line">总用量 20</span><br><span class="line">-rw-r--r--. 1 root root  131 6月   9 14:12 arg.c</span><br><span class="line">drwxr-xr-x. 2 root root 4096 6月   9 13:28 hello</span><br><span class="line">drwxr-xr-x. 2 root root 4096 6月   8 01:23 hello2</span><br><span class="line">-rw-r--r--. 1 root root  121 6月   9 14:13 helloworld.c</span><br><span class="line">-rw-r--r--. 1 root root   34 6月   3 17:33 ht.c</span><br><span class="line">./hello</span><br><span class="line">总用量 0</span><br><span class="line">-rw-r--r--. 1 root root 0 6月   7 16:49 HelloWorld.c</span><br><span class="line">./hello2</span><br><span class="line">总用量 16</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:17 HelloWorld2.c</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:17 HelloWorld.c</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:00 p1.c</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:16 p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]#</span><br></pre></td></tr></table></figure>
+<p>查找当前目录下的子目录，不包括这个<code>.</code>目录，并对这些子目录执行<code>ls -l</code>命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# find . -type d ! -name &#x27;.&#x27;  -print -exec ls -l &#123;&#125; \;</span><br><span class="line">./hello</span><br><span class="line">总用量 0</span><br><span class="line">-rw-r--r--. 1 root root 0 6月   7 16:49 HelloWorld.c</span><br><span class="line">./hello2</span><br><span class="line">总用量 16</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:17 HelloWorld2.c</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:17 HelloWorld.c</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:00 p1.c</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:16 p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<h2 id="find-ok执行命令"><a href="#find-ok执行命令" class="headerlink" title="find -ok执行命令"></a>find -ok执行命令</h2><p>-ok选项在执行指定的命令前等待用户确认</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# find . -type d -print -ok ls -l &#123;&#125; \;</span><br><span class="line">.</span><br><span class="line">&lt; ls ... . &gt; ? n</span><br><span class="line">./hello</span><br><span class="line">&lt; ls ... ./hello &gt; ? y</span><br><span class="line">总用量 0</span><br><span class="line">-rw-r--r--. 1 root root 0 6月   7 16:49 HelloWorld.c</span><br><span class="line">./hello2</span><br><span class="line">&lt; ls ... ./hello2 &gt; ? y</span><br><span class="line">总用量 16</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:17 HelloWorld2.c</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:17 HelloWorld.c</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:00 p1.c</span><br><span class="line">-rw-r--r--. 1 root root 66 6月   2 17:16 p2.c</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+<h2 id="利用find的递归式遍历目录的功能在文件中搜寻字符串"><a href="#利用find的递归式遍历目录的功能在文件中搜寻字符串" class="headerlink" title="利用find的递归式遍历目录的功能在文件中搜寻字符串"></a>利用find的递归式遍历目录的功能在文件中搜寻字符串</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find src -name \*.c -exec grep -n -- --help &#123;&#125; /dev/null \;</span><br></pre></td></tr></table></figure>
+<p>在目录src中所有.c文件中查找–help字符串<br>grep的-n选项，–选项，&#x2F;dev&#x2F;null文件的作用<br>其他类似做法：将满足条件的文件转码或者对文件进行其他分析处理等</p>
+<p>运行效果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 文件管理和目录管理]# tree -N</span><br><span class="line">.</span><br><span class="line">├── arg.c</span><br><span class="line">├── hello</span><br><span class="line">│   └── HelloWorld.c</span><br><span class="line">├── hello2</span><br><span class="line">│   ├── HelloWorld2.c</span><br><span class="line">│   ├── HelloWorld.c</span><br><span class="line">│   ├── p1.c</span><br><span class="line">│   └── p2.c</span><br><span class="line">├── helloworld.c</span><br><span class="line">└── ht.c</span><br><span class="line"></span><br><span class="line">2 directories, 8 files</span><br><span class="line">[root@localhost 文件管理和目录管理]# cat ht.c </span><br><span class="line">56</span><br><span class="line">-1</span><br><span class="line">-4</span><br><span class="line">8</span><br><span class="line">--help</span><br><span class="line">--hello</span><br><span class="line">--world</span><br><span class="line">[root@localhost 文件管理和目录管理]# find . -name \*.c -exec grep -n -- --help &#123;&#125; /dev/null \;</span><br><span class="line">./ht.c:5:--help</span><br><span class="line">[root@localhost 文件管理和目录管理]# </span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1718,357 +2064,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/80acc920/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/80acc920/" class="post-title-link" itemprop="url">Linux 文件命名和目录结构</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-05-31 13:53:53" itemprop="dateCreated datePublished" datetime="2021-05-31T13:53:53+08:00">2021-05-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%96%87%E4%BB%B6%E5%90%8D%E5%92%8C%E6%96%87%E4%BB%B6%E9%80%9A%E9%85%8D%E7%AC%A6/" itemprop="url" rel="index"><span itemprop="name">文件名和文件通配符</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/80acc920/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/80acc920/" data-xid="/blog/80acc920/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.3k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="文件和目录的命名规则"><a href="#文件和目录的命名规则" class="headerlink" title="文件和目录的命名规则"></a>文件和目录的命名规则</h1><h2 id="名字长度"><a href="#名字长度" class="headerlink" title="名字长度"></a>名字长度</h2><ul>
-<li>一般允许1－255字符</li>
-<li>有些UNIX不支持长文件名，但至少长度为1-14</li>
-</ul>
-<h2 id="取名的合法字符"><a href="#取名的合法字符" class="headerlink" title="取名的合法字符"></a>取名的合法字符</h2><ul>
-<li>除斜线外的所有字符都是命名的合法字符</li>
-<li>不可打印字符也可以做文件名(除了字节0）</li>
-<li>斜线（&#x2F;）留做路径名分割符</li>
-</ul>
-<h2 id="大小写字母有区别"><a href="#大小写字母有区别" class="headerlink" title="大小写字母有区别"></a>大小写字母有区别</h2><ul>
-<li>Makefile与makefile是两个不同的文件</li>
-<li>尽量不要依靠字母的大小写区分不同文件名，文件名带来的说明性差，不便于Windows&#x2F;Linux之间的迁移</li>
-</ul>
-<h1 id="系统配置信息"><a href="#系统配置信息" class="headerlink" title="系统配置信息"></a>系统配置信息</h1><h2 id="x2F-etc目录"><a href="#x2F-etc目录" class="headerlink" title="&#x2F;etc目录"></a>&#x2F;etc目录</h2><ul>
-<li><strong>供系统维护管理用的命令和配置文件</strong><ul>
-<li>文件格式为文本文件</li>
-<li><strong>功能类似Windows的注册表信息</strong></li>
-</ul>
-</li>
-</ul>
-<p>&#x2F;etc目录包括如下内容</p>
-<ul>
-<li>&#96;passwd，hosts文件</li>
-<li><code>*.conf</code>文件</li>
-<li>ssh,xinet.d,apt,network….等目录</li>
-<li>系统启动阶段系统初始化和启动各服务的脚本<code>rc*.d</code></li>
-<li><code>profile</code>&#x2F;<code>bash.bashrc</code>系统级bash等shell的偏好设置</li>
-<li>自定义的需要自启动的服务脚本<code>rc.local</code></li>
-</ul>
-<h1 id="临时目录"><a href="#临时目录" class="headerlink" title="临时目录"></a>临时目录</h1><h2 id="x2F-tmp"><a href="#x2F-tmp" class="headerlink" title="&#x2F;tmp"></a>&#x2F;tmp</h2><p>临时文件，每个用户都可以在这里临时创建文件，但只能删除自己的文件，不可以删除其他用户创建的文件</p>
-<h2 id="x2F-var"><a href="#x2F-var" class="headerlink" title="&#x2F;var"></a>&#x2F;var</h2><p>系统运行时要改变的数据<br>系统日志syslog等</p>
-<h1 id="可运行程序和设备文件"><a href="#可运行程序和设备文件" class="headerlink" title="可运行程序和设备文件"></a>可运行程序和设备文件</h1><p>（类似Windows的Program Files目录和Windows\system32）</p>
-<h2 id="x2F-bin"><a href="#x2F-bin" class="headerlink" title="&#x2F;bin"></a>&#x2F;bin</h2><p><strong>系统常用命令</strong>，如ls，ln，cp，cat等</p>
-<h2 id="x2F-usr-x2F-bin"><a href="#x2F-usr-x2F-bin" class="headerlink" title="&#x2F;usr&#x2F;bin"></a>&#x2F;usr&#x2F;bin</h2><p><strong>存放一些常用命令</strong>，如ssh,ftp，make，gcc，git等</p>
-<h2 id="x2F-sbin-x2F-usr-x2F-sbin"><a href="#x2F-sbin-x2F-usr-x2F-sbin" class="headerlink" title="&#x2F;sbin,&#x2F;usr&#x2F;sbin"></a>&#x2F;sbin,&#x2F;usr&#x2F;sbin</h2><p><strong>系统管理员专用命令</strong></p>
-<h2 id="x2F-dev"><a href="#x2F-dev" class="headerlink" title="&#x2F;dev"></a>&#x2F;dev</h2><p>设备文件，如终端设备，磁带机，打印机等</p>
-<h1 id="头文件和库文件"><a href="#头文件和库文件" class="headerlink" title="头文件和库文件"></a>头文件和库文件</h1><h2 id="x2F-usr-x2F-include-usr-x3D-Unix-System-Resource）"><a href="#x2F-usr-x2F-include-usr-x3D-Unix-System-Resource）" class="headerlink" title="&#x2F;usr&#x2F;include  (usr&#x3D;Unix System Resource）"></a>&#x2F;usr&#x2F;include  (usr&#x3D;Unix System Resource）</h2><p>C语言头文件存放目录</p>
-<h2 id="x2F-lib-x2F-usr-x2F-lib"><a href="#x2F-lib-x2F-usr-x2F-lib" class="headerlink" title="&#x2F;lib,&#x2F;usr&#x2F;lib"></a>&#x2F;lib,&#x2F;usr&#x2F;lib</h2><ul>
-<li>存放各种库文件，指C语言的链接库文件，以及terminfo终端库等等</li>
-<li>静态链接库文件有<code>.a</code>后缀(archive，存档)</li>
-<li>动态链接库文件后缀是<code>.so</code>  (shared objects：共享的目标代码，多个.o文件的集成) </li>
-<li>Linux广泛使用动态链接库，静态链接库逐渐过时</li>
-</ul>
-<p>使用动态链接库的好处</p>
-<h3 id="动态链接"><a href="#动态链接" class="headerlink" title="动态链接"></a>动态链接</h3><p>动态链接与静态链接</p>
-<h4 id="命令ldd"><a href="#命令ldd" class="headerlink" title="命令ldd"></a>命令ldd</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vi]# ldd ./helloworld.out </span><br><span class="line">    linux-vdso.so.1 =&gt;  (0x0000007f85b2f000)</span><br><span class="line">    libc.so.6 =&gt; /lib64/libc.so.6 (0x0000007f859a2000)</span><br><span class="line">    /lib/ld-linux-aarch64.so.1 (0x000000557443e000)</span><br><span class="line">[root@localhost vi]# </span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc hello.c –o hello          #hello大小(7.2KB)</span><br><span class="line">gcc –static hello.c –o hello  #hello大小(712KB)</span><br></pre></td></tr></table></figure>
-<p>应用程序可编程控制的动态链接库的加载、卸载和调用</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/4116ba94/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/4116ba94/" class="post-title-link" itemprop="url">Linux vi显示乱码问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-05-30 21:01:41" itemprop="dateCreated datePublished" datetime="2021-05-30T21:01:41+08:00">2021-05-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/vi%E7%BC%96%E8%BE%91%E5%99%A8%E5%8F%8A%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">vi编辑器及乱码问题</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/4116ba94/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/4116ba94/" data-xid="/blog/4116ba94/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="屏幕显示乱码问题"><a href="#屏幕显示乱码问题" class="headerlink" title="屏幕显示乱码问题"></a>屏幕显示乱码问题</h1><h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /bin/bash</span><br></pre></td></tr></table></figure>
-<p>或</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head -n 1 /bin/bash</span><br></pre></td></tr></table></figure>
-<p>导致屏幕乱码，键盘输入也只能看到画表用的框框符</p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>&#x2F;bin&#x2F;bash文件不是文本文件，这些二进制内容逐字节送到终端，凑巧一个序列被终端理解为一个转义序列，执行动作：修改了终端字符集</p>
-<h2 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h2><p>ASCII字符集（7比特128种符号）<br>选择其他字符集，相同码值代表了那个字符集之中的某个符号</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>断开连接，重新登录<br>注意不要把非文本信息在终端输出</p>
-<h1 id="文本文件格式问题"><a href="#文本文件格式问题" class="headerlink" title="文本文件格式问题"></a>文本文件格式问题</h1><h2 id="现象-1"><a href="#现象-1" class="headerlink" title="现象"></a>现象</h2><p>Linux下的文本文件在Windows用notepad打开，所有内容粘在一行内</p>
-<h2 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h2><p>Linux和Windows的文本文件的存储格式不同</p>
-<h2 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h2><p>在Linux完成格式转换后再用Windows处理（首选此方案）<br>用Windows中可容忍Linux文本文件格式的其他编辑器</p>
-<h2 id="文本文件格式"><a href="#文本文件格式" class="headerlink" title="文本文件格式"></a>文本文件格式</h2><p>Windows和Linux文本文件行的行尾不同</p>
-<ul>
-<li>Linux：行尾处仅存换行字符</li>
-<li>Windows：行尾处存回车和换行两个字符</li>
-</ul>
-<p>例:文件mini.txt，第一行为ab，第二行为xyz<br>Windows中，文件的大小为9字节</p>
-<pre>
-61 62 <mark>0d 0a</mark> 78 79 7a <mark>0d 0a</mark>
-</pre>
-
-<p>在Linux中，文件的大小为7字节</p>
-<pre>
-61 62 <mark>0a</mark> 78 79 7a <mark>0a</mark>
-</pre>
-
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="Windows文本文件"><a href="#Windows文本文件" class="headerlink" title="Windows文本文件"></a>Windows文本文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ ls</span><br><span class="line">helloworld.c  mini_windows.txt</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ file mini_windows.txt</span><br><span class="line">mini_windows.txt: ASCII text, with CRLF line terminators</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ cat mini_windows.txt</span><br><span class="line">ab</span><br><span class="line">xyz</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ od -t x1 mini_windows.txt</span><br><span class="line">0000000 61 62 0d 0a 78 79 7a</span><br><span class="line">0000007</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
-<h4 id="linux文本文件"><a href="#linux文本文件" class="headerlink" title="linux文本文件"></a>linux文本文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost encode]# file mini.txt </span><br><span class="line">mini.txt: ASCII text</span><br><span class="line">[root@localhost encode]# cat mini.txt </span><br><span class="line">ab</span><br><span class="line">xyz</span><br><span class="line">[root@localhost encode]# od -t x1 mini.txt </span><br><span class="line">0000000 61 62 0a 78 79 7a 0a</span><br><span class="line">0000007</span><br><span class="line">[root@localhost encode]# </span><br></pre></td></tr></table></figure>
-
-<h2 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h2><p>（两种格式间转换）<br>dos2unix&#x2F;unix2dos, todos&#x2F;fromdos<br>（查看文件的数据类型，供参考）</p>
-<h3 id="dos2unix和fromdos命令"><a href="#dos2unix和fromdos命令" class="headerlink" title="dos2unix和fromdos命令"></a>dos2unix和fromdos命令</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.linuxidc.com/Linux/2014-01/95144.htm">https://www.linuxidc.com/Linux/2014-01/95144.htm</a><br>两个命令的用法相同,不同的是两个命令使用的环境不一样.<br>dos2unix在CentOS系列的系统中使用，fromdos则在Ubuntu系列的系统中使用。<br>用法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dos2unix filename</span><br><span class="line">fromdos filename</span><br></pre></td></tr></table></figure>
-<p>意思是：转换文件格式，将windos系统的文件转换成linux系统可以使用的文件格式，否则文件在linux系统中可能会出现错误，如：文件中显示^m 这样的错误字符。<br>导致这样的错误出现的原因是，windos环境中的换行符是<code>\r\n</code>,而linux系统中的换行符直接<code>\n</code>就行了。</p>
-</blockquote>
-<h3 id="file"><a href="#file" class="headerlink" title="file"></a>file</h3><p>如果没有file命令则需要先安装file命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vi]# file helloworld.c </span><br><span class="line">-bash: file: 未找到命令</span><br><span class="line">[root@localhost vi]# yum list file</span><br><span class="line">已加载插件：fastestmirror</span><br><span class="line">Repodata is over 2 weeks old. Install yum-cron? Or run: yum makecache fast</span><br><span class="line">Determining fastest mirrors</span><br><span class="line"> * epel: mirrors.ustc.edu.cn</span><br><span class="line">可安装的软件包</span><br><span class="line">file.aarch64                                                                     5.11-37.el7                                                                     base</span><br><span class="line">[root@localhost vi]# yum install file</span><br></pre></td></tr></table></figure>
-<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vi]# file helloworld.c </span><br><span class="line">helloworld.c: C source, ASCII text</span><br><span class="line">[root@localhost vi]# </span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /e/Blog/blog/source/_posts/编程/Linux/通用/vi编辑器及乱码问题 (master)</span><br><span class="line">$ file &#x27;Linux 显示乱码问题.md&#x27;</span><br><span class="line">Linux 显示乱码问题.md: UTF-8 Unicode text</span><br></pre></td></tr></table></figure>
-<h3 id="Windows文本文件和Linux文本文件相互转换"><a href="#Windows文本文件和Linux文本文件相互转换" class="headerlink" title="Windows文本文件和Linux文本文件相互转换"></a>Windows文本文件和Linux文本文件相互转换</h3><h4 id="Windows系统中用记事本创建的helloworld-c文件"><a href="#Windows系统中用记事本创建的helloworld-c文件" class="headerlink" title="Windows系统中用记事本创建的helloworld.c文件"></a>Windows系统中用记事本创建的helloworld.c文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ cat helloworld.c</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">        printf(&quot;%s\n&quot;,&quot;Hello&quot;);</span><br><span class="line">        printf(&quot;%s\n&quot;,&quot;World&quot;);</span><br><span class="line">        printf(&quot;%s\n&quot;,&quot;Welcome to Linux&quot;);</span><br><span class="line">&#125;</span><br><span class="line">lan@DESKTOP-8ISAT6B MINGW64 /g/Desktop/test/Linux</span><br><span class="line">$ file helloworld.c</span><br><span class="line">helloworld.c: C source, ASCII text, with CRLF line terminators</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>可以看到helloworld.c文件使用的是CRLF，也就是<strong>回车换行符</strong><code>\r\n</code>。</p>
-<h4 id="Linux中打开Windows文本文件"><a href="#Linux中打开Windows文本文件" class="headerlink" title="Linux中打开Windows文本文件"></a>Linux中打开Windows文本文件</h4><p>将该文件上传到CentOS中，再次执行file命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost encode]# file helloworld.c </span><br><span class="line">helloworld.c: C source, ASCII text, with CRLF line terminators</span><br><span class="line">[root@localhost encode]# </span><br></pre></td></tr></table></figure>
-<p>使用vi打开该文件：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/DisplayGarbledProblem/1.png" alt="图片"></p>
-<h4 id="Linux中吧Windows文本文件转换成Linux文本文件"><a href="#Linux中吧Windows文本文件转换成Linux文本文件" class="headerlink" title="Linux中吧Windows文本文件转换成Linux文本文件"></a>Linux中吧Windows文本文件转换成Linux文本文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost encode]# dos2unix helloworld.c </span><br><span class="line">dos2unix: converting file helloworld.c to Unix format ...</span><br><span class="line">[root@localhost encode]# file helloworld.c </span><br><span class="line">helloworld.c: C source, ASCII text</span><br><span class="line">[root@localhost encode]# </span><br></pre></td></tr></table></figure>
-<p>然后在使用vi打开该文件:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/Programming/Linux/General/VIEditorAndGarbledProblem/DisplayGarbledProblem/2.png" alt="图片"></p>
-<h1 id="中文编码问题"><a href="#中文编码问题" class="headerlink" title="中文编码问题"></a>中文编码问题</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>从Windows迁来的文件，只有在显示中文字符时是乱码。Linux本生的中文信息正常显示。</p>
-<h2 id="原因-2"><a href="#原因-2" class="headerlink" title="原因"></a>原因</h2><p>中文GBK与UTF8不兼容</p>
-<h2 id="英文字符集"><a href="#英文字符集" class="headerlink" title="英文字符集"></a>英文字符集</h2><p>7比特ASCII码，字节高位为0的，后面7位是英文ASCII码</p>
-<h2 id="中文字符编码GBK"><a href="#中文字符编码GBK" class="headerlink" title="中文字符编码GBK"></a>中文字符编码GBK</h2><p>Windows默认中文编码方案，两个字节表示一个汉字，字节的高位为1，以区别于ASCII码</p>
-<h2 id="中文字符编码UTF8"><a href="#中文字符编码UTF8" class="headerlink" title="中文字符编码UTF8"></a>中文字符编码UTF8</h2><p>许多Linux默认中文编码方案，三个字节表示一个汉字，字节的高位为1，以区别于ASCII码</p>
-<h2 id="检查系统设置"><a href="#检查系统设置" class="headerlink" title="检查系统设置"></a>检查系统设置</h2><p>与语言有关的环境变量LANG应为<code>en_US.UTF-8</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env | grep LANG</span><br></pre></td></tr></table></figure>
-<p>若有问题，设置方法为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export LANG=en_US.UTF-8</span><br></pre></td></tr></table></figure>
-<h2 id="命令iconv：中文字符编码的转换"><a href="#命令iconv：中文字符编码的转换" class="headerlink" title="命令iconv：中文字符编码的转换"></a>命令iconv：中文字符编码的转换</h2><h3 id="from-GBK-to-UTF8"><a href="#from-GBK-to-UTF8" class="headerlink" title="from GBK to UTF8"></a>from GBK to UTF8</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iconv –f gbk –t utf8</span><br></pre></td></tr></table></figure>
-<h3 id="from-UTF8-to-GBK"><a href="#from-UTF8-to-GBK" class="headerlink" title="from UTF8 to GBK"></a>from UTF8 to GBK</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iconv –f utf8 –t gbk</span><br></pre></td></tr></table></figure>
-<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;汉字&quot; | od -t x1</span><br><span class="line">0000000 e6 b1 89 e5 ad 97 0a</span><br><span class="line">$ echo &quot;汉字&quot; | iconv -f utf-8 -t gbk | od -t x1 </span><br><span class="line">0000000 ba ba d7 d6 0a</span><br></pre></td></tr></table></figure>
-<h1 id="终端配置：配色和中文编码"><a href="#终端配置：配色和中文编码" class="headerlink" title="终端配置：配色和中文编码"></a>终端配置：配色和中文编码</h1><h2 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h2><p>终端不是默认的黑底白字，ls，grep，vi等输出信息无配色<br>中文显示的是乱码</p>
-<h2 id="调整终端仿真软件的配置"><a href="#调整终端仿真软件的配置" class="headerlink" title="调整终端仿真软件的配置"></a>调整终端仿真软件的配置</h2><p>根据所用的终端仿真软件的不同，调整终端类型和字符编码，具体方法与所用软件有关</p>
-<!-- Blog/Programming/Linux/General/VIEditorAndGarbledProblem/DisplayGarbledProblem -->
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/23/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/blog/page/25/">25</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/70/">70</a><a class="extend next" rel="next" href="/blog/page/25/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -2101,7 +2096,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">24:54</span>
+    <span title="站点阅读时长">24:55</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
