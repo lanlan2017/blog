@@ -9,10 +9,12 @@ updated: 2022-07-01 20:08:20
 ---
 
 
-# 需要import
+## 需要import
+
 import pyautogui
 import time
-```
+
+```cmd
 pip install pyautogui==0.9.50
 pip install opencv-python -i https://pypi.tuna.tsinghua.edu.cn/simple
 pip install pillow
