@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">700</span>
+          <span class="site-state-item-count">703</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">223</span>
+        <span class="site-state-item-count">225</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -213,6 +213,401 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/9a2728d1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/9a2728d1/" class="post-title-link" itemprop="url">Java JFrame关闭窗体之前弹出对话框让用户确认</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-10-16 15:49:46" itemprop="dateCreated datePublished" datetime="2023-10-16T15:49:46+08:00">2023-10-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Swing/" itemprop="url" rel="index"><span itemprop="name">Swing</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/9a2728d1/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/9a2728d1/" data-xid="/blog/9a2728d1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol>
+<li>先设置DO_NOTHING_ON_CLOSE：<code>frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);</code>。</li>
+<li>然后再调用frame.addWindowListener方法，重写windowClosing方法，在windowClosing方法里面弹出确认对话框。</li>
+</ol>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.swing.*;  </span><br><span class="line"><span class="keyword">import</span> java.awt.event.*;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CloseConfirmation</span> &#123;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;  </span><br><span class="line">        <span class="type">JFrame</span> <span class="variable">frame</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JFrame</span>(<span class="string">&quot;Close Confirmation Example&quot;</span>);  </span><br><span class="line">        frame.setSize(<span class="number">300</span>, <span class="number">200</span>);  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);  </span><br><span class="line">        frame.addWindowListener(<span class="keyword">new</span> <span class="title class_">WindowAdapter</span>() &#123;  </span><br><span class="line">            <span class="meta">@Override</span>  </span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">windowClosing</span><span class="params">(WindowEvent e)</span> &#123;  </span><br><span class="line">                <span class="type">int</span> <span class="variable">confirm</span> <span class="operator">=</span> JOptionPane.showConfirmDialog(frame, <span class="string">&quot;Are you sure you want to close?&quot;</span>);  </span><br><span class="line">                <span class="keyword">if</span> (confirm == JOptionPane.YES_OPTION) &#123;  </span><br><span class="line">                    frame.dispose();  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;);  </span><br><span class="line">        frame.setVisible(<span class="literal">true</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">frameSettings</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 取消默认关闭操作</span></span><br><span class="line">    frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);</span><br><span class="line">    <span class="comment">// 自己实现windowClosing</span></span><br><span class="line">    frame.addWindowListener(<span class="keyword">new</span> <span class="title class_">WindowAdapter</span>() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">windowClosing</span><span class="params">(WindowEvent e)</span> &#123;</span><br><span class="line">            <span class="comment">// int result = JOptionPane.showConfirmDialog(contentPane, &quot;确认关闭&quot;);</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> JOptionPane.showConfirmDialog(contentPane, <span class="string">&quot;确定关闭&quot;</span>, <span class="string">&quot;是否关闭窗体&quot;</span>, JOptionPane.YES_NO_OPTION);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="keyword">switch</span> (result) &#123;</span><br><span class="line">                <span class="keyword">case</span> JOptionPane.OK_OPTION:</span><br><span class="line">                    <span class="built_in">super</span>.windowClosing(e);</span><br><span class="line">                    <span class="comment">// adbJPanels.getStopBtn().doClick();</span></span><br><span class="line">                    universalPanels.getBtnStop().doClick();</span><br><span class="line">                    scrcpyJPanels.getBtnKillScrcpy().doClick();</span><br><span class="line">                    System.out.println(<span class="string">&quot;窗体正在关闭。。。。。。。。。。。。&quot;</span>);</span><br><span class="line">                    <span class="comment">// ThreadSleep.seconds(5);</span></span><br><span class="line">                    System.exit(<span class="number">0</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="comment">// default:</span></span><br><span class="line">                <span class="comment">//     frame.pack();</span></span><br><span class="line">                <span class="comment">//     break;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 永远置顶</span></span><br><span class="line">    frame.setAlwaysOnTop(<span class="literal">true</span>);</span><br><span class="line">    <span class="comment">// 调整窗体到最佳大小</span></span><br><span class="line">    frame.pack();</span><br><span class="line">    <span class="comment">// 显示窗体</span></span><br><span class="line">    frame.setVisible(<span class="literal">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/48696dcf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/48696dcf/" class="post-title-link" itemprop="url">adb获取按钮位置：使用adb shell uiautomator dump命令</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-09-26 17:22:58 / 修改时间：17:24:17" itemprop="dateCreated datePublished" datetime="2023-09-26T17:22:58+08:00">2023-09-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/adb/" itemprop="url" rel="index"><span itemprop="name">adb</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/48696dcf/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/48696dcf/" data-xid="/blog/48696dcf/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p><strong>使用adb命令点击屏幕上的某个按钮</strong></p>
+<h2 id="adb在屏幕的指定坐标上点击"><a href="#adb在屏幕的指定坐标上点击" class="headerlink" title="adb在屏幕的指定坐标上点击"></a>adb在屏幕的指定坐标上点击</h2><p>如果我们知道按钮的坐标<code>[x,y]</code>的话，使用<code>adb shell input tap x y</code>命令可Android设备屏幕上的x,y坐标上点击。</p>
+<h2 id="如何获取要点击的按钮的坐标"><a href="#如何获取要点击的按钮的坐标" class="headerlink" title="如何获取要点击的按钮的坐标"></a>如何获取要点击的按钮的坐标</h2><p>答案就是使用<code>adb shell uiautomator dump</code>先分析当前activity的UI，然后在命令生成的xml文件中找到要点击的按钮的坐标x,y。</p>
+<p>有了坐标之后，再使用adb shell input tap x y进行点击即可。</p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><h2 id="adb-shell-uiautomator-dump"><a href="#adb-shell-uiautomator-dump" class="headerlink" title="adb shell uiautomator dump"></a>adb shell uiautomator dump</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell uiautomator dump</span><br></pre></td></tr></table></figure>
+<p>命令会在Android设备上生成一个xml文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">G:\dev2\idea_workspace\MyJavaTools\runable&gt;adb shell uiautomator dump</span><br><span class="line">UI hierchary dumped to: /sdcard/window_dump.xml</span><br><span class="line"></span><br><span class="line">G:\dev2\idea_workspace\MyJavaTools\runable&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="从Android上复制xml文件到电脑上"><a href="#从Android上复制xml文件到电脑上" class="headerlink" title="从Android上复制xml文件到电脑上"></a>从Android上复制xml文件到电脑上</h2><p>使用adb pull命令从Android中复制文件到电脑上：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb pull /sdcard/window_dump.xml D:\Desktop\test\获取activity按钮位置</span><br></pre></td></tr></table></figure>
+<p>复制成功效果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">G:\dev2\idea_workspace\MyJavaTools\runable&gt;adb pull /sdcard/window_dump.xml D:\Desktop\test\获取activity按钮位置</span><br><span class="line">/sdcard/window_dump.xml: 1 file pulled...pped. 2.2 MB/s (22056 bytes in 0.010s)</span><br><span class="line"></span><br><span class="line">G:\dev2\idea_workspace\MyJavaTools\runable&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="分析xml文件"><a href="#分析xml文件" class="headerlink" title="分析xml文件"></a>分析xml文件</h2><p>在电脑上用vscode打开这个xml文件。按Ctrl+F，打开查找，在搜索框中输入要点击的按钮的文字。一般这个时候就能找到这个按钮对应的标签。</p>
+<h3 id="获取按钮的bounds属性"><a href="#获取按钮的bounds属性" class="headerlink" title="获取按钮的bounds属性"></a>获取按钮的bounds属性</h3><p>查找文字为”反馈”的按钮：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">node</span> <span class="attr">index</span>=<span class="string">&quot;0&quot;</span> <span class="attr">text</span>=<span class="string">&quot;&quot;</span> <span class="attr">resource-id</span>=<span class="string">&quot;com.byted.pangle:id/tt_top_area&quot;</span> <span class="attr">class</span>=<span class="string">&quot;android.widget.LinearLayout&quot;</span> <span class="attr">package</span>=<span class="string">&quot;com.xk.qreader&quot;</span> <span class="attr">content-desc</span>=<span class="string">&quot;&quot;</span> <span class="attr">checkable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;false&quot;</span> <span class="attr">clickable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">enabled</span>=<span class="string">&quot;true&quot;</span> <span class="attr">focusable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">focused</span>=<span class="string">&quot;false&quot;</span> <span class="attr">scrollable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">long-clickable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">password</span>=<span class="string">&quot;false&quot;</span> <span class="attr">selected</span>=<span class="string">&quot;false&quot;</span> <span class="attr">bounds</span>=<span class="string">&quot;[0,0][1080,144]&quot;</span>&gt;</span></span><br><span class="line">                                            <span class="tag">&lt;<span class="name">node</span> <span class="attr">index</span>=<span class="string">&quot;0&quot;</span> <span class="attr">text</span>=<span class="string">&quot;&quot;</span> <span class="attr">resource-id</span>=<span class="string">&quot;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;android.widget.FrameLayout&quot;</span> <span class="attr">package</span>=<span class="string">&quot;com.xk.qreader&quot;</span> <span class="attr">content-desc</span>=<span class="string">&quot;&quot;</span> <span class="attr">checkable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;false&quot;</span> <span class="attr">clickable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">enabled</span>=<span class="string">&quot;true&quot;</span> <span class="attr">focusable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">focused</span>=<span class="string">&quot;false&quot;</span> <span class="attr">scrollable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">long-clickable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">password</span>=<span class="string">&quot;false&quot;</span> <span class="attr">selected</span>=<span class="string">&quot;false&quot;</span> <span class="attr">bounds</span>=<span class="string">&quot;[0,0][936,144]&quot;</span>&gt;</span></span><br><span class="line">                                                <span class="tag">&lt;<span class="name">node</span> <span class="attr">index</span>=<span class="string">&quot;0&quot;</span> <span class="attr">text</span>=<span class="string">&quot;反馈&quot;</span> <span class="attr">resource-id</span>=<span class="string">&quot;com.byted.pangle:id/tt_top_dislike&quot;</span> <span class="attr">class</span>=<span class="string">&quot;android.widget.TextView&quot;</span> <span class="attr">package</span>=<span class="string">&quot;com.xk.qreader&quot;</span> <span class="attr">content-desc</span>=<span class="string">&quot;&quot;</span> <span class="attr">checkable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;false&quot;</span> <span class="attr">clickable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">enabled</span>=<span class="string">&quot;true&quot;</span> <span class="attr">focusable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">focused</span>=<span class="string">&quot;false&quot;</span> <span class="attr">scrollable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">long-clickable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">password</span>=<span class="string">&quot;false&quot;</span> <span class="attr">selected</span>=<span class="string">&quot;false&quot;</span> <span class="attr">bounds</span>=<span class="string">&quot;[720,60][888,144]&quot;</span> /&gt;</span><span class="tag">&lt;/<span class="name">node</span>&gt;</span></span><br><span class="line">                                            <span class="tag">&lt;<span class="name">node</span> <span class="attr">NAF</span>=<span class="string">&quot;true&quot;</span> <span class="attr">index</span>=<span class="string">&quot;1&quot;</span> <span class="attr">text</span>=<span class="string">&quot;&quot;</span> <span class="attr">resource-id</span>=<span class="string">&quot;com.byted.pangle:id/tt_reward_full_count_down&quot;</span> <span class="attr">class</span>=<span class="string">&quot;android.widget.LinearLayout&quot;</span> <span class="attr">package</span>=<span class="string">&quot;com.xk.qreader&quot;</span> <span class="attr">content-desc</span>=<span class="string">&quot;&quot;</span> <span class="attr">checkable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;false&quot;</span> <span class="attr">clickable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">enabled</span>=<span class="string">&quot;true&quot;</span> <span class="attr">focusable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">focused</span>=<span class="string">&quot;false&quot;</span> <span class="attr">scrollable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">long-clickable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">password</span>=<span class="string">&quot;false&quot;</span> <span class="attr">selected</span>=<span class="string">&quot;false&quot;</span> <span class="attr">bounds</span>=<span class="string">&quot;[936,60][1032,144]&quot;</span>&gt;</span></span><br><span class="line">                                                <span class="tag">&lt;<span class="name">node</span> <span class="attr">NAF</span>=<span class="string">&quot;true&quot;</span> <span class="attr">index</span>=<span class="string">&quot;0&quot;</span> <span class="attr">text</span>=<span class="string">&quot;&quot;</span> <span class="attr">resource-id</span>=<span class="string">&quot;com.byted.pangle:id/tt_reward_full_count_down_after&quot;</span> <span class="attr">class</span>=<span class="string">&quot;android.widget.LinearLayout&quot;</span> <span class="attr">package</span>=<span class="string">&quot;com.xk.qreader&quot;</span> <span class="attr">content-desc</span>=<span class="string">&quot;&quot;</span> <span class="attr">checkable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;false&quot;</span> <span class="attr">clickable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">enabled</span>=<span class="string">&quot;true&quot;</span> <span class="attr">focusable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">focused</span>=<span class="string">&quot;false&quot;</span> <span class="attr">scrollable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">long-clickable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">password</span>=<span class="string">&quot;false&quot;</span> <span class="attr">selected</span>=<span class="string">&quot;false&quot;</span> <span class="attr">bounds</span>=<span class="string">&quot;[966,84][1002,120]&quot;</span>&gt;</span></span><br><span class="line">                                                    <span class="tag">&lt;<span class="name">node</span> <span class="attr">index</span>=<span class="string">&quot;0&quot;</span> <span class="attr">text</span>=<span class="string">&quot;&quot;</span> <span class="attr">resource-id</span>=<span class="string">&quot;com.byted.pangle:id/tt_reward_full_count_down_after_close&quot;</span> <span class="attr">class</span>=<span class="string">&quot;android.widget.ImageView&quot;</span> <span class="attr">package</span>=<span class="string">&quot;com.xk.qreader&quot;</span> <span class="attr">content-desc</span>=<span class="string">&quot;&quot;</span> <span class="attr">checkable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;false&quot;</span> <span class="attr">clickable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">enabled</span>=<span class="string">&quot;true&quot;</span> <span class="attr">focusable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">focused</span>=<span class="string">&quot;false&quot;</span> <span class="attr">scrollable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">long-clickable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">password</span>=<span class="string">&quot;false&quot;</span> <span class="attr">selected</span>=<span class="string">&quot;false&quot;</span> <span class="attr">bounds</span>=<span class="string">&quot;[966,84][1002,120]&quot;</span> /&gt;</span><span class="tag">&lt;/<span class="name">node</span>&gt;</span></span><br><span class="line">                                            <span class="tag">&lt;/<span class="name">node</span>&gt;</span></span><br><span class="line">                                        <span class="tag">&lt;/<span class="name">node</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这条标签的内容如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">node</span> <span class="attr">index</span>=<span class="string">&quot;0&quot;</span> <span class="attr">text</span>=<span class="string">&quot;反馈&quot;</span> <span class="attr">resource-id</span>=<span class="string">&quot;com.byted.pangle:id/tt_top_dislike&quot;</span> <span class="attr">class</span>=<span class="string">&quot;android.widget.TextView&quot;</span> <span class="attr">package</span>=<span class="string">&quot;com.xk.qreader&quot;</span> <span class="attr">content-desc</span>=<span class="string">&quot;&quot;</span> <span class="attr">checkable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;false&quot;</span> <span class="attr">clickable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">enabled</span>=<span class="string">&quot;true&quot;</span> <span class="attr">focusable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">focused</span>=<span class="string">&quot;false&quot;</span> <span class="attr">scrollable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">long-clickable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">password</span>=<span class="string">&quot;false&quot;</span> <span class="attr">selected</span>=<span class="string">&quot;false&quot;</span> <span class="attr">bounds</span>=<span class="string">&quot;[720,60][888,144]&quot;</span> /&gt;</span><span class="tag">&lt;/<span class="name">node</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>标签中的信息很多，我们需要的信息在这条标签的末尾bounds属性：<code>bounds=&quot;[720,60][888,144]&quot;</code></p>
+<p>这表示”反馈”按钮占据的矩形的左上角的坐标为：<code>[720,60]</code>，右下角的坐标为<code>[888,144]</code>;</p>
+<h3 id="计算中点的坐标"><a href="#计算中点的坐标" class="headerlink" title="计算中点的坐标"></a>计算中点的坐标</h3><p>有了两个坐标点之后，我们计算出中点的坐标。得到<code>x=888.0, y=144.0</code>；</p>
+<h3 id="adb命令点击按钮的中点坐标"><a href="#adb命令点击按钮的中点坐标" class="headerlink" title="adb命令点击按钮的中点坐标"></a>adb命令点击按钮的中点坐标</h3><p>得到按钮的中点坐标之后，就可以使用adb命令进行点击了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell input tap 804.0 102.0</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/growing_tree/article/details/110606365">https://blog.csdn.net/growing_tree/article/details/110606365</a></p>
+<h2 id="文心一言-回答"><a href="#文心一言-回答" class="headerlink" title="文心一言 回答"></a>文心一言 回答</h2><p>问：</p>
+<p>adb如何获取顶部activity中的按钮的位置</p>
+<blockquote>
+<p>答：<br>要在Android Debug Bridge (ADB)中获取顶部Activity中的按钮位置，你需要使用ADB的命令行工具并结合Android设备的屏幕坐标系统。以下是获取顶部Activity中按钮位置的一般步骤：</p>
+<ol>
+<li>确保你的Android设备已连接到计算机，并已启用开发者选项和USB调试模式。在设备上打开开发者选项，然后启用USB调试模式。</li>
+<li>打开终端或命令提示符，导航到ADB的安装目录。</li>
+<li>运行以下命令来查看当前连接的Android设备列表：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure>
+确保你的设备显示在列表中。</li>
+<li>获取顶部Activity的焦点。你可以使用以下命令将焦点切换到顶部Activity：<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys window windows | grep -E &#x27;mCurrentFocus|mFocusedApp&#x27;</span><br></pre></td></tr></table></figure>
+这将显示当前具有焦点的Activity的相关信息。</li>
+<li>找到你想要获取位置的按钮的视图ID。你可以使用以下命令来获取当前Activity的布局层次结构：<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell uiautomator dump</span><br></pre></td></tr></table></figure>
+这将生成一个XML文件，其中包含当前Activity的布局层次结构信息。你可以在计算机上找到这个XML文件，通常位于<code>/sdcard/window_dump.xml</code>。</li>
+<li>在XML文件中找到你想要获取位置的按钮的视图ID。你可以使用文本编辑器或XML解析器来打开XML文件，并查找包含按钮的视图ID。通常，视图ID的格式为<code>@id/button_id</code>。</li>
+<li>使用以下命令来获取按钮的位置：<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell uiautomator dump | grep -E <span class="string">&#x27;viewId=.*button_id&#x27;</span></span><br></pre></td></tr></table></figure>
+将<code>button_id</code>替换为你在步骤6中找到的按钮视图ID。这将显示包含按钮位置的相关信息。</li>
+<li>从输出结果中提取按钮的位置信息。你可以查找包含<code>bounds</code>或<code>location</code>的行，这些行将提供按钮的位置坐标。通常，你会看到类似以下的输出：<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">viewId=com.example.app:id/button_id bounds=[<span class="number">0</span>, <span class="number">0</span>][<span class="number">100</span>, <span class="number">50</span>]</span><br></pre></td></tr></table></figure>
+这表示按钮的左上角坐标为(0, 0)，右下角坐标为(100, 50)。你可以根据需要提取这些坐标值。<br>请注意，这些步骤假设你已经连接到Android设备并具有适当的权限来执行ADB命令。此外，由于Android设备和应用程序的布局可能有所不同，因此你可能需要根据实际情况进行适当的调整。</li>
+</ol>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/31d7fd61/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/31d7fd61/" class="post-title-link" itemprop="url">Java 定时关闭弹出的对话框</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-09-20 17:58:34" itemprop="dateCreated datePublished" datetime="2023-09-20T17:58:34+08:00">2023-09-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/Swing/" itemprop="url" rel="index"><span itemprop="name">Swing</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/31d7fd61/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/31d7fd61/" data-xid="/blog/31d7fd61/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="自动关闭JOptionPane弹窗"><a href="#自动关闭JOptionPane弹窗" class="headerlink" title="自动关闭JOptionPane弹窗"></a>自动关闭JOptionPane弹窗</h1><p>JOptionPane定时关闭。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> adbs.main.ui.jpanels.auto;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.swing.JButton;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JDialog;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JFrame;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JOptionPane;</span><br><span class="line"><span class="keyword">import</span> javax.swing.Timer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AutoCloseJOption</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">TIME_VISIBLE</span> <span class="operator">=</span> <span class="number">3000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> <span class="type">JFrame</span> <span class="variable">frame1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JFrame</span>(<span class="string">&quot;My App&quot;</span>);</span><br><span class="line">        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">        frame1.setSize(<span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line">        frame1.setLocation(<span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">JButton</span> <span class="variable">button</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JButton</span>(<span class="string">&quot;My Button&quot;</span>);</span><br><span class="line">        frame1.getContentPane().add(button);</span><br><span class="line"></span><br><span class="line">        button.addActionListener(<span class="keyword">new</span> <span class="title class_">ActionListener</span>() &#123;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">actionPerformed</span><span class="params">(ActionEvent e)</span> &#123;</span><br><span class="line">                <span class="type">JOptionPane</span> <span class="variable">pane</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JOptionPane</span>(<span class="string">&quot;Message&quot;</span>, JOptionPane.INFORMATION_MESSAGE);</span><br><span class="line">                <span class="type">JDialog</span> <span class="variable">dialog</span> <span class="operator">=</span> pane.createDialog(<span class="literal">null</span>, <span class="string">&quot;Title&quot;</span>);</span><br><span class="line">                dialog.setModal(<span class="literal">false</span>);</span><br><span class="line">                dialog.setVisible(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">Timer</span>(TIME_VISIBLE, <span class="keyword">new</span> <span class="title class_">ActionListener</span>() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">actionPerformed</span><span class="params">(ActionEvent e)</span> &#123;</span><br><span class="line">                        dialog.setVisible(<span class="literal">false</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;).start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        frame1.setVisible(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/java/codedemo-484052162.html">https://www.w3cschool.cn/java/codedemo-484052162.html</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/ask/sof/102428944">https://cloud.tencent.com/developer/ask/sof/102428944</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1147,467 +1542,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e0ddc9c1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/e0ddc9c1/" class="post-title-link" itemprop="url">adb禁止USB充电adb允许USB充电</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-08-22 20:10:58" itemprop="dateCreated datePublished" datetime="2023-08-22T20:10:58+08:00">2023-08-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-08-23 20:07:22" itemprop="dateModified" datetime="2023-08-23T20:07:22+08:00">2023-08-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/adb/" itemprop="url" rel="index"><span itemprop="name">adb</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/e0ddc9c1/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/e0ddc9c1/" data-xid="/blog/e0ddc9c1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>475</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>为了避免 Android 手机在连接 USB 进行自动化测试时充电过度导致电池鼓包的问题，可以通过以下步骤实现禁止充电若干小时后自动充电的功能。</p>
-<h1 id="adb禁止Android手机使用USB充电"><a href="#adb禁止Android手机使用USB充电" class="headerlink" title="adb禁止Android手机使用USB充电"></a>adb禁止Android手机使用USB充电</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys battery set usb 0</span><br></pre></td></tr></table></figure>
-
-<h1 id="adb允许手机USB充电"><a href="#adb允许手机USB充电" class="headerlink" title="adb允许手机USB充电"></a>adb允许手机USB充电</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys battery set usb 1</span><br></pre></td></tr></table></figure>
-
-<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>当前手机 设置 电池的信息如下：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2023/08/20230822201723.png" alt="图1"></p>
-<p>从图中可以看到，电池电量百分数的百分号后面有“正在充电”四个字，这说明当前手机正在充电。下面还有一行字显示还需要多少时间电池能充满<br>执行下面的命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys battery set usb 0</span><br></pre></td></tr></table></figure>
-<p>禁止USB充电后，电池信息如下：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2023/08/20230822202048.png" alt="图2"><br>从图中可以看到，电量百分号后面的“正在充电”的提示信息消失了。电量下面的一行字变成我们可以使用多少分钟。</p>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>adb获取电池信息</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys battery</span><br></pre></td></tr></table></figure>
-<p>adb获取电池电量</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys battery | findstr level</span><br></pre></td></tr></table></figure>
-<h2 id="adb恢复电池默认设置-adb电池复位"><a href="#adb恢复电池默认设置-adb电池复位" class="headerlink" title="adb恢复电池默认设置 adb电池复位"></a>adb恢复电池默认设置 adb电池复位</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys battery reset</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/49194f9b/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/49194f9b/" class="post-title-link" itemprop="url">手机屏幕坏了如何在另一台电脑上开启USB调试功能</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-08-10 09:55:31" itemprop="dateCreated datePublished" datetime="2023-08-10T09:55:31+08:00">2023-08-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-08-23 20:07:22" itemprop="dateModified" datetime="2023-08-23T20:07:22+08:00">2023-08-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/adb/" itemprop="url" rel="index"><span itemprop="name">adb</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/49194f9b/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/49194f9b/" data-xid="/blog/49194f9b/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>931</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我有两台新旧电脑，一个安卓手机。</p>
-<p>安卓机已经开启USB调试功能，并且安卓机已经授权给旧电脑USB调试权限了。</p>
-<p>后来我又新买了一台新电脑，新电脑我也想用来调试这台安卓机。</p>
-<p>不过不巧的是，安卓机此时屏幕正好坏掉了。也就是我无法通过点击屏幕来给新电脑授予USB调试权限。</p>
-<p>那么，此时我该怎么授予新电脑调试这台安卓机呢？</p>
-<h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><ul>
-<li>一台已经允许USB调试的旧电脑，</li>
-<li>一台已经开启USB调试的手机</li>
-<li>一个WiFi</li>
-<li>一台新电脑</li>
-<li>adb.exe</li>
-<li>scrcpy.exe</li>
-</ul>
-<h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><p>因为在手机屏幕坏掉之前，我们已经始终允许旧电脑对手机进行USB调试了。所以我们可以在旧电脑上通过adb命令和scrcpy命令来操作这台屏幕坏掉的手机。</p>
-<ul>
-<li><strong>先把手机用USB数据线连接到旧电脑上</strong></li>
-<li>在旧电脑上，运行adb devices -l命令，并记下 <strong>序列表</strong></li>
-<li>在旧电脑上，运行scrcpy.exe，把手机投屏到旧电脑得屏幕上。</li>
-<li>在旧电脑上，通过adb命令，开启手机的网络调试功能。执行命令：<code>adb -s 序列号 tcpip 5555</code>。</li>
-<li>获取手机的IP地址，<ul>
-<li>可以通过操作旧电脑的手机投屏获取IP地址，</li>
-<li>或者登陆路由器后台获取。最好能固定手机的IP地址，方便后续通过网络调试。</li>
-</ul>
-</li>
-<li>在新电脑上，通过网络调试手机，在旧电脑的手机投屏上，点击弹出的授权对话框。<ul>
-<li>首先要确保手机和新电脑在同一个网络中，也就是新电脑和手机连接的路由器是同一个。(新电脑和手机连接同一个WiFi,新电脑通过网线连接路由器，手机通过WiFi连接同一个路由器都行)，</li>
-<li>然后在新电脑上执行如下命令：<code>adb connect 手机IP:5555</code>。<ul>
-<li>此时就电脑上的手机投屏就会弹出一个对话框，要你是否授权新电脑对手机进行USB调试。<ul>
-<li>勾选始终允许这台电脑进行USB调试。然后点击确认按钮。</li>
-<li>此时新电脑终于可以USB调试这台手机了。但是执行adb devices -l命令可能还是显示没有授权。<ul>
-<li>没关系，在新电脑上，执行adb disconnect 手机IP:5555，先断开网络调试，然后再执行<code>adb connect 手机IP:5555</code>开启网络调试。然后再执行adb devices -l命令查看，这个时候就不会显示没有授权了。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>获取USB授权之后，就可以把手机通过USB数据线连接到新电脑上。新电脑可以像旧电脑那样通过USB调试手机了。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/c45a49fc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/c45a49fc/" class="post-title-link" itemprop="url">把Hexo站点从一台电脑拷贝到另一台电脑上</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-07-05 21:07:21" itemprop="dateCreated datePublished" datetime="2023-07-05T21:07:21+08:00">2023-07-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-06 00:13:09" itemprop="dateModified" datetime="2023-07-06T00:13:09+08:00">2023-07-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/%E8%BF%81%E7%A7%BB/" itemprop="url" rel="index"><span itemprop="name">迁移</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/c45a49fc/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/c45a49fc/" data-xid="/blog/c45a49fc/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>4.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="需求1：部署Hexo站点到另一台电脑上"><a href="#需求1：部署Hexo站点到另一台电脑上" class="headerlink" title="需求1：部署Hexo站点到另一台电脑上"></a>需求1：部署Hexo站点到另一台电脑上</h1><p>最近买了个台式机，我想把我的Hexo站点部署到台式机上。因为这个台式机我打算二十四小时都开着，当服务器使用。这样我就可以随时访问我的Hexo站点了。</p>
-<h1 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h1><h2 id="复制整个博客站点的的文件夹到台式机上"><a href="#复制整个博客站点的的文件夹到台式机上" class="headerlink" title="复制整个博客站点的的文件夹到台式机上"></a>复制整个博客站点的的文件夹到台式机上</h2><p>我在笔记本上开启网络共享功能，然后在台式机上访问我的笔记本，把Hexo站点的整个文件夹复制到台式机上。</p>
-<p>这个时候Hexo站点就已经迁移(复制)完成了，但是还不能开启本地服务器。<br>为什么呢，因为还没安装好Hexo所需要的依赖软件</p>
-<h2 id="安装Hexo站点需要的软件"><a href="#安装Hexo站点需要的软件" class="headerlink" title="安装Hexo站点需要的软件"></a>安装Hexo站点需要的软件</h2><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>略</p>
-<h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><p>略</p>
-<h4 id="使用nvm管理nodejs"><a href="#使用nvm管理nodejs" class="headerlink" title="使用nvm管理nodejs"></a>使用nvm管理nodejs</h4><p>略</p>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>略</p>
-<h2 id="本地部署Hexo"><a href="#本地部署Hexo" class="headerlink" title="本地部署Hexo"></a>本地部署Hexo</h2><p>安装好上述软件之后，就可以在台式机上部署hexo站点了，执行hexo s命令，不出意外的话可以成功部署。</p>
-<h1 id="需求2：同一个账户在两台电脑上协作"><a href="#需求2：同一个账户在两台电脑上协作" class="headerlink" title="需求2：同一个账户在两台电脑上协作"></a>需求2：同一个账户在两台电脑上协作</h1><p>我习惯在笔记本上编写Hexo站点文章，不过Hexo站点我部署在台式机上了。<br>所以我需要在两台电脑之间进行协作。</p>
-<h1 id="做法-1"><a href="#做法-1" class="headerlink" title="做法"></a>做法</h1><p>我先在笔记本上写好Hexo站点的文章，然后我推送到github上。<br>接着，我在台式机上拉取GitHub上的文章，然后在台式机上本地部署即可。</p>
-<h2 id="在台式机上重新-配置Git-SSH"><a href="#在台式机上重新-配置Git-SSH" class="headerlink" title="在台式机上重新 配置Git SSH"></a>在台式机上重新 配置Git SSH</h2><p>因为我直接把整个Hexo站点（git仓库）复制到台式机上了，此时台式机上的远程仓库链接已经设置好了，我不用重新init仓库。</p>
-<p>不过，此时是不可以直接拉取Github上的仓库，这是因为在台式机上还没配置好Git SSH的缘故。此时执行<code>git push origin master</code>命令，将会输出如下的错误信息：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ git pull origin master</span><br><span class="line">ssh: connect to host github.com port 22: Connection refused</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
-<h2 id="配置git的邮箱和用户名"><a href="#配置git的邮箱和用户名" class="headerlink" title="配置git的邮箱和用户名"></a>配置git的邮箱和用户名</h2><h3 id="配置邮箱"><a href="#配置邮箱" class="headerlink" title="配置邮箱"></a>配置邮箱</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;your_email@example.com&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="配置用户名"><a href="#配置用户名" class="headerlink" title="配置用户名"></a>配置用户名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;your_name&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global  --list</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ git config --global  --list</span><br><span class="line">user.email=xxxxxxx@163.com</span><br><span class="line">user.name=xyzabc</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
-
-<h2 id="从旧电脑上复制私钥和known-hosts文件到到新电脑上"><a href="#从旧电脑上复制私钥和known-hosts文件到到新电脑上" class="headerlink" title="从旧电脑上复制私钥和known_hosts文件到到新电脑上"></a>从旧电脑上复制私钥和known_hosts文件到到新电脑上</h2><p>在笔记本上进入用户目录下的.ssh目录中，.ssh目录结构如下代码块所示：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xyzabc\.ssh&gt;dir</span><br><span class="line"> 驱动器 C 中的卷没有标签。</span><br><span class="line"> 卷的序列号是 FA82-C79F</span><br><span class="line"></span><br><span class="line"> C:\Users\xyzabc\.ssh 的目录</span><br><span class="line"></span><br><span class="line">2023.07.04  19:46    &lt;DIR&gt;          .</span><br><span class="line">2023.07.04  19:46    &lt;DIR&gt;          ..</span><br><span class="line">2021.10.11  09:23                 0 config</span><br><span class="line">2021.07.12  09:13             2,610 id_rsa</span><br><span class="line">2021.07.12  09:13               573 id_rsa.pub</span><br><span class="line">2023.07.04  19:46               919 known_hosts</span><br><span class="line">2022.04.12  15:40               747 known_hosts.old</span><br><span class="line">               5 个文件          4,849 字节</span><br><span class="line">               2 个目录 59,848,286,208 可用字节</span><br><span class="line"></span><br><span class="line">C:\Users\xyzabc\.ssh&gt;</span><br></pre></td></tr></table></figure>
-<p>其中的id_rsa文件就是我们需要的私钥文件，id_rsa.pub是公钥文件，这个公钥我们之前已经放到GitHub上了</p>
-<h3 id="复制id-rsa和known-hosts到新电脑上的-ssh目录中"><a href="#复制id-rsa和known-hosts到新电脑上的-ssh目录中" class="headerlink" title="复制id_rsa和known_hosts到新电脑上的.ssh目录中"></a>复制id_rsa和known_hosts到新电脑上的.ssh目录中</h3><p>在台式机上同样进入用户目录，</p>
-<ul>
-<li>如果有.ssh目录，则进入.ssh目录，然后把 私钥文件id_rsa和known_hosts文件 粘贴到.ssh目录。</li>
-<li>如果没有.ssh目录，则创建一个.ssh目录。然后把 私钥文件id_rsa和known_hosts文件 粘贴到.ssh目录中。</li>
-</ul>
-<p>不过，为了方便起见，你把旧电脑上.ssh目录下的所有文件都复制到新电脑的.ssh目录下也可以。</p>
-<p>我之所以说复制私钥文件和known_hosts就可以了，是因为在我的操作中，复制私钥文件id_rsa和known_hosts文件之后，就可以通过SSH访问GitHub了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\abc\.ssh&gt;dir</span><br><span class="line"> 驱动器 C 中的卷没有标签。</span><br><span class="line"> 卷的序列号是 4A1D-5B3F</span><br><span class="line"></span><br><span class="line"> C:\Users\abc\.ssh 的目录</span><br><span class="line"></span><br><span class="line">2023/07/05  23:23    &lt;DIR&gt;          .</span><br><span class="line">2023/07/05  23:23    &lt;DIR&gt;          ..</span><br><span class="line">2023/07/05  22:59             2,610 id_rsa</span><br><span class="line">2023/07/05  23:23               919 known_hosts</span><br><span class="line">               2 个文件          3,529 字节</span><br><span class="line">               2 个目录 11,805,638,656 可用字节</span><br><span class="line"></span><br><span class="line">C:\Users\abc\.ssh&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加私钥到SSH"><a href="#添加私钥到SSH" class="headerlink" title="添加私钥到SSH"></a>添加私钥到SSH</h2><h3 id="开启ssh服务"><a href="#开启ssh服务" class="headerlink" title="开启ssh服务"></a>开启ssh服务</h3><p>在台式机上的.ssh目录中打开git-bash。<br>输入如下命令启动SSH服务：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br></pre></td></tr></table></figure>
-<p>这条命令没有输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 ~/.ssh</span><br><span class="line">$ ssh-agent bash</span><br></pre></td></tr></table></figure>
-<h3 id="添加私钥"><a href="#添加私钥" class="headerlink" title="添加私钥"></a>添加私钥</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add id_rsa</span><br></pre></td></tr></table></figure>
-<p>命令输出如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 ~/.ssh</span><br><span class="line">$ ssh-add id_rsa</span><br><span class="line">Identity added: id_rsa (xxxxxxx@163.com)</span><br></pre></td></tr></table></figure>
-<h2 id="测试链接是否成功"><a href="#测试链接是否成功" class="headerlink" title="测试链接是否成功"></a>测试链接是否成功</h2><p>因为之前在旧电脑的Git SSH配置中我们已经把公钥保存到github上了，所以现在我们就不用再重新布置了。</p>
-<p>git-bash<strong>进入Hexo站点目录</strong>，然后执行如下命令，测试是否能成功连接到github上。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>如果有如下的输出，则表示成功连接到GitHub上：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi githbubUseName! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
-<h3 id="解决：ssh-connect-to-host-github-com-port-22-Connection-refused"><a href="#解决：ssh-connect-to-host-github-com-port-22-Connection-refused" class="headerlink" title="解决：ssh: connect to host github.com port 22: Connection refused"></a>解决：ssh: connect to host github.com port 22: Connection refused</h3><p>我测试的时候并没有成功连接到GitHub上而是输出如下信息：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">ssh: connect to host github.com port 22: Connection refused</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
-<p>我这里应该是被墙了，安装Steam++，加速GitHub之后即可正常连接。</p>
-<h2 id="解决The-authenticity-of-host-‘github-com-127-0-0-1-’-can’t-be-established"><a href="#解决The-authenticity-of-host-‘github-com-127-0-0-1-’-can’t-be-established" class="headerlink" title="解决The authenticity of host ‘github.com (127.0.0.1)’ can’t be established."></a>解决The authenticity of host ‘github.com (127.0.0.1)’ can’t be established.</h2><p>如果出现如下的输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">an@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">The authenticity of host &#x27;github.com (127.0.0.1)&#x27; can&#x27;t be established.</span><br><span class="line">ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.</span><br><span class="line">This key is not known by any other names.</span><br><span class="line">Are you sure you want to continue connecting (yes/no/[fingerprint])?</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br></pre></td></tr></table></figure>
-<p>这说明你只复制了秘钥文件到新电脑上，忘了从旧电脑上把known_hosts文件复制到新电脑的.ssh目录中。</p>
-<p>从旧电脑上把known_hosts文件复制到新电脑的.ssh目录中，然后在重新测试连接即可。此时应该就能正常连接了。</p>
-<h1 id="拉取GitHub上的仓库到新电脑"><a href="#拉取GitHub上的仓库到新电脑" class="headerlink" title="拉取GitHub上的仓库到新电脑"></a>拉取GitHub上的仓库到新电脑</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line">$ git pull origin master</span><br><span class="line">remote: Enumerating objects: 23, done.</span><br><span class="line">remote: Counting objects: 100% (23/23), done.</span><br><span class="line">remote: Compressing objects: 100% (4/4), done.</span><br><span class="line">remote: Total 12 (delta 8), reused 12 (delta 8), pack-reused 0</span><br><span class="line">Unpacking objects: 100% (12/12), 2.29 KiB | 3.00 KiB/s, done.</span><br><span class="line">From github.com:githbubUseName/JavaReadingNotes</span><br><span class="line"> * branch              master     -&gt; FETCH_HEAD</span><br><span class="line">   d1bf8037..cd1954fe  master     -&gt; origin/master</span><br><span class="line">Updating d1bf8037..cd1954fe</span><br><span class="line">Fast-forward</span><br><span class="line"> ...277\220\350\241\214\346\234\272\345\210\266.md&quot; | 17 +++--</span><br><span class="line"> ...221Java\347\232\204\345\207\206\345\244\207.md&quot; | 79 +++++++++++++---------</span><br><span class="line"> ...200\344\270\252Java\347\250\213\345\272\217.md&quot; | 61 ++++++++++-------</span><br><span class="line"> 3 files changed, 91 insertions(+), 66 deletions(-)</span><br><span class="line"></span><br><span class="line">lan@DESKTOP-731NAOL MINGW64 /e/Tools/Blog/JavaReadingNotes_new (master)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="git文件名乱码-gitbash文件名乱码"><a href="#git文件名乱码-gitbash文件名乱码" class="headerlink" title="git文件名乱码 gitbash文件名乱码"></a>git文件名乱码 gitbash文件名乱码</h2><p>此时可以成功拉取更新了，不过文件名是乱码的，输入如下命令解决：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.quotepath false</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="blog/8d23490d/">Git SSH配置过程</a><br><a href="blog/ad35763b/">git bash中文乱码</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/70/">70</a><a class="extend next" rel="next" href="/blog/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/71/">71</a><a class="extend next" rel="next" href="/blog/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1638,7 +1574,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">24:55</span>
+    <span title="站点阅读时长">24:57</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">700</span>
+          <span class="site-state-item-count">703</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">223</span>
+        <span class="site-state-item-count">225</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -213,6 +213,422 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/cc785ddc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/cc785ddc/" class="post-title-link" itemprop="url">Ubuntu 为shell脚本创建.destop快捷方式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-26 00:48:27" itemprop="dateCreated datePublished" datetime="2019-11-26T00:48:27+08:00">2019-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/VirtualBox/" itemprop="url" rel="index"><span itemprop="name">VirtualBox</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/VirtualBox/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/cc785ddc/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/cc785ddc/" data-xid="/blog/cc785ddc/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Ubuntu-为shell脚本创建-destop快捷方式"><a href="#Ubuntu-为shell脚本创建-destop快捷方式" class="headerlink" title="Ubuntu 为shell脚本创建.destop快捷方式"></a>Ubuntu 为shell脚本创建.destop快捷方式</h1><h2 id="HexoS-sh"><a href="#HexoS-sh" class="headerlink" title="HexoS.sh"></a>HexoS.sh</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">! /bin/bash</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">杀死占用端口的所有进程</span></span><br><span class="line">kill -s 9 $(lsof -i:4007 -t)</span><br><span class="line">cd /home/blue/桌面/Blog/blog9/</span><br><span class="line">hexo s -p 4007</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="启动博客-desktop"><a href="#启动博客-desktop" class="headerlink" title="启动博客.desktop"></a>启动博客.desktop</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Encoding=UTF-8</span><br><span class="line">Name=启动博客</span><br><span class="line">Type=Application</span><br><span class="line">Categories=Application;</span><br><span class="line">StartupNotify=true</span><br><span class="line">Terminal=true</span><br><span class="line">Exec=sh /home/blue/桌面/Blog/blog9/HexoS.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="desktop-配置详解"><a href="#desktop-配置详解" class="headerlink" title=".desktop 配置详解"></a>.desktop 配置详解</h2><p><code>Desktop Entry</code> 文件以”<code>.desktop</code>“为后缀名。<br>以 <code>Linux GNOME</code> 桌面系统为例，用户打开应用程序浏览器后（见图1）会看见很多应用程序快捷方式。<br>事实上，每个应用程序快捷方式都和一个 <code>Desktop Entry</code> 文件相对应。<br>这些 <code>Desktop Entry</code> 文件通常被存放在 &#x2F;<code>usr/share/applications/</code> 和&#x2F;<code>opt/gnome/share/applications/</code> 等目录下。<br>从文件浏览器进入这些目录，点击相应的 <code>Desktop Entry</code> 文件就可以启动相对应的应用程序。</p>
+<h2 id="Desktop-Entry-文件结构"><a href="#Desktop-Entry-文件结构" class="headerlink" title="Desktop Entry 文件结构"></a>Desktop Entry 文件结构</h2><p>Desktop Entry 文件通常以字符串”[Desktop Entry]”开始</p>
+<p>Desktop Entry文件的剩余内容由若干形如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">标准关键字＝值</span><br></pre></td></tr></table></figure>
+<p>的键值对组成。</p>
+<h2 id="关键字详解"><a href="#关键字详解" class="headerlink" title="关键字详解"></a>关键字详解</h2><p>Desktop Entry 文件标准定义了一系列标准关键字。<br>标准关键字分为<strong>必选</strong>和<strong>可选</strong>两种：</p>
+<ul>
+<li>必选标准关键字必须在 .desktop 文件中被定义；</li>
+<li>可选关键字则可以省略不写</li>
+</ul>
+<h3 id="必选关键字"><a href="#必选关键字" class="headerlink" title="必选关键字"></a>必选关键字</h3><p>关键字”Name”：[必选]<br>该数值指定了相关应用程序的名称，快捷方式的显示名称由关键字”Name”的数值所决定<br>关键字”Type”：[必选]<br>关键字”Type”定义了Desktop Entry文件的类型。常见的”Type”数值是”Application”和”Link”。</p>
+<ul>
+<li>“Type &#x3D; Application”表示当前Desktop Entry文件指向了一个应用程序；</li>
+<li>而”Type &#x3D; Link”表示当前Desktop Entry文件指向了一个URL</li>
+</ul>
+<h3 id="可选关键字"><a href="#可选关键字" class="headerlink" title="可选关键字"></a>可选关键字</h3><p>关键字”Version”：[可选] 该数值指定了当前 Desktop Entry 文件所遵循的 Desktop Entry 文件标准版本。<br>关键字”Encoding”：[1.0 版本不推荐使用] 该数值指定了当前 Desktop Entry 文件中特定字符串所使用的编码方式。尽管Desktop Entry 文件标准 1.0 不再推荐使用该关键字，但由于历史原因该关键字仍然广泛出现在现有的 Desktop Entry 文件中。<br>关键字”GenericName”：[可选]<br>该数值指定了相关应用程序的通用名称<br>关键字”Comment”：[可选]<br>该数值是对当前Desktop Entry的简单描述。<br>关键字”Icon”：[可选]<br>该数值定义了当前Desktop Entry文件在应用程序浏览器或是在文件浏览器中所显示的图标<br>关键字”OnlyShowIn”和”NotShowIn”：[可选]<br>这两个关键字分别定义了当前Desktop Entry是否在特定Linux 桌面系统（例如：Linux GNOME 或 Linux KDE）下显示（由”OnlyShowIn”定义），或不显示（由”NotShowIn”定义）。具体定义请参考”Desktop Specification Menu”[4]</p>
+<h4 id="以”Type”类型是”Application”为前提的关键字"><a href="#以”Type”类型是”Application”为前提的关键字" class="headerlink" title="以”Type”类型是”Application”为前提的关键字"></a>以”Type”类型是”Application”为前提的关键字</h4><p>关键字”Exec”：[可选]<br>关键字”Exec”只有在”Type”类型是”Application”时才有意义。”Exec”的数值定义了启动指定应用程序所要执行的命令，在此命令 是可以带参数的</p>
+<p>关键字”StartupNotify”：[可选]<br>关键字”StartupNotify”的数值是布尔值（true 或是 false）。该关键字只有在”Type”类型是”Application”时才有意义。其数值的含义由规范”Startup Notification Protocol Specifications”[3]定义，在此不再详述。<br>关键字”Terminal”：[可选]<br>和”StartupNotify”一样，关键字”StartupNotify”的数值也是布尔值，并且该关键字只有在”Type”类型 是”Application”时才有意义。其数值指出了关键字”Exec”的指定的应用程序<strong>是否需要在终端窗口中运行</strong>。<br>关键字”Categories”只有在”Type”类型是”Application”时才有意义。”Categories”的数值指出了相关应用程序在菜单中显示的类别。具体菜单分类由规范”Desktop Specification Menu”具体定义[4]。</p>
+<h4 id="以”Type”类型是”Link”为前提的关键字"><a href="#以”Type”类型是”Link”为前提的关键字" class="headerlink" title="以”Type”类型是”Link”为前提的关键字"></a>以”Type”类型是”Link”为前提的关键字</h4><p>关键字”URL”：[可选]<br>关键字”URL”只有在”Type”类型是”Link”时才有意义。”URL”的数值定义了该Desktop Entry文件指向的URL</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Type = <span class="type">Link</span></span><br><span class="line"><span class="variable">URL</span> <span class="operator">=</span> http:<span class="comment">//www.ibm.com/developerworks</span></span><br></pre></td></tr></table></figure>
+<p>则双击含有上述内容的Desktop Entry文件将启动web浏览器，并打开指定网页”<a target="_blank" rel="noopener" href="http://www.ibm.com/developerworks&quot;">http://www.ibm.com/developerworks&quot;</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="http://m.blog.chinaunix.net/uid-20332519-id-3015914">Linux桌面快捷方式 Desktop Entry 详解</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e2b78dd9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/e2b78dd9/" class="post-title-link" itemprop="url">Linux 杀死占用端口的所有进程</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-25 23:26:06" itemprop="dateCreated datePublished" datetime="2019-11-25T23:26:06+08:00">2019-11-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/e2b78dd9/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/e2b78dd9/" data-xid="/blog/e2b78dd9/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>934</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="查找占用端口的程序"><a href="#查找占用端口的程序" class="headerlink" title="查找占用端口的程序"></a>查找占用端口的程序</h1><h2 id="命令1"><a href="#命令1" class="headerlink" title="命令1"></a>命令1</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:端口号</span><br></pre></td></tr></table></figure>
+<p>例如查看4007端口是否被占用:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:4007</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">blue@blue-VirtualBox:~/桌面/Blog/blog9$ lsof -i:4007</span><br><span class="line">COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME</span><br><span class="line">hexo    2564 blue   19u  IPv6  39809      0t0  TCP *:4007 (LISTEN)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="查找占用端口的程序的PID"><a href="#查找占用端口的程序的PID" class="headerlink" title="查找占用端口的程序的PID"></a>查找占用端口的程序的PID</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:端口号 -t</span><br></pre></td></tr></table></figure>
+<p>效果如下:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">blue@blue-VirtualBox:~/桌面$ lsof -i:4007</span><br><span class="line">COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME</span><br><span class="line">hexo    4924 blue   21u  IPv6  56489      0t0  TCP *:4007 (LISTEN)</span><br><span class="line">blue@blue-VirtualBox:~/桌面$ lsof -i:4007 -t</span><br><span class="line">4924</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="命令2"><a href="#命令2" class="headerlink" title="命令2"></a>命令2</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunlp | grep 端口号</span><br></pre></td></tr></table></figure>
+<p>例如</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunlp | grep 4007</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">blue@blue-VirtualBox:~/桌面/Blog/blog9$ netstat -tunlp | grep 4007</span><br><span class="line">（并非所有进程都能被检测到，所有非本用户的进程信息将不会显示，如果想看到所有信息，则必须切换到 root 用户）</span><br><span class="line">tcp6       0      0 :::4007                 :::*                    LISTEN      2564/hexo   </span><br></pre></td></tr></table></figure>
+<h1 id="根据PID杀死进程"><a href="#根据PID杀死进程" class="headerlink" title="根据PID杀死进程"></a>根据PID杀死进程</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -s 9 PID</span><br></pre></td></tr></table></figure>
+<p>例如:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -s 9 2564</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">blue@blue-VirtualBox:~/桌面/Blog/blog9$ lsof -i:4007</span><br><span class="line">COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME</span><br><span class="line">hexo    2564 blue   19u  IPv6  39809      0t0  TCP *:4007 (LISTEN)</span><br><span class="line">blue@blue-VirtualBox:~/桌面/Blog/blog9$ kill -s 9 2564</span><br></pre></td></tr></table></figure>
+<h1 id="一条命令杀死占用端口的所有进程"><a href="#一条命令杀死占用端口的所有进程" class="headerlink" title="一条命令杀死占用端口的所有进程"></a>一条命令杀死占用端口的所有进程</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo kill -s 9 $(lsof -i:端口号 -t)</span><br></pre></td></tr></table></figure>
+<p>例如:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -s 9 $(lsof -i:4007 -t)</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Linux/Common/kill/port/1.png" alt="图片"><br>效果:<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Linux/Common/kill/port/2.png" alt="图片"></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/showker/p/11567863.html">https://www.cnblogs.com/showker/p/11567863.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/92f73acb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/92f73acb/" class="post-title-link" itemprop="url">Ubuntu 安装Git NodeJS Hexo</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-11-25 19:55:24" itemprop="dateCreated datePublished" datetime="2019-11-25T19:55:24+08:00">2019-11-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/VirtualBox/" itemprop="url" rel="index"><span itemprop="name">VirtualBox</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/VirtualBox/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/92f73acb/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/92f73acb/" data-xid="/blog/92f73acb/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>923</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Ubuntu-安装-git"><a href="#Ubuntu-安装-git" class="headerlink" title="Ubuntu 安装 git"></a>Ubuntu 安装 git</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
+<h1 id="Ubuntu-安装-nodejs"><a href="#Ubuntu-安装-nodejs" class="headerlink" title="Ubuntu 安装 nodejs"></a>Ubuntu 安装 nodejs</h1><h2 id="安装指定的版本"><a href="#安装指定的版本" class="headerlink" title="安装指定的版本"></a>安装指定的版本</h2><p>进入<a target="_blank" rel="noopener" href="https://nodejs.org/en/">nodejs官网</a>查看最新的<strong>长期执行版本(LTS)</strong>,可以看到现在的长期支持版本为<code>12</code>.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://deb.nodesource.com/setup_12.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+<p>如果要安装<code>nodejs10.x</code>则将上面的数字改成10即可,也就是:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://deb.nodesource.com/setup_12.x | sudo -E bash -</span><br></pre></td></tr></table></figure>
+<h2 id="配置Nodejs"><a href="#配置Nodejs" class="headerlink" title="配置Nodejs"></a>配置Nodejs</h2><h3 id="使用淘宝镜像"><a href="#使用淘宝镜像" class="headerlink" title="使用淘宝镜像"></a>使用淘宝镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<h3 id="产看配置是否成功"><a href="#产看配置是否成功" class="headerlink" title="产看配置是否成功"></a>产看配置是否成功</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">blue@blue-VirtualBox:~/桌面/Blog$ npm config ls</span><br><span class="line">; cli configs</span><br><span class="line">metrics-registry = &quot;https://registry.npm.taobao.org/&quot;</span><br><span class="line">scope = &quot;&quot;</span><br><span class="line">user-agent = &quot;npm/6.12.1 node/v12.13.1 linux x64&quot;</span><br><span class="line"></span><br><span class="line">; userconfig /home/blue/.npmrc</span><br><span class="line">registry = &quot;https://registry.npm.taobao.org/&quot;</span><br><span class="line"></span><br><span class="line">; node bin location = /usr/bin/node</span><br><span class="line">; cwd = /home/blue/桌面/Blog</span><br><span class="line">; HOME = /home/blue</span><br><span class="line">; &quot;npm config ls -l&quot; to show all defaults.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/heiheiya/article/details/86008575">https://blog.csdn.net/heiheiya/article/details/86008575</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1150,454 +1566,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/30dba46d/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/30dba46d/" class="post-title-link" itemprop="url">Navicat激活</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-11-23 15:47:40" itemprop="dateCreated datePublished" datetime="2019-11-23T15:47:40+08:00">2019-11-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/MySQL/%E5%9B%BE%E5%BD%A2%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">图形工具</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/30dba46d/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/30dba46d/" data-xid="/blog/30dba46d/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>5.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="下载需要的破解程序"><a href="#下载需要的破解程序" class="headerlink" title="下载需要的破解程序"></a>下载需要的破解程序</h1><h1 id="生成秘钥文件"><a href="#生成秘钥文件" class="headerlink" title="生成秘钥文件"></a>生成秘钥文件</h1><p>先运行<code>navicat-patcher.exe</code>这个程序</p>
-<h2 id="navicat-patcher-exe帮助文档"><a href="#navicat-patcher-exe帮助文档" class="headerlink" title="navicat-patcher.exe帮助文档"></a>navicat-patcher.exe帮助文档</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">PS D:\Desktop\PuoJie&gt; .\navicat-patcher.exe</span><br><span class="line">***************************************************</span><br><span class="line">*       Navicat Patcher by @DoubleLabyrinth       *</span><br><span class="line">*                  Version: 4.1                   *</span><br><span class="line">***************************************************</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line">    navicat-patcher.exe [-dry-run] &lt;Navicat Installation Path&gt; [RSA-2048 PEM File Path]</span><br><span class="line"></span><br><span class="line">    [-dry-run]                   Run patcher without applying any patches.</span><br><span class="line">                                 This parameter is optional.</span><br><span class="line"></span><br><span class="line">    &lt;Navicat Installation Path&gt;  The folder path where Navicat is installed.</span><br><span class="line">                                 This parameter must be specified.</span><br><span class="line"></span><br><span class="line">    [RSA-2048 PEM File Path]     The path to an RSA-2048 private key file.</span><br><span class="line">                                 This parameter is optional.</span><br><span class="line">                                 If not specified, an RSA-2048 private key file</span><br><span class="line">                                 named &quot;RegPrivateKey.pem&quot; will be generated.</span><br><span class="line"></span><br><span class="line">Example:</span><br><span class="line">    navicat-patcher.exe &quot;C:\Program Files\PremiumSoft\Navicat Premium 12&quot;</span><br><span class="line">PS D:\Desktop\PuoJie&gt;</span><br></pre></td></tr></table></figure>
-<p>所以要执行如下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navicat-patcher.exe &quot;Navicat安装路径&quot;</span><br></pre></td></tr></table></figure>
-<p>我的命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navicat-patcher.exe &quot;F:\Program Files\PremiumSoft\Navicat Premium 12&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="命令运行过程"><a href="#命令运行过程" class="headerlink" title="命令运行过程"></a>命令运行过程</h2><pre>
-D:\Desktop\PuoJie&gt;navicat-patcher.exe "F:\Program Files\PremiumSoft\Navicat Premium 12"
-***************************************************
-*       Navicat Patcher by @DoubleLabyrinth       *
-*                  Version: 4.1                   *
-***************************************************
-
-Press Enter to continue or Ctrl + C to abort.
-
-[+] Try to open Navicat.exe ... Ok!
-[+] Try to open libcc.dll ... Ok!
-
-[+] PatchSolution0 ...... Ready to apply
-    [*] Patch offset = +0x029bd6d8
-[+] PatchSolution1 ...... Ready to apply
-    [*] [0] Patch offset = +0x0220aa60
-    [*] [1] Patch offset = +0x0074c749
-...... 这里省略了一大串的输出
-    [*] [109] Instruction RVA = 0x016637f8, Patch Offset = +0x01662bfc
-    [*] [110] Instruction RVA = 0x016637fe, Patch Offset = +0x01662c01
-[-] PatchSolution4 ...... Omitted
-
-[*] PatchSolution0 is suppressed in order to keep digital signature valid.
-
-[?] Previous backup F:\Program Files\PremiumSoft\Navicat Premium 12\libcc.dll.backup detected. Delete? (y/n)
-</pre>
-
-<p>然后输入<code>y</code></p>
-<pre>
-[*] Generating new RSA private key, it may take a long time...
-[*] Your RSA public key:
-...... 这里省略了一大串的输出
-[*] +01662bfc: 51 41 ---&gt; 51 41
-[*] +01662c01: 42 ---&gt; 42
-
-[*] New RSA-2048 private key has been saved to
-<mark>D:\Desktop\PuoJie\RegPrivateKey.pe</mark>m
-
-*******************************************************
-*           PATCH HAS BEEN DONE SUCCESSFULLY!         *
-*                  HAVE FUN AND ENJOY~                *
-*******************************************************
-</pre>
-
-<p>可以看到命令在当前目录(<code>D:\Desktop\PuoJie</code>)下生成<code>RegPrivateKey.pem</code>这个文件.（<code>D:\Desktop\PuoJie\RegPrivateKey.pem</code>）</p>
-<h1 id="使用上面生成的秘钥文件破解"><a href="#使用上面生成的秘钥文件破解" class="headerlink" title="使用上面生成的秘钥文件破解"></a>使用上面生成的秘钥文件破解</h1><h2 id="navicat-keygen-exe帮助文档"><a href="#navicat-keygen-exe帮助文档" class="headerlink" title="navicat-keygen.exe帮助文档"></a>navicat-keygen.exe帮助文档</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">PS D:\Desktop\PuoJie&gt; .\navicat-keygen.exe</span><br><span class="line">***************************************************</span><br><span class="line">*       Navicat Keygen by @DoubleLabyrinth        *</span><br><span class="line">*                   Version: 4.0                  *</span><br><span class="line">***************************************************</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line">    navicat-keygen.exe &lt;-bin|-text&gt; [-adv] &lt;RSA-2048 Private Key File&gt;</span><br><span class="line"></span><br><span class="line">    &lt;-bin|-text&gt;       Specify &quot;-bin&quot; to generate &quot;license_file&quot; used by Navicat 11.</span><br><span class="line">                       Specify &quot;-text&quot; to generate base64-encoded activation code.</span><br><span class="line">                       This parameter must be specified.</span><br><span class="line"></span><br><span class="line">    [-adv]             Enable advance mode.</span><br><span class="line">                       This parameter is optional.</span><br><span class="line"></span><br><span class="line">    &lt;RSA-2048 Private Key File&gt;    A path to an RSA-2048 private key file.</span><br><span class="line">                                   This parameter must be specified.</span><br><span class="line"></span><br><span class="line">Example:</span><br><span class="line">    navicat-keygen.exe -text .\RegPrivateKey.pem</span><br><span class="line">PS D:\Desktop\PuoJie&gt;</span><br></pre></td></tr></table></figure>
-<p>所以我的命令如下：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navicat-keygen.exe -text .\RegPrivateKey.pem</span><br></pre></td></tr></table></figure>
-<h2 id="选择要破解的程序和版本"><a href="#选择要破解的程序和版本" class="headerlink" title="选择要破解的程序和版本"></a>选择要破解的程序和版本</h2><p>我用的是<code>Premium 12.1</code> <code>中文版</code>,所以</p>
-<ul>
-<li>先输入1,</li>
-<li>然后输入1</li>
-</ul>
-<p>这样就得到了一个<code>序列号</code></p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">G:\<span class="title">Desktop</span>\<span class="title">PuoJie</span>&gt;<span class="title">navicat</span>-<span class="title">keygen.exe</span> -<span class="title">text</span> .\<span class="title">RegPrivateKey.pem</span></span></span><br><span class="line"><span class="function">***************************************************</span></span><br><span class="line"><span class="function">*       <span class="title">Navicat</span> <span class="title">Keygen</span> <span class="title">by</span> @<span class="title">DoubleLabyrinth</span>        *</span></span><br><span class="line"><span class="function">*                   <span class="title">Version</span>: 4.0                  *</span></span><br><span class="line"><span class="function">***************************************************</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">[*] <span class="title">Select</span> <span class="title">Navicat</span> <span class="title">product</span>:</span></span><br><span class="line"><span class="function"> 0. <span class="title">DataModeler</span></span></span><br><span class="line"><span class="function"> 1. <span class="title">Premium</span></span></span><br><span class="line"><span class="function"> 2. <span class="title">MySQL</span></span></span><br><span class="line"><span class="function"> 3. <span class="title">PostgreSQL</span></span></span><br><span class="line"><span class="function"> 4. <span class="title">Oracle</span></span></span><br><span class="line"><span class="function"> 5. <span class="title">SQLServer</span></span></span><br><span class="line"><span class="function"> 6. <span class="title">SQLite</span></span></span><br><span class="line"><span class="function"> 7. <span class="title">MariaDB</span></span></span><br><span class="line"><span class="function"> 8. <span class="title">MongoDB</span></span></span><br><span class="line"><span class="function"> 9. <span class="title">ReportViewer</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">(<span class="title">Input</span> <span class="title">index</span>)&gt; 1</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">[*] <span class="title">Select</span> <span class="title">product</span> <span class="title">language</span>:</span></span><br><span class="line"><span class="function"> 0. <span class="title">English</span></span></span><br><span class="line"><span class="function"> 1. <span class="title">Simplified</span> <span class="title">Chinese</span></span></span><br><span class="line"><span class="function"> 2. <span class="title">Traditional</span> <span class="title">Chinese</span></span></span><br><span class="line"><span class="function"> 3. <span class="title">Japanese</span></span></span><br><span class="line"><span class="function"> 4. <span class="title">Polish</span></span></span><br><span class="line"><span class="function"> 5. <span class="title">Spanish</span></span></span><br><span class="line"><span class="function"> 6. <span class="title">French</span></span></span><br><span class="line"><span class="function"> 7. <span class="title">German</span></span></span><br><span class="line"><span class="function"> 8. <span class="title">Korean</span></span></span><br><span class="line"><span class="function"> 9. <span class="title">Russian</span></span></span><br><span class="line"><span class="function"> 10. <span class="title">Portuguese</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">(<span class="title">Input</span> <span class="title">index</span>)&gt; 1</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">[*] <span class="title">Input</span> <span class="title">major</span> <span class="title">version</span> <span class="title">number</span>:</span></span><br><span class="line"><span class="function">(<span class="title">range</span>: 0 ~ 15, <span class="title">default</span>: 12)&gt; 12</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">[*] <span class="title">Serial</span> <span class="title">number</span>:</span></span><br><span class="line"><span class="function"><span class="title">NAVN</span>-6<span class="title">XZI</span>-<span class="title">FK3F</span>-<span class="title">NU44</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="复制序列号-断开网络-打开Navicat-手动激活"><a href="#复制序列号-断开网络-打开Navicat-手动激活" class="headerlink" title="复制序列号 断开网络 打开Navicat 手动激活"></a>复制序列号 断开网络 打开Navicat 手动激活</h2><p>复制生成的这个<code>序列号</code>,接下<strong>断开网络</strong>,打开<code>navicat</code>,点<code>帮助</code>,<code>注册</code>,然后输入<code>序列号</code>,选择<code>手动激活</code>,这样会得<code>一大串字符串</code>（这里我命名为邀请码）:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bz6Pp8T7/4kXP8UZ2uJ9XUKvy6xP8G3mhe1ZSOOAznS7sVRzjGNiTvyiUuNFtPq5++KQXBgtpT62pKEU8SzKwtPfpwfpE2Gck5GW8IkY7v025AIvAE0kgk6c</span><br><span class="line">4th+L2GvMRtOX4D9kqzGyh0Pz8ywrwOGlotN72MNWkpWNbhI8+rM8qvTNYkMkM4XBl4b1marLMIsKFDWZSb0tZ5yoWTiqBa3qWyM/ewHeY3TW4hxXLHqK3+H</span><br><span class="line">md1ATOn4RKMgNiNk2fN2YyQ5beHB06U13TT+HKUoTIZC56+rGXaQOHfo+tshBuc929/KqgzsiGY9dkupJ2PIgdUwh8pw0oxEXCNyug==</span><br></pre></td></tr></table></figure>
-<h2 id="复制邀请码-生成注册码"><a href="#复制邀请码-生成注册码" class="headerlink" title="复制邀请码 生成注册码"></a>复制邀请码 生成注册码</h2><p>复制这一大串字符串.<br>然后,回到cmd中,继续输入<code>用户名</code>和<code>组织</code>,接着<code>粘贴</code>刚才复制的,按下<code>两次回车</code>,这样就生成了<code>注册码</code>:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[*] Your name: lan</span><br><span class="line">[*] Your organization: lan</span><br><span class="line">[*] Input request code <span class="keyword">in</span> Base64: (Input empty line to end)</span><br><span class="line">bz6Pp8T7/<span class="number">4</span>kXP8UZ2uJ9XUKvy6xP8G3mhe1ZSOOAznS7sVRzjGNiTvyiUuNFtPq5++KQXBgtpT62pKEU8SzKwtPfpwfpE2Gck5GW8IkY7v025AIvAE0kgk6c</span><br><span class="line"><span class="number">4</span>th+L2GvMRtOX4D9kqzGyh0Pz8ywrwOGlotN72MNWkpWNbhI8+rM8qvTNYkMkM4XBl4b1marLMIsKFDWZSb0tZ5yoWTiqBa3qWyM/ewHeY3TW4hxXLHqK3+H</span><br><span class="line">md1ATOn4RKMgNiNk2fN2YyQ5beHB06U13TT+HKUoTIZC56+rGXaQOHfo+tshBuc929/KqgzsiGY9dkupJ2PIgdUwh8pw0oxEXCNyug==</span><br><span class="line">[*] Request Info:</span><br><span class="line">&#123;&quot;K&quot;:&quot;NAVN6XZIFK3FNU44&quot;, &quot;DI&quot;:&quot;+th07Jntcvd3RIb9CnhQ&quot;, &quot;P&quot;:&quot;WIN&quot;&#125;</span><br><span class="line">[*] Response Info:</span><br><span class="line">&#123;&quot;K&quot;:&quot;NAVN6XZIFK3FNU44&quot;,&quot;DI&quot;:&quot;+th07Jntcvd3RIb9CnhQ&quot;,&quot;N&quot;:&quot;lan&quot;,&quot;O&quot;:&quot;lan&quot;,&quot;T&quot;:<span class="number">1574497681</span>&#125;</span><br><span class="line">[*] Activation Code:</span><br><span class="line">mWO8nXhK31HFTR4PJpea/<span class="number">2</span>v0oeHNmBwSfmSjbb42ZhuqQRuj4Zqq+FjnXYAIp60OgI/L9JFUjrEb6u7AXFarVDJzVLYiGPIacD0uUVG+azHE86FKh4VyekxO</span><br><span class="line">RKtHivokjqq6v+owtonQrOalF60FN/Xe8+<span class="number">8</span>DBTObaIEIT3FGvIsIvoSDEv4KnxywQASDTL0c0L23rukCtbSngJ47CoAtYOejBWgFsbH+ATAPPyJZqxkRp8C7</span><br><span class="line">F2uob7A8rMPkQU7bR+Jc7KIzok1JqvSraH3eBo+ZgNUyFQm0afSYBeJ7jEkD9u/Ns+qHc4X197y4L7XHi3gybdBPc+hvU91WmzHSKA==</span><br></pre></td></tr></table></figure>
-<h2 id="复制注册码-回到Navicat，粘贴注册码"><a href="#复制注册码-回到Navicat，粘贴注册码" class="headerlink" title="复制注册码 回到Navicat，粘贴注册码"></a>复制注册码 回到Navicat，粘贴注册码</h2><p>复制生成的这串字符串:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mWO8nXhK31HFTR4PJpea/2v0oeHNmBwSfmSjbb42ZhuqQRuj4Zqq+FjnXYAIp60OgI/L9JFUjrEb6u7AXFarVDJzVLYiGPIacD0uUVG+azHE86FKh4VyekxO</span><br><span class="line">RKtHivokjqq6v+owtonQrOalF60FN/Xe8+8DBTObaIEIT3FGvIsIvoSDEv4KnxywQASDTL0c0L23rukCtbSngJ47CoAtYOejBWgFsbH+ATAPPyJZqxkRp8C7</span><br><span class="line">F2uob7A8rMPkQU7bR+Jc7KIzok1JqvSraH3eBo+ZgNUyFQm0afSYBeJ7jEkD9u/Ns+qHc4X197y4L7XHi3gybdBPc+hvU91WmzHSKA==</span><br></pre></td></tr></table></figure>
-<p>粘贴到<code>Navicat</code>上的注册码输入框，就可以。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://github.com/DoubleLabyrinth/navicat-keygen/blob/windows/doc/how-to-use.windows.zh-CN.md">https://github.com/DoubleLabyrinth/navicat-keygen/blob/windows/doc/how-to-use.windows.zh-CN.md</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/b19c6a80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/b19c6a80/" class="post-title-link" itemprop="url">PicGo GitHub图床</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-11-22 12:59:46" itemprop="dateCreated datePublished" datetime="2019-11-22T12:59:46+08:00">2019-11-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-13 09:32:17" itemprop="dateModified" datetime="2022-04-13T09:32:17+08:00">2022-04-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Hexo/%E5%9B%BE%E5%BA%8A/" itemprop="url" rel="index"><span itemprop="name">图床</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/b19c6a80/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/b19c6a80/" data-xid="/blog/b19c6a80/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>638</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="生成github-token"><a href="#生成github-token" class="headerlink" title="生成github token"></a>生成github token</h1><p>以此点击<strong>github头像</strong>，选择<strong>Setting</strong>，然后下来到最后，选择<strong>Developer settings</strong>，然后选择最下面的<strong>Personal access tokens</strong>菜单，即可进入token设置页面。<br>或者点击如下链接，进入：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></p>
-<h1 id="下载安装PigGo"><a href="#下载安装PigGo" class="headerlink" title="下载安装PigGo"></a>下载安装PigGo</h1><p>进入<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">PicGo仓库</a>然后点击</p>
-<h1 id="配置PigGo"><a href="#配置PigGo" class="headerlink" title="配置PigGo"></a>配置PigGo</h1><p>详细配置见<a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/zh/guide/#%E5%BA%94%E7%94%A8%E8%AF%B4%E6%98%8E">PigGo配置手册</a></p>
-<h2 id="Github图床配置"><a href="#Github图床配置" class="headerlink" title="Github图床配置"></a>Github图床配置</h2><p>PigGo的Github图床配置有固定的格式:<br>仓库名格式为:<code>用户名/仓库名</code><br>分支名设置为:<code>master</code><br>Token设置为:上面获取到的<code>token</code><br>存储路径可以随意,如设置为:<code>img/</code><br>自定义域名格式为:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://raw.githubusercontent.com/用户名/仓库名/分支名</span><br></pre></td></tr></table></figure>
-<p>这个默认的好像无法同步删除<code>github</code>上的图片,只能上传图片。所以安装<code>picgo-plugin-github-plus</code></p>
-<h2 id="githubPlus插件配置"><a href="#githubPlus插件配置" class="headerlink" title="githubPlus插件配置"></a>githubPlus插件配置</h2><p><code>githubPlus</code>可以同步相册,当在<code>PigGo</code>的相册中<strong>删除图片后,会同步删除<code>github</code>上的图片</strong>.</p>
-<h3 id="同步更新删除Github"><a href="#同步更新删除Github" class="headerlink" title="同步更新删除Github"></a>同步更新删除Github</h3><p>在<code>插件设置</code>的搜索框中,输入插件的名称:<code>picgo-plugin-github-plus</code>,然后安装这个插件.<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/PicGo/install_plug_in.png"></p>
-<h3 id="配置githubPlus"><a href="#配置githubPlus" class="headerlink" title="配置githubPlus"></a>配置githubPlus</h3><p>这个插件的配置和上面的Github图片配置差不多一样.<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Hexo/PigGo/githubPlusSettings.png" alt="图片"></p>
-<h2 id="PigGo其他配置"><a href="#PigGo其他配置" class="headerlink" title="PigGo其他配置"></a>PigGo其他配置</h2><h3 id="上传快捷方式"><a href="#上传快捷方式" class="headerlink" title="上传快捷方式"></a>上传快捷方式</h3><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/img/Hexo/PicGo/KeyboardSetting.png" alt="图片_配置快捷方式"></p>
-<h1 id="参考连接"><a href="#参考连接" class="headerlink" title="参考连接"></a>参考连接</h1><p><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">PicGo仓库</a><br><a target="_blank" rel="noopener" href="https://github.com/PicGo/Awesome-PicGo">PicGo插件库</a><br><a target="_blank" rel="noopener" href="https://github.com/zWingz/picgo-plugin-github-plus">picgo-plugin-github-plus仓库</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/a51d0e/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/a51d0e/" class="post-title-link" itemprop="url">cmd 解压缩 WinRAR的命令行模式用法介绍</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-11-22 11:16:59" itemprop="dateCreated datePublished" datetime="2019-11-22T11:16:59+08:00">2019-11-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 16:36:43" itemprop="dateModified" datetime="2022-04-04T16:36:43+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/" itemprop="url" rel="index"><span itemprop="name">CMD</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/%E6%89%B9%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">批处理</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Windows/CMD/%E6%89%B9%E5%A4%84%E7%90%86/%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">系统相关命令</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/a51d0e/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/a51d0e/" data-xid="/blog/a51d0e/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="cmd-解压缩WinRAR的命令行模式用法介绍"><a href="#cmd-解压缩WinRAR的命令行模式用法介绍" class="headerlink" title="cmd 解压缩WinRAR的命令行模式用法介绍"></a>cmd 解压缩WinRAR的命令行模式用法介绍</h1><h2 id="下载安装WinRAR"><a href="#下载安装WinRAR" class="headerlink" title="下载安装WinRAR"></a>下载安装WinRAR</h2><p><code>WinRAR.exe</code>安装完后,从<strong>安装目录</strong>将主程序<code>winRAR.exe</code>拷贝出来即可,该程序是独立可运行的</p>
-<p><code>WinRaR</code>的命令行模式程序在安装目录下的<code>rar.exe</code> (打包压缩程序),<code>unrar.exe</code>(解压缩程序)</p>
-<h2 id="unrar-exe帮助文档"><a href="#unrar-exe帮助文档" class="headerlink" title="unrar.exe帮助文档"></a>unrar.exe帮助文档</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">F:\<span class="title">Program</span> <span class="title">Files</span>\<span class="title">WinRAR</span>&gt;<span class="title">unrar.exe</span> /?</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">UNRAR</span> 5.71 <span class="title">x64</span> 免费软件      版权所有 (<span class="title">C</span>) 1993-2019 <span class="title">Alexander</span> <span class="title">Roshal</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">用法:     <span class="title">unrar</span> &lt;<span class="title">command</span>&gt; -&lt;<span class="title">switch</span> 1&gt; -&lt;<span class="title">switch</span> <span class="title">N</span>&gt; &lt;<span class="title">archive</span>&gt; &lt;<span class="title">files</span>...&gt;</span></span><br><span class="line"><span class="function">               &lt;@<span class="title">listfiles</span>...&gt; &lt;<span class="title">path_to_extract</span>\&gt;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&lt;<span class="title">Commands</span>&gt;</span></span><br><span class="line"><span class="function">  <span class="title">e</span>             提取文件不带压缩路径</span></span><br><span class="line"><span class="function">  <span class="title">l</span>[<span class="title">t</span>[<span class="title">a</span>],<span class="title">b</span>]     列出压缩文档内容 [<span class="title">technical</span>[<span class="title">all</span>], <span class="title">bare</span>]</span></span><br><span class="line"><span class="function">  <span class="title">p</span>             打印文件到 <span class="title">stdout</span></span></span><br><span class="line"><span class="function">  <span class="title">t</span>             测试压缩文档的文件</span></span><br><span class="line"><span class="function">  <span class="title">v</span>[<span class="title">t</span>[<span class="title">a</span>],<span class="title">b</span>]     详细列出压缩文档的内容 [<span class="title">technical</span>[<span class="title">all</span>],<span class="title">bare</span>]</span></span><br><span class="line"><span class="function">  <span class="title">x</span>             解压文件带完整路径</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&lt;<span class="title">Switches</span>&gt;</span></span><br><span class="line"><span class="function">  -             停止参数扫描</span></span><br><span class="line"><span class="function">  @[+]          禁用 [<span class="title">enable</span>] 文件列表</span></span><br><span class="line"><span class="function">  <span class="title">ac</span>            压缩或解压后清除压缩文档属性</span></span><br><span class="line"><span class="function">  <span class="title">ad</span>            扩展压缩文档名称到目标路径</span></span><br><span class="line"><span class="function">  <span class="title">ag</span>[<span class="title">format</span>]    使用当前日期生成压缩文档名称</span></span><br><span class="line"><span class="function">  <span class="title">ai</span>            忽略文件属性</span></span><br><span class="line"><span class="function">  <span class="title">ap</span>&lt;<span class="title">path</span>&gt;      设置压缩文档内部的路径</span></span><br><span class="line"><span class="function">  <span class="title">c</span>-            禁用内容显示</span></span><br><span class="line"><span class="function">  <span class="title">cfg</span>-          禁用读取配置</span></span><br><span class="line"><span class="function">  <span class="title">cl</span>            转换名称为小写</span></span><br><span class="line"><span class="function">  <span class="title">cu</span>            转换名称为大写</span></span><br><span class="line"><span class="function">  <span class="title">dh</span>            打开共享的文件</span></span><br><span class="line"><span class="function">  <span class="title">ep</span>            从名称里排除路径</span></span><br><span class="line"><span class="function">  <span class="title">ep3</span>          扩展路径为完整路径包括驱动器盘符</span></span><br><span class="line"><span class="function">  <span class="title">f</span>             刷新文件</span></span><br><span class="line"><span class="function">  <span class="title">id</span>[<span class="title">c</span>,<span class="title">d</span>,<span class="title">p</span>,<span class="title">q</span>]   禁用消息</span></span><br><span class="line"><span class="function">  <span class="title">ierr</span>         发送所有压缩文档到 <span class="title">stderr</span></span></span><br><span class="line"><span class="function">  <span class="title">inul</span>          禁用所有消息</span></span><br><span class="line"><span class="function">  <span class="title">ioff</span>[<span class="title">n</span>]       完成一个操作后关闭电脑</span></span><br><span class="line"><span class="function">  <span class="title">kb</span>            保留损坏的已解压文件</span></span><br><span class="line"><span class="function">  <span class="title">n</span>&lt;<span class="title">file</span>&gt;       额外管理器包含文件</span></span><br><span class="line"><span class="function">  <span class="title">n</span>@            从 <span class="title">stdin</span> 读取额外的过滤器掩码</span></span><br><span class="line"><span class="function">  <span class="title">n</span>@&lt;<span class="title">list</span>&gt;      从列表文件读取额外的过滤器掩码</span></span><br><span class="line"><span class="function">  <span class="title">o</span>[+|-]        设置覆盖模式</span></span><br><span class="line"><span class="function">  <span class="title">oc</span>            设置 <span class="title">NTFS</span> 压缩属性</span></span><br><span class="line"><span class="function">  <span class="title">ol</span>[<span class="title">a</span>]         将符号链接处理为链接 [<span class="title">absolute</span> <span class="title">paths</span>]</span></span><br><span class="line"><span class="function">  <span class="title">or</span>            自动重命名文件</span></span><br><span class="line"><span class="function">  <span class="title">ow</span>            保存或恢复文件拥有者和组</span></span><br><span class="line"><span class="function">  <span class="title">p</span>[<span class="title">password</span>]   设置密码</span></span><br><span class="line"><span class="function">  <span class="title">p</span>-            不要查询密码</span></span><br><span class="line"><span class="function">  <span class="title">r</span>             递归子目录</span></span><br><span class="line"><span class="function">  <span class="title">ri</span>&lt;<span class="title">P</span>&gt;[:&lt;<span class="title">S</span>&gt;]   设置优先级 (0-默认,1-最小.15-最大) 和休眠时间单位为 <span class="title">ms</span></span></span><br><span class="line"><span class="function">  <span class="title">sc</span>&lt;<span class="title">chr</span>&gt;[<span class="title">obj</span>]  指定字符集</span></span><br><span class="line"><span class="function">  <span class="title">sl</span>&lt;<span class="title">size</span>&gt;      处理小于指定大小的文件</span></span><br><span class="line"><span class="function">  <span class="title">sm</span>&lt;<span class="title">size</span>&gt;      处理大于指定大小的文件</span></span><br><span class="line"><span class="function">  <span class="title">ta</span>[<span class="title">mcao</span>]&lt;<span class="title">d</span>&gt;   处理那些在日期 &lt;<span class="title">d</span>&gt; <span class="title">YYYYMMDDHHMMSS</span> 之后修改过的文件</span></span><br><span class="line"><span class="function">  <span class="title">tb</span>[<span class="title">mcao</span>]&lt;<span class="title">d</span>&gt;   处理那些在日期 &lt;<span class="title">d</span>&gt; <span class="title">YYYYMMDDHHMMSS</span> 之前修改过的文件</span></span><br><span class="line"><span class="function">  <span class="title">tn</span>[<span class="title">mcao</span>]&lt;<span class="title">t</span>&gt;   处理那些时间比 &lt;<span class="title">t</span>&gt; 更新的文件</span></span><br><span class="line"><span class="function">  <span class="title">to</span>[<span class="title">mcao</span>]&lt;<span class="title">t</span>&gt;   处理那些时间比 &lt;<span class="title">t</span>&gt; 更老的文件</span></span><br><span class="line"><span class="function">  <span class="title">ts</span>[<span class="title">m</span>,<span class="title">c</span>,<span class="title">a</span>]     保存或恢复文件时间（修改日期，创建日期，访问日期）</span></span><br><span class="line"><span class="function">  <span class="title">u</span>             更新文件</span></span><br><span class="line"><span class="function">  <span class="title">v</span>             列出所有卷</span></span><br><span class="line"><span class="function">  <span class="title">ver</span>[<span class="title">n</span>]        文件版本控制</span></span><br><span class="line"><span class="function">  <span class="title">vp</span>            每个卷之前暂停</span></span><br><span class="line"><span class="function">  <span class="title">x</span>&lt;<span class="title">file</span>&gt;       排除特定文件</span></span><br><span class="line"><span class="function">  <span class="title">x</span>@           读取文件名以便从 <span class="title">stdin</span> 排除</span></span><br><span class="line"><span class="function">  <span class="title">x</span>@&lt;<span class="title">list</span>&gt;      排除在特定列表文件里列出的文件</span></span><br><span class="line"><span class="function">  <span class="title">y</span>             对所有问题回答是</span></span><br></pre></td></tr></table></figure>
-<p><strong>先这样,有空再研究</strong></p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fetty/p/4769279.html">https://www.cnblogs.com/fetty/p/4769279.html</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/43/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/43/">43</a><span class="page-number current">44</span><a class="page-number" href="/blog/page/45/">45</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/70/">70</a><a class="extend next" rel="next" href="/blog/page/45/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/43/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/43/">43</a><span class="page-number current">44</span><a class="page-number" href="/blog/page/45/">45</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/71/">71</a><a class="extend next" rel="next" href="/blog/page/45/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1628,7 +1598,7 @@ Press Enter to continue or Ctrl + C to abort.
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">24:55</span>
+    <span title="站点阅读时长">24:57</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

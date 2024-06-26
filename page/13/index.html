@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">700</span>
+          <span class="site-state-item-count">703</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">223</span>
+        <span class="site-state-item-count">225</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -213,6 +213,470 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/13a6846b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/13a6846b/" class="post-title-link" itemprop="url">Java GUI美化 Swing使用FlatLaf主题 解决FlatDarkLaf主题不生效的问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-23 22:48:56" itemprop="dateCreated datePublished" datetime="2021-08-23T22:48:56+08:00">2021-08-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Swing/" itemprop="url" rel="index"><span itemprop="name">Swing</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/13a6846b/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/13a6846b/" data-xid="/blog/13a6846b/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="常见设置Java-Swing-LookAndFeel方式"><a href="#常见设置Java-Swing-LookAndFeel方式" class="headerlink" title="常见设置Java Swing LookAndFeel方式"></a>常见设置Java Swing LookAndFeel方式</h1><p>一般使用UIManager.setLookAndFeel()方法来设置外观，如下所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置外观</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 跨平台外观</span></span><br><span class="line">    <span class="comment">// UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());</span></span><br><span class="line">    <span class="comment">// 和系统一样的外观</span></span><br><span class="line">    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">catch</span> (InstantiationException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">catch</span> (UnsupportedLookAndFeelException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>经过我的测试，发现这种方式可以设置两种类型的外观。</p>
+<p>一种是跨平台的外观，这是默认的外观。如果想使用这种方式，可以不设置。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());</span><br></pre></td></tr></table></figure>
+
+<p>跨平台的外观如下图所示：</p>
+<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/09/20210910092757.png" alt="image-20210910092750337"></p>
+<p>另一种就是和系统一样的外观：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());</span><br></pre></td></tr></table></figure>
+
+<p>如下图所示：</p>
+<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/09/20210910093214.png" alt="image-20210910093214534"></p>
+<p>这种方式比上面的跨平台外观要好看一些。</p>
+<p>如果你想要界面更加美观，可以使用FlatLaf主题。</p>
+<h1 id="FlatLaf主题"><a href="#FlatLaf主题" class="headerlink" title="FlatLaf主题"></a>FlatLaf主题</h1><h2 id="下载FlatLaf主题"><a href="#下载FlatLaf主题" class="headerlink" title="下载FlatLaf主题"></a>下载FlatLaf主题</h2><p>到maven仓库下载：<a target="_blank" rel="noopener" href="https://mvnrepository.com/artifact/com.formdev/flatlaf/1.5">https://mvnrepository.com/artifact/com.formdev/flatlaf/1.5</a></p>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>导入jar</p>
+<blockquote>
+<h3 id="Getting-started"><a href="#Getting-started" class="headerlink" title="Getting started"></a>Getting started</h3><p><a target="_blank" rel="noopener" href="https://www.formdev.com/flatlaf/">https://www.formdev.com/flatlaf/</a><br>To enable FlatLaf, add following code to your main method <mark>before you create any Swing component:</mark></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FlatLightLaf.install();</span><br><span class="line"><span class="comment">// create UI here...</span></span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    UIManager.setLookAndFeel( <span class="keyword">new</span> <span class="title class_">FlatLightLaf</span>() );</span><br><span class="line">&#125; <span class="keyword">catch</span>( Exception ex ) &#123;</span><br><span class="line">    System.err.println( <span class="string">&quot;Failed to initialize LaF&quot;</span> );</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// create UI here...</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>需要注意的是，如果你使用的是第一种方式<code>FlatLightLaf.install();</code>。install方法已经不适用了，应该使用<code>setup()</code>方法.也就是改成：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FlatLightLaf.setup();</span><br></pre></td></tr></table></figure>
+<h2 id="外观不生效或部分生效的问题"><a href="#外观不生效或部分生效的问题" class="headerlink" title="外观不生效或部分生效的问题"></a>外观不生效或部分生效的问题</h2><p>还有就是，如果光写这条语句而已，可能只是部分组件起作用的，有些组件还是原来的外观。还需要给所有的组件都设置上该主题。<br><strong>这是因为你先创建了组件，然后才使用这条语句来设置外观，造成的。</strong></p>
+<h3 id="方案1：先设置外观再创建组件"><a href="#方案1：先设置外观再创建组件" class="headerlink" title="方案1：先设置外观再创建组件"></a>方案1：先设置外观再创建组件</h3><p>应该先设置外观，然后再创建组件<br>把<code>FlatLightLaf.setup();</code>写到静态代码块中，并把这个静态代码块定义在类的前面。<br>因为静态代码块最先加载，从而保证在创建UI组件时，外观已经设置好了，组件将会以我们事先创建好的外观显示。</p>
+<h4 id="完美的使用FlatLaf外观方式"><a href="#完美的使用FlatLaf外观方式" class="headerlink" title="完美的使用FlatLaf外观方式"></a>完美的使用FlatLaf外观方式</h4><p>如下所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainFrom</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="comment">// 先设置外观，再创建UI。</span></span><br><span class="line">        <span class="comment">// 为了保证创建UI时，已经实现设置好新外观，</span></span><br><span class="line">        <span class="comment">// 最好把设置外观的代码写在静态块中，</span></span><br><span class="line">        <span class="comment">// 并且把这个静态块写在类定义的最前面。</span></span><br><span class="line">        FlatLightLaf.setup();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> JFrame frame;</span><br><span class="line">    <span class="keyword">private</span> JPanel panel;</span><br><span class="line">    <span class="keyword">private</span> JButton exitButton;</span><br><span class="line">    <span class="keyword">private</span> JTextField textField;</span><br><span class="line">    <span class="keyword">private</span> JTextArea textArea;</span><br><span class="line">    <span class="keyword">private</span> JLabel lable;</span><br><span class="line">    <span class="keyword">private</span> JScrollPane scrollPane;</span><br><span class="line">    <span class="keyword">private</span> JPanel scrollPaneFather;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MainFrom</span><span class="params">(JFrame frame)</span> &#123;</span><br><span class="line">        <span class="comment">// 记下Frame</span></span><br><span class="line">        <span class="built_in">this</span>.frame = frame;</span><br><span class="line">        <span class="comment">// 初始化系统托盘</span></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">ToolUiSystemTray</span>(frame);</span><br><span class="line">        <span class="comment">// 程序刚开始，还没输入内容，不会有输出，隐藏用来显示输出的文本域</span></span><br><span class="line">        <span class="comment">// scrollPane.setVisible(false);</span></span><br><span class="line">        scrollPaneFather.setVisible(<span class="literal">false</span>);</span><br><span class="line">        <span class="comment">// 设置退出按钮的功能</span></span><br><span class="line">        exitButtonSetting();</span><br><span class="line">        <span class="comment">// 窗体功能</span></span><br><span class="line">        frameSetting();</span><br><span class="line">        <span class="comment">// 文本框功能</span></span><br><span class="line">        textFieldSetting();</span><br><span class="line">        <span class="comment">// 监听文本域鼠标事件，右键点击文本域，将会清空文本域。</span></span><br><span class="line">        textArea.addMouseListener(<span class="keyword">new</span> <span class="title class_">TextAreaMouseListener</span>(frame, textArea));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 省略后续代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="美化后的外观如下"><a href="#美化后的外观如下" class="headerlink" title="美化后的外观如下"></a>美化后的外观如下</h4><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/09/20210910095538.png" alt="image-20210910095538356"></p>
+<p>这种方式比系统默认的要更加美观一些。</p>
+<h3 id="方案2：先创建组件再更改外观-不推荐使用这种方式"><a href="#方案2：先创建组件再更改外观-不推荐使用这种方式" class="headerlink" title="方案2：先创建组件再更改外观 不推荐使用这种方式"></a>方案2：先创建组件再更改外观 不推荐使用这种方式</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.docs4dev.com/docs/zh/java/java8/tutorials/uiswing-lookandfeel-plaf.html">https://www.docs4dev.com/docs/zh/java/java8/tutorials/uiswing-lookandfeel-plaf.html</a><br>即使程序的 GUI 可见，您也可以使用setLookAndFeel更改 L＆F。要使现有组件反映新的 L＆F，请对每个顶级容器调用一次SwingUtilities updateComponentTreeUI方法。然后，您可能希望调整每个顶级容器的大小，以反映其包含的组件的新大小。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UIManager.setLookAndFeel(lnfName);</span><br><span class="line">SwingUtilities.updateComponentTreeUI(frame);</span><br><span class="line">frame.pack();</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><p>我测试有效的方式如下：</p>
+<p>在main方法中写上如下代码：</p>
+<pre>
+public static void main(String[] args) {
+    MainFrom mainFrom = new MainFrom();
+    JFrame frame = new JFrame("MainFrom");
+    // 设置面板到窗体上
+    frame.setContentPane(mainFrom.panel);
+    // // 设置关闭按钮功能
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    // frame.setType(Window.Type.NORMAL);
+    // frame.setType(Window.Type.POPUP);
+    // 不显示任务栏
+    frame.setType(Window.Type.UTILITY);
+    // 不显示标题栏，最小化，关闭按钮
+    frame.setUndecorated(true);
+    // 永远置顶
+    frame.setAlwaysOnTop(true);
+    // 设置初始界面
+    mainFromSetting(mainFrom, frame);
+    // 设置主题
+    // FlatLightLaf.setup();
+    <mark>FlatDarkLaf.setup();</mark>
+    // 给所有的组件都使用该主题
+    <mark>SwingUtilities.updateComponentTreeUI(frame);</mark>
+    // 最合适的方式显示
+    <mark>frame.pack();</mark>
+    // 显示窗体
+    frame.setVisible(true);
+}
+</pre>
+
+<h4 id="成果示例"><a href="#成果示例" class="headerlink" title="成果示例"></a>成果示例</h4><p>使用暗色主题成功效果：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823220726.png" alt="image-20210823220726108"></p>
+<p>如果你没有写<code>SwingUtilities.updateComponentTreeUI(frame);</code>，虽然你使用的是暗色的主题，但是运行结果不会显示暗色主题，默认使用的是亮色的主题</p>
+<pre>
+    public static void main(String[] args) {
+        ......
+        // 设置主题
+        FlatDarkLaf.setup();
+        // FlatLightLaf.setup();
+        // 给所有的组件都使用该主题
+        <mark>// SwingUtilities.updateComponentTreeUI(frame);</mark>
+        // 最合适的方式显示
+        frame.pack();
+        // 显示窗体
+        frame.setVisible(true);
+    }
+</pre>
+
+<p>此时显示的效果如下图所示：</p>
+<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823221038.png" alt="image-20210823221038003"></p>
+<h4 id="为什么不推荐先创建组件再更改外观"><a href="#为什么不推荐先创建组件再更改外观" class="headerlink" title="为什么不推荐先创建组件再更改外观"></a>为什么不推荐先创建组件再更改外观</h4><p>先创建组件，然后再更改外观，可能会造成其他的奇奇怪怪的问题。</p>
+<h5 id="java-awt-IllegalComponentStateException-component-must-be-showing-on-the-screen-to-determine-its-location"><a href="#java-awt-IllegalComponentStateException-component-must-be-showing-on-the-screen-to-determine-its-location" class="headerlink" title="java.awt.IllegalComponentStateException: component must be showing on the screen to determine its location"></a>java.awt.IllegalComponentStateException: component must be showing on the screen to determine its location</h5><p>这是使用这种方式造成的问题：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread &quot;AWT-EventQueue-0&quot; java.awt.IllegalComponentStateException: component must be showing on the screen to determine its location</span><br><span class="line">	at java.awt.Component.getLocationOnScreen_NoTreeLock(Component.java:2062)</span><br><span class="line">	at java.awt.Component.getLocationOnScreen(Component.java:2036)</span><br><span class="line">	at javax.swing.JPopupMenu.show(JPopupMenu.java:948)</span><br><span class="line">	at javax.swing.plaf.basic.BasicComboPopup.show(BasicComboPopup.java:211)</span><br><span class="line">	at javax.swing.plaf.basic.BasicComboBoxUI.setPopupVisible(BasicComboBoxUI.java:877)</span><br><span class="line">	at javax.swing.JComboBox.setPopupVisible(JComboBox.java:816)</span><br><span class="line">	at blue.commands.ui.event.textfield.TextFieldDocumentListener2.updateList(TextFieldDocumentListener2.java:60)</span><br><span class="line">	at blue.commands.ui.event.textfield.TextFieldDocumentListener2.insertUpdate(TextFieldDocumentListener2.java:28)</span><br><span class="line">	at javax.swing.text.AbstractDocument.fireInsertUpdate(AbstractDocument.java:201)</span><br><span class="line">	at javax.swing.text.AbstractDocument.handleInsertString(AbstractDocument.java:748)</span><br><span class="line">	at javax.swing.text.AbstractDocument.insertString(AbstractDocument.java:707)</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>使用第一种方案，也就是先设置外观，再创建UI组件，这样就不会有这样的问题。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.docs4dev.com/docs/zh/java/java8/tutorials/uiswing-lookandfeel-plaf.html">https://www.docs4dev.com/docs/zh/java/java8/tutorials/uiswing-lookandfeel-plaf.html</a><br><a target="_blank" rel="noopener" href="https://github.com/JFormDesigner/FlatLaf">https://github.com/JFormDesigner/FlatLaf</a><br><a target="_blank" rel="noopener" href="https://mvnrepository.com/artifact/com.formdev/flatlaf/1.5">https://mvnrepository.com/artifact/com.formdev/flatlaf/1.5</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/2ee17d2f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2ee17d2f/" class="post-title-link" itemprop="url">idea导出可执行jar包是，没有导出依赖的第三方jar包</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-23 22:27:00" itemprop="dateCreated datePublished" datetime="2021-08-23T22:27:00+08:00">2021-08-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/Idea/" itemprop="url" rel="index"><span itemprop="name">Idea</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/2ee17d2f/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/2ee17d2f/" data-xid="/blog/2ee17d2f/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>262</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>我的项目中使用了第三方的jar包，在idea中运行正常，但是导出的可执行jar包运行不正常，经过我的查找，发现是因为，导出可执行jar的时候，没有把第三方的jar中内内容解压到可执行jar中。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>引入第三方jar的时候，不要引入该文件本身，而是引用该第三方jar所在的目录。<br>这样导出可执行jar的时候，就会解压这些第三方的jar包中的内容到可执行jar中，这样就不会运行出错了。</p>
+<h2 id="正确的导入第三方jar方式"><a href="#正确的导入第三方jar方式" class="headerlink" title="正确的导入第三方jar方式"></a>正确的导入第三方jar方式</h2><p>也就是引入第三方jar的时候使用如下形式：<br><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823222915.png" alt="image-20210823222915600"></p>
+<h3 id="错误的导入第三方jar方式"><a href="#错误的导入第三方jar方式" class="headerlink" title="错误的导入第三方jar方式"></a>错误的导入第三方jar方式</h3><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823223520.png" alt="image-20210823223519983"></p>
+<h2 id="查看导入的jar是否解压到可执行jar中"><a href="#查看导入的jar是否解压到可执行jar中" class="headerlink" title="查看导入的jar是否解压到可执行jar中"></a>查看导入的jar是否解压到可执行jar中</h2><p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823223836.png" alt="image-20210823223835983"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/956009f0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/956009f0/" class="post-title-link" itemprop="url">eclipse提取变量快捷键alt+shift+L与冲突的问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-23 19:53:00" itemprop="dateCreated datePublished" datetime="2021-08-23T19:53:00+08:00">2021-08-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/IDE/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/956009f0/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/956009f0/" data-xid="/blog/956009f0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>587</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="操作注册表，添加内容"><a href="#操作注册表，添加内容" class="headerlink" title="操作注册表，添加内容"></a>操作注册表，添加内容</h1><h2 id="备份注册表"><a href="#备份注册表" class="headerlink" title="备份注册表"></a>备份注册表</h2><p>Win+R打开运行，输入如下命令打开注册表：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">regedit</span><br></pre></td></tr></table></figure>
+
+<p>然后按文件，导出，</p>
+<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823200131.png" alt="image-20210823200124636"></p>
+<p>导出范围选择全部：</p>
+<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823200153.png" alt="image-20210823200153678"></p>
+<h2 id="管理员身份打开CMD"><a href="#管理员身份打开CMD" class="headerlink" title="管理员身份打开CMD"></a>管理员身份打开CMD</h2><p>输入如下命令，来添加信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\SynTP\Parameters\Debug /v DumpKernel /d 00000000 /t REG_DWORD /f</span><br></pre></td></tr></table></figure>
+<h2 id="重启电脑"><a href="#重启电脑" class="headerlink" title="重启电脑"></a>重启电脑</h2><p>输入上述命令后会提示添加成功，然后此时按Alt+Shift+L依然有问题。要重启后才不会有问题。</p>
+<h2 id="操作成功效果"><a href="#操作成功效果" class="headerlink" title="操作成功效果"></a>操作成功效果</h2><p>重启电脑之后，按下ALT+Shift+L就可以很方便的提取变量了，也不会有那个烦人的弹窗。</p>
+<p>可以打开注册表查看效果：</p>
+<p><img data-src="https://raw.githubusercontent.com/lanlan2017/images/master/Blog/2021/08/20210823200429.png" alt="image-20210823200429194"></p>
+<p>如果你怕上述命令有问题，也可以在注册表编辑区里面，手动创建上述内容。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lzxomg/article/details/53230871">https://blog.csdn.net/lzxomg/article/details/53230871</a><br><a target="_blank" rel="noopener" href="https://jitwxs.blog.csdn.net/article/details/78774156">https://jitwxs.blog.csdn.net/article/details/78774156</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/yuanlaijike/article/details/78774156">https://blog.csdn.net/yuanlaijike/article/details/78774156</a><br><a target="_blank" rel="noopener" href="https://demo.tc/post/820">https://demo.tc/post/820</a><br><a target="_blank" rel="noopener" href="http://www.pipimp3.com/jiaocheng/11925.html">http://www.pipimp3.com/jiaocheng/11925.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1066,374 +1530,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/658bf365/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/658bf365/" class="post-title-link" itemprop="url">2021年08月18日 课堂笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-08-18 14:15:30" itemprop="dateCreated datePublished" datetime="2021-08-18T14:15:30+08:00">2021-08-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年08月</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/658bf365/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/658bf365/" data-xid="/blog/658bf365/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>21</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="树的遍历"><a href="#树的遍历" class="headerlink" title="树的遍历"></a>树的遍历</h2><h3 id="递归实现"><a href="#递归实现" class="headerlink" title="递归实现"></a>递归实现</h3><h3 id="非递归实现：使用栈来实现"><a href="#非递归实现：使用栈来实现" class="headerlink" title="非递归实现：使用栈来实现"></a>非递归实现：使用栈来实现</h3>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/335e8fcf/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/335e8fcf/" class="post-title-link" itemprop="url">eclipse log4j自动补全插件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-08-18 10:41:50" itemprop="dateCreated datePublished" datetime="2021-08-18T10:41:50+08:00">2021-08-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/IDE/" itemprop="url" rel="index"><span itemprop="name">IDE</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/IDE/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/335e8fcf/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/335e8fcf/" data-xid="/blog/335e8fcf/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>109</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="查找eclipse的log4j插件"><a href="#查找eclipse的log4j插件" class="headerlink" title="查找eclipse的log4j插件"></a>查找eclipse的log4j插件</h1><p>进入eclipse插件官网：<a target="_blank" rel="noopener" href="https://marketplace.eclipse.org/">https://marketplace.eclipse.org/</a><br>输入log4j进行查找：</p>
-<h1 id="这个插件只能在java类中自动补全"><a href="#这个插件只能在java类中自动补全" class="headerlink" title="这个插件只能在java类中自动补全"></a>这个插件只能在java类中自动补全</h1><p>不会给log4j.xml自动补全。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/24af0bf3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/24af0bf3/" class="post-title-link" itemprop="url">2021年08月16日 课堂笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-08-16 09:52:37" itemprop="dateCreated datePublished" datetime="2021-08-16T09:52:37+08:00">2021-08-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随堂笔记</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年08月</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E9%9A%8F%E5%A0%82%E7%AC%94%E8%AE%B0/2021%E5%B9%B408%E6%9C%88/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/24af0bf3/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/24af0bf3/" data-xid="/blog/24af0bf3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>434</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="装饰流"><a href="#装饰流" class="headerlink" title="装饰流"></a>装饰流</h1><h2 id="DataInputStream"><a href="#DataInputStream" class="headerlink" title="DataInputStream"></a>DataInputStream</h2><h2 id="对象流"><a href="#对象流" class="headerlink" title="对象流"></a>对象流</h2><p>对象按整体进行读写</p>
-<h3 id="对象序列化"><a href="#对象序列化" class="headerlink" title="对象序列化"></a>对象序列化</h3><h2 id="随机访问流"><a href="#随机访问流" class="headerlink" title="随机访问流"></a>随机访问流</h2><p>RandomAccessFile</p>
-<p>随机流可以用于多线程下载或多个线程同时写数据到文件,为快速完成访问提供了便利。</p>
-<h3 id="编程：多线程拷贝一个10M的文件"><a href="#编程：多线程拷贝一个10M的文件" class="headerlink" title="编程：多线程拷贝一个10M的文件"></a>编程：多线程拷贝一个10M的文件</h3><h1 id="NIO"><a href="#NIO" class="headerlink" title="NIO"></a>NIO</h1><h2 id="Channel通道"><a href="#Channel通道" class="headerlink" title="Channel通道"></a>Channel通道</h2><p>通道和流的区别</p>
-<ul>
-<li>通道可读可写，多功能，流一般来说是单向的。</li>
-<li>通到可以异步读写</li>
-<li>通道总是基于缓冲区Buffer来读写</li>
-</ul>
-<p>可以从通道中读取数据，写入到buffer,也可以从buffer内读取数据，写入到通道中。</p>
-<h2 id="Path类"><a href="#Path类" class="headerlink" title="Path类"></a>Path类</h2><p>表示的是路径，可以指文件，或目录。只能表示路径，不能指代具体的文件。<br>与File功能有点类似，</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Path p=Paths.get(<span class="string">&quot;路径&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="Files类型"><a href="#Files类型" class="headerlink" title="Files类型"></a>Files类型</h2><p>工具集，与Path配置，封装了对文件和目录的常用操作。</p>
-<h2 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h2><p>Buffer用于和Channel交互<br>四个步骤</p>
-<ol>
-<li>把数据读入buffer</li>
-</ol>
-<p>写入buffer,put<br>flip()模式切换，<br>读取buffer,get</p>
-<h2 id="操作文件"><a href="#操作文件" class="headerlink" title="操作文件"></a>操作文件</h2><h3 id="FileChannel"><a href="#FileChannel" class="headerlink" title="FileChannel"></a>FileChannel</h3><h2 id="异步文件操作"><a href="#异步文件操作" class="headerlink" title="异步文件操作"></a>异步文件操作</h2>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/12/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/blog/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/70/">70</a><a class="extend next" rel="next" href="/blog/page/14/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/12/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/blog/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/71/">71</a><a class="extend next" rel="next" href="/blog/page/14/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1464,7 +1562,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">24:55</span>
+    <span title="站点阅读时长">24:57</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
