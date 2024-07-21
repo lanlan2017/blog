@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">703</span>
+          <span class="site-state-item-count">704</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,149 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e4a1ea9f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/e4a1ea9f/" class="post-title-link" itemprop="url">Java IO 合并多个二进制文件为一个二进制文件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-06-27 17:54:33" itemprop="dateCreated datePublished" datetime="2019-06-27T17:54:33+08:00">2019-06-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:44" itemprop="dateModified" datetime="2022-04-04T00:51:44+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-IO%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">Java IO流</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Java/Java-IO%E6%B5%81/%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">应用</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/e4a1ea9f/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/e4a1ea9f/" data-xid="/blog/e4a1ea9f/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Java-IO-合并多个二进制文件为一个二进制文件"><a href="#Java-IO-合并多个二进制文件为一个二进制文件" class="headerlink" title="Java IO 合并多个二进制文件为一个二进制文件"></a>Java IO 合并多个二进制文件为一个二进制文件</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li>我最近在调用讯飞语音的<code>API</code>来把我的博客中的文字转成音频,</li>
+<li>讯飞语音合成有数字限制,如果超过字数限制,会合成失败.</li>
+<li>为了不超过字数限制,我把文章分割成好几部分,分别合成,</li>
+<li>然后再把这些部分合并为一个文件.</li>
+<li>讯飞合成的音频文件是<code>.pcm</code>文件,这是个二进制文件,</li>
+</ul>
+<p>好了,废话就说到这,下面介绍<strong>如何把多个二进制文件合并为一个二进制文件</strong>.</p>
+<h2 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h2><p>复制文件的算法如下:</p>
+<ul>
+<li>从源文件中读入一些字节到内存(字节数组)中</li>
+<li>把内存中的这些字节写到目标文件中.</li>
+</ul>
+<p>多个源文件合并成一个目标文件,算法跟复制文件差不多,算法描述如下:</p>
+<ul>
+<li>读取第一个源文件中的内容,输出到目标文件中.</li>
+<li>然后读取第二个源文件中的内容,然后输出到目标文件中.</li>
+<li>然后读取第三个源文件中的内容,然后输出到目标文件中.</li>
+<li>依次类推,直到处理所有的源文件完成。</li>
+</ul>
+<h2 id="关键代码"><a href="#关键代码" class="headerlink" title="关键代码"></a>关键代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 缓存数组</span></span><br><span class="line"><span class="type">byte</span>[] buffer = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">2048</span>];</span><br><span class="line"><span class="comment">// 每次读入的字节数量</span></span><br><span class="line"><span class="type">int</span> <span class="variable">inSize</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line"><span class="comment">// 批量读入字节到buffer缓存中,并返回读入的自己数量给inSize</span></span><br><span class="line"><span class="comment">// 这里的in为输入流对象</span></span><br><span class="line"><span class="keyword">while</span> ((inSize = in.read(buffer)) != -<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 把buffer缓存中的字节写入输出流(也就是目标文件)</span></span><br><span class="line">      <span class="comment">// 这里的out为输出流对象  </span></span><br><span class="line">    out.write(buffer, <span class="number">0</span>, inSize);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="合并多个源文件到目标文件并删除源文件"><a href="#合并多个源文件到目标文件并删除源文件" class="headerlink" title="合并多个源文件到目标文件并删除源文件"></a>合并多个源文件到目标文件并删除源文件</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 合并文件ArrayList中的多个源文件为一个文件.</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> targetFilePath</span></span><br><span class="line"><span class="comment"> *            目标文件路径名称字符串.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> sourceFilePathList</span></span><br><span class="line"><span class="comment"> *            存放源文件的路径名称字符串的ArrayList集合.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">merge2TargetFileDeleteSourceFile</span><span class="params">(String targetFilePath,</span></span><br><span class="line"><span class="params">        ArrayList&lt;String&gt; sourceFilePathList)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 如果ArrayList中有东西</span></span><br><span class="line">    <span class="keyword">if</span> (sourceFilePathList.size() &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        BufferedInputStream in;</span><br><span class="line">        <span class="keyword">try</span> (<span class="type">BufferedOutputStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedOutputStream</span>(</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="keyword">new</span> <span class="title class_">File</span>(targetFilePath)));)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;源文件列表:&quot;</span>);</span><br><span class="line">            <span class="keyword">for</span> (Iterator&lt;String&gt; iterator = sourceFilePathList</span><br><span class="line">                    .iterator(); iterator.hasNext();)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">sourceFilePath</span> <span class="operator">=</span> iterator.next();</span><br><span class="line">                System.out.println(<span class="string">&quot;    &quot;</span> + sourceFilePath);</span><br><span class="line">                <span class="type">File</span> <span class="variable">sourceFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(sourceFilePath);</span><br><span class="line">                in = <span class="keyword">new</span> <span class="title class_">BufferedInputStream</span>(</span><br><span class="line">                        <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(sourceFile));</span><br><span class="line">                <span class="comment">// 缓存数组</span></span><br><span class="line">                <span class="type">byte</span>[] buffer = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">2048</span>];</span><br><span class="line">                <span class="comment">// 每次读入的字节数量</span></span><br><span class="line">                <span class="type">int</span> <span class="variable">inSize</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">                <span class="comment">// 批量读入字节到buffer缓存中,并返回读入的自己数量给inSize</span></span><br><span class="line">                <span class="keyword">while</span> ((inSize = in.read(buffer)) != -<span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 把buffer缓存中的字节写入输出流(也就是目标文件)</span></span><br><span class="line">                    out.write(buffer, <span class="number">0</span>, inSize);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 关闭源文件</span></span><br><span class="line">                in.close();</span><br><span class="line">                <span class="comment">// 删除这个源文件</span></span><br><span class="line">                sourceFile.delete();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1385,187 +1528,6 @@
 <h3 id="服务端响应线程"><a href="#服务端响应线程" class="headerlink" title="服务端响应线程"></a>服务端响应线程</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tcp.arg;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"><span class="keyword">import</span> tcp.EchoThreadServer;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EchoThreadByArgs</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 客户端引用</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Socket</span> <span class="variable">client</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="type">int</span> clienId;</span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">EchoThreadByArgs</span><span class="params">(Socket client)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.client = client;</span><br><span class="line">        <span class="comment">// 设置服务线程编号</span></span><br><span class="line">        <span class="built_in">this</span>.clienId = EchoThreadServer.getClientNum();</span><br><span class="line">        <span class="comment">// 服务线程数量加1</span></span><br><span class="line">        EchoThreadServer.addClientNum();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 线程执行体</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 接收客户端的输入</span></span><br><span class="line">        <span class="type">ObjectInputStream</span> <span class="variable">inoutFromClient</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">ObjectOutputStream</span> <span class="variable">outputToClient</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 接收客户端的输入</span></span><br><span class="line">            inoutFromClient = <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(client.getInputStream());</span><br><span class="line">            String[] inputArg = (String[]) inoutFromClient.readObject();</span><br><span class="line">            <span class="keyword">for</span> (String string : inputArg)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.println(string);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 输出对象到客户端</span></span><br><span class="line">            outputToClient = <span class="keyword">new</span> <span class="title class_">ObjectOutputStream</span>(client.getOutputStream());</span><br><span class="line">            outputToClient.writeObject(inputArg);</span><br><span class="line">            <span class="comment">// 一定要刷新,不然客户端接收不到</span></span><br><span class="line">            outputToClient.flush();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (inoutFromClient != <span class="literal">null</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">try</span></span><br><span class="line">                &#123;</span><br><span class="line">                    inoutFromClient.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">                &#123;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (outputToClient != <span class="literal">null</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">try</span></span><br><span class="line">                &#123;</span><br><span class="line">                    outputToClient.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">                &#123;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="客户端线程"><a href="#客户端线程" class="headerlink" title="客户端线程"></a>客户端线程</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tcp.arg;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"><span class="keyword">import</span> java.net.UnknownHostException;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EchoClientByArgs</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 定义客户端引用</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">client</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 创建客户端监听本机的6666端口</span></span><br><span class="line">            client = <span class="keyword">new</span> <span class="title class_">Socket</span>(<span class="string">&quot;localhost&quot;</span>, <span class="number">6666</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnknownHostException e)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">ObjectOutputStream</span> <span class="variable">outputToServer</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">ObjectInputStream</span> <span class="variable">inputByServer</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            outputToServer = <span class="keyword">new</span> <span class="title class_">ObjectOutputStream</span>(client.getOutputStream());</span><br><span class="line">            <span class="comment">// 把命令行参数序列化到服务器</span></span><br><span class="line">            outputToServer.writeObject(args);</span><br><span class="line">            outputToServer.flush();</span><br><span class="line">            <span class="comment">// 注意先后顺序,一定要写在发送之前</span></span><br><span class="line">            <span class="comment">// 接收服务端的序列化信息</span></span><br><span class="line">            inputByServer = <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(client.getInputStream());</span><br><span class="line">            <span class="comment">// 反序列化成对象(字符串数组)</span></span><br><span class="line">            String[] inputArg = (String[]) inputByServer.readObject();</span><br><span class="line">            <span class="comment">// 遍历数组</span></span><br><span class="line">            <span class="keyword">for</span> (String string : inputArg)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.println(string);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException | ClassNotFoundException e)</span><br><span class="line">        &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (outputToServer != <span class="literal">null</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">try</span></span><br><span class="line">                &#123;</span><br><span class="line">                    outputToServer.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">                &#123;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (inputByServer != <span class="literal">null</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">try</span></span><br><span class="line">                &#123;</span><br><span class="line">                    inputByServer.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">                &#123;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h3><p><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/Java/net/TCP/6.png" alt="这里有一张图片"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/6aa2ee08/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/6aa2ee08/" class="post-title-link" itemprop="url">Java 网络编程5---UDP程序设计</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-05-30 17:00:13" itemprop="dateCreated datePublished" datetime="2019-05-30T17:00:13+08:00">2019-05-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-05-13 21:24:25" itemprop="dateModified" datetime="2022-05-13T21:24:25+08:00">2022-05-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">网络编程</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/6aa2ee08/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/6aa2ee08/" data-xid="/blog/6aa2ee08/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="UDP简介"><a href="#UDP简介" class="headerlink" title="UDP简介"></a>UDP简介</h2><p><code>TCP</code>的所有操作都必须建立可靠的连接，这样肯定会消耗大量的系统资源，为了减少这种开销，在网络中又提供了另一种传输协议—<code>UDP</code>协议,<strong><code>DUP</code>连接时一种不可靠的连接</strong>，<code>UDP</code>协议广泛的使用与各种聊天工具中。<br>使用<code>DUP</code>发送的消息，接收方不一定会接收到，所有的信息使用数据包的形式发送出去，所以这就要求客户端要始终等待服务器发送的消息才能进行接收，在<code>Java</code>中使用<code>DatagramSocket</code>类和<code>DatagramPacket</code>类完成<code>UDP</code>程序的开发。</p>
-<h2 id="UDP程序实现"><a href="#UDP程序实现" class="headerlink" title="UDP程序实现"></a>UDP程序实现</h2><p>在UDP开发中使用DatagramPacket类包装一条要发送的信息，之后使用DatagramSocket类用于完成信息的发送操作，这两个类的常用方法如下表所示。</p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>DatagramPacket类常用方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td><code>DatagramPacket(byte[] buf, int length)</code></td>
-<td>构造 DatagramPacket(数据报包)对象，指定数据报包的长度为length</td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>DatagramPacket(byte[] buf, int length, InetAddress address, int port)</code></td>
-<td>构造数据报包对象，指定数据的长度，目标地址，目标端口</td>
-</tr>
-<tr>
-<td>3</td>
-<td><code>byte[] getData()</code></td>
-<td>返回接收的数据</td>
-</tr>
-<tr>
-<td>4</td>
-<td><code>int getLength()</code></td>
-<td>返回将要发送或接收到的数据的长度。</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>DatagramSocket类的常用方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td><code>DatagramSocket(int port)</code></td>
-<td>创建数据报套接字并将其绑定到本地主机上的指定端口。</td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>void send(DatagramPacket p)</code></td>
-<td>从此套接字发送数据报包。</td>
-</tr>
-<tr>
-<td>3</td>
-<td><code>void receive(DatagramPacket p)</code></td>
-<td>从此套接字接收数据报包。</td>
-</tr>
-</tbody></table>
-<p>实现UDP程序，首先应该从客户端编写，在客户端指定要接收数据的端口和取得数据。<br><strong>实例：UDP客户端—UDPClient</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> my.net.udp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.net.DatagramPacket;</span><br><span class="line"><span class="keyword">import</span> java.net.DatagramSocket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UDPClient</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//定义用户接收数据报的引用</span></span><br><span class="line">		<span class="type">DatagramSocket</span> <span class="variable">ds</span> <span class="operator">=</span> <span class="literal">null</span>; </span><br><span class="line">		<span class="comment">// 开辟空间，以接收数据</span></span><br><span class="line">		<span class="type">byte</span>[] buf = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>]; </span><br><span class="line">		<span class="comment">// 声明DatagramPacket对象</span></span><br><span class="line">		<span class="type">DatagramPacket</span> <span class="variable">dp</span> <span class="operator">=</span> <span class="literal">null</span>; </span><br><span class="line">		<span class="comment">//监听本机的6666端口</span></span><br><span class="line">		ds = <span class="keyword">new</span> <span class="title class_">DatagramSocket</span>(<span class="number">6666</span>);</span><br><span class="line">		<span class="comment">// 所有的信息使用buf保存</span></span><br><span class="line">		dp = <span class="keyword">new</span> <span class="title class_">DatagramPacket</span>(buf, <span class="number">1024</span>); </span><br><span class="line">		<span class="comment">//接收数据到数据报包中</span></span><br><span class="line">		System.out.println(<span class="string">&quot;等待接收信息中...&quot;</span>);</span><br><span class="line">		ds.receive(dp);</span><br><span class="line">		String receiveStr= <span class="keyword">new</span> <span class="title class_">String</span>(dp.getData(), <span class="number">0</span>, dp.getLength());</span><br><span class="line">		String str=receiveStr + <span class="string">&quot;from &quot;</span></span><br><span class="line">				+ dp.getAddress().getHostAddress() + <span class="string">&quot;：&quot;</span> + dp.getPort();</span><br><span class="line">		System.out.println(<span class="string">&quot;接收到信息:&quot;</span>);</span><br><span class="line">		System.out.println(str); <span class="comment">// 输出内容</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>程序运行结果：</strong><br><img data-src="https://img-blog.csdn.net/20180713125025829?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="UDP客户端运行结果"><br>程序运行之后，客户端已经打开了监听端口，等待服务器端向客户端发送信息。现在来编写服务端向客户端接收信息。<br><strong>实例：DUP发送的服务端程序—UDPServer</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> my.net.udp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.net.DatagramPacket;</span><br><span class="line"><span class="keyword">import</span> java.net.DatagramSocket;</span><br><span class="line"><span class="keyword">import</span> java.net.InetAddress;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UDPServer</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 定义发送数据报的对象</span></span><br><span class="line">		<span class="type">DatagramSocket</span> <span class="variable">ds</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">		<span class="comment">// 声明DatagramPacket对象</span></span><br><span class="line">		<span class="type">DatagramPacket</span> <span class="variable">dp</span> <span class="operator">=</span> <span class="literal">null</span>; </span><br><span class="line">		<span class="comment">// 服务端在8888端口上发送信息</span></span><br><span class="line">		ds = <span class="keyword">new</span> <span class="title class_">DatagramSocket</span>(<span class="number">8888</span>); </span><br><span class="line">		<span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;来着服务器的消息&quot;</span>;</span><br><span class="line">		<span class="type">byte</span>[] tosend=str.getBytes();</span><br><span class="line">		<span class="comment">//向客户端发送消息</span></span><br><span class="line">		dp = <span class="keyword">new</span> <span class="title class_">DatagramPacket</span>(tosend, tosend.length,</span><br><span class="line">				InetAddress.getByName(<span class="string">&quot;localhost&quot;</span>), <span class="number">6666</span>); </span><br><span class="line">		System.out.println(<span class="string">&quot;服务器正在发送信息...&quot;</span>);</span><br><span class="line">		ds.send(dp);</span><br><span class="line">		System.out.println(<span class="string">&quot;发送完毕...&quot;</span>);</span><br><span class="line">		ds.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>运行结果：</strong><br><img data-src="https://img-blog.csdn.net/2018071312541898?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="DUP客户端的运行结果"><br>在服务器端运行完成后，客户端可以接收到来自服务端的消息，此时的客户端的运行结果：<br><img data-src="https://img-blog.csdn.net/20180713125739342?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="客户端接收到的消息"></p>
 
       
     </div>

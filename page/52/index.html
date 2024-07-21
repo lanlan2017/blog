@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">703</span>
+          <span class="site-state-item-count">704</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,187 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/6aa2ee08/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/6aa2ee08/" class="post-title-link" itemprop="url">Java 网络编程5---UDP程序设计</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-05-30 17:00:13" itemprop="dateCreated datePublished" datetime="2019-05-30T17:00:13+08:00">2019-05-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-13 21:24:25" itemprop="dateModified" datetime="2022-05-13T21:24:25+08:00">2022-05-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/Java/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">网络编程</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/6aa2ee08/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/6aa2ee08/" data-xid="/blog/6aa2ee08/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="UDP简介"><a href="#UDP简介" class="headerlink" title="UDP简介"></a>UDP简介</h2><p><code>TCP</code>的所有操作都必须建立可靠的连接，这样肯定会消耗大量的系统资源，为了减少这种开销，在网络中又提供了另一种传输协议—<code>UDP</code>协议,<strong><code>DUP</code>连接时一种不可靠的连接</strong>，<code>UDP</code>协议广泛的使用与各种聊天工具中。<br>使用<code>DUP</code>发送的消息，接收方不一定会接收到，所有的信息使用数据包的形式发送出去，所以这就要求客户端要始终等待服务器发送的消息才能进行接收，在<code>Java</code>中使用<code>DatagramSocket</code>类和<code>DatagramPacket</code>类完成<code>UDP</code>程序的开发。</p>
+<h2 id="UDP程序实现"><a href="#UDP程序实现" class="headerlink" title="UDP程序实现"></a>UDP程序实现</h2><p>在UDP开发中使用DatagramPacket类包装一条要发送的信息，之后使用DatagramSocket类用于完成信息的发送操作，这两个类的常用方法如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>DatagramPacket类常用方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>DatagramPacket(byte[] buf, int length)</code></td>
+<td>构造 DatagramPacket(数据报包)对象，指定数据报包的长度为length</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>DatagramPacket(byte[] buf, int length, InetAddress address, int port)</code></td>
+<td>构造数据报包对象，指定数据的长度，目标地址，目标端口</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>byte[] getData()</code></td>
+<td>返回接收的数据</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>int getLength()</code></td>
+<td>返回将要发送或接收到的数据的长度。</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>DatagramSocket类的常用方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>DatagramSocket(int port)</code></td>
+<td>创建数据报套接字并将其绑定到本地主机上的指定端口。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>void send(DatagramPacket p)</code></td>
+<td>从此套接字发送数据报包。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>void receive(DatagramPacket p)</code></td>
+<td>从此套接字接收数据报包。</td>
+</tr>
+</tbody></table>
+<p>实现UDP程序，首先应该从客户端编写，在客户端指定要接收数据的端口和取得数据。<br><strong>实例：UDP客户端—UDPClient</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> my.net.udp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.net.DatagramPacket;</span><br><span class="line"><span class="keyword">import</span> java.net.DatagramSocket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UDPClient</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//定义用户接收数据报的引用</span></span><br><span class="line">		<span class="type">DatagramSocket</span> <span class="variable">ds</span> <span class="operator">=</span> <span class="literal">null</span>; </span><br><span class="line">		<span class="comment">// 开辟空间，以接收数据</span></span><br><span class="line">		<span class="type">byte</span>[] buf = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>]; </span><br><span class="line">		<span class="comment">// 声明DatagramPacket对象</span></span><br><span class="line">		<span class="type">DatagramPacket</span> <span class="variable">dp</span> <span class="operator">=</span> <span class="literal">null</span>; </span><br><span class="line">		<span class="comment">//监听本机的6666端口</span></span><br><span class="line">		ds = <span class="keyword">new</span> <span class="title class_">DatagramSocket</span>(<span class="number">6666</span>);</span><br><span class="line">		<span class="comment">// 所有的信息使用buf保存</span></span><br><span class="line">		dp = <span class="keyword">new</span> <span class="title class_">DatagramPacket</span>(buf, <span class="number">1024</span>); </span><br><span class="line">		<span class="comment">//接收数据到数据报包中</span></span><br><span class="line">		System.out.println(<span class="string">&quot;等待接收信息中...&quot;</span>);</span><br><span class="line">		ds.receive(dp);</span><br><span class="line">		String receiveStr= <span class="keyword">new</span> <span class="title class_">String</span>(dp.getData(), <span class="number">0</span>, dp.getLength());</span><br><span class="line">		String str=receiveStr + <span class="string">&quot;from &quot;</span></span><br><span class="line">				+ dp.getAddress().getHostAddress() + <span class="string">&quot;：&quot;</span> + dp.getPort();</span><br><span class="line">		System.out.println(<span class="string">&quot;接收到信息:&quot;</span>);</span><br><span class="line">		System.out.println(str); <span class="comment">// 输出内容</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>程序运行结果：</strong><br><img data-src="https://img-blog.csdn.net/20180713125025829?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="UDP客户端运行结果"><br>程序运行之后，客户端已经打开了监听端口，等待服务器端向客户端发送信息。现在来编写服务端向客户端接收信息。<br><strong>实例：DUP发送的服务端程序—UDPServer</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> my.net.udp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.net.DatagramPacket;</span><br><span class="line"><span class="keyword">import</span> java.net.DatagramSocket;</span><br><span class="line"><span class="keyword">import</span> java.net.InetAddress;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UDPServer</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 定义发送数据报的对象</span></span><br><span class="line">		<span class="type">DatagramSocket</span> <span class="variable">ds</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">		<span class="comment">// 声明DatagramPacket对象</span></span><br><span class="line">		<span class="type">DatagramPacket</span> <span class="variable">dp</span> <span class="operator">=</span> <span class="literal">null</span>; </span><br><span class="line">		<span class="comment">// 服务端在8888端口上发送信息</span></span><br><span class="line">		ds = <span class="keyword">new</span> <span class="title class_">DatagramSocket</span>(<span class="number">8888</span>); </span><br><span class="line">		<span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;来着服务器的消息&quot;</span>;</span><br><span class="line">		<span class="type">byte</span>[] tosend=str.getBytes();</span><br><span class="line">		<span class="comment">//向客户端发送消息</span></span><br><span class="line">		dp = <span class="keyword">new</span> <span class="title class_">DatagramPacket</span>(tosend, tosend.length,</span><br><span class="line">				InetAddress.getByName(<span class="string">&quot;localhost&quot;</span>), <span class="number">6666</span>); </span><br><span class="line">		System.out.println(<span class="string">&quot;服务器正在发送信息...&quot;</span>);</span><br><span class="line">		ds.send(dp);</span><br><span class="line">		System.out.println(<span class="string">&quot;发送完毕...&quot;</span>);</span><br><span class="line">		ds.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果：</strong><br><img data-src="https://img-blog.csdn.net/2018071312541898?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="DUP客户端的运行结果"><br>在服务器端运行完成后，客户端可以接收到来自服务端的消息，此时的客户端的运行结果：<br><img data-src="https://img-blog.csdn.net/20180713125739342?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIxODA4OTYx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="客户端接收到的消息"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1973,142 +2154,6 @@
 <h1 id="被Windows-Defender拦截"><a href="#被Windows-Defender拦截" class="headerlink" title="被Windows Defender拦截"></a>被Windows Defender拦截</h1><h2 id="Windows-Defender不扫描eclipse的安装目录"><a href="#Windows-Defender不扫描eclipse的安装目录" class="headerlink" title="Windows Defender不扫描eclipse的安装目录"></a>Windows Defender不扫描eclipse的安装目录</h2><p>上面是<code>eclipse</code>中的配置,但是我发现,配置之后没有效果.我打开任务管理器发现,每次启动<code>eclipse</code>的时候,都会被<code>Windows Defender</code>拦截，如下图所示：<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/StartSlow/1.png" alt="这里有一张图片"><br><code>Windows Defender</code>会先扫描<code>eclipse</code>的安装目录,确认安全后再让<code>eclipse</code>运行.扫描是很耗时的,这就造成<code>eclipse</code>启动十分缓慢.</p>
 <h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>打开<code>windows defender</code>,然后点击<code>病毒和威胁防护</code>,然后点击<code>&quot;病毒和威胁防护&quot;设置</code><br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/StartSlow/2.png" alt="这里有一张图片"><br>然后向下拖动滚动条,找到<code>排除项</code>,点击<code>添加或删除排除项</code>。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/StartSlow/3.png" alt="这里有一张图片"><br>然后点击<code>添加排除项</code>,添加<code>eclipse</code>的安装目录即可。<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/JavaEE/IDE/Eclipse/StartSlow/4.png" alt="这里有一张图片"></p>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/5553fa829ad79e65a2393433.html">如何让Windows Defender不扫描指定排除文件夹</a>](<a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/5553fa829ad79e65a2393433.html">如何让WindowsDefender不扫描指定排除文件夹</a>)</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/e8358348/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/e8358348/" class="post-title-link" itemprop="url">正则表达 匹配方法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-05-16 19:07:02" itemprop="dateCreated datePublished" datetime="2019-05-16T19:07:02+08:00">2019-05-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">正则表达式</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E5%85%B6%E4%BB%96/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E5%AE%9E%E4%BE%8B/" itemprop="url" rel="index"><span itemprop="name">实例</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/e8358348/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/e8358348/" data-xid="/blog/e8358348/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="正则表达-匹配方法"><a href="#正则表达-匹配方法" class="headerlink" title="正则表达 匹配方法"></a>正则表达 匹配方法</h1><p><strong>部分内容已经消失</strong></p>
-<p>可以看到<code>getter</code>方法和<code>setter</code>方法已经从代码之中移除出去了,这样我们<strong>写文章的时候代码比较紧凑,便于阅读</strong>.</p>
-<h2 id="不足的地方"><a href="#不足的地方" class="headerlink" title="不足的地方"></a>不足的地方</h2><p>这个正在表达式不适合方法体之中存在代码快的情况.因为它以<code>&#125;</code>作为方法的介绍标记.但是如果此时方法体重存在<code>&#125;</code>这个符号,将不会匹配成功.</p>
-<h1 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h1><p>上面的代码并不能匹配到方法体之中有嵌套的代码块的情况.</p>
-<h2 id="匹配正则"><a href="#匹配正则" class="headerlink" title="匹配正则"></a>匹配正则</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public\s+(?:\w+(?:\s+)?)+\((?:\,?\s*\w+\s+\w+)*\)(\s+)\&#123;(?:(?:\n|\r\n).*)*?\1\&#125;</span><br></pre></td></tr></table></figure>
-<p>上面正则判断方法的代码如下:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(\s+)\&#123;(?:(?:\n|\r\n).*)*?\1\&#125;</span><br></pre></td></tr></table></figure>
-<p>通过匹配方法体开始标记<code>(\s+)\&#123;</code>和结束标记<code>\1\&#125;</code>前面的空格判断方法体的开始和结束位置.匹配效果如下图:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/regex/example/Method/3.png" alt="这里有一张图片"><br>这样就可以匹配到如下所示的代码:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public static String oneArg(String arg1)</span><br><span class="line">&#123;</span><br><span class="line">    //从剪贴板获取文本</span><br><span class="line">    String text=SysClipboardUtil.getSysClipboardText();</span><br><span class="line">    // 删除空行</span><br><span class="line">    text = text.replaceAll(&quot;(?m)^\\s*$(\\n|\\r\\n)&quot;, &quot;&quot;);</span><br><span class="line">    switch (arg1)</span><br><span class="line">    &#123;</span><br><span class="line">    //省略...</span><br><span class="line">    &#125;</span><br><span class="line">    return text;</span><br><span class="line">&#125;</span><br><span class="line">public static String noArg(String text)</span><br><span class="line">&#123;</span><br><span class="line">    // 删除无用的空行</span><br><span class="line">    text = text.replaceAll(&quot;(?m)^\\s*$(\\n|\\r\\n)&quot;, &quot;&quot;);</span><br><span class="line">    return text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="新的问题"><a href="#新的问题" class="headerlink" title="新的问题"></a>新的问题</h2><p>好的现在又引入了新的问题,如果是下面的代码:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void setName(String name) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述正则将无法匹配到.因为方法体开始符<code>&#123;</code>前面只有一个空格,而结束符前面却有4个空格。<br>嗯,这个事情暂且搁置.就让自己手动现在使用哪种方式吧.</p>
-<h2 id="匹配getter-setter方法"><a href="#匹配getter-setter方法" class="headerlink" title="匹配getter setter方法"></a>匹配getter setter方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public\s+\w+\s+(?:set|get)\w+\((?:\,?\s*\w+\s+\w+)*\)(\s+)\&#123;(?:(?:\n|\r\n).*)*?\1\&#125;</span><br></pre></td></tr></table></figure>
-<p>匹配效果如下图图所示:<br><img data-src="https://image-1257720033.cos.ap-shanghai.myqcloud.com/blog/regex/example/Method/4.png" alt="这里有一张图片"></p>
-<h1 id="在线正则表达式匹配工具"><a href="#在线正则表达式匹配工具" class="headerlink" title="在线正则表达式匹配工具"></a>在线正则表达式匹配工具</h1><p><a target="_blank" rel="noopener" href="http://tool.chinaz.com/regex/">http://tool.chinaz.com/regex/</a></p>
 
       
     </div>

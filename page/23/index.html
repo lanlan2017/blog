@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">703</span>
+          <span class="site-state-item-count">704</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,129 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/975cf8c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="蓝蓝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝蓝站点">
+      <meta itemprop="description" content="记录一些学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 蓝蓝站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/975cf8c/" class="post-title-link" itemprop="url">Linux 设定文件和目录的权限</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-24 13:32:33" itemprop="dateCreated datePublished" datetime="2021-06-24T13:32:33+08:00">2021-06-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%83%E9%99%90/" itemprop="url" rel="index"><span itemprop="name">文件和目录的权限</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/blog/975cf8c/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/blog/975cf8c/" data-xid="/blog/975cf8c/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>327</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="演示：文件的读写权限"><a href="#演示：文件的读写权限" class="headerlink" title="演示：文件的读写权限"></a>演示：文件的读写权限</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost 验证]# tree -N</span><br><span class="line">.</span><br><span class="line"></span><br><span class="line">0 directories, 0 files</span><br><span class="line">[root@localhost 验证]# umask</span><br><span class="line">0022</span><br><span class="line">[root@localhost 验证]# echo &quot;hell world&quot; &gt;newfile.txt</span><br><span class="line">[root@localhost 验证]# ls -l newfile.txt </span><br><span class="line">-rw-r--r--. 1 root root 11 6月  26 11:52 newfile.txt</span><br><span class="line">[root@localhost 验证]# </span><br></pre></td></tr></table></figure>
+<p>创建新文件时，文件的权限受到两方面的影响，一个是umask值，另一个是重定向命令（<code>&gt;</code>）的open调用时指定的文件权限。<br>没有修改权限的文件，依旧可以删除：</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1607,146 +1730,6 @@ drwxrwxrw<mark>t</mark> 13 root root 20480  Mar 22 06:11 /tmp
 
 
 <!-- Blog/programming/LinuxGeneral/FileSystem/LinuxFileSystemStorageStructure -->
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/blog/58bbb0ab/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="蓝蓝">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝蓝站点">
-      <meta itemprop="description" content="记录一些学习心得">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 蓝蓝站点">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/58bbb0ab/" class="post-title-link" itemprop="url">Linux 文件系统的创建与安装</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-06-20 14:34:35" itemprop="dateCreated datePublished" datetime="2021-06-20T14:34:35+08:00">2021-06-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-04 00:51:45" itemprop="dateModified" datetime="2022-04-04T00:51:45+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">通用</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/Linux/%E9%80%9A%E7%94%A8/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">文件系统</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/blog/58bbb0ab/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/blog/58bbb0ab/" data-xid="/blog/58bbb0ab/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.5k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="根文件系统与子文件系统"><a href="#根文件系统与子文件系统" class="headerlink" title="根文件系统与子文件系统"></a>根文件系统与子文件系统</h1><h2 id="根文件系统-root-filesystem"><a href="#根文件系统-root-filesystem" class="headerlink" title="根文件系统(root filesystem)"></a>根文件系统(root filesystem)</h2><p>根文件系统是整个文件系统的基础，不能“脱卸(umount)”</p>
-<h2 id="子文件系统"><a href="#子文件系统" class="headerlink" title="子文件系统"></a>子文件系统</h2><ul>
-<li>子文件系统，包括硬盘，软盘，CD-ROM，USB盘，网络文件系统NFS</li>
-<li>以根文件系统中某一子目录的身份出现(不似Windows逻辑盘）</li>
-</ul>
-<h2 id="独立的存储结构"><a href="#独立的存储结构" class="headerlink" title="独立的存储结构"></a>独立的存储结构</h2><p>根文件系统和子文件系统都有其自己独立的文件系统存储结构，甚至文件系统的格式也不同</p>
-<h2 id="mkfs和mount：文件系统的创建和安装"><a href="#mkfs和mount：文件系统的创建和安装" class="headerlink" title="mkfs和mount：文件系统的创建和安装"></a>mkfs和mount：文件系统的创建和安装</h2><h3 id="创建文件系统"><a href="#创建文件系统" class="headerlink" title="创建文件系统"></a>创建文件系统</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs /dev/sdb</span><br></pre></td></tr></table></figure>
-<p>块设备文件&#x2F;dev&#x2F;sdb上创建文件系统(make filesystem)</p>
-<h3 id="安装子文件系统mount"><a href="#安装子文件系统mount" class="headerlink" title="安装子文件系统mount"></a>安装子文件系统mount</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sdb /mnt</span><br></pre></td></tr></table></figure>
-<p><code>/mnt</code>可以是任一个<strong>事先建好的空目录名</strong>，允许处于根文件系统的任何目录中，此后，操作子目录&#x2F;mnt就是对子文件系统的访问。对于应用程序来说，从所操作的文件或目录名，看不出和其它根文件系统的对象有什么区别。</p>
-<h2 id="不带参数的mount命令"><a href="#不带参数的mount命令" class="headerlink" title="不带参数的mount命令"></a>不带参数的mount命令</h2><p>列出当前已安装的所有的子文件系统</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@localhost ~]# mount</span><br><span class="line">/dev/block/mmcblk0p53 on / type ext4 (rw,seclabel,relatime,discard,noauto_da_alloc,errors=panic,data=ordered)</span><br><span class="line">proc on /proc type proc (rw,relatime)</span><br><span class="line">sys on /sys type sysfs (rw,seclabel,relatime)</span><br><span class="line">tmpfs on /dev type tmpfs (rw,seclabel,nosuid,relatime,size=1822552k,nr_inodes=455638,mode=755)</span><br><span class="line">tmpfs on /dev/shm type tmpfs (rw,seclabel,nosuid,nodev,relatime)</span><br><span class="line">devpts on /dev/pts type devpts (rw,seclabel,relatime,mode=600)</span><br><span class="line">/data/media on /mnt/files type sdcardfs (rw,nosuid,nodev,relatime,uid=1023,gid=1023,derive=legacy,reserved=50MB)</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
-
-<h2 id="umount：文件系统的卸载"><a href="#umount：文件系统的卸载" class="headerlink" title="umount：文件系统的卸载"></a>umount：文件系统的卸载</h2><h3 id="umount命令"><a href="#umount命令" class="headerlink" title="umount命令"></a>umount命令</h3><p>功能与mount命令相反，卸载一个已安装的子文件系统。例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">umount /dev/sdb</span><br></pre></td></tr></table></figure>
-
-<h2 id="df-文件系统空闲空间"><a href="#df-文件系统空闲空间" class="headerlink" title="df: 文件系统空闲空间"></a>df: 文件系统空闲空间</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# df</span><br><span class="line">文件系统                                  1K-块     已用     可用 已用% 挂载点</span><br><span class="line">/dev/block/bootdevice/by-name/userdata 56814352 24486508 32311460   44% /</span><br><span class="line">tmpfs                                   1822552      368  1822184    1% /dev</span><br><span class="line">tmpfs                                   1843032        0  1843032    0% /dev/shm</span><br><span class="line">/data/media                            56763152 24502892 32260260   44% /mnt/files</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# df -h</span><br><span class="line">文件系统                                容量  已用  可用 已用% 挂载点</span><br><span class="line">/dev/block/bootdevice/by-name/userdata   55G   24G   31G   44% /</span><br><span class="line">tmpfs                                   1.8G  368K  1.8G    1% /dev</span><br><span class="line">tmpfs                                   1.8G     0  1.8G    0% /dev/shm</span><br><span class="line">/data/media                              55G   24G   31G   44% /mnt/files</span><br><span class="line">[root@localhost ~]# </span><br></pre></td></tr></table></figure>
 
       
     </div>
